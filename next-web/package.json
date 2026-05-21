@@ -1,0 +1,48 @@
+{
+  "name": "solar-next-web",
+  "private": true,
+  "scripts": {
+    "clean": "node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){}\"",
+    "dev": "next dev -H 127.0.0.1 -p 3001",
+    "dev:3000": "next dev -H 127.0.0.1 -p 3000",
+    "dev:3002": "next dev -H 127.0.0.1 -p 3002",
+    "build": "next build",
+    "start": "next start -H 127.0.0.1 -p 3001",
+    "lint": "next lint",
+    "fetch-planet-textures": "node scripts/fetch-planet-textures.mjs",
+    "fetch-nasa-earth-hd": "node scripts/fetch-nasa-earth-hd.mjs",
+    "fetch-nasa-hd-all": "node scripts/fetch-nasa-hd-bundle.mjs --extras",
+    "fetch-nasa-hd-extras": "node scripts/fetch-nasa-hd-bundle.mjs --extras-only",
+    "fetch-nasa-hd-with-extras": "node scripts/fetch-nasa-hd-bundle.mjs --extras",
+    "fetch-sky-eso": "node scripts/fetch-sky-eso.mjs",
+    "build-sky": "python scripts/build-universe-sandbox-sky.py"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.2.8",
+    "@fontsource-variable/jetbrains-mono": "^5.2.8",
+    "@react-three/drei": "^9.117.3",
+    "@react-three/fiber": "^8.17.10",
+    "@react-three/postprocessing": "^2.16.3",
+    "framer-motion": "^11.18.2",
+    "lucide-react": "^0.577.0",
+    "meshline": "^3.3.1",
+    "next": "^14.2.18",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.15.4",
+    "satellite.js": "^7.0.0",
+    "three": "^0.170.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@types/three": "^0.170.0",
+    "autoprefixer": "^10.4.27",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.2.18",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.6.3"
+  }
+}
