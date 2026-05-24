@@ -10,7 +10,7 @@ import type { FloatingOriginState } from "../lib/floatingOrigin";
 import type { MutableRefObject } from "react";
 
 export default function ScienceBackdrop({
-  brightStarTier2 = false,
+  brightStarTier2 = true,
 }: {
   floatingOriginRef?: MutableRefObject<FloatingOriginState>;
   brightStarTier2?: boolean;
@@ -31,7 +31,7 @@ export default function ScienceBackdrop({
   return (
     <group ref={rootRef} renderOrder={-500}>
       <GalaxyEnvironmentSphere visible />
-      <BrightStarCatalog opacity={0.026} tier2Loaded={brightStarTier2} />
+      <BrightStarCatalog opacity={0.038} tier2Loaded={brightStarTier2} />
     </group>
   );
 }

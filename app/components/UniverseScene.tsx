@@ -18,6 +18,7 @@ import type { PhysicsHistoryStack } from "../lib/physicsHistoryStack";
 import type { KerrBlackHoleUiState } from "./KerrBlackHolePanel";
 import type { LaunchConfig } from "../lib/launchTelemetryTypes";
 import type { LocalTelemetry } from "../lib/localLaunchPhysics";
+import type { MissionPlan } from "../lib/missionDesignerTypes";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { applyFloatingOffsetScene, updateFloatingOrigin } from "../lib/floatingOrigin";
 import { lodConfigForTier } from "../lib/galacticLod";
@@ -39,8 +40,11 @@ import MajorStarBeacons from "./MajorStarBeacons";
 import ConstellationLines from "./ConstellationLines";
 import GaiaStarField from "./GaiaStarField";
 import NebulaMarkers from "./NebulaMarkers";
+import DeepSkyImageSprites from "./DeepSkyImageSprites";
+import NebulaMilkyWay from "./NebulaMilkyWay";
 import StarClusterMarkers from "./StarClusterMarkers";
 import PulsarField from "./PulsarField";
+import MissionTrajectoryPreview from "./MissionTrajectoryPreview";
 
 type FocusMode = "orbit" | "inspect" | "lock";
 type ActiveFocus =
@@ -94,7 +98,7 @@ function LodOrbitControlsBridge({ floatingOriginRef, controlsRef }: { floatingOr
 }
 
 function BrightStarTierBridge({ floatingOriginRef, children }: { floatingOriginRef: MutableRefObject<FloatingOriginState>; children: (tier2: boolean) => ReactNode }) {
-  const [tier2, setTier2] = useState(false);
+  const [tier2, setTier2] = useState(true);
   useFrame(() => { if (!tier2 && floatingOriginRef.current.lodTier !== "solar") setTier2(true); });
   return <>{children(tier2)}</>;
 }
@@ -108,6 +112,7 @@ function GalacticOverlayGate({ floatingOriginRef, children }: { floatingOriginRe
 function CameraZoomBridge({ controlsRef }: { controlsRef: MutableRefObject<OrbitControlsImpl | null> }) {
   const camera = useThree((s) => s.camera);
   const zoomDeltaRef = useRef(0);
+  const dirRef = useRef(new THREE.Vector3());
   useEffect(() => {
     const onZoom = (e: Event) => {
       if (e.defaultPrevented) return;
@@ -121,7 +126,7 @@ function CameraZoomBridge({ controlsRef }: { controlsRef: MutableRefObject<Orbit
     if (!controls || zoomDeltaRef.current === 0) return;
     const delta = zoomDeltaRef.current;
     zoomDeltaRef.current = 0;
-    const dir = new THREE.Vector3().subVectors(camera.position, controls.target);
+    const dir = dirRef.current.subVectors(camera.position, controls.target);
     dir.multiplyScalar(delta > 0 ? 0.78 : 1.28);
     camera.position.copy(controls.target).add(dir);
     controls.update();
@@ -146,28 +151,13 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
   const lockDesiredDistanceRef = useRef<number | null>(null);
   const lockViewDirRef = useRef(new THREE.Vector3(0.28, 0.38, 0.88).normalize());
   const lastRequestNonceRef = useRef<number | null>(null);
+  const recentEventFocusRef = useRef<{
+    bodyIndex: number;
+    mode: FocusMode;
+    t: number;
+  } | null>(null);
   const focusStartCamera = useRef(new THREE.Vector3());
   const focusStartTarget = useRef(new THREE.Vector3());
-
-  useEffect(() => {
-    const d = cameraBodyFocusRequest;
-    const controls = controlsRef.current;
-    if (!d || d.bodyIndex < 0) return;
-    focusRef.current = null;
-    lockBodyIndexRef.current = null;
-    lockInitializedRef.current = false;
-    if (controls) controls.enableDamping = prevDampingRef.current;
-    const now = performance.now();
-    focusRef.current = {
-      kind: "body",
-      index: d.bodyIndex,
-      mode: d.mode,
-      start: now,
-      until: now + focusAnimationMs(d.mode),
-    };
-    focusStartCamera.current.copy(camera.position);
-    if (controls) focusStartTarget.current.copy(controls.target);
-  }, [cameraBodyFocusRequest?.nonce, cameraBodyFocusRequest, controlsRef]);
 
   useEffect(() => {
     const controls = controlsRef.current;
@@ -201,6 +191,7 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       const mode: FocusMode = raw === "inspect" ? "inspect" : raw === "lock" ? "lock" : "orbit";
       clearLock();
       const now = performance.now();
+      recentEventFocusRef.current = { bodyIndex: d.bodyIndex, mode, t: now };
       focusRef.current = { kind: "body", index: d.bodyIndex, mode, start: now, until: now + focusAnimationMs(mode) };
       focusStartCamera.current.copy(camera.position);
       if (controls) focusStartTarget.current.copy(controls.target);
@@ -281,21 +272,31 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
     const request = cameraBodyFocusRequest;
     if (request && request.nonce !== lastRequestNonceRef.current) {
       lastRequestNonceRef.current = request.nonce;
-      focusRef.current = null;
-      lockBodyIndexRef.current = null;
-      lockInitializedRef.current = false;
-      lockDesiredDistanceRef.current = null;
-      controls.enableDamping = prevDampingRef.current;
-      const started = performance.now();
-      focusRef.current = {
-        kind: "body",
-        index: request.bodyIndex,
-        mode: request.mode,
-        start: started,
-        until: started + focusAnimationMs(request.mode),
-      };
-      focusStartCamera.current.copy(camera.position);
-      focusStartTarget.current.copy(controls.target);
+      const recent = recentEventFocusRef.current;
+      if (
+        recent &&
+        recent.bodyIndex === request.bodyIndex &&
+        recent.mode === request.mode &&
+        performance.now() - recent.t < 500
+      ) {
+        recentEventFocusRef.current = null;
+      } else {
+        focusRef.current = null;
+        lockBodyIndexRef.current = null;
+        lockInitializedRef.current = false;
+        lockDesiredDistanceRef.current = null;
+        controls.enableDamping = prevDampingRef.current;
+        const started = performance.now();
+        focusRef.current = {
+          kind: "body",
+          index: request.bodyIndex,
+          mode: request.mode,
+          start: started,
+          until: started + focusAnimationMs(request.mode),
+        };
+        focusStartCamera.current.copy(camera.position);
+        focusStartTarget.current.copy(controls.target);
+      }
     }
     const origin = floatingOriginRef.current;
     const now = performance.now();
@@ -413,7 +414,7 @@ function SelectionMetricsBridge({ selectedBodyIndex, physicsRef, floatingOriginR
 }
 
 export type UniverseCanvasSimulationProps = {
-  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
+  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
 };
 
 export default function UniverseScene({ simulation }: { simulation: UniverseCanvasSimulationProps }) {
@@ -427,12 +428,14 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
         <FloatingOriginBridge floatingOriginRef={simulation.floatingOriginRef} />
         <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} />}</BrightStarTierBridge>
+        <NebulaMilkyWay />
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
           <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} />
           <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} />
           <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
           <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} />
           <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} />
+          <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} />
           <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />
           <StarClusterMarkers floatingOriginRef={simulation.floatingOriginRef} />
           <PulsarField floatingOriginRef={simulation.floatingOriginRef} />
@@ -442,6 +445,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <OrbitControls ref={controlsRef} makeDefault enableDamping dampingFactor={0.06} maxDistance={50000} enabled={!simulation.localLaunchActive} />
         <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} />
         <CameraFocusDirectionBridge controlsRef={controlsRef} />
+        <MissionTrajectoryPreview plan={simulation.missionPreviewPlan ?? null} floatingOriginRef={simulation.floatingOriginRef} />
         {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor /> : null}
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />

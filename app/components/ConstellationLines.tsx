@@ -1,5 +1,6 @@
 "use client";
 
+import { Html } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useMemo, useRef } from "react";
@@ -62,20 +63,39 @@ export default function ConstellationLines({
 }) {
   const lineRef = useRef<THREE.LineSegments>(null);
   const nodeRef = useRef<THREE.Points>(null);
+  const orionLineRef = useRef<THREE.LineSegments>(null);
+  const orionNodeRef = useRef<THREE.Points>(null);
+  const lastTierRef = useRef<string | null>(null);
   const data = useMemo(() => buildConstellationData(), []);
+  const orionData = useMemo(
+    () => data.find((item) => item.name === "Orion") ?? null,
+    [data],
+  );
 
   useFrame(() => {
     const line = lineRef.current;
     const nodes = nodeRef.current;
+    const orionLine = orionLineRef.current;
+    const orionNodes = orionNodeRef.current;
     if (!line) return;
     const tier = floatingOriginRef.current.lodTier;
+    if (lastTierRef.current === tier) return;
+    lastTierRef.current = tier;
     const visible = true;
     line.visible = visible;
     if (nodes) nodes.visible = visible;
     const lineMat = line.material as THREE.LineBasicMaterial;
-    lineMat.opacity = tier === "solar" ? 0.028 : tier === "mid" ? 0.075 : 0.16;
+    lineMat.opacity = tier === "solar" ? 0.075 : tier === "mid" ? 0.12 : 0.2;
     const nodeMat = nodes?.material as THREE.PointsMaterial | undefined;
-    if (nodeMat) nodeMat.opacity = tier === "solar" ? 0.018 : tier === "mid" ? 0.07 : 0.16;
+    if (nodeMat) nodeMat.opacity = tier === "solar" ? 0.055 : tier === "mid" ? 0.1 : 0.18;
+    if (orionLine) {
+      const mat = orionLine.material as THREE.LineBasicMaterial;
+      mat.opacity = tier === "solar" ? 0.58 : tier === "mid" ? 0.52 : 0.46;
+    }
+    if (orionNodes) {
+      const mat = orionNodes.material as THREE.PointsMaterial;
+      mat.opacity = tier === "solar" ? 0.82 : tier === "mid" ? 0.74 : 0.62;
+    }
   });
 
   // Merge all constellation segments into a single LineSegments for performance.
@@ -118,6 +138,35 @@ export default function ConstellationLines({
     return geo;
   }, []);
 
+  const orionGeometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute(
+      "position",
+      new THREE.BufferAttribute(orionData?.positions ?? new Float32Array(), 3),
+    );
+    return geo;
+  }, [orionData]);
+
+  const orionNodeGeometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    const orion = CONSTELLATION_LINES.find((c) => c.name === "Orion");
+    if (!orion) {
+      geo.setAttribute("position", new THREE.Float32BufferAttribute([], 3));
+      return geo;
+    }
+    const coords: number[] = [];
+    for (const [ra, dec] of orion.waypoints) {
+      const dir = raDecToSceneDir(ra, dec);
+      coords.push(
+        dir.x * CONSTELLATION_DISTANCE_SCENE,
+        dir.y * CONSTELLATION_DISTANCE_SCENE,
+        dir.z * CONSTELLATION_DISTANCE_SCENE,
+      );
+    }
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(coords, 3));
+    return geo;
+  }, []);
+
   const material = useMemo(
     () =>
       new THREE.LineBasicMaterial({
@@ -148,6 +197,36 @@ export default function ConstellationLines({
     []
   );
 
+  const orionMaterial = useMemo(
+    () =>
+      new THREE.LineBasicMaterial({
+        color: "#9fc8ff",
+        transparent: true,
+        opacity: 0.58,
+        depthWrite: false,
+        depthTest: false,
+        toneMapped: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    [],
+  );
+
+  const orionNodeMaterial = useMemo(
+    () =>
+      new THREE.PointsMaterial({
+        color: "#fff0c6",
+        size: 3.2,
+        sizeAttenuation: false,
+        transparent: true,
+        opacity: 0.82,
+        depthWrite: false,
+        depthTest: false,
+        toneMapped: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    [],
+  );
+
   return (
     <>
       <lineSegments
@@ -164,6 +243,38 @@ export default function ConstellationLines({
         frustumCulled={false}
         renderOrder={-479}
       />
+      {orionData ? (
+        <>
+          <lineSegments
+            ref={orionLineRef}
+            geometry={orionGeometry}
+            material={orionMaterial}
+            frustumCulled={false}
+            renderOrder={-478}
+          />
+          <points
+            ref={orionNodeRef}
+            geometry={orionNodeGeometry}
+            material={orionNodeMaterial}
+            frustumCulled={false}
+            renderOrder={-477}
+          />
+          <Html
+            position={[
+              orionData.centroid.x,
+              orionData.centroid.y + 260,
+              orionData.centroid.z,
+            ]}
+            center
+            distanceFactor={18}
+            style={{ pointerEvents: "none" }}
+          >
+            <span className="whitespace-nowrap text-[11px] tracking-[0.22em] text-[#cfe5ff]/80 drop-shadow-[0_0_10px_rgba(90,150,220,0.75)]">
+              ORION
+            </span>
+          </Html>
+        </>
+      ) : null}
     </>
   );
 }

@@ -125,6 +125,19 @@ npm run dev:3002
 
 ## 验证
 
+## DeepSeek Mission Advisor
+
+Mission Designer can optionally call DeepSeek from a server-side Next.js route:
+
+```powershell
+# .env.local
+DEEPSEEK_API_KEY=your_deepseek_key
+DEEPSEEK_MODEL=deepseek-v4-flash
+DEEPSEEK_API_BASE=https://api.deepseek.com
+```
+
+Do not prefix the key with `NEXT_PUBLIC_`. The browser calls `/api/mission-advisor/deepseek`; the route reads the key on the server and falls back to the local rule-based advisor when the key is missing, the request times out, or DeepSeek returns malformed content.
+
 本轮已验证：
 
 - `npx tsc --noEmit`

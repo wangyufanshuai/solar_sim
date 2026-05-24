@@ -645,6 +645,16 @@ destination: "http://127.0.0.1:8765/textures/:path*"
 - `NEXT_PUBLIC_LENSING_ENABLED=1`：启用引力透镜。
 - `NEXT_PUBLIC_LENSING_QUALITY`：透镜质量档位。
 
+### DeepSeek Mission Advisor
+
+Mission Designer 的 DeepSeek 增强顾问通过服务端 route 调用：
+
+- `DEEPSEEK_API_KEY`：DeepSeek API key，仅服务端读取，不要使用 `NEXT_PUBLIC_` 前缀。
+- `DEEPSEEK_MODEL`：默认 `deepseek-v4-flash`。
+- `DEEPSEEK_API_BASE`：默认 `https://api.deepseek.com`。
+
+客户端只调用 `/api/mission-advisor/deepseek`。无 key、超时、HTTP 错误或非 JSON 输出时，route 返回本地规则顾问 fallback，任务优化器和主 N 体物理状态不受影响。
+
 ## 17. 运行命令
 
 安装依赖：

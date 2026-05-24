@@ -8,6 +8,7 @@ import {
   Layers,
   Minus,
   MoreHorizontal,
+  Orbit,
   Pause,
   Play,
   Plus,
@@ -27,7 +28,7 @@ import {
 
 const IS = 1.0;
 
-export type BottomControlBarSection = "simulation" | "view" | "tools" | "launch";
+export type BottomControlBarSection = "simulation" | "view" | "tools" | "launch" | "mission";
 
 export type BottomControlBarProps = {
   isPlaying?: boolean;
@@ -60,6 +61,8 @@ const sections: { id: BottomControlBarSection; label: string; Icon: typeof Box }
   { id: "launch", label: "发射", Icon: Rocket },
   { id: "tools", label: "工具", Icon: Wrench },
 ];
+
+sections.splice(3, 0, { id: "mission", label: "Mission", Icon: Orbit });
 
 const iconBtn =
   "flex h-9 w-9 items-center justify-center rounded-full text-[var(--ui-text-dim)] transition-all duration-150 hover:bg-white/10 hover:text-[var(--ui-text-primary)] disabled:pointer-events-none disabled:opacity-25";

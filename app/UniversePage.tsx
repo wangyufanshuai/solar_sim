@@ -69,8 +69,10 @@ import { PHYSICS_ACTIVE_BODY_COUNT } from "./lib/physicsSharedBuffer";
 import SimulationHistoryBar from "./components/SimulationHistoryBar";
 import LaunchControlPanel from "./components/LaunchControlPanel";
 import LaunchTelemetryStrip from "./components/LaunchTelemetryStrip";
+import MissionDesignerPanel from "./components/MissionDesignerPanel";
 import useLaunchWebSocket from "./lib/useLaunchWebSocket";
 import type { LaunchConfig } from "./lib/launchTelemetryTypes";
+import type { MissionOptimizationResult, MissionPlan } from "./lib/missionDesignerTypes";
 import {
   startLaunchSequence,
   stopLaunchSequence,
@@ -126,6 +128,8 @@ export default function UniversePage() {
   const [historySnapshotCount, setHistorySnapshotCount] = useState(0);
   const [searchFocusNonce, setSearchFocusNonce] = useState(0);
   const [leftPanelCollapsed, setLeftPanelCollapsed] = useState(true);
+  const [missionResult, setMissionResult] = useState<MissionOptimizationResult | null>(null);
+  const [missionPreviewPlan, setMissionPreviewPlan] = useState<MissionPlan | null>(null);
 
   // ── Launch mode state ──
   const [launchMode, setLaunchMode] = useState(false);
@@ -460,6 +464,7 @@ export default function UniversePage() {
             timeTravelScrubURef,
             timeTravelScrubbingRef,
             physicsHistoryRef,
+            missionPreviewPlan,
             onCanvasPointerMissed: clearFocusLock,
             launchMode,
             localLaunchActive,
@@ -581,6 +586,17 @@ export default function UniversePage() {
             isStreaming={localLaunchActive}
           />
         </div>
+      ) : null}
+      {activeSection === "mission" ? (
+        <MissionDesignerPanel
+          physicsRef={physicsRef}
+          simDaysRef={simDaysRef}
+          relativityEnabled={relativityEnabled}
+          result={missionResult}
+          selectedPlanId={missionPreviewPlan?.id ?? null}
+          onResult={setMissionResult}
+          onSelectPlan={setMissionPreviewPlan}
+        />
       ) : null}
     </div>
   );

@@ -14,6 +14,7 @@ import { CONSTELLATION_LINES } from "../data/constellationCatalog";
 import { NEBULAE } from "../data/nebulaCatalog";
 import { STAR_CLUSTERS } from "../data/starClusterCatalog";
 import { PULSARS } from "../data/pulsarCatalog";
+import { MAJOR_GAIA_STARS } from "../data/majorGaiaStars";
 import { galacticToEquatorial } from "../lib/galacticToEquatorial";
 import type { BottomControlBarSection } from "./BottomControlBar";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
@@ -82,6 +83,7 @@ export default function UniverseSandboxHud({
   const [query, setQuery] = useState("");
   const [solarOpen, setSolarOpen] = useState(true);
   const [nearbyOpen, setNearbyOpen] = useState(false);
+  const [gaiaOpen, setGaiaOpen] = useState(false);
   const [constellationsOpen, setConstellationsOpen] = useState(false);
   const [deepSkyOpen, setDeepSkyOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
@@ -222,6 +224,49 @@ export default function UniverseSandboxHud({
                         style={{ backgroundColor: star.color }}
                       />
                       <span className="truncate">{star.name}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          ) : null}
+
+          <SectionHeader
+            label="GAIA DR3 STARS"
+            count={MAJOR_GAIA_STARS.length}
+            open={gaiaOpen}
+            onClick={() => setGaiaOpen((v) => !v)}
+          />
+          {gaiaOpen ? (
+            <ul className="mb-4 mt-1">
+              {MAJOR_GAIA_STARS.map((star) => {
+                const q = query.trim().toLowerCase();
+                if (
+                  q &&
+                  !star.name.toLowerCase().includes(q) &&
+                  !star.id.toLowerCase().includes(q) &&
+                  !star.gaiaDr3SourceId.includes(q)
+                ) {
+                  return null;
+                }
+                return (
+                  <li key={star.id}>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onNearbyStarFocus?.(
+                          starToDirection(star.raDeg / 15, star.decDeg),
+                        )
+                      }
+                      className="flex w-full items-center gap-3 rounded-lg px-3 py-2 text-left text-[12px] text-white/62 transition-colors hover:bg-white/[0.05] hover:text-white/86"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#d6e8ff]" />
+                      <span className="min-w-0 flex-1">
+                        <span className="block truncate">{star.name}</span>
+                        <span className="block truncate text-[9px] text-white/26">
+                          DR3 {star.gaiaDr3SourceId.slice(0, 8)}... G {star.gaiaGMag.toFixed(1)}
+                        </span>
+                      </span>
                     </button>
                   </li>
                 );

@@ -74,6 +74,7 @@ export default function NebulaMarkers({
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
+  const lastTierRef = useRef<string | null>(null);
 
   const { geometry, material } = useMemo(() => {
     const count = NEBULAE.length;
@@ -125,9 +126,10 @@ export default function NebulaMarkers({
     const pts = pointsRef.current;
     if (!pts) return;
     const tier = floatingOriginRef.current.lodTier;
-    pts.visible = tier !== "solar";
+    if (lastTierRef.current === tier) return;
+    lastTierRef.current = tier;
     const mat = pts.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0 : tier === "mid" ? 0.1 : 0.34;
+    mat.uniforms.uOpacity.value = tier === "solar" ? 0.34 : tier === "mid" ? 0.26 : 0.42;
   });
 
   return (

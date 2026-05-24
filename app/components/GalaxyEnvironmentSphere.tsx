@@ -1,6 +1,6 @@
 "use client";
 
-import { useFrame, useThree } from "@react-three/fiber";
+import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
 
@@ -54,9 +54,8 @@ export default function GalaxyEnvironmentSphere({
 }: GalaxyEnvironmentSphereProps) {
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
   const meshRef = useRef<THREE.Mesh>(null);
-  const localCameraPosRef = useRef(new THREE.Vector3());
   const onTextureStateRef = useRef(onTextureState);
-  const { camera, gl } = useThree();
+  const { gl } = useThree();
 
   onTextureStateRef.current = onTextureState;
 
@@ -124,14 +123,6 @@ export default function GalaxyEnvironmentSphere({
   }, [gl, material]);
 
   useEffect(() => () => material.dispose(), [material]);
-
-  useFrame(() => {
-    const mesh = meshRef.current;
-    if (!mesh || !visible) return;
-    localCameraPosRef.current.copy(camera.position);
-    mesh.parent?.worldToLocal(localCameraPosRef.current);
-    mesh.position.copy(localCameraPosRef.current);
-  }, -1000);
 
   if (!visible || !texture) return null;
 

@@ -29,7 +29,7 @@ const STAR_QUAD_HALF = 1.55;
 /**
  * Efficient star field renderer using THREE.InstancedMesh.
  * Renders Gaia DR3 stars (or placeholder catalog) as billboarded quads.
- * Only mounts when LOD tier is mid or far to avoid GPU overhead in solar tier.
+ * Mounts in all LOD tiers at low opacity; instancing keeps the extra star layer cheap.
  */
 export default function GaiaStarField({
   floatingOriginRef,
@@ -37,24 +37,17 @@ export default function GaiaStarField({
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
-  const catalogRef = useRef<GaiaStarCatalogData | null>(null);
-  const [catalogReady, setCatalogReady] = useState(false);
+  const [catalog, setCatalog] = useState<GaiaStarCatalogData | null>(null);
   const [active, setActive] = useState(false);
   const dummyObj = useRef(new THREE.Object3D());
 
-  // Lazy-load only outside close solar-system view. The sky sphere already
-  // carries dense stars; keeping this off in solar preserves interaction FPS.
-  useFrame(() => {
-    const shouldMount = floatingOriginRef.current.lodTier !== "solar";
-    if (shouldMount && !catalogReady) {
-      catalogRef.current = generatePlaceholderCatalog(MAX_INSTANCES);
-      setCatalogReady(true);
-    }
-    if (shouldMount !== active) setActive(shouldMount);
-  });
+  useEffect(() => {
+    setCatalog(generatePlaceholderCatalog(MAX_INSTANCES));
+    setActive(true);
+  }, []);
 
   const starData = useMemo(() => {
-    const cat = catalogRef.current;
+    const cat = catalog;
     if (!cat) return null;
 
     const positions = new Float32Array(cat.count * 3);
@@ -80,7 +73,7 @@ export default function GaiaStarField({
     }
 
     return { positions, colors, sizes };
-  }, [catalogReady]);
+  }, [catalog]);
 
   const geometry = useMemo(() => {
     const geo = new THREE.BufferGeometry();
@@ -149,14 +142,17 @@ export default function GaiaStarField({
   const initialized = useRef(false);
   const cachedBasePositions = useRef<Float32Array | null>(null);
   const prevOffsetRef = useRef<THREE.Vector3>(new THREE.Vector3(NaN, NaN, NaN));
+  const lastTierRef = useRef<string | null>(null);
 
   useFrame(() => {
     const mesh = meshRef.current;
     if (!mesh || !starData) return;
     const mat = mesh.material as THREE.ShaderMaterial;
     const tier = floatingOriginRef.current.lodTier;
-    const opacityTarget = tier === "solar" ? 0.035 : tier === "mid" ? 0.075 : 0.16;
-    mat.uniforms.uOpacity.value = THREE.MathUtils.lerp(mat.uniforms.uOpacity.value, opacityTarget, 0.06);
+    if (lastTierRef.current !== tier) {
+      lastTierRef.current = tier;
+      mat.uniforms.uOpacity.value = tier === "solar" ? 0.055 : tier === "mid" ? 0.085 : 0.16;
+    }
 
     if (!initialized.current) {
       initialized.current = true;
@@ -204,8 +200,7 @@ export default function GaiaStarField({
     mesh.instanceMatrix.needsUpdate = true;
   });
 
-  // Don't mount InstancedMesh until mid/far tier
-  if (!catalogReady || !active) return null;
+  if (!catalog || !active) return null;
 
   return (
     <instancedMesh
