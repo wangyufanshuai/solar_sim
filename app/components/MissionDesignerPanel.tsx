@@ -35,6 +35,18 @@ function bodyDisplay(id: MissionBodyId): string {
   return id === "earth" ? "Earth" : id === "venus" ? "Venus" : id === "jupiter" ? "Jupiter" : "Saturn";
 }
 
+function validatePlan(plan: MissionPlan | null): string | null {
+  if (!plan) return "Run the optimizer to generate a candidate.";
+  if (plan.segments.length < 3) return "Trajectory needs at least 3 patched-conic segments.";
+  if (!Number.isFinite(plan.totalDeltaVKms) || plan.totalDeltaVKms <= 0) return "Delta-v estimate is invalid.";
+  if (!Number.isFinite(plan.durationDays) || plan.durationDays <= 0) return "Mission duration is invalid.";
+  if (!Number.isFinite(plan.maxCommunicationDelayMin) || plan.maxCommunicationDelayMin <= 0) return "Communication delay estimate is invalid.";
+  if (plan.segments.some((seg) => !Number.isFinite(seg.deltaVKms) || seg.deltaVKms <= 0 || seg.trajectoryAu.length < 8)) {
+    return "One or more trajectory segments need review.";
+  }
+  return null;
+}
+
 function buildSnapshot(
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>,
   simDays: number,
@@ -95,6 +107,7 @@ export default function MissionDesignerPanel({
     [result, selectedPlanId],
   );
   const localAdvisor = useMemo(() => explainMissionPlan(selectedPlan), [selectedPlan]);
+  const planWarning = useMemo(() => validatePlan(selectedPlan), [selectedPlan]);
   const [advisor, setAdvisor] = useState<MissionAdvisorReport>(localAdvisor);
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
 
@@ -168,6 +181,10 @@ export default function MissionDesignerPanel({
         </span>
       </div>
 
+      <div className="rounded-[4px] border border-amber-200/14 bg-amber-200/[0.045] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-amber-100/82">
+        First-pass patched-conics approximation / not high-fidelity optimal control
+      </div>
+
       <div className="grid grid-cols-4 gap-1.5">
         {BODY_IDS.map((id, idx) => (
           <div key={id} className="rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] px-2 py-1">
@@ -221,6 +238,12 @@ export default function MissionDesignerPanel({
           <Metric label="Fuel est." value={formatMass(selectedPlan.fuelEstimateKg)} />
           <Metric label="Duration" value={`${(selectedPlan.durationDays / 365.25).toFixed(1)} yr`} />
           <Metric label="Score" value={`${selectedPlan.score.toFixed(0)}/100`} />
+        </div>
+      ) : null}
+
+      {planWarning ? (
+        <div className="rounded-[4px] border border-amber-200/20 bg-amber-200/[0.05] px-2 py-1.5 text-[10px] leading-4 text-amber-100/80">
+          {planWarning}
         </div>
       ) : null}
 

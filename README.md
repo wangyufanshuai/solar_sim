@@ -138,6 +138,30 @@ DEEPSEEK_API_BASE=https://api.deepseek.com
 
 Do not prefix the key with `NEXT_PUBLIC_`. The browser calls `/api/mission-advisor/deepseek`; the route reads the key on the server and falls back to the local rule-based advisor when the key is missing, the request times out, or DeepSeek returns malformed content.
 
+## Production Deployment
+
+Recommended ECS sizing:
+
+- Personal test only: 2 vCPU / 2 GiB with swap. This can run the app, but it is not the target for smooth stable service.
+- Stable small deployment: 2 vCPU / 4 GiB.
+- Public demo or multiple users: 4 vCPU / 8 GiB plus Nginx/Caddy and CDN.
+
+Production commands:
+
+```bash
+npm ci
+npm run build
+HOSTNAME=0.0.0.0 PORT=3001 npm run start
+```
+
+DeepSeek configuration must stay in server environment variables or `.env.local`; never commit a real API key. Large sky and planet assets are currently served from `public/`. For public traffic, put `public/textures` behind CDN or object storage to reduce ECS bandwidth and first-load latency.
+
+For local production testing on Windows:
+
+```powershell
+npm run start:local
+```
+
 本轮已验证：
 
 - `npx tsc --noEmit`

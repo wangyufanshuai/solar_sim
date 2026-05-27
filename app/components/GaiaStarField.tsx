@@ -63,13 +63,13 @@ export default function GaiaStarField({
 
       const distPc = 1000 / Math.max(star.parallaxMas, 0.001);
       const lum = gaiaMagToLuminosity(star.magG, distPc);
-      const brightness = Math.min(1.0, Math.max(0.1, 0.3 + 0.2 * Math.log10(Math.max(lum, 0.001))));
-      sizes[i] = brightness;
+      const brightness = Math.min(0.72, Math.max(0.08, 0.22 + 0.14 * Math.log10(Math.max(lum, 0.001))));
+      sizes[i] = Math.max(0.34, brightness * 1.35);
 
       const [r, g, b] = gaiaColorToRgb(star.colorBpRp);
-      colors[i * 3] = r * brightness;
-      colors[i * 3 + 1] = g * brightness;
-      colors[i * 3 + 2] = b * brightness;
+      colors[i * 3] = (0.88 + r * 0.12) * brightness;
+      colors[i * 3 + 1] = (0.9 + g * 0.1) * brightness;
+      colors[i * 3 + 2] = (0.94 + b * 0.06) * brightness;
     }
 
     return { positions, colors, sizes };
@@ -100,7 +100,7 @@ export default function GaiaStarField({
         side: THREE.DoubleSide,
         uniforms: {
           uHalfSize: { value: STAR_QUAD_HALF },
-          uOpacity: { value: 0.12 },
+          uOpacity: { value: 0.09 },
         },
         vertexShader: `
           uniform float uHalfSize;
@@ -151,7 +151,7 @@ export default function GaiaStarField({
     const tier = floatingOriginRef.current.lodTier;
     if (lastTierRef.current !== tier) {
       lastTierRef.current = tier;
-      mat.uniforms.uOpacity.value = tier === "solar" ? 0.055 : tier === "mid" ? 0.085 : 0.16;
+      mat.uniforms.uOpacity.value = tier === "solar" ? 0.04 : tier === "mid" ? 0.065 : 0.12;
     }
 
     if (!initialized.current) {

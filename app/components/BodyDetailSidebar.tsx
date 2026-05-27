@@ -70,19 +70,17 @@ function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
           >
             <div className="absolute inset-0 rounded-full bg-[radial-gradient(circle_at_30%_24%,rgba(255,255,255,0.26),transparent_22%),radial-gradient(circle_at_80%_72%,rgba(0,0,0,0.55),transparent_48%)]" />
           </div>
-          {isSun ? (
-            <div className="absolute h-[96px] w-[96px] rounded-full bg-[#ffd88a]/25 blur-xl" aria-hidden />
-          ) : null}
+          {isSun ? <div className="absolute h-[96px] w-[96px] rounded-full bg-[#ffd88a]/25 blur-xl" aria-hidden /> : null}
         </div>
         <div className="min-w-0 flex-1">
           <div className="text-[10px] uppercase tracking-[0.26em] text-slate-500">Visual Profile</div>
           <div className="mt-2 truncate text-[15px] font-medium text-white/90">{def.name}</div>
           <div className="mt-1 text-[11px] leading-5 text-slate-400">
-            {texture ? "本地贴图已加载" : "程序颜色预览"}，近景会使用真实光照、边缘反光和阴影终止线。
+            {texture ? "本地贴图已加载" : "程序颜色预览"}。近景使用真实光照、边缘反光和阴影终止线。
           </div>
           <div className="mt-3 flex gap-2 text-[10px] text-white/55">
-            <span className="rounded-full border border-white/10 px-2 py-1">半径 {def.radiusScene.toFixed(3)}</span>
-            <span className="rounded-full border border-white/10 px-2 py-1">{def.showRings ? "有环系" : "无环系"}</span>
+            <span className="rounded-full border border-white/10 px-2 py-1">视觉半径 {def.radiusScene.toFixed(3)}</span>
+            <span className="rounded-full border border-white/10 px-2 py-1">{def.showRings ? "有环系统" : "无环系统"}</span>
           </div>
         </div>
       </div>
@@ -111,8 +109,7 @@ export default function BodyDetailSidebar({
     return () => window.clearInterval(id);
   }, [bodyMetricsRef, selectedBodyIndex, simulationDiagnosticsRef]);
 
-  const def =
-    selectedBodyIndex !== null ? SOLAR_SYSTEM_BODIES[selectedBodyIndex] : null;
+  const def = selectedBodyIndex !== null ? SOLAR_SYSTEM_BODIES[selectedBodyIndex] : null;
   const fact = def ? BODY_DISPLAY_FACTS[def.id] : null;
   const moonIds = useMemo(
     () =>
@@ -129,11 +126,10 @@ export default function BodyDetailSidebar({
         "triton",
         "charon",
       ]),
-    []
+    [],
   );
 
   if (!def || selectedBodyIndex === null) return null;
-
   const headline = bodyClass(def, selectedBodyIndex, moonIds);
 
   return (
@@ -141,15 +137,9 @@ export default function BodyDetailSidebar({
       <div className="border-b border-white/8 px-4 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="text-[10px] uppercase tracking-[0.28em] text-slate-400">
-              Observation
-            </div>
-            <h2 className="mt-2 truncate text-[22px] font-medium tracking-[0.02em] text-white/92">
-              {def.name}
-            </h2>
-            <p className="mt-1 text-[11px] tracking-[0.16em] text-slate-400">
-              {headline} · 已锁定跟随
-            </p>
+            <div className="text-[10px] uppercase tracking-[0.28em] text-slate-400">Observation</div>
+            <h2 className="mt-2 truncate text-[22px] font-medium tracking-[0.02em] text-white/92">{def.name}</h2>
+            <p className="mt-1 text-[11px] tracking-[0.16em] text-slate-400">{headline} / 已锁定跟随</p>
           </div>
           <button
             type="button"
@@ -165,73 +155,50 @@ export default function BodyDetailSidebar({
 
       <div className="max-h-[calc(100dvh-235px)] space-y-4 overflow-y-auto px-4 py-4">
         <section>
-          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">
-            Live
-          </div>
+          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Live</div>
           <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
-            <MetricRow
-              label="速度"
-              value={metrics ? `${metrics.speedKms.toFixed(2)} km/s` : "--"}
-            />
-            <MetricRow
-              label="距太阳"
-              value={metrics ? `${metrics.distSunAu.toFixed(4)} AU` : "--"}
-            />
-            <MetricRow
-              label="距镜头"
-              value={metrics ? `${metrics.distCameraAu.toFixed(4)} AU` : "--"}
-            />
-            <MetricRow label="历书日" value={simDaysRef.current.toFixed(2)} />
+            <MetricRow label="速度" value={metrics ? `${metrics.speedKms.toFixed(2)} km/s` : "--"} />
+            <MetricRow label="距太阳" value={metrics ? `${metrics.distSunAu.toFixed(4)} AU` : "--"} />
+            <MetricRow label="距相机" value={metrics ? `${metrics.distCameraAu.toFixed(4)} AU` : "--"} />
+            <MetricRow label="模拟日" value={simDaysRef.current.toFixed(2)} />
             <MetricRow label="时间倍率" value={`${daysPerSecond.toFixed(1)} 天/秒`} />
             <MetricRow label="相对论" value={relativityEnabled ? "开启" : "关闭"} />
           </div>
         </section>
 
         <section>
-          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">
-            Physical
-          </div>
+          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Physical</div>
           <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
             <MetricRow label="视觉半径" value={def.radiusScene.toFixed(3)} />
             <MetricRow label="材质" value={def.textureMap ? "贴图 + PBR" : "程序色 + PBR"} />
-            <MetricRow label="环系" value={def.showRings ? "有" : "无"} />
-            <MetricRow label="轨道色" value={def.orbitColor.toUpperCase()} />
+            <MetricRow label="环系统" value={def.showRings ? "有" : "无"} />
+            <MetricRow label="轨道颜色" value={def.orbitColor.toUpperCase()} />
           </div>
         </section>
 
         {fact ? (
           <section className="rounded-[18px] bg-white/[0.035] px-3 py-3">
-            <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">
-              Notes
-            </div>
+            <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Reference</div>
             <p className="text-[12px] leading-6 text-slate-300">
-              平均半径 {fact.equatorialRadiusKm.toLocaleString()} km，密度{" "}
-              {fact.densityGcm3.toFixed(2)} g/cm³，表面重力{" "}
-              {fact.surfaceGravityMs2.toFixed(2)} m/s²。
+              平均半径 {fact.equatorialRadiusKm.toLocaleString()} km，密度 {fact.densityGcm3.toFixed(2)} g/cm3，表面重力 {fact.surfaceGravityMs2.toFixed(2)} m/s2。
             </p>
             <p className="mt-2 text-[11px] leading-5 text-slate-400">
-              平均温度 {fact.meanTempC}°C，年龄约 {fact.ageGyears.toFixed(1)} 十亿年。
+              自转周期 {fact.rotationPeriodHours.toFixed(1)} 小时，平均温度 {fact.meanTempC} C，年龄约 {fact.ageGyears.toFixed(1)} 十亿年。
             </p>
           </section>
         ) : null}
 
         {diag ? (
           <section className="rounded-[18px] border border-white/8 px-3 py-3">
-            <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">
-              Simulation
-            </div>
+            <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Simulation</div>
             <div className="grid grid-cols-2 gap-2 text-[11px] text-white/54">
               <div className="rounded-xl bg-white/[0.035] px-3 py-2">
-                <div className="text-slate-500">历书日</div>
-                <div className="mt-1 font-mono text-slate-200">
-                  {diag.simDays.toFixed(2)}
-                </div>
+                <div className="text-slate-500">模拟日</div>
+                <div className="mt-1 font-mono text-slate-200">{diag.simDays.toFixed(2)}</div>
               </div>
               <div className="rounded-xl bg-white/[0.035] px-3 py-2">
                 <div className="text-slate-500">能量漂移</div>
-                <div className="mt-1 font-mono text-slate-200">
-                  {diag.relEnergyDrift.toExponential(2)}
-                </div>
+                <div className="mt-1 font-mono text-slate-200">{diag.relEnergyDrift.toExponential(2)}</div>
               </div>
             </div>
           </section>

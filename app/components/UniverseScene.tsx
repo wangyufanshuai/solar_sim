@@ -371,6 +371,14 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       const minDist = def ? minFocusDistance(def) : 0.05;
       const targetDist = THREE.MathUtils.clamp(lockDesiredDistanceRef.current ?? Math.max(currentDist, minDist), minDist, def ? Math.max(idealFocusCameraDistance(def, "lock") * 14, minDist * 2) : 50000);
       lockDesiredDistanceRef.current = targetDist;
+      if (userControllingRef.current) {
+        const liveDist = THREE.MathUtils.clamp(Math.max(currentDist, minDist), minDist, def ? Math.max(idealFocusCameraDistance(def, "lock") * 14, minDist * 2) : 50000);
+        lockDesiredDistanceRef.current = liveDist;
+        controls.target.copy(lockTargetSmooth.current);
+        camera.position.copy(controls.target).addScaledVector(lockViewDirRef.current, liveDist);
+        controls.update();
+        return;
+      }
       const nextDist = THREE.MathUtils.lerp(Math.max(currentDist, minDist), targetDist, 1 - Math.pow(0.0008, dt));
       controls.target.copy(lockTargetSmooth.current);
       camera.position.copy(controls.target).addScaledVector(lockViewDirRef.current, nextDist);
@@ -388,10 +396,19 @@ function CameraFocusDirectionBridge({ controlsRef }: { controlsRef: MutableRefOb
   const camRef = useRef(new THREE.Vector3());
   useEffect(() => {
     const onDir = (e: Event) => { const d = (e as CustomEvent<CameraFocusDirectionDetail>).detail; if (!d?.direction) return; const dir = new THREE.Vector3(...d.direction).normalize(); targetRef.current = dir.clone().multiplyScalar(7000); camRef.current.copy(dir).multiplyScalar(-800).add(new THREE.Vector3(0, 300, 0)); };
+    const clear = () => { targetRef.current = null; };
     window.addEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDir);
-    return () => window.removeEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDir);
+    window.addEventListener(CAMERA_FOCUS_BODY_EVENT, clear);
+    window.addEventListener(CAMERA_FOCUS_ORIGIN_EVENT, clear);
+    window.addEventListener(CAMERA_FOCUS_EARTH_MOON_EVENT, clear);
+    return () => {
+      window.removeEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDir);
+      window.removeEventListener(CAMERA_FOCUS_BODY_EVENT, clear);
+      window.removeEventListener(CAMERA_FOCUS_ORIGIN_EVENT, clear);
+      window.removeEventListener(CAMERA_FOCUS_EARTH_MOON_EVENT, clear);
+    };
   }, []);
-  useFrame(() => { const controls = controlsRef.current; if (!controls || !targetRef.current) return; controls.target.lerp(targetRef.current, 0.12); camera.position.lerp(camRef.current, 0.1); controls.update(); if (camera.position.distanceTo(camRef.current) < 3) targetRef.current = null; }, 2);
+  useFrame(() => { const controls = controlsRef.current; if (!controls || !targetRef.current) return; controls.target.lerp(targetRef.current, 0.1); camera.position.lerp(camRef.current, 0.085); controls.update(); if (camera.position.distanceTo(camRef.current) < 3) targetRef.current = null; }, 2);
   return null;
 }
 
@@ -428,24 +445,28 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
         <FloatingOriginBridge floatingOriginRef={simulation.floatingOriginRef} />
         <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} />}</BrightStarTierBridge>
-        <NebulaMilkyWay />
+        {simulation.viewSettings.showGalaxyBackground ? <NebulaMilkyWay /> : null}
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
           <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} />
           <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} />
           <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
-          <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} />
-          <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} />
-          <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} />
-          <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />
-          <StarClusterMarkers floatingOriginRef={simulation.floatingOriginRef} />
-          <PulsarField floatingOriginRef={simulation.floatingOriginRef} />
+          {simulation.viewSettings.showConstellations ? <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} /> : null}
+          {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} /> : null}
+          {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={simulation.viewSettings.highQualityRendering} /> : null}
+          {simulation.viewSettings.showDeepSkyMarkers ? (
+            <>
+              <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />
+              <StarClusterMarkers floatingOriginRef={simulation.floatingOriginRef} />
+              <PulsarField floatingOriginRef={simulation.floatingOriginRef} />
+            </>
+          ) : null}
         </GalacticOverlayGate>
         <SelectionMetricsBridge selectedBodyIndex={simulation.selectedBodyIndex} physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} bodyMetricsRef={simulation.bodyMetricsRef} />
         <SolarSystemIntegrator physicsRef={simulation.physicsRef} simDaysRef={simulation.simDaysRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} precisionTierRef={simulation.precisionTierRef} integrationSuspendedRef={simulation.integrationSuspendedRef} localLaunchActiveRef={simulation.localLaunchActiveRef} floatingOriginRef={simulation.floatingOriginRef} />
         <OrbitControls ref={controlsRef} makeDefault enableDamping dampingFactor={0.06} maxDistance={50000} enabled={!simulation.localLaunchActive} />
         <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} />
         <CameraFocusDirectionBridge controlsRef={controlsRef} />
-        <MissionTrajectoryPreview plan={simulation.missionPreviewPlan ?? null} floatingOriginRef={simulation.floatingOriginRef} />
+        {simulation.viewSettings.showMissionTrajectory ? <MissionTrajectoryPreview plan={simulation.missionPreviewPlan ?? null} floatingOriginRef={simulation.floatingOriginRef} /> : null}
         {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor /> : null}
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />

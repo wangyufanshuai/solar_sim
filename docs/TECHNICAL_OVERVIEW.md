@@ -682,6 +682,16 @@ npm run build
 npm run start
 ```
 
+生产环境 `npm run start` 会读取 `HOSTNAME` / `HOST` / `PORT`，默认监听 `0.0.0.0:3001`，适合放在 Nginx/Caddy 反代后。Windows 本地生产预览可使用 `npm run start:local`。
+
+部署建议：
+
+- 2 vCPU / 2 GiB：仅个人测试，建议配置 swap。
+- 2 vCPU / 4 GiB：小流量稳定部署最低推荐。
+- 4 vCPU / 8 GiB：公开演示推荐，配 CDN 承载 `public/textures`。
+
+DeepSeek 相关变量只允许配置在服务器环境或 `.env.local`，不要使用 `NEXT_PUBLIC_`，也不要把真实 key 提交到 Git。
+
 默认地址：
 
 ```text

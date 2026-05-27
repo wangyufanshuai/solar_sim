@@ -15,9 +15,12 @@ type DeepSkySpriteDef = {
   size: number;
   rotation: number;
   opacity: number;
+  priority?: boolean;
 };
 
 const SKY_RADIUS = 8700;
+const PRIORITY_DEEP_SKY_COUNT = 10;
+const textureCache = new Map<string, THREE.Texture>();
 
 const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   {
@@ -29,6 +32,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 620,
     rotation: -0.18,
     opacity: 0.58,
+    priority: true,
   },
   {
     id: "ic434",
@@ -39,6 +43,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 430,
     rotation: 0.2,
     opacity: 0.46,
+    priority: true,
   },
   {
     id: "ngc2237",
@@ -49,6 +54,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 580,
     rotation: 0.08,
     opacity: 0.52,
+    priority: true,
   },
   {
     id: "m8",
@@ -59,6 +65,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 520,
     rotation: -0.35,
     opacity: 0.5,
+    priority: true,
   },
   {
     id: "m16",
@@ -69,6 +76,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 470,
     rotation: 0.18,
     opacity: 0.48,
+    priority: true,
   },
   {
     id: "m17",
@@ -79,6 +87,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 470,
     rotation: -0.2,
     opacity: 0.46,
+    priority: true,
   },
   {
     id: "m20",
@@ -89,6 +98,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 430,
     rotation: 0.32,
     opacity: 0.48,
+    priority: true,
   },
   {
     id: "ngc7000",
@@ -99,6 +109,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 680,
     rotation: -0.12,
     opacity: 0.42,
+    priority: true,
   },
   {
     id: "ngc7293",
@@ -109,6 +120,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 430,
     rotation: 0.1,
     opacity: 0.48,
+    priority: true,
   },
   {
     id: "m57",
@@ -119,6 +131,7 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
     size: 300,
     rotation: 0,
     opacity: 0.52,
+    priority: true,
   },
   {
     id: "m27",
@@ -314,8 +327,10 @@ function galacticSkyPosition(lonDeg: number, latDeg: number): THREE.Vector3 {
 
 export default function DeepSkyImageSprites({
   floatingOriginRef,
+  highQuality = false,
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  highQuality?: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
   const materialRefs = useRef<THREE.SpriteMaterial[]>([]);
@@ -323,6 +338,7 @@ export default function DeepSkyImageSprites({
   const camera = useThree((s) => s.camera);
   const gl = useThree((s) => s.gl);
   const [textures, setTextures] = useState<Record<string, THREE.Texture>>({});
+  const [allowFullSet, setAllowFullSet] = useState(false);
   const alphaMap = useMemo(() => {
     if (typeof document === "undefined") return null;
     const size = 256;
@@ -353,53 +369,66 @@ export default function DeepSkyImageSprites({
   }, []);
   const defs = useMemo(
     () =>
-      DEEP_SKY_IMAGES.map((def) => ({
+      DEEP_SKY_IMAGES.filter(
+        (def, index) => allowFullSet || highQuality || def.priority || index < PRIORITY_DEEP_SKY_COUNT,
+      ).map((def) => ({
         ...def,
         position: galacticSkyPosition(def.galLonDeg, def.galLatDeg),
       })),
-    [],
+    [allowFullSet, highQuality],
   );
+
+  useEffect(() => {
+    const scheduleFull = () => setAllowFullSet(true);
+    let idleId: number | null = null;
+    const timeoutId = window.setTimeout(scheduleFull, highQuality ? 400 : 1800);
+    if ("requestIdleCallback" in window) {
+      idleId = window.requestIdleCallback(scheduleFull, { timeout: highQuality ? 700 : 2400 });
+    }
+    return () => {
+      window.clearTimeout(timeoutId);
+      if (idleId !== null && "cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
+    };
+  }, [highQuality]);
 
   useEffect(() => {
     let cancelled = false;
     const loader = new THREE.TextureLoader();
-    const loaded: THREE.Texture[] = [];
+    const maxAnisotropy = Math.min(highQuality ? 8 : 4, gl.capabilities.getMaxAnisotropy());
 
-    Promise.all(
-      DEEP_SKY_IMAGES.map(
-        (def) =>
-          new Promise<[string, THREE.Texture] | null>((resolve) => {
-            loader.load(
-              def.imageUrl,
-              (tex) => {
-                tex.colorSpace = THREE.SRGBColorSpace;
-                tex.minFilter = THREE.LinearMipmapLinearFilter;
-                tex.magFilter = THREE.LinearFilter;
-                tex.generateMipmaps = true;
-                tex.anisotropy = Math.min(4, gl.capabilities.getMaxAnisotropy());
-                tex.needsUpdate = true;
-                loaded.push(tex);
-                resolve([def.id, tex]);
-              },
-              undefined,
-              () => resolve(null),
-            );
-          }),
-      ),
-    ).then((items) => {
-      if (cancelled) return;
-      const next: Record<string, THREE.Texture> = {};
-      for (const item of items) {
-        if (item) next[item[0]] = item[1];
+    for (const def of defs) {
+      const cached = textureCache.get(def.id);
+      if (cached) {
+        setTextures((prev) => (prev[def.id] ? prev : { ...prev, [def.id]: cached }));
+        continue;
       }
-      setTextures(next);
-    });
+      loader.load(
+        def.imageUrl,
+        (tex) => {
+          if (cancelled) {
+            tex.dispose();
+            return;
+          }
+          tex.colorSpace = THREE.SRGBColorSpace;
+          tex.minFilter = THREE.LinearMipmapLinearFilter;
+          tex.magFilter = THREE.LinearFilter;
+          tex.generateMipmaps = true;
+          tex.anisotropy = maxAnisotropy;
+          tex.needsUpdate = true;
+          textureCache.set(def.id, tex);
+          setTextures((prev) => ({ ...prev, [def.id]: tex }));
+        },
+        undefined,
+        () => {
+          if (!cancelled) setTextures((prev) => prev);
+        },
+      );
+    }
 
     return () => {
       cancelled = true;
-      for (const tex of loaded) tex.dispose();
     };
-  }, [gl]);
+  }, [defs, gl, highQuality]);
 
   useEffect(() => () => alphaMap?.dispose(), [alphaMap]);
 

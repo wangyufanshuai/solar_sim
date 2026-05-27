@@ -25,7 +25,7 @@ export default function UniverseCanvas({
     <Canvas
       className="h-full w-full"
       style={{ display: "block" }}
-      dpr={1}
+      dpr={simulation.viewSettings.highQualityRendering ? [1, 1.5] : 1}
       onPointerDown={(e) => {
         pointerDownRef.current = {
           x: e.nativeEvent.clientX,
