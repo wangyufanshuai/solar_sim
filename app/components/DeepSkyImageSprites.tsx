@@ -22,6 +22,10 @@ const SKY_RADIUS = 8700;
 const PRIORITY_DEEP_SKY_COUNT = 10;
 const textureCache = new Map<string, THREE.Texture>();
 const PLANE_FORWARD = new THREE.Vector3(0, 0, 1);
+const CORE_DECAL_SCALE = 0.86;
+const DEFERRED_DECAL_SCALE = 0.76;
+const CORE_OPACITY_SCALE = 0.78;
+const DEFERRED_OPACITY_SCALE = 0.66;
 
 const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   {
@@ -467,27 +471,29 @@ export default function DeepSkyImageSprites({
         if (!tex) return null;
         const aspect = textureAspect(tex);
         const quaternion = skyDecalQuaternion(def.position, def.rotation);
+        const decalSize = def.size * (def.priority ? CORE_DECAL_SCALE : DEFERRED_DECAL_SCALE);
+        const decalOpacity = def.opacity * (def.priority ? CORE_OPACITY_SCALE : DEFERRED_OPACITY_SCALE);
         return (
           <mesh
             key={def.id}
             position={def.position}
             quaternion={quaternion}
-            scale={[def.size * aspect, def.size, 1]}
+            scale={[decalSize * aspect, decalSize, 1]}
             renderOrder={-470}
-            userData={{ opacity: def.opacity, label: def.name }}
+            userData={{ opacity: decalOpacity, label: def.name }}
           >
             <planeGeometry args={[1, 1, 1, 1]} />
             <meshBasicMaterial
               ref={(mat) => {
                 if (!mat) return;
-                mat.userData.baseOpacity = def.opacity;
+                mat.userData.baseOpacity = decalOpacity;
                 if (!materialRefs.current.includes(mat)) materialRefs.current.push(mat);
               }}
               map={tex}
               alphaMap={alphaMap ?? undefined}
               color="#ffffff"
               transparent
-              opacity={def.opacity}
+              opacity={decalOpacity}
               alphaTest={0.015}
               depthTest={false}
               depthWrite={false}

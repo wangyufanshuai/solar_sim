@@ -56,6 +56,11 @@ function compactPlan(plan: MissionPlan) {
       tofDays: Math.round(s.tofDays),
       deltaVKms: Number(s.deltaVKms.toFixed(3)),
       c3Km2S2: Number(s.c3Km2S2.toFixed(3)),
+      lambertConverged: s.lambertConverged,
+      lambertResidual: Number(s.lambertResidual.toFixed(1)),
+      departureVinfinityKms: Number(s.departureVinfinityKms.toFixed(3)),
+      arrivalVinfinityKms: Number(s.arrivalVinfinityKms.toFixed(3)),
+      flybySafetyMargin: Number.isFinite(s.flybySafetyMargin) ? Number(s.flybySafetyMargin.toFixed(3)) : null,
       closestApproachKm: Math.round(s.closestApproachKm),
       turnAngleDeg: Number(s.turnAngleDeg.toFixed(1)),
       communicationDelayMin: Number(s.communicationDelayMin.toFixed(2)),
@@ -135,7 +140,7 @@ export async function POST(req: Request) {
           {
             role: "system",
             content:
-              "You are a space mission engineering advisor. Use only the provided first-pass patched-conics mission data. Do not claim GMAT, STK, NASA, or high-fidelity optimal-control validation. Return strict JSON with keys: summary, fuelTradeoff, gravityAssist, risk, communication, recommendation, tags.",
+              "You are a space mission engineering advisor. Use only the provided first-pass Lambert patched-conics mission data. Do not claim GMAT, STK, NASA, real mission feasibility, or high-fidelity optimal-control validation. Return strict JSON with keys: summary, fuelTradeoff, gravityAssist, risk, communication, recommendation, tags.",
           },
           {
             role: "user",

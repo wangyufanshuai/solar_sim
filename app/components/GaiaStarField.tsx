@@ -9,7 +9,6 @@ import {
   type GaiaStarCatalogData,
   gaiaStarToGalacticPc,
   gaiaColorToRgb,
-  gaiaMagToLuminosity,
   generatePlaceholderCatalog,
 } from "../data/gaiaStarCatalog";
 import { AU_TO_SCENE } from "../data/planetsJ2000";
@@ -25,6 +24,11 @@ const GALACTIC_SCALE = 1.5;
 const MAX_INSTANCES = 1800;
 /** Billboard half-size in scene units (scaled by instanceSize). */
 const STAR_QUAD_HALF = 1.55;
+
+function apparentMagnitudeIntensity(mag: number): number {
+  const relative = Math.pow(10, -0.4 * (mag + 1.46));
+  return THREE.MathUtils.clamp(Math.pow(relative, 0.36), 0.055, 0.88);
+}
 
 /**
  * Efficient star field renderer using THREE.InstancedMesh.
@@ -61,15 +65,13 @@ export default function GaiaStarField({
       positions[i * 3 + 1] = gy;
       positions[i * 3 + 2] = gz;
 
-      const distPc = 1000 / Math.max(star.parallaxMas, 0.001);
-      const lum = gaiaMagToLuminosity(star.magG, distPc);
-      const brightness = Math.min(0.72, Math.max(0.08, 0.22 + 0.14 * Math.log10(Math.max(lum, 0.001))));
-      sizes[i] = Math.max(0.34, brightness * 1.35);
+      const brightness = apparentMagnitudeIntensity(star.magG);
+      sizes[i] = Math.max(0.28, 0.28 + brightness * 1.15);
 
       const [r, g, b] = gaiaColorToRgb(star.colorBpRp);
-      colors[i * 3] = (0.88 + r * 0.12) * brightness;
-      colors[i * 3 + 1] = (0.9 + g * 0.1) * brightness;
-      colors[i * 3 + 2] = (0.94 + b * 0.06) * brightness;
+      colors[i * 3] = (0.86 + r * 0.14) * brightness;
+      colors[i * 3 + 1] = (0.88 + g * 0.12) * brightness;
+      colors[i * 3 + 2] = (0.92 + b * 0.08) * brightness;
     }
 
     return { positions, colors, sizes };
@@ -131,7 +133,7 @@ export default function GaiaStarField({
             float r2 = dot(vLocalPos, vLocalPos) * 4.0;
             if (r2 > 1.0) discard;
             float alpha = 1.0 - smoothstep(0.0, 1.0, r2);
-            gl_FragColor = vec4(vColor, alpha * 0.85 * uOpacity);
+            gl_FragColor = vec4(vColor, alpha * 0.72 * uOpacity);
             #include <logdepthbuf_fragment>
           }
         `,
@@ -151,7 +153,7 @@ export default function GaiaStarField({
     const tier = floatingOriginRef.current.lodTier;
     if (lastTierRef.current !== tier) {
       lastTierRef.current = tier;
-      mat.uniforms.uOpacity.value = tier === "solar" ? 0.04 : tier === "mid" ? 0.065 : 0.12;
+      mat.uniforms.uOpacity.value = tier === "solar" ? 0.032 : tier === "mid" ? 0.052 : 0.095;
     }
 
     if (!initialized.current) {

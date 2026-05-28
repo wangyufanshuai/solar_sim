@@ -10,6 +10,16 @@ export type HeliocentricOsculating = {
   a: number;
 };
 
+export type ClassicalOsculatingElements = {
+  e: number;
+  a: number;
+  inclinationRad: number;
+  periapsisM: number;
+  apoapsisM: number;
+  periodSeconds: number | null;
+  currentRadiusM: number;
+};
+
 /**
  * Standard gravitational parameter for Sun + body (SI m³/s²).
  */
@@ -58,6 +68,43 @@ export function heliocentricOsculatingEccentricityAndSemiMajorAxis(
   if (e >= 1 - 1e-12) return null;
 
   return { e, a };
+}
+
+export function classicalOsculatingElements(
+  posM: Float64Array,
+  velM: Float64Array,
+  centralIdx: number,
+  bodyIdx: number,
+  mu: number
+): ClassicalOsculatingElements | null {
+  const ic = centralIdx * 3;
+  const ib = bodyIdx * 3;
+  const rx = posM[ib] - posM[ic];
+  const ry = posM[ib + 1] - posM[ic + 1];
+  const rz = posM[ib + 2] - posM[ic + 2];
+  const vx = velM[ib] - velM[ic];
+  const vy = velM[ib + 1] - velM[ic + 1];
+  const vz = velM[ib + 2] - velM[ic + 2];
+  const r = Math.hypot(rx, ry, rz);
+  if (r < 1e3 || mu <= 0) return null;
+  const v2 = vx * vx + vy * vy + vz * vz;
+  const eps = 0.5 * v2 - mu / r;
+  const hx = ry * vz - rz * vy;
+  const hy = rz * vx - rx * vz;
+  const hz = rx * vy - ry * vx;
+  const h = Math.hypot(hx, hy, hz);
+  if (h < 1e-9) return null;
+  const a = eps < 0 ? -mu / (2 * eps) : Number.POSITIVE_INFINITY;
+  const evx = (vy * hz - vz * hy) / mu - rx / r;
+  const evy = (vz * hx - vx * hz) / mu - ry / r;
+  const evz = (vx * hy - vy * hx) / mu - rz / r;
+  const e = Math.hypot(evx, evy, evz);
+  const inclinationRad = Math.acos(Math.max(-1, Math.min(1, hz / h)));
+  const periapsisM = Number.isFinite(a) ? a * (1 - e) : (h * h / mu) / (1 + e);
+  const apoapsisM = Number.isFinite(a) && e < 1 ? a * (1 + e) : Number.POSITIVE_INFINITY;
+  const periodSeconds = Number.isFinite(a) && a > 0 && e < 1 ? keplerPeriodSeconds(a, mu) : null;
+  if (!Number.isFinite(e) || !Number.isFinite(periapsisM)) return null;
+  return { e, a, inclinationRad, periapsisM, apoapsisM, periodSeconds, currentRadiusM: r };
 }
 
 /** Heliocentric radial velocity (m/s): (v_b - v_sun) · r̂ */

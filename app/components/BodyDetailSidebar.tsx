@@ -4,7 +4,10 @@ import { ChevronLeft } from "lucide-react";
 import { useEffect, useMemo, useState, type MutableRefObject } from "react";
 import { BODY_DISPLAY_FACTS } from "../data/bodyDisplayFacts";
 import { SOLAR_SYSTEM_BODIES, type SolarSystemBodyDef } from "../data/planetsJ2000";
+import { AU_METERS, G_SI } from "../lib/physicalConstants";
 import type { BodyLiveMetrics } from "../lib/bodyLiveMetrics";
+import { classicalOsculatingElements, type ClassicalOsculatingElements } from "../lib/osculatingElements";
+import { siderealSpinRadPerSimDayForBodyId } from "../lib/planetSiderealSpin";
 import type { SimulationDiagnostics } from "../lib/simulationDiagnosticsTypes";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { getLatestTelemetrySample, type TelemetrySeriesState } from "../lib/telemetryTypes";
@@ -41,6 +44,20 @@ function bodyClass(def: SolarSystemBodyDef, selectedBodyIndex: number, moonIds: 
 function formatMaybe(value: number | null | undefined, suffix = "", digits = 3) {
   if (!Number.isFinite(value ?? NaN)) return "--";
   return `${(value as number).toFixed(digits)}${suffix}`;
+}
+
+function au(meters: number | null | undefined, digits = 4) {
+  return Number.isFinite(meters ?? NaN) ? `${((meters as number) / AU_METERS).toFixed(digits)} AU` : "--";
+}
+
+function deg(rad: number | null | undefined, digits = 2) {
+  return Number.isFinite(rad ?? NaN) ? `${(((rad as number) * 180) / Math.PI).toFixed(digits)} deg` : "--";
+}
+
+function periodText(seconds: number | null | undefined) {
+  if (!Number.isFinite(seconds ?? NaN) || !seconds) return "--";
+  const days = seconds / 86400;
+  return days > 900 ? `${(days / 365.25).toFixed(2)} yr` : `${days.toFixed(2)} days`;
 }
 
 function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
@@ -94,6 +111,7 @@ function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
 }
 
 export default function BodyDetailSidebar({
+  physicsRef,
   bodyMetricsRef,
   simulationDiagnosticsRef,
   telemetrySeriesRef,
@@ -108,6 +126,7 @@ export default function BodyDetailSidebar({
   const [telemetry, setTelemetry] = useState(() =>
     telemetrySeriesRef.current ? getLatestTelemetrySample(telemetrySeriesRef.current) : null,
   );
+  const [elements, setElements] = useState<ClassicalOsculatingElements | null>(null);
 
   useEffect(() => {
     if (selectedBodyIndex === null) return;
@@ -115,9 +134,18 @@ export default function BodyDetailSidebar({
       setMetrics(bodyMetricsRef.current);
       setDiag(simulationDiagnosticsRef.current);
       setTelemetry(telemetrySeriesRef.current ? getLatestTelemetrySample(telemetrySeriesRef.current) : null);
+      const p = physicsRef.current;
+      const def = SOLAR_SYSTEM_BODIES[selectedBodyIndex];
+      if (!p || !def || selectedBodyIndex <= 0 || selectedBodyIndex >= p.n) {
+        setElements(null);
+        return;
+      }
+      const centralIdx = def.osculatingCentralBodyIndex ?? 0;
+      const mu = G_SI * ((p.mass[centralIdx] ?? 0) + (p.mass[selectedBodyIndex] ?? 0));
+      setElements(classicalOsculatingElements(p.posM, p.velM, centralIdx, selectedBodyIndex, mu));
     }, 250);
     return () => window.clearInterval(id);
-  }, [bodyMetricsRef, selectedBodyIndex, simulationDiagnosticsRef, telemetrySeriesRef]);
+  }, [bodyMetricsRef, physicsRef, selectedBodyIndex, simulationDiagnosticsRef, telemetrySeriesRef]);
 
   const def = selectedBodyIndex !== null ? SOLAR_SYSTEM_BODIES[selectedBodyIndex] : null;
   const fact = def ? BODY_DISPLAY_FACTS[def.id] : null;
@@ -142,15 +170,12 @@ export default function BodyDetailSidebar({
   if (!def || selectedBodyIndex === null) return null;
 
   const headline = bodyClass(def, selectedBodyIndex, moonIds);
-  const periodDays = telemetry?.orbitalPeriodDays;
-  const ecc = telemetry?.eccentricity;
-  const periodYears = Number.isFinite(periodDays ?? NaN) ? (periodDays as number) / 365.25 : null;
-  const semiMajorAu = periodYears && periodYears > 0 ? Math.pow(periodYears * periodYears, 1 / 3) : null;
-  const perihelionAu = semiMajorAu !== null && Number.isFinite(ecc ?? NaN) ? semiMajorAu * (1 - (ecc as number)) : null;
-  const aphelionAu = semiMajorAu !== null && Number.isFinite(ecc ?? NaN) ? semiMajorAu * (1 + (ecc as number)) : null;
+  const spinRadPerDay = siderealSpinRadPerSimDayForBodyId(def.id);
+  const visualSpin = spinRadPerDay === null ? "unavailable" : "sidereal period";
+  const periodDaysFallback = telemetry?.orbitalPeriodDays;
 
   return (
-    <aside className="pointer-events-auto fixed right-4 top-4 z-[90] max-h-[calc(100dvh-2rem)] w-[min(332px,calc(100vw-2rem))] overflow-hidden rounded-[24px] border border-white/10 bg-black/68 shadow-[0_28px_80px_rgba(0,0,0,0.46)] backdrop-blur-xl">
+    <aside className="pointer-events-auto fixed right-4 top-4 z-[90] max-h-[calc(100dvh-2rem)] w-[min(342px,calc(100vw-2rem))] overflow-hidden rounded-[24px] border border-white/10 bg-black/68 shadow-[0_28px_80px_rgba(0,0,0,0.46)] backdrop-blur-xl">
       <div className="border-b border-white/8 px-4 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -186,12 +211,23 @@ export default function BodyDetailSidebar({
         <section>
           <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Orbit Parameters</div>
           <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
-            <MetricRow label="半长轴" value={`${formatMaybe(semiMajorAu, " AU", 4)} approx`} />
-            <MetricRow label="偏心率" value={formatMaybe(ecc, "", 4)} />
-            <MetricRow label="近日点" value={`${formatMaybe(perihelionAu, " AU", 4)} approx`} />
-            <MetricRow label="远日点" value={`${formatMaybe(aphelionAu, " AU", 4)} approx`} />
-            <MetricRow label="轨道周期" value={formatMaybe(periodDays, " days", 2)} />
-            <MetricRow label="倾角" value="approx unavailable" />
+            <MetricRow label="半长轴" value={elements?.a && Number.isFinite(elements.a) ? au(elements.a) : "approx unavailable"} />
+            <MetricRow label="偏心率" value={formatMaybe(elements?.e ?? telemetry?.eccentricity, "", 4)} />
+            <MetricRow label="倾角" value={deg(elements?.inclinationRad)} />
+            <MetricRow label="近日点" value={au(elements?.periapsisM)} />
+            <MetricRow label="远日点" value={Number.isFinite(elements?.apoapsisM ?? NaN) ? au(elements?.apoapsisM) : "--"} />
+            <MetricRow label="当前半径" value={au(elements?.currentRadiusM ?? (metrics ? metrics.distSunAu * AU_METERS : null))} />
+            <MetricRow label="轨道周期" value={periodText(elements?.periodSeconds ?? (periodDaysFallback ? periodDaysFallback * 86400 : null))} />
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Time Scale</div>
+          <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
+            <MetricRow label="视觉自转" value={visualSpin} />
+            <MetricRow label="自转周期" value={fact ? `${fact.rotationPeriodHours.toFixed(2)} h` : "--"} />
+            <MetricRow label="公转周期来源" value={elements?.periodSeconds ? "osculating state vector" : telemetry ? "telemetry approximation" : "--"} />
+            <MetricRow label="比例说明" value="visual radius / nonlinear distance" />
           </div>
         </section>
 
@@ -200,7 +236,7 @@ export default function BodyDetailSidebar({
           <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
             <MetricRow label="位置状态" value="J2000 / generated ephemeris" />
             <MetricRow label="轨道线" value="osculating / sampled trail" />
-            <MetricRow label="视觉比例" value="nonlinear scale" />
+            <MetricRow label="轨道参数" value={elements ? "instant state vector" : "approximate fallback"} />
             <MetricRow label="材质" value={def.textureMap ? "texture + artistic lighting" : "procedural fallback"} />
           </div>
         </section>

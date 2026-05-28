@@ -1,4 +1,5 @@
 import { AU_METERS, C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
+import { solveLambertTransfer, type Vec3 } from "./lambertSolver";
 import type {
   MissionBodyId,
   MissionBodySnapshot,
@@ -14,6 +15,8 @@ const SUN_MU = G_SI * 1.98847e30;
 const DEFAULT_ISP_S = 320;
 const G0 = 9.80665;
 const SAMPLE_COUNT = 72;
+const EARTH_MU_KM3S2 = 398600.4418;
+const PARKING_ORBIT_RADIUS_KM = 6678;
 
 const BODY_ORDER: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
 const NOMINAL_TOF_DAYS: Record<string, number> = {
@@ -21,15 +24,29 @@ const NOMINAL_TOF_DAYS: Record<string, number> = {
   "venus-jupiter": 720,
   "jupiter-saturn": 1160,
 };
-const FLYBY_BONUS_KMS: Partial<Record<MissionBodyId, number>> = {
-  venus: 2.35,
-  jupiter: 5.2,
-};
 const BODY_RADIUS_KM: Record<MissionBodyId, number> = {
   earth: 6378,
   venus: 6052,
   jupiter: 69911,
   saturn: 58232,
+};
+const BODY_MU_KM3S2: Record<MissionBodyId, number> = {
+  earth: EARTH_MU_KM3S2,
+  venus: 324858.592,
+  jupiter: 126686534,
+  saturn: 37931207.8,
+};
+
+type BodyState = {
+  posAu: [number, number, number];
+  velAuPerDay: [number, number, number];
+  posM: [number, number, number];
+  velMps: [number, number, number];
+};
+
+type TransferDraft = MissionSegment & {
+  departureVinfVecKms: [number, number, number];
+  arrivalVinfVecKms: [number, number, number];
 };
 
 export const DEFAULT_MISSION_OPTIONS: Omit<
@@ -75,6 +92,11 @@ function normalize(a: readonly number[]): [number, number, number] {
   return [a[0]! / n, a[1]! / n, a[2]! / n];
 }
 
+function angleDeg(a: readonly number[], b: readonly number[]): number {
+  const d = dot(a, b) / Math.max(norm(a) * norm(b), 1e-12);
+  return (Math.acos(Math.max(-1, Math.min(1, d))) * 180) / Math.PI;
+}
+
 function rotateAroundAxis(
   v: readonly number[],
   axis: readonly number[],
@@ -89,7 +111,23 @@ function rotateAroundAxis(
   return add(add(term1, term2), term3);
 }
 
-function predictBodyAu(body: MissionBodySnapshot, daysAfterSnapshot: number): [number, number, number] {
+function auToM(v: readonly number[]): [number, number, number] {
+  return [v[0]! * AU_METERS, v[1]! * AU_METERS, v[2]! * AU_METERS];
+}
+
+function auDayToMps(v: readonly number[]): [number, number, number] {
+  return [
+    (v[0]! * AU_METERS) / DAY_SECONDS,
+    (v[1]! * AU_METERS) / DAY_SECONDS,
+    (v[2]! * AU_METERS) / DAY_SECONDS,
+  ];
+}
+
+function mpsToKms(v: readonly number[]): [number, number, number] {
+  return [v[0]! / 1000, v[1]! / 1000, v[2]! / 1000];
+}
+
+function predictBodyState(body: MissionBodySnapshot, daysAfterSnapshot: number): BodyState {
   const rAu = body.posAu;
   const vAuDay = body.velAuPerDay;
   const rM = norm(rAu) * AU_METERS;
@@ -97,11 +135,14 @@ function predictBodyAu(body: MissionBodySnapshot, daysAfterSnapshot: number): [n
   const axis = norm(h) > 1e-8 ? h : [0, 0, 1];
   const nRadS = Math.sqrt(SUN_MU / Math.max(rM * rM * rM, 1));
   const angle = nRadS * daysAfterSnapshot * DAY_SECONDS;
-  return rotateAroundAxis(rAu, axis, angle);
-}
-
-function bodySpeedKms(body: MissionBodySnapshot): number {
-  return (norm(body.velAuPerDay) * AU_METERS) / DAY_SECONDS / 1000;
+  const posAu = rotateAroundAxis(rAu, axis, angle);
+  const velAuPerDay = rotateAroundAxis(vAuDay, axis, angle);
+  return {
+    posAu,
+    velAuPerDay,
+    posM: auToM(posAu),
+    velMps: auDayToMps(velAuPerDay),
+  };
 }
 
 function trajectorySamples(
@@ -127,18 +168,19 @@ function riskFrom(value: number): MissionRiskLevel {
   return "low";
 }
 
-function segmentDeltaV(
-  from: MissionBodySnapshot,
-  to: MissionBodySnapshot,
-  fromPos: [number, number, number],
-  toPos: [number, number, number],
-  tofDays: number,
-): number {
-  const chordAu = norm(sub(toPos, fromPos));
-  const transferKms = (chordAu * AU_METERS) / Math.max(tofDays * DAY_SECONDS, 1) / 1000;
-  const circularBlend = Math.abs(bodySpeedKms(from) - bodySpeedKms(to)) * 0.18;
-  const shapingPenalty = Math.max(0, chordAu - 4) * 0.12;
-  return Math.max(0.35, transferKms * 0.42 + circularBlend + shapingPenalty);
+function injectionDeltaVKms(vinfKms: number): number {
+  const vc = Math.sqrt(EARTH_MU_KM3S2 / PARKING_ORBIT_RADIUS_KM);
+  const vesc = Math.sqrt((2 * EARTH_MU_KM3S2) / PARKING_ORBIT_RADIUS_KM);
+  return Math.max(0.05, Math.sqrt(vinfKms * vinfKms + vesc * vesc) - vc);
+}
+
+function fallbackLambertVelocity(from: BodyState, to: BodyState, tofDays: number): [number, number, number] {
+  const dt = Math.max(tofDays * DAY_SECONDS, 1);
+  return [
+    (to.posM[0] - from.posM[0]) / dt,
+    (to.posM[1] - from.posM[1]) / dt,
+    (to.posM[2] - from.posM[2]) / dt,
+  ];
 }
 
 function makeSegment(
@@ -147,52 +189,113 @@ function makeSegment(
   departureDay: number,
   tofDays: number,
   snapshot: MissionPhysicsSnapshot,
-  includeRelativity: boolean,
-  variantScale: number,
-): MissionSegment {
+): TransferDraft {
   const from = snapshot.bodies[fromBody];
   const to = snapshot.bodies[toBody];
   const arrivalDay = departureDay + tofDays;
-  const fromPos = predictBodyAu(from, departureDay - snapshot.simDays);
-  const toPos = predictBodyAu(to, arrivalDay - snapshot.simDays);
-  const rawDv = segmentDeltaV(from, to, fromPos, toPos, tofDays) * variantScale;
-  const bonus = FLYBY_BONUS_KMS[toBody] ?? 0;
-  const deltaVKms = Math.max(0.18, rawDv - bonus);
-  const c3Km2S2 = fromBody === "earth" ? Math.max(0.1, deltaVKms * deltaVKms - 11.2) : deltaVKms * deltaVKms * 0.28;
-  const closestApproachKm =
-    toBody === "saturn"
-      ? BODY_RADIUS_KM.saturn * 18
-      : BODY_RADIUS_KM[toBody] * (2.6 + Math.max(0, 1.15 - variantScale) * 1.4);
-  const turnAngleDeg = toBody === "venus" ? 31 + (1.1 - variantScale) * 9 : toBody === "jupiter" ? 62 + (1.1 - variantScale) * 14 : 8;
-  const earthAtArrival = predictBodyAu(snapshot.bodies.earth, arrivalDay - snapshot.simDays);
-  const communicationDelayMin = (norm(sub(toPos, earthAtArrival)) * AU_METERS) / C_LIGHT / 60;
-  const riskScalar =
-    deltaVKms / 9 +
-    (closestApproachKm < BODY_RADIUS_KM[toBody] * 3 ? 0.38 : 0) +
-    (communicationDelayMin > 70 ? 0.22 : 0);
-  const risk = riskFrom(riskScalar);
-  const liftAu = Math.min(3.4, Math.max(0.18, norm(sub(toPos, fromPos)) * 0.16));
+  const fromState = predictBodyState(from, departureDay - snapshot.simDays);
+  const toState = predictBodyState(to, arrivalDay - snapshot.simDays);
+  const lambert = solveLambertTransfer({
+    r1M: fromState.posM as Vec3,
+    r2M: toState.posM as Vec3,
+    tofSeconds: tofDays * DAY_SECONDS,
+    mu: SUN_MU,
+    prograde: true,
+    toleranceSeconds: Math.max(2, tofDays * DAY_SECONDS * 3e-6),
+  });
+  const departureVelocityMps = lambert.converged
+    ? lambert.departureVelocityMps
+    : fallbackLambertVelocity(fromState, toState, tofDays);
+  const arrivalVelocityMps = lambert.converged
+    ? lambert.arrivalVelocityMps
+    : fallbackLambertVelocity(fromState, toState, tofDays);
+  const departureVinfVecMps = sub(departureVelocityMps, fromState.velMps);
+  const arrivalVinfVecMps = sub(arrivalVelocityMps, toState.velMps);
+  const departureVinfinityKms = norm(departureVinfVecMps) / 1000;
+  const arrivalVinfinityKms = norm(arrivalVinfVecMps) / 1000;
+  const earthAtArrival = predictBodyState(snapshot.bodies.earth, arrivalDay - snapshot.simDays);
+  const communicationDelayMin = (norm(sub(toState.posM, earthAtArrival.posM)) / C_LIGHT) / 60;
+  const liftAu = Math.min(3.4, Math.max(0.18, norm(sub(toState.posAu, fromState.posAu)) * 0.16));
 
   return {
-    id: `${fromBody}-${toBody}-${Math.round(departureDay)}`,
+    id: `${fromBody}-${toBody}-${Math.round(departureDay)}-${Math.round(tofDays)}`,
     fromBody,
     toBody,
     departureDay,
     arrivalDay,
     tofDays,
-    deltaVKms,
-    c3Km2S2,
-    closestApproachKm,
-    turnAngleDeg: Math.max(0, turnAngleDeg),
+    deltaVKms: Math.max(0.05, departureVinfinityKms * 0.12),
+    c3Km2S2: fromBody === "earth" ? departureVinfinityKms * departureVinfinityKms : 0,
+    lambertConverged: lambert.converged,
+    lambertIterations: lambert.iterations,
+    lambertResidual: lambert.residualSeconds,
+    departureVinfinityKms,
+    arrivalVinfinityKms,
+    periapsisAltitudeKm: Number.POSITIVE_INFINITY,
+    flybySafetyMargin: Number.POSITIVE_INFINITY,
+    closestApproachKm: toBody === "saturn" ? BODY_RADIUS_KM.saturn * 18 : BODY_RADIUS_KM[toBody] * 8,
+    turnAngleDeg: lambert.transferAngleDeg,
     communicationDelayMin,
-    burnAttitude: fromBody === "earth" ? "LEO prograde injection" : "B-plane targeting trim",
+    burnAttitude: fromBody === "earth" ? "LEO prograde Lambert injection" : "B-plane targeting trim",
     antennaPointing: communicationDelayMin > 60 ? "High-gain Earth-pointing with store-and-forward windows" : "Continuous high-gain Earth lock",
     solarArrayPointing: toBody === "jupiter" || toBody === "saturn" ? "Low-flux cruise bias, battery-positive margins" : "Sun-track cruise",
-    kalmanSigmaKm: Math.max(12, 180 - turnAngleDeg * 1.8 + deltaVKms * 9),
-    risk,
-    trajectoryAu: trajectorySamples(fromPos, toPos, liftAu),
+    kalmanSigmaKm: Math.max(10, 160 + departureVinfinityKms * 7 + (lambert.converged ? 0 : 80)),
+    risk: lambert.converged ? "low" : "medium",
+    trajectoryAu: trajectorySamples(fromState.posAu, toState.posAu, liftAu),
+    departureVinfVecKms: mpsToKms(departureVinfVecMps),
+    arrivalVinfVecKms: mpsToKms(arrivalVinfVecMps),
   };
 }
+
+function annotatePatchedConics(segments: TransferDraft[]): MissionSegment[] {
+  for (let i = 0; i < segments.length; i++) {
+    const seg = segments[i]!;
+    if (i === 0) {
+      seg.deltaVKms = injectionDeltaVKms(seg.departureVinfinityKms) + 0.12;
+    } else {
+      const prev = segments[i - 1]!;
+      const vinfMismatch = Math.abs(seg.departureVinfinityKms - prev.arrivalVinfinityKms);
+      seg.deltaVKms = Math.max(0.08, vinfMismatch * 0.16 + (seg.lambertConverged ? 0.06 : 0.35));
+    }
+
+    const next = segments[i + 1];
+    if (next && (seg.toBody === "venus" || seg.toBody === "jupiter")) {
+      const incoming = scale(seg.arrivalVinfVecKms, -1);
+      const outgoing = next.departureVinfVecKms;
+      const turnAngle = angleDeg(incoming, outgoing);
+      const vinfAvg = Math.max(0.1, 0.5 * (seg.arrivalVinfinityKms + next.departureVinfinityKms));
+      const mu = BODY_MU_KM3S2[seg.toBody];
+      const radius = BODY_RADIUS_KM[seg.toBody];
+      const sinHalf = Math.sin(THREE_DEG_TO_RAD * Math.max(0.1, Math.min(175, turnAngle)) * 0.5);
+      const rpKm = Math.max(radius * 1.08, (mu / (vinfAvg * vinfAvg)) * (1 / Math.max(0.03, sinHalf) - 1));
+      const altitudeKm = rpKm - radius;
+      const safetyMargin = altitudeKm / radius;
+      const maxTurnAtSafeAltitude =
+        (2 * Math.asin(1 / (1 + ((radius * 1.25) * vinfAvg * vinfAvg) / mu)) * 180) / Math.PI;
+      seg.turnAngleDeg = turnAngle;
+      seg.closestApproachKm = rpKm;
+      seg.periapsisAltitudeKm = altitudeKm;
+      seg.flybySafetyMargin = safetyMargin;
+      seg.risk = riskFrom(
+        (turnAngle > maxTurnAtSafeAltitude ? 0.38 : 0) +
+          (safetyMargin < 0.3 ? 0.34 : 0) +
+          (seg.lambertConverged ? 0 : 0.26) +
+          (seg.communicationDelayMin > 70 ? 0.18 : 0),
+      );
+      seg.kalmanSigmaKm = Math.max(8, 70 + turnAngle * 1.2 + Math.max(0, 0.4 - safetyMargin) * 240);
+    } else if (seg.toBody === "saturn") {
+      seg.deltaVKms = Math.max(seg.deltaVKms, seg.arrivalVinfinityKms * 0.42 + 0.25);
+      seg.periapsisAltitudeKm = BODY_RADIUS_KM.saturn * 7;
+      seg.flybySafetyMargin = 7;
+      seg.closestApproachKm = BODY_RADIUS_KM.saturn * 8;
+      seg.turnAngleDeg = 0;
+      seg.risk = riskFrom(seg.arrivalVinfinityKms / 18 + (seg.communicationDelayMin > 80 ? 0.22 : 0));
+    }
+  }
+  return segments.map(({ departureVinfVecKms: _a, arrivalVinfVecKms: _b, ...segment }) => segment);
+}
+
+const THREE_DEG_TO_RAD = Math.PI / 180;
 
 function fuelEstimateKg(deltaVKms: number): number {
   const dryMassKg = 4200;
@@ -202,8 +305,10 @@ function fuelEstimateKg(deltaVKms: number): number {
 
 export function scoreMissionPlan(plan: MissionPlan): number {
   const riskPenalty = plan.risk === "high" ? 22 : plan.risk === "medium" ? 9 : 0;
-  const durationPenalty = Math.max(0, (plan.durationDays - 2300) / 95);
-  return Math.max(0, 100 - plan.totalDeltaVKms * 5.6 - durationPenalty - riskPenalty);
+  const durationPenalty = Math.max(0, (plan.durationDays - 2500) / 110);
+  const convergencePenalty = plan.segments.filter((s) => !s.lambertConverged).length * 16;
+  const c3Penalty = Math.max(0, (plan.segments[0]?.c3Km2S2 ?? 0) - 85) * 0.09;
+  return Math.max(0, 100 - plan.totalDeltaVKms * 4.4 - durationPenalty - riskPenalty - convergencePenalty - c3Penalty);
 }
 
 function buildPlan(
@@ -213,33 +318,28 @@ function buildPlan(
   snapshot: MissionPhysicsSnapshot,
   options: MissionOptimizerOptions,
 ): MissionPlan {
-  const segments: MissionSegment[] = [];
+  const drafts: TransferDraft[] = [];
   let cursor = departureDay;
   for (let i = 0; i < options.sequence.length - 1; i++) {
     const from = options.sequence[i]!;
     const to = options.sequence[i + 1]!;
     const key = `${from}-${to}`;
     const baseTof = NOMINAL_TOF_DAYS[key] ?? 365;
-    const seg = makeSegment(
-      from,
-      to,
-      cursor,
-      Math.round(baseTof * tofScale * (1 + i * 0.025)),
-      snapshot,
-      options.includeRelativity,
-      variantScale + i * 0.018,
-    );
-    segments.push(seg);
+    const tofDays = Math.round(baseTof * tofScale * variantScale * (1 + i * 0.025));
+    const seg = makeSegment(from, to, cursor, tofDays, snapshot);
+    drafts.push(seg);
     cursor = seg.arrivalDay;
   }
 
+  const segments = annotatePatchedConics(drafts);
   const totalDeltaVKms = segments.reduce((sum, s) => sum + s.deltaVKms, 0);
   const maxCommunicationDelayMin = Math.max(...segments.map((s) => s.communicationDelayMin));
   const navigationUncertaintyKm = Math.max(...segments.map((s) => s.kalmanSigmaKm));
   const riskRank = Math.max(...segments.map((s) => (s.risk === "high" ? 2 : s.risk === "medium" ? 1 : 0)));
+  const lambertFailures = segments.filter((s) => !s.lambertConverged).length;
   const plan: MissionPlan = {
-    id: `evjs-${Math.round(departureDay)}-${tofScale.toFixed(2)}-${variantScale.toFixed(2)}`,
-    name: "Earth-Venus-Jupiter-Saturn Gravity Assist",
+    id: `evjs-lambert-${Math.round(departureDay)}-${tofScale.toFixed(2)}-${variantScale.toFixed(2)}`,
+    name: "Earth-Venus-Jupiter-Saturn Lambert Patched-Conics",
     sequence: [...options.sequence],
     departureDay,
     arrivalDay: cursor,
@@ -248,12 +348,12 @@ function buildPlan(
     fuelEstimateKg: fuelEstimateKg(totalDeltaVKms),
     score: 0,
     grCorrectionNote: options.includeRelativity
-      ? "1PN reporting enabled; weak-field correction tracked outside the optimizer loop."
-      : "Newtonian optimizer; 1PN reporting disabled.",
+      ? "1PN reporting enabled; Lambert transfer remains Newtonian two-body with separate weak-field note."
+      : "Newtonian Lambert transfer; 1PN reporting disabled.",
     attitudeEvents: segments.length * 2 + 1,
     maxCommunicationDelayMin,
     navigationUncertaintyKm,
-    risk: riskRank >= 2 ? "high" : riskRank === 1 ? "medium" : "low",
+    risk: lambertFailures > 0 ? "medium" : riskRank >= 2 ? "high" : riskRank === 1 ? "medium" : "low",
     segments,
   };
   plan.score = scoreMissionPlan(plan);
@@ -264,7 +364,7 @@ function dedupePlans(plans: MissionPlan[]): MissionPlan[] {
   const seen = new Set<string>();
   const out: MissionPlan[] = [];
   for (const plan of plans) {
-    const key = `${Math.round(plan.departureDay / 15)}:${Math.round(plan.durationDays / 20)}`;
+    const key = `${Math.round(plan.departureDay / 15)}:${Math.round(plan.durationDays / 20)}:${plan.segments.filter((s) => s.lambertConverged).length}`;
     if (seen.has(key)) continue;
     seen.add(key);
     out.push(plan);
@@ -279,8 +379,8 @@ export function optimizeMission(
   const sequence = options.sequence.length >= 2 ? options.sequence : BODY_ORDER;
   const normalized: MissionOptimizerOptions = { ...options, sequence };
   const plans: MissionPlan[] = [];
-  const tofScales = [0.92, 1.0, 1.08];
-  const variantScales = [0.9, 1.0, 1.1];
+  const tofScales = [0.88, 0.96, 1.04, 1.12];
+  const variantScales = [0.96, 1.0, 1.04];
 
   for (
     let dep = normalized.departureStartDay;

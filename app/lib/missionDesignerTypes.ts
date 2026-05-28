@@ -24,6 +24,13 @@ export type MissionSegment = {
   tofDays: number;
   deltaVKms: number;
   c3Km2S2: number;
+  lambertConverged: boolean;
+  lambertIterations: number;
+  lambertResidual: number;
+  departureVinfinityKms: number;
+  arrivalVinfinityKms: number;
+  periapsisAltitudeKm: number;
+  flybySafetyMargin: number;
   closestApproachKm: number;
   turnAngleDeg: number;
   communicationDelayMin: number;

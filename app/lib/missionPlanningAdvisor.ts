@@ -30,21 +30,21 @@ export function explainMissionPlan(plan: MissionPlan | null): MissionAdvisorRepo
   ];
 
   return {
-    summary: `Best current plan scores ${fmt(plan.score, 0)}/100 with ${fmt(plan.totalDeltaVKms)} km/s total deterministic delta-v over ${fmt(plan.durationDays, 0)} days.`,
+    summary: `Best current Lambert patched-conics plan scores ${fmt(plan.score, 0)}/100 with ${fmt(plan.totalDeltaVKms)} km/s deterministic delta-v over ${fmt(plan.durationDays, 0)} days. This is still an approximate first-pass plan, not GMAT/STK validation.`,
     fuelTradeoff:
       plan.durationDays > 2300
         ? `The optimizer accepts a longer ${fmt(plan.durationDays / 365.25, 1)} year cruise to reduce injection energy and keep fuel near ${fmt(plan.fuelEstimateKg / 1000, 1)} t.`
         : `This is an aggressive transfer; fuel estimate is ${fmt(plan.fuelEstimateKg / 1000, 1)} t and should be protected with larger correction margins.`,
-    gravityAssist: `Venus provides about ${fmt(venus?.turnAngleDeg ?? 0, 0)} deg of turn shaping; Jupiter is the main energy pump at ${fmt(jupiter?.turnAngleDeg ?? 0, 0)} deg before Saturn arrival.`,
+    gravityAssist: `Venus requires about ${fmt(venus?.turnAngleDeg ?? 0, 0)} deg of B-plane turn shaping; Jupiter is the main energy pump at ${fmt(jupiter?.turnAngleDeg ?? 0, 0)} deg before Saturn arrival. Lambert convergence is ${plan.segments.filter((s) => s.lambertConverged).length}/${plan.segments.length} legs.`,
     risk:
       highRisk.length > 0
         ? `${highRisk.length} segment(s) need review, mainly flyby altitude, B-plane targeting, and navigation covariance.`
-        : "No segment is above low risk in the first-pass patched-conics model.",
+        : "No segment is above low risk in the first-pass Lambert patched-conics model.",
     communication: `Maximum one-way light time reaches ${fmt(plan.maxCommunicationDelayMin, 1)} min; schedule autonomous fault protection near ${longest.toBody.toUpperCase()} cruise.`,
     recommendation:
       plan.totalDeltaVKms > 9
-        ? "Extend the departure window or accept a slower Venus-to-Jupiter leg before committing this plan."
-        : "Keep this as the reference candidate, then run a narrower search around the selected departure day.",
+        ? "Extend the departure window or accept a slower Venus-to-Jupiter leg before treating this as a reference design."
+        : "Keep this as a reference candidate, then run a narrower Lambert search around the selected departure day. Do not treat it as real mission feasibility.",
     tags,
     provider: "local",
   };

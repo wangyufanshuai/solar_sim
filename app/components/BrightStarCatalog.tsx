@@ -34,11 +34,11 @@ void main() {
   float d = length(c);
   if (d > 0.5) discard;
   float edge = smoothstep(0.5, 0.16, d);
-  float core = exp(-d * d * 18.0);
-  float halo = exp(-d * d * 7.0) * 0.10;
+  float core = exp(-d * d * 22.0);
+  float halo = exp(-d * d * 6.0) * 0.075;
   float alpha = core + halo;
   float sizeAlpha = smoothstep(1.4, 3.2, vPS);
-  vec3 col = vColor * (0.72 + core * 1.05);
+  vec3 col = vColor * (0.68 + core * 0.95);
   gl_FragColor = vec4(col, alpha * edge * (0.18 + 0.72 * sizeAlpha) * uOpacity);
   #include <logdepthbuf_fragment>
 }
@@ -53,6 +53,11 @@ function raDecToXYZ(raHours: number, decDeg: number, radius: number): [number, n
   return [x, y, z];
 }
 
+function magnitudeIntensity(magV: number): number {
+  const relative = Math.pow(10, -0.4 * (magV + 1.46));
+  return THREE.MathUtils.clamp(Math.pow(relative, 0.42), 0.08, 1.25);
+}
+
 export default function BrightStarCatalog({
   opacity = 1,
   tier2Loaded = false,
@@ -63,7 +68,10 @@ export default function BrightStarCatalog({
   const { size } = useThree();
   const dpr = size.width > 0 ? Math.min(window.devicePixelRatio, 2) : 1;
 
-  const stars = tier2Loaded ? [...BRIGHT_STARS_TIER1, ...BRIGHT_STARS_TIER2] : BRIGHT_STARS_TIER1;
+  const stars = useMemo(
+    () => (tier2Loaded ? [...BRIGHT_STARS_TIER1, ...BRIGHT_STARS_TIER2] : BRIGHT_STARS_TIER1),
+    [tier2Loaded],
+  );
 
   const { geometry, material } = useMemo(() => {
     const count = stars.length;
@@ -77,11 +85,11 @@ export default function BrightStarCatalog({
       pos[i * 3] = x;
       pos[i * 3 + 1] = y;
       pos[i * 3 + 2] = z;
-      colors[i * 3] = star.r;
-      colors[i * 3 + 1] = star.g;
-      colors[i * 3 + 2] = star.b;
-      const bright = Math.max(0, (3.5 - star.magV) / 5.0);
-      sizes[i] = (0.38 + bright * 1.15) * dpr;
+      const intensity = magnitudeIntensity(star.magV);
+      colors[i * 3] = (0.82 + star.r * 0.18) * intensity;
+      colors[i * 3 + 1] = (0.84 + star.g * 0.16) * intensity;
+      colors[i * 3 + 2] = (0.88 + star.b * 0.12) * intensity;
+      sizes[i] = (0.34 + Math.pow(intensity, 0.72) * 1.08) * dpr;
     }
 
     const geom = new THREE.BufferGeometry();
@@ -103,7 +111,7 @@ export default function BrightStarCatalog({
     });
 
     return { geometry: geom, material: mat };
-  }, [dpr, opacity, stars.length]);
+  }, [dpr, opacity, stars]);
 
   material.uniforms.uOpacity.value = opacity;
 

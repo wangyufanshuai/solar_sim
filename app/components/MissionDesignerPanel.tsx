@@ -38,6 +38,7 @@ function bodyDisplay(id: MissionBodyId): string {
 function validatePlan(plan: MissionPlan | null): string | null {
   if (!plan) return "Run the optimizer to generate a candidate.";
   if (plan.segments.length < 3) return "Trajectory needs at least 3 patched-conic segments.";
+  if (plan.segments.filter((seg) => seg.lambertConverged).length < 3) return "Lambert solver did not converge for enough mission legs.";
   if (!Number.isFinite(plan.totalDeltaVKms) || plan.totalDeltaVKms <= 0) return "Delta-v estimate is invalid.";
   if (!Number.isFinite(plan.durationDays) || plan.durationDays <= 0) return "Mission duration is invalid.";
   if (!Number.isFinite(plan.maxCommunicationDelayMin) || plan.maxCommunicationDelayMin <= 0) return "Communication delay estimate is invalid.";
@@ -182,7 +183,7 @@ export default function MissionDesignerPanel({
       </div>
 
       <div className="rounded-[4px] border border-amber-200/14 bg-amber-200/[0.045] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-amber-100/82">
-        First-pass patched-conics approximation / not high-fidelity optimal control
+        Lambert first-pass patched conics / not GMAT, STK, NASA, or high-fidelity optimal-control validation
       </div>
 
       <div className="grid grid-cols-4 gap-1.5">
@@ -238,6 +239,10 @@ export default function MissionDesignerPanel({
           <Metric label="Fuel est." value={formatMass(selectedPlan.fuelEstimateKg)} />
           <Metric label="Duration" value={`${(selectedPlan.durationDays / 365.25).toFixed(1)} yr`} />
           <Metric label="Score" value={`${selectedPlan.score.toFixed(0)}/100`} />
+          <Metric label="Lambert" value={`${selectedPlan.segments.filter((seg) => seg.lambertConverged).length}/${selectedPlan.segments.length}`} />
+          <Metric label="C3" value={`${(selectedPlan.segments[0]?.c3Km2S2 ?? 0).toFixed(1)}`} />
+          <Metric label="Arr v-inf" value={`${(selectedPlan.segments.at(-1)?.arrivalVinfinityKms ?? 0).toFixed(2)}`} />
+          <Metric label="Max resid." value={`${Math.max(...selectedPlan.segments.map((seg) => seg.lambertResidual)).toFixed(0)} s`} />
         </div>
       ) : null}
 
@@ -290,6 +295,12 @@ export default function MissionDesignerPanel({
                 <span>{seg.turnAngleDeg.toFixed(0)} deg</span>
                 <span>{seg.communicationDelayMin.toFixed(1)} min</span>
               </div>
+              <div className="mt-1 grid grid-cols-4 gap-1 text-[8px] text-[var(--ui-text-dim)]">
+                <span>{seg.lambertConverged ? "Lambert ok" : "Lambert fallback"}</span>
+                <span>{seg.lambertIterations} iter</span>
+                <span>{seg.departureVinfinityKms.toFixed(1)} v-inf</span>
+                <span>{Number.isFinite(seg.flybySafetyMargin) ? `${seg.flybySafetyMargin.toFixed(2)} R` : "--"}</span>
+              </div>
             </div>
           ))}
         </div>
@@ -320,6 +331,11 @@ export default function MissionDesignerPanel({
           <Metric label="Comms" value={selectedPlan ? `${selectedPlan.maxCommunicationDelayMin.toFixed(1)} min` : "--"} />
           <Metric label="Kalman sigma" value={selectedPlan ? `${selectedPlan.navigationUncertaintyKm.toFixed(0)} km` : "--"} />
         </div>
+        {selectedPlan ? (
+          <div className="mt-2 rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase tracking-[0.12em] text-amber-100/78">
+            Approximate Lambert patched-conics report only; not a real mission feasibility certificate.
+          </div>
+        ) : null}
         <div className="mt-2 grid gap-1 text-[9px] leading-3 text-[var(--ui-text-dim)]">
           <span className="flex gap-1"><ShieldAlert className="h-3 w-3 shrink-0" strokeWidth={IS} />{advisor.risk}</span>
           <span className="flex gap-1"><Satellite className="h-3 w-3 shrink-0" strokeWidth={IS} />{advisor.gravityAssist}</span>
