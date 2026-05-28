@@ -16,7 +16,8 @@
     "fetch-nasa-hd-extras": "node scripts/fetch-nasa-hd-bundle.mjs --extras-only",
     "fetch-nasa-hd-with-extras": "node scripts/fetch-nasa-hd-bundle.mjs --extras",
     "fetch-sky-eso": "node scripts/fetch-sky-eso.mjs",
-    "build-sky": "python scripts/build-universe-sandbox-sky.py"
+    "build-sky": "python scripts/build-universe-sandbox-sky.py",
+    "build-realism-manifest": "node scripts/build-realism-manifest.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

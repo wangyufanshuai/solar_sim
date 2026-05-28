@@ -42,6 +42,7 @@ export type PlanetBodyProps = {
   sunCoronaRadiusScale?: number;
   sunCoronaOpacity?: number;
   map?: THREE.Texture | null;
+  nightMap?: THREE.Texture | null;
   normalMap?: THREE.Texture | null;
   roughnessMap?: THREE.Texture | null;
   color?: THREE.ColorRepresentation;
@@ -84,6 +85,7 @@ export default function Planet({
   radius = 1,
   position = [0, 0, 0],
   map = null,
+  nightMap = null,
   normalMap = null,
   roughnessMap = null,
   color,
@@ -229,7 +231,11 @@ export default function Planet({
       closeLight,
       1 - Math.pow(0.0015, Math.max(0.001, dt))
     );
-    const textureFill = map ? closeLightRef.current * (showAtmosphere ? 0.32 : 0.22) : 0;
+    const textureFill = nightMap
+      ? 0.08 + closeLightRef.current * (showAtmosphere ? 0.2 : 0.14)
+      : map
+        ? closeLightRef.current * (showAtmosphere ? 0.32 : 0.22)
+        : 0;
     const st = opticsStateRef?.current;
     const spMat = spriteRef.current?.material as THREE.SpriteMaterial | undefined;
     if (
@@ -435,9 +441,9 @@ export default function Planet({
           roughnessMap={roughnessMap ?? undefined}
           roughness={Math.max(0.48, roughness)}
           metalness={metalness}
-          emissive={map ? "#ffffff" : emissiveBaseColor}
-          emissiveMap={map ?? undefined}
-          emissiveIntensity={Math.max(emissiveIntensity * (selected ? 0.82 : 0.58), selected ? (map ? 0.26 : 0.14) : 0)}
+          emissive={nightMap ? "#dbeafe" : map ? "#ffffff" : emissiveBaseColor}
+          emissiveMap={nightMap ?? map ?? undefined}
+          emissiveIntensity={Math.max(emissiveIntensity * (selected ? 0.82 : 0.58), selected ? (map ? 0.26 : 0.14) : nightMap ? 0.08 : 0)}
           envMapIntensity={selected ? Math.min(Math.max(envMapIntensity, 0.18), 0.42) : Math.min(Math.max(envMapIntensity, 0.08), 0.22)}
           clearcoat={selected ? 0.2 : showAtmosphere ? 0.18 : 0.055}
           clearcoatRoughness={showAtmosphere ? 0.38 : 0.78}

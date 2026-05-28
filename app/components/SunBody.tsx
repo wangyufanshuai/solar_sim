@@ -348,10 +348,10 @@ export default function SunBody({
             vec3 color = mix(base, hot, filament);
             color = mix(color, texHot * vec3(1.45, 0.42, 0.08), 0.78);
             color = mix(color, deep, clamp(sunspot, 0.0, 0.82));
-            color += whiteHot * activeRegion * 0.34;
-            color = mix(color, deep, (1.0 - mu) * 0.18);
-            color *= limb * 1.18;
-            color += vec3(0.32, 0.055, 0.0) * pow(1.0 - mu, 1.35);
+            color += whiteHot * activeRegion * 0.24;
+            color = mix(color, deep, (1.0 - mu) * 0.22);
+            color *= limb * 1.04;
+            color += vec3(0.24, 0.042, 0.0) * pow(1.0 - mu, 1.35);
 
             gl_FragColor = vec4(color, 1.0);
             #include <logdepthbuf_fragment>
@@ -399,7 +399,7 @@ export default function SunBody({
         <meshBasicMaterial
           color="#ff6a16"
           transparent
-          opacity={0.11}
+          opacity={0.082}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -410,7 +410,7 @@ export default function SunBody({
         <meshBasicMaterial
           color="#e53508"
           transparent
-          opacity={0.065}
+          opacity={0.048}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -426,7 +426,7 @@ export default function SunBody({
             map={haloTex}
             color="#ffb86a"
             transparent
-            opacity={0.32}
+            opacity={0.24}
             toneMapped={false}
             depthWrite={false}
             depthTest={false}

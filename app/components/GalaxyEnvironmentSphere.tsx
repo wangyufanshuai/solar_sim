@@ -38,12 +38,18 @@ void main() {
   vec2 sampleUv = vec2(fract(vUv.x + 0.055), clamp(vUv.y + 0.02, 0.0, 1.0));
   vec3 tex = texture2D(uMap, sampleUv).rgb;
   float n = hash(vUv * vec2(1630.0, 815.0));
-  float tinyStars = pow(smoothstep(0.9984, 1.0, n), 4.0);
-  vec3 color = max(tex - vec3(0.006, 0.007, 0.008), vec3(0.0));
-  color *= vec3(0.72, 0.78, 0.88);
-  color = color / (color + vec3(0.58));
-  color = pow(max(color, vec3(0.0)), vec3(0.94));
-  color += vec3(0.66, 0.74, 0.94) * tinyStars * 0.006;
+  float tinyStars = pow(smoothstep(0.9987, 1.0, n), 4.5);
+  float luma = dot(tex, vec3(0.299, 0.587, 0.114));
+  float dustLane = smoothstep(0.12, 0.34, luma) * (1.0 - smoothstep(0.45, 0.82, luma));
+  float brightCloud = smoothstep(0.24, 0.78, luma);
+  vec3 color = max(tex - vec3(0.0055, 0.0065, 0.0075), vec3(0.0));
+  color *= vec3(0.70, 0.78, 0.9);
+  color = mix(color * 0.82, color * 1.22, brightCloud);
+  color -= vec3(0.018, 0.02, 0.024) * dustLane;
+  color = max(color, vec3(0.0));
+  color = color / (color + vec3(0.55));
+  color = pow(color, vec3(0.92));
+  color += vec3(0.62, 0.72, 0.95) * tinyStars * 0.0045;
   gl_FragColor = vec4(color, 1.0);
 }
 `;

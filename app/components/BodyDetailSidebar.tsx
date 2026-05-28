@@ -7,7 +7,7 @@ import { SOLAR_SYSTEM_BODIES, type SolarSystemBodyDef } from "../data/planetsJ20
 import type { BodyLiveMetrics } from "../lib/bodyLiveMetrics";
 import type { SimulationDiagnostics } from "../lib/simulationDiagnosticsTypes";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
-import type { TelemetrySeriesState } from "../lib/telemetryTypes";
+import { getLatestTelemetrySample, type TelemetrySeriesState } from "../lib/telemetryTypes";
 
 type BodyDetailSidebarProps = {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
@@ -25,7 +25,7 @@ function MetricRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-center justify-between gap-4 border-b border-white/8 py-2 text-[11px] last:border-b-0">
       <span className="text-slate-400">{label}</span>
-      <span className="font-mono text-slate-100">{value}</span>
+      <span className="text-right font-mono text-slate-100">{value}</span>
     </div>
   );
 }
@@ -36,6 +36,11 @@ function bodyClass(def: SolarSystemBodyDef, selectedBodyIndex: number, moonIds: 
   if (selectedBodyIndex <= 9) return "行星";
   if (def.radiusScene < 0.2) return "小天体";
   return "天体";
+}
+
+function formatMaybe(value: number | null | undefined, suffix = "", digits = 3) {
+  if (!Number.isFinite(value ?? NaN)) return "--";
+  return `${(value as number).toFixed(digits)}${suffix}`;
 }
 
 function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
@@ -76,11 +81,11 @@ function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
           <div className="text-[10px] uppercase tracking-[0.26em] text-slate-500">Visual Profile</div>
           <div className="mt-2 truncate text-[15px] font-medium text-white/90">{def.name}</div>
           <div className="mt-1 text-[11px] leading-5 text-slate-400">
-            {texture ? "本地贴图已加载" : "程序颜色预览"}。近景使用真实光照、边缘反光和阴影终止线。
+            {texture ? "本地贴图材质" : "程序化材质"}，近景使用视觉缩放、边缘光和阴影增强。
           </div>
-          <div className="mt-3 flex gap-2 text-[10px] text-white/55">
+          <div className="mt-3 flex flex-wrap gap-2 text-[10px] text-white/55">
             <span className="rounded-full border border-white/10 px-2 py-1">视觉半径 {def.radiusScene.toFixed(3)}</span>
-            <span className="rounded-full border border-white/10 px-2 py-1">{def.showRings ? "有环系统" : "无环系统"}</span>
+            <span className="rounded-full border border-white/10 px-2 py-1">{def.showRings ? "环系统" : "无环"}</span>
           </div>
         </div>
       </div>
@@ -91,6 +96,7 @@ function BodyPreview({ def }: { def: SolarSystemBodyDef }) {
 export default function BodyDetailSidebar({
   bodyMetricsRef,
   simulationDiagnosticsRef,
+  telemetrySeriesRef,
   relativityEnabled,
   simDaysRef,
   daysPerSecond,
@@ -99,15 +105,19 @@ export default function BodyDetailSidebar({
 }: BodyDetailSidebarProps) {
   const [metrics, setMetrics] = useState<BodyLiveMetrics | null>(null);
   const [diag, setDiag] = useState<SimulationDiagnostics | null>(null);
+  const [telemetry, setTelemetry] = useState(() =>
+    telemetrySeriesRef.current ? getLatestTelemetrySample(telemetrySeriesRef.current) : null,
+  );
 
   useEffect(() => {
     if (selectedBodyIndex === null) return;
     const id = window.setInterval(() => {
       setMetrics(bodyMetricsRef.current);
       setDiag(simulationDiagnosticsRef.current);
+      setTelemetry(telemetrySeriesRef.current ? getLatestTelemetrySample(telemetrySeriesRef.current) : null);
     }, 250);
     return () => window.clearInterval(id);
-  }, [bodyMetricsRef, selectedBodyIndex, simulationDiagnosticsRef]);
+  }, [bodyMetricsRef, selectedBodyIndex, simulationDiagnosticsRef, telemetrySeriesRef]);
 
   const def = selectedBodyIndex !== null ? SOLAR_SYSTEM_BODIES[selectedBodyIndex] : null;
   const fact = def ? BODY_DISPLAY_FACTS[def.id] : null;
@@ -130,10 +140,17 @@ export default function BodyDetailSidebar({
   );
 
   if (!def || selectedBodyIndex === null) return null;
+
   const headline = bodyClass(def, selectedBodyIndex, moonIds);
+  const periodDays = telemetry?.orbitalPeriodDays;
+  const ecc = telemetry?.eccentricity;
+  const periodYears = Number.isFinite(periodDays ?? NaN) ? (periodDays as number) / 365.25 : null;
+  const semiMajorAu = periodYears && periodYears > 0 ? Math.pow(periodYears * periodYears, 1 / 3) : null;
+  const perihelionAu = semiMajorAu !== null && Number.isFinite(ecc ?? NaN) ? semiMajorAu * (1 - (ecc as number)) : null;
+  const aphelionAu = semiMajorAu !== null && Number.isFinite(ecc ?? NaN) ? semiMajorAu * (1 + (ecc as number)) : null;
 
   return (
-    <aside className="pointer-events-auto fixed right-4 top-4 z-[90] max-h-[calc(100dvh-2rem)] w-[min(318px,calc(100vw-2rem))] overflow-hidden rounded-[24px] border border-white/10 bg-black/68 shadow-[0_28px_80px_rgba(0,0,0,0.46)] backdrop-blur-xl">
+    <aside className="pointer-events-auto fixed right-4 top-4 z-[90] max-h-[calc(100dvh-2rem)] w-[min(332px,calc(100vw-2rem))] overflow-hidden rounded-[24px] border border-white/10 bg-black/68 shadow-[0_28px_80px_rgba(0,0,0,0.46)] backdrop-blur-xl">
       <div className="border-b border-white/8 px-4 py-4">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
@@ -163,6 +180,28 @@ export default function BodyDetailSidebar({
             <MetricRow label="模拟日" value={simDaysRef.current.toFixed(2)} />
             <MetricRow label="时间倍率" value={`${daysPerSecond.toFixed(1)} 天/秒`} />
             <MetricRow label="相对论" value={relativityEnabled ? "开启" : "关闭"} />
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Orbit Parameters</div>
+          <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
+            <MetricRow label="半长轴" value={`${formatMaybe(semiMajorAu, " AU", 4)} approx`} />
+            <MetricRow label="偏心率" value={formatMaybe(ecc, "", 4)} />
+            <MetricRow label="近日点" value={`${formatMaybe(perihelionAu, " AU", 4)} approx`} />
+            <MetricRow label="远日点" value={`${formatMaybe(aphelionAu, " AU", 4)} approx`} />
+            <MetricRow label="轨道周期" value={formatMaybe(periodDays, " days", 2)} />
+            <MetricRow label="倾角" value="approx unavailable" />
+          </div>
+        </section>
+
+        <section>
+          <div className="mb-2 text-[10px] uppercase tracking-[0.24em] text-slate-400">Data Fidelity</div>
+          <div className="rounded-[18px] bg-white/[0.035] px-3 py-2">
+            <MetricRow label="位置状态" value="J2000 / generated ephemeris" />
+            <MetricRow label="轨道线" value="osculating / sampled trail" />
+            <MetricRow label="视觉比例" value="nonlinear scale" />
+            <MetricRow label="材质" value={def.textureMap ? "texture + artistic lighting" : "procedural fallback"} />
           </div>
         </section>
 

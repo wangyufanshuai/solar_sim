@@ -4,7 +4,18 @@ import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useLayoutEffect, useMemo, useRef } from "react";
 
-const PARTICLE_COUNT = 1500;
+const PARTICLE_COUNT = 2400;
+const SKY_RADIUS = 8200;
+
+function galacticPosition(lonDeg: number, latDeg: number, radius: number) {
+  const l = THREE.MathUtils.degToRad(lonDeg);
+  const b = THREE.MathUtils.degToRad(latDeg);
+  return new THREE.Vector3(
+    -Math.cos(b) * Math.cos(l) * radius,
+    Math.sin(b) * radius,
+    Math.cos(b) * Math.sin(l) * radius,
+  );
+}
 
 function buildMilkyWayDust() {
   const pos = new Float32Array(PARTICLE_COUNT * 3);
@@ -12,23 +23,24 @@ function buildMilkyWayDust() {
   const size = new Float32Array(PARTICLE_COUNT);
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
-    const t = Math.random();
-    const along = (t - 0.5) * 10800;
-    const width = (Math.random() - 0.5) * (220 + Math.pow(Math.random(), 2.4) * 880);
-    const depth = (Math.random() - 0.5) * 80;
-    pos[i * 3] = along;
-    pos[i * 3 + 1] = width;
-    pos[i * 3 + 2] = depth;
+    const lon = Math.random() * 360;
+    const coreBand = Math.random() < 0.68;
+    const spread = coreBand ? 4 + Math.pow(Math.random(), 2.2) * 8 : 12 + Math.random() * 16;
+    const lat = (Math.random() - 0.5) * spread;
+    const radius = SKY_RADIUS - Math.random() * 240;
+    const p = galacticPosition(lon, lat, radius);
+    pos[i * 3] = p.x;
+    pos[i * 3 + 1] = p.y;
+    pos[i * 3 + 2] = p.z;
 
-    const lane = Math.abs(width) < 280 && Math.random() < 0.48;
-    const bright = lane ? 0.025 + Math.random() * 0.045 : 0.09 + Math.random() * 0.22;
-    const warm = Math.random() * 0.18;
-    color[i * 3] = bright * (0.72 + warm);
+    const lane = Math.abs(lat) < 2.2 && Math.random() < 0.5;
+    const armBoost = 0.65 + 0.35 * Math.sin(THREE.MathUtils.degToRad(lon * 2.0 + 28));
+    const bright = lane ? 0.012 + Math.random() * 0.035 : (0.055 + Math.random() * 0.16) * armBoost;
+    const warm = Math.random() * 0.14;
+    color[i * 3] = bright * (0.7 + warm);
     color[i * 3 + 1] = bright * (0.78 + warm);
-    color[i * 3 + 2] = bright * (0.86 + Math.random() * 0.18);
-    size[i] = lane
-      ? 0.25 + Math.random() * 0.25
-      : Math.pow(Math.random(), 2.8) * 0.65 + 0.2;
+    color[i * 3 + 2] = bright * (0.9 + Math.random() * 0.18);
+    size[i] = lane ? 0.18 + Math.random() * 0.26 : 0.28 + Math.pow(Math.random(), 2.6) * 0.72;
   }
 
   return { pos, color, size };
@@ -37,12 +49,6 @@ function buildMilkyWayDust() {
 export default function NebulaMilkyWay() {
   const groupRef = useRef<THREE.Group>(null);
   const camera = useThree((s) => s.camera);
-  const dir = useMemo(() => new THREE.Vector3(), []);
-  const roll = useMemo(
-    () => new THREE.Quaternion().setFromAxisAngle(new THREE.Vector3(0, 0, 1), -0.5),
-    [],
-  );
-
   const dust = useMemo(buildMilkyWayDust, []);
 
   const geom = useMemo(() => {
@@ -62,7 +68,7 @@ export default function NebulaMilkyWay() {
         blending: THREE.AdditiveBlending,
         toneMapped: false,
         uniforms: {
-          uOpacity: { value: 0.07 },
+          uOpacity: { value: 0.075 },
         },
         vertexShader: `
           attribute vec3 aColor;
@@ -73,7 +79,7 @@ export default function NebulaMilkyWay() {
             vColor = aColor;
             vSize = aSize;
             vec4 mv = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = clamp(aSize, 0.22, 0.9);
+            gl_PointSize = clamp(aSize, 0.18, 0.95);
             gl_Position = projectionMatrix * mv;
           }
         `,
@@ -85,8 +91,8 @@ export default function NebulaMilkyWay() {
             vec2 p = gl_PointCoord - 0.5;
             float d = length(p);
             if (d > 0.5) discard;
-            float soft = exp(-d * d * 12.0);
-            float alpha = soft * uOpacity * smoothstep(0.18, 0.8, vSize);
+            float soft = exp(-d * d * 13.0);
+            float alpha = soft * uOpacity * smoothstep(0.16, 0.8, vSize);
             gl_FragColor = vec4(vColor, alpha);
           }
         `,
@@ -106,9 +112,7 @@ export default function NebulaMilkyWay() {
   useFrame(() => {
     const group = groupRef.current;
     if (!group) return;
-    camera.getWorldDirection(dir);
-    group.position.copy(camera.position).addScaledVector(dir, 7200);
-    group.quaternion.copy(camera.quaternion).multiply(roll);
+    group.position.copy(camera.position);
   }, -20);
 
   return (

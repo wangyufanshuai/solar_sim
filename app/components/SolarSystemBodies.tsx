@@ -29,9 +29,55 @@ import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { applyFloatingOffsetScene } from "../lib/floatingOrigin";
 import { siderealSpinRadPerSimDayForBodyId } from "../lib/planetSiderealSpin";
 
+function createSaturnRingTexture() {
+  const canvas = document.createElement("canvas");
+  canvas.width = 1024;
+  canvas.height = 8;
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return null;
+  const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
+  gradient.addColorStop(0.0, "rgba(128,112,86,0.05)");
+  gradient.addColorStop(0.09, "rgba(176,158,122,0.18)");
+  gradient.addColorStop(0.22, "rgba(210,194,154,0.42)");
+  gradient.addColorStop(0.43, "rgba(232,216,174,0.72)");
+  gradient.addColorStop(0.565, "rgba(28,24,20,0.18)");
+  gradient.addColorStop(0.6, "rgba(214,196,150,0.62)");
+  gradient.addColorStop(0.78, "rgba(178,154,112,0.36)");
+  gradient.addColorStop(0.9, "rgba(122,104,78,0.16)");
+  gradient.addColorStop(1.0, "rgba(90,76,58,0.04)");
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = "rgba(8,7,6,0.36)";
+  ctx.fillRect(Math.floor(canvas.width * 0.555), 0, Math.floor(canvas.width * 0.025), canvas.height);
+  ctx.fillStyle = "rgba(255,245,215,0.16)";
+  for (let x = 0; x < canvas.width; x += 19) ctx.fillRect(x, 0, 1, canvas.height);
+  const tex = new THREE.CanvasTexture(canvas);
+  tex.colorSpace = THREE.SRGBColorSpace;
+  tex.minFilter = THREE.LinearFilter;
+  tex.magFilter = THREE.LinearFilter;
+  tex.wrapS = THREE.ClampToEdgeWrapping;
+  tex.wrapT = THREE.ClampToEdgeWrapping;
+  tex.needsUpdate = true;
+  return tex;
+}
+
 function SaturnRings({ radiusScene }: { radiusScene: number }) {
+  const ringTexture = useMemo(() => (typeof document === "undefined" ? null : createSaturnRingTexture()), []);
   return (
     <group>
+      {ringTexture ? (
+        <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={6} castShadow={false} receiveShadow={false}>
+          <ringGeometry args={[radiusScene * 1.11, radiusScene * 2.43, 192]} />
+          <meshBasicMaterial
+            map={ringTexture}
+            transparent
+            opacity={0.72}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+            toneMapped={false}
+          />
+        </mesh>
+      ) : null}
       {/* D Ring — faint inner ring */}
       <mesh
         rotation={[Math.PI / 2, 0, 0]}
@@ -185,6 +231,7 @@ function BodyShell({
   const normalMap = useOptionalDataTexture(def.normalMap);
   const manifest = useMemo(() => textureManifestEntryForBodyId(def.id), [def.id]);
   const cloudMap = useOptionalTexture(manifest?.clouds);
+  const nightMap = useOptionalTexture(manifest?.night);
   const groupRef = useRef<THREE.Group>(null);
   const visualRef = useRef<THREE.Group>(null);
   const spinAngleRef = useRef(0);
@@ -305,6 +352,7 @@ function BodyShell({
           position={[0, 0, 0]}
           color={def.color}
           map={diffuseMap}
+          nightMap={nightMap}
           normalMap={normalMap}
           emissive={def.color}
           emissiveIntensity={planetEmissiveIntensity}

@@ -21,6 +21,7 @@ type DeepSkySpriteDef = {
 const SKY_RADIUS = 8700;
 const PRIORITY_DEEP_SKY_COUNT = 10;
 const textureCache = new Map<string, THREE.Texture>();
+const PLANE_FORWARD = new THREE.Vector3(0, 0, 1);
 
 const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   {
@@ -325,6 +326,19 @@ function galacticSkyPosition(lonDeg: number, latDeg: number): THREE.Vector3 {
   );
 }
 
+function skyDecalQuaternion(position: THREE.Vector3, rotation: number): THREE.Quaternion {
+  const inward = position.clone().normalize().negate();
+  const base = new THREE.Quaternion().setFromUnitVectors(PLANE_FORWARD, inward);
+  const roll = new THREE.Quaternion().setFromAxisAngle(inward, rotation);
+  return base.multiply(roll);
+}
+
+function textureAspect(texture: THREE.Texture): number {
+  const image = texture.image as { width?: number; height?: number } | undefined;
+  if (!image?.width || !image?.height) return 1;
+  return THREE.MathUtils.clamp(image.width / image.height, 0.65, 1.85);
+}
+
 export default function DeepSkyImageSprites({
   floatingOriginRef,
   highQuality = false,
@@ -333,7 +347,7 @@ export default function DeepSkyImageSprites({
   highQuality?: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
-  const materialRefs = useRef<THREE.SpriteMaterial[]>([]);
+  const materialRefs = useRef<THREE.MeshBasicMaterial[]>([]);
   const lastTierRef = useRef<string | null>(null);
   const camera = useThree((s) => s.camera);
   const gl = useThree((s) => s.gl);
@@ -451,15 +465,19 @@ export default function DeepSkyImageSprites({
       {defs.map((def) => {
         const tex = textures[def.id];
         if (!tex) return null;
+        const aspect = textureAspect(tex);
+        const quaternion = skyDecalQuaternion(def.position, def.rotation);
         return (
-          <sprite
+          <mesh
             key={def.id}
             position={def.position}
-            scale={[def.size, def.size, 1]}
+            quaternion={quaternion}
+            scale={[def.size * aspect, def.size, 1]}
             renderOrder={-470}
             userData={{ opacity: def.opacity, label: def.name }}
           >
-            <spriteMaterial
+            <planeGeometry args={[1, 1, 1, 1]} />
+            <meshBasicMaterial
               ref={(mat) => {
                 if (!mat) return;
                 mat.userData.baseOpacity = def.opacity;
@@ -470,13 +488,14 @@ export default function DeepSkyImageSprites({
               color="#ffffff"
               transparent
               opacity={def.opacity}
-              rotation={def.rotation}
+              alphaTest={0.015}
               depthTest={false}
               depthWrite={false}
               toneMapped={false}
               blending={THREE.AdditiveBlending}
+              side={THREE.DoubleSide}
             />
-          </sprite>
+          </mesh>
         );
       })}
     </group>
