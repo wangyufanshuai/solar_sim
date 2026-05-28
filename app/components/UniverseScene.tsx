@@ -436,6 +436,7 @@ export type UniverseCanvasSimulationProps = {
 
 export default function UniverseScene({ simulation }: { simulation: UniverseCanvasSimulationProps }) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
+  const qualityBudget = simulation.viewSettings.renderBudget === "quality" || simulation.viewSettings.highQualityRendering;
 
   return (
     <RelativisticOpticsProvider>
@@ -447,12 +448,12 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} />}</BrightStarTierBridge>
         {simulation.viewSettings.showGalaxyBackground ? <NebulaMilkyWay /> : null}
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
-          <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} />
-          <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} />
+          {qualityBudget ? <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} /> : null}
+          {qualityBudget ? <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} /> : null}
           <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
           {simulation.viewSettings.showConstellations ? <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} /> : null}
           {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} /> : null}
-          {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={simulation.viewSettings.highQualityRendering} /> : null}
+          {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
           {simulation.viewSettings.showDeepSkyMarkers ? (
             <>
               <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />

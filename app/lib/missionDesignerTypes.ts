@@ -23,6 +23,7 @@ export type MissionSegment = {
   arrivalDay: number;
   tofDays: number;
   deltaVKms: number;
+  dsmDeltaVKms: number;
   c3Km2S2: number;
   lambertConverged: boolean;
   lambertIterations: number;
@@ -31,6 +32,10 @@ export type MissionSegment = {
   arrivalVinfinityKms: number;
   periapsisAltitudeKm: number;
   flybySafetyMargin: number;
+  flybyFeasible: boolean;
+  requiredTurnAngleDeg: number;
+  maxTurnAngleDeg: number;
+  bPlaneRisk: MissionRiskLevel;
   closestApproachKm: number;
   turnAngleDeg: number;
   communicationDelayMin: number;
@@ -40,6 +45,18 @@ export type MissionSegment = {
   kalmanSigmaKm: number;
   risk: MissionRiskLevel;
   trajectoryAu: [number, number, number][];
+};
+
+export type MissionChartPoint = {
+  label: string;
+  day: number;
+  c3Km2S2: number;
+  deltaVKms: number;
+  dsmDeltaVKms: number;
+  departureVinfinityKms: number;
+  arrivalVinfinityKms: number;
+  communicationDelayMin: number;
+  flybySafetyMargin: number | null;
 };
 
 export type MissionPlan = {
@@ -58,6 +75,7 @@ export type MissionPlan = {
   navigationUncertaintyKm: number;
   risk: MissionRiskLevel;
   segments: MissionSegment[];
+  chartSeries: MissionChartPoint[];
 };
 
 export type MissionOptimizerOptions = {

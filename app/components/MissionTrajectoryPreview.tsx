@@ -19,6 +19,13 @@ function labelFor(seg: MissionSegment): string {
   return seg.toBody === "venus" ? "VENUS FLYBY" : seg.toBody === "jupiter" ? "JUPITER FLYBY" : "SATURN ARRIVAL";
 }
 
+function markerStatus(seg: MissionSegment): string {
+  if (seg.toBody === "saturn") return `v-inf ${seg.arrivalVinfinityKms.toFixed(1)} km/s`;
+  return seg.flybyFeasible
+    ? `B-plane ok / DSM ${seg.dsmDeltaVKms.toFixed(2)}`
+    : `B-plane risk / req ${seg.requiredTurnAngleDeg.toFixed(0)} deg`;
+}
+
 function SegmentLine({ segment, index }: { segment: MissionSegment; index: number }) {
   const line = useMemo(() => {
     const pts = segment.trajectoryAu.map(scenePoint);
@@ -61,7 +68,7 @@ function Marker({ segment, index }: { segment: MissionSegment; index: number }) 
       </mesh>
       <Html center distanceFactor={18} style={{ pointerEvents: "none" }}>
         <span className="whitespace-nowrap rounded bg-black/45 px-1.5 py-0.5 font-mono text-[9px] tracking-[0.16em] text-cyan-100 shadow-[0_0_14px_rgba(80,210,255,0.32)]">
-          {labelFor(segment)} / {segment.communicationDelayMin.toFixed(0)}m
+          {labelFor(segment)} / {markerStatus(segment)} / {segment.communicationDelayMin.toFixed(0)}m
         </span>
       </Html>
     </group>

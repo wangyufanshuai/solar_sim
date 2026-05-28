@@ -22,6 +22,8 @@ export function explainMissionPlan(plan: MissionPlan | null): MissionAdvisorRepo
   const jupiter = plan.segments.find((s) => s.toBody === "jupiter");
   const longest = [...plan.segments].sort((a, b) => b.tofDays - a.tofDays)[0]!;
   const highRisk = plan.segments.filter((s) => s.risk !== "low");
+  const totalDsm = plan.segments.reduce((sum, seg) => sum + seg.dsmDeltaVKms, 0);
+  const bPlaneRisks = plan.segments.filter((seg) => !seg.flybyFeasible || seg.bPlaneRisk !== "low");
   const tags = [
     plan.risk === "high" ? "risk-watch" : "viable",
     plan.totalDeltaVKms < 8 ? "low-dv" : "high-energy",
@@ -33,12 +35,12 @@ export function explainMissionPlan(plan: MissionPlan | null): MissionAdvisorRepo
     summary: `Best current Lambert patched-conics plan scores ${fmt(plan.score, 0)}/100 with ${fmt(plan.totalDeltaVKms)} km/s deterministic delta-v over ${fmt(plan.durationDays, 0)} days. This is still an approximate first-pass plan, not GMAT/STK validation.`,
     fuelTradeoff:
       plan.durationDays > 2300
-        ? `The optimizer accepts a longer ${fmt(plan.durationDays / 365.25, 1)} year cruise to reduce injection energy and keep fuel near ${fmt(plan.fuelEstimateKg / 1000, 1)} t.`
-        : `This is an aggressive transfer; fuel estimate is ${fmt(plan.fuelEstimateKg / 1000, 1)} t and should be protected with larger correction margins.`,
-    gravityAssist: `Venus requires about ${fmt(venus?.turnAngleDeg ?? 0, 0)} deg of B-plane turn shaping; Jupiter is the main energy pump at ${fmt(jupiter?.turnAngleDeg ?? 0, 0)} deg before Saturn arrival. Lambert convergence is ${plan.segments.filter((s) => s.lambertConverged).length}/${plan.segments.length} legs.`,
+        ? `The optimizer accepts a longer ${fmt(plan.durationDays / 365.25, 1)} year cruise to reduce injection energy, with ${fmt(totalDsm, 2)} km/s reserved for deterministic deep-space maneuvers and fuel near ${fmt(plan.fuelEstimateKg / 1000, 1)} t.`
+        : `This is an aggressive transfer; fuel estimate is ${fmt(plan.fuelEstimateKg / 1000, 1)} t and DSM reserve is ${fmt(totalDsm, 2)} km/s, so correction margins should be protected.`,
+    gravityAssist: `Venus requires about ${fmt(venus?.requiredTurnAngleDeg ?? venus?.turnAngleDeg ?? 0, 0)} deg of B-plane turn shaping; Jupiter is the main energy pump at ${fmt(jupiter?.requiredTurnAngleDeg ?? jupiter?.turnAngleDeg ?? 0, 0)} deg before Saturn arrival. Lambert convergence is ${plan.segments.filter((s) => s.lambertConverged).length}/${plan.segments.length} legs.`,
     risk:
-      highRisk.length > 0
-        ? `${highRisk.length} segment(s) need review, mainly flyby altitude, B-plane targeting, and navigation covariance.`
+      highRisk.length > 0 || bPlaneRisks.length > 0
+        ? `${Math.max(highRisk.length, bPlaneRisks.length)} segment(s) need review, mainly flyby periapsis altitude, B-plane turn feasibility, and navigation covariance.`
         : "No segment is above low risk in the first-pass Lambert patched-conics model.",
     communication: `Maximum one-way light time reaches ${fmt(plan.maxCommunicationDelayMin, 1)} min; schedule autonomous fault protection near ${longest.toBody.toUpperCase()} cruise.`,
     recommendation:

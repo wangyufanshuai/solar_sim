@@ -2,6 +2,7 @@
  * View toggles aligned with a Universe Sandbox-style Graphics / View panel.
  */
 export type SimulationViewSettings = {
+  renderBudget: "balanced" | "quality";
   showBodyLabels: boolean;
   showOrbitTrails: boolean;
   showOsculatingOrbits: boolean;
@@ -21,15 +22,16 @@ export type SimulationViewSettings = {
 };
 
 export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
+  renderBudget: "balanced",
   showBodyLabels: true,
   showOrbitTrails: true,
   showOsculatingOrbits: true,
   showReferenceOrbits: true,
   showGalaxyBackground: true,
-  showGaiaStars: true,
+  showGaiaStars: false,
   showConstellations: true,
   showNebulaImages: true,
-  showDeepSkyMarkers: true,
+  showDeepSkyMarkers: false,
   showMissionTrajectory: true,
   highQualityRendering: false,
   showKerrBlackHole: false,

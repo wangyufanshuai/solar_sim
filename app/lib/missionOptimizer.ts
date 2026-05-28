@@ -9,6 +9,7 @@ import type {
   MissionPlan,
   MissionRiskLevel,
   MissionSegment,
+  MissionChartPoint,
 } from "./missionDesignerTypes";
 
 const SUN_MU = G_SI * 1.98847e30;
@@ -225,6 +226,7 @@ function makeSegment(
     arrivalDay,
     tofDays,
     deltaVKms: Math.max(0.05, departureVinfinityKms * 0.12),
+    dsmDeltaVKms: 0,
     c3Km2S2: fromBody === "earth" ? departureVinfinityKms * departureVinfinityKms : 0,
     lambertConverged: lambert.converged,
     lambertIterations: lambert.iterations,
@@ -233,6 +235,10 @@ function makeSegment(
     arrivalVinfinityKms,
     periapsisAltitudeKm: Number.POSITIVE_INFINITY,
     flybySafetyMargin: Number.POSITIVE_INFINITY,
+    flybyFeasible: true,
+    requiredTurnAngleDeg: 0,
+    maxTurnAngleDeg: 180,
+    bPlaneRisk: lambert.converged ? "low" : "medium",
     closestApproachKm: toBody === "saturn" ? BODY_RADIUS_KM.saturn * 18 : BODY_RADIUS_KM[toBody] * 8,
     turnAngleDeg: lambert.transferAngleDeg,
     communicationDelayMin,
@@ -255,7 +261,8 @@ function annotatePatchedConics(segments: TransferDraft[]): MissionSegment[] {
     } else {
       const prev = segments[i - 1]!;
       const vinfMismatch = Math.abs(seg.departureVinfinityKms - prev.arrivalVinfinityKms);
-      seg.deltaVKms = Math.max(0.08, vinfMismatch * 0.16 + (seg.lambertConverged ? 0.06 : 0.35));
+      seg.dsmDeltaVKms = Math.max(0, Math.min(1.25, vinfMismatch * 0.11));
+      seg.deltaVKms = Math.max(0.08, vinfMismatch * 0.08 + seg.dsmDeltaVKms + (seg.lambertConverged ? 0.06 : 0.35));
     }
 
     const next = segments[i + 1];
@@ -272,24 +279,34 @@ function annotatePatchedConics(segments: TransferDraft[]): MissionSegment[] {
       const safetyMargin = altitudeKm / radius;
       const maxTurnAtSafeAltitude =
         (2 * Math.asin(1 / (1 + ((radius * 1.25) * vinfAvg * vinfAvg) / mu)) * 180) / Math.PI;
+      const feasible = turnAngle <= maxTurnAtSafeAltitude && safetyMargin >= 0.25;
       seg.turnAngleDeg = turnAngle;
+      seg.requiredTurnAngleDeg = turnAngle;
+      seg.maxTurnAngleDeg = maxTurnAtSafeAltitude;
       seg.closestApproachKm = rpKm;
       seg.periapsisAltitudeKm = altitudeKm;
       seg.flybySafetyMargin = safetyMargin;
+      seg.flybyFeasible = feasible;
       seg.risk = riskFrom(
-        (turnAngle > maxTurnAtSafeAltitude ? 0.38 : 0) +
+        (!feasible ? 0.38 : 0) +
           (safetyMargin < 0.3 ? 0.34 : 0) +
           (seg.lambertConverged ? 0 : 0.26) +
           (seg.communicationDelayMin > 70 ? 0.18 : 0),
       );
+      seg.bPlaneRisk = seg.risk;
       seg.kalmanSigmaKm = Math.max(8, 70 + turnAngle * 1.2 + Math.max(0, 0.4 - safetyMargin) * 240);
     } else if (seg.toBody === "saturn") {
       seg.deltaVKms = Math.max(seg.deltaVKms, seg.arrivalVinfinityKms * 0.42 + 0.25);
+      seg.dsmDeltaVKms = Math.max(seg.dsmDeltaVKms, Math.min(0.95, seg.arrivalVinfinityKms * 0.04));
       seg.periapsisAltitudeKm = BODY_RADIUS_KM.saturn * 7;
       seg.flybySafetyMargin = 7;
+      seg.flybyFeasible = true;
+      seg.requiredTurnAngleDeg = 0;
+      seg.maxTurnAngleDeg = 0;
       seg.closestApproachKm = BODY_RADIUS_KM.saturn * 8;
       seg.turnAngleDeg = 0;
       seg.risk = riskFrom(seg.arrivalVinfinityKms / 18 + (seg.communicationDelayMin > 80 ? 0.22 : 0));
+      seg.bPlaneRisk = seg.risk;
     }
   }
   return segments.map(({ departureVinfVecKms: _a, arrivalVinfVecKms: _b, ...segment }) => segment);
@@ -301,6 +318,20 @@ function fuelEstimateKg(deltaVKms: number): number {
   const dryMassKg = 4200;
   const massRatio = Math.exp((deltaVKms * 1000) / (DEFAULT_ISP_S * G0));
   return Math.min(180_000, Math.max(1200, dryMassKg * (massRatio - 1)));
+}
+
+function chartSeriesForSegments(segments: MissionSegment[]): MissionChartPoint[] {
+  return segments.map((seg) => ({
+    label: `${seg.fromBody.toUpperCase()}-${seg.toBody.toUpperCase()}`,
+    day: seg.arrivalDay,
+    c3Km2S2: seg.c3Km2S2,
+    deltaVKms: seg.deltaVKms,
+    dsmDeltaVKms: seg.dsmDeltaVKms,
+    departureVinfinityKms: seg.departureVinfinityKms,
+    arrivalVinfinityKms: seg.arrivalVinfinityKms,
+    communicationDelayMin: seg.communicationDelayMin,
+    flybySafetyMargin: Number.isFinite(seg.flybySafetyMargin) ? seg.flybySafetyMargin : null,
+  }));
 }
 
 export function scoreMissionPlan(plan: MissionPlan): number {
@@ -355,6 +386,7 @@ function buildPlan(
     navigationUncertaintyKm,
     risk: lambertFailures > 0 ? "medium" : riskRank >= 2 ? "high" : riskRank === 1 ? "medium" : "low",
     segments,
+    chartSeries: chartSeriesForSegments(segments),
   };
   plan.score = scoreMissionPlan(plan);
   return plan;

@@ -5,6 +5,8 @@ import type { PhysicsPrecisionTier } from "../lib/physicsPrecision";
 import { mainThreadLastAcceptedSubsteps } from "../lib/solarIntegrationMetrics";
 import { isPhysicsRuntime } from "../lib/physicsRuntime";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
+import type { MissionPlan } from "../lib/missionDesignerTypes";
+import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 
 const TIERS: { id: PhysicsPrecisionTier; label: string }[] = [
   { id: "full", label: "FULL" },
@@ -16,10 +18,14 @@ export default function PhysicsPerformanceHud({
   physicsRef,
   precisionTierRef,
   physicsUsesSharedBuffer,
+  viewSettings,
+  missionPlan,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   precisionTierRef: MutableRefObject<PhysicsPrecisionTier>;
   physicsUsesSharedBuffer: boolean;
+  viewSettings: SimulationViewSettings;
+  missionPlan: MissionPlan | null;
 }) {
   const [stepsPerSec, setStepsPerSec] = useState(0);
   const [fps, setFps] = useState(0);
@@ -67,8 +73,36 @@ export default function PhysicsPerformanceHud({
     return () => cancelAnimationFrame(id);
   }, [physicsRef]);
 
+  const activeLayers = [
+    viewSettings.showGalaxyBackground,
+    viewSettings.showGaiaStars,
+    viewSettings.showConstellations,
+    viewSettings.showNebulaImages,
+    viewSettings.showDeepSkyMarkers,
+    viewSettings.showMissionTrajectory && !!missionPlan,
+    viewSettings.showLagrangePoints,
+    viewSettings.showRelativisticOptics,
+    viewSettings.highQualityRendering,
+  ].filter(Boolean).length;
+
+  const heavyLayers = [
+    viewSettings.showGaiaStars,
+    viewSettings.showNebulaImages,
+    viewSettings.showDeepSkyMarkers,
+    viewSettings.highQualityRendering,
+    viewSettings.showMissionTrajectory && !!missionPlan,
+  ].filter(Boolean).length;
+
+  const dprLabel = viewSettings.highQualityRendering ? "1-1.5" : "1";
+  const deepSkyLabel = !viewSettings.showNebulaImages
+    ? "off"
+    : viewSettings.highQualityRendering || viewSettings.renderBudget === "quality"
+      ? "full"
+      : "core";
+  const missionSegments = missionPlan?.segments.length ?? 0;
+
   return (
-    <div className="pointer-events-auto fixed right-3 top-3 z-[84] w-[158px] rounded-3xl bg-[rgba(8,9,12,0.78)] px-3 py-3 text-white/56 shadow-[0_14px_36px_rgba(0,0,0,0.34)] backdrop-blur-2xl">
+    <div className="pointer-events-auto fixed right-3 top-3 z-[84] w-[174px] rounded-3xl bg-[rgba(8,9,12,0.78)] px-3 py-3 text-white/56 shadow-[0_14px_36px_rgba(0,0,0,0.34)] backdrop-blur-2xl">
       <div className="text-[8px] tracking-[0.24em]">PHYSICS ENGINE</div>
       <div className="mt-2 text-[10px] text-slate-500">
         {physicsUsesSharedBuffer ? "Worker + SAB" : "Main thread"}
@@ -79,6 +113,30 @@ export default function PhysicsPerformanceHud({
       </div>
       <div className="mt-1 text-[10px]">
         Steps/s <span className="text-white/82">{stepsPerSec.toFixed(0)}</span>
+      </div>
+      <div className="mt-2 border-t border-white/6 pt-2 text-[9px] leading-4 text-white/42">
+        <div className="flex justify-between">
+          <span>Render</span>
+          <span className="text-white/68">{viewSettings.renderBudget}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>DPR</span>
+          <span className="text-white/68">{dprLabel}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Layers</span>
+          <span className={heavyLayers >= 4 ? "text-amber-200" : "text-white/68"}>
+            {activeLayers} / heavy {heavyLayers}
+          </span>
+        </div>
+        <div className="flex justify-between">
+          <span>Deep sky</span>
+          <span className="text-white/68">{deepSkyLabel}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Mission seg</span>
+          <span className="text-white/68">{missionSegments}</span>
+        </div>
       </div>
       <div className="mt-3 flex rounded-full bg-black/22 p-1">
         {TIERS.map((t) => (

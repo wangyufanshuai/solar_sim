@@ -83,6 +83,29 @@ function Metric({ label, value }: { label: string; value: string }) {
   );
 }
 
+function ChartBar({
+  label,
+  value,
+  max,
+  color = "bg-cyan-200/70",
+}: {
+  label: string;
+  value: number;
+  max: number;
+  color?: string;
+}) {
+  const pct = Math.max(3, Math.min(100, (value / Math.max(max, 1e-6)) * 100));
+  return (
+    <div className="grid grid-cols-[5.5rem_1fr_3.5rem] items-center gap-2 text-[8px] text-[var(--ui-text-dim)]">
+      <span className="truncate font-mono">{label}</span>
+      <span className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+        <span className={`block h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />
+      </span>
+      <span className="text-right font-mono">{value.toFixed(1)}</span>
+    </div>
+  );
+}
+
 function advisorStatusLabel(status: DeepSeekStatus, advisor: MissionAdvisorReport): string {
   if (status === "thinking") return "Thinking";
   if (advisor.provider === "deepseek") return `DeepSeek${advisor.model ? ` / ${advisor.model}` : ""}`;
@@ -243,6 +266,7 @@ export default function MissionDesignerPanel({
           <Metric label="C3" value={`${(selectedPlan.segments[0]?.c3Km2S2 ?? 0).toFixed(1)}`} />
           <Metric label="Arr v-inf" value={`${(selectedPlan.segments.at(-1)?.arrivalVinfinityKms ?? 0).toFixed(2)}`} />
           <Metric label="Max resid." value={`${Math.max(...selectedPlan.segments.map((seg) => seg.lambertResidual)).toFixed(0)} s`} />
+          <Metric label="DSM" value={`${selectedPlan.segments.reduce((sum, seg) => sum + seg.dsmDeltaVKms, 0).toFixed(2)} km/s`} />
         </div>
       ) : null}
 
@@ -299,10 +323,33 @@ export default function MissionDesignerPanel({
                 <span>{seg.lambertConverged ? "Lambert ok" : "Lambert fallback"}</span>
                 <span>{seg.lambertIterations} iter</span>
                 <span>{seg.departureVinfinityKms.toFixed(1)} v-inf</span>
+                <span>{seg.flybyFeasible ? "B-plane ok" : "B-plane risk"}</span>
+              </div>
+              <div className="mt-1 grid grid-cols-4 gap-1 text-[8px] text-[var(--ui-text-dim)]">
+                <span>DSM {seg.dsmDeltaVKms.toFixed(2)}</span>
+                <span>req {seg.requiredTurnAngleDeg.toFixed(0)} deg</span>
+                <span>max {seg.maxTurnAngleDeg.toFixed(0)} deg</span>
                 <span>{Number.isFinite(seg.flybySafetyMargin) ? `${seg.flybySafetyMargin.toFixed(2)} R` : "--"}</span>
               </div>
             </div>
           ))}
+        </div>
+      ) : null}
+
+      {selectedPlan ? (
+        <div className="rounded-[4px] border border-white/[0.07] bg-black/18 p-2">
+          <div className="mb-1 font-mono text-[8px] uppercase tracking-[0.16em] text-[var(--ui-text-dim)]">Mission charts</div>
+          <div className="grid gap-1.5">
+            {selectedPlan.chartSeries.map((p) => (
+              <ChartBar key={`${p.label}-dv`} label={`${p.label} DV`} value={p.deltaVKms} max={Math.max(...selectedPlan.chartSeries.map((q) => q.deltaVKms), 1)} />
+            ))}
+            {selectedPlan.chartSeries.map((p) => (
+              <ChartBar key={`${p.label}-comm`} label={`${p.label} comm`} value={p.communicationDelayMin} max={Math.max(...selectedPlan.chartSeries.map((q) => q.communicationDelayMin), 1)} color="bg-sky-300/65" />
+            ))}
+            {selectedPlan.chartSeries.map((p) => (
+              <ChartBar key={`${p.label}-vinf`} label={`${p.label} v-inf`} value={p.arrivalVinfinityKms} max={Math.max(...selectedPlan.chartSeries.map((q) => q.arrivalVinfinityKms), 1)} color="bg-amber-200/70" />
+            ))}
+          </div>
         </div>
       ) : null}
 

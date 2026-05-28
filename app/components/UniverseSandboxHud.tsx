@@ -44,14 +44,30 @@ function ToggleRow({
   label,
   checked,
   onChange,
+  cost,
+  status,
 }: {
   label: string;
   checked: boolean;
   onChange: (v: boolean) => void;
+  cost?: "Low" | "Medium" | "High";
+  status?: string;
 }) {
   return (
     <label className="flex cursor-pointer items-center justify-between gap-3 border-b border-white/5 py-2 text-[12px] text-[rgba(215,215,215,0.82)]">
-      <span>{label}</span>
+      <span className="min-w-0">
+        <span className="block truncate">{label}</span>
+        {(cost || status) ? (
+          <span className="mt-0.5 flex flex-wrap gap-1 text-[9px] text-white/30">
+            {cost ? (
+              <span className={cost === "High" ? "text-amber-200/75" : cost === "Medium" ? "text-cyan-200/62" : "text-emerald-200/62"}>
+                {cost}
+              </span>
+            ) : null}
+            {status ? <span>{status}</span> : null}
+          </span>
+        ) : null}
+      </span>
       <input
         type="checkbox"
         checked={checked}
@@ -335,20 +351,36 @@ export default function UniverseSandboxHud({
             {activeSection === "view" ? (
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">DISPLAY LAYERS</div>
-                <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} />
-                <ToggleRow label="轨道拖尾" checked={viewSettings.showOrbitTrails} onChange={(v) => patch({ showOrbitTrails: v })} />
-                <ToggleRow label="开普勒轨道线" checked={viewSettings.showOsculatingOrbits} onChange={(v) => patch({ showOsculatingOrbits: v })} />
-                <ToggleRow label="参考轨道" checked={viewSettings.showReferenceOrbits} onChange={(v) => patch({ showReferenceOrbits: v })} />
-                <ToggleRow label="银河背景增强" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} />
-                <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} />
-                <ToggleRow label="星座线" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} />
-                <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} />
-                <ToggleRow label="深空标记" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} />
-                <ToggleRow label="任务轨迹" checked={viewSettings.showMissionTrajectory} onChange={(v) => patch({ showMissionTrajectory: v })} />
-                <ToggleRow label="拉格朗日点" checked={viewSettings.showLagrangePoints} onChange={(v) => patch({ showLagrangePoints: v })} />
-                <ToggleRow label="相对论光学" checked={viewSettings.showRelativisticOptics} onChange={(v) => patch({ showRelativisticOptics: v })} />
-                <ToggleRow label="高画质渲染" checked={viewSettings.highQualityRendering} onChange={(v) => patch({ highQualityRendering: v })} />
-                <ToggleRow label="视觉增强" checked={visualEnhance} onChange={onVisualEnhanceChange} />
+                <div className="mb-3 grid grid-cols-2 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
+                  <button
+                    type="button"
+                    onClick={() => patch({ renderBudget: "balanced", highQualityRendering: false })}
+                    className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "balanced" && !viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
+                  >
+                    Balanced
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => patch({ renderBudget: "quality" })}
+                    className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
+                  >
+                    Quality
+                  </button>
+                </div>
+                <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />
+                <ToggleRow label="轨道拖尾" checked={viewSettings.showOrbitTrails} onChange={(v) => patch({ showOrbitTrails: v })} cost="Medium" />
+                <ToggleRow label="瞬时轨道线" checked={viewSettings.showOsculatingOrbits} onChange={(v) => patch({ showOsculatingOrbits: v })} cost="Medium" />
+                <ToggleRow label="参考轨道" checked={viewSettings.showReferenceOrbits} onChange={(v) => patch({ showReferenceOrbits: v })} cost="Low" />
+                <ToggleRow label="银河背景增强" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} cost="Medium" status="Loaded" />
+                <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced budget"} />
+                <ToggleRow label="星座线" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} cost="Medium" />
+                <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "full decals" : "core decals"} />
+                <ToggleRow label="深空标记" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} cost="Medium" />
+                <ToggleRow label="任务轨迹" checked={viewSettings.showMissionTrajectory} onChange={(v) => patch({ showMissionTrajectory: v })} cost="Medium" />
+                <ToggleRow label="拉格朗日点" checked={viewSettings.showLagrangePoints} onChange={(v) => patch({ showLagrangePoints: v })} cost="Medium" />
+                <ToggleRow label="相对论光学" checked={viewSettings.showRelativisticOptics} onChange={(v) => patch({ showRelativisticOptics: v })} cost="Medium" />
+                <ToggleRow label="高画质渲染" checked={viewSettings.highQualityRendering} onChange={(v) => patch({ highQualityRendering: v, renderBudget: v ? "quality" : viewSettings.renderBudget })} cost="High" status={viewSettings.highQualityRendering ? "DPR up to 1.5" : "DPR 1"} />
+                <ToggleRow label="视觉增强" checked={visualEnhance} onChange={onVisualEnhanceChange} cost="High" />
               </div>
             ) : (
               <div>

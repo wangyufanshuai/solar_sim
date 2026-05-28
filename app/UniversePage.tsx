@@ -498,6 +498,8 @@ export default function UniversePage() {
         physicsRef={physicsRef}
         precisionTierRef={precisionTierRef}
         physicsUsesSharedBuffer={physicsUsesSharedBuffer}
+        viewSettings={viewSettings}
+        missionPlan={missionPreviewPlan}
       />
       {viewSettings.showKerrBlackHole ? (
         <KerrBlackHolePanel value={kerrBlackHole} onChange={setKerrBlackHole} />
