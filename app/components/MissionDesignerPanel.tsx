@@ -208,6 +208,9 @@ export default function MissionDesignerPanel({
       <div className="rounded-[4px] border border-amber-200/14 bg-amber-200/[0.045] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-amber-100/82">
         Lambert first-pass patched conics / not GMAT, STK, NASA, or high-fidelity optimal-control validation
       </div>
+      <div className="rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-cyan-100/72">
+        Preview cost: mission trajectory adds {selectedPlan?.segments.length ?? 0} rendered segment(s); use View / Safe if camera rotation drops frames.
+      </div>
 
       <div className="grid grid-cols-4 gap-1.5">
         {BODY_IDS.map((id, idx) => (

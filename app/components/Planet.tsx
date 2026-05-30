@@ -341,7 +341,7 @@ export default function Planet({
   }, [planetColor, emissiveBaseColor, emissiveIntensity]);
 
   const normalScale = useMemo(
-    () => new THREE.Vector2(1.65, 1.65),
+    () => new THREE.Vector2(1.9, 1.9),
     []
   );
 
@@ -437,7 +437,7 @@ export default function Planet({
           normalMap={normalMap ?? undefined}
           normalScale={normalMap ? normalScale : undefined}
           bumpMap={!normalMap && map ? map : undefined}
-          bumpScale={!normalMap && map ? radius * 0.018 : 0}
+          bumpScale={!normalMap && map ? radius * 0.024 : 0}
           roughnessMap={roughnessMap ?? undefined}
           roughness={Math.max(0.48, roughness)}
           metalness={metalness}
@@ -479,7 +479,7 @@ export default function Planet({
           <meshStandardMaterial
             map={clouds}
             transparent
-            opacity={0.45}
+            opacity={0.5}
             depthWrite={false}
             depthTest
             metalness={0}

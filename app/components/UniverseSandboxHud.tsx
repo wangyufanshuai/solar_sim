@@ -29,6 +29,7 @@ type Props = {
   onConstellationFocus?: (direction: [number, number, number]) => void;
   viewSettings: SimulationViewSettings;
   onViewSettingsChange: (next: SimulationViewSettings) => void;
+  onPerformanceSafe?: () => void;
   visualEnhance: boolean;
   onVisualEnhanceChange: (next: boolean) => void;
   leftPanelCollapsed: boolean;
@@ -93,6 +94,7 @@ export default function UniverseSandboxHud({
   onConstellationFocus,
   viewSettings,
   onViewSettingsChange,
+  onPerformanceSafe,
   visualEnhance,
   onVisualEnhanceChange,
   leftPanelCollapsed,
@@ -351,7 +353,7 @@ export default function UniverseSandboxHud({
             {activeSection === "view" ? (
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">DISPLAY LAYERS</div>
-                <div className="mb-3 grid grid-cols-2 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
+                <div className="mb-3 grid grid-cols-3 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
                   <button
                     type="button"
                     onClick={() => patch({ renderBudget: "balanced", highQualityRendering: false })}
@@ -361,10 +363,17 @@ export default function UniverseSandboxHud({
                   </button>
                   <button
                     type="button"
-                    onClick={() => patch({ renderBudget: "quality" })}
+                    onClick={() => patch({ renderBudget: "quality", highQualityRendering: true, showGaiaStars: true, showDeepSkyMarkers: true })}
                     className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
                   >
                     Quality
+                  </button>
+                  <button
+                    type="button"
+                    onClick={onPerformanceSafe}
+                    className="rounded-lg px-2 py-1.5 text-white/42 transition-colors hover:bg-white/10 hover:text-white/78"
+                  >
+                    Safe
                   </button>
                 </div>
                 <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />
@@ -372,7 +381,7 @@ export default function UniverseSandboxHud({
                 <ToggleRow label="瞬时轨道线" checked={viewSettings.showOsculatingOrbits} onChange={(v) => patch({ showOsculatingOrbits: v })} cost="Medium" />
                 <ToggleRow label="参考轨道" checked={viewSettings.showReferenceOrbits} onChange={(v) => patch({ showReferenceOrbits: v })} cost="Low" />
                 <ToggleRow label="银河背景增强" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} cost="Medium" status="Loaded" />
-                <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced budget"} />
+                <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced subset"} />
                 <ToggleRow label="星座线" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} cost="Medium" />
                 <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "full decals" : "core decals"} />
                 <ToggleRow label="深空标记" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} cost="Medium" />

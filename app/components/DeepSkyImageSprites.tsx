@@ -397,11 +397,15 @@ export default function DeepSkyImageSprites({
   );
 
   useEffect(() => {
+    if (!highQuality) {
+      setAllowFullSet(false);
+      return;
+    }
     const scheduleFull = () => setAllowFullSet(true);
     let idleId: number | null = null;
-    const timeoutId = window.setTimeout(scheduleFull, highQuality ? 400 : 1800);
+    const timeoutId = window.setTimeout(scheduleFull, 400);
     if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(scheduleFull, { timeout: highQuality ? 700 : 2400 });
+      idleId = window.requestIdleCallback(scheduleFull, { timeout: 700 });
     }
     return () => {
       window.clearTimeout(timeoutId);

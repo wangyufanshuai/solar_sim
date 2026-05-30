@@ -28,8 +28,13 @@ export default function PhysicsPerformanceHud({
   missionPlan: MissionPlan | null;
 }) {
   const [stepsPerSec, setStepsPerSec] = useState(0);
-  const [fps, setFps] = useState(0);
-  const [frameMs, setFrameMs] = useState(0);
+  const [perf, setPerf] = useState({
+    fps: 0,
+    avgFps10s: 0,
+    minFps10s: 0,
+    frameMs: 0,
+    longFrames10s: 0,
+  });
   const [tierLabel, setTierLabel] = useState<PhysicsPrecisionTier>(
     precisionTierRef.current,
   );
@@ -38,6 +43,7 @@ export default function PhysicsPerformanceHud({
     let id = 0;
     const stepsBuf: number[] = [];
     const timeBuf: number[] = [];
+    const frameBuf: Array<{ t: number; dt: number; fps: number }> = [];
     let lastFrameT = performance.now();
     let fpsSmooth = 0;
     let lastSetT = 0;
@@ -47,6 +53,10 @@ export default function PhysicsPerformanceHud({
       lastFrameT = t;
       const currentFps = 1000 / dt;
       fpsSmooth = fpsSmooth === 0 ? currentFps : fpsSmooth * 0.9 + currentFps * 0.1;
+      frameBuf.push({ t, dt, fps: currentFps });
+      while (frameBuf.length > 0 && t - frameBuf[0]!.t > 10000) {
+        frameBuf.shift();
+      }
       const p = physicsRef.current;
       let s = mainThreadLastAcceptedSubsteps.value;
       if (p && isPhysicsRuntime(p)) {
@@ -58,14 +68,28 @@ export default function PhysicsPerformanceHud({
         timeBuf.shift();
         stepsBuf.shift();
       }
-      if (t - lastSetT >= 300) {
+      if (t - lastSetT >= 500) {
         lastSetT = t;
         const sum = stepsBuf.reduce((a, b) => a + b, 0);
         const dtMs = t - (timeBuf[0] ?? t);
         const dtS = dtMs / 1000;
+        const avgFrameMs =
+          frameBuf.length > 0
+            ? frameBuf.reduce((a, b) => a + b.dt, 0) / frameBuf.length
+            : dt;
+        const minFps10s =
+          frameBuf.length > 0
+            ? Math.min(...frameBuf.map((sample) => sample.fps))
+            : currentFps;
+        const longFrames10s = frameBuf.filter((sample) => sample.dt > 50).length;
         setStepsPerSec(dtS > 0.05 ? sum / dtS : 0);
-        setFps(fpsSmooth);
-        setFrameMs(1000 / Math.max(fpsSmooth, 1));
+        setPerf({
+          fps: fpsSmooth,
+          avgFps10s: 1000 / Math.max(avgFrameMs, 1),
+          minFps10s,
+          frameMs: 1000 / Math.max(fpsSmooth, 1),
+          longFrames10s,
+        });
       }
       id = requestAnimationFrame(tick);
     };
@@ -108,13 +132,21 @@ export default function PhysicsPerformanceHud({
         {physicsUsesSharedBuffer ? "Worker + SAB" : "Main thread"}
       </div>
       <div className="mt-1 text-[10px]">
-        FPS <span className={fps >= 50 ? "text-emerald-200" : fps >= 30 ? "text-amber-200" : "text-rose-200"}>{fps.toFixed(0)}</span>
-        <span className="ml-1 text-white/34">{frameMs.toFixed(1)}ms</span>
+        FPS <span className={perf.fps >= 50 ? "text-emerald-200" : perf.fps >= 30 ? "text-amber-200" : "text-rose-200"}>{perf.fps.toFixed(0)}</span>
+        <span className="ml-1 text-white/34">{perf.frameMs.toFixed(1)}ms</span>
       </div>
       <div className="mt-1 text-[10px]">
         Steps/s <span className="text-white/82">{stepsPerSec.toFixed(0)}</span>
       </div>
       <div className="mt-2 border-t border-white/6 pt-2 text-[9px] leading-4 text-white/42">
+        <div className="flex justify-between">
+          <span>10s avg/min</span>
+          <span className="text-white/68">{perf.avgFps10s.toFixed(0)} / {perf.minFps10s.toFixed(0)}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Long frames</span>
+          <span className={perf.longFrames10s > 12 ? "text-amber-200" : "text-white/68"}>{perf.longFrames10s}</span>
+        </div>
         <div className="flex justify-between">
           <span>Render</span>
           <span className="text-white/68">{viewSettings.renderBudget}</span>

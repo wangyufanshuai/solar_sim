@@ -4,7 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useLayoutEffect, useMemo, useRef } from "react";
 
-const PARTICLE_COUNT = 2400;
+const PARTICLE_COUNT = 1800;
 const SKY_RADIUS = 8200;
 
 function galacticPosition(lonDeg: number, latDeg: number, radius: number) {
@@ -68,7 +68,7 @@ export default function NebulaMilkyWay() {
         blending: THREE.AdditiveBlending,
         toneMapped: false,
         uniforms: {
-          uOpacity: { value: 0.075 },
+          uOpacity: { value: 0.055 },
         },
         vertexShader: `
           attribute vec3 aColor;

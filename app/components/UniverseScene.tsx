@@ -197,6 +197,7 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       if (controls) focusStartTarget.current.copy(controls.target);
     };
     const onEarthMoon = () => { clearLock(); const now = performance.now(); focusRef.current = { kind: "earthMoon", start: now, until: now + 2800 }; };
+    const onDirection = () => { clearLock(); };
     const focusBodyTarget = (bodyIndex: number): THREE.Vector3 | null => {
       const p = physicsRef.current;
       if (!p || bodyIndex < 0 || bodyIndex >= p.n) return null;
@@ -249,6 +250,7 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
     };
     window.addEventListener(CAMERA_FOCUS_BODY_EVENT, onBody);
     window.addEventListener(CAMERA_FOCUS_EARTH_MOON_EVENT, onEarthMoon);
+    window.addEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDirection);
     const onOrigin = () => clearLock(true);
     window.addEventListener(CAMERA_FOCUS_ORIGIN_EVENT, onOrigin);
     window.addEventListener(CAMERA_ZOOM_EVENT, onZoomLocked, { capture: true });
@@ -257,6 +259,7 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
     return () => {
       window.removeEventListener(CAMERA_FOCUS_BODY_EVENT, onBody);
       window.removeEventListener(CAMERA_FOCUS_EARTH_MOON_EVENT, onEarthMoon);
+      window.removeEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDirection);
       window.removeEventListener(CAMERA_FOCUS_ORIGIN_EVENT, onOrigin);
       window.removeEventListener(CAMERA_ZOOM_EVENT, onZoomLocked, { capture: true });
       controls?.removeEventListener("start", onControlStart);
@@ -452,7 +455,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
           {qualityBudget ? <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} /> : null}
           <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
           {simulation.viewSettings.showConstellations ? <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} /> : null}
-          {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} /> : null}
+          {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
           {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
           {simulation.viewSettings.showDeepSkyMarkers ? (
             <>

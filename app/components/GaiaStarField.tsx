@@ -22,6 +22,7 @@ const PC_TO_SCENE = (206265 * AU_TO_SCENE); // 1 pc = 206265 AU
 const GALACTIC_SCALE = 1.5;
 
 const MAX_INSTANCES = 1800;
+const BALANCED_INSTANCES = 650;
 /** Billboard half-size in scene units (scaled by instanceSize). */
 const STAR_QUAD_HALF = 1.55;
 
@@ -37,8 +38,10 @@ function apparentMagnitudeIntensity(mag: number): number {
  */
 export default function GaiaStarField({
   floatingOriginRef,
+  highQuality = false,
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  highQuality?: boolean;
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
   const [catalog, setCatalog] = useState<GaiaStarCatalogData | null>(null);
@@ -46,9 +49,9 @@ export default function GaiaStarField({
   const dummyObj = useRef(new THREE.Object3D());
 
   useEffect(() => {
-    setCatalog(generatePlaceholderCatalog(MAX_INSTANCES));
+    setCatalog(generatePlaceholderCatalog(highQuality ? MAX_INSTANCES : BALANCED_INSTANCES));
     setActive(true);
-  }, []);
+  }, [highQuality]);
 
   const starData = useMemo(() => {
     const cat = catalog;

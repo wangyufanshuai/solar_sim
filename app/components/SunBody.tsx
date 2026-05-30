@@ -112,8 +112,8 @@ export default function SunBody({
         toneMapped: false,
         side: THREE.FrontSide,
         uniforms: {
-          uColor: { value: new THREE.Color("#ff4a12") },
-          uPower: { value: 1.95 },
+          uColor: { value: new THREE.Color("#ff5a1a") },
+          uPower: { value: 2.18 },
           uPulse: { value: 1.0 },
         },
         vertexShader: `
@@ -139,7 +139,7 @@ export default function SunBody({
           void main() {
             float fresnel = pow(1.0 - abs(dot(normalize(vNrm), normalize(-vView))), uPower);
             float shell = smoothstep(0.0, 1.0, fresnel) * uPulse;
-            gl_FragColor = vec4(uColor, shell * 0.32);
+            gl_FragColor = vec4(uColor, shell * 0.24);
             #include <logdepthbuf_fragment>
           }
         `,
@@ -350,8 +350,8 @@ export default function SunBody({
             color = mix(color, deep, clamp(sunspot, 0.0, 0.82));
             color += whiteHot * activeRegion * 0.24;
             color = mix(color, deep, (1.0 - mu) * 0.22);
-            color *= limb * 1.04;
-            color += vec3(0.24, 0.042, 0.0) * pow(1.0 - mu, 1.35);
+            color *= limb * 0.92;
+            color += vec3(0.18, 0.034, 0.0) * pow(1.0 - mu, 1.45);
 
             gl_FragColor = vec4(color, 1.0);
             #include <logdepthbuf_fragment>
@@ -399,7 +399,7 @@ export default function SunBody({
         <meshBasicMaterial
           color="#ff6a16"
           transparent
-          opacity={0.082}
+          opacity={0.062}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -410,7 +410,7 @@ export default function SunBody({
         <meshBasicMaterial
           color="#e53508"
           transparent
-          opacity={0.048}
+          opacity={0.034}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -426,7 +426,7 @@ export default function SunBody({
             map={haloTex}
             color="#ffb86a"
             transparent
-            opacity={0.24}
+            opacity={0.18}
             toneMapped={false}
             depthWrite={false}
             depthTest={false}
@@ -440,7 +440,7 @@ export default function SunBody({
           <meshBasicMaterial
             color="#ff3b0b"
             transparent
-            opacity={0.2}
+            opacity={0.15}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
             toneMapped={false}
@@ -451,7 +451,7 @@ export default function SunBody({
           <meshBasicMaterial
             color="#ff8a22"
             transparent
-            opacity={0.16}
+            opacity={0.12}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
             toneMapped={false}
@@ -462,7 +462,7 @@ export default function SunBody({
           <meshBasicMaterial
             color="#ffd08a"
             transparent
-            opacity={0.13}
+            opacity={0.1}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
             toneMapped={false}
@@ -473,7 +473,7 @@ export default function SunBody({
           <meshBasicMaterial
             color="#ff9b42"
             transparent
-            opacity={0.035}
+            opacity={0.024}
             blending={THREE.AdditiveBlending}
             depthWrite={false}
             depthTest={false}

@@ -118,6 +118,17 @@ export default function UniversePage() {
   const [viewSettings, setViewSettings] = useState<SimulationViewSettings>(
     DEFAULT_SIMULATION_VIEW_SETTINGS
   );
+  const applyPerformanceSafeMode = useCallback(() => {
+    setVisualEnhance(false);
+    setViewSettings({
+      ...DEFAULT_SIMULATION_VIEW_SETTINGS,
+      renderBudget: "balanced",
+      showGaiaStars: false,
+      showDeepSkyMarkers: false,
+      highQualityRendering: false,
+      showRelativisticOptics: false,
+    });
+  }, []);
   const lagrangeSpawnNonceRef = useRef(0);
   const physicsHistoryRef = useRef(new PhysicsHistoryStack());
   const integrationSuspendedRef = useRef(false);
@@ -486,6 +497,7 @@ export default function UniversePage() {
         onConstellationFocus={onNearbyStarFocus}
         viewSettings={viewSettings}
         onViewSettingsChange={setViewSettings}
+        onPerformanceSafe={applyPerformanceSafeMode}
         visualEnhance={visualEnhance}
         onVisualEnhanceChange={setVisualEnhance}
         leftPanelCollapsed={leftPanelCollapsed}
