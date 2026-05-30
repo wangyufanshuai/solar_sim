@@ -23,7 +23,7 @@ export type SimulationViewSettings = {
 
 export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
   renderBudget: "balanced",
-  showBodyLabels: true,
+  showBodyLabels: false,
   showOrbitTrails: true,
   showOsculatingOrbits: true,
   showReferenceOrbits: true,

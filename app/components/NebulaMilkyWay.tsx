@@ -3,6 +3,7 @@
 import { useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useLayoutEffect, useMemo, useRef } from "react";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 const PARTICLE_COUNT = 1800;
 const SKY_RADIUS = 8200;
@@ -68,7 +69,7 @@ export default function NebulaMilkyWay() {
         blending: THREE.AdditiveBlending,
         toneMapped: false,
         uniforms: {
-          uOpacity: { value: 0.055 },
+          uOpacity: { value: VISUAL_CALIBRATION.galaxyDustOpacity },
         },
         vertexShader: `
           attribute vec3 aColor;

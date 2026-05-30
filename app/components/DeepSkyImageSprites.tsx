@@ -5,6 +5,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 type DeepSkySpriteDef = {
   id: string;
@@ -24,8 +25,8 @@ const textureCache = new Map<string, THREE.Texture>();
 const PLANE_FORWARD = new THREE.Vector3(0, 0, 1);
 const CORE_DECAL_SCALE = 0.86;
 const DEFERRED_DECAL_SCALE = 0.76;
-const CORE_OPACITY_SCALE = 0.78;
-const DEFERRED_OPACITY_SCALE = 0.66;
+const BALANCED_LOAD_GAP_MS = 90;
+const QUALITY_LOAD_GAP_MS = 35;
 
 const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   {
@@ -355,7 +356,10 @@ export default function DeepSkyImageSprites({
   const lastTierRef = useRef<string | null>(null);
   const camera = useThree((s) => s.camera);
   const gl = useThree((s) => s.gl);
-  const [textures, setTextures] = useState<Record<string, THREE.Texture>>({});
+  const texturesRef = useRef<Record<string, THREE.Texture>>({});
+  const loadedIdsRef = useRef<Set<string>>(new Set());
+  const pendingCommitRef = useRef(false);
+  const [loadedIds, setLoadedIds] = useState<string[]>([]);
   const [allowFullSet, setAllowFullSet] = useState(false);
   const alphaMap = useMemo(() => {
     if (typeof document === "undefined") return null;
@@ -417,12 +421,47 @@ export default function DeepSkyImageSprites({
     let cancelled = false;
     const loader = new THREE.TextureLoader();
     const maxAnisotropy = Math.min(highQuality ? 8 : 4, gl.capabilities.getMaxAnisotropy());
+    const queue = defs.filter((def) => !loadedIdsRef.current.has(def.id));
+    const loadGapMs = highQuality ? QUALITY_LOAD_GAP_MS : BALANCED_LOAD_GAP_MS;
+    let timerId: number | null = null;
+
+    const commitLoadedIds = () => {
+      if (cancelled || pendingCommitRef.current) return;
+      pendingCommitRef.current = true;
+      const run = () => {
+        pendingCommitRef.current = false;
+        if (cancelled) return;
+        setLoadedIds(Array.from(loadedIdsRef.current));
+      };
+      if ("requestIdleCallback" in window) {
+        window.requestIdleCallback(run, { timeout: 180 });
+      } else {
+        globalThis.setTimeout(run, 32);
+      }
+    };
+
+    const markLoaded = (id: string, tex: THREE.Texture) => {
+      texturesRef.current[id] = tex;
+      loadedIdsRef.current.add(id);
+      commitLoadedIds();
+    };
 
     for (const def of defs) {
       const cached = textureCache.get(def.id);
       if (cached) {
-        setTextures((prev) => (prev[def.id] ? prev : { ...prev, [def.id]: cached }));
-        continue;
+        markLoaded(def.id, cached);
+      }
+    }
+
+    let queueIndex = 0;
+    const loadNext = () => {
+      if (cancelled || queueIndex >= queue.length) return;
+      const def = queue[queueIndex++]!;
+      if (textureCache.has(def.id)) {
+        const cached = textureCache.get(def.id)!;
+        markLoaded(def.id, cached);
+        timerId = window.setTimeout(loadNext, loadGapMs);
+        return;
       }
       loader.load(
         def.imageUrl,
@@ -438,19 +477,25 @@ export default function DeepSkyImageSprites({
           tex.anisotropy = maxAnisotropy;
           tex.needsUpdate = true;
           textureCache.set(def.id, tex);
-          setTextures((prev) => ({ ...prev, [def.id]: tex }));
+          markLoaded(def.id, tex);
+          timerId = window.setTimeout(loadNext, loadGapMs);
         },
         undefined,
         () => {
-          if (!cancelled) setTextures((prev) => prev);
+          if (!cancelled) timerId = window.setTimeout(loadNext, loadGapMs);
         },
       );
-    }
+    };
+
+    timerId = window.setTimeout(loadNext, highQuality ? 60 : 140);
 
     return () => {
       cancelled = true;
+      if (timerId !== null) window.clearTimeout(timerId);
     };
   }, [defs, gl, highQuality]);
+
+  const loadedIdSet = useMemo(() => new Set(loadedIds), [loadedIds]);
 
   useEffect(() => () => alphaMap?.dispose(), [alphaMap]);
 
@@ -461,7 +506,12 @@ export default function DeepSkyImageSprites({
     const tier = floatingOriginRef.current.lodTier;
     if (lastTierRef.current === tier) return;
     lastTierRef.current = tier;
-    const opacityScale = tier === "solar" ? 1 : tier === "mid" ? 0.82 : 0.68;
+    const opacityScale =
+      tier === "solar"
+        ? VISUAL_CALIBRATION.deepSkySolarLodOpacity
+        : tier === "mid"
+          ? VISUAL_CALIBRATION.deepSkyMidLodOpacity
+          : VISUAL_CALIBRATION.deepSkyFarLodOpacity;
     for (const mat of materialRefs.current) {
       const opacity = (mat.userData.baseOpacity as number | undefined) ?? 0.45;
       mat.opacity = opacity * opacityScale;
@@ -471,12 +521,13 @@ export default function DeepSkyImageSprites({
   return (
     <group ref={groupRef} renderOrder={-470}>
       {defs.map((def) => {
-        const tex = textures[def.id];
+        if (!loadedIdSet.has(def.id)) return null;
+        const tex = texturesRef.current[def.id];
         if (!tex) return null;
         const aspect = textureAspect(tex);
         const quaternion = skyDecalQuaternion(def.position, def.rotation);
         const decalSize = def.size * (def.priority ? CORE_DECAL_SCALE : DEFERRED_DECAL_SCALE);
-        const decalOpacity = def.opacity * (def.priority ? CORE_OPACITY_SCALE : DEFERRED_OPACITY_SCALE);
+        const decalOpacity = def.opacity * (def.priority ? VISUAL_CALIBRATION.deepSkyCoreOpacityScale : VISUAL_CALIBRATION.deepSkyDeferredOpacityScale);
         return (
           <mesh
             key={def.id}

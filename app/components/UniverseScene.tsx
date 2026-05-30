@@ -90,9 +90,13 @@ function FloatingOriginBridge({ floatingOriginRef }: { floatingOriginRef: Mutabl
 }
 
 function LodOrbitControlsBridge({ floatingOriginRef, controlsRef }: { floatingOriginRef: MutableRefObject<FloatingOriginState>; controlsRef: MutableRefObject<OrbitControlsImpl | null> }) {
+  const lastTierRef = useRef<string | null>(null);
   useFrame(() => {
     const controls = controlsRef.current;
-    if (controls) controls.maxDistance = lodConfigForTier(floatingOriginRef.current.lodTier).maxDistance;
+    const tier = floatingOriginRef.current.lodTier;
+    if (!controls || lastTierRef.current === tier) return;
+    lastTierRef.current = tier;
+    controls.maxDistance = lodConfigForTier(tier).maxDistance;
   });
   return null;
 }
@@ -470,7 +474,13 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <OrbitControls ref={controlsRef} makeDefault enableDamping dampingFactor={0.06} maxDistance={50000} enabled={!simulation.localLaunchActive} />
         <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} />
         <CameraFocusDirectionBridge controlsRef={controlsRef} />
-        {simulation.viewSettings.showMissionTrajectory ? <MissionTrajectoryPreview plan={simulation.missionPreviewPlan ?? null} floatingOriginRef={simulation.floatingOriginRef} /> : null}
+        {simulation.viewSettings.showMissionTrajectory ? (
+          <MissionTrajectoryPreview
+            plan={simulation.missionPreviewPlan ?? null}
+            floatingOriginRef={simulation.floatingOriginRef}
+            showLabels={qualityBudget}
+          />
+        ) : null}
         {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor /> : null}
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />

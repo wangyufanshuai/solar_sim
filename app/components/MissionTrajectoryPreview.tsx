@@ -56,7 +56,7 @@ function SegmentLine({ segment, index }: { segment: MissionSegment; index: numbe
   return <primitive object={line} />;
 }
 
-function Marker({ segment, index }: { segment: MissionSegment; index: number }) {
+function Marker({ segment, index, showLabel }: { segment: MissionSegment; index: number; showLabel: boolean }) {
   const p = segment.trajectoryAu[segment.trajectoryAu.length - 1] ?? [0, 0, 0];
   const pos = scenePoint(p);
   const color = SEGMENT_COLORS[index % SEGMENT_COLORS.length]!;
@@ -66,11 +66,13 @@ function Marker({ segment, index }: { segment: MissionSegment; index: number }) 
         <sphereGeometry args={[1.35 + index * 0.35, 18, 10]} />
         <meshBasicMaterial color={color} transparent opacity={0.86} depthWrite={false} toneMapped={false} />
       </mesh>
-      <Html center distanceFactor={18} style={{ pointerEvents: "none" }}>
-        <span className="whitespace-nowrap rounded bg-black/45 px-1.5 py-0.5 font-mono text-[9px] tracking-[0.16em] text-cyan-100 shadow-[0_0_14px_rgba(80,210,255,0.32)]">
-          {labelFor(segment)} / {markerStatus(segment)} / {segment.communicationDelayMin.toFixed(0)}m
-        </span>
-      </Html>
+      {showLabel ? (
+        <Html center distanceFactor={18} style={{ pointerEvents: "none" }}>
+          <span className="whitespace-nowrap rounded bg-black/45 px-1.5 py-0.5 font-mono text-[9px] tracking-[0.16em] text-cyan-100 shadow-[0_0_14px_rgba(80,210,255,0.32)]">
+            {labelFor(segment)} / {markerStatus(segment)} / {segment.communicationDelayMin.toFixed(0)}m
+          </span>
+        </Html>
+      ) : null}
     </group>
   );
 }
@@ -78,9 +80,11 @@ function Marker({ segment, index }: { segment: MissionSegment; index: number }) 
 export default function MissionTrajectoryPreview({
   plan,
   floatingOriginRef,
+  showLabels = false,
 }: {
   plan: MissionPlan | null;
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  showLabels?: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
 
@@ -98,7 +102,7 @@ export default function MissionTrajectoryPreview({
         <SegmentLine key={segment.id} segment={segment} index={index} />
       ))}
       {plan.segments.map((segment, index) => (
-        <Marker key={`${segment.id}-marker`} segment={segment} index={index} />
+        <Marker key={`${segment.id}-marker`} segment={segment} index={index} showLabel={showLabels} />
       ))}
     </group>
   );
