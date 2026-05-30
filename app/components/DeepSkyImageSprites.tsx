@@ -466,7 +466,7 @@ export default function DeepSkyImageSprites({
       const opacity = (mat.userData.baseOpacity as number | undefined) ?? 0.45;
       mat.opacity = opacity * opacityScale;
     }
-  }, -990);
+  }, 1002);
 
   return (
     <group ref={groupRef} renderOrder={-470}>

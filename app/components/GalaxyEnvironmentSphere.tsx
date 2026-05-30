@@ -138,7 +138,7 @@ export default function GalaxyEnvironmentSphere({
       frustumCulled={false}
       renderOrder={-10000}
       rotation={[0.1, Math.PI + 0.34, -0.62]}
-      scale={900000}
+      scale={12000}
     >
       <sphereGeometry args={[1, 96, 48]} />
       <primitive object={material} attach="material" />

@@ -113,7 +113,7 @@ export default function NebulaMilkyWay() {
     const group = groupRef.current;
     if (!group) return;
     group.position.copy(camera.position);
-  }, -20);
+  }, 1001);
 
   return (
     <group ref={groupRef} renderOrder={-520}>

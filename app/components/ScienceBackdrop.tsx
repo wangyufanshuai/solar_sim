@@ -26,7 +26,7 @@ export default function ScienceBackdrop({
     root.position.copy(camera.position);
     if (optics?.active) root.quaternion.copy(optics.aberrationQuat);
     else root.quaternion.identity();
-  }, -999);
+  }, 1000);
 
   return (
     <group ref={rootRef} renderOrder={-500}>
