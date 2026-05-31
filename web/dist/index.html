@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>太阳系相对论模拟 · 可视化</title>
+    <script type="module" crossorigin src="/assets/index-CXnC4d7n.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DBjSSfvn.css">
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div id="css2d-mount"></div>
+
+    <button type="button" id="diag-toggle" aria-expanded="false" title="诊断信息">
+      i
+    </button>
+    <aside id="diag-panel" hidden>
+      <h2>诊断</h2>
+      <p class="hint">将观测图置于 <code>web/public/observation.jpg</code></p>
+      <div id="obs-wrap">
+        <img id="obs-img" alt="观测参考" src="/observation.jpg" width="240" />
+      </div>
+      <dl class="stats">
+        <dt>相对论偏差 ⟨|a₁ₚₙ−aₙ|/|aₙ|⟩</dt>
+        <dd id="stat-rel">—</dd>
+        <dt>WebSocket</dt>
+        <dd id="stat-ws">连接中…</dd>
+      </dl>
+    </aside>
+
+    <footer id="dock">
+      <div class="dock-left">
+        <button type="button" id="btn-play" class="dock-icon" title="暂停/继续">▶</button>
+        <span id="dock-time" class="dock-time">—</span>
+        <span id="dock-dps" class="dock-dps">0 天/秒</span>
+        <button type="button" class="dock-icon dock-muted" title="快退（占位）">⏮</button>
+        <button type="button" class="dock-icon dock-muted" title="快进（占位）">⏭</button>
+      </div>
+      <div class="dock-center">
+        <button type="button" class="dock-tool dock-muted" title="视角（占位）">
+          <span class="dock-tool-ic">◻</span><span>视角</span>
+        </button>
+        <button type="button" class="dock-tool dock-muted" title="视图（占位）">
+          <span class="dock-tool-ic">▤</span><span>视图</span>
+        </button>
+        <button type="button" class="dock-tool dock-muted" title="工具（占位）">
+          <span class="dock-tool-ic">⚙</span><span>工具</span>
+        </button>
+      </div>
+      <div class="dock-right">
+        <label class="dock-scale">
+          <span>倍率</span>
+          <input id="range-timescale" type="range" min="0" max="500" step="0.5" value="1" />
+        </label>
+        <button type="button" id="btn-zoom-out" class="dock-icon" title="拉远">−</button>
+        <button type="button" id="btn-zoom-in" class="dock-icon" title="推进">+</button>
+        <button type="button" id="btn-reset-view" class="dock-icon" title="复位视角">↻</button>
+        <button type="button" class="dock-icon dock-muted" title="搜索（占位）">⌕</button>
+      </div>
+    </footer>
+
+  </body>
+</html>

@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+next-web/node_modules/
+
+# Build output
+.next/
+next-web/.next/
+out/
+next-web/out/
+
+# Deployment artifacts
+deploy-artifacts/
+next-web/deploy-artifacts/
+*.tgz
+*.tar.gz
+
+# Local environment
+.env
+.env.local
+.env.*.local
+next-web/.env
+next-web/.env.local
+next-web/.env.*.local
+
+# Runtime and cache files
+.cache/
+next-web/.cache/
+.playwright-mcp/
+__pycache__/
+*.pyc
+*.pyo
+*.log
+*.tsbuildinfo
+debug-a243dd.log
+
+# Local agent/debug artifacts
+.claude/
+next-web/.claude/
+.codex-*.png
+next-web/.codex-*.png
+next-web/Untitled
+
+# Large assets live in OSS under /solar.
+next-web/public/models/spacecraft/*.glb
+next-web/public/textures/sky/*.jpg
+next-web/public/textures/sky/*.png
+next-web/public/textures/planets/*.jpg
+next-web/public/textures/planets/nasa-hd/*.jpg
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
