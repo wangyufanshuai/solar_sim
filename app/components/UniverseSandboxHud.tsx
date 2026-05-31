@@ -357,6 +357,7 @@ export default function UniverseSandboxHud({
                   <button
                     type="button"
                     onClick={() => patch({ renderBudget: "balanced", highQualityRendering: false })}
+                    data-solar-action="budget-balanced"
                     className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "balanced" && !viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
                   >
                     Balanced
@@ -364,6 +365,7 @@ export default function UniverseSandboxHud({
                   <button
                     type="button"
                     onClick={() => patch({ renderBudget: "quality", highQualityRendering: true, showGaiaStars: true, showDeepSkyMarkers: true })}
+                    data-solar-action="budget-quality"
                     className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
                   >
                     Quality
@@ -371,6 +373,7 @@ export default function UniverseSandboxHud({
                   <button
                     type="button"
                     onClick={onPerformanceSafe}
+                    data-solar-action="budget-safe"
                     className="rounded-lg px-2 py-1.5 text-white/42 transition-colors hover:bg-white/10 hover:text-white/78"
                   >
                     Safe

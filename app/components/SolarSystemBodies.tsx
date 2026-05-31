@@ -292,7 +292,7 @@ function BodyShell({
         : def.radiusScene;
 
   const labelText =
-    showBodyLabels && MAJOR_BODY_LABEL_IDS.has(def.id) ? def.name : undefined;
+    showBodyLabels && (isSelected || MAJOR_BODY_LABEL_IDS.has(def.id)) ? def.name : undefined;
 
   if (def.variant === "sun") {
     const sunVisualRadius = def.radiusScene * 0.62;

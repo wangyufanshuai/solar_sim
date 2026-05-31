@@ -3,6 +3,7 @@
 import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 type GalaxyEnvironmentSphereProps = {
   onTextureState?: (loaded: boolean) => void;
@@ -27,6 +28,9 @@ void main() {
 
 const SKY_FRAGMENT = /* glsl */ `
 uniform sampler2D uMap;
+uniform float uExposure;
+uniform float uContrast;
+uniform float uTinyStarIntensity;
 varying vec2 vUv;
 varying vec3 vWorldDir;
 
@@ -47,9 +51,11 @@ void main() {
   color = mix(color * 0.82, color * 1.22, brightCloud);
   color -= vec3(0.018, 0.02, 0.024) * dustLane;
   color = max(color, vec3(0.0));
+  color *= uExposure;
+  color = mix(vec3(luma), color, uContrast);
   color = color / (color + vec3(0.55));
   color = pow(color, vec3(0.92));
-  color += vec3(0.62, 0.72, 0.95) * tinyStars * 0.0045;
+  color += vec3(0.62, 0.72, 0.95) * tinyStars * uTinyStarIntensity;
   gl_FragColor = vec4(color, 1.0);
 }
 `;
@@ -76,6 +82,9 @@ export default function GalaxyEnvironmentSphere({
         toneMapped: false,
         uniforms: {
           uMap: { value: null as THREE.Texture | null },
+          uExposure: { value: VISUAL_CALIBRATION.skyExposure },
+          uContrast: { value: VISUAL_CALIBRATION.skyContrast },
+          uTinyStarIntensity: { value: VISUAL_CALIBRATION.skyTinyStarIntensity },
         },
       }),
     []

@@ -42,6 +42,9 @@ function validatePlan(plan: MissionPlan | null): string | null {
   if (!Number.isFinite(plan.totalDeltaVKms) || plan.totalDeltaVKms <= 0) return "Delta-v estimate is invalid.";
   if (!Number.isFinite(plan.durationDays) || plan.durationDays <= 0) return "Mission duration is invalid.";
   if (!Number.isFinite(plan.maxCommunicationDelayMin) || plan.maxCommunicationDelayMin <= 0) return "Communication delay estimate is invalid.";
+  if (!Number.isFinite(plan.segments[0]?.c3Km2S2) || (plan.segments[0]?.c3Km2S2 ?? 0) < 0) return "Earth departure C3 estimate is invalid.";
+  if (plan.segments.some((seg) => seg.toBody !== "saturn" && (!Number.isFinite(seg.flybySafetyMargin) || seg.flybySafetyMargin <= 0))) return "Flyby periapsis margin needs review.";
+  if (plan.segments.some((seg) => !Number.isFinite(seg.departureVinfinityKms) || !Number.isFinite(seg.arrivalVinfinityKms))) return "One or more v-infinity estimates are invalid.";
   if (plan.segments.some((seg) => !Number.isFinite(seg.deltaVKms) || seg.deltaVKms <= 0 || seg.trajectoryAu.length < 8)) {
     return "One or more trajectory segments need review.";
   }
@@ -253,6 +256,7 @@ export default function MissionDesignerPanel({
       <button
         type="button"
         onClick={runOptimize}
+        data-solar-action="mission-optimize"
         className="flex items-center justify-center gap-2 rounded-[3px] border border-cyan-200/25 bg-cyan-200/[0.07] px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100 transition-colors hover:border-cyan-100/45 hover:bg-cyan-200/[0.12]"
       >
         <Sparkles className="h-3.5 w-3.5" strokeWidth={IS} />
@@ -365,6 +369,7 @@ export default function MissionDesignerPanel({
           <button
             type="button"
             onClick={runDeepSeekAdvisor}
+            data-solar-action="mission-deepseek"
             disabled={!selectedPlan || deepSeekStatus === "thinking"}
             className="rounded-[3px] border border-cyan-200/20 bg-cyan-200/[0.06] px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-cyan-100 transition-colors hover:border-cyan-100/40 disabled:pointer-events-none disabled:opacity-45"
           >

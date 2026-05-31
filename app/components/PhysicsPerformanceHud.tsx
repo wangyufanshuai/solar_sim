@@ -7,6 +7,7 @@ import { isPhysicsRuntime } from "../lib/physicsRuntime";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import type { MissionPlan } from "../lib/missionDesignerTypes";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
+import type { CameraIntentState } from "../lib/cameraIntentState";
 
 const TIERS: { id: PhysicsPrecisionTier; label: string }[] = [
   { id: "full", label: "FULL" },
@@ -20,12 +21,14 @@ export default function PhysicsPerformanceHud({
   physicsUsesSharedBuffer,
   viewSettings,
   missionPlan,
+  cameraIntentRef,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   precisionTierRef: MutableRefObject<PhysicsPrecisionTier>;
   physicsUsesSharedBuffer: boolean;
   viewSettings: SimulationViewSettings;
   missionPlan: MissionPlan | null;
+  cameraIntentRef?: MutableRefObject<CameraIntentState>;
 }) {
   const [stepsPerSec, setStepsPerSec] = useState(0);
   const [perf, setPerf] = useState({
@@ -37,6 +40,9 @@ export default function PhysicsPerformanceHud({
   });
   const [tierLabel, setTierLabel] = useState<PhysicsPrecisionTier>(
     precisionTierRef.current,
+  );
+  const [cameraIntent, setCameraIntent] = useState<CameraIntentState | null>(
+    cameraIntentRef?.current ?? null,
   );
 
   useEffect(() => {
@@ -90,12 +96,13 @@ export default function PhysicsPerformanceHud({
           frameMs: 1000 / Math.max(fpsSmooth, 1),
           longFrames10s,
         });
+        if (cameraIntentRef) setCameraIntent({ ...cameraIntentRef.current });
       }
       id = requestAnimationFrame(tick);
     };
     id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(id);
-  }, [physicsRef]);
+  }, [cameraIntentRef, physicsRef]);
 
   const activeLayers = [
     viewSettings.showGalaxyBackground,
@@ -168,6 +175,18 @@ export default function PhysicsPerformanceHud({
         <div className="flex justify-between">
           <span>Mission seg</span>
           <span className="text-white/68">{missionSegments}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Camera</span>
+          <span className="max-w-[92px] truncate text-white/68">{cameraIntent?.kind ?? "free"}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Target</span>
+          <span className="max-w-[92px] truncate text-white/68">{cameraIntent?.targetLabel ?? "--"}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Zoom dist</span>
+          <span className="text-white/68">{cameraIntent?.distance ? cameraIntent.distance.toFixed(1) : "--"}</span>
         </div>
       </div>
       <div className="mt-3 flex rounded-full bg-black/22 p-1">

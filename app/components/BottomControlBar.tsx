@@ -148,6 +148,7 @@ export default function BottomControlBar({
           <button
             type="button"
             onClick={togglePlay}
+            data-solar-action="toggle-play"
             aria-pressed={isPlaying}
             aria-label={isPlaying ? "暂停" : "播放"}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white/8 text-[var(--ui-text-primary)] transition-all hover:bg-white/12"
@@ -204,6 +205,7 @@ export default function BottomControlBar({
                 key={id}
                 type="button"
                 onClick={() => selectSection(id)}
+                data-solar-section={id}
                 className={`flex min-w-[56px] flex-col items-center gap-1 rounded-xl px-2 py-1 transition-colors ${
                   on ? "text-[var(--ui-text-primary)]" : "text-[var(--ui-text-dim)]"
                 }`}

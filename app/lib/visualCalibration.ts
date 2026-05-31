@@ -1,10 +1,18 @@
 export const VISUAL_CALIBRATION = {
+  skyExposure: 0.96,
+  skyContrast: 0.92,
+  skyTinyStarIntensity: 0.0036,
   galaxyDustOpacity: 0.046,
+  milkyWayContrast: 0.94,
   deepSkyCoreOpacityScale: 0.68,
   deepSkyDeferredOpacityScale: 0.56,
   deepSkySolarLodOpacity: 0.86,
   deepSkyMidLodOpacity: 0.7,
   deepSkyFarLodOpacity: 0.56,
+  brightStarHaloScale: 0.92,
   sunHaloScale: 4.35,
   sunCoronaAlpha: 0.2,
+  planetRimIntensity: 0.92,
+  planetCloudIntensity: 0.96,
+  planetNightLightIntensity: 0.9,
 } as const;

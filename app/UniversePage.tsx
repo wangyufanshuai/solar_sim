@@ -81,6 +81,7 @@ import {
 import { SPACECRAFT_BODY_INDEX } from "./data/planetsJ2000";
 import type { LocalTelemetry } from "./lib/localLaunchPhysics";
 import { createFloatingOrigin, type FloatingOriginState } from "./lib/floatingOrigin";
+import { createCameraIntentState, type CameraIntentState } from "./lib/cameraIntentState";
 
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
@@ -89,6 +90,7 @@ export default function UniversePage() {
     useSolarSystemPhysics();
   const precisionTierRef = useRef<PhysicsPrecisionTier>("full");
   const floatingOriginRef = useRef<FloatingOriginState>(createFloatingOrigin());
+  const cameraIntentRef = useRef<CameraIntentState>(createCameraIntentState());
   const simDaysRef = useRef(0);
   const [isPlaying, setIsPlaying] = useState(true);
   const [daysPerSecond, setDaysPerSecond] = useState(
@@ -122,9 +124,10 @@ export default function UniversePage() {
     setVisualEnhance(false);
     setViewSettings({
       ...DEFAULT_SIMULATION_VIEW_SETTINGS,
-      renderBudget: "balanced",
+      renderBudget: "safe",
       showGaiaStars: false,
       showDeepSkyMarkers: false,
+      showBodyLabels: false,
       highQualityRendering: false,
       showRelativisticOptics: false,
     });
@@ -459,6 +462,7 @@ export default function UniversePage() {
             relativityEnabledRef,
             precisionTierRef,
             floatingOriginRef,
+            cameraIntentRef,
             onSelectBody,
             onBodyCanvasPick,
             selectedBodyIndex,
@@ -512,6 +516,7 @@ export default function UniversePage() {
         physicsUsesSharedBuffer={physicsUsesSharedBuffer}
         viewSettings={viewSettings}
         missionPlan={missionPreviewPlan}
+        cameraIntentRef={cameraIntentRef}
       />
       {viewSettings.showKerrBlackHole ? (
         <KerrBlackHolePanel value={kerrBlackHole} onChange={setKerrBlackHole} />

@@ -2,7 +2,7 @@
  * View toggles aligned with a Universe Sandbox-style Graphics / View panel.
  */
 export type SimulationViewSettings = {
-  renderBudget: "balanced" | "quality";
+  renderBudget: "safe" | "balanced" | "quality";
   showBodyLabels: boolean;
   showOrbitTrails: boolean;
   showOsculatingOrbits: boolean;
@@ -19,6 +19,42 @@ export type SimulationViewSettings = {
   showLagrangePoints: boolean;
   /** Doppler/searchlight/aberration visual teaching layer. */
   showRelativisticOptics: boolean;
+};
+
+export type SimulationLayerCost = "low" | "medium" | "high";
+
+export const SIMULATION_LAYER_COSTS: Record<
+  keyof Pick<
+    SimulationViewSettings,
+    | "showBodyLabels"
+    | "showOrbitTrails"
+    | "showOsculatingOrbits"
+    | "showReferenceOrbits"
+    | "showGalaxyBackground"
+    | "showGaiaStars"
+    | "showConstellations"
+    | "showNebulaImages"
+    | "showDeepSkyMarkers"
+    | "showMissionTrajectory"
+    | "showLagrangePoints"
+    | "showRelativisticOptics"
+    | "highQualityRendering"
+  >,
+  SimulationLayerCost
+> = {
+  showBodyLabels: "medium",
+  showOrbitTrails: "medium",
+  showOsculatingOrbits: "medium",
+  showReferenceOrbits: "low",
+  showGalaxyBackground: "medium",
+  showGaiaStars: "high",
+  showConstellations: "medium",
+  showNebulaImages: "high",
+  showDeepSkyMarkers: "medium",
+  showMissionTrajectory: "medium",
+  showLagrangePoints: "medium",
+  showRelativisticOptics: "medium",
+  highQualityRendering: "high",
 };
 
 export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
