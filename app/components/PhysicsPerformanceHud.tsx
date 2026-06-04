@@ -188,6 +188,14 @@ export default function PhysicsPerformanceHud({
           <span>Zoom dist</span>
           <span className="text-white/68">{cameraIntent?.distance ? cameraIntent.distance.toFixed(1) : "--"}</span>
         </div>
+        <div className="flex justify-between">
+          <span>Last</span>
+          <span className="max-w-[92px] truncate text-white/68">{cameraIntent?.lastAction ?? "--"}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Reason</span>
+          <span className="max-w-[92px] truncate text-white/68">{cameraIntent?.transitionReason ?? "--"}</span>
+        </div>
       </div>
       <div className="mt-3 flex rounded-full bg-black/22 p-1">
         {TIERS.map((t) => (

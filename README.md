@@ -156,6 +156,8 @@ HOSTNAME=0.0.0.0 PORT=3001 npm run start
 
 DeepSeek configuration must stay in server environment variables or `.env.local`; never commit a real API key. Large sky and planet assets are currently served from `public/`. For public traffic, put `public/textures` behind CDN or object storage to reduce ECS bandwidth and first-load latency.
 
+2C2G 服务器可以作为测试站或低访问展示站，但不建议作为商业稳定主站。若机器上已有其他网站，建议增加 2 GiB swap，把 `npm run build` 放在本地或 GitHub Actions 完成，服务器只运行 Next.js SSR/API 和静态路由；Nginx/Caddy 应配置 gzip/brotli、长缓存 headers，并优先将 `public/textures`、`public/models` 放到 OSS/CDN。DeepSeek key 只放服务器环境变量。
+
 For local production testing on Windows:
 
 ```powershell

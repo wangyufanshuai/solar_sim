@@ -69,7 +69,7 @@ export default function NebulaMilkyWay() {
         blending: THREE.AdditiveBlending,
         toneMapped: false,
         uniforms: {
-          uOpacity: { value: VISUAL_CALIBRATION.galaxyDustOpacity },
+          uOpacity: { value: VISUAL_CALIBRATION.nebulae.galaxyDustOpacity },
         },
         vertexShader: `
           attribute vec3 aColor;

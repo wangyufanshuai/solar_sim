@@ -140,7 +140,7 @@ export default function SunBody({
           void main() {
             float fresnel = pow(1.0 - abs(dot(normalize(vNrm), normalize(-vView))), uPower);
             float shell = smoothstep(0.0, 1.0, fresnel) * uPulse;
-            gl_FragColor = vec4(uColor, shell * ${VISUAL_CALIBRATION.sunCoronaAlpha.toFixed(3)});
+            gl_FragColor = vec4(uColor, shell * ${VISUAL_CALIBRATION.sun.coronaAlpha.toFixed(3)});
             #include <logdepthbuf_fragment>
           }
         `,
@@ -184,7 +184,7 @@ export default function SunBody({
     }
     if (halo) {
       const pulse = 1 + Math.sin(t * 0.7) * 0.02;
-      halo.scale.setScalar(radius * VISUAL_CALIBRATION.sunHaloScale * pulse);
+      halo.scale.setScalar(radius * VISUAL_CALIBRATION.sun.haloScale * pulse);
     }
     if (prominenceRef.current) {
       prominenceRef.current.rotation.y += 0.0018;

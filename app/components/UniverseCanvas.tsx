@@ -4,6 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { useRef } from "react";
 import * as THREE from "three";
 import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
+import { RenderAssetQueueProvider } from "../context/RenderAssetQueueContext";
 import UniverseScene, {
   type UniverseCanvasSimulationProps,
 } from "./UniverseScene";
@@ -80,7 +81,9 @@ export default function UniverseCanvas({
         }
       }}
     >
-      <UniverseScene simulation={simulation} />
+      <RenderAssetQueueProvider budget={simulation.viewSettings.renderBudget}>
+        <UniverseScene simulation={simulation} />
+      </RenderAssetQueueProvider>
     </Canvas>
   );
 }

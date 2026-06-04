@@ -33,6 +33,7 @@ import {
   SPRITE_LOD_ENTER_PX,
   SPRITE_LOD_EXIT_PX,
 } from "../lib/celestialTextures";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 export type PlanetBodyProps = {
   variant: "planet";
@@ -356,7 +357,7 @@ export default function Planet({
         side: THREE.FrontSide,
         uniforms: {
           uColor: { value: planetColor.clone().lerp(new THREE.Color("#9fc8ff"), showAtmosphere ? 0.62 : 0.24) },
-          uOpacity: { value: showAtmosphere ? 0.32 : 0.13 },
+          uOpacity: { value: (showAtmosphere ? 0.32 : 0.13) * VISUAL_CALIBRATION.planets.rimIntensity },
         },
         vertexShader: `
           varying vec3 vNormal;
@@ -443,7 +444,7 @@ export default function Planet({
           metalness={metalness}
           emissive={nightMap ? "#dbeafe" : map ? "#ffffff" : emissiveBaseColor}
           emissiveMap={nightMap ?? map ?? undefined}
-          emissiveIntensity={Math.max(emissiveIntensity * (selected ? 0.82 : 0.58), selected ? (map ? 0.26 : 0.14) : nightMap ? 0.08 : 0)}
+          emissiveIntensity={Math.max(emissiveIntensity * (selected ? 0.82 : 0.58), selected ? (map ? 0.26 : 0.14) : nightMap ? 0.08 * VISUAL_CALIBRATION.planets.nightLightIntensity : 0)}
           envMapIntensity={selected ? Math.min(Math.max(envMapIntensity, 0.18), 0.42) : Math.min(Math.max(envMapIntensity, 0.08), 0.22)}
           clearcoat={selected ? 0.2 : showAtmosphere ? 0.18 : 0.055}
           clearcoatRoughness={showAtmosphere ? 0.38 : 0.78}
@@ -479,7 +480,7 @@ export default function Planet({
           <meshStandardMaterial
             map={clouds}
             transparent
-            opacity={0.5}
+            opacity={0.5 * VISUAL_CALIBRATION.planets.cloudIntensity}
             depthWrite={false}
             depthTest
             metalness={0}

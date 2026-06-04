@@ -145,7 +145,14 @@ async (scenario) => {
     canvas.dispatchEvent(new PointerEvent("pointermove", { bubbles: true, pointerId: 7, pointerType: "mouse", clientX: x, clientY: y, buttons: 1 }));
     if (frame > 340) canvas.dispatchEvent(new PointerEvent("pointerup", { bubbles: true, pointerId: 7, pointerType: "mouse", clientX: x, clientY: y, buttons: 0 }));
   });
-  return { ok: true, scenario, ...result };
+  const assetMarks = performance
+    .getEntriesByType("mark")
+    .filter((entry) => entry.name.startsWith("solar:"))
+    .map((entry) => ({
+      name: entry.name.replace("solar:", ""),
+      ms: Number(entry.startTime.toFixed(1)),
+    }));
+  return { ok: true, scenario, ...result, assetMarks };
 }`;
 
 async function readTraceStream(cdp, stream) {

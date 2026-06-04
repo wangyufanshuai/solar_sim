@@ -6,6 +6,8 @@ import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
+import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
+import { markRenderAssetStage, type RenderAssetPriority } from "../lib/renderAssetQueue";
 
 type DeepSkySpriteDef = {
   id: string;
@@ -25,8 +27,6 @@ const textureCache = new Map<string, THREE.Texture>();
 const PLANE_FORWARD = new THREE.Vector3(0, 0, 1);
 const CORE_DECAL_SCALE = 0.86;
 const DEFERRED_DECAL_SCALE = 0.76;
-const BALANCED_LOAD_GAP_MS = 90;
-const QUALITY_LOAD_GAP_MS = 35;
 
 const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   {
@@ -356,6 +356,7 @@ export default function DeepSkyImageSprites({
   const lastTierRef = useRef<string | null>(null);
   const camera = useThree((s) => s.camera);
   const gl = useThree((s) => s.gl);
+  const renderAssetQueue = useOptionalRenderAssetQueue();
   const texturesRef = useRef<Record<string, THREE.Texture>>({});
   const loadedIdsRef = useRef<Set<string>>(new Set());
   const pendingCommitRef = useRef(false);
@@ -421,9 +422,8 @@ export default function DeepSkyImageSprites({
     let cancelled = false;
     const loader = new THREE.TextureLoader();
     const maxAnisotropy = Math.min(highQuality ? 8 : 4, gl.capabilities.getMaxAnisotropy());
-    const queue = defs.filter((def) => !loadedIdsRef.current.has(def.id));
-    const loadGapMs = highQuality ? QUALITY_LOAD_GAP_MS : BALANCED_LOAD_GAP_MS;
-    let timerId: number | null = null;
+    const loadQueue = defs.filter((def) => !loadedIdsRef.current.has(def.id));
+    const cancelLoads: Array<() => void> = [];
 
     const commitLoadedIds = () => {
       if (cancelled || pendingCommitRef.current) return;
@@ -453,47 +453,77 @@ export default function DeepSkyImageSprites({
       }
     }
 
-    let queueIndex = 0;
-    const loadNext = () => {
-      if (cancelled || queueIndex >= queue.length) return;
-      const def = queue[queueIndex++]!;
+    const loadOne = (def: (typeof defs)[number]) => {
       if (textureCache.has(def.id)) {
         const cached = textureCache.get(def.id)!;
         markLoaded(def.id, cached);
-        timerId = window.setTimeout(loadNext, loadGapMs);
         return;
       }
-      loader.load(
-        def.imageUrl,
-        (tex) => {
-          if (cancelled) {
-            tex.dispose();
-            return;
-          }
+      const priority: RenderAssetPriority = def.priority
+        ? "visible"
+        : highQuality
+          ? "quality"
+          : "idle";
+      const onLoad = (tex: THREE.Texture) => {
+        if (cancelled) return;
+        textureCache.set(def.id, tex);
+        markLoaded(def.id, tex);
+      };
+      const onError = () => {};
+      if (renderAssetQueue) {
+        cancelLoads.push(renderAssetQueue.loadTexture({
+          url: def.imageUrl,
+          priority,
+          colorSpace: THREE.SRGBColorSpace,
+          anisotropy: maxAnisotropy,
+          configure: (tex) => {
+            tex.minFilter = highQuality ? THREE.LinearMipmapLinearFilter : THREE.LinearFilter;
+            tex.magFilter = THREE.LinearFilter;
+            tex.generateMipmaps = highQuality;
+          },
+          onLoad,
+          onError,
+        }));
+      } else {
+        loader.load(
+          def.imageUrl,
+          (tex) => {
+            if (cancelled) {
+              tex.dispose();
+              return;
+            }
           tex.colorSpace = THREE.SRGBColorSpace;
           tex.minFilter = THREE.LinearMipmapLinearFilter;
           tex.magFilter = THREE.LinearFilter;
           tex.generateMipmaps = true;
           tex.anisotropy = maxAnisotropy;
           tex.needsUpdate = true;
-          textureCache.set(def.id, tex);
-          markLoaded(def.id, tex);
-          timerId = window.setTimeout(loadNext, loadGapMs);
-        },
-        undefined,
-        () => {
-          if (!cancelled) timerId = window.setTimeout(loadNext, loadGapMs);
-        },
-      );
+            onLoad(tex);
+          },
+          undefined,
+          onError,
+        );
+      }
     };
 
-    timerId = window.setTimeout(loadNext, highQuality ? 60 : 140);
+    for (const def of loadQueue) loadOne(def);
 
     return () => {
       cancelled = true;
-      if (timerId !== null) window.clearTimeout(timerId);
+      for (const cancel of cancelLoads) cancel();
     };
-  }, [defs, gl, highQuality]);
+  }, [defs, gl, highQuality, renderAssetQueue]);
+
+  useEffect(() => {
+    const loaded = loadedIdsRef.current;
+    const coreReady = DEEP_SKY_IMAGES
+      .filter((def, index) => def.priority || index < PRIORITY_DEEP_SKY_COUNT)
+      .every((def) => loaded.has(def.id));
+    if (coreReady) markRenderAssetStage("deep-sky-core-ready");
+    if (highQuality && DEEP_SKY_IMAGES.every((def) => loaded.has(def.id))) {
+      markRenderAssetStage("quality-assets-ready");
+    }
+  }, [highQuality, loadedIds]);
 
   const loadedIdSet = useMemo(() => new Set(loadedIds), [loadedIds]);
 
@@ -508,10 +538,10 @@ export default function DeepSkyImageSprites({
     lastTierRef.current = tier;
     const opacityScale =
       tier === "solar"
-        ? VISUAL_CALIBRATION.deepSkySolarLodOpacity
+        ? VISUAL_CALIBRATION.nebulae.deepSkySolarLodOpacity
         : tier === "mid"
-          ? VISUAL_CALIBRATION.deepSkyMidLodOpacity
-          : VISUAL_CALIBRATION.deepSkyFarLodOpacity;
+          ? VISUAL_CALIBRATION.nebulae.deepSkyMidLodOpacity
+          : VISUAL_CALIBRATION.nebulae.deepSkyFarLodOpacity;
     for (const mat of materialRefs.current) {
       const opacity = (mat.userData.baseOpacity as number | undefined) ?? 0.45;
       mat.opacity = opacity * opacityScale;
@@ -527,7 +557,7 @@ export default function DeepSkyImageSprites({
         const aspect = textureAspect(tex);
         const quaternion = skyDecalQuaternion(def.position, def.rotation);
         const decalSize = def.size * (def.priority ? CORE_DECAL_SCALE : DEFERRED_DECAL_SCALE);
-        const decalOpacity = def.opacity * (def.priority ? VISUAL_CALIBRATION.deepSkyCoreOpacityScale : VISUAL_CALIBRATION.deepSkyDeferredOpacityScale);
+        const decalOpacity = def.opacity * (def.priority ? VISUAL_CALIBRATION.nebulae.deepSkyCoreOpacityScale : VISUAL_CALIBRATION.nebulae.deepSkyDeferredOpacityScale);
         return (
           <mesh
             key={def.id}

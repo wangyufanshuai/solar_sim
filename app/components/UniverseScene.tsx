@@ -20,7 +20,7 @@ import type { LaunchConfig } from "../lib/launchTelemetryTypes";
 import type { LocalTelemetry } from "../lib/localLaunchPhysics";
 import type { MissionPlan } from "../lib/missionDesignerTypes";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
-import type { CameraIntentState } from "../lib/cameraIntentState";
+import { cameraIntentReducer, type CameraIntentAction, type CameraIntentState } from "../lib/cameraIntentState";
 import { applyFloatingOffsetScene, updateFloatingOrigin } from "../lib/floatingOrigin";
 import { lodConfigForTier } from "../lib/galacticLod";
 import { AU_TO_SCENE, EARTH_BODY_INDEX, MOON_BODY_INDEX, SOLAR_SYSTEM_BODIES, type SolarSystemBodyDef } from "../data/planetsJ2000";
@@ -83,6 +83,14 @@ function focusAnimationMs(mode: FocusMode): number {
 }
 
 const ORIGIN_CAMERA_OFFSET = new THREE.Vector3(-310, 108, 560);
+
+function dispatchCameraIntent(
+  cameraIntentRef: MutableRefObject<CameraIntentState> | undefined,
+  action: CameraIntentAction,
+) {
+  if (!cameraIntentRef) return;
+  cameraIntentRef.current = cameraIntentReducer(cameraIntentRef.current, action);
+}
 
 function FloatingOriginBridge({ floatingOriginRef }: { floatingOriginRef: MutableRefObject<FloatingOriginState> }) {
   const camera = useThree((s) => s.camera);
@@ -171,7 +179,11 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       lockBodyIndexRef.current = null;
       lockInitializedRef.current = false;
       lockDesiredDistanceRef.current = null;
-      if (cameraIntentRef) cameraIntentRef.current = { kind: animateOrigin ? "free" : "free", targetLabel: animateOrigin ? "origin" : undefined, updatedAt: performance.now() };
+      dispatchCameraIntent(cameraIntentRef, {
+        type: "reset",
+        targetLabel: animateOrigin ? "origin" : undefined,
+        reason: animateOrigin ? "origin focus requested" : "camera focus cleared",
+      });
       if (controls) controls.enableDamping = prevDampingRef.current;
       if (animateOrigin) {
         const now = performance.now();
@@ -198,20 +210,19 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       clearLock();
       const now = performance.now();
       recentEventFocusRef.current = { bodyIndex: d.bodyIndex, mode, t: now };
-      if (cameraIntentRef) {
-        cameraIntentRef.current = {
-          kind: mode === "lock" ? "bodyLock" : "bodyFocus",
-          bodyIndex: d.bodyIndex,
-          targetLabel: SOLAR_SYSTEM_BODIES[d.bodyIndex]?.name,
-          progress: 0,
-          updatedAt: now,
-        };
-      }
+      dispatchCameraIntent(cameraIntentRef, {
+        type: mode === "lock" ? "lockBody" : "focusBody",
+        bodyIndex: d.bodyIndex,
+        targetLabel: SOLAR_SYSTEM_BODIES[d.bodyIndex]?.name,
+        progress: 0,
+        now,
+        reason: mode === "lock" ? "body lock event" : "body focus event",
+      });
       focusRef.current = { kind: "body", index: d.bodyIndex, mode, start: now, until: now + focusAnimationMs(mode) };
       focusStartCamera.current.copy(camera.position);
       if (controls) focusStartTarget.current.copy(controls.target);
     };
-    const onEarthMoon = () => { clearLock(); const now = performance.now(); if (cameraIntentRef) cameraIntentRef.current = { kind: "bodyFocus", targetLabel: "Earth-Moon", progress: 0, updatedAt: now }; focusRef.current = { kind: "earthMoon", start: now, until: now + 2800 }; };
+    const onEarthMoon = () => { clearLock(); const now = performance.now(); dispatchCameraIntent(cameraIntentRef, { type: "focusEarthMoon", now }); focusRef.current = { kind: "earthMoon", start: now, until: now + 2800 }; };
     const onDirection = () => { clearLock(); };
     const focusBodyTarget = (bodyIndex: number): THREE.Vector3 | null => {
       const p = physicsRef.current;
@@ -238,7 +249,13 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       lockBodyIndexRef.current = bodyIndex;
       lockTargetSmooth.current.copy(target);
       lockInitializedRef.current = true;
-      if (cameraIntentRef) cameraIntentRef.current = { kind: "bodyLock", bodyIndex, targetLabel: SOLAR_SYSTEM_BODIES[bodyIndex]?.name, distance: lockDesiredDistanceRef.current ?? undefined, updatedAt: performance.now() };
+      dispatchCameraIntent(cameraIntentRef, {
+        type: "updateLock",
+        bodyIndex,
+        targetLabel: SOLAR_SYSTEM_BODIES[bodyIndex]?.name,
+        distance: lockDesiredDistanceRef.current ?? undefined,
+        reason: "locked wheel zoom changed desired distance",
+      });
       const def = SOLAR_SYSTEM_BODIES[bodyIndex];
       if (def) {
         controls.minDistance = minFocusDistance(def);
@@ -313,15 +330,14 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
           start: started,
           until: started + focusAnimationMs(request.mode),
         };
-        if (cameraIntentRef) {
-          cameraIntentRef.current = {
-            kind: request.mode === "lock" ? "bodyLock" : "bodyFocus",
-            bodyIndex: request.bodyIndex,
-            targetLabel: SOLAR_SYSTEM_BODIES[request.bodyIndex]?.name,
-            progress: 0,
-            updatedAt: started,
-          };
-        }
+        dispatchCameraIntent(cameraIntentRef, {
+          type: request.mode === "lock" ? "lockBody" : "focusBody",
+          bodyIndex: request.bodyIndex,
+          targetLabel: SOLAR_SYSTEM_BODIES[request.bodyIndex]?.name,
+          progress: 0,
+          now: started,
+          reason: "body focus request state changed",
+        });
         focusStartCamera.current.copy(camera.position);
         focusStartTarget.current.copy(controls.target);
       }
@@ -399,7 +415,13 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       const minDist = def ? minFocusDistance(def) : 0.05;
       const targetDist = THREE.MathUtils.clamp(lockDesiredDistanceRef.current ?? Math.max(currentDist, minDist), minDist, def ? Math.max(idealFocusCameraDistance(def, "lock") * 14, minDist * 2) : 50000);
       lockDesiredDistanceRef.current = targetDist;
-      if (cameraIntentRef) cameraIntentRef.current = { kind: "bodyLock", bodyIndex: li, targetLabel: def?.name, distance: targetDist, updatedAt: now };
+      dispatchCameraIntent(cameraIntentRef, {
+        type: "updateLock",
+        bodyIndex: li,
+        targetLabel: def?.name,
+        distance: targetDist,
+        now,
+      });
       if (userControllingRef.current) {
         const liveDist = THREE.MathUtils.clamp(Math.max(currentDist, minDist), minDist, def ? Math.max(idealFocusCameraDistance(def, "lock") * 14, minDist * 2) : 50000);
         lockDesiredDistanceRef.current = liveDist;
@@ -424,7 +446,7 @@ function CameraFocusDirectionBridge({ controlsRef, cameraIntentRef }: { controls
   const targetRef = useRef<THREE.Vector3 | null>(null);
   const camRef = useRef(new THREE.Vector3());
   useEffect(() => {
-    const onDir = (e: Event) => { const d = (e as CustomEvent<CameraFocusDirectionDetail>).detail; if (!d?.direction) return; const dir = new THREE.Vector3(...d.direction).normalize(); targetRef.current = dir.clone().multiplyScalar(7000); camRef.current.copy(dir).multiplyScalar(-800).add(new THREE.Vector3(0, 300, 0)); if (cameraIntentRef) cameraIntentRef.current = { kind: "skyDirectionFocus", targetLabel: "sky direction", progress: 0, updatedAt: performance.now() }; };
+    const onDir = (e: Event) => { const d = (e as CustomEvent<CameraFocusDirectionDetail>).detail; if (!d?.direction) return; const dir = new THREE.Vector3(...d.direction).normalize(); targetRef.current = dir.clone().multiplyScalar(7000); camRef.current.copy(dir).multiplyScalar(-800).add(new THREE.Vector3(0, 300, 0)); dispatchCameraIntent(cameraIntentRef, { type: "focusSkyDirection", progress: 0 }); };
     const clear = () => { targetRef.current = null; };
     window.addEventListener(CAMERA_FOCUS_DIRECTION_EVENT, onDir);
     window.addEventListener(CAMERA_FOCUS_BODY_EVENT, clear);
@@ -437,7 +459,7 @@ function CameraFocusDirectionBridge({ controlsRef, cameraIntentRef }: { controls
       window.removeEventListener(CAMERA_FOCUS_EARTH_MOON_EVENT, clear);
     };
   }, [cameraIntentRef]);
-  useFrame(() => { const controls = controlsRef.current; if (!controls || !targetRef.current) return; controls.target.lerp(targetRef.current, 0.1); camera.position.lerp(camRef.current, 0.085); controls.update(); const remain = camera.position.distanceTo(camRef.current); if (cameraIntentRef) cameraIntentRef.current = { kind: "skyDirectionFocus", targetLabel: "sky direction", progress: THREE.MathUtils.clamp(1 - remain / 1200, 0, 1), distance: remain, updatedAt: performance.now() }; if (remain < 3) { targetRef.current = null; if (cameraIntentRef) cameraIntentRef.current = { kind: "free", targetLabel: "sky direction", updatedAt: performance.now() }; } }, 2);
+  useFrame(() => { const controls = controlsRef.current; if (!controls || !targetRef.current) return; controls.target.lerp(targetRef.current, 0.1); camera.position.lerp(camRef.current, 0.085); controls.update(); const remain = camera.position.distanceTo(camRef.current); dispatchCameraIntent(cameraIntentRef, { type: "focusSkyDirection", progress: THREE.MathUtils.clamp(1 - remain / 1200, 0, 1), distance: remain, reason: "sky focus animation progressing" }); if (remain < 3) { targetRef.current = null; dispatchCameraIntent(cameraIntentRef, { type: "reset", targetLabel: "sky direction", reason: "sky focus animation completed" }); } }, 2);
   return null;
 }
 
@@ -470,11 +492,10 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
   useEffect(() => {
     if (!simulation.cameraIntentRef) return;
     if (simulation.localLaunchActive) {
-      simulation.cameraIntentRef.current = {
-        kind: "launchFollow",
+      dispatchCameraIntent(simulation.cameraIntentRef, {
+        type: "launchFollow",
         targetLabel: "launch vehicle",
-        updatedAt: performance.now(),
-      };
+      });
     }
   }, [simulation.cameraIntentRef, simulation.localLaunchActive]);
 

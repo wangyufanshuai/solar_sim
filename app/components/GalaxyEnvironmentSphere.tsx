@@ -4,6 +4,8 @@ import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
+import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
+import { markRenderAssetStage } from "../lib/renderAssetQueue";
 
 type GalaxyEnvironmentSphereProps = {
   onTextureState?: (loaded: boolean) => void;
@@ -68,6 +70,7 @@ export default function GalaxyEnvironmentSphere({
   const meshRef = useRef<THREE.Mesh>(null);
   const onTextureStateRef = useRef(onTextureState);
   const { gl } = useThree();
+  const queue = useOptionalRenderAssetQueue();
 
   onTextureStateRef.current = onTextureState;
 
@@ -82,9 +85,9 @@ export default function GalaxyEnvironmentSphere({
         toneMapped: false,
         uniforms: {
           uMap: { value: null as THREE.Texture | null },
-          uExposure: { value: VISUAL_CALIBRATION.skyExposure },
-          uContrast: { value: VISUAL_CALIBRATION.skyContrast },
-          uTinyStarIntensity: { value: VISUAL_CALIBRATION.skyTinyStarIntensity },
+          uExposure: { value: VISUAL_CALIBRATION.sky.exposure },
+          uContrast: { value: VISUAL_CALIBRATION.sky.contrast },
+          uTinyStarIntensity: { value: VISUAL_CALIBRATION.sky.tinyStarIntensity },
         },
       }),
     []
@@ -104,14 +107,15 @@ export default function GalaxyEnvironmentSphere({
       loaded.mapping = THREE.UVMapping;
       loaded.wrapS = THREE.RepeatWrapping;
       loaded.wrapT = THREE.ClampToEdgeWrapping;
-      loaded.minFilter = THREE.LinearMipmapLinearFilter;
+      loaded.minFilter = THREE.LinearFilter;
       loaded.magFilter = THREE.LinearFilter;
-      loaded.generateMipmaps = true;
+      loaded.generateMipmaps = false;
       loaded.anisotropy = Math.min(8, gl.capabilities.getMaxAnisotropy());
       loaded.needsUpdate = true;
       material.uniforms.uMap.value = loaded;
       material.needsUpdate = true;
       setTexture(loaded);
+      markRenderAssetStage("sky-ready");
       onTextureStateRef.current?.(true);
     };
     const loadAt = (index: number) => {
@@ -120,7 +124,23 @@ export default function GalaxyEnvironmentSphere({
         if (!cancelled) onTextureStateRef.current?.(false);
         return;
       }
-      loader.load(url, configure, undefined, () => loadAt(index + 1));
+      if (queue) {
+        queue.loadTexture({
+          url,
+          priority: "critical",
+          colorSpace: THREE.SRGBColorSpace,
+          anisotropy: Math.min(8, gl.capabilities.getMaxAnisotropy()),
+          configure: (tex) => {
+            tex.mapping = THREE.UVMapping;
+            tex.wrapS = THREE.RepeatWrapping;
+            tex.wrapT = THREE.ClampToEdgeWrapping;
+          },
+          onLoad: configure,
+          onError: () => loadAt(index + 1),
+        });
+      } else {
+        loader.load(url, configure, undefined, () => loadAt(index + 1));
+      }
     };
     loadAt(0);
     return () => {
@@ -135,7 +155,7 @@ export default function GalaxyEnvironmentSphere({
         return null;
       });
     };
-  }, [gl, material]);
+  }, [gl, material, queue]);
 
   useEffect(() => () => material.dispose(), [material]);
 

@@ -28,6 +28,7 @@ import OsculatingOrbitEllipse from "./OsculatingOrbitEllipse";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { applyFloatingOffsetScene } from "../lib/floatingOrigin";
 import { siderealSpinRadPerSimDayForBodyId } from "../lib/planetSiderealSpin";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 function createSaturnRingTexture() {
   const canvas = document.createElement("canvas");
@@ -71,7 +72,7 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
           <meshBasicMaterial
             map={ringTexture}
             transparent
-            opacity={0.72}
+            opacity={VISUAL_CALIBRATION.rings.saturnOpacity}
             side={THREE.DoubleSide}
             depthWrite={false}
             toneMapped={false}
@@ -143,7 +144,7 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
         <meshStandardMaterial
           color="#3a352e"
           transparent
-          opacity={0.12}
+          opacity={VISUAL_CALIBRATION.rings.cassiniDivisionOpacity}
           side={THREE.DoubleSide}
           depthWrite={false}
           metalness={0.0}
