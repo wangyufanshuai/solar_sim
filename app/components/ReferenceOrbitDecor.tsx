@@ -52,12 +52,12 @@ function budgetOrbitStyle(
   const major = MAJOR_REFERENCE_IDS.has(def.id);
   const selected = selectedBodyId === def.id;
   if (renderBudget === "quality") {
-    return { visible: true, opacityMul: selected ? 1.18 : major ? 0.78 : 0.52, glowMul: selected ? 0.72 : major ? 0.55 : 0.28, label: selected || major };
+    return { visible: true, opacityMul: selected ? 1.18 : major ? 0.66 : 0.38, glowMul: selected ? 0.72 : major ? 0.4 : 0.18, label: selected || major };
   }
   if (renderBudget === "safe") {
     return { visible: selected || major, opacityMul: selected ? 0.72 : major ? 0.34 : 0, glowMul: selected ? 0.18 : 0, label: selected };
   }
-  return { visible: selected || major || def.aAu < 4.2, opacityMul: selected ? 0.95 : major ? 0.46 : 0.16, glowMul: selected ? 0.32 : major ? 0.12 : 0, label: selected || major };
+  return { visible: selected || major || def.aAu < 4.2, opacityMul: selected ? 0.95 : major ? 0.38 : 0.1, glowMul: selected ? 0.32 : major ? 0.08 : 0, label: selected || major };
 }
 
 function DecorOrbit({
@@ -185,6 +185,7 @@ function DecorOrbit({
     const op = THREE.MathUtils.clamp(
       ORBIT_CINEMATIC_BASE_OPACITY *
         VISUAL_CALIBRATION.orbits.referenceOpacity *
+        (selected ? VISUAL_CALIBRATION.orbits.activeOpacity : VISUAL_CALIBRATION.orbits.contextOpacity) *
         style.opacityMul *
         sizeMul *
         lodA,
@@ -213,7 +214,7 @@ function DecorOrbit({
           />
         </mesh>
       ) : null}
-      {style.label ? <Html
+      {style.label && (size.width >= 640 || selected) ? <Html
         position={[labelAnchor.x, labelAnchor.y, labelAnchor.z]}
         center={false}
         distanceFactor={20}

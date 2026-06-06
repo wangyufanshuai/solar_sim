@@ -95,7 +95,7 @@ export function solveLambertTransfer({
   const sinDtheta = Math.sin(dtheta);
   const angleDeg = (dtheta * 180) / Math.PI;
   const aLambert = sinDtheta * Math.sqrt((r1 * r2) / Math.max(1e-12, 1 - cosDtheta));
-  if (!Number.isFinite(aLambert) || Math.abs(aLambert) < 1e-9) {
+  if (!Number.isFinite(aLambert) || Math.abs(sinDtheta) < 1e-8 || Math.abs(aLambert) < 1e-9) {
     return zeroVelocityResult("near-180 degree Lambert geometry is singular for this first-pass solver", angleDeg);
   }
 

@@ -184,7 +184,12 @@ export default function SunBody({
     }
     if (halo) {
       const pulse = 1 + Math.sin(t * 0.7) * 0.02;
-      halo.scale.setScalar(radius * VISUAL_CALIBRATION.sun.haloScale * pulse);
+      halo.scale.setScalar(
+        radius *
+          VISUAL_CALIBRATION.sun.haloScale *
+          VISUAL_CALIBRATION.closeups.sun.haloScale *
+          pulse,
+      );
     }
     if (prominenceRef.current) {
       prominenceRef.current.rotation.y += 0.0018;

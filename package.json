@@ -12,6 +12,7 @@
     "perf:smoke": "node scripts/perf-smoke.mjs",
     "perf:profile": "node scripts/perf-profile.mjs",
     "perf:profile:assert": "node scripts/perf-profile.mjs | node scripts/perf-assert.mjs",
+    "test:mission": "vitest run app/lib/__tests__/missionEngineering.test.ts",
     "lint": "next lint",
     "fetch-planet-textures": "node scripts/fetch-planet-textures.mjs",
     "fetch-nasa-earth-hd": "node scripts/fetch-nasa-earth-hd.mjs",
@@ -48,6 +49,7 @@
     "eslint-config-next": "^14.2.18",
     "postcss": "^8.5.8",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.6.3"
+    "typescript": "^5.6.3",
+    "vitest": "^2.1.9"
   }
 }

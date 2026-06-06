@@ -1,4 +1,6 @@
 export type MissionRiskLevel = "low" | "medium" | "high";
+export type MissionValidationStatus = "pass" | "warning" | "fail";
+export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -13,6 +15,52 @@ export type MissionBodySnapshot = {
 export type MissionPhysicsSnapshot = {
   simDays: number;
   bodies: Record<MissionBodyId, MissionBodySnapshot>;
+};
+
+export type MissionEngineeringConstraints = {
+  preset: MissionConstraintPreset;
+  dryMassKg: number;
+  ispSeconds: number;
+  parkingOrbitAltitudeKm: number;
+  maxC3Km2S2: number;
+  maxTotalDeltaVKms: number;
+  maxDsmDeltaVKms: number;
+  maxDurationDays: number;
+  minVenusFlybyAltitudeKm: number;
+  minJupiterFlybyAltitudeKm: number;
+  maxNavigationUncertaintyKm: number;
+};
+
+export type MissionConstraintCheck = {
+  id: string;
+  label: string;
+  actual: number;
+  limit: number;
+  margin: number;
+  unit: string;
+  status: MissionValidationStatus;
+  explanation: string;
+};
+
+export type MissionSolverProvenance = {
+  modelLevel: "medium-fidelity preliminary design";
+  epochSimDays: number;
+  gravityModel: "heliocentric two-body Lambert + patched conics";
+  ephemerisSource: "live simulation state with circular state propagation";
+  lambertToleranceSeconds: number;
+  candidateCount: number;
+  convergedCandidateCount: number;
+};
+
+export type MissionSensitivitySummary = {
+  samples: number;
+  departurePerturbationDays: number;
+  tofPerturbationFraction: number;
+  deltaVRangeKms: [number, number];
+  c3RangeKm2S2: [number, number];
+  minimumFlybyMarginKm: number;
+  scoreRange: [number, number];
+  robustnessScore: number;
 };
 
 export type MissionSegment = {
@@ -67,6 +115,8 @@ export type MissionPlan = {
   arrivalDay: number;
   durationDays: number;
   totalDeltaVKms: number;
+  deterministicDeltaVKms: number;
+  dsmReserveDeltaVKms: number;
   fuelEstimateKg: number;
   score: number;
   grCorrectionNote: string;
@@ -74,6 +124,12 @@ export type MissionPlan = {
   maxCommunicationDelayMin: number;
   navigationUncertaintyKm: number;
   risk: MissionRiskLevel;
+  validationStatus: MissionValidationStatus;
+  constraintChecks: MissionConstraintCheck[];
+  assumptions: string[];
+  solverProvenance: MissionSolverProvenance;
+  sensitivitySummary: MissionSensitivitySummary | null;
+  rejectionReasons: string[];
   segments: MissionSegment[];
   chartSeries: MissionChartPoint[];
 };
@@ -85,11 +141,15 @@ export type MissionOptimizerOptions = {
   departureStepDays: number;
   maxCandidates: number;
   includeRelativity: boolean;
+  constraintPreset: MissionConstraintPreset;
+  constraints?: Partial<Omit<MissionEngineeringConstraints, "preset">>;
 };
 
 export type MissionOptimizationResult = {
   options: MissionOptimizerOptions;
+  constraints: MissionEngineeringConstraints;
   plans: MissionPlan[];
+  rejectedPlans: MissionPlan[];
   bestPlan: MissionPlan | null;
   generatedAt: number;
 };

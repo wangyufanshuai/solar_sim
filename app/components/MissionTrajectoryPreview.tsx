@@ -8,6 +8,7 @@ import { AU_TO_SCENE } from "../data/planetsJ2000";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import type { MissionPlan, MissionSegment } from "../lib/missionDesignerTypes";
 import type { MutableRefObject } from "react";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 const SEGMENT_COLORS = ["#62e6ff", "#ff7ab6", "#ffd166"];
 
@@ -33,7 +34,7 @@ function SegmentLine({ segment, index }: { segment: MissionSegment; index: numbe
     const mat = new THREE.LineBasicMaterial({
       color: SEGMENT_COLORS[index % SEGMENT_COLORS.length],
       transparent: true,
-      opacity: 0.78,
+      opacity: VISUAL_CALIBRATION.orbits.missionOpacity,
       depthWrite: false,
       depthTest: true,
       toneMapped: false,

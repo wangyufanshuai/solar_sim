@@ -72,13 +72,14 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
       {ringTexture ? (
         <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={6} castShadow={false} receiveShadow={false}>
           <ringGeometry args={[radiusScene * 1.11, radiusScene * 2.43, 192]} />
-          <meshBasicMaterial
+          <meshStandardMaterial
             map={ringTexture}
             transparent
-            opacity={VISUAL_CALIBRATION.rings.saturnOpacity}
+            opacity={VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity}
             side={THREE.DoubleSide}
             depthWrite={false}
-            toneMapped={false}
+            metalness={0}
+            roughness={0.9}
           />
         </mesh>
       ) : null}
@@ -147,7 +148,7 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
         <meshStandardMaterial
           color="#3a352e"
           transparent
-          opacity={VISUAL_CALIBRATION.rings.cassiniDivisionOpacity}
+          opacity={VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity}
           side={THREE.DoubleSide}
           depthWrite={false}
           metalness={0.0}
@@ -308,7 +309,17 @@ function BodyShell({
 
   const preset =
     def.variant === "planet" ? planetMaterialPreset(def.id) : null;
-  const planetRoughness = preset?.roughness ?? 0.82;
+  const closeupCalibration =
+    def.id === "earth"
+      ? VISUAL_CALIBRATION.closeups.earth
+      : def.id === "moon"
+        ? VISUAL_CALIBRATION.closeups.moon
+        : def.id === "jupiter"
+          ? VISUAL_CALIBRATION.closeups.jupiter
+          : def.id === "saturn"
+            ? VISUAL_CALIBRATION.closeups.saturn
+            : null;
+  const planetRoughness = closeupCalibration?.roughness ?? preset?.roughness ?? 0.82;
   const planetMetalness = preset?.metalness ?? 0.04;
   const baseEmissive = preset?.emissiveIntensity ?? 0.1;
   const planetEmissiveIntensity =
@@ -380,6 +391,7 @@ function BodyShell({
         {def.showRings ? <SaturnRings radiusScene={def.radiusScene} /> : null}
         <CelestialBody
           variant="planet"
+          bodyId={def.id}
           radius={visualRadius}
           position={[0, 0, 0]}
           color={def.color}
@@ -388,7 +400,9 @@ function BodyShell({
           normalMap={normalMap}
           emissive={def.color}
           emissiveIntensity={planetEmissiveIntensity}
-          envMapIntensity={0.56}
+          envMapIntensity={0.24}
+          calibratedEnvMapIntensity={closeupCalibration?.envMapIntensity}
+          normalScaleIntensity={closeupCalibration?.normalScale}
           roughness={planetRoughness}
           metalness={planetMetalness}
           sunCastPointLight={false}
@@ -416,6 +430,8 @@ function BodyShell({
           showAtmosphere={!!def.atmosphereColor}
           atmosphereColor={def.atmosphereColor}
           clouds={cloudMap}
+          illuminationBodyIndex={bodyIndex}
+          illuminationPhysicsRef={physicsRef}
           spinAngleRef={spinAngleRef}
         />
       </group>

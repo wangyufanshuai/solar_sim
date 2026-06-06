@@ -1,16 +1,40 @@
 "use client";
 
 import { useEffect, useMemo, useState, type MutableRefObject } from "react";
-import { BrainCircuit, Clock3, Radio, Route, Satellite, ShieldAlert, Sparkles } from "lucide-react";
+import {
+  BrainCircuit,
+  ChevronDown,
+  Clock3,
+  Radio,
+  Route,
+  Satellite,
+  ShieldAlert,
+  SlidersHorizontal,
+  Sparkles,
+} from "lucide-react";
 import { AU_METERS, DAY_SECONDS } from "../lib/physicalConstants";
-import { DEFAULT_MISSION_OPTIONS, optimizeMission } from "../lib/missionOptimizer";
+import {
+  DEFAULT_MISSION_OPTIONS,
+  MISSION_CONSTRAINT_PRESETS,
+  optimizeMission,
+} from "../lib/missionOptimizer";
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
-import type { MissionAdvisorReport, MissionBodyId, MissionOptimizationResult, MissionPhysicsSnapshot, MissionPlan } from "../lib/missionDesignerTypes";
+import type {
+  MissionAdvisorReport,
+  MissionBodyId,
+  MissionConstraintPreset,
+  MissionEngineeringConstraints,
+  MissionOptimizationResult,
+  MissionPhysicsSnapshot,
+  MissionPlan,
+} from "../lib/missionDesignerTypes";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 const BODY_IDS: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
+const TABS = ["summary", "legs", "audit"] as const;
 const IS = 1.05;
+type MissionTab = (typeof TABS)[number];
 type DeepSeekStatus = "idle" | "thinking" | "deepseek" | "fallback" | "error";
 
 type Props = {
@@ -23,54 +47,34 @@ type Props = {
   onSelectPlan: (plan: MissionPlan | null) => void;
 };
 
-function formatDay(days: number): string {
-  return `T+${Math.round(days).toLocaleString()} d`;
+function bodyDisplay(id: MissionBodyId): string {
+  return id === "earth" ? "Earth" : id === "venus" ? "Venus" : id === "jupiter" ? "Jupiter" : "Saturn";
 }
 
 function formatMass(kg: number): string {
   return kg >= 1000 ? `${(kg / 1000).toFixed(1)} t` : `${kg.toFixed(0)} kg`;
 }
 
-function bodyDisplay(id: MissionBodyId): string {
-  return id === "earth" ? "Earth" : id === "venus" ? "Venus" : id === "jupiter" ? "Jupiter" : "Saturn";
-}
-
-function validatePlan(plan: MissionPlan | null): string | null {
-  if (!plan) return "Run the optimizer to generate a candidate.";
-  if (plan.segments.length < 3) return "Trajectory needs at least 3 patched-conic segments.";
-  if (plan.segments.filter((seg) => seg.lambertConverged).length < 3) return "Lambert solver did not converge for enough mission legs.";
-  if (!Number.isFinite(plan.totalDeltaVKms) || plan.totalDeltaVKms <= 0) return "Delta-v estimate is invalid.";
-  if (!Number.isFinite(plan.durationDays) || plan.durationDays <= 0) return "Mission duration is invalid.";
-  if (!Number.isFinite(plan.maxCommunicationDelayMin) || plan.maxCommunicationDelayMin <= 0) return "Communication delay estimate is invalid.";
-  if (!Number.isFinite(plan.segments[0]?.c3Km2S2) || (plan.segments[0]?.c3Km2S2 ?? 0) < 0) return "Earth departure C3 estimate is invalid.";
-  if (plan.segments.some((seg) => seg.toBody !== "saturn" && (!Number.isFinite(seg.flybySafetyMargin) || seg.flybySafetyMargin <= 0))) return "Flyby periapsis margin needs review.";
-  if (plan.segments.some((seg) => !Number.isFinite(seg.departureVinfinityKms) || !Number.isFinite(seg.arrivalVinfinityKms))) return "One or more v-infinity estimates are invalid.";
-  if (plan.segments.some((seg) => !Number.isFinite(seg.deltaVKms) || seg.deltaVKms <= 0 || seg.trajectoryAu.length < 8)) {
-    return "One or more trajectory segments need review.";
-  }
-  return null;
-}
-
 function buildSnapshot(
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>,
   simDays: number,
 ): MissionPhysicsSnapshot | null {
-  const p = physicsRef.current;
-  if (!p) return null;
+  const physics = physicsRef.current;
+  if (!physics) return null;
   const bodies = {} as MissionPhysicsSnapshot["bodies"];
   for (const id of BODY_IDS) {
-    const idx = SOLAR_SYSTEM_BODIES.findIndex((b) => b.id === id);
-    if (idx < 0 || idx >= p.n) return null;
-    const k = idx * 3;
+    const index = SOLAR_SYSTEM_BODIES.findIndex((body) => body.id === id);
+    if (index < 0 || index >= physics.n) return null;
+    const offset = index * 3;
     bodies[id] = {
       id,
       name: bodyDisplay(id),
-      massKg: p.mass[idx] ?? SOLAR_SYSTEM_BODIES[idx]!.massKg,
-      posAu: [p.posAu[k] ?? 0, p.posAu[k + 1] ?? 0, p.posAu[k + 2] ?? 0],
+      massKg: physics.mass[index] ?? SOLAR_SYSTEM_BODIES[index]!.massKg,
+      posAu: [physics.posAu[offset] ?? 0, physics.posAu[offset + 1] ?? 0, physics.posAu[offset + 2] ?? 0],
       velAuPerDay: [
-        ((p.velM[k] ?? 0) * DAY_SECONDS) / AU_METERS,
-        ((p.velM[k + 1] ?? 0) * DAY_SECONDS) / AU_METERS,
-        ((p.velM[k + 2] ?? 0) * DAY_SECONDS) / AU_METERS,
+        ((physics.velM[offset] ?? 0) * DAY_SECONDS) / AU_METERS,
+        ((physics.velM[offset + 1] ?? 0) * DAY_SECONDS) / AU_METERS,
+        ((physics.velM[offset + 2] ?? 0) * DAY_SECONDS) / AU_METERS,
       ],
     };
   }
@@ -79,34 +83,44 @@ function buildSnapshot(
 
 function Metric({ label, value }: { label: string; value: string }) {
   return (
-    <div className="rounded-[4px] border border-white/[0.07] bg-white/[0.035] px-2 py-1.5">
-      <div className="font-mono text-[7px] uppercase tracking-[0.16em] text-[var(--ui-text-dim)]">{label}</div>
-      <div className="mt-1 truncate font-mono text-[11px] text-[var(--ui-text-primary)]">{value}</div>
+    <div className="min-w-0 rounded-[4px] border border-white/[0.07] bg-white/[0.035] px-2 py-1.5">
+      <div className="font-mono text-[7px] uppercase tracking-[0.12em] text-[var(--ui-text-dim)]">{label}</div>
+      <div className="mt-1 truncate font-mono text-[10px] text-[var(--ui-text-primary)]">{value}</div>
     </div>
   );
 }
 
-function ChartBar({
+function NumberField({
   label,
   value,
-  max,
-  color = "bg-cyan-200/70",
+  unit,
+  onChange,
 }: {
   label: string;
   value: number;
-  max: number;
-  color?: string;
+  unit: string;
+  onChange: (value: number) => void;
 }) {
-  const pct = Math.max(3, Math.min(100, (value / Math.max(max, 1e-6)) * 100));
   return (
-    <div className="grid grid-cols-[5.5rem_1fr_3.5rem] items-center gap-2 text-[8px] text-[var(--ui-text-dim)]">
-      <span className="truncate font-mono">{label}</span>
-      <span className="h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
-        <span className={`block h-full rounded-full ${color}`} style={{ width: `${pct}%` }} />
-      </span>
-      <span className="text-right font-mono">{value.toFixed(1)}</span>
-    </div>
+    <label className="grid grid-cols-[1fr_5rem_2.5rem] items-center gap-1.5 text-[8px] text-[var(--ui-text-dim)]">
+      <span>{label}</span>
+      <input
+        type="number"
+        value={value}
+        onChange={(event) => onChange(Number(event.target.value))}
+        className="min-w-0 rounded-[3px] border border-white/10 bg-black/30 px-1.5 py-1 text-right font-mono text-[9px] text-white/80 outline-none focus:border-cyan-200/35"
+      />
+      <span className="font-mono">{unit}</span>
+    </label>
   );
+}
+
+function statusClass(status: "pass" | "warning" | "fail"): string {
+  return status === "pass"
+    ? "border-emerald-300/20 bg-emerald-300/[0.06] text-emerald-100"
+    : status === "warning"
+      ? "border-amber-200/20 bg-amber-200/[0.06] text-amber-100"
+      : "border-rose-300/20 bg-rose-300/[0.07] text-rose-100";
 }
 
 function advisorStatusLabel(status: DeepSeekStatus, advisor: MissionAdvisorReport): string {
@@ -114,7 +128,7 @@ function advisorStatusLabel(status: DeepSeekStatus, advisor: MissionAdvisorRepor
   if (advisor.provider === "deepseek") return `DeepSeek${advisor.model ? ` / ${advisor.model}` : ""}`;
   if (advisor.provider === "fallback") return advisor.error === "not_configured" ? "Not configured" : "Fallback";
   if (status === "error") return "Error";
-  return "Local";
+  return "Local audit";
 }
 
 export default function MissionDesignerPanel({
@@ -126,27 +140,48 @@ export default function MissionDesignerPanel({
   onResult,
   onSelectPlan,
 }: Props) {
+  const [activeTab, setActiveTab] = useState<MissionTab>("summary");
   const [departureWindowDays, setDepartureWindowDays] = useState(DEFAULT_MISSION_OPTIONS.departureWindowDays);
   const [departureStepDays, setDepartureStepDays] = useState(DEFAULT_MISSION_OPTIONS.departureStepDays);
+  const [preset, setPreset] = useState<MissionConstraintPreset>("nominal");
+  const [constraints, setConstraints] = useState<MissionEngineeringConstraints>(MISSION_CONSTRAINT_PRESETS.nominal);
+  const [advancedOpen, setAdvancedOpen] = useState(false);
   const [status, setStatus] = useState("Ready");
+  const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
   const selectedPlan = useMemo(
-    () => result?.plans.find((p) => p.id === selectedPlanId) ?? result?.bestPlan ?? null,
+    () =>
+      result?.plans.find((plan) => plan.id === selectedPlanId) ??
+      result?.rejectedPlans.find((plan) => plan.id === selectedPlanId) ??
+      result?.bestPlan ??
+      result?.rejectedPlans[0] ??
+      null,
     [result, selectedPlanId],
   );
   const localAdvisor = useMemo(() => explainMissionPlan(selectedPlan), [selectedPlan]);
-  const planWarning = useMemo(() => validatePlan(selectedPlan), [selectedPlan]);
   const [advisor, setAdvisor] = useState<MissionAdvisorReport>(localAdvisor);
-  const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
 
   useEffect(() => {
     setAdvisor(localAdvisor);
     setDeepSeekStatus("idle");
   }, [localAdvisor]);
 
+  const choosePreset = (next: MissionConstraintPreset) => {
+    setPreset(next);
+    setConstraints(MISSION_CONSTRAINT_PRESETS[next]);
+  };
+
+  const patchConstraint = (
+    key: keyof Omit<MissionEngineeringConstraints, "preset">,
+    value: number,
+  ) => {
+    if (!Number.isFinite(value)) return;
+    setConstraints((current) => ({ ...current, [key]: value }));
+  };
+
   const runOptimize = () => {
     const snapshot = buildSnapshot(physicsRef, simDaysRef.current);
     if (!snapshot) {
-      setStatus("Physics state unavailable");
+      setStatus("Physics unavailable");
       return;
     }
     const next = optimizeMission(
@@ -156,29 +191,27 @@ export default function MissionDesignerPanel({
         departureWindowDays,
         departureStepDays,
         includeRelativity: relativityEnabled,
+        constraintPreset: preset,
+        constraints,
       },
       snapshot,
     );
     onResult(next);
-    onSelectPlan(next.bestPlan);
-    setStatus(`${next.plans.length} candidates generated`);
+    onSelectPlan(next.bestPlan ?? next.rejectedPlans[0] ?? null);
+    setStatus(`${next.plans.length} feasible / ${next.rejectedPlans.length} rejected`);
   };
 
   const runDeepSeekAdvisor = async () => {
-    if (!selectedPlan) {
-      setAdvisor(localAdvisor);
-      setDeepSeekStatus("fallback");
-      return;
-    }
+    if (!selectedPlan) return;
     setDeepSeekStatus("thinking");
     try {
-      const res = await fetch("/api/mission-advisor/deepseek", {
+      const response = await fetch("/api/mission-advisor/deepseek", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ plan: selectedPlan }),
       });
-      const data = (await res.json()) as { ok?: boolean; report?: MissionAdvisorReport };
-      if (!data.report) throw new Error("missing advisor report");
+      const data = (await response.json()) as { report?: MissionAdvisorReport };
+      if (!data.report) throw new Error("missing report");
       setAdvisor(data.report);
       setDeepSeekStatus(data.report.provider === "deepseek" ? "deepseek" : "fallback");
     } catch {
@@ -188,214 +221,250 @@ export default function MissionDesignerPanel({
   };
 
   return (
-    <section className="pointer-events-auto absolute bottom-28 right-4 z-[132] flex max-h-[calc(100dvh-8.5rem)] w-[25rem] flex-col gap-2 overflow-y-auto rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.82)] p-3 shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <div className="grid h-8 w-8 place-items-center rounded-[5px] border border-cyan-200/20 bg-cyan-300/[0.07]">
-            <Route className="h-4 w-4 text-cyan-200" strokeWidth={IS} />
+    <section className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[25rem]">
+      <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
+        <div className="flex items-center justify-between gap-2">
+          <div className="flex min-w-0 items-center gap-2">
+            <div className="grid h-8 w-8 shrink-0 place-items-center rounded-[5px] border border-cyan-200/20 bg-cyan-300/[0.07]">
+              <Route className="h-4 w-4 text-cyan-200" strokeWidth={IS} />
+            </div>
+            <div className="min-w-0">
+              <h2 className="truncate font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--ui-text-primary)]">
+                Mission Engineering Audit
+              </h2>
+              <p className="font-mono text-[7px] uppercase tracking-[0.14em] text-[var(--ui-text-dim)]">
+                Medium-fidelity preliminary design
+              </p>
+            </div>
           </div>
-          <div>
-            <h2 className="font-mono text-[11px] font-semibold uppercase tracking-[0.16em] text-[var(--ui-text-primary)]">
-              Relativistic Space Mission Designer
-            </h2>
-            <p className="font-mono text-[7px] uppercase tracking-[0.18em] text-[var(--ui-text-dim)]">
-              Earth / Venus / Jupiter / Saturn
-            </p>
-          </div>
+          <span className="shrink-0 rounded-[3px] bg-white/8 px-2 py-1 font-mono text-[7px] uppercase text-cyan-100">
+            {status}
+          </span>
         </div>
-        <span className="rounded-full bg-white/8 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.16em] text-cyan-100">
-          {status}
-        </span>
-      </div>
-
-      <div className="rounded-[4px] border border-amber-200/14 bg-amber-200/[0.045] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-amber-100/82">
-        Lambert first-pass patched conics / not GMAT, STK, NASA, or high-fidelity optimal-control validation
-      </div>
-      <div className="rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] text-cyan-100/72">
-        Preview cost: mission trajectory adds {selectedPlan?.segments.length ?? 0} rendered segment(s); use View / Safe if camera rotation drops frames.
-      </div>
-
-      <div className="grid grid-cols-4 gap-1.5">
-        {BODY_IDS.map((id, idx) => (
-          <div key={id} className="rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] px-2 py-1">
-            <div className="font-mono text-[7px] text-[var(--ui-text-dim)]">NODE {idx + 1}</div>
-            <div className="mt-0.5 text-[10px] text-cyan-100">{bodyDisplay(id)}</div>
-          </div>
-        ))}
-      </div>
-
-      <div className="grid grid-cols-2 gap-2">
-        <label className="flex flex-col gap-1">
-          <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[var(--ui-text-dim)]">Search Window</span>
-          <input
-            type="range"
-            min={180}
-            max={1200}
-            step={30}
-            value={departureWindowDays}
-            onChange={(e) => setDepartureWindowDays(Number(e.target.value))}
-            className="h-px cursor-pointer appearance-none bg-[var(--ui-glass-border)] accent-cyan-200"
-          />
-          <span className="font-mono text-[10px] text-[var(--ui-text-muted)]">{departureWindowDays} days</span>
-        </label>
-        <label className="flex flex-col gap-1">
-          <span className="font-mono text-[8px] uppercase tracking-[0.16em] text-[var(--ui-text-dim)]">Grid Step</span>
-          <input
-            type="range"
-            min={15}
-            max={90}
-            step={15}
-            value={departureStepDays}
-            onChange={(e) => setDepartureStepDays(Number(e.target.value))}
-            className="h-px cursor-pointer appearance-none bg-[var(--ui-glass-border)] accent-cyan-200"
-          />
-          <span className="font-mono text-[10px] text-[var(--ui-text-muted)]">{departureStepDays} days</span>
-        </label>
-      </div>
-
-      <button
-        type="button"
-        onClick={runOptimize}
-        data-solar-action="mission-optimize"
-        className="flex items-center justify-center gap-2 rounded-[3px] border border-cyan-200/25 bg-cyan-200/[0.07] px-3 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.16em] text-cyan-100 transition-colors hover:border-cyan-100/45 hover:bg-cyan-200/[0.12]"
-      >
-        <Sparkles className="h-3.5 w-3.5" strokeWidth={IS} />
-        Optimize Gravity-Assist Mission
-      </button>
-
-      {selectedPlan ? (
-        <div className="grid grid-cols-4 gap-1.5">
-          <Metric label="Delta-v" value={`${selectedPlan.totalDeltaVKms.toFixed(2)} km/s`} />
-          <Metric label="Fuel est." value={formatMass(selectedPlan.fuelEstimateKg)} />
-          <Metric label="Duration" value={`${(selectedPlan.durationDays / 365.25).toFixed(1)} yr`} />
-          <Metric label="Score" value={`${selectedPlan.score.toFixed(0)}/100`} />
-          <Metric label="Lambert" value={`${selectedPlan.segments.filter((seg) => seg.lambertConverged).length}/${selectedPlan.segments.length}`} />
-          <Metric label="C3" value={`${(selectedPlan.segments[0]?.c3Km2S2 ?? 0).toFixed(1)}`} />
-          <Metric label="Arr v-inf" value={`${(selectedPlan.segments.at(-1)?.arrivalVinfinityKms ?? 0).toFixed(2)}`} />
-          <Metric label="Max resid." value={`${Math.max(...selectedPlan.segments.map((seg) => seg.lambertResidual)).toFixed(0)} s`} />
-          <Metric label="DSM" value={`${selectedPlan.segments.reduce((sum, seg) => sum + seg.dsmDeltaVKms, 0).toFixed(2)} km/s`} />
-        </div>
-      ) : null}
-
-      {planWarning ? (
-        <div className="rounded-[4px] border border-amber-200/20 bg-amber-200/[0.05] px-2 py-1.5 text-[10px] leading-4 text-amber-100/80">
-          {planWarning}
-        </div>
-      ) : null}
-
-      {result?.plans.length ? (
-        <div className="rounded-[4px] border border-white/[0.07] bg-black/20">
-          <div className="grid grid-cols-[1fr_4.5rem_4.5rem_4rem] border-b border-white/[0.06] px-2 py-1 font-mono text-[7px] uppercase tracking-[0.14em] text-[var(--ui-text-dim)]">
-            <span>Candidate</span>
-            <span>DV</span>
-            <span>TOF</span>
-            <span>Risk</span>
-          </div>
-          {result.plans.map((plan, idx) => (
+        <div className="mt-2 grid grid-cols-3 gap-1 rounded-[4px] bg-black/25 p-0.5">
+          {TABS.map((tab) => (
             <button
+              key={tab}
               type="button"
-              key={plan.id}
-              onClick={() => onSelectPlan(plan)}
-              onMouseEnter={() => onSelectPlan(plan)}
-              className={`grid w-full grid-cols-[1fr_4.5rem_4.5rem_4rem] px-2 py-1.5 text-left text-[10px] transition-colors ${
-                selectedPlan?.id === plan.id ? "bg-cyan-200/[0.10] text-cyan-100" : "text-[var(--ui-text-muted)] hover:bg-white/[0.05]"
+              onClick={() => setActiveTab(tab)}
+              className={`rounded-[3px] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] ${
+                activeTab === tab ? "bg-cyan-200/[0.11] text-cyan-100" : "text-white/42 hover:text-white/70"
               }`}
             >
-              <span className="truncate font-mono">#{idx + 1} {formatDay(plan.departureDay - simDaysRef.current)}</span>
-              <span className="font-mono">{plan.totalDeltaVKms.toFixed(1)}</span>
-              <span className="font-mono">{Math.round(plan.durationDays)}</span>
-              <span className="font-mono uppercase">{plan.risk}</span>
+              {tab}
             </button>
           ))}
         </div>
-      ) : null}
+      </header>
 
-      {selectedPlan ? (
-        <div className="grid gap-1.5">
-          {selectedPlan.segments.map((seg) => (
-            <div key={seg.id} className="rounded-[4px] border border-white/[0.06] bg-white/[0.03] px-2 py-1.5">
-              <div className="flex items-center justify-between gap-2">
-                <span className="font-mono text-[10px] text-[var(--ui-text-primary)]">
-                  {bodyDisplay(seg.fromBody)} {"->"} {bodyDisplay(seg.toBody)}
-                </span>
-                <span className="font-mono text-[9px] uppercase text-[var(--ui-text-dim)]">{seg.risk}</span>
-              </div>
-              <div className="mt-1 grid grid-cols-4 gap-1 text-[8px] text-[var(--ui-text-dim)]">
-                <span>{Math.round(seg.tofDays)} d</span>
-                <span>{seg.deltaVKms.toFixed(2)} km/s</span>
-                <span>{seg.turnAngleDeg.toFixed(0)} deg</span>
-                <span>{seg.communicationDelayMin.toFixed(1)} min</span>
-              </div>
-              <div className="mt-1 grid grid-cols-4 gap-1 text-[8px] text-[var(--ui-text-dim)]">
-                <span>{seg.lambertConverged ? "Lambert ok" : "Lambert fallback"}</span>
-                <span>{seg.lambertIterations} iter</span>
-                <span>{seg.departureVinfinityKms.toFixed(1)} v-inf</span>
-                <span>{seg.flybyFeasible ? "B-plane ok" : "B-plane risk"}</span>
-              </div>
-              <div className="mt-1 grid grid-cols-4 gap-1 text-[8px] text-[var(--ui-text-dim)]">
-                <span>DSM {seg.dsmDeltaVKms.toFixed(2)}</span>
-                <span>req {seg.requiredTurnAngleDeg.toFixed(0)} deg</span>
-                <span>max {seg.maxTurnAngleDeg.toFixed(0)} deg</span>
-                <span>{Number.isFinite(seg.flybySafetyMargin) ? `${seg.flybySafetyMargin.toFixed(2)} R` : "--"}</span>
-              </div>
+      <div className="min-h-0 flex-1 overflow-y-auto p-3 pt-2">
+        {activeTab === "summary" ? (
+          <div className="grid gap-2">
+            <div className="grid grid-cols-3 gap-1">
+              {(["conservative", "nominal", "aggressive"] as const).map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => choosePreset(value)}
+                  className={`rounded-[3px] border px-1.5 py-1.5 font-mono text-[7px] uppercase ${
+                    preset === value
+                      ? "border-cyan-200/25 bg-cyan-200/[0.09] text-cyan-100"
+                      : "border-white/[0.07] text-white/42"
+                  }`}
+                >
+                  {value}
+                </button>
+              ))}
             </div>
-          ))}
-        </div>
-      ) : null}
 
-      {selectedPlan ? (
-        <div className="rounded-[4px] border border-white/[0.07] bg-black/18 p-2">
-          <div className="mb-1 font-mono text-[8px] uppercase tracking-[0.16em] text-[var(--ui-text-dim)]">Mission charts</div>
-          <div className="grid gap-1.5">
-            {selectedPlan.chartSeries.map((p) => (
-              <ChartBar key={`${p.label}-dv`} label={`${p.label} DV`} value={p.deltaVKms} max={Math.max(...selectedPlan.chartSeries.map((q) => q.deltaVKms), 1)} />
-            ))}
-            {selectedPlan.chartSeries.map((p) => (
-              <ChartBar key={`${p.label}-comm`} label={`${p.label} comm`} value={p.communicationDelayMin} max={Math.max(...selectedPlan.chartSeries.map((q) => q.communicationDelayMin), 1)} color="bg-sky-300/65" />
-            ))}
-            {selectedPlan.chartSeries.map((p) => (
-              <ChartBar key={`${p.label}-vinf`} label={`${p.label} v-inf`} value={p.arrivalVinfinityKms} max={Math.max(...selectedPlan.chartSeries.map((q) => q.arrivalVinfinityKms), 1)} color="bg-amber-200/70" />
-            ))}
-          </div>
-        </div>
-      ) : null}
+            <button
+              type="button"
+              onClick={() => setAdvancedOpen((open) => !open)}
+              className="flex items-center justify-between rounded-[3px] border border-white/[0.07] bg-white/[0.025] px-2 py-1.5 font-mono text-[8px] uppercase text-white/55"
+            >
+              <span className="flex items-center gap-1.5"><SlidersHorizontal className="h-3 w-3" /> Engineering constraints</span>
+              <ChevronDown className={`h-3 w-3 transition-transform ${advancedOpen ? "rotate-180" : ""}`} />
+            </button>
+            {advancedOpen ? (
+              <div className="grid gap-1.5 rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+                <NumberField label="Dry mass" value={constraints.dryMassKg} unit="kg" onChange={(value) => patchConstraint("dryMassKg", value)} />
+                <NumberField label="Specific impulse" value={constraints.ispSeconds} unit="s" onChange={(value) => patchConstraint("ispSeconds", value)} />
+                <NumberField label="Parking orbit" value={constraints.parkingOrbitAltitudeKm} unit="km" onChange={(value) => patchConstraint("parkingOrbitAltitudeKm", value)} />
+                <NumberField label="Maximum C3" value={constraints.maxC3Km2S2} unit="km²/s²" onChange={(value) => patchConstraint("maxC3Km2S2", value)} />
+                <NumberField label="Maximum delta-v" value={constraints.maxTotalDeltaVKms} unit="km/s" onChange={(value) => patchConstraint("maxTotalDeltaVKms", value)} />
+                <NumberField label="DSM budget" value={constraints.maxDsmDeltaVKms} unit="km/s" onChange={(value) => patchConstraint("maxDsmDeltaVKms", value)} />
+                <NumberField label="Mission duration" value={constraints.maxDurationDays} unit="days" onChange={(value) => patchConstraint("maxDurationDays", value)} />
+                <NumberField label="Venus altitude" value={constraints.minVenusFlybyAltitudeKm} unit="km" onChange={(value) => patchConstraint("minVenusFlybyAltitudeKm", value)} />
+                <NumberField label="Jupiter altitude" value={constraints.minJupiterFlybyAltitudeKm} unit="km" onChange={(value) => patchConstraint("minJupiterFlybyAltitudeKm", value)} />
+                <NumberField label="Navigation sigma" value={constraints.maxNavigationUncertaintyKm} unit="km" onChange={(value) => patchConstraint("maxNavigationUncertaintyKm", value)} />
+              </div>
+            ) : null}
 
-      <div className="rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] p-2">
-        <div className="mb-1 flex items-center justify-between gap-2">
-          <div className="flex items-center gap-1.5 font-mono text-[8px] uppercase tracking-[0.16em] text-cyan-100">
-            <BrainCircuit className="h-3 w-3" strokeWidth={IS} />
-            Mission Planning AI
-          </div>
-          <button
-            type="button"
-            onClick={runDeepSeekAdvisor}
-            data-solar-action="mission-deepseek"
-            disabled={!selectedPlan || deepSeekStatus === "thinking"}
-            className="rounded-[3px] border border-cyan-200/20 bg-cyan-200/[0.06] px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-cyan-100 transition-colors hover:border-cyan-100/40 disabled:pointer-events-none disabled:opacity-45"
-          >
-            DeepSeek AI
-          </button>
-        </div>
-        <div className="mb-1 flex items-center justify-between gap-2 font-mono text-[7px] uppercase tracking-[0.14em] text-[var(--ui-text-dim)]">
-          <span>{advisorStatusLabel(deepSeekStatus, advisor)}</span>
-          {advisor.latencyMs ? <span>{advisor.latencyMs} ms</span> : null}
-        </div>
-        <p className="text-[10px] leading-4 text-[var(--ui-text-muted)]">{advisor.summary}</p>
-        <p className="mt-1 text-[10px] leading-4 text-[var(--ui-text-dim)]">{advisor.recommendation}</p>
-        <div className="mt-2 grid grid-cols-2 gap-1">
-          <Metric label="Comms" value={selectedPlan ? `${selectedPlan.maxCommunicationDelayMin.toFixed(1)} min` : "--"} />
-          <Metric label="Kalman sigma" value={selectedPlan ? `${selectedPlan.navigationUncertaintyKm.toFixed(0)} km` : "--"} />
-        </div>
-        {selectedPlan ? (
-          <div className="mt-2 rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase tracking-[0.12em] text-amber-100/78">
-            Approximate Lambert patched-conics report only; not a real mission feasibility certificate.
+            <div className="grid grid-cols-2 gap-2">
+              <label className="grid gap-1 font-mono text-[8px] uppercase text-white/42">
+                Search window
+                <input type="range" min={180} max={1200} step={30} value={departureWindowDays} onChange={(event) => setDepartureWindowDays(Number(event.target.value))} className="accent-cyan-200" />
+                <span className="text-[9px] text-white/65">{departureWindowDays} days</span>
+              </label>
+              <label className="grid gap-1 font-mono text-[8px] uppercase text-white/42">
+                Grid step
+                <input type="range" min={15} max={90} step={15} value={departureStepDays} onChange={(event) => setDepartureStepDays(Number(event.target.value))} className="accent-cyan-200" />
+                <span className="text-[9px] text-white/65">{departureStepDays} days</span>
+              </label>
+            </div>
+
+            <button
+              type="button"
+              onClick={runOptimize}
+              data-solar-action="mission-optimize"
+              className="flex items-center justify-center gap-2 rounded-[3px] border border-cyan-200/25 bg-cyan-200/[0.08] px-3 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-100"
+            >
+              <Sparkles className="h-3.5 w-3.5" strokeWidth={IS} />
+              Run audited search
+            </button>
+
+            {selectedPlan ? (
+              <>
+                <div className={`rounded-[4px] border px-2 py-1.5 font-mono text-[8px] uppercase ${statusClass(selectedPlan.validationStatus)}`}>
+                  Verdict {selectedPlan.validationStatus} · score {selectedPlan.score.toFixed(0)} · robustness {selectedPlan.sensitivitySummary?.robustnessScore.toFixed(0) ?? "--"}
+                </div>
+                <div className="grid grid-cols-3 gap-1.5">
+                  <Metric label="Deterministic DV" value={`${selectedPlan.deterministicDeltaVKms.toFixed(2)} km/s`} />
+                  <Metric label="DSM reserve" value={`${selectedPlan.dsmReserveDeltaVKms.toFixed(2)} km/s`} />
+                  <Metric label="Propellant" value={formatMass(selectedPlan.fuelEstimateKg)} />
+                  <Metric label="Duration" value={`${(selectedPlan.durationDays / 365.25).toFixed(1)} yr`} />
+                  <Metric label="C3" value={`${(selectedPlan.segments[0]?.c3Km2S2 ?? 0).toFixed(1)}`} />
+                  <Metric label="Max residual" value={`${Math.max(...selectedPlan.segments.map((segment) => segment.lambertResidual)).toFixed(0)} s`} />
+                </div>
+              </>
+            ) : null}
+
+            {result?.plans.length ? (
+              <div className="rounded-[4px] border border-white/[0.07] bg-black/20">
+                {result.plans.map((plan, index) => (
+                  <button
+                    type="button"
+                    key={plan.id}
+                    onClick={() => onSelectPlan(plan)}
+                    className={`grid w-full grid-cols-[1fr_3.4rem_3.4rem_3.4rem] gap-1 border-b border-white/[0.05] px-2 py-1.5 text-left font-mono text-[9px] last:border-0 ${
+                      selectedPlan?.id === plan.id ? "bg-cyan-200/[0.09] text-cyan-100" : "text-white/55"
+                    }`}
+                  >
+                    <span>#{index + 1} T+{Math.round(plan.departureDay - simDaysRef.current)}d</span>
+                    <span>{plan.totalDeltaVKms.toFixed(1)} DV</span>
+                    <span>{plan.sensitivitySummary?.robustnessScore.toFixed(0) ?? "--"} R</span>
+                    <span className="uppercase">{plan.validationStatus}</span>
+                  </button>
+                ))}
+              </div>
+            ) : null}
+            {result?.rejectedPlans.length ? (
+              <div className="rounded-[4px] border border-rose-300/10 bg-rose-300/[0.025] p-1.5">
+                <div className="mb-1 font-mono text-[7px] uppercase text-rose-100/55">
+                  Rejected samples · excluded from ranking
+                </div>
+                {result.rejectedPlans.slice(0, 3).map((plan) => (
+                  <button
+                    type="button"
+                    key={`rejected-${plan.id}`}
+                    onClick={() => onSelectPlan(plan)}
+                    className={`grid w-full grid-cols-[1fr_3.4rem] gap-1 px-1 py-1 text-left font-mono text-[8px] ${
+                      selectedPlan?.id === plan.id ? "bg-rose-300/[0.08] text-rose-100" : "text-rose-100/48"
+                    }`}
+                  >
+                    <span className="truncate">{plan.rejectionReasons[0] ?? "Engineering audit failed"}</span>
+                    <span>{plan.totalDeltaVKms.toFixed(1)} DV</span>
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
         ) : null}
-        <div className="mt-2 grid gap-1 text-[9px] leading-3 text-[var(--ui-text-dim)]">
-          <span className="flex gap-1"><ShieldAlert className="h-3 w-3 shrink-0" strokeWidth={IS} />{advisor.risk}</span>
-          <span className="flex gap-1"><Satellite className="h-3 w-3 shrink-0" strokeWidth={IS} />{advisor.gravityAssist}</span>
-          <span className="flex gap-1"><Radio className="h-3 w-3 shrink-0" strokeWidth={IS} />{advisor.communication}</span>
-          <span className="flex gap-1"><Clock3 className="h-3 w-3 shrink-0" strokeWidth={IS} />{selectedPlan?.grCorrectionNote ?? "1PN report follows the global relativity toggle."}</span>
+
+        {activeTab === "legs" ? (
+          <div className="grid gap-1.5">
+            {selectedPlan?.segments.map((segment) => (
+              <div key={segment.id} className="rounded-[4px] border border-white/[0.07] bg-white/[0.03] p-2">
+                <div className="flex justify-between font-mono text-[10px] text-white/82">
+                  <span>{bodyDisplay(segment.fromBody)} {"->"} {bodyDisplay(segment.toBody)}</span>
+                  <span className="uppercase text-white/42">{segment.risk}</span>
+                </div>
+                <div className="mt-1.5 grid grid-cols-3 gap-1">
+                  <Metric label="TOF" value={`${Math.round(segment.tofDays)} d`} />
+                  <Metric label="Delta-v" value={`${segment.deltaVKms.toFixed(2)} km/s`} />
+                  <Metric label="DSM" value={`${segment.dsmDeltaVKms.toFixed(2)} km/s`} />
+                  <Metric label="v∞ out/in" value={`${segment.departureVinfinityKms.toFixed(1)} / ${segment.arrivalVinfinityKms.toFixed(1)}`} />
+                  <Metric label="Turn req/max" value={`${segment.requiredTurnAngleDeg.toFixed(0)}° / ${segment.maxTurnAngleDeg.toFixed(0)}°`} />
+                  <Metric label="Flyby alt." value={Number.isFinite(segment.periapsisAltitudeKm) ? `${segment.periapsisAltitudeKm.toFixed(0)} km` : "--"} />
+                </div>
+              </div>
+            )) ?? <div className="text-[10px] text-white/42">Run the audited search to inspect mission legs.</div>}
+          </div>
+        ) : null}
+
+        {activeTab === "audit" ? (
+          <div className="grid gap-2">
+            {selectedPlan ? (
+              <>
+                <div className="grid gap-1">
+                  {selectedPlan.constraintChecks.map((check) => (
+                    <div key={check.id} className={`rounded-[4px] border px-2 py-1.5 ${statusClass(check.status)}`}>
+                      <div className="flex items-center justify-between gap-2 font-mono text-[8px] uppercase">
+                        <span>{check.label}</span>
+                        <span>{check.status}</span>
+                      </div>
+                      <div className="mt-1 font-mono text-[8px] opacity-75">
+                        {check.actual.toFixed(2)} / {check.limit.toFixed(2)} {check.unit} · margin {check.margin.toFixed(2)}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+                <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                  <div className="font-mono text-[8px] uppercase text-white/72">Solver provenance</div>
+                  <p>{selectedPlan.solverProvenance.gravityModel}</p>
+                  <p>{selectedPlan.solverProvenance.ephemerisSource}</p>
+                  <p>Epoch T+{selectedPlan.solverProvenance.epochSimDays.toFixed(1)} d · tolerance {selectedPlan.solverProvenance.lambertToleranceSeconds}s</p>
+                  <p>{selectedPlan.solverProvenance.convergedCandidateCount}/{selectedPlan.solverProvenance.candidateCount} sampled candidates converged.</p>
+                </div>
+                <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                  <div className="font-mono text-[8px] uppercase text-white/72">Assumptions</div>
+                  {selectedPlan.assumptions.map((assumption) => <p key={assumption}>· {assumption}</p>)}
+                </div>
+              </>
+            ) : <div className="text-[10px] text-white/42">No audit is available until a feasible candidate is selected.</div>}
+          </div>
+        ) : null}
+
+        {selectedPlan && activeTab === "summary" ? (
+          <div className="mt-2 rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] p-2">
+            <div className="mb-1 flex items-center justify-between">
+              <span className="flex items-center gap-1.5 font-mono text-[8px] uppercase text-cyan-100">
+                <BrainCircuit className="h-3 w-3" /> Mission advisor
+              </span>
+              <button
+                type="button"
+                onClick={runDeepSeekAdvisor}
+                data-solar-action="mission-deepseek"
+                disabled={deepSeekStatus === "thinking"}
+                className="rounded-[3px] border border-cyan-200/20 px-2 py-1 font-mono text-[7px] uppercase text-cyan-100 disabled:opacity-45"
+              >
+                DeepSeek AI
+              </button>
+            </div>
+            <div className="font-mono text-[7px] uppercase text-white/35">{advisorStatusLabel(deepSeekStatus, advisor)}</div>
+            <p className="mt-1 text-[9px] leading-4 text-white/62">{advisor.summary}</p>
+            <p className="mt-1 text-[9px] leading-4 text-white/42">{advisor.recommendation}</p>
+            <div className="mt-2 grid gap-1 text-[8px] leading-3 text-white/42">
+              <span className="flex gap-1"><ShieldAlert className="h-3 w-3 shrink-0" />{advisor.risk}</span>
+              <span className="flex gap-1"><Satellite className="h-3 w-3 shrink-0" />{advisor.gravityAssist}</span>
+              <span className="flex gap-1"><Radio className="h-3 w-3 shrink-0" />{advisor.communication}</span>
+              <span className="flex gap-1"><Clock3 className="h-3 w-3 shrink-0" />{selectedPlan.grCorrectionNote}</span>
+            </div>
+          </div>
+        ) : null}
+
+        <div className="mt-2 rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase leading-3 text-amber-100/72">
+          Preliminary Lambert patched-conics audit only. Not GMAT/STK validation or a real mission certification.
         </div>
       </div>
     </section>

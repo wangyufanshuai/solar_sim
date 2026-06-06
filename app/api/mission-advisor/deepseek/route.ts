@@ -44,8 +44,24 @@ function compactPlan(plan: MissionPlan) {
     departureDay: Math.round(plan.departureDay),
     durationDays: Math.round(plan.durationDays),
     totalDeltaVKms: Number(plan.totalDeltaVKms.toFixed(3)),
+    deterministicDeltaVKms: Number(plan.deterministicDeltaVKms.toFixed(3)),
+    dsmReserveDeltaVKms: Number(plan.dsmReserveDeltaVKms.toFixed(3)),
     fuelEstimateKg: Math.round(plan.fuelEstimateKg),
     score: Math.round(plan.score),
+    validationStatus: plan.validationStatus,
+    constraintChecks: plan.constraintChecks.map((check) => ({
+      id: check.id,
+      label: check.label,
+      actual: Number(check.actual.toFixed(3)),
+      limit: Number(check.limit.toFixed(3)),
+      margin: Number(check.margin.toFixed(3)),
+      unit: check.unit,
+      status: check.status,
+      explanation: check.explanation,
+    })),
+    assumptions: plan.assumptions,
+    solverProvenance: plan.solverProvenance,
+    sensitivitySummary: plan.sensitivitySummary,
     maxCommunicationDelayMin: Number(plan.maxCommunicationDelayMin.toFixed(2)),
     navigationUncertaintyKm: Math.round(plan.navigationUncertaintyKm),
     risk: plan.risk,
@@ -145,7 +161,7 @@ export async function POST(req: Request) {
           {
             role: "system",
             content:
-              "You are a space mission engineering advisor. Use only the provided first-pass Lambert patched-conics mission data. Do not claim GMAT, STK, NASA, real mission feasibility, or high-fidelity optimal-control validation. Return strict JSON with keys: summary, fuelTradeoff, gravityAssist, risk, communication, recommendation, tags.",
+              "You are a space mission engineering advisor. Use only the provided structured constraint checks, assumptions, solver provenance, sensitivity summary, and Lambert patched-conics data. Never override the audit verdict or invent feasibility evidence. Do not claim GMAT, STK, NASA, real mission feasibility, or high-fidelity optimal-control validation. Return strict JSON with keys: summary, fuelTradeoff, gravityAssist, risk, communication, recommendation, tags.",
           },
           {
             role: "user",

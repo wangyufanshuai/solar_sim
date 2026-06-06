@@ -10,14 +10,18 @@ import type {
   MissionRiskLevel,
   MissionSegment,
   MissionChartPoint,
+  MissionEngineeringConstraints,
+  MissionConstraintCheck,
+  MissionConstraintPreset,
+  MissionValidationStatus,
 } from "./missionDesignerTypes";
 
 const SUN_MU = G_SI * 1.98847e30;
-const DEFAULT_ISP_S = 320;
 const G0 = 9.80665;
 const SAMPLE_COUNT = 72;
 const EARTH_MU_KM3S2 = 398600.4418;
-const PARKING_ORBIT_RADIUS_KM = 6678;
+const EARTH_RADIUS_KM = 6378;
+const LAMBERT_TOLERANCE_SECONDS = 2;
 
 const BODY_ORDER: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
 const NOMINAL_TOF_DAYS: Record<string, number> = {
@@ -58,7 +62,55 @@ export const DEFAULT_MISSION_OPTIONS: Omit<
   departureWindowDays: 720,
   departureStepDays: 45,
   maxCandidates: 8,
+  constraintPreset: "nominal",
 };
+
+export const MISSION_CONSTRAINT_PRESETS: Record<MissionConstraintPreset, MissionEngineeringConstraints> = {
+  conservative: {
+    preset: "conservative",
+    dryMassKg: 5200,
+    ispSeconds: 450,
+    parkingOrbitAltitudeKm: 300,
+    maxC3Km2S2: 72,
+    maxTotalDeltaVKms: 8.5,
+    maxDsmDeltaVKms: 1.1,
+    maxDurationDays: 2800,
+    minVenusFlybyAltitudeKm: 500,
+    minJupiterFlybyAltitudeKm: 30000,
+    maxNavigationUncertaintyKm: 260,
+  },
+  nominal: {
+    preset: "nominal",
+    dryMassKg: 4200,
+    ispSeconds: 450,
+    parkingOrbitAltitudeKm: 300,
+    maxC3Km2S2: 90,
+    maxTotalDeltaVKms: 10.5,
+    maxDsmDeltaVKms: 1.8,
+    maxDurationDays: 3200,
+    minVenusFlybyAltitudeKm: 300,
+    minJupiterFlybyAltitudeKm: 15000,
+    maxNavigationUncertaintyKm: 360,
+  },
+  aggressive: {
+    preset: "aggressive",
+    dryMassKg: 3600,
+    ispSeconds: 465,
+    parkingOrbitAltitudeKm: 250,
+    maxC3Km2S2: 220,
+    maxTotalDeltaVKms: 20,
+    maxDsmDeltaVKms: 3.2,
+    maxDurationDays: 3800,
+    minVenusFlybyAltitudeKm: 200,
+    minJupiterFlybyAltitudeKm: 5000,
+    maxNavigationUncertaintyKm: 520,
+  },
+};
+
+export function resolveMissionConstraints(options: MissionOptimizerOptions): MissionEngineeringConstraints {
+  const base = MISSION_CONSTRAINT_PRESETS[options.constraintPreset];
+  return { ...base, ...options.constraints, preset: options.constraintPreset };
+}
 
 function dot(a: readonly number[], b: readonly number[]): number {
   return a[0]! * b[0]! + a[1]! * b[1]! + a[2]! * b[2]!;
@@ -169,19 +221,11 @@ function riskFrom(value: number): MissionRiskLevel {
   return "low";
 }
 
-function injectionDeltaVKms(vinfKms: number): number {
-  const vc = Math.sqrt(EARTH_MU_KM3S2 / PARKING_ORBIT_RADIUS_KM);
-  const vesc = Math.sqrt((2 * EARTH_MU_KM3S2) / PARKING_ORBIT_RADIUS_KM);
+export function injectionDeltaVKms(vinfKms: number, parkingOrbitAltitudeKm = 300): number {
+  const parkingOrbitRadiusKm = EARTH_RADIUS_KM + parkingOrbitAltitudeKm;
+  const vc = Math.sqrt(EARTH_MU_KM3S2 / parkingOrbitRadiusKm);
+  const vesc = Math.sqrt((2 * EARTH_MU_KM3S2) / parkingOrbitRadiusKm);
   return Math.max(0.05, Math.sqrt(vinfKms * vinfKms + vesc * vesc) - vc);
-}
-
-function fallbackLambertVelocity(from: BodyState, to: BodyState, tofDays: number): [number, number, number] {
-  const dt = Math.max(tofDays * DAY_SECONDS, 1);
-  return [
-    (to.posM[0] - from.posM[0]) / dt,
-    (to.posM[1] - from.posM[1]) / dt,
-    (to.posM[2] - from.posM[2]) / dt,
-  ];
 }
 
 function makeSegment(
@@ -202,14 +246,10 @@ function makeSegment(
     tofSeconds: tofDays * DAY_SECONDS,
     mu: SUN_MU,
     prograde: true,
-    toleranceSeconds: Math.max(2, tofDays * DAY_SECONDS * 3e-6),
+    toleranceSeconds: Math.max(LAMBERT_TOLERANCE_SECONDS, tofDays * DAY_SECONDS * 3e-6),
   });
-  const departureVelocityMps = lambert.converged
-    ? lambert.departureVelocityMps
-    : fallbackLambertVelocity(fromState, toState, tofDays);
-  const arrivalVelocityMps = lambert.converged
-    ? lambert.arrivalVelocityMps
-    : fallbackLambertVelocity(fromState, toState, tofDays);
+  const departureVelocityMps = lambert.converged ? lambert.departureVelocityMps : fromState.velMps;
+  const arrivalVelocityMps = lambert.converged ? lambert.arrivalVelocityMps : toState.velMps;
   const departureVinfVecMps = sub(departureVelocityMps, fromState.velMps);
   const arrivalVinfVecMps = sub(arrivalVelocityMps, toState.velMps);
   const departureVinfinityKms = norm(departureVinfVecMps) / 1000;
@@ -253,11 +293,17 @@ function makeSegment(
   };
 }
 
-function annotatePatchedConics(segments: TransferDraft[]): MissionSegment[] {
+function annotatePatchedConics(
+  segments: TransferDraft[],
+  constraints: MissionEngineeringConstraints,
+): MissionSegment[] {
   for (let i = 0; i < segments.length; i++) {
     const seg = segments[i]!;
     if (i === 0) {
-      seg.deltaVKms = injectionDeltaVKms(seg.departureVinfinityKms) + 0.12;
+      seg.deltaVKms = injectionDeltaVKms(
+        seg.departureVinfinityKms,
+        constraints.parkingOrbitAltitudeKm,
+      ) + 0.12;
     } else {
       const prev = segments[i - 1]!;
       const vinfMismatch = Math.abs(seg.departureVinfinityKms - prev.arrivalVinfinityKms);
@@ -314,10 +360,116 @@ function annotatePatchedConics(segments: TransferDraft[]): MissionSegment[] {
 
 const THREE_DEG_TO_RAD = Math.PI / 180;
 
-function fuelEstimateKg(deltaVKms: number): number {
-  const dryMassKg = 4200;
-  const massRatio = Math.exp((deltaVKms * 1000) / (DEFAULT_ISP_S * G0));
-  return Math.min(180_000, Math.max(1200, dryMassKg * (massRatio - 1)));
+export function propellantEstimateKg(
+  deltaVKms: number,
+  dryMassKg: number,
+  ispSeconds: number,
+): number {
+  if (deltaVKms <= 0 || dryMassKg <= 0 || ispSeconds <= 0) return 0;
+  const massRatio = Math.exp((deltaVKms * 1000) / (ispSeconds * G0));
+  return dryMassKg * (massRatio - 1);
+}
+
+function maximumCheck(
+  id: string,
+  label: string,
+  actual: number,
+  limit: number,
+  unit: string,
+): MissionConstraintCheck {
+  const ratio = actual / Math.max(limit, 1e-9);
+  const status: MissionValidationStatus = ratio > 1 ? "fail" : ratio > 0.85 ? "warning" : "pass";
+  return {
+    id,
+    label,
+    actual,
+    limit,
+    margin: limit - actual,
+    unit,
+    status,
+    explanation: status === "fail"
+      ? `${label} exceeds the engineering limit.`
+      : status === "warning"
+        ? `${label} is within 15% of the engineering limit.`
+        : `${label} retains engineering margin.`,
+  };
+}
+
+function minimumCheck(
+  id: string,
+  label: string,
+  actual: number,
+  limit: number,
+  unit: string,
+): MissionConstraintCheck {
+  const ratio = actual / Math.max(limit, 1e-9);
+  const status: MissionValidationStatus = ratio < 1 ? "fail" : ratio < 1.25 ? "warning" : "pass";
+  return {
+    id,
+    label,
+    actual,
+    limit,
+    margin: actual - limit,
+    unit,
+    status,
+    explanation: status === "fail"
+      ? `${label} is below the required clearance.`
+      : status === "warning"
+        ? `${label} has less than 25% clearance margin.`
+        : `${label} retains clearance margin.`,
+  };
+}
+
+export function auditMissionPlan(
+  plan: Pick<
+    MissionPlan,
+    "segments" | "totalDeltaVKms" | "dsmReserveDeltaVKms" | "durationDays" | "navigationUncertaintyKm"
+  >,
+  constraints: MissionEngineeringConstraints,
+): { checks: MissionConstraintCheck[]; status: MissionValidationStatus; rejectionReasons: string[] } {
+  const venus = plan.segments.find((segment) => segment.toBody === "venus");
+  const jupiter = plan.segments.find((segment) => segment.toBody === "jupiter");
+  const checks: MissionConstraintCheck[] = [
+    maximumCheck("c3", "Earth departure C3", plan.segments[0]?.c3Km2S2 ?? Number.POSITIVE_INFINITY, constraints.maxC3Km2S2, "km²/s²"),
+    maximumCheck("delta-v", "Total delta-v", plan.totalDeltaVKms, constraints.maxTotalDeltaVKms, "km/s"),
+    maximumCheck("dsm", "DSM reserve", plan.dsmReserveDeltaVKms, constraints.maxDsmDeltaVKms, "km/s"),
+    maximumCheck("duration", "Mission duration", plan.durationDays, constraints.maxDurationDays, "days"),
+    maximumCheck("navigation", "Navigation uncertainty", plan.navigationUncertaintyKm, constraints.maxNavigationUncertaintyKm, "km"),
+  ];
+  if (venus) {
+    checks.push(minimumCheck("venus-flyby", "Venus flyby altitude", venus.periapsisAltitudeKm, constraints.minVenusFlybyAltitudeKm, "km"));
+  }
+  if (jupiter) {
+    checks.push(minimumCheck("jupiter-flyby", "Jupiter flyby altitude", jupiter.periapsisAltitudeKm, constraints.minJupiterFlybyAltitudeKm, "km"));
+  }
+  for (const segment of plan.segments) {
+    if (!segment.lambertConverged) {
+      const segmentTolerance = Math.max(
+        LAMBERT_TOLERANCE_SECONDS,
+        segment.tofDays * DAY_SECONDS * 3e-6,
+      );
+      checks.push({
+        id: `lambert-${segment.id}`,
+        label: `${segment.fromBody}-${segment.toBody} Lambert convergence`,
+        actual: segment.lambertResidual,
+        limit: segmentTolerance,
+        margin: segmentTolerance - segment.lambertResidual,
+        unit: "s residual",
+        status: "fail",
+        explanation: "The Lambert leg did not converge and is excluded from feasible ranking.",
+      });
+    }
+  }
+  const status: MissionValidationStatus = checks.some((check) => check.status === "fail")
+    ? "fail"
+    : checks.some((check) => check.status === "warning")
+      ? "warning"
+      : "pass";
+  return {
+    checks,
+    status,
+    rejectionReasons: checks.filter((check) => check.status === "fail").map((check) => check.explanation),
+  };
 }
 
 function chartSeriesForSegments(segments: MissionSegment[]): MissionChartPoint[] {
@@ -336,10 +488,11 @@ function chartSeriesForSegments(segments: MissionSegment[]): MissionChartPoint[]
 
 export function scoreMissionPlan(plan: MissionPlan): number {
   const riskPenalty = plan.risk === "high" ? 22 : plan.risk === "medium" ? 9 : 0;
+  const validationPenalty = plan.validationStatus === "fail" ? 45 : plan.validationStatus === "warning" ? 8 : 0;
   const durationPenalty = Math.max(0, (plan.durationDays - 2500) / 110);
   const convergencePenalty = plan.segments.filter((s) => !s.lambertConverged).length * 16;
   const c3Penalty = Math.max(0, (plan.segments[0]?.c3Km2S2 ?? 0) - 85) * 0.09;
-  return Math.max(0, 100 - plan.totalDeltaVKms * 4.4 - durationPenalty - riskPenalty - convergencePenalty - c3Penalty);
+  return Math.max(0, 100 - plan.totalDeltaVKms * 4.4 - durationPenalty - riskPenalty - validationPenalty - convergencePenalty - c3Penalty);
 }
 
 function buildPlan(
@@ -348,6 +501,7 @@ function buildPlan(
   variantScale: number,
   snapshot: MissionPhysicsSnapshot,
   options: MissionOptimizerOptions,
+  constraints: MissionEngineeringConstraints,
 ): MissionPlan {
   const drafts: TransferDraft[] = [];
   let cursor = departureDay;
@@ -362,8 +516,10 @@ function buildPlan(
     cursor = seg.arrivalDay;
   }
 
-  const segments = annotatePatchedConics(drafts);
+  const segments = annotatePatchedConics(drafts, constraints);
   const totalDeltaVKms = segments.reduce((sum, s) => sum + s.deltaVKms, 0);
+  const dsmReserveDeltaVKms = segments.reduce((sum, s) => sum + s.dsmDeltaVKms, 0);
+  const deterministicDeltaVKms = Math.max(0, totalDeltaVKms - dsmReserveDeltaVKms);
   const maxCommunicationDelayMin = Math.max(...segments.map((s) => s.communicationDelayMin));
   const navigationUncertaintyKm = Math.max(...segments.map((s) => s.kalmanSigmaKm));
   const riskRank = Math.max(...segments.map((s) => (s.risk === "high" ? 2 : s.risk === "medium" ? 1 : 0)));
@@ -376,7 +532,13 @@ function buildPlan(
     arrivalDay: cursor,
     durationDays: cursor - departureDay,
     totalDeltaVKms,
-    fuelEstimateKg: fuelEstimateKg(totalDeltaVKms),
+    deterministicDeltaVKms,
+    dsmReserveDeltaVKms,
+    fuelEstimateKg: propellantEstimateKg(
+      totalDeltaVKms,
+      constraints.dryMassKg,
+      constraints.ispSeconds,
+    ),
     score: 0,
     grCorrectionNote: options.includeRelativity
       ? "1PN reporting enabled; Lambert transfer remains Newtonian two-body with separate weak-field note."
@@ -385,9 +547,36 @@ function buildPlan(
     maxCommunicationDelayMin,
     navigationUncertaintyKm,
     risk: lambertFailures > 0 ? "medium" : riskRank >= 2 ? "high" : riskRank === 1 ? "medium" : "low",
+    validationStatus: "fail",
+    constraintChecks: [],
+    assumptions: [
+      "Heliocentric two-body Lambert legs with patched-conic flybys.",
+      "Body states originate from the live simulation epoch and use circular state propagation.",
+      "Deterministic burns and DSM reserve are combined for the rocket-equation propellant estimate.",
+      "No finite-burn, covariance propagation, launch vehicle, thermal, power, or communications link-budget certification.",
+    ],
+    solverProvenance: {
+      modelLevel: "medium-fidelity preliminary design",
+      epochSimDays: snapshot.simDays,
+      gravityModel: "heliocentric two-body Lambert + patched conics",
+      ephemerisSource: "live simulation state with circular state propagation",
+      lambertToleranceSeconds: Math.max(
+        ...segments.map((segment) =>
+          Math.max(LAMBERT_TOLERANCE_SECONDS, segment.tofDays * DAY_SECONDS * 3e-6),
+        ),
+      ),
+      candidateCount: 0,
+      convergedCandidateCount: 0,
+    },
+    sensitivitySummary: null,
+    rejectionReasons: [],
     segments,
     chartSeries: chartSeriesForSegments(segments),
   };
+  const audit = auditMissionPlan(plan, constraints);
+  plan.constraintChecks = audit.checks;
+  plan.validationStatus = audit.status;
+  plan.rejectionReasons = audit.rejectionReasons;
   plan.score = scoreMissionPlan(plan);
   return plan;
 }
@@ -404,12 +593,53 @@ function dedupePlans(plans: MissionPlan[]): MissionPlan[] {
   return out;
 }
 
+function minimumFlybyMarginKm(plan: MissionPlan): number {
+  const margins = plan.segments
+    .filter((segment) => segment.toBody === "venus" || segment.toBody === "jupiter")
+    .map((segment) => segment.periapsisAltitudeKm);
+  return margins.length ? Math.min(...margins) : 0;
+}
+
+function withSensitivity(
+  plan: MissionPlan,
+  snapshot: MissionPhysicsSnapshot,
+  options: MissionOptimizerOptions,
+  constraints: MissionEngineeringConstraints,
+): MissionPlan {
+  const departurePerturbationDays = Math.max(3, options.departureStepDays * 0.5);
+  const tofPerturbationFraction = 0.02;
+  const samples = [
+    buildPlan(plan.departureDay - departurePerturbationDays, 1, 1, snapshot, options, constraints),
+    buildPlan(plan.departureDay + departurePerturbationDays, 1, 1, snapshot, options, constraints),
+    buildPlan(plan.departureDay, 1 - tofPerturbationFraction, 1, snapshot, options, constraints),
+    buildPlan(plan.departureDay, 1 + tofPerturbationFraction, 1, snapshot, options, constraints),
+  ];
+  const deltaVs = samples.map((sample) => sample.totalDeltaVKms);
+  const c3Values = samples.map((sample) => sample.segments[0]?.c3Km2S2 ?? Number.POSITIVE_INFINITY);
+  const scores = samples.map((sample) => sample.score);
+  const failed = samples.filter((sample) => sample.validationStatus === "fail").length;
+  const scoreSpread = Math.max(...scores) - Math.min(...scores);
+  const deltaVSpread = Math.max(...deltaVs) - Math.min(...deltaVs);
+  plan.sensitivitySummary = {
+    samples: samples.length,
+    departurePerturbationDays,
+    tofPerturbationFraction,
+    deltaVRangeKms: [Math.min(...deltaVs), Math.max(...deltaVs)],
+    c3RangeKm2S2: [Math.min(...c3Values), Math.max(...c3Values)],
+    minimumFlybyMarginKm: Math.min(...samples.map(minimumFlybyMarginKm)),
+    scoreRange: [Math.min(...scores), Math.max(...scores)],
+    robustnessScore: Math.max(0, 100 - failed * 22 - scoreSpread * 1.4 - deltaVSpread * 5),
+  };
+  return plan;
+}
+
 export function optimizeMission(
   options: MissionOptimizerOptions,
   physicsSnapshot: MissionPhysicsSnapshot,
 ): MissionOptimizationResult {
   const sequence = options.sequence.length >= 2 ? options.sequence : BODY_ORDER;
   const normalized: MissionOptimizerOptions = { ...options, sequence };
+  const constraints = resolveMissionConstraints(normalized);
   const plans: MissionPlan[] = [];
   const tofScales = [0.88, 0.96, 1.04, 1.12];
   const variantScales = [0.96, 1.0, 1.04];
@@ -421,18 +651,33 @@ export function optimizeMission(
   ) {
     for (const tofScale of tofScales) {
       for (const variantScale of variantScales) {
-        plans.push(buildPlan(dep, tofScale, variantScale, physicsSnapshot, normalized));
+        plans.push(buildPlan(dep, tofScale, variantScale, physicsSnapshot, normalized, constraints));
       }
     }
   }
 
-  const ranked = dedupePlans(plans)
-    .sort((a, b) => b.score - a.score)
+  const uniquePlans = dedupePlans(plans);
+  const convergedCandidateCount = uniquePlans.filter((plan) => plan.segments.every((segment) => segment.lambertConverged)).length;
+  for (const plan of uniquePlans) {
+    plan.solverProvenance.candidateCount = uniquePlans.length;
+    plan.solverProvenance.convergedCandidateCount = convergedCandidateCount;
+  }
+  const rejectedPlans = uniquePlans
+    .filter((plan) => plan.validationStatus === "fail")
+    .sort((a, b) => b.score - a.score);
+  const ranked = uniquePlans
+    .filter((plan) => plan.validationStatus !== "fail")
+    .sort((a, b) => b.score - a.score || a.totalDeltaVKms - b.totalDeltaVKms)
     .slice(0, Math.max(3, normalized.maxCandidates));
+  if (ranked[0]) {
+    withSensitivity(ranked[0], physicsSnapshot, normalized, constraints);
+  }
 
   return {
     options: normalized,
+    constraints,
     plans: ranked,
+    rejectedPlans: rejectedPlans.slice(0, Math.max(3, normalized.maxCandidates)),
     bestPlan: ranked[0] ?? null,
     generatedAt: Date.now(),
   };

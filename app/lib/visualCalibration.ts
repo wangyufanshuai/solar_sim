@@ -31,13 +31,51 @@ export const VISUAL_CALIBRATION = {
     cloudIntensity: 0.88,
     nightLightIntensity: 0.78,
   },
+  closeups: {
+    sun: {
+      exposure: 0.88,
+      haloScale: 0.94,
+    },
+    earth: {
+      roughness: 0.72,
+      normalScale: 1.35,
+      envMapIntensity: 0.24,
+      nightIntensity: 0.72,
+      cloudDayOpacity: 0.46,
+      cloudNightOpacity: 0.12,
+      atmosphereIntensity: 0.31,
+    },
+    moon: {
+      roughness: 0.96,
+      normalScale: 1.7,
+      envMapIntensity: 0.1,
+      fillIntensity: 0.04,
+    },
+    jupiter: {
+      roughness: 0.66,
+      normalScale: 0.72,
+      envMapIntensity: 0.16,
+      fillIntensity: 0.035,
+    },
+    saturn: {
+      roughness: 0.7,
+      normalScale: 0.62,
+      envMapIntensity: 0.14,
+      fillIntensity: 0.03,
+      ringLitOpacity: 0.62,
+      ringDarkOpacity: 0.22,
+    },
+  },
   rings: {
     saturnOpacity: 0.66,
     cassiniDivisionOpacity: 0.18,
   },
   orbits: {
-    referenceOpacity: 0.46,
+    referenceOpacity: 0.38,
     trailOpacity: 0.82,
-    glowScale: 0.34,
+    glowScale: 0.26,
+    contextOpacity: 0.7,
+    activeOpacity: 1,
+    missionOpacity: 0.92,
   },
 } as const;
