@@ -18,6 +18,7 @@ import { MAJOR_GAIA_STARS } from "../data/majorGaiaStars";
 import { galacticToEquatorial } from "../lib/galacticToEquatorial";
 import type { BottomControlBarSection } from "./BottomControlBar";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
+import SpacecraftGalleryPanel from "./SpacecraftGalleryPanel";
 
 type Props = {
   activeSection: BottomControlBarSection;
@@ -437,6 +438,7 @@ export default function UniverseSandboxHud({
                 />
                 {onExportSystemState ? <ToolButton label="导出当前系统状态" onClick={onExportSystemState} /> : null}
                 {onImportSystemState ? <ToolButton label="导入系统状态" onClick={onImportSystemState} /> : null}
+                <SpacecraftGalleryPanel />
               </div>
             )}
           </div>

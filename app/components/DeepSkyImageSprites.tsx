@@ -8,17 +8,21 @@ import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
 import { markRenderAssetStage, type RenderAssetPriority } from "../lib/renderAssetQueue";
+import type { DeepSkyResourcePackItem, ResourcePackManifest } from "../lib/resourcePackTypes";
 
 type DeepSkySpriteDef = {
   id: string;
   name: string;
-  imageUrl: string;
+  imageUrl?: string;
+  previewUrl?: string;
+  qualityUrl?: string;
   galLonDeg: number;
   galLatDeg: number;
   size: number;
   rotation: number;
   opacity: number;
   priority?: boolean;
+  renderTier?: "core" | "deferred" | "highQuality";
 };
 
 const SKY_RADIUS = 8700;
@@ -322,6 +326,34 @@ const DEEP_SKY_IMAGES: DeepSkySpriteDef[] = [
   },
 ];
 
+function manifestItemToSpriteDef(item: DeepSkyResourcePackItem): DeepSkySpriteDef {
+  return {
+    id: item.id,
+    name: item.name,
+    previewUrl: item.previewUrl,
+    qualityUrl: item.qualityUrl,
+    galLonDeg: item.galactic.lonDeg,
+    galLatDeg: item.galactic.latDeg,
+    size: item.visual.size,
+    rotation: item.visual.rotation,
+    opacity: item.visual.opacity,
+    priority: item.renderTier === "core",
+    renderTier: item.renderTier,
+  };
+}
+
+async function fetchDeepSkyManifest(): Promise<DeepSkySpriteDef[]> {
+  const res = await fetch("/textures/deep-sky/combined-resource-manifest.json", { cache: "force-cache" });
+  if (!res.ok) throw new Error(`deep-sky manifest ${res.status}`);
+  const manifest = (await res.json()) as ResourcePackManifest;
+  return (manifest.deepSky ?? []).map(manifestItemToSpriteDef);
+}
+
+function imageUrlForDef(def: DeepSkySpriteDef, highQuality: boolean) {
+  if (highQuality) return def.qualityUrl ?? def.previewUrl ?? def.imageUrl;
+  return def.previewUrl ?? def.imageUrl ?? def.qualityUrl;
+}
+
 function galacticSkyPosition(lonDeg: number, latDeg: number): THREE.Vector3 {
   const l = THREE.MathUtils.degToRad(lonDeg);
   const b = THREE.MathUtils.degToRad(latDeg);
@@ -359,10 +391,12 @@ export default function DeepSkyImageSprites({
   const gl = useThree((s) => s.gl);
   const renderAssetQueue = useOptionalRenderAssetQueue();
   const texturesRef = useRef<Record<string, THREE.Texture>>({});
+  const loadedUrlRef = useRef<Record<string, string>>({});
   const loadedIdsRef = useRef<Set<string>>(new Set());
   const pendingCommitRef = useRef(false);
   const [loadedIds, setLoadedIds] = useState<string[]>([]);
   const [allowFullSet, setAllowFullSet] = useState(false);
+  const [manifestDefs, setManifestDefs] = useState<DeepSkySpriteDef[] | null>(null);
   const alphaMap = useMemo(() => {
     if (typeof document === "undefined") return null;
     const size = 256;
@@ -391,15 +425,29 @@ export default function DeepSkyImageSprites({
     tex.needsUpdate = true;
     return tex;
   }, []);
+  useEffect(() => {
+    let cancelled = false;
+    fetchDeepSkyManifest()
+      .then((items) => {
+        if (!cancelled && items.length > 0) setManifestDefs(items);
+      })
+      .catch(() => {});
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const sourceDefs = manifestDefs ?? DEEP_SKY_IMAGES;
   const defs = useMemo(
     () =>
-      DEEP_SKY_IMAGES.filter(
+      sourceDefs.filter(
         (def, index) => allowFullSet || def.priority || index < PRIORITY_DEEP_SKY_COUNT,
       ).map((def) => ({
         ...def,
+        imageUrl: imageUrlForDef(def, highQuality && allowFullSet),
         position: galacticSkyPosition(def.galLonDeg, def.galLatDeg),
-      })),
-    [allowFullSet],
+      })).filter((def) => !!def.imageUrl),
+    [allowFullSet, highQuality, sourceDefs],
   );
 
   useEffect(() => {
@@ -418,7 +466,7 @@ export default function DeepSkyImageSprites({
     let cancelled = false;
     const loader = new THREE.TextureLoader();
     const maxAnisotropy = Math.min(highQuality ? 8 : 4, gl.capabilities.getMaxAnisotropy());
-    const loadQueue = defs.filter((def) => !loadedIdsRef.current.has(def.id));
+    const loadQueue = defs.filter((def) => def.imageUrl && loadedUrlRef.current[def.id] !== def.imageUrl);
     const cancelLoads: Array<() => void> = [];
 
     const commitLoadedIds = () => {
@@ -436,23 +484,27 @@ export default function DeepSkyImageSprites({
       }
     };
 
-    const markLoaded = (id: string, tex: THREE.Texture) => {
+    const markLoaded = (id: string, url: string, tex: THREE.Texture) => {
       texturesRef.current[id] = tex;
+      loadedUrlRef.current[id] = url;
       loadedIdsRef.current.add(id);
       commitLoadedIds();
     };
 
     for (const def of defs) {
-      const cached = textureCache.get(def.id);
+      if (!def.imageUrl) continue;
+      const cached = textureCache.get(def.imageUrl);
       if (cached) {
-        markLoaded(def.id, cached);
+        markLoaded(def.id, def.imageUrl, cached);
       }
     }
 
     const loadOne = (def: (typeof defs)[number]) => {
-      if (textureCache.has(def.id)) {
-        const cached = textureCache.get(def.id)!;
-        markLoaded(def.id, cached);
+      const imageUrl = def.imageUrl;
+      if (!imageUrl) return;
+      if (textureCache.has(imageUrl)) {
+        const cached = textureCache.get(imageUrl)!;
+        markLoaded(def.id, imageUrl, cached);
         return;
       }
       const priority: RenderAssetPriority = def.priority
@@ -462,13 +514,13 @@ export default function DeepSkyImageSprites({
           : "idle";
       const onLoad = (tex: THREE.Texture) => {
         if (cancelled) return;
-        textureCache.set(def.id, tex);
-        markLoaded(def.id, tex);
+        textureCache.set(imageUrl, tex);
+        markLoaded(def.id, imageUrl, tex);
       };
       const onError = () => {};
       if (renderAssetQueue) {
         cancelLoads.push(renderAssetQueue.loadTexture({
-          url: def.imageUrl,
+          url: imageUrl,
           priority,
           colorSpace: THREE.SRGBColorSpace,
           anisotropy: maxAnisotropy,
@@ -482,7 +534,7 @@ export default function DeepSkyImageSprites({
         }));
       } else {
         loader.load(
-          def.imageUrl,
+          imageUrl,
           (tex) => {
             if (cancelled) {
               tex.dispose();
@@ -516,10 +568,14 @@ export default function DeepSkyImageSprites({
       .filter((def, index) => def.priority || index < PRIORITY_DEEP_SKY_COUNT)
       .every((def) => loaded.has(def.id));
     if (coreReady) markRenderAssetStage("deep-sky-core-ready");
-    if (highQuality && DEEP_SKY_IMAGES.every((def) => loaded.has(def.id))) {
-      markRenderAssetStage("quality-assets-ready");
+    if (manifestDefs && sourceDefs.filter((def) => def.priority).every((def) => loaded.has(def.id))) {
+      markRenderAssetStage("deep-sky-pack-preview-ready");
     }
-  }, [highQuality, loadedIds]);
+    if (highQuality && sourceDefs.every((def) => loaded.has(def.id))) {
+      markRenderAssetStage("quality-assets-ready");
+      if (manifestDefs) markRenderAssetStage("deep-sky-pack-quality-ready");
+    }
+  }, [highQuality, loadedIds, manifestDefs, sourceDefs]);
 
   const loadedIdSet = useMemo(() => new Set(loadedIds), [loadedIds]);
 

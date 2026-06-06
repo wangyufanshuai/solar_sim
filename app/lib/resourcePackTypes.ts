@@ -1,0 +1,58 @@
+export type ResourceRenderTier = "core" | "deferred" | "highQuality";
+
+export type DeepSkyResourcePackItem = {
+  id: string;
+  name: string;
+  file: string;
+  publicUrl?: string;
+  previewUrl: string;
+  qualityUrl: string;
+  nasaId?: string | null;
+  sourceUrl: string | null;
+  credit: string;
+  bytes: {
+    preview: number;
+    quality: number;
+  };
+  dimensions?: {
+    preview?: [number, number];
+    quality?: [number, number];
+  };
+  checksum: {
+    preview: string;
+    quality: string;
+  };
+  galactic: {
+    lonDeg: number;
+    latDeg: number;
+  };
+  visual: {
+    size: number;
+    rotation: number;
+    opacity: number;
+  };
+  renderTier: ResourceRenderTier;
+  renderMode: "anchored sky-sphere decal";
+};
+
+export type SpacecraftResourcePackItem = {
+  id: string;
+  title: string;
+  localPath: string;
+  originUrl: string;
+  sourcePage: string;
+  credit: string;
+  bytes: number;
+  checksum: string;
+  modelScale: number;
+  previewTier: "core" | "gallery";
+};
+
+export type ResourcePackManifest = {
+  generatedAt: string;
+  source: string;
+  license: string;
+  performancePolicy: string;
+  deepSky?: DeepSkyResourcePackItem[];
+  spacecraft?: SpacecraftResourcePackItem[];
+};
