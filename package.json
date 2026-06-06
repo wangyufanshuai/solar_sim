@@ -11,6 +11,7 @@
     "start:local": "next start -H 127.0.0.1 -p 3001",
     "perf:smoke": "node scripts/perf-smoke.mjs",
     "perf:profile": "node scripts/perf-profile.mjs",
+    "perf:profile:assert": "node scripts/perf-profile.mjs | node scripts/perf-assert.mjs",
     "lint": "next lint",
     "fetch-planet-textures": "node scripts/fetch-planet-textures.mjs",
     "fetch-nasa-earth-hd": "node scripts/fetch-nasa-earth-hd.mjs",

@@ -1,4 +1,4 @@
-import { mkdtempSync, rmSync } from "node:fs";
+import { existsSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawn } from "node:child_process";
@@ -35,7 +35,8 @@ async function waitForCdp() {
       await sleep(180);
     }
   }
-  throw lastError ?? new Error("Chrome DevTools endpoint did not start");
+  const detail = lastError?.cause?.message ?? lastError?.message ?? "unknown error";
+  throw new Error(`Chrome DevTools endpoint did not start on port ${port}: ${detail}`);
 }
 
 function createCdp(wsUrl) {
@@ -188,12 +189,13 @@ async () => {
 }`;
 
 async function main() {
-  const chromePath = chromeCandidates.find(Boolean);
+  const chromePath = chromeCandidates.find((candidate) => existsSync(candidate));
   if (!chromePath) {
     console.error("No Chrome or Edge executable found. Set CHROME_PATH and retry.");
     process.exit(1);
   }
   const userDataDir = mkdtempSync(join(tmpdir(), "solar-perf-chrome-"));
+  let chromeExit = null;
   const chrome = spawn(chromePath, [
     `--remote-debugging-port=${port}`,
     `--user-data-dir=${userDataDir}`,
@@ -207,9 +209,13 @@ async function main() {
     "--window-size=1280,900",
     targetUrl,
   ], { stdio: "ignore" });
+  chrome.on("exit", (code, signal) => {
+    chromeExit = { code, signal };
+  });
 
   try {
     await waitForCdp();
+    if (chromeExit) throw new Error(`Chrome exited before CDP was ready: ${JSON.stringify(chromeExit)}`);
     const tabs = await fetchJson(`http://127.0.0.1:${port}/json`);
     const page = tabs.find((tab) => tab.type === "page") ?? tabs[0];
     if (!page?.webSocketDebuggerUrl) throw new Error("No debuggable page found");
