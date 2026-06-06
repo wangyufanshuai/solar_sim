@@ -488,6 +488,10 @@ export type UniverseCanvasSimulationProps = {
 export default function UniverseScene({ simulation }: { simulation: UniverseCanvasSimulationProps }) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const qualityBudget = simulation.viewSettings.renderBudget === "quality" || simulation.viewSettings.highQualityRendering;
+  const selectedBodyId =
+    simulation.selectedBodyIndex == null
+      ? null
+      : SOLAR_SYSTEM_BODIES[simulation.selectedBodyIndex]?.id ?? null;
 
   useEffect(() => {
     if (!simulation.cameraIntentRef) return;
@@ -506,7 +510,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <hemisphereLight intensity={TRUE_VOID_CINEMATIC_HEMISPHERE_INTENSITY} groundColor="#020204" color="#17223a" />
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
         <FloatingOriginBridge floatingOriginRef={simulation.floatingOriginRef} />
-        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} qualitySky={qualityBudget} />}</BrightStarTierBridge>
+        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} qualitySky={qualityBudget} renderBudget={simulation.viewSettings.renderBudget} />}</BrightStarTierBridge>
         {simulation.viewSettings.showGalaxyBackground ? <NebulaMilkyWay /> : null}
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
           {qualityBudget ? <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} /> : null}
@@ -535,7 +539,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
             showLabels={qualityBudget}
           />
         ) : null}
-        {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor renderBudget={simulation.viewSettings.renderBudget} /> : null}
+        {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor renderBudget={simulation.viewSettings.renderBudget} selectedBodyId={selectedBodyId} /> : null}
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />
         <LodOrbitControlsBridge floatingOriginRef={simulation.floatingOriginRef} controlsRef={controlsRef} />

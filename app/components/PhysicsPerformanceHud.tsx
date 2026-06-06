@@ -131,6 +131,12 @@ export default function PhysicsPerformanceHud({
       ? "full"
       : "core";
   const missionSegments = missionPlan?.segments.length ?? 0;
+  const renderLabel =
+    viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering
+      ? "showcase"
+      : viewSettings.renderBudget === "safe"
+        ? "perf"
+        : "balanced";
 
   return (
     <div className="pointer-events-auto fixed right-3 top-3 z-[84] w-[174px] rounded-3xl bg-[rgba(8,9,12,0.78)] px-3 py-3 text-white/56 shadow-[0_14px_36px_rgba(0,0,0,0.34)] backdrop-blur-2xl">
@@ -156,7 +162,7 @@ export default function PhysicsPerformanceHud({
         </div>
         <div className="flex justify-between">
           <span>Render</span>
-          <span className="text-white/68">{viewSettings.renderBudget}</span>
+          <span className="text-white/68">{renderLabel}</span>
         </div>
         <div className="flex justify-between">
           <span>DPR</span>

@@ -7,15 +7,18 @@ import { useRelativisticOpticsStateRef } from "../context/RelativisticOpticsCont
 import GalaxyEnvironmentSphere from "./GalaxyEnvironmentSphere";
 import BrightStarCatalog from "./BrightStarCatalog";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import type { RenderBudget } from "../lib/renderAssetQueue";
 import type { MutableRefObject } from "react";
 
 export default function ScienceBackdrop({
   brightStarTier2 = true,
   qualitySky = false,
+  renderBudget = "balanced",
 }: {
   floatingOriginRef?: MutableRefObject<FloatingOriginState>;
   brightStarTier2?: boolean;
   qualitySky?: boolean;
+  renderBudget?: RenderBudget;
 }) {
   const rootRef = useRef<THREE.Group>(null);
   const opticsRef = useRelativisticOpticsStateRef();
@@ -32,7 +35,7 @@ export default function ScienceBackdrop({
 
   return (
     <group ref={rootRef} renderOrder={-500}>
-      <GalaxyEnvironmentSphere visible qualityEnabled={qualitySky} />
+      <GalaxyEnvironmentSphere visible qualityEnabled={qualitySky} renderBudget={renderBudget} />
       <BrightStarCatalog opacity={0.038} tier2Loaded={brightStarTier2} />
     </group>
   );

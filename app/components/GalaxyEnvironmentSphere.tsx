@@ -5,17 +5,23 @@ import * as THREE from "three";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
-import { markRenderAssetStage } from "../lib/renderAssetQueue";
+import { markRenderAssetStage, type RenderBudget, type RenderAssetPriority } from "../lib/renderAssetQueue";
 
 type GalaxyEnvironmentSphereProps = {
   onTextureState?: (loaded: boolean) => void;
   visible?: boolean;
   qualityEnabled?: boolean;
+  renderBudget?: RenderBudget;
 };
 
-const PREVIEW_SKY_TEXTURES = [
-  "/textures/sky/nasa_milkyway_2020_4k_balanced.jpg",
+type SkyStage = "fast" | "balanced" | "quality";
+
+const FAST_SKY_TEXTURES = [
+  "/textures/sky/milky-way-equirect.jpg",
   "/textures/sky/universe-sandbox-sky.jpg",
+] as const;
+const BALANCED_SKY_TEXTURES = [
+  "/textures/sky/nasa_milkyway_2020_4k_balanced.jpg",
 ] as const;
 const QUALITY_SKY_TEXTURES = [
   "/textures/sky/universe-sandbox-sky-8k.jpg",
@@ -70,6 +76,7 @@ export default function GalaxyEnvironmentSphere({
   onTextureState,
   visible = true,
   qualityEnabled = false,
+  renderBudget = "balanced",
 }: GalaxyEnvironmentSphereProps) {
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
   const meshRef = useRef<THREE.Mesh>(null);
@@ -100,8 +107,9 @@ export default function GalaxyEnvironmentSphere({
 
   useEffect(() => {
     let cancelled = false;
+    const cancelLoads: Array<() => void> = [];
     const loader = new THREE.TextureLoader();
-    const configure = (loaded: THREE.Texture, stage: "preview" | "quality") => {
+    const configure = (loaded: THREE.Texture, stage: SkyStage) => {
       if (cancelled) {
         return;
       }
@@ -115,29 +123,39 @@ export default function GalaxyEnvironmentSphere({
       loaded.anisotropy = Math.min(8, gl.capabilities.getMaxAnisotropy());
       loaded.needsUpdate = true;
       const sky = VISUAL_CALIBRATION.sky;
-      material.uniforms.uExposure.value =
-        stage === "quality" ? sky.exposure : sky.previewExposure;
-      material.uniforms.uContrast.value =
-        stage === "quality" ? sky.contrast : sky.previewContrast;
-      material.uniforms.uTinyStarIntensity.value =
-        stage === "quality" ? sky.tinyStarIntensity : sky.previewTinyStarIntensity;
+      const exposure =
+        stage === "quality" ? sky.exposure : stage === "balanced" ? sky.previewExposure : sky.fastExposure;
+      const contrast =
+        stage === "quality" ? sky.contrast : stage === "balanced" ? sky.previewContrast : sky.fastContrast;
+      const tinyStarIntensity =
+        stage === "quality" ? sky.tinyStarIntensity : stage === "balanced" ? sky.previewTinyStarIntensity : sky.fastTinyStarIntensity;
+      material.uniforms.uExposure.value = exposure;
+      material.uniforms.uContrast.value = contrast;
+      material.uniforms.uTinyStarIntensity.value = tinyStarIntensity;
       material.uniforms.uMap.value = loaded;
       material.needsUpdate = true;
       setTexture(loaded);
-      markRenderAssetStage(stage === "quality" ? "quality-sky-ready" : "preview-sky-ready");
-      if (stage === "preview") markRenderAssetStage("sky-ready");
+      if (stage === "quality") markRenderAssetStage("quality-sky-ready");
+      else if (stage === "balanced") {
+        markRenderAssetStage("balanced-sky-ready");
+        markRenderAssetStage("sky-ready");
+      } else {
+        markRenderAssetStage("preview-sky-ready");
+      }
       onTextureStateRef.current?.(true);
     };
-    const loadAt = (urls: readonly string[], index: number, stage: "preview" | "quality") => {
+    const priorityForStage = (stage: SkyStage): RenderAssetPriority =>
+      stage === "quality" ? "quality" : stage === "balanced" ? "upgrade" : "preview";
+    const loadAt = (urls: readonly string[], index: number, stage: SkyStage) => {
       const url = urls[index];
       if (!url) {
-        if (!cancelled && stage === "preview") onTextureStateRef.current?.(false);
+        if (!cancelled && stage === "fast") onTextureStateRef.current?.(false);
         return;
       }
       if (queue) {
-        queue.loadTexture({
+        const cancel = queue.loadTexture({
           url,
-          priority: stage === "quality" ? "quality" : "preview",
+          priority: priorityForStage(stage),
           colorSpace: THREE.SRGBColorSpace,
           anisotropy: Math.min(8, gl.capabilities.getMaxAnisotropy()),
           configure: (tex) => {
@@ -148,18 +166,21 @@ export default function GalaxyEnvironmentSphere({
           onLoad: (tex) => configure(tex, stage),
           onError: () => loadAt(urls, index + 1, stage),
         });
+        cancelLoads.push(cancel);
       } else {
         loader.load(url, (tex) => configure(tex, stage), undefined, () => loadAt(urls, index + 1, stage));
       }
     };
-    loadAt(PREVIEW_SKY_TEXTURES, 0, "preview");
+    loadAt(FAST_SKY_TEXTURES, 0, "fast");
+    if (renderBudget !== "safe") loadAt(BALANCED_SKY_TEXTURES, 0, "balanced");
     if (qualityEnabled) loadAt(QUALITY_SKY_TEXTURES, 0, "quality");
     return () => {
       cancelled = true;
+      cancelLoads.forEach((cancel) => cancel());
       material.uniforms.uMap.value = null;
       setTexture(null);
     };
-  }, [gl, material, qualityEnabled, queue]);
+  }, [gl, material, qualityEnabled, queue, renderBudget]);
 
   useEffect(() => () => material.dispose(), [material]);
 

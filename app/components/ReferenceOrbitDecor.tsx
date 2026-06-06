@@ -47,27 +47,32 @@ const MAJOR_REFERENCE_IDS = new Set([
 function budgetOrbitStyle(
   def: ReferenceKeplerOrbitDef,
   renderBudget: SimulationViewSettings["renderBudget"],
+  selectedBodyId?: string | null,
 ) {
   const major = MAJOR_REFERENCE_IDS.has(def.id);
+  const selected = selectedBodyId === def.id;
   if (renderBudget === "quality") {
-    return { visible: true, opacityMul: major ? 0.78 : 0.52, glowMul: major ? 0.55 : 0.28, label: major };
+    return { visible: true, opacityMul: selected ? 1.18 : major ? 0.78 : 0.52, glowMul: selected ? 0.72 : major ? 0.55 : 0.28, label: selected || major };
   }
   if (renderBudget === "safe") {
-    return { visible: major, opacityMul: major ? 0.34 : 0, glowMul: 0, label: false };
+    return { visible: selected || major, opacityMul: selected ? 0.72 : major ? 0.34 : 0, glowMul: selected ? 0.18 : 0, label: selected };
   }
-  return { visible: major || def.aAu < 4.2, opacityMul: major ? 0.46 : 0.16, glowMul: major ? 0.12 : 0, label: major };
+  return { visible: selected || major || def.aAu < 4.2, opacityMul: selected ? 0.95 : major ? 0.46 : 0.16, glowMul: selected ? 0.32 : major ? 0.12 : 0, label: selected || major };
 }
 
 function DecorOrbit({
   def,
   renderBudget,
+  selectedBodyId,
 }: {
   def: ReferenceKeplerOrbitDef;
   renderBudget: SimulationViewSettings["renderBudget"];
+  selectedBodyId?: string | null;
 }) {
   const bloomActions = useOptionalBloomSceneActions();
   const { camera, size } = useThree();
-  const style = useMemo(() => budgetOrbitStyle(def, renderBudget), [def, renderBudget]);
+  const style = useMemo(() => budgetOrbitStyle(def, renderBudget, selectedBodyId), [def, renderBudget, selectedBodyId]);
+  const selected = selectedBodyId === def.id;
 
   const mutedColor = useMemo(
     () => orbitColorForBodyId(def.id),
@@ -82,11 +87,11 @@ function DecorOrbit({
   const bundle = useMemo(
     () =>
       createHairlineOrbitLineBundle(mutedColor, {
-        linewidthPx: renderBudget === "quality" ? 0.58 : 0.46,
-        glowWidthPx: renderBudget === "quality" ? 1.35 : 0.92,
+        linewidthPx: selected ? 0.78 : renderBudget === "quality" ? 0.58 : 0.46,
+        glowWidthPx: selected ? 1.7 : renderBudget === "quality" ? 1.35 : 0.92,
         renderOrder: -37,
       }),
-    [mutedColor, renderBudget]
+    [mutedColor, renderBudget, selected]
   );
 
   useLayoutEffect(() => {
@@ -152,14 +157,14 @@ function DecorOrbit({
 
   useEffect(() => {
     bundle.coreMaterial.color.copy(mutedColor);
-    bundle.glowMaterial.color.copy(mutedColor).lerp(new THREE.Color("#fff1c7"), 0.18);
+    bundle.glowMaterial.color.copy(mutedColor).lerp(new THREE.Color("#fff1c7"), selected ? 0.34 : 0.18);
     setLineGeometryFromVectors(bundle, closed, closed.length, false, flatScratch);
     return () => {
       bundle.geometry.dispose();
       bundle.coreMaterial.dispose();
       bundle.glowMaterial.dispose();
     };
-  }, [bundle, closed, flatScratch, mutedColor]);
+  }, [bundle, closed, flatScratch, mutedColor, selected]);
 
   useFrame(() => {
     bundle.coreMaterial.resolution.set(size.width, size.height);
@@ -221,7 +226,7 @@ function DecorOrbit({
             fontSize: 11,
             fontWeight: 400,
             letterSpacing: "0.02em",
-            color: "rgba(224,219,205,0.58)",
+            color: selected ? "rgba(255,241,199,0.82)" : "rgba(224,219,205,0.58)",
             textShadow:
               "0 0 10px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.75)",
             transform: "translate(15px, -15px)",
@@ -237,13 +242,15 @@ function DecorOrbit({
 
 export default function ReferenceOrbitDecor({
   renderBudget,
+  selectedBodyId,
 }: {
   renderBudget: SimulationViewSettings["renderBudget"];
+  selectedBodyId?: string | null;
 }) {
   return (
     <>
       {REFERENCE_KEPLER_ORBITS.map((def) => (
-        <DecorOrbit key={def.id} def={def} renderBudget={renderBudget} />
+        <DecorOrbit key={def.id} def={def} renderBudget={renderBudget} selectedBodyId={selectedBodyId} />
       ))}
     </>
   );

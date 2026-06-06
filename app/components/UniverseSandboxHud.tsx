@@ -159,6 +159,37 @@ export default function UniverseSandboxHud({
 
   const patch = (p: Partial<SimulationViewSettings>) =>
     onViewSettingsChange({ ...viewSettings, ...p });
+  const applyBalancedPreset = () => {
+    onVisualEnhanceChange(false);
+    patch({
+      renderBudget: "balanced",
+      highQualityRendering: false,
+      showGaiaStars: false,
+      showDeepSkyMarkers: false,
+      showBodyLabels: false,
+      showReferenceOrbits: true,
+      showOrbitTrails: true,
+      showOsculatingOrbits: true,
+      showNebulaImages: true,
+    });
+  };
+  const applyShowcasePreset = () => {
+    onVisualEnhanceChange(true);
+    patch({
+      renderBudget: "quality",
+      highQualityRendering: true,
+      showGaiaStars: true,
+      showDeepSkyMarkers: true,
+      showReferenceOrbits: true,
+      showOrbitTrails: true,
+      showOsculatingOrbits: true,
+      showNebulaImages: true,
+      showConstellations: true,
+    });
+  };
+  const applyPerfPreset = () => {
+    onPerformanceSafe?.();
+  };
 
   return (
     <>
@@ -356,7 +387,7 @@ export default function UniverseSandboxHud({
                 <div className="mb-3 grid grid-cols-3 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
                   <button
                     type="button"
-                    onClick={() => patch({ renderBudget: "balanced", highQualityRendering: false })}
+                    onClick={applyBalancedPreset}
                     data-solar-action="budget-balanced"
                     className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "balanced" && !viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
                   >
@@ -364,19 +395,19 @@ export default function UniverseSandboxHud({
                   </button>
                   <button
                     type="button"
-                    onClick={() => patch({ renderBudget: "quality", highQualityRendering: true, showGaiaStars: true, showDeepSkyMarkers: true })}
+                    onClick={applyShowcasePreset}
                     data-solar-action="budget-quality"
                     className={`rounded-lg px-2 py-1.5 transition-colors ${viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "bg-white/10 text-white/86" : "text-white/42 hover:text-white/70"}`}
                   >
-                    Quality
+                    Showcase
                   </button>
                   <button
                     type="button"
-                    onClick={onPerformanceSafe}
+                    onClick={applyPerfPreset}
                     data-solar-action="budget-safe"
                     className="rounded-lg px-2 py-1.5 text-white/42 transition-colors hover:bg-white/10 hover:text-white/78"
                   >
-                    Safe
+                    Perf
                   </button>
                 </div>
                 <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />
