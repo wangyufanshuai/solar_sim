@@ -21,7 +21,6 @@ import {
 } from "../lib/orbitCinematicTokens";
 import {
   createHairlineOrbitLineBundle,
-  setHairlineOrbitBundleOpacity,
   setLineGeometryFromVectors,
 } from "../lib/hairlineOrbitLine";
 import {
@@ -30,10 +29,45 @@ import {
   ORBIT_SCREEN_LOD_FADE_START_PX,
   screenDiscDiameterPx,
 } from "../lib/screenSpaceBodyLod";
+import type { SimulationViewSettings } from "../lib/simulationViewSettings";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
-function DecorOrbit({ def }: { def: ReferenceKeplerOrbitDef }) {
+const MAJOR_REFERENCE_IDS = new Set([
+  "mercury",
+  "venus",
+  "earth",
+  "mars",
+  "jupiter",
+  "saturn",
+  "uranus",
+  "neptune",
+  "pluto",
+]);
+
+function budgetOrbitStyle(
+  def: ReferenceKeplerOrbitDef,
+  renderBudget: SimulationViewSettings["renderBudget"],
+) {
+  const major = MAJOR_REFERENCE_IDS.has(def.id);
+  if (renderBudget === "quality") {
+    return { visible: true, opacityMul: major ? 0.78 : 0.52, glowMul: major ? 0.55 : 0.28, label: major };
+  }
+  if (renderBudget === "safe") {
+    return { visible: major, opacityMul: major ? 0.34 : 0, glowMul: 0, label: false };
+  }
+  return { visible: major || def.aAu < 4.2, opacityMul: major ? 0.46 : 0.16, glowMul: major ? 0.12 : 0, label: major };
+}
+
+function DecorOrbit({
+  def,
+  renderBudget,
+}: {
+  def: ReferenceKeplerOrbitDef;
+  renderBudget: SimulationViewSettings["renderBudget"];
+}) {
   const bloomActions = useOptionalBloomSceneActions();
   const { camera, size } = useThree();
+  const style = useMemo(() => budgetOrbitStyle(def, renderBudget), [def, renderBudget]);
 
   const mutedColor = useMemo(
     () => orbitColorForBodyId(def.id),
@@ -48,11 +82,11 @@ function DecorOrbit({ def }: { def: ReferenceKeplerOrbitDef }) {
   const bundle = useMemo(
     () =>
       createHairlineOrbitLineBundle(mutedColor, {
-        linewidthPx: 0.58,
-        glowWidthPx: 1.5,
+        linewidthPx: renderBudget === "quality" ? 0.58 : 0.46,
+        glowWidthPx: renderBudget === "quality" ? 1.35 : 0.92,
         renderOrder: -37,
       }),
-    [mutedColor]
+    [mutedColor, renderBudget]
   );
 
   useLayoutEffect(() => {
@@ -144,15 +178,20 @@ function DecorOrbit({ def }: { def: ReferenceKeplerOrbitDef }) {
     );
     const sizeMul = orbitOpacityMulFromLodWorldRadius(bodyDiscForOpacity);
     const op = THREE.MathUtils.clamp(
-      ORBIT_CINEMATIC_BASE_OPACITY * 0.64 * sizeMul * lodA,
+      ORBIT_CINEMATIC_BASE_OPACITY *
+        VISUAL_CALIBRATION.orbits.referenceOpacity *
+        style.opacityMul *
+        sizeMul *
+        lodA,
       0,
       1
     );
-    setHairlineOrbitBundleOpacity(bundle, op);
-    bundle.root.visible = op > 0.02;
+    bundle.coreMaterial.opacity = op;
+    bundle.glowMaterial.opacity = THREE.MathUtils.clamp(op * VISUAL_CALIBRATION.orbits.glowScale * style.glowMul, 0, 0.16);
+    bundle.root.visible = style.visible && op > 0.012;
   });
 
-  if (closed.length < 4) return null;
+  if (!style.visible || closed.length < 4) return null;
 
   return (
     <group renderOrder={-38}>
@@ -169,7 +208,7 @@ function DecorOrbit({ def }: { def: ReferenceKeplerOrbitDef }) {
           />
         </mesh>
       ) : null}
-      <Html
+      {style.label ? <Html
         position={[labelAnchor.x, labelAnchor.y, labelAnchor.z]}
         center={false}
         distanceFactor={20}
@@ -191,16 +230,20 @@ function DecorOrbit({ def }: { def: ReferenceKeplerOrbitDef }) {
         >
           {def.label}
         </span>
-      </Html>
+      </Html> : null}
     </group>
   );
 }
 
-export default function ReferenceOrbitDecor() {
+export default function ReferenceOrbitDecor({
+  renderBudget,
+}: {
+  renderBudget: SimulationViewSettings["renderBudget"];
+}) {
   return (
     <>
       {REFERENCE_KEPLER_ORBITS.map((def) => (
-        <DecorOrbit key={def.id} def={def} />
+        <DecorOrbit key={def.id} def={def} renderBudget={renderBudget} />
       ))}
     </>
   );

@@ -17,6 +17,7 @@ import {
   setGradientLineColor,
   type GradientOrbitLineBundle,
 } from "../lib/orbitTrailGradientMaterial";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 /* ── Types ── */
 
@@ -201,11 +202,12 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
       bundle.line.visible = true;
       glowBundle.line.visible = selected;
 
+      const trailOpacity = VISUAL_CALIBRATION.orbits.trailOpacity;
       const mat = bundle.material;
-      mat.uniforms.uOpacityScale.value = selected ? 1.28 : 0.72;
+      mat.uniforms.uOpacityScale.value = (selected ? 1.28 : 0.72) * trailOpacity;
       mat.uniforms.uRgbMul.value = selected ? 1.85 : 1.36;
       if (selected) {
-        glowBundle.material.uniforms.uOpacityScale.value = 0.86;
+        glowBundle.material.uniforms.uOpacityScale.value = 0.86 * trailOpacity;
         glowBundle.material.uniforms.uRgbMul.value = 1.45;
       }
     });

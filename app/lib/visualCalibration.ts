@@ -3,6 +3,9 @@ export const VISUAL_CALIBRATION = {
     exposure: 0.92,
     contrast: 0.88,
     tinyStarIntensity: 0.0028,
+    previewExposure: 0.74,
+    previewContrast: 0.78,
+    previewTinyStarIntensity: 0.0012,
     milkyWayContrast: 0.9,
   },
   stars: {
@@ -28,5 +31,10 @@ export const VISUAL_CALIBRATION = {
   rings: {
     saturnOpacity: 0.66,
     cassiniDivisionOpacity: 0.18,
+  },
+  orbits: {
+    referenceOpacity: 0.46,
+    trailOpacity: 0.82,
+    glowScale: 0.34,
   },
 } as const;

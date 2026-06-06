@@ -535,7 +535,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
             showLabels={qualityBudget}
           />
         ) : null}
-        {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor /> : null}
+        {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor renderBudget={simulation.viewSettings.renderBudget} /> : null}
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />
         <LodOrbitControlsBridge floatingOriginRef={simulation.floatingOriginRef} controlsRef={controlsRef} />

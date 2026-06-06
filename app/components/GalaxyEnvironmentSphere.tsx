@@ -14,8 +14,8 @@ type GalaxyEnvironmentSphereProps = {
 };
 
 const PREVIEW_SKY_TEXTURES = [
-  "/textures/sky/universe-sandbox-sky.jpg",
   "/textures/sky/nasa_milkyway_2020_4k_balanced.jpg",
+  "/textures/sky/universe-sandbox-sky.jpg",
 ] as const;
 const QUALITY_SKY_TEXTURES = [
   "/textures/sky/universe-sandbox-sky-8k.jpg",
@@ -114,6 +114,13 @@ export default function GalaxyEnvironmentSphere({
       loaded.generateMipmaps = false;
       loaded.anisotropy = Math.min(8, gl.capabilities.getMaxAnisotropy());
       loaded.needsUpdate = true;
+      const sky = VISUAL_CALIBRATION.sky;
+      material.uniforms.uExposure.value =
+        stage === "quality" ? sky.exposure : sky.previewExposure;
+      material.uniforms.uContrast.value =
+        stage === "quality" ? sky.contrast : sky.previewContrast;
+      material.uniforms.uTinyStarIntensity.value =
+        stage === "quality" ? sky.tinyStarIntensity : sky.previewTinyStarIntensity;
       material.uniforms.uMap.value = loaded;
       material.needsUpdate = true;
       setTexture(loaded);
