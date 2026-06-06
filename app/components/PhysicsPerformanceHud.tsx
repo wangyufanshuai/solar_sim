@@ -128,7 +128,7 @@ export default function PhysicsPerformanceHud({
   const deepSkyLabel = !viewSettings.showNebulaImages
     ? "off"
     : viewSettings.highQualityRendering || viewSettings.renderBudget === "quality"
-      ? "full"
+      ? "core+idle"
       : "core";
   const missionSegments = missionPlan?.segments.length ?? 0;
   const renderLabel =

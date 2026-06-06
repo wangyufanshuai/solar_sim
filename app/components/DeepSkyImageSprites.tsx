@@ -23,6 +23,7 @@ type DeepSkySpriteDef = {
 
 const SKY_RADIUS = 8700;
 const PRIORITY_DEEP_SKY_COUNT = 10;
+const FULL_DEEP_SKY_IDLE_DELAY_MS = 90000;
 const textureCache = new Map<string, THREE.Texture>();
 const PLANE_FORWARD = new THREE.Vector3(0, 0, 1);
 const CORE_DECAL_SCALE = 0.86;
@@ -393,12 +394,12 @@ export default function DeepSkyImageSprites({
   const defs = useMemo(
     () =>
       DEEP_SKY_IMAGES.filter(
-        (def, index) => allowFullSet || highQuality || def.priority || index < PRIORITY_DEEP_SKY_COUNT,
+        (def, index) => allowFullSet || def.priority || index < PRIORITY_DEEP_SKY_COUNT,
       ).map((def) => ({
         ...def,
         position: galacticSkyPosition(def.galLonDeg, def.galLatDeg),
       })),
-    [allowFullSet, highQuality],
+    [allowFullSet],
   );
 
   useEffect(() => {
@@ -407,14 +408,9 @@ export default function DeepSkyImageSprites({
       return;
     }
     const scheduleFull = () => setAllowFullSet(true);
-    let idleId: number | null = null;
-    const timeoutId = window.setTimeout(scheduleFull, 400);
-    if ("requestIdleCallback" in window) {
-      idleId = window.requestIdleCallback(scheduleFull, { timeout: 700 });
-    }
+    const timeoutId = window.setTimeout(scheduleFull, FULL_DEEP_SKY_IDLE_DELAY_MS);
     return () => {
       window.clearTimeout(timeoutId);
-      if (idleId !== null && "cancelIdleCallback" in window) window.cancelIdleCallback(idleId);
     };
   }, [highQuality]);
 
@@ -462,7 +458,7 @@ export default function DeepSkyImageSprites({
       const priority: RenderAssetPriority = def.priority
         ? "visible"
         : highQuality
-          ? "quality"
+          ? "upgrade"
           : "idle";
       const onLoad = (tex: THREE.Texture) => {
         if (cancelled) return;

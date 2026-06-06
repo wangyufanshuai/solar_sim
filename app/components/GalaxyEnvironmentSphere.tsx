@@ -26,6 +26,7 @@ const BALANCED_SKY_TEXTURES = [
 const QUALITY_SKY_TEXTURES = [
   "/textures/sky/universe-sandbox-sky-8k.jpg",
 ] as const;
+const QUALITY_SKY_IDLE_DELAY_MS = 90000;
 
 const SKY_VERTEX = /* glsl */ `
 varying vec2 vUv;
@@ -173,9 +174,15 @@ export default function GalaxyEnvironmentSphere({
     };
     loadAt(FAST_SKY_TEXTURES, 0, "fast");
     if (renderBudget !== "safe") loadAt(BALANCED_SKY_TEXTURES, 0, "balanced");
-    if (qualityEnabled) loadAt(QUALITY_SKY_TEXTURES, 0, "quality");
+    let qualityTimer: ReturnType<typeof globalThis.setTimeout> | null = null;
+    if (qualityEnabled) {
+      qualityTimer = globalThis.setTimeout(() => {
+        if (!cancelled) loadAt(QUALITY_SKY_TEXTURES, 0, "quality");
+      }, QUALITY_SKY_IDLE_DELAY_MS);
+    }
     return () => {
       cancelled = true;
+      if (qualityTimer) globalThis.clearTimeout(qualityTimer);
       cancelLoads.forEach((cancel) => cancel());
       material.uniforms.uMap.value = null;
       setTexture(null);

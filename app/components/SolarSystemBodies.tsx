@@ -236,7 +236,7 @@ function BodyShell({
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
 }) {
   const qualityOnInspect = isSelected && ["sun", "earth", "moon", "jupiter", "saturn"].includes(def.id);
-  const preferQuality = highQualityRendering || renderBudget === "quality" || qualityOnInspect;
+  const preferQuality = qualityOnInspect || (highQualityRendering && isSelected && def.variant === "planet");
   const tieredManifest = useMemo(() => tieredTextureManifestEntryForBodyId(def.id), [def.id]);
   const resolvedManifest = useMemo(
     () => resolveTieredPlanetTextureManifest(def.id, renderBudget, preferQuality),
@@ -247,7 +247,7 @@ function BodyShell({
     qualityUrl: tieredManifest.albedo?.quality,
     preferQuality,
     previewPriority: "visible",
-    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+    qualityPriority: "upgrade",
   });
   const normalMap = useOptionalDataTexture(def.normalMap);
   const cloudMap = useOptionalTieredTexture({
@@ -255,14 +255,14 @@ function BodyShell({
     qualityUrl: tieredManifest.clouds?.quality,
     preferQuality,
     previewPriority: "idle",
-    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+    qualityPriority: "upgrade",
   });
   const nightMap = useOptionalTieredTexture({
     previewUrl: tieredManifest.night?.preview,
     qualityUrl: tieredManifest.night?.quality,
     preferQuality,
     previewPriority: "idle",
-    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+    qualityPriority: "upgrade",
   });
   const groupRef = useRef<THREE.Group>(null);
   const visualRef = useRef<THREE.Group>(null);

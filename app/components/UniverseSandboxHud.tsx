@@ -417,7 +417,7 @@ export default function UniverseSandboxHud({
                 <ToggleRow label="银河背景增强" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} cost="Medium" status="Loaded" />
                 <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced subset"} />
                 <ToggleRow label="星座线" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} cost="Medium" />
-                <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "full decals" : "core decals"} />
+                <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "core + idle full" : "core decals"} />
                 <ToggleRow label="深空标记" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} cost="Medium" />
                 <ToggleRow label="任务轨迹" checked={viewSettings.showMissionTrajectory} onChange={(v) => patch({ showMissionTrajectory: v })} cost="Medium" />
                 <ToggleRow label="拉格朗日点" checked={viewSettings.showLagrangePoints} onChange={(v) => patch({ showLagrangePoints: v })} cost="Medium" />
