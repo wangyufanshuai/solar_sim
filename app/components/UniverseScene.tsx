@@ -506,7 +506,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <hemisphereLight intensity={TRUE_VOID_CINEMATIC_HEMISPHERE_INTENSITY} groundColor="#020204" color="#17223a" />
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
         <FloatingOriginBridge floatingOriginRef={simulation.floatingOriginRef} />
-        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} />}</BrightStarTierBridge>
+        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} qualitySky={qualityBudget} />}</BrightStarTierBridge>
         {simulation.viewSettings.showGalaxyBackground ? <NebulaMilkyWay /> : null}
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
           {qualityBudget ? <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} /> : null}

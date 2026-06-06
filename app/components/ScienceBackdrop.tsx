@@ -11,9 +11,11 @@ import type { MutableRefObject } from "react";
 
 export default function ScienceBackdrop({
   brightStarTier2 = true,
+  qualitySky = false,
 }: {
   floatingOriginRef?: MutableRefObject<FloatingOriginState>;
   brightStarTier2?: boolean;
+  qualitySky?: boolean;
 }) {
   const rootRef = useRef<THREE.Group>(null);
   const opticsRef = useRelativisticOpticsStateRef();
@@ -30,7 +32,7 @@ export default function ScienceBackdrop({
 
   return (
     <group ref={rootRef} renderOrder={-500}>
-      <GalaxyEnvironmentSphere visible />
+      <GalaxyEnvironmentSphere visible qualityEnabled={qualitySky} />
       <BrightStarCatalog opacity={0.038} tier2Loaded={brightStarTier2} />
     </group>
   );

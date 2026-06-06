@@ -16,8 +16,11 @@ import {
 } from "../data/planetsJ2000";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 import { planetMaterialPreset } from "../lib/planetMaterialPresets";
-import { textureManifestEntryForBodyId } from "../data/planetTextureManifest";
-import { useOptionalDataTexture, useOptionalTexture } from "../lib/useOptionalTexture";
+import {
+  resolveTieredPlanetTextureManifest,
+  tieredTextureManifestEntryForBodyId,
+} from "../data/planetTextureManifest";
+import { useOptionalDataTexture, useOptionalTieredTexture } from "../lib/useOptionalTexture";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import {
   bodyVisualBandForDef,
@@ -212,6 +215,8 @@ function BodyShell({
   showOrbitTrails,
   showBodyLabels,
   showRelativisticOptics,
+  renderBudget,
+  highQualityRendering,
   globalSelectedBodyIndex,
   physicsRef,
 }: {
@@ -225,14 +230,40 @@ function BodyShell({
   showOrbitTrails: boolean;
   showBodyLabels: boolean;
   showRelativisticOptics: boolean;
+  renderBudget: SimulationViewSettings["renderBudget"];
+  highQualityRendering: boolean;
   globalSelectedBodyIndex: number | null;
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
 }) {
-  const diffuseMap = useOptionalTexture(def.textureMap);
+  const qualityOnInspect = isSelected && ["sun", "earth", "moon", "jupiter", "saturn"].includes(def.id);
+  const preferQuality = highQualityRendering || renderBudget === "quality" || qualityOnInspect;
+  const tieredManifest = useMemo(() => tieredTextureManifestEntryForBodyId(def.id), [def.id]);
+  const resolvedManifest = useMemo(
+    () => resolveTieredPlanetTextureManifest(def.id, renderBudget, preferQuality),
+    [def.id, preferQuality, renderBudget],
+  );
+  const diffuseMap = useOptionalTieredTexture({
+    previewUrl: tieredManifest.albedo?.preview ?? resolvedManifest.albedo,
+    qualityUrl: tieredManifest.albedo?.quality,
+    preferQuality,
+    previewPriority: "visible",
+    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+  });
   const normalMap = useOptionalDataTexture(def.normalMap);
-  const manifest = useMemo(() => textureManifestEntryForBodyId(def.id), [def.id]);
-  const cloudMap = useOptionalTexture(manifest?.clouds);
-  const nightMap = useOptionalTexture(manifest?.night);
+  const cloudMap = useOptionalTieredTexture({
+    previewUrl: tieredManifest.clouds?.preview,
+    qualityUrl: tieredManifest.clouds?.quality,
+    preferQuality,
+    previewPriority: "idle",
+    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+  });
+  const nightMap = useOptionalTieredTexture({
+    previewUrl: tieredManifest.night?.preview,
+    qualityUrl: tieredManifest.night?.quality,
+    preferQuality,
+    previewPriority: "idle",
+    qualityPriority: renderBudget === "quality" || highQualityRendering ? "quality" : "upgrade",
+  });
   const groupRef = useRef<THREE.Group>(null);
   const visualRef = useRef<THREE.Group>(null);
   const spinAngleRef = useRef(0);
@@ -477,6 +508,8 @@ export default function SolarSystemBodies({
           showOrbitTrails={viewSettings.showOrbitTrails}
           showBodyLabels={viewSettings.showBodyLabels}
           showRelativisticOptics={viewSettings.showRelativisticOptics}
+          renderBudget={viewSettings.renderBudget}
+          highQualityRendering={viewSettings.highQualityRendering}
           globalSelectedBodyIndex={selectedBodyIndex}
           physicsRef={physicsRef}
         />

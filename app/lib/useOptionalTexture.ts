@@ -2,7 +2,11 @@ import { useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { useEffect, useState } from "react";
 import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
-import { priorityForTextureUrl, type RenderAssetPriority } from "./renderAssetQueue";
+import {
+  markRenderAssetStage,
+  priorityForTextureUrl,
+  type RenderAssetPriority,
+} from "./renderAssetQueue";
 
 function configureLoadedTexture(
   texture: THREE.Texture,
@@ -25,6 +29,7 @@ function useQueuedOptionalTexture(
   colorSpace: THREE.ColorSpace,
   anisotropyCap: number,
   priorityOverride?: RenderAssetPriority,
+  stageMark?: string,
 ): THREE.Texture | null {
   const [tex, setTex] = useState<THREE.Texture | null>(null);
   const gl = useThree((state) => state.gl);
@@ -47,7 +52,10 @@ function useQueuedOptionalTexture(
         colorSpace,
         anisotropy,
         onLoad: (t) => {
-          if (alive) setTex(t);
+          if (alive) {
+            setTex(t);
+            if (stageMark) markRenderAssetStage(stageMark);
+          }
         },
         onError: () => {
           if (alive) setTex(null);
@@ -78,6 +86,7 @@ function useQueuedOptionalTexture(
           anisotropyCap,
         );
         setTex(t);
+        if (stageMark) markRenderAssetStage(stageMark);
       },
       undefined,
       () => {
@@ -90,7 +99,7 @@ function useQueuedOptionalTexture(
       if (loaded) loaded.dispose();
       setTex(null);
     };
-  }, [anisotropyCap, colorSpace, gl, priorityOverride, queue, url]);
+  }, [anisotropyCap, colorSpace, gl, priorityOverride, queue, stageMark, url]);
 
   return tex;
 }
@@ -107,4 +116,42 @@ export function useOptionalDataTexture(
   priorityOverride?: RenderAssetPriority,
 ): THREE.Texture | null {
   return useQueuedOptionalTexture(url, THREE.LinearSRGBColorSpace, 8, priorityOverride);
+}
+
+export function useOptionalTieredTexture({
+  previewUrl,
+  qualityUrl,
+  preferQuality = false,
+  previewPriority = "preview",
+  qualityPriority = "upgrade",
+  previewStageMark,
+  qualityStageMark,
+  colorSpace = THREE.SRGBColorSpace,
+  anisotropyCap = 16,
+}: {
+  previewUrl?: string;
+  qualityUrl?: string;
+  preferQuality?: boolean;
+  previewPriority?: RenderAssetPriority;
+  qualityPriority?: RenderAssetPriority;
+  previewStageMark?: string;
+  qualityStageMark?: string;
+  colorSpace?: THREE.ColorSpace;
+  anisotropyCap?: number;
+}): THREE.Texture | null {
+  const preview = useQueuedOptionalTexture(
+    previewUrl,
+    colorSpace,
+    anisotropyCap,
+    previewPriority,
+    previewStageMark,
+  );
+  const quality = useQueuedOptionalTexture(
+    preferQuality ? qualityUrl : undefined,
+    colorSpace,
+    anisotropyCap,
+    qualityPriority,
+    qualityStageMark,
+  );
+  return quality ?? preview;
 }

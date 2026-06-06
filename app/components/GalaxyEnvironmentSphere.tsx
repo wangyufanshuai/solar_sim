@@ -10,11 +10,15 @@ import { markRenderAssetStage } from "../lib/renderAssetQueue";
 type GalaxyEnvironmentSphereProps = {
   onTextureState?: (loaded: boolean) => void;
   visible?: boolean;
+  qualityEnabled?: boolean;
 };
 
-const SKY_TEXTURES = [
-  "/textures/sky/universe-sandbox-sky-8k.jpg",
+const PREVIEW_SKY_TEXTURES = [
+  "/textures/sky/universe-sandbox-sky.jpg",
   "/textures/sky/nasa_milkyway_2020_4k_balanced.jpg",
+] as const;
+const QUALITY_SKY_TEXTURES = [
+  "/textures/sky/universe-sandbox-sky-8k.jpg",
 ] as const;
 
 const SKY_VERTEX = /* glsl */ `
@@ -65,6 +69,7 @@ void main() {
 export default function GalaxyEnvironmentSphere({
   onTextureState,
   visible = true,
+  qualityEnabled = false,
 }: GalaxyEnvironmentSphereProps) {
   const [texture, setTexture] = useState<THREE.Texture | null>(null);
   const meshRef = useRef<THREE.Mesh>(null);
@@ -96,13 +101,10 @@ export default function GalaxyEnvironmentSphere({
   useEffect(() => {
     let cancelled = false;
     const loader = new THREE.TextureLoader();
-    let loadedTexture: THREE.Texture | null = null;
-    const configure = (loaded: THREE.Texture) => {
+    const configure = (loaded: THREE.Texture, stage: "preview" | "quality") => {
       if (cancelled) {
-        loaded.dispose();
         return;
       }
-      loadedTexture = loaded;
       loaded.colorSpace = THREE.SRGBColorSpace;
       loaded.mapping = THREE.UVMapping;
       loaded.wrapS = THREE.RepeatWrapping;
@@ -115,19 +117,20 @@ export default function GalaxyEnvironmentSphere({
       material.uniforms.uMap.value = loaded;
       material.needsUpdate = true;
       setTexture(loaded);
-      markRenderAssetStage("sky-ready");
+      markRenderAssetStage(stage === "quality" ? "quality-sky-ready" : "preview-sky-ready");
+      if (stage === "preview") markRenderAssetStage("sky-ready");
       onTextureStateRef.current?.(true);
     };
-    const loadAt = (index: number) => {
-      const url = SKY_TEXTURES[index];
+    const loadAt = (urls: readonly string[], index: number, stage: "preview" | "quality") => {
+      const url = urls[index];
       if (!url) {
-        if (!cancelled) onTextureStateRef.current?.(false);
+        if (!cancelled && stage === "preview") onTextureStateRef.current?.(false);
         return;
       }
       if (queue) {
         queue.loadTexture({
           url,
-          priority: "critical",
+          priority: stage === "quality" ? "quality" : "preview",
           colorSpace: THREE.SRGBColorSpace,
           anisotropy: Math.min(8, gl.capabilities.getMaxAnisotropy()),
           configure: (tex) => {
@@ -135,27 +138,21 @@ export default function GalaxyEnvironmentSphere({
             tex.wrapS = THREE.RepeatWrapping;
             tex.wrapT = THREE.ClampToEdgeWrapping;
           },
-          onLoad: configure,
-          onError: () => loadAt(index + 1),
+          onLoad: (tex) => configure(tex, stage),
+          onError: () => loadAt(urls, index + 1, stage),
         });
       } else {
-        loader.load(url, configure, undefined, () => loadAt(index + 1));
+        loader.load(url, (tex) => configure(tex, stage), undefined, () => loadAt(urls, index + 1, stage));
       }
     };
-    loadAt(0);
+    loadAt(PREVIEW_SKY_TEXTURES, 0, "preview");
+    if (qualityEnabled) loadAt(QUALITY_SKY_TEXTURES, 0, "quality");
     return () => {
       cancelled = true;
       material.uniforms.uMap.value = null;
-      if (loadedTexture) {
-        loadedTexture.dispose();
-        loadedTexture = null;
-      }
-      setTexture((prev) => {
-        prev?.dispose();
-        return null;
-      });
+      setTexture(null);
     };
-  }, [gl, material, queue]);
+  }, [gl, material, qualityEnabled, queue]);
 
   useEffect(() => () => material.dispose(), [material]);
 

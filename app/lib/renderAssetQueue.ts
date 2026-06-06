@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-export type RenderAssetPriority = "critical" | "visible" | "idle" | "quality";
+export type RenderAssetPriority = "preview" | "critical" | "visible" | "idle" | "upgrade" | "quality";
 export type RenderBudget = "safe" | "balanced" | "quality";
 
 type TextureTask = {
@@ -15,10 +15,12 @@ type TextureTask = {
 };
 
 const PRIORITY_ORDER: Record<RenderAssetPriority, number> = {
-  critical: 0,
-  visible: 1,
-  idle: 2,
-  quality: 3,
+  preview: 0,
+  critical: 1,
+  visible: 2,
+  idle: 3,
+  upgrade: 4,
+  quality: 5,
 };
 
 const CORE_TEXTURE_HINTS = [
@@ -31,6 +33,8 @@ const CORE_TEXTURE_HINTS = [
 
 const textureCache = new Map<string, THREE.Texture>();
 const loadedCoreTextureHints = new Set<string>();
+const loadedPreviewCoreTextureHints = new Set<string>();
+const loadedQualityCoreTextureHints = new Set<string>();
 
 function requestFrame(cb: () => void) {
   if (typeof window !== "undefined") window.requestAnimationFrame(() => cb());
@@ -40,7 +44,7 @@ function requestFrame(cb: () => void) {
 function allowsPriority(budget: RenderBudget, priority: RenderAssetPriority) {
   if (budget === "quality") return true;
   if (budget === "balanced") return priority !== "quality";
-  return priority === "critical" || priority === "visible";
+  return priority === "preview" || priority === "critical" || priority === "visible";
 }
 
 export function markRenderAssetStage(stage: string) {
@@ -52,7 +56,7 @@ export function markRenderAssetStage(stage: string) {
 
 export function priorityForTextureUrl(url: string | undefined): RenderAssetPriority {
   if (!url) return "idle";
-  if (url.includes("/textures/sky/")) return "critical";
+  if (url.includes("/textures/sky/")) return "preview";
   if (url.includes("/textures/planets/")) {
     const lower = url.toLowerCase();
     return CORE_TEXTURE_HINTS.some((hint) => lower.includes(hint)) ? "visible" : "idle";
@@ -65,8 +69,38 @@ function noteTextureStage(url: string) {
   for (const hint of CORE_TEXTURE_HINTS) {
     if (lower.includes(hint)) loadedCoreTextureHints.add(hint);
   }
+  const previewHits: Record<string, string[]> = {
+    sun: ["sun.jpg"],
+    earth_daymap: ["earth_2k.jpg", "earth.jpg"],
+    moon: ["moon_2k.jpg", "moon.jpg"],
+    jupiter: ["jupiter_2k.jpg", "jupiter.jpg"],
+    saturn: ["saturn_2k.jpg", "saturn.jpg"],
+  };
+  const qualityHits: Record<string, string[]> = {
+    sun: ["8k_sun.jpg"],
+    earth_daymap: ["8k_earth_daymap.jpg"],
+    moon: ["8k_moon.jpg"],
+    jupiter: ["8k_jupiter.jpg"],
+    saturn: ["8k_saturn.jpg"],
+  };
+  for (const [hint, patterns] of Object.entries(previewHits)) {
+    if (patterns.some((pattern) => lower.includes(pattern))) {
+      loadedPreviewCoreTextureHints.add(hint);
+    }
+  }
+  for (const [hint, patterns] of Object.entries(qualityHits)) {
+    if (patterns.some((pattern) => lower.includes(pattern))) {
+      loadedQualityCoreTextureHints.add(hint);
+    }
+  }
   if (loadedCoreTextureHints.size >= CORE_TEXTURE_HINTS.length) {
     markRenderAssetStage("core-planets-ready");
+  }
+  if (loadedPreviewCoreTextureHints.size >= CORE_TEXTURE_HINTS.length) {
+    markRenderAssetStage("preview-planets-ready");
+  }
+  if (loadedQualityCoreTextureHints.size >= CORE_TEXTURE_HINTS.length) {
+    markRenderAssetStage("quality-planets-ready");
   }
 }
 
@@ -169,10 +203,10 @@ export class RenderAssetQueue {
   private canStart(task: TextureTask) {
     if (task.cancelled || !allowsPriority(this.budget, task.priority)) return false;
     const now = performance.now();
-    if (this.budget === "balanced" && (task.priority === "idle" || task.priority === "quality")) {
+    if (this.budget === "balanced" && (task.priority === "idle" || task.priority === "upgrade" || task.priority === "quality")) {
       if (now - this.createdAt < 12000) return false;
     }
-    if ((task.priority === "idle" || task.priority === "quality") && now < this.interactiveUntil) {
+    if ((task.priority === "idle" || task.priority === "upgrade" || task.priority === "quality") && now < this.interactiveUntil) {
       return false;
     }
     return true;
