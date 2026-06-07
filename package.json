@@ -12,6 +12,7 @@
     "perf:smoke": "node scripts/perf-smoke.mjs",
     "perf:profile": "node scripts/perf-profile.mjs",
     "perf:profile:assert": "node scripts/perf-profile.mjs | node scripts/perf-assert.mjs",
+    "visual:acceptance": "node scripts/visual-acceptance.mjs",
     "test:mission": "vitest run app/lib/__tests__/missionEngineering.test.ts",
     "lint": "next lint",
     "fetch-planet-textures": "node scripts/fetch-planet-textures.mjs",

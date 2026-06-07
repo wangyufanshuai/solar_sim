@@ -5,6 +5,7 @@ import {
   BrainCircuit,
   ChevronDown,
   Clock3,
+  Download,
   Radio,
   Route,
   Satellite,
@@ -19,6 +20,7 @@ import {
   optimizeMission,
 } from "../lib/missionOptimizer";
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
+import { downloadMissionReport } from "../lib/missionReport";
 import type {
   MissionAdvisorReport,
   MissionBodyId,
@@ -221,6 +223,11 @@ export default function MissionDesignerPanel({
     }
   };
 
+  const exportReport = (format: "json" | "markdown") => {
+    if (!selectedPlan) return;
+    downloadMissionReport(selectedPlan, format, advisor, result);
+  };
+
   return (
     <section className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[25rem]">
       <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
@@ -328,6 +335,26 @@ export default function MissionDesignerPanel({
               <>
                 <div className={`rounded-[4px] border px-2 py-1.5 font-mono text-[8px] uppercase ${statusClass(selectedPlan.validationStatus)}`}>
                   Verdict {selectedPlan.validationStatus} · score {selectedPlan.score.toFixed(0)} · robustness {selectedPlan.sensitivitySummary?.robustnessScore.toFixed(0) ?? "--"}
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  <button
+                    type="button"
+                    onClick={() => exportReport("json")}
+                    data-solar-action="mission-export-json"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62 hover:text-white/84"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export JSON
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => exportReport("markdown")}
+                    data-solar-action="mission-export-markdown"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62 hover:text-white/84"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export MD
+                  </button>
                 </div>
                 <div className="grid grid-cols-3 gap-1.5">
                   <Metric label="Deterministic DV" value={`${selectedPlan.deterministicDeltaVKms.toFixed(2)} km/s`} />
@@ -442,6 +469,26 @@ export default function MissionDesignerPanel({
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Assumptions</div>
                   {selectedPlan.assumptions.map((assumption) => <p key={assumption}>· {assumption}</p>)}
+                </div>
+                <div className="grid grid-cols-2 gap-1">
+                  <button
+                    type="button"
+                    onClick={() => exportReport("json")}
+                    data-solar-action="mission-audit-export-json"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export JSON
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => exportReport("markdown")}
+                    data-solar-action="mission-audit-export-markdown"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export MD
+                  </button>
                 </div>
               </>
             ) : <div className="text-[10px] text-white/42">No audit is available until a feasible candidate is selected.</div>}

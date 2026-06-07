@@ -9,6 +9,7 @@ import {
   optimizeMission,
   propellantEstimateKg,
 } from "../missionOptimizer";
+import { MISSION_REPORT_CAVEAT, missionPlanToMarkdown, missionPlanToReportJson } from "../missionReport";
 import type {
   MissionPhysicsSnapshot,
   MissionPlan,
@@ -205,5 +206,45 @@ describe("mission engineering calculations", () => {
     expect(result.plans.length).toBe(0);
     expect(result.rejectedPlans.length).toBeGreaterThan(0);
     expect(result.rejectedPlans[0]?.rejectionReasons.join(" ")).toMatch(/JPL table coverage/);
+  });
+
+  it("exports deterministic mission report JSON and Markdown with audit provenance", () => {
+    const result = optimizeMission({
+      sequence: ["earth", "venus", "jupiter", "saturn"],
+      departureStartDay: 35,
+      departureWindowDays: 90,
+      departureStepDays: 45,
+      maxCandidates: 4,
+      includeRelativity: false,
+      ephemerisMode: "jpl-table",
+      constraintPreset: "aggressive",
+    }, snapshot);
+    const plan = result.bestPlan ?? result.rejectedPlans[0];
+    expect(plan).toBeTruthy();
+    if (!plan) return;
+
+    const advisor = {
+      summary: "Local summary",
+      fuelTradeoff: "Fuel note",
+      gravityAssist: "Assist note",
+      risk: "Risk note",
+      communication: "Comms note",
+      recommendation: "Recommendation",
+      tags: ["local-ai"],
+      provider: "local" as const,
+    };
+    const json = missionPlanToReportJson(plan, advisor, result);
+    expect(json.caveat).toBe(MISSION_REPORT_CAVEAT);
+    expect(json.plan.solverProvenance.ephemerisSource).toBe("JPL Horizons table interpolation");
+    expect(json.resultSummary?.bestPlanId).toBe(result.bestPlan?.id ?? null);
+    expect(json.advisor?.summary).toBe("Local summary");
+
+    const markdown = missionPlanToMarkdown(plan, advisor, result);
+    expect(markdown).toContain(MISSION_REPORT_CAVEAT);
+    expect(markdown).toContain("## Ephemeris Audit");
+    expect(markdown).toContain("JPL Horizons table interpolation");
+    expect(markdown).toContain("## Constraint Checks");
+    expect(markdown).toContain("## Rejected Candidates");
+    expect(markdown).toContain("Local summary");
   });
 });
