@@ -107,6 +107,19 @@ const SPACECRAFT_TARGETS = [
   ["polar", "Polar", null, "https://science.nasa.gov/3d-resources/polar/", 1.1],
 ];
 
+const SPACECRAFT_METADATA = {
+  "apollo-lunar-module": [1969, "lunar", "Apollo LM", "Crewed lunar lander used for Apollo Moon surface operations."],
+  "apollo-soyuz": [1975, "crewed", "Apollo-Soyuz", "Crewed docking spacecraft from the Apollo-Soyuz Test Project."],
+  "gateway-core": [2020, "space-station", "Gateway", "Lunar Gateway core stack concept for cislunar operations."],
+  "hubble-space-telescope-b": [1990, "telescope", "Hubble", "Low Earth orbit observatory for ultraviolet, visible, and near-infrared astronomy."],
+  "voyager-probe-a": [1977, "outer-planet", "Voyager", "Outer planet and interstellar probe with high-gain antenna and RTG boom."],
+  "cassini-huygens-b": [1997, "outer-planet", "Cassini", "Saturn orbiter and Huygens probe mission spacecraft."],
+  "mars-2020-perseverance-rover": [2020, "mars", "Perseverance", "Mars rover built for Jezero crater exploration and sample caching."],
+  "deep-impact": [2005, "comet", "Deep Impact", "Comet mission spacecraft later used for EPOXI extended observations."],
+  "lunar-reconnaissance-orbiter-b": [2009, "lunar", "LRO", "Lunar polar orbiter for high-resolution mapping and resource reconnaissance."],
+  "polar": [1996, "earth-orbit", "Polar", "Magnetospheric research spacecraft for Earth's polar plasma environment."],
+};
+
 function slugFile(id, suffix = "jpg") {
   return `${id.replace(/[^a-z0-9_-]/gi, "-").toLowerCase()}.${suffix}`;
 }
@@ -275,6 +288,7 @@ async function fetchSpacecraftTarget(target) {
   }
   const bytes = DRY_RUN ? 0 : await fileBytes(outPath);
   if (bytes > MAX_FILE_BYTES) throw new Error(`${id} exceeds file limit after download`);
+  const metadata = SPACECRAFT_METADATA[id] ?? [null, "probe", title, `${title} NASA 3D model.`];
   return {
     id,
     title,
@@ -286,6 +300,11 @@ async function fetchSpacecraftTarget(target) {
     checksum: DRY_RUN ? "" : await checksum(outPath),
     modelScale,
     previewTier: id === "gateway-core" ? "gallery" : "core",
+    missionYear: metadata[0],
+    category: metadata[1],
+    scaleLabel: metadata[2],
+    description: metadata[3],
+    sourceCreditShort: "NASA 3D",
   };
 }
 

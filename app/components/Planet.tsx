@@ -132,6 +132,8 @@ export type PlanetBodyProps = {
   illuminationPhysicsRef?: MutableRefObject<SolarSystemPhysicsRef | null>;
   normalScaleIntensity?: number;
   calibratedEnvMapIntensity?: number;
+  calibratedFillIntensity?: number;
+  calibratedRimIntensity?: number;
   /** Sim-driven visual spin angle; affects surface/clouds only, not physics or labels. */
   spinAngleRef?: MutableRefObject<number>;
 };
@@ -173,6 +175,8 @@ export default function Planet({
   illuminationPhysicsRef,
   normalScaleIntensity = 1.9,
   calibratedEnvMapIntensity,
+  calibratedFillIntensity,
+  calibratedRimIntensity,
   spinAngleRef,
 }: PlanetBodyProps) {
   const [wSeg, hSeg] = sphereSegments;
@@ -324,10 +328,11 @@ export default function Planet({
       closeLight,
       1 - Math.pow(0.0015, Math.max(0.001, dt))
     );
+    const fillBase = calibratedFillIntensity ?? (showAtmosphere ? 0.18 : 0.1);
     const textureFill = nightMap
-      ? 0.08 + closeLightRef.current * (showAtmosphere ? 0.2 : 0.14)
+      ? fillBase * (0.55 + closeLightRef.current * 1.15)
       : map
-        ? closeLightRef.current * (showAtmosphere ? 0.32 : 0.22)
+        ? closeLightRef.current * fillBase * (showAtmosphere ? 1.6 : 1.25)
         : 0;
     const st = opticsStateRef?.current;
     const spMat = spriteRef.current?.material as THREE.SpriteMaterial | undefined;
@@ -449,7 +454,7 @@ export default function Planet({
         side: THREE.FrontSide,
         uniforms: {
           uColor: { value: planetColor.clone().lerp(new THREE.Color("#9fc8ff"), showAtmosphere ? 0.62 : 0.24) },
-          uOpacity: { value: (showAtmosphere ? 0.32 : 0.13) * VISUAL_CALIBRATION.planets.rimIntensity },
+          uOpacity: { value: (showAtmosphere ? 0.32 : 0.13) * (calibratedRimIntensity ?? VISUAL_CALIBRATION.planets.rimIntensity) },
         },
         vertexShader: `
           varying vec3 vNormal;
@@ -478,7 +483,7 @@ export default function Planet({
           }
         `,
       }),
-    [planetColor, showAtmosphere]
+    [calibratedRimIntensity, planetColor, showAtmosphere]
   );
 
   useLayoutEffect(() => {

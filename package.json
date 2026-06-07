@@ -24,7 +24,9 @@
     "build-realism-manifest": "node scripts/build-realism-manifest.mjs",
     "fetch:space-resources": "node scripts/fetch-space-resource-pack.mjs",
     "build:resource-manifests": "node scripts/build-resource-manifests.mjs",
-    "audit:resources": "node scripts/audit-resources.mjs"
+    "audit:resources": "node scripts/audit-resources.mjs",
+    "fetch:jpl-ephemeris": "node scripts/fetch-jpl-ephemeris-table.mjs",
+    "audit:jpl-ephemeris": "node scripts/audit-jpl-ephemeris.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

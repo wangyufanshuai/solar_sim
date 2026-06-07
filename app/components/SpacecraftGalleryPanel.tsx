@@ -1,6 +1,6 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { LoaderCircle } from "lucide-react";
 import { Suspense, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
@@ -10,6 +10,7 @@ import type { ResourcePackManifest, SpacecraftResourcePackItem } from "../lib/re
 
 type LoadedModelProps = {
   item: SpacecraftResourcePackItem;
+  onReady?: () => void;
 };
 
 const modelCache = new Map<string, THREE.Object3D>();
@@ -24,8 +25,8 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   object.traverse((node) => {
     const mesh = node as THREE.Mesh;
     if (!mesh.isMesh) return;
-    mesh.castShadow = false;
-    mesh.receiveShadow = false;
+      mesh.castShadow = true;
+      mesh.receiveShadow = true;
     const material = mesh.material;
     const mats = Array.isArray(material) ? material : [material];
     for (const mat of mats) {
@@ -37,7 +38,7 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   });
 }
 
-function GalleryModel({ item }: LoadedModelProps) {
+function GalleryModel({ item, onReady }: LoadedModelProps) {
   const groupRef = useRef<THREE.Group>(null);
   const [scene, setScene] = useState<THREE.Object3D | null>(() => modelCache.get(item.localPath)?.clone(true) ?? null);
 
@@ -47,6 +48,7 @@ function GalleryModel({ item }: LoadedModelProps) {
     if (cached) {
       setScene(cached.clone(true));
       markRenderAssetStage("spacecraft-pack-ready");
+      onReady?.();
       return;
     }
     const loader = new GLTFLoader();
@@ -59,6 +61,7 @@ function GalleryModel({ item }: LoadedModelProps) {
         modelCache.set(item.localPath, root);
         setScene(root.clone(true));
         markRenderAssetStage("spacecraft-pack-ready");
+        onReady?.();
       },
       undefined,
       () => {
@@ -68,7 +71,7 @@ function GalleryModel({ item }: LoadedModelProps) {
     return () => {
       cancelled = true;
     };
-  }, [item]);
+  }, [item, onReady]);
 
   useFrame((_, delta) => {
     if (!groupRef.current) return;
@@ -83,20 +86,37 @@ function GalleryModel({ item }: LoadedModelProps) {
   );
 }
 
-function GalleryStage({ item }: LoadedModelProps) {
+function GalleryCameraRig() {
+  const camera = useThree((state) => state.camera);
+  useFrame(({ clock }) => {
+    const t = clock.elapsedTime * 0.14;
+    camera.position.set(Math.sin(t) * 0.35, 0.55 + Math.sin(t * 0.7) * 0.05, 3.2 + Math.cos(t) * 0.18);
+    camera.lookAt(0, -0.05, 0);
+  });
+  return null;
+}
+
+function GalleryStage({ item, onReady }: LoadedModelProps) {
   return (
     <Canvas
       dpr={[1, 1.25]}
       camera={{ position: [0, 0.55, 3.2], fov: 38, near: 0.1, far: 20 }}
       gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
+      shadows
     >
-      <ambientLight intensity={0.65} />
-      <directionalLight position={[3, 2, 4]} intensity={2.2} />
-      <directionalLight position={[-2, -1, -2]} intensity={0.55} color="#b7d4ff" />
+      <GalleryCameraRig />
+      <ambientLight intensity={0.38} />
+      <directionalLight position={[3.2, 3.4, 4.2]} intensity={2.65} castShadow shadow-mapSize={[512, 512]} />
+      <directionalLight position={[-2.2, 0.6, -2.6]} intensity={0.85} color="#9fc4ff" />
+      <pointLight position={[0, 1.4, -2.8]} intensity={0.7} color="#ffffff" />
       <Suspense fallback={null}>
-        <GalleryModel item={item} />
+        <GalleryModel item={item} onReady={onReady} />
       </Suspense>
-      <mesh position={[0, -0.92, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+      <mesh position={[0, -0.94, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
+        <circleGeometry args={[1.35, 96]} />
+        <shadowMaterial transparent opacity={0.32} />
+      </mesh>
+      <mesh position={[0, -0.91, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <ringGeometry args={[0.72, 0.78, 96]} />
         <meshBasicMaterial color="#7aa7ff" transparent opacity={0.34} depthWrite={false} />
       </mesh>
@@ -113,6 +133,7 @@ async function fetchSpacecraftManifest() {
 export default function SpacecraftGalleryPanel() {
   const [items, setItems] = useState<SpacecraftResourcePackItem[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [loadingModelId, setLoadingModelId] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -134,6 +155,10 @@ export default function SpacecraftGalleryPanel() {
     [items, selectedId],
   );
 
+  useEffect(() => {
+    if (selected) setLoadingModelId(selected.id);
+  }, [selected]);
+
   if (items.length === 0) {
     return (
       <div className="mt-3 border-t border-white/5 pt-3 text-[11px] text-white/34">
@@ -150,8 +175,25 @@ export default function SpacecraftGalleryPanel() {
         <div className="text-[10px] text-white/28">{items.length} NASA GLB</div>
       </div>
       {selected ? (
-        <div className="mb-2 h-36 overflow-hidden rounded-xl border border-white/8 bg-black/24">
-          <GalleryStage item={selected} />
+        <div className="relative mb-2 h-40 overflow-hidden rounded-xl border border-white/8 bg-[radial-gradient(circle_at_50%_18%,rgba(78,116,180,0.22),rgba(0,0,0,0.26)_52%,rgba(0,0,0,0.52))]">
+          <GalleryStage item={selected} onReady={() => setLoadingModelId((current) => current === selected.id ? null : current)} />
+          {loadingModelId === selected.id ? (
+            <div className="absolute inset-0 grid place-items-center bg-black/18 text-[10px] uppercase tracking-[0.18em] text-white/46">
+              <span><LoaderCircle className="mr-2 inline h-3.5 w-3.5 animate-spin" />Loading model</span>
+            </div>
+          ) : null}
+          <div className="pointer-events-none absolute left-2 top-2 rounded bg-black/42 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-white/58">
+            {selected.sourceCreditShort} 路 {selected.category}
+          </div>
+        </div>
+      ) : null}
+      {selected ? (
+        <div className="mb-2 rounded-lg border border-white/[0.06] bg-white/[0.025] px-2 py-1.5">
+          <div className="flex items-center justify-between gap-2">
+            <span className="truncate text-[12px] text-white/78">{selected.title}</span>
+            <span className="shrink-0 font-mono text-[9px] text-white/34">{selected.missionYear ?? "--"}</span>
+          </div>
+          <p className="mt-1 max-h-8 overflow-hidden text-[10px] leading-3 text-white/42">{selected.description}</p>
         </div>
       ) : null}
       <div className="grid max-h-44 grid-cols-2 gap-1 overflow-y-auto pr-1">

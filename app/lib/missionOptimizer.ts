@@ -14,7 +14,14 @@ import type {
   MissionConstraintCheck,
   MissionConstraintPreset,
   MissionValidationStatus,
+  MissionEphemerisAudit,
+  MissionEphemerisMode,
 } from "./missionDesignerTypes";
+import {
+  JPL_EPHEMERIS_TABLE,
+  interpolateJplState,
+  jplStateDeltaKm,
+} from "./jplEphemerisTable";
 
 const SUN_MU = G_SI * 1.98847e30;
 const G0 = 9.80665;
@@ -47,6 +54,8 @@ type BodyState = {
   velAuPerDay: [number, number, number];
   posM: [number, number, number];
   velMps: [number, number, number];
+  source: "live-circular" | "jpl-table";
+  error?: string;
 };
 
 type TransferDraft = MissionSegment & {
@@ -62,6 +71,7 @@ export const DEFAULT_MISSION_OPTIONS: Omit<
   departureWindowDays: 720,
   departureStepDays: 45,
   maxCandidates: 8,
+  ephemerisMode: "jpl-table",
   constraintPreset: "nominal",
 };
 
@@ -195,7 +205,32 @@ function predictBodyState(body: MissionBodySnapshot, daysAfterSnapshot: number):
     velAuPerDay,
     posM: auToM(posAu),
     velMps: auDayToMps(velAuPerDay),
+    source: "live-circular",
   };
+}
+
+function bodyStateAt(
+  id: MissionBodyId,
+  simDay: number,
+  snapshot: MissionPhysicsSnapshot,
+  mode: MissionEphemerisMode,
+): BodyState {
+  if (mode === "jpl-table") {
+    const state = interpolateJplState(id, simDay);
+    if ("reason" in state) {
+      const fallback = snapshot.bodies[id];
+      const live = predictBodyState(fallback, simDay - snapshot.simDays);
+      return { ...live, source: "jpl-table", error: state.reason };
+    }
+    return {
+      posAu: state.positionAu,
+      velAuPerDay: state.velocityAuPerDay,
+      posM: auToM(state.positionAu),
+      velMps: auDayToMps(state.velocityAuPerDay),
+      source: "jpl-table",
+    };
+  }
+  return predictBodyState(snapshot.bodies[id], simDay - snapshot.simDays);
 }
 
 function trajectorySamples(
@@ -234,20 +269,29 @@ function makeSegment(
   departureDay: number,
   tofDays: number,
   snapshot: MissionPhysicsSnapshot,
+  ephemerisMode: MissionEphemerisMode,
 ): TransferDraft {
-  const from = snapshot.bodies[fromBody];
-  const to = snapshot.bodies[toBody];
   const arrivalDay = departureDay + tofDays;
-  const fromState = predictBodyState(from, departureDay - snapshot.simDays);
-  const toState = predictBodyState(to, arrivalDay - snapshot.simDays);
-  const lambert = solveLambertTransfer({
-    r1M: fromState.posM as Vec3,
-    r2M: toState.posM as Vec3,
-    tofSeconds: tofDays * DAY_SECONDS,
-    mu: SUN_MU,
-    prograde: true,
-    toleranceSeconds: Math.max(LAMBERT_TOLERANCE_SECONDS, tofDays * DAY_SECONDS * 3e-6),
-  });
+  const fromState = bodyStateAt(fromBody, departureDay, snapshot, ephemerisMode);
+  const toState = bodyStateAt(toBody, arrivalDay, snapshot, ephemerisMode);
+  const ephemerisError = fromState.error ?? toState.error;
+  const lambert = ephemerisError
+    ? {
+        converged: false,
+        departureVelocityMps: fromState.velMps,
+        arrivalVelocityMps: toState.velMps,
+        iterations: 0,
+        residualSeconds: Number.POSITIVE_INFINITY,
+        transferAngleDeg: 0,
+      }
+    : solveLambertTransfer({
+        r1M: fromState.posM as Vec3,
+        r2M: toState.posM as Vec3,
+        tofSeconds: tofDays * DAY_SECONDS,
+        mu: SUN_MU,
+        prograde: true,
+        toleranceSeconds: Math.max(LAMBERT_TOLERANCE_SECONDS, tofDays * DAY_SECONDS * 3e-6),
+      });
   const departureVelocityMps = lambert.converged ? lambert.departureVelocityMps : fromState.velMps;
   const arrivalVelocityMps = lambert.converged ? lambert.arrivalVelocityMps : toState.velMps;
   const departureVinfVecMps = sub(departureVelocityMps, fromState.velMps);
@@ -271,6 +315,7 @@ function makeSegment(
     lambertConverged: lambert.converged,
     lambertIterations: lambert.iterations,
     lambertResidual: lambert.residualSeconds,
+    solverFailureReason: ephemerisError,
     departureVinfinityKms,
     arrivalVinfinityKms,
     periapsisAltitudeKm: Number.POSITIVE_INFINITY,
@@ -290,6 +335,46 @@ function makeSegment(
     trajectoryAu: trajectorySamples(fromState.posAu, toState.posAu, liftAu),
     departureVinfVecKms: mpsToKms(departureVinfVecMps),
     arrivalVinfVecKms: mpsToKms(arrivalVinfVecMps),
+  };
+}
+
+function buildEphemerisAudit(
+  mode: MissionEphemerisMode,
+  snapshot: MissionPhysicsSnapshot,
+  segments: MissionSegment[],
+): MissionEphemerisAudit {
+  const liveVsTableDelta =
+    mode === "jpl-table"
+      ? BODY_ORDER.map((body) => {
+          const delta = jplStateDeltaKm(body, snapshot.simDays, snapshot);
+          return {
+            body,
+            positionDeltaKm: delta?.positionDeltaKm ?? Number.NaN,
+            velocityDeltaMps: delta?.velocityDeltaMps ?? Number.NaN,
+          };
+        })
+      : [];
+  return {
+    mode,
+    source: mode === "jpl-table" ? "NASA/JPL Horizons API DE441 vectors" : "Live simulation snapshot with circular propagation",
+    coverageSimDays:
+      mode === "jpl-table"
+        ? [JPL_EPHEMERIS_TABLE.startSimDay, JPL_EPHEMERIS_TABLE.stopSimDay]
+        : [snapshot.simDays, snapshot.simDays],
+    stepDays: mode === "jpl-table" ? JPL_EPHEMERIS_TABLE.stepDays : 0,
+    interpolation: mode === "jpl-table" ? JPL_EPHEMERIS_TABLE.interpolation : "Circular state propagation from live snapshot",
+    liveVsTableDelta,
+    segmentStateSources: segments.map((segment) => ({
+      segmentId: segment.id,
+      departureBody: segment.fromBody,
+      arrivalBody: segment.toBody,
+      departureSimDay: segment.departureDay,
+      arrivalSimDay: segment.arrivalDay,
+      source: mode === "jpl-table" ? "JPL Horizons table interpolation" : "live-circular propagation",
+    })),
+    caveat: mode === "jpl-table"
+      ? "JPL-table preliminary Lambert audit, not GMAT/STK/SPICE certification."
+      : "Live-circular preliminary Lambert audit, not GMAT/STK/SPICE certification.",
   };
 }
 
@@ -456,7 +541,7 @@ export function auditMissionPlan(
         margin: segmentTolerance - segment.lambertResidual,
         unit: "s residual",
         status: "fail",
-        explanation: "The Lambert leg did not converge and is excluded from feasible ranking.",
+        explanation: segment.solverFailureReason ?? "The Lambert leg did not converge and is excluded from feasible ranking.",
       });
     }
   }
@@ -503,6 +588,7 @@ function buildPlan(
   options: MissionOptimizerOptions,
   constraints: MissionEngineeringConstraints,
 ): MissionPlan {
+  const ephemerisMode = options.ephemerisMode ?? "jpl-table";
   const drafts: TransferDraft[] = [];
   let cursor = departureDay;
   for (let i = 0; i < options.sequence.length - 1; i++) {
@@ -511,7 +597,7 @@ function buildPlan(
     const key = `${from}-${to}`;
     const baseTof = NOMINAL_TOF_DAYS[key] ?? 365;
     const tofDays = Math.round(baseTof * tofScale * variantScale * (1 + i * 0.025));
-    const seg = makeSegment(from, to, cursor, tofDays, snapshot);
+    const seg = makeSegment(from, to, cursor, tofDays, snapshot, ephemerisMode);
     drafts.push(seg);
     cursor = seg.arrivalDay;
   }
@@ -551,7 +637,9 @@ function buildPlan(
     constraintChecks: [],
     assumptions: [
       "Heliocentric two-body Lambert legs with patched-conic flybys.",
-      "Body states originate from the live simulation epoch and use circular state propagation.",
+      ephemerisMode === "jpl-table"
+        ? "Body states originate from NASA/JPL Horizons table interpolation for the mission window."
+        : "Body states originate from the live simulation epoch and use circular state propagation.",
       "Deterministic burns and DSM reserve are combined for the rocket-equation propellant estimate.",
       "No finite-burn, covariance propagation, launch vehicle, thermal, power, or communications link-budget certification.",
     ],
@@ -559,7 +647,7 @@ function buildPlan(
       modelLevel: "medium-fidelity preliminary design",
       epochSimDays: snapshot.simDays,
       gravityModel: "heliocentric two-body Lambert + patched conics",
-      ephemerisSource: "live simulation state with circular state propagation",
+      ephemerisSource: ephemerisMode === "jpl-table" ? "JPL Horizons table interpolation" : "live simulation state with circular state propagation",
       lambertToleranceSeconds: Math.max(
         ...segments.map((segment) =>
           Math.max(LAMBERT_TOLERANCE_SECONDS, segment.tofDays * DAY_SECONDS * 3e-6),
@@ -568,6 +656,7 @@ function buildPlan(
       candidateCount: 0,
       convergedCandidateCount: 0,
     },
+    ephemerisAudit: buildEphemerisAudit(ephemerisMode, snapshot, segments),
     sensitivitySummary: null,
     rejectionReasons: [],
     segments,

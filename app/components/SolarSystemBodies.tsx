@@ -32,6 +32,7 @@ import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { applyFloatingOffsetScene } from "../lib/floatingOrigin";
 import { siderealSpinRadPerSimDayForBodyId } from "../lib/planetSiderealSpin";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
+import { closeupLightingProfile } from "../lib/closeupLightingProfile";
 
 function createSaturnRingTexture() {
   const canvas = document.createElement("canvas");
@@ -65,7 +66,15 @@ function createSaturnRingTexture() {
   return tex;
 }
 
-function SaturnRings({ radiusScene }: { radiusScene: number }) {
+function SaturnRings({
+  radiusScene,
+  litOpacity = VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity,
+  darkOpacity = VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity,
+}: {
+  radiusScene: number;
+  litOpacity?: number;
+  darkOpacity?: number;
+}) {
   const ringTexture = useMemo(() => (typeof document === "undefined" ? null : createSaturnRingTexture()), []);
   return (
     <group>
@@ -75,7 +84,7 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
           <meshStandardMaterial
             map={ringTexture}
             transparent
-            opacity={VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity}
+            opacity={litOpacity}
             side={THREE.DoubleSide}
             depthWrite={false}
             metalness={0}
@@ -148,7 +157,7 @@ function SaturnRings({ radiusScene }: { radiusScene: number }) {
         <meshStandardMaterial
           color="#3a352e"
           transparent
-          opacity={VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity}
+          opacity={darkOpacity}
           side={THREE.DoubleSide}
           depthWrite={false}
           metalness={0.0}
@@ -309,17 +318,8 @@ function BodyShell({
 
   const preset =
     def.variant === "planet" ? planetMaterialPreset(def.id) : null;
-  const closeupCalibration =
-    def.id === "earth"
-      ? VISUAL_CALIBRATION.closeups.earth
-      : def.id === "moon"
-        ? VISUAL_CALIBRATION.closeups.moon
-        : def.id === "jupiter"
-          ? VISUAL_CALIBRATION.closeups.jupiter
-          : def.id === "saturn"
-            ? VISUAL_CALIBRATION.closeups.saturn
-            : null;
-  const planetRoughness = closeupCalibration?.roughness ?? preset?.roughness ?? 0.82;
+  const closeupProfile = closeupLightingProfile(def.id, isSelected || preferQuality);
+  const planetRoughness = closeupProfile.roughness ?? preset?.roughness ?? 0.82;
   const planetMetalness = preset?.metalness ?? 0.04;
   const baseEmissive = preset?.emissiveIntensity ?? 0.1;
   const planetEmissiveIntensity =
@@ -388,7 +388,7 @@ function BodyShell({
         />
       ) : null}
       <group ref={visualRef} frustumCulled={false}>
-        {def.showRings ? <SaturnRings radiusScene={def.radiusScene} /> : null}
+        {def.showRings ? <SaturnRings radiusScene={def.radiusScene} litOpacity={closeupProfile.ringLitOpacity} darkOpacity={closeupProfile.ringDarkOpacity} /> : null}
         <CelestialBody
           variant="planet"
           bodyId={def.id}
@@ -401,8 +401,10 @@ function BodyShell({
           emissive={def.color}
           emissiveIntensity={planetEmissiveIntensity}
           envMapIntensity={0.24}
-          calibratedEnvMapIntensity={closeupCalibration?.envMapIntensity}
-          normalScaleIntensity={closeupCalibration?.normalScale}
+          calibratedEnvMapIntensity={closeupProfile.envMapIntensity}
+          calibratedFillIntensity={closeupProfile.fillIntensity}
+          calibratedRimIntensity={closeupProfile.rimIntensity}
+          normalScaleIntensity={closeupProfile.normalScale}
           roughness={planetRoughness}
           metalness={planetMetalness}
           sunCastPointLight={false}

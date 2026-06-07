@@ -1,6 +1,7 @@
 export type MissionRiskLevel = "low" | "medium" | "high";
 export type MissionValidationStatus = "pass" | "warning" | "fail";
 export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
+export type MissionEphemerisMode = "live-circular" | "jpl-table";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -46,10 +47,32 @@ export type MissionSolverProvenance = {
   modelLevel: "medium-fidelity preliminary design";
   epochSimDays: number;
   gravityModel: "heliocentric two-body Lambert + patched conics";
-  ephemerisSource: "live simulation state with circular state propagation";
+  ephemerisSource: "live simulation state with circular state propagation" | "JPL Horizons table interpolation";
   lambertToleranceSeconds: number;
   candidateCount: number;
   convergedCandidateCount: number;
+};
+
+export type MissionEphemerisAudit = {
+  mode: MissionEphemerisMode;
+  source: string;
+  coverageSimDays: [number, number];
+  stepDays: number;
+  interpolation: string;
+  liveVsTableDelta: Array<{
+    body: MissionBodyId;
+    positionDeltaKm: number;
+    velocityDeltaMps: number;
+  }>;
+  segmentStateSources: Array<{
+    segmentId: string;
+    departureBody: MissionBodyId;
+    arrivalBody: MissionBodyId;
+    departureSimDay: number;
+    arrivalSimDay: number;
+    source: string;
+  }>;
+  caveat: string;
 };
 
 export type MissionSensitivitySummary = {
@@ -76,6 +99,7 @@ export type MissionSegment = {
   lambertConverged: boolean;
   lambertIterations: number;
   lambertResidual: number;
+  solverFailureReason?: string;
   departureVinfinityKms: number;
   arrivalVinfinityKms: number;
   periapsisAltitudeKm: number;
@@ -128,6 +152,7 @@ export type MissionPlan = {
   constraintChecks: MissionConstraintCheck[];
   assumptions: string[];
   solverProvenance: MissionSolverProvenance;
+  ephemerisAudit: MissionEphemerisAudit;
   sensitivitySummary: MissionSensitivitySummary | null;
   rejectionReasons: string[];
   segments: MissionSegment[];
@@ -141,6 +166,7 @@ export type MissionOptimizerOptions = {
   departureStepDays: number;
   maxCandidates: number;
   includeRelativity: boolean;
+  ephemerisMode?: MissionEphemerisMode;
   constraintPreset: MissionConstraintPreset;
   constraints?: Partial<Omit<MissionEngineeringConstraints, "preset">>;
 };

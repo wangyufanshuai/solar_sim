@@ -46,6 +46,11 @@ export type SpacecraftResourcePackItem = {
   checksum: string;
   modelScale: number;
   previewTier: "core" | "gallery";
+  missionYear: number | null;
+  category: "space-station" | "crewed" | "telescope" | "outer-planet" | "mars" | "lunar" | "earth-orbit" | "comet" | "probe";
+  scaleLabel: string;
+  description: string;
+  sourceCreditShort: string;
 };
 
 export type ResourcePackManifest = {

@@ -68,6 +68,9 @@ for (const manifestPath of manifests) {
     if (!item.id || !item.title || !item.originUrl || !item.sourcePage || !item.credit) {
       fail(`spacecraft metadata incomplete: ${item.id}`);
     }
+    if (!item.category || !item.scaleLabel || !item.description || !item.sourceCreditShort || !("missionYear" in item)) {
+      fail(`spacecraft gallery metadata incomplete: ${item.id}`);
+    }
     await checkFile(item.localPath, item.checksum);
   }
 }

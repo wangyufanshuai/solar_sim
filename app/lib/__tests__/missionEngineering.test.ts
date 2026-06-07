@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { AU_METERS, DAY_SECONDS, G_SI } from "../physicalConstants";
 import { solveLambertTransfer } from "../lambertSolver";
+import { JPL_EPHEMERIS_TABLE, interpolateJplState } from "../jplEphemerisTable";
 import {
   MISSION_CONSTRAINT_PRESETS,
   auditMissionPlan,
@@ -150,6 +151,7 @@ describe("mission engineering calculations", () => {
       departureStepDays: 45,
       maxCandidates: 5,
       includeRelativity: false,
+      ephemerisMode: "live-circular" as const,
       constraintPreset: "aggressive" as const,
     };
     const first = optimizeMission({ ...options, sequence: [...options.sequence] }, snapshot);
@@ -157,5 +159,51 @@ describe("mission engineering calculations", () => {
     expect(first.plans.every((plan) => plan.validationStatus !== "fail")).toBe(true);
     expect(first.rejectedPlans.every((plan) => plan.validationStatus === "fail")).toBe(true);
     expect(first.plans.map((plan) => plan.sensitivitySummary)).toEqual(second.plans.map((plan) => plan.sensitivitySummary));
+  });
+
+  it("interpolates JPL table endpoints and rejects missing coverage", () => {
+    const earth0 = interpolateJplState("earth", 0);
+    expect("reason" in earth0).toBe(false);
+    if ("reason" in earth0) return;
+    expect(earth0.positionAu.every(Number.isFinite)).toBe(true);
+    expect(earth0.velocityAuPerDay.every(Number.isFinite)).toBe(true);
+    const earthMid = interpolateJplState("earth", JPL_EPHEMERIS_TABLE.stepDays * 0.5);
+    expect("reason" in earthMid).toBe(false);
+    const out = interpolateJplState("earth", JPL_EPHEMERIS_TABLE.stopSimDay + 10);
+    expect("reason" in out).toBe(true);
+  });
+
+  it("uses JPL table provenance and ephemeris audit in optimizer output", () => {
+    const result = optimizeMission({
+      sequence: ["earth", "venus", "jupiter", "saturn"],
+      departureStartDay: 35,
+      departureWindowDays: 90,
+      departureStepDays: 45,
+      maxCandidates: 4,
+      includeRelativity: false,
+      ephemerisMode: "jpl-table",
+      constraintPreset: "aggressive",
+    }, snapshot);
+    const plan = result.bestPlan ?? result.rejectedPlans[0];
+    expect(plan).toBeTruthy();
+    expect(plan?.solverProvenance.ephemerisSource).toBe("JPL Horizons table interpolation");
+    expect(plan?.ephemerisAudit.mode).toBe("jpl-table");
+    expect(plan?.ephemerisAudit.liveVsTableDelta.length).toBeGreaterThan(0);
+  });
+
+  it("rejects JPL candidates outside table coverage without silent live fallback", () => {
+    const result = optimizeMission({
+      sequence: ["earth", "venus", "jupiter", "saturn"],
+      departureStartDay: JPL_EPHEMERIS_TABLE.stopSimDay + 50,
+      departureWindowDays: 45,
+      departureStepDays: 45,
+      maxCandidates: 3,
+      includeRelativity: false,
+      ephemerisMode: "jpl-table",
+      constraintPreset: "aggressive",
+    }, snapshot);
+    expect(result.plans.length).toBe(0);
+    expect(result.rejectedPlans.length).toBeGreaterThan(0);
+    expect(result.rejectedPlans[0]?.rejectionReasons.join(" ")).toMatch(/JPL table coverage/);
   });
 });

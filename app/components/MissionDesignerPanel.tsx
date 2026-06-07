@@ -191,6 +191,7 @@ export default function MissionDesignerPanel({
         departureWindowDays,
         departureStepDays,
         includeRelativity: relativityEnabled,
+        ephemerisMode: "jpl-table",
         constraintPreset: preset,
         constraints,
       },
@@ -421,10 +422,22 @@ export default function MissionDesignerPanel({
                 </div>
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Solver provenance</div>
+                  <p className="text-cyan-100/70">{selectedPlan.ephemerisAudit.caveat}</p>
                   <p>{selectedPlan.solverProvenance.gravityModel}</p>
                   <p>{selectedPlan.solverProvenance.ephemerisSource}</p>
                   <p>Epoch T+{selectedPlan.solverProvenance.epochSimDays.toFixed(1)} d · tolerance {selectedPlan.solverProvenance.lambertToleranceSeconds}s</p>
                   <p>{selectedPlan.solverProvenance.convergedCandidateCount}/{selectedPlan.solverProvenance.candidateCount} sampled candidates converged.</p>
+                </div>
+                <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                  <div className="font-mono text-[8px] uppercase text-white/72">Ephemeris audit</div>
+                  <p>{selectedPlan.ephemerisAudit.source}</p>
+                  <p>Coverage T+{selectedPlan.ephemerisAudit.coverageSimDays[0].toFixed(0)} to T+{selectedPlan.ephemerisAudit.coverageSimDays[1].toFixed(0)} d 路 step {selectedPlan.ephemerisAudit.stepDays} d</p>
+                  <p>{selectedPlan.ephemerisAudit.interpolation}</p>
+                  {selectedPlan.ephemerisAudit.liveVsTableDelta.map((delta) => (
+                    <p key={delta.body}>
+                      {bodyDisplay(delta.body)} delta {Number.isFinite(delta.positionDeltaKm) ? delta.positionDeltaKm.toExponential(2) : "--"} km / {Number.isFinite(delta.velocityDeltaMps) ? delta.velocityDeltaMps.toFixed(2) : "--"} m/s
+                    </p>
+                  ))}
                 </div>
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Assumptions</div>
