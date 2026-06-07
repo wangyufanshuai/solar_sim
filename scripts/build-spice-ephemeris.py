@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the browser SPICE state table and preliminary low-thrust solution library."""
+"""Build the browser SPICE state table and preliminary low-thrust seed library."""
 
 from __future__ import annotations
 
@@ -144,11 +144,11 @@ def low_thrust_dynamics(_, state, thrust_newton, isp_seconds, direction):
 
 
 def build_low_thrust_library() -> None:
-    """Create deterministic precomputed audit records using a compact collocation proxy.
+    """Create deterministic low-thrust seed records.
 
-    The browser labels these as preliminary refinements. The optimization minimizes
-    terminal mismatch and propellant for each Lambert-like leg; full residual metadata
-    is preserved so an unconverged result cannot be ranked as feasible.
+    These records are not certified Hermite-Simpson solutions. They preserve a
+    stable control seed and explicit residual metadata so the browser can display
+    them as unavailable for feasible ranking until a real offline solve is added.
     """
     legs = [
         ("earth-venus", 155.0, 0.65),
@@ -186,14 +186,15 @@ def build_low_thrust_library() -> None:
             {
                 "id": f"{leg_id}-nominal",
                 "legId": leg_id,
-                "method": "Hermite-Simpson direct collocation seed + SLSQP",
+                "status": "seed",
+                "method": "Direct-control seed for future Hermite-Simpson solve",
                 "nodes": nodes,
-                "converged": bool(result.success),
+                "converged": False,
                 "iterations": int(result.nit),
                 "objective": float(result.fun),
-                "maxDefect": 5e-7 if result.success else 1.0,
-                "terminalPositionErrorKm": 420.0 if result.success else 1e9,
-                "terminalVelocityErrorMps": 4.5 if result.success else 1e9,
+                "maxDefect": 1.0,
+                "terminalPositionErrorKm": 1e9,
+                "terminalVelocityErrorMps": 1e9,
                 "tofDays": tof_days,
                 "initialMassKg": initial_mass,
                 "finalMassKg": initial_mass - propellant,
@@ -209,15 +210,38 @@ def build_low_thrust_library() -> None:
                     }
                     for i in range(nodes)
                 ],
-                "message": str(result.message),
+                "message": "Seed only; terminal residuals were not produced by a verified collocation solve.",
+                "gridKey": {
+                    "tofDays": tof_days,
+                    "constraintPreset": "aggressive",
+                    "ephemerisSha256": "see public/data/spice-ephemeris-v1-manifest.json",
+                },
+                "defectSummary": {
+                    "maxPositionDefectKm": 1e9,
+                    "maxVelocityDefectMps": 1e9,
+                    "maxMassDefectKg": 0.0,
+                },
+                "terminalResidual": {
+                    "positionKm": 1e9,
+                    "velocityMps": 1e9,
+                },
+                "constraintResiduals": [
+                    {
+                        "id": "verified-collocation",
+                        "value": 1.0,
+                        "limit": 0.0,
+                        "status": "fail",
+                    }
+                ],
+                "unavailableReason": "A real offline Hermite-Simpson solve is required before this record can be ranked feasible.",
             }
         )
     payload = {
         "version": 1,
         "generatedAt": np.datetime_as_string(np.datetime64("now"), unit="s") + "Z",
-        "solver": "SciPy SLSQP / Hermite-Simpson preliminary low-thrust refinement",
+        "solver": "SciPy SLSQP direct-control seed; not a verified Hermite-Simpson collocation result",
         "solutions": solutions,
-        "caveat": "Precomputed preliminary refinement; parameter changes outside the grid require an offline solve.",
+        "caveat": "Low-thrust records are control seeds only unless status is converged; parameter changes require an offline Hermite-Simpson solve.",
     }
     (OUT / "low-thrust-solution-library-v1.json").write_text(
         json.dumps(payload, separators=(",", ":")), encoding="utf-8"

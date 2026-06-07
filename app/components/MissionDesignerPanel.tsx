@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, type MutableRefObject } from "react";
+import { useEffect, useMemo, useState, useTransition, type MutableRefObject } from "react";
 import {
   BrainCircuit,
   ChevronDown,
@@ -17,12 +17,10 @@ import { AU_METERS, DAY_SECONDS } from "../lib/physicalConstants";
 import {
   DEFAULT_MISSION_OPTIONS,
   MISSION_CONSTRAINT_PRESETS,
-  optimizeMission,
 } from "../lib/missionOptimizer";
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
 import { downloadMissionReport } from "../lib/missionReport";
-import { runHighFidelityMissionAudit } from "../lib/missionHighFidelityClient";
-import { loadSpiceEphemerisTable } from "../lib/spiceEphemerisTable";
+import { runMissionOptimizationWorker } from "../lib/missionHighFidelityClient";
 import type {
   MissionAdvisorReport,
   MissionBodyId,
@@ -151,6 +149,8 @@ export default function MissionDesignerPanel({
   const [constraints, setConstraints] = useState<MissionEngineeringConstraints>(MISSION_CONSTRAINT_PRESETS.aggressive);
   const [advancedOpen, setAdvancedOpen] = useState(false);
   const [status, setStatus] = useState("Ready");
+  const [isOptimizing, setIsOptimizing] = useState(false);
+  const [, startResultTransition] = useTransition();
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
   const selectedPlan = useMemo(
     () =>
@@ -183,50 +183,52 @@ export default function MissionDesignerPanel({
   };
 
   const runOptimize = async () => {
+    if (isOptimizing) return;
     const snapshot = buildSnapshot(physicsRef, simDaysRef.current);
     if (!snapshot) {
       setStatus("Physics unavailable");
       return;
     }
-    setStatus("Loading SPICE");
+    const options = {
+      ...DEFAULT_MISSION_OPTIONS,
+      departureStartDay: simDaysRef.current + 35,
+      departureWindowDays,
+      departureStepDays,
+      includeRelativity: relativityEnabled,
+      ephemerisMode: "spice-table" as const,
+      constraintPreset: preset,
+      constraints,
+    };
+    setIsOptimizing(true);
+    setStatus("Worker queued");
     try {
-      await loadSpiceEphemerisTable();
+      const next = await runMissionOptimizationWorker({
+        options,
+        physicsSnapshot: snapshot,
+        onProgress: (_phase, message) => {
+          if (message) setStatus(message);
+        },
+        onIntermediate: (intermediate) => {
+          startResultTransition(() => {
+            onResult(intermediate);
+            onSelectPlan(intermediate.bestPlan ?? intermediate.rejectedPlans[0] ?? null);
+          });
+          setStatus(`${intermediate.plans.length} feasible / Cowell running`);
+        },
+      });
+      startResultTransition(() => {
+        onResult(next);
+        onSelectPlan(next.bestPlan ?? next.rejectedPlans[0] ?? null);
+      });
+      setStatus(
+        next.plans.length
+          ? `${next.plans.length} feasible / Cowell audited`
+          : `0 feasible / ${next.rejectedPlans.length} rejected`,
+      );
     } catch (error) {
-      setStatus(error instanceof Error ? error.message : "SPICE unavailable");
-      return;
-    }
-    const next = optimizeMission(
-      {
-        ...DEFAULT_MISSION_OPTIONS,
-        departureStartDay: simDaysRef.current + 35,
-        departureWindowDays,
-        departureStepDays,
-        includeRelativity: relativityEnabled,
-        ephemerisMode: "spice-table",
-        constraintPreset: preset,
-        constraints,
-      },
-      snapshot,
-    );
-    onResult(next);
-    onSelectPlan(next.bestPlan ?? next.rejectedPlans[0] ?? null);
-    setStatus(`${next.plans.length} feasible / Cowell running`);
-    if (next.plans.length === 0) {
-      setStatus(`0 feasible / ${next.rejectedPlans.length} rejected`);
-      return;
-    }
-    try {
-      const auditedPlans = await runHighFidelityMissionAudit(next.plans, relativityEnabled);
-      const bestPlan =
-        auditedPlans.find((plan) => plan.id === next.bestPlan?.id) ??
-        auditedPlans[0] ??
-        null;
-      const auditedResult = { ...next, plans: auditedPlans, bestPlan };
-      onResult(auditedResult);
-      onSelectPlan(bestPlan);
-      setStatus(`${auditedPlans.length} feasible / Cowell audited`);
-    } catch {
-      setStatus(`${next.plans.length} feasible / Cowell unavailable`);
+      setStatus(error instanceof Error ? error.message : "Mission worker unavailable");
+    } finally {
+      setIsOptimizing(false);
     }
   };
 
@@ -255,7 +257,10 @@ export default function MissionDesignerPanel({
   };
 
   return (
-    <section className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[25rem]">
+    <section
+      data-solar-panel="mission"
+      className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[25rem]"
+    >
       <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
         <div className="flex items-center justify-between gap-2">
           <div className="flex min-w-0 items-center gap-2">
@@ -351,10 +356,11 @@ export default function MissionDesignerPanel({
               type="button"
               onClick={runOptimize}
               data-solar-action="mission-optimize"
-              className="flex items-center justify-center gap-2 rounded-[3px] border border-cyan-200/25 bg-cyan-200/[0.08] px-3 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-100"
+              disabled={isOptimizing}
+              className="flex items-center justify-center gap-2 rounded-[3px] border border-cyan-200/25 bg-cyan-200/[0.08] px-3 py-2 font-mono text-[9px] font-semibold uppercase tracking-[0.12em] text-cyan-100 disabled:cursor-wait disabled:opacity-55"
             >
               <Sparkles className="h-3.5 w-3.5" strokeWidth={IS} />
-              Run audited search
+              {isOptimizing ? "Mission worker running" : "Run audited search"}
             </button>
 
             {selectedPlan ? (
@@ -478,6 +484,12 @@ export default function MissionDesignerPanel({
                   <p className="text-cyan-100/70">{selectedPlan.ephemerisAudit.caveat}</p>
                   <p>{selectedPlan.solverProvenance.gravityModel}</p>
                   <p>{selectedPlan.solverProvenance.ephemerisSource}</p>
+                  {selectedPlan.missionWorkerProvenance ? (
+                    <p>
+                      Worker {selectedPlan.missionWorkerProvenance.status} / SPICE{" "}
+                      {selectedPlan.missionWorkerProvenance.spiceBinarySha256?.slice(0, 12) ?? "unverified"}
+                    </p>
+                  ) : null}
                   <p>Epoch T+{selectedPlan.solverProvenance.epochSimDays.toFixed(1)} d · tolerance {selectedPlan.solverProvenance.lambertToleranceSeconds}s</p>
                   <p>{selectedPlan.solverProvenance.convergedCandidateCount}/{selectedPlan.solverProvenance.candidateCount} sampled candidates converged.</p>
                 </div>
@@ -502,7 +514,14 @@ export default function MissionDesignerPanel({
                       <p>Energy drift {selectedPlan.cowellAudit.relativeEnergyDrift.toExponential(2)} · min approach {selectedPlan.cowellAudit.minimumApproachKm.toExponential(2)} km</p>
                     </>
                   ) : <p>Cowell Worker audit pending.</p>}
-                  <p>{selectedPlan.lowThrustSolutions.length} collocation refinements attached.</p>
+                  <p>
+                    Low-thrust {selectedPlan.missionWorkerProvenance?.lowThrustMatchStatus ?? "none"} /{" "}
+                    {selectedPlan.lowThrustSolutions.filter((solution) => solution.status === "converged").length} verified /{" "}
+                    {selectedPlan.lowThrustSolutions.length} library records
+                  </p>
+                  {selectedPlan.missionWorkerProvenance?.message ? (
+                    <p>{selectedPlan.missionWorkerProvenance.message}</p>
+                  ) : null}
                 </div>
                 {selectedPlan.covarianceAudit ? (
                   <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">

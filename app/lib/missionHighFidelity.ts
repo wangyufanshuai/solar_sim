@@ -41,11 +41,38 @@ const BODY_J3: Record<string, number> = {
 type State = [number, number, number, number, number, number, number];
 type Derivative = State;
 type LowThrustLibrary = {
+  version: number;
+  solver?: string;
   solutions: LowThrustSolution[];
   caveat: string;
 };
 
 const LOW_THRUST_LIBRARY = lowThrustLibraryRaw as unknown as LowThrustLibrary;
+const LOW_THRUST_POSITION_TOLERANCE_KM = 1000;
+const LOW_THRUST_VELOCITY_TOLERANCE_MPS = 10;
+
+function isConvergedLowThrustSolution(solution: LowThrustSolution | undefined): solution is LowThrustSolution {
+  const residualPosition =
+    solution?.terminalResidual?.positionKm ?? solution?.terminalPositionErrorKm ?? Number.POSITIVE_INFINITY;
+  const residualVelocity =
+    solution?.terminalResidual?.velocityMps ?? solution?.terminalVelocityErrorMps ?? Number.POSITIVE_INFINITY;
+  return Boolean(
+    solution &&
+      solution.status === "converged" &&
+      solution.converged &&
+      solution.terminalPositionErrorKm < LOW_THRUST_POSITION_TOLERANCE_KM &&
+      solution.terminalVelocityErrorMps < LOW_THRUST_VELOCITY_TOLERANCE_MPS &&
+      residualPosition < LOW_THRUST_POSITION_TOLERANCE_KM &&
+      residualVelocity < LOW_THRUST_VELOCITY_TOLERANCE_MPS,
+  );
+}
+
+function lowThrustStatusFor(solutions: LowThrustSolution[], segmentCount: number) {
+  if (solutions.length === 0) return "none";
+  const statuses = new Set(solutions.map((solution) => solution.status));
+  if (solutions.length < segmentCount || statuses.size > 1) return "mixed";
+  return solutions[0]?.status ?? "none";
+}
 
 function norm3(x: number, y: number, z: number): number {
   return Math.hypot(x, y, z);
@@ -386,13 +413,14 @@ export function auditPlanHighFidelity(
   plan: MissionPlan,
   includeRelativity: boolean,
 ): MissionPlan {
-  const solutions = plan.segments
+  const libraryMatches = plan.segments
     .map((segment) => LOW_THRUST_LIBRARY.solutions.find((item) => item.legId === `${segment.fromBody}-${segment.toBody}`))
     .filter((item): item is LowThrustSolution => Boolean(item));
+  const convergedSolutions = libraryMatches.filter(isConvergedLowThrustSolution);
   const propagated = plan.segments.map((segment) =>
     propagateSegment(
       segment,
-      solutions.find((solution) => solution.legId === `${segment.fromBody}-${segment.toBody}`),
+      convergedSolutions.find((solution) => solution.legId === `${segment.fromBody}-${segment.toBody}`),
       includeRelativity,
     ),
   );
@@ -405,7 +433,9 @@ export function auditPlanHighFidelity(
       "SPICE Earth/Venus/Jupiter/Saturn third-body gravity",
       "Near-body J2/J3",
       includeRelativity ? "Solar 1PN correction" : "1PN disabled",
-      "Precomputed low-thrust controls with mass depletion",
+      convergedSolutions.length === plan.segments.length
+        ? "Verified precomputed low-thrust controls with mass depletion"
+        : "Ballistic Cowell propagation; low-thrust seed library is not ranked as converged",
     ],
     integrator: "Dormand-Prince 5(4)",
     acceptedSteps: propagated.reduce((sum, item) => sum + item.acceptedSteps, 0),
@@ -416,16 +446,13 @@ export function auditPlanHighFidelity(
     minimumApproachKm: Math.min(...propagated.map((item) => item.minimumApproachKm)),
     converged:
       propagated.every((item) => Number.isFinite(item.positionResidualKm)) &&
-      solutions.every(
-        (solution) =>
-          solution.converged &&
-          solution.terminalPositionErrorKm < 1000 &&
-          solution.terminalVelocityErrorMps < 10,
-      ),
+      (convergedSolutions.length === 0 ||
+        convergedSolutions.length === plan.segments.length),
   };
+  const lowThrustStatus = lowThrustStatusFor(libraryMatches, plan.segments.length);
   return {
     ...plan,
-    propagationMode: solutions.length === plan.segments.length
+    propagationMode: convergedSolutions.length === plan.segments.length
       ? "low-thrust-collocation"
       : "cowell",
     solverProvenance: {
@@ -434,12 +461,28 @@ export function auditPlanHighFidelity(
       gravityModel: "Cowell multi-body propagation + patched conics",
     },
     cowellAudit,
-    lowThrustSolutions: solutions,
+    lowThrustSolutions: libraryMatches,
+    missionWorkerProvenance: {
+      ...(plan.missionWorkerProvenance ?? {
+        worker: "missionOptimizer.worker",
+        status: "auditing",
+        lowThrustMatchStatus: "none",
+      }),
+      status: "done",
+      lowThrustMatchStatus: lowThrustStatus,
+      message:
+        convergedSolutions.length === plan.segments.length
+          ? "Verified low-thrust collocation records matched every leg."
+          : "No verified low-thrust collocation grid covers this candidate; Cowell audit remains ballistic/preliminary.",
+    },
     covarianceAudit: covarianceAudit(plan),
     assumptions: [
       ...plan.assumptions,
       LOW_THRUST_LIBRARY.caveat,
-      "Cowell propagation includes SPICE third-body states, near-body J2/J3, mass depletion, and optional solar 1PN.",
+      convergedSolutions.length === plan.segments.length
+        ? "Cowell propagation includes SPICE third-body states, near-body J2/J3, verified low-thrust mass depletion, and optional solar 1PN."
+        : "Low-thrust records are seed/unavailable unless marked converged with terminal residuals below 1000 km and 10 m/s; this candidate requires an offline solve for finite-thrust certification.",
+      "Cowell propagation includes SPICE third-body states, near-body J2/J3, and optional solar 1PN.",
       "Covariance propagates a 6x6 solar-gravity variational STM with process noise; thrust and mass errors are not stochastic.",
     ],
   };

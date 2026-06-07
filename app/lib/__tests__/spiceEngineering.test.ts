@@ -68,6 +68,10 @@ describe("high-fidelity mission audit", () => {
     expect(result.bestPlan).not.toBeNull();
     const first = auditPlanHighFidelity(result.bestPlan!, true);
     const second = auditPlanHighFidelity(result.bestPlan!, true);
+    expect(first.propagationMode).toBe("cowell");
+    expect(first.lowThrustSolutions.every((solution) => solution.status === "seed")).toBe(true);
+    expect(first.missionWorkerProvenance?.lowThrustMatchStatus).toBe("seed");
+    expect(first.assumptions.join(" ")).toMatch(/offline solve/);
     expect(first.covarianceAudit?.positiveSemidefinite).toBe(true);
     expect(first.covarianceAudit).toEqual(second.covarianceAudit);
     const nodes = first.covarianceAudit?.nodeThreeSigma ?? [];

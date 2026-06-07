@@ -42,6 +42,7 @@ const checks = [
   ["quality", "Showcase", baseline.showcaseMaxTaskMs],
   ["safe", "Perf/Safe", baseline.safeMaxTaskMs],
   ["mission", "Mission", baseline.missionMaxTaskMs],
+  ["mission-run-worker", "Mission run worker", baseline.missionRunWorkerMaxTaskMs],
 ];
 
 const rows = checks.map(([id, label, limit]) => {

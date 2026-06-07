@@ -50,6 +50,15 @@ type LoadedSpiceTable = {
 let loadedTable: LoadedSpiceTable | null = null;
 let loadingPromise: Promise<LoadedSpiceTable> | null = null;
 
+async function sha256Hex(buffer: ArrayBuffer): Promise<string | null> {
+  const cryptoApi = globalThis.crypto?.subtle;
+  if (!cryptoApi) return null;
+  const digest = await cryptoApi.digest("SHA-256", buffer);
+  return Array.from(new Uint8Array(digest))
+    .map((byte) => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
 function hermite(p0: number, p1: number, v0: number, v1: number, t: number, h: number): number {
   const t2 = t * t;
   const t3 = t2 * t;
@@ -84,6 +93,10 @@ export async function loadSpiceEphemerisTable(): Promise<LoadedSpiceTable> {
     const buffer = await binaryResponse.arrayBuffer();
     if (buffer.byteLength !== manifest.binaryBytes) {
       throw new Error(`SPICE binary size mismatch ${buffer.byteLength}/${manifest.binaryBytes}`);
+    }
+    const checksum = await sha256Hex(buffer);
+    if (checksum && checksum !== manifest.binarySha256) {
+      throw new Error("SPICE binary checksum mismatch");
     }
     const values = new Float64Array(buffer);
     const bodyIndex = new Map(manifest.bodyOrder.map((id, index) => [id, index]));

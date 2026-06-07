@@ -25,6 +25,11 @@ export function explainMissionPlan(plan: MissionPlan | null): MissionAdvisorRepo
   const failedChecks = plan.constraintChecks.filter((check) => check.status === "fail");
   const warningChecks = plan.constraintChecks.filter((check) => check.status === "warning");
   const bPlaneRisks = plan.segments.filter((seg) => !seg.flybyFeasible || seg.bPlaneRisk !== "low");
+  const verifiedLowThrust = plan.lowThrustSolutions.filter((solution) => solution.status === "converged").length;
+  const lowThrustNote =
+    verifiedLowThrust === plan.segments.length && plan.segments.length > 0
+      ? "Verified low-thrust records cover every leg in the precomputed library."
+      : "Finite-thrust optimization is not certified for this candidate; an offline Hermite-Simpson solve is required.";
   const tags = [
     plan.validationStatus === "fail" ? "constraint-fail" : plan.validationStatus === "warning" ? "margin-watch" : "audited-pass",
     plan.totalDeltaVKms < 8 ? "low-dv" : "high-energy",
@@ -52,8 +57,8 @@ export function explainMissionPlan(plan: MissionPlan | null): MissionAdvisorRepo
       plan.validationStatus === "fail"
         ? "Reject this candidate under the current constraint preset and inspect the failed audit rows before widening the search."
         : plan.totalDeltaVKms > 9
-        ? "Extend the departure window or accept a slower Venus-to-Jupiter leg before treating this as a reference design."
-        : "Keep this as a preliminary reference candidate, then narrow the departure grid and validate it in an external high-fidelity tool.",
+        ? `Extend the departure window or accept a slower Venus-to-Jupiter leg before treating this as a reference design. ${lowThrustNote}`
+        : `Keep this as a preliminary reference candidate, then narrow the departure grid and validate it in an external high-fidelity tool. ${lowThrustNote}`,
     tags,
     provider: "local",
   };

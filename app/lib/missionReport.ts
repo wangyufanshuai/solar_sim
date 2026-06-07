@@ -85,6 +85,9 @@ export function missionPlanToMarkdown(
     `- Lambert tolerance: ${plan.solverProvenance.lambertToleranceSeconds} s`,
     `- Converged candidates: ${plan.solverProvenance.convergedCandidateCount}/${plan.solverProvenance.candidateCount}`,
     `- Propagation mode: ${plan.propagationMode}`,
+    plan.missionWorkerProvenance
+      ? `- Mission worker: ${plan.missionWorkerProvenance.status}, SPICE ${plan.missionWorkerProvenance.spiceBinarySha256?.slice(0, 12) ?? "unverified"}`
+      : "- Mission worker: not recorded",
     "",
     "## High-Fidelity Propagation",
     "",
@@ -99,6 +102,19 @@ export function missionPlanToMarkdown(
           `- Converged: ${plan.cowellAudit.converged ? "yes" : "no"}`,
         ].join("\n")
       : "- Cowell propagation was not run.",
+    "",
+    "## Low-Thrust Library",
+    "",
+    plan.lowThrustSolutions.length
+      ? [
+          `- Match status: ${plan.missionWorkerProvenance?.lowThrustMatchStatus ?? "none"}`,
+          `- Verified converged records: ${plan.lowThrustSolutions.filter((solution) => solution.status === "converged").length}/${plan.lowThrustSolutions.length}`,
+          ...plan.lowThrustSolutions.map(
+            (solution) =>
+              `- ${solution.legId}: ${solution.status}; terminal residual ${fmt(solution.terminalResidual?.positionKm ?? solution.terminalPositionErrorKm, 1)} km / ${fmt(solution.terminalResidual?.velocityMps ?? solution.terminalVelocityErrorMps, 2)} m/s; ${solution.unavailableReason ?? solution.message}`,
+          ),
+        ].join("\n")
+      : "- No verified low-thrust collocation solution covers this candidate; offline solve required for finite-thrust certification.",
     "",
     "## Covariance",
     "",

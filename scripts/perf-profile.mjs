@@ -189,9 +189,29 @@ async (scenario) => {
   await sleep(1200);
   const box = canvas?.getBoundingClientRect();
   if (!canvas || !box) return { ok: false, reason: "canvas_unavailable" };
-  if (scenario === "mission") {
+  const observedLongTasks = [];
+  let longTaskObserver = null;
+  if ("PerformanceObserver" in window) {
+    try {
+      longTaskObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          observedLongTasks.push({
+            name: entry.name,
+            ms: Number(entry.duration.toFixed(2)),
+            startMs: Number(entry.startTime.toFixed(1)),
+          });
+        }
+      });
+      longTaskObserver.observe({ entryTypes: ["longtask"] });
+    } catch {}
+  }
+  if (scenario === "mission" || scenario === "mission-run-worker") {
     press('[data-solar-section="mission"]');
     await sleep(900);
+  }
+  if (scenario === "mission-run-worker") {
+    press('[data-solar-action="mission-optimize"]');
+    await sleep(100);
   }
   if (scenario === "quality") {
     press('[data-solar-section="view"]');
@@ -205,7 +225,11 @@ async (scenario) => {
     press('[data-solar-action="budget-safe"]');
     await sleep(800);
   }
-  const result = await sample(scenario === "zoom" ? 4500 : 6000, (frame) => {
+  const durationMs =
+    scenario === "zoom" ? 4500 :
+    scenario === "mission-run-worker" ? 1800 :
+    6000;
+  const result = await sample(durationMs, (frame) => {
     if (scenario === "zoom") {
       if (frame % 4 === 0) canvas.dispatchEvent(new WheelEvent("wheel", { bubbles: true, clientX: box.left + box.width * 0.5, clientY: box.top + box.height * 0.5, deltaY: frame % 8 === 0 ? -140 : 120, deltaMode: 0 }));
       return;
@@ -223,7 +247,18 @@ async (scenario) => {
       name: entry.name.replace("solar:", ""),
       ms: Number(entry.startTime.toFixed(1)),
     }));
-  return { ok: true, scenario, ...result, assetMarks };
+  const missionStatus = document.querySelector('[data-solar-panel="mission"]')?.textContent ?? "";
+  longTaskObserver?.disconnect();
+  const observedLongTaskMaxMs = observedLongTasks.reduce((max, item) => Math.max(max, item.ms), 0);
+  return {
+    ok: true,
+    scenario,
+    ...result,
+    assetMarks,
+    missionStatus: missionStatus.slice(0, 240),
+    observedLongTaskMaxMs,
+    observedLongTasks: observedLongTasks.slice(-12),
+  };
 }`;
 
 async function readTraceStream(cdp, stream) {
@@ -258,12 +293,19 @@ function summarizeTrace(trace, scenarioResult) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 12)
     .map(([name, ms]) => ({ name, ms: Number(ms.toFixed(2)) }));
+  const observedMissionWorkerMax =
+    scenarioResult?.scenario === "mission-run-worker" &&
+    Number.isFinite(scenarioResult?.observedLongTaskMaxMs)
+      ? Number(scenarioResult.observedLongTaskMaxMs.toFixed(2))
+      : null;
   return {
     scenarioResult,
     eventCount: events.length,
-    longTaskCount: complete.filter((ev) => ev.dur >= 50000).length,
-    maxTaskMs: Number(((longTasks[0]?.ms ?? 0)).toFixed(2)),
-    longTasks,
+    longTaskCount: observedMissionWorkerMax === null
+      ? complete.filter((ev) => ev.dur >= 50000).length
+      : scenarioResult.observedLongTasks.length,
+    maxTaskMs: observedMissionWorkerMax ?? Number(((longTasks[0]?.ms ?? 0)).toFixed(2)),
+    longTasks: observedMissionWorkerMax === null ? longTasks : scenarioResult.observedLongTasks,
     topTotals,
   };
 }
@@ -328,7 +370,7 @@ async function main() {
     await sleep(1500);
     await cdp.send("Page.bringToFront");
     const scenarios = [];
-    for (const scenario of ["rotate", "zoom", "mission", "safe", "quality"]) {
+    for (const scenario of ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality"]) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }
     console.log(JSON.stringify({ url: targetUrl, scenarios }, null, 2));

@@ -228,7 +228,7 @@ async function runScenarioAction(cdp, scenario) {
       press('[data-solar-section="mission"]');
       await sleep(400);
       press('[data-solar-action="mission-optimize"]');
-      await sleep(1900);
+      await sleep(3600);
       pressText("audit");
       await sleep(500);
     }

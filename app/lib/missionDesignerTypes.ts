@@ -3,6 +3,7 @@ export type MissionValidationStatus = "pass" | "warning" | "fail";
 export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
 export type MissionEphemerisMode = "live-circular" | "jpl-table" | "spice-table";
 export type MissionPropagationMode = "lambert" | "cowell" | "low-thrust-collocation";
+export type LowThrustSolutionStatus = "converged" | "seed" | "failed" | "unavailable";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -83,6 +84,7 @@ export type LowThrustControl = {
 export type LowThrustSolution = {
   id: string;
   legId: string;
+  status: LowThrustSolutionStatus;
   method: string;
   nodes: number;
   converged: boolean;
@@ -99,6 +101,37 @@ export type LowThrustSolution = {
   ispSeconds: number;
   controls: LowThrustControl[];
   message: string;
+  gridKey?: {
+    departureDay?: number;
+    tofDays: number;
+    constraintPreset?: MissionConstraintPreset;
+    constraintsHash?: string;
+    ephemerisSha256?: string;
+  };
+  defectSummary?: {
+    maxPositionDefectKm: number;
+    maxVelocityDefectMps: number;
+    maxMassDefectKg: number;
+  };
+  terminalResidual?: {
+    positionKm: number;
+    velocityMps: number;
+  };
+  constraintResiduals?: Array<{
+    id: string;
+    value: number;
+    limit: number;
+    status: MissionValidationStatus;
+  }>;
+  unavailableReason?: string;
+};
+
+export type MissionWorkerProvenance = {
+  worker: "missionOptimizer.worker";
+  status: "queued" | "loading-spice" | "solving" | "auditing" | "done" | "error";
+  spiceBinarySha256?: string;
+  lowThrustMatchStatus: LowThrustSolutionStatus | "mixed" | "none";
+  message?: string;
 };
 
 export type MissionCovarianceAudit = {
@@ -225,6 +258,7 @@ export type MissionPlan = {
   propagationMode: MissionPropagationMode;
   cowellAudit: CowellPropagationAudit | null;
   lowThrustSolutions: LowThrustSolution[];
+  missionWorkerProvenance?: MissionWorkerProvenance;
   covarianceAudit: MissionCovarianceAudit | null;
   rejectionReasons: string[];
   segments: MissionSegment[];
