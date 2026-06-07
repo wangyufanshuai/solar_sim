@@ -22,6 +22,7 @@ import {
   interpolateJplState,
   jplStateDeltaKm,
 } from "./jplEphemerisTable";
+import { getLoadedSpiceManifest, interpolateSpiceState } from "./spiceEphemerisTable";
 
 const SUN_MU = G_SI * 1.98847e30;
 const G0 = 9.80665;
@@ -54,7 +55,7 @@ type BodyState = {
   velAuPerDay: [number, number, number];
   posM: [number, number, number];
   velMps: [number, number, number];
-  source: "live-circular" | "jpl-table";
+  source: "live-circular" | "jpl-table" | "spice-table";
   error?: string;
 };
 
@@ -71,8 +72,8 @@ export const DEFAULT_MISSION_OPTIONS: Omit<
   departureWindowDays: 720,
   departureStepDays: 45,
   maxCandidates: 8,
-  ephemerisMode: "jpl-table",
-  constraintPreset: "nominal",
+  ephemerisMode: "spice-table",
+  constraintPreset: "aggressive",
 };
 
 export const MISSION_CONSTRAINT_PRESETS: Record<MissionConstraintPreset, MissionEngineeringConstraints> = {
@@ -215,6 +216,21 @@ function bodyStateAt(
   snapshot: MissionPhysicsSnapshot,
   mode: MissionEphemerisMode,
 ): BodyState {
+  if (mode === "spice-table") {
+    const state = interpolateSpiceState(id, simDay);
+    if ("reason" in state) {
+      const fallback = snapshot.bodies[id];
+      const live = predictBodyState(fallback, simDay - snapshot.simDays);
+      return { ...live, source: "spice-table", error: state.reason };
+    }
+    return {
+      posAu: state.positionAu,
+      velAuPerDay: state.velocityAuPerDay,
+      posM: auToM(state.positionAu),
+      velMps: auDayToMps(state.velocityAuPerDay),
+      source: "spice-table",
+    };
+  }
   if (mode === "jpl-table") {
     const state = interpolateJplState(id, simDay);
     if ("reason" in state) {
@@ -332,6 +348,18 @@ function makeSegment(
     solarArrayPointing: toBody === "jupiter" || toBody === "saturn" ? "Low-flux cruise bias, battery-positive margins" : "Sun-track cruise",
     kalmanSigmaKm: Math.max(10, 160 + departureVinfinityKms * 7 + (lambert.converged ? 0 : 80)),
     risk: lambert.converged ? "low" : "medium",
+    departurePositionAu: [...fromState.posAu],
+    arrivalPositionAu: [...toState.posAu],
+    departureVelocityAuPerDay: [
+      (departureVelocityMps[0] * DAY_SECONDS) / AU_METERS,
+      (departureVelocityMps[1] * DAY_SECONDS) / AU_METERS,
+      (departureVelocityMps[2] * DAY_SECONDS) / AU_METERS,
+    ],
+    arrivalVelocityAuPerDay: [
+      (arrivalVelocityMps[0] * DAY_SECONDS) / AU_METERS,
+      (arrivalVelocityMps[1] * DAY_SECONDS) / AU_METERS,
+      (arrivalVelocityMps[2] * DAY_SECONDS) / AU_METERS,
+    ],
     trajectoryAu: trajectorySamples(fromState.posAu, toState.posAu, liftAu),
     departureVinfVecKms: mpsToKms(departureVinfVecMps),
     arrivalVinfVecKms: mpsToKms(arrivalVinfVecMps),
@@ -356,13 +384,33 @@ function buildEphemerisAudit(
       : [];
   return {
     mode,
-    source: mode === "jpl-table" ? "NASA/JPL Horizons API DE441 vectors" : "Live simulation snapshot with circular propagation",
+    source:
+      mode === "spice-table"
+        ? "NASA/JPL NAIF SPICE DE442s vectors"
+        : mode === "jpl-table"
+          ? "NASA/JPL Horizons API DE441 vectors"
+          : "Live simulation snapshot with circular propagation",
     coverageSimDays:
-      mode === "jpl-table"
+      mode === "spice-table"
+        ? [
+            getLoadedSpiceManifest()?.startSimDay ?? 0,
+            getLoadedSpiceManifest()?.stopSimDay ?? 0,
+          ]
+        : mode === "jpl-table"
         ? [JPL_EPHEMERIS_TABLE.startSimDay, JPL_EPHEMERIS_TABLE.stopSimDay]
         : [snapshot.simDays, snapshot.simDays],
-    stepDays: mode === "jpl-table" ? JPL_EPHEMERIS_TABLE.stepDays : 0,
-    interpolation: mode === "jpl-table" ? JPL_EPHEMERIS_TABLE.interpolation : "Circular state propagation from live snapshot",
+    stepDays:
+      mode === "spice-table"
+        ? getLoadedSpiceManifest()?.stepDays ?? 0
+        : mode === "jpl-table"
+          ? JPL_EPHEMERIS_TABLE.stepDays
+          : 0,
+    interpolation:
+      mode === "spice-table"
+        ? getLoadedSpiceManifest()?.interpolation ?? "SPICE table unavailable"
+        : mode === "jpl-table"
+          ? JPL_EPHEMERIS_TABLE.interpolation
+          : "Circular state propagation from live snapshot",
     liveVsTableDelta,
     segmentStateSources: segments.map((segment) => ({
       segmentId: segment.id,
@@ -370,11 +418,19 @@ function buildEphemerisAudit(
       arrivalBody: segment.toBody,
       departureSimDay: segment.departureDay,
       arrivalSimDay: segment.arrivalDay,
-      source: mode === "jpl-table" ? "JPL Horizons table interpolation" : "live-circular propagation",
+      source:
+        mode === "spice-table"
+          ? "NASA/JPL NAIF SPICE DE442s table interpolation"
+          : mode === "jpl-table"
+            ? "JPL Horizons table interpolation"
+            : "live-circular propagation",
     })),
-    caveat: mode === "jpl-table"
-      ? "JPL-table preliminary Lambert audit, not GMAT/STK/SPICE certification."
-      : "Live-circular preliminary Lambert audit, not GMAT/STK/SPICE certification.",
+    caveat:
+      mode === "spice-table"
+        ? "SPICE-table high-fidelity preliminary audit, not an operational navigation product or certification."
+        : mode === "jpl-table"
+          ? "JPL-table preliminary Lambert audit, not GMAT/STK/SPICE certification."
+          : "Live-circular preliminary Lambert audit, not GMAT/STK/SPICE certification.",
   };
 }
 
@@ -588,7 +644,7 @@ function buildPlan(
   options: MissionOptimizerOptions,
   constraints: MissionEngineeringConstraints,
 ): MissionPlan {
-  const ephemerisMode = options.ephemerisMode ?? "jpl-table";
+  const ephemerisMode = options.ephemerisMode ?? "spice-table";
   const drafts: TransferDraft[] = [];
   let cursor = departureDay;
   for (let i = 0; i < options.sequence.length - 1; i++) {
@@ -637,17 +693,27 @@ function buildPlan(
     constraintChecks: [],
     assumptions: [
       "Heliocentric two-body Lambert legs with patched-conic flybys.",
-      ephemerisMode === "jpl-table"
-        ? "Body states originate from NASA/JPL Horizons table interpolation for the mission window."
-        : "Body states originate from the live simulation epoch and use circular state propagation.",
+      ephemerisMode === "spice-table"
+        ? "Body states originate from NASA/JPL NAIF SPICE DE442s table interpolation."
+        : ephemerisMode === "jpl-table"
+          ? "Body states originate from NASA/JPL Horizons table interpolation for the mission window."
+          : "Body states originate from the live simulation epoch and use circular state propagation.",
       "Deterministic burns and DSM reserve are combined for the rocket-equation propellant estimate.",
       "No finite-burn, covariance propagation, launch vehicle, thermal, power, or communications link-budget certification.",
     ],
     solverProvenance: {
-      modelLevel: "medium-fidelity preliminary design",
+      modelLevel:
+        ephemerisMode === "spice-table"
+          ? "high-fidelity preliminary audit"
+          : "medium-fidelity preliminary design",
       epochSimDays: snapshot.simDays,
       gravityModel: "heliocentric two-body Lambert + patched conics",
-      ephemerisSource: ephemerisMode === "jpl-table" ? "JPL Horizons table interpolation" : "live simulation state with circular state propagation",
+      ephemerisSource:
+        ephemerisMode === "spice-table"
+          ? "NASA/JPL NAIF SPICE DE442s table interpolation"
+          : ephemerisMode === "jpl-table"
+            ? "JPL Horizons table interpolation"
+            : "live simulation state with circular state propagation",
       lambertToleranceSeconds: Math.max(
         ...segments.map((segment) =>
           Math.max(LAMBERT_TOLERANCE_SECONDS, segment.tofDays * DAY_SECONDS * 3e-6),
@@ -658,6 +724,10 @@ function buildPlan(
     },
     ephemerisAudit: buildEphemerisAudit(ephemerisMode, snapshot, segments),
     sensitivitySummary: null,
+    propagationMode: "lambert",
+    cowellAudit: null,
+    lowThrustSolutions: [],
+    covarianceAudit: null,
     rejectionReasons: [],
     segments,
     chartSeries: chartSeriesForSegments(segments),

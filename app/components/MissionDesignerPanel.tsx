@@ -21,6 +21,8 @@ import {
 } from "../lib/missionOptimizer";
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
 import { downloadMissionReport } from "../lib/missionReport";
+import { runHighFidelityMissionAudit } from "../lib/missionHighFidelityClient";
+import { loadSpiceEphemerisTable } from "../lib/spiceEphemerisTable";
 import type {
   MissionAdvisorReport,
   MissionBodyId,
@@ -145,8 +147,8 @@ export default function MissionDesignerPanel({
   const [activeTab, setActiveTab] = useState<MissionTab>("summary");
   const [departureWindowDays, setDepartureWindowDays] = useState(DEFAULT_MISSION_OPTIONS.departureWindowDays);
   const [departureStepDays, setDepartureStepDays] = useState(DEFAULT_MISSION_OPTIONS.departureStepDays);
-  const [preset, setPreset] = useState<MissionConstraintPreset>("nominal");
-  const [constraints, setConstraints] = useState<MissionEngineeringConstraints>(MISSION_CONSTRAINT_PRESETS.nominal);
+  const [preset, setPreset] = useState<MissionConstraintPreset>("aggressive");
+  const [constraints, setConstraints] = useState<MissionEngineeringConstraints>(MISSION_CONSTRAINT_PRESETS.aggressive);
   const [advancedOpen, setAdvancedOpen] = useState(false);
   const [status, setStatus] = useState("Ready");
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
@@ -180,10 +182,17 @@ export default function MissionDesignerPanel({
     setConstraints((current) => ({ ...current, [key]: value }));
   };
 
-  const runOptimize = () => {
+  const runOptimize = async () => {
     const snapshot = buildSnapshot(physicsRef, simDaysRef.current);
     if (!snapshot) {
       setStatus("Physics unavailable");
+      return;
+    }
+    setStatus("Loading SPICE");
+    try {
+      await loadSpiceEphemerisTable();
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "SPICE unavailable");
       return;
     }
     const next = optimizeMission(
@@ -193,7 +202,7 @@ export default function MissionDesignerPanel({
         departureWindowDays,
         departureStepDays,
         includeRelativity: relativityEnabled,
-        ephemerisMode: "jpl-table",
+        ephemerisMode: "spice-table",
         constraintPreset: preset,
         constraints,
       },
@@ -201,7 +210,24 @@ export default function MissionDesignerPanel({
     );
     onResult(next);
     onSelectPlan(next.bestPlan ?? next.rejectedPlans[0] ?? null);
-    setStatus(`${next.plans.length} feasible / ${next.rejectedPlans.length} rejected`);
+    setStatus(`${next.plans.length} feasible / Cowell running`);
+    if (next.plans.length === 0) {
+      setStatus(`0 feasible / ${next.rejectedPlans.length} rejected`);
+      return;
+    }
+    try {
+      const auditedPlans = await runHighFidelityMissionAudit(next.plans, relativityEnabled);
+      const bestPlan =
+        auditedPlans.find((plan) => plan.id === next.bestPlan?.id) ??
+        auditedPlans[0] ??
+        null;
+      const auditedResult = { ...next, plans: auditedPlans, bestPlan };
+      onResult(auditedResult);
+      onSelectPlan(bestPlan);
+      setStatus(`${auditedPlans.length} feasible / Cowell audited`);
+    } catch {
+      setStatus(`${next.plans.length} feasible / Cowell unavailable`);
+    }
   };
 
   const runDeepSeekAdvisor = async () => {
@@ -467,6 +493,26 @@ export default function MissionDesignerPanel({
                   ))}
                 </div>
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                  <div className="font-mono text-[8px] uppercase text-white/72">High-fidelity propagation</div>
+                  <p>Mode {selectedPlan.propagationMode}</p>
+                  {selectedPlan.cowellAudit ? (
+                    <>
+                      <p>{selectedPlan.cowellAudit.integrator} · {selectedPlan.cowellAudit.acceptedSteps} accepted / {selectedPlan.cowellAudit.rejectedSteps} rejected</p>
+                      <p>Residual {selectedPlan.cowellAudit.maxPositionResidualKm.toExponential(2)} km / {selectedPlan.cowellAudit.maxVelocityResidualMps.toExponential(2)} m/s</p>
+                      <p>Energy drift {selectedPlan.cowellAudit.relativeEnergyDrift.toExponential(2)} · min approach {selectedPlan.cowellAudit.minimumApproachKm.toExponential(2)} km</p>
+                    </>
+                  ) : <p>Cowell Worker audit pending.</p>}
+                  <p>{selectedPlan.lowThrustSolutions.length} collocation refinements attached.</p>
+                </div>
+                {selectedPlan.covarianceAudit ? (
+                  <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                    <div className="font-mono text-[8px] uppercase text-white/72">Covariance / STM</div>
+                    <p>{selectedPlan.covarianceAudit.method}</p>
+                    <p>Saturn arrival 3σ {selectedPlan.covarianceAudit.saturnArrivalThreeSigmaKm.toExponential(2)} km</p>
+                    <p>B-plane 3σ {selectedPlan.covarianceAudit.bPlaneThreeSigmaKm.toExponential(2)} km · PSD {selectedPlan.covarianceAudit.positiveSemidefinite ? "pass" : "fail"}</p>
+                  </div>
+                ) : null}
+                <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Assumptions</div>
                   {selectedPlan.assumptions.map((assumption) => <p key={assumption}>· {assumption}</p>)}
                 </div>
@@ -524,7 +570,7 @@ export default function MissionDesignerPanel({
         ) : null}
 
         <div className="mt-2 rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase leading-3 text-amber-100/72">
-          Preliminary Lambert patched-conics audit only. Not GMAT/STK validation or a real mission certification.
+          Preliminary Lambert/Cowell/low-thrust audit only. Not GMAT/STK/SPICE certification.
         </div>
       </div>
     </section>

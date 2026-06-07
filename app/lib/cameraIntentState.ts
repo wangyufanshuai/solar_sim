@@ -4,6 +4,7 @@ export type CameraIntentKind =
   | "bodyLock"
   | "skyDirectionFocus"
   | "missionPreview"
+  | "cinematic"
   | "launchFollow";
 
 export type CameraIntentState = {
@@ -24,6 +25,7 @@ export type CameraIntentAction =
   | { type: "focusEarthMoon"; now?: number; reason?: string }
   | { type: "focusSkyDirection"; progress?: number; distance?: number; now?: number; reason?: string }
   | { type: "missionPreview"; targetLabel?: string; progress?: number; now?: number; reason?: string }
+  | { type: "cinematic"; targetLabel: string; progress?: number; distance?: number; now?: number; reason?: string }
   | { type: "launchFollow"; targetLabel?: string; now?: number; reason?: string }
   | { type: "updateLock"; bodyIndex: number; targetLabel?: string; distance?: number; now?: number; reason?: string };
 
@@ -115,6 +117,18 @@ export function cameraIntentReducer(
         },
         action,
         "mission preview owns camera",
+      );
+    case "cinematic":
+      return withMeta(
+        {
+          kind: "cinematic",
+          targetLabel: action.targetLabel,
+          progress: action.progress,
+          distance: action.distance,
+          updatedAt: at(action),
+        },
+        action,
+        "cinematic preset transition",
       );
     case "launchFollow":
       return withMeta(

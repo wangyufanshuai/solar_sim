@@ -2,9 +2,22 @@ import { existsSync, mkdtempSync, rmSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 import { spawn } from "node:child_process";
+import { createServer } from "node:net";
 
-const targetUrl = process.argv[2] ?? process.env.SOLAR_PERF_URL ?? "http://127.0.0.1:3002/";
-const port = Number(process.env.SOLAR_PERF_CDP_PORT ?? (9700 + Math.floor(Math.random() * 400)));
+let targetUrl = process.argv[2] ?? process.env.SOLAR_PERF_URL ?? "http://127.0.0.1:3002/";
+async function findFreePort() {
+  return new Promise((resolve, reject) => {
+    const server = createServer();
+    server.unref();
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      const freePort = typeof address === "object" && address ? address.port : 0;
+      server.close((error) => error ? reject(error) : resolve(freePort));
+    });
+  });
+}
+const port = Number(process.env.SOLAR_PERF_CDP_PORT ?? await findFreePort());
 const chromeCandidates = [
   process.env.CHROME_PATH,
   "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
@@ -21,6 +34,65 @@ async function fetchJson(url) {
   const res = await fetch(url);
   if (!res.ok) throw new Error(`${url} -> ${res.status}`);
   return res.json();
+}
+
+async function waitForHttp(url, label, timeoutMs = 45000) {
+  const deadline = Date.now() + timeoutMs;
+  let lastError = null;
+  while (Date.now() < deadline) {
+    try {
+      const response = await fetch(url);
+      if (response.ok || response.status === 404) return;
+      lastError = new Error(`${response.status}`);
+    } catch (error) {
+      lastError = error;
+    }
+    await sleep(500);
+  }
+  const detail = lastError?.cause?.message ?? lastError?.message ?? "unknown error";
+  throw new Error(`${label} did not become reachable at ${url}: ${detail}`);
+}
+
+async function startDevServerIfNeeded() {
+  try {
+    await waitForHttp(targetUrl, "Existing dev server", 5000);
+    return null;
+  } catch {}
+  const devPort = await findFreePort();
+  targetUrl = `http://127.0.0.1:${devPort}/`;
+  const command = process.platform === "win32" ? process.env.ComSpec ?? "cmd.exe" : "npm";
+  const args = process.platform === "win32"
+    ? ["/d", "/s", "/c", `npx next dev -H 127.0.0.1 -p ${devPort}`]
+    : ["exec", "next", "dev", "-H", "127.0.0.1", "-p", String(devPort)];
+  const processHandle = spawn(command, args, {
+    cwd: process.cwd(),
+    stdio: ["ignore", "pipe", "pipe"],
+    env: { ...process.env, BROWSER: "none" },
+  });
+  let lastOutput = "";
+  const remember = (chunk) => {
+    lastOutput = `${lastOutput}${chunk.toString()}`.slice(-3000);
+  };
+  processHandle.stdout.on("data", remember);
+  processHandle.stderr.on("data", remember);
+  try {
+    await waitForHttp(targetUrl, "Next dev server", 60000);
+  } catch (error) {
+    throw new Error(`${error.message}\nDev server output:\n${lastOutput}`);
+  }
+  return processHandle;
+}
+
+function killProcessTree(processHandle) {
+  if (!processHandle || processHandle.killed) return;
+  if (process.platform === "win32" && processHandle.pid) {
+    spawn(process.env.ComSpec ?? "cmd.exe", ["/d", "/s", "/c", `taskkill /pid ${processHandle.pid} /t /f`], {
+      stdio: "ignore",
+      windowsHide: true,
+    });
+    return;
+  }
+  processHandle.kill();
 }
 
 async function waitForCdp() {
@@ -119,9 +191,7 @@ async (scenario) => {
   if (!canvas || !box) return { ok: false, reason: "canvas_unavailable" };
   if (scenario === "mission") {
     press('[data-solar-section="mission"]');
-    await sleep(500);
-    press('[data-solar-action="mission-optimize"]');
-    await sleep(1800);
+    await sleep(900);
   }
   if (scenario === "quality") {
     press('[data-solar-section="view"]');
@@ -221,6 +291,7 @@ async function runScenario(cdp, scenario) {
 }
 
 async function main() {
+  const server = await startDevServerIfNeeded();
   const chromePath = chromeCandidates.find((candidate) => existsSync(candidate));
   if (!chromePath) throw new Error("No Chrome or Edge executable found. Set CHROME_PATH and retry.");
   const userDataDir = mkdtempSync(join(tmpdir(), "solar-profile-chrome-"));
@@ -264,6 +335,7 @@ async function main() {
     cdp.close();
   } finally {
     chrome.kill();
+    killProcessTree(server);
     setTimeout(() => {
       try {
         rmSync(userDataDir, { recursive: true, force: true, maxRetries: 3, retryDelay: 120 });

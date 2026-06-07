@@ -9,7 +9,6 @@ import {
   ToneMapping,
   Vignette,
 } from "@react-three/postprocessing";
-import { useFrame, useThree } from "@react-three/fiber";
 import { Component, type ReactNode, useMemo } from "react";
 import { BlendFunction, SMAAPreset, ToneMappingMode } from "postprocessing";
 import { useBloomScene } from "../context/BloomSceneContext";
@@ -17,7 +16,6 @@ import LightBender from "../effects/LightBender";
 import ThreeJsPostPipeline from "../effects/ThreeJsPostPipeline";
 import { readLensingEnv } from "../effects/lightBenderBridge";
 import SunLensFlare from "../effects/SunLensFlare";
-import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
 
 const LENSING_ENABLED = readLensingEnv().enabled;
 
@@ -28,15 +26,6 @@ function isPublicSsaoEnabled(): boolean {
 }
 
 const SSAO_ENABLED = isPublicSsaoEnabled();
-
-/** pmndrs `ToneMapping` uses three tone-mapping chunks; keep exposure aligned with `UniverseCanvas`. */
-function PmndrsToneMappingExposureSync() {
-  const gl = useThree((s) => s.gl);
-  useFrame(() => {
-    gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE;
-  });
-  return null;
-}
 
 /** When false, use three.js EffectComposer + UnrealBloomPass (ThreeJsPostPipeline). */
 const USE_PMNDRS_POST_STACK = LENSING_ENABLED || SSAO_ENABLED;
@@ -108,7 +97,6 @@ export default function UniversePostProcessing({
         enableNormalPass={SSAO_ENABLED}
         resolutionScale={SSAO_ENABLED ? 0.5 : undefined}
       >
-        <PmndrsToneMappingExposureSync />
         {LENSING_ENABLED ? (
           <LightBender
             lensingStrength={lensingOpts.lensingStrength}

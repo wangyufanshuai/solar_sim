@@ -78,6 +78,10 @@ function segment(overrides: Partial<MissionSegment> = {}): MissionSegment {
     solarArrayPointing: "sun",
     kalmanSigmaKm: 100,
     risk: "low",
+    departurePositionAu: [1, 0, 0],
+    arrivalPositionAu: [0.7, 0.2, 0],
+    departureVelocityAuPerDay: [0, 0.017, 0],
+    arrivalVelocityAuPerDay: [-0.01, 0.014, 0],
     trajectoryAu: [[1, 0, 0], [0.7, 0.2, 0]],
     ...overrides,
   };

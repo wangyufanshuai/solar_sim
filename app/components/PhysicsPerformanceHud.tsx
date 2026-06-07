@@ -8,6 +8,8 @@ import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import type { MissionPlan } from "../lib/missionDesignerTypes";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 import type { CameraIntentState } from "../lib/cameraIntentState";
+import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
+import { solarOcclusionFactor } from "../lib/solarOcclusion";
 
 const TIERS: { id: PhysicsPrecisionTier; label: string }[] = [
   { id: "full", label: "FULL" },
@@ -22,6 +24,7 @@ export default function PhysicsPerformanceHud({
   viewSettings,
   missionPlan,
   cameraIntentRef,
+  selectedBodyIndex,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   precisionTierRef: MutableRefObject<PhysicsPrecisionTier>;
@@ -29,6 +32,7 @@ export default function PhysicsPerformanceHud({
   viewSettings: SimulationViewSettings;
   missionPlan: MissionPlan | null;
   cameraIntentRef?: MutableRefObject<CameraIntentState>;
+  selectedBodyIndex?: number | null;
 }) {
   const [stepsPerSec, setStepsPerSec] = useState(0);
   const [perf, setPerf] = useState({
@@ -44,6 +48,7 @@ export default function PhysicsPerformanceHud({
   const [cameraIntent, setCameraIntent] = useState<CameraIntentState | null>(
     cameraIntentRef?.current ?? null,
   );
+  const [solarVisibility, setSolarVisibility] = useState(1);
 
   useEffect(() => {
     let id = 0;
@@ -97,12 +102,21 @@ export default function PhysicsPerformanceHud({
           longFrames10s,
         });
         if (cameraIntentRef) setCameraIntent({ ...cameraIntentRef.current });
+        setSolarVisibility(
+          selectedBodyIndex == null
+            ? 1
+            : solarOcclusionFactor(
+                physicsRef.current,
+                selectedBodyIndex,
+                SOLAR_SYSTEM_BODIES.map((body) => body.id),
+              ),
+        );
       }
       id = requestAnimationFrame(tick);
     };
     id = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(id);
-  }, [cameraIntentRef, physicsRef]);
+  }, [cameraIntentRef, physicsRef, selectedBodyIndex]);
 
   const activeLayers = [
     viewSettings.showGalaxyBackground,
@@ -181,6 +195,12 @@ export default function PhysicsPerformanceHud({
         <div className="flex justify-between">
           <span>Mission seg</span>
           <span className="text-white/68">{missionSegments}</span>
+        </div>
+        <div className="flex justify-between">
+          <span>Sun visible</span>
+          <span className={solarVisibility < 0.98 ? "text-amber-200" : "text-white/68"}>
+            {(solarVisibility * 100).toFixed(1)}%
+          </span>
         </div>
         <div className="flex justify-between">
           <span>Camera</span>

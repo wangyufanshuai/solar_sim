@@ -45,13 +45,19 @@ const checks = [
 ];
 
 const rows = checks.map(([id, label, limit]) => {
-  const value = scenario(profile, id).maxTaskMs;
-  return { id, label, value, limit, pass: value <= limit };
+  const result = scenario(profile, id);
+  const value = result.maxTaskMs;
+  const sampled =
+    result.scenarioResult?.ok === true &&
+    Number(result.scenarioResult?.frames ?? 0) > 30;
+  return { id, label, value, limit, sampled, pass: sampled && value <= limit };
 });
 
 for (const row of rows) {
   const status = row.pass ? "PASS" : "FAIL";
-  console.log(`${status} ${row.label}: ${row.value}ms <= ${row.limit}ms`);
+  console.log(
+    `${status} ${row.label}: ${row.value}ms <= ${row.limit}ms${row.sampled ? "" : " (scenario did not produce a valid frame sample)"}`,
+  );
 }
 
 const failed = rows.filter((row) => !row.pass);

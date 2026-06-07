@@ -86,6 +86,9 @@ import { createCameraIntentState, type CameraIntentState } from "./lib/cameraInt
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
 export default function UniversePage() {
+  const visualTestRequested =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("visualTest") === "1";
   const { physicsRef, physicsReady, physicsUsesSharedBuffer } =
     useSolarSystemPhysics();
   const precisionTierRef = useRef<PhysicsPrecisionTier>("full");
@@ -93,6 +96,7 @@ export default function UniversePage() {
   const cameraIntentRef = useRef<CameraIntentState>(createCameraIntentState());
   const simDaysRef = useRef(0);
   const [isPlaying, setIsPlaying] = useState(true);
+  const [visualTest, setVisualTest] = useState(false);
   const [daysPerSecond, setDaysPerSecond] = useState(
     DEFAULT_SIM_DAYS_PER_WORLD_SECOND
   );
@@ -120,6 +124,14 @@ export default function UniversePage() {
   const [viewSettings, setViewSettings] = useState<SimulationViewSettings>(
     DEFAULT_SIMULATION_VIEW_SETTINGS
   );
+  useEffect(() => {
+    const enabled = new URLSearchParams(window.location.search).get("visualTest") === "1";
+    setVisualTest(enabled);
+    if (enabled) {
+      setIsPlaying(false);
+      simDaysRef.current = 0;
+    }
+  }, []);
   const applyPerformanceSafeMode = useCallback(() => {
     setVisualEnhance(false);
     setViewSettings({
@@ -456,7 +468,7 @@ export default function UniversePage() {
         <UniverseCanvas
           simulation={{
             simDaysRef,
-            isPlaying,
+            isPlaying: isPlaying && !visualTestRequested,
             daysPerSecond,
             physicsRef,
             relativityEnabledRef,
@@ -473,6 +485,7 @@ export default function UniversePage() {
             telemetrySeriesRef,
             kerrBlackHole,
             visualEnhance,
+            visualTest: visualTest || visualTestRequested,
             viewSettings,
             lagrangeSpawnNonceRef,
             integrationSuspendedRef,
@@ -517,6 +530,7 @@ export default function UniversePage() {
         viewSettings={viewSettings}
         missionPlan={missionPreviewPlan}
         cameraIntentRef={cameraIntentRef}
+        selectedBodyIndex={selectedBodyIndex}
       />
       {viewSettings.showKerrBlackHole ? (
         <KerrBlackHolePanel value={kerrBlackHole} onChange={setKerrBlackHole} />

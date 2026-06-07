@@ -14,7 +14,7 @@ import {
 import BodyLabel from "./BodyLabel";
 import EarthAtmosphereGlow from "./EarthAtmosphereGlow";
 import { useRelativisticOpticsStateRef } from "../context/RelativisticOpticsContext";
-import { AU_TO_SCENE } from "../data/planetsJ2000";
+import { AU_TO_SCENE, SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 import {
   applyDopplerTint,
   bodyVelScenePerRealSec,
@@ -34,6 +34,10 @@ import {
   SPRITE_LOD_EXIT_PX,
 } from "../lib/celestialTextures";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
+import { solarOcclusionFactor } from "../lib/solarOcclusion";
+
+const OCCLUSION_TARGETS = new Set(["earth", "moon", "jupiter", "saturn"]);
+const SOLAR_BODY_IDS = SOLAR_SYSTEM_BODIES.map((body) => body.id);
 
 const illuminatedLayerVertexShader = `
   varying vec2 vUvLayer;
@@ -70,6 +74,7 @@ const cloudLayerFragmentShader = `
   uniform vec3 uSunDirection;
   uniform float uDayOpacity;
   uniform float uNightOpacity;
+  uniform float uSolarVisibility;
   varying vec2 vUvLayer;
   varying vec3 vNormalWorldLayer;
   #include <logdepthbuf_pars_fragment>
@@ -77,7 +82,7 @@ const cloudLayerFragmentShader = `
     vec4 texel = texture2D(uMap, vUvLayer);
     float density = max(texel.a, dot(texel.rgb, vec3(0.3333)));
     float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float day = smoothstep(-0.22, 0.48, sunDot);
+    float day = smoothstep(-0.22, 0.48, sunDot) * uSolarVisibility;
     float opacity = mix(uNightOpacity, uDayOpacity, day) * density;
     vec3 color = mix(vec3(0.32, 0.38, 0.46), vec3(1.0, 0.98, 0.94), day);
     gl_FragColor = vec4(color, opacity);
@@ -202,6 +207,8 @@ export default function Planet({
   const [spriteTex, setSpriteTex] = useState<THREE.CanvasTexture | null>(null);
   const closeQualityRef = useRef(false);
   const closeLightRef = useRef(0);
+  const solarVisibilityRef = useRef(1);
+  const occlusionFrameRef = useRef(0);
   const sunDirectionWorld = useRef(new THREE.Vector3(1, 0, 0));
   const nightUniforms = useMemo(() => ({
     uMap: { value: nightMap },
@@ -213,6 +220,7 @@ export default function Planet({
     uSunDirection: { value: sunDirectionWorld.current.clone() },
     uDayOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudDayOpacity },
     uNightOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudNightOpacity },
+    uSolarVisibility: { value: 1 },
   }), [clouds]);
 
   useLayoutEffect(() => {
@@ -267,6 +275,20 @@ export default function Planet({
       ).normalize();
       nightMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
       cloudMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
+      occlusionFrameRef.current += 1;
+      if (occlusionFrameRef.current % 12 === 1) {
+        solarVisibilityRef.current =
+          bodyId && OCCLUSION_TARGETS.has(bodyId)
+            ? solarOcclusionFactor(illumination, illuminationBodyIndex, SOLAR_BODY_IDS)
+            : 1;
+      }
+      if (cloudMaterialRef.current) {
+        cloudMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
+      }
+      limbMaterial.uniforms.uOpacity.value =
+        (showAtmosphere ? 0.32 : 0.13) *
+        (calibratedRimIntensity ?? VISUAL_CALIBRATION.planets.rimIntensity) *
+        (0.18 + 0.82 * solarVisibilityRef.current);
     }
     mesh.getWorldPosition(worldPos);
     const dist = worldPos.distanceTo(camera.position);
@@ -342,21 +364,21 @@ export default function Planet({
       !mat ||
       !st
     ) {
-      if (mat) mat.color.copy(baseColorStore.current);
-      if (mat) mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
+      if (mat) mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
+      if (mat) mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }
     if (!st.active) {
-      mat.color.copy(baseColorStore.current);
-      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
+      mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
+      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }
     const p = opticsPhysicsRef.current;
     if (!p || opticsBodyIndex < 0 || opticsBodyIndex >= p.n) {
-      mat.color.copy(baseColorStore.current);
-      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
+      mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
+      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }

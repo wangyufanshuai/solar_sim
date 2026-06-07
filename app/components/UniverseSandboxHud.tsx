@@ -19,6 +19,10 @@ import { galacticToEquatorial } from "../lib/galacticToEquatorial";
 import type { BottomControlBarSection } from "./BottomControlBar";
 import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 import SpacecraftGalleryPanel from "./SpacecraftGalleryPanel";
+import {
+  CINEMATIC_CAMERA_PRESETS,
+  dispatchCinematicCameraPreset,
+} from "../lib/cinematicCamera";
 
 type Props = {
   activeSection: BottomControlBarSection;
@@ -429,6 +433,22 @@ export default function UniverseSandboxHud({
             ) : (
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">TOOLS</div>
+                <div className="mb-3">
+                  <div className="mb-1.5 text-[9px] tracking-[0.18em] text-white/36">CINEMATIC PRESETS</div>
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {CINEMATIC_CAMERA_PRESETS.map((preset) => (
+                      <button
+                        key={preset.id}
+                        type="button"
+                        data-solar-action={`cinematic-${preset.id}`}
+                        onClick={() => dispatchCinematicCameraPreset(preset.id)}
+                        className="min-h-8 rounded-lg bg-white/[0.045] px-2 py-1.5 text-left text-[10px] text-white/62 transition-colors hover:bg-white/[0.09] hover:text-white/88"
+                      >
+                        {preset.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
                 <ToolButton
                   label="发射拉格朗日测试粒子"
                   onClick={() => {

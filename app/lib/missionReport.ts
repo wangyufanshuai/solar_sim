@@ -1,7 +1,7 @@
 import type { MissionAdvisorReport, MissionOptimizationResult, MissionPlan } from "./missionDesignerTypes";
 
 export const MISSION_REPORT_CAVEAT =
-  "Preliminary Lambert patched-conics audit only. Not GMAT/STK/SPICE certification.";
+  "Preliminary Lambert/Cowell/low-thrust audit only. Not GMAT/STK/SPICE certification.";
 
 export type MissionReportExport = {
   schemaVersion: 1;
@@ -84,6 +84,33 @@ export function missionPlanToMarkdown(
     `- Epoch: T+${fmt(plan.solverProvenance.epochSimDays, 1)} d`,
     `- Lambert tolerance: ${plan.solverProvenance.lambertToleranceSeconds} s`,
     `- Converged candidates: ${plan.solverProvenance.convergedCandidateCount}/${plan.solverProvenance.candidateCount}`,
+    `- Propagation mode: ${plan.propagationMode}`,
+    "",
+    "## High-Fidelity Propagation",
+    "",
+    plan.cowellAudit
+      ? [
+          `- Integrator: ${plan.cowellAudit.integrator}`,
+          `- Force model: ${plan.cowellAudit.forceModel.join("; ")}`,
+          `- Accepted/rejected steps: ${plan.cowellAudit.acceptedSteps}/${plan.cowellAudit.rejectedSteps}`,
+          `- Maximum position residual: ${fmt(plan.cowellAudit.maxPositionResidualKm, 3)} km`,
+          `- Maximum velocity residual: ${fmt(plan.cowellAudit.maxVelocityResidualMps, 3)} m/s`,
+          `- Relative energy drift: ${plan.cowellAudit.relativeEnergyDrift.toExponential(3)}`,
+          `- Converged: ${plan.cowellAudit.converged ? "yes" : "no"}`,
+        ].join("\n")
+      : "- Cowell propagation was not run.",
+    "",
+    "## Covariance",
+    "",
+    plan.covarianceAudit
+      ? [
+          `- Method: ${plan.covarianceAudit.method}`,
+          `- Saturn arrival 3-sigma: ${fmt(plan.covarianceAudit.saturnArrivalThreeSigmaKm, 1)} km`,
+          `- B-plane 3-sigma: ${fmt(plan.covarianceAudit.bPlaneThreeSigmaKm, 1)} km`,
+          `- Positive semidefinite: ${plan.covarianceAudit.positiveSemidefinite ? "yes" : "no"}`,
+          `- Caveat: ${plan.covarianceAudit.caveat}`,
+        ].join("\n")
+      : "- Covariance propagation was not run.",
     "",
     "## Ephemeris Audit",
     "",

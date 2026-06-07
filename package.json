@@ -13,7 +13,10 @@
     "perf:profile": "node scripts/perf-profile.mjs",
     "perf:profile:assert": "node scripts/perf-profile.mjs | node scripts/perf-assert.mjs",
     "visual:acceptance": "node scripts/visual-acceptance.mjs",
-    "test:mission": "vitest run app/lib/__tests__/missionEngineering.test.ts",
+    "visual:baseline:update": "node scripts/visual-baseline-update.mjs",
+    "visual:regression": "node scripts/visual-regression.mjs",
+    "test:mission": "vitest run app/lib/__tests__",
+    "test:spice-python": "python scripts/test-spice-toolchain.py",
     "lint": "next lint",
     "fetch-planet-textures": "node scripts/fetch-planet-textures.mjs",
     "fetch-nasa-earth-hd": "node scripts/fetch-nasa-earth-hd.mjs",
@@ -27,7 +30,9 @@
     "build:resource-manifests": "node scripts/build-resource-manifests.mjs",
     "audit:resources": "node scripts/audit-resources.mjs",
     "fetch:jpl-ephemeris": "node scripts/fetch-jpl-ephemeris-table.mjs",
-    "audit:jpl-ephemeris": "node scripts/audit-jpl-ephemeris.mjs"
+    "audit:jpl-ephemeris": "node scripts/audit-jpl-ephemeris.mjs",
+    "fetch:spice": "python scripts/build-spice-ephemeris.py",
+    "audit:spice": "node scripts/audit-spice.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",
@@ -47,13 +52,16 @@
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
+    "@types/pngjs": "^6.0.5",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@types/three": "^0.170.0",
     "autoprefixer": "^10.4.27",
     "eslint": "^8.57.0",
     "eslint-config-next": "^14.2.18",
+    "pngjs": "^7.0.0",
     "postcss": "^8.5.8",
+    "ssim.js": "^3.5.0",
     "tailwindcss": "^3.4.17",
     "typescript": "^5.6.3",
     "vitest": "^2.1.9"

@@ -46,6 +46,9 @@ import NebulaMilkyWay from "./NebulaMilkyWay";
 import StarClusterMarkers from "./StarClusterMarkers";
 import PulsarField from "./PulsarField";
 import MissionTrajectoryPreview from "./MissionTrajectoryPreview";
+import CinematicCameraBridge from "./CinematicCameraBridge";
+import CinematicExposureController from "./CinematicExposureController";
+import CloseupShadowLight from "./CloseupShadowLight";
 
 type FocusMode = "orbit" | "inspect" | "lock";
 type ActiveFocus =
@@ -482,12 +485,18 @@ function SelectionMetricsBridge({ selectedBodyIndex, physicsRef, floatingOriginR
 }
 
 export type UniverseCanvasSimulationProps = {
-  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; cameraIntentRef?: MutableRefObject<CameraIntentState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
+  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; cameraIntentRef?: MutableRefObject<CameraIntentState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; visualTest?: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
 };
 
 export default function UniverseScene({ simulation }: { simulation: UniverseCanvasSimulationProps }) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const qualityBudget = simulation.viewSettings.renderBudget === "quality" || simulation.viewSettings.highQualityRendering;
+  const shadowQuality =
+    !qualityBudget
+      ? "off"
+      : simulation.viewSettings.highQualityRendering
+        ? "quality"
+        : "showcase";
   const selectedBodyId =
     simulation.selectedBodyIndex == null
       ? null
@@ -529,7 +538,28 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         </GalacticOverlayGate>
         <SelectionMetricsBridge selectedBodyIndex={simulation.selectedBodyIndex} physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} bodyMetricsRef={simulation.bodyMetricsRef} />
         <SolarSystemIntegrator physicsRef={simulation.physicsRef} simDaysRef={simulation.simDaysRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} precisionTierRef={simulation.precisionTierRef} integrationSuspendedRef={simulation.integrationSuspendedRef} localLaunchActiveRef={simulation.localLaunchActiveRef} floatingOriginRef={simulation.floatingOriginRef} />
-        <OrbitControls ref={controlsRef} makeDefault enableDamping dampingFactor={0.06} maxDistance={50000} enabled={!simulation.localLaunchActive} />
+        <OrbitControls
+          ref={controlsRef}
+          makeDefault
+          enableDamping
+          dampingFactor={0.06}
+          maxDistance={50000}
+          enabled={!simulation.localLaunchActive}
+          onStart={() => {
+            if (simulation.cameraIntentRef?.current.kind === "cinematic") {
+              dispatchCameraIntent(simulation.cameraIntentRef, {
+                type: "reset",
+                reason: "user input exited cinematic mode",
+              });
+            }
+          }}
+        />
+        <CinematicCameraBridge
+          controlsRef={controlsRef}
+          physicsRef={simulation.physicsRef}
+          floatingOriginRef={simulation.floatingOriginRef}
+          cameraIntentRef={simulation.cameraIntentRef}
+        />
         <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} cameraIntentRef={simulation.cameraIntentRef} />
         <CameraFocusDirectionBridge controlsRef={controlsRef} cameraIntentRef={simulation.cameraIntentRef} />
         {simulation.viewSettings.showMissionTrajectory ? (
@@ -544,12 +574,27 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />
         <LodOrbitControlsBridge floatingOriginRef={simulation.floatingOriginRef} controlsRef={controlsRef} />
         <CameraZoomBridge controlsRef={controlsRef} />
+        {qualityBudget ? (
+          <>
+            <CinematicExposureController
+              enabled
+              selectedBodyId={selectedBodyId}
+              visualTest={simulation.visualTest ?? false}
+            />
+            <CloseupShadowLight
+              physicsRef={simulation.physicsRef}
+              floatingOriginRef={simulation.floatingOriginRef}
+              selectedBodyIndex={simulation.selectedBodyIndex}
+              quality={shadowQuality}
+            />
+          </>
+        ) : null}
         {simulation.localLaunchActive && simulation.onLocalLaunchHandoff ? (
           <LaunchSceneView physicsRef={simulation.physicsRef} onHandoff={simulation.onLocalLaunchHandoff} onAbort={simulation.onLocalLaunchAbort ?? (() => {})} telemetryRef={simulation.localTelemetryRef} active={!!simulation.localLaunchActive} launchConfigRef={simulation.launchConfigRef} />
         ) : (
           <>
             <LabelOcclusionProvider>
-              <SolarSystemBodies physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} onSelectBody={simulation.onSelectBody} onBodyCanvasPick={simulation.onBodyCanvasPick} selectedBodyIndex={simulation.selectedBodyIndex} earthMoonView={simulation.earthMoonView} viewSettings={simulation.viewSettings} simDaysRef={simulation.simDaysRef} />
+              <SolarSystemBodies physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} onSelectBody={simulation.onSelectBody} onBodyCanvasPick={simulation.onBodyCanvasPick} selectedBodyIndex={simulation.selectedBodyIndex} earthMoonView={simulation.earthMoonView} viewSettings={simulation.viewSettings} simDaysRef={simulation.simDaysRef} visualTest={simulation.visualTest} />
             </LabelOcclusionProvider>
           </>
         )}

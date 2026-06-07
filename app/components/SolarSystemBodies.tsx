@@ -33,6 +33,9 @@ import { applyFloatingOffsetScene } from "../lib/floatingOrigin";
 import { siderealSpinRadPerSimDayForBodyId } from "../lib/planetSiderealSpin";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 import { closeupLightingProfile } from "../lib/closeupLightingProfile";
+import { solarOcclusionFactor } from "../lib/solarOcclusion";
+
+const SOLAR_BODY_IDS = SOLAR_SYSTEM_BODIES.map((body) => body.id);
 
 function createSaturnRingTexture() {
   const canvas = document.createElement("canvas");
@@ -68,20 +71,34 @@ function createSaturnRingTexture() {
 
 function SaturnRings({
   radiusScene,
+  bodyIndex,
+  physicsRef,
   litOpacity = VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity,
   darkOpacity = VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity,
 }: {
   radiusScene: number;
+  bodyIndex: number;
+  physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   litOpacity?: number;
   darkOpacity?: number;
 }) {
   const ringTexture = useMemo(() => (typeof document === "undefined" ? null : createSaturnRingTexture()), []);
+  const mainMaterialRef = useRef<THREE.MeshStandardMaterial>(null);
+  const occlusionFrameRef = useRef(0);
+  useFrame(() => {
+    if (!mainMaterialRef.current) return;
+    occlusionFrameRef.current += 1;
+    if (occlusionFrameRef.current % 12 !== 1) return;
+    const visibility = solarOcclusionFactor(physicsRef.current, bodyIndex, SOLAR_BODY_IDS);
+    mainMaterialRef.current.opacity = litOpacity * (0.16 + 0.84 * visibility);
+  });
   return (
     <group>
       {ringTexture ? (
         <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={6} castShadow={false} receiveShadow={false}>
           <ringGeometry args={[radiusScene * 1.11, radiusScene * 2.43, 192]} />
           <meshStandardMaterial
+            ref={mainMaterialRef}
             map={ringTexture}
             transparent
             opacity={litOpacity}
@@ -227,6 +244,7 @@ function BodyShell({
   showRelativisticOptics,
   renderBudget,
   highQualityRendering,
+  visualTest,
   globalSelectedBodyIndex,
   physicsRef,
 }: {
@@ -242,10 +260,14 @@ function BodyShell({
   showRelativisticOptics: boolean;
   renderBudget: SimulationViewSettings["renderBudget"];
   highQualityRendering: boolean;
+  visualTest: boolean;
   globalSelectedBodyIndex: number | null;
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
 }) {
-  const qualityOnInspect = isSelected && ["sun", "earth", "moon", "jupiter", "saturn"].includes(def.id);
+  const qualityOnInspect =
+    !visualTest &&
+    isSelected &&
+    ["sun", "earth", "moon", "jupiter", "saturn"].includes(def.id);
   const preferQuality = qualityOnInspect || (highQualityRendering && isSelected && def.variant === "planet");
   const tieredManifest = useMemo(() => tieredTextureManifestEntryForBodyId(def.id), [def.id]);
   const resolvedManifest = useMemo(
@@ -388,7 +410,15 @@ function BodyShell({
         />
       ) : null}
       <group ref={visualRef} frustumCulled={false}>
-        {def.showRings ? <SaturnRings radiusScene={def.radiusScene} litOpacity={closeupProfile.ringLitOpacity} darkOpacity={closeupProfile.ringDarkOpacity} /> : null}
+        {def.showRings ? (
+          <SaturnRings
+            radiusScene={def.radiusScene}
+            bodyIndex={bodyIndex}
+            physicsRef={physicsRef}
+            litOpacity={closeupProfile.ringLitOpacity}
+            darkOpacity={closeupProfile.ringDarkOpacity}
+          />
+        ) : null}
         <CelestialBody
           variant="planet"
           bodyId={def.id}
@@ -456,6 +486,7 @@ export default function SolarSystemBodies({
   earthMoonView,
   viewSettings,
   simDaysRef,
+  visualTest = false,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
@@ -465,6 +496,7 @@ export default function SolarSystemBodies({
   earthMoonView: boolean;
   viewSettings: SimulationViewSettings;
   simDaysRef: MutableRefObject<number>;
+  visualTest?: boolean;
 }) {
   // Pre-allocate refs array — one entry per body, persists across renders
   const refsArray = useRef<BodyRefs[]>(
@@ -528,6 +560,7 @@ export default function SolarSystemBodies({
           showRelativisticOptics={viewSettings.showRelativisticOptics}
           renderBudget={viewSettings.renderBudget}
           highQualityRendering={viewSettings.highQualityRendering}
+          visualTest={visualTest}
           globalSelectedBodyIndex={selectedBodyIndex}
           physicsRef={physicsRef}
         />

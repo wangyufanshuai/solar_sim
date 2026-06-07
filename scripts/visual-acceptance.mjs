@@ -2,9 +2,25 @@ import { existsSync, mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { spawn } from "node:child_process";
+import { createServer } from "node:net";
 
-const targetUrl = process.argv[2] ?? process.env.SOLAR_VISUAL_URL ?? "http://127.0.0.1:3002/";
-const cdpPort = Number(process.env.SOLAR_VISUAL_CDP_PORT ?? (9900 + Math.floor(Math.random() * 300)));
+const baseTargetUrl = process.argv[2] ?? process.env.SOLAR_VISUAL_URL ?? "http://127.0.0.1:3002/";
+let targetUrl = process.env.SOLAR_VISUAL_TEST === "1"
+  ? `${baseTargetUrl}${baseTargetUrl.includes("?") ? "&" : "?"}visualTest=1`
+  : baseTargetUrl;
+async function findFreePort() {
+  return new Promise((resolve, reject) => {
+    const server = createServer();
+    server.unref();
+    server.once("error", reject);
+    server.listen(0, "127.0.0.1", () => {
+      const address = server.address();
+      const freePort = typeof address === "object" && address ? address.port : 0;
+      server.close((error) => error ? reject(error) : resolve(freePort));
+    });
+  });
+}
+const cdpPort = Number(process.env.SOLAR_VISUAL_CDP_PORT ?? await findFreePort());
 const outDir = resolve(process.env.SOLAR_VISUAL_OUT_DIR ?? ".visual-runs/latest");
 const chromeCandidates = [
   process.env.CHROME_PATH,
@@ -116,11 +132,18 @@ async function runtime(cdp, expression) {
 
 async function startDevServerIfNeeded() {
   try {
-    await waitForHttp(targetUrl, "Existing dev server", 1200);
+    await waitForHttp(targetUrl, "Existing dev server", 5000);
     return null;
   } catch {}
+  const devPort = await findFreePort();
+  const target = new URL(targetUrl);
+  target.hostname = "127.0.0.1";
+  target.port = String(devPort);
+  targetUrl = target.toString();
   const command = process.platform === "win32" ? process.env.ComSpec ?? "cmd.exe" : "npm";
-  const args = process.platform === "win32" ? ["/d", "/s", "/c", "npm run dev:3002"] : ["run", "dev:3002"];
+  const args = process.platform === "win32"
+    ? ["/d", "/s", "/c", `npx next dev -H 127.0.0.1 -p ${devPort}`]
+    : ["exec", "next", "dev", "-H", "127.0.0.1", "-p", String(devPort)];
   const proc = spawn(command, args, {
     cwd: process.cwd(),
     stdio: ["ignore", "pipe", "pipe"],
@@ -219,10 +242,14 @@ async function runScenarioAction(cdp, scenario) {
       await sleep(2200);
     }
     if (scenarioArg.action === "focus") {
+      await waitFor(
+        () => performance.getEntriesByName("solar:preview-planets-ready", "mark").length > 0,
+        45000,
+      );
       window.dispatchEvent(new CustomEvent("solar-sim-camera-focus-body", {
         detail: { bodyIndex: scenarioArg.bodyIndex, mode: "inspect" },
       }));
-      await sleep(2200);
+      await sleep(3800);
     }
 
     const text = document.body.textContent ?? "";
@@ -256,8 +283,8 @@ function checkScenario(scenario, state, screenshotBytes) {
   }
   if (scenario.expect.includes("missionAudit")) {
     if (!/Mission Engineering Audit/i.test(state.text)) failures.push("mission panel missing");
-    if (!/JPL Horizons table interpolation|Ephemeris audit|Solver provenance/i.test(state.text)) {
-      failures.push("JPL audit provenance missing");
+    if (!/SPICE table|JPL Horizons table interpolation|Ephemeris audit|Solver provenance/i.test(state.text)) {
+      failures.push("ephemeris audit provenance missing");
     }
     if (state.exportButtons < 2) failures.push("mission report export buttons missing");
   }
@@ -313,6 +340,19 @@ async function main() {
     const cdp = await createCdp(page.webSocketDebuggerUrl);
     await cdp.send("Runtime.enable");
     await cdp.send("Page.enable");
+    if (process.env.SOLAR_VISUAL_TEST === "1") {
+      await cdp.send("Page.addScriptToEvaluateOnNewDocument", {
+        source: `
+          (() => {
+            let seed = 0x5eed1234;
+            Math.random = () => {
+              seed = (1664525 * seed + 1013904223) >>> 0;
+              return seed / 4294967296;
+            };
+          })();
+        `,
+      });
+    }
     await cdp.send("Page.bringToFront");
     await cdp.send("Emulation.setFocusEmulationEnabled", { enabled: true });
 
