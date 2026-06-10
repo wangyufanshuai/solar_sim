@@ -158,6 +158,26 @@ npm run test:spice-python # compares committed SPICE table samples against Spice
 
 Do not commit `.cache/spice`, raw NAIF kernels, `.env.local`, dynamic visual runs, or real API keys.
 
+## Workbench And Showcase Boundary
+
+This version positions Solar Sim as a preliminary aerospace engineering workbench plus a high-end WebGL showcase.
+
+- Mission Workbench supports Project / Scenario / Run / Report flow with local JSON import/export, CSV leg summaries, OEM-like trajectory tables, Markdown/JSON reports, and an engineering audit matrix.
+- Reports preserve solver provenance, SPICE checksum status, ephemeris audit, Cowell/covariance results, constraint margins, rejected candidates, and low-thrust availability.
+- Low-thrust seed records remain audit-only. They are not ranked as feasible unless an offline Hermite-Simpson solve is explicitly marked `status: "converged"` and passes residual gates.
+- Showcase Tour and Spacecraft Gallery v2 are presentation features. They do not enter the N-body integrator and do not change mission dynamics.
+- The current visual target is strong browser showcase quality. It is not an offline film renderer with path-traced volumetrics, production compositing, or physically complete spacecraft materials.
+
+Local regression gates:
+
+```bash
+npm run visual:acceptance
+npm run visual:regression
+npm run visual:tour
+npm run perf:profile:assert
+npm run audit:mission-project
+```
+
 ## Production Deployment
 
 Recommended ECS sizing:

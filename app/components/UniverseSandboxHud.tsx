@@ -21,6 +21,7 @@ import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 import SpacecraftGalleryPanel from "./SpacecraftGalleryPanel";
 import {
   CINEMATIC_CAMERA_PRESETS,
+  dispatchCinematicCameraTour,
   dispatchCinematicCameraPreset,
 } from "../lib/cinematicCamera";
 
@@ -434,7 +435,17 @@ export default function UniverseSandboxHud({
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">TOOLS</div>
                 <div className="mb-3">
-                  <div className="mb-1.5 text-[9px] tracking-[0.18em] text-white/36">CINEMATIC PRESETS</div>
+                  <div className="mb-1.5 flex items-center justify-between gap-2">
+                    <div className="text-[9px] tracking-[0.18em] text-white/36">CINEMATIC PRESETS</div>
+                    <button
+                      type="button"
+                      data-solar-action="cinematic-tour"
+                      onClick={dispatchCinematicCameraTour}
+                      className="rounded-md border border-cyan-200/14 bg-cyan-200/[0.04] px-2 py-1 text-[9px] uppercase tracking-[0.12em] text-cyan-100/68"
+                    >
+                      Tour
+                    </button>
+                  </div>
                   <div className="grid grid-cols-2 gap-1.5">
                     {CINEMATIC_CAMERA_PRESETS.map((preset) => (
                       <button

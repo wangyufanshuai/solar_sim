@@ -33,6 +33,7 @@ const chromeCandidates = [
 const scenarios = [
   { id: "balanced-wide", viewport: { width: 1280, height: 900 }, action: "balanced", expect: ["canvas"] },
   { id: "showcase-deep-sky", viewport: { width: 1280, height: 900 }, action: "showcase", expect: ["canvas", "showcase"] },
+  { id: "showcase-tour", viewport: { width: 1280, height: 900 }, action: "tour", expect: ["canvas", "tour"] },
   { id: "mission-audit", viewport: { width: 1280, height: 900 }, action: "mission", expect: ["canvas", "missionAudit"] },
   { id: "spacecraft-gallery", viewport: { width: 1280, height: 900 }, action: "gallery", expect: ["canvas", "gallery"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
@@ -218,6 +219,15 @@ async function runScenarioAction(cdp, scenario) {
     };
 
     await waitFor(() => document.querySelector("canvas"));
+    if (scenarioArg.action === "balanced") {
+      await waitFor(
+        () => performance.getEntriesByType("mark").some((entry) =>
+          entry.name === "solar:preview-sky-ready" || entry.name === "solar:sky-ready"
+        ),
+        45000,
+      );
+      await sleep(900);
+    }
     if (scenarioArg.action === "showcase") {
       press('[data-solar-section="view"]');
       await sleep(350);
@@ -229,8 +239,14 @@ async function runScenarioAction(cdp, scenario) {
       await sleep(400);
       press('[data-solar-action="mission-optimize"]');
       await sleep(3600);
-      pressText("audit");
+      pressText("report");
       await sleep(500);
+    }
+    if (scenarioArg.action === "tour") {
+      press('[data-solar-section="tools"]');
+      await sleep(350);
+      press('[data-solar-action="cinematic-tour"]');
+      await sleep(4200);
     }
     if (scenarioArg.action === "gallery") {
       press('[data-solar-section="tools"]');
@@ -258,6 +274,7 @@ async function runScenarioAction(cdp, scenario) {
       return { width: Math.round(rect.width), height: Math.round(rect.height), area: Math.round(rect.width * rect.height) };
     });
     const spacecraftButtons = document.querySelectorAll("[data-solar-spacecraft]").length;
+    const galleryV2 = Boolean(document.querySelector('[data-solar-gallery="v2"]'));
     const exportButtons = document.querySelectorAll("[data-solar-action*='export']").length;
     const hasFrameworkOverlay = /Unhandled Runtime Error|Build Error|Next\\.js|Hydration failed/i.test(text);
     return {
@@ -265,6 +282,7 @@ async function runScenarioAction(cdp, scenario) {
       canvases,
       spacecraftButtons,
       exportButtons,
+      galleryV2,
       hasFrameworkOverlay,
       url: location.href,
       title: document.title,
@@ -282,7 +300,7 @@ function checkScenario(scenario, state, screenshotBytes) {
     failures.push("showcase UI text missing");
   }
   if (scenario.expect.includes("missionAudit")) {
-    if (!/Mission Engineering Audit/i.test(state.text)) failures.push("mission panel missing");
+    if (!/Mission Engineering (Audit|Workbench)/i.test(state.text)) failures.push("mission panel missing");
     if (!/SPICE table|JPL Horizons table interpolation|Ephemeris audit|Solver provenance/i.test(state.text)) {
       failures.push("ephemeris audit provenance missing");
     }
@@ -290,7 +308,11 @@ function checkScenario(scenario, state, screenshotBytes) {
   }
   if (scenario.expect.includes("gallery")) {
     if (!/SPACECRAFT GALLERY/i.test(state.text)) failures.push("spacecraft gallery missing");
+    if (!state.galleryV2) failures.push("spacecraft gallery v2 marker missing");
     if (state.spacecraftButtons < 8) failures.push(`expected at least 8 spacecraft buttons, saw ${state.spacecraftButtons}`);
+  }
+  if (scenario.expect.includes("tour")) {
+    if (!/CINEMATIC PRESETS|SPACECRAFT GALLERY|HDR stage v2/i.test(state.text)) failures.push("showcase tour controls missing");
   }
   return failures;
 }

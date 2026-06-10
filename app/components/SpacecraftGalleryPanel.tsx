@@ -2,15 +2,17 @@
 
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { LoaderCircle } from "lucide-react";
-import { Suspense, useEffect, useMemo, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { SPACECRAFT_GALLERY_LIGHTING_PROFILE } from "../lib/closeupRenderProfile";
 import { markRenderAssetStage } from "../lib/renderAssetQueue";
 import type { ResourcePackManifest, SpacecraftResourcePackItem } from "../lib/resourcePackTypes";
 
 type LoadedModelProps = {
   item: SpacecraftResourcePackItem;
   onReady?: () => void;
+  onError?: (message: string) => void;
 };
 
 const modelCache = new Map<string, THREE.Object3D>();
@@ -25,8 +27,8 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   object.traverse((node) => {
     const mesh = node as THREE.Mesh;
     if (!mesh.isMesh) return;
-      mesh.castShadow = true;
-      mesh.receiveShadow = true;
+    mesh.castShadow = true;
+    mesh.receiveShadow = true;
     const material = mesh.material;
     const mats = Array.isArray(material) ? material : [material];
     for (const mat of mats) {
@@ -38,7 +40,7 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   });
 }
 
-function GalleryModel({ item, onReady }: LoadedModelProps) {
+function GalleryModel({ item, onReady, onError }: LoadedModelProps) {
   const groupRef = useRef<THREE.Group>(null);
   const [scene, setScene] = useState<THREE.Object3D | null>(() => modelCache.get(item.localPath)?.clone(true) ?? null);
 
@@ -64,18 +66,21 @@ function GalleryModel({ item, onReady }: LoadedModelProps) {
         onReady?.();
       },
       undefined,
-      () => {
-        if (!cancelled) setScene(null);
+      (error) => {
+        if (!cancelled) {
+          setScene(null);
+          onError?.(error instanceof Error ? error.message : "model load failed");
+        }
       },
     );
     return () => {
       cancelled = true;
     };
-  }, [item, onReady]);
+  }, [item, onReady, onError]);
 
   useFrame((_, delta) => {
     if (!groupRef.current) return;
-    groupRef.current.rotation.y += delta * 0.28;
+    groupRef.current.rotation.y += delta * SPACECRAFT_GALLERY_LIGHTING_PROFILE.turntableSpeed;
   });
 
   if (!scene) return null;
@@ -96,7 +101,7 @@ function GalleryCameraRig() {
   return null;
 }
 
-function GalleryStage({ item, onReady }: LoadedModelProps) {
+function GalleryStage({ item, onReady, onError }: LoadedModelProps) {
   return (
     <Canvas
       dpr={[1, 1.25]}
@@ -105,20 +110,25 @@ function GalleryStage({ item, onReady }: LoadedModelProps) {
       shadows
     >
       <GalleryCameraRig />
-      <ambientLight intensity={0.38} />
-      <directionalLight position={[3.2, 3.4, 4.2]} intensity={2.65} castShadow shadow-mapSize={[512, 512]} />
-      <directionalLight position={[-2.2, 0.6, -2.6]} intensity={0.85} color="#9fc4ff" />
-      <pointLight position={[0, 1.4, -2.8]} intensity={0.7} color="#ffffff" />
+      <ambientLight intensity={0.18} />
+      <hemisphereLight args={["#dce8ff", "#10131c", 0.42]} />
+      <spotLight position={[2.6, 3.2, 3.4]} angle={0.46} penumbra={0.72} intensity={SPACECRAFT_GALLERY_LIGHTING_PROFILE.keyIntensity} castShadow shadow-mapSize={[1024, 1024]} />
+      <directionalLight position={[-2.5, 0.75, -2.6]} intensity={SPACECRAFT_GALLERY_LIGHTING_PROFILE.rimIntensity} color="#a8c9ff" />
+      <pointLight position={[0, 1.2, 2.2]} intensity={SPACECRAFT_GALLERY_LIGHTING_PROFILE.fillIntensity} color="#ffffff" />
       <Suspense fallback={null}>
-        <GalleryModel item={item} onReady={onReady} />
+        <GalleryModel item={item} onReady={onReady} onError={onError} />
       </Suspense>
       <mesh position={[0, -0.94, 0]} rotation={[-Math.PI / 2, 0, 0]} receiveShadow>
         <circleGeometry args={[1.35, 96]} />
-        <shadowMaterial transparent opacity={0.32} />
+        <shadowMaterial transparent opacity={SPACECRAFT_GALLERY_LIGHTING_PROFILE.contactShadowOpacity} />
       </mesh>
       <mesh position={[0, -0.91, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <ringGeometry args={[0.72, 0.78, 96]} />
-        <meshBasicMaterial color="#7aa7ff" transparent opacity={0.34} depthWrite={false} />
+        <meshBasicMaterial color="#7aa7ff" transparent opacity={SPACECRAFT_GALLERY_LIGHTING_PROFILE.scaleReferenceOpacity} depthWrite={false} />
+      </mesh>
+      <mesh position={[0, -0.905, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+        <ringGeometry args={[1.08, 1.09, 128]} />
+        <meshBasicMaterial color="#ffffff" transparent opacity={0.18} depthWrite={false} />
       </mesh>
     </Canvas>
   );
@@ -134,6 +144,7 @@ export default function SpacecraftGalleryPanel() {
   const [items, setItems] = useState<SpacecraftResourcePackItem[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [loadingModelId, setLoadingModelId] = useState<string | null>(null);
+  const [modelError, setModelError] = useState<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
@@ -154,9 +165,20 @@ export default function SpacecraftGalleryPanel() {
     () => items.find((item) => item.id === selectedId) ?? items[0],
     [items, selectedId],
   );
+  const selectedModelId = selected?.id ?? null;
+  const handleModelReady = useCallback(() => {
+    setLoadingModelId((current) => current === selectedModelId ? null : current);
+  }, [selectedModelId]);
+  const handleModelError = useCallback((message: string) => {
+    setLoadingModelId(null);
+    setModelError(message);
+  }, []);
 
   useEffect(() => {
-    if (selected) setLoadingModelId(selected.id);
+    if (selected) {
+      setLoadingModelId(selected.id);
+      setModelError(null);
+    }
   }, [selected]);
 
   if (items.length === 0) {
@@ -169,17 +191,29 @@ export default function SpacecraftGalleryPanel() {
   }
 
   return (
-    <div className="mt-3 border-t border-white/5 pt-3">
+    <div className="mt-3 border-t border-white/5 pt-3" data-solar-gallery="v2">
       <div className="mb-2 flex items-center justify-between gap-3">
         <div className="text-[11px] tracking-[0.2em] text-slate-400">SPACECRAFT GALLERY</div>
         <div className="text-[10px] text-white/28">{items.length} NASA GLB</div>
       </div>
       {selected ? (
-        <div className="relative mb-2 h-40 overflow-hidden rounded-xl border border-white/8 bg-[radial-gradient(circle_at_50%_18%,rgba(78,116,180,0.22),rgba(0,0,0,0.26)_52%,rgba(0,0,0,0.52))]">
-          <GalleryStage item={selected} onReady={() => setLoadingModelId((current) => current === selected.id ? null : current)} />
+        <div className="relative mb-2 h-40 overflow-hidden rounded-xl border border-white/8 bg-[radial-gradient(circle_at_50%_18%,rgba(98,128,188,0.26),rgba(5,8,14,0.28)_52%,rgba(0,0,0,0.58))]">
+          <GalleryStage
+            item={selected}
+            onReady={handleModelReady}
+            onError={handleModelError}
+          />
           {loadingModelId === selected.id ? (
             <div className="absolute inset-0 grid place-items-center bg-black/18 text-[10px] uppercase tracking-[0.18em] text-white/46">
               <span><LoaderCircle className="mr-2 inline h-3.5 w-3.5 animate-spin" />Loading model</span>
+              <div className="absolute bottom-4 left-4 right-4 h-2 overflow-hidden rounded-full bg-white/[0.06]">
+                <div className="h-full w-1/2 animate-pulse rounded-full bg-cyan-200/24" />
+              </div>
+            </div>
+          ) : null}
+          {modelError ? (
+            <div className="absolute inset-0 grid place-items-center bg-black/45 px-5 text-center font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-rose-100/72">
+              Model preview unavailable<br />{modelError.slice(0, 80)}
             </div>
           ) : null}
           <div className="pointer-events-none absolute left-2 top-2 rounded bg-black/42 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-white/58">
@@ -194,6 +228,11 @@ export default function SpacecraftGalleryPanel() {
             <span className="shrink-0 font-mono text-[9px] text-white/34">{selected.missionYear ?? "--"}</span>
           </div>
           <p className="mt-1 max-h-8 overflow-hidden text-[10px] leading-3 text-white/42">{selected.description}</p>
+          <div className="mt-1 grid grid-cols-3 gap-1 font-mono text-[8px] uppercase text-white/32">
+            <span>{selected.category}</span>
+            <span>{selected.scaleLabel ?? "scale n/a"}</span>
+            <span>{(selected.bytes / 1024 / 1024).toFixed(1)} MB</span>
+          </div>
         </div>
       ) : null}
       <div className="grid max-h-44 grid-cols-2 gap-1 overflow-y-auto pr-1">

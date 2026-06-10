@@ -1,0 +1,53 @@
+name: Solar Sim CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install
+        run: npm ci
+
+      - name: Typecheck
+        run: npx tsc --noEmit
+
+      - name: Mission tests
+        run: npm run test:mission
+
+      - name: Resource audits
+        run: |
+          npm run audit:resources
+          npm run audit:jpl-ephemeris
+          npm run audit:spice
+          npm run audit:mission-project
+
+      - name: Build
+        run: npm run build
+
+      - name: Secret scan
+        shell: pwsh
+        run: |
+          $matches = Get-ChildItem -Recurse -File |
+            Where-Object {
+              $_.FullName -notmatch '\\node_modules\\|\\.next\\|\\.git\\|\\.cache\\|\\.visual-runs\\' -and
+              $_.Name -notin @('.env.local', 'NEXT_SESSION_SUMMARY.md')
+            } |
+            Select-String -Pattern 'sk-[A-Za-z0-9_-]{20,}|deepseek-[A-Za-z0-9_-]{20,}' -List
+          if ($matches) {
+            $matches | ForEach-Object { Write-Error "$($_.Path):$($_.LineNumber) potential secret pattern" }
+            exit 1
+          }

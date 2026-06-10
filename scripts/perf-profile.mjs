@@ -219,6 +219,25 @@ async (scenario) => {
     press('[data-solar-action="budget-quality"]');
     await sleep(1200);
   }
+  if (scenario === "showcase-tour") {
+    press('[data-solar-section="view"]');
+    await sleep(200);
+    press('[data-solar-action="budget-quality"]');
+    await sleep(700);
+    press('[data-solar-section="tools"]');
+    await sleep(250);
+    press('[data-solar-action="cinematic-tour"]');
+    await sleep(300);
+  }
+  if (scenario === "gallery-open") {
+    press('[data-solar-section="tools"]');
+    const deadline = performance.now() + 45000;
+    while (document.querySelectorAll("[data-solar-spacecraft]").length < 8 && performance.now() < deadline) {
+      await sleep(250);
+    }
+    document.querySelector("[data-solar-spacecraft]")?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    await sleep(1200);
+  }
   if (scenario === "safe") {
     press('[data-solar-section="view"]');
     await sleep(200);
@@ -228,6 +247,8 @@ async (scenario) => {
   const durationMs =
     scenario === "zoom" ? 4500 :
     scenario === "mission-run-worker" ? 1800 :
+    scenario === "gallery-open" ? 3500 :
+    scenario === "showcase-tour" ? 5000 :
     6000;
   const result = await sample(durationMs, (frame) => {
     if (scenario === "zoom") {
@@ -248,6 +269,7 @@ async (scenario) => {
       ms: Number(entry.startTime.toFixed(1)),
     }));
   const missionStatus = document.querySelector('[data-solar-panel="mission"]')?.textContent ?? "";
+  const galleryStatus = document.querySelector('[data-solar-gallery="v2"]')?.textContent ?? "";
   longTaskObserver?.disconnect();
   const observedLongTaskMaxMs = observedLongTasks.reduce((max, item) => Math.max(max, item.ms), 0);
   return {
@@ -256,6 +278,7 @@ async (scenario) => {
     ...result,
     assetMarks,
     missionStatus: missionStatus.slice(0, 240),
+    galleryStatus: galleryStatus.slice(0, 180),
     observedLongTaskMaxMs,
     observedLongTasks: observedLongTasks.slice(-12),
   };
@@ -370,7 +393,7 @@ async function main() {
     await sleep(1500);
     await cdp.send("Page.bringToFront");
     const scenarios = [];
-    for (const scenario of ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality"]) {
+    for (const scenario of ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open"]) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }
     console.log(JSON.stringify({ url: targetUrl, scenarios }, null, 2));

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState, useTransition, type MutableRefObject } from "react";
+import { useEffect, useMemo, useRef, useState, useTransition, type MutableRefObject } from "react";
 import {
   BrainCircuit,
   ChevronDown,
@@ -19,22 +19,33 @@ import {
   MISSION_CONSTRAINT_PRESETS,
 } from "../lib/missionOptimizer";
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
-import { downloadMissionReport } from "../lib/missionReport";
+import { downloadMissionReport, missionPlanToMarkdown, missionPlanToReportJson } from "../lib/missionReport";
+import {
+  createMissionProject,
+  createMissionScenario,
+  downloadMissionWorkbenchArtifact,
+  loadMissionProjectLocal,
+  missionEngineeringMatrix,
+  parseMissionProjectJson,
+  saveMissionProjectLocal,
+} from "../lib/missionProject";
 import { runMissionOptimizationWorker } from "../lib/missionHighFidelityClient";
 import type {
   MissionAdvisorReport,
   MissionBodyId,
   MissionConstraintPreset,
   MissionEngineeringConstraints,
+  MissionExportFormat,
   MissionOptimizationResult,
   MissionPhysicsSnapshot,
   MissionPlan,
+  MissionProject,
 } from "../lib/missionDesignerTypes";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 const BODY_IDS: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
-const TABS = ["summary", "legs", "audit"] as const;
+const TABS = ["project", "scenario", "run", "report"] as const;
 const IS = 1.05;
 type MissionTab = (typeof TABS)[number];
 type DeepSeekStatus = "idle" | "thinking" | "deepseek" | "fallback" | "error";
@@ -142,7 +153,7 @@ export default function MissionDesignerPanel({
   onResult,
   onSelectPlan,
 }: Props) {
-  const [activeTab, setActiveTab] = useState<MissionTab>("summary");
+  const [activeTab, setActiveTab] = useState<MissionTab>("run");
   const [departureWindowDays, setDepartureWindowDays] = useState(DEFAULT_MISSION_OPTIONS.departureWindowDays);
   const [departureStepDays, setDepartureStepDays] = useState(DEFAULT_MISSION_OPTIONS.departureStepDays);
   const [preset, setPreset] = useState<MissionConstraintPreset>("aggressive");
@@ -152,6 +163,8 @@ export default function MissionDesignerPanel({
   const [isOptimizing, setIsOptimizing] = useState(false);
   const [, startResultTransition] = useTransition();
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
+  const [project, setProject] = useState<MissionProject | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const selectedPlan = useMemo(
     () =>
       result?.plans.find((plan) => plan.id === selectedPlanId) ??
@@ -163,11 +176,16 @@ export default function MissionDesignerPanel({
   );
   const localAdvisor = useMemo(() => explainMissionPlan(selectedPlan), [selectedPlan]);
   const [advisor, setAdvisor] = useState<MissionAdvisorReport>(localAdvisor);
+  const matrixRows = useMemo(() => missionEngineeringMatrix(result), [result]);
 
   useEffect(() => {
     setAdvisor(localAdvisor);
     setDeepSeekStatus("idle");
   }, [localAdvisor]);
+
+  useEffect(() => {
+    setProject(loadMissionProjectLocal());
+  }, []);
 
   const choosePreset = (next: MissionConstraintPreset) => {
     setPreset(next);
@@ -225,6 +243,20 @@ export default function MissionDesignerPanel({
           ? `${next.plans.length} feasible / Cowell audited`
           : `0 feasible / ${next.rejectedPlans.length} rejected`,
       );
+      const scenario = createMissionScenario({
+        name: "Earth-Venus-Jupiter-Saturn Scenario",
+        epochSimDays: snapshot.simDays,
+        options,
+        constraints,
+        selectedPlanId: next.bestPlan?.id ?? next.rejectedPlans[0]?.id ?? null,
+      });
+      const nextProject = createMissionProject({
+        name: "Solar Sim Preliminary Mission Workbench",
+        scenario,
+        result: next,
+      });
+      setProject(nextProject);
+      saveMissionProjectLocal(nextProject);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Mission worker unavailable");
     } finally {
@@ -256,6 +288,75 @@ export default function MissionDesignerPanel({
     downloadMissionReport(selectedPlan, format, advisor, result);
   };
 
+  const exportWorkbench = (format: MissionExportFormat | "project-json") => {
+    if (!selectedPlan) return;
+    downloadMissionWorkbenchArtifact({
+      plan: selectedPlan,
+      project,
+      format,
+      reportJson: JSON.stringify(missionPlanToReportJson(selectedPlan, advisor, result), null, 2),
+      reportMarkdown: missionPlanToMarkdown(selectedPlan, advisor, result),
+    });
+  };
+
+  const saveProject = () => {
+    const scenario = createMissionScenario({
+      name: "Earth-Venus-Jupiter-Saturn Scenario",
+      epochSimDays: simDaysRef.current,
+      options: {
+        ...DEFAULT_MISSION_OPTIONS,
+        departureStartDay: simDaysRef.current + 35,
+        departureWindowDays,
+        departureStepDays,
+        includeRelativity: relativityEnabled,
+        ephemerisMode: "spice-table",
+        constraintPreset: preset,
+        constraints,
+      },
+      constraints,
+      selectedPlanId: selectedPlan?.id ?? null,
+    });
+    const next = createMissionProject({
+      name: "Solar Sim Preliminary Mission Workbench",
+      scenario,
+      result,
+    });
+    setProject(next);
+    saveMissionProjectLocal(next);
+    setStatus("Project saved locally");
+  };
+
+  const importProject = async (file: File | null) => {
+    if (!file) return;
+    try {
+      const imported = parseMissionProjectJson(await file.text());
+      const scenario = imported.scenarios.find((item) => item.id === imported.activeScenarioId) ?? imported.scenarios[0];
+      if (scenario) {
+        setDepartureWindowDays(scenario.options.departureWindowDays);
+        setDepartureStepDays(scenario.options.departureStepDays);
+        setPreset(scenario.constraints.preset);
+        setConstraints(scenario.constraints);
+      }
+      const latestRun = [...imported.runs].reverse().find((run) => run.scenarioId === imported.activeScenarioId) ?? imported.runs.at(-1);
+      if (latestRun) {
+        onResult(latestRun.result);
+        const restoredPlan =
+          latestRun.result.plans.find((plan) => plan.id === latestRun.selectedPlanId) ??
+          latestRun.result.bestPlan ??
+          latestRun.result.rejectedPlans[0] ??
+          null;
+        onSelectPlan(restoredPlan);
+      }
+      setProject(imported);
+      saveMissionProjectLocal(imported);
+      setStatus("Project imported");
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Project import failed");
+    } finally {
+      if (fileInputRef.current) fileInputRef.current.value = "";
+    }
+  };
+
   return (
     <section
       data-solar-panel="mission"
@@ -269,10 +370,10 @@ export default function MissionDesignerPanel({
             </div>
             <div className="min-w-0">
               <h2 className="truncate font-mono text-[10px] font-semibold uppercase tracking-[0.12em] text-[var(--ui-text-primary)]">
-                Mission Engineering Audit
+                Mission Engineering Workbench
               </h2>
               <p className="font-mono text-[7px] uppercase tracking-[0.14em] text-[var(--ui-text-dim)]">
-                Medium-fidelity preliminary design
+                Preliminary aerospace project workspace
               </p>
             </div>
           </div>
@@ -280,7 +381,7 @@ export default function MissionDesignerPanel({
             {status}
           </span>
         </div>
-        <div className="mt-2 grid grid-cols-3 gap-1 rounded-[4px] bg-black/25 p-0.5">
+        <div className="mt-2 grid grid-cols-4 gap-1 rounded-[4px] bg-black/25 p-0.5">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -297,7 +398,64 @@ export default function MissionDesignerPanel({
       </header>
 
       <div className="min-h-0 flex-1 overflow-y-auto p-3 pt-2">
-        {activeTab === "summary" ? (
+        <input
+          ref={fileInputRef}
+          type="file"
+          accept="application/json,.json"
+          className="hidden"
+          onChange={(event) => void importProject(event.target.files?.[0] ?? null)}
+        />
+        {activeTab === "project" ? (
+          <div className="grid gap-2">
+            <div className="rounded-[4px] border border-white/[0.07] bg-white/[0.03] p-2">
+              <div className="font-mono text-[8px] uppercase tracking-[0.12em] text-white/72">Project status</div>
+              <div className="mt-1 text-[10px] leading-4 text-white/55">
+                <p>{project?.name ?? "No local mission project saved"}</p>
+                <p>Scenarios {project?.scenarios.length ?? 0} / runs {project?.runs.length ?? 0}</p>
+                <p>Active {project?.activeScenarioId ?? "none"}</p>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-1">
+              <button
+                type="button"
+                onClick={saveProject}
+                data-solar-action="mission-project-save"
+                className="rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72"
+              >
+                Save Project
+              </button>
+              <button
+                type="button"
+                onClick={() => fileInputRef.current?.click()}
+                data-solar-action="mission-project-import"
+                className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62"
+              >
+                Import JSON
+              </button>
+              <button
+                type="button"
+                onClick={() => selectedPlan && project && exportWorkbench("project-json")}
+                data-solar-action="mission-project-export"
+                disabled={!selectedPlan || !project}
+                className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62 disabled:opacity-35"
+              >
+                Export Project
+              </button>
+              <button
+                type="button"
+                onClick={() => setActiveTab("run")}
+                className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62"
+              >
+                Open Run
+              </button>
+            </div>
+            <div className="rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase leading-3 text-amber-100/72">
+              Local JSON workspace only. Preliminary design data; not flight certification.
+            </div>
+          </div>
+        ) : null}
+
+        {activeTab === "run" ? (
           <div className="grid gap-2">
             <div className="grid grid-cols-3 gap-1">
               {(["conservative", "nominal", "aggressive"] as const).map((value) => (
@@ -441,8 +599,14 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "legs" ? (
+        {activeTab === "scenario" ? (
           <div className="grid gap-1.5">
+            <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+              <div className="font-mono text-[8px] uppercase text-white/72">Scenario definition</div>
+              <p>Sequence Earth - Venus - Jupiter - Saturn</p>
+              <p>Epoch T+{simDaysRef.current.toFixed(1)} d / SPICE table mode</p>
+              <p>Preset {preset} / window {departureWindowDays} d / step {departureStepDays} d</p>
+            </div>
             {selectedPlan?.segments.map((segment) => (
               <div key={segment.id} className="rounded-[4px] border border-white/[0.07] bg-white/[0.03] p-2">
                 <div className="flex justify-between font-mono text-[10px] text-white/82">
@@ -462,7 +626,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "audit" ? (
+        {activeTab === "report" ? (
           <div className="grid gap-2">
             {selectedPlan ? (
               <>
@@ -531,6 +695,31 @@ export default function MissionDesignerPanel({
                     <p>B-plane 3σ {selectedPlan.covarianceAudit.bPlaneThreeSigmaKm.toExponential(2)} km · PSD {selectedPlan.covarianceAudit.positiveSemidefinite ? "pass" : "fail"}</p>
                   </div>
                 ) : null}
+                {matrixRows.length ? (
+                  <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
+                    <div className="mb-1 font-mono text-[8px] uppercase text-white/72">Engineering audit matrix</div>
+                    <div className="grid gap-1">
+                      {matrixRows.slice(0, 6).map((row) => (
+                        <div
+                          key={row.planId}
+                          className={`grid grid-cols-[1fr_2.8rem_3.2rem_3.4rem] gap-1 rounded-[3px] border px-1.5 py-1 font-mono text-[7px] uppercase ${
+                            row.reportReady
+                              ? "border-emerald-300/12 bg-emerald-300/[0.035] text-emerald-100/70"
+                              : "border-rose-300/12 bg-rose-300/[0.035] text-rose-100/68"
+                          }`}
+                        >
+                          <span className="truncate">{row.planId}</span>
+                          <span>{row.verdict}</span>
+                          <span>{row.lambertConvergedLegs}/{row.lambertTotalLegs} L</span>
+                          <span>{row.lowThrustStatus}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <p className="mt-1 text-[8px] text-white/38">
+                      Failed, seed, and unavailable finite-thrust records remain excluded from feasible ranking.
+                    </p>
+                  </div>
+                ) : null}
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Assumptions</div>
                   {selectedPlan.assumptions.map((assumption) => <p key={assumption}>· {assumption}</p>)}
@@ -554,13 +743,31 @@ export default function MissionDesignerPanel({
                     <Download className="h-3 w-3" strokeWidth={IS} />
                     Export MD
                   </button>
+                  <button
+                    type="button"
+                    onClick={() => exportWorkbench("csv")}
+                    data-solar-action="mission-export-csv"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export CSV
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => exportWorkbench("ccsds-oem-like")}
+                    data-solar-action="mission-export-oem"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export OEM
+                  </button>
                 </div>
               </>
             ) : <div className="text-[10px] text-white/42">No audit is available until a feasible candidate is selected.</div>}
           </div>
         ) : null}
 
-        {selectedPlan && activeTab === "summary" ? (
+        {selectedPlan && activeTab === "run" ? (
           <div className="mt-2 rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] p-2">
             <div className="mb-1 flex items-center justify-between">
               <span className="flex items-center gap-1.5 font-mono text-[8px] uppercase text-cyan-100">

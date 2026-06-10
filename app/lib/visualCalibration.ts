@@ -35,6 +35,10 @@ export const VISUAL_CALIBRATION = {
     sun: {
       exposure: 0.88,
       haloScale: 0.94,
+      coronaLayerAlpha: 0.18,
+      flareOpacity: 0.12,
+      limbDarkening: 0.22,
+      shadowSoftness: 0.72,
     },
     earth: {
       roughness: 0.72,
@@ -46,6 +50,10 @@ export const VISUAL_CALIBRATION = {
       atmosphereIntensity: 0.31,
       fillIntensity: 0.18,
       rimIntensity: 0.92,
+      terminatorFeather: 0.28,
+      cloudSilverLining: 0.08,
+      nightTerminatorCutoff: 0.1,
+      shadowSoftness: 0.62,
     },
     moon: {
       roughness: 0.96,
@@ -53,6 +61,8 @@ export const VISUAL_CALIBRATION = {
       envMapIntensity: 0.1,
       fillIntensity: 0.04,
       rimIntensity: 0.54,
+      microDetail: 0.22,
+      shadowSoftness: 0.68,
     },
     jupiter: {
       roughness: 0.66,
@@ -60,6 +70,9 @@ export const VISUAL_CALIBRATION = {
       envMapIntensity: 0.16,
       fillIntensity: 0.035,
       rimIntensity: 0.48,
+      bandContrast: 0.12,
+      stormContrast: 0.1,
+      shadowSoftness: 0.54,
     },
     saturn: {
       roughness: 0.7,
@@ -69,6 +82,8 @@ export const VISUAL_CALIBRATION = {
       rimIntensity: 0.45,
       ringLitOpacity: 0.62,
       ringDarkOpacity: 0.22,
+      ringPhaseContrast: 0.16,
+      shadowSoftness: 0.58,
     },
   },
   rings: {

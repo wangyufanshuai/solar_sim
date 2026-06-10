@@ -17,6 +17,7 @@ export type CinematicCameraPreset = {
 };
 
 export const CINEMATIC_CAMERA_EVENT = "solar-sim-cinematic-camera";
+export const CINEMATIC_TOUR_EVENT = "solar-sim-cinematic-tour";
 
 export const CINEMATIC_CAMERA_PRESETS: CinematicCameraPreset[] = [
   { id: "wide-milky-way", label: "Wide Milky Way", positionOffset: [-310, 108, 560], targetOffset: [0, 0, 0], fov: 39, durationMs: 1400 },
@@ -29,4 +30,22 @@ export const CINEMATIC_CAMERA_PRESETS: CinematicCameraPreset[] = [
 
 export function dispatchCinematicCameraPreset(id: CinematicCameraPresetId): void {
   window.dispatchEvent(new CustomEvent(CINEMATIC_CAMERA_EVENT, { detail: { id } }));
+}
+
+export const CINEMATIC_TOUR_SEQUENCE: Array<{ id: CinematicCameraPresetId; holdMs: number }> = [
+  { id: "wide-milky-way", holdMs: 12000 },
+  { id: "sun-corona", holdMs: 12000 },
+  { id: "earth-moon", holdMs: 15000 },
+  { id: "jupiter-storm", holdMs: 12000 },
+  { id: "saturn-rings", holdMs: 15000 },
+  { id: "mission-overview", holdMs: 14000 },
+];
+
+export function dispatchCinematicCameraTour(): void {
+  window.dispatchEvent(new CustomEvent(CINEMATIC_TOUR_EVENT, { detail: { sequence: CINEMATIC_TOUR_SEQUENCE } }));
+  let delay = 0;
+  for (const step of CINEMATIC_TOUR_SEQUENCE) {
+    window.setTimeout(() => dispatchCinematicCameraPreset(step.id), delay);
+    delay += step.holdMs;
+  }
 }

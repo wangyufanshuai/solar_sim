@@ -15,6 +15,7 @@
     "visual:acceptance": "node scripts/visual-acceptance.mjs",
     "visual:baseline:update": "node scripts/visual-baseline-update.mjs",
     "visual:regression": "node scripts/visual-regression.mjs",
+    "visual:tour": "node scripts/visual-tour.mjs",
     "test:mission": "vitest run app/lib/__tests__",
     "test:spice-python": "python scripts/test-spice-toolchain.py",
     "lint": "next lint",
@@ -32,7 +33,9 @@
     "fetch:jpl-ephemeris": "node scripts/fetch-jpl-ephemeris-table.mjs",
     "audit:jpl-ephemeris": "node scripts/audit-jpl-ephemeris.mjs",
     "fetch:spice": "python scripts/build-spice-ephemeris.py",
-    "audit:spice": "node scripts/audit-spice.mjs"
+    "audit:spice": "node scripts/audit-spice.mjs",
+    "audit:mission-project": "node scripts/audit-mission-project.mjs",
+    "export:demo-scenario": "node scripts/export-demo-scenario.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

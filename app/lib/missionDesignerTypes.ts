@@ -4,6 +4,7 @@ export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
 export type MissionEphemerisMode = "live-circular" | "jpl-table" | "spice-table";
 export type MissionPropagationMode = "lambert" | "cowell" | "low-thrust-collocation";
 export type LowThrustSolutionStatus = "converged" | "seed" | "failed" | "unavailable";
+export type MissionExportFormat = "report-json" | "report-md" | "csv" | "ccsds-oem-like";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -284,6 +285,52 @@ export type MissionOptimizationResult = {
   rejectedPlans: MissionPlan[];
   bestPlan: MissionPlan | null;
   generatedAt: number;
+};
+
+export type MissionScenario = {
+  schemaVersion: 1;
+  id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  epochSimDays: number;
+  options: MissionOptimizerOptions;
+  constraints: MissionEngineeringConstraints;
+  selectedPlanId: string | null;
+  notes: string[];
+};
+
+export type MissionRunRecord = {
+  id: string;
+  scenarioId: string;
+  createdAt: string;
+  result: MissionOptimizationResult;
+  selectedPlanId: string | null;
+};
+
+export type MissionProject = {
+  schemaVersion: 1;
+  id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  activeScenarioId: string;
+  scenarios: MissionScenario[];
+  runs: MissionRunRecord[];
+};
+
+export type MissionEngineeringMatrixRow = {
+  planId: string;
+  verdict: MissionValidationStatus;
+  score: number;
+  ephemerisSource: MissionSolverProvenance["ephemerisSource"];
+  lambertConvergedLegs: number;
+  lambertTotalLegs: number;
+  cowellResidualKm: number | null;
+  covarianceThreeSigmaKm: number | null;
+  lowThrustStatus: LowThrustSolutionStatus | "mixed" | "none";
+  minimumConstraintMargin: number;
+  reportReady: boolean;
 };
 
 export type MissionAdvisorReport = {

@@ -56,13 +56,16 @@ const nightLayerFragmentShader = `
   uniform sampler2D uMap;
   uniform vec3 uSunDirection;
   uniform float uIntensity;
+  uniform float uSolarVisibility;
+  uniform float uTerminatorFeather;
   varying vec2 vUvLayer;
   varying vec3 vNormalWorldLayer;
   #include <logdepthbuf_pars_fragment>
   void main() {
     vec3 texel = texture2D(uMap, vUvLayer).rgb;
     float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float night = 1.0 - smoothstep(-0.16, 0.12, sunDot);
+    float night = 1.0 - smoothstep(-0.16 - uTerminatorFeather, 0.12 + uTerminatorFeather, sunDot);
+    night *= 1.0 - uSolarVisibility * smoothstep(-0.03, 0.18, sunDot);
     float luminance = dot(texel, vec3(0.2126, 0.7152, 0.0722));
     gl_FragColor = vec4(texel * uIntensity * night, luminance * night);
     #include <logdepthbuf_fragment>
@@ -75,6 +78,8 @@ const cloudLayerFragmentShader = `
   uniform float uDayOpacity;
   uniform float uNightOpacity;
   uniform float uSolarVisibility;
+  uniform float uTerminatorFeather;
+  uniform float uSilverLining;
   varying vec2 vUvLayer;
   varying vec3 vNormalWorldLayer;
   #include <logdepthbuf_pars_fragment>
@@ -82,9 +87,11 @@ const cloudLayerFragmentShader = `
     vec4 texel = texture2D(uMap, vUvLayer);
     float density = max(texel.a, dot(texel.rgb, vec3(0.3333)));
     float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float day = smoothstep(-0.22, 0.48, sunDot) * uSolarVisibility;
+    float day = smoothstep(-0.22 - uTerminatorFeather, 0.48 + uTerminatorFeather, sunDot) * uSolarVisibility;
+    float edge = smoothstep(-0.12, 0.1, sunDot) * (1.0 - smoothstep(0.1, 0.42, sunDot));
     float opacity = mix(uNightOpacity, uDayOpacity, day) * density;
     vec3 color = mix(vec3(0.32, 0.38, 0.46), vec3(1.0, 0.98, 0.94), day);
+    color += vec3(0.18, 0.22, 0.28) * edge * uSilverLining * uSolarVisibility;
     gl_FragColor = vec4(color, opacity);
     #include <logdepthbuf_fragment>
   }
@@ -214,6 +221,8 @@ export default function Planet({
     uMap: { value: nightMap },
     uSunDirection: { value: sunDirectionWorld.current.clone() },
     uIntensity: { value: VISUAL_CALIBRATION.closeups.earth.nightIntensity },
+    uSolarVisibility: { value: 1 },
+    uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
   }), [nightMap]);
   const cloudUniforms = useMemo(() => ({
     uMap: { value: clouds },
@@ -221,6 +230,8 @@ export default function Planet({
     uDayOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudDayOpacity },
     uNightOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudNightOpacity },
     uSolarVisibility: { value: 1 },
+    uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
+    uSilverLining: { value: VISUAL_CALIBRATION.closeups.earth.cloudSilverLining },
   }), [clouds]);
 
   useLayoutEffect(() => {
@@ -284,6 +295,9 @@ export default function Planet({
       }
       if (cloudMaterialRef.current) {
         cloudMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
+      }
+      if (nightMaterialRef.current) {
+        nightMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
       }
       limbMaterial.uniforms.uOpacity.value =
         (showAtmosphere ? 0.32 : 0.13) *

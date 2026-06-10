@@ -9,6 +9,14 @@ import {
   optimizeMission,
   propellantEstimateKg,
 } from "../missionOptimizer";
+import {
+  createMissionProject,
+  createMissionScenario,
+  missionEngineeringMatrix,
+  missionLegsToCsv,
+  missionPlanToCcsdsOemLike,
+  parseMissionProjectJson,
+} from "../missionProject";
 import { MISSION_REPORT_CAVEAT, missionPlanToMarkdown, missionPlanToReportJson } from "../missionReport";
 import type {
   MissionPhysicsSnapshot,
@@ -250,5 +258,55 @@ describe("mission engineering calculations", () => {
     expect(markdown).toContain("## Constraint Checks");
     expect(markdown).toContain("## Rejected Candidates");
     expect(markdown).toContain("Local summary");
+  });
+
+  it("round-trips Mission Project data and exports leg CSV/OEM-like tables", () => {
+    const options = {
+      sequence: ["earth", "venus", "jupiter", "saturn"] as const,
+      departureStartDay: 35,
+      departureWindowDays: 90,
+      departureStepDays: 45,
+      maxCandidates: 4,
+      includeRelativity: false,
+      ephemerisMode: "jpl-table" as const,
+      constraintPreset: "aggressive" as const,
+    };
+    const result = optimizeMission({ ...options, sequence: [...options.sequence] }, snapshot);
+    const plan = result.bestPlan ?? result.rejectedPlans[0];
+    expect(plan).toBeTruthy();
+    if (!plan) return;
+
+    const scenario = createMissionScenario({
+      name: "EVJS demo",
+      epochSimDays: snapshot.simDays,
+      options: { ...options, sequence: [...options.sequence] },
+      constraints: MISSION_CONSTRAINT_PRESETS.aggressive,
+      selectedPlanId: plan.id,
+    });
+    const project = createMissionProject({ name: "Solar Sim demo project", scenario, result });
+    const restored = parseMissionProjectJson(JSON.stringify(project));
+    expect(restored.schemaVersion).toBe(1);
+    expect(restored.scenarios[0]?.selectedPlanId).toBe(plan.id);
+    expect(restored.runs[0]?.result.bestPlan?.id ?? restored.runs[0]?.result.rejectedPlans[0]?.id).toBeTruthy();
+
+    const matrix = missionEngineeringMatrix(result);
+    expect(matrix.length).toBe(result.plans.length + result.rejectedPlans.length);
+    expect(matrix.filter((row) => row.verdict !== "fail").every((row) => row.reportReady)).toBe(true);
+    expect(matrix.filter((row) => row.verdict === "fail").every((row) => !row.reportReady)).toBe(true);
+    expect(result.plans.every((candidate) => candidate.lowThrustSolutions.every((solution) => solution.status !== "seed"))).toBe(true);
+
+    const csv = missionLegsToCsv(plan);
+    expect(csv).toContain('"leg","departure_day","arrival_day"');
+    expect(csv).toContain('"earth-venus"');
+
+    const oem = missionPlanToCcsdsOemLike(plan);
+    expect(oem).toContain("CCSDS_OEM_VERS = 2.0");
+    expect(oem).toContain("CENTER_NAME = SUN");
+    const epochs = oem
+      .split("\n")
+      .filter((line) => line.startsWith("T+"))
+      .map((line) => Number(line.slice(2, line.indexOf("d"))));
+    expect(epochs.length).toBeGreaterThan(1);
+    expect(epochs.every((day, index) => index === 0 || day >= epochs[index - 1]!)).toBe(true);
   });
 });

@@ -1,4 +1,5 @@
 import { VISUAL_CALIBRATION } from "./visualCalibration";
+import { closeupRenderProfile, type CloseupRenderProfile } from "./closeupRenderProfile";
 
 export type BodyCloseupCalibration = {
   roughness: number;
@@ -18,6 +19,7 @@ export type CloseupLightingProfile = {
   rimIntensity: number;
   ringLitOpacity?: number;
   ringDarkOpacity?: number;
+  renderProfile: CloseupRenderProfile;
 };
 
 const DEFAULT_CALIBRATION: BodyCloseupCalibration = {
@@ -38,17 +40,19 @@ export function bodyCloseupCalibration(bodyId: string): BodyCloseupCalibration {
 }
 
 export function closeupLightingProfile(bodyId: string, active: boolean): CloseupLightingProfile {
-  const calibration = bodyCloseupCalibration(bodyId);
+  const renderProfile = closeupRenderProfile(bodyId);
+  const calibration = bodyId === "default" ? bodyCloseupCalibration(bodyId) : renderProfile;
   const activeScale = active ? 1 : 0.72;
   return {
     bodyId,
-    exposure: bodyId === "sun" ? VISUAL_CALIBRATION.closeups.sun.exposure : 1,
+    exposure: renderProfile.exposure,
     roughness: calibration.roughness,
     normalScale: calibration.normalScale,
-    envMapIntensity: calibration.envMapIntensity * activeScale,
+    envMapIntensity: ("envMapIntensity" in calibration ? calibration.envMapIntensity : DEFAULT_CALIBRATION.envMapIntensity) * activeScale,
     fillIntensity: calibration.fillIntensity * activeScale,
     rimIntensity: calibration.rimIntensity * activeScale,
-    ringLitOpacity: bodyId === "saturn" ? VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity : undefined,
-    ringDarkOpacity: bodyId === "saturn" ? VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity : undefined,
+    ringLitOpacity: renderProfile.ringLitOpacity,
+    ringDarkOpacity: renderProfile.ringDarkOpacity,
+    renderProfile,
   };
 }
