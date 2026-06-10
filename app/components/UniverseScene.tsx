@@ -19,6 +19,7 @@ import type { KerrBlackHoleUiState } from "./KerrBlackHolePanel";
 import type { LaunchConfig } from "../lib/launchTelemetryTypes";
 import type { LocalTelemetry } from "../lib/localLaunchPhysics";
 import type { MissionPlan } from "../lib/missionDesignerTypes";
+import type { CinematicPostProfileId } from "../lib/cinematicPostProfile";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import { cameraIntentReducer, type CameraIntentAction, type CameraIntentState } from "../lib/cameraIntentState";
 import { applyFloatingOffsetScene, updateFloatingOrigin } from "../lib/floatingOrigin";
@@ -485,7 +486,7 @@ function SelectionMetricsBridge({ selectedBodyIndex, physicsRef, floatingOriginR
 }
 
 export type UniverseCanvasSimulationProps = {
-  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; cameraIntentRef?: MutableRefObject<CameraIntentState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; visualTest?: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
+  simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; cameraIntentRef?: MutableRefObject<CameraIntentState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; cinematicPostProfile: CinematicPostProfileId; cinematicDofEnabled: boolean; visualTest?: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
 };
 
 function CloseupPresentationGate({
@@ -644,7 +645,11 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
             </LabelOcclusionProvider>
           </>
         )}
-        <PostProcessingGate visualEnhance={simulation.visualEnhance} />
+        <PostProcessingGate
+          visualEnhance={simulation.visualEnhance}
+          profileId={simulation.visualTest ? "balanced-fixed" : simulation.cinematicPostProfile}
+          dofEnabled={simulation.visualTest ? false : simulation.cinematicDofEnabled}
+        />
       </BloomSceneProvider>
     </RelativisticOpticsProvider>
   );

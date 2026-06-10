@@ -4,7 +4,16 @@ export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
 export type MissionEphemerisMode = "live-circular" | "jpl-table" | "spice-table";
 export type MissionPropagationMode = "lambert" | "cowell" | "low-thrust-collocation";
 export type LowThrustSolutionStatus = "converged" | "seed" | "failed" | "unavailable";
-export type MissionExportFormat = "report-json" | "report-md" | "csv" | "ccsds-oem" | "ccsds-opm";
+export type MissionExportFormat =
+  | "report-json"
+  | "report-md"
+  | "csv"
+  | "ccsds-oem"
+  | "ccsds-opm"
+  | "review-json"
+  | "review-md"
+  | "state-history-csv"
+  | "maneuver-events-csv";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -375,6 +384,111 @@ export type MissionRunRecordV2 = {
 
 export type MissionRunRecord = MissionRunRecordV2;
 
+export type MissionArtifactRecord = {
+  id: string;
+  runId: string;
+  createdAt: string;
+  format: MissionExportFormat | "project-json";
+  label: string;
+  checksum: string;
+  bytes: number;
+};
+
+export type MissionRunNotebookEntry = {
+  id: string;
+  runId: string;
+  createdAt: string;
+  author: "local-user" | "system";
+  note: string;
+  decision: string;
+  riskTags: string[];
+  auditSnapshot: {
+    verdict: MissionValidationStatus | "unavailable";
+    reportReadiness: MissionRunRecordV2["reportReadiness"];
+    inputHash: string;
+    solverVersion: string;
+    spiceChecksum: string | null;
+  };
+};
+
+export type MissionRiskMetric = {
+  p10: number;
+  p50: number;
+  p90: number;
+  worst: number;
+  unit: string;
+};
+
+export type MissionMonteCarloConfig = {
+  seed: string;
+  samples: number;
+  departureSigmaDays: number;
+  tofSigmaFraction: number;
+  dsmReserveSigmaFraction: number;
+  navigationSigmaKm: number;
+  ispSigmaSeconds: number;
+  dryMassSigmaKg: number;
+};
+
+export type MissionMonteCarloResult = {
+  id: string;
+  runId: string;
+  planId: string | null;
+  createdAt: string;
+  config: MissionMonteCarloConfig;
+  successRate: number;
+  robustnessGrade: "A" | "B" | "C" | "D" | "F";
+  failReasonHistogram: Record<string, number>;
+  c3: MissionRiskMetric;
+  deltaV: MissionRiskMetric;
+  arrivalThreeSigma: MissionRiskMetric;
+  minimumConstraintMargin: MissionRiskMetric;
+  dominantFailureReason: string;
+  preliminaryCaveat: string;
+};
+
+export type MissionReviewPackage = {
+  schemaVersion: 1;
+  id: string;
+  createdAt: string;
+  projectId: string | null;
+  scenarioId: string | null;
+  runId: string | null;
+  planId: string | null;
+  verdict: MissionValidationStatus | "unavailable";
+  inputHash: string | null;
+  solverVersion: string | null;
+  spiceChecksum: string | null;
+  reportReadiness: MissionRunRecordV2["reportReadiness"] | "unavailable";
+  comparisonRows: MissionComparisonRow[];
+  engineeringMatrix: MissionEngineeringMatrixRow[];
+  monteCarlo: MissionMonteCarloResult | null;
+  artifactRecords: MissionArtifactRecord[];
+  topRisks: string[];
+  exportReadiness: {
+    report: boolean;
+    ccsdsOem: boolean;
+    ccsdsOpm: boolean;
+    reviewPackage: boolean;
+  };
+  caveat: string;
+};
+
+export type MissionTrajectoryInspectionSample = {
+  id: string;
+  kind: "state" | "maneuver" | "flyby";
+  segmentId: string;
+  label: string;
+  epochTdbJd: number;
+  simDay: number;
+  positionKm: [number, number, number] | null;
+  velocityKmS: [number, number, number] | null;
+  massKg: number | null;
+  deltaVVectorKmS?: [number, number, number];
+  source: string;
+  nearestConstraintStatus: MissionValidationStatus | "unavailable";
+};
+
 export type MissionProjectV2 = {
   schemaVersion: 2;
   id: string;
@@ -385,6 +499,10 @@ export type MissionProjectV2 = {
   activeRunId: string | null;
   scenarios: MissionScenario[];
   runs: MissionRunRecordV2[];
+  runNotebooks?: MissionRunNotebookEntry[];
+  reviewPackages?: MissionReviewPackage[];
+  riskResults?: MissionMonteCarloResult[];
+  artifactRecords?: MissionArtifactRecord[];
 };
 
 export type MissionProject = MissionProjectV2;
@@ -411,6 +529,10 @@ export type MissionComparisonRow = {
   minimumConstraintMargin: number | null;
   cowellResidualKm: number | null;
   arrivalThreeSigmaKm: number | null;
+  monteCarloSuccessRate: number | null;
+  monteCarloDeltaVP50Kms: number | null;
+  monteCarloWorstMargin: number | null;
+  monteCarloDominantFailureReason: string | null;
   recommended: boolean;
 };
 

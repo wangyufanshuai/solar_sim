@@ -4,6 +4,7 @@ import { useThree } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import type { WebGLRenderer } from "three";
 import UniversePostProcessing from "./UniversePostProcessing";
+import type { CinematicPostProfileId } from "../lib/cinematicPostProfile";
 
 /**
  * pmndrs/postprocessing reads `gl.getContext().getContextAttributes().alpha` with no null check.
@@ -22,8 +23,12 @@ function webGlContextAttributesReady(gl: WebGLRenderer): boolean {
  */
 export default function PostProcessingGate({
   visualEnhance,
+  profileId,
+  dofEnabled,
 }: {
   visualEnhance: boolean;
+  profileId: CinematicPostProfileId;
+  dofEnabled: boolean;
 }) {
   const gl = useThree((s) => s.gl);
   const [, setCtxTick] = useState(0);
@@ -41,5 +46,5 @@ export default function PostProcessingGate({
   }, [gl]);
 
   if (!ready) return null;
-  return <UniversePostProcessing visualEnhance={visualEnhance} />;
+  return <UniversePostProcessing visualEnhance={visualEnhance} profileId={profileId} dofEnabled={dofEnabled} />;
 }

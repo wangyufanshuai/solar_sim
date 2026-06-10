@@ -78,6 +78,35 @@ function Marker({ segment, index, showLabel }: { segment: MissionSegment; index:
   );
 }
 
+function EventMarker({
+  position,
+  label,
+  color,
+  showLabel,
+}: {
+  position: [number, number, number];
+  label: string;
+  color: string;
+  showLabel: boolean;
+}) {
+  const pos = scenePoint(position);
+  return (
+    <group position={pos} renderOrder={-21}>
+      <mesh frustumCulled={false}>
+        <octahedronGeometry args={[1.05, 0]} />
+        <meshBasicMaterial color={color} transparent opacity={0.92} depthWrite={false} toneMapped={false} />
+      </mesh>
+      {showLabel ? (
+        <Html center distanceFactor={16} style={{ pointerEvents: "none" }}>
+          <span className="whitespace-nowrap rounded bg-black/45 px-1.5 py-0.5 font-mono text-[8px] tracking-[0.16em] text-white/80 shadow-[0_0_12px_rgba(80,210,255,0.22)]">
+            {label}
+          </span>
+        </Html>
+      ) : null}
+    </group>
+  );
+}
+
 export default function MissionTrajectoryPreview({
   plan,
   floatingOriginRef,
@@ -96,6 +125,20 @@ export default function MissionTrajectoryPreview({
   }, -12);
 
   if (!plan) return null;
+  const maneuverMarkers = (plan.cowellAudit?.maneuverEvents ?? [])
+    .map((event) => {
+      const segment = plan.segments.find((item) => item.id === event.segmentId);
+      if (!segment) return null;
+      const u = Math.max(0, Math.min(1, (event.simDay - segment.departureDay) / Math.max(1, segment.tofDays)));
+      const idx = Math.min(segment.trajectoryAu.length - 1, Math.max(0, Math.round(u * (segment.trajectoryAu.length - 1))));
+      return {
+        id: event.id,
+        position: segment.trajectoryAu[idx] ?? segment.departurePositionAu,
+        label: `${event.type.toUpperCase()} ${event.deltaVMagnitudeKmS.toFixed(2)} km/s`,
+        color: event.type === "injection" ? "#9be7ff" : "#ffd166",
+      };
+    })
+    .filter(Boolean) as Array<{ id: string; position: [number, number, number]; label: string; color: string }>;
 
   return (
     <group ref={groupRef}>
@@ -104,6 +147,9 @@ export default function MissionTrajectoryPreview({
       ))}
       {plan.segments.map((segment, index) => (
         <Marker key={`${segment.id}-marker`} segment={segment} index={index} showLabel={showLabels} />
+      ))}
+      {maneuverMarkers.map((marker) => (
+        <EventMarker key={marker.id} position={marker.position} label={marker.label} color={marker.color} showLabel={showLabels} />
       ))}
     </group>
   );

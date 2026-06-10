@@ -21,6 +21,18 @@ import {
 import { missionPlanToCcsdsOem, missionPlanToCcsdsOpm } from "../missionCcsds";
 import { auditPlanHighFidelity } from "../missionHighFidelity";
 import { MISSION_REPORT_CAVEAT, missionPlanToMarkdown, missionPlanToReportJson } from "../missionReport";
+import {
+  DEFAULT_MONTE_CARLO_CONFIG,
+  appendMissionNotebookEntry,
+  appendMissionRiskResult,
+  createMissionNotebookEntry,
+  createMissionReviewPackage,
+  missionManeuverEventsToCsv,
+  missionReviewPackageToMarkdown,
+  missionStateHistoryToCsv,
+  runMissionMonteCarloLite,
+  trajectoryInspectionSamples,
+} from "../missionReview";
 import type {
   MissionPhysicsSnapshot,
   MissionPlan,
@@ -304,6 +316,7 @@ describe("mission engineering calculations", () => {
     expect(appended.runs[0]).not.toBe(appended.runs[1]);
     const compare = missionComparisonRows(appended, appended.runs.map((run) => run.id));
     expect(compare).toHaveLength(2);
+    expect(compare.every((row) => row.monteCarloSuccessRate === null)).toBe(true);
 
     const v1 = {
       ...project,
@@ -320,6 +333,50 @@ describe("mission engineering calculations", () => {
     expect(csv).toContain('"earth-venus"');
 
     const auditedPlan = auditPlanHighFidelity(plan, false);
+    const riskA = runMissionMonteCarloLite(auditedPlan, appended.runs[1]!.id, {
+      ...DEFAULT_MONTE_CARLO_CONFIG,
+      samples: 32,
+      seed: "deterministic-test",
+    });
+    const riskB = runMissionMonteCarloLite(auditedPlan, appended.runs[1]!.id, {
+      ...DEFAULT_MONTE_CARLO_CONFIG,
+      samples: 32,
+      seed: "deterministic-test",
+    });
+    expect(riskA.successRate).toBe(riskB.successRate);
+    expect(riskA.deltaV.p50).toBe(riskB.deltaV.p50);
+    const riskProject = appendMissionRiskResult(appended, riskA);
+    const compareWithRisk = missionComparisonRows(riskProject, riskProject.runs.map((run) => run.id));
+    expect(compareWithRisk.some((row) => row.monteCarloSuccessRate !== null)).toBe(true);
+    const notebook = createMissionNotebookEntry({
+      run: riskProject.runs[1]!,
+      note: "Risk review captured",
+      decision: "Keep as preliminary baseline",
+      riskTags: ["navigation", "finite-thrust"],
+    });
+    const notebookProject = appendMissionNotebookEntry(riskProject, notebook);
+    expect(notebookProject.runs[1]).toBe(riskProject.runs[1]);
+    expect(notebookProject.runNotebooks?.[0]?.auditSnapshot.inputHash).toBe(riskProject.runs[1]!.inputHash);
+    const review = createMissionReviewPackage({
+      project: notebookProject,
+      run: notebookProject.runs[1]!,
+      comparisonRows: compareWithRisk,
+      engineeringMatrix: matrix,
+      monteCarlo: riskA,
+    });
+    expect(review.caveat).toContain("Not GMAT/STK/SPICE certification");
+    expect(review.monteCarlo?.dominantFailureReason).toBeTruthy();
+    expect(missionReviewPackageToMarkdown(review)).toContain("## Monte Carlo Lite");
+
+    const stateCsv = missionStateHistoryToCsv(auditedPlan);
+    expect(stateCsv).toContain('"epoch_tdb_jd"');
+    expect(stateCsv).toContain('"vx_km_s"');
+    const maneuverCsv = missionManeuverEventsToCsv(auditedPlan);
+    expect(maneuverCsv).toContain('"dv_mag_km_s"');
+    const samples = trajectoryInspectionSamples(auditedPlan);
+    expect(samples.length).toBeGreaterThan(0);
+    expect(samples.every((sample, index) => index === 0 || sample.simDay >= samples[index - 1]!.simDay)).toBe(true);
+
     const oem = missionPlanToCcsdsOem(auditedPlan);
     expect(oem).toContain("CCSDS_OEM_VERS = 3.0");
     expect(oem).toContain("CENTER_NAME = SUN");

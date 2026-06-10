@@ -48,9 +48,19 @@ const checks = [
   ["gallery-all-models", "Gallery all models", baseline.galleryAllModelsMaxTaskMs],
   ["mission-compare", "Mission compare", baseline.missionCompareMaxTaskMs],
   ["ccsds-export", "CCSDS export", baseline.ccsdsExportMaxTaskMs],
+  ["monte-carlo-worker", "Monte Carlo worker", baseline.monteCarloWorkerMaxTaskMs],
+  ["review-export", "Review export", baseline.reviewExportMaxTaskMs],
+  ["trajectory-inspector", "Trajectory inspector", baseline.trajectoryInspectorMaxTaskMs],
+  ["cinematic-post", "Cinematic post", baseline.cinematicPostMaxTaskMs],
 ];
+const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
+  ? new Set(process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean))
+  : null;
+const activeChecks = requestedScenarios
+  ? checks.filter(([id]) => requestedScenarios.has(id))
+  : checks;
 
-const rows = checks.map(([id, label, limit]) => {
+const rows = activeChecks.map(([id, label, limit]) => {
   const result = scenario(profile, id);
   const value = result.maxTaskMs;
   const sampled =

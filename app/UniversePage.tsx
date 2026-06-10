@@ -82,6 +82,7 @@ import { SPACECRAFT_BODY_INDEX } from "./data/planetsJ2000";
 import type { LocalTelemetry } from "./lib/localLaunchPhysics";
 import { createFloatingOrigin, type FloatingOriginState } from "./lib/floatingOrigin";
 import { createCameraIntentState, type CameraIntentState } from "./lib/cameraIntentState";
+import type { CinematicPostProfileId } from "./lib/cinematicPostProfile";
 
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
@@ -121,6 +122,9 @@ export default function UniversePage() {
     frameDragTeachingScale: 1.2e12,
   });
   const [visualEnhance, setVisualEnhance] = useState(false);
+  const [cinematicPostProfile, setCinematicPostProfile] =
+    useState<CinematicPostProfileId>("balanced-fixed");
+  const [cinematicDofEnabled, setCinematicDofEnabled] = useState(false);
   const [viewSettings, setViewSettings] = useState<SimulationViewSettings>(
     DEFAULT_SIMULATION_VIEW_SETTINGS
   );
@@ -297,6 +301,19 @@ export default function UniversePage() {
     a.click();
     URL.revokeObjectURL(url);
   }, [physicsRef]);
+
+  const handleExportCoverFrame = useCallback(() => {
+    try {
+      const canvas = document.querySelector("canvas");
+      if (!canvas) throw new Error("Canvas unavailable");
+      const a = document.createElement("a");
+      a.href = canvas.toDataURL("image/png");
+      a.download = `solar-sim-cover-${new Date().toISOString().slice(0, 19).replace(/:/g, "-")}.png`;
+      a.click();
+    } catch {
+      window.alert("Unable to export the current cover frame from this WebGL context.");
+    }
+  }, []);
 
   const handleImportStateFile = useCallback(
     async (ev: ChangeEvent<HTMLInputElement>) => {
@@ -485,6 +502,8 @@ export default function UniversePage() {
             telemetrySeriesRef,
             kerrBlackHole,
             visualEnhance,
+            cinematicPostProfile,
+            cinematicDofEnabled,
             visualTest: visualTest || visualTestRequested,
             viewSettings,
             lagrangeSpawnNonceRef,
@@ -517,6 +536,11 @@ export default function UniversePage() {
         onPerformanceSafe={applyPerformanceSafeMode}
         visualEnhance={visualEnhance}
         onVisualEnhanceChange={setVisualEnhance}
+        cinematicPostProfile={cinematicPostProfile}
+        onCinematicPostProfileChange={setCinematicPostProfile}
+        cinematicDofEnabled={cinematicDofEnabled}
+        onCinematicDofEnabledChange={setCinematicDofEnabled}
+        onExportCoverFrame={handleExportCoverFrame}
         leftPanelCollapsed={leftPanelCollapsed}
         onLeftPanelCollapsedChange={setLeftPanelCollapsed}
         lagrangeSpawnNonceRef={lagrangeSpawnNonceRef}

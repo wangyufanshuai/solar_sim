@@ -35,6 +35,20 @@ import {
   renameMissionScenario,
   updateMissionScenarioDefinition,
 } from "../lib/missionProject";
+import {
+  DEFAULT_MONTE_CARLO_CONFIG,
+  addMissionArtifactRecord,
+  appendMissionNotebookEntry,
+  appendMissionRiskResult,
+  buildMissionArtifactRecord,
+  createMissionNotebookEntry,
+  createMissionReviewPackage,
+  missionManeuverEventsToCsv,
+  missionReviewPackageToMarkdown,
+  missionStateHistoryToCsv,
+  trajectoryInspectionSamples,
+} from "../lib/missionReview";
+import { runMissionRiskWorker } from "../lib/missionRiskClient";
 import { loadMissionProject, saveMissionProject } from "../lib/missionProjectStore";
 import { runMissionOptimizationWorker } from "../lib/missionHighFidelityClient";
 import type {
@@ -43,6 +57,7 @@ import type {
   MissionConstraintPreset,
   MissionEngineeringConstraints,
   MissionExportFormat,
+  MissionMonteCarloConfig,
   MissionOptimizationResult,
   MissionPhysicsSnapshot,
   MissionPlan,
@@ -52,7 +67,7 @@ import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 const BODY_IDS: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
-const TABS = ["project", "scenario", "run", "compare", "report"] as const;
+const TABS = ["project", "scenario", "run", "compare", "review", "report"] as const;
 const IS = 1.05;
 type MissionTab = (typeof TABS)[number];
 type DeepSeekStatus = "idle" | "thinking" | "deepseek" | "fallback" | "error";
@@ -172,6 +187,13 @@ export default function MissionDesignerPanel({
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
   const [project, setProject] = useState<MissionProject | null>(null);
   const [compareRunIds, setCompareRunIds] = useState<string[]>([]);
+  const [riskSeed, setRiskSeed] = useState(DEFAULT_MONTE_CARLO_CONFIG.seed);
+  const [riskSamples, setRiskSamples] = useState(DEFAULT_MONTE_CARLO_CONFIG.samples);
+  const [isRiskRunning, setIsRiskRunning] = useState(false);
+  const [notebookNote, setNotebookNote] = useState("");
+  const [notebookDecision, setNotebookDecision] = useState("");
+  const [notebookRiskTags, setNotebookRiskTags] = useState("navigation, finite-thrust");
+  const [selectedInspectionId, setSelectedInspectionId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const selectedPlan = useMemo(
     () =>
@@ -192,6 +214,38 @@ export default function MissionDesignerPanel({
   const activeScenario = useMemo(
     () => project?.scenarios.find((scenario) => scenario.id === project.activeScenarioId) ?? null,
     [project],
+  );
+  const activeRun = useMemo(() => {
+    if (!project) return null;
+    return (
+      project.runs.find((run) => run.id === project.activeRunId) ??
+      [...project.runs].reverse().find((run) => run.scenarioId === project.activeScenarioId) ??
+      project.runs.at(-1) ??
+      null
+    );
+  }, [project]);
+  const currentRiskResult = useMemo(
+    () => project?.riskResults?.find((risk) => risk.runId === activeRun?.id) ?? null,
+    [activeRun?.id, project?.riskResults],
+  );
+  const reviewPackage = useMemo(
+    () =>
+      createMissionReviewPackage({
+        project,
+        run: activeRun,
+        comparisonRows,
+        engineeringMatrix: matrixRows,
+        monteCarlo: currentRiskResult,
+      }),
+    [activeRun, comparisonRows, currentRiskResult, matrixRows, project],
+  );
+  const inspectionSamples = useMemo(
+    () => (selectedPlan ? trajectoryInspectionSamples(selectedPlan) : []),
+    [selectedPlan],
+  );
+  const selectedInspection = useMemo(
+    () => inspectionSamples.find((sample) => sample.id === selectedInspectionId) ?? inspectionSamples[0] ?? null,
+    [inspectionSamples, selectedInspectionId],
   );
 
   useEffect(() => {
@@ -328,13 +382,56 @@ export default function MissionDesignerPanel({
 
   const exportWorkbench = (format: MissionExportFormat | "project-json") => {
     if (!selectedPlan) return;
+    const reviewJson = JSON.stringify(reviewPackage, null, 2);
+    const reviewMarkdown = missionReviewPackageToMarkdown(reviewPackage);
     downloadMissionWorkbenchArtifact({
       plan: selectedPlan,
       project,
       format,
-      reportJson: JSON.stringify(missionPlanToReportJson(selectedPlan, advisor, result), null, 2),
-      reportMarkdown: missionPlanToMarkdown(selectedPlan, advisor, result),
+      reportJson: format === "review-json" ? reviewJson : JSON.stringify(missionPlanToReportJson(selectedPlan, advisor, result), null, 2),
+      reportMarkdown: format === "review-md" ? reviewMarkdown : missionPlanToMarkdown(selectedPlan, advisor, result),
     });
+    if (project && activeRun && (format === "review-json" || format === "review-md")) {
+      const text = format === "review-json" ? reviewJson : reviewMarkdown;
+      void persistProject(addMissionArtifactRecord(project, buildMissionArtifactRecord(activeRun.id, format, text)));
+    }
+  };
+
+  const runMonteCarlo = async () => {
+    if (!selectedPlan || !project || !activeRun || isRiskRunning) return;
+    const config: MissionMonteCarloConfig = {
+      ...DEFAULT_MONTE_CARLO_CONFIG,
+      seed: riskSeed.trim() || DEFAULT_MONTE_CARLO_CONFIG.seed,
+      samples: riskSamples,
+    };
+    setIsRiskRunning(true);
+    setStatus("Monte Carlo queued");
+    try {
+      const risk = await runMissionRiskWorker({
+        runId: activeRun.id,
+        plan: selectedPlan,
+        config,
+        onProgress: setStatus,
+      });
+      await persistProject(appendMissionRiskResult(project, risk), `Monte Carlo ${Math.round(risk.successRate * 100)}% success`);
+    } catch (error) {
+      setStatus(error instanceof Error ? error.message : "Monte Carlo failed");
+    } finally {
+      setIsRiskRunning(false);
+    }
+  };
+
+  const saveNotebookEntry = async () => {
+    if (!project || !activeRun) return;
+    const entry = createMissionNotebookEntry({
+      run: activeRun,
+      note: notebookNote || "Review note captured from Mission Workbench.",
+      decision: notebookDecision || "No formal decision recorded.",
+      riskTags: notebookRiskTags.split(","),
+    });
+    await persistProject(appendMissionNotebookEntry(project, entry), "Review notebook saved");
+    setNotebookNote("");
+    setNotebookDecision("");
   };
 
   const saveProject = async () => {
@@ -427,7 +524,7 @@ export default function MissionDesignerPanel({
   return (
     <section
       data-solar-panel="mission"
-      className={`pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] ${activeTab === "compare" ? "sm:w-[44rem]" : "sm:w-[25rem]"}`}
+      className={`pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] ${activeTab === "compare" || activeTab === "review" ? "sm:w-[44rem]" : "sm:w-[25rem]"}`}
     >
       <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
         <div className="flex items-center justify-between gap-2">
@@ -448,7 +545,7 @@ export default function MissionDesignerPanel({
             {status}
           </span>
         </div>
-        <div className="mt-2 grid grid-cols-5 gap-1 rounded-[4px] bg-black/25 p-0.5">
+        <div className="mt-2 grid grid-cols-6 gap-1 rounded-[4px] bg-black/25 p-0.5">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -788,7 +885,7 @@ export default function MissionDesignerPanel({
                 <table className="w-full min-w-[38rem] border-collapse font-mono text-[8px] text-white/55">
                   <thead className="bg-white/[0.035] text-[7px] uppercase text-white/42">
                     <tr>
-                      {["Run", "Verdict", "C3", "Delta-v", "Propellant", "Duration", "Robust.", "Min margin", "Cowell", "3sigma"].map((label) => (
+                      {["Run", "Verdict", "C3", "Delta-v", "Propellant", "Duration", "Robust.", "MC", "MC P50 DV", "Top fail", "Min margin", "Cowell", "3sigma"].map((label) => (
                         <th key={label} className="px-2 py-1.5 text-left font-medium">{label}</th>
                       ))}
                     </tr>
@@ -803,6 +900,9 @@ export default function MissionDesignerPanel({
                         <td className="px-2 py-1.5">{row.propellantKg ? formatMass(row.propellantKg) : "--"}</td>
                         <td className="px-2 py-1.5">{row.durationDays?.toFixed(0) ?? "--"} d</td>
                         <td className="px-2 py-1.5">{row.robustnessScore?.toFixed(0) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.monteCarloSuccessRate == null ? "--" : `${(row.monteCarloSuccessRate * 100).toFixed(0)}%`}</td>
+                        <td className="px-2 py-1.5">{row.monteCarloDeltaVP50Kms?.toFixed(2) ?? "--"}</td>
+                        <td className="max-w-24 truncate px-2 py-1.5">{row.monteCarloDominantFailureReason ?? "--"}</td>
                         <td className="px-2 py-1.5">{row.minimumConstraintMargin?.toFixed(2) ?? "--"}</td>
                         <td className="px-2 py-1.5">{row.cowellResidualKm?.toExponential(1) ?? "--"}</td>
                         <td className="px-2 py-1.5">{row.arrivalThreeSigmaKm?.toExponential(1) ?? "--"}</td>
@@ -816,6 +916,173 @@ export default function MissionDesignerPanel({
                 Select at least two runs. Failed, seed, and unavailable solutions remain audit-only and cannot be recommended.
               </div>
             )}
+          </div>
+        ) : null}
+
+        {activeTab === "review" ? (
+          <div className="grid gap-2" data-solar-mission-review>
+            <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
+              <Metric label="Verdict" value={reviewPackage.verdict} />
+              <Metric label="Readiness" value={reviewPackage.reportReadiness} />
+              <Metric label="SPICE" value={reviewPackage.spiceChecksum?.slice(0, 8) ?? "unverified"} />
+              <Metric label="MC success" value={currentRiskResult ? `${(currentRiskResult.successRate * 100).toFixed(0)}% / ${currentRiskResult.robustnessGrade}` : "not run"} />
+            </div>
+
+            <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+              <div className="mb-1 flex items-center justify-between gap-2">
+                <div className="font-mono text-[8px] uppercase text-white/72">Monte Carlo Lite</div>
+                <button
+                  type="button"
+                  data-solar-action="mission-monte-carlo"
+                  onClick={runMonteCarlo}
+                  disabled={!selectedPlan || !activeRun || isRiskRunning}
+                  className="rounded-[3px] border border-cyan-200/18 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100 disabled:opacity-35"
+                >
+                  {isRiskRunning ? "running" : "run risk"}
+                </button>
+              </div>
+              <div className="grid grid-cols-[1fr_5rem] gap-1.5">
+                <label className="grid gap-1 font-mono text-[7px] uppercase text-white/42">
+                  Seed
+                  <input
+                    value={riskSeed}
+                    onChange={(event) => setRiskSeed(event.target.value)}
+                    className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1 text-[9px] normal-case text-white/72 outline-none"
+                  />
+                </label>
+                <label className="grid gap-1 font-mono text-[7px] uppercase text-white/42">
+                  Samples
+                  <input
+                    type="number"
+                    min={16}
+                    max={256}
+                    step={16}
+                    value={riskSamples}
+                    onChange={(event) => setRiskSamples(Math.max(16, Math.min(256, Number(event.target.value))))}
+                    className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1 text-right text-[9px] text-white/72 outline-none"
+                  />
+                </label>
+              </div>
+              {currentRiskResult ? (
+                <div className="mt-2 grid grid-cols-2 gap-1 sm:grid-cols-4">
+                  <Metric label="DV P10/50/90" value={`${currentRiskResult.deltaV.p10.toFixed(2)} / ${currentRiskResult.deltaV.p50.toFixed(2)} / ${currentRiskResult.deltaV.p90.toFixed(2)}`} />
+                  <Metric label="C3 P90" value={`${currentRiskResult.c3.p90.toFixed(1)}`} />
+                  <Metric label="3sigma P90" value={`${currentRiskResult.arrivalThreeSigma.p90.toExponential(1)} km`} />
+                  <Metric label="Top fail" value={currentRiskResult.dominantFailureReason} />
+                </div>
+              ) : (
+                <p className="mt-2 text-[9px] text-white/42">Run deterministic preliminary perturbations to populate Review and Compare risk columns.</p>
+              )}
+            </div>
+
+            <div className="grid gap-2 sm:grid-cols-2">
+              <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+                <div className="font-mono text-[8px] uppercase text-white/72">Top review risks</div>
+                <div className="mt-1 grid gap-1">
+                  {reviewPackage.topRisks.map((risk) => (
+                    <div key={risk} className="rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 text-[9px] leading-4 text-amber-100/72">
+                      {risk}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+                <div className="font-mono text-[8px] uppercase text-white/72">Export readiness</div>
+                <div className="mt-1 grid grid-cols-2 gap-1">
+                  {Object.entries(reviewPackage.exportReadiness).map(([key, ready]) => (
+                    <Metric key={key} label={key} value={ready ? "ready" : "blocked"} />
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+              <div className="mb-1 font-mono text-[8px] uppercase text-white/72">Run notebook</div>
+              <div className="grid gap-1.5">
+                <input
+                  value={notebookDecision}
+                  onChange={(event) => setNotebookDecision(event.target.value)}
+                  placeholder="Decision, e.g. Keep EVJS baseline for review"
+                  className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1.5 text-[10px] text-white/75 outline-none"
+                />
+                <textarea
+                  value={notebookNote}
+                  onChange={(event) => setNotebookNote(event.target.value)}
+                  placeholder="Audit note"
+                  rows={2}
+                  className="resize-none rounded-[3px] border border-white/10 bg-black/30 px-2 py-1.5 text-[10px] text-white/75 outline-none"
+                />
+                <div className="grid grid-cols-[1fr_auto] gap-1.5">
+                  <input
+                    value={notebookRiskTags}
+                    onChange={(event) => setNotebookRiskTags(event.target.value)}
+                    placeholder="risk tags"
+                    className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1.5 text-[10px] text-white/75 outline-none"
+                  />
+                  <button
+                    type="button"
+                    data-solar-action="mission-review-note"
+                    onClick={() => void saveNotebookEntry()}
+                    disabled={!activeRun}
+                    className="rounded-[3px] border border-cyan-200/18 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100 disabled:opacity-35"
+                  >
+                    Save note
+                  </button>
+                </div>
+              </div>
+              {project?.runNotebooks?.filter((entry) => entry.runId === activeRun?.id).slice(-3).map((entry) => (
+                <div key={entry.id} className="mt-1 rounded-[3px] border border-white/[0.06] bg-white/[0.025] px-2 py-1 text-[9px] leading-4 text-white/52">
+                  <span className="font-mono text-[7px] uppercase text-white/34">{entry.createdAt} / {entry.riskTags.join(", ")}</span>
+                  <p>{entry.decision}</p>
+                  <p>{entry.note}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+              <div className="mb-1 font-mono text-[8px] uppercase text-white/72">Trajectory inspector</div>
+              {inspectionSamples.length ? (
+                <div className="grid gap-2 sm:grid-cols-[14rem_1fr]">
+                  <div className="max-h-40 overflow-y-auto rounded-[3px] border border-white/[0.06]">
+                    {inspectionSamples.slice(0, 28).map((sample) => (
+                      <button
+                        key={sample.id}
+                        type="button"
+                        data-solar-action="mission-trajectory-inspect"
+                        onClick={() => setSelectedInspectionId(sample.id)}
+                        className={`block w-full border-t border-white/[0.04] px-2 py-1.5 text-left font-mono text-[7px] uppercase ${selectedInspection?.id === sample.id ? "bg-cyan-200/[0.08] text-cyan-100" : "text-white/46"}`}
+                      >
+                        {sample.kind} / T+{sample.simDay.toFixed(1)} / {sample.label}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="grid gap-1 text-[9px] leading-4 text-white/52">
+                    <p className="font-mono text-[8px] uppercase text-white/72">{selectedInspection?.label ?? "No sample"}</p>
+                    <p>Epoch TDB JD {selectedInspection?.epochTdbJd.toFixed(6) ?? "--"} / segment {selectedInspection?.segmentId ?? "--"}</p>
+                    <p>Status {selectedInspection?.nearestConstraintStatus ?? "--"} / source {selectedInspection?.source ?? "--"}</p>
+                    <p>r km {selectedInspection?.positionKm?.map((v) => v.toExponential(2)).join(", ") ?? "event marker"}</p>
+                    <p>v km/s {selectedInspection?.velocityKmS?.map((v) => v.toExponential(2)).join(", ") ?? selectedInspection?.deltaVVectorKmS?.map((v) => v.toExponential(2)).join(", ") ?? "--"}</p>
+                  </div>
+                </div>
+              ) : (
+                <p className="text-[9px] text-white/42">Run a Cowell-audited mission before inspecting trajectory samples.</p>
+              )}
+            </div>
+
+            <div className="grid grid-cols-2 gap-1 sm:grid-cols-4">
+              <button type="button" onClick={() => exportWorkbench("review-json")} data-solar-action="mission-review-export-json" disabled={!selectedPlan} className="rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 disabled:opacity-35">
+                Review JSON
+              </button>
+              <button type="button" onClick={() => exportWorkbench("review-md")} data-solar-action="mission-review-export-md" disabled={!selectedPlan} className="rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 disabled:opacity-35">
+                Review MD
+              </button>
+              <button type="button" onClick={() => exportWorkbench("state-history-csv")} data-solar-action="mission-state-history-csv" disabled={!selectedPlan} className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62 disabled:opacity-35">
+                State CSV
+              </button>
+              <button type="button" onClick={() => exportWorkbench("maneuver-events-csv")} data-solar-action="mission-maneuver-events-csv" disabled={!selectedPlan} className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62 disabled:opacity-35">
+                Maneuver CSV
+              </button>
+            </div>
           </div>
         ) : null}
 

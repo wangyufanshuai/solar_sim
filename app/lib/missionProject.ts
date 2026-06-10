@@ -1,4 +1,9 @@
 import { missionPlanToCcsdsOem, missionPlanToCcsdsOpm } from "./missionCcsds";
+import {
+  missionManeuverEventsToCsv,
+  missionStateHistoryToCsv,
+  resultWithRiskRows,
+} from "./missionReview";
 import type {
   MissionComparisonRow,
   MissionEngineeringConstraints,
@@ -155,6 +160,10 @@ export function createMissionProject({
     activeRunId: run?.id ?? null,
     scenarios: [scenario],
     runs: run ? [run] : [],
+    runNotebooks: [],
+    reviewPackages: [],
+    riskResults: [],
+    artifactRecords: [],
   };
 }
 
@@ -310,6 +319,10 @@ export function parseMissionProjectJson(text: string): MissionProject {
     schemaVersion: 2,
     activeRunId: parsed.activeRunId ?? null,
     runs: Array.isArray(parsed.runs) ? parsed.runs : [],
+    runNotebooks: Array.isArray(parsed.runNotebooks) ? parsed.runNotebooks : [],
+    reviewPackages: Array.isArray(parsed.reviewPackages) ? parsed.reviewPackages : [],
+    riskResults: Array.isArray(parsed.riskResults) ? parsed.riskResults : [],
+    artifactRecords: Array.isArray(parsed.artifactRecords) ? parsed.artifactRecords : [],
   };
 }
 
@@ -369,6 +382,10 @@ export function missionComparisonRows(
         minimumConstraintMargin: plan ? minimumConstraintMargin(plan) : null,
         cowellResidualKm: plan?.cowellAudit?.maxPositionResidualKm ?? null,
         arrivalThreeSigmaKm: plan?.covarianceAudit?.saturnArrivalThreeSigmaKm ?? null,
+        monteCarloSuccessRate: null,
+        monteCarloDeltaVP50Kms: null,
+        monteCarloWorstMargin: null,
+        monteCarloDominantFailureReason: null,
         recommended: Boolean(eligible),
       } satisfies MissionComparisonRow;
     });
@@ -378,7 +395,10 @@ export function missionComparisonRows(
       (a.deltaVKms ?? Number.POSITIVE_INFINITY) - (b.deltaVKms ?? Number.POSITIVE_INFINITY) ||
       (b.robustnessScore ?? 0) - (a.robustnessScore ?? 0),
     );
-  return rows.map((row) => ({ ...row, recommended: row.runId === ranked[0]?.runId }));
+  return resultWithRiskRows(
+    rows.map((row) => ({ ...row, recommended: row.runId === ranked[0]?.runId })),
+    project.riskResults,
+  );
 }
 
 export function missionLegsToCsv(plan: MissionPlan) {
@@ -434,9 +454,21 @@ export function downloadMissionWorkbenchArtifact({
   } else if (format === "ccsds-oem") {
     text = missionPlanToCcsdsOem(plan);
     extension = "oem";
-  } else {
+  } else if (format === "ccsds-opm") {
     text = missionPlanToCcsdsOpm(plan);
     extension = "opm";
+  } else if (format === "state-history-csv") {
+    text = missionStateHistoryToCsv(plan);
+    extension = "csv";
+  } else if (format === "maneuver-events-csv") {
+    text = missionManeuverEventsToCsv(plan);
+    extension = "csv";
+  } else if (format === "review-json") {
+    text = reportJson ?? "{}";
+    extension = "json";
+  } else {
+    text = reportMarkdown ?? "";
+    extension = "md";
   }
   const blob = new Blob([text], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);

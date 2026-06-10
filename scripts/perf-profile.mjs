@@ -278,6 +278,39 @@ async (scenario) => {
     press('[data-solar-action="mission-export-oem"]');
     press('[data-solar-action="mission-export-opm"]');
   }
+  if (scenario === "monte-carlo-worker") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    pressText("review");
+    await sleep(250);
+    press('[data-solar-action="mission-monte-carlo"]');
+    await sleep(250);
+  }
+  if (scenario === "review-export") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    pressText("review");
+    await sleep(250);
+    press('[data-solar-action="mission-review-export-json"]');
+    press('[data-solar-action="mission-review-export-md"]');
+  }
+  if (scenario === "trajectory-inspector") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    pressText("review");
+    await sleep(250);
+    press('[data-solar-action="mission-trajectory-inspect"]');
+  }
+  if (scenario === "cinematic-post") {
+    press('[data-solar-section="view"]');
+    await sleep(200);
+    press('[data-solar-action="budget-quality"]');
+    await sleep(500);
+    press('[data-solar-section="tools"]');
+    await sleep(250);
+    press('[data-solar-action="post-tour-cover"]');
+    await sleep(400);
+  }
   if (scenario === "safe") {
     press('[data-solar-section="view"]');
     await sleep(200);
@@ -291,6 +324,10 @@ async (scenario) => {
     scenario === "gallery-all-models" ? 3000 :
     scenario === "mission-compare" ? 2400 :
     scenario === "ccsds-export" ? 1800 :
+    scenario === "monte-carlo-worker" ? 2600 :
+    scenario === "review-export" ? 1800 :
+    scenario === "trajectory-inspector" ? 1800 :
+    scenario === "cinematic-post" ? 3000 :
     scenario === "showcase-tour" ? 5000 :
     6000;
   const result = await sample(durationMs, (frame) => {
@@ -381,7 +418,7 @@ async function runScenario(cdp, scenario) {
   cdp.on("Tracing.tracingComplete", (params) => {
     traceStream = params.stream;
   });
-  if (scenario === "mission-compare") {
+  if (["mission-compare", "monte-carlo-worker", "review-export", "trajectory-inspector"].includes(scenario)) {
     await cdp.send("Runtime.evaluate", {
       expression: `(${String(async () => {
         const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -450,7 +487,7 @@ async function main() {
     const scenarios = [];
     const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
       ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
-      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export"];
+      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post"];
     for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }

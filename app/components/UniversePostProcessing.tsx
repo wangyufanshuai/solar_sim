@@ -12,6 +12,7 @@ import {
 import { Component, type ReactNode, useMemo } from "react";
 import { BlendFunction, SMAAPreset, ToneMappingMode } from "postprocessing";
 import { useBloomScene } from "../context/BloomSceneContext";
+import { cinematicPostProfile, type CinematicPostProfileId } from "../lib/cinematicPostProfile";
 import LightBender from "../effects/LightBender";
 import ThreeJsPostPipeline from "../effects/ThreeJsPostPipeline";
 import { readLensingEnv } from "../effects/lightBenderBridge";
@@ -68,8 +69,12 @@ const BLOOM_ENHANCE = {
  */
 export default function UniversePostProcessing({
   visualEnhance = false,
+  profileId = "balanced-fixed",
+  dofEnabled = false,
 }: {
   visualEnhance?: boolean;
+  profileId?: CinematicPostProfileId;
+  dofEnabled?: boolean;
 }) {
   const { bloomTargets, sunLight } = useBloomScene();
   const lights = useMemo(
@@ -79,12 +84,21 @@ export default function UniversePostProcessing({
   const canSelective = lights.length > 0 && bloomTargets.length > 0;
 
   const lensingOpts = readLensingEnv();
-  const bloom = visualEnhance ? BLOOM_ENHANCE : BLOOM_BASE;
+  const profile = cinematicPostProfile(profileId);
+  const bloom = visualEnhance || profileId !== "balanced-fixed"
+    ? {
+        luminanceThreshold: profile.bloomThreshold,
+        luminanceSmoothing: BLOOM_ENHANCE.luminanceSmoothing,
+        intensity: profile.bloomStrength,
+        radius: profile.bloomRadius,
+        levels: BLOOM_ENHANCE.levels,
+      }
+    : BLOOM_BASE;
 
   if (!USE_PMNDRS_POST_STACK) {
     return (
       <PostFxBoundary>
-        <ThreeJsPostPipeline visualEnhance={visualEnhance} />
+        <ThreeJsPostPipeline visualEnhance={visualEnhance} profileId={profileId} dofEnabled={dofEnabled} />
       </PostFxBoundary>
     );
   }
@@ -147,18 +161,18 @@ export default function UniversePostProcessing({
         )}
         {/* EffectComposer sets gl.toneMapping = NoToneMapping; ACES runs here (see PmndrsToneMappingExposureSync). */}
         <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
-        {visualEnhance ? (
+        {visualEnhance || profileId !== "balanced-fixed" ? (
           <BrightnessContrast
             blendFunction={BlendFunction.NORMAL}
             brightness={-0.035}
-            contrast={0.24}
+            contrast={profile.contrast || 0.24}
           />
         ) : (
           <></>
         )}
         <Vignette
-          darkness={visualEnhance ? 0.42 : 0.48}
-          offset={visualEnhance ? 1.02 : 1.1}
+          darkness={profile.vignetteDarkness}
+          offset={profile.vignetteOffset}
           eskil={false}
         />
         <SMAA preset={SMAAPreset.HIGH} />

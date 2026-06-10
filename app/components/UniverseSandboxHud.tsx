@@ -24,6 +24,10 @@ import {
   dispatchCinematicCameraTour,
   dispatchCinematicCameraPreset,
 } from "../lib/cinematicCamera";
+import {
+  CINEMATIC_POST_PROFILES,
+  type CinematicPostProfileId,
+} from "../lib/cinematicPostProfile";
 
 type Props = {
   activeSection: BottomControlBarSection;
@@ -38,6 +42,11 @@ type Props = {
   onPerformanceSafe?: () => void;
   visualEnhance: boolean;
   onVisualEnhanceChange: (next: boolean) => void;
+  cinematicPostProfile: CinematicPostProfileId;
+  onCinematicPostProfileChange: (next: CinematicPostProfileId) => void;
+  cinematicDofEnabled: boolean;
+  onCinematicDofEnabledChange: (next: boolean) => void;
+  onExportCoverFrame?: () => void;
   leftPanelCollapsed: boolean;
   onLeftPanelCollapsedChange: (collapsed: boolean) => void;
   lagrangeSpawnNonceRef: MutableRefObject<number>;
@@ -103,6 +112,11 @@ export default function UniverseSandboxHud({
   onPerformanceSafe,
   visualEnhance,
   onVisualEnhanceChange,
+  cinematicPostProfile,
+  onCinematicPostProfileChange,
+  cinematicDofEnabled,
+  onCinematicDofEnabledChange,
+  onExportCoverFrame,
   leftPanelCollapsed,
   onLeftPanelCollapsedChange,
   lagrangeSpawnNonceRef,
@@ -460,6 +474,34 @@ export default function UniverseSandboxHud({
                       </button>
                     ))}
                   </div>
+                </div>
+                <div className="mb-3 border-t border-white/5 pt-3">
+                  <div className="mb-1.5 text-[9px] tracking-[0.18em] text-white/36">POST PROFILE</div>
+                  <div className="grid grid-cols-2 gap-1.5">
+                    {CINEMATIC_POST_PROFILES.map((profile) => (
+                      <button
+                        key={profile.id}
+                        type="button"
+                        data-solar-action={`post-${profile.id}`}
+                        onClick={() => onCinematicPostProfileChange(profile.id)}
+                        className={`min-h-8 rounded-lg px-2 py-1.5 text-left text-[10px] transition-colors ${
+                          cinematicPostProfile === profile.id
+                            ? "bg-cyan-200/[0.1] text-cyan-100"
+                            : "bg-white/[0.045] text-white/62 hover:bg-white/[0.09] hover:text-white/88"
+                        }`}
+                      >
+                        {profile.label}
+                      </button>
+                    ))}
+                  </div>
+                  <ToggleRow
+                    label="Depth of field intent"
+                    checked={cinematicDofEnabled}
+                    onChange={onCinematicDofEnabledChange}
+                    cost="Medium"
+                    status="profile marker"
+                  />
+                  {onExportCoverFrame ? <ToolButton label="Export cover frame" onClick={onExportCoverFrame} /> : null}
                 </div>
                 <ToolButton
                   label="发射拉格朗日测试粒子"

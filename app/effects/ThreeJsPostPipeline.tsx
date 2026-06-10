@@ -9,6 +9,7 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { UnrealBloomPass } from "three/examples/jsm/postprocessing/UnrealBloomPass.js";
 import { ShaderPass } from "three/examples/jsm/postprocessing/ShaderPass.js";
 import { createVignetteShaderPass } from "./vignetteShaderPass";
+import { cinematicPostProfile, type CinematicPostProfileId } from "../lib/cinematicPostProfile";
 
 type PassRefs = {
   composer: EffectComposer;
@@ -18,8 +19,12 @@ type PassRefs = {
 
 export default function ThreeJsPostPipeline({
   visualEnhance = false,
+  profileId = "balanced-fixed",
+  dofEnabled = false,
 }: {
   visualEnhance?: boolean;
+  profileId?: CinematicPostProfileId;
+  dofEnabled?: boolean;
 }) {
   const { gl, scene, camera, size } = useThree();
   const refs = useRef<PassRefs | null>(null);
@@ -59,21 +64,23 @@ export default function ThreeJsPostPipeline({
   useEffect(() => {
     const b = refs.current?.bloomPass;
     const v = refs.current?.vignettePass;
+    const profile = cinematicPostProfile(profileId);
     if (!b) return;
-    if (visualEnhance) {
-      b.strength = 0.2;
-      b.radius = 0.2;
-      b.threshold = 0.94;
+    if (visualEnhance || profileId !== "balanced-fixed") {
+      b.strength = profile.bloomStrength;
+      b.radius = profile.bloomRadius;
+      b.threshold = profile.bloomThreshold;
     } else {
       b.strength = 0.14;
       b.radius = 0.16;
       b.threshold = 0.96;
     }
     if (v?.uniforms.darkness && v.uniforms.offset) {
-      v.uniforms.darkness.value = visualEnhance ? 0.52 : 0.58;
-      v.uniforms.offset.value = visualEnhance ? 0.98 : 1.08;
+      v.uniforms.darkness.value = dofEnabled ? Math.max(0.34, profile.vignetteDarkness - 0.04) : profile.vignetteDarkness;
+      v.uniforms.offset.value = profile.vignetteOffset;
     }
-  }, [visualEnhance]);
+    gl.toneMappingExposure = profile.exposure;
+  }, [dofEnabled, gl, profileId, visualEnhance]);
 
   useEffect(() => {
     const c = refs.current?.composer;

@@ -36,6 +36,7 @@ jobs:
           npm run audit:mission-project
           npm run audit:gallery-models
           npm run audit:ccsds
+          npm run audit:mission-review
 
       - name: Build
         run: npm run build

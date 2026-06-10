@@ -39,6 +39,9 @@ const scenarios = [
   { id: "gallery-all-models", viewport: { width: 1280, height: 900 }, action: "galleryAll", expect: ["canvas", "gallery", "galleryAll"] },
   { id: "mission-compare", viewport: { width: 1280, height: 900 }, action: "missionCompare", expect: ["canvas", "missionCompare"] },
   { id: "ccsds-export", viewport: { width: 1280, height: 900 }, action: "ccsdsExport", expect: ["canvas", "ccsdsExport"] },
+  { id: "mission-review", viewport: { width: 1280, height: 900 }, action: "missionReview", expect: ["canvas", "missionReview"] },
+  { id: "trajectory-inspector", viewport: { width: 1280, height: 900 }, action: "trajectoryInspector", expect: ["canvas", "trajectoryInspector"] },
+  { id: "cinematic-post", viewport: { width: 1280, height: 900 }, action: "cinematicPost", expect: ["canvas", "cinematicPost"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
   { id: "earth-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
@@ -290,6 +293,30 @@ async function runScenarioAction(cdp, scenario) {
       press('[data-solar-action="mission-export-opm"]');
       await sleep(250);
     }
+    if (scenarioArg.action === "missionReview" || scenarioArg.action === "trajectoryInspector") {
+      press('[data-solar-section="mission"]');
+      await sleep(400);
+      press('[data-solar-action="mission-optimize"]');
+      await sleep(4200);
+      pressText("review");
+      await sleep(500);
+      press('[data-solar-action="mission-monte-carlo"]');
+      await sleep(1200);
+      if (scenarioArg.action === "trajectoryInspector") {
+        press('[data-solar-action="mission-trajectory-inspect"]');
+        await sleep(300);
+      }
+    }
+    if (scenarioArg.action === "cinematicPost") {
+      press('[data-solar-section="view"]');
+      await sleep(350);
+      press('[data-solar-action="budget-quality"]');
+      await sleep(900);
+      press('[data-solar-section="tools"]');
+      await sleep(350);
+      press('[data-solar-action="post-tour-cover"]');
+      await sleep(1200);
+    }
     if (scenarioArg.action === "focus") {
       await waitFor(
         () => performance.getEntriesByName("solar:preview-planets-ready", "mark").length > 0,
@@ -309,6 +336,9 @@ async function runScenarioAction(cdp, scenario) {
     const spacecraftButtons = document.querySelectorAll("[data-solar-spacecraft]").length;
     const galleryV2 = Boolean(document.querySelector('[data-solar-gallery="v2"]'));
     const missionCompare = Boolean(document.querySelector("[data-solar-mission-compare]"));
+    const missionReview = Boolean(document.querySelector("[data-solar-mission-review]"));
+    const trajectoryButtons = document.querySelectorAll('[data-solar-action="mission-trajectory-inspect"]').length;
+    const postButtons = document.querySelectorAll('[data-solar-action^="post-"]').length;
     const ccsdsButtons = document.querySelectorAll(
       '[data-solar-action="mission-export-oem"], [data-solar-action="mission-export-opm"]',
     ).length;
@@ -321,6 +351,9 @@ async function runScenarioAction(cdp, scenario) {
       exportButtons,
       galleryV2,
       missionCompare,
+      missionReview,
+      trajectoryButtons,
+      postButtons,
       ccsdsButtons,
       hasFrameworkOverlay,
       url: location.href,
@@ -359,6 +392,19 @@ function checkScenario(scenario, state, screenshotBytes) {
   }
   if (scenario.expect.includes("ccsdsExport")) {
     if (state.ccsdsButtons < 2) failures.push("CCSDS OEM/OPM export actions missing");
+  }
+  if (scenario.expect.includes("missionReview")) {
+    if (!state.missionReview) failures.push("mission review workspace missing");
+    if (!/Monte Carlo Lite|Top review risks|Run notebook/i.test(state.text)) failures.push("mission review sections missing");
+    if (!/Review JSON|Review MD/i.test(state.text)) failures.push("review export actions missing");
+  }
+  if (scenario.expect.includes("trajectoryInspector")) {
+    if (state.trajectoryButtons < 1) failures.push("trajectory inspector actions missing");
+    if (!/Trajectory inspector|Epoch TDB JD|segment/i.test(state.text)) failures.push("trajectory inspector details missing");
+  }
+  if (scenario.expect.includes("cinematicPost")) {
+    if (state.postButtons < 4) failures.push("cinematic post profile controls missing");
+    if (!/POST PROFILE|Tour cover|Export cover frame/i.test(state.text)) failures.push("cinematic post UI missing");
   }
   if (scenario.expect.includes("tour")) {
     if (!/CINEMATIC PRESETS|SPACECRAFT GALLERY|HDR stage v2/i.test(state.text)) failures.push("showcase tour controls missing");
