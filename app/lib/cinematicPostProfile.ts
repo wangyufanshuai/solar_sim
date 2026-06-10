@@ -1,4 +1,9 @@
-export type CinematicPostProfileId = "balanced-fixed" | "closeup-quality" | "tour-cover" | "gallery-studio";
+export type CinematicPostProfileId =
+  | "balanced-fixed"
+  | "closeup-quality"
+  | "tour-cover"
+  | "gallery-studio"
+  | "atlas-flight";
 
 export type CinematicPostProfile = {
   id: CinematicPostProfileId;
@@ -60,6 +65,18 @@ export const CINEMATIC_POST_PROFILES: CinematicPostProfile[] = [
     vignetteOffset: 0.96,
     contrast: 0.16,
     exposure: 1,
+    dofEnabled: false,
+  },
+  {
+    id: "atlas-flight",
+    label: "Atlas flight",
+    bloomStrength: 0.22,
+    bloomRadius: 0.2,
+    bloomThreshold: 0.93,
+    vignetteDarkness: 0.36,
+    vignetteOffset: 1,
+    contrast: 0.2,
+    exposure: 0.97,
     dofEnabled: false,
   },
 ];

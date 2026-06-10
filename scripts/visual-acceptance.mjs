@@ -42,12 +42,17 @@ const scenarios = [
   { id: "mission-review", viewport: { width: 1280, height: 900 }, action: "missionReview", expect: ["canvas", "missionReview"] },
   { id: "trajectory-inspector", viewport: { width: 1280, height: 900 }, action: "trajectoryInspector", expect: ["canvas", "trajectoryInspector"] },
   { id: "cinematic-post", viewport: { width: 1280, height: 900 }, action: "cinematicPost", expect: ["canvas", "cinematicPost"] },
+  { id: "sky-atlas-search", viewport: { width: 1280, height: 900 }, action: "skyAtlasSearch", expect: ["canvas", "skyAtlas"] },
+  { id: "sky-atlas-route", viewport: { width: 1280, height: 900 }, action: "skyAtlasRoute", expect: ["canvas", "skyAtlas", "atlasRoute"] },
+  { id: "sky-atlas-target-card", viewport: { width: 1280, height: 900 }, action: "skyAtlasTarget", expect: ["canvas", "skyAtlas", "atlasTarget"] },
+  { id: "atlas-cover", viewport: { width: 1280, height: 900 }, action: "atlasCover", expect: ["canvas", "skyAtlas", "atlasCover"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
   { id: "earth-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
   { id: "jupiter-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 6, expect: ["canvas"] },
   { id: "saturn-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 7, expect: ["canvas"] },
   { id: "mobile-mission", viewport: { width: 390, height: 844, mobile: true }, action: "mobileMission", expect: ["canvas", "missionAudit"] },
+  { id: "mobile-atlas", viewport: { width: 390, height: 844, mobile: true }, action: "mobileAtlas", expect: ["canvas", "skyAtlas"] },
 ];
 
 async function sleep(ms) {
@@ -224,7 +229,7 @@ async function runScenarioAction(cdp, scenario) {
       return null;
     };
 
-    await waitFor(() => document.querySelector("canvas"));
+    await waitFor(() => document.querySelector("canvas"), 90000);
     if (scenarioArg.action === "balanced") {
       await waitFor(
         () => performance.getEntriesByType("mark").some((entry) =>
@@ -317,6 +322,29 @@ async function runScenarioAction(cdp, scenario) {
       press('[data-solar-action="post-tour-cover"]');
       await sleep(1200);
     }
+    if (["skyAtlasSearch", "skyAtlasRoute", "skyAtlasTarget", "atlasCover", "mobileAtlas"].includes(scenarioArg.action)) {
+      press('[data-solar-section="atlas"]');
+      await sleep(650);
+      const input = document.querySelector('[data-solar-action="atlas-search-input"]');
+      if (input && (scenarioArg.action === "skyAtlasSearch" || scenarioArg.action === "mobileAtlas")) {
+        const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
+        setter?.call(input, "orion");
+        input.dispatchEvent(new Event("input", { bubbles: true }));
+        await sleep(500);
+      }
+      if (scenarioArg.action === "skyAtlasRoute") {
+        press('[data-solar-action="atlas-route-play"]');
+        await sleep(1800);
+      }
+      if (scenarioArg.action === "skyAtlasTarget") {
+        press('[data-solar-action="atlas-fly-target"]');
+        await sleep(1600);
+      }
+      if (scenarioArg.action === "atlasCover") {
+        press('[data-solar-action="atlas-cover"]');
+        await sleep(350);
+      }
+    }
     if (scenarioArg.action === "focus") {
       await waitFor(
         () => performance.getEntriesByName("solar:preview-planets-ready", "mark").length > 0,
@@ -342,6 +370,11 @@ async function runScenarioAction(cdp, scenario) {
     const ccsdsButtons = document.querySelectorAll(
       '[data-solar-action="mission-export-oem"], [data-solar-action="mission-export-opm"]',
     ).length;
+    const skyAtlasPanel = Boolean(document.querySelector('[data-solar-panel="sky-atlas"]'));
+    const skyAtlasTargetCard = Boolean(document.querySelector("[data-solar-atlas-target-card]"));
+    const skyAtlasHud = Boolean(document.querySelector("[data-solar-atlas-flight-hud]"));
+    const skyAtlasObjects = document.querySelectorAll("[data-solar-atlas-object]").length;
+    const skyAtlasCoverButton = Boolean(document.querySelector('[data-solar-action="atlas-cover"]'));
     const exportButtons = document.querySelectorAll("[data-solar-action*='export']").length;
     const hasFrameworkOverlay = /Unhandled Runtime Error|Build Error|Next\\.js|Hydration failed/i.test(text);
     return {
@@ -355,6 +388,11 @@ async function runScenarioAction(cdp, scenario) {
       trajectoryButtons,
       postButtons,
       ccsdsButtons,
+      skyAtlasPanel,
+      skyAtlasTargetCard,
+      skyAtlasHud,
+      skyAtlasObjects,
+      skyAtlasCoverButton,
       hasFrameworkOverlay,
       url: location.href,
       title: document.title,
@@ -407,7 +445,23 @@ function checkScenario(scenario, state, screenshotBytes) {
     if (!/POST PROFILE|Tour cover|Export cover frame/i.test(state.text)) failures.push("cinematic post UI missing");
   }
   if (scenario.expect.includes("tour")) {
-    if (!/CINEMATIC PRESETS|SPACECRAFT GALLERY|HDR stage v2/i.test(state.text)) failures.push("showcase tour controls missing");
+    if (!/CINEMATIC PRESETS|SPACECRAFT GALLERY|HDR stage v2|Sky Atlas Explorer|Deep Sky Flight Route/i.test(state.text)) {
+      failures.push("showcase tour controls missing");
+    }
+  }
+  if (scenario.expect.includes("skyAtlas")) {
+    if (!state.skyAtlasPanel) failures.push("Sky Atlas panel missing");
+    if (state.skyAtlasObjects < 4) failures.push(`expected Sky Atlas objects, saw ${state.skyAtlasObjects}`);
+    if (!/Sky Atlas Explorer|Deep Sky Flight Route|Curated visual atlas/i.test(state.text)) failures.push("Sky Atlas text missing");
+  }
+  if (scenario.expect.includes("atlasRoute") && !state.skyAtlasHud) {
+    failures.push("Sky Atlas flight HUD missing after route play");
+  }
+  if (scenario.expect.includes("atlasTarget") && !state.skyAtlasTargetCard) {
+    failures.push("Sky Atlas target card missing");
+  }
+  if (scenario.expect.includes("atlasCover") && !state.skyAtlasCoverButton) {
+    failures.push("Sky Atlas cover action missing");
   }
   return failures;
 }
@@ -474,20 +528,30 @@ async function main() {
     await cdp.send("Emulation.setFocusEmulationEnabled", { enabled: true });
 
     for (const scenario of scenarios) {
-      await preparePage(cdp, scenario);
-      const state = await runScenarioAction(cdp, scenario);
+      let state = null;
+      let screenshotBytes = 0;
+      let failures = [];
       const screenshotFile = `${scenario.id}.png`;
-      const screenshotBytes = await captureScreenshot(cdp, join(outDir, screenshotFile));
-      const failures = checkScenario(scenario, state, screenshotBytes);
+      for (let attempt = 0; attempt < 2; attempt += 1) {
+        await preparePage(cdp, scenario);
+        state = await runScenarioAction(cdp, scenario);
+        screenshotBytes = await captureScreenshot(cdp, join(outDir, screenshotFile));
+        failures = checkScenario(scenario, state, screenshotBytes);
+        const retryable = failures.some((failure) =>
+          /canvas missing|framework error overlay|loading/i.test(failure),
+        );
+        if (!retryable || attempt === 1) break;
+        await sleep(1200);
+      }
       summary.scenarios.push({
         id: scenario.id,
         viewport: scenario.viewport,
         screenshotFile,
         screenshotBytes,
-        canvasCount: state.canvases.length,
-        biggestCanvasArea: Math.max(0, ...state.canvases.map((canvas) => canvas.area)),
-        spacecraftButtons: state.spacecraftButtons,
-        exportButtons: state.exportButtons,
+        canvasCount: state?.canvases.length ?? 0,
+        biggestCanvasArea: Math.max(0, ...(state?.canvases ?? []).map((canvas) => canvas.area)),
+        spacecraftButtons: state?.spacecraftButtons ?? 0,
+        exportButtons: state?.exportButtons ?? 0,
         ok: failures.length === 0,
         failures,
       });

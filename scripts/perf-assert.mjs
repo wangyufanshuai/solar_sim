@@ -52,6 +52,9 @@ const checks = [
   ["review-export", "Review export", baseline.reviewExportMaxTaskMs],
   ["trajectory-inspector", "Trajectory inspector", baseline.trajectoryInspectorMaxTaskMs],
   ["cinematic-post", "Cinematic post", baseline.cinematicPostMaxTaskMs],
+  ["sky-atlas-open", "Sky Atlas open", baseline.skyAtlasOpenMaxTaskMs],
+  ["sky-atlas-route", "Sky Atlas route", baseline.skyAtlasRouteMaxTaskMs],
+  ["atlas-cover", "Atlas cover", baseline.atlasCoverMaxTaskMs],
 ];
 const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
   ? new Set(process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean))

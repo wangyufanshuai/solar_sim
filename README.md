@@ -180,9 +180,21 @@ npm run perf:profile:assert
 npm run audit:mission-project
 npm run audit:ccsds
 npm run audit:gallery-models
+npm run audit:sky-atlas
 ```
 
 CCSDS demo artifacts can be regenerated with `npm run export:demo-ccsds`. The exporter is intended for preliminary data exchange and does not turn the workbench into a certified flight-dynamics chain.
+
+## Sky Atlas Boundary
+
+Sky Atlas Explorer is a curated visual navigation layer. It merges the committed nearby stars, Gaia bright-star cross-match, constellation guide layer, nebulae, clusters, pulsars, and NASA deep-sky manifests into a searchable flight experience.
+
+- It is not a complete SpaceEngine-scale procedural universe or a certified planetarium database.
+- Coordinates, distances, and magnitudes are used for visual orientation and education, not professional astrometric reduction.
+- Atlas route playback reuses the existing camera direction focus path and does not change the global N-body simulation, Mission Designer, SPICE/Cowell audit, or DeepSeek integration.
+- New Atlas resources are staged from existing committed manifests; no additional large textures, HDR files, or GLB models are required for this version.
+
+The demo Atlas route can be regenerated with `npm run export:demo-atlas-route`.
 
 ## Production Deployment
 

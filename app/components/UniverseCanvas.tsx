@@ -28,6 +28,7 @@ export default function UniverseCanvas({
       style={{ display: "block" }}
       dpr={simulation.viewSettings.highQualityRendering ? [1, 1.5] : 1}
       onPointerDown={(e) => {
+        simulation.onUserCameraInput?.();
         pointerDownRef.current = {
           x: e.nativeEvent.clientX,
           y: e.nativeEvent.clientY,
@@ -43,6 +44,7 @@ export default function UniverseCanvas({
         if (dx * dx + dy * dy > 36) draggedRef.current = true;
       }}
       onWheel={() => {
+        simulation.onUserCameraInput?.();
         wheelUntilRef.current = performance.now() + 180;
       }}
       onPointerMissed={() => {

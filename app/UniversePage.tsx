@@ -5,6 +5,7 @@ import { AnimatePresence } from "framer-motion";
 import {
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
   type ChangeEvent,
@@ -70,6 +71,8 @@ import SimulationHistoryBar from "./components/SimulationHistoryBar";
 import LaunchControlPanel from "./components/LaunchControlPanel";
 import LaunchTelemetryStrip from "./components/LaunchTelemetryStrip";
 import MissionDesignerPanel from "./components/MissionDesignerPanel";
+import SkyAtlasExplorer from "./components/SkyAtlasExplorer";
+import SkyAtlasFlightHud from "./components/SkyAtlasFlightHud";
 import useLaunchWebSocket from "./lib/useLaunchWebSocket";
 import type { LaunchConfig } from "./lib/launchTelemetryTypes";
 import type { MissionOptimizationResult, MissionPlan } from "./lib/missionDesignerTypes";
@@ -83,6 +86,14 @@ import type { LocalTelemetry } from "./lib/localLaunchPhysics";
 import { createFloatingOrigin, type FloatingOriginState } from "./lib/floatingOrigin";
 import { createCameraIntentState, type CameraIntentState } from "./lib/cameraIntentState";
 import type { CinematicPostProfileId } from "./lib/cinematicPostProfile";
+import { SKY_ATLAS_TOUR_EVENT } from "./lib/cinematicCamera";
+import {
+  buildSkyAtlasCatalog,
+  defaultSkyAtlasRoute,
+  skyAtlasObjectToDirection,
+  type SkyAtlasObject,
+  type SkyAtlasRoute,
+} from "./lib/skyAtlas";
 
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
@@ -103,6 +114,7 @@ export default function UniversePage() {
   );
   const [activeSection, setActiveSection] =
     useState<BottomControlBarSection>("simulation");
+  const skyAtlasCatalog = useMemo(() => buildSkyAtlasCatalog(), []);
   const [relativityEnabled, setRelativityEnabled] = useState(true);
   const relativityEnabledRef = useRef(true);
   relativityEnabledRef.current = relativityEnabled;
@@ -160,6 +172,10 @@ export default function UniversePage() {
   const [leftPanelCollapsed, setLeftPanelCollapsed] = useState(true);
   const [missionResult, setMissionResult] = useState<MissionOptimizationResult | null>(null);
   const [missionPreviewPlan, setMissionPreviewPlan] = useState<MissionPlan | null>(null);
+  const [skyAtlasTarget, setSkyAtlasTarget] = useState<SkyAtlasObject | null>(null);
+  const [skyAtlasRoute, setSkyAtlasRoute] = useState<SkyAtlasRoute | null>(null);
+  const [skyAtlasRouteStopIndex, setSkyAtlasRouteStopIndex] = useState(0);
+  const skyAtlasRouteTimersRef = useRef<number[]>([]);
 
   // ── Launch mode state ──
   const [launchMode, setLaunchMode] = useState(false);
@@ -315,6 +331,96 @@ export default function UniversePage() {
     }
   }, []);
 
+  const clearSkyAtlasRouteTimers = useCallback(() => {
+    for (const timer of skyAtlasRouteTimersRef.current) {
+      window.clearTimeout(timer);
+    }
+    skyAtlasRouteTimersRef.current = [];
+  }, []);
+
+  useEffect(() => clearSkyAtlasRouteTimers, [clearSkyAtlasRouteTimers]);
+
+  const enableSkyAtlasFlightView = useCallback(() => {
+    setVisualEnhance(true);
+    setCinematicPostProfile("atlas-flight");
+    setCinematicDofEnabled(false);
+    setViewSettings((current) => ({
+      ...current,
+      renderBudget: current.renderBudget === "safe" ? "balanced" : "quality",
+      highQualityRendering: true,
+      showGalaxyBackground: true,
+      showGaiaStars: true,
+      showConstellations: true,
+      showNebulaImages: true,
+      showDeepSkyMarkers: true,
+    }));
+  }, []);
+
+  const focusSkyAtlasObject = useCallback(
+    (object: SkyAtlasObject, route: SkyAtlasRoute | null, routeStopIndex: number) => {
+      setEarthMoonView(false);
+      setSelectedBodyIndex(null);
+      setCameraBodyFocusRequest(null);
+      setSkyAtlasTarget(object);
+      setSkyAtlasRoute(route);
+      setSkyAtlasRouteStopIndex(routeStopIndex);
+      enableSkyAtlasFlightView();
+      dispatchCameraFocusDirection(skyAtlasObjectToDirection(object));
+    },
+    [enableSkyAtlasFlightView],
+  );
+
+  const handleSkyAtlasTargetSelect = useCallback(
+    (object: SkyAtlasObject) => {
+      clearSkyAtlasRouteTimers();
+      focusSkyAtlasObject(object, null, 0);
+    },
+    [clearSkyAtlasRouteTimers, focusSkyAtlasObject],
+  );
+
+  const handleSkyAtlasRoutePlay = useCallback(
+    (route: SkyAtlasRoute, startIndex: number) => {
+      clearSkyAtlasRouteTimers();
+      if (!route.stops.length) return;
+      enableSkyAtlasFlightView();
+      setSkyAtlasRoute(route);
+      route.stops.forEach((_, offset) => {
+        const index = (startIndex + offset) % route.stops.length;
+        const timer = window.setTimeout(() => {
+          const stop = route.stops[index];
+          const object = stop
+            ? skyAtlasCatalog.find((item) => item.id === stop.objectId) ?? null
+            : null;
+          if (object) focusSkyAtlasObject(object, route, index);
+        }, offset * 7200);
+        skyAtlasRouteTimersRef.current.push(timer);
+      });
+    },
+    [clearSkyAtlasRouteTimers, enableSkyAtlasFlightView, focusSkyAtlasObject, skyAtlasCatalog],
+  );
+
+  const handleUserCameraInput = useCallback(() => {
+    clearSkyAtlasRouteTimers();
+  }, [clearSkyAtlasRouteTimers]);
+
+  useEffect(() => {
+    const onTour = () => {
+      const route = defaultSkyAtlasRoute(skyAtlasCatalog);
+      const stops = route.stops.slice(0, 3);
+      clearSkyAtlasRouteTimers();
+      setActiveSection("atlas");
+      stops.forEach((stop, index) => {
+        const timer = window.setTimeout(() => {
+          const object = skyAtlasCatalog.find((item) => item.id === stop.objectId);
+          if (object) focusSkyAtlasObject(object, route, index);
+        }, index * 5200);
+        skyAtlasRouteTimersRef.current.push(timer);
+      });
+    };
+    window.addEventListener(SKY_ATLAS_TOUR_EVENT, onTour);
+    return () => window.removeEventListener(SKY_ATLAS_TOUR_EVENT, onTour);
+  }, [clearSkyAtlasRouteTimers, focusSkyAtlasObject, skyAtlasCatalog]);
+
   const handleImportStateFile = useCallback(
     async (ev: ChangeEvent<HTMLInputElement>) => {
       const file = ev.target.files?.[0];
@@ -351,11 +457,14 @@ export default function UniversePage() {
   const handleZoomIn = useCallback(() => dispatchCameraZoom(1), []);
   const handleZoomOut = useCallback(() => dispatchCameraZoom(-1), []);
   const clearFocusLock = useCallback(() => {
+    clearSkyAtlasRouteTimers();
+    setSkyAtlasTarget(null);
+    setSkyAtlasRoute(null);
     setEarthMoonView(false);
     setSelectedBodyIndex(null);
     setCameraBodyFocusRequest(null);
     dispatchCameraFocusOrigin();
-  }, []);
+  }, [clearSkyAtlasRouteTimers]);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -513,6 +622,7 @@ export default function UniversePage() {
             physicsHistoryRef,
             missionPreviewPlan,
             onCanvasPointerMissed: clearFocusLock,
+            onUserCameraInput: handleUserCameraInput,
             launchMode,
             localLaunchActive,
             localLaunchActiveRef,
@@ -555,6 +665,11 @@ export default function UniversePage() {
         missionPlan={missionPreviewPlan}
         cameraIntentRef={cameraIntentRef}
         selectedBodyIndex={selectedBodyIndex}
+      />
+      <SkyAtlasFlightHud
+        target={skyAtlasTarget}
+        route={skyAtlasRoute}
+        routeStopIndex={skyAtlasRouteStopIndex}
       />
       {viewSettings.showKerrBlackHole ? (
         <KerrBlackHolePanel value={kerrBlackHole} onChange={setKerrBlackHole} />
@@ -653,6 +768,13 @@ export default function UniversePage() {
           selectedPlanId={missionPreviewPlan?.id ?? null}
           onResult={setMissionResult}
           onSelectPlan={setMissionPreviewPlan}
+        />
+      ) : null}
+      {activeSection === "atlas" ? (
+        <SkyAtlasExplorer
+          onTargetSelect={handleSkyAtlasTargetSelect}
+          onRoutePlay={handleSkyAtlasRoutePlay}
+          onExportCover={handleExportCoverFrame}
         />
       ) : null}
     </div>

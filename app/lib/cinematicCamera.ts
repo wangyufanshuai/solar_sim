@@ -18,6 +18,7 @@ export type CinematicCameraPreset = {
 
 export const CINEMATIC_CAMERA_EVENT = "solar-sim-cinematic-camera";
 export const CINEMATIC_TOUR_EVENT = "solar-sim-cinematic-tour";
+export const SKY_ATLAS_TOUR_EVENT = "solar-sim-sky-atlas-tour";
 
 export const CINEMATIC_CAMERA_PRESETS: CinematicCameraPreset[] = [
   { id: "wide-milky-way", label: "Wide Milky Way", positionOffset: [-310, 108, 560], targetOffset: [0, 0, 0], fov: 39, durationMs: 1400 },
@@ -43,6 +44,7 @@ export const CINEMATIC_TOUR_SEQUENCE: Array<{ id: CinematicCameraPresetId; holdM
 
 export function dispatchCinematicCameraTour(): void {
   window.dispatchEvent(new CustomEvent(CINEMATIC_TOUR_EVENT, { detail: { sequence: CINEMATIC_TOUR_SEQUENCE } }));
+  window.dispatchEvent(new CustomEvent(SKY_ATLAS_TOUR_EVENT, { detail: { chapter: "deep-sky-flight" } }));
   let delay = 0;
   for (const step of CINEMATIC_TOUR_SEQUENCE) {
     window.setTimeout(() => dispatchCinematicCameraPreset(step.id), delay);

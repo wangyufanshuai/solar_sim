@@ -37,6 +37,7 @@ jobs:
           npm run audit:gallery-models
           npm run audit:ccsds
           npm run audit:mission-review
+          npm run audit:sky-atlas
 
       - name: Build
         run: npm run build

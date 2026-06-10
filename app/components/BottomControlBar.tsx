@@ -5,6 +5,7 @@ import {
   Crosshair,
   Earth,
   FastForward,
+  Globe2,
   Layers,
   Minus,
   MoreHorizontal,
@@ -28,7 +29,7 @@ import {
 
 const IS = 1.0;
 
-export type BottomControlBarSection = "simulation" | "view" | "tools" | "launch" | "mission";
+export type BottomControlBarSection = "simulation" | "view" | "tools" | "launch" | "mission" | "atlas";
 
 export type BottomControlBarProps = {
   isPlaying?: boolean;
@@ -63,6 +64,7 @@ const sections: { id: BottomControlBarSection; label: string; Icon: typeof Box }
 ];
 
 sections.splice(3, 0, { id: "mission", label: "Mission", Icon: Orbit });
+sections.splice(4, 0, { id: "atlas", label: "Atlas", Icon: Globe2 });
 
 const iconBtn =
   "flex h-9 w-9 items-center justify-center rounded-full text-[var(--ui-text-dim)] transition-all duration-150 hover:bg-white/10 hover:text-[var(--ui-text-primary)] disabled:pointer-events-none disabled:opacity-25";

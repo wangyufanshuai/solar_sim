@@ -311,6 +311,18 @@ async (scenario) => {
     press('[data-solar-action="post-tour-cover"]');
     await sleep(400);
   }
+  if (scenario === "sky-atlas-open" || scenario === "sky-atlas-route" || scenario === "atlas-cover") {
+    press('[data-solar-section="atlas"]');
+    await sleep(650);
+    if (scenario === "sky-atlas-route") {
+      press('[data-solar-action="atlas-route-play"]');
+      await sleep(900);
+    }
+    if (scenario === "atlas-cover") {
+      press('[data-solar-action="atlas-cover"]');
+      await sleep(250);
+    }
+  }
   if (scenario === "safe") {
     press('[data-solar-section="view"]');
     await sleep(200);
@@ -328,6 +340,9 @@ async (scenario) => {
     scenario === "review-export" ? 1800 :
     scenario === "trajectory-inspector" ? 1800 :
     scenario === "cinematic-post" ? 3000 :
+    scenario === "sky-atlas-open" ? 2200 :
+    scenario === "sky-atlas-route" ? 3600 :
+    scenario === "atlas-cover" ? 1600 :
     scenario === "showcase-tour" ? 5000 :
     6000;
   const result = await sample(durationMs, (frame) => {
@@ -487,7 +502,7 @@ async function main() {
     const scenarios = [];
     const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
       ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
-      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post"];
+      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover"];
     for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }
