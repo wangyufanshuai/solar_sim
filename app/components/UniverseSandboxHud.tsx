@@ -115,6 +115,7 @@ export default function UniverseSandboxHud({
   const [gaiaOpen, setGaiaOpen] = useState(false);
   const [constellationsOpen, setConstellationsOpen] = useState(false);
   const [deepSkyOpen, setDeepSkyOpen] = useState(false);
+  const [galleryOpen, setGalleryOpen] = useState(false);
   const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -469,7 +470,16 @@ export default function UniverseSandboxHud({
                 />
                 {onExportSystemState ? <ToolButton label="导出当前系统状态" onClick={onExportSystemState} /> : null}
                 {onImportSystemState ? <ToolButton label="导入系统状态" onClick={onImportSystemState} /> : null}
-                <SpacecraftGalleryPanel />
+                <button
+                  type="button"
+                  data-solar-action="gallery-toggle"
+                  onClick={() => setGalleryOpen((open) => !open)}
+                  className="mt-3 flex w-full items-center justify-between border-t border-white/5 pt-3 text-left"
+                >
+                  <span className="text-[11px] tracking-[0.2em] text-slate-400">SPACECRAFT GALLERY</span>
+                  <ChevronDown className={`h-3.5 w-3.5 text-white/36 transition-transform ${galleryOpen ? "rotate-180" : ""}`} />
+                </button>
+                {galleryOpen ? <SpacecraftGalleryPanel /> : null}
               </div>
             )}
           </div>

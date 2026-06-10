@@ -164,6 +164,14 @@ async (scenario) => {
     el.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     return true;
   };
+  const pressText = (text) => {
+    const wanted = text.toLowerCase();
+    const button = [...document.querySelectorAll("button")]
+      .find((item) => (item.textContent ?? "").trim().toLowerCase() === wanted);
+    if (!button) return false;
+    button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    return true;
+  };
   const sample = (durationMs, drive) => new Promise((resolve) => {
     let done = false;
     const samples = [];
@@ -231,12 +239,44 @@ async (scenario) => {
   }
   if (scenario === "gallery-open") {
     press('[data-solar-section="tools"]');
+    await sleep(250);
+    press('[data-solar-action="gallery-toggle"]');
     const deadline = performance.now() + 45000;
     while (document.querySelectorAll("[data-solar-spacecraft]").length < 8 && performance.now() < deadline) {
       await sleep(250);
     }
-    document.querySelector("[data-solar-spacecraft]")?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
     await sleep(1200);
+  }
+  if (scenario === "gallery-all-models") {
+    press('[data-solar-section="tools"]');
+    await sleep(250);
+    press('[data-solar-action="gallery-toggle"]');
+    const deadline = performance.now() + 45000;
+    while (document.querySelectorAll("[data-solar-spacecraft]").length < 8 && performance.now() < deadline) {
+      await sleep(250);
+    }
+    for (const button of [...document.querySelectorAll("[data-solar-spacecraft]")]) {
+      button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+      const modelDeadline = performance.now() + 15000;
+      while (/Loading model/i.test(document.querySelector('[data-solar-gallery="v2"]')?.textContent ?? "") && performance.now() < modelDeadline) {
+        await sleep(120);
+      }
+      await sleep(240);
+    }
+  }
+  if (scenario === "mission-compare") {
+    press('[data-solar-section="mission"]');
+    await sleep(400);
+    pressText("compare");
+    await sleep(300);
+  }
+  if (scenario === "ccsds-export") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    pressText("report");
+    await sleep(250);
+    press('[data-solar-action="mission-export-oem"]');
+    press('[data-solar-action="mission-export-opm"]');
   }
   if (scenario === "safe") {
     press('[data-solar-section="view"]');
@@ -248,6 +288,9 @@ async (scenario) => {
     scenario === "zoom" ? 4500 :
     scenario === "mission-run-worker" ? 1800 :
     scenario === "gallery-open" ? 3500 :
+    scenario === "gallery-all-models" ? 3000 :
+    scenario === "mission-compare" ? 2400 :
+    scenario === "ccsds-export" ? 1800 :
     scenario === "showcase-tour" ? 5000 :
     6000;
   const result = await sample(durationMs, (frame) => {
@@ -338,6 +381,18 @@ async function runScenario(cdp, scenario) {
   cdp.on("Tracing.tracingComplete", (params) => {
     traceStream = params.stream;
   });
+  if (scenario === "mission-compare") {
+    await cdp.send("Runtime.evaluate", {
+      expression: `(${String(async () => {
+        const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+        document.querySelector('[data-solar-section="mission"]')?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        await sleep(350);
+        document.querySelector('[data-solar-action="mission-optimize"]')?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        await sleep(4200);
+      })})()`,
+      awaitPromise: true,
+    });
+  }
   await cdp.send("Tracing.start", {
     transferMode: "ReturnAsStream",
     categories: "devtools.timeline,disabled-by-default-devtools.timeline,blink,cc,gpu",
@@ -393,7 +448,10 @@ async function main() {
     await sleep(1500);
     await cdp.send("Page.bringToFront");
     const scenarios = [];
-    for (const scenario of ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open"]) {
+    const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
+      ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
+      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export"];
+    for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }
     console.log(JSON.stringify({ url: targetUrl, scenarios }, null, 2));

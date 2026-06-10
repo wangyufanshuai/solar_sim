@@ -162,10 +162,12 @@ Do not commit `.cache/spice`, raw NAIF kernels, `.env.local`, dynamic visual run
 
 This version positions Solar Sim as a preliminary aerospace engineering workbench plus a high-end WebGL showcase.
 
-- Mission Workbench supports Project / Scenario / Run / Report flow with local JSON import/export, CSV leg summaries, OEM-like trajectory tables, Markdown/JSON reports, and an engineering audit matrix.
+- Mission Workbench schema v2 stores multiple scenarios and immutable run history in IndexedDB. Existing localStorage schema v1 projects migrate on first load, and JSON import remains compatible with v1/v2.
+- Run Compare accepts 2-4 immutable runs and compares C3, delta-v, propellant, duration, robustness, constraint margin, Cowell residual, and arrival 3-sigma. Failed and unverified finite-thrust records remain audit-only.
+- Mission exchange exports include CCSDS OEM 3.0 and OPM 3.0 KVN with absolute TDB epochs, heliocentric ECLIPJ2000 states in km/km/s, initial covariance, and explicit injection/DSM maneuver records.
 - Reports preserve solver provenance, SPICE checksum status, ephemeris audit, Cowell/covariance results, constraint margins, rejected candidates, and low-thrust availability.
 - Low-thrust seed records remain audit-only. They are not ranked as feasible unless an offline Hermite-Simpson solve is explicitly marked `status: "converged"` and passes residual gates.
-- Showcase Tour and Spacecraft Gallery v2 are presentation features. They do not enter the N-body integrator and do not change mission dynamics.
+- Showcase Tour and Spacecraft Gallery v2 are presentation features. Gallery Draco decoding is local (`public/draco`), with no runtime decoder CDN dependency. They do not enter the N-body integrator and do not change mission dynamics.
 - The current visual target is strong browser showcase quality. It is not an offline film renderer with path-traced volumetrics, production compositing, or physically complete spacecraft materials.
 
 Local regression gates:
@@ -176,7 +178,11 @@ npm run visual:regression
 npm run visual:tour
 npm run perf:profile:assert
 npm run audit:mission-project
+npm run audit:ccsds
+npm run audit:gallery-models
 ```
+
+CCSDS demo artifacts can be regenerated with `npm run export:demo-ccsds`. The exporter is intended for preliminary data exchange and does not turn the workbench into a certified flight-dynamics chain.
 
 ## Production Deployment
 

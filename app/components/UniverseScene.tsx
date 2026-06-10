@@ -61,12 +61,12 @@ function idealFocusCameraDistance(def: SolarSystemBodyDef, mode: FocusMode): num
   const r = def.radiusScene;
   if (mode === "inspect") {
     if (def.variant === "sun") return Math.max(2.2, r * 1.72);
-    if (def.showRings) return Math.max(r * 2.55 * 1.38, 3.2);
+    if (def.showRings) return Math.max(r * 2.55 * 2.5, 8);
     return Math.max(r * 5.2, 0.42);
   }
   if (mode === "lock") {
     if (def.variant === "sun") return Math.max(2.8, r * 2.05);
-    if (def.showRings) return Math.max(r * 2.55 * 1.62, 3.8);
+    if (def.showRings) return Math.max(r * 2.55 * 2.2, 8);
     return Math.max(r * 4.0, 0.32);
   }
   return Math.max(14, r * 24);
@@ -488,6 +488,45 @@ export type UniverseCanvasSimulationProps = {
   simDaysRef: MutableRefObject<number>; isPlaying: boolean; daysPerSecond: number; physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; relativityEnabledRef: MutableRefObject<boolean>; precisionTierRef: MutableRefObject<PhysicsPrecisionTier>; floatingOriginRef: MutableRefObject<FloatingOriginState>; cameraIntentRef?: MutableRefObject<CameraIntentState>; onSelectBody: (bodyIndex: number) => void; onBodyCanvasPick: (bodyIndex: number) => void; selectedBodyIndex: number | null; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; bodyMetricsRef: MutableRefObject<BodyLiveMetrics | null>; simulationDiagnosticsRef: MutableRefObject<SimulationDiagnostics | null>; earthMoonView: boolean; telemetrySeriesRef: MutableRefObject<TelemetrySeriesState | null>; kerrBlackHole: KerrBlackHoleUiState; visualEnhance: boolean; visualTest?: boolean; viewSettings: SimulationViewSettings; lagrangeSpawnNonceRef: MutableRefObject<number>; integrationSuspendedRef: MutableRefObject<boolean>; timeTravelScrubURef: MutableRefObject<number>; timeTravelScrubbingRef: MutableRefObject<boolean>; physicsHistoryRef: MutableRefObject<PhysicsHistoryStack>; missionPreviewPlan?: MissionPlan | null; onCanvasPointerMissed?: () => void; launchMode?: boolean; localLaunchActive?: boolean; localLaunchActiveRef?: MutableRefObject<boolean>; onLocalLaunchHandoff?: LaunchSceneViewProps["onHandoff"]; onLocalLaunchAbort?: () => void; localTelemetryRef?: MutableRefObject<LocalTelemetry | null>; launchConfigRef?: MutableRefObject<LaunchConfig | null>;
 };
 
+function CloseupPresentationGate({
+  activeRef,
+  children,
+}: {
+  activeRef: MutableRefObject<boolean>;
+  children: ReactNode;
+}) {
+  const groupRef = useRef<THREE.Group>(null);
+  useFrame(() => {
+    if (!groupRef.current) return;
+    groupRef.current.visible = !activeRef.current;
+  });
+  return <group ref={groupRef}>{children}</group>;
+}
+
+function CloseupPresentationBridge({
+  selectedBodyId,
+  cameraIntentRef,
+  activeRef,
+}: {
+  selectedBodyId: string | null;
+  cameraIntentRef?: MutableRefObject<CameraIntentState>;
+  activeRef: MutableRefObject<boolean>;
+}) {
+  useFrame(() => {
+    const intent = cameraIntentRef?.current;
+    const intentBodyId =
+      intent?.bodyIndex == null ? null : SOLAR_SYSTEM_BODIES[intent.bodyIndex]?.id ?? null;
+    const effectiveBodyId = selectedBodyId ?? intentBodyId;
+    activeRef.current = Boolean(
+      effectiveBodyId &&
+      ["sun", "earth", "moon", "jupiter", "saturn"].includes(effectiveBodyId) &&
+      intent?.kind !== "missionPreview" &&
+      intent?.targetLabel !== "mission-overview",
+    );
+  }, -1000);
+  return null;
+}
+
 export default function UniverseScene({ simulation }: { simulation: UniverseCanvasSimulationProps }) {
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const qualityBudget = simulation.viewSettings.renderBudget === "quality" || simulation.viewSettings.highQualityRendering;
@@ -501,6 +540,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
     simulation.selectedBodyIndex == null
       ? null
       : SOLAR_SYSTEM_BODIES[simulation.selectedBodyIndex]?.id ?? null;
+  const closeupPresentationRef = useRef(false);
 
   useEffect(() => {
     if (!simulation.cameraIntentRef) return;
@@ -519,22 +559,25 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         <hemisphereLight intensity={TRUE_VOID_CINEMATIC_HEMISPHERE_INTENSITY} groundColor="#020204" color="#17223a" />
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
         <FloatingOriginBridge floatingOriginRef={simulation.floatingOriginRef} />
-        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} qualitySky={qualityBudget} renderBudget={simulation.viewSettings.renderBudget} />}</BrightStarTierBridge>
+        <CloseupPresentationBridge selectedBodyId={selectedBodyId} cameraIntentRef={simulation.cameraIntentRef} activeRef={closeupPresentationRef} />
+        <BrightStarTierBridge floatingOriginRef={simulation.floatingOriginRef}>{(tier2) => <ScienceBackdrop floatingOriginRef={simulation.floatingOriginRef} brightStarTier2={tier2} qualitySky={qualityBudget} renderBudget={simulation.viewSettings.renderBudget} closeupPresentationRef={closeupPresentationRef} />}</BrightStarTierBridge>
         {simulation.viewSettings.showGalaxyBackground ? <NebulaMilkyWay /> : null}
         <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
           {qualityBudget ? <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} /> : null}
           {qualityBudget ? <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} /> : null}
           <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
-          {simulation.viewSettings.showConstellations ? <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} /> : null}
-          {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
-          {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
-          {simulation.viewSettings.showDeepSkyMarkers ? (
-            <>
-              <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />
-              <StarClusterMarkers floatingOriginRef={simulation.floatingOriginRef} />
-              <PulsarField floatingOriginRef={simulation.floatingOriginRef} />
-            </>
-          ) : null}
+          <CloseupPresentationGate activeRef={closeupPresentationRef}>
+            {simulation.viewSettings.showConstellations ? <ConstellationLines floatingOriginRef={simulation.floatingOriginRef} /> : null}
+            {simulation.viewSettings.showGaiaStars ? <GaiaStarField floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
+            {simulation.viewSettings.showNebulaImages ? <DeepSkyImageSprites floatingOriginRef={simulation.floatingOriginRef} highQuality={qualityBudget} /> : null}
+            {simulation.viewSettings.showDeepSkyMarkers ? (
+              <>
+                <NebulaMarkers floatingOriginRef={simulation.floatingOriginRef} />
+                <StarClusterMarkers floatingOriginRef={simulation.floatingOriginRef} />
+                <PulsarField floatingOriginRef={simulation.floatingOriginRef} />
+              </>
+            ) : null}
+          </CloseupPresentationGate>
         </GalacticOverlayGate>
         <SelectionMetricsBridge selectedBodyIndex={simulation.selectedBodyIndex} physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} bodyMetricsRef={simulation.bodyMetricsRef} />
         <SolarSystemIntegrator physicsRef={simulation.physicsRef} simDaysRef={simulation.simDaysRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} precisionTierRef={simulation.precisionTierRef} integrationSuspendedRef={simulation.integrationSuspendedRef} localLaunchActiveRef={simulation.localLaunchActiveRef} floatingOriginRef={simulation.floatingOriginRef} />
@@ -569,7 +612,9 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
             showLabels={qualityBudget}
           />
         ) : null}
-        {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor renderBudget={simulation.viewSettings.renderBudget} selectedBodyId={selectedBodyId} /> : null}
+        <CloseupPresentationGate activeRef={closeupPresentationRef}>
+          {simulation.viewSettings.showReferenceOrbits ? <ReferenceOrbitDecor renderBudget={simulation.viewSettings.renderBudget} selectedBodyId={selectedBodyId} /> : null}
+        </CloseupPresentationGate>
         {simulation.viewSettings.showKerrBlackHole ? <KerrBlackHole massSolar={simulation.kerrBlackHole.massSolar} aOverM={simulation.kerrBlackHole.aOverM} frameDragTeachingScale={simulation.kerrBlackHole.frameDragTeachingScale} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} /> : null}
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />
         <LodOrbitControlsBridge floatingOriginRef={simulation.floatingOriginRef} controlsRef={controlsRef} />
@@ -585,6 +630,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
               physicsRef={simulation.physicsRef}
               floatingOriginRef={simulation.floatingOriginRef}
               selectedBodyIndex={simulation.selectedBodyIndex}
+              cameraIntentRef={simulation.cameraIntentRef}
               quality={shadowQuality}
             />
           </>
@@ -594,7 +640,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
         ) : (
           <>
             <LabelOcclusionProvider>
-              <SolarSystemBodies physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} onSelectBody={simulation.onSelectBody} onBodyCanvasPick={simulation.onBodyCanvasPick} selectedBodyIndex={simulation.selectedBodyIndex} earthMoonView={simulation.earthMoonView} viewSettings={simulation.viewSettings} simDaysRef={simulation.simDaysRef} visualTest={simulation.visualTest} />
+              <SolarSystemBodies physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} onSelectBody={simulation.onSelectBody} onBodyCanvasPick={simulation.onBodyCanvasPick} selectedBodyIndex={simulation.selectedBodyIndex} earthMoonView={simulation.earthMoonView} viewSettings={simulation.viewSettings} simDaysRef={simulation.simDaysRef} visualTest={simulation.visualTest} closeupPresentationRef={closeupPresentationRef} />
             </LabelOcclusionProvider>
           </>
         )}

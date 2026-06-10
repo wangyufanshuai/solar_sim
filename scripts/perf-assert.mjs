@@ -45,6 +45,9 @@ const checks = [
   ["mission-run-worker", "Mission run worker", baseline.missionRunWorkerMaxTaskMs],
   ["showcase-tour", "Showcase tour", baseline.showcaseTourMaxTaskMs],
   ["gallery-open", "Gallery open", baseline.galleryOpenMaxTaskMs],
+  ["gallery-all-models", "Gallery all models", baseline.galleryAllModelsMaxTaskMs],
+  ["mission-compare", "Mission compare", baseline.missionCompareMaxTaskMs],
+  ["ccsds-export", "CCSDS export", baseline.ccsdsExportMaxTaskMs],
 ];
 
 const rows = checks.map(([id, label, limit]) => {

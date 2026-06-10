@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 2,
+  "id": "project-demo-evjs",
+  "name": "Solar Sim Demo Mission Workbench",
+  "createdAt": "2026-06-10T00:00:00.000Z",
+  "updatedAt": "2026-06-10T00:00:00.000Z",
+  "activeScenarioId": "scenario-demo-evjs",
+  "activeRunId": null,
+  "scenarios": [
+    {
+      "schemaVersion": 2,
+      "id": "scenario-demo-evjs",
+      "name": "Demo Earth-Venus-Jupiter-Saturn Scenario",
+      "createdAt": "2026-06-10T00:00:00.000Z",
+      "updatedAt": "2026-06-10T00:00:00.000Z",
+      "epochSimDays": 0,
+      "options": {
+        "sequence": [
+          "earth",
+          "venus",
+          "jupiter",
+          "saturn"
+        ],
+        "departureStartDay": 35,
+        "departureWindowDays": 540,
+        "departureStepDays": 45,
+        "maxCandidates": 12,
+        "includeRelativity": true,
+        "ephemerisMode": "spice-table",
+        "constraintPreset": "aggressive",
+        "constraints": {
+          "preset": "aggressive",
+          "dryMassKg": 4200,
+          "ispSeconds": 450,
+          "parkingOrbitAltitudeKm": 300,
+          "maxC3Km2S2": 120,
+          "maxTotalDeltaVKms": 18,
+          "maxDsmDeltaVKms": 5,
+          "maxDurationDays": 4200,
+          "minVenusFlybyAltitudeKm": 350,
+          "minJupiterFlybyAltitudeKm": 120000,
+          "maxNavigationUncertaintyKm": 1500
+        }
+      },
+      "constraints": {
+        "preset": "aggressive",
+        "dryMassKg": 4200,
+        "ispSeconds": 450,
+        "parkingOrbitAltitudeKm": 300,
+        "maxC3Km2S2": 120,
+        "maxTotalDeltaVKms": 18,
+        "maxDsmDeltaVKms": 5,
+        "maxDurationDays": 4200,
+        "minVenusFlybyAltitudeKm": 350,
+        "minJupiterFlybyAltitudeKm": 120000,
+        "maxNavigationUncertaintyKm": 1500
+      },
+      "selectedPlanId": null,
+      "notes": [
+        "Preliminary aerospace engineering workbench scenario.",
+        "Not GMAT/STK/SPICE certification.",
+        "Finite-thrust solutions require offline Hermite-Simpson convergence before ranking."
+      ]
+    }
+  ],
+  "runs": []
+}

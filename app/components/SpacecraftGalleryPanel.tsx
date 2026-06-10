@@ -4,10 +4,11 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { LoaderCircle } from "lucide-react";
 import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { SPACECRAFT_GALLERY_LIGHTING_PROFILE } from "../lib/closeupRenderProfile";
 import { markRenderAssetStage } from "../lib/renderAssetQueue";
 import type { ResourcePackManifest, SpacecraftResourcePackItem } from "../lib/resourcePackTypes";
+import { createSpacecraftGltfLoader } from "../lib/spacecraftGltfLoader";
 
 type LoadedModelProps = {
   item: SpacecraftResourcePackItem;
@@ -16,6 +17,34 @@ type LoadedModelProps = {
 };
 
 const modelCache = new Map<string, THREE.Object3D>();
+
+function galleryMaterial(source: THREE.Material) {
+  const material = source as THREE.MeshStandardMaterial;
+  const normalized = new THREE.MeshStandardMaterial({
+    name: source.name,
+    color: material.color?.clone() ?? new THREE.Color("#c9d2df"),
+    map: material.map ?? null,
+    normalMap: material.normalMap ?? null,
+    normalScale: material.normalScale?.clone() ?? new THREE.Vector2(1, 1),
+    metalnessMap: material.metalnessMap ?? null,
+    roughnessMap: material.roughnessMap ?? null,
+    metalness: THREE.MathUtils.clamp(material.metalness ?? 0.28, 0, 0.92),
+    roughness: THREE.MathUtils.clamp(material.roughness ?? 0.58, 0.42, 0.88),
+    emissive: material.emissive?.clone() ?? new THREE.Color(0x000000),
+    emissiveMap: material.emissiveMap ?? null,
+    emissiveIntensity: material.emissiveIntensity ?? 1,
+    aoMap: material.aoMap ?? null,
+    alphaMap: material.alphaMap ?? null,
+    transparent: material.transparent,
+    opacity: material.opacity,
+    alphaTest: material.alphaTest,
+    side: material.side,
+    vertexColors: material.vertexColors,
+    depthWrite: material.depthWrite,
+  });
+  normalized.envMapIntensity = 1.05;
+  return normalized;
+}
 
 function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   const box = new THREE.Box3().setFromObject(object);
@@ -29,14 +58,10 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
     if (!mesh.isMesh) return;
     mesh.castShadow = true;
     mesh.receiveShadow = true;
-    const material = mesh.material;
-    const mats = Array.isArray(material) ? material : [material];
-    for (const mat of mats) {
-      if (mat && "metalness" in mat) {
-        const standard = mat as THREE.MeshStandardMaterial;
-        standard.roughness = Math.max(0.42, standard.roughness ?? 0.6);
-      }
-    }
+    const originals = Array.isArray(mesh.material) ? mesh.material : [mesh.material];
+    const normalized = originals.map(galleryMaterial);
+    mesh.material = Array.isArray(mesh.material) ? normalized : normalized[0]!;
+    originals.forEach((material) => material.dispose());
   });
 }
 
@@ -53,8 +78,8 @@ function GalleryModel({ item, onReady, onError }: LoadedModelProps) {
       onReady?.();
       return;
     }
-    const loader = new GLTFLoader();
-    loader.load(
+    const loaderBundle = createSpacecraftGltfLoader();
+    loaderBundle.loader.load(
       item.localPath,
       (gltf) => {
         if (cancelled) return;
@@ -75,6 +100,7 @@ function GalleryModel({ item, onReady, onError }: LoadedModelProps) {
     );
     return () => {
       cancelled = true;
+      loaderBundle.dispose();
     };
   }, [item, onReady, onError]);
 
@@ -89,6 +115,23 @@ function GalleryModel({ item, onReady, onError }: LoadedModelProps) {
       <primitive object={scene} />
     </group>
   );
+}
+
+function GalleryEnvironment() {
+  const gl = useThree((state) => state.gl);
+  const scene = useThree((state) => state.scene);
+  useEffect(() => {
+    const pmrem = new THREE.PMREMGenerator(gl);
+    const environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    const previous = scene.environment;
+    scene.environment = environment;
+    return () => {
+      scene.environment = previous;
+      environment.dispose();
+      pmrem.dispose();
+    };
+  }, [gl, scene]);
+  return null;
 }
 
 function GalleryCameraRig() {
@@ -109,6 +152,7 @@ function GalleryStage({ item, onReady, onError }: LoadedModelProps) {
       gl={{ alpha: true, antialias: true, powerPreference: "low-power" }}
       shadows
     >
+      <GalleryEnvironment />
       <GalleryCameraRig />
       <ambientLight intensity={0.18} />
       <hemisphereLight args={["#dce8ff", "#10131c", 0.42]} />
@@ -153,7 +197,8 @@ export default function SpacecraftGalleryPanel() {
         if (cancelled) return;
         const next = manifest.spacecraft ?? [];
         setItems(next);
-        setSelectedId((current) => current ?? next[0]?.id ?? null);
+        const lightest = [...next].sort((a, b) => a.bytes - b.bytes)[0];
+        setSelectedId((current) => current ?? lightest?.id ?? next[0]?.id ?? null);
       })
       .catch(() => {});
     return () => {
@@ -180,6 +225,30 @@ export default function SpacecraftGalleryPanel() {
       setModelError(null);
     }
   }, [selected]);
+
+  useEffect(() => {
+    if (!selected || items.length < 2) return;
+    const selectedIndex = items.findIndex((item) => item.id === selected.id);
+    const neighbor = items[(selectedIndex + 1) % items.length];
+    if (!neighbor || modelCache.has(neighbor.localPath)) return;
+    let cancelled = false;
+    const loaderBundle = createSpacecraftGltfLoader();
+    loaderBundle.loader.load(
+      neighbor.localPath,
+      (gltf) => {
+        if (!cancelled) {
+          normalizeModel(gltf.scene, neighbor.modelScale);
+          modelCache.set(neighbor.localPath, gltf.scene);
+        }
+        loaderBundle.dispose();
+      },
+      undefined,
+      () => loaderBundle.dispose(),
+    );
+    return () => {
+      cancelled = true;
+    };
+  }, [items, selected]);
 
   if (items.length === 0) {
     return (

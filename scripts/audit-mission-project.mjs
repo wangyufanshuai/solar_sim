@@ -2,6 +2,8 @@ import { existsSync, readFileSync } from "node:fs";
 
 const requiredFiles = [
   "app/lib/missionProject.ts",
+  "app/lib/missionProjectStore.ts",
+  "app/lib/missionCcsds.ts",
   "app/lib/missionDesignerTypes.ts",
   "app/components/MissionDesignerPanel.tsx",
   "public/data/low-thrust-solution-library-v1.json",
@@ -13,15 +15,20 @@ for (const file of requiredFiles) {
 }
 
 const packageJson = JSON.parse(readFileSync("package.json", "utf8"));
-for (const script of ["audit:mission-project", "export:demo-scenario", "visual:tour"]) {
+for (const script of ["audit:mission-project", "export:demo-scenario", "audit:ccsds", "export:demo-ccsds", "visual:tour"]) {
   if (!packageJson.scripts?.[script]) failures.push(`Missing package script: ${script}`);
 }
 
 const types = readFileSync("app/lib/missionDesignerTypes.ts", "utf8");
 for (const symbol of [
   "MissionProject",
+  "MissionProjectV2",
   "MissionScenario",
   "MissionRunRecord",
+  "MissionRunRecordV2",
+  "MissionStateSample",
+  "MissionManeuverEvent",
+  "MissionComparisonRow",
   "MissionEngineeringMatrixRow",
   "MissionExportFormat",
 ]) {
@@ -33,12 +40,19 @@ for (const symbol of [
 const workbench = readFileSync("app/lib/missionProject.ts", "utf8");
 for (const symbol of [
   "createMissionProject",
+  "appendMissionRun",
+  "migrateMissionProjectV1",
   "parseMissionProjectJson",
+  "missionComparisonRows",
   "missionEngineeringMatrix",
   "missionLegsToCsv",
-  "missionPlanToCcsdsOemLike",
 ]) {
   if (!workbench.includes(`export function ${symbol}`)) failures.push(`Missing missionProject helper: ${symbol}`);
+}
+
+const ccsds = readFileSync("app/lib/missionCcsds.ts", "utf8");
+for (const symbol of ["missionPlanToCcsdsOem", "missionPlanToCcsdsOpm", "jdTdbToCcsdsEpoch"]) {
+  if (!ccsds.includes(`export function ${symbol}`)) failures.push(`Missing CCSDS helper: ${symbol}`);
 }
 
 const lowThrust = JSON.parse(readFileSync("public/data/low-thrust-solution-library-v1.json", "utf8"));

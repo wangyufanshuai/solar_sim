@@ -4,6 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
+import { closeupRenderProfile } from "../lib/closeupRenderProfile";
 
 export default function CinematicExposureController({
   enabled,
@@ -45,9 +46,11 @@ export default function CinematicExposureController({
         count += 1;
       }
       const average = Math.exp(logSum / Math.max(count, 1));
+      const profile = selectedBodyId ? closeupRenderProfile(selectedBodyId) : null;
+      const center = profile?.exposure ?? TRUE_VOID_TONE_MAPPING_EXPOSURE;
       const isSun = selectedBodyId === "sun";
-      const minExposure = isSun ? 0.65 : selectedBodyId ? 0.72 : 0.68;
-      const maxExposure = isSun ? 0.88 : selectedBodyId ? 1.04 : 1.15;
+      const minExposure = isSun ? Math.max(0.65, center - 0.12) : selectedBodyId ? Math.max(0.68, center - 0.2) : 0.68;
+      const maxExposure = isSun ? Math.min(0.9, center + 0.08) : selectedBodyId ? Math.min(1.08, center + 0.16) : 1.15;
       const target = THREE.MathUtils.clamp(0.18 / Math.max(average, 0.025), minExposure, maxExposure);
       const alpha = 1 - Math.pow(0.015, Math.max(delta, 0.001));
       exposureRef.current = THREE.MathUtils.lerp(exposureRef.current, target, alpha);

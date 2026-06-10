@@ -10,13 +10,16 @@ import {
   propellantEstimateKg,
 } from "../missionOptimizer";
 import {
+  appendMissionRun,
   createMissionProject,
   createMissionScenario,
+  missionComparisonRows,
   missionEngineeringMatrix,
   missionLegsToCsv,
-  missionPlanToCcsdsOemLike,
   parseMissionProjectJson,
 } from "../missionProject";
+import { missionPlanToCcsdsOem, missionPlanToCcsdsOpm } from "../missionCcsds";
+import { auditPlanHighFidelity } from "../missionHighFidelity";
 import { MISSION_REPORT_CAVEAT, missionPlanToMarkdown, missionPlanToReportJson } from "../missionReport";
 import type {
   MissionPhysicsSnapshot,
@@ -260,7 +263,7 @@ describe("mission engineering calculations", () => {
     expect(markdown).toContain("Local summary");
   });
 
-  it("round-trips Mission Project data and exports leg CSV/OEM-like tables", () => {
+  it("round-trips Project v2, migrates v1, appends runs, and exports CCSDS OEM/OPM", () => {
     const options = {
       sequence: ["earth", "venus", "jupiter", "saturn"] as const,
       departureStartDay: 35,
@@ -285,7 +288,7 @@ describe("mission engineering calculations", () => {
     });
     const project = createMissionProject({ name: "Solar Sim demo project", scenario, result });
     const restored = parseMissionProjectJson(JSON.stringify(project));
-    expect(restored.schemaVersion).toBe(1);
+    expect(restored.schemaVersion).toBe(2);
     expect(restored.scenarios[0]?.selectedPlanId).toBe(plan.id);
     expect(restored.runs[0]?.result.bestPlan?.id ?? restored.runs[0]?.result.rejectedPlans[0]?.id).toBeTruthy();
 
@@ -295,18 +298,48 @@ describe("mission engineering calculations", () => {
     expect(matrix.filter((row) => row.verdict === "fail").every((row) => !row.reportReady)).toBe(true);
     expect(result.plans.every((candidate) => candidate.lowThrustSolutions.every((solution) => solution.status !== "seed"))).toBe(true);
 
+    const appended = appendMissionRun(project, scenario.id, result, plan.id);
+    expect(appended.runs).toHaveLength(2);
+    expect(project.runs).toHaveLength(1);
+    expect(appended.runs[0]).not.toBe(appended.runs[1]);
+    const compare = missionComparisonRows(appended, appended.runs.map((run) => run.id));
+    expect(compare).toHaveLength(2);
+
+    const v1 = {
+      ...project,
+      schemaVersion: 1,
+      scenarios: project.scenarios.map((item) => ({ ...item, schemaVersion: 1 })),
+      runs: project.runs.map(({ schemaVersion: _schemaVersion, inputHash: _inputHash, solverVersion: _solverVersion, spiceChecksum: _spiceChecksum, constraintsSnapshot: _constraintsSnapshot, status: _status, reportReadiness: _reportReadiness, ...run }) => run),
+    };
+    const migrated = parseMissionProjectJson(JSON.stringify(v1));
+    expect(migrated.schemaVersion).toBe(2);
+    expect(migrated.runs[0]?.inputHash).toMatch(/^fnv1a-/);
+
     const csv = missionLegsToCsv(plan);
     expect(csv).toContain('"leg","departure_day","arrival_day"');
     expect(csv).toContain('"earth-venus"');
 
-    const oem = missionPlanToCcsdsOemLike(plan);
-    expect(oem).toContain("CCSDS_OEM_VERS = 2.0");
+    const auditedPlan = auditPlanHighFidelity(plan, false);
+    const oem = missionPlanToCcsdsOem(auditedPlan);
+    expect(oem).toContain("CCSDS_OEM_VERS = 3.0");
     expect(oem).toContain("CENTER_NAME = SUN");
+    expect(oem).toContain("REF_FRAME = ECLIPJ2000");
+    expect(oem).toContain("TIME_SYSTEM = TDB");
     const epochs = oem
       .split("\n")
-      .filter((line) => line.startsWith("T+"))
-      .map((line) => Number(line.slice(2, line.indexOf("d"))));
+      .filter((line) => /^\d{4}-\d{2}-\d{2}T/.test(line))
+      .map((line) => line.split(" ")[0]!);
     expect(epochs.length).toBeGreaterThan(1);
-    expect(epochs.every((day, index) => index === 0 || day >= epochs[index - 1]!)).toBe(true);
+    expect(epochs.every((epoch, index) => index === 0 || epoch >= epochs[index - 1]!)).toBe(true);
+    expect(auditedPlan.cowellAudit?.stateHistory.length).toBeGreaterThan(auditedPlan.segments.length);
+    expect(auditedPlan.cowellAudit?.stateHistory.every((sample) =>
+      sample.positionKm.every(Number.isFinite) && sample.velocityKmS.every(Number.isFinite),
+    )).toBe(true);
+
+    const opm = missionPlanToCcsdsOpm(auditedPlan);
+    expect(opm).toContain("CCSDS_OPM_VERS = 3.0");
+    expect(opm).toContain("COV_REF_FRAME = ECLIPJ2000");
+    expect(opm).toContain("MAN_EPOCH_IGNITION");
+    expect(opm).toContain("MAN_REF_FRAME = ECLIPJ2000");
   });
 });

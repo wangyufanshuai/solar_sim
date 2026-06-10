@@ -14,13 +14,16 @@ export default function ScienceBackdrop({
   brightStarTier2 = true,
   qualitySky = false,
   renderBudget = "balanced",
+  closeupPresentationRef,
 }: {
   floatingOriginRef?: MutableRefObject<FloatingOriginState>;
   brightStarTier2?: boolean;
   qualitySky?: boolean;
   renderBudget?: RenderBudget;
+  closeupPresentationRef?: MutableRefObject<boolean>;
 }) {
   const rootRef = useRef<THREE.Group>(null);
+  const starsRef = useRef<THREE.Group>(null);
   const opticsRef = useRelativisticOpticsStateRef();
   const camera = useThree((s) => s.camera);
 
@@ -31,12 +34,15 @@ export default function ScienceBackdrop({
     root.position.copy(camera.position);
     if (optics?.active) root.quaternion.copy(optics.aberrationQuat);
     else root.quaternion.identity();
+    if (starsRef.current) starsRef.current.visible = !closeupPresentationRef?.current;
   }, 1000);
 
   return (
     <group ref={rootRef} renderOrder={-500}>
       <GalaxyEnvironmentSphere visible qualityEnabled={qualitySky} renderBudget={renderBudget} />
-      <BrightStarCatalog opacity={0.038} tier2Loaded={brightStarTier2} />
+      <group ref={starsRef}>
+        <BrightStarCatalog opacity={0.038} tier2Loaded={brightStarTier2} />
+      </group>
     </group>
   );
 }

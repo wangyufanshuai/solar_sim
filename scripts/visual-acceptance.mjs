@@ -36,6 +36,9 @@ const scenarios = [
   { id: "showcase-tour", viewport: { width: 1280, height: 900 }, action: "tour", expect: ["canvas", "tour"] },
   { id: "mission-audit", viewport: { width: 1280, height: 900 }, action: "mission", expect: ["canvas", "missionAudit"] },
   { id: "spacecraft-gallery", viewport: { width: 1280, height: 900 }, action: "gallery", expect: ["canvas", "gallery"] },
+  { id: "gallery-all-models", viewport: { width: 1280, height: 900 }, action: "galleryAll", expect: ["canvas", "gallery", "galleryAll"] },
+  { id: "mission-compare", viewport: { width: 1280, height: 900 }, action: "missionCompare", expect: ["canvas", "missionCompare"] },
+  { id: "ccsds-export", viewport: { width: 1280, height: 900 }, action: "ccsdsExport", expect: ["canvas", "ccsdsExport"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
   { id: "earth-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
@@ -248,14 +251,44 @@ async function runScenarioAction(cdp, scenario) {
       press('[data-solar-action="cinematic-tour"]');
       await sleep(4200);
     }
-    if (scenarioArg.action === "gallery") {
+    if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll") {
       press('[data-solar-section="tools"]');
+      await sleep(300);
+      press('[data-solar-action="gallery-toggle"]');
       await waitFor(() => document.querySelectorAll("[data-solar-spacecraft]").length >= 8, 45000);
       const buttons = [...document.querySelectorAll("[data-solar-spacecraft]")];
-      buttons[0]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-      await sleep(1200);
-      buttons[7]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-      await sleep(2200);
+      if (scenarioArg.action === "galleryAll") {
+        for (const button of buttons) {
+          button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+          await sleep(900);
+          if (/Model preview unavailable/i.test(document.body.innerText)) break;
+        }
+      } else {
+        buttons[0]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        await sleep(1200);
+        buttons[7]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        await sleep(2200);
+      }
+    }
+    if (scenarioArg.action === "missionCompare") {
+      press('[data-solar-section="mission"]');
+      await sleep(400);
+      press('[data-solar-action="mission-optimize"]');
+      await sleep(4200);
+      pressText("compare");
+      await sleep(500);
+    }
+    if (scenarioArg.action === "ccsdsExport") {
+      press('[data-solar-section="mission"]');
+      await sleep(400);
+      press('[data-solar-action="mission-optimize"]');
+      await sleep(4200);
+      pressText("report");
+      await sleep(500);
+      press('[data-solar-action="mission-export-oem"]');
+      await sleep(250);
+      press('[data-solar-action="mission-export-opm"]');
+      await sleep(250);
     }
     if (scenarioArg.action === "focus") {
       await waitFor(
@@ -275,6 +308,10 @@ async function runScenarioAction(cdp, scenario) {
     });
     const spacecraftButtons = document.querySelectorAll("[data-solar-spacecraft]").length;
     const galleryV2 = Boolean(document.querySelector('[data-solar-gallery="v2"]'));
+    const missionCompare = Boolean(document.querySelector("[data-solar-mission-compare]"));
+    const ccsdsButtons = document.querySelectorAll(
+      '[data-solar-action="mission-export-oem"], [data-solar-action="mission-export-opm"]',
+    ).length;
     const exportButtons = document.querySelectorAll("[data-solar-action*='export']").length;
     const hasFrameworkOverlay = /Unhandled Runtime Error|Build Error|Next\\.js|Hydration failed/i.test(text);
     return {
@@ -283,6 +320,8 @@ async function runScenarioAction(cdp, scenario) {
       spacecraftButtons,
       exportButtons,
       galleryV2,
+      missionCompare,
+      ccsdsButtons,
       hasFrameworkOverlay,
       url: location.href,
       title: document.title,
@@ -310,6 +349,16 @@ function checkScenario(scenario, state, screenshotBytes) {
     if (!/SPACECRAFT GALLERY/i.test(state.text)) failures.push("spacecraft gallery missing");
     if (!state.galleryV2) failures.push("spacecraft gallery v2 marker missing");
     if (state.spacecraftButtons < 8) failures.push(`expected at least 8 spacecraft buttons, saw ${state.spacecraftButtons}`);
+  }
+  if (scenario.expect.includes("galleryAll") && /Model preview unavailable|DRACOLoader/i.test(state.text)) {
+    failures.push("one or more gallery models failed to decode");
+  }
+  if (scenario.expect.includes("missionCompare")) {
+    if (!state.missionCompare) failures.push("mission compare workspace missing");
+    if (!/Run compare/i.test(state.text)) failures.push("mission compare heading missing");
+  }
+  if (scenario.expect.includes("ccsdsExport")) {
+    if (state.ccsdsButtons < 2) failures.push("CCSDS OEM/OPM export actions missing");
   }
   if (scenario.expect.includes("tour")) {
     if (!/CINEMATIC PRESETS|SPACECRAFT GALLERY|HDR stage v2/i.test(state.text)) failures.push("showcase tour controls missing");

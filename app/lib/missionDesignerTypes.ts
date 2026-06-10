@@ -4,7 +4,7 @@ export type MissionConstraintPreset = "conservative" | "nominal" | "aggressive";
 export type MissionEphemerisMode = "live-circular" | "jpl-table" | "spice-table";
 export type MissionPropagationMode = "lambert" | "cowell" | "low-thrust-collocation";
 export type LowThrustSolutionStatus = "converged" | "seed" | "failed" | "unavailable";
-export type MissionExportFormat = "report-json" | "report-md" | "csv" | "ccsds-oem-like";
+export type MissionExportFormat = "report-json" | "report-md" | "csv" | "ccsds-oem" | "ccsds-opm";
 
 export type MissionBodyId = "earth" | "venus" | "jupiter" | "saturn";
 
@@ -73,6 +73,30 @@ export type CowellPropagationAudit = {
   minimumApproachKm: number;
   converged: boolean;
   failureReason?: string;
+  stateHistory: MissionStateSample[];
+  maneuverEvents: MissionManeuverEvent[];
+};
+
+export type MissionStateSample = {
+  segmentId: string;
+  epochTdbJd: number;
+  simDay: number;
+  positionKm: [number, number, number];
+  velocityKmS: [number, number, number];
+  massKg: number;
+  integrationStatus: "initial" | "accepted" | "terminal";
+};
+
+export type MissionManeuverEvent = {
+  id: string;
+  segmentId: string;
+  type: "injection" | "dsm";
+  epochTdbJd: number;
+  simDay: number;
+  deltaVVectorKmS: [number, number, number];
+  deltaVMagnitudeKmS: number;
+  estimatedMassChangeKg: number;
+  source: string;
 };
 
 export type LowThrustControl = {
@@ -140,6 +164,7 @@ export type MissionCovarianceAudit = {
   initialPositionSigmaKm: number;
   initialVelocitySigmaMps: number;
   processNoiseAccelerationMps2: number;
+  initialCovarianceKmKmS: number[][];
   nodeThreeSigma: Array<{
     segmentId: string;
     positionKm: number;
@@ -244,6 +269,7 @@ export type MissionPlan = {
   deterministicDeltaVKms: number;
   dsmReserveDeltaVKms: number;
   fuelEstimateKg: number;
+  engineeringConstraints: MissionEngineeringConstraints;
   score: number;
   grCorrectionNote: string;
   attitudeEvents: number;
@@ -287,7 +313,7 @@ export type MissionOptimizationResult = {
   generatedAt: number;
 };
 
-export type MissionScenario = {
+export type MissionScenarioV1 = {
   schemaVersion: 1;
   id: string;
   name: string;
@@ -300,7 +326,7 @@ export type MissionScenario = {
   notes: string[];
 };
 
-export type MissionRunRecord = {
+export type MissionRunRecordV1 = {
   id: string;
   scenarioId: string;
   createdAt: string;
@@ -308,15 +334,84 @@ export type MissionRunRecord = {
   selectedPlanId: string | null;
 };
 
-export type MissionProject = {
+export type MissionProjectV1 = {
   schemaVersion: 1;
   id: string;
   name: string;
   createdAt: string;
   updatedAt: string;
   activeScenarioId: string;
+  scenarios: MissionScenarioV1[];
+  runs: MissionRunRecordV1[];
+};
+
+export type MissionScenario = {
+  schemaVersion: 2;
+  id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  epochSimDays: number;
+  options: MissionOptimizerOptions;
+  constraints: MissionEngineeringConstraints;
+  selectedPlanId: string | null;
+  notes: string[];
+};
+
+export type MissionRunRecordV2 = {
+  schemaVersion: 2;
+  id: string;
+  scenarioId: string;
+  createdAt: string;
+  inputHash: string;
+  solverVersion: string;
+  spiceChecksum: string | null;
+  constraintsSnapshot: MissionEngineeringConstraints;
+  status: "completed" | "failed" | "cancelled";
+  reportReadiness: "ready" | "partial" | "blocked";
+  result: MissionOptimizationResult;
+  selectedPlanId: string | null;
+};
+
+export type MissionRunRecord = MissionRunRecordV2;
+
+export type MissionProjectV2 = {
+  schemaVersion: 2;
+  id: string;
+  name: string;
+  createdAt: string;
+  updatedAt: string;
+  activeScenarioId: string;
+  activeRunId: string | null;
   scenarios: MissionScenario[];
-  runs: MissionRunRecord[];
+  runs: MissionRunRecordV2[];
+};
+
+export type MissionProject = MissionProjectV2;
+
+export type MissionCcsdsExportOptions = {
+  originator?: string;
+  objectName?: string;
+  objectId?: string;
+  includeCovariance?: boolean;
+  includeManeuvers?: boolean;
+};
+
+export type MissionComparisonRow = {
+  runId: string;
+  scenarioId: string;
+  createdAt: string;
+  planId: string | null;
+  verdict: MissionValidationStatus | "unavailable";
+  c3Km2S2: number | null;
+  deltaVKms: number | null;
+  propellantKg: number | null;
+  durationDays: number | null;
+  robustnessScore: number | null;
+  minimumConstraintMargin: number | null;
+  cowellResidualKm: number | null;
+  arrivalThreeSigmaKm: number | null;
+  recommended: boolean;
 };
 
 export type MissionEngineeringMatrixRow = {

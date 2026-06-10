@@ -3,9 +3,12 @@ import type {
   CowellPropagationAudit,
   LowThrustSolution,
   MissionCovarianceAudit,
+  MissionManeuverEvent,
   MissionPlan,
   MissionSegment,
+  MissionStateSample,
 } from "./missionDesignerTypes";
+import { EPOCH_JD_TDB } from "../data/planetsJ2000";
 import { interpolateSpiceState } from "./spiceEphemerisTable";
 
 const AU_METERS = 149_597_870_700;
@@ -207,12 +210,14 @@ function propagateSegment(
   segment: MissionSegment,
   solution: LowThrustSolution | undefined,
   includeRelativity: boolean,
+  initialMassKg: number,
 ) {
   let state: State = [
     ...segment.departurePositionAu,
     ...segment.departureVelocityAuPerDay,
-    solution?.initialMassKg ?? 4200,
+    solution?.initialMassKg ?? initialMassKg,
   ];
+  const acceptedStates: Array<{ t: number; state: State }> = [{ t: 0, state: [...state] as State }];
   const initialEnergy = specificEnergy(state);
   let t = 0;
   let h = Math.min(4, Math.max(0.05, segment.tofDays / 180));
@@ -234,6 +239,7 @@ function propagateSegment(
       state = trial.next;
       t += h;
       acceptedSteps += 1;
+      acceptedStates.push({ t, state: [...state] as State });
       const target = interpolateSpiceState(segment.toBody, segment.departureDay + t);
       if (!("reason" in target)) {
         minimumApproachAu = Math.min(
@@ -264,6 +270,51 @@ function propagateSegment(
       state[5] - segment.arrivalVelocityAuPerDay[2],
     ) * AU_METERS / DAY_SECONDS;
   const finalEnergy = specificEnergy(state);
+  const sampleStepDays = Math.max(1, segment.tofDays / 1024);
+  const sampleTimes: number[] = [];
+  for (let sampleTime = 0; sampleTime < segment.tofDays; sampleTime += sampleStepDays) {
+    sampleTimes.push(sampleTime);
+  }
+  sampleTimes.push(segment.tofDays);
+  let acceptedIndex = 0;
+  const stateHistory: MissionStateSample[] = sampleTimes.map((sampleTime, sampleIndex) => {
+    while (
+      acceptedIndex < acceptedStates.length - 2 &&
+      acceptedStates[acceptedIndex + 1]!.t < sampleTime
+    ) {
+      acceptedIndex += 1;
+    }
+    const left = acceptedStates[acceptedIndex]!;
+    const right = acceptedStates[Math.min(acceptedIndex + 1, acceptedStates.length - 1)]!;
+    const span = Math.max(right.t - left.t, 1e-12);
+    const alpha = Math.min(1, Math.max(0, (sampleTime - left.t) / span));
+    const interpolated = left.state.map(
+      (value, index) => value + (right.state[index]! - value) * alpha,
+    ) as State;
+    const simDay = segment.departureDay + sampleTime;
+    return {
+      segmentId: segment.id,
+      epochTdbJd: EPOCH_JD_TDB + simDay,
+      simDay,
+      positionKm: [
+        interpolated[0] * AU_METERS / 1000,
+        interpolated[1] * AU_METERS / 1000,
+        interpolated[2] * AU_METERS / 1000,
+      ],
+      velocityKmS: [
+        interpolated[3] * AU_METERS / DAY_SECONDS / 1000,
+        interpolated[4] * AU_METERS / DAY_SECONDS / 1000,
+        interpolated[5] * AU_METERS / DAY_SECONDS / 1000,
+      ],
+      massKg: interpolated[6],
+      integrationStatus:
+        sampleIndex === 0
+          ? "initial"
+          : sampleIndex === sampleTimes.length - 1
+            ? "terminal"
+            : "accepted",
+    };
+  });
   return {
     acceptedSteps,
     rejectedSteps,
@@ -272,7 +323,75 @@ function propagateSegment(
     relativeEnergyDrift: Math.abs((finalEnergy - initialEnergy) / Math.max(Math.abs(initialEnergy), 1e-12)),
     minimumApproachKm: minimumApproachAu * AU_METERS / 1000,
     finalMassKg: state[6],
+    stateHistory,
   };
+}
+
+function unitVector(vector: [number, number, number]): [number, number, number] {
+  const magnitude = norm3(...vector);
+  if (magnitude <= 1e-15) return [1, 0, 0];
+  return [vector[0] / magnitude, vector[1] / magnitude, vector[2] / magnitude];
+}
+
+function maneuverEvents(plan: MissionPlan, initialMassKg: number): MissionManeuverEvent[] {
+  const events: MissionManeuverEvent[] = [];
+  let massKg = initialMassKg;
+  const isp = Math.max(plan.engineeringConstraints.ispSeconds, 1);
+  const applyManeuver = (
+    segment: MissionSegment,
+    type: MissionManeuverEvent["type"],
+    simDay: number,
+    vector: [number, number, number],
+    source: string,
+  ) => {
+    const magnitude = norm3(...vector);
+    if (!(magnitude > 0)) return;
+    const nextMass = massKg * Math.exp(-(magnitude * 1000) / (isp * G0));
+    events.push({
+      id: `${segment.id}-${type}`,
+      segmentId: segment.id,
+      type,
+      epochTdbJd: EPOCH_JD_TDB + simDay,
+      simDay,
+      deltaVVectorKmS: vector,
+      deltaVMagnitudeKmS: magnitude,
+      estimatedMassChangeKg: nextMass - massKg,
+      source,
+    });
+    massKg = Math.max(plan.engineeringConstraints.dryMassKg, nextMass);
+  };
+
+  for (const segment of plan.segments) {
+    const bodyState = interpolateSpiceState(segment.fromBody, segment.departureDay);
+    if (!("reason" in bodyState)) {
+      applyManeuver(
+        segment,
+        "injection",
+        segment.departureDay,
+        [
+          (segment.departureVelocityAuPerDay[0] - bodyState.velocityAuPerDay[0]) * AU_METERS / DAY_SECONDS / 1000,
+          (segment.departureVelocityAuPerDay[1] - bodyState.velocityAuPerDay[1]) * AU_METERS / DAY_SECONDS / 1000,
+          (segment.departureVelocityAuPerDay[2] - bodyState.velocityAuPerDay[2]) * AU_METERS / DAY_SECONDS / 1000,
+        ],
+        "SPICE body-relative patched-conics injection estimate",
+      );
+    }
+    if (segment.dsmDeltaVKms > 0) {
+      const direction = unitVector(segment.departureVelocityAuPerDay);
+      applyManeuver(
+        segment,
+        "dsm",
+        segment.departureDay + segment.tofDays * 0.5,
+        [
+          direction[0] * segment.dsmDeltaVKms,
+          direction[1] * segment.dsmDeltaVKms,
+          direction[2] * segment.dsmDeltaVKms,
+        ],
+        "Patched-conics DSM reserve aligned with departure transfer velocity",
+      );
+    }
+  }
+  return events;
 }
 
 type Matrix6 = number[][];
@@ -399,6 +518,14 @@ function covarianceAudit(plan: MissionPlan): MissionCovarianceAudit {
     initialPositionSigmaKm,
     initialVelocitySigmaMps,
     processNoiseAccelerationMps2,
+    initialCovarianceKmKmS: Array.from({ length: 6 }, (_, row) =>
+      Array.from({ length: 6 }, (_, column) => {
+        if (row !== column) return 0;
+        return row < 3
+          ? initialPositionSigmaKm ** 2
+          : (initialVelocitySigmaMps / 1000) ** 2;
+      }),
+    ),
     nodeThreeSigma,
     saturnArrivalThreeSigmaKm: arrival,
     bPlaneThreeSigmaKm: Math.max(...nodeThreeSigma.map((node) => node.positionKm), 0) * 0.18,
@@ -417,13 +544,18 @@ export function auditPlanHighFidelity(
     .map((segment) => LOW_THRUST_LIBRARY.solutions.find((item) => item.legId === `${segment.fromBody}-${segment.toBody}`))
     .filter((item): item is LowThrustSolution => Boolean(item));
   const convergedSolutions = libraryMatches.filter(isConvergedLowThrustSolution);
-  const propagated = plan.segments.map((segment) =>
-    propagateSegment(
+  const initialMassKg = plan.engineeringConstraints.dryMassKg + plan.fuelEstimateKg;
+  let segmentMassKg = initialMassKg;
+  const propagated = plan.segments.map((segment) => {
+    const result = propagateSegment(
       segment,
       convergedSolutions.find((solution) => solution.legId === `${segment.fromBody}-${segment.toBody}`),
       includeRelativity,
-    ),
-  );
+      segmentMassKg,
+    );
+    segmentMassKg = result.finalMassKg;
+    return result;
+  });
   const maxPositionResidualKm = Math.max(...propagated.map((item) => item.positionResidualKm), 0);
   const maxVelocityResidualMps = Math.max(...propagated.map((item) => item.velocityResidualMps), 0);
   const cowellAudit: CowellPropagationAudit = {
@@ -448,6 +580,8 @@ export function auditPlanHighFidelity(
       propagated.every((item) => Number.isFinite(item.positionResidualKm)) &&
       (convergedSolutions.length === 0 ||
         convergedSolutions.length === plan.segments.length),
+    stateHistory: propagated.flatMap((item) => item.stateHistory),
+    maneuverEvents: maneuverEvents(plan, initialMassKg),
   };
   const lowThrustStatus = lowThrustStatusFor(libraryMatches, plan.segments.length);
   return {

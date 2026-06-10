@@ -1,7 +1,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 
-const outputPath = process.argv[2] ?? "public/data/demo-mission-project-v1.json";
+const outputPath = process.argv[2] ?? "public/data/demo-mission-project-v2.json";
 const now = "2026-06-10T00:00:00.000Z";
 
 const constraints = {
@@ -19,7 +19,7 @@ const constraints = {
 };
 
 const scenario = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   id: "scenario-demo-evjs",
   name: "Demo Earth-Venus-Jupiter-Saturn Scenario",
   createdAt: now,
@@ -46,12 +46,13 @@ const scenario = {
 };
 
 const project = {
-  schemaVersion: 1,
+  schemaVersion: 2,
   id: "project-demo-evjs",
   name: "Solar Sim Demo Mission Workbench",
   createdAt: now,
   updatedAt: now,
   activeScenarioId: scenario.id,
+  activeRunId: null,
   scenarios: [scenario],
   runs: [],
 };

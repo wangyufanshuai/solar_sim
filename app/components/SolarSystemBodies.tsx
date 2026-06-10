@@ -2,7 +2,7 @@
 
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { useMemo, useRef, type MutableRefObject } from "react";
+import { useMemo, useRef, type MutableRefObject, type ReactNode } from "react";
 import CelestialBody from "./CelestialBody";
 import OrbitTrail, { type OrbitTrailHandle } from "./OrbitTrail";
 import {
@@ -40,25 +40,26 @@ const SOLAR_BODY_IDS = SOLAR_SYSTEM_BODIES.map((body) => body.id);
 function createSaturnRingTexture() {
   const canvas = document.createElement("canvas");
   canvas.width = 1024;
-  canvas.height = 8;
+  canvas.height = 1024;
   const ctx = canvas.getContext("2d");
   if (!ctx) return null;
-  const gradient = ctx.createLinearGradient(0, 0, canvas.width, 0);
-  gradient.addColorStop(0.0, "rgba(128,112,86,0.05)");
-  gradient.addColorStop(0.09, "rgba(176,158,122,0.18)");
-  gradient.addColorStop(0.22, "rgba(210,194,154,0.42)");
-  gradient.addColorStop(0.43, "rgba(232,216,174,0.72)");
-  gradient.addColorStop(0.565, "rgba(28,24,20,0.18)");
-  gradient.addColorStop(0.6, "rgba(214,196,150,0.62)");
-  gradient.addColorStop(0.78, "rgba(178,154,112,0.36)");
-  gradient.addColorStop(0.9, "rgba(122,104,78,0.16)");
-  gradient.addColorStop(1.0, "rgba(90,76,58,0.04)");
+  const center = canvas.width / 2;
+  const gradient = ctx.createRadialGradient(center, center, 0, center, center, center);
+  gradient.addColorStop(0.0, "rgba(0,0,0,0)");
+  gradient.addColorStop(0.445, "rgba(0,0,0,0)");
+  gradient.addColorStop(0.46, "rgba(128,112,86,0.06)");
+  gradient.addColorStop(0.51, "rgba(172,154,120,0.2)");
+  gradient.addColorStop(0.61, "rgba(218,199,158,0.48)");
+  gradient.addColorStop(0.72, "rgba(235,219,178,0.7)");
+  gradient.addColorStop(0.79, "rgba(218,199,157,0.58)");
+  gradient.addColorStop(0.802, "rgba(30,26,22,0.18)");
+  gradient.addColorStop(0.83, "rgba(18,16,14,0.12)");
+  gradient.addColorStop(0.845, "rgba(214,196,150,0.58)");
+  gradient.addColorStop(0.93, "rgba(174,151,110,0.32)");
+  gradient.addColorStop(0.985, "rgba(112,96,72,0.1)");
+  gradient.addColorStop(1.0, "rgba(0,0,0,0)");
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = "rgba(8,7,6,0.36)";
-  ctx.fillRect(Math.floor(canvas.width * 0.555), 0, Math.floor(canvas.width * 0.025), canvas.height);
-  ctx.fillStyle = "rgba(255,245,215,0.16)";
-  for (let x = 0; x < canvas.width; x += 19) ctx.fillRect(x, 0, 1, canvas.height);
   const tex = new THREE.CanvasTexture(canvas);
   tex.colorSpace = THREE.SRGBColorSpace;
   tex.minFilter = THREE.LinearFilter;
@@ -93,9 +94,9 @@ function SaturnRings({
     mainMaterialRef.current.opacity = litOpacity * (0.16 + 0.84 * visibility);
   });
   return (
-    <group>
+    <group rotation={[0.34, 0.08, -0.2]}>
       {ringTexture ? (
-        <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={6} castShadow={false} receiveShadow={false}>
+        <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={6} castShadow receiveShadow>
           <ringGeometry args={[radiusScene * 1.11, radiusScene * 2.43, 192]} />
           <meshStandardMaterial
             ref={mainMaterialRef}
@@ -106,6 +107,20 @@ function SaturnRings({
             depthWrite={false}
             metalness={0}
             roughness={0.9}
+          />
+        </mesh>
+      ) : null}
+      {ringTexture ? (
+        <mesh rotation={[Math.PI / 2, 0, 0]} renderOrder={7}>
+          <ringGeometry args={[radiusScene * 1.11, radiusScene * 2.43, 192]} />
+          <meshBasicMaterial
+            map={ringTexture}
+            color="#d8c49b"
+            transparent
+            opacity={litOpacity * 0.38}
+            side={THREE.DoubleSide}
+            depthWrite={false}
+            toneMapped
           />
         </mesh>
       ) : null}
@@ -247,6 +262,7 @@ function BodyShell({
   visualTest,
   globalSelectedBodyIndex,
   physicsRef,
+  closeupPresentationRef,
 }: {
   def: SolarSystemBodyDef;
   bodyIndex: number;
@@ -263,6 +279,7 @@ function BodyShell({
   visualTest: boolean;
   globalSelectedBodyIndex: number | null;
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
+  closeupPresentationRef?: MutableRefObject<boolean>;
 }) {
   const qualityOnInspect =
     !visualTest &&
@@ -300,11 +317,17 @@ function BodyShell({
   const visualRef = useRef<THREE.Group>(null);
   const spinAngleRef = useRef(0);
   const trailRef = useRef<OrbitTrailHandle>(null);
+  const trailGroupRef = useRef<THREE.Group>(null);
   const trailCfg = orbitTrailParams(def);
   const spinRadPerSimDay = useMemo(
     () => siderealSpinRadPerSimDayForBodyId(def.id) ?? 0,
     [def.id],
   );
+  useFrame(() => {
+    if (trailGroupRef.current) {
+      trailGroupRef.current.visible = !closeupPresentationRef?.current || isSelected;
+    }
+  });
 
   // Wire up refs for centralized position updates
   bodyRefs.group = groupRef.current;
@@ -398,16 +421,18 @@ function BodyShell({
   return (
     <group ref={(g) => { (groupRef as React.MutableRefObject<THREE.Group | null>).current = g; bodyRefs.group = g; }} frustumCulled={false}>
       {showOrbitTrails && shouldShowTrail ? (
-        <OrbitTrail
-          ref={(r) => { bodyRefs.trail = r; }}
-          bodyIndex={bodyIndex}
-          bodyId={def.id}
-          lodWorldRadius={visualRadius}
-          maxPoints={trailCfg.maxPoints}
-          minVertexDistance={trailCfg.minVertexDistance}
-          selected={isSelected}
-          renderOrder={-40}
-        />
+        <group ref={trailGroupRef}>
+          <OrbitTrail
+            ref={(r) => { bodyRefs.trail = r; }}
+            bodyIndex={bodyIndex}
+            bodyId={def.id}
+            lodWorldRadius={visualRadius}
+            maxPoints={trailCfg.maxPoints}
+            minVertexDistance={trailCfg.minVertexDistance}
+            selected={isSelected}
+            renderOrder={-40}
+          />
+        </group>
       ) : null}
       <group ref={visualRef} frustumCulled={false}>
         {def.showRings ? (
@@ -473,6 +498,24 @@ function BodyShell({
 
 const _tmpPos = new THREE.Vector3();
 
+function ContextOrbitGate({
+  closeupPresentationRef,
+  selected,
+  children,
+}: {
+  closeupPresentationRef?: MutableRefObject<boolean>;
+  selected: boolean;
+  children: ReactNode;
+}) {
+  const groupRef = useRef<THREE.Group>(null);
+  useFrame(() => {
+    if (groupRef.current) {
+      groupRef.current.visible = !closeupPresentationRef?.current || selected;
+    }
+  });
+  return <group ref={groupRef}>{children}</group>;
+}
+
 /**
  * Sun + planets + Moon: positions driven by `SolarSystemPhysics` (N-body + optional 1PN).
  * Uses a single centralized useFrame for all 102 bodies instead of per-body useFrame hooks.
@@ -487,6 +530,7 @@ export default function SolarSystemBodies({
   viewSettings,
   simDaysRef,
   visualTest = false,
+  closeupPresentationRef,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
@@ -497,6 +541,7 @@ export default function SolarSystemBodies({
   viewSettings: SimulationViewSettings;
   simDaysRef: MutableRefObject<number>;
   visualTest?: boolean;
+  closeupPresentationRef?: MutableRefObject<boolean>;
 }) {
   // Pre-allocate refs array — one entry per body, persists across renders
   const refsArray = useRef<BodyRefs[]>(
@@ -563,6 +608,7 @@ export default function SolarSystemBodies({
           visualTest={visualTest}
           globalSelectedBodyIndex={selectedBodyIndex}
           physicsRef={physicsRef}
+          closeupPresentationRef={closeupPresentationRef}
         />
       ))}
       {SOLAR_SYSTEM_BODIES.map((def, bodyIndex) => {
@@ -574,15 +620,20 @@ export default function SolarSystemBodies({
           (def.heliocentricOsculatingOrbit === false ? null : 0);
         if (central === null) return null;
         return (
-          <OsculatingOrbitEllipse
+          <ContextOrbitGate
             key={`osc-${def.id}`}
-            bodyIndex={bodyIndex}
-            bodyId={def.id}
-            centralBodyIndex={central}
-            physicsRef={physicsRef}
-            lodWorldRadius={def.radiusScene}
+            closeupPresentationRef={closeupPresentationRef}
             selected={selectedBodyIndex === bodyIndex}
-          />
+          >
+            <OsculatingOrbitEllipse
+              bodyIndex={bodyIndex}
+              bodyId={def.id}
+              centralBodyIndex={central}
+              physicsRef={physicsRef}
+              lodWorldRadius={def.radiusScene}
+              selected={selectedBodyIndex === bodyIndex}
+            />
+          </ContextOrbitGate>
         );
       })}
     </>

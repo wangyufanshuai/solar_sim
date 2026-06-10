@@ -35,7 +35,10 @@
     "fetch:spice": "python scripts/build-spice-ephemeris.py",
     "audit:spice": "node scripts/audit-spice.mjs",
     "audit:mission-project": "node scripts/audit-mission-project.mjs",
-    "export:demo-scenario": "node scripts/export-demo-scenario.mjs"
+    "export:demo-scenario": "node scripts/export-demo-scenario.mjs",
+    "audit:gallery-models": "node scripts/audit-gallery-models.mjs",
+    "audit:ccsds": "node scripts/audit-ccsds.mjs",
+    "export:demo-ccsds": "node scripts/export-demo-ccsds.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

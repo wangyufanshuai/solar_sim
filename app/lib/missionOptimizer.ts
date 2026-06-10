@@ -681,6 +681,7 @@ function buildPlan(
       constraints.dryMassKg,
       constraints.ispSeconds,
     ),
+    engineeringConstraints: { ...constraints },
     score: 0,
     grCorrectionNote: options.includeRelativity
       ? "1PN reporting enabled; Lambert transfer remains Newtonian two-body with separate weak-field note."

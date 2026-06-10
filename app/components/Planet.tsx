@@ -97,6 +97,24 @@ const cloudLayerFragmentShader = `
   }
 `;
 
+const cloudShadowFragmentShader = `
+  uniform sampler2D uMap;
+  uniform vec3 uSunDirection;
+  uniform float uSolarVisibility;
+  varying vec2 vUvLayer;
+  varying vec3 vNormalWorldLayer;
+  #include <logdepthbuf_pars_fragment>
+  void main() {
+    vec4 texel = texture2D(uMap, vUvLayer);
+    float density = max(texel.a, dot(texel.rgb, vec3(0.3333)));
+    float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
+    float day = smoothstep(-0.08, 0.42, sunDot) * uSolarVisibility;
+    float shadow = density * day * 0.2;
+    gl_FragColor = vec4(vec3(0.12), shadow);
+    #include <logdepthbuf_fragment>
+  }
+`;
+
 export type PlanetBodyProps = {
   variant: "planet";
   bodyId?: string;
@@ -194,9 +212,11 @@ export default function Planet({
   const [wSeg, hSeg] = sphereSegments;
   const visualRef = useRef<THREE.Mesh>(null);
   const cloudsRef = useRef<THREE.Mesh>(null);
+  const cloudShadowRef = useRef<THREE.Mesh>(null);
   const nightLayerRef = useRef<THREE.Mesh>(null);
   const nightMaterialRef = useRef<THREE.ShaderMaterial>(null);
   const cloudMaterialRef = useRef<THREE.ShaderMaterial>(null);
+  const cloudShadowMaterialRef = useRef<THREE.ShaderMaterial>(null);
   const spriteRef = useRef<THREE.Sprite>(null);
   const lastPointerDownMs = useRef(0);
   const bloomActions = useOptionalBloomSceneActions();
@@ -232,6 +252,11 @@ export default function Planet({
     uSolarVisibility: { value: 1 },
     uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
     uSilverLining: { value: VISUAL_CALIBRATION.closeups.earth.cloudSilverLining },
+  }), [clouds]);
+  const cloudShadowUniforms = useMemo(() => ({
+    uMap: { value: clouds },
+    uSunDirection: { value: sunDirectionWorld.current.clone() },
+    uSolarVisibility: { value: 1 },
   }), [clouds]);
 
   useLayoutEffect(() => {
@@ -269,6 +294,7 @@ export default function Planet({
     if (spinAngleRef) {
       mesh.rotation.y = spinAngleRef.current;
       if (cloudsRef.current) cloudsRef.current.rotation.y = spinAngleRef.current * 1.018;
+      if (cloudShadowRef.current) cloudShadowRef.current.rotation.y = spinAngleRef.current * 1.018;
       if (nightLayerRef.current) nightLayerRef.current.rotation.y = spinAngleRef.current;
     }
     const illumination = illuminationPhysicsRef?.current;
@@ -286,6 +312,7 @@ export default function Planet({
       ).normalize();
       nightMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
       cloudMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
+      cloudShadowMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
       occlusionFrameRef.current += 1;
       if (occlusionFrameRef.current % 12 === 1) {
         solarVisibilityRef.current =
@@ -295,6 +322,9 @@ export default function Planet({
       }
       if (cloudMaterialRef.current) {
         cloudMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
+      }
+      if (cloudShadowMaterialRef.current) {
+        cloudShadowMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
       }
       if (nightMaterialRef.current) {
         nightMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
@@ -628,19 +658,34 @@ export default function Planet({
         </mesh>
       ) : null}
       {bodyId === "earth" && clouds ? (
-        <mesh ref={cloudsRef} renderOrder={4} frustumCulled={false}>
-          <sphereGeometry args={[radius * 1.008, wSeg, hSeg]} />
-          <shaderMaterial
-            ref={cloudMaterialRef}
-            vertexShader={illuminatedLayerVertexShader}
-            fragmentShader={cloudLayerFragmentShader}
-            uniforms={cloudUniforms}
-            transparent
-            depthWrite={false}
-            depthTest
-            blending={THREE.NormalBlending}
-          />
-        </mesh>
+        <>
+          <mesh ref={cloudShadowRef} renderOrder={3} frustumCulled={false}>
+            <sphereGeometry args={[radius * 1.0035, wSeg, hSeg]} />
+            <shaderMaterial
+              ref={cloudShadowMaterialRef}
+              vertexShader={illuminatedLayerVertexShader}
+              fragmentShader={cloudShadowFragmentShader}
+              uniforms={cloudShadowUniforms}
+              transparent
+              depthWrite={false}
+              depthTest
+              blending={THREE.MultiplyBlending}
+            />
+          </mesh>
+          <mesh ref={cloudsRef} renderOrder={4} frustumCulled={false}>
+            <sphereGeometry args={[radius * 1.008, wSeg, hSeg]} />
+            <shaderMaterial
+              ref={cloudMaterialRef}
+              vertexShader={illuminatedLayerVertexShader}
+              fragmentShader={cloudLayerFragmentShader}
+              uniforms={cloudUniforms}
+              transparent
+              depthWrite={false}
+              depthTest
+              blending={THREE.NormalBlending}
+            />
+          </mesh>
+        </>
       ) : clouds ? (
         <mesh ref={cloudsRef} renderOrder={4} frustumCulled={false}>
           <sphereGeometry args={[radius * 1.008, wSeg, hSeg]} />

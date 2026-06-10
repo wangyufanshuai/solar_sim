@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useTransition, type MutableRefObj
 import {
   BrainCircuit,
   ChevronDown,
+  Copy,
   Clock3,
   Download,
   Radio,
@@ -12,6 +13,7 @@ import {
   ShieldAlert,
   SlidersHorizontal,
   Sparkles,
+  Trash2,
 } from "lucide-react";
 import { AU_METERS, DAY_SECONDS } from "../lib/physicalConstants";
 import {
@@ -21,14 +23,19 @@ import {
 import { explainMissionPlan } from "../lib/missionPlanningAdvisor";
 import { downloadMissionReport, missionPlanToMarkdown, missionPlanToReportJson } from "../lib/missionReport";
 import {
+  appendMissionRun,
   createMissionProject,
   createMissionScenario,
+  deleteMissionScenario,
   downloadMissionWorkbenchArtifact,
-  loadMissionProjectLocal,
+  duplicateMissionScenario,
   missionEngineeringMatrix,
+  missionComparisonRows,
   parseMissionProjectJson,
-  saveMissionProjectLocal,
+  renameMissionScenario,
+  updateMissionScenarioDefinition,
 } from "../lib/missionProject";
+import { loadMissionProject, saveMissionProject } from "../lib/missionProjectStore";
 import { runMissionOptimizationWorker } from "../lib/missionHighFidelityClient";
 import type {
   MissionAdvisorReport,
@@ -45,7 +52,7 @@ import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 const BODY_IDS: MissionBodyId[] = ["earth", "venus", "jupiter", "saturn"];
-const TABS = ["project", "scenario", "run", "report"] as const;
+const TABS = ["project", "scenario", "run", "compare", "report"] as const;
 const IS = 1.05;
 type MissionTab = (typeof TABS)[number];
 type DeepSeekStatus = "idle" | "thinking" | "deepseek" | "fallback" | "error";
@@ -164,6 +171,7 @@ export default function MissionDesignerPanel({
   const [, startResultTransition] = useTransition();
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
   const [project, setProject] = useState<MissionProject | null>(null);
+  const [compareRunIds, setCompareRunIds] = useState<string[]>([]);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const selectedPlan = useMemo(
     () =>
@@ -177,6 +185,14 @@ export default function MissionDesignerPanel({
   const localAdvisor = useMemo(() => explainMissionPlan(selectedPlan), [selectedPlan]);
   const [advisor, setAdvisor] = useState<MissionAdvisorReport>(localAdvisor);
   const matrixRows = useMemo(() => missionEngineeringMatrix(result), [result]);
+  const comparisonRows = useMemo(
+    () => missionComparisonRows(project, compareRunIds),
+    [project, compareRunIds],
+  );
+  const activeScenario = useMemo(
+    () => project?.scenarios.find((scenario) => scenario.id === project.activeScenarioId) ?? null,
+    [project],
+  );
 
   useEffect(() => {
     setAdvisor(localAdvisor);
@@ -184,8 +200,17 @@ export default function MissionDesignerPanel({
   }, [localAdvisor]);
 
   useEffect(() => {
-    setProject(loadMissionProjectLocal());
+    void loadMissionProject().then((loaded) => {
+      setProject(loaded);
+      setCompareRunIds(loaded?.runs.slice(-4).map((run) => run.id) ?? []);
+    });
   }, []);
+
+  const persistProject = async (next: MissionProject, message?: string) => {
+    setProject(next);
+    await saveMissionProject(next);
+    if (message) setStatus(message);
+  };
 
   const choosePreset = (next: MissionConstraintPreset) => {
     setPreset(next);
@@ -243,20 +268,33 @@ export default function MissionDesignerPanel({
           ? `${next.plans.length} feasible / Cowell audited`
           : `0 feasible / ${next.rejectedPlans.length} rejected`,
       );
-      const scenario = createMissionScenario({
-        name: "Earth-Venus-Jupiter-Saturn Scenario",
-        epochSimDays: snapshot.simDays,
-        options,
-        constraints,
-        selectedPlanId: next.bestPlan?.id ?? next.rejectedPlans[0]?.id ?? null,
-      });
-      const nextProject = createMissionProject({
-        name: "Solar Sim Preliminary Mission Workbench",
-        scenario,
-        result: next,
-      });
-      setProject(nextProject);
-      saveMissionProjectLocal(nextProject);
+      const nextSelectedPlanId = next.bestPlan?.id ?? next.rejectedPlans[0]?.id ?? null;
+      if (project && activeScenario) {
+        const updated = updateMissionScenarioDefinition(project, activeScenario.id, {
+          epochSimDays: snapshot.simDays,
+          options,
+          constraints,
+          selectedPlanId: nextSelectedPlanId,
+        });
+        const appended = appendMissionRun(updated, activeScenario.id, next, nextSelectedPlanId);
+        await persistProject(appended);
+        setCompareRunIds((current) => Array.from(new Set([...current, appended.activeRunId!])).slice(-4));
+      } else {
+        const scenario = createMissionScenario({
+          name: "Earth-Venus-Jupiter-Saturn Scenario",
+          epochSimDays: snapshot.simDays,
+          options,
+          constraints,
+          selectedPlanId: nextSelectedPlanId,
+        });
+        const nextProject = createMissionProject({
+          name: "Solar Sim Preliminary Mission Workbench",
+          scenario,
+          result: next,
+        });
+        await persistProject(nextProject);
+        setCompareRunIds(nextProject.runs.map((run) => run.id));
+      }
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Mission worker unavailable");
     } finally {
@@ -299,7 +337,7 @@ export default function MissionDesignerPanel({
     });
   };
 
-  const saveProject = () => {
+  const saveProject = async () => {
     const scenario = createMissionScenario({
       name: "Earth-Venus-Jupiter-Saturn Scenario",
       epochSimDays: simDaysRef.current,
@@ -316,14 +354,19 @@ export default function MissionDesignerPanel({
       constraints,
       selectedPlanId: selectedPlan?.id ?? null,
     });
-    const next = createMissionProject({
-      name: "Solar Sim Preliminary Mission Workbench",
-      scenario,
-      result,
-    });
-    setProject(next);
-    saveMissionProjectLocal(next);
-    setStatus("Project saved locally");
+    const next = project && activeScenario
+      ? updateMissionScenarioDefinition(project, activeScenario.id, {
+          epochSimDays: simDaysRef.current,
+          options: scenario.options,
+          constraints,
+          selectedPlanId: selectedPlan?.id ?? null,
+        })
+      : createMissionProject({
+          name: "Solar Sim Preliminary Mission Workbench",
+          scenario,
+          result,
+        });
+    await persistProject(next, "Project saved to IndexedDB");
   };
 
   const importProject = async (file: File | null) => {
@@ -347,8 +390,8 @@ export default function MissionDesignerPanel({
           null;
         onSelectPlan(restoredPlan);
       }
-      setProject(imported);
-      saveMissionProjectLocal(imported);
+      await persistProject(imported);
+      setCompareRunIds(imported.runs.slice(-4).map((run) => run.id));
       setStatus("Project imported");
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Project import failed");
@@ -357,10 +400,34 @@ export default function MissionDesignerPanel({
     }
   };
 
+  const updateScenarioProject = async (next: MissionProject, message: string) => {
+    await persistProject(next, message);
+  };
+
+  const selectScenario = async (scenarioId: string) => {
+    if (!project) return;
+    const next = { ...project, activeScenarioId: scenarioId, activeRunId: null };
+    const scenario = next.scenarios.find((item) => item.id === scenarioId);
+    if (scenario) {
+      setDepartureWindowDays(scenario.options.departureWindowDays);
+      setDepartureStepDays(scenario.options.departureStepDays);
+      setPreset(scenario.constraints.preset);
+      setConstraints(scenario.constraints);
+    }
+    await updateScenarioProject(next, "Scenario activated");
+  };
+
+  const toggleCompareRun = (runId: string) => {
+    setCompareRunIds((current) => {
+      if (current.includes(runId)) return current.filter((id) => id !== runId);
+      return [...current, runId].slice(-4);
+    });
+  };
+
   return (
     <section
       data-solar-panel="mission"
-      className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[25rem]"
+      className={`pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] ${activeTab === "compare" ? "sm:w-[44rem]" : "sm:w-[25rem]"}`}
     >
       <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
         <div className="flex items-center justify-between gap-2">
@@ -381,7 +448,7 @@ export default function MissionDesignerPanel({
             {status}
           </span>
         </div>
-        <div className="mt-2 grid grid-cols-4 gap-1 rounded-[4px] bg-black/25 p-0.5">
+        <div className="mt-2 grid grid-cols-5 gap-1 rounded-[4px] bg-black/25 p-0.5">
           {TABS.map((tab) => (
             <button
               key={tab}
@@ -415,10 +482,50 @@ export default function MissionDesignerPanel({
                 <p>Active {project?.activeScenarioId ?? "none"}</p>
               </div>
             </div>
+            {project?.scenarios.map((scenario) => {
+              const scenarioRuns = project.runs.filter((run) => run.scenarioId === scenario.id);
+              const active = scenario.id === project.activeScenarioId;
+              return (
+                <div
+                  key={scenario.id}
+                  className={`grid grid-cols-[1fr_auto] items-center gap-2 rounded-[4px] border px-2 py-1.5 ${
+                    active
+                      ? "border-cyan-200/20 bg-cyan-200/[0.055]"
+                      : "border-white/[0.07] bg-white/[0.02]"
+                  }`}
+                >
+                  <button type="button" onClick={() => void selectScenario(scenario.id)} className="min-w-0 text-left">
+                    <span className="block truncate text-[10px] text-white/72">{scenario.name}</span>
+                    <span className="font-mono text-[7px] uppercase text-white/34">
+                      {scenarioRuns.length} immutable runs / T+{scenario.epochSimDays.toFixed(1)} d
+                    </span>
+                  </button>
+                  <div className="flex gap-1">
+                    <button
+                      type="button"
+                      title="Duplicate scenario"
+                      onClick={() => void updateScenarioProject(duplicateMissionScenario(project, scenario.id), "Scenario duplicated")}
+                      className="grid h-7 w-7 place-items-center rounded-[3px] border border-white/[0.08] text-white/45"
+                    >
+                      <Copy className="h-3 w-3" />
+                    </button>
+                    <button
+                      type="button"
+                      title="Delete scenario"
+                      disabled={project.scenarios.length <= 1}
+                      onClick={() => void updateScenarioProject(deleteMissionScenario(project, scenario.id), "Scenario deleted")}
+                      className="grid h-7 w-7 place-items-center rounded-[3px] border border-white/[0.08] text-white/45 disabled:opacity-25"
+                    >
+                      <Trash2 className="h-3 w-3" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
             <div className="grid grid-cols-2 gap-1">
               <button
                 type="button"
-                onClick={saveProject}
+                onClick={() => void saveProject()}
                 data-solar-action="mission-project-save"
                 className="rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72"
               >
@@ -601,6 +708,20 @@ export default function MissionDesignerPanel({
 
         {activeTab === "scenario" ? (
           <div className="grid gap-1.5">
+            {activeScenario ? (
+              <label className="grid gap-1 font-mono text-[8px] uppercase text-white/42">
+                Scenario name
+                <input
+                  value={activeScenario.name}
+                  onChange={(event) => {
+                    if (!project) return;
+                    setProject(renameMissionScenario(project, activeScenario.id, event.target.value));
+                  }}
+                  onBlur={() => project && void saveMissionProject(project)}
+                  className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1.5 text-[10px] normal-case text-white/75 outline-none focus:border-cyan-200/35"
+                />
+              </label>
+            ) : null}
             <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
               <div className="font-mono text-[8px] uppercase text-white/72">Scenario definition</div>
               <p>Sequence Earth - Venus - Jupiter - Saturn</p>
@@ -623,6 +744,78 @@ export default function MissionDesignerPanel({
                 </div>
               </div>
             )) ?? <div className="text-[10px] text-white/42">Run the audited search to inspect mission legs.</div>}
+            {project?.runs.filter((run) => run.scenarioId === project.activeScenarioId).length ? (
+              <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
+                <div className="mb-1 font-mono text-[8px] uppercase text-white/65">Immutable run history</div>
+                {[...project.runs]
+                  .filter((run) => run.scenarioId === project.activeScenarioId)
+                  .reverse()
+                  .map((run) => (
+                    <label key={run.id} className="grid grid-cols-[auto_1fr_auto] items-center gap-2 border-t border-white/[0.05] py-1.5 first:border-0">
+                      <input
+                        type="checkbox"
+                        checked={compareRunIds.includes(run.id)}
+                        onChange={() => toggleCompareRun(run.id)}
+                        className="accent-cyan-200"
+                      />
+                      <span className="min-w-0">
+                        <span className="block truncate font-mono text-[8px] text-white/62">{run.id}</span>
+                        <span className="block font-mono text-[7px] text-white/32">
+                          {run.inputHash} / {run.solverVersion}
+                        </span>
+                      </span>
+                      <span className={`font-mono text-[7px] uppercase ${run.reportReadiness === "ready" ? "text-emerald-200/65" : "text-amber-100/60"}`}>
+                        {run.reportReadiness}
+                      </span>
+                    </label>
+                  ))}
+              </div>
+            ) : null}
+          </div>
+        ) : null}
+
+        {activeTab === "compare" ? (
+          <div className="grid gap-2" data-solar-mission-compare>
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <div className="font-mono text-[8px] uppercase text-white/72">Run compare</div>
+                <p className="text-[9px] text-white/38">Select 2-4 immutable runs in Scenario.</p>
+              </div>
+              <span className="font-mono text-[8px] text-cyan-100/65">{comparisonRows.length}/4</span>
+            </div>
+            {comparisonRows.length >= 2 ? (
+              <div className="overflow-x-auto rounded-[4px] border border-white/[0.07] bg-black/20">
+                <table className="w-full min-w-[38rem] border-collapse font-mono text-[8px] text-white/55">
+                  <thead className="bg-white/[0.035] text-[7px] uppercase text-white/42">
+                    <tr>
+                      {["Run", "Verdict", "C3", "Delta-v", "Propellant", "Duration", "Robust.", "Min margin", "Cowell", "3sigma"].map((label) => (
+                        <th key={label} className="px-2 py-1.5 text-left font-medium">{label}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {comparisonRows.map((row) => (
+                      <tr key={row.runId} className={`border-t border-white/[0.05] ${row.recommended ? "bg-emerald-300/[0.045] text-emerald-100/72" : ""}`}>
+                        <td className="max-w-28 truncate px-2 py-1.5">{row.runId}</td>
+                        <td className="px-2 py-1.5 uppercase">{row.recommended ? "recommended" : row.verdict}</td>
+                        <td className="px-2 py-1.5">{row.c3Km2S2?.toFixed(1) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.deltaVKms?.toFixed(2) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.propellantKg ? formatMass(row.propellantKg) : "--"}</td>
+                        <td className="px-2 py-1.5">{row.durationDays?.toFixed(0) ?? "--"} d</td>
+                        <td className="px-2 py-1.5">{row.robustnessScore?.toFixed(0) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.minimumConstraintMargin?.toFixed(2) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.cowellResidualKm?.toExponential(1) ?? "--"}</td>
+                        <td className="px-2 py-1.5">{row.arrivalThreeSigmaKm?.toExponential(1) ?? "--"}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            ) : (
+              <div className="rounded-[4px] border border-white/[0.07] bg-white/[0.025] p-4 text-center text-[10px] text-white/42">
+                Select at least two runs. Failed, seed, and unavailable solutions remain audit-only and cannot be recommended.
+              </div>
+            )}
           </div>
         ) : null}
 
@@ -754,12 +947,21 @@ export default function MissionDesignerPanel({
                   </button>
                   <button
                     type="button"
-                    onClick={() => exportWorkbench("ccsds-oem-like")}
+                    onClick={() => exportWorkbench("ccsds-oem")}
                     data-solar-action="mission-export-oem"
                     className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
                   >
                     <Download className="h-3 w-3" strokeWidth={IS} />
-                    Export OEM
+                    Export CCSDS OEM
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => exportWorkbench("ccsds-opm")}
+                    data-solar-action="mission-export-opm"
+                    className="flex items-center justify-center gap-1.5 rounded-[3px] border border-cyan-200/15 bg-cyan-200/[0.04] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-cyan-100/72 hover:text-cyan-100"
+                  >
+                    <Download className="h-3 w-3" strokeWidth={IS} />
+                    Export CCSDS OPM
                   </button>
                 </div>
               </>

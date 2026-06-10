@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { createSpacecraftGltfLoader } from "../lib/spacecraftGltfLoader";
 
 type SpacecraftModelProps = {
   modelUrls: readonly string[];
@@ -24,7 +24,7 @@ export default function SpacecraftModel({
   radiusScene,
 }: SpacecraftModelProps) {
   const [sceneObj, setSceneObj] = useState<THREE.Object3D | null>(null);
-  const loader = useMemo(() => new GLTFLoader(), []);
+  const loaderBundle = useMemo(() => createSpacecraftGltfLoader(), []);
 
   useEffect(() => {
     let disposed = false;
@@ -32,7 +32,7 @@ export default function SpacecraftModel({
     (async () => {
       for (const url of modelUrls) {
         try {
-          const gltf = await loader.loadAsync(url);
+          const gltf = await loaderBundle.loader.loadAsync(url);
           loadedObj = gltf.scene.clone(true);
           loadedObj.traverse((n) => {
             const mesh = n as THREE.Mesh;
@@ -56,7 +56,9 @@ export default function SpacecraftModel({
       disposed = true;
       if (loadedObj) disposeObject3D(loadedObj);
     };
-  }, [loader, modelUrls]);
+  }, [loaderBundle, modelUrls]);
+
+  useEffect(() => () => loaderBundle.dispose(), [loaderBundle]);
 
   if (!sceneObj) return null;
   const scale = Math.max(0.01, radiusScene * 0.11);
