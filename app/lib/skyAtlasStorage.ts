@@ -9,6 +9,8 @@ export const EMPTY_SKY_ATLAS_STORAGE: SkyAtlasStorageV1 = {
   favorites: [],
   recent: [],
   customRoutes: [],
+  comparisonIds: [],
+  preferredMode: "panel",
 };
 
 function sanitizeCustomRoute(value: unknown): SkyAtlasCustomRoute | null {
@@ -48,6 +50,10 @@ export function sanitizeSkyAtlasStorage(value: unknown): SkyAtlasStorageV1 {
     customRoutes: Array.isArray(raw.customRoutes)
       ? raw.customRoutes.map(sanitizeCustomRoute).filter(Boolean).slice(0, 8) as SkyAtlasCustomRoute[]
       : [],
+    comparisonIds: Array.isArray(raw.comparisonIds)
+      ? raw.comparisonIds.filter((item): item is string => typeof item === "string").slice(0, 2)
+      : [],
+    preferredMode: raw.preferredMode === "immersive" ? "immersive" : "panel",
   };
 }
 

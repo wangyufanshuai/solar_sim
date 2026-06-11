@@ -1,10 +1,13 @@
 import { describe, expect, it } from "vitest";
 import {
   buildSkyAtlasCatalog,
+  clusterSkyAtlasObjects,
+  compareSkyAtlasObjects,
   createSkyAtlasCustomRoute,
   defaultSkyAtlasRoute,
   nearestSkyAtlasObject,
   projectSkyAtlasObject,
+  rankSkyAtlasObjects,
   searchSkyAtlasObjects,
   skyAtlasObjectToDirection,
   skyAtlasRouteToJson,
@@ -17,6 +20,11 @@ import {
   upsertCustomRoute,
   withRecent,
 } from "../skyAtlasStorage";
+import {
+  INITIAL_SKY_ATLAS_PLAYBACK,
+  skyAtlasPlaybackHoldMs,
+  skyAtlasPlaybackReducer,
+} from "../skyAtlasPlayback";
 
 describe("sky atlas catalog", () => {
   const catalog = buildSkyAtlasCatalog();
@@ -43,6 +51,17 @@ describe("sky atlas catalog", () => {
     expect(nearby.every((object) => object.distancePc != null && object.distancePc <= 5)).toBe(true);
   });
 
+  it("ranks exact names, favorites, and route targets with reasons", () => {
+    const orion = catalog.find((object) => object.name.toLowerCase().includes("orion"))!;
+    const ranked = rankSkyAtlasObjects(catalog, orion.name, {}, {
+      favoriteIds: [orion.id],
+      routeObjectIds: [orion.id],
+    });
+    expect(ranked[0]?.object.id).toBe(orion.id);
+    expect(ranked[0]?.reasons).toContain("exact name");
+    expect(ranked[0]?.reasons).toContain("favorite");
+  });
+
   it("builds a non-empty route with valid stops", () => {
     const route = defaultSkyAtlasRoute(catalog);
     expect(route.id).toBe("deep-sky-flight-route");
@@ -67,6 +86,29 @@ describe("sky atlas catalog", () => {
     const galactic = projectSkyAtlasObject(target, "galactic", viewport);
     expect([equatorial.x, equatorial.y, galactic.x, galactic.y].every(Number.isFinite)).toBe(true);
     expect(nearestSkyAtlasObject(catalog, { x: galactic.x, y: galactic.y }, "galactic", viewport)?.id).toBe(target.id);
+  });
+
+  it("clusters projected objects deterministically and preserves selected priority", () => {
+    const viewport = { width: 420, height: 188 };
+    const selected = catalog.find((object) => object.type === "nebula")!;
+    const first = clusterSkyAtlasObjects(catalog, "galactic", viewport, {
+      cellSize: 30,
+      selectedObjectId: selected.id,
+    });
+    const second = clusterSkyAtlasObjects(catalog, "galactic", viewport, {
+      cellSize: 30,
+      selectedObjectId: selected.id,
+    });
+    expect(first.map((cluster) => cluster.id)).toEqual(second.map((cluster) => cluster.id));
+    expect(first.some((cluster) => cluster.representative.id === selected.id)).toBe(true);
+  });
+
+  it("compares targets and marks missing fields unavailable", () => {
+    const left = catalog.find((object) => object.distancePc != null && object.magnitude != null)!;
+    const right = catalog.find((object) => object.type === "constellation")!;
+    const comparison = compareSkyAtlasObjects(left, right);
+    expect(comparison.fields.find((field) => field.id === "distance")?.right).toBe("unavailable");
+    expect(comparison.fields.find((field) => field.id === "coordinates")?.left).toContain("RA");
   });
 
   it("creates and exports custom routes with provenance", () => {
@@ -96,6 +138,8 @@ describe("sky atlas storage", () => {
         favorites: ["nebula:m42"],
         recent: ["star:alpha-centauri"],
         customRoutes: [],
+        comparisonIds: [],
+        preferredMode: "panel",
       });
   });
 
@@ -118,5 +162,30 @@ describe("sky atlas storage", () => {
         customRoutes: [route, { id: "bad", name: "Bad", stops: [{ nope: true }] }],
       }).customRoutes,
     ).toHaveLength(1);
+  });
+});
+
+describe("sky atlas playback", () => {
+  const route = {
+    id: "test-route",
+    name: "Test",
+    stops: [
+      { id: "one", objectId: "nebula:m42", holdMs: 4000, note: "one" },
+      { id: "two", objectId: "cluster:m45", holdMs: 6000, note: "two" },
+    ],
+  };
+
+  it("supports play, pause, jump, speed, and wrapped navigation", () => {
+    let state = skyAtlasPlaybackReducer(INITIAL_SKY_ATLAS_PLAYBACK, { type: "play", route, startIndex: 1 });
+    expect(state.status).toBe("playing");
+    expect(state.stopIndex).toBe(1);
+    state = skyAtlasPlaybackReducer(state, { type: "pause" });
+    expect(state.status).toBe("paused");
+    state = skyAtlasPlaybackReducer(state, { type: "next" });
+    expect(state.stopIndex).toBe(0);
+    state = skyAtlasPlaybackReducer(state, { type: "speed", speed: 2 });
+    expect(skyAtlasPlaybackHoldMs(state.route, state.stopIndex, state.speed)).toBe(2000);
+    state = skyAtlasPlaybackReducer(state, { type: "previous" });
+    expect(state.stopIndex).toBe(1);
   });
 });

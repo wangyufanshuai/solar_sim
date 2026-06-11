@@ -8,31 +8,51 @@ import {
   ChevronRight,
   Download,
   FileText,
+  Images,
   Map as MapIcon,
+  Maximize2,
+  Minimize2,
+  Pause,
+  Pin,
   Play,
   Plus,
   Search,
+  SkipBack,
+  SkipForward,
   Star,
   Trash2,
 } from "lucide-react";
 import { useEffect, useMemo, useState } from "react";
 import {
   buildSkyAtlasCatalog,
+  clusterSkyAtlasObjects,
+  compareSkyAtlasObjects,
   createSkyAtlasCustomRoute,
   defaultSkyAtlasRoute,
   nearestSkyAtlasObject,
   projectSkyAtlasObject,
+  rankSkyAtlasObjects,
   recommendedSkyAtlasObjects,
   searchSkyAtlasObjects,
   skyAtlasRouteToJson,
   skyAtlasRouteToMarkdown,
   skyAtlasTargetNarrative,
   type SkyAtlasCoverMetadata,
+  type SkyAtlasMode,
   type SkyAtlasObject,
   type SkyAtlasObjectType,
+  type SkyAtlasPlaybackState,
   type SkyAtlasProjection,
   type SkyAtlasRoute,
 } from "../lib/skyAtlas";
+import type { SkyAtlasPlaybackAction } from "../lib/skyAtlasPlayback";
+import {
+  createSkyAtlasAlbumRecord,
+  loadSkyAtlasAlbum,
+  removeSkyAtlasAlbumRecord,
+  saveSkyAtlasAlbumRecord,
+  type SkyAtlasAlbumRecord,
+} from "../lib/skyAtlasAlbum";
 import {
   EMPTY_SKY_ATLAS_STORAGE,
   loadSkyAtlasStorage,
@@ -94,11 +114,13 @@ function ObjectButton({
   object,
   active,
   favorite,
+  reason,
   onSelect,
 }: {
   object: SkyAtlasObject;
   active: boolean;
   favorite: boolean;
+  reason?: string;
   onSelect: () => void;
 }) {
   return (
@@ -114,7 +136,7 @@ function ObjectButton({
       <span className="min-w-0">
         <span className="block truncate text-[10px] text-white/74">{object.name}</span>
         <span className="block truncate font-mono text-[7px] uppercase text-white/34">
-          {fmtDistance(object.distancePc)} / {object.renderTier ?? object.source}
+          {reason ?? `${fmtDistance(object.distancePc)} / ${object.renderTier ?? object.source}`}
         </span>
       </span>
       <span className="flex items-center gap-1">
@@ -130,6 +152,8 @@ function AtlasMap({
   route,
   selected,
   projection,
+  favoriteIds,
+  immersive,
   onProjectionChange,
   onSelect,
 }: {
@@ -137,17 +161,21 @@ function AtlasMap({
   route: SkyAtlasRoute;
   selected: SkyAtlasObject | null;
   projection: SkyAtlasProjection;
+  favoriteIds: string[];
+  immersive: boolean;
   onProjectionChange: (next: SkyAtlasProjection) => void;
   onSelect: (object: SkyAtlasObject) => void;
 }) {
-  const projected = useMemo(
-    () =>
-      catalog
-        .map((object) => projectSkyAtlasObject(object, projection, MAP_SIZE))
-        .filter((item) => item.visible)
-        .sort((a, b) => (a.object.magnitude ?? 99) - (b.object.magnitude ?? 99))
-        .slice(0, 140),
-    [catalog, projection],
+  const routeObjectIds = useMemo(() => route.stops.map((stop) => stop.objectId), [route]);
+  const clusters = useMemo(
+    () => clusterSkyAtlasObjects(catalog, projection, MAP_SIZE, {
+      cellSize: immersive ? 18 : 25,
+      selectedObjectId: selected?.id,
+      favoriteIds,
+      routeObjectIds,
+      maxClusters: immersive ? 190 : 135,
+    }),
+    [catalog, favoriteIds, immersive, projection, routeObjectIds, selected?.id],
   );
   const routePoints = route.stops
     .map((stop) => catalog.find((object) => object.id === stop.objectId))
@@ -156,7 +184,7 @@ function AtlasMap({
   const selectedPoint = selected ? projectSkyAtlasObject(selected, projection, MAP_SIZE) : null;
 
   return (
-    <div className="rounded-[5px] border border-white/[0.07] bg-black/25 p-2" data-solar-atlas-map>
+    <div className="rounded-[5px] border border-white/[0.07] bg-black/25 p-2" data-solar-atlas-map data-solar-atlas-clustered>
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-1.5 font-mono text-[8px] uppercase text-white/62">
           <MapIcon className="h-3.5 w-3.5 text-cyan-100/62" strokeWidth={IS} />
@@ -180,7 +208,7 @@ function AtlasMap({
       </div>
       <svg
         viewBox={`0 0 ${MAP_SIZE.width} ${MAP_SIZE.height}`}
-        className="h-[188px] w-full rounded-[4px] border border-white/[0.06] bg-[#02050a]"
+        className={`${immersive ? "h-[min(54dvh,560px)]" : "h-[188px]"} w-full rounded-[4px] border border-white/[0.06] bg-[#02050a]`}
         role="img"
         onClick={(event) => {
           const rect = event.currentTarget.getBoundingClientRect();
@@ -215,17 +243,23 @@ function AtlasMap({
             strokeWidth="1.2"
           />
         ) : null}
-        {projected.map(({ object, x, y }) => (
-          <circle
-            key={object.id}
-            cx={x}
-            cy={y}
-            r={typeRadius(object)}
-            fill={object.color}
-            fillOpacity={object.type === "constellation" ? 0.34 : 0.78}
-            stroke={selected?.id === object.id ? "#cffafe" : "transparent"}
-            strokeWidth={selected?.id === object.id ? 1.6 : 0}
-          />
+        {clusters.map((cluster) => (
+          <g key={cluster.id} data-solar-atlas-cluster={cluster.members.length}>
+            <circle
+              cx={cluster.x}
+              cy={cluster.y}
+              r={typeRadius(cluster.representative) + Math.min(2.4, Math.log2(cluster.members.length))}
+              fill={cluster.representative.color}
+              fillOpacity={cluster.representative.type === "constellation" ? 0.34 : 0.78}
+              stroke={selected?.id === cluster.representative.id ? "#cffafe" : "transparent"}
+              strokeWidth={selected?.id === cluster.representative.id ? 1.6 : 0}
+            />
+            {cluster.members.length > 1 ? (
+              <text x={cluster.x + 5} y={cluster.y - 4} fill="#cffafe" fillOpacity="0.62" fontSize="6">
+                {cluster.members.length}
+              </text>
+            ) : null}
+          </g>
         ))}
         {routePoints.map((point, index) => (
           <circle key={`${point.object.id}-${index}`} cx={point.x} cy={point.y} r="5" fill="none" stroke="#fef3c7" strokeOpacity="0.72" strokeWidth="1" />
@@ -239,8 +273,8 @@ function AtlasMap({
         ) : null}
       </svg>
       <div className="mt-1 flex justify-between font-mono text-[7px] uppercase text-white/32">
-        <span>mag scale: dot size</span>
-        <span>rings: visual distance guide</span>
+        <span>declutter grid / {clusters.length} clusters</span>
+        <span>priority: selected · route · favorite · magnitude</span>
       </div>
     </div>
   );
@@ -248,12 +282,18 @@ function AtlasMap({
 
 export default function SkyAtlasExplorer({
   onTargetSelect,
-  onRoutePlay,
+  playback,
+  onPlaybackAction,
   onExportCover,
+  mode,
+  onModeChange,
 }: {
   onTargetSelect: (object: SkyAtlasObject) => void;
-  onRoutePlay: (route: SkyAtlasRoute, startIndex: number) => void;
+  playback: SkyAtlasPlaybackState;
+  onPlaybackAction: (action: SkyAtlasPlaybackAction) => void;
   onExportCover: (metadata?: SkyAtlasCoverMetadata) => void;
+  mode: SkyAtlasMode;
+  onModeChange: (mode: SkyAtlasMode) => void;
 }) {
   const catalog = useMemo(() => buildSkyAtlasCatalog(), []);
   const fixedRoute = useMemo(() => defaultSkyAtlasRoute(catalog), [catalog]);
@@ -265,11 +305,15 @@ export default function SkyAtlasExplorer({
   const [routeIndex, setRouteIndex] = useState(0);
   const [projection, setProjection] = useState<SkyAtlasProjection>("galactic");
   const [customStopIds, setCustomStopIds] = useState<string[]>([]);
+  const [comparisonIds, setComparisonIds] = useState<string[]>([]);
+  const [album, setAlbum] = useState<SkyAtlasAlbumRecord[]>([]);
 
   useEffect(() => {
     const loaded = loadSkyAtlasStorage();
     setStorage(loaded);
     setCustomStopIds(loaded.customRoutes?.[0]?.stops.map((stop) => stop.objectId) ?? []);
+    setComparisonIds(loaded.comparisonIds ?? []);
+    void loadSkyAtlasAlbum().then(setAlbum);
   }, []);
 
   const selected = useMemo(
@@ -277,8 +321,16 @@ export default function SkyAtlasExplorer({
     [catalog, discover, selectedId],
   );
   const searchResults = useMemo(
-    () => searchSkyAtlasObjects(catalog, query, { types: activeTypes }).slice(0, 60),
-    [activeTypes, catalog, query],
+    () => rankSkyAtlasObjects(
+      catalog,
+      query,
+      { types: activeTypes },
+      {
+        favoriteIds: storage.favorites,
+        routeObjectIds: (customStopIds.length ? customStopIds : fixedRoute.stops.map((stop) => stop.objectId)),
+      },
+    ).slice(0, 60),
+    [activeTypes, catalog, customStopIds, fixedRoute.stops, query, storage.favorites],
   );
   const customRoute = useMemo(
     () => createSkyAtlasCustomRoute(customStopIds, "Custom Atlas Route"),
@@ -288,6 +340,12 @@ export default function SkyAtlasExplorer({
   const routeStop = activeRoute.stops[routeIndex] ?? activeRoute.stops[0] ?? null;
   const routeObject = routeStop ? catalog.find((object) => object.id === routeStop.objectId) ?? null : null;
   const narrative = selected ? skyAtlasTargetNarrative(selected) : null;
+  const comparison = useMemo(() => {
+    const [leftId, rightId] = comparisonIds;
+    const left = catalog.find((object) => object.id === leftId);
+    const right = catalog.find((object) => object.id === rightId);
+    return left && right ? compareSkyAtlasObjects(left, right) : null;
+  }, [catalog, comparisonIds]);
   const neighbors = useMemo(
     () =>
       selected
@@ -319,6 +377,14 @@ export default function SkyAtlasExplorer({
     if (!selected) return;
     persist(toggleFavorite(storage, selected.id));
   };
+  const pinSelected = () => {
+    if (!selected) return;
+    const next = comparisonIds.includes(selected.id)
+      ? comparisonIds.filter((id) => id !== selected.id)
+      : [...comparisonIds.slice(-1), selected.id].slice(0, 2);
+    setComparisonIds(next);
+    persist({ ...storage, comparisonIds: next });
+  };
   const setRouteObject = (nextIndex: number) => {
     const wrapped = (nextIndex + activeRoute.stops.length) % Math.max(1, activeRoute.stops.length);
     setRouteIndex(wrapped);
@@ -328,13 +394,43 @@ export default function SkyAtlasExplorer({
   };
   const exportRouteJson = () => downloadText("solar-sim-atlas-route.json", JSON.stringify(skyAtlasRouteToJson(activeRoute, catalog), null, 2), "application/json");
   const exportRouteMarkdown = () => downloadText("solar-sim-atlas-route.md", skyAtlasRouteToMarkdown(activeRoute, catalog), "text/markdown");
+  const captureCover = async () => {
+    const metadata: SkyAtlasCoverMetadata = {
+      targetId: selected?.id ?? null,
+      targetName: selected?.name ?? null,
+      routeId: activeRoute.id,
+      routeStopIndex: routeIndex,
+      projection,
+      postProfile: mode === "immersive" ? "atlas-flight" : "atlas-map",
+      timestamp: new Date().toISOString(),
+    };
+    const canvas = document.querySelector(".absolute.inset-0 canvas");
+    const record = await createSkyAtlasAlbumRecord(
+      metadata,
+      canvas instanceof HTMLCanvasElement ? canvas : null,
+    );
+    await saveSkyAtlasAlbumRecord(record);
+    setAlbum(await loadSkyAtlasAlbum());
+    onExportCover(metadata);
+  };
+
+  useEffect(() => {
+    if (playback.route?.id !== activeRoute.id) return;
+    setRouteIndex(playback.stopIndex);
+    const stop = activeRoute.stops[playback.stopIndex];
+    const object = stop ? catalog.find((item) => item.id === stop.objectId) : null;
+    if (object) setSelectedId(object.id);
+  }, [activeRoute, catalog, playback.route?.id, playback.stopIndex]);
 
   return (
     <section
       data-solar-panel="sky-atlas"
-      className="pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.9)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:left-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[31rem]"
+      data-solar-atlas-mode={mode}
+      className={mode === "immersive"
+        ? "pointer-events-auto absolute inset-0 z-[142] flex flex-col overflow-hidden bg-[rgba(2,5,10,0.74)] backdrop-blur-[2px]"
+        : "pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.9)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:left-4 sm:max-h-[calc(100dvh-8.5rem)] sm:w-[31rem]"}
     >
-      <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
+      <header className={`${mode === "immersive" ? "bg-black/34 px-4 py-3" : "p-3 pb-2"} shrink-0 border-b border-white/[0.07]`}>
         <div className="flex items-center justify-between gap-2">
           <div>
             <h2 className="font-mono text-[10px] font-semibold uppercase tracking-[0.14em] text-white/86">
@@ -344,40 +440,46 @@ export default function SkyAtlasExplorer({
               Curated map, route builder, and deep-sky flight / {catalog.length} objects
             </p>
           </div>
-          <button
-            type="button"
-            data-solar-action="atlas-cover"
-            onClick={() =>
-              onExportCover({
-                targetId: selected?.id ?? null,
-                targetName: selected?.name ?? null,
-                routeId: activeRoute.id,
-                routeStopIndex: routeIndex,
-                projection,
-                postProfile: "atlas-flight",
-                timestamp: new Date().toISOString(),
-              })
-            }
-            className="flex items-center gap-1 rounded-[3px] border border-cyan-200/16 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100/76"
-          >
-            <Download className="h-3 w-3" strokeWidth={IS} />
-            Cover
-          </button>
+          <div className="flex items-center gap-1">
+            <button
+              type="button"
+              data-solar-action="atlas-mode-toggle"
+              onClick={() => onModeChange(mode === "immersive" ? "panel" : "immersive")}
+              className="grid h-7 w-7 place-items-center rounded-[3px] border border-white/[0.1] bg-white/[0.04] text-white/62"
+              aria-label={mode === "immersive" ? "Exit immersive Atlas" : "Enter immersive Atlas"}
+            >
+              {mode === "immersive" ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+            </button>
+            <button
+              type="button"
+              data-solar-action="atlas-cover"
+              onClick={() => void captureCover()}
+              className="flex items-center gap-1 rounded-[3px] border border-cyan-200/16 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100/76"
+            >
+              <Download className="h-3 w-3" strokeWidth={IS} />
+              Cover
+            </button>
+          </div>
         </div>
       </header>
 
-      <div className="min-h-0 flex-1 overflow-y-auto p-3 pt-2">
-        <div className="grid gap-2">
+      <div className={`${mode === "immersive" ? "p-3 sm:p-4" : "p-3 pt-2"} min-h-0 flex-1 overflow-y-auto`}>
+        <div className={mode === "immersive" ? "grid gap-3 sm:grid-cols-[minmax(0,1fr)_22rem]" : "grid gap-2"}>
+          <div className={mode === "immersive" ? "min-w-0" : "contents"}>
           <AtlasMap
             catalog={catalog}
             route={activeRoute}
             selected={selected}
             projection={projection}
+            favoriteIds={storage.favorites}
+            immersive={mode === "immersive"}
             onProjectionChange={setProjection}
             onSelect={select}
           />
+          </div>
 
-          <div className="rounded-[5px] border border-white/[0.07] bg-black/20 p-2" data-solar-atlas-target-card>
+          <div className={mode === "immersive" ? "grid content-start gap-2 overflow-y-auto sm:max-h-[calc(100dvh-6rem)]" : "contents"}>
+          <div className="rounded-[5px] border border-white/[0.07] bg-black/35 p-2" data-solar-atlas-target-card>
             {selected ? (
               <div className="grid gap-2">
                 {selected.previewUrl ? (
@@ -393,14 +495,25 @@ export default function SkyAtlasExplorer({
                       {narrative?.headline ?? selected.subtitle ?? selected.catalogId ?? selected.source}
                     </div>
                   </div>
-                  <button
-                    type="button"
-                    data-solar-action="atlas-favorite"
-                    onClick={favoriteSelected}
-                    className="grid h-7 w-7 shrink-0 place-items-center rounded-[3px] border border-white/[0.08] bg-white/[0.035] text-cyan-100/78"
-                  >
-                    <Star className={`h-3.5 w-3.5 ${storage.favorites.includes(selected.id) ? "fill-cyan-100" : ""}`} strokeWidth={IS} />
-                  </button>
+                  <div className="flex gap-1">
+                    <button
+                      type="button"
+                      data-solar-action="atlas-compare-pin"
+                      onClick={pinSelected}
+                      className="grid h-7 w-7 shrink-0 place-items-center rounded-[3px] border border-white/[0.08] bg-white/[0.035] text-amber-100/72"
+                      aria-label="Pin target for comparison"
+                    >
+                      <Pin className={`h-3.5 w-3.5 ${comparisonIds.includes(selected.id) ? "fill-amber-100/50" : ""}`} strokeWidth={IS} />
+                    </button>
+                    <button
+                      type="button"
+                      data-solar-action="atlas-favorite"
+                      onClick={favoriteSelected}
+                      className="grid h-7 w-7 shrink-0 place-items-center rounded-[3px] border border-white/[0.08] bg-white/[0.035] text-cyan-100/78"
+                    >
+                      <Star className={`h-3.5 w-3.5 ${storage.favorites.includes(selected.id) ? "fill-cyan-100" : ""}`} strokeWidth={IS} />
+                    </button>
+                  </div>
                 </div>
                 <div className="text-[9px] leading-4 text-white/56">
                   <span className="font-mono uppercase text-white/34">Why visit: </span>
@@ -447,11 +560,19 @@ export default function SkyAtlasExplorer({
                 <button
                   type="button"
                   data-solar-action="atlas-route-play"
-                  onClick={() => onRoutePlay(activeRoute, routeIndex)}
+                  onClick={() => onPlaybackAction(
+                    playback.route?.id === activeRoute.id && playback.status === "playing"
+                      ? { type: "pause" }
+                      : playback.route?.id === activeRoute.id && playback.status === "paused"
+                        ? { type: "resume" }
+                        : { type: "play", route: activeRoute, startIndex: routeIndex },
+                  )}
                   className="flex items-center gap-1 rounded-[3px] border border-cyan-200/16 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100/76"
                 >
-                  <Play className="h-3 w-3" strokeWidth={IS} />
-                  Play
+                  {playback.route?.id === activeRoute.id && playback.status === "playing"
+                    ? <Pause className="h-3 w-3" strokeWidth={IS} />
+                    : <Play className="h-3 w-3" strokeWidth={IS} />}
+                  {playback.route?.id === activeRoute.id && playback.status === "playing" ? "Pause" : "Play"}
                 </button>
               </div>
             </div>
@@ -473,6 +594,35 @@ export default function SkyAtlasExplorer({
               {activeRoute.stops.map((stop, index) => (
                 <button key={stop.id} type="button" aria-label={`Route stop ${index + 1}`} onClick={() => setRouteObject(index)} className={`h-1.5 flex-1 rounded-full ${index === routeIndex ? "bg-cyan-200/80" : "bg-white/12"}`} />
               ))}
+            </div>
+            <div className="mt-2 rounded-[4px] border border-white/[0.06] bg-white/[0.025] p-1.5" data-solar-atlas-playback>
+              <div className="mb-1 flex items-center gap-1">
+                <button type="button" data-solar-action="atlas-playback-prev" onClick={() => onPlaybackAction({ type: "previous" })} className="grid h-6 w-6 place-items-center rounded-[3px] text-white/48">
+                  <SkipBack className="h-3 w-3" />
+                </button>
+                <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/10">
+                  <div className="h-full bg-cyan-200/70" style={{ width: `${Math.round(playback.progress * 100)}%` }} />
+                </div>
+                <button type="button" data-solar-action="atlas-playback-next" onClick={() => onPlaybackAction({ type: "next" })} className="grid h-6 w-6 place-items-center rounded-[3px] text-white/48">
+                  <SkipForward className="h-3 w-3" />
+                </button>
+              </div>
+              <div className="flex items-center justify-between gap-2 font-mono text-[7px] uppercase text-white/36">
+                <span>{playback.status} · stop {playback.stopIndex + 1}</span>
+                <div className="flex gap-0.5">
+                  {([0.5, 1, 2] as const).map((speed) => (
+                    <button
+                      key={speed}
+                      type="button"
+                      data-solar-action={`atlas-playback-speed-${speed}`}
+                      onClick={() => onPlaybackAction({ type: "speed", speed })}
+                      className={`rounded-[2px] px-1.5 py-0.5 ${playback.speed === speed ? "bg-cyan-200/12 text-cyan-100" : "text-white/34"}`}
+                    >
+                      {speed}x
+                    </button>
+                  ))}
+                </div>
+              </div>
             </div>
             <div className="mt-2 grid gap-1">
               <div className="flex gap-1">
@@ -549,8 +699,18 @@ export default function SkyAtlasExplorer({
               })}
             </div>
             <div className="grid max-h-52 gap-1 overflow-y-auto" data-solar-atlas-search-results>
-              {(query || activeTypes.length ? searchResults : discover).slice(0, 18).map((object) => (
-                <ObjectButton key={object.id} object={object} active={selected?.id === object.id} favorite={storage.favorites.includes(object.id)} onSelect={() => select(object)} />
+              {(query || activeTypes.length
+                ? searchResults
+                : discover.map((object) => ({ object, score: 0, reasons: ["curated route"] }))
+              ).slice(0, 18).map((result) => (
+                <ObjectButton
+                  key={result.object.id}
+                  object={result.object}
+                  active={selected?.id === result.object.id}
+                  favorite={storage.favorites.includes(result.object.id)}
+                  reason={`${result.reasons.join(" · ")}${result.score ? ` / ${Math.round(result.score)}` : ""}`}
+                  onSelect={() => select(result.object)}
+                />
               ))}
             </div>
           </div>
@@ -577,8 +737,78 @@ export default function SkyAtlasExplorer({
             </div>
           ) : null}
 
+          <div className="rounded-[5px] border border-white/[0.07] bg-black/30 p-2" data-solar-atlas-comparison>
+            <div className="mb-1.5 flex items-center justify-between">
+              <span className="font-mono text-[8px] uppercase text-white/62">Object comparison</span>
+              <span className="font-mono text-[7px] uppercase text-white/30">{comparisonIds.length}/2 pinned</span>
+            </div>
+            {comparison ? (
+              <div className="grid gap-1">
+                <div className="grid grid-cols-[5rem_1fr_1fr] gap-1 text-[8px] text-white/56">
+                  <span />
+                  <button type="button" onClick={() => select(comparison.left)} className="truncate text-left text-cyan-100/72">{comparison.left.name}</button>
+                  <button type="button" onClick={() => select(comparison.right)} className="truncate text-left text-amber-100/72">{comparison.right.name}</button>
+                </div>
+                {comparison.fields.map((field) => (
+                  <div key={field.id} className="grid grid-cols-[5rem_1fr_1fr] gap-1 border-t border-white/[0.05] py-1 font-mono text-[7px] leading-3">
+                    <span className="uppercase text-white/30">{field.label}</span>
+                    <span className="text-white/50">{field.left}</span>
+                    <span className="text-white/50">{field.right}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-[8px] leading-4 text-white/34">Pin two targets from the learning card. Missing catalog fields remain explicitly unavailable.</div>
+            )}
+          </div>
+
+          <div className="rounded-[5px] border border-white/[0.07] bg-black/30 p-2" data-solar-atlas-album>
+            <div className="mb-1.5 flex items-center justify-between">
+              <span className="flex items-center gap-1 font-mono text-[8px] uppercase text-white/62">
+                <Images className="h-3 w-3" />
+                Atlas album
+              </span>
+              <span className="font-mono text-[7px] uppercase text-white/30">{album.length}/12 local</span>
+            </div>
+            {album.length ? (
+              <div className="grid grid-cols-2 gap-1.5">
+                {album.slice(0, 6).map((record) => (
+                  <div key={record.id} className="overflow-hidden rounded-[4px] border border-white/[0.06] bg-white/[0.025]">
+                    {record.thumbnailWebp ? (
+                      // IndexedDB data URLs are local generated artifacts, not remotely optimizable assets.
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={record.thumbnailWebp} alt="" className="aspect-video w-full object-cover" />
+                    ) : (
+                      <div className="grid aspect-video place-items-center font-mono text-[7px] uppercase text-white/24">metadata only</div>
+                    )}
+                    <div className="flex items-center gap-1 px-1.5 py-1">
+                      <span className="min-w-0 flex-1 truncate text-[8px] text-white/54">{record.metadata.targetName ?? record.metadata.routeId ?? "Atlas cover"}</span>
+                      {record.thumbnailWebp ? (
+                        <a href={record.thumbnailWebp} download={`${record.id}.webp`} className="text-cyan-100/55" aria-label="Download album thumbnail">
+                          <Download className="h-3 w-3" />
+                        </a>
+                      ) : null}
+                      <button
+                        type="button"
+                        data-solar-action="atlas-album-remove"
+                        onClick={() => void removeSkyAtlasAlbumRecord(record.id).then(async () => setAlbum(await loadSkyAtlasAlbum()))}
+                        className="text-white/30"
+                        aria-label="Remove album record"
+                      >
+                        <Trash2 className="h-3 w-3" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-[8px] leading-4 text-white/34">Export a cover to save a compressed WebP thumbnail and provenance metadata locally.</div>
+            )}
+          </div>
+
           <div className="rounded-[3px] border border-amber-200/12 bg-amber-200/[0.035] px-2 py-1 font-mono text-[7px] uppercase leading-3 text-amber-100/72">
             Curated visual atlas only. Not a complete planetarium or certified astrometric database.
+          </div>
           </div>
         </div>
       </div>
