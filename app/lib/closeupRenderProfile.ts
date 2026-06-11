@@ -14,6 +14,12 @@ export type CloseupRenderProfile = {
   terminatorFeather?: number;
   ringLitOpacity?: number;
   ringDarkOpacity?: number;
+  limbDarkening?: number;
+  bandContrast?: number;
+  stormContrast?: number;
+  ringPhaseContrast?: number;
+  cloudSilverLining?: number;
+  nightTerminatorCutoff?: number;
   coronaAlpha?: number;
   flareOpacity?: number;
 };
@@ -25,6 +31,8 @@ export type SpacecraftGalleryLightingProfile = {
   contactShadowOpacity: number;
   turntableSpeed: number;
   scaleReferenceOpacity: number;
+  autoFramePadding: number;
+  coverShotProfile: "gallery-v3-studio";
 };
 
 export const SPACECRAFT_GALLERY_LIGHTING_PROFILE: SpacecraftGalleryLightingProfile = {
@@ -32,8 +40,10 @@ export const SPACECRAFT_GALLERY_LIGHTING_PROFILE: SpacecraftGalleryLightingProfi
   fillIntensity: 0.55,
   rimIntensity: 1.25,
   contactShadowOpacity: 0.38,
-  turntableSpeed: 0.22,
-  scaleReferenceOpacity: 0.42,
+  turntableSpeed: 0.18,
+  scaleReferenceOpacity: 0.5,
+  autoFramePadding: 1.72,
+  coverShotProfile: "gallery-v3-studio",
 };
 
 export function closeupRenderProfile(bodyId: string): CloseupRenderProfile {
@@ -47,6 +57,7 @@ export function closeupRenderProfile(bodyId: string): CloseupRenderProfile {
       shadowSoftness: closeups.sun.shadowSoftness,
       normalScale: 0,
       roughness: 0,
+      limbDarkening: closeups.sun.limbDarkening,
       coronaAlpha: closeups.sun.coronaLayerAlpha,
       flareOpacity: closeups.sun.flareOpacity,
     };
@@ -64,13 +75,21 @@ export function closeupRenderProfile(bodyId: string): CloseupRenderProfile {
       cloudDayOpacity: closeups.earth.cloudDayOpacity,
       cloudNightOpacity: closeups.earth.cloudNightOpacity,
       terminatorFeather: closeups.earth.terminatorFeather,
+      cloudSilverLining: closeups.earth.cloudSilverLining,
+      nightTerminatorCutoff: closeups.earth.nightTerminatorCutoff,
     };
   }
   if (bodyId === "moon") {
     return { bodyId: "moon", exposure: 1, ...closeups.moon };
   }
   if (bodyId === "jupiter") {
-    return { bodyId: "jupiter", exposure: 1, ...closeups.jupiter };
+    return {
+      bodyId: "jupiter",
+      exposure: 1,
+      ...closeups.jupiter,
+      bandContrast: closeups.jupiter.bandContrast,
+      stormContrast: closeups.jupiter.stormContrast,
+    };
   }
   if (bodyId === "saturn") {
     return {
@@ -83,6 +102,7 @@ export function closeupRenderProfile(bodyId: string): CloseupRenderProfile {
       roughness: closeups.saturn.roughness,
       ringLitOpacity: closeups.saturn.ringLitOpacity,
       ringDarkOpacity: closeups.saturn.ringDarkOpacity,
+      ringPhaseContrast: closeups.saturn.ringPhaseContrast,
     };
   }
   return {

@@ -37,6 +37,7 @@ const scenarios = [
   { id: "mission-audit", viewport: { width: 1280, height: 900 }, action: "mission", expect: ["canvas", "missionAudit"] },
   { id: "spacecraft-gallery", viewport: { width: 1280, height: 900 }, action: "gallery", expect: ["canvas", "gallery"] },
   { id: "gallery-all-models", viewport: { width: 1280, height: 900 }, action: "galleryAll", expect: ["canvas", "gallery", "galleryAll"] },
+  { id: "gallery-cover-v3", viewport: { width: 1280, height: 900 }, action: "galleryCoverV3", expect: ["canvas", "gallery", "galleryCoverV3"] },
   { id: "mission-compare", viewport: { width: 1280, height: 900 }, action: "missionCompare", expect: ["canvas", "missionCompare"] },
   { id: "ccsds-export", viewport: { width: 1280, height: 900 }, action: "ccsdsExport", expect: ["canvas", "ccsdsExport"] },
   { id: "mission-review", viewport: { width: 1280, height: 900 }, action: "missionReview", expect: ["canvas", "missionReview"] },
@@ -56,6 +57,10 @@ const scenarios = [
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
   { id: "jupiter-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 6, expect: ["canvas"] },
   { id: "saturn-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 7, expect: ["canvas"] },
+  { id: "sun-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
+  { id: "earth-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
+  { id: "jupiter-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 6, expect: ["canvas"] },
+  { id: "saturn-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 7, expect: ["canvas"] },
   { id: "mobile-mission", viewport: { width: 390, height: 844, mobile: true }, action: "mobileMission", expect: ["canvas", "missionAudit"] },
   { id: "mobile-atlas", viewport: { width: 390, height: 844, mobile: true }, action: "mobileAtlas", expect: ["canvas", "skyAtlas"] },
   { id: "sky-atlas-map-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasMapMobile", expect: ["canvas", "skyAtlas", "atlasMap"] },
@@ -270,7 +275,7 @@ async function runScenarioAction(cdp, scenario) {
       }
     }
     const visualTest = new URLSearchParams(location.search).get("visualTest") === "1";
-    if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll") {
+    if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll" || scenarioArg.action === "galleryCoverV3") {
       press('[data-solar-section="tools"]');
       await sleep(300);
       press('[data-solar-action="gallery-toggle"]');
@@ -289,6 +294,10 @@ async function runScenarioAction(cdp, scenario) {
         await sleep(1200);
         buttons[7]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
         await sleep(2200);
+      }
+      if (scenarioArg.action === "galleryCoverV3") {
+        await waitFor(() => Boolean(document.querySelector("[data-solar-gallery-metadata]")), 10000);
+        await sleep(500);
       }
     }
     if (scenarioArg.action === "missionCompare") {
@@ -412,7 +421,10 @@ async function runScenarioAction(cdp, scenario) {
       return { width: Math.round(rect.width), height: Math.round(rect.height), area: Math.round(rect.width * rect.height) };
     });
     const spacecraftButtons = document.querySelectorAll("[data-solar-spacecraft]").length;
-    const galleryV2 = Boolean(document.querySelector('[data-solar-gallery="v2"]'));
+    const galleryV2 = Boolean(document.querySelector('[data-solar-gallery="v2"], [data-solar-gallery="v3"]'));
+    const galleryV3 = Boolean(document.querySelector('[data-solar-gallery="v3"]'));
+    const galleryMetadata = Boolean(document.querySelector("[data-solar-gallery-metadata]"));
+    const galleryCoverExport = Boolean(document.querySelector('[data-solar-action="gallery-cover-export"]'));
     const missionCompare = Boolean(document.querySelector("[data-solar-mission-compare]"));
     const missionReview = Boolean(document.querySelector("[data-solar-mission-review]"));
     const trajectoryButtons = document.querySelectorAll('[data-solar-action="mission-trajectory-inspect"]').length;
@@ -439,6 +451,9 @@ async function runScenarioAction(cdp, scenario) {
       spacecraftButtons,
       exportButtons,
       galleryV2,
+      galleryV3,
+      galleryMetadata,
+      galleryCoverExport,
       missionCompare,
       missionReview,
       trajectoryButtons,
@@ -478,8 +493,14 @@ function checkScenario(scenario, state, screenshotBytes) {
   }
   if (scenario.expect.includes("gallery")) {
     if (!/SPACECRAFT GALLERY/i.test(state.text)) failures.push("spacecraft gallery missing");
-    if (!state.galleryV2) failures.push("spacecraft gallery v2 marker missing");
+    if (!state.galleryV2) failures.push("spacecraft gallery marker missing");
     if (state.spacecraftButtons < 8) failures.push(`expected at least 8 spacecraft buttons, saw ${state.spacecraftButtons}`);
+  }
+  if (scenario.expect.includes("galleryCoverV3")) {
+    if (!state.galleryV3) failures.push("spacecraft gallery v3 marker missing");
+    if (!state.galleryMetadata) failures.push("gallery v3 metadata marker missing");
+    if (!state.galleryCoverExport) failures.push("gallery cover export action missing");
+    if (!/gallery-v3-studio|Export gallery cover/i.test(state.text)) failures.push("gallery v3 cover metadata copy missing");
   }
   if (scenario.expect.includes("galleryAll") && /Model preview unavailable|DRACOLoader/i.test(state.text)) {
     failures.push("one or more gallery models failed to decode");

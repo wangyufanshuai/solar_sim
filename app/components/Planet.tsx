@@ -58,6 +58,7 @@ const nightLayerFragmentShader = `
   uniform float uIntensity;
   uniform float uSolarVisibility;
   uniform float uTerminatorFeather;
+  uniform float uNightCutoff;
   varying vec2 vUvLayer;
   varying vec3 vNormalWorldLayer;
   #include <logdepthbuf_pars_fragment>
@@ -66,6 +67,7 @@ const nightLayerFragmentShader = `
     float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
     float night = 1.0 - smoothstep(-0.16 - uTerminatorFeather, 0.12 + uTerminatorFeather, sunDot);
     night *= 1.0 - uSolarVisibility * smoothstep(-0.03, 0.18, sunDot);
+    night *= 1.0 - smoothstep(uNightCutoff, uNightCutoff + 0.24, sunDot);
     float luminance = dot(texel, vec3(0.2126, 0.7152, 0.0722));
     gl_FragColor = vec4(texel * uIntensity * night, luminance * night);
     #include <logdepthbuf_fragment>
@@ -164,6 +166,9 @@ export type PlanetBodyProps = {
   calibratedEnvMapIntensity?: number;
   calibratedFillIntensity?: number;
   calibratedRimIntensity?: number;
+  calibratedBandContrast?: number;
+  calibratedCloudSilverLining?: number;
+  calibratedNightTerminatorCutoff?: number;
   /** Sim-driven visual spin angle; affects surface/clouds only, not physics or labels. */
   spinAngleRef?: MutableRefObject<number>;
 };
@@ -207,6 +212,9 @@ export default function Planet({
   calibratedEnvMapIntensity,
   calibratedFillIntensity,
   calibratedRimIntensity,
+  calibratedBandContrast,
+  calibratedCloudSilverLining,
+  calibratedNightTerminatorCutoff,
   spinAngleRef,
 }: PlanetBodyProps) {
   const [wSeg, hSeg] = sphereSegments;
@@ -243,7 +251,8 @@ export default function Planet({
     uIntensity: { value: VISUAL_CALIBRATION.closeups.earth.nightIntensity },
     uSolarVisibility: { value: 1 },
     uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
-  }), [nightMap]);
+    uNightCutoff: { value: calibratedNightTerminatorCutoff ?? VISUAL_CALIBRATION.closeups.earth.nightTerminatorCutoff },
+  }), [calibratedNightTerminatorCutoff, nightMap]);
   const cloudUniforms = useMemo(() => ({
     uMap: { value: clouds },
     uSunDirection: { value: sunDirectionWorld.current.clone() },
@@ -251,8 +260,8 @@ export default function Planet({
     uNightOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudNightOpacity },
     uSolarVisibility: { value: 1 },
     uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
-    uSilverLining: { value: VISUAL_CALIBRATION.closeups.earth.cloudSilverLining },
-  }), [clouds]);
+    uSilverLining: { value: calibratedCloudSilverLining ?? VISUAL_CALIBRATION.closeups.earth.cloudSilverLining },
+  }), [calibratedCloudSilverLining, clouds]);
   const cloudShadowUniforms = useMemo(() => ({
     uMap: { value: clouds },
     uSunDirection: { value: sunDirectionWorld.current.clone() },
@@ -328,6 +337,8 @@ export default function Planet({
       }
       if (nightMaterialRef.current) {
         nightMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
+        nightMaterialRef.current.uniforms.uNightCutoff.value =
+          calibratedNightTerminatorCutoff ?? VISUAL_CALIBRATION.closeups.earth.nightTerminatorCutoff;
       }
       limbMaterial.uniforms.uOpacity.value =
         (showAtmosphere ? 0.32 : 0.13) *
@@ -613,6 +624,8 @@ export default function Planet({
           clearcoatRoughness={showAtmosphere ? 0.38 : 0.78}
           sheen={showAtmosphere ? 0.16 : 0.035}
           sheenRoughness={0.72}
+          iridescence={bodyId === "jupiter" || bodyId === "saturn" ? Math.min(0.1, calibratedBandContrast ?? 0) : 0}
+          iridescenceIOR={1.2}
           wireframe={false}
         />
       </mesh>

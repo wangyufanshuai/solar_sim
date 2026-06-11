@@ -21,6 +21,7 @@ import type { LocalTelemetry } from "../lib/localLaunchPhysics";
 import type { MissionPlan } from "../lib/missionDesignerTypes";
 import type { CinematicPostProfileId } from "../lib/cinematicPostProfile";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import { closeupCameraPresetForBody } from "../lib/closeupCameraPresets";
 import { cameraIntentReducer, type CameraIntentAction, type CameraIntentState } from "../lib/cameraIntentState";
 import { applyFloatingOffsetScene, updateFloatingOrigin } from "../lib/floatingOrigin";
 import { lodConfigForTier } from "../lib/galacticLod";
@@ -151,7 +152,7 @@ function CameraZoomBridge({ controlsRef }: { controlsRef: MutableRefObject<Orbit
   return null;
 }
 
-function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, cameraBodyFocusRequest, controlsRef, cameraIntentRef }: { physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; floatingOriginRef: MutableRefObject<FloatingOriginState>; earthMoonView: boolean; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; controlsRef: MutableRefObject<OrbitControlsImpl | null>; cameraIntentRef?: MutableRefObject<CameraIntentState> }) {
+function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, cameraBodyFocusRequest, controlsRef, cameraIntentRef, visualTest = false }: { physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>; floatingOriginRef: MutableRefObject<FloatingOriginState>; earthMoonView: boolean; cameraBodyFocusRequest?: CameraBodyFocusRequest | null; controlsRef: MutableRefObject<OrbitControlsImpl | null>; cameraIntentRef?: MutableRefObject<CameraIntentState>; visualTest?: boolean }) {
   const camera = useThree((s) => s.camera);
   const focusRef = useRef<ActiveFocus | null>(null);
   const lockBodyIndexRef = useRef<number | null>(null);
@@ -388,19 +389,24 @@ function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoonView, c
       const [x, y, z] = applyFloatingOffsetScene(p.posAu[3 * f.index]!, p.posAu[3 * f.index + 1]!, p.posAu[3 * f.index + 2]!, origin);
       tmpTarget.current.set(x, y, z);
       const def = SOLAR_SYSTEM_BODIES[f.index]!;
-      const idealDist = idealFocusCameraDistance(def, f.mode);
+      const preset = visualTest && f.mode === "inspect" ? closeupCameraPresetForBody(def.id) : null;
+      const idealDist = idealFocusCameraDistance(def, f.mode) * (preset?.distanceScale ?? 1);
       const u = THREE.MathUtils.clamp((now - f.start) / Math.max(1, f.until - f.start), 0, 1);
       const ease = 1 - Math.pow(1 - u, 3);
-      tmpDir.current.subVectors(camera.position, controls.target).normalize();
+      if (preset) {
+        tmpDir.current.fromArray(preset.viewDirection).normalize();
+      } else {
+        tmpDir.current.subVectors(camera.position, controls.target).normalize();
+      }
       if (!Number.isFinite(tmpDir.current.x)) tmpDir.current.set(0.28, 0.38, 0.88).normalize();
-      const pitchBias = f.mode === "lock" || f.mode === "inspect" ? 0.18 : 0;
+      const pitchBias = preset ? 0 : f.mode === "lock" || f.mode === "inspect" ? 0.18 : 0;
       tmpDir.current.y = THREE.MathUtils.clamp(tmpDir.current.y + pitchBias, -0.72, 0.82);
       tmpDir.current.normalize();
       tmpCam.current.copy(tmpTarget.current).addScaledVector(tmpDir.current, idealDist);
       controls.target.lerpVectors(focusStartTarget.current, tmpTarget.current, ease);
       camera.position.lerpVectors(focusStartCamera.current, tmpCam.current, ease);
       controls.minDistance = earthMoonView ? 0.32 : minFocusDistance(def); controls.update();
-      if (now >= f.until) { if (f.mode === "inspect" || f.mode === "lock") { lockBodyIndexRef.current = f.index; lockTargetSmooth.current.copy(tmpTarget.current); lockInitializedRef.current = true; tmpOffset.current.subVectors(camera.position, controls.target); const len = tmpOffset.current.length(); if (len > 1e-8 && Number.isFinite(len)) { lockViewDirRef.current.copy(tmpOffset.current).normalize(); lockDesiredDistanceRef.current = len; } } focusRef.current = null; }
+      if (now >= f.until) { if (f.mode === "inspect" || f.mode === "lock") { lockBodyIndexRef.current = f.index; lockTargetSmooth.current.copy(tmpTarget.current); lockInitializedRef.current = true; tmpOffset.current.subVectors(camera.position, controls.target); const len = tmpOffset.current.length(); if (len > 1e-8 && Number.isFinite(len)) { lockViewDirRef.current.copy(tmpOffset.current).normalize(); lockDesiredDistanceRef.current = len; } if (preset) { lockViewDirRef.current.fromArray(preset.viewDirection).normalize(); lockDesiredDistanceRef.current = idealDist; } } focusRef.current = null; }
       return;
     }
     const li = lockBodyIndexRef.current;
@@ -605,7 +611,7 @@ export default function UniverseScene({ simulation }: { simulation: UniverseCanv
           floatingOriginRef={simulation.floatingOriginRef}
           cameraIntentRef={simulation.cameraIntentRef}
         />
-        <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} cameraIntentRef={simulation.cameraIntentRef} />
+        <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} controlsRef={controlsRef} cameraIntentRef={simulation.cameraIntentRef} visualTest={simulation.visualTest ?? false} />
         <CameraFocusDirectionBridge controlsRef={controlsRef} cameraIntentRef={simulation.cameraIntentRef} />
         {simulation.viewSettings.showMissionTrajectory ? (
           <MissionTrajectoryPreview

@@ -116,6 +116,7 @@ export default function SunBody({
           uColor: { value: new THREE.Color("#ff5a1a") },
           uPower: { value: 2.18 },
           uPulse: { value: 1.0 },
+          uCoronaAlpha: { value: VISUAL_CALIBRATION.closeups.sun.coronaLayerAlpha },
         },
         vertexShader: `
           varying vec3 vNrm;
@@ -134,13 +135,14 @@ export default function SunBody({
           uniform vec3 uColor;
           uniform float uPower;
           uniform float uPulse;
+          uniform float uCoronaAlpha;
           varying vec3 vNrm;
           varying vec3 vView;
           #include <logdepthbuf_pars_fragment>
           void main() {
             float fresnel = pow(1.0 - abs(dot(normalize(vNrm), normalize(-vView))), uPower);
             float shell = smoothstep(0.0, 1.0, fresnel) * uPulse;
-            gl_FragColor = vec4(uColor, shell * ${VISUAL_CALIBRATION.sun.coronaAlpha.toFixed(3)});
+            gl_FragColor = vec4(uColor, shell * uCoronaAlpha);
             #include <logdepthbuf_fragment>
           }
         `,
@@ -196,6 +198,7 @@ export default function SunBody({
       prominenceRef.current.rotation.z = Math.sin(t * 0.18) * 0.08;
     }
     glowMat.uniforms.uPulse.value = 0.72 + Math.sin(t * 0.55) * 0.035;
+    glowMat.uniforms.uCoronaAlpha.value = VISUAL_CALIBRATION.closeups.sun.coronaLayerAlpha;
 
     if (L?.castShadow && mesh && frame % 72 === 0) {
       mesh.getWorldPosition(sunWorld.current);
@@ -282,6 +285,7 @@ export default function SunBody({
         uniforms: {
           uTexture: { value: map },
           uTime: { value: 0 },
+          uLimbDarkening: { value: VISUAL_CALIBRATION.closeups.sun.limbDarkening },
         },
         vertexShader: `
           varying vec2 vUv;
@@ -301,6 +305,7 @@ export default function SunBody({
         fragmentShader: `
           uniform sampler2D uTexture;
           uniform float uTime;
+          uniform float uLimbDarkening;
           varying vec2 vUv;
           varying vec3 vNrm;
           varying vec3 vView;
@@ -336,7 +341,7 @@ export default function SunBody({
             float cosTheta = max(dot(n, v), 0.0);
 
             float mu = cosTheta;
-            float limb = 0.18 + 0.82 * pow(mu, 0.52);
+            float limb = (0.18 + uLimbDarkening * 0.28) + (0.82 - uLimbDarkening * 0.28) * pow(mu, 0.52 + uLimbDarkening * 0.18);
 
             vec3 tex = texture2D(uTexture, vUv).rgb;
             float texLum = dot(tex, vec3(0.299, 0.587, 0.114));
@@ -357,7 +362,7 @@ export default function SunBody({
             color += whiteHot * activeRegion * 0.24;
             color = mix(color, deep, (1.0 - mu) * 0.22);
             color *= limb * 0.92;
-            color += vec3(0.18, 0.034, 0.0) * pow(1.0 - mu, 1.45);
+            color += vec3(0.18, 0.034, 0.0) * pow(1.0 - mu, 1.45) * (1.0 + uLimbDarkening);
 
             gl_FragColor = vec4(color, 1.0);
             #include <logdepthbuf_fragment>
@@ -372,6 +377,7 @@ export default function SunBody({
       sunCoreMat.uniforms.uTexture.value = map;
     }
     sunCoreMat.uniforms.uTime.value = state.clock.elapsedTime;
+    sunCoreMat.uniforms.uLimbDarkening.value = VISUAL_CALIBRATION.closeups.sun.limbDarkening;
   });
 
   useLayoutEffect(() => {
@@ -403,9 +409,9 @@ export default function SunBody({
       <mesh renderOrder={2} frustumCulled={false}>
         <sphereGeometry args={[radius * 1.018, shellSeg, Math.max(36, Math.floor(shellSeg * 0.55))]} />
         <meshBasicMaterial
-          color="#ff6a16"
-          transparent
-          opacity={0.062}
+            color="#ff6a16"
+            transparent
+            opacity={0.062 + VISUAL_CALIBRATION.closeups.sun.flareOpacity * 0.08}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -414,9 +420,9 @@ export default function SunBody({
       <mesh renderOrder={2} frustumCulled={false}>
         <sphereGeometry args={[radius * 1.055, shellSeg, Math.max(36, Math.floor(shellSeg * 0.55))]} />
         <meshBasicMaterial
-          color="#e53508"
-          transparent
-          opacity={0.034}
+            color="#e53508"
+            transparent
+            opacity={0.034 + VISUAL_CALIBRATION.closeups.sun.flareOpacity * 0.05}
           blending={THREE.AdditiveBlending}
           depthWrite={false}
           toneMapped={false}
@@ -432,7 +438,7 @@ export default function SunBody({
             map={haloTex}
             color="#ffb86a"
             transparent
-            opacity={0.18}
+            opacity={0.18 + VISUAL_CALIBRATION.closeups.sun.flareOpacity * 0.18}
             toneMapped={false}
             depthWrite={false}
             depthTest={false}

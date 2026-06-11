@@ -76,12 +76,14 @@ function SaturnRings({
   physicsRef,
   litOpacity = VISUAL_CALIBRATION.closeups.saturn.ringLitOpacity,
   darkOpacity = VISUAL_CALIBRATION.closeups.saturn.ringDarkOpacity,
+  phaseContrast = VISUAL_CALIBRATION.closeups.saturn.ringPhaseContrast,
 }: {
   radiusScene: number;
   bodyIndex: number;
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   litOpacity?: number;
   darkOpacity?: number;
+  phaseContrast?: number;
 }) {
   const ringTexture = useMemo(() => (typeof document === "undefined" ? null : createSaturnRingTexture()), []);
   const mainMaterialRef = useRef<THREE.MeshStandardMaterial>(null);
@@ -91,7 +93,7 @@ function SaturnRings({
     occlusionFrameRef.current += 1;
     if (occlusionFrameRef.current % 12 !== 1) return;
     const visibility = solarOcclusionFactor(physicsRef.current, bodyIndex, SOLAR_BODY_IDS);
-    mainMaterialRef.current.opacity = litOpacity * (0.16 + 0.84 * visibility);
+    mainMaterialRef.current.opacity = litOpacity * (0.14 + (0.86 + phaseContrast * 0.18) * visibility);
   });
   return (
     <group rotation={[0.34, 0.08, -0.2]}>
@@ -117,7 +119,7 @@ function SaturnRings({
             map={ringTexture}
             color="#d8c49b"
             transparent
-            opacity={litOpacity * 0.38}
+            opacity={litOpacity * (0.38 + phaseContrast * 0.24)}
             side={THREE.DoubleSide}
             depthWrite={false}
             toneMapped
@@ -171,7 +173,7 @@ function SaturnRings({
         <meshStandardMaterial
           color="#d4c4a4"
           transparent
-          opacity={0.58}
+          opacity={0.58 + phaseContrast * 0.2}
           side={THREE.DoubleSide}
           depthWrite={false}
           metalness={0.02}
@@ -207,7 +209,7 @@ function SaturnRings({
         <meshStandardMaterial
           color="#c8b898"
           transparent
-          opacity={0.45}
+          opacity={0.45 + phaseContrast * 0.16}
           side={THREE.DoubleSide}
           depthWrite={false}
           metalness={0.02}
@@ -442,6 +444,7 @@ function BodyShell({
             physicsRef={physicsRef}
             litOpacity={closeupProfile.ringLitOpacity}
             darkOpacity={closeupProfile.ringDarkOpacity}
+            phaseContrast={closeupProfile.ringPhaseContrast}
           />
         ) : null}
         <CelestialBody
@@ -459,6 +462,9 @@ function BodyShell({
           calibratedEnvMapIntensity={closeupProfile.envMapIntensity}
           calibratedFillIntensity={closeupProfile.fillIntensity}
           calibratedRimIntensity={closeupProfile.rimIntensity}
+          calibratedBandContrast={closeupProfile.bandContrast ?? closeupProfile.ringPhaseContrast}
+          calibratedCloudSilverLining={closeupProfile.cloudSilverLining}
+          calibratedNightTerminatorCutoff={closeupProfile.nightTerminatorCutoff}
           normalScaleIntensity={closeupProfile.normalScale}
           roughness={planetRoughness}
           metalness={planetMetalness}

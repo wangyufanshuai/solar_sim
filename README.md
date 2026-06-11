@@ -167,8 +167,8 @@ This version positions Solar Sim as a preliminary aerospace engineering workbenc
 - Mission exchange exports include CCSDS OEM 3.0 and OPM 3.0 KVN with absolute TDB epochs, heliocentric ECLIPJ2000 states in km/km/s, initial covariance, and explicit injection/DSM maneuver records.
 - Reports preserve solver provenance, SPICE checksum status, ephemeris audit, Cowell/covariance results, constraint margins, rejected candidates, and low-thrust availability.
 - Low-thrust seed records remain audit-only. They are not ranked as feasible unless an offline Hermite-Simpson solve is explicitly marked `status: "converged"` and passes residual gates.
-- Showcase Tour and Spacecraft Gallery v2 are presentation features. Gallery Draco decoding is local (`public/draco`), with no runtime decoder CDN dependency. They do not enter the N-body integrator and do not change mission dynamics.
-- The current visual target is strong browser showcase quality. It is not an offline film renderer with path-traced volumetrics, production compositing, or physically complete spacecraft materials.
+- Showcase Tour and Spacecraft Gallery v3 are presentation features. Gallery Draco decoding is local (`public/draco`), with no runtime decoder CDN dependency. They do not enter the N-body integrator and do not change mission dynamics.
+- AAA Closeup v3 improves deterministic Sun/Earth/Jupiter/Saturn browser closeups, Gallery auto-framing, scale reference, and cover metadata export. It is still a real-time WebGL showcase, not an offline film renderer with path-traced volumetrics, production compositing, or physically complete spacecraft materials.
 
 Local regression gates:
 
@@ -180,11 +180,14 @@ npm run perf:profile:assert
 npm run audit:mission-project
 npm run audit:ccsds
 npm run audit:gallery-models
+npm run audit:closeups
 npm run audit:sky-atlas
 npm run audit:sky-atlas-routes
 ```
 
 CCSDS demo artifacts can be regenerated with `npm run export:demo-ccsds`. The exporter is intended for preliminary data exchange and does not turn the workbench into a certified flight-dynamics chain.
+
+Gallery v3 cover metadata can be regenerated with `npm run export:demo-gallery-cover`. The JSON sidecar records the selected spacecraft id, title, scale label, source credit, category, render profile, and capture timestamp for local portfolio/review use.
 
 ## Sky Atlas Boundary
 

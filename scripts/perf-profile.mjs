@@ -258,7 +258,7 @@ async (scenario) => {
     for (const button of [...document.querySelectorAll("[data-solar-spacecraft]")]) {
       button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
       const modelDeadline = performance.now() + 15000;
-      while (/Loading model/i.test(document.querySelector('[data-solar-gallery="v2"]')?.textContent ?? "") && performance.now() < modelDeadline) {
+      while (/Loading model/i.test(document.querySelector('[data-solar-gallery="v2"], [data-solar-gallery="v3"]')?.textContent ?? "") && performance.now() < modelDeadline) {
         await sleep(120);
       }
       await sleep(240);

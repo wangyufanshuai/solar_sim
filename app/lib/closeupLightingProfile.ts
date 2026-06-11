@@ -19,6 +19,11 @@ export type CloseupLightingProfile = {
   rimIntensity: number;
   ringLitOpacity?: number;
   ringDarkOpacity?: number;
+  bandContrast?: number;
+  stormContrast?: number;
+  ringPhaseContrast?: number;
+  cloudSilverLining?: number;
+  nightTerminatorCutoff?: number;
   renderProfile: CloseupRenderProfile;
 };
 
@@ -53,6 +58,11 @@ export function closeupLightingProfile(bodyId: string, active: boolean): Closeup
     rimIntensity: calibration.rimIntensity * activeScale,
     ringLitOpacity: renderProfile.ringLitOpacity,
     ringDarkOpacity: renderProfile.ringDarkOpacity,
+    bandContrast: renderProfile.bandContrast,
+    stormContrast: renderProfile.stormContrast,
+    ringPhaseContrast: renderProfile.ringPhaseContrast,
+    cloudSilverLining: renderProfile.cloudSilverLining,
+    nightTerminatorCutoff: renderProfile.nightTerminatorCutoff,
     renderProfile,
   };
 }

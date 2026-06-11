@@ -6,6 +6,7 @@ import { Suspense, useCallback, useEffect, useMemo, useRef, useState } from "rea
 import * as THREE from "three";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { SPACECRAFT_GALLERY_LIGHTING_PROFILE } from "../lib/closeupRenderProfile";
+import { createGalleryCoverMetadata } from "../lib/galleryCoverMetadata";
 import { markRenderAssetStage } from "../lib/renderAssetQueue";
 import type { ResourcePackManifest, SpacecraftResourcePackItem } from "../lib/resourcePackTypes";
 import { createSpacecraftGltfLoader } from "../lib/spacecraftGltfLoader";
@@ -52,7 +53,7 @@ function normalizeModel(object: THREE.Object3D, scaleHint: number) {
   const center = box.getCenter(new THREE.Vector3());
   const maxAxis = Math.max(size.x, size.y, size.z, 0.001);
   object.position.sub(center);
-  object.scale.setScalar((1.55 / maxAxis) * Math.max(0.2, scaleHint));
+  object.scale.setScalar((SPACECRAFT_GALLERY_LIGHTING_PROFILE.autoFramePadding / maxAxis) * Math.max(0.2, scaleHint));
   object.traverse((node) => {
     const mesh = node as THREE.Mesh;
     if (!mesh.isMesh) return;
@@ -138,7 +139,7 @@ function GalleryCameraRig() {
   const camera = useThree((state) => state.camera);
   useFrame(({ clock }) => {
     const t = clock.elapsedTime * 0.14;
-    camera.position.set(Math.sin(t) * 0.35, 0.55 + Math.sin(t * 0.7) * 0.05, 3.2 + Math.cos(t) * 0.18);
+    camera.position.set(Math.sin(t) * 0.28, 0.55 + Math.sin(t * 0.7) * 0.04, 3.35 + Math.cos(t) * 0.12);
     camera.lookAt(0, -0.05, 0);
   });
   return null;
@@ -186,6 +187,7 @@ async function fetchSpacecraftManifest() {
 
 export default function SpacecraftGalleryPanel() {
   const [items, setItems] = useState<SpacecraftResourcePackItem[]>([]);
+  const [visibleItems, setVisibleItems] = useState<SpacecraftResourcePackItem[]>([]);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [loadingModelId, setLoadingModelId] = useState<string | null>(null);
   const [modelError, setModelError] = useState<string | null>(null);
@@ -197,14 +199,20 @@ export default function SpacecraftGalleryPanel() {
         if (cancelled) return;
         const next = manifest.spacecraft ?? [];
         setItems(next);
-        const lightest = [...next].sort((a, b) => a.bytes - b.bytes)[0];
-        setSelectedId((current) => current ?? lightest?.id ?? next[0]?.id ?? null);
       })
       .catch(() => {});
     return () => {
       cancelled = true;
     };
   }, []);
+  useEffect(() => {
+    if (items.length === 0) {
+      setVisibleItems([]);
+      return;
+    }
+    const frame = window.requestAnimationFrame(() => setVisibleItems(items));
+    return () => window.cancelAnimationFrame(frame);
+  }, [items]);
 
   const selected = useMemo(
     () => items.find((item) => item.id === selectedId) ?? items[0],
@@ -218,6 +226,29 @@ export default function SpacecraftGalleryPanel() {
     setLoadingModelId(null);
     setModelError(message);
   }, []);
+  const handleExportGalleryCover = useCallback(() => {
+    if (!selected) return;
+    try {
+      const galleryRoot = document.querySelector('[data-solar-gallery="v3"]');
+      const canvas = galleryRoot?.querySelector("canvas") ?? null;
+      if (!(canvas instanceof HTMLCanvasElement)) throw new Error("Gallery canvas unavailable");
+      const stamp = new Date().toISOString().slice(0, 19).replace(/:/g, "-");
+      const image = document.createElement("a");
+      image.href = canvas.toDataURL("image/png");
+      image.download = `solar-sim-gallery-${selected.id}-${stamp}.png`;
+      image.click();
+      const metadata = createGalleryCoverMetadata(selected);
+      const blob = new Blob([JSON.stringify(metadata, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const sidecar = document.createElement("a");
+      sidecar.href = url;
+      sidecar.download = `solar-sim-gallery-${selected.id}-${stamp}.json`;
+      sidecar.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      window.alert("Unable to export the current gallery cover from this WebGL context.");
+    }
+  }, [selected]);
 
   useEffect(() => {
     if (selected) {
@@ -260,11 +291,16 @@ export default function SpacecraftGalleryPanel() {
   }
 
   return (
-    <div className="mt-3 border-t border-white/5 pt-3" data-solar-gallery="v2">
+    <div className="mt-3 border-t border-white/5 pt-3" data-solar-gallery="v3">
       <div className="mb-2 flex items-center justify-between gap-3">
         <div className="text-[11px] tracking-[0.2em] text-slate-400">SPACECRAFT GALLERY</div>
-        <div className="text-[10px] text-white/28">{items.length} NASA GLB</div>
+        <div className="text-[10px] text-white/28">v3 · {items.length} NASA GLB</div>
       </div>
+      {!selected ? (
+        <div className="mb-2 rounded-lg border border-white/[0.06] bg-white/[0.025] px-2 py-2 font-mono text-[9px] uppercase leading-4 tracking-[0.12em] text-white/34">
+          Select a spacecraft to load the Gallery v3 studio preview, scale reference, and cover metadata.
+        </div>
+      ) : null}
       {selected ? (
         <div className="relative mb-2 h-40 overflow-hidden rounded-xl border border-white/8 bg-[radial-gradient(circle_at_50%_18%,rgba(98,128,188,0.26),rgba(5,8,14,0.28)_52%,rgba(0,0,0,0.58))]">
           <GalleryStage
@@ -286,7 +322,7 @@ export default function SpacecraftGalleryPanel() {
             </div>
           ) : null}
           <div className="pointer-events-none absolute left-2 top-2 rounded bg-black/42 px-2 py-1 font-mono text-[8px] uppercase tracking-[0.14em] text-white/58">
-            {selected.sourceCreditShort} 路 {selected.category}
+            {selected.sourceCreditShort} · {selected.category}
           </div>
         </div>
       ) : null}
@@ -302,10 +338,23 @@ export default function SpacecraftGalleryPanel() {
             <span>{selected.scaleLabel ?? "scale n/a"}</span>
             <span>{(selected.bytes / 1024 / 1024).toFixed(1)} MB</span>
           </div>
+          <div className="mt-1 font-mono text-[8px] uppercase tracking-[0.12em] text-white/28" data-solar-gallery-metadata>
+            {SPACECRAFT_GALLERY_LIGHTING_PROFILE.coverShotProfile} · {selected.sourceCreditShort}
+          </div>
         </div>
       ) : null}
+      {selected ? (
+        <button
+          type="button"
+          data-solar-action="gallery-cover-export"
+          onClick={handleExportGalleryCover}
+          className="mb-2 w-full rounded-lg border border-cyan-200/12 bg-cyan-200/[0.04] px-2 py-1.5 text-left font-mono text-[9px] uppercase tracking-[0.12em] text-cyan-100/68 transition-colors hover:bg-cyan-200/[0.08] hover:text-cyan-100"
+        >
+          Export gallery cover + metadata
+        </button>
+      ) : null}
       <div className="grid max-h-44 grid-cols-2 gap-1 overflow-y-auto pr-1">
-        {items.map((item) => {
+        {visibleItems.map((item) => {
           const active = item.id === selected?.id;
           return (
             <button
