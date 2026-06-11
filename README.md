@@ -213,6 +213,22 @@ npm run export:demo-atlas-map
 npm run export:demo-atlas-route-v2
 ```
 
+Sky Atlas v3 upgrades this layer into an immersive curated visual explorer:
+
+- Panel and immersive layouts share the same catalog, filters, provenance, and camera focus path. Immersive mode suppresses the normal simulation HUD while keeping compact navigation, search, route state, and an explicit exit control.
+- Deterministic map clustering favors selected objects, route stops, favorites, and brighter objects. Ranked search reports why each result matched.
+- Route playback uses one controller for play, pause, speed, previous/next stop, progress, and manual-camera pause behavior.
+- Two-target comparison reports catalog type, distance, magnitude, coordinates, source, and preview availability without inventing missing data.
+- Atlas Album stores at most 12 compressed WebP thumbnails in local IndexedDB, with metadata-only fallback. Nothing is uploaded and images are not written to localStorage.
+
+Sky Atlas remains a curated visual explorer, not a complete SpaceEngine replacement or a certified planetarium. It does not provide a complete procedural universe, professional astrometric reduction, or an authoritative observational catalog.
+
+Atlas v3 audit:
+
+```bash
+npm run audit:sky-atlas-v3
+```
+
 ## Production Deployment
 
 Recommended ECS sizing:

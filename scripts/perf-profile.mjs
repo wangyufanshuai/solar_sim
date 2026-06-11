@@ -318,6 +318,10 @@ async (scenario) => {
     scenario === "sky-atlas-map" ||
     scenario === "sky-atlas-route-builder" ||
     scenario === "sky-atlas-route-export"
+    || scenario === "sky-atlas-immersive"
+    || scenario === "sky-atlas-ranked-search"
+    || scenario === "sky-atlas-timeline"
+    || scenario === "sky-atlas-album"
   ) {
     press('[data-solar-section="atlas"]');
     await sleep(650);
@@ -348,6 +352,29 @@ async (scenario) => {
       press('[data-solar-action="atlas-cover"]');
       await sleep(250);
     }
+    if (scenario === "sky-atlas-immersive") {
+      press('[data-solar-action="atlas-mode-toggle"]');
+      await sleep(450);
+    }
+    if (scenario === "sky-atlas-ranked-search") {
+      const input = document.querySelector('[data-solar-action="atlas-search-input"]');
+      const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
+      setter?.call(input, "orion");
+      input?.dispatchEvent(new Event("input", { bubbles: true }));
+      await sleep(350);
+    }
+    if (scenario === "sky-atlas-timeline") {
+      press('[data-solar-action="atlas-route-play"]');
+      await sleep(350);
+      press('[data-solar-action="atlas-route-play"]');
+      press('[data-solar-action="atlas-playback-speed-2"]');
+      press('[data-solar-action="atlas-playback-next"]');
+      await sleep(350);
+    }
+    if (scenario === "sky-atlas-album") {
+      press('[data-solar-action="atlas-cover"]');
+      await sleep(650);
+    }
   }
   if (scenario === "safe") {
     press('[data-solar-section="view"]');
@@ -372,6 +399,10 @@ async (scenario) => {
     scenario === "sky-atlas-route-builder" ? 2400 :
     scenario === "sky-atlas-route-export" ? 1800 :
     scenario === "atlas-cover" ? 1600 :
+    scenario === "sky-atlas-immersive" ? 2200 :
+    scenario === "sky-atlas-ranked-search" ? 1800 :
+    scenario === "sky-atlas-timeline" ? 2000 :
+    scenario === "sky-atlas-album" ? 2200 :
     scenario === "showcase-tour" ? 5000 :
     6000;
   const result = await sample(durationMs, (frame) => {
@@ -531,7 +562,7 @@ async function main() {
     const scenarios = [];
     const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
       ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
-      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover", "sky-atlas-map", "sky-atlas-route-builder", "sky-atlas-route-export"];
+      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover", "sky-atlas-map", "sky-atlas-route-builder", "sky-atlas-route-export", "sky-atlas-immersive", "sky-atlas-ranked-search", "sky-atlas-timeline", "sky-atlas-album"];
     for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }

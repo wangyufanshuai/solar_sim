@@ -58,6 +58,10 @@ const checks = [
   ["sky-atlas-map", "Sky Atlas map", baseline.skyAtlasMapMaxTaskMs],
   ["sky-atlas-route-builder", "Sky Atlas route builder", baseline.skyAtlasRouteBuilderMaxTaskMs],
   ["sky-atlas-route-export", "Sky Atlas route export", baseline.skyAtlasRouteExportMaxTaskMs],
+  ["sky-atlas-immersive", "Sky Atlas immersive", baseline.skyAtlasImmersiveMaxTaskMs],
+  ["sky-atlas-ranked-search", "Sky Atlas ranked search", baseline.skyAtlasRankedSearchMaxTaskMs],
+  ["sky-atlas-timeline", "Sky Atlas timeline", baseline.skyAtlasTimelineMaxTaskMs],
+  ["sky-atlas-album", "Sky Atlas album", baseline.skyAtlasAlbumMaxTaskMs],
 ];
 const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
   ? new Set(process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean))

@@ -38,6 +38,7 @@ export type SkyAtlasObject = {
 };
 
 export type SkyAtlasProjection = "equatorial" | "galactic";
+export type SkyAtlasMode = "panel" | "immersive";
 
 export type SkyAtlasMapState = {
   projection: SkyAtlasProjection;
@@ -49,6 +50,20 @@ export type SkyAtlasProjectedObject = {
   x: number;
   y: number;
   visible: boolean;
+};
+
+export type SkyAtlasMapCluster = {
+  id: string;
+  x: number;
+  y: number;
+  representative: SkyAtlasObject;
+  members: SkyAtlasObject[];
+};
+
+export type SkyAtlasSearchScore = {
+  object: SkyAtlasObject;
+  score: number;
+  reasons: string[];
 };
 
 export type SkyAtlasRouteStop = {
@@ -113,11 +128,34 @@ export type SkyAtlasUiState = {
   routeStopIndex: number;
 };
 
+export type SkyAtlasPlaybackStatus = "idle" | "playing" | "paused";
+
+export type SkyAtlasPlaybackState = {
+  status: SkyAtlasPlaybackStatus;
+  route: SkyAtlasRoute | null;
+  stopIndex: number;
+  speed: 0.5 | 1 | 2;
+  progress: number;
+};
+
+export type SkyAtlasComparison = {
+  left: SkyAtlasObject;
+  right: SkyAtlasObject;
+  fields: Array<{
+    id: "type" | "distance" | "magnitude" | "coordinates" | "source";
+    label: string;
+    left: string;
+    right: string;
+  }>;
+};
+
 export type SkyAtlasStorageV1 = {
   schemaVersion: 1;
   favorites: string[];
   recent: string[];
   customRoutes?: SkyAtlasCustomRoute[];
+  comparisonIds?: string[];
+  preferredMode?: SkyAtlasMode;
 };
 
 export type SkyAtlasSearchFilters = {
@@ -125,6 +163,11 @@ export type SkyAtlasSearchFilters = {
   maxDistancePc?: number;
   maxMagnitude?: number;
   renderTier?: string;
+};
+
+export type SkyAtlasSearchContext = {
+  favoriteIds?: string[];
+  routeObjectIds?: string[];
 };
 
 type DeepSkyManifestItem = {
@@ -368,6 +411,74 @@ export function searchSkyAtlasObjects(
     );
 }
 
+export function rankSkyAtlasObjects(
+  catalog: SkyAtlasObject[],
+  query: string,
+  filters: SkyAtlasSearchFilters = {},
+  context: SkyAtlasSearchContext = {},
+): SkyAtlasSearchScore[] {
+  const q = query.trim().toLowerCase();
+  const favorites = new Set(context.favoriteIds ?? []);
+  const routeIds = new Set(context.routeObjectIds ?? []);
+  return searchSkyAtlasObjects(catalog, "", filters)
+    .map((object) => {
+      const name = object.name.toLowerCase();
+      const catalogId = object.catalogId?.toLowerCase() ?? "";
+      const sourceId = object.sourceId.toLowerCase();
+      const reasons: string[] = [];
+      let score = 0;
+      if (q) {
+        if (name === q) {
+          score += 1000;
+          reasons.push("exact name");
+        } else if (name.startsWith(q)) {
+          score += 720;
+          reasons.push("name prefix");
+        } else if (name.includes(q)) {
+          score += 460;
+          reasons.push("name match");
+        }
+        if (catalogId === q || sourceId === q) {
+          score += 640;
+          reasons.push("catalog id");
+        } else if (catalogId.includes(q) || sourceId.includes(q)) {
+          score += 300;
+          reasons.push("catalog match");
+        }
+        if (object.type.includes(q)) {
+          score += 180;
+          reasons.push("type match");
+        }
+        if (!object.searchText.includes(q) && score === 0) return null;
+      } else {
+        reasons.push("discover");
+      }
+      if (favorites.has(object.id)) {
+        score += 130;
+        reasons.push("favorite");
+      }
+      if (routeIds.has(object.id)) {
+        score += 110;
+        reasons.push("current route");
+      }
+      if (object.magnitude != null) {
+        score += Math.max(0, 60 - Math.max(-2, object.magnitude) * 7);
+        reasons.push("brightness");
+      }
+      if (object.distancePc != null) {
+        score += Math.max(0, 55 - Math.log10(Math.max(1, object.distancePc)) * 18);
+        reasons.push("distance");
+      }
+      return { object, score, reasons: Array.from(new Set(reasons)).slice(0, 3) };
+    })
+    .filter(Boolean)
+    .sort((a, b) =>
+      b!.score - a!.score ||
+      (a!.object.magnitude ?? Number.POSITIVE_INFINITY) - (b!.object.magnitude ?? Number.POSITIVE_INFINITY) ||
+      a!.object.name.localeCompare(b!.object.name),
+    ) as SkyAtlasSearchScore[];
+}
+
 export function skyAtlasObjectToDirection(object: SkyAtlasObject): [number, number, number] {
   return starToDirection(object.raHours, object.decDeg);
 }
@@ -410,6 +521,59 @@ export function nearestSkyAtlasObject(
       (a.object.magnitude ?? Number.POSITIVE_INFINITY) - (b.object.magnitude ?? Number.POSITIVE_INFINITY) ||
       a.object.name.localeCompare(b.object.name),
     )[0]?.object ?? null;
+}
+
+export function clusterSkyAtlasObjects(
+  catalog: SkyAtlasObject[],
+  projection: SkyAtlasProjection,
+  viewport: { width: number; height: number },
+  options: {
+    cellSize?: number;
+    selectedObjectId?: string | null;
+    favoriteIds?: string[];
+    routeObjectIds?: string[];
+    maxClusters?: number;
+  } = {},
+): SkyAtlasMapCluster[] {
+  const cellSize = Math.max(12, options.cellSize ?? 26);
+  const favorites = new Set(options.favoriteIds ?? []);
+  const routeIds = new Set(options.routeObjectIds ?? []);
+  const selectedId = options.selectedObjectId ?? null;
+  const priority = (object: SkyAtlasObject) =>
+    (object.id === selectedId ? 10000 : 0) +
+    (routeIds.has(object.id) ? 5000 : 0) +
+    (favorites.has(object.id) ? 2500 : 0) +
+    Math.max(0, 100 - (object.magnitude ?? 10) * 10);
+  const cells = new Map<string, SkyAtlasProjectedObject[]>();
+  for (const object of catalog) {
+    const projected = projectSkyAtlasObject(object, projection, viewport);
+    if (!projected.visible) continue;
+    const key = `${Math.floor(projected.x / cellSize)}:${Math.floor(projected.y / cellSize)}`;
+    const bucket = cells.get(key) ?? [];
+    bucket.push(projected);
+    cells.set(key, bucket);
+  }
+  return Array.from(cells.entries())
+    .map(([key, bucket]) => {
+      const sorted = [...bucket].sort((a, b) =>
+        priority(b.object) - priority(a.object) ||
+        (a.object.magnitude ?? Number.POSITIVE_INFINITY) - (b.object.magnitude ?? Number.POSITIVE_INFINITY) ||
+        a.object.id.localeCompare(b.object.id),
+      );
+      const representative = sorted[0]!;
+      return {
+        id: `atlas-cluster-${projection}-${key}`,
+        x: representative.x,
+        y: representative.y,
+        representative: representative.object,
+        members: sorted.map((item) => item.object),
+      };
+    })
+    .sort((a, b) =>
+      priority(b.representative) - priority(a.representative) ||
+      a.id.localeCompare(b.id),
+    )
+    .slice(0, options.maxClusters ?? 160);
 }
 
 function findObject(catalog: SkyAtlasObject[], type: SkyAtlasObjectType, sourceId: string, fallbackName: string) {
@@ -552,5 +716,35 @@ export function skyAtlasTargetNarrative(object: SkyAtlasObject): SkyAtlasTargetN
     headline,
     whyVisit,
     sourceLine: `${object.credit ?? object.source} / ${object.renderTier ?? object.catalogId ?? "catalog"}`,
+  };
+}
+
+function comparisonValue(value: string | number | undefined, formatter?: (number: number) => string) {
+  if (value == null || value === "" || (typeof value === "number" && !Number.isFinite(value))) return "unavailable";
+  return typeof value === "number" && formatter ? formatter(value) : String(value);
+}
+
+export function compareSkyAtlasObjects(left: SkyAtlasObject, right: SkyAtlasObject): SkyAtlasComparison {
+  const coordinates = (object: SkyAtlasObject) => `RA ${object.raHours.toFixed(2)}h / Dec ${object.decDeg.toFixed(1)} deg`;
+  return {
+    left,
+    right,
+    fields: [
+      { id: "type", label: "Type", left: left.type, right: right.type },
+      {
+        id: "distance",
+        label: "Distance",
+        left: comparisonValue(left.distancePc, (value) => `${value.toFixed(value < 10 ? 2 : 0)} pc`),
+        right: comparisonValue(right.distancePc, (value) => `${value.toFixed(value < 10 ? 2 : 0)} pc`),
+      },
+      {
+        id: "magnitude",
+        label: "Magnitude",
+        left: comparisonValue(left.magnitude, (value) => value.toFixed(2)),
+        right: comparisonValue(right.magnitude, (value) => value.toFixed(2)),
+      },
+      { id: "coordinates", label: "Coordinates", left: coordinates(left), right: coordinates(right) },
+      { id: "source", label: "Source", left: left.credit ?? left.source, right: right.credit ?? right.source },
+    ],
   };
 }
