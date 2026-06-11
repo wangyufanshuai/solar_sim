@@ -3,7 +3,8 @@ export type CinematicPostProfileId =
   | "closeup-quality"
   | "tour-cover"
   | "gallery-studio"
-  | "atlas-flight";
+  | "atlas-flight"
+  | "atlas-map";
 
 export type CinematicPostProfile = {
   id: CinematicPostProfileId;
@@ -77,6 +78,18 @@ export const CINEMATIC_POST_PROFILES: CinematicPostProfile[] = [
     vignetteOffset: 1,
     contrast: 0.2,
     exposure: 0.97,
+    dofEnabled: false,
+  },
+  {
+    id: "atlas-map",
+    label: "Atlas map",
+    bloomStrength: 0.1,
+    bloomRadius: 0.12,
+    bloomThreshold: 0.97,
+    vignetteDarkness: 0.3,
+    vignetteOffset: 1.08,
+    contrast: 0.1,
+    exposure: 1,
     dofEnabled: false,
   },
 ];

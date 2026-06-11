@@ -38,6 +38,7 @@ jobs:
           npm run audit:ccsds
           npm run audit:mission-review
           npm run audit:sky-atlas
+          npm run audit:sky-atlas-routes
 
       - name: Build
         run: npm run build

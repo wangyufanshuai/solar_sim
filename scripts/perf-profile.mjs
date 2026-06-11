@@ -311,12 +311,38 @@ async (scenario) => {
     press('[data-solar-action="post-tour-cover"]');
     await sleep(400);
   }
-  if (scenario === "sky-atlas-open" || scenario === "sky-atlas-route" || scenario === "atlas-cover") {
+  if (
+    scenario === "sky-atlas-open" ||
+    scenario === "sky-atlas-route" ||
+    scenario === "atlas-cover" ||
+    scenario === "sky-atlas-map" ||
+    scenario === "sky-atlas-route-builder" ||
+    scenario === "sky-atlas-route-export"
+  ) {
     press('[data-solar-section="atlas"]');
     await sleep(650);
+    if (scenario === "sky-atlas-map") {
+      press('[data-solar-action="atlas-projection-equatorial"]');
+      await sleep(260);
+      press('[data-solar-action="atlas-projection-galactic"]');
+      await sleep(260);
+    }
     if (scenario === "sky-atlas-route") {
       press('[data-solar-action="atlas-route-play"]');
       await sleep(900);
+    }
+    if (scenario === "sky-atlas-route-builder" || scenario === "sky-atlas-route-export") {
+      press('[data-solar-action="atlas-route-add"]');
+      await sleep(180);
+      press('[data-solar-action="atlas-route-next"]');
+      await sleep(180);
+      press('[data-solar-action="atlas-route-add"]');
+      await sleep(180);
+      if (scenario === "sky-atlas-route-export") {
+        press('[data-solar-action="atlas-route-export-json"]');
+        press('[data-solar-action="atlas-route-export-md"]');
+        await sleep(220);
+      }
     }
     if (scenario === "atlas-cover") {
       press('[data-solar-action="atlas-cover"]');
@@ -342,6 +368,9 @@ async (scenario) => {
     scenario === "cinematic-post" ? 3000 :
     scenario === "sky-atlas-open" ? 2200 :
     scenario === "sky-atlas-route" ? 3600 :
+    scenario === "sky-atlas-map" ? 2600 :
+    scenario === "sky-atlas-route-builder" ? 2400 :
+    scenario === "sky-atlas-route-export" ? 1800 :
     scenario === "atlas-cover" ? 1600 :
     scenario === "showcase-tour" ? 5000 :
     6000;
@@ -502,7 +531,7 @@ async function main() {
     const scenarios = [];
     const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
       ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
-      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover"];
+      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover", "sky-atlas-map", "sky-atlas-route-builder", "sky-atlas-route-export"];
     for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }

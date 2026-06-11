@@ -181,6 +181,7 @@ npm run audit:mission-project
 npm run audit:ccsds
 npm run audit:gallery-models
 npm run audit:sky-atlas
+npm run audit:sky-atlas-routes
 ```
 
 CCSDS demo artifacts can be regenerated with `npm run export:demo-ccsds`. The exporter is intended for preliminary data exchange and does not turn the workbench into a certified flight-dynamics chain.
@@ -195,6 +196,19 @@ Sky Atlas Explorer is a curated visual navigation layer. It merges the committed
 - New Atlas resources are staged from existing committed manifests; no additional large textures, HDR files, or GLB models are required for this version.
 
 The demo Atlas route can be regenerated with `npm run export:demo-atlas-route`.
+
+Sky Atlas v2 adds a low-cost map and route-building layer:
+
+- Map projections: equatorial and galactic, with route path, distance guide rings, magnitude-scaled points, and target reticle.
+- Custom routes: add, reorder, remove, play, and export curated stops as JSON or Markdown with credit/source provenance.
+- Target cards: each selected object includes a short "Why visit" explanation, source/credit details, and nearby suggestions.
+
+Demo Atlas v2 artifacts can be regenerated with:
+
+```bash
+npm run export:demo-atlas-map
+npm run export:demo-atlas-route-v2
+```
 
 ## Production Deployment
 

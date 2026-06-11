@@ -413,7 +413,12 @@ export default function MissionDesignerPanel({
         config,
         onProgress: setStatus,
       });
-      await persistProject(appendMissionRiskResult(project, risk), `Monte Carlo ${Math.round(risk.successRate * 100)}% success`);
+      const nextProject = appendMissionRiskResult(project, risk);
+      startResultTransition(() => setProject(nextProject));
+      setStatus(`Monte Carlo ${Math.round(risk.successRate * 100)}% success`);
+      window.setTimeout(() => {
+        void saveMissionProject(nextProject);
+      }, 3500);
     } catch (error) {
       setStatus(error instanceof Error ? error.message : "Monte Carlo failed");
     } finally {

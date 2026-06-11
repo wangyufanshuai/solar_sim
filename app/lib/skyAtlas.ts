@@ -37,6 +37,20 @@ export type SkyAtlasObject = {
   searchText: string;
 };
 
+export type SkyAtlasProjection = "equatorial" | "galactic";
+
+export type SkyAtlasMapState = {
+  projection: SkyAtlasProjection;
+  selectedObjectId: string | null;
+};
+
+export type SkyAtlasProjectedObject = {
+  object: SkyAtlasObject;
+  x: number;
+  y: number;
+  visible: boolean;
+};
+
 export type SkyAtlasRouteStop = {
   id: string;
   objectId: string;
@@ -50,6 +64,49 @@ export type SkyAtlasRoute = {
   stops: SkyAtlasRouteStop[];
 };
 
+export type SkyAtlasCustomRoute = SkyAtlasRoute & {
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type SkyAtlasRouteExport = {
+  schemaVersion: 1;
+  generatedAt: string;
+  route: SkyAtlasRoute;
+  stops: Array<{
+    index: number;
+    objectId: string;
+    name: string;
+    type: SkyAtlasObjectType;
+    raHours: number;
+    decDeg: number;
+    galacticLonDeg?: number;
+    galacticLatDeg?: number;
+    distancePc?: number;
+    magnitude?: number;
+    credit: string;
+    source: string;
+    note: string;
+  }>;
+  boundary: string;
+};
+
+export type SkyAtlasTargetNarrative = {
+  headline: string;
+  whyVisit: string;
+  sourceLine: string;
+};
+
+export type SkyAtlasCoverMetadata = {
+  targetId: string | null;
+  targetName: string | null;
+  routeId: string | null;
+  routeStopIndex: number | null;
+  projection: SkyAtlasProjection;
+  postProfile: string;
+  timestamp: string;
+};
+
 export type SkyAtlasUiState = {
   selectedObjectId: string | null;
   routePlaying: boolean;
@@ -60,6 +117,7 @@ export type SkyAtlasStorageV1 = {
   schemaVersion: 1;
   favorites: string[];
   recent: string[];
+  customRoutes?: SkyAtlasCustomRoute[];
 };
 
 export type SkyAtlasSearchFilters = {
@@ -86,6 +144,19 @@ function objectId(type: SkyAtlasObjectType, id: string) {
 
 function normalizeSearch(...parts: Array<string | number | undefined | null>) {
   return parts.filter((part) => part != null).join(" ").toLowerCase();
+}
+
+function normalizeDeg(value: number) {
+  return ((value % 360) + 360) % 360;
+}
+
+function routeHash(parts: string[]) {
+  let hash = 2166136261;
+  for (const part of parts.join("|")) {
+    hash ^= part.charCodeAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return (hash >>> 0).toString(36);
 }
 
 function galacticObject(
@@ -301,6 +372,46 @@ export function skyAtlasObjectToDirection(object: SkyAtlasObject): [number, numb
   return starToDirection(object.raHours, object.decDeg);
 }
 
+export function projectSkyAtlasObject(
+  object: SkyAtlasObject,
+  projection: SkyAtlasProjection,
+  viewport: { width: number; height: number },
+): SkyAtlasProjectedObject {
+  const width = Math.max(1, viewport.width);
+  const height = Math.max(1, viewport.height);
+  const lon = projection === "galactic"
+    ? normalizeDeg(object.galacticLonDeg ?? object.raHours * 15)
+    : normalizeDeg(object.raHours * 15);
+  const lat = projection === "galactic"
+    ? Math.max(-90, Math.min(90, object.galacticLatDeg ?? object.decDeg))
+    : Math.max(-90, Math.min(90, object.decDeg));
+  const x = (lon / 360) * width;
+  const y = ((90 - lat) / 180) * height;
+  return { object, x, y, visible: Number.isFinite(x) && Number.isFinite(y) };
+}
+
+export function nearestSkyAtlasObject(
+  catalog: SkyAtlasObject[],
+  projectedPoint: { x: number; y: number },
+  projection: SkyAtlasProjection,
+  viewport: { width: number; height: number },
+  maxDistancePx = 22,
+): SkyAtlasObject | null {
+  return catalog
+    .map((object) => {
+      const projected = projectSkyAtlasObject(object, projection, viewport);
+      const dx = projected.x - projectedPoint.x;
+      const dy = projected.y - projectedPoint.y;
+      return { object, distance: Math.hypot(dx, dy) };
+    })
+    .filter((item) => item.distance <= maxDistancePx)
+    .sort((a, b) =>
+      a.distance - b.distance ||
+      (a.object.magnitude ?? Number.POSITIVE_INFINITY) - (b.object.magnitude ?? Number.POSITIVE_INFINITY) ||
+      a.object.name.localeCompare(b.object.name),
+    )[0]?.object ?? null;
+}
+
 function findObject(catalog: SkyAtlasObject[], type: SkyAtlasObjectType, sourceId: string, fallbackName: string) {
   return (
     catalog.find((object) => object.id === objectId(type, sourceId)) ??
@@ -343,4 +454,103 @@ export function recommendedSkyAtlasObjects(catalog: SkyAtlasObject[]): SkyAtlasO
   return route.stops
     .map((stop) => catalog.find((object) => object.id === stop.objectId))
     .filter(Boolean) as SkyAtlasObject[];
+}
+
+export function createSkyAtlasCustomRoute(
+  stops: Array<string | SkyAtlasObject | SkyAtlasRouteStop>,
+  name = "Custom Atlas Route",
+  now = new Date().toISOString(),
+): SkyAtlasCustomRoute {
+  const normalizedStops = stops
+    .map((stop, index) => {
+      const objectId = typeof stop === "string"
+        ? stop
+        : "objectId" in stop
+          ? stop.objectId
+          : stop.id;
+      return {
+        id: `custom-stop-${index + 1}-${routeHash([objectId, String(index)]).slice(0, 4)}`,
+        objectId,
+        holdMs: 7500,
+        note: "Custom Sky Atlas stop",
+      };
+    })
+    .filter((stop, index, array) => stop.objectId && array.findIndex((item) => item.objectId === stop.objectId) === index);
+  return {
+    id: `custom-atlas-route-${routeHash(normalizedStops.map((stop) => stop.objectId))}`,
+    name,
+    createdAt: now,
+    updatedAt: now,
+    stops: normalizedStops,
+  };
+}
+
+export const SKY_ATLAS_ROUTE_BOUNDARY =
+  "Curated Sky Atlas visual navigation export. Coordinates and distances are for Solar Sim exploration, not certified astrometry.";
+
+export function skyAtlasRouteToJson(route: SkyAtlasRoute, catalog: SkyAtlasObject[]): SkyAtlasRouteExport {
+  const byId = new Map(catalog.map((object) => [object.id, object]));
+  return {
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    route,
+    stops: route.stops
+      .map((stop, index) => {
+        const object = byId.get(stop.objectId);
+        if (!object) return null;
+        return {
+          index: index + 1,
+          objectId: object.id,
+          name: object.name,
+          type: object.type,
+          raHours: object.raHours,
+          decDeg: object.decDeg,
+          galacticLonDeg: object.galacticLonDeg,
+          galacticLatDeg: object.galacticLatDeg,
+          distancePc: object.distancePc,
+          magnitude: object.magnitude,
+          credit: object.credit ?? object.source,
+          source: object.source,
+          note: stop.note,
+        };
+      })
+      .filter(Boolean) as SkyAtlasRouteExport["stops"],
+    boundary: SKY_ATLAS_ROUTE_BOUNDARY,
+  };
+}
+
+export function skyAtlasRouteToMarkdown(route: SkyAtlasRoute, catalog: SkyAtlasObject[]) {
+  const exported = skyAtlasRouteToJson(route, catalog);
+  return [
+    `# ${exported.route.name}`,
+    "",
+    exported.boundary,
+    "",
+    ...exported.stops.map((stop) =>
+      `${stop.index}. ${stop.name} (${stop.objectId}) - RA ${stop.raHours.toFixed(2)}h / Dec ${stop.decDeg.toFixed(1)} deg - ${stop.credit}`,
+    ),
+    "",
+  ].join("\n");
+}
+
+export function skyAtlasTargetNarrative(object: SkyAtlasObject): SkyAtlasTargetNarrative {
+  const typeLine = object.type.replace(/-/g, " ");
+  const headline = `${object.name} / ${typeLine}`;
+  const whyVisit =
+    object.type === "deep-sky-image"
+      ? "A real image-backed deep-sky stop that gives the flight route a strong visual anchor."
+      : object.type === "nebula"
+        ? "A luminous gas-and-dust landmark that makes galactic structure easier to read from the cockpit view."
+        : object.type === "cluster"
+          ? "A dense stellar waypoint for comparing nearby and distant star populations."
+          : object.type === "pulsar"
+            ? "A compact high-energy marker that adds scientific contrast to the visual route."
+            : object.type === "constellation"
+              ? "A familiar sky pattern that helps orient the curated atlas."
+              : "A stellar waypoint for scale, distance, and color comparison.";
+  return {
+    headline,
+    whyVisit,
+    sourceLine: `${object.credit ?? object.source} / ${object.renderTier ?? object.catalogId ?? "catalog"}`,
+  };
 }

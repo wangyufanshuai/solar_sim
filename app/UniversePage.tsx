@@ -91,6 +91,7 @@ import {
   buildSkyAtlasCatalog,
   defaultSkyAtlasRoute,
   skyAtlasObjectToDirection,
+  type SkyAtlasCoverMetadata,
   type SkyAtlasObject,
   type SkyAtlasRoute,
 } from "./lib/skyAtlas";
@@ -318,14 +319,24 @@ export default function UniversePage() {
     URL.revokeObjectURL(url);
   }, [physicsRef]);
 
-  const handleExportCoverFrame = useCallback(() => {
+  const handleExportCoverFrame = useCallback((metadata?: SkyAtlasCoverMetadata) => {
     try {
       const canvas = document.querySelector("canvas");
       if (!canvas) throw new Error("Canvas unavailable");
+      const stamp = new Date().toISOString().slice(0, 19).replace(/:/g, "-");
       const a = document.createElement("a");
       a.href = canvas.toDataURL("image/png");
-      a.download = `solar-sim-cover-${new Date().toISOString().slice(0, 19).replace(/:/g, "-")}.png`;
+      a.download = `solar-sim-cover-${stamp}.png`;
       a.click();
+      if (metadata) {
+        const blob = new Blob([JSON.stringify(metadata, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const sidecar = document.createElement("a");
+        sidecar.href = url;
+        sidecar.download = `solar-sim-atlas-cover-${stamp}.json`;
+        sidecar.click();
+        URL.revokeObjectURL(url);
+      }
     } catch {
       window.alert("Unable to export the current cover frame from this WebGL context.");
     }
@@ -373,9 +384,16 @@ export default function UniversePage() {
   const handleSkyAtlasTargetSelect = useCallback(
     (object: SkyAtlasObject) => {
       clearSkyAtlasRouteTimers();
+      if (visualTestRequested) {
+        setSkyAtlasTarget(object);
+        setSkyAtlasRoute(null);
+        setSkyAtlasRouteStopIndex(0);
+        enableSkyAtlasFlightView();
+        return;
+      }
       focusSkyAtlasObject(object, null, 0);
     },
-    [clearSkyAtlasRouteTimers, focusSkyAtlasObject],
+    [clearSkyAtlasRouteTimers, enableSkyAtlasFlightView, focusSkyAtlasObject, visualTestRequested],
   );
 
   const handleSkyAtlasRoutePlay = useCallback(
@@ -384,6 +402,13 @@ export default function UniversePage() {
       if (!route.stops.length) return;
       enableSkyAtlasFlightView();
       setSkyAtlasRoute(route);
+      if (visualTestRequested) {
+        const stop = route.stops[startIndex % route.stops.length];
+        const object = stop ? skyAtlasCatalog.find((item) => item.id === stop.objectId) ?? null : null;
+        setSkyAtlasTarget(object);
+        setSkyAtlasRouteStopIndex(startIndex % route.stops.length);
+        return;
+      }
       route.stops.forEach((_, offset) => {
         const index = (startIndex + offset) % route.stops.length;
         const timer = window.setTimeout(() => {
@@ -396,7 +421,7 @@ export default function UniversePage() {
         skyAtlasRouteTimersRef.current.push(timer);
       });
     },
-    [clearSkyAtlasRouteTimers, enableSkyAtlasFlightView, focusSkyAtlasObject, skyAtlasCatalog],
+    [clearSkyAtlasRouteTimers, enableSkyAtlasFlightView, focusSkyAtlasObject, skyAtlasCatalog, visualTestRequested],
   );
 
   const handleUserCameraInput = useCallback(() => {
@@ -713,6 +738,11 @@ export default function UniversePage() {
         onSectionChange={(s) => {
           setActiveSection(s);
           if (s === "launch") setLaunchMode(true);
+          if (s === "atlas") {
+            setVisualEnhance(true);
+            setCinematicPostProfile("atlas-map");
+            setCinematicDofEnabled(false);
+          }
         }}
         onZoomIn={handleZoomIn}
         onZoomOut={handleZoomOut}

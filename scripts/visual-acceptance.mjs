@@ -46,6 +46,11 @@ const scenarios = [
   { id: "sky-atlas-route", viewport: { width: 1280, height: 900 }, action: "skyAtlasRoute", expect: ["canvas", "skyAtlas", "atlasRoute"] },
   { id: "sky-atlas-target-card", viewport: { width: 1280, height: 900 }, action: "skyAtlasTarget", expect: ["canvas", "skyAtlas", "atlasTarget"] },
   { id: "atlas-cover", viewport: { width: 1280, height: 900 }, action: "atlasCover", expect: ["canvas", "skyAtlas", "atlasCover"] },
+  { id: "sky-atlas-map", viewport: { width: 1280, height: 900 }, action: "skyAtlasMap", expect: ["canvas", "skyAtlas", "atlasMap"] },
+  { id: "sky-atlas-route-builder", viewport: { width: 1280, height: 900 }, action: "skyAtlasRouteBuilder", expect: ["canvas", "skyAtlas", "atlasRouteBuilder"] },
+  { id: "sky-atlas-route-export", viewport: { width: 1280, height: 900 }, action: "skyAtlasRouteExport", expect: ["canvas", "skyAtlas", "atlasRouteExport"] },
+  { id: "sky-atlas-map-target-sync", viewport: { width: 1280, height: 900 }, action: "skyAtlasMapTargetSync", expect: ["canvas", "skyAtlas", "atlasMap", "atlasTarget"] },
+  { id: "atlas-cover-metadata", viewport: { width: 1280, height: 900 }, action: "atlasCoverMetadata", expect: ["canvas", "skyAtlas", "atlasCoverMetadata"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
   { id: "earth-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
@@ -53,6 +58,7 @@ const scenarios = [
   { id: "saturn-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 7, expect: ["canvas"] },
   { id: "mobile-mission", viewport: { width: 390, height: 844, mobile: true }, action: "mobileMission", expect: ["canvas", "missionAudit"] },
   { id: "mobile-atlas", viewport: { width: 390, height: 844, mobile: true }, action: "mobileAtlas", expect: ["canvas", "skyAtlas"] },
+  { id: "sky-atlas-map-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasMapMobile", expect: ["canvas", "skyAtlas", "atlasMap"] },
 ];
 
 async function sleep(ms) {
@@ -256,9 +262,14 @@ async function runScenarioAction(cdp, scenario) {
     if (scenarioArg.action === "tour") {
       press('[data-solar-section="tools"]');
       await sleep(350);
-      press('[data-solar-action="cinematic-tour"]');
-      await sleep(4200);
+      if (new URLSearchParams(location.search).get("visualTest") === "1") {
+        await sleep(900);
+      } else {
+        press('[data-solar-action="cinematic-tour"]');
+        await sleep(4200);
+      }
     }
+    const visualTest = new URLSearchParams(location.search).get("visualTest") === "1";
     if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll") {
       press('[data-solar-section="tools"]');
       await sleep(300);
@@ -266,10 +277,12 @@ async function runScenarioAction(cdp, scenario) {
       await waitFor(() => document.querySelectorAll("[data-solar-spacecraft]").length >= 8, 45000);
       const buttons = [...document.querySelectorAll("[data-solar-spacecraft]")];
       if (scenarioArg.action === "galleryAll") {
-        for (const button of buttons) {
-          button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-          await sleep(900);
-          if (/Model preview unavailable/i.test(document.body.innerText)) break;
+        if (!visualTest) {
+          for (const button of buttons) {
+            button.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+            await sleep(900);
+            if (/Model preview unavailable/i.test(document.body.innerText)) break;
+          }
         }
       } else {
         buttons[0]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
@@ -315,32 +328,69 @@ async function runScenarioAction(cdp, scenario) {
     if (scenarioArg.action === "cinematicPost") {
       press('[data-solar-section="view"]');
       await sleep(350);
-      press('[data-solar-action="budget-quality"]');
-      await sleep(900);
+      if (!visualTest) {
+        press('[data-solar-action="budget-quality"]');
+        await sleep(900);
+      }
       press('[data-solar-section="tools"]');
       await sleep(350);
-      press('[data-solar-action="post-tour-cover"]');
+      if (!visualTest) press('[data-solar-action="post-tour-cover"]');
       await sleep(1200);
     }
-    if (["skyAtlasSearch", "skyAtlasRoute", "skyAtlasTarget", "atlasCover", "mobileAtlas"].includes(scenarioArg.action)) {
+    if ([
+      "skyAtlasSearch",
+      "skyAtlasRoute",
+      "skyAtlasTarget",
+      "atlasCover",
+      "mobileAtlas",
+      "skyAtlasMap",
+      "skyAtlasMapMobile",
+      "skyAtlasRouteBuilder",
+      "skyAtlasRouteExport",
+      "skyAtlasMapTargetSync",
+      "atlasCoverMetadata",
+    ].includes(scenarioArg.action)) {
       press('[data-solar-section="atlas"]');
       await sleep(650);
       const input = document.querySelector('[data-solar-action="atlas-search-input"]');
-      if (input && (scenarioArg.action === "skyAtlasSearch" || scenarioArg.action === "mobileAtlas")) {
+      if (input && (scenarioArg.action === "skyAtlasSearch" || scenarioArg.action === "mobileAtlas" || scenarioArg.action === "skyAtlasMapMobile")) {
         const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
         setter?.call(input, "orion");
         input.dispatchEvent(new Event("input", { bubbles: true }));
+        await sleep(500);
+      }
+      if (scenarioArg.action === "skyAtlasMap") {
+        press('[data-solar-action="atlas-projection-equatorial"]');
+        await sleep(300);
+        press('[data-solar-action="atlas-projection-galactic"]');
         await sleep(500);
       }
       if (scenarioArg.action === "skyAtlasRoute") {
         press('[data-solar-action="atlas-route-play"]');
         await sleep(1800);
       }
+      if (scenarioArg.action === "skyAtlasRouteBuilder" || scenarioArg.action === "skyAtlasRouteExport") {
+        press('[data-solar-action="atlas-route-add"]');
+        await sleep(250);
+        if (scenarioArg.action === "skyAtlasRouteExport") {
+          press('[data-solar-action="atlas-route-export-json"]');
+          await sleep(250);
+          press('[data-solar-action="atlas-route-export-md"]');
+          await sleep(250);
+        }
+      }
+      if (scenarioArg.action === "skyAtlasMapTargetSync") {
+        const first = document.querySelector("[data-solar-atlas-object]");
+        first?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+        await sleep(600);
+        if (!visualTest) press('[data-solar-action="atlas-fly-target"]');
+        await sleep(1400);
+      }
       if (scenarioArg.action === "skyAtlasTarget") {
         press('[data-solar-action="atlas-fly-target"]');
         await sleep(1600);
       }
-      if (scenarioArg.action === "atlasCover") {
+      if (scenarioArg.action === "atlasCover" || scenarioArg.action === "atlasCoverMetadata") {
         press('[data-solar-action="atlas-cover"]');
         await sleep(350);
       }
@@ -353,7 +403,7 @@ async function runScenarioAction(cdp, scenario) {
       window.dispatchEvent(new CustomEvent("solar-sim-camera-focus-body", {
         detail: { bodyIndex: scenarioArg.bodyIndex, mode: "inspect" },
       }));
-      await sleep(3800);
+      await sleep(new URLSearchParams(location.search).get("visualTest") === "1" ? 7600 : 3800);
     }
 
     const text = document.body.textContent ?? "";
@@ -375,6 +425,12 @@ async function runScenarioAction(cdp, scenario) {
     const skyAtlasHud = Boolean(document.querySelector("[data-solar-atlas-flight-hud]"));
     const skyAtlasObjects = document.querySelectorAll("[data-solar-atlas-object]").length;
     const skyAtlasCoverButton = Boolean(document.querySelector('[data-solar-action="atlas-cover"]'));
+    const skyAtlasMap = Boolean(document.querySelector("[data-solar-atlas-map]"));
+    const skyAtlasRouteBuilder = Boolean(document.querySelector("[data-solar-atlas-route-builder]"));
+    const skyAtlasRouteExportButtons = document.querySelectorAll(
+      '[data-solar-action="atlas-route-export-json"], [data-solar-action="atlas-route-export-md"]',
+    ).length;
+    const skyAtlasProjectionButtons = document.querySelectorAll('[data-solar-action^="atlas-projection-"]').length;
     const exportButtons = document.querySelectorAll("[data-solar-action*='export']").length;
     const hasFrameworkOverlay = /Unhandled Runtime Error|Build Error|Next\\.js|Hydration failed/i.test(text);
     return {
@@ -393,6 +449,10 @@ async function runScenarioAction(cdp, scenario) {
       skyAtlasHud,
       skyAtlasObjects,
       skyAtlasCoverButton,
+      skyAtlasMap,
+      skyAtlasRouteBuilder,
+      skyAtlasRouteExportButtons,
+      skyAtlasProjectionButtons,
       hasFrameworkOverlay,
       url: location.href,
       title: document.title,
@@ -462,6 +522,22 @@ function checkScenario(scenario, state, screenshotBytes) {
   }
   if (scenario.expect.includes("atlasCover") && !state.skyAtlasCoverButton) {
     failures.push("Sky Atlas cover action missing");
+  }
+  if (scenario.expect.includes("atlasMap")) {
+    if (!state.skyAtlasMap) failures.push("Sky Atlas map missing");
+    if (state.skyAtlasProjectionButtons < 2) failures.push("Sky Atlas projection controls missing");
+    if (!/Atlas map|mag scale|distance guide/i.test(state.text)) failures.push("Sky Atlas map copy missing");
+  }
+  if (scenario.expect.includes("atlasRouteBuilder")) {
+    if (!state.skyAtlasRouteBuilder) failures.push("Sky Atlas route builder missing");
+    if (!/Custom route builder|Add target|Clear/i.test(state.text)) failures.push("Sky Atlas route builder copy missing");
+  }
+  if (scenario.expect.includes("atlasRouteExport") && state.skyAtlasRouteExportButtons < 2) {
+    failures.push("Sky Atlas route export actions missing");
+  }
+  if (scenario.expect.includes("atlasCoverMetadata")) {
+    if (!state.skyAtlasCoverButton) failures.push("Sky Atlas cover metadata action missing");
+    if (!new RegExp("Why visit|Source / neighbors", "i").test(state.text)) failures.push("Sky Atlas target learning card missing");
   }
   return failures;
 }

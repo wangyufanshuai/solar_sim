@@ -55,6 +55,9 @@ const checks = [
   ["sky-atlas-open", "Sky Atlas open", baseline.skyAtlasOpenMaxTaskMs],
   ["sky-atlas-route", "Sky Atlas route", baseline.skyAtlasRouteMaxTaskMs],
   ["atlas-cover", "Atlas cover", baseline.atlasCoverMaxTaskMs],
+  ["sky-atlas-map", "Sky Atlas map", baseline.skyAtlasMapMaxTaskMs],
+  ["sky-atlas-route-builder", "Sky Atlas route builder", baseline.skyAtlasRouteBuilderMaxTaskMs],
+  ["sky-atlas-route-export", "Sky Atlas route export", baseline.skyAtlasRouteExportMaxTaskMs],
 ];
 const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
   ? new Set(process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean))

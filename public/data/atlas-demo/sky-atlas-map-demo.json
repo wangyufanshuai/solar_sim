@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "1970-01-01T00:00:00.000Z",
+  "boundary": "Curated Sky Atlas map demo. Projection samples are for Solar Sim visual navigation, not certified astrometry.",
+  "viewport": {
+    "width": 420,
+    "height": 188
+  },
+  "projections": [
+    {
+      "id": "equatorial",
+      "label": "Equatorial",
+      "axes": [
+        "right ascension",
+        "declination"
+      ]
+    },
+    {
+      "id": "galactic",
+      "label": "Galactic",
+      "axes": [
+        "galactic longitude",
+        "galactic latitude"
+      ]
+    }
+  ],
+  "overlays": [
+    "magnitude scale",
+    "distance rings",
+    "route path",
+    "target reticle"
+  ],
+  "featuredTargets": [
+    "nebula:m42",
+    "cluster:m45",
+    "nebula:m1",
+    "pulsar:b0833-45"
+  ]
+}
