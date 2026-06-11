@@ -76,7 +76,13 @@ import SkyAtlasExplorer from "./components/SkyAtlasExplorer";
 import SkyAtlasFlightHud from "./components/SkyAtlasFlightHud";
 import useLaunchWebSocket from "./lib/useLaunchWebSocket";
 import type { LaunchConfig } from "./lib/launchTelemetryTypes";
-import type { MissionOptimizationResult, MissionPlan } from "./lib/missionDesignerTypes";
+import type {
+  MissionInspectionSelection,
+  MissionOptimizationResult,
+  MissionPlan,
+  MissionWorkflowStage,
+  MissionWorkspaceMode,
+} from "./lib/missionDesignerTypes";
 import {
   startLaunchSequence,
   stopLaunchSequence,
@@ -181,6 +187,10 @@ export default function UniversePage() {
   const [leftPanelCollapsed, setLeftPanelCollapsed] = useState(true);
   const [missionResult, setMissionResult] = useState<MissionOptimizationResult | null>(null);
   const [missionPreviewPlan, setMissionPreviewPlan] = useState<MissionPlan | null>(null);
+  const [missionWorkspaceMode, setMissionWorkspaceMode] = useState<MissionWorkspaceMode>("panel");
+  const [missionWorkflowStage, setMissionWorkflowStage] = useState<MissionWorkflowStage>("run");
+  const [missionInspectionSelection, setMissionInspectionSelection] =
+    useState<MissionInspectionSelection | null>(null);
   const [skyAtlasTarget, setSkyAtlasTarget] = useState<SkyAtlasObject | null>(null);
   const [skyAtlasMode, setSkyAtlasMode] = useState<SkyAtlasMode>("panel");
   const [skyAtlasPlayback, dispatchSkyAtlasPlayback] = useReducer(
@@ -451,6 +461,13 @@ export default function UniversePage() {
   }, []);
 
   useEffect(() => {
+    if (activeSection !== "mission" && missionWorkspaceMode === "immersive") {
+      setMissionWorkspaceMode("panel");
+      setMissionInspectionSelection(null);
+    }
+  }, [activeSection, missionWorkspaceMode]);
+
+  useEffect(() => {
     const onTour = () => {
       const route = defaultSkyAtlasRoute(skyAtlasCatalog);
       setActiveSection("atlas");
@@ -520,11 +537,17 @@ export default function UniversePage() {
         setSkyAtlasMode("panel");
         return;
       }
+      if (missionWorkspaceMode === "immersive") {
+        e.preventDefault();
+        setMissionWorkspaceMode("panel");
+        setMissionInspectionSelection(null);
+        return;
+      }
       clearFocusLock();
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [clearFocusLock, skyAtlasMode]);
+  }, [clearFocusLock, missionWorkspaceMode, skyAtlasMode]);
 
   const handleFocus = useCallback(() => {
     setEarthMoonView(false);
@@ -630,6 +653,8 @@ export default function UniversePage() {
     );
   }
 
+  const suppressOrdinaryHud = skyAtlasMode === "immersive" || missionWorkspaceMode === "immersive";
+
   return (
     <div className="relative h-[100dvh] w-screen overflow-hidden bg-[#030303]">
       {/* touch-none：减少移动端拖场景时误触滚动；底部栏单独可点 */}
@@ -664,6 +689,7 @@ export default function UniversePage() {
             timeTravelScrubbingRef,
             physicsHistoryRef,
             missionPreviewPlan,
+            missionInspectionSelection,
             onCanvasPointerMissed: clearFocusLock,
             onUserCameraInput: handleUserCameraInput,
             launchMode,
@@ -676,7 +702,7 @@ export default function UniversePage() {
           }}
         />
       </div>
-      {skyAtlasMode !== "immersive" ? <UniverseSandboxHud
+      {!suppressOrdinaryHud ? <UniverseSandboxHud
         activeSection={activeSection}
         searchFocusNonce={searchFocusNonce}
         selectedBodyIndex={selectedBodyIndex}
@@ -700,7 +726,7 @@ export default function UniversePage() {
         onExportSystemState={handleExportSystemState}
         onImportSystemState={() => importStateInputRef.current?.click()}
       /> : null}
-      {skyAtlasMode !== "immersive" ? <PhysicsPerformanceHud
+      {!suppressOrdinaryHud ? <PhysicsPerformanceHud
         physicsRef={physicsRef}
         precisionTierRef={precisionTierRef}
         physicsUsesSharedBuffer={physicsUsesSharedBuffer}
@@ -717,14 +743,14 @@ export default function UniversePage() {
       {viewSettings.showKerrBlackHole ? (
         <KerrBlackHolePanel value={kerrBlackHole} onChange={setKerrBlackHole} />
       ) : null}
-      {skyAtlasMode !== "immersive" ? <ScienceTelemetryPanel
+      {!suppressOrdinaryHud ? <ScienceTelemetryPanel
         telemetrySeriesRef={telemetrySeriesRef}
         selectedBodyIndex={selectedBodyIndex}
         relativityEnabled={relativityEnabled}
         mainSidebarOffsetPx={leftPanelCollapsed ? 0 : 288}
       /> : null}
       <AnimatePresence mode="wait">
-        {selectedBodyIndex !== null ? (
+        {selectedBodyIndex !== null && !suppressOrdinaryHud ? (
           <BodyDetailSidebar
             key={selectedBodyIndex}
             physicsRef={physicsRef}
@@ -747,7 +773,7 @@ export default function UniversePage() {
         aria-hidden
         onChange={handleImportStateFile}
       />
-      {skyAtlasMode !== "immersive" ? <BottomControlBar
+      {!suppressOrdinaryHud ? <BottomControlBar
         isPlaying={isPlaying}
         onPlayPause={() => setIsPlaying((p) => !p)}
         simulationTimeSlot={<SimClockReadout simDaysRef={simDaysRef} />}
@@ -816,6 +842,11 @@ export default function UniversePage() {
           selectedPlanId={missionPreviewPlan?.id ?? null}
           onResult={setMissionResult}
           onSelectPlan={setMissionPreviewPlan}
+          mode={missionWorkspaceMode}
+          stage={missionWorkflowStage}
+          onModeChange={setMissionWorkspaceMode}
+          onStageChange={setMissionWorkflowStage}
+          onInspectionSelectionChange={setMissionInspectionSelection}
         />
       ) : null}
       {activeSection === "atlas" ? (

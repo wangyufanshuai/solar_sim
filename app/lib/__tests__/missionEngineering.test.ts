@@ -33,6 +33,15 @@ import {
   runMissionMonteCarloLite,
   trajectoryInspectionSamples,
 } from "../missionReview";
+import {
+  EMPTY_MISSION_INSPECTION_SELECTION,
+  canEnterMissionStage,
+  createMissionInspectionSelection,
+  filterMissionInspectionSamples,
+  missionInspectionPositionAu,
+  missionRunProgressLabel,
+  nextMissionStage,
+} from "../missionOperations";
 import type {
   MissionPhysicsSnapshot,
   MissionPlan,
@@ -398,5 +407,69 @@ describe("mission engineering calculations", () => {
     expect(opm).toContain("COV_REF_FRAME = ECLIPJ2000");
     expect(opm).toContain("MAN_EPOCH_IGNITION");
     expect(opm).toContain("MAN_REF_FRAME = ECLIPJ2000");
+  });
+});
+
+describe("mission operations workspace", () => {
+  it("guards workflow stages without inventing unavailable data", () => {
+    expect(canEnterMissionStage("inspect", { hasPlan: false, compareCount: 0 })).toBe(false);
+    expect(canEnterMissionStage("compare", { hasPlan: true, compareCount: 1 })).toBe(false);
+    expect(nextMissionStage("review", { hasPlan: false, compareCount: 0 })).toBe("run");
+    expect(nextMissionStage("compare", { hasPlan: true, compareCount: 1 })).toBe("inspect");
+    expect(nextMissionStage("compare", { hasPlan: true, compareCount: 2 })).toBe("compare");
+  });
+
+  it("labels mission worker phases explicitly", () => {
+    expect(missionRunProgressLabel({ status: "loading-spice", message: "", startedAt: null, completedAt: null })).toBe("SPICE");
+    expect(missionRunProgressLabel({ status: "auditing", message: "", startedAt: null, completedAt: null })).toBe("Cowell");
+    expect(missionRunProgressLabel({ status: "cancelled", message: "", startedAt: null, completedAt: null })).toBe("Cancelled");
+  });
+
+  it("filters inspection samples and maps deterministic highlight positions", () => {
+    const plan = {
+      segments: [
+        segment({
+          id: "earth-venus",
+          departureDay: 0,
+          arrivalDay: 100,
+          tofDays: 100,
+          trajectoryAu: [[1, 0, 0], [0.5, 0.5, 0], [0.2, 0.7, 0]],
+        }),
+      ],
+    } as MissionPlan;
+    const samples = [
+      {
+        id: "state-earth-venus-1",
+        kind: "state" as const,
+        segmentId: "earth-venus",
+        label: "Earth Venus state",
+        epochTdbJd: 2451545,
+        simDay: 50,
+        positionKm: [149597870.7, 0, 0] as [number, number, number],
+        velocityKmS: [0, 29.8, 0] as [number, number, number],
+        massKg: 4000,
+        source: "cowell",
+        nearestConstraintStatus: "pass" as const,
+      },
+      {
+        id: "flyby-earth-venus",
+        kind: "flyby" as const,
+        segmentId: "earth-venus",
+        label: "Venus flyby",
+        epochTdbJd: 2451645,
+        simDay: 100,
+        positionKm: null,
+        velocityKmS: null,
+        massKg: null,
+        source: "patched-conics flyby feasible",
+        nearestConstraintStatus: "pass" as const,
+      },
+    ];
+    expect(filterMissionInspectionSamples(samples, { kind: "flyby", segmentId: null, query: "venus" })).toHaveLength(1);
+    expect(missionInspectionPositionAu(plan, samples[0])?.[0]).toBeCloseTo(1, 5);
+    expect(missionInspectionPositionAu(plan, samples[1])).toEqual([0.2, 0.7, 0]);
+    const selection = createMissionInspectionSelection(plan, samples, EMPTY_MISSION_INSPECTION_SELECTION, "flyby-earth-venus");
+    expect(selection.sampleId).toBe("flyby-earth-venus");
+    expect(selection.positionAu).toEqual([0.2, 0.7, 0]);
   });
 });

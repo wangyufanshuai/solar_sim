@@ -168,6 +168,17 @@ export type MissionWorkerProvenance = {
   message?: string;
 };
 
+export type MissionWorkspaceMode = "panel" | "immersive";
+
+export type MissionWorkflowStage = "setup" | "run" | "inspect" | "compare" | "review";
+
+export type MissionRunProgressState = {
+  status: MissionWorkerProvenance["status"] | "idle" | "cancelled";
+  message: string;
+  startedAt: string | null;
+  completedAt: string | null;
+};
+
 export type MissionCovarianceAudit = {
   method: "6x6 variational STM covariance";
   initialPositionSigmaKm: number;
@@ -487,6 +498,15 @@ export type MissionTrajectoryInspectionSample = {
   deltaVVectorKmS?: [number, number, number];
   source: string;
   nearestConstraintStatus: MissionValidationStatus | "unavailable";
+};
+
+export type MissionInspectionSelection = {
+  sampleId: string | null;
+  kind: MissionTrajectoryInspectionSample["kind"] | "all";
+  segmentId: string | null;
+  query: string;
+  simDay: number | null;
+  positionAu: [number, number, number] | null;
 };
 
 export type MissionProjectV2 = {

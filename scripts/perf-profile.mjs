@@ -221,6 +221,23 @@ async (scenario) => {
     press('[data-solar-action="mission-optimize"]');
     await sleep(100);
   }
+  if (scenario === "mission-immersive") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    press('[data-solar-action="mission-mode-toggle"]');
+    await sleep(350);
+  }
+  if (scenario === "mission-stage-switch") {
+    press('[data-solar-section="mission"]');
+    await sleep(300);
+    press('[data-solar-action="mission-mode-toggle"]');
+    await sleep(250);
+    press('[data-solar-action="mission-stage-setup"]');
+    await sleep(180);
+    press('[data-solar-action="mission-stage-run"]');
+    await sleep(180);
+    press('[data-solar-action="mission-stage-setup"]');
+  }
   if (scenario === "quality") {
     press('[data-solar-section="view"]');
     await sleep(200);
@@ -301,6 +318,17 @@ async (scenario) => {
     await sleep(250);
     press('[data-solar-action="mission-trajectory-inspect"]');
   }
+  if (scenario === "mission-inspect-select") {
+    press('[data-solar-section="mission"]');
+    await sleep(250);
+    press('[data-solar-action="mission-mode-toggle"]');
+    await sleep(250);
+    press('[data-solar-action="mission-stage-inspect"]');
+    await sleep(350);
+    press('[data-solar-action="mission-inspect-next"]');
+    await sleep(180);
+    press('[data-solar-action="mission-trajectory-inspect"]');
+  }
   if (scenario === "cinematic-post") {
     press('[data-solar-section="view"]');
     await sleep(200);
@@ -323,6 +351,8 @@ async (scenario) => {
     || scenario === "sky-atlas-timeline"
     || scenario === "sky-atlas-album"
   ) {
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
+    await sleep(120);
     press('[data-solar-section="atlas"]');
     await sleep(650);
     if (scenario === "sky-atlas-map") {
@@ -385,6 +415,9 @@ async (scenario) => {
   const durationMs =
     scenario === "zoom" ? 4500 :
     scenario === "mission-run-worker" ? 1800 :
+    scenario === "mission-immersive" ? 1600 :
+    scenario === "mission-stage-switch" ? 1600 :
+    scenario === "mission-inspect-select" ? 1600 :
     scenario === "gallery-open" ? 3500 :
     scenario === "gallery-all-models" ? 3000 :
     scenario === "mission-compare" ? 2400 :
@@ -471,19 +504,17 @@ function summarizeTrace(trace, scenarioResult) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 12)
     .map(([name, ms]) => ({ name, ms: Number(ms.toFixed(2)) }));
-  const observedMissionWorkerMax =
-    scenarioResult?.scenario === "mission-run-worker" &&
-    Number.isFinite(scenarioResult?.observedLongTaskMaxMs)
-      ? Number(scenarioResult.observedLongTaskMaxMs.toFixed(2))
-      : null;
+  const observedLongTaskMax = Number.isFinite(scenarioResult?.observedLongTaskMaxMs)
+    ? Number(scenarioResult.observedLongTaskMaxMs.toFixed(2))
+    : null;
   return {
     scenarioResult,
     eventCount: events.length,
-    longTaskCount: observedMissionWorkerMax === null
+    longTaskCount: observedLongTaskMax === null
       ? complete.filter((ev) => ev.dur >= 50000).length
       : scenarioResult.observedLongTasks.length,
-    maxTaskMs: observedMissionWorkerMax ?? Number(((longTasks[0]?.ms ?? 0)).toFixed(2)),
-    longTasks: observedMissionWorkerMax === null ? longTasks : scenarioResult.observedLongTasks,
+    maxTaskMs: observedLongTaskMax ?? Number(((longTasks[0]?.ms ?? 0)).toFixed(2)),
+    longTasks: observedLongTaskMax === null ? longTasks : scenarioResult.observedLongTasks,
     topTotals,
   };
 }
@@ -493,7 +524,15 @@ async function runScenario(cdp, scenario) {
   cdp.on("Tracing.tracingComplete", (params) => {
     traceStream = params.stream;
   });
-  if (["mission-compare", "monte-carlo-worker", "review-export", "trajectory-inspector"].includes(scenario)) {
+  if (scenario === "sky-atlas-ranked-search") {
+    await cdp.send("Page.navigate", { url: targetUrl });
+    await cdp.send("Page.loadEventFired").catch(() => {});
+    await sleep(1200);
+  }
+  await cdp.send("Page.bringToFront").catch(() => {});
+  await cdp.send("Emulation.setFocusEmulationEnabled", { enabled: true }).catch(() => {});
+  await cdp.send("Page.setWebLifecycleState", { state: "active" }).catch(() => {});
+  if (["mission-compare", "monte-carlo-worker", "review-export", "trajectory-inspector", "mission-inspect-select"].includes(scenario)) {
     await cdp.send("Runtime.evaluate", {
       expression: `(${String(async () => {
         const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -505,17 +544,21 @@ async function runScenario(cdp, scenario) {
       awaitPromise: true,
     });
   }
-  await cdp.send("Tracing.start", {
-    transferMode: "ReturnAsStream",
-    categories: "devtools.timeline,disabled-by-default-devtools.timeline,blink,cc,gpu",
-  });
+  const fullTrace = process.env.SOLAR_PERF_TRACE === "1";
+  if (fullTrace) {
+    await cdp.send("Tracing.start", {
+      transferMode: "ReturnAsStream",
+      categories: "devtools.timeline",
+    });
+  }
   const result = await cdp.send("Runtime.evaluate", {
     expression: `(${scenarioRunner})(${JSON.stringify(scenario)})`,
     awaitPromise: true,
     returnByValue: true,
   });
+  if (!fullTrace) return summarizeTrace({ traceEvents: [] }, result.result.value);
   await cdp.send("Tracing.end");
-  const deadline = Date.now() + 15000;
+  const deadline = Date.now() + 60000;
   while (!traceStream && Date.now() < deadline) await sleep(100);
   if (!traceStream) throw new Error(`No trace stream for ${scenario}`);
   const trace = await readTraceStream(cdp, traceStream);
@@ -562,7 +605,7 @@ async function main() {
     const scenarios = [];
     const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
       ? process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean)
-      : ["rotate", "zoom", "mission", "mission-run-worker", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover", "sky-atlas-map", "sky-atlas-route-builder", "sky-atlas-route-export", "sky-atlas-immersive", "sky-atlas-ranked-search", "sky-atlas-timeline", "sky-atlas-album"];
+      : ["rotate", "zoom", "mission", "mission-run-worker", "mission-immersive", "mission-stage-switch", "mission-inspect-select", "safe", "quality", "showcase-tour", "gallery-open", "gallery-all-models", "mission-compare", "ccsds-export", "monte-carlo-worker", "review-export", "trajectory-inspector", "cinematic-post", "sky-atlas-open", "sky-atlas-route", "atlas-cover", "sky-atlas-map", "sky-atlas-route-builder", "sky-atlas-route-export", "sky-atlas-immersive", "sky-atlas-ranked-search", "sky-atlas-timeline", "sky-atlas-album"];
     for (const scenario of requestedScenarios) {
       scenarios.push({ scenario, ...(await runScenario(cdp, scenario)) });
     }
