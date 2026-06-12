@@ -169,6 +169,7 @@ This version positions Solar Sim as a preliminary aerospace engineering workbenc
 - Low-thrust seed records remain audit-only. They are not ranked as feasible unless an offline Hermite-Simpson solve is explicitly marked `status: "converged"` and passes residual gates.
 - Showcase Tour and Spacecraft Gallery v3 are presentation features. Gallery Draco decoding is local (`public/draco`), with no runtime decoder CDN dependency. They do not enter the N-body integrator and do not change mission dynamics.
 - AAA Closeup v3 improves deterministic Sun/Earth/Jupiter/Saturn browser closeups, Gallery auto-framing, scale reference, and cover metadata export. It is still a real-time WebGL showcase, not an offline film renderer with path-traced volumetrics, production compositing, or physically complete spacecraft materials.
+- Mission Operations v3 upgrades the Mission panel into an optional immersive workbench with the fixed Setup -> Run -> Inspect -> Compare -> Review workflow, worker cancellation, event search/filtering, and trajectory event highlighting. It remains a preliminary engineering workbench, does not add solver capability, and is not GMAT/STK/SPICE certification.
 
 Local regression gates:
 
@@ -178,6 +179,7 @@ npm run visual:regression
 npm run visual:tour
 npm run perf:profile:assert
 npm run audit:mission-project
+npm run audit:mission-operations
 npm run audit:ccsds
 npm run audit:gallery-models
 npm run audit:closeups

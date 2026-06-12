@@ -1,19 +1,25 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, useTransition, type MutableRefObject } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, useTransition, type MutableRefObject } from "react";
 import {
   BrainCircuit,
   ChevronDown,
   Copy,
   Clock3,
   Download,
+  Maximize2,
+  Minimize2,
   Radio,
   Route,
   Satellite,
+  Search,
   ShieldAlert,
   SlidersHorizontal,
   Sparkles,
+  StepBack,
+  StepForward,
   Trash2,
+  XCircle,
 } from "lucide-react";
 import { AU_METERS, DAY_SECONDS } from "../lib/physicalConstants";
 import {
@@ -51,17 +57,30 @@ import {
 import { runMissionRiskWorker } from "../lib/missionRiskClient";
 import { loadMissionProject, saveMissionProject } from "../lib/missionProjectStore";
 import { runMissionOptimizationWorker } from "../lib/missionHighFidelityClient";
+import {
+  EMPTY_MISSION_INSPECTION_SELECTION,
+  INITIAL_MISSION_RUN_PROGRESS,
+  MISSION_WORKFLOW_STAGES,
+  createMissionInspectionSelection,
+  filterMissionInspectionSamples,
+  missionRunProgressLabel,
+  nextMissionStage,
+} from "../lib/missionOperations";
 import type {
   MissionAdvisorReport,
   MissionBodyId,
   MissionConstraintPreset,
   MissionEngineeringConstraints,
   MissionExportFormat,
+  MissionInspectionSelection,
   MissionMonteCarloConfig,
   MissionOptimizationResult,
   MissionPhysicsSnapshot,
   MissionPlan,
   MissionProject,
+  MissionRunProgressState,
+  MissionWorkflowStage,
+  MissionWorkspaceMode,
 } from "../lib/missionDesignerTypes";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
@@ -80,6 +99,11 @@ type Props = {
   selectedPlanId: string | null;
   onResult: (result: MissionOptimizationResult) => void;
   onSelectPlan: (plan: MissionPlan | null) => void;
+  mode?: MissionWorkspaceMode;
+  stage?: MissionWorkflowStage;
+  onModeChange?: (mode: MissionWorkspaceMode) => void;
+  onStageChange?: (stage: MissionWorkflowStage) => void;
+  onInspectionSelectionChange?: (selection: MissionInspectionSelection) => void;
 };
 
 function bodyDisplay(id: MissionBodyId): string {
@@ -174,6 +198,11 @@ export default function MissionDesignerPanel({
   selectedPlanId,
   onResult,
   onSelectPlan,
+  mode = "panel",
+  stage = "run",
+  onModeChange,
+  onStageChange,
+  onInspectionSelectionChange,
 }: Props) {
   const [activeTab, setActiveTab] = useState<MissionTab>("run");
   const [departureWindowDays, setDepartureWindowDays] = useState(DEFAULT_MISSION_OPTIONS.departureWindowDays);
@@ -182,6 +211,7 @@ export default function MissionDesignerPanel({
   const [constraints, setConstraints] = useState<MissionEngineeringConstraints>(MISSION_CONSTRAINT_PRESETS.aggressive);
   const [advancedOpen, setAdvancedOpen] = useState(false);
   const [status, setStatus] = useState("Ready");
+  const [runProgress, setRunProgress] = useState<MissionRunProgressState>(INITIAL_MISSION_RUN_PROGRESS);
   const [isOptimizing, setIsOptimizing] = useState(false);
   const [, startResultTransition] = useTransition();
   const [deepSeekStatus, setDeepSeekStatus] = useState<DeepSeekStatus>("idle");
@@ -194,7 +224,11 @@ export default function MissionDesignerPanel({
   const [notebookDecision, setNotebookDecision] = useState("");
   const [notebookRiskTags, setNotebookRiskTags] = useState("navigation, finite-thrust");
   const [selectedInspectionId, setSelectedInspectionId] = useState<string | null>(null);
+  const [inspectionKind, setInspectionKind] = useState<MissionInspectionSelection["kind"]>("all");
+  const [inspectionQuery, setInspectionQuery] = useState("");
+  const [inspectionSegmentId, setInspectionSegmentId] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const missionAbortRef = useRef<AbortController | null>(null);
   const selectedPlan = useMemo(
     () =>
       result?.plans.find((plan) => plan.id === selectedPlanId) ??
@@ -243,15 +277,69 @@ export default function MissionDesignerPanel({
     () => (selectedPlan ? trajectoryInspectionSamples(selectedPlan) : []),
     [selectedPlan],
   );
-  const selectedInspection = useMemo(
-    () => inspectionSamples.find((sample) => sample.id === selectedInspectionId) ?? inspectionSamples[0] ?? null,
-    [inspectionSamples, selectedInspectionId],
+  const filteredInspectionSamples = useMemo(
+    () => filterMissionInspectionSamples(inspectionSamples, {
+      kind: inspectionKind,
+      segmentId: inspectionSegmentId,
+      query: inspectionQuery,
+    }),
+    [inspectionKind, inspectionQuery, inspectionSamples, inspectionSegmentId],
   );
+  const selectedInspection = useMemo(
+    () => filteredInspectionSamples.find((sample) => sample.id === selectedInspectionId) ?? filteredInspectionSamples[0] ?? null,
+    [filteredInspectionSamples, selectedInspectionId],
+  );
+  const stageContext = useMemo(
+    () => ({ hasPlan: Boolean(selectedPlan), compareCount: comparisonRows.length }),
+    [comparisonRows.length, selectedPlan],
+  );
+  const activeStage = nextMissionStage(stage, stageContext);
+  const stageLabel = mode === "immersive" ? activeStage : activeTab;
+  const activeView = mode === "immersive"
+    ? activeStage === "setup"
+      ? "setup"
+      : activeStage === "inspect"
+        ? "review"
+        : activeStage
+    : activeTab;
 
   useEffect(() => {
     setAdvisor(localAdvisor);
     setDeepSeekStatus("idle");
   }, [localAdvisor]);
+
+  useEffect(() => {
+    if (mode !== "immersive" || activeStage === stage) return;
+    onStageChange?.(activeStage);
+  }, [activeStage, mode, onStageChange, stage]);
+
+  const publishInspectionSelection = useCallback(
+    (sampleId: string | null, patch: Partial<MissionInspectionSelection> = {}) => {
+      const base = {
+        ...EMPTY_MISSION_INSPECTION_SELECTION,
+        kind: inspectionKind,
+        segmentId: inspectionSegmentId,
+        query: inspectionQuery,
+        ...patch,
+      };
+      const selection = createMissionInspectionSelection(selectedPlan, inspectionSamples, base, sampleId);
+      setSelectedInspectionId(selection.sampleId);
+      onInspectionSelectionChange?.(selection);
+    },
+    [
+      inspectionKind,
+      inspectionQuery,
+      inspectionSamples,
+      inspectionSegmentId,
+      onInspectionSelectionChange,
+      selectedPlan,
+    ],
+  );
+
+  useEffect(() => {
+    if (mode !== "immersive" || activeStage !== "inspect") return;
+    publishInspectionSelection(selectedInspection?.id ?? null);
+  }, [activeStage, mode, publishInspectionSelection, selectedInspection?.id]);
 
   useEffect(() => {
     void loadMissionProject().then((loaded) => {
@@ -296,13 +384,29 @@ export default function MissionDesignerPanel({
       constraintPreset: preset,
       constraints,
     };
+    const abortController = new AbortController();
+    missionAbortRef.current = abortController;
     setIsOptimizing(true);
     setStatus("Worker queued");
+    setRunProgress({
+      status: "queued",
+      message: "Queued mission worker",
+      startedAt: new Date().toISOString(),
+      completedAt: null,
+    });
+    onStageChange?.("run");
     try {
       const next = await runMissionOptimizationWorker({
         options,
         physicsSnapshot: snapshot,
-        onProgress: (_phase, message) => {
+        signal: abortController.signal,
+        onProgress: (phase, message) => {
+          setRunProgress((current) => ({
+            ...current,
+            status: phase,
+            message: message ?? missionRunProgressLabel({ ...current, status: phase }),
+            completedAt: phase === "done" || phase === "error" ? new Date().toISOString() : null,
+          }));
           if (message) setStatus(message);
         },
         onIntermediate: (intermediate) => {
@@ -322,6 +426,12 @@ export default function MissionDesignerPanel({
           ? `${next.plans.length} feasible / Cowell audited`
           : `0 feasible / ${next.rejectedPlans.length} rejected`,
       );
+      setRunProgress((current) => ({
+        ...current,
+        status: "done",
+        message: next.plans.length ? "Cowell and covariance audited" : "No feasible candidates",
+        completedAt: new Date().toISOString(),
+      }));
       const nextSelectedPlanId = next.bestPlan?.id ?? next.rejectedPlans[0]?.id ?? null;
       if (project && activeScenario) {
         const updated = updateMissionScenarioDefinition(project, activeScenario.id, {
@@ -350,10 +460,23 @@ export default function MissionDesignerPanel({
         setCompareRunIds(nextProject.runs.map((run) => run.id));
       }
     } catch (error) {
+      const cancelled = error instanceof DOMException && error.name === "AbortError";
+      setRunProgress((current) => ({
+        ...current,
+        status: cancelled ? "cancelled" : "error",
+        message: cancelled ? "Mission worker cancelled" : error instanceof Error ? error.message : "Mission worker unavailable",
+        completedAt: new Date().toISOString(),
+      }));
       setStatus(error instanceof Error ? error.message : "Mission worker unavailable");
     } finally {
+      if (missionAbortRef.current === abortController) missionAbortRef.current = null;
       setIsOptimizing(false);
     }
+  };
+
+  const cancelMissionRun = () => {
+    missionAbortRef.current?.abort();
+    setStatus("Mission worker cancelled");
   };
 
   const runDeepSeekAdvisor = async () => {
@@ -526,10 +649,29 @@ export default function MissionDesignerPanel({
     });
   };
 
+  const goStage = (next: MissionWorkflowStage) => {
+    onStageChange?.(nextMissionStage(next, stageContext));
+  };
+
+  const selectInspectionAt = (index: number) => {
+    if (!filteredInspectionSamples.length) return;
+    const wrapped = (index + filteredInspectionSamples.length) % filteredInspectionSamples.length;
+    publishInspectionSelection(filteredInspectionSamples[wrapped]?.id ?? null);
+  };
+
+  const stageName = (item: MissionWorkflowStage) =>
+    item === "setup" ? "Setup" : item === "run" ? "Run" : item === "inspect" ? "Inspect" : item === "compare" ? "Compare" : "Review";
+
+  const panelClass = mode === "immersive"
+    ? "pointer-events-auto absolute inset-x-0 top-[42dvh] bottom-0 z-[170] flex flex-col overflow-hidden rounded-t-[var(--ui-radius)] border-[0.5px] border-cyan-200/18 bg-[rgba(3,7,13,0.9)] shadow-[0_22px_80px_rgba(0,0,0,0.48)] backdrop-blur-ui md:inset-x-4 md:top-3 md:bottom-5 md:rounded-[var(--ui-radius)] md:bg-[rgba(3,7,13,0.78)]"
+    : `pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] ${activeTab === "compare" || activeTab === "review" ? "sm:w-[44rem]" : "sm:w-[25rem]"}`;
+
   return (
     <section
       data-solar-panel="mission"
-      className={`pointer-events-auto absolute inset-x-2 bottom-24 z-[132] flex max-h-[62dvh] flex-col overflow-hidden rounded-[var(--ui-radius)] border-[0.5px] border-[var(--ui-glass-border)] bg-[rgba(5,8,14,0.88)] shadow-[0_18px_60px_rgba(0,0,0,0.42)] backdrop-blur-ui sm:inset-x-auto sm:bottom-28 sm:right-4 sm:max-h-[calc(100dvh-8.5rem)] ${activeTab === "compare" || activeTab === "review" ? "sm:w-[44rem]" : "sm:w-[25rem]"}`}
+      data-solar-mission-mode={mode}
+      data-solar-mission-stage={stageLabel}
+      className={panelClass}
     >
       <header className="shrink-0 border-b border-white/[0.07] p-3 pb-2">
         <div className="flex items-center justify-between gap-2">
@@ -549,9 +691,35 @@ export default function MissionDesignerPanel({
           <span className="shrink-0 rounded-[3px] bg-white/8 px-2 py-1 font-mono text-[7px] uppercase text-cyan-100">
             {status}
           </span>
+          <button
+            type="button"
+            data-solar-action="mission-mode-toggle"
+            onClick={() => onModeChange?.(mode === "immersive" ? "panel" : "immersive")}
+            className="grid h-7 w-7 shrink-0 place-items-center rounded-[3px] border border-white/[0.08] bg-white/[0.035] text-white/58 hover:text-cyan-100"
+            aria-label={mode === "immersive" ? "Exit immersive Mission" : "Enter immersive Mission"}
+          >
+            {mode === "immersive" ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+          </button>
         </div>
-        <div className="mt-2 grid grid-cols-6 gap-1 rounded-[4px] bg-black/25 p-0.5">
-          {TABS.map((tab) => (
+        {mode === "immersive" ? (
+          <div className="mt-2 grid grid-cols-5 gap-1 rounded-[4px] bg-black/25 p-0.5" data-solar-mission-workflow>
+            {MISSION_WORKFLOW_STAGES.map((item, index) => (
+              <button
+                key={item}
+                type="button"
+                data-solar-action={`mission-stage-${item}`}
+                onClick={() => goStage(item)}
+                className={`rounded-[3px] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.12em] ${
+                  activeStage === item ? "bg-cyan-200/[0.13] text-cyan-100" : "text-white/42 hover:text-white/70"
+                }`}
+              >
+                {index + 1}. {stageName(item)}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="mt-2 grid grid-cols-6 gap-1 rounded-[4px] bg-black/25 p-0.5">
+            {TABS.map((tab) => (
             <button
               key={tab}
               type="button"
@@ -562,11 +730,12 @@ export default function MissionDesignerPanel({
             >
               {tab}
             </button>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </header>
 
-      <div className="min-h-0 flex-1 overflow-y-auto p-3 pt-2">
+      <div className={mode === "immersive" ? "min-h-0 flex-1 overflow-y-auto p-3 pt-2 md:grid md:grid-cols-[13rem_minmax(0,1fr)_21rem] md:gap-3" : "min-h-0 flex-1 overflow-y-auto p-3 pt-2"}>
         <input
           ref={fileInputRef}
           type="file"
@@ -574,7 +743,7 @@ export default function MissionDesignerPanel({
           className="hidden"
           onChange={(event) => void importProject(event.target.files?.[0] ?? null)}
         />
-        {activeTab === "project" ? (
+        {activeView === "project" || activeView === "setup" ? (
           <div className="grid gap-2">
             <div className="rounded-[4px] border border-white/[0.07] bg-white/[0.03] p-2">
               <div className="font-mono text-[8px] uppercase tracking-[0.12em] text-white/72">Project status</div>
@@ -652,7 +821,7 @@ export default function MissionDesignerPanel({
               </button>
               <button
                 type="button"
-                onClick={() => setActiveTab("run")}
+                onClick={() => mode === "immersive" ? goStage("run") : setActiveTab("run")}
                 className="rounded-[3px] border border-white/[0.08] bg-white/[0.035] px-2 py-1.5 font-mono text-[8px] uppercase tracking-[0.1em] text-white/62"
               >
                 Open Run
@@ -664,7 +833,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "run" ? (
+        {activeView === "run" || activeView === "setup" ? (
           <div className="grid gap-2">
             <div className="grid grid-cols-3 gap-1">
               {(["conservative", "nominal", "aggressive"] as const).map((value) => (
@@ -729,6 +898,48 @@ export default function MissionDesignerPanel({
               <Sparkles className="h-3.5 w-3.5" strokeWidth={IS} />
               {isOptimizing ? "Mission worker running" : "Run audited search"}
             </button>
+
+            <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2" data-solar-mission-progress>
+              <div className="mb-1 flex items-center justify-between gap-2">
+                <span className="font-mono text-[8px] uppercase text-white/72">Run progress</span>
+                <span className="font-mono text-[8px] uppercase text-cyan-100/72">{missionRunProgressLabel(runProgress)}</span>
+              </div>
+              <div className="grid grid-cols-5 gap-1">
+                {[
+                  ["queued", "Queued"],
+                  ["loading-spice", "SPICE"],
+                  ["solving", "Lambert"],
+                  ["auditing", "Cowell"],
+                  ["done", "Done"],
+                ].map(([phase, label]) => {
+                  const active = runProgress.status === phase || (phase === "done" && runProgress.status === "cancelled");
+                  return (
+                    <div
+                      key={phase}
+                      className={`rounded-[3px] border px-1 py-1 text-center font-mono text-[7px] uppercase ${
+                        active ? "border-cyan-200/25 bg-cyan-200/[0.08] text-cyan-100" : "border-white/[0.06] text-white/30"
+                      }`}
+                    >
+                      {label}
+                    </div>
+                  );
+                })}
+              </div>
+              <div className="mt-1.5 flex items-center justify-between gap-2 text-[9px] leading-4 text-white/45">
+                <span>{runProgress.message}</span>
+                {isOptimizing ? (
+                  <button
+                    type="button"
+                    data-solar-action="mission-run-cancel"
+                    onClick={cancelMissionRun}
+                    className="flex shrink-0 items-center gap-1 rounded-[3px] border border-rose-300/20 bg-rose-300/[0.06] px-2 py-1 font-mono text-[7px] uppercase text-rose-100/80"
+                  >
+                    <XCircle className="h-3 w-3" />
+                    Cancel
+                  </button>
+                ) : null}
+              </div>
+            </div>
 
             {selectedPlan ? (
               <>
@@ -808,7 +1019,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "scenario" ? (
+        {activeView === "scenario" || activeView === "setup" ? (
           <div className="grid gap-1.5">
             {activeScenario ? (
               <label className="grid gap-1 font-mono text-[8px] uppercase text-white/42">
@@ -876,7 +1087,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "compare" ? (
+        {activeView === "compare" ? (
           <div className="grid gap-2" data-solar-mission-compare>
             <div className="flex items-center justify-between gap-2">
               <div>
@@ -890,15 +1101,15 @@ export default function MissionDesignerPanel({
                 <table className="w-full min-w-[38rem] border-collapse font-mono text-[8px] text-white/55">
                   <thead className="bg-white/[0.035] text-[7px] uppercase text-white/42">
                     <tr>
-                      {["Run", "Verdict", "C3", "Delta-v", "Propellant", "Duration", "Robust.", "MC", "MC P50 DV", "Top fail", "Min margin", "Cowell", "3sigma"].map((label) => (
-                        <th key={label} className="px-2 py-1.5 text-left font-medium">{label}</th>
+                      {["Run", "Verdict", "C3", "Delta-v", "Propellant", "Duration", "Robust.", "MC", "MC P50 DV", "Top fail", "Min margin", "Cowell", "3sigma"].map((label, index) => (
+                        <th key={label} className={`px-2 py-1.5 text-left font-medium ${index === 0 ? "sticky left-0 z-10 bg-[rgb(9,13,20)]" : ""}`}>{label}</th>
                       ))}
                     </tr>
                   </thead>
                   <tbody>
                     {comparisonRows.map((row) => (
                       <tr key={row.runId} className={`border-t border-white/[0.05] ${row.recommended ? "bg-emerald-300/[0.045] text-emerald-100/72" : ""}`}>
-                        <td className="max-w-28 truncate px-2 py-1.5">{row.runId}</td>
+                        <td className={`sticky left-0 z-10 max-w-28 truncate px-2 py-1.5 ${row.recommended ? "bg-[rgba(12,45,36,0.96)]" : "bg-[rgba(8,12,18,0.96)]"}`}>{row.runId}</td>
                         <td className="px-2 py-1.5 uppercase">{row.recommended ? "recommended" : row.verdict}</td>
                         <td className="px-2 py-1.5">{row.c3Km2S2?.toFixed(1) ?? "--"}</td>
                         <td className="px-2 py-1.5">{row.deltaVKms?.toFixed(2) ?? "--"}</td>
@@ -924,7 +1135,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "review" ? (
+        {activeView === "review" ? (
           <div className="grid gap-2" data-solar-mission-review>
             <div className="grid grid-cols-2 gap-2 sm:grid-cols-4">
               <Metric label="Verdict" value={reviewPackage.verdict} />
@@ -1047,14 +1258,85 @@ export default function MissionDesignerPanel({
             <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2">
               <div className="mb-1 font-mono text-[8px] uppercase text-white/72">Trajectory inspector</div>
               {inspectionSamples.length ? (
+                <div className="mb-2 grid gap-1.5" data-solar-mission-inspection-controls>
+                  <div className="grid grid-cols-4 gap-1">
+                    {(["all", "state", "maneuver", "flyby"] as const).map((kind) => (
+                      <button
+                        key={kind}
+                        type="button"
+                        data-solar-action={`mission-inspect-kind-${kind}`}
+                        onClick={() => {
+                          setInspectionKind(kind);
+                          publishInspectionSelection(null, { kind });
+                        }}
+                        className={`rounded-[3px] border px-1.5 py-1 font-mono text-[7px] uppercase ${
+                          inspectionKind === kind ? "border-cyan-200/25 bg-cyan-200/[0.08] text-cyan-100" : "border-white/[0.07] text-white/38"
+                        }`}
+                      >
+                        {kind}
+                      </button>
+                    ))}
+                  </div>
+                  <div className="grid gap-1 sm:grid-cols-[1fr_8rem]">
+                    <label className="flex items-center gap-1 rounded-[3px] border border-white/10 bg-black/30 px-2 py-1">
+                      <Search className="h-3 w-3 text-white/35" />
+                      <input
+                        value={inspectionQuery}
+                        onChange={(event) => {
+                          setInspectionQuery(event.target.value);
+                          publishInspectionSelection(null, { query: event.target.value });
+                        }}
+                        placeholder="Search segment, event, T+ day"
+                        className="min-w-0 flex-1 bg-transparent font-mono text-[9px] text-white/72 outline-none"
+                      />
+                    </label>
+                    <select
+                      value={inspectionSegmentId ?? "all"}
+                      onChange={(event) => {
+                        const segmentId = event.target.value === "all" ? null : event.target.value;
+                        setInspectionSegmentId(segmentId);
+                        publishInspectionSelection(null, { segmentId });
+                      }}
+                      className="rounded-[3px] border border-white/10 bg-black/30 px-2 py-1 font-mono text-[8px] uppercase text-white/62 outline-none"
+                    >
+                      <option value="all">All legs</option>
+                      {selectedPlan?.segments.map((segment) => (
+                        <option key={segment.id} value={segment.id}>{segment.id}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="grid grid-cols-[auto_1fr_auto] items-center gap-1">
+                    <button
+                      type="button"
+                      data-solar-action="mission-inspect-prev"
+                      onClick={() => selectInspectionAt(filteredInspectionSamples.findIndex((sample) => sample.id === selectedInspection?.id) - 1)}
+                      className="grid h-7 w-7 place-items-center rounded-[3px] border border-white/[0.08] text-white/45"
+                    >
+                      <StepBack className="h-3 w-3" />
+                    </button>
+                    <div className="truncate text-center font-mono text-[7px] uppercase text-white/34">
+                      {filteredInspectionSamples.length} matching events
+                    </div>
+                    <button
+                      type="button"
+                      data-solar-action="mission-inspect-next"
+                      onClick={() => selectInspectionAt(filteredInspectionSamples.findIndex((sample) => sample.id === selectedInspection?.id) + 1)}
+                      className="grid h-7 w-7 place-items-center rounded-[3px] border border-white/[0.08] text-white/45"
+                    >
+                      <StepForward className="h-3 w-3" />
+                    </button>
+                  </div>
+                </div>
+              ) : null}
+              {inspectionSamples.length ? (
                 <div className="grid gap-2 sm:grid-cols-[14rem_1fr]">
                   <div className="max-h-40 overflow-y-auto rounded-[3px] border border-white/[0.06]">
-                    {inspectionSamples.slice(0, 28).map((sample) => (
+                    {filteredInspectionSamples.slice(0, 36).map((sample) => (
                       <button
                         key={sample.id}
                         type="button"
                         data-solar-action="mission-trajectory-inspect"
-                        onClick={() => setSelectedInspectionId(sample.id)}
+                        onClick={() => publishInspectionSelection(sample.id)}
                         className={`block w-full border-t border-white/[0.04] px-2 py-1.5 text-left font-mono text-[7px] uppercase ${selectedInspection?.id === sample.id ? "bg-cyan-200/[0.08] text-cyan-100" : "text-white/46"}`}
                       >
                         {sample.kind} / T+{sample.simDay.toFixed(1)} / {sample.label}
@@ -1091,7 +1373,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {activeTab === "report" ? (
+        {activeView === "report" || (mode === "immersive" && activeStage === "review") ? (
           <div className="grid gap-2">
             {selectedPlan ? (
               <>
@@ -1241,7 +1523,7 @@ export default function MissionDesignerPanel({
           </div>
         ) : null}
 
-        {selectedPlan && activeTab === "run" ? (
+        {selectedPlan && activeView === "run" ? (
           <div className="mt-2 rounded-[4px] border border-cyan-200/10 bg-cyan-200/[0.035] p-2">
             <div className="mb-1 flex items-center justify-between">
               <span className="flex items-center gap-1.5 font-mono text-[8px] uppercase text-cyan-100">

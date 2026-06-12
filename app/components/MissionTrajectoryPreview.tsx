@@ -9,6 +9,7 @@ import type { FloatingOriginState } from "../lib/floatingOrigin";
 import type { MissionPlan, MissionSegment } from "../lib/missionDesignerTypes";
 import type { MutableRefObject } from "react";
 import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
+import type { MissionInspectionSelection } from "../lib/missionDesignerTypes";
 
 const SEGMENT_COLORS = ["#62e6ff", "#ff7ab6", "#ffd166"];
 
@@ -110,10 +111,12 @@ function EventMarker({
 export default function MissionTrajectoryPreview({
   plan,
   floatingOriginRef,
+  inspectionSelection = null,
   showLabels = false,
 }: {
   plan: MissionPlan | null;
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  inspectionSelection?: MissionInspectionSelection | null;
   showLabels?: boolean;
 }) {
   const groupRef = useRef<THREE.Group>(null);
@@ -151,6 +154,14 @@ export default function MissionTrajectoryPreview({
       {maneuverMarkers.map((marker) => (
         <EventMarker key={marker.id} position={marker.position} label={marker.label} color={marker.color} showLabel={showLabels} />
       ))}
+      {inspectionSelection?.positionAu ? (
+        <EventMarker
+          position={inspectionSelection.positionAu}
+          label={`${inspectionSelection.kind.toUpperCase()} T+${inspectionSelection.simDay?.toFixed(1) ?? "--"}`}
+          color="#ffffff"
+          showLabel={showLabels}
+        />
+      ) : null}
     </group>
   );
 }

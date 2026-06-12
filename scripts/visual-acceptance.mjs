@@ -42,6 +42,11 @@ const scenarios = [
   { id: "ccsds-export", viewport: { width: 1280, height: 900 }, action: "ccsdsExport", expect: ["canvas", "ccsdsExport"] },
   { id: "mission-review", viewport: { width: 1280, height: 900 }, action: "missionReview", expect: ["canvas", "missionReview"] },
   { id: "trajectory-inspector", viewport: { width: 1280, height: 900 }, action: "trajectoryInspector", expect: ["canvas", "trajectoryInspector"] },
+  { id: "mission-immersive-setup", viewport: { width: 1280, height: 900 }, action: "missionImmersiveSetup", expect: ["canvas", "missionImmersive", "missionSetup"] },
+  { id: "mission-run-progress", viewport: { width: 1280, height: 900 }, action: "missionRunProgress", expect: ["canvas", "missionImmersive", "missionRunProgress"] },
+  { id: "mission-inspect-timeline", viewport: { width: 1280, height: 900 }, action: "missionInspectTimeline", expect: ["canvas", "missionImmersive", "trajectoryInspector"] },
+  { id: "mission-compare-immersive", viewport: { width: 1280, height: 900 }, action: "missionCompareImmersive", expect: ["canvas", "missionImmersive", "missionCompare"] },
+  { id: "mission-review-immersive", viewport: { width: 1280, height: 900 }, action: "missionReviewImmersive", expect: ["canvas", "missionImmersive", "missionReview"] },
   { id: "cinematic-post", viewport: { width: 1280, height: 900 }, action: "cinematicPost", expect: ["canvas", "cinematicPost"] },
   { id: "sky-atlas-search", viewport: { width: 1280, height: 900 }, action: "skyAtlasSearch", expect: ["canvas", "skyAtlas"] },
   { id: "sky-atlas-route", viewport: { width: 1280, height: 900 }, action: "skyAtlasRoute", expect: ["canvas", "skyAtlas", "atlasRoute"] },
@@ -68,6 +73,7 @@ const scenarios = [
   { id: "jupiter-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 6, expect: ["canvas"] },
   { id: "saturn-closeup-v3", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 7, expect: ["canvas"] },
   { id: "mobile-mission", viewport: { width: 390, height: 844, mobile: true }, action: "mobileMission", expect: ["canvas", "missionAudit"] },
+  { id: "mission-immersive-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "missionImmersiveMobile", expect: ["canvas", "missionImmersive", "missionSetup"] },
   { id: "mobile-atlas", viewport: { width: 390, height: 844, mobile: true }, action: "mobileAtlas", expect: ["canvas", "skyAtlas"] },
   { id: "sky-atlas-map-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasMapMobile", expect: ["canvas", "skyAtlas", "atlasMap"] },
   { id: "sky-atlas-immersive-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasImmersive", expect: ["canvas", "skyAtlas", "atlasImmersive"] },
@@ -341,6 +347,59 @@ async function runScenarioAction(cdp, scenario) {
         await sleep(300);
       }
     }
+    if ([
+      "missionImmersiveSetup",
+      "missionRunProgress",
+      "missionInspectTimeline",
+      "missionCompareImmersive",
+      "missionReviewImmersive",
+      "missionImmersiveMobile",
+    ].includes(scenarioArg.action)) {
+      press('[data-solar-section="mission"]');
+      await sleep(450);
+      press('[data-solar-action="mission-mode-toggle"]');
+      await sleep(450);
+      if (scenarioArg.action === "missionImmersiveSetup" || scenarioArg.action === "missionImmersiveMobile") {
+        press('[data-solar-action="mission-stage-setup"]');
+        await sleep(600);
+      }
+      if (scenarioArg.action === "missionRunProgress") {
+        press('[data-solar-action="mission-stage-run"]');
+        await sleep(150);
+        press('[data-solar-action="mission-optimize"]');
+        await sleep(1200);
+      }
+      if (scenarioArg.action === "missionInspectTimeline") {
+        press('[data-solar-action="mission-stage-run"]');
+        await sleep(150);
+        press('[data-solar-action="mission-optimize"]');
+        await sleep(4200);
+        press('[data-solar-action="mission-stage-inspect"]');
+        await sleep(500);
+        press('[data-solar-action="mission-inspect-next"]');
+        await sleep(250);
+      }
+      if (scenarioArg.action === "missionCompareImmersive") {
+        press('[data-solar-action="mission-stage-run"]');
+        await sleep(150);
+        press('[data-solar-action="mission-optimize"]');
+        await sleep(4200);
+        press('[data-solar-action="mission-optimize"]');
+        await sleep(4200);
+        press('[data-solar-action="mission-stage-compare"]');
+        await sleep(600);
+      }
+      if (scenarioArg.action === "missionReviewImmersive") {
+        press('[data-solar-action="mission-stage-run"]');
+        await sleep(150);
+        press('[data-solar-action="mission-optimize"]');
+        await sleep(4200);
+        press('[data-solar-action="mission-stage-review"]');
+        await sleep(500);
+        press('[data-solar-action="mission-monte-carlo"]');
+        await sleep(1200);
+      }
+    }
     if (scenarioArg.action === "cinematicPost") {
       press('[data-solar-section="view"]');
       await sleep(350);
@@ -420,6 +479,10 @@ async function runScenarioAction(cdp, scenario) {
       }
       if (scenarioArg.action === "skyAtlasRoute") {
         press('[data-solar-action="atlas-route-play"]');
+        await waitFor(
+          () => performance.getEntriesByType("mark").some((entry) => entry.name === "solar:deep-sky-pack-preview-ready"),
+          45000,
+        );
         await sleep(1800);
       }
       if (scenarioArg.action === "skyAtlasRouteBuilder" || scenarioArg.action === "skyAtlasRouteExport") {
@@ -459,6 +522,11 @@ async function runScenarioAction(cdp, scenario) {
       await sleep(new URLSearchParams(location.search).get("visualTest") === "1" ? 7600 : 3800);
     }
 
+    [...document.querySelectorAll("[data-solar-mission-compare] tbody tr")].forEach((row, index) => {
+      const firstCell = row.querySelector("td");
+      if (firstCell) firstCell.textContent = `run-${index + 1}`;
+    });
+
     const text = document.body.textContent ?? "";
     const canvases = [...document.querySelectorAll("canvas")].map((canvas) => {
       const rect = canvas.getBoundingClientRect();
@@ -471,6 +539,11 @@ async function runScenarioAction(cdp, scenario) {
     const galleryCoverExport = Boolean(document.querySelector('[data-solar-action="gallery-cover-export"]'));
     const missionCompare = Boolean(document.querySelector("[data-solar-mission-compare]"));
     const missionReview = Boolean(document.querySelector("[data-solar-mission-review]"));
+    const missionMode = document.querySelector('[data-solar-panel="mission"]')?.getAttribute("data-solar-mission-mode") ?? null;
+    const missionStage = document.querySelector('[data-solar-panel="mission"]')?.getAttribute("data-solar-mission-stage") ?? null;
+    const missionWorkflow = Boolean(document.querySelector("[data-solar-mission-workflow]"));
+    const missionProgress = Boolean(document.querySelector("[data-solar-mission-progress]"));
+    const missionInspectionControls = Boolean(document.querySelector("[data-solar-mission-inspection-controls]"));
     const trajectoryButtons = document.querySelectorAll('[data-solar-action="mission-trajectory-inspect"]').length;
     const postButtons = document.querySelectorAll('[data-solar-action^="post-"]').length;
     const ccsdsButtons = document.querySelectorAll(
@@ -505,6 +578,11 @@ async function runScenarioAction(cdp, scenario) {
       galleryCoverExport,
       missionCompare,
       missionReview,
+      missionMode,
+      missionStage,
+      missionWorkflow,
+      missionProgress,
+      missionInspectionControls,
       trajectoryButtons,
       postButtons,
       ccsdsButtons,
@@ -571,8 +649,22 @@ function checkScenario(scenario, state, screenshotBytes) {
     if (!/Monte Carlo Lite|Top review risks|Run notebook/i.test(state.text)) failures.push("mission review sections missing");
     if (!/Review JSON|Review MD/i.test(state.text)) failures.push("review export actions missing");
   }
+  if (scenario.expect.includes("missionImmersive")) {
+    if (state.missionMode !== "immersive") failures.push("Mission immersive mode missing");
+    if (!state.missionWorkflow) failures.push("Mission workflow navigation missing");
+    if (!/Setup|Run|Inspect|Compare|Review/i.test(state.text)) failures.push("Mission workflow labels missing");
+  }
+  if (scenario.expect.includes("missionSetup")) {
+    if (state.missionStage !== "setup") failures.push(`Mission setup stage missing, saw ${state.missionStage}`);
+    if (!/Project status|Scenario definition|Engineering constraints/i.test(state.text)) failures.push("Mission setup content missing");
+  }
+  if (scenario.expect.includes("missionRunProgress")) {
+    if (!state.missionProgress) failures.push("Mission run progress marker missing");
+    if (!/Queued|SPICE|Lambert|Cowell|Done/i.test(state.text)) failures.push("Mission run phase labels missing");
+  }
   if (scenario.expect.includes("trajectoryInspector")) {
     if (state.trajectoryButtons < 1) failures.push("trajectory inspector actions missing");
+    if (state.missionMode === "immersive" && !state.missionInspectionControls) failures.push("Mission inspection filters missing");
     if (!/Trajectory inspector|Epoch TDB JD|segment/i.test(state.text)) failures.push("trajectory inspector details missing");
   }
   if (scenario.expect.includes("cinematicPost")) {

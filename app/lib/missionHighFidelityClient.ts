@@ -73,11 +73,13 @@ export function runMissionOptimizationWorker({
   physicsSnapshot,
   onProgress,
   onIntermediate,
+  signal,
 }: {
   options: MissionOptimizerOptions;
   physicsSnapshot: MissionPhysicsSnapshot;
   onProgress?: (status: MissionWorkerProvenance["status"], message?: string) => void;
   onIntermediate?: (result: MissionOptimizationResult) => void;
+  signal?: AbortSignal;
 }): Promise<MissionOptimizationResult> {
   return new Promise((resolve, reject) => {
     const worker = new Worker(
@@ -85,10 +87,25 @@ export function runMissionOptimizationWorker({
       { type: "module" },
     );
     const id = ++requestId;
+    if (signal?.aborted) {
+      worker.terminate();
+      reject(new DOMException("Mission worker cancelled", "AbortError"));
+      return;
+    }
     const timeout = window.setTimeout(() => {
       worker.terminate();
       reject(new Error("Mission worker timed out"));
     }, 120000);
+    const abort = () => {
+      window.clearTimeout(timeout);
+      worker.terminate();
+      reject(new DOMException("Mission worker cancelled", "AbortError"));
+    };
+    signal?.addEventListener("abort", abort, { once: true });
+    const cleanup = () => {
+      window.clearTimeout(timeout);
+      signal?.removeEventListener("abort", abort);
+    };
     worker.onmessage = (event: MessageEvent<MissionWorkerMessage>) => {
       if (event.data.id !== id) return;
       if (event.data.type === "progress") {
@@ -99,7 +116,7 @@ export function runMissionOptimizationWorker({
         onIntermediate?.(event.data.result);
         return;
       }
-      window.clearTimeout(timeout);
+      cleanup();
       worker.terminate();
       if (!event.data.ok || !event.data.result) {
         reject(new Error(event.data.error ?? "Mission worker failed"));
@@ -108,7 +125,7 @@ export function runMissionOptimizationWorker({
       resolve(event.data.result);
     };
     worker.onerror = (event) => {
-      window.clearTimeout(timeout);
+      cleanup();
       worker.terminate();
       reject(new Error(event.message || "Mission worker failed"));
     };
