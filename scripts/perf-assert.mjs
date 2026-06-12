@@ -41,6 +41,7 @@ const checks = [
   ["rotate", "Balanced rotate", baseline.balancedRotateMaxTaskMs],
   ["quality", "Showcase", baseline.showcaseMaxTaskMs],
   ["safe", "Perf/Safe", baseline.safeMaxTaskMs],
+  ["deep-universe-preset", "Deep Universe preset", baseline.deepUniversePresetMaxTaskMs],
   ["mission", "Mission", baseline.missionMaxTaskMs],
   ["mission-run-worker", "Mission run worker", baseline.missionRunWorkerMaxTaskMs],
   ["mission-immersive", "Mission immersive", baseline.missionImmersiveMaxTaskMs],
@@ -65,6 +66,7 @@ const checks = [
   ["sky-atlas-ranked-search", "Sky Atlas ranked search", baseline.skyAtlasRankedSearchMaxTaskMs],
   ["sky-atlas-timeline", "Sky Atlas timeline", baseline.skyAtlasTimelineMaxTaskMs],
   ["sky-atlas-album", "Sky Atlas album", baseline.skyAtlasAlbumMaxTaskMs],
+  ["atlas-deep-universe-route", "Atlas Deep Universe route", baseline.atlasDeepUniverseRouteMaxTaskMs],
 ];
 const requestedScenarios = process.env.SOLAR_PERF_SCENARIOS
   ? new Set(process.env.SOLAR_PERF_SCENARIOS.split(",").map((value) => value.trim()).filter(Boolean))

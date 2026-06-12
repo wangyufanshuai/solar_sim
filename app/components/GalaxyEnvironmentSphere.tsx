@@ -44,6 +44,9 @@ uniform sampler2D uMap;
 uniform float uExposure;
 uniform float uContrast;
 uniform float uTinyStarIntensity;
+uniform float uDustLaneContrast;
+uniform float uCoreCompression;
+uniform float uObservationTone;
 varying vec2 vUv;
 varying vec3 vWorldDir;
 
@@ -57,18 +60,18 @@ void main() {
   float n = hash(vUv * vec2(1630.0, 815.0));
   float tinyStars = pow(smoothstep(0.9987, 1.0, n), 4.5);
   float luma = dot(tex, vec3(0.299, 0.587, 0.114));
-  float dustLane = smoothstep(0.12, 0.34, luma) * (1.0 - smoothstep(0.45, 0.82, luma));
-  float brightCloud = smoothstep(0.24, 0.78, luma);
+  float dustLane = smoothstep(0.08, 0.28, luma) * (1.0 - smoothstep(0.34, 0.72, luma));
+  float brightCloud = smoothstep(0.2, 0.66, luma);
   vec3 color = max(tex - vec3(0.0055, 0.0065, 0.0075), vec3(0.0));
-  color *= vec3(0.70, 0.78, 0.9);
-  color = mix(color * 0.82, color * 1.22, brightCloud);
-  color -= vec3(0.018, 0.02, 0.024) * dustLane;
+  color *= vec3(0.66, 0.73, 0.84);
+  color = mix(color * 0.78, color * (1.02 - uCoreCompression * 0.18), brightCloud);
+  color -= vec3(0.022, 0.025, 0.03) * dustLane * uDustLaneContrast;
   color = max(color, vec3(0.0));
   color *= uExposure;
-  color = mix(vec3(luma), color, uContrast);
-  color = color / (color + vec3(0.55));
-  color = pow(color, vec3(0.92));
-  color += vec3(0.62, 0.72, 0.95) * tinyStars * uTinyStarIntensity;
+  color = mix(vec3(luma * 0.72), color, uContrast);
+  color = color / (color + vec3(0.58 + uCoreCompression * 0.55));
+  color = pow(color, vec3(1.0 + (1.0 - uObservationTone) * 0.38));
+  color += vec3(0.58, 0.68, 0.9) * tinyStars * uTinyStarIntensity;
   gl_FragColor = vec4(color, 1.0);
 }
 `;
@@ -101,6 +104,9 @@ export default function GalaxyEnvironmentSphere({
           uExposure: { value: VISUAL_CALIBRATION.sky.exposure },
           uContrast: { value: VISUAL_CALIBRATION.sky.contrast },
           uTinyStarIntensity: { value: VISUAL_CALIBRATION.sky.tinyStarIntensity },
+          uDustLaneContrast: { value: VISUAL_CALIBRATION.sky.dustLaneContrast },
+          uCoreCompression: { value: VISUAL_CALIBRATION.sky.coreCompression },
+          uObservationTone: { value: VISUAL_CALIBRATION.sky.observationTone },
         },
       }),
     []
@@ -125,9 +131,9 @@ export default function GalaxyEnvironmentSphere({
       loaded.needsUpdate = true;
       const sky = VISUAL_CALIBRATION.sky;
       const exposure =
-        stage === "quality" ? sky.exposure : stage === "balanced" ? sky.previewExposure : sky.fastExposure;
+        stage === "quality" ? sky.deepUniverseExposure : stage === "balanced" ? sky.previewExposure : sky.fastExposure;
       const contrast =
-        stage === "quality" ? sky.contrast : stage === "balanced" ? sky.previewContrast : sky.fastContrast;
+        stage === "quality" ? sky.deepUniverseContrast : stage === "balanced" ? sky.previewContrast : sky.fastContrast;
       const tinyStarIntensity =
         stage === "quality" ? sky.tinyStarIntensity : stage === "balanced" ? sky.previewTinyStarIntensity : sky.fastTinyStarIntensity;
       material.uniforms.uExposure.value = exposure;

@@ -8,6 +8,14 @@ import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 const PARTICLE_COUNT = 1800;
 const SKY_RADIUS = 8200;
 
+function seededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = Math.imul(1664525, state) + 1013904223;
+    return (state >>> 0) / 4294967296;
+  };
+}
+
 function galacticPosition(lonDeg: number, latDeg: number, radius: number) {
   const l = THREE.MathUtils.degToRad(lonDeg);
   const b = THREE.MathUtils.degToRad(latDeg);
@@ -19,29 +27,30 @@ function galacticPosition(lonDeg: number, latDeg: number, radius: number) {
 }
 
 function buildMilkyWayDust() {
+  const rand = seededRandom(0x5eed4204);
   const pos = new Float32Array(PARTICLE_COUNT * 3);
   const color = new Float32Array(PARTICLE_COUNT * 3);
   const size = new Float32Array(PARTICLE_COUNT);
 
   for (let i = 0; i < PARTICLE_COUNT; i++) {
-    const lon = Math.random() * 360;
-    const coreBand = Math.random() < 0.68;
-    const spread = coreBand ? 4 + Math.pow(Math.random(), 2.2) * 8 : 12 + Math.random() * 16;
-    const lat = (Math.random() - 0.5) * spread;
-    const radius = SKY_RADIUS - Math.random() * 240;
+    const lon = rand() * 360;
+    const coreBand = rand() < 0.68;
+    const spread = coreBand ? 4 + Math.pow(rand(), 2.2) * 8 : 12 + rand() * 16;
+    const lat = (rand() - 0.5) * spread;
+    const radius = SKY_RADIUS - rand() * 240;
     const p = galacticPosition(lon, lat, radius);
     pos[i * 3] = p.x;
     pos[i * 3 + 1] = p.y;
     pos[i * 3 + 2] = p.z;
 
-    const lane = Math.abs(lat) < 2.2 && Math.random() < 0.5;
+    const lane = Math.abs(lat) < 2.2 && rand() < 0.5;
     const armBoost = 0.65 + 0.35 * Math.sin(THREE.MathUtils.degToRad(lon * 2.0 + 28));
-    const bright = lane ? 0.012 + Math.random() * 0.035 : (0.055 + Math.random() * 0.16) * armBoost;
-    const warm = Math.random() * 0.14;
+    const bright = lane ? 0.01 + rand() * 0.028 : (0.04 + rand() * 0.12) * armBoost;
+    const warm = rand() * 0.12;
     color[i * 3] = bright * (0.7 + warm);
     color[i * 3 + 1] = bright * (0.78 + warm);
-    color[i * 3 + 2] = bright * (0.9 + Math.random() * 0.18);
-    size[i] = lane ? 0.18 + Math.random() * 0.26 : 0.28 + Math.pow(Math.random(), 2.6) * 0.72;
+    color[i * 3 + 2] = bright * (0.88 + rand() * 0.16);
+    size[i] = lane ? 0.16 + rand() * 0.22 : 0.24 + Math.pow(rand(), 2.6) * 0.64;
   }
 
   return { pos, color, size };

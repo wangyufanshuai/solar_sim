@@ -7,6 +7,7 @@ const deepSkyDir = path.join(root, "public", "textures", "deep-sky");
 const existingPath = path.join(deepSkyDir, "realism-manifest.json");
 const legacyImagePath = path.join(deepSkyDir, "nasa-image-manifest.json");
 const packPath = path.join(deepSkyDir, "pack-v2-manifest.json");
+const packV3Path = path.join(deepSkyDir, "pack-v3-manifest.json");
 const outPath = path.join(deepSkyDir, "combined-resource-manifest.json");
 
 const LEGACY_VISUALS = {
@@ -96,7 +97,9 @@ async function readJsonIfExists(file) {
 const existing = await readJsonIfExists(existingPath);
 const legacy = await readJsonIfExists(legacyImagePath);
 const pack = await readJsonIfExists(packPath);
+const packV3 = await readJsonIfExists(packV3Path);
 const deepSky = [
+  ...(packV3?.deepSky ?? []),
   ...(existing?.items ?? []).map(normalizeExisting),
   ...(legacy ?? []).map(normalizeLegacyImage).filter(Boolean),
   ...(pack?.deepSky ?? []),

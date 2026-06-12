@@ -287,6 +287,7 @@ export default function SkyAtlasExplorer({
   onExportCover,
   mode,
   onModeChange,
+  onDeepUniversePreset,
 }: {
   onTargetSelect: (object: SkyAtlasObject) => void;
   playback: SkyAtlasPlaybackState;
@@ -294,6 +295,7 @@ export default function SkyAtlasExplorer({
   onExportCover: (metadata?: SkyAtlasCoverMetadata) => void;
   mode: SkyAtlasMode;
   onModeChange: (mode: SkyAtlasMode) => void;
+  onDeepUniversePreset: () => void;
 }) {
   const catalog = useMemo(() => buildSkyAtlasCatalog(), []);
   const fixedRoute = useMemo(() => defaultSkyAtlasRoute(catalog), [catalog]);
@@ -395,14 +397,30 @@ export default function SkyAtlasExplorer({
   const exportRouteJson = () => downloadText("solar-sim-atlas-route.json", JSON.stringify(skyAtlasRouteToJson(activeRoute, catalog), null, 2), "application/json");
   const exportRouteMarkdown = () => downloadText("solar-sim-atlas-route.md", skyAtlasRouteToMarkdown(activeRoute, catalog), "text/markdown");
   const captureCover = async () => {
+    const qualityReady = performance
+      .getEntriesByType("mark")
+      .some((entry) => entry.name === "solar:deep-universe-v4-quality-ready");
+    const previewReady = performance
+      .getEntriesByType("mark")
+      .some((entry) => entry.name === "solar:deep-universe-v4-preview-ready");
     const metadata: SkyAtlasCoverMetadata = {
       targetId: selected?.id ?? null,
       targetName: selected?.name ?? null,
       routeId: activeRoute.id,
       routeStopIndex: routeIndex,
       projection,
-      postProfile: mode === "immersive" ? "atlas-flight" : "atlas-map",
+      postProfile: mode === "immersive" ? "deep-universe-v4" : "atlas-map",
       timestamp: new Date().toISOString(),
+      deepUniverse: {
+        selectedTargetId: selected?.id ?? null,
+        title: selected?.name ?? activeRoute.name,
+        scaleLabel: selected?.renderTier ?? selected?.type ?? "curated target",
+        sourceCredit: selected?.credit ?? selected?.source ?? "Solar Sim curated atlas",
+        renderProfile: "deep-universe-v4-observational",
+        resourcePack: "pack-v3",
+        qualityState: qualityReady ? "quality-ready" : previewReady ? "quality-lazy" : "preview",
+        timestamp: new Date().toISOString(),
+      },
     };
     const canvas = document.querySelector(".absolute.inset-0 canvas");
     const record = await createSkyAtlasAlbumRecord(
@@ -449,6 +467,14 @@ export default function SkyAtlasExplorer({
               aria-label={mode === "immersive" ? "Exit immersive Atlas" : "Enter immersive Atlas"}
             >
               {mode === "immersive" ? <Minimize2 className="h-3.5 w-3.5" /> : <Maximize2 className="h-3.5 w-3.5" />}
+            </button>
+            <button
+              type="button"
+              data-solar-action="atlas-deep-universe-preset"
+              onClick={onDeepUniversePreset}
+              className="rounded-[3px] border border-cyan-200/14 bg-cyan-200/[0.05] px-2 py-1 font-mono text-[7px] uppercase text-cyan-100/72"
+            >
+              Deep
             </button>
             <button
               type="button"

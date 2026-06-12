@@ -28,8 +28,11 @@
     "build-sky": "python scripts/build-universe-sandbox-sky.py",
     "build-realism-manifest": "node scripts/build-realism-manifest.mjs",
     "fetch:space-resources": "node scripts/fetch-space-resource-pack.mjs",
+    "fetch:deep-universe-v4": "node scripts/fetch-deep-universe-v4.mjs",
     "build:resource-manifests": "node scripts/build-resource-manifests.mjs",
+    "build:deep-universe-manifest": "node scripts/build-deep-universe-manifest.mjs",
     "audit:resources": "node scripts/audit-resources.mjs",
+    "audit:deep-universe": "node scripts/audit-deep-universe.mjs",
     "fetch:jpl-ephemeris": "node scripts/fetch-jpl-ephemeris-table.mjs",
     "audit:jpl-ephemeris": "node scripts/audit-jpl-ephemeris.mjs",
     "fetch:spice": "python scripts/build-spice-ephemeris.py",
@@ -49,7 +52,8 @@
     "audit:sky-atlas-routes": "node scripts/audit-sky-atlas-routes.mjs",
     "audit:sky-atlas-v3": "node scripts/audit-sky-atlas-v3.mjs",
     "export:demo-atlas-map": "node scripts/export-demo-atlas-map.mjs",
-    "export:demo-atlas-route-v2": "node scripts/export-demo-atlas-route-v2.mjs"
+    "export:demo-atlas-route-v2": "node scripts/export-demo-atlas-route-v2.mjs",
+    "export:demo-deep-universe-cover": "node scripts/export-demo-deep-universe-cover.mjs"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.8",

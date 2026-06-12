@@ -191,6 +191,26 @@ CCSDS demo artifacts can be regenerated with `npm run export:demo-ccsds`. The ex
 
 Gallery v3 cover metadata can be regenerated with `npm run export:demo-gallery-cover`. The JSON sidecar records the selected spacecraft id, title, scale label, source credit, category, render profile, and capture timestamp for local portfolio/review use.
 
+## Deep Universe v4
+
+Deep Universe v4 focuses on real-observation-style WebGL immersion for the Milky Way, deterministic starfields, nebula/deep-sky decals, and the Sky Atlas deep-universe browsing preset. It uses committed compressed NASA/JWST/Hubble-derived assets in `public/textures/deep-sky/pack-v3` with preview and quality tiers, checksum metadata, source credits, galactic positions, and render tuning.
+
+- Runtime loading remains offline: the app does not call NASA, JWST, Hubble, or any external API while rendering.
+- Preview assets load first; quality assets are lazy-loaded only for Showcase, Atlas immersive, or Deep Universe preset views.
+- The v4 resource audit enforces preview/quality pairs, source/credit fields, checksums, deterministic visual-test behavior, and a committed pack budget below 1GB.
+- Solar-system close and far views use the same renderer boundaries; Deep Universe v4 does not change Mission, SPICE, Lambert, Cowell, covariance, Atlas storage, or Gallery model behavior.
+
+Deep Universe v4 is not a complete SpaceEngine replacement, not a certified planetarium, not a scientific astrometry tool, and not an offline path-tracing renderer. It is a curated real-observation-style WebGL presentation layer.
+
+Useful commands:
+
+```bash
+npm run fetch:deep-universe-v4
+npm run build:deep-universe-manifest
+npm run audit:deep-universe
+npm run export:demo-deep-universe-cover
+```
+
 ## Sky Atlas Boundary
 
 Sky Atlas Explorer is a curated visual navigation layer. It merges the committed nearby stars, Gaia bright-star cross-match, constellation guide layer, nebulae, clusters, pulsars, and NASA deep-sky manifests into a searchable flight experience.
