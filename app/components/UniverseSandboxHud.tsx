@@ -208,6 +208,24 @@ export default function UniverseSandboxHud({
       showConstellations: true,
     });
   };
+  const applyDeepUniversePreset = () => {
+    onVisualEnhanceChange(true);
+    onCinematicPostProfileChange("deep-universe-v4");
+    onCinematicDofEnabledChange(false);
+    patch({
+      renderBudget: "quality",
+      highQualityRendering: true,
+      showGalaxyBackground: true,
+      showGaiaStars: true,
+      showConstellations: true,
+      showNebulaImages: true,
+      showDeepSkyMarkers: true,
+      showReferenceOrbits: false,
+      showOrbitTrails: true,
+      showOsculatingOrbits: false,
+      showBodyLabels: false,
+    });
+  };
   const applyPerfPreset = () => {
     onPerformanceSafe?.();
   };
@@ -405,7 +423,7 @@ export default function UniverseSandboxHud({
             {activeSection === "view" ? (
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">DISPLAY LAYERS</div>
-                <div className="mb-3 grid grid-cols-3 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
+                <div className="mb-3 grid grid-cols-4 gap-1 rounded-xl bg-black/18 p-1 text-[10px]">
                   <button
                     type="button"
                     onClick={applyBalancedPreset}
@@ -429,6 +447,14 @@ export default function UniverseSandboxHud({
                     className="rounded-lg px-2 py-1.5 text-white/42 transition-colors hover:bg-white/10 hover:text-white/78"
                   >
                     Perf
+                  </button>
+                  <button
+                    type="button"
+                    onClick={applyDeepUniversePreset}
+                    data-solar-action="deep-universe-preset"
+                    className={`rounded-lg px-2 py-1.5 transition-colors ${cinematicPostProfile === "deep-universe-v4" ? "bg-cyan-200/[0.12] text-cyan-100" : "text-white/42 hover:text-white/70"}`}
+                  >
+                    Deep
                   </button>
                 </div>
                 <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />

@@ -123,6 +123,8 @@ export class RenderAssetQueue {
       window.addEventListener("pointerdown", noteInteraction, { passive: true });
       window.addEventListener("pointermove", noteInteraction, { passive: true });
       window.addEventListener("wheel", noteInteraction, { passive: true });
+      window.addEventListener("click", noteInteraction, { passive: true });
+      window.addEventListener("keydown", noteInteraction);
     }
   }
 

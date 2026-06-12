@@ -63,6 +63,12 @@ const scenarios = [
   { id: "sky-atlas-paused-timeline", viewport: { width: 1280, height: 900 }, action: "skyAtlasPausedTimeline", expect: ["canvas", "skyAtlas", "atlasPlayback"] },
   { id: "sky-atlas-comparison", viewport: { width: 1280, height: 900 }, action: "skyAtlasComparison", expect: ["canvas", "skyAtlas", "atlasComparison"] },
   { id: "sky-atlas-album", viewport: { width: 1280, height: 900 }, action: "skyAtlasAlbum", expect: ["canvas", "skyAtlas", "atlasAlbum"] },
+  { id: "deep-universe-showcase-v4", viewport: { width: 1280, height: 900 }, action: "deepUniverse", expect: ["canvas", "deepUniverse"] },
+  { id: "milky-way-core-v4", viewport: { width: 1280, height: 900 }, action: "deepUniverse", expect: ["canvas", "deepUniverse"] },
+  { id: "deep-sky-nebula-quality-v4", viewport: { width: 1280, height: 900 }, action: "deepUniverseQuality", expect: ["canvas", "deepUniverse", "deepUniverseQuality"] },
+  { id: "starfield-density-v4", viewport: { width: 1280, height: 900 }, action: "starfieldDensity", expect: ["canvas", "deepUniverse"] },
+  { id: "atlas-deep-universe-route-v4", viewport: { width: 1280, height: 900 }, action: "atlasDeepUniverseRoute", expect: ["canvas", "skyAtlas", "atlasRoute", "deepUniverse", "deepUniverseReadiness"] },
+  { id: "solar-system-deep-sky-blend-v4", viewport: { width: 1280, height: 900 }, action: "solarSystemDeepSkyBlend", expect: ["canvas", "deepUniverse"] },
   { id: "sun-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 0, expect: ["canvas"] },
   { id: "earth-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 3, expect: ["canvas"] },
   { id: "moon-closeup", viewport: { width: 1280, height: 900 }, action: "focus", bodyIndex: 4, expect: ["canvas"] },
@@ -77,6 +83,7 @@ const scenarios = [
   { id: "mobile-atlas", viewport: { width: 390, height: 844, mobile: true }, action: "mobileAtlas", expect: ["canvas", "skyAtlas"] },
   { id: "sky-atlas-map-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasMapMobile", expect: ["canvas", "skyAtlas", "atlasMap"] },
   { id: "sky-atlas-immersive-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasImmersive", expect: ["canvas", "skyAtlas", "atlasImmersive"] },
+  { id: "mobile-deep-universe-v4", viewport: { width: 390, height: 844, mobile: true }, action: "deepUniverse", expect: ["canvas", "deepUniverse"] },
 ];
 
 async function sleep(ms) {
@@ -252,8 +259,34 @@ async function runScenarioAction(cdp, scenario) {
       }
       return null;
     };
+    const deleteDatabase = (name) => new Promise((resolve) => {
+      if (!("indexedDB" in window)) {
+        resolve(false);
+        return;
+      }
+      const request = indexedDB.deleteDatabase(name);
+      request.onsuccess = () => resolve(true);
+      request.onerror = () => resolve(false);
+      request.onblocked = () => resolve(false);
+    });
+    const resetVisualPersistence = async () => {
+      if (new URLSearchParams(location.search).get("visualTest") !== "1") return;
+      localStorage.removeItem("solar-sim:sky-atlas:v1");
+      localStorage.removeItem("solar-sim:mission-project:v1");
+      await deleteDatabase("solar-sim-workbench");
+      await deleteDatabase("solar-sim-sky-atlas");
+    };
 
     await waitFor(() => document.querySelector("canvas"), 90000);
+    await resetVisualPersistence();
+    await waitFor(
+      () => performance.getEntriesByType("mark").some((entry) =>
+        entry.name === "solar:preview-sky-ready" ||
+        entry.name === "solar:sky-ready" ||
+        entry.name === "solar:balanced-sky-ready"
+      ),
+      45000,
+    );
     if (scenarioArg.action === "balanced") {
       await waitFor(
         () => performance.getEntriesByType("mark").some((entry) =>
@@ -413,6 +446,39 @@ async function runScenarioAction(cdp, scenario) {
       await sleep(1200);
     }
     if ([
+      "deepUniverse",
+      "deepUniverseQuality",
+      "starfieldDensity",
+      "solarSystemDeepSkyBlend",
+    ].includes(scenarioArg.action)) {
+      press('[data-solar-section="view"]');
+      await sleep(350);
+      press('[data-solar-action="deep-universe-preset"]');
+      await waitFor(
+        () => performance.getEntriesByType("mark").some((entry) =>
+          entry.name === "solar:deep-universe-v4-preview-ready" ||
+          entry.name === "solar:deep-sky-pack-preview-ready"
+        ),
+        45000,
+      );
+      if (scenarioArg.action === "deepUniverseQuality") {
+        await waitFor(
+          () => performance.getEntriesByType("mark").some((entry) =>
+            entry.name === "solar:deep-universe-v4-quality-ready"
+          ),
+          45000,
+        );
+      }
+      if (scenarioArg.action === "solarSystemDeepSkyBlend") {
+        window.dispatchEvent(new CustomEvent("solar-sim-camera-focus-body", {
+          detail: { bodyIndex: 3, mode: "inspect" },
+        }));
+        await sleep(2600);
+      } else {
+        await sleep(1800);
+      }
+    }
+    if ([
       "skyAtlasSearch",
       "skyAtlasRoute",
       "skyAtlasTarget",
@@ -430,9 +496,16 @@ async function runScenarioAction(cdp, scenario) {
       "skyAtlasPausedTimeline",
       "skyAtlasComparison",
       "skyAtlasAlbum",
+      "atlasDeepUniverseRoute",
     ].includes(scenarioArg.action)) {
       press('[data-solar-section="atlas"]');
       await sleep(650);
+      if (scenarioArg.action === "atlasDeepUniverseRoute") {
+        press('[data-solar-action="atlas-deep-universe-preset"]');
+        await sleep(350);
+        press('[data-solar-action="atlas-mode-toggle"]');
+        await sleep(500);
+      }
       const input = document.querySelector('[data-solar-action="atlas-search-input"]');
       if (input && (scenarioArg.action === "skyAtlasSearch" || scenarioArg.action === "mobileAtlas" || scenarioArg.action === "skyAtlasMapMobile" || scenarioArg.action === "skyAtlasRankedSearch")) {
         const setter = Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, "value")?.set;
@@ -477,10 +550,13 @@ async function runScenarioAction(cdp, scenario) {
         press('[data-solar-action="atlas-projection-galactic"]');
         await sleep(500);
       }
-      if (scenarioArg.action === "skyAtlasRoute") {
+      if (scenarioArg.action === "skyAtlasRoute" || scenarioArg.action === "atlasDeepUniverseRoute") {
         press('[data-solar-action="atlas-route-play"]');
         await waitFor(
-          () => performance.getEntriesByType("mark").some((entry) => entry.name === "solar:deep-sky-pack-preview-ready"),
+          () => performance.getEntriesByType("mark").some((entry) =>
+            entry.name === "solar:deep-universe-v4-preview-ready" ||
+            entry.name === "solar:deep-sky-pack-preview-ready"
+          ),
           45000,
         );
         await sleep(1800);
@@ -565,6 +641,11 @@ async function runScenarioAction(cdp, scenario) {
     const skyAtlasPlayback = Boolean(document.querySelector("[data-solar-atlas-playback]"));
     const skyAtlasComparison = Boolean(document.querySelector("[data-solar-atlas-comparison]"));
     const skyAtlasAlbum = Boolean(document.querySelector("[data-solar-atlas-album]"));
+    const deepUniversePresetButton = Boolean(document.querySelector('[data-solar-action="deep-universe-preset"]'));
+    const atlasDeepUniversePresetButton = Boolean(document.querySelector('[data-solar-action="atlas-deep-universe-preset"]'));
+    const renderMarks = performance.getEntriesByType("mark").map((entry) => entry.name);
+    const deepUniversePreviewReady = renderMarks.includes("solar:deep-universe-v4-preview-ready");
+    const deepUniverseQualityReady = renderMarks.includes("solar:deep-universe-v4-quality-ready");
     const exportButtons = document.querySelectorAll("[data-solar-action*='export']").length;
     const hasFrameworkOverlay = /Unhandled Runtime Error|Build Error|Next\\.js|Hydration failed/i.test(text);
     return {
@@ -600,6 +681,10 @@ async function runScenarioAction(cdp, scenario) {
       skyAtlasPlayback,
       skyAtlasComparison,
       skyAtlasAlbum,
+      deepUniversePresetButton,
+      atlasDeepUniversePresetButton,
+      deepUniversePreviewReady,
+      deepUniverseQualityReady,
       hasFrameworkOverlay,
       url: location.href,
       title: document.title,
@@ -726,6 +811,18 @@ function checkScenario(scenario, state, screenshotBytes) {
   if (scenario.expect.includes("atlasAlbum")) {
     if (!state.skyAtlasAlbum) failures.push("Atlas album missing");
     if (!/Atlas album|local/i.test(state.text)) failures.push("Atlas album copy missing");
+  }
+  if (scenario.expect.includes("deepUniverse")) {
+    if (!state.deepUniversePresetButton && !state.atlasDeepUniversePresetButton) {
+      failures.push("Deep Universe preset control missing");
+    }
+    if (!state.deepUniversePreviewReady) failures.push("Deep Universe preview assets did not report ready");
+  }
+  if (scenario.expect.includes("deepUniverseQuality") && !state.deepUniverseQualityReady) {
+    failures.push("Deep Universe quality assets did not report ready");
+  }
+  if (scenario.expect.includes("deepUniverseReadiness") && !state.atlasDeepUniversePresetButton) {
+    failures.push("Atlas Deep Universe preset control missing");
   }
   return failures;
 }

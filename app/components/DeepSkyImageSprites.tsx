@@ -9,6 +9,7 @@ import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 import { useOptionalRenderAssetQueue } from "../context/RenderAssetQueueContext";
 import { markRenderAssetStage, type RenderAssetPriority } from "../lib/renderAssetQueue";
 import type { DeepSkyResourcePackItem, ResourcePackManifest } from "../lib/resourcePackTypes";
+import { DEEP_UNIVERSE_RENDER_PROFILE } from "../lib/deepUniverseProfile";
 
 type DeepSkySpriteDef = {
   id: string;
@@ -456,7 +457,11 @@ export default function DeepSkyImageSprites({
       return;
     }
     const scheduleFull = () => setAllowFullSet(true);
-    const timeoutId = window.setTimeout(scheduleFull, FULL_DEEP_SKY_IDLE_DELAY_MS);
+    const visualTest = new URLSearchParams(window.location.search).get("visualTest") === "1";
+    const timeoutId = window.setTimeout(
+      scheduleFull,
+      visualTest ? 1200 : FULL_DEEP_SKY_IDLE_DELAY_MS,
+    );
     return () => {
       window.clearTimeout(timeoutId);
     };
@@ -508,9 +513,11 @@ export default function DeepSkyImageSprites({
         return;
       }
       const priority: RenderAssetPriority = def.priority
-        ? "visible"
-        : highQuality
+        ? highQuality
           ? "upgrade"
+          : "idle"
+        : highQuality
+          ? "quality"
           : "idle";
       const onLoad = (tex: THREE.Texture) => {
         if (cancelled) return;
@@ -570,10 +577,12 @@ export default function DeepSkyImageSprites({
     if (coreReady) markRenderAssetStage("deep-sky-core-ready");
     if (manifestDefs && sourceDefs.filter((def) => def.priority).every((def) => loaded.has(def.id))) {
       markRenderAssetStage("deep-sky-pack-preview-ready");
+      markRenderAssetStage("deep-universe-v4-preview-ready");
     }
     if (highQuality && sourceDefs.every((def) => loaded.has(def.id))) {
       markRenderAssetStage("quality-assets-ready");
       if (manifestDefs) markRenderAssetStage("deep-sky-pack-quality-ready");
+      if (manifestDefs) markRenderAssetStage("deep-universe-v4-quality-ready");
     }
   }, [highQuality, loadedIds, manifestDefs, sourceDefs]);
 
@@ -609,7 +618,11 @@ export default function DeepSkyImageSprites({
         const aspect = textureAspect(tex);
         const quaternion = skyDecalQuaternion(def.position, def.rotation);
         const decalSize = def.size * (def.priority ? CORE_DECAL_SCALE : DEFERRED_DECAL_SCALE);
-        const decalOpacity = def.opacity * (def.priority ? VISUAL_CALIBRATION.nebulae.deepSkyCoreOpacityScale : VISUAL_CALIBRATION.nebulae.deepSkyDeferredOpacityScale);
+        const profileOpacity = DEEP_UNIVERSE_RENDER_PROFILE.decalShellOpacity * VISUAL_CALIBRATION.nebulae.deepSkyShellOpacityScale;
+        const saturationScale = highQuality ? VISUAL_CALIBRATION.nebulae.qualitySaturation : VISUAL_CALIBRATION.nebulae.previewSaturation;
+        const decalOpacity = def.opacity
+          * (def.priority ? VISUAL_CALIBRATION.nebulae.deepSkyCoreOpacityScale : VISUAL_CALIBRATION.nebulae.deepSkyDeferredOpacityScale)
+          * profileOpacity;
         return (
           <mesh
             key={def.id}
@@ -628,7 +641,7 @@ export default function DeepSkyImageSprites({
               }}
               map={tex}
               alphaMap={alphaMap ?? undefined}
-              color="#ffffff"
+              color={new THREE.Color(saturationScale, saturationScale, 1)}
               transparent
               opacity={decalOpacity}
               alphaTest={0.015}

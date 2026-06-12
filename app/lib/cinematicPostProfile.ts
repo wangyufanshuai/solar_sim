@@ -4,7 +4,8 @@ export type CinematicPostProfileId =
   | "tour-cover"
   | "gallery-studio"
   | "atlas-flight"
-  | "atlas-map";
+  | "atlas-map"
+  | "deep-universe-v4";
 
 export type CinematicPostProfile = {
   id: CinematicPostProfileId;
@@ -90,6 +91,18 @@ export const CINEMATIC_POST_PROFILES: CinematicPostProfile[] = [
     vignetteOffset: 1.08,
     contrast: 0.1,
     exposure: 1,
+    dofEnabled: false,
+  },
+  {
+    id: "deep-universe-v4",
+    label: "Deep universe v4",
+    bloomStrength: 0.16,
+    bloomRadius: 0.18,
+    bloomThreshold: 0.96,
+    vignetteDarkness: 0.34,
+    vignetteOffset: 1.04,
+    contrast: 0.16,
+    exposure: 0.92,
     dofEnabled: false,
   },
 ];

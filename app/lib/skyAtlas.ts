@@ -5,6 +5,7 @@ import { NEARBY_STARS, starToDirection } from "../data/nearbyStars";
 import { NEBULAE } from "../data/nebulaCatalog";
 import { PULSARS } from "../data/pulsarCatalog";
 import { STAR_CLUSTERS } from "../data/starClusterCatalog";
+import type { DeepUniverseCoverMetadata } from "./deepUniverseTypes";
 import { galacticToEquatorial } from "./galacticToEquatorial";
 
 export type SkyAtlasObjectType =
@@ -120,6 +121,7 @@ export type SkyAtlasCoverMetadata = {
   projection: SkyAtlasProjection;
   postProfile: string;
   timestamp: string;
+  deepUniverse?: DeepUniverseCoverMetadata;
 };
 
 export type SkyAtlasUiState = {

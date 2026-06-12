@@ -7,11 +7,15 @@ import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import {
   type GaiaStarCatalogData,
+  type GaiaStarRecord,
   gaiaStarToGalacticPc,
   gaiaColorToRgb,
-  generatePlaceholderCatalog,
 } from "../data/gaiaStarCatalog";
+import { MAJOR_GAIA_STARS } from "../data/majorGaiaStars";
+import { NEARBY_STARS } from "../data/nearbyStars";
 import { AU_TO_SCENE } from "../data/planetsJ2000";
+import { STARFIELD_RENDER_PROFILES } from "../lib/deepUniverseProfile";
+import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
 
 /** 1 parsec in scene units. */
 const PC_TO_SCENE = (206265 * AU_TO_SCENE); // 1 pc = 206265 AU
@@ -25,6 +29,70 @@ const MAX_INSTANCES = 1800;
 const BALANCED_INSTANCES = 650;
 /** Billboard half-size in scene units (scaled by instanceSize). */
 const STAR_QUAD_HALF = 1.55;
+
+function seededRandom(seed: number) {
+  let state = seed >>> 0;
+  return () => {
+    state = Math.imul(1664525, state) + 1013904223;
+    return (state >>> 0) / 4294967296;
+  };
+}
+
+function spectralColorIndex(spectralType: string): number {
+  const first = spectralType.trim().charAt(0).toUpperCase();
+  if (first === "O" || first === "B") return -0.2;
+  if (first === "A") return 0.02;
+  if (first === "F") return 0.34;
+  if (first === "G") return 0.68;
+  if (first === "K") return 1.15;
+  if (first === "M") return 2.1;
+  return 0.82;
+}
+
+function deterministicStarCatalog(count: number): GaiaStarCatalogData {
+  const rand = seededRandom(VISUAL_CALIBRATION.stars.deterministicSeed);
+  const stars: GaiaStarRecord[] = [];
+  for (const star of MAJOR_GAIA_STARS) {
+    stars.push({
+      sourceId: `gaia-major-${star.id}`,
+      raDeg: star.raDeg,
+      decDeg: star.decDeg,
+      parallaxMas: star.gaiaParallaxMas && star.gaiaParallaxMas > 0 ? star.gaiaParallaxMas : 1000 / 180,
+      magG: star.visualMag,
+      colorBpRp: star.gaiaBpRp ?? spectralColorIndex(star.name),
+    });
+  }
+  for (const star of NEARBY_STARS) {
+    stars.push({
+      sourceId: `nearby-${star.id}`,
+      raDeg: star.raHours * 15,
+      decDeg: star.decDeg,
+      parallaxMas: 1000 / Math.max(0.1, star.distancePc),
+      magG: star.magV,
+      colorBpRp: spectralColorIndex(star.spectralType),
+    });
+  }
+  for (let i = stars.length; i < count; i++) {
+    const planeBias = rand() < 0.68;
+    const raDeg = rand() * 360;
+    const sinDec = planeBias ? (rand() - 0.5) * 0.62 : 2 * rand() - 1;
+    const decDeg = Math.asin(THREE.MathUtils.clamp(sinDec, -1, 1)) * 180 / Math.PI;
+    const distancePc = 12 + Math.pow(rand(), 1.85) * (planeBias ? 680 : 360);
+    const hot = rand() < 0.18;
+    const cool = rand() < 0.42;
+    const colorBpRp = hot ? -0.24 + rand() * 0.42 : cool ? 1.0 + rand() * 2.1 : 0.22 + rand() * 1.1;
+    const magG = planeBias ? 3.8 + rand() * 5.2 : 2.6 + rand() * 4.8;
+    stars.push({
+      sourceId: `gaia-faint-tier-${i}`,
+      raDeg,
+      decDeg,
+      parallaxMas: 1000 / distancePc,
+      magG,
+      colorBpRp,
+    });
+  }
+  return { stars: stars.slice(0, count), capacity: count, count: Math.min(count, stars.length) };
+}
 
 function apparentMagnitudeIntensity(mag: number): number {
   const relative = Math.pow(10, -0.4 * (mag + 1.46));
@@ -47,9 +115,11 @@ export default function GaiaStarField({
   const [catalog, setCatalog] = useState<GaiaStarCatalogData | null>(null);
   const [active, setActive] = useState(false);
   const dummyObj = useRef(new THREE.Object3D());
+  const profile = highQuality ? STARFIELD_RENDER_PROFILES["atlas-deep-universe"] : STARFIELD_RENDER_PROFILES["milky-way"];
 
   useEffect(() => {
-    setCatalog(generatePlaceholderCatalog(highQuality ? MAX_INSTANCES : BALANCED_INSTANCES));
+    const instanceCount = highQuality ? MAX_INSTANCES : BALANCED_INSTANCES;
+    setCatalog(deterministicStarCatalog(instanceCount));
     setActive(true);
   }, [highQuality]);
 
@@ -69,16 +139,17 @@ export default function GaiaStarField({
       positions[i * 3 + 2] = gz;
 
       const brightness = apparentMagnitudeIntensity(star.magG);
-      sizes[i] = Math.max(0.28, 0.28 + brightness * 1.15);
+      sizes[i] = Math.max(0.22, (0.26 + brightness * 1.05) * profile.haloScale);
 
       const [r, g, b] = gaiaColorToRgb(star.colorBpRp);
-      colors[i * 3] = (0.86 + r * 0.14) * brightness;
-      colors[i * 3 + 1] = (0.88 + g * 0.12) * brightness;
-      colors[i * 3 + 2] = (0.92 + b * 0.08) * brightness;
+      const colorStrength = profile.colorIndexStrength;
+      colors[i * 3] = (0.88 * (1 - colorStrength) + r * colorStrength) * brightness;
+      colors[i * 3 + 1] = (0.9 * (1 - colorStrength) + g * colorStrength) * brightness;
+      colors[i * 3 + 2] = (0.94 * (1 - colorStrength) + b * colorStrength) * brightness;
     }
 
     return { positions, colors, sizes };
-  }, [catalog]);
+  }, [catalog, profile.colorIndexStrength, profile.haloScale]);
 
   const geometry = useMemo(() => {
     const geo = new THREE.BufferGeometry();
@@ -149,6 +220,13 @@ export default function GaiaStarField({
   const prevOffsetRef = useRef<THREE.Vector3>(new THREE.Vector3(NaN, NaN, NaN));
   const lastTierRef = useRef<string | null>(null);
 
+  useEffect(() => {
+    initialized.current = false;
+    cachedBasePositions.current = null;
+    prevOffsetRef.current.set(NaN, NaN, NaN);
+    lastTierRef.current = null;
+  }, [starData]);
+
   useFrame(() => {
     const mesh = meshRef.current;
     if (!mesh || !starData) return;
@@ -156,7 +234,12 @@ export default function GaiaStarField({
     const tier = floatingOriginRef.current.lodTier;
     if (lastTierRef.current !== tier) {
       lastTierRef.current = tier;
-      mat.uniforms.uOpacity.value = tier === "solar" ? 0.032 : tier === "mid" ? 0.052 : 0.095;
+      mat.uniforms.uOpacity.value =
+        tier === "solar"
+          ? profile.opacityByLod.solar
+          : tier === "mid"
+            ? profile.opacityByLod.mid
+            : profile.opacityByLod.far;
     }
 
     if (!initialized.current) {

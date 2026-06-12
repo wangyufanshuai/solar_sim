@@ -10,6 +10,9 @@ export type DeepSkyResourcePackItem = {
   nasaId?: string | null;
   sourceUrl: string | null;
   credit: string;
+  sourceCredit?: string;
+  packVersion?: "pack-v2" | "pack-v3";
+  renderProfile?: "deep-universe-v4-observational";
   bytes: {
     preview: number;
     quality: number;
@@ -30,6 +33,9 @@ export type DeepSkyResourcePackItem = {
     size: number;
     rotation: number;
     opacity: number;
+    dustPreserve?: number;
+    saturation?: number;
+    shellOpacity?: number;
   };
   renderTier: ResourceRenderTier;
   renderMode: "anchored sky-sphere decal";

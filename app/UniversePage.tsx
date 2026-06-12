@@ -130,6 +130,7 @@ export default function UniversePage() {
   const [activeSection, setActiveSection] =
     useState<BottomControlBarSection>("simulation");
   const skyAtlasCatalog = useMemo(() => buildSkyAtlasCatalog(), []);
+  const skyAtlasQualityUpgradeTimerRef = useRef<number | null>(null);
   const [relativityEnabled, setRelativityEnabled] = useState(true);
   const relativityEnabledRef = useRef(true);
   relativityEnabledRef.current = relativityEnabled;
@@ -364,17 +365,52 @@ export default function UniversePage() {
 
   const enableSkyAtlasFlightView = useCallback(() => {
     setVisualEnhance(true);
-    setCinematicPostProfile("atlas-flight");
+    setCinematicPostProfile("deep-universe-v4");
     setCinematicDofEnabled(false);
+    if (skyAtlasQualityUpgradeTimerRef.current != null) {
+      window.clearTimeout(skyAtlasQualityUpgradeTimerRef.current);
+      skyAtlasQualityUpgradeTimerRef.current = null;
+    }
     setViewSettings((current) => ({
       ...current,
-      renderBudget: current.renderBudget === "safe" ? "balanced" : "quality",
+      renderBudget: current.renderBudget === "safe" ? "balanced" : current.renderBudget,
+      highQualityRendering: current.highQualityRendering,
+      showGalaxyBackground: true,
+      showGaiaStars: true,
+      showConstellations: true,
+      showNebulaImages: true,
+      showDeepSkyMarkers: true,
+    }));
+    skyAtlasQualityUpgradeTimerRef.current = window.setTimeout(() => {
+      skyAtlasQualityUpgradeTimerRef.current = null;
+      setViewSettings((current) => ({
+        ...current,
+        renderBudget: "quality",
+        highQualityRendering: true,
+      }));
+    }, visualTestRequested ? 5200 : 1800);
+  }, [visualTestRequested]);
+
+  const enableDeepUniversePreset = useCallback(() => {
+    setVisualEnhance(true);
+    setCinematicPostProfile("deep-universe-v4");
+    setCinematicDofEnabled(false);
+    if (skyAtlasQualityUpgradeTimerRef.current != null) {
+      window.clearTimeout(skyAtlasQualityUpgradeTimerRef.current);
+      skyAtlasQualityUpgradeTimerRef.current = null;
+    }
+    setViewSettings((current) => ({
+      ...current,
+      renderBudget: "quality",
       highQualityRendering: true,
       showGalaxyBackground: true,
       showGaiaStars: true,
       showConstellations: true,
       showNebulaImages: true,
       showDeepSkyMarkers: true,
+      showReferenceOrbits: false,
+      showOsculatingOrbits: false,
+      showBodyLabels: false,
     }));
   }, []);
 
@@ -857,6 +893,7 @@ export default function UniversePage() {
           onExportCover={handleExportCoverFrame}
           mode={skyAtlasMode}
           onModeChange={setSkyAtlasMode}
+          onDeepUniversePreset={enableDeepUniversePreset}
         />
       ) : null}
     </div>
