@@ -31,6 +31,13 @@ const chromeCandidates = [
 ].filter(Boolean);
 
 const scenarios = [
+  { id: "aaa-first-screen-v5", viewport: { width: 1280, height: 900 }, action: "aaaFirstScreen", expect: ["canvas", "aaaConsole"] },
+  { id: "aaa-solar-console-v5", viewport: { width: 1280, height: 900 }, action: "aaaSolarConsole", expect: ["canvas", "aaaConsole"] },
+  { id: "aaa-deep-universe-console-v5", viewport: { width: 1280, height: 900 }, action: "aaaDeepUniverseConsole", expect: ["canvas", "aaaConsole", "deepUniverse"] },
+  { id: "aaa-atlas-immersive-v5", viewport: { width: 1280, height: 900 }, action: "skyAtlasImmersive", expect: ["canvas", "skyAtlas", "atlasImmersive", "aaaImmersive"] },
+  { id: "aaa-mission-workbench-v5", viewport: { width: 1280, height: 900 }, action: "missionImmersiveSetup", expect: ["canvas", "missionImmersive", "missionSetup", "aaaImmersive"] },
+  { id: "aaa-gallery-studio-v5", viewport: { width: 1280, height: 900 }, action: "aaaGalleryStudio", expect: ["canvas", "aaaConsole", "gallery", "galleryCoverV3"] },
+  { id: "aaa-mobile-console-v5", viewport: { width: 390, height: 844, mobile: true }, action: "aaaFirstScreen", expect: ["canvas", "aaaConsole"] },
   { id: "balanced-wide", viewport: { width: 1280, height: 900 }, action: "balanced", expect: ["canvas"] },
   { id: "showcase-deep-sky", viewport: { width: 1280, height: 900 }, action: "showcase", expect: ["canvas", "showcase"] },
   { id: "showcase-tour", viewport: { width: 1280, height: 900 }, action: "tour", expect: ["canvas", "tour"] },
@@ -85,6 +92,18 @@ const scenarios = [
   { id: "sky-atlas-immersive-mobile", viewport: { width: 390, height: 844, mobile: true }, action: "skyAtlasImmersive", expect: ["canvas", "skyAtlas", "atlasImmersive"] },
   { id: "mobile-deep-universe-v4", viewport: { width: 390, height: 844, mobile: true }, action: "deepUniverse", expect: ["canvas", "deepUniverse"] },
 ];
+const scenarioFilter = (process.env.SOLAR_VISUAL_SCENARIOS ?? "")
+  .split(",")
+  .map((item) => item.trim())
+  .filter(Boolean);
+const activeScenarios = scenarioFilter.length
+  ? scenarios.filter((scenario) => scenarioFilter.includes(scenario.id))
+  : scenarios;
+if (scenarioFilter.length && activeScenarios.length !== scenarioFilter.length) {
+  const found = new Set(activeScenarios.map((scenario) => scenario.id));
+  const missing = scenarioFilter.filter((id) => !found.has(id));
+  throw new Error(`Unknown visual scenario(s): ${missing.join(", ")}`);
+}
 
 async function sleep(ms) {
   await new Promise((resolve) => setTimeout(resolve, ms));
@@ -287,6 +306,22 @@ async function runScenarioAction(cdp, scenario) {
       ),
       45000,
     );
+    if (scenarioArg.action === "aaaFirstScreen" || scenarioArg.action === "aaaSolarConsole") {
+      await waitFor(() => Boolean(document.querySelector('[data-solar-console="v5"]')), 20000);
+      await sleep(scenarioArg.action === "aaaFirstScreen" ? 1000 : 700);
+    }
+    if (scenarioArg.action === "aaaDeepUniverseConsole") {
+      await waitFor(() => Boolean(document.querySelector('[data-solar-console="v5"]')), 20000);
+      press('[data-solar-action="aaa-deep"]');
+      await waitFor(
+        () => performance.getEntriesByType("mark").some((entry) =>
+          entry.name === "solar:deep-universe-v4-preview-ready" ||
+          entry.name === "solar:deep-sky-pack-preview-ready"
+        ),
+        45000,
+      );
+      await sleep(1500);
+    }
     if (scenarioArg.action === "balanced") {
       await waitFor(
         () => performance.getEntriesByType("mark").some((entry) =>
@@ -321,10 +356,15 @@ async function runScenarioAction(cdp, scenario) {
       }
     }
     const visualTest = new URLSearchParams(location.search).get("visualTest") === "1";
-    if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll" || scenarioArg.action === "galleryCoverV3") {
-      press('[data-solar-section="tools"]');
-      await sleep(300);
-      press('[data-solar-action="gallery-toggle"]');
+    if (scenarioArg.action === "gallery" || scenarioArg.action === "galleryAll" || scenarioArg.action === "galleryCoverV3" || scenarioArg.action === "aaaGalleryStudio") {
+      if (scenarioArg.action === "aaaGalleryStudio") {
+        press('[data-solar-action="aaa-gallery"]');
+        await sleep(500);
+      } else {
+        press('[data-solar-section="tools"]');
+        await sleep(300);
+        press('[data-solar-action="gallery-toggle"]');
+      }
       await waitFor(() => document.querySelectorAll("[data-solar-spacecraft]").length >= 8, 45000);
       const buttons = [...document.querySelectorAll("[data-solar-spacecraft]")];
       if (scenarioArg.action === "galleryAll") {
@@ -341,7 +381,7 @@ async function runScenarioAction(cdp, scenario) {
         buttons[7]?.dispatchEvent(new MouseEvent("click", { bubbles: true }));
         await sleep(2200);
       }
-      if (scenarioArg.action === "galleryCoverV3") {
+      if (scenarioArg.action === "galleryCoverV3" || scenarioArg.action === "aaaGalleryStudio") {
         await waitFor(() => Boolean(document.querySelector("[data-solar-gallery-metadata]")), 10000);
         await sleep(500);
       }
@@ -641,6 +681,12 @@ async function runScenarioAction(cdp, scenario) {
     const skyAtlasPlayback = Boolean(document.querySelector("[data-solar-atlas-playback]"));
     const skyAtlasComparison = Boolean(document.querySelector("[data-solar-atlas-comparison]"));
     const skyAtlasAlbum = Boolean(document.querySelector("[data-solar-atlas-album]"));
+    const aaaConsole = Boolean(document.querySelector('[data-solar-console="v5"]'));
+    const aaaConsoleMode = document.querySelector('[data-solar-console="v5"]')?.getAttribute("data-solar-ui-mode") ?? null;
+    const aaaConsoleActions = document.querySelectorAll(
+      '[data-solar-action="aaa-explore"], [data-solar-action="aaa-deep"], [data-solar-action="aaa-atlas"], [data-solar-action="aaa-mission"], [data-solar-action="aaa-gallery"]',
+    ).length;
+    const developerHud = /PHYSICS ENGINE/i.test(text);
     const deepUniversePresetButton = Boolean(document.querySelector('[data-solar-action="deep-universe-preset"]'));
     const atlasDeepUniversePresetButton = Boolean(document.querySelector('[data-solar-action="atlas-deep-universe-preset"]'));
     const renderMarks = performance.getEntriesByType("mark").map((entry) => entry.name);
@@ -681,6 +727,10 @@ async function runScenarioAction(cdp, scenario) {
       skyAtlasPlayback,
       skyAtlasComparison,
       skyAtlasAlbum,
+      aaaConsole,
+      aaaConsoleMode,
+      aaaConsoleActions,
+      developerHud,
       deepUniversePresetButton,
       atlasDeepUniversePresetButton,
       deepUniversePreviewReady,
@@ -698,6 +748,19 @@ function checkScenario(scenario, state, screenshotBytes) {
   if (scenario.expect.includes("canvas") && biggestCanvas < 10000) failures.push("canvas missing or too small");
   if (state.hasFrameworkOverlay) failures.push("framework error overlay detected");
   if (screenshotBytes < 12000) failures.push("screenshot is unexpectedly small");
+  if (scenario.expect.includes("aaaConsole")) {
+    if (!state.aaaConsole) failures.push("AAA v5 console shell missing");
+    if (state.aaaConsoleActions < 5) failures.push(`expected five AAA console actions, saw ${state.aaaConsoleActions}`);
+    if (!/Solar Sim Console|Explore|Deep|Atlas|Mission|Gallery/i.test(state.text)) {
+      failures.push("AAA console copy missing");
+    }
+    if (state.developerHud && scenario.id !== "aaa-gallery-studio-v5") {
+      failures.push("developer HUD is visible in default AAA console scene");
+    }
+  }
+  if (scenario.expect.includes("aaaImmersive") && state.aaaConsole) {
+    failures.push("ordinary AAA console should be suppressed in immersive mode");
+  }
   if (scenario.expect.includes("showcase") && !/Showcase|Render showcase|Deep sky/i.test(state.text)) {
     failures.push("showcase UI text missing");
   }
@@ -888,7 +951,7 @@ async function main() {
     await cdp.send("Page.bringToFront");
     await cdp.send("Emulation.setFocusEmulationEnabled", { enabled: true });
 
-    for (const scenario of scenarios) {
+    for (const scenario of activeScenarios) {
       let state = null;
       let screenshotBytes = 0;
       let failures = [];

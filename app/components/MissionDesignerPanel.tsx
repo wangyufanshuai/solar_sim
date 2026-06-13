@@ -1407,7 +1407,7 @@ export default function MissionDesignerPanel({
                 <div className="rounded-[4px] border border-white/[0.07] bg-black/20 p-2 text-[9px] leading-4 text-white/52">
                   <div className="font-mono text-[8px] uppercase text-white/72">Ephemeris audit</div>
                   <p>{selectedPlan.ephemerisAudit.source}</p>
-                  <p>Coverage T+{selectedPlan.ephemerisAudit.coverageSimDays[0].toFixed(0)} to T+{selectedPlan.ephemerisAudit.coverageSimDays[1].toFixed(0)} d 路 step {selectedPlan.ephemerisAudit.stepDays} d</p>
+                  <p>Coverage T+{selectedPlan.ephemerisAudit.coverageSimDays[0].toFixed(0)} to T+{selectedPlan.ephemerisAudit.coverageSimDays[1].toFixed(0)} d / step {selectedPlan.ephemerisAudit.stepDays} d</p>
                   <p>{selectedPlan.ephemerisAudit.interpolation}</p>
                   {selectedPlan.ephemerisAudit.liveVsTableDelta.map((delta) => (
                     <p key={delta.body}>

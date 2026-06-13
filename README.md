@@ -202,6 +202,16 @@ Deep Universe v4 focuses on real-observation-style WebGL immersion for the Milky
 
 Deep Universe v4 is not a complete SpaceEngine replacement, not a certified planetarium, not a scientific astrometry tool, and not an offline path-tracing renderer. It is a curated real-observation-style WebGL presentation layer.
 
+## AAA Interface v5
+
+AAA Interface v5 wraps Solar System, Deep Universe, Sky Atlas, Mission Operations, and Gallery workflows in a unified NASA mission-console shell. The default HUD is compact and canvas-first: Explore, Deep, Atlas, Mission, Gallery, and Search live in the top console, while advanced render layers, export tools, and the physics performance HUD are contextual instead of always covering the scene.
+
+- The UI copy audit checks visible console copy for mojibake and common encoding artifacts.
+- The interface audit checks `SolarUiMode`, `SolarUiDensity`, `HudVisibilityState`, v5 console markers, immersive HUD suppression, and v5 visual scenarios.
+- Mobile views keep the primary WebGL canvas visible and collapse long controls into compact icon-first navigation.
+
+AAA Interface v5 is a real-time browser product-shell upgrade. It does not add backend storage, does not change Mission numerical methods, and does not claim GMAT/STK/SPICE certification or SpaceEngine-level completeness.
+
 Useful commands:
 
 ```bash

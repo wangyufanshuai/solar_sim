@@ -8,6 +8,7 @@ import {
   useMemo,
   useReducer,
   useRef,
+  startTransition,
   useState,
   type ChangeEvent,
 } from "react";
@@ -37,6 +38,7 @@ const KerrBlackHolePanel = dynamic(
 import {
   DEFAULT_SIM_DAYS_PER_WORLD_SECOND,
   EARTH_BODY_INDEX,
+  SOLAR_SYSTEM_BODIES,
 } from "./data/planetsJ2000";
 import {
   CAMERA_FOCUS_ORIGIN_EVENT,
@@ -74,6 +76,7 @@ import LaunchTelemetryStrip from "./components/LaunchTelemetryStrip";
 import MissionDesignerPanel from "./components/MissionDesignerPanel";
 import SkyAtlasExplorer from "./components/SkyAtlasExplorer";
 import SkyAtlasFlightHud from "./components/SkyAtlasFlightHud";
+import SolarConsoleShell from "./components/SolarConsoleShell";
 import useLaunchWebSocket from "./lib/useLaunchWebSocket";
 import type { LaunchConfig } from "./lib/launchTelemetryTypes";
 import type {
@@ -109,6 +112,7 @@ import {
   skyAtlasPlaybackReducer,
   type SkyAtlasPlaybackAction,
 } from "./lib/skyAtlasPlayback";
+import type { HudVisibilityState, SolarUiMode } from "./lib/solarUi";
 
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
@@ -116,6 +120,9 @@ export default function UniversePage() {
   const visualTestRequested =
     typeof window !== "undefined" &&
     new URLSearchParams(window.location.search).get("visualTest") === "1";
+  const debugHudRequested =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("debugHud") === "1";
   const { physicsRef, physicsReady, physicsUsesSharedBuffer } =
     useSolarSystemPhysics();
   const precisionTierRef = useRef<PhysicsPrecisionTier>("full");
@@ -440,7 +447,9 @@ export default function UniversePage() {
   );
 
   const handleSkyAtlasPlaybackAction = useCallback((action: SkyAtlasPlaybackAction) => {
-    dispatchSkyAtlasPlayback(action);
+    startTransition(() => {
+      dispatchSkyAtlasPlayback(action);
+    });
   }, []);
 
   useEffect(() => {
@@ -629,6 +638,48 @@ export default function UniversePage() {
     setSearchFocusNonce((n) => n + 1);
   }, []);
 
+  const openExploreConsole = useCallback(() => {
+    setActiveSection("simulation");
+    setLeftPanelCollapsed(true);
+  }, []);
+
+  const openAtlasConsole = useCallback(() => {
+    setActiveSection("atlas");
+    setVisualEnhance(true);
+    setCinematicPostProfile("atlas-map");
+    setCinematicDofEnabled(false);
+  }, []);
+
+  const openMissionConsole = useCallback(() => {
+    setActiveSection("mission");
+  }, []);
+
+  const openDeepUniverseConsole = useCallback(() => {
+    setActiveSection("view");
+    enableDeepUniversePreset();
+  }, [enableDeepUniversePreset]);
+
+  const openGalleryConsole = useCallback(() => {
+    setActiveSection("tools");
+    setLeftPanelCollapsed(true);
+    window.setTimeout(() => {
+      document
+        .querySelector<HTMLElement>('[data-solar-action="gallery-toggle"]')
+        ?.click();
+      let attempts = 0;
+      const revealGallery = window.setInterval(() => {
+        attempts += 1;
+        const gallery = document.querySelector<HTMLElement>('[data-solar-gallery="v3"]');
+        if (gallery) {
+          gallery.scrollIntoView({ block: "start", behavior: "smooth" });
+          window.clearInterval(revealGallery);
+        } else if (attempts >= 20) {
+          window.clearInterval(revealGallery);
+        }
+      }, 100);
+    }, 80);
+  }, []);
+
   const onBodyFocusFromList = useCallback((bodyIndex: number) => {
     setEarthMoonView(false);
     setSelectedBodyIndex(bodyIndex);
@@ -690,6 +741,28 @@ export default function UniversePage() {
   }
 
   const suppressOrdinaryHud = skyAtlasMode === "immersive" || missionWorkspaceMode === "immersive";
+  const solarUiMode: SolarUiMode =
+    activeSection === "atlas"
+      ? "atlas"
+      : activeSection === "mission"
+        ? "mission"
+        : activeSection === "tools"
+          ? "gallery"
+          : cinematicPostProfile === "deep-universe-v4"
+            ? "deep-universe"
+            : "solar";
+  const hudVisibility: HudVisibilityState = {
+    mode: solarUiMode,
+    density: selectedBodyIndex !== null ? "inspect" : activeSection === "simulation" ? "compact" : "standard",
+    ordinaryHudVisible: !suppressOrdinaryHud,
+    developerHudVisible: !suppressOrdinaryHud && (activeSection === "tools" || debugHudRequested),
+    immersive: suppressOrdinaryHud,
+  };
+  const targetLabel =
+    skyAtlasTarget?.name ??
+    (selectedBodyIndex !== null
+      ? SOLAR_SYSTEM_BODIES[selectedBodyIndex]?.name ?? `body-${selectedBodyIndex}`
+      : null);
 
   return (
     <div className="relative h-[100dvh] w-screen overflow-hidden bg-[#030303]">
@@ -738,6 +811,17 @@ export default function UniversePage() {
           }}
         />
       </div>
+      <SolarConsoleShell
+        state={hudVisibility}
+        targetLabel={targetLabel}
+        simRateLabel={`${daysPerSecond.toFixed(1)} days/s`}
+        onExplore={openExploreConsole}
+        onAtlas={openAtlasConsole}
+        onMission={openMissionConsole}
+        onDeepUniverse={openDeepUniverseConsole}
+        onGallery={openGalleryConsole}
+        onSearch={handleSearch}
+      />
       {!suppressOrdinaryHud ? <UniverseSandboxHud
         activeSection={activeSection}
         searchFocusNonce={searchFocusNonce}
@@ -762,7 +846,7 @@ export default function UniversePage() {
         onExportSystemState={handleExportSystemState}
         onImportSystemState={() => importStateInputRef.current?.click()}
       /> : null}
-      {!suppressOrdinaryHud ? <PhysicsPerformanceHud
+      {hudVisibility.developerHudVisible ? <PhysicsPerformanceHud
         physicsRef={physicsRef}
         precisionTierRef={precisionTierRef}
         physicsUsesSharedBuffer={physicsUsesSharedBuffer}

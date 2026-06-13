@@ -394,6 +394,7 @@ export default function DeepSkyImageSprites({
   const texturesRef = useRef<Record<string, THREE.Texture>>({});
   const loadedUrlRef = useRef<Record<string, string>>({});
   const loadedIdsRef = useRef<Set<string>>(new Set());
+  const loadedQualityIdsRef = useRef<Set<string>>(new Set());
   const pendingCommitRef = useRef(false);
   const [loadedIds, setLoadedIds] = useState<string[]>([]);
   const [allowFullSet, setAllowFullSet] = useState(false);
@@ -439,16 +440,22 @@ export default function DeepSkyImageSprites({
   }, []);
 
   const sourceDefs = manifestDefs ?? DEEP_SKY_IMAGES;
+  const visualTestMode =
+    typeof window !== "undefined" &&
+    new URLSearchParams(window.location.search).get("visualTest") === "1";
   const defs = useMemo(
     () =>
       sourceDefs.filter(
-        (def, index) => allowFullSet || def.priority || index < PRIORITY_DEEP_SKY_COUNT,
+        (def, index) =>
+          def.priority ||
+          index < PRIORITY_DEEP_SKY_COUNT ||
+          (allowFullSet && (!visualTestMode || index < 8)),
       ).map((def) => ({
         ...def,
         imageUrl: imageUrlForDef(def, highQuality && allowFullSet),
         position: galacticSkyPosition(def.galLonDeg, def.galLatDeg),
       })).filter((def) => !!def.imageUrl),
-    [allowFullSet, highQuality, sourceDefs],
+    [allowFullSet, highQuality, sourceDefs, visualTestMode],
   );
 
   useEffect(() => {
@@ -493,6 +500,15 @@ export default function DeepSkyImageSprites({
       texturesRef.current[id] = tex;
       loadedUrlRef.current[id] = url;
       loadedIdsRef.current.add(id);
+      const loadedDef = defs.find((def) => def.id === id);
+      if (highQuality && loadedDef?.qualityUrl === url) {
+        loadedQualityIdsRef.current.add(id);
+        if (loadedQualityIdsRef.current.size >= 4) {
+          markRenderAssetStage("quality-assets-ready");
+          if (manifestDefs) markRenderAssetStage("deep-sky-pack-quality-ready");
+          if (manifestDefs) markRenderAssetStage("deep-universe-v4-quality-ready");
+        }
+      }
       commitLoadedIds();
     };
 
@@ -567,7 +583,7 @@ export default function DeepSkyImageSprites({
       cancelled = true;
       for (const cancel of cancelLoads) cancel();
     };
-  }, [defs, gl, highQuality, renderAssetQueue]);
+  }, [defs, gl, highQuality, manifestDefs, renderAssetQueue]);
 
   useEffect(() => {
     const loaded = loadedIdsRef.current;
@@ -579,7 +595,12 @@ export default function DeepSkyImageSprites({
       markRenderAssetStage("deep-sky-pack-preview-ready");
       markRenderAssetStage("deep-universe-v4-preview-ready");
     }
-    if (highQuality && sourceDefs.every((def) => loaded.has(def.id))) {
+    const qualityDefs = sourceDefs.slice(0, 8);
+    const qualityUrlsReady = qualityDefs.every((def) => {
+      const targetUrl = imageUrlForDef(def, true);
+      return targetUrl ? loadedUrlRef.current[def.id] === targetUrl : loaded.has(def.id);
+    });
+    if (highQuality && qualityDefs.length > 0 && qualityUrlsReady) {
       markRenderAssetStage("quality-assets-ready");
       if (manifestDefs) markRenderAssetStage("deep-sky-pack-quality-ready");
       if (manifestDefs) markRenderAssetStage("deep-universe-v4-quality-ready");

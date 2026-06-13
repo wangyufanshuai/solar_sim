@@ -57,17 +57,17 @@ export type BottomControlBarProps = {
 };
 
 const sections: { id: BottomControlBarSection; label: string; Icon: typeof Box }[] = [
-  { id: "simulation", label: "模拟", Icon: Box },
-  { id: "view", label: "视图", Icon: Layers },
-  { id: "launch", label: "发射", Icon: Rocket },
-  { id: "tools", label: "工具", Icon: Wrench },
+  { id: "simulation", label: "Explore", Icon: Box },
+  { id: "view", label: "Layers", Icon: Layers },
+  { id: "launch", label: "Launch", Icon: Rocket },
+  { id: "tools", label: "Tools", Icon: Wrench },
 ];
 
 sections.splice(3, 0, { id: "mission", label: "Mission", Icon: Orbit });
 sections.splice(4, 0, { id: "atlas", label: "Atlas", Icon: Globe2 });
 
 const iconBtn =
-  "flex h-9 w-9 items-center justify-center rounded-full text-[var(--ui-text-dim)] transition-all duration-150 hover:bg-white/10 hover:text-[var(--ui-text-primary)] disabled:pointer-events-none disabled:opacity-25";
+  "flex h-9 w-9 items-center justify-center rounded-[10px] text-[var(--ui-text-dim)] transition-all duration-150 hover:bg-white/10 hover:text-[var(--ui-text-primary)] disabled:pointer-events-none disabled:opacity-25";
 
 export default function BottomControlBar({
   isPlaying: isPlayingControlled,
@@ -134,7 +134,7 @@ export default function BottomControlBar({
   return (
     <footer className="pointer-events-auto fixed bottom-0 left-0 right-0 z-[100] flex flex-col pb-[max(0px,env(safe-area-inset-bottom))]">
       {historySlot ? (
-        <div className="mx-auto mb-1 w-[min(96vw,720px)] overflow-hidden rounded-full bg-[rgba(38,38,42,0.78)]">
+        <div className="mx-auto mb-1 w-[min(96vw,720px)] overflow-hidden rounded-[10px] border border-white/[0.06] bg-[rgba(5,8,14,0.78)]">
           {historySlot}
         </div>
       ) : null}
@@ -145,15 +145,15 @@ export default function BottomControlBar({
         </div>
       ) : null}
 
-      <div className="mx-0 flex h-[72px] w-full items-center justify-between border-t border-white/5 bg-[rgba(28,28,30,0.86)] px-3 backdrop-blur-2xl">
-        <div className="flex min-w-0 items-center gap-2">
+      <div className="mx-2 mb-2 flex min-h-[64px] items-center justify-between gap-2 rounded-[18px] border border-[var(--ui-glass-border)] bg-[rgba(4,8,16,0.86)] px-3 shadow-[0_18px_48px_rgba(0,0,0,0.36)] backdrop-blur-ui max-md:min-h-[58px] max-md:px-2">
+        <div className="flex min-w-0 items-center gap-2 max-md:gap-1">
           <button
             type="button"
             onClick={togglePlay}
             data-solar-action="toggle-play"
             aria-pressed={isPlaying}
             aria-label={isPlaying ? "暂停" : "播放"}
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/8 text-[var(--ui-text-primary)] transition-all hover:bg-white/12"
+            className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[var(--ui-glass-border)] bg-[var(--ui-accent-subtle)] text-[var(--ui-text-primary)] transition-all hover:bg-white/12"
           >
             {isPlaying ? (
               <Pause className="h-4 w-4" strokeWidth={IS} />
@@ -161,7 +161,7 @@ export default function BottomControlBar({
               <Play className="h-4 w-4 pl-px" strokeWidth={IS} />
             )}
           </button>
-          <div className="min-w-[170px]">
+          <div className="min-w-[154px] max-sm:hidden">
             <div className="text-[12px] text-[var(--ui-text-muted)]">
               {simulationTimeSlot ?? simulationTimeText}
             </div>
@@ -169,7 +169,7 @@ export default function BottomControlBar({
               <span className="ui-instrument text-[12px] text-[var(--ui-text-muted)]">
                 {dps}
               </span>
-              <span className="text-[12px] text-[var(--ui-text-dim)]">天/秒</span>
+              <span className="text-[12px] text-[var(--ui-text-dim)]">days/s</span>
               {onRelativityToggle !== undefined && relativityEnabled !== undefined ? (
                 <button
                   type="button"
@@ -199,7 +199,7 @@ export default function BottomControlBar({
           </button>
         </div>
 
-        <div className="flex items-center gap-5">
+        <div className="flex min-w-0 flex-1 items-center justify-center gap-1.5 overflow-x-auto px-2 max-md:justify-start max-md:px-0">
           {sections.map(({ id, label, Icon }) => {
             const on = activeSection === id;
             return (
@@ -208,19 +208,19 @@ export default function BottomControlBar({
                 type="button"
                 onClick={() => selectSection(id)}
                 data-solar-section={id}
-                className={`flex min-w-[56px] flex-col items-center gap-1 rounded-xl px-2 py-1 transition-colors ${
-                  on ? "text-[var(--ui-text-primary)]" : "text-[var(--ui-text-dim)]"
+                className={`flex h-11 min-w-[62px] flex-col items-center justify-center gap-1 rounded-[12px] px-2 py-1 transition-colors max-md:min-w-11 ${
+                  on ? "bg-white/[0.07] text-[var(--ui-text-primary)] ring-1 ring-white/[0.08]" : "text-[var(--ui-text-dim)] hover:bg-white/[0.045] hover:text-[var(--ui-text-muted)]"
                 }`}
               >
                 <Icon className="h-4 w-4" strokeWidth={IS} />
-                <span className="text-[11px]">{label}</span>
+                <span className="text-[11px] max-md:hidden">{label}</span>
               </button>
             );
           })}
         </div>
 
         <div className="flex items-center gap-2">
-          <div className="flex items-center rounded-2xl bg-black/30 px-1.5 py-1">
+          <div className="flex items-center rounded-[14px] border border-white/[0.06] bg-black/24 px-1 py-1">
             <button type="button" onClick={onZoomIn} className={iconBtn} aria-label="拉近">
               <Plus className="h-4 w-4" strokeWidth={IS} />
             </button>
@@ -235,7 +235,7 @@ export default function BottomControlBar({
             <button
               type="button"
               onClick={() => setMoreOpen((v) => !v)}
-              className="flex h-10 w-10 items-center justify-center rounded-2xl bg-black/30 text-[var(--ui-text-dim)] transition-colors hover:text-[var(--ui-text-primary)]"
+            className="flex h-10 w-10 items-center justify-center rounded-[12px] bg-black/24 text-[var(--ui-text-dim)] transition-colors hover:text-[var(--ui-text-primary)]"
               aria-label="更多"
             >
               <MoreHorizontal className="h-4 w-4" strokeWidth={IS} />
