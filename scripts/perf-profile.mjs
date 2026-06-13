@@ -412,7 +412,9 @@ async (scenario) => {
       press('[data-solar-action="atlas-route-play"]');
       await sleep(350);
       press('[data-solar-action="atlas-route-play"]');
+      await sleep(90);
       press('[data-solar-action="atlas-playback-speed-2"]');
+      await sleep(90);
       press('[data-solar-action="atlas-playback-next"]');
       await sleep(350);
     }

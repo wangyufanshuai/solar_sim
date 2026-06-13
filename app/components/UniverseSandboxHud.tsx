@@ -235,7 +235,7 @@ export default function UniverseSandboxHud({
       <button
         type="button"
         onClick={() => onLeftPanelCollapsedChange(!leftPanelCollapsed)}
-        className="pointer-events-auto fixed left-3 top-3 z-[98] flex h-10 w-10 items-center justify-center rounded-full bg-black/18 text-white/55 backdrop-blur-md transition-colors hover:bg-black/28 hover:text-white/84"
+        className="pointer-events-auto fixed left-3 top-3 z-[98] flex h-10 w-10 items-center justify-center rounded-[12px] border border-[var(--ui-glass-border)] bg-[rgba(4,8,16,0.72)] text-[var(--ui-text-muted)] shadow-[0_14px_36px_rgba(0,0,0,0.28)] backdrop-blur-ui transition-colors hover:bg-[rgba(8,14,26,0.86)] hover:text-[var(--ui-text-primary)]"
         aria-expanded={!leftPanelCollapsed}
         aria-controls="universe-object-browser"
         aria-label="打开对象菜单"
@@ -245,12 +245,15 @@ export default function UniverseSandboxHud({
 
       <aside
         id="universe-object-browser"
-        className={`fixed left-0 top-0 z-[95] flex h-[100dvh] w-[min(100vw,286px)] flex-col bg-[rgba(18,18,20,0.78)] pb-[calc(var(--ui-dock-height)+8px+env(safe-area-inset-bottom))] pt-16 shadow-[0_20px_70px_rgba(0,0,0,0.4)] backdrop-blur-2xl transition-transform duration-200 ${
+        className={`fixed left-0 top-0 z-[95] flex h-[100dvh] w-[min(100vw,292px)] flex-col border-r border-[var(--ui-glass-border)] bg-[rgba(4,8,16,0.84)] pb-[calc(var(--ui-dock-height)+8px+env(safe-area-inset-bottom))] pt-16 shadow-[0_20px_70px_rgba(0,0,0,0.4)] backdrop-blur-ui transition-transform duration-200 ${
           leftPanelCollapsed ? "-translate-x-full" : "translate-x-0"
         }`}
       >
         <div className="flex items-center justify-between px-4 pb-3">
-          <div className="text-[11px] tracking-[0.24em] text-white/45">OBJECTS</div>
+          <div>
+            <div className="text-[11px] tracking-[0.24em] text-white/58">OBJECTS</div>
+            <div className="mt-0.5 font-mono text-[8px] uppercase tracking-[0.14em] text-white/30">NASA mission console</div>
+          </div>
           <button
             type="button"
             onClick={() => onLeftPanelCollapsedChange(true)}
@@ -268,13 +271,13 @@ export default function UniverseSandboxHud({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="搜索行星、恒星、星座、星云"
-            className="w-full rounded-xl border border-white/8 bg-white/[0.03] px-3 py-2 text-[12px] text-white/84 outline-none placeholder:text-white/28 focus:border-white/18"
+            className="h-10 w-full rounded-[10px] border border-white/10 bg-white/[0.035] px-3 py-2 text-[12px] text-white/84 outline-none placeholder:text-white/30 focus:border-[var(--ui-glass-border-strong)]"
             aria-label="搜索对象"
           />
         </div>
 
         <nav className="min-h-0 flex-1 overflow-y-auto px-3 text-white/70">
-          <SectionHeader label="太阳系" count={filteredBodies.length} open={solarOpen} onClick={() => setSolarOpen((v) => !v)} />
+          <SectionHeader label="Solar System" count={filteredBodies.length} open={solarOpen} onClick={() => setSolarOpen((v) => !v)} />
           {solarOpen ? (
             <ul className="mb-3 mt-1">
               {filteredBodies.map((bodyIndex) => {
@@ -302,7 +305,7 @@ export default function UniverseSandboxHud({
             </ul>
           ) : null}
 
-          <SectionHeader label="邻近恒星" count={filteredNearby.length} open={nearbyOpen} onClick={() => setNearbyOpen((v) => !v)} />
+          <SectionHeader label="Nearby Stars" count={filteredNearby.length} open={nearbyOpen} onClick={() => setNearbyOpen((v) => !v)} />
           {nearbyOpen ? (
             <ul className="mb-4 mt-1">
               {filteredNearby.map((star) => (
@@ -320,7 +323,7 @@ export default function UniverseSandboxHud({
             </ul>
           ) : null}
 
-          <SectionHeader label="Gaia DR3 亮星" count={filteredGaia.length} open={gaiaOpen} onClick={() => setGaiaOpen((v) => !v)} />
+          <SectionHeader label="Gaia DR3" count={filteredGaia.length} open={gaiaOpen} onClick={() => setGaiaOpen((v) => !v)} />
           {gaiaOpen ? (
             <ul className="mb-4 mt-1">
               {filteredGaia.map((star) => (
@@ -343,7 +346,7 @@ export default function UniverseSandboxHud({
             </ul>
           ) : null}
 
-          <SectionHeader label="星座" count={filteredConstellations.length} open={constellationsOpen} onClick={() => setConstellationsOpen((v) => !v)} />
+          <SectionHeader label="Constellations" count={filteredConstellations.length} open={constellationsOpen} onClick={() => setConstellationsOpen((v) => !v)} />
           {constellationsOpen ? (
             <ul className="mb-4 mt-1">
               {filteredConstellations.map((c) => {
@@ -369,7 +372,7 @@ export default function UniverseSandboxHud({
           ) : null}
 
           <SectionHeader
-            label="深空天体"
+            label="Deep Sky"
             count={filteredNebulae.length + filteredClusters.length + filteredPulsars.length}
             open={deepSkyOpen}
             onClick={() => setDeepSkyOpen((v) => !v)}
@@ -419,7 +422,7 @@ export default function UniverseSandboxHud({
 
       {(activeSection === "view" || activeSection === "tools") && (
         <div className="pointer-events-none fixed bottom-[calc(var(--ui-dock-height)+10px+env(safe-area-inset-bottom))] left-1/2 z-[96] w-[min(92vw,390px)] -translate-x-1/2">
-          <div className="pointer-events-auto max-h-[min(70dvh,520px)] overflow-y-auto rounded-2xl bg-[rgba(18,18,20,0.88)] px-4 py-3 shadow-[0_24px_60px_rgba(0,0,0,0.38)] backdrop-blur-2xl">
+          <div className="pointer-events-auto max-h-[min(70dvh,520px)] overflow-y-auto rounded-[16px] border border-[var(--ui-glass-border)] bg-[rgba(4,8,16,0.9)] px-4 py-3 shadow-[0_24px_60px_rgba(0,0,0,0.38)] backdrop-blur-ui max-sm:max-h-[52dvh]">
             {activeSection === "view" ? (
               <div>
                 <div className="mb-2 text-[11px] tracking-[0.22em] text-slate-400">DISPLAY LAYERS</div>
@@ -457,20 +460,20 @@ export default function UniverseSandboxHud({
                     Deep
                   </button>
                 </div>
-                <ToggleRow label="名称标签" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />
-                <ToggleRow label="轨道拖尾" checked={viewSettings.showOrbitTrails} onChange={(v) => patch({ showOrbitTrails: v })} cost="Medium" />
-                <ToggleRow label="瞬时轨道线" checked={viewSettings.showOsculatingOrbits} onChange={(v) => patch({ showOsculatingOrbits: v })} cost="Medium" />
-                <ToggleRow label="参考轨道" checked={viewSettings.showReferenceOrbits} onChange={(v) => patch({ showReferenceOrbits: v })} cost="Low" />
-                <ToggleRow label="银河背景增强" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} cost="Medium" status="Loaded" />
-                <ToggleRow label="Gaia 恒星层" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced subset"} />
-                <ToggleRow label="星座线" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} cost="Medium" />
-                <ToggleRow label="星云图片" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "core + idle full" : "core decals"} />
-                <ToggleRow label="深空标记" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} cost="Medium" />
-                <ToggleRow label="任务轨迹" checked={viewSettings.showMissionTrajectory} onChange={(v) => patch({ showMissionTrajectory: v })} cost="Medium" />
-                <ToggleRow label="拉格朗日点" checked={viewSettings.showLagrangePoints} onChange={(v) => patch({ showLagrangePoints: v })} cost="Medium" />
-                <ToggleRow label="相对论光学" checked={viewSettings.showRelativisticOptics} onChange={(v) => patch({ showRelativisticOptics: v })} cost="Medium" />
-                <ToggleRow label="高画质渲染" checked={viewSettings.highQualityRendering} onChange={(v) => patch({ highQualityRendering: v, renderBudget: v ? "quality" : viewSettings.renderBudget })} cost="High" status={viewSettings.highQualityRendering ? "DPR up to 1.5" : "DPR 1"} />
-                <ToggleRow label="视觉增强" checked={visualEnhance} onChange={onVisualEnhanceChange} cost="High" />
+                <ToggleRow label="Body labels" checked={viewSettings.showBodyLabels} onChange={(v) => patch({ showBodyLabels: v })} cost="Low" />
+                <ToggleRow label="Orbit trails" checked={viewSettings.showOrbitTrails} onChange={(v) => patch({ showOrbitTrails: v })} cost="Medium" />
+                <ToggleRow label="Osculating lines" checked={viewSettings.showOsculatingOrbits} onChange={(v) => patch({ showOsculatingOrbits: v })} cost="Medium" />
+                <ToggleRow label="Reference orbits" checked={viewSettings.showReferenceOrbits} onChange={(v) => patch({ showReferenceOrbits: v })} cost="Low" />
+                <ToggleRow label="Milky Way background" checked={viewSettings.showGalaxyBackground} onChange={(v) => patch({ showGalaxyBackground: v })} cost="Medium" status="Loaded" />
+                <ToggleRow label="Gaia star layer" checked={viewSettings.showGaiaStars} onChange={(v) => patch({ showGaiaStars: v })} cost="High" status={viewSettings.renderBudget === "quality" ? "full budget" : "balanced subset"} />
+                <ToggleRow label="Constellation lines" checked={viewSettings.showConstellations} onChange={(v) => patch({ showConstellations: v })} cost="Medium" />
+                <ToggleRow label="Nebula imagery" checked={viewSettings.showNebulaImages} onChange={(v) => patch({ showNebulaImages: v })} cost="High" status={viewSettings.renderBudget === "quality" || viewSettings.highQualityRendering ? "core + idle full" : "core decals"} />
+                <ToggleRow label="Deep-sky markers" checked={viewSettings.showDeepSkyMarkers} onChange={(v) => patch({ showDeepSkyMarkers: v })} cost="Medium" />
+                <ToggleRow label="Mission trajectory" checked={viewSettings.showMissionTrajectory} onChange={(v) => patch({ showMissionTrajectory: v })} cost="Medium" />
+                <ToggleRow label="Lagrange points" checked={viewSettings.showLagrangePoints} onChange={(v) => patch({ showLagrangePoints: v })} cost="Medium" />
+                <ToggleRow label="Relativistic optics" checked={viewSettings.showRelativisticOptics} onChange={(v) => patch({ showRelativisticOptics: v })} cost="Medium" />
+                <ToggleRow label="High-quality render" checked={viewSettings.highQualityRendering} onChange={(v) => patch({ highQualityRendering: v, renderBudget: v ? "quality" : viewSettings.renderBudget })} cost="High" status={viewSettings.highQualityRendering ? "DPR up to 1.5" : "DPR 1"} />
+                <ToggleRow label="Visual enhancement" checked={visualEnhance} onChange={onVisualEnhanceChange} cost="High" />
               </div>
             ) : (
               <div>
@@ -530,14 +533,14 @@ export default function UniverseSandboxHud({
                   {onExportCoverFrame ? <ToolButton label="Export cover frame" onClick={onExportCoverFrame} /> : null}
                 </div>
                 <ToolButton
-                  label="发射拉格朗日测试粒子"
+                  label="Launch Lagrange test particle"
                   onClick={() => {
                     lagrangeSpawnNonceRef.current += 1;
                   }}
                   disabled={!viewSettings.showLagrangePoints}
                 />
-                {onExportSystemState ? <ToolButton label="导出当前系统状态" onClick={onExportSystemState} /> : null}
-                {onImportSystemState ? <ToolButton label="导入系统状态" onClick={onImportSystemState} /> : null}
+                {onExportSystemState ? <ToolButton label="Export system state" onClick={onExportSystemState} /> : null}
+                {onImportSystemState ? <ToolButton label="Import system state" onClick={onImportSystemState} /> : null}
                 <button
                   type="button"
                   data-solar-action="gallery-toggle"
