@@ -47,7 +47,7 @@ void main() {
   vec4 mv = modelViewMatrix * vec4(position, 1.0);
   float dist = max(-mv.z, 1.0);
   gl_PointSize = aSize * uPixelRatio * (26000.0 / dist);
-  gl_PointSize = clamp(gl_PointSize, 0.42, 4.8);
+  gl_PointSize = clamp(gl_PointSize, 0.32, 2.8);
   vPS = gl_PointSize;
   gl_Position = projectionMatrix * mv;
   #include <logdepthbuf_vertex>
@@ -89,7 +89,7 @@ void main() {
   vec4 mv = modelViewMatrix * vec4(position, 1.0);
   float dist = max(-mv.z, 1.0);
   gl_PointSize = aSize * uPixelRatio * (28000.0 / dist);
-  gl_PointSize = clamp(gl_PointSize, 18.0, 165.0);
+  gl_PointSize = clamp(gl_PointSize, 12.0, 92.0);
   vPS = gl_PointSize;
   gl_Position = projectionMatrix * mv;
   #include <logdepthbuf_vertex>
@@ -354,8 +354,8 @@ export default function GalacticScaleField({
   useFrame(() => {
     const tier = floatingOriginRef.current.lodTier;
     const dpr = Math.min(typeof window !== "undefined" ? window.devicePixelRatio || 1 : 1, 1.35);
-    const starTarget = tier === "far" ? 0.42 : tier === "mid" ? 0.1 : 0.0;
-    const nebulaTarget = tier === "far" ? 0.14 : tier === "mid" ? 0.035 : 0.0;
+    const starTarget = tier === "far" ? 0.095 : tier === "mid" ? 0.032 : 0.0;
+    const nebulaTarget = tier === "far" ? 0.022 : tier === "mid" ? 0.006 : 0.0;
 
     starMaterial.uniforms.uPixelRatio.value = dpr;
     nebulaMaterial.uniforms.uPixelRatio.value = dpr;

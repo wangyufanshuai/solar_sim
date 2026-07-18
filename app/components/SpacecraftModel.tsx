@@ -3,7 +3,10 @@
 import { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { atlasAssetCandidates } from "../lib/atlasAssetResolver";
 import { solarAssetUrl } from "../lib/runtimeUrls";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
+import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
 
 type SpacecraftModelProps = {
   modelUrls: readonly string[];
@@ -30,8 +33,12 @@ export default function SpacecraftModel({
   useEffect(() => {
     let disposed = false;
     let loadedObj: THREE.Object3D | null = null;
+    let releaseModel: (() => void) | null = null;
     (async () => {
-      for (const url of modelUrls.map((entry) => solarAssetUrl(entry))) {
+      const candidates = Array.from(new Set(
+        modelUrls.flatMap((entry) => atlasAssetCandidates(solarAssetUrl(entry))),
+      ));
+      for (const url of candidates) {
         try {
           const gltf = await loader.loadAsync(url);
           loadedObj = gltf.scene.clone(true);
@@ -51,10 +58,18 @@ export default function SpacecraftModel({
         if (loadedObj) disposeObject3D(loadedObj);
         return;
       }
+      if (loadedObj) {
+        releaseModel = acquireAtlasResource(
+          "model",
+          atlasRuntimeStore.getSnapshot().sceneMode,
+          "spacecraft-model",
+        );
+      }
       setSceneObj(loadedObj);
     })();
     return () => {
       disposed = true;
+      releaseModel?.();
       if (loadedObj) disposeObject3D(loadedObj);
     };
   }, [loader, modelUrls]);

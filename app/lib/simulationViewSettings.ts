@@ -11,6 +11,9 @@ export type SimulationViewSettings = {
   showLagrangePoints: boolean;
   /** 高时间缩放 / 相对论速度下的多普勒、探照灯、星光行差（视觉近似）。 */
   showRelativisticOptics: boolean;
+  showConstellationLines: boolean;
+  showDeepSkyObjects: boolean;
+  showCatalogLabels: boolean;
 };
 
 export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
@@ -24,4 +27,7 @@ export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
   showKerrBlackHole: false,
   showLagrangePoints: false,
   showRelativisticOptics: true,
+  showConstellationLines: true,
+  showDeepSkyObjects: true,
+  showCatalogLabels: false,
 };

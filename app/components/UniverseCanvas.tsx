@@ -1,16 +1,24 @@
 "use client";
 
-import { Canvas } from "@react-three/fiber";
-import { useRef } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { memo, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
 import UniverseScene, {
+  normalizeAtlasCanvasSimulationProps,
+  stabilizeAtlasCanvasSimulationGroups,
+  type AtlasCanvasSimulationGroups,
   type UniverseCanvasSimulationProps,
 } from "./UniverseScene";
+import {
+  ORBIT_ATLAS_CAMERA_FOV,
+  ORBIT_ATLAS_CAMERA_POSITION,
+} from "../lib/orbitAtlasPresentation";
+import { createAtlasVisualDirectorV4 } from "../lib/atlasVisualDirectorV4";
 
-export type { UniverseCanvasSimulationProps };
+export type { AtlasCanvasSimulationGroups, UniverseCanvasSimulationProps };
 
-export default function UniverseCanvas({
+function UniverseCanvas({
   simulation,
 }: {
   simulation: UniverseCanvasSimulationProps;
@@ -20,6 +28,18 @@ export default function UniverseCanvas({
   );
   const draggedRef = useRef(false);
   const wheelUntilRef = useRef(0);
+  const simulationGroupsRef = useRef<AtlasCanvasSimulationGroups | null>(null);
+  const simulationGroups = useMemo(
+    () => {
+      const next = stabilizeAtlasCanvasSimulationGroups(
+        simulationGroupsRef.current,
+        normalizeAtlasCanvasSimulationProps(simulation),
+      );
+      simulationGroupsRef.current = next;
+      return next;
+    },
+    [simulation],
+  );
 
   return (
     <Canvas
@@ -52,12 +72,12 @@ export default function UniverseCanvas({
         simulation.onCanvasPointerMissed?.();
       }}
       camera={{
-        fov: simulation.presentationMode === "orbit-atlas" ? 54 : 60,
+        fov: simulation.presentationMode === "orbit-atlas" ? ORBIT_ATLAS_CAMERA_FOV : 60,
         near: 0.01,
         far: 1e9,
         position:
           simulation.presentationMode === "orbit-atlas"
-            ? [0, 720, 420]
+            ? ORBIT_ATLAS_CAMERA_POSITION.toArray()
             : [0, 460, 300],
       }}
       gl={{
@@ -71,7 +91,6 @@ export default function UniverseCanvas({
       onCreated={({ gl, camera }) => {
         const black = new THREE.Color(0x000000);
         gl.setClearColor(black, 1);
-        gl.setPixelRatio(1);
         gl.toneMapping = THREE.ACESFilmicToneMapping;
         gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE;
         gl.outputColorSpace = THREE.SRGBColorSpace;
@@ -84,7 +103,32 @@ export default function UniverseCanvas({
         simulation.onCanvasReady?.();
       }}
     >
-      <UniverseScene simulation={simulation} />
+      <RenderExposureDirector sceneMode={simulation.sceneMode} qualityTier={simulation.runtimeQualityTier ?? "balanced"} />
+      <UniverseScene simulationGroups={simulationGroups} />
     </Canvas>
   );
 }
+
+function RenderExposureDirector({ sceneMode, qualityTier }: { sceneMode: UniverseCanvasSimulationProps["sceneMode"]; qualityTier: NonNullable<UniverseCanvasSimulationProps["runtimeQualityTier"]> }) {
+  const gl = useThree((state) => state.gl);
+  useEffect(() => {
+    const profile = createAtlasVisualDirectorV4(sceneMode, qualityTier);
+    gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE * profile.exposure;
+  }, [gl, qualityTier, sceneMode]);
+  return null;
+}
+
+export function shallowEqualSimulationProps(
+  previous: UniverseCanvasSimulationProps,
+  next: UniverseCanvasSimulationProps,
+): boolean {
+  if (previous === next) return true;
+  const keys = Object.keys(previous) as (keyof UniverseCanvasSimulationProps)[];
+  if (keys.length !== Object.keys(next).length) return false;
+  return keys.every((key) => Object.is(previous[key], next[key]));
+}
+
+export default memo(
+  UniverseCanvas,
+  (previous, next) => shallowEqualSimulationProps(previous.simulation, next.simulation),
+);

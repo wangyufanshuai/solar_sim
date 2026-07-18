@@ -5,6 +5,10 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import type {
+  AtlasCinematicCameraProfile,
+  AtlasGaiaStarfieldEnhancementQualityTier,
+} from "../lib/simulationDiagnosticsTypes";
 import { NEBULAE } from "../data/nebulaCatalog";
 
 const GALAXY_VISUAL_SCALE = 36;
@@ -49,8 +53,8 @@ void main() {
   float veil = exp(-d * d * 2.1);
   float edge = smoothstep(0.5, 0.12, d);
   float texture = mix(0.58, 1.18, filament * 0.55 + clump * 0.45);
-  float alpha = (core * 0.45 + veil * 0.62) * edge * texture * vIntensity * uOpacity;
-  vec3 col = vColor * (0.42 + core * 1.35 + veil * 0.36);
+  float alpha = (core * 0.32 + veil * 0.52) * edge * texture * vIntensity * uOpacity;
+  vec3 col = mix(vColor, vec3(0.88, 0.9, 0.96), 0.18) * (0.34 + core * 1.04 + veil * 0.3);
   gl_FragColor = vec4(col, alpha);
   #include <logdepthbuf_fragment>
 }
@@ -70,8 +74,16 @@ function galacticToScene(lonDeg: number, latDeg: number, distPc: number): [numbe
 
 export default function NebulaMarkers({
   floatingOriginRef,
+  enabled = true,
+  orbitAtlas = false,
+  cinematicCameraProfile = "overview-atlas",
+  qualityTier = "balanced",
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  enabled?: boolean;
+  orbitAtlas?: boolean;
+  cinematicCameraProfile?: AtlasCinematicCameraProfile;
+  qualityTier?: AtlasGaiaStarfieldEnhancementQualityTier;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
 
@@ -94,8 +106,8 @@ export default function NebulaMarkers({
       colors[i * 3 + 1] = col.g;
       colors[i * 3 + 2] = col.b;
 
-      sizes[i] = Math.max(16, Math.min(72, 14 + Math.sqrt(n.sizeArcmin) * 5.2));
-      intensities[i] = Math.min(1.25, n.intensity * 0.82);
+      sizes[i] = Math.max(14, Math.min(68, 13 + Math.sqrt(n.sizeArcmin) * 4.75));
+      intensities[i] = Math.min(1.08, n.intensity * 0.76);
     }
 
     const geo = new THREE.BufferGeometry();
@@ -125,9 +137,18 @@ export default function NebulaMarkers({
     const pts = pointsRef.current;
     if (!pts) return;
     const tier = floatingOriginRef.current.lodTier;
-    pts.visible = tier !== "solar";
+    pts.visible = enabled && (orbitAtlas || tier !== "solar");
     const mat = pts.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0 : tier === "mid" ? 0.1 : 0.34;
+    const cinematicScale =
+      cinematicCameraProfile === "selected-body-cinematic"
+        ? 0.22
+        : cinematicCameraProfile === "showcase-deep-space"
+          ? 0.82
+          : 1;
+    const nebulaMobileScale = qualityTier === "mobile" ? 0.58 : 1;
+    const nebulaDenseScale = qualityTier === "dense" ? 1.16 : 1.02;
+    const baseOpacity = orbitAtlas ? 0.014 : tier === "solar" ? 0 : tier === "mid" ? 0.078 : 0.29;
+    mat.uniforms.uOpacity.value = !enabled ? 0 : baseOpacity * cinematicScale * nebulaMobileScale * nebulaDenseScale;
   });
 
   return (

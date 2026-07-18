@@ -8,6 +8,7 @@ import { createPhysicsBufferViews, createSharedPhysicsArrayBuffer } from "./phys
 import { PhysicsRuntime } from "./physicsRuntime";
 import { SolarSystemPhysics } from "./solarSystemPhysics";
 import type { SolarSystemPhysicsRef } from "./solarSystemRef";
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
 
 export type { SolarSystemPhysicsRef } from "./solarSystemRef";
 
@@ -38,6 +39,7 @@ export function useSolarSystemPhysics(): {
       const w = new Worker(
         new URL("../workers/physics.worker.ts", import.meta.url)
       );
+      const releaseWorker = acquireAtlasResource("worker", "atlas", "solar-system-physics");
 
       const onMsg = (e: MessageEvent) => {
         if (cancelled) return;
@@ -62,6 +64,7 @@ export function useSolarSystemPhysics(): {
             "[physics] Worker init timeout; falling back to main-thread integrator."
           );
           w.terminate();
+          releaseWorker();
           physicsRef.current = new SolarSystemPhysics();
           workerRef.current = null;
           setUsesShared(false);
@@ -74,6 +77,7 @@ export function useSolarSystemPhysics(): {
         window.clearTimeout(t);
         w.removeEventListener("message", onMsg);
         workerRef.current?.terminate();
+        releaseWorker();
         workerRef.current = null;
         physicsRef.current = null;
         setPhysicsReady(false);

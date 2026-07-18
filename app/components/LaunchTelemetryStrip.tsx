@@ -82,26 +82,31 @@ function TelemetryCell({
   unit,
   warn,
   wide,
+  priority = "secondary",
 }: {
   label: string;
   value: string;
   unit?: string;
   warn?: boolean;
   wide?: boolean;
+  priority?: "primary" | "secondary";
 }) {
   return (
-    <div className={`flex min-w-0 flex-col items-center gap-px px-2 py-0.5 sm:px-3 ${wide ? "min-w-[7rem]" : ""}`}>
-      <span className="font-mono text-[7px] uppercase tracking-[0.15em] text-[var(--ui-text-dim)]">{label}</span>
-      <span className={`ui-instrument truncate text-[11px] font-semibold leading-none ${warn ? "text-amber-300" : "text-[var(--ui-accent)]"}`}>
+    <div
+      className={`${priority === "secondary" ? "hidden sm:flex" : "flex"} min-w-0 flex-col items-center gap-px px-1 py-1 sm:px-3 ${wide ? "sm:min-w-[7rem]" : ""}`}
+      data-atlas-launch-telemetry-priority={priority}
+    >
+      <span className="font-mono text-[11px] uppercase tracking-[0.08em] text-[var(--ui-text-dim)] sm:text-[10px]">{label}</span>
+      <span className={`ui-instrument truncate text-[13px] font-semibold leading-none sm:text-[12px] ${warn ? "text-amber-300" : "text-[var(--ui-accent)]"}`}>
         {value}
       </span>
-      {unit ? <span className="text-[7px] text-[var(--ui-text-dim)]">{unit}</span> : null}
+      {unit ? <span className="text-[11px] text-[var(--ui-text-dim)] sm:text-[10px]">{unit}</span> : null}
     </div>
   );
 }
 
 function Separator() {
-  return <div className="h-6 w-px shrink-0 bg-white/[0.08]" />;
+  return <div className="hidden h-6 w-px shrink-0 bg-white/[0.08] sm:block" />;
 }
 
 function LocalTelemetryStrip({ t }: { t: LocalTelemetry }) {
@@ -109,14 +114,14 @@ function LocalTelemetryStrip({ t }: { t: LocalTelemetry }) {
   const maxQ = t.dynamicPressurePa > 28_000;
 
   return (
-    <div className="flex items-center justify-center gap-1 overflow-x-auto sm:gap-0">
+    <div className="grid min-w-0 grid-cols-4 items-center gap-0 sm:flex sm:justify-center sm:overflow-x-auto">
       <TelemetryCell label="任务" value={`${t.missionName} -> ${t.destination}`} wide />
       <Separator />
-      <TelemetryCell label="MET" value={formatMET(t.missionTimeS)} wide />
+      <TelemetryCell label="MET" value={formatMET(t.missionTimeS)} wide priority="primary" />
       <Separator />
-      <TelemetryCell label="高度" value={formatAlt(t.altitudeKm * 1000)} warn={t.altitudeKm < 0} />
+      <TelemetryCell label="高度" value={formatAlt(t.altitudeKm * 1000)} warn={t.altitudeKm < 0} priority="primary" />
       <Separator />
-      <TelemetryCell label="速度" value={formatVel(t.speedKms * 1000)} />
+      <TelemetryCell label="速度" value={formatVel(t.speedKms * 1000)} priority="primary" />
       <Separator />
       <TelemetryCell label="马赫" value={formatMach(t.mach)} warn={t.mach > 20} />
       <Separator />
@@ -134,7 +139,7 @@ function LocalTelemetryStrip({ t }: { t: LocalTelemetry }) {
       <Separator />
       <TelemetryCell label="推力" value={`${t.thrustKN.toFixed(0)}`} unit="kN" />
       <Separator />
-      <TelemetryCell label="阶段" value={LOCAL_PHASE_LABELS[t.phase] || t.phase} wide />
+      <TelemetryCell label="阶段" value={LOCAL_PHASE_LABELS[t.phase] || t.phase} wide priority="primary" />
     </div>
   );
 }
@@ -142,19 +147,19 @@ function LocalTelemetryStrip({ t }: { t: LocalTelemetry }) {
 function WebSocketTelemetryStrip({ state }: { state: LaunchSimState }) {
   const s = state.currentSample;
   if (!s) {
-    return <div className="flex h-10 items-center justify-center text-xs text-[var(--ui-text-dim)]">等待发射数据...</div>;
+    return <div className="flex h-10 items-center justify-center text-xs text-[var(--ui-text-dim)]">等待发射数据…</div>;
   }
 
   const speed = Math.sqrt(s.vx * s.vx + s.vy * s.vy + s.vz * s.vz);
   const nearMaxQ = s.dynamicPressurePa > state.maxQPa * 0.9 && state.maxQPa > 0;
 
   return (
-    <div className="flex items-center justify-center gap-1 overflow-x-auto sm:gap-0">
-      <TelemetryCell label="MET" value={formatMET(s.t)} wide />
+    <div className="grid min-w-0 grid-cols-4 items-center gap-0 sm:flex sm:justify-center sm:overflow-x-auto">
+      <TelemetryCell label="MET" value={formatMET(s.t)} wide priority="primary" />
       <Separator />
-      <TelemetryCell label="高度" value={formatAlt(s.altitudeM)} warn={s.altitudeM < 0} />
+      <TelemetryCell label="高度" value={formatAlt(s.altitudeM)} warn={s.altitudeM < 0} priority="primary" />
       <Separator />
-      <TelemetryCell label="速度" value={formatVel(speed)} />
+      <TelemetryCell label="速度" value={formatVel(speed)} priority="primary" />
       <Separator />
       <TelemetryCell label="马赫" value={formatMach(s.mach)} warn={s.mach > 20} />
       <Separator />
@@ -164,7 +169,7 @@ function WebSocketTelemetryStrip({ state }: { state: LaunchSimState }) {
       <Separator />
       <TelemetryCell label="γ" value={formatGamma(s.lorentzGamma)} />
       <Separator />
-      <TelemetryCell label="阶段" value={PHASE_LABELS[state.phase] || state.phase} wide />
+      <TelemetryCell label="阶段" value={PHASE_LABELS[state.phase] || state.phase} wide priority="primary" />
       <Separator />
       <TelemetryCell label="倍率" value={`${state.timeScale.toFixed(1)}x`} />
     </div>

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Orbit Atlas",
+  "version": "1.0.0-beta.1",
+  "identifier": "science.solar-atlas.desktop",
+  "build": {
+    "beforeDevCommand": "npm run dev:3002",
+    "devUrl": "http://127.0.0.1:3002",
+    "beforeBuildCommand": "npm run desktop:stage:release",
+    "frontendDist": "../desktop-shell"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "Orbit Atlas",
+        "width": 1440,
+        "height": 900,
+        "minWidth": 1024,
+        "minHeight": 680,
+        "resizable": true,
+        "fullscreen": false,
+        "url": "index.html"
+      }
+    ],
+    "security": {
+      "csp": {
+        "default-src": "'self' customprotocol: asset:",
+        "connect-src": "ipc: http://ipc.localhost http://127.0.0.1:*",
+        "img-src": "'self' asset: http://asset.localhost blob: data:",
+        "style-src": "'self' 'unsafe-inline'",
+        "script-src": "'self' 'wasm-unsafe-eval'",
+        "object-src": "'none'",
+        "frame-ancestors": "'none'"
+      },
+      "headers": {
+        "Cross-Origin-Opener-Policy": "same-origin",
+        "Cross-Origin-Embedder-Policy": "credentialless",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis", "msi"],
+    "icon": ["icons/icon.ico"],
+    "resources": {
+      "../dist/desktop-stage/release/server": "server",
+      "../dist/desktop-stage/release/runtime": "runtime",
+      "../dist/desktop-stage/release/content-pack-manifests": "content-pack-manifests",
+      "../dist/desktop-stage/release/desktop-stage.json": "desktop-stage.json"
+    },
+    "windows": {
+      "wix": {
+        "version": "1.0.0.1"
+      },
+      "webviewInstallMode": {
+        "type": "embedBootstrapper",
+        "silent": true
+      }
+    }
+  }
+}

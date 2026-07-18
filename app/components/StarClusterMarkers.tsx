@@ -5,6 +5,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import type { AtlasCinematicCameraProfile } from "../lib/simulationDiagnosticsTypes";
 import { STAR_CLUSTERS } from "../data/starClusterCatalog";
 
 const GALAXY_VISUAL_SCALE = 36;
@@ -48,8 +49,8 @@ void main() {
   float halo = exp(-d * d * 3.2) * 0.38;
   float crown = exp(-d * d * 11.0) * rays * 0.34;
   float edge = smoothstep(0.5, 0.18, d);
-  float alpha = (core + halo + crown + speckle * 0.18) * edge * vIntensity * uOpacity;
-  vec3 col = vColor * (0.64 + core * 1.62 + speckle * 1.1);
+  float alpha = (core * 0.78 + halo + crown * 0.72 + speckle * 0.12) * edge * vIntensity * uOpacity;
+  vec3 col = mix(vColor, vec3(0.92, 0.9, 0.8), 0.12) * (0.5 + core * 1.18 + speckle * 0.7);
   gl_FragColor = vec4(col, alpha);
   #include <logdepthbuf_fragment>
 }
@@ -67,8 +68,14 @@ function galacticToScene(lonDeg: number, latDeg: number, distPc: number): [numbe
 
 export default function StarClusterMarkers({
   floatingOriginRef,
+  enabled = true,
+  orbitAtlas = false,
+  cinematicCameraProfile = "overview-atlas",
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  enabled?: boolean;
+  orbitAtlas?: boolean;
+  cinematicCameraProfile?: AtlasCinematicCameraProfile;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
 
@@ -91,8 +98,8 @@ export default function StarClusterMarkers({
       colors[i * 3 + 1] = col.g;
       colors[i * 3 + 2] = col.b;
 
-      sizes[i] = c.kind === "globular" ? Math.max(13, 30 - c.magV * 0.55) : Math.max(8, 20 - c.magV * 0.55);
-      intensities[i] = Math.min(1.25, c.intensity * 0.9);
+      sizes[i] = c.kind === "globular" ? Math.max(11, 26 - c.magV * 0.52) : Math.max(7, 17 - c.magV * 0.5);
+      intensities[i] = Math.min(1.05, c.intensity * 0.74);
     }
 
     const geo = new THREE.BufferGeometry();
@@ -122,9 +129,16 @@ export default function StarClusterMarkers({
     const pts = pointsRef.current;
     if (!pts) return;
     const tier = floatingOriginRef.current.lodTier;
-    pts.visible = tier !== "solar";
+    pts.visible = enabled && (orbitAtlas || tier !== "solar");
     const mat = pts.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0 : tier === "mid" ? 0.1 : 0.34;
+    const cinematicScale =
+      cinematicCameraProfile === "selected-body-cinematic"
+        ? 0.42
+        : cinematicCameraProfile === "showcase-deep-space"
+          ? 0.76
+          : 1;
+    const baseOpacity = orbitAtlas ? 0.012 : tier === "solar" ? 0 : tier === "mid" ? 0.072 : 0.24;
+    mat.uniforms.uOpacity.value = !enabled ? 0 : baseOpacity * cinematicScale;
   });
 
   return (

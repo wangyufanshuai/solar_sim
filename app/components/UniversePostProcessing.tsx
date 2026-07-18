@@ -1,44 +1,27 @@
 "use client";
 
-import {
-  BrightnessContrast,
-  EffectComposer,
-  SelectiveBloom,
-  SMAA,
-  SSAO,
-  ToneMapping,
-  Vignette,
-} from "@react-three/postprocessing";
-import { useFrame, useThree } from "@react-three/fiber";
-import { Component, type ReactNode, useMemo } from "react";
-import { BlendFunction, SMAAPreset, ToneMappingMode } from "postprocessing";
-import { useBloomScene } from "../context/BloomSceneContext";
-import LightBender from "../effects/LightBender";
+import { Component, lazy, Suspense, type ReactNode } from "react";
 import ThreeJsPostPipeline from "../effects/ThreeJsPostPipeline";
 import { readLensingEnv } from "../effects/lightBenderBridge";
-import SunLensFlare from "../effects/SunLensFlare";
-import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
+import type { SolarPresentationMode } from "../lib/orbitAtlasPresentation";
+import type {
+  AtlasGlobalColorGradeProfile,
+  AtlasReferenceGradeCompositeProfile,
+  AtlasSelectedBodyLightingProfile,
+} from "../lib/simulationDiagnosticsTypes";
 
+const PmndrsPostProcessing = lazy(
+  () => import("./UniversePmndrsPostProcessing"),
+);
 const LENSING_ENABLED = readLensingEnv().enabled;
 
 function isPublicSsaoEnabled(): boolean {
   if (typeof process === "undefined") return false;
-  const v = process.env.NEXT_PUBLIC_ENABLE_SSAO?.trim().toLowerCase();
-  return v === "1" || v === "true" || v === "yes";
+  const value = process.env.NEXT_PUBLIC_ENABLE_SSAO?.trim().toLowerCase();
+  return value === "1" || value === "true" || value === "yes";
 }
 
 const SSAO_ENABLED = isPublicSsaoEnabled();
-
-/** pmndrs `ToneMapping` uses three tone-mapping chunks; keep exposure aligned with `UniverseCanvas`. */
-function PmndrsToneMappingExposureSync() {
-  const gl = useThree((s) => s.gl);
-  useFrame(() => {
-    gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE;
-  });
-  return null;
-}
-
-/** When false, use three.js EffectComposer + UnrealBloomPass (ThreeJsPostPipeline). */
 const USE_PMNDRS_POST_STACK = LENSING_ENABLED || SSAO_ENABLED;
 
 class PostFxBoundary extends Component<
@@ -57,124 +40,49 @@ class PostFxBoundary extends Component<
   }
 }
 
-const BLOOM_BASE = {
-  luminanceThreshold: 0.96,
-  luminanceSmoothing: 0.28,
-  intensity: 0.18,
-  radius: 0.16,
-  levels: 7,
-} as const;
+export type UniversePostProcessingProps = {
+  visualEnhance?: boolean;
+  presentationMode?: SolarPresentationMode;
+  selectedBodyLightingProfile?: AtlasSelectedBodyLightingProfile;
+  cinematicPostFxProfile?: string;
+  referenceGradeCompositeProfile?: AtlasReferenceGradeCompositeProfile;
+  globalColorGradeProfile?: AtlasGlobalColorGradeProfile;
+};
 
-const BLOOM_ENHANCE = {
-  luminanceThreshold: 0.93,
-  luminanceSmoothing: 0.34,
-  intensity: 0.26,
-  radius: 0.22,
-  levels: 8,
-} as const;
+function ThreeJsFallback(props: UniversePostProcessingProps) {
+  return (
+    <ThreeJsPostPipeline
+      visualEnhance={props.visualEnhance ?? false}
+      presentationMode={props.presentationMode ?? "sandbox"}
+      selectedBodyLightingProfile={props.selectedBodyLightingProfile ?? "overview"}
+      cinematicPostFxProfile={props.cinematicPostFxProfile}
+      referenceGradeCompositeProfile={props.referenceGradeCompositeProfile}
+      globalColorGradeProfile={props.globalColorGradeProfile}
+    />
+  );
+}
 
 /**
- * 统一后处理出口：默认 three.js UnrealBloom 管线；透镜/SSAO 时走 pmndrs SelectiveBloom 等。
- * `useFrame(..., 1)` 于 ThreeJsPostPipeline 内关闭 R3F 默认 gl.render，避免双次场景绘制。
+ * Default rendering stays on the existing Three.js pipeline. The optional
+ * pmndrs lensing/SSAO stack is requested only when its public feature switch
+ * is enabled, keeping N8AO blue-noise and postprocessing code off the cold
+ * Canvas path without changing either rendering policy.
  */
-export default function UniversePostProcessing({
-  visualEnhance = false,
-}: {
-  visualEnhance?: boolean;
-}) {
-  const { bloomTargets, sunLight } = useBloomScene();
-  const lights = useMemo(
-    () => (sunLight ? [sunLight] : []),
-    [sunLight]
-  );
-  const canSelective = lights.length > 0 && bloomTargets.length > 0;
-
-  const lensingOpts = readLensingEnv();
-  const bloom = visualEnhance ? BLOOM_ENHANCE : BLOOM_BASE;
-
-  if (!USE_PMNDRS_POST_STACK) {
+export default function UniversePostProcessing(props: UniversePostProcessingProps) {
+  const presentationMode = props.presentationMode ?? "sandbox";
+  if (presentationMode === "orbit-atlas" || !USE_PMNDRS_POST_STACK) {
     return (
       <PostFxBoundary>
-        <ThreeJsPostPipeline visualEnhance={visualEnhance} />
+        <ThreeJsFallback {...props} presentationMode={presentationMode} />
       </PostFxBoundary>
     );
   }
 
   return (
     <PostFxBoundary>
-      <EffectComposer
-        multisampling={0}
-        depthBuffer
-        enableNormalPass={SSAO_ENABLED}
-        resolutionScale={SSAO_ENABLED ? 0.5 : undefined}
-      >
-        <PmndrsToneMappingExposureSync />
-        {LENSING_ENABLED ? (
-          <LightBender
-            lensingStrength={lensingOpts.lensingStrength}
-            stepCount={lensingOpts.stepCount}
-            uvDeflectScale={lensingOpts.uvDeflectScale}
-          />
-        ) : (
-          <></>
-        )}
-        {SSAO_ENABLED ? (
-          <SSAO
-            blendFunction={BlendFunction.MULTIPLY}
-            samples={12}
-            rings={6}
-            intensity={0.12}
-            radius={0.1}
-            bias={0.028}
-            fade={0.02}
-            luminanceInfluence={0.32}
-            depthAwareUpsampling
-            worldDistanceThreshold={22000}
-            worldDistanceFalloff={4500}
-            worldProximityThreshold={4}
-            worldProximityFalloff={0.5}
-          />
-        ) : (
-          <></>
-        )}
-        {canSelective ? (
-          <SelectiveBloom
-            lights={lights}
-            selection={bloomTargets}
-            luminanceThreshold={bloom.luminanceThreshold}
-            luminanceSmoothing={bloom.luminanceSmoothing}
-            intensity={bloom.intensity}
-            radius={bloom.radius}
-            levels={bloom.levels}
-            mipmapBlur
-            ignoreBackground
-          />
-        ) : (
-          <></>
-        )}
-        {sunLight ? (
-          <SunLensFlare sunLight={sunLight} boost={visualEnhance} />
-        ) : (
-          <></>
-        )}
-        {/* EffectComposer sets gl.toneMapping = NoToneMapping; ACES runs here (see PmndrsToneMappingExposureSync). */}
-        <ToneMapping mode={ToneMappingMode.ACES_FILMIC} />
-        {visualEnhance ? (
-          <BrightnessContrast
-            blendFunction={BlendFunction.NORMAL}
-            brightness={-0.035}
-            contrast={0.24}
-          />
-        ) : (
-          <></>
-        )}
-        <Vignette
-          darkness={visualEnhance ? 0.42 : 0.48}
-          offset={visualEnhance ? 1.02 : 1.1}
-          eskil={false}
-        />
-        <SMAA preset={SMAAPreset.HIGH} />
-      </EffectComposer>
+      <Suspense fallback={<ThreeJsFallback {...props} presentationMode={presentationMode} />}>
+        <PmndrsPostProcessing {...props} presentationMode={presentationMode} />
+      </Suspense>
     </PostFxBoundary>
   );
 }

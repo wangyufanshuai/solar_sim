@@ -75,10 +75,11 @@ function AtlasBodyLabel({
             display: "block",
             transform: `translate(${offset[0]}px, ${offset[1]}px)`,
             fontFamily: "var(--font-body)",
-            fontSize: bodyId === "sun" ? 12 : 11,
-            fontWeight: bodyId === "sun" ? 500 : 400,
-            color: bodyId === "sun" ? "rgba(246,219,166,0.82)" : "rgba(224,221,210,0.65)",
-            textShadow: "0 1px 3px rgba(0,0,0,0.95), 0 0 9px rgba(0,0,0,0.9)",
+            fontSize: bodyId === "sun" ? 12 : 10.5,
+            fontWeight: bodyId === "sun" ? 520 : 430,
+            letterSpacing: "0.01em",
+            color: bodyId === "sun" ? "rgba(231,199,130,0.86)" : "rgba(239,232,214,0.64)",
+            textShadow: "0 1px 4px rgba(0,0,0,1), 0 0 12px rgba(0,0,0,0.94)",
           }}
         >
           {ORBIT_ATLAS_LABELS[bodyId]}
@@ -96,7 +97,7 @@ export default function OrbitAtlasLabels({
   scaleMode: OrbitAtlasScaleMode;
 }) {
   const { size } = useThree();
-  const labelLimit = size.width < 640 ? 7 : 11;
+  const labelLimit = size.width < 640 ? 7 : 10;
   const visibleIds = useMemo(
     () => ORBIT_ATLAS_DEFAULT_LABEL_IDS.filter((id) => BODY_INDEX_BY_ID.has(id)).slice(0, labelLimit),
     [labelLimit],

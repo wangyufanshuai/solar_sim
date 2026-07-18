@@ -1,0 +1,28 @@
+[package]
+name = "solar-atlas-desktop"
+version = "1.0.0-beta.1"
+description = "Windows scientific-cinematic atlas desktop shell"
+authors = ["Solar Atlas contributors"]
+edition = "2021"
+
+[lib]
+name = "solar_atlas_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-single-instance = "2"
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.32", features = ["bundled"] }
+reqwest = { version = "0.12", default-features = false, features = ["json", "rustls-tls", "stream"] }
+sha2 = "0.10"
+hex = "0.4"
+futures-util = "0.3"
+parking_lot = "0.12"
+fs2 = "0.4"
+semver = "1"

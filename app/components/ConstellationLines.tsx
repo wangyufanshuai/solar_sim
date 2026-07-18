@@ -3,7 +3,12 @@
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useMemo, useRef } from "react";
+import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import type {
+  AtlasCinematicCameraProfile,
+  AtlasGaiaStarfieldEnhancementQualityTier,
+} from "../lib/simulationDiagnosticsTypes";
 import { CONSTELLATION_LINES } from "../data/constellationCatalog";
 
 const CONSTELLATION_DISTANCE_SCENE = 9500;
@@ -57,11 +62,20 @@ function buildConstellationData(): ConstellationLineGroup[] {
 
 export default function ConstellationLines({
   floatingOriginRef,
+  enabled = true,
+  orbitAtlas = false,
+  cinematicCameraProfile = "overview-atlas",
+  qualityTier = "balanced",
 }: {
-  floatingOriginRef: React.MutableRefObject<FloatingOriginState>;
+  floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  enabled?: boolean;
+  orbitAtlas?: boolean;
+  cinematicCameraProfile?: AtlasCinematicCameraProfile;
+  qualityTier?: AtlasGaiaStarfieldEnhancementQualityTier;
 }) {
   const lineRef = useRef<THREE.LineSegments>(null);
   const nodeRef = useRef<THREE.Points>(null);
+  const lastConstellationFrameSignatureRef = useRef("");
   const data = useMemo(() => buildConstellationData(), []);
 
   useFrame(() => {
@@ -69,13 +83,37 @@ export default function ConstellationLines({
     const nodes = nodeRef.current;
     if (!line) return;
     const tier = floatingOriginRef.current.lodTier;
-    const visible = true;
+    const visible = enabled;
+    const cinematicScale =
+      cinematicCameraProfile === "selected-body-cinematic"
+        ? 0.24
+        : cinematicCameraProfile === "showcase-deep-space"
+          ? 0.78
+          : 1;
+    const constellationMobileScale = qualityTier === "mobile" ? 0.62 : 1;
+    const constellationDenseScale = qualityTier === "dense" ? 1.12 : 1.02;
+    const artPolishScale = cinematicScale * constellationMobileScale * constellationDenseScale;
+    const lineOpacity = (!enabled ? 0 : orbitAtlas ? 0.028 : tier === "solar" ? 0.014 : tier === "mid" ? 0.05 : 0.105) * artPolishScale;
+    const nodeOpacity = (!enabled ? 0 : orbitAtlas ? 0.024 : tier === "solar" ? 0.01 : tier === "mid" ? 0.044 : 0.098) * artPolishScale;
+    const signature = [
+      "constellation-frame-signature-material-write-dedupe",
+      visible,
+      tier,
+      orbitAtlas,
+      cinematicCameraProfile,
+      qualityTier,
+      lineOpacity,
+      nodeOpacity,
+    ].join("|");
+    if (lastConstellationFrameSignatureRef.current === signature) return;
+    lastConstellationFrameSignatureRef.current = signature;
+
     line.visible = visible;
     if (nodes) nodes.visible = visible;
     const lineMat = line.material as THREE.LineBasicMaterial;
-    lineMat.opacity = tier === "solar" ? 0.028 : tier === "mid" ? 0.075 : 0.16;
+    lineMat.opacity = lineOpacity;
     const nodeMat = nodes?.material as THREE.PointsMaterial | undefined;
-    if (nodeMat) nodeMat.opacity = tier === "solar" ? 0.018 : tier === "mid" ? 0.07 : 0.16;
+    if (nodeMat) nodeMat.opacity = nodeOpacity;
   });
 
   // Merge all constellation segments into a single LineSegments for performance.
@@ -121,7 +159,7 @@ export default function ConstellationLines({
   const material = useMemo(
     () =>
       new THREE.LineBasicMaterial({
-        color: "#6f91b8",
+        color: "#8aa0b8",
         transparent: true,
         opacity: 0.18,
         depthWrite: false,
@@ -135,8 +173,8 @@ export default function ConstellationLines({
   const nodeMaterial = useMemo(
     () =>
       new THREE.PointsMaterial({
-        color: "#b8d6ff",
-        size: 1.35,
+        color: "#d7c48f",
+        size: 1.12,
         sizeAttenuation: false,
         transparent: true,
         opacity: 0.24,

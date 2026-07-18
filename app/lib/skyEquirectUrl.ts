@@ -3,8 +3,6 @@
  * `NEXT_PUBLIC_SKY_EQUIRECT_URL` forces a single URL; otherwise candidates are tried in order.
  */
 
-import { solarAssetUrl } from "./runtimeUrls";
-
 /** Optional high-quality sky from `BUILD_SKY_8K=1 npm run build-sky`. */
 export const LOCAL_UNIVERSE_SANDBOX_SKY_8K_PATH =
   "/textures/sky/universe-sandbox-sky-8k.jpg" as const;
@@ -21,8 +19,8 @@ export const LOCAL_MILKY_WAY_SKY_PATH =
 export const LOCAL_ESO_SKY_PATH = "/textures/sky/eso0932a.png" as const;
 
 const DEFAULT_CANDIDATES = [
-  LOCAL_UNIVERSE_SANDBOX_SKY_8K_PATH,
   LOCAL_NASA_MILKY_WAY_SKY_PATH,
+  LOCAL_UNIVERSE_SANDBOX_SKY_8K_PATH,
   LOCAL_ESO_SKY_PATH,
 ] as const;
 
@@ -39,5 +37,5 @@ export function skyEquirectCandidateUrls(): readonly string[] {
       ? process.env.NEXT_PUBLIC_SKY_EQUIRECT_URL?.trim()
       : undefined;
   if (env) return [env];
-  return DEFAULT_CANDIDATES.map((url) => solarAssetUrl(url));
+  return DEFAULT_CANDIDATES;
 }

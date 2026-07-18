@@ -9,6 +9,24 @@ export const ORBIT_CINEMATIC_BASE_OPACITY = 0.12;
 export const ORBIT_SPLINE_MAX_SAMPLES = 500;
 export const ORBIT_SPLINE_MIN_SAMPLES = 80;
 
+export const ORBIT_VELOCITY_MIN_KM_S = 0.5;
+export const ORBIT_VELOCITY_MAX_KM_S = 60;
+
+export function normalizeOrbitVelocityKmS(speedKmS: number): number {
+  if (!Number.isFinite(speedKmS) || speedKmS <= ORBIT_VELOCITY_MIN_KM_S) return 0;
+  const minLog = Math.log1p(ORBIT_VELOCITY_MIN_KM_S);
+  const maxLog = Math.log1p(ORBIT_VELOCITY_MAX_KM_S);
+  return THREE.MathUtils.clamp((Math.log1p(speedKmS) - minLog) / (maxLog - minLog), 0, 1);
+}
+
+export function orbitVelocityColor(normalizedSpeed: number): THREE.Color {
+  const t = THREE.MathUtils.clamp(normalizedSpeed, 0, 1);
+  const cold = new THREE.Color("#65c7d4");
+  const mid = new THREE.Color("#d9b45f");
+  const hot = new THREE.Color("#ef765f");
+  return t < 0.5 ? cold.lerp(mid, t * 2) : mid.lerp(hot, (t - 0.5) * 2);
+}
+
 /**
  * Body-ID → orbit trail color.
  * Muted but visible tones with AdditiveBlending.

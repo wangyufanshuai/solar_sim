@@ -75,6 +75,12 @@ function BodyLabel({
   const rootRef = useRef<THREE.Group>(null);
   const lineStartRef = useRef<THREE.Object3D>(null);
   const htmlRootRef = useRef<HTMLDivElement>(null);
+  const lastLabelStyleRef = useRef({
+    transform: "",
+    opacity: "",
+    leaderVisible: false,
+    leaderOpacity: Number.NaN,
+  });
   const { camera, size } = useThree();
   const labelOcclusion = useOptionalLabelOcclusion();
 
@@ -127,8 +133,11 @@ function BodyLabel({
       const scaleFactor = targetDf / FIXED_DISTANCE_FACTOR;
       // Apply as CSS transform scale on the inner content div
       const inner = el.firstElementChild as HTMLElement | null;
-      if (inner) {
-        inner.style.transform = `translate(-50%, 0) scale(${scaleFactor})`;
+      const previousBodyLabelStyle = lastLabelStyleRef.current;
+      const transform = `translate(-50%, 0) scale(${scaleFactor})`;
+      if (inner && previousBodyLabelStyle.transform !== transform) {
+        inner.style.transform = transform;
+        previousBodyLabelStyle.transform = transform;
       }
     }
 
@@ -218,9 +227,18 @@ function BodyLabel({
       0,
       1,
     );
-    el.style.opacity = String(base);
+    const previousBodyLabelStyle = lastLabelStyleRef.current;
+    const opacity = String(base);
+    if (previousBodyLabelStyle.opacity !== opacity) {
+      el.style.opacity = opacity;
+      previousBodyLabelStyle.opacity = opacity;
+    }
 
-    leaderLine.visible = showLeaderLine && base > 0.04;
+    const leaderVisible = showLeaderLine && base > 0.04;
+    if (previousBodyLabelStyle.leaderVisible !== leaderVisible) {
+      leaderLine.visible = leaderVisible;
+      previousBodyLabelStyle.leaderVisible = leaderVisible;
+    }
     if (leaderLine.visible && lineStartRef.current) {
       lineStartRef.current.getWorldPosition(_lineA);
       root.getWorldPosition(_lineB);
@@ -229,8 +247,11 @@ function BodyLabel({
       _lineB.toArray(posAttr.array, 3);
       posAttr.needsUpdate = true;
     }
-    (leaderLine.material as THREE.LineBasicMaterial).opacity =
-      0.22 + 0.36 * base;
+    const leaderOpacity = 0.22 + 0.36 * base;
+    if (previousBodyLabelStyle.leaderOpacity !== leaderOpacity) {
+      (leaderLine.material as THREE.LineBasicMaterial).opacity = leaderOpacity;
+      previousBodyLabelStyle.leaderOpacity = leaderOpacity;
+    }
   });
 
   return (

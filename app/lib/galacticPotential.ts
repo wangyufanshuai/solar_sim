@@ -17,13 +17,13 @@ import { G_SI, AU_METERS } from "./physicalConstants";
 // ── Constants ────────────────────────────────────────────────────────
 
 /** Solar mass in kg. */
-const M_SUN_KG = 1.98892e30;
+export const M_SUN_KG = 1.98892e30;
 
 /** Parsec in meters. */
-const PC_METERS = 3.08568e16;
+export const PC_METERS = 3.08568e16;
 
 /** Kiloparsec in meters. */
-const KPC_METERS = 3.08568e19;
+export const KPC_METERS = 3.08568e19;
 
 // ── Parameters ───────────────────────────────────────────────────────
 
@@ -138,6 +138,40 @@ export function galacticCircularVelocityKmS(
   // ax is acceleration toward center at (rM, 0, 0), so |ax| = v^2/r
   const vMs = Math.sqrt(Math.abs(ax) * rM);
   return vMs / 1000;
+}
+
+/**
+ * Combined Miyamoto-Nagai disk + NFW halo potential in J/kg.
+ * This is used for validation diagnostics only, not for the main integrator.
+ */
+export function galacticPotentialJPerKg(
+  posX_m: number,
+  posY_m: number,
+  posZ_m: number,
+  params: GalacticPotentialParams = DEFAULT_GALACTIC_POTENTIAL
+): number {
+  const R2 = posX_m * posX_m + posY_m * posY_m;
+  const zeta = Math.sqrt(posZ_m * posZ_m + params.diskScaleB_M * params.diskScaleB_M);
+  const diskDenom = Math.sqrt(R2 + Math.pow(params.diskScaleA_M + zeta, 2));
+  const diskPhi = -G_SI * params.diskMassKg / diskDenom;
+
+  const c = params.haloConcentration;
+  const fc = Math.log(1 + c) - c / (1 + c);
+  const r = Math.max(Math.sqrt(R2 + posZ_m * posZ_m), 1e10);
+  const haloPhi =
+    -(G_SI * params.haloVirialMassKg / fc) *
+    Math.log(1 + r / params.haloScaleRadius_M) /
+    r;
+
+  return diskPhi + haloPhi;
+}
+
+export function galacticEscapeSpeedKmS(
+  radiusKpc: number,
+  params: GalacticPotentialParams = DEFAULT_GALACTIC_POTENTIAL
+): number {
+  const rM = radiusKpc * KPC_METERS;
+  return Math.sqrt(2 * Math.abs(galacticPotentialJPerKg(rM, 0, 0, params))) / 1000;
 }
 
 // ── AU interface for physics engine ──────────────────────────────────

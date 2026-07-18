@@ -72,7 +72,11 @@ export function useSolarPresentation() {
     );
     query.set("scale", merged.scaleMode ?? "compressed");
     query.set("budget", merged.renderBudget ?? "balanced");
-    window.history.replaceState(null, "", `${window.location.pathname}?${query}`);
+    window.history.replaceState(
+      null,
+      "",
+      `${window.location.pathname}?${query}${window.location.hash}`,
+    );
   }, []);
 
   const setPresentationMode = useCallback(
@@ -106,4 +110,3 @@ export function useSolarPresentation() {
     setRenderBudget,
   };
 }
-

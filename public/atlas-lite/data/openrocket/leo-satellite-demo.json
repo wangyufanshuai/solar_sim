@@ -1,0 +1,18 @@
+{
+  "version": "v118-openrocket-replay-manifest",
+  "vehicle": { "name": "LEO Satellite Demo", "lengthM": 32.4, "diameterM": 3.7 },
+  "stages": [
+    { "name": "Booster", "componentCount": 7 },
+    { "name": "Upper stage", "componentCount": 4 }
+  ],
+  "events": [
+    { "timeS": 0, "type": "ignition", "label": "Ignition" },
+    { "timeS": 72, "type": "max-q", "label": "Max-Q" },
+    { "timeS": 168, "type": "stage-separation", "label": "MECO / separation" },
+    { "timeS": 540, "type": "payload-deploy", "label": "Payload deploy" }
+  ],
+  "telemetry": [],
+  "units": { "time": "s", "altitude": "m", "velocity": "m/s", "dynamicPressure": "Pa" },
+  "source": { "kind": "json", "filename": "built-in-leo-satellite-demo", "policy": "offline-import-no-browser-exe-launch" },
+  "checksum": "built-in-deterministic-profile-v118"
+}

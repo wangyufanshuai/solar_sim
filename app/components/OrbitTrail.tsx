@@ -10,7 +10,10 @@ import {
   useMemo,
   useRef,
 } from "react";
-import { orbitColorForBodyId } from "../lib/orbitCinematicTokens";
+import {
+  normalizeOrbitVelocityKmS,
+  orbitColorForBodyId,
+} from "../lib/orbitCinematicTokens";
 import {
   createGradientOrbitLineBundle,
   setGradientLinePositions,
@@ -22,7 +25,7 @@ import { MAJOR_PLANET_IDS } from "../data/planetsJ2000";
 /* ── Types ── */
 
 export type OrbitTrailHandle = {
-  updatePosition: (newPos: THREE.Vector3) => void;
+  updatePosition: (newPos: THREE.Vector3, speedKmS: number) => void;
   clear: () => void;
 };
 
@@ -66,6 +69,8 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
       () => Array.from({ length: maxPoints }, () => new THREE.Vector3()),
       [maxPoints]
     );
+    const speedPool = useMemo(() => new Float32Array(maxPoints), [maxPoints]);
+    const orderedSpeedScratch = useMemo(() => new Float32Array(maxPoints), [maxPoints]);
 
     /* ── Gradient trail bundle (ShaderMaterial with comet-tail fade) ── */
     const color = useMemo(
@@ -79,7 +84,7 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
           closed: false,
           renderOrder,
           maxVertices: maxPoints,
-          headAlpha: 0.98,
+          headAlpha: 0.82,
         }),
       // eslint-disable-next-line react-hooks/exhaustive-deps
       [maxPoints, renderOrder]
@@ -91,7 +96,7 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
         closed: false,
         renderOrder: renderOrder - 1,
         maxVertices: maxPoints,
-        headAlpha: 0.54,
+        headAlpha: 0.34,
       });
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [maxPoints, renderOrder]);
@@ -122,7 +127,7 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
 
     /* ── Ring buffer push ── */
     const pushSample = useCallback(
-      (v: THREE.Vector3) => {
+      (v: THREE.Vector3, speedKmS: number) => {
         const cap = maxPoints;
         const pool = samplePool;
         const start = sampleStartRef.current;
@@ -137,23 +142,25 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
         if (len < cap) {
           const ni = (start + len) % cap;
           pool[ni]!.copy(v);
+          speedPool[ni] = normalizeOrbitVelocityKmS(speedKmS);
           sampleCountRef.current = len + 1;
         } else {
           const newStart = (start + 1) % cap;
           sampleStartRef.current = newStart;
           const ni = (newStart + cap - 1) % cap;
           pool[ni]!.copy(v);
+          speedPool[ni] = normalizeOrbitVelocityKmS(speedKmS);
         }
         dirtyRef.current = true;
       },
-      [maxPoints, minDistSq, samplePool]
+      [maxPoints, minDistSq, samplePool, speedPool]
     );
 
     useImperativeHandle(
       ref,
       () => ({
-        updatePosition: (newPos: THREE.Vector3) => {
-          pushSample(newPos);
+        updatePosition: (newPos: THREE.Vector3, speedKmS: number) => {
+          pushSample(newPos, speedKmS);
         },
         clear: () => {
           sampleStartRef.current = 0;
@@ -187,15 +194,17 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
       if (dirtyRef.current) {
         for (let i = 0; i < nSamples; i++) {
           orderedScratch[i]!.copy(samplePool[(start + i) % cap]!);
+          orderedSpeedScratch[i] = speedPool[(start + i) % cap]!;
         }
 
-        setGradientLinePositions(bundle.geometry, orderedScratch, nSamples, "openHeadAtEnd");
+        setGradientLinePositions(bundle.geometry, orderedScratch, nSamples, "openHeadAtEnd", orderedSpeedScratch);
         if (selected) {
           setGradientLinePositions(
             glowBundle.geometry,
             orderedScratch,
             nSamples,
-            "openHeadAtEnd"
+            "openHeadAtEnd",
+            orderedSpeedScratch,
           );
         }
         dirtyRef.current = false;
@@ -205,21 +214,24 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
 
       const mat = bundle.material;
       mat.uniforms.uOpacityScale.value = selected
-        ? 1.28
+        ? 0.98
         : prominentTrail
-          ? 0.72
-          : 0.46;
+          ? 0.48
+          : 0.24;
       mat.uniforms.uRgbMul.value = selected
-        ? 1.85
+        ? 1.45
         : prominentTrail
-          ? 1.36
-          : 1.12;
+          ? 1.12
+          : 0.9;
+      mat.uniforms.uVelocityColoring.value = selected ? 1 : 0;
       if (selected) {
-        glowBundle.material.uniforms.uOpacityScale.value = 0.86;
-        glowBundle.material.uniforms.uRgbMul.value = 1.45;
+        glowBundle.material.uniforms.uOpacityScale.value = 0.42;
+        glowBundle.material.uniforms.uRgbMul.value = 1.18;
+        glowBundle.material.uniforms.uVelocityColoring.value = 1;
       } else if (!prominentTrail) {
-        glowBundle.material.uniforms.uOpacityScale.value = 0.56;
-        glowBundle.material.uniforms.uRgbMul.value = 1.12;
+        glowBundle.material.uniforms.uOpacityScale.value = 0.26;
+        glowBundle.material.uniforms.uRgbMul.value = 0.94;
+        glowBundle.material.uniforms.uVelocityColoring.value = 0;
       }
     });
 

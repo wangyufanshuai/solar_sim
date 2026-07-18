@@ -33,13 +33,13 @@ void main() {
   vec2 c = gl_PointCoord - 0.5;
   float d = length(c);
   if (d > 0.5) discard;
-  float edge = smoothstep(0.5, 0.16, d);
+  float edge = 1.0 - smoothstep(0.36, 0.5, d);
   float core = exp(-d * d * 18.0);
   float halo = exp(-d * d * 7.0) * 0.10;
-  float alpha = core + halo;
+  float alpha = 0.78 + core * 0.22 + halo;
   float sizeAlpha = smoothstep(1.4, 3.2, vPS);
-  vec3 col = vColor * (0.72 + core * 1.05);
-  gl_FragColor = vec4(col, alpha * edge * (0.18 + 0.72 * sizeAlpha) * uOpacity);
+  vec3 col = vColor * (1.25 + core * 0.95);
+  gl_FragColor = vec4(col, alpha * edge * (0.72 + 0.28 * sizeAlpha) * uOpacity);
   #include <logdepthbuf_fragment>
 }
 `;
@@ -63,7 +63,10 @@ export default function BrightStarCatalog({
   const { size } = useThree();
   const dpr = size.width > 0 ? Math.min(window.devicePixelRatio, 2) : 1;
 
-  const stars = tier2Loaded ? [...BRIGHT_STARS_TIER1, ...BRIGHT_STARS_TIER2] : BRIGHT_STARS_TIER1;
+  const stars = useMemo(
+    () => (tier2Loaded ? [...BRIGHT_STARS_TIER1, ...BRIGHT_STARS_TIER2] : BRIGHT_STARS_TIER1),
+    [tier2Loaded],
+  );
 
   const { geometry, material } = useMemo(() => {
     const count = stars.length;
@@ -81,7 +84,11 @@ export default function BrightStarCatalog({
       colors[i * 3 + 1] = star.g;
       colors[i * 3 + 2] = star.b;
       const bright = Math.max(0, (3.5 - star.magV) / 5.0);
-      sizes[i] = (0.38 + bright * 1.15) * dpr;
+      // Keep the curated catalogue legible after the V9 sky is downsampled to
+      // the display.  Sub-pixel points disappear at common desktop sampling
+      // phases; a restrained 3.8-8.6 px point remains sparse while preserving
+      // the catalogue position, colour and magnitude ordering.
+      sizes[i] = (3.8 + bright * 4.8) * dpr;
     }
 
     const geom = new THREE.BufferGeometry();
@@ -103,7 +110,7 @@ export default function BrightStarCatalog({
     });
 
     return { geometry: geom, material: mat };
-  }, [dpr, opacity, stars.length]);
+  }, [dpr, opacity, stars]);
 
   material.uniforms.uOpacity.value = opacity;
 

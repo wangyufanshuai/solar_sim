@@ -20,8 +20,7 @@ import {
   type BodyTextureSlots,
 } from "../lib/planetTextureManager";
 
-const TEXTURE_PROGRESS_MESSAGE =
-  "正在从本地同步 NASA 级别高分快照…";
+const TEXTURE_PROGRESS_MESSAGE = "正在载入本地行星纹理";
 
 export type TextureAssetProgress = {
   ratio: number;
@@ -75,10 +74,7 @@ export function PlanetTextureAssetsProvider({
     return m;
   }, []);
 
-  const bodyIds = useMemo(
-    () => SOLAR_SYSTEM_BODIES.map((b) => b.id),
-    [],
-  );
+  const bodyIds = useMemo(() => SOLAR_SYSTEM_BODIES.map((b) => b.id), []);
 
   const reportProgress = useCallback(
     (loaded: number, total: number) => {
@@ -100,20 +96,22 @@ export function PlanetTextureAssetsProvider({
 
     let cancelled = false;
 
-    preloadPlanetTextureUrls(tasks, gl, (loaded, total) => {
-      if (!cancelled) reportProgress(loaded, total);
-    }, "high").then((byUrl) => {
+    preloadPlanetTextureUrls(
+      tasks,
+      gl,
+      (loaded, total) => {
+        if (!cancelled) reportProgress(loaded, total);
+      },
+      "high",
+    ).then((byUrl) => {
       if (cancelled || disposedRef.current) {
-        byUrl.forEach((t) => t.dispose());
+        byUrl.forEach((texture) => texture.dispose());
         return;
       }
       texturesRef.current = byUrl;
-      const assembled = assembleBodyTextureSlots(
-        bodyIds,
-        byUrl,
-        extraNormalById,
+      setTexturesById(
+        assembleBodyTextureSlots(bodyIds, byUrl, extraNormalById),
       );
-      setTexturesById(assembled);
       setReady(true);
       reportProgress(tasks.length, tasks.length);
     });
@@ -121,7 +119,7 @@ export function PlanetTextureAssetsProvider({
     return () => {
       cancelled = true;
       disposedRef.current = true;
-      texturesRef.current.forEach((t) => t.dispose());
+      texturesRef.current.forEach((texture) => texture.dispose());
       texturesRef.current.clear();
       setTexturesById({});
       setReady(false);
@@ -134,11 +132,7 @@ export function PlanetTextureAssetsProvider({
   );
 
   const value = useMemo<PlanetTextureAssetsValue>(
-    () => ({
-      ready,
-      texturesById,
-      getSlots,
-    }),
+    () => ({ ready, texturesById, getSlots }),
     [ready, texturesById, getSlots],
   );
 

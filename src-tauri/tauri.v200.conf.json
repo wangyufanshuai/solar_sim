@@ -1,0 +1,13 @@
+{
+  "build": {
+    "beforeBuildCommand": "npm run desktop:stage:v200"
+  },
+  "bundle": {
+    "resources": {
+      "../dist/desktop-stage/v200/server": "server",
+      "../dist/desktop-stage/v200/runtime": "runtime",
+      "../dist/desktop-stage/v200/content-pack-manifests": "content-pack-manifests",
+      "../dist/desktop-stage/v200/desktop-stage.json": "desktop-stage.json"
+    }
+  }
+}

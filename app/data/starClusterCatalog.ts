@@ -68,4 +68,9 @@ export const STAR_CLUSTERS: StarClusterDef[] = [
   { id: "m19", catalogName: "M19 / NGC 6273", commonName: "M19", subtitleCn: "M19球状星团", kind: "globular", galLonDeg: 357.0, galLatDeg: 9.4, distancePc: 8800, sizeArcmin: 14, magV: 6.8, color: "#ccbb77", intensity: 0.60 },
   { id: "ngc2808", catalogName: "NGC 2808", commonName: "NGC 2808", subtitleCn: "NGC 2808星团", kind: "globular", galLonDeg: 282.2, galLatDeg: -11.3, distancePc: 10000, sizeArcmin: 13, magV: 6.3, color: "#ddbb77", intensity: 0.62 },
   { id: "ngc2419", catalogName: "NGC 2419", commonName: "Intergalactic Wanderer", subtitleCn: "星系间漫游者", kind: "globular", galLonDeg: 180.4, galLatDeg: 25.2, distancePc: 85000, sizeArcmin: 4, magV: 10.4, color: "#bbaa66", intensity: 0.35 },
+  // v33 deep-sky navigation readability additions.
+  { id: "m11", catalogName: "M11 / NGC 6705", commonName: "Wild Duck Cluster", subtitleCn: "Wild Duck Cluster", kind: "open", galLonDeg: 27.3, galLatDeg: -2.8, distancePc: 1870, sizeArcmin: 14, magV: 5.8, color: "#ccd9ff", intensity: 0.66 },
+  { id: "m46", catalogName: "M46 / NGC 2437", commonName: "M46", subtitleCn: "M46", kind: "open", galLonDeg: 231.9, galLatDeg: 4.1, distancePc: 1510, sizeArcmin: 27, magV: 6.1, color: "#c7d6ff", intensity: 0.58 },
+  { id: "m67", catalogName: "M67 / NGC 2682", commonName: "M67", subtitleCn: "M67", kind: "open", galLonDeg: 215.7, galLatDeg: 31.9, distancePc: 900, sizeArcmin: 30, magV: 6.1, color: "#d8d6ff", intensity: 0.56 },
+  { id: "ngc7789", catalogName: "NGC 7789", commonName: "Caroline's Rose", subtitleCn: "Caroline's Rose", kind: "open", galLonDeg: 115.5, galLatDeg: -5.4, distancePc: 2400, sizeArcmin: 16, magV: 6.7, color: "#d4d8ff", intensity: 0.54 },
 ];

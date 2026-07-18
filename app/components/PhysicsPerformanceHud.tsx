@@ -5,6 +5,7 @@ import type { PhysicsPrecisionTier } from "../lib/physicsPrecision";
 import { mainThreadLastAcceptedSubsteps } from "../lib/solarIntegrationMetrics";
 import { isPhysicsRuntime } from "../lib/physicsRuntime";
 import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
+import type { AtlasPerformanceBudgetSummary } from "../lib/simulationDiagnosticsTypes";
 
 const TIERS: { id: PhysicsPrecisionTier; label: string }[] = [
   { id: "full", label: "FULL" },
@@ -16,10 +17,12 @@ export default function PhysicsPerformanceHud({
   physicsRef,
   precisionTierRef,
   physicsUsesSharedBuffer,
+  performanceBudgetSummary,
 }: {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   precisionTierRef: MutableRefObject<PhysicsPrecisionTier>;
   physicsUsesSharedBuffer: boolean;
+  performanceBudgetSummary?: AtlasPerformanceBudgetSummary;
 }) {
   const [stepsPerSec, setStepsPerSec] = useState(0);
   const [fps, setFps] = useState(0);
@@ -68,19 +71,42 @@ export default function PhysicsPerformanceHud({
   }, [physicsRef]);
 
   return (
-    <div className="pointer-events-auto fixed right-3 top-3 z-[84] w-[158px] rounded-3xl bg-[rgba(8,9,12,0.78)] px-3 py-3 text-white/56 shadow-[0_14px_36px_rgba(0,0,0,0.34)] backdrop-blur-2xl">
-      <div className="text-[8px] tracking-[0.24em]">PHYSICS ENGINE</div>
-      <div className="mt-2 text-[10px] text-slate-500">
+    <div
+      className="atlas-cinematic-panel pointer-events-auto fixed right-3 top-3 z-[84] w-[96px] rounded-lg px-2 py-1.5 text-white/58 sm:w-[164px] sm:px-3 sm:py-2.5"
+      data-atlas-performance-version={performanceBudgetSummary?.version}
+      data-atlas-performance-tier={performanceBudgetSummary?.tier}
+      data-atlas-cinematic-hud="performance"
+    >
+      <div className="hidden text-[8px] tracking-[0.2em] text-[var(--atlas-cine-dim)] sm:block">PHYSICS ENGINE</div>
+      <div className="mt-1.5 hidden text-[10px] text-[var(--atlas-cine-muted)] sm:block">
         {physicsUsesSharedBuffer ? "Worker + SAB" : "Main thread"}
       </div>
-      <div className="mt-1 text-[10px]">
+      <div className="text-center text-[10px] sm:mt-1 sm:text-left">
         FPS <span className={fps >= 50 ? "text-emerald-200" : fps >= 30 ? "text-amber-200" : "text-rose-200"}>{fps.toFixed(0)}</span>
-        <span className="ml-1 text-white/34">{frameMs.toFixed(1)}ms</span>
+        <span className="ml-1 hidden text-white/34 sm:inline">{frameMs.toFixed(1)}ms</span>
       </div>
-      <div className="mt-1 text-[10px]">
+      <div className="mt-1 hidden text-[10px] sm:block">
         Steps/s <span className="text-white/82">{stepsPerSec.toFixed(0)}</span>
       </div>
-      <div className="mt-3 flex rounded-full bg-black/22 p-1">
+      {performanceBudgetSummary ? (
+        <div className="mt-2 hidden rounded-md border border-[var(--atlas-cine-line)] bg-black/24 px-2 py-1.5 text-[9px] text-[var(--atlas-cine-muted)] sm:block">
+          <div className="flex items-center justify-between gap-2">
+            <span>Render</span>
+            <span className="text-cyan-100/82">{performanceBudgetSummary.tier}</span>
+          </div>
+          <div className="mt-0.5 flex items-center justify-between gap-2">
+            <span>Stability</span>
+            <span className={performanceBudgetSummary.renderStability === "ready" ? "text-emerald-200" : "text-amber-200"}>
+              {performanceBudgetSummary.renderStability}
+            </span>
+          </div>
+          <div className="mt-0.5 flex items-center justify-between gap-2">
+            <span>Labels</span>
+            <span className="text-white/78">{performanceBudgetSummary.deepSkyLabelBudget}</span>
+          </div>
+        </div>
+      ) : null}
+      <div className="mt-2 hidden rounded-md bg-black/24 p-1 sm:flex">
         {TIERS.map((t) => (
           <button
             key={t.id}
@@ -91,7 +117,7 @@ export default function PhysicsPerformanceHud({
             }}
             className={`flex-1 rounded-full px-1.5 py-1 text-[8px] transition-colors ${
               tierLabel === t.id
-                ? "bg-white/10 text-white/88"
+                ? "bg-[rgba(211,179,110,0.12)] text-white/88"
                 : "text-slate-500 hover:text-slate-300"
             }`}
           >

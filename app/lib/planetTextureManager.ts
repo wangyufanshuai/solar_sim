@@ -3,14 +3,19 @@ import {
   textureManifestEntryForBodyId,
   type PlanetTextureManifestEntry,
 } from "../data/planetTextureManifest";
+import { atlasAssetCandidates } from "./atlasAssetResolver";
 
 export type BodyTextureSlots = {
   albedo?: THREE.Texture;
   normal?: THREE.Texture;
   clouds?: THREE.Texture;
+  cloudAlpha?: THREE.Texture;
   night?: THREE.Texture;
+  nightMask?: THREE.Texture;
   ringColorMap?: THREE.Texture;
   ringAlphaMap?: THREE.Texture;
+  roughness?: THREE.Texture;
+  bandMask?: THREE.Texture;
 };
 export type TextureQualityTier = "high" | "medium" | "low";
 
@@ -25,9 +30,13 @@ const SLOT_COLOR_SPACE: Record<keyof PlanetTextureManifestEntry, THREE.ColorSpac
   albedo: THREE.SRGBColorSpace,
   normal: THREE.LinearSRGBColorSpace,
   clouds: THREE.SRGBColorSpace,
+  cloudAlpha: THREE.LinearSRGBColorSpace,
   night: THREE.SRGBColorSpace,
+  nightMask: THREE.LinearSRGBColorSpace,
   ringColorMap: THREE.SRGBColorSpace,
   ringAlphaMap: THREE.LinearSRGBColorSpace,
+  roughness: THREE.LinearSRGBColorSpace,
+  bandMask: THREE.LinearSRGBColorSpace,
 };
 
 function configureTexture(
@@ -80,8 +89,8 @@ export function collectPlanetTextureLoadTasks(
 }
 
 /**
- * Preload via one `TextureLoader` + `LoadingManager` (onProgress = itemsLoaded / itemsTotal).
- * Failed URLs are skipped; `onLoad` still runs when the queue finishes.
+ * Preload through the content-pack resolver while retaining manifest URLs as map keys.
+ * Failed candidates are skipped and progress advances when each logical asset settles.
  */
 export function preloadPlanetTextureUrls(
   tasks: LoadTask[],
@@ -97,26 +106,22 @@ export function preloadPlanetTextureUrls(
     return Promise.resolve(byUrl);
   }
 
-  return new Promise((resolve) => {
-    const manager = new THREE.LoadingManager(
-      () => resolve(byUrl),
-      (_url, loaded, total) => onProgress?.(loaded, total),
-      () => {},
-    );
-    const loader = new THREE.TextureLoader(manager);
-
-    for (const task of tasks) {
-      loader.load(
-        task.url,
-        (tex) => {
-          configureTexture(tex, task.colorSpace, aniso, task.slot, qualityTier);
-          byUrl.set(task.url, tex);
-        },
-        undefined,
-        () => {},
-      );
+  const loader = new THREE.TextureLoader();
+  let settled = 0;
+  return Promise.all(tasks.map(async (task) => {
+    for (const candidate of atlasAssetCandidates(task.url)) {
+      try {
+        const tex = await loader.loadAsync(candidate);
+        configureTexture(tex, task.colorSpace, aniso, task.slot, qualityTier);
+        byUrl.set(task.url, tex);
+        break;
+      } catch {
+        // Continue through local pack, remote pack, and core fallback candidates.
+      }
     }
-  });
+    settled += 1;
+    onProgress?.(settled, tasks.length);
+  })).then(() => byUrl);
 }
 
 export function assembleBodyTextureSlots(

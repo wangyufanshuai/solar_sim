@@ -6,13 +6,17 @@ import { useMemo, useRef, useEffect, useState } from "react";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import {
-  type GaiaStarCatalogData,
   gaiaStarToGalacticPc,
-  gaiaColorToRgb,
-  gaiaMagToLuminosity,
-  generatePlaceholderCatalog,
+  gaiaOverlayColorToRgb,
+  gaiaOverlayVisualBrightness,
+  rankGaiaStarsForOverlay,
 } from "../data/gaiaStarCatalog";
+import {
+  ensureGaiaCatalogLoaded,
+  useGaiaCatalogSnapshot,
+} from "../lib/gaiaCatalogStore";
 import { AU_TO_SCENE } from "../data/planetsJ2000";
+import { stellarMaterialProfile } from "../lib/stellarMaterialProfile";
 
 /** 1 parsec in scene units. */
 const PC_TO_SCENE = (206265 * AU_TO_SCENE); // 1 pc = 206265 AU
@@ -22,6 +26,7 @@ const PC_TO_SCENE = (206265 * AU_TO_SCENE); // 1 pc = 206265 AU
  *  At scale=1.5, 1pc ≈ 78 scene units; 100pc ≈ 7800; 200pc ≈ 15600. */
 const GALACTIC_SCALE = 1.5;
 
+export const GAIA_STARFIELD_RENDER_BUDGET = "v97-1000-1800-3000-preserved";
 const MAX_INSTANCES = 1800;
 /** Billboard half-size in scene units (scaled by instanceSize). */
 const STAR_QUAD_HALF = 1.55;
@@ -33,54 +38,68 @@ const STAR_QUAD_HALF = 1.55;
  */
 export default function GaiaStarField({
   floatingOriginRef,
+  renderEnabled = true,
+  maxInstances = MAX_INSTANCES,
+  opacityScale = 1,
+  allowSolarTier = false,
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  renderEnabled?: boolean;
+  maxInstances?: number;
+  opacityScale?: number;
+  allowSolarTier?: boolean;
 }) {
   const meshRef = useRef<THREE.InstancedMesh>(null);
-  const catalogRef = useRef<GaiaStarCatalogData | null>(null);
-  const [catalogReady, setCatalogReady] = useState(false);
+  const catalogSnapshot = useGaiaCatalogSnapshot();
   const [active, setActive] = useState(false);
   const dummyObj = useRef(new THREE.Object3D());
 
-  // Lazy-load only outside close solar-system view. The sky sphere already
-  // carries dense stars; keeping this off in solar preserves interaction FPS.
+  useEffect(() => {
+    void ensureGaiaCatalogLoaded();
+  }, []);
+
+  // The sky sphere already carries dense stars; keeping this off in solar
+  // preserves interaction FPS while still allowing the source marker to load.
   useFrame(() => {
-    const shouldMount = floatingOriginRef.current.lodTier !== "solar";
-    if (shouldMount && !catalogReady) {
-      catalogRef.current = generatePlaceholderCatalog(MAX_INSTANCES);
-      setCatalogReady(true);
-    }
+    const shouldMount = renderEnabled && (allowSolarTier || floatingOriginRef.current.lodTier !== "solar");
     if (shouldMount !== active) setActive(shouldMount);
   });
 
   const starData = useMemo(() => {
-    const cat = catalogRef.current;
+    const cat = catalogSnapshot.catalog;
     if (!cat) return null;
 
-    const positions = new Float32Array(cat.count * 3);
-    const colors = new Float32Array(cat.count * 3);
-    const sizes = new Float32Array(cat.count);
+    const rankedStars = rankGaiaStarsForOverlay(cat.stars, maxInstances);
+    const count = rankedStars.length;
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+    const sizes = new Float32Array(count);
 
-    for (let i = 0; i < cat.count; i++) {
-      const star = cat.stars[i]!;
+    for (let i = 0; i < count; i++) {
+      const star = rankedStars[i]!;
       const [gx, gy, gz] = gaiaStarToGalacticPc(star);
       positions[i * 3] = gx;
       positions[i * 3 + 1] = gy;
       positions[i * 3 + 2] = gz;
 
-      const distPc = 1000 / Math.max(star.parallaxMas, 0.001);
-      const lum = gaiaMagToLuminosity(star.magG, distPc);
-      const brightness = Math.min(1.0, Math.max(0.1, 0.3 + 0.2 * Math.log10(Math.max(lum, 0.001))));
-      sizes[i] = brightness;
+      const brightness = gaiaOverlayVisualBrightness(star);
+      const material = stellarMaterialProfile({
+        id: star.sourceId,
+        colorBpRp: star.colorBpRp,
+        mag: star.magG,
+        parallaxMas: star.parallaxMas,
+      });
+      sizes[i] = Math.max(0.14, Math.min(1.22, 0.66 + brightness * 0.44 + material.haloScale * 0.12));
 
-      const [r, g, b] = gaiaColorToRgb(star.colorBpRp);
-      colors[i * 3] = r * brightness;
-      colors[i * 3 + 1] = g * brightness;
-      colors[i * 3 + 2] = b * brightness;
+      const [r, g, b] = gaiaOverlayColorToRgb(star.colorBpRp);
+      const profileColor = new THREE.Color(material.color);
+      colors[i * 3] = Math.min(1, (r * 0.55 + profileColor.r * 0.45) * brightness * material.coreIntensity);
+      colors[i * 3 + 1] = Math.min(1, (g * 0.55 + profileColor.g * 0.45) * brightness * material.coreIntensity);
+      colors[i * 3 + 2] = Math.min(1, (b * 0.55 + profileColor.b * 0.45) * brightness * material.coreIntensity);
     }
 
     return { positions, colors, sizes };
-  }, [catalogReady]);
+  }, [catalogSnapshot.catalog, maxInstances]);
 
   const geometry = useMemo(() => {
     const geo = new THREE.BufferGeometry();
@@ -107,7 +126,7 @@ export default function GaiaStarField({
         side: THREE.DoubleSide,
         uniforms: {
           uHalfSize: { value: STAR_QUAD_HALF },
-          uOpacity: { value: 0.12 },
+          uOpacity: { value: 0.08 },
         },
         vertexShader: `
           uniform float uHalfSize;
@@ -137,8 +156,12 @@ export default function GaiaStarField({
           void main() {
             float r2 = dot(vLocalPos, vLocalPos) * 4.0;
             if (r2 > 1.0) discard;
-            float alpha = 1.0 - smoothstep(0.0, 1.0, r2);
-            gl_FragColor = vec4(vColor, alpha * 0.85 * uOpacity);
+            float halo = 1.0 - smoothstep(0.0, 1.0, r2);
+            float core = 1.0 - smoothstep(0.0, 0.18, r2);
+            float diffraction = smoothstep(0.28, 0.34, r2) * (1.0 - smoothstep(0.34, 0.48, r2));
+            vec3 col = vColor * (0.72 + core * 0.48) + vColor * diffraction * 0.18;
+            float alpha = (halo * 0.58 + core * 0.55 + diffraction * 0.16) * uOpacity;
+            gl_FragColor = vec4(col, alpha);
             #include <logdepthbuf_fragment>
           }
         `,
@@ -149,14 +172,23 @@ export default function GaiaStarField({
   const initialized = useRef(false);
   const cachedBasePositions = useRef<Float32Array | null>(null);
   const prevOffsetRef = useRef<THREE.Vector3>(new THREE.Vector3(NaN, NaN, NaN));
+  const prevOpacityTargetRef = useRef<number | null>(null);
 
   useFrame(() => {
     const mesh = meshRef.current;
     if (!mesh || !starData) return;
     const mat = mesh.material as THREE.ShaderMaterial;
     const tier = floatingOriginRef.current.lodTier;
-    const opacityTarget = tier === "solar" ? 0.035 : tier === "mid" ? 0.075 : 0.16;
-    mat.uniforms.uOpacity.value = THREE.MathUtils.lerp(mat.uniforms.uOpacity.value, opacityTarget, 0.06);
+    const opacityTarget = (tier === "solar" ? 0.018 : tier === "mid" ? 0.04 : 0.08) * opacityScale;
+    const previousGaiaUniformOpacityTarget = prevOpacityTargetRef.current;
+    const currentOpacity = mat.uniforms.uOpacity.value as number;
+    if (
+      previousGaiaUniformOpacityTarget !== opacityTarget ||
+      Math.abs(currentOpacity - opacityTarget) > 0.0005
+    ) {
+      mat.uniforms.uOpacity.value = THREE.MathUtils.lerp(currentOpacity, opacityTarget, 0.06);
+      prevOpacityTargetRef.current = opacityTarget;
+    }
 
     if (!initialized.current) {
       initialized.current = true;
@@ -164,11 +196,11 @@ export default function GaiaStarField({
       mesh.instanceMatrix.setUsage(THREE.DynamicDrawUsage);
 
       const instanceColor = new THREE.InstancedBufferAttribute(starData.colors, 3);
-      instanceColor.setUsage(THREE.DynamicDrawUsage);
+      instanceColor.setUsage(THREE.StaticDrawUsage);
       geometry.setAttribute("instanceColor", instanceColor);
 
       const instanceSize = new THREE.InstancedBufferAttribute(starData.sizes, 1);
-      instanceSize.setUsage(THREE.DynamicDrawUsage);
+      instanceSize.setUsage(THREE.StaticDrawUsage);
       geometry.setAttribute("instanceSize", instanceSize);
 
       mesh.count = count;
@@ -205,12 +237,12 @@ export default function GaiaStarField({
   });
 
   // Don't mount InstancedMesh until mid/far tier
-  if (!catalogReady || !active) return null;
+  if (!catalogSnapshot.catalog || !active) return null;
 
   return (
     <instancedMesh
       ref={meshRef}
-      args={[geometry, material, MAX_INSTANCES]}
+      args={[geometry, material, maxInstances]}
       frustumCulled={false}
       renderOrder={-490}
       count={0}
