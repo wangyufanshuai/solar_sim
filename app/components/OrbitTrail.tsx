@@ -1,6 +1,6 @@
 "use client";
 
-import { useFrame, useThree } from "@react-three/fiber";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import {
   forwardRef,
@@ -46,15 +46,12 @@ const OrbitTrail = forwardRef<OrbitTrailHandle, OrbitTrailProps>(
       minVertexDistance = 0.02,
       bodyIndex,
       bodyId,
-      lodWorldRadius,
       selected = false,
       renderOrder = -30,
     },
     ref
   ) {
     const minDistSq = minVertexDistance * minVertexDistance;
-    const { size } = useThree();
-
     /* ── Ring buffer ── */
     const sampleStartRef = useRef(0);
     const sampleCountRef = useRef(0);

@@ -6,7 +6,8 @@ const root = process.cwd();
 const readJson = async (file) => JSON.parse(await readFile(path.join(root, file), "utf8"));
 const sha256 = async (file) => createHash("sha256").update(await readFile(path.join(root, file))).digest("hex");
 const hashStableReport = (report) => {
-  const { generatedAt: _generatedAt, ...stable } = report;
+  const stable = { ...report };
+  delete stable.generatedAt;
   return createHash("sha256").update(JSON.stringify(stable)).digest("hex");
 };
 const indexRows = (report) => new Map(report.perBodyComparison.flatMap((checkpoint) =>
@@ -35,7 +36,6 @@ const iasStateHash = ias15.reruns[0].canonicalStateHash;
 const iasRepeatStateHash = ias15Rerun.reruns[0].canonicalStateHash;
 
 const dopFineIndex = indexRows(dopFine);
-const dopFinerIndex = indexRows(dopFiner);
 const iasIndex = indexRows(ias15);
 const checkpoints = dopFiner.perBodyComparison.map((checkpoint) => ({
   label: checkpoint.label,

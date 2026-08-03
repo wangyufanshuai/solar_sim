@@ -56,11 +56,14 @@ const sourceFiles = {
   densePlan: "dist/science/kerr-dense-execution-plan-v8-release.json",
   denseAggregate: "dist/science/kerr-dense-cross-validation-v8.json",
   kerrGateV8: "dist/science/kerr-dense-gate-v8.json",
+  kerrCampaignProgressV8: "dist/science/kerr-dense-campaign-progress-v8.json",
+  v6ShardQuarantine: "dist/science/quarantine/kerr-shards-v6-pre-v8/quarantine-manifest.json",
   stm: "dist/science/relativity-variational-stm-v12-smoke-evidence.json",
-  bundleStandalone: "dist/science/client-bundle-v236-standalone-full.json",
-  bundleLite: "dist/science/client-bundle-v236-vercel-lite.json",
+  bundleStandalone: "dist/science/client-bundle-v253-standalone-full.json",
+  bundleLite: "dist/science/client-bundle-v253-vercel-lite.json",
   lifecycle: "dist/science/lifecycle-soak-v236-report.json",
   contentPacks: "dist/science/content-pack-integrity-v232.json",
+  catalogExpansion: "dist/science/catalog-expansion-v255.json",
   security: "dist/science/production-security-v232.json",
   productionAudit: "dist/science/production-audit-v232.json",
   secretScan: "dist/science/secret-scan-v232.json",
@@ -80,7 +83,22 @@ invariant(reports.kerrGateV8.gatePassed === true, "current V8 short gate has not
 invariant(reports.kerrGateV8.provenance?.codeSha256 === reports.densePlan.codeSha256, "V8 gate code provenance drifted");
 invariant(reports.kerrGateV8.provenance?.environmentSha256 === reports.densePlan.environmentSha256, "V8 gate environment provenance drifted");
 invariant(reports.kerrGateV8.provenance?.finiteObserverScreenManifestSha256 === reports.densePlan.finiteObserverScreenManifestSha256, "V8 gate screen provenance drifted");
+invariant(reports.kerrCampaignProgressV8.freezeCommitSha === reports.researchCampaign.denseKerr.freezeCommitSha, "current evidence freeze commit disagrees with the campaign");
+invariant(reports.kerrCampaignProgressV8.progressSha256 === reports.researchCampaign.denseKerr.campaignProgressSha256, "current evidence progress hash disagrees with the campaign");
+invariant(reports.kerrCampaignProgressV8.v6QuarantineManifestSha256 === reports.v6ShardQuarantine.manifestSha256, "current evidence V6 quarantine provenance drifted");
+invariant(reports.kerrCampaignProgressV8.status === reports.researchCampaign.denseKerr.campaignStatus, "current evidence campaign status disagrees with V13");
+invariant(reports.kerrCampaignProgressV8.failedShardIndex === reports.researchCampaign.denseKerr.failedShardIndex, "current evidence failed shard disagrees with V13");
+invariant(reports.kerrCampaignProgressV8.noAutomaticRetry === reports.researchCampaign.denseKerr.noAutomaticRetry, "current evidence retry boundary disagrees with V13");
 invariant(reports.stm.version === "v229-relativity-variational-stm-evidence-v12", "unexpected variational STM evidence version");
+invariant(reports.catalogExpansion.version === "v255-catalog-expansion", "unexpected catalog expansion evidence");
+invariant(reports.catalogExpansion.status === "ready", "catalog expansion evidence is not ready");
+invariant(reports.catalogExpansion.defaultScientificKernel === "legacy-eih-1pn", "catalog expansion changed the default kernel");
+invariant(
+  reports.catalogExpansion.livePhysicsMutation === "not-applied" &&
+  reports.catalogExpansion.workerPhysicsMutation === "not-applied" &&
+  reports.catalogExpansion.eihOnePnMutation === "not-applied",
+  "catalog expansion crossed the presentation-only boundary",
+);
 
 const shardDirectory = "dist/science/kerr-shards-v8";
 const shardFiles = await optionalDirectoryFiles(shardDirectory, /^shard-\d{4}\.json$/);
@@ -103,25 +121,12 @@ for (const { file, document } of completeShards) {
   );
 }
 
-const completedExecutions = completeShards.flatMap(({ document }) =>
-  document.rays.flatMap((ray) => ray.executions),
-);
-const maxNullConstraint = completedExecutions.length
-  ? Math.max(...completedExecutions.map((execution) => execution.maxNullConstraint ?? 0))
-  : null;
-const rayClassCounts = completeShards.reduce(
-  (total, { document }) => {
-    for (const [key, value] of Object.entries(document.rayClassCounts ?? {})) total[key] = (total[key] ?? 0) + value;
-    return total;
-  },
-  {},
-);
-
 const productGates = {
-  contentPacks: reports.contentPacks.passed === true && reports.contentPacks.verifiedFileCount === 805,
-  standaloneBundle: reports.bundleStandalone.transferBytes <= 614_400,
-  liteBundle: reports.bundleLite.transferBytes <= 614_400,
+  contentPacks: reports.contentPacks.passed === true && reports.contentPacks.verifiedFileCount === reports.contentPacks.manifestFileCount,
+  standaloneBundle: reports.bundleStandalone.transferBytes <= 604_160,
+  liteBundle: reports.bundleLite.transferBytes <= 604_160,
   lifecycle: reports.lifecycle.passed === true,
+  catalogExpansion: reports.catalogExpansion.status === "ready",
   security: reports.security.status === "passed",
   productionAudit: reports.productionAudit.passed === true,
   secretScan: reports.secretScan.passed === true,
@@ -130,6 +135,7 @@ const localProductGatesPassed = Object.values(productGates).every(Boolean);
 const denseGatePassed =
   completeShards.length === reports.densePlan.shardCount &&
   reports.denseAggregate.gatePassed === true;
+invariant(reports.kerrCampaignProgressV8.completedShardCount === completeShards.length, "current evidence V8 progress/shard coverage disagrees");
 const stmGatePassed = reports.stm.releaseQualificationAvailable === true;
 const campaign = reports.researchCampaign;
 const perBodyRegressionCount = campaign.weakField.historicalRegressionCount;
@@ -177,6 +183,19 @@ const core = {
       packCount: reports.contentPacks.packCount,
       manifestFileCount: reports.contentPacks.manifestFileCount,
       verifiedFileCount: reports.contentPacks.verifiedFileCount,
+    },
+    catalogExpansion: {
+      version: reports.catalogExpansion.version,
+      canonicalSha256: reports.catalogExpansion.canonicalSha256,
+      gaiaRowCount: reports.catalogExpansion.gaia.rowCount,
+      iauConstellationCount: reports.catalogExpansion.visualCounts.iauConstellations,
+      asterismCount: reports.catalogExpansion.visualCounts.asterisms,
+      starClusterCount: reports.catalogExpansion.visualCounts.starClusters,
+      nebulaCount: reports.catalogExpansion.visualCounts.nebulae,
+      activeRenderBudget: reports.catalogExpansion.activeRenderBudget,
+      livePhysicsMutation: reports.catalogExpansion.livePhysicsMutation,
+      workerPhysicsMutation: reports.catalogExpansion.workerPhysicsMutation,
+      eihOnePnMutation: reports.catalogExpansion.eihOnePnMutation,
     },
   },
   boundary: "generated-current-evidence-no-root-contract-or-runtime-physics-mutation",

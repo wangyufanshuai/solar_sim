@@ -135,16 +135,20 @@ export function KerrRayTraceRendererV3({
   }, [maxSteps, report.criticalCurveRadiusScreenM, spinA]);
 
   useEffect(() => {
-    const release = target ? acquireAtlasResource("gpu-render-target", "kerr", "kerr-ray-trace-v3") : () => {};
+    const spriteMaterial = spriteMaterialRef.current;
+    const release = target ? acquireAtlasResource("gpu-render-target", "kerr", "kerr-ray-trace-v3", {
+      owner: "kerr-presentation",
+      estimatedBytes: targetSize * targetSize * 4,
+    }) : () => {};
     return () => {
-      spriteMaterialRef.current?.dispose();
+      spriteMaterial?.dispose();
       target?.texture.dispose();
       target?.dispose();
       offscreen.geometry.dispose();
       offscreen.material.dispose();
       release();
     };
-  }, [offscreen, target]);
+  }, [offscreen, target, targetSize]);
 
   useFrame((state) => {
     if (mobileSafe || !target) return;

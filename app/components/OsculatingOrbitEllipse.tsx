@@ -64,7 +64,7 @@ export default function OsculatingOrbitEllipse({
   const planetWorldRef = useRef(new THREE.Vector3());
   const nPointsRef = useRef(0);
   const bloomActions = useOptionalBloomSceneActions();
-  const { camera, size } = useThree();
+  const { size } = useThree();
 
   const pointPool = useMemo(
     () => Array.from({ length: segments }, () => new THREE.Vector3()),

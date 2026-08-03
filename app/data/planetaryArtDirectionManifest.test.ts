@@ -1,5 +1,4 @@
 import { existsSync } from "node:fs";
-import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import {
   ATLAS_V55_ART_ASSET_BASE,
@@ -26,14 +25,14 @@ describe("v55 planetary art-direction asset manifest", () => {
     }
   });
 
-  it("keeps the old logical paths while current packs provide v49 and sky assets", () => {
+  it("keeps old logical paths while current packs provide KTX2 and 2K sky layers", () => {
     for (const entry of ATLAS_V55_ART_ASSET_MANIFEST) {
       expect(existsSync(atlasContentPackTestPath(entry.path))).toBe(false);
     }
     expect(atlasV55ArtAssetPathFor("gas-band-contrast")).toBe(
       "/textures/planets/v55/gas-band-contrast-v55.png",
     );
-    expect(existsSync(atlasContentPackTestPath("/textures/sky/orbit-atlas-v48-base-4k.jpg"))).toBe(true);
-    expect(existsSync(atlasContentPackTestPath("/textures/planets/v49/earth-albedo.jpg"))).toBe(true);
+    expect(existsSync(atlasContentPackTestPath("/textures/sky/orbit-atlas-v9-stars-2k.jpg"))).toBe(true);
+    expect(existsSync(atlasContentPackTestPath("/textures/ktx2/planets_v49_earth-albedo.ktx2"))).toBe(true);
   });
 });

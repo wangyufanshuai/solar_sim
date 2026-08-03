@@ -103,7 +103,7 @@ describe("v170 Atlas launch controller", () => {
       "launchConfigRef.current = null;",
       "selection.resetCameraOrigin();",
       "isLaunchActivePhase()",
-      "stopLaunchSequence(physicsRef.current);",
+      "stopLaunchSequence();",
     ]);
     expectOrdered(handoff, [
       "writeAtlasLaunchHandoffToPhysics(",

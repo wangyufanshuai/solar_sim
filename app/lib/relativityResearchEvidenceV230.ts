@@ -1,10 +1,8 @@
-import { ATLAS_CURRENT_EVIDENCE_MANIFEST_V233 } from "./atlasCurrentEvidenceManifestV233";
 import { ATLAS_RESEARCH_CAMPAIGN_MANIFEST_V13 } from "./atlasResearchCampaignV13";
 
 export const ATLAS_RELATIVITY_RESEARCH_EVIDENCE_V230_VERSION =
   "v230-relativity-research-evidence" as const;
 
-const currentEvidence = ATLAS_CURRENT_EVIDENCE_MANIFEST_V233;
 const campaign = ATLAS_RESEARCH_CAMPAIGN_MANIFEST_V13;
 
 /**
@@ -18,7 +16,8 @@ export const ATLAS_RELATIVITY_RESEARCH_STATUS_V230 = {
   defaultSolarKernel: "legacy-eih-1pn",
   runtimePromotionApplied: false,
   denseKerr: {
-    profile: "finite-observer-v8-short-gate-passed-release-shards-incomplete",
+    profile: "finite-observer-v8-campaign-failed-negative-evidence-retained",
+    campaignStatus: campaign.denseKerr.campaignStatus,
     plannedRayCount: 3097,
     plannedShardCount: 49,
     canonicalRayCount: 25,
@@ -26,6 +25,13 @@ export const ATLAS_RELATIVITY_RESEARCH_STATUS_V230 = {
     criticalBracketRayCount: 1024,
     completedReleaseShardCount:
       campaign.denseKerr.completedReleaseShardCount,
+    completedRayCount: campaign.denseKerr.completedRayCount,
+    completedExecutionCount: campaign.denseKerr.completedExecutionCount,
+    attemptedRayCount: campaign.denseKerr.attemptedRayCount,
+    attemptedExecutionCount: campaign.denseKerr.attemptedExecutionCount,
+    failedShardIndex: campaign.denseKerr.failedShardIndex,
+    failedShardEvidence: campaign.denseKerr.failedShardEvidence,
+    noAutomaticRetry: campaign.denseKerr.noAutomaticRetry,
     frozenScreenManifestSha256:
       campaign.denseKerr.finiteObserverScreenManifestSha256,
     releasePlanFileSha256:
@@ -75,6 +81,7 @@ export const ATLAS_RELATIVITY_RESEARCH_STATUS_V230 = {
       ".venv-science\\Scripts\\python.exe scripts\\run-kerr-dense-shards-v8.py --profile release --plan-only",
     denseKerrRun:
       ".venv-science\\Scripts\\python.exe scripts\\run-kerr-dense-shards-v8.py --profile release --shard N --watchdog-seconds 180",
+    automaticDenseKerrRetryAuthorized: false,
     variationalStm:
       ".venv-science\\Scripts\\python.exe scripts\\run-relativity-variational-stm-v12.py --modes legacy-eih-1pn full-eih-1pn-2pn-lt --output dist/science/relativity-variational-stm-v12-a.json",
   },

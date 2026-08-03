@@ -35,8 +35,6 @@ export default function LaunchTrajectoryLine({
   state,
   maxRenderedPoints = MAX_RENDER,
 }: Props) {
-  const coreRef = useRef<Line2>(null);
-  const glowRef = useRef<Line2>(null);
   const coreGeoRef = useRef<LineGeometry | null>(null);
   const glowGeoRef = useRef<LineGeometry | null>(null);
   const lastCountRef = useRef(0);

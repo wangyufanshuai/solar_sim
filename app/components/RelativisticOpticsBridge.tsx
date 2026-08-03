@@ -11,8 +11,6 @@ import type { SimulationViewSettings } from "../lib/simulationViewSettings";
 const tmpLook = new THREE.Vector3();
 const tmpAxis = new THREE.Vector3();
 const tmpVelN = new THREE.Vector3();
-const tmpQuatPrev = new THREE.Quaternion();
-const tmpQuatDelta = new THREE.Quaternion();
 
 type Props = {
   daysPerSecond: number;
@@ -31,7 +29,6 @@ export default function RelativisticOpticsBridge({
   const stateRef = useRelativisticOpticsStateRef();
   const { camera } = useThree();
   const prevCamPos = useRef(new THREE.Vector3());
-  const prevCamQuat = useRef(new THREE.Quaternion());
   const initialized = useRef(false);
 
   useFrame((_, dt) => {
@@ -45,7 +42,6 @@ export default function RelativisticOpticsBridge({
 
     if (!initialized.current) {
       prevCamPos.current.copy(camera.position);
-      prevCamQuat.current.copy(camera.quaternion);
       initialized.current = true;
       s.active = false;
       s.aberrationQuat.identity();
@@ -57,10 +53,6 @@ export default function RelativisticOpticsBridge({
     prevCamPos.current.copy(camera.position);
 
     s.cEffScenePerReal = effectiveLightSpeedScenePerRealSec(AU_TO_SCENE, Math.max(dps, 1e-6));
-
-    tmpQuatDelta.copy(prevCamQuat.current).invert().multiply(camera.quaternion);
-    prevCamQuat.current.copy(camera.quaternion);
-    const omega = (2 * Math.acos(THREE.MathUtils.clamp(tmpQuatDelta.w, -1, 1))) / dtSafe;
 
     const vLen = s.camVelScenePerReal.length();
     const betaLin = s.cEffScenePerReal > 1e-20 ? vLen / s.cEffScenePerReal : 0;

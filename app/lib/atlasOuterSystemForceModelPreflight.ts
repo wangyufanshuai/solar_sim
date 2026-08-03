@@ -5,10 +5,8 @@ import {
   V77_HORIZONS_LAST_KNOWN_FAILURE_MEASURED,
 } from "./atlasHorizonsGateAudit";
 import type {
-  AtlasOuterSystemForceModelPreflightCandidateId,
   AtlasOuterSystemForceModelPreflightClassification,
   AtlasOuterSystemForceModelPreflightFixtureAudit,
-  AtlasOuterSystemForceModelPreflightFixtureAuditId,
   AtlasOuterSystemForceModelPreflightRow,
   AtlasOuterSystemForceModelPreflightSummary,
   AtlasPlutoResidualIsolationAggregate,
@@ -168,14 +166,12 @@ function emptyRow(
     plutoPositionKm: null,
     plutoVelocityMs: null,
     plutoPositionImprovementVsBaseline: null,
-    plutoExcludedAggregate: emptyAggregate(profile.id),
+    plutoExcludedAggregate: emptyAggregate(),
     mutationStatus: "not-applied",
   };
 }
 
-function emptyAggregate(
-  candidateId: AtlasOuterSystemForceModelPreflightCandidateId,
-): AtlasPlutoResidualIsolationAggregate {
+function emptyAggregate(): AtlasPlutoResidualIsolationAggregate {
   return {
     candidateId: "",
     excludedBodyId: "pluto",

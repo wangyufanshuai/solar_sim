@@ -1,11 +1,11 @@
 export const ATLAS_DELIVERY_PROFILE_VERSION = "v171-dual-web-delivery" as const;
 
-export type AtlasDeliveryProfile = "standalone-full" | "vercel-lite";
+export type AtlasDeliveryProfile = "standalone-full" | "vercel-lite" | "local-shadow";
 
 export function getAtlasDeliveryProfile(
   configured = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE,
 ): AtlasDeliveryProfile {
-  return configured === "vercel-lite" ? "vercel-lite" : "standalone-full";
+  return configured === "vercel-lite" ? "vercel-lite" : configured === "local-shadow" ? "local-shadow" : "standalone-full";
 }
 
 export function atlasPublicAssetUrl(

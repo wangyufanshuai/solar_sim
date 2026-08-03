@@ -7,14 +7,6 @@ const fromRoot = (file) => path.join(root, file);
 const readJson = async (file) => JSON.parse(await readFile(fromRoot(file), "utf8"));
 const sha256 = async (file) =>
   createHash("sha256").update(await readFile(fromRoot(file))).digest("hex");
-const canonicalHash = (document, omitted = ["generatedAt", "canonicalEvidenceSha256"]) => {
-  const stable = Object.fromEntries(
-    Object.entries(document).filter(([key]) => !omitted.includes(key)),
-  );
-  return createHash("sha256")
-    .update(JSON.stringify(stable, Object.keys(stable).sort()))
-    .digest("hex");
-};
 const deepCanonicalHash = (document, omitted = ["generatedAt", "canonicalEvidenceSha256"]) => {
   const stable = structuredClone(document);
   for (const key of omitted) delete stable[key];

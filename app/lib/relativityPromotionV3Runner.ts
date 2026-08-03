@@ -1,6 +1,6 @@
 import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 import { calculateAcceleration, stateAuToSi } from "./physicsEngine";
-import { AU_METERS, C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
+import { C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
 import { calculateRelativityForceModelV2Delta } from "./relativityForceModelV2";
 import { compareStateToHorizonsCheckpoint } from "./relativityValidation";
 import type { HorizonsComparisonCheckpoint, HorizonsValidationDataset } from "./simulationDiagnosticsTypes";

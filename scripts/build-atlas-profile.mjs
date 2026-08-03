@@ -154,24 +154,41 @@ async function runBuild(root, env) {
   });
 }
 
+function boundedNodeOptions(existing, heapMb) {
+  const withoutHeap = String(existing ?? "").replace(/--max-old-space-size=\d+/g, "").trim();
+  return `${withoutHeap} --max-old-space-size=${heapMb}`.trim();
+}
+
 const root = await realpath(process.cwd());
 const profile = argumentValue("--profile", "standalone-full");
 const preserveActiveDev = process.argv.includes("--preserve-active-dev");
 const rotate = process.argv.includes("--rotate");
 const distDir = argumentValue(
   "--dist-dir",
-  profile === "vercel-lite" ? ".next-atlas-lite-current" : ".next-atlas-standalone-current",
+  profile === "vercel-lite" ? ".next-atlas-lite-current" : profile === "local-shadow" ? ".next-atlas-local-shadow-current" : ".next-atlas-standalone-current",
 );
 const previousDistDir = argumentValue("--previous-dist-dir", `${distDir}-previous`);
-if (!new Set(["standalone-full", "vercel-lite"]).has(profile)) {
+const heapMb = Number(process.env.ATLAS_NODE_HEAP_MB ?? "8192");
+if (!Number.isInteger(heapMb) || heapMb < 4096 || heapMb > 8192) {
+  throw new Error(`ATLAS_NODE_HEAP_MB must be an integer between 4096 and 8192: ${heapMb}`);
+}
+if (!new Set(["standalone-full", "vercel-lite", "local-shadow"]).has(profile)) {
   throw new Error(`Unsupported Atlas delivery profile: ${profile}`);
 }
+
+const buildReceiptName = profile === "vercel-lite"
+  ? "atlas-lite-build-resource-v562.json"
+  : profile === "local-shadow"
+    ? "atlas-local-shadow-build-resource-v562.json"
+    : "atlas-build-resource-v562.json";
+const buildReceiptPath = join(root, "dist", "release", buildReceiptName);
 
 const target = assertSafeBuildDirectory(root, distDir);
 const previous = assertSafeBuildDirectory(root, previousDistDir);
 if (target === previous) throw new Error("Current and previous build slots must differ");
 
 const lockPath = resolve(root, ".atlas-build.lock");
+const buildTsconfigPath = resolve(root, ".atlas-build-tsconfig.json");
 let lock;
 try {
   lock = await open(lockPath, "wx");
@@ -188,10 +205,14 @@ const isolatedJunctions = [];
 const rollbackJunctions = [];
 const previousRollbackJunctions = [];
 const moved = [];
+let routeOverlayDirectoryCount = 0;
+let routeOverlayVersionedEvidenceDirectoryCount = 0;
+let rootPageHeldForLocalShadow = false;
 let rollbackPresent = false;
 let previousRollbackPresent = false;
 let holdCreated = false;
 let targetPrepared = false;
+let buildTsconfigCreated = false;
 let buildCode = 1;
 
 try {
@@ -233,6 +254,41 @@ try {
   for (const payload of [resolve(root, "dist", "content-packs"), resolve(root, "dist", "desktop-stage")]) {
     if (await exists(payload)) isolated.push(payload);
   }
+  // Keep each build on its admitted route graph. Formal standalone/lite omit
+  // every local-shadow and versioned research route. The local-shadow profile
+  // admits only the selected candidate version (v562 by default); compiling
+  // all 202 historical evidence versions exceeded the fixed 8 GiB policy.
+  // The finally block restores every held route byte-for-byte.
+  const routeOverlayEnabled = process.env.ATLAS_ROUTE_OVERLAY !== "off";
+  if (routeOverlayEnabled) {
+    const appRoot = resolve(root, "app");
+    const evidenceRoot = resolve(appRoot, "api", "atlas", "relativity-evidence");
+    const localShadowVersion = (process.env.ATLAS_LOCAL_SHADOW_ROUTE_VERSION ?? "v562").trim();
+    if (!/^v\d+$/.test(localShadowVersion)) throw new Error(`Invalid local-shadow route version: ${localShadowVersion}`);
+    const localShadowRoutes = (await readdir(appRoot, { withFileTypes: true }))
+      .filter((entry) => entry.isDirectory() && /^local-shadow-v\d+$/.test(entry.name))
+      .filter((entry) => profile !== "local-shadow" || entry.name !== `local-shadow-${localShadowVersion}`)
+      .map((entry) => resolve(appRoot, entry.name));
+    const versionedEvidenceRoutes = await exists(evidenceRoot)
+      ? (await readdir(evidenceRoot, { withFileTypes: true }))
+        .filter((entry) => entry.isDirectory() && /^v\d+$/.test(entry.name))
+        .filter((entry) => profile !== "local-shadow" || entry.name !== localShadowVersion)
+        .map((entry) => resolve(evidenceRoot, entry.name))
+      : [];
+    for (const source of [...localShadowRoutes, ...versionedEvidenceRoutes]) {
+      if (!within(root, source)) throw new Error(`Route overlay escapes workspace: ${source}`);
+      isolated.push(source);
+    }
+    routeOverlayDirectoryCount = localShadowRoutes.length + versionedEvidenceRoutes.length;
+    routeOverlayVersionedEvidenceDirectoryCount = versionedEvidenceRoutes.length;
+    if (profile === "local-shadow") {
+      const formalRootPage = resolve(appRoot, "page.tsx");
+      if (await exists(formalRootPage)) {
+        isolated.push(formalRootPage);
+        rootPageHeldForLocalShadow = true;
+      }
+    }
+  }
 
   for (let index = 0; index < isolated.length; index += 1) {
     const source = isolated[index];
@@ -242,9 +298,37 @@ try {
     moved.push({ source, destination });
   }
 
+  const buildTsconfigExcludes = [
+    "node_modules",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "tests/**",
+    "scripts/**",
+    ".next/**",
+  ];
+  await writeFile(buildTsconfigPath, `${JSON.stringify({
+    extends: "./tsconfig.json",
+    compilerOptions: {
+      incremental: false,
+    },
+    include: [
+      "next-env.d.ts",
+      "proxy.ts",
+      "app/**/*.ts",
+      "app/**/*.tsx",
+      `${distDir}/types/**/*.ts`,
+    ],
+    exclude: buildTsconfigExcludes,
+  }, null, 2)}\n`, "utf8");
+  buildTsconfigCreated = true;
+
   buildCode = await runBuild(root, {
     ...process.env,
+    NODE_OPTIONS: boundedNodeOptions(process.env.NODE_OPTIONS, heapMb),
+    ATLAS_LOW_MEMORY_BUILD: "true",
+    ATLAS_WEBPACK_STATS: process.env.ATLAS_WEBPACK_STATS ?? "off",
     ATLAS_NEXT_DIST_DIR: distDir,
+    ATLAS_TSCONFIG_PATH: ".atlas-build-tsconfig.json",
     ATLAS_LOCAL_ASSET_PACK_ROOT: "off",
     ATLAS_TEXTURE_PROXY: profile === "vercel-lite" ? "off" : process.env.ATLAS_TEXTURE_PROXY,
     NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE: profile,
@@ -259,6 +343,13 @@ try {
     distDir,
     buildId: topology.buildId,
     directoryCount: topology.directoryCount,
+    routeOverlay: {
+      enabled: routeOverlayDirectoryCount > 0,
+      directoryCount: routeOverlayDirectoryCount,
+      versionedEvidenceDirectoryCount: routeOverlayVersionedEvidenceDirectoryCount,
+      rootPageHeldForLocalShadow,
+      boundary: "profile-scoped-routes-restored-after-build",
+    },
   }, null, 2)}\n`, "utf8");
 
   if (rotate && rollbackPresent) {
@@ -273,8 +364,48 @@ try {
     previousRollbackPresent = false;
     await restoreJunctions(previousRollbackJunctions);
   }
+  await mkdir(join(root, "dist", "release"), { recursive: true });
+  await writeFile(buildReceiptPath, `${JSON.stringify({
+    version: "v562-atlas-build-resource-receipt-v1",
+    status: "passed",
+    profile,
+    distDir,
+    heapMb,
+    lowMemoryMode: true,
+    heapPolicyMaximumReached: heapMb === 8192,
+    routeOverlayDirectoryCount,
+    routeOverlayVersionedEvidenceDirectoryCount,
+    rootPageHeldForLocalShadow,
+    standaloneTopologyQualified: true,
+    rollbackSlotAvailable: await exists(previous),
+    browserStarted: false,
+    denseStarted: false,
+    gpuStarted: false,
+  }, null, 2)}\n`, "utf8");
 } catch (error) {
   buildCode = 1;
+  try {
+    await writeFile(buildReceiptPath, `${JSON.stringify({
+      version: "v562-atlas-build-resource-receipt-v1",
+      status: "resource-blocked",
+      blocker: buildCode === 134 && heapMb === 8192 ? "runner-node-heap-oom-at-policy-maximum" : "build-runner-failure",
+      profile,
+      distDir,
+      heapMb,
+      lowMemoryMode: true,
+      heapPolicyMaximumReached: heapMb === 8192,
+      routeOverlayDirectoryCount,
+      routeOverlayVersionedEvidenceDirectoryCount,
+      rootPageHeldForLocalShadow,
+      error: error instanceof Error ? error.message : String(error),
+      rollbackAttempted: rollbackPresent || targetPrepared,
+      browserStarted: false,
+      denseStarted: false,
+      gpuStarted: false,
+    }, null, 2)}\n`, "utf8");
+  } catch {
+    // Preserve the original build error if the diagnostic receipt itself cannot be written.
+  }
   if (targetPrepared) await removeBuildDirectory(target, distDir);
   if (rollbackPresent) {
     await renameWithRetry(rollback, target);
@@ -302,6 +433,7 @@ try {
     restoreErrors.push(error);
   }
   if (holdCreated) await rm(hold, { recursive: true, force: true });
+  if (buildTsconfigCreated) await rm(buildTsconfigPath, { force: true });
   await lock.close();
   await rm(lockPath, { force: true });
   if (restoreErrors.length > 0) {

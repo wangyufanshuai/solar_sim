@@ -90,6 +90,24 @@ describe("Orbit Atlas presentation transform", () => {
   });
 
   it("ships the fallback sky layers, v61 default sky layers, and selected-body HD texture manifest", () => {
+    const archivedHistoricalSkyLayers = new Set([
+      ORBIT_ATLAS_V9_SKY.desktopBase,
+      ORBIT_ATLAS_V9_SKY.mobileBase,
+      ORBIT_ATLAS_V48_SKY.desktopBase,
+      ORBIT_ATLAS_V48_SKY.mobileBase,
+      ORBIT_ATLAS_V56_SKY.desktopBase,
+      ORBIT_ATLAS_V57_SKY.desktopBase,
+      ORBIT_ATLAS_V57_SKY.dustMask,
+      ORBIT_ATLAS_V57_SKY.negativeSpaceMask,
+      ORBIT_ATLAS_V57_SKY.nebulaHazeMask,
+      ORBIT_ATLAS_V59_SKY.desktopBase,
+      ORBIT_ATLAS_V59_SKY.dustMask,
+      ORBIT_ATLAS_V59_SKY.negativeSpaceMask,
+      ORBIT_ATLAS_V66_SKY.desktopBase,
+      ORBIT_ATLAS_V67_SKY.desktopStars,
+      ORBIT_ATLAS_V68_SKY.desktopBase,
+      ORBIT_ATLAS_V68_SKY.desktopStars,
+    ]);
     for (const asset of [
       ORBIT_ATLAS_V9_SKY.desktopBase,
       ORBIT_ATLAS_V9_SKY.mobileBase,
@@ -201,6 +219,10 @@ describe("Orbit Atlas presentation transform", () => {
         resolution.packId,
         resolution.path,
       );
+      if (archivedHistoricalSkyLayers.has(asset)) {
+        expect(existsSync(path), `historical sky layer unexpectedly restored: ${asset}`).toBe(false);
+        continue;
+      }
       const minimumSize =
         asset.includes("v65-lock") || asset.includes("v64-cinematic")
           ? 16 * 1024

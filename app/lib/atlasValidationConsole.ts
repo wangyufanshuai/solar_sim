@@ -1,6 +1,5 @@
 import type {
   AtlasMissionHubSummary,
-  AtlasNavigatorPanelId,
   AtlasNavigatorSummary,
   AtlasReportStudioSummary,
   AtlasValidationConsoleSummary,
@@ -9,7 +8,6 @@ import type {
   AtlasValidationDomainId,
   AtlasValidationDomainStatus,
   AtlasValidationIssue,
-  AtlasValidationIssueSeverity,
   AtlasWorkflowSummary,
   EvidenceClaim,
   EvidenceClaimGroup,

@@ -8,7 +8,6 @@ import {
   SOLAR_LIMB_DEFLECTION_TARGET_ARCSEC,
 } from "./relativityValidation";
 import type {
-  EvidenceClaimConfidence,
   EvidenceClaimStatus,
   KerrRelativityStudioSummary,
   RelativityObservableAtlasSummary,

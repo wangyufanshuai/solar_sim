@@ -2,11 +2,9 @@
 
 import { lazy } from "react";
 
-type AtlasSceneModule = Promise<{ default: React.ComponentType<any> }>;
-
-let launchSceneModule: AtlasSceneModule | undefined;
-let exoplanetSceneModule: AtlasSceneModule | undefined;
-let kerrSceneModule: AtlasSceneModule | undefined;
+let launchSceneModule: Promise<typeof import("./LaunchSceneView")> | undefined;
+let exoplanetSceneModule: Promise<typeof import("./ExoplanetSystemScene")> | undefined;
+let kerrSceneModule: Promise<typeof import("./KerrBlackHole")> | undefined;
 
 const loadLaunchSceneView = () => (
   launchSceneModule ??= import("./LaunchSceneView")

@@ -2,7 +2,6 @@ import type {
   AtlasReleaseGateSummary,
   AtlasReleaseGateVersion,
   AtlasValidationDomain,
-  AtlasValidationDomainId,
   AtlasValidationDomainStatus,
 } from "./simulationDiagnosticsTypes";
 

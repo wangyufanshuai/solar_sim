@@ -9,6 +9,7 @@ import {
   atlasDesktopSessionValue,
   configuredAtlasDesktopToken,
 } from "./app/lib/atlasDesktopSession";
+import { classifyAtlasProxyPathV562 } from "./app/lib/atlasProxyContractV562";
 
 function desktopNotFound() {
   return new NextResponse(null, {
@@ -55,17 +56,15 @@ function authorizeDesktopRequest(request: NextRequest): NextResponse | null {
 export function proxy(request: NextRequest) {
   const desktopAuthorization = authorizeDesktopRequest(request);
   if (desktopAuthorization) return desktopAuthorization;
-  if (request.method !== "GET" && request.method !== "HEAD") {
+  const deliveryProfile = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE === "local-shadow"
+    ? "local-shadow"
+    : process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE === "vercel-lite"
+      ? "vercel-lite"
+      : "standalone-full";
+  const pathDecision = classifyAtlasProxyPathV562(request.method, request.nextUrl.pathname, deliveryProfile);
+  if (pathDecision === "next") {
     return NextResponse.next();
   }
-  const { pathname } = request.nextUrl;
-  if (pathname === "/") return NextResponse.next();
-  if (pathname === "/downloads") return NextResponse.next();
-  if (pathname.startsWith("/api/")) return NextResponse.next();
-  if (pathname.startsWith("/_next")) return NextResponse.next();
-  if (pathname.startsWith("/textures")) return NextResponse.next();
-  if (pathname === "/favicon.ico") return NextResponse.next();
-  if (/\.[a-zA-Z0-9]{1,10}$/.test(pathname)) return NextResponse.next();
   const url = request.nextUrl.clone();
   url.pathname = "/";
   url.search = "";

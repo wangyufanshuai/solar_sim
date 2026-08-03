@@ -8,7 +8,7 @@
  * only refines sampling in time. Tuning: `solarSystemPhysics.ts`.
  */
 
-import { AU_METERS, C_LIGHT, DAY_SECONDS } from "./physicalConstants";
+import { AU_METERS, DAY_SECONDS } from "./physicalConstants";
 
 /** Softening ε² (m²); ~1e-4 AU. */
 export function defaultEps2Meters(): number {

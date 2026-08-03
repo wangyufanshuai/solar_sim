@@ -7,7 +7,9 @@ const fromRoot = (file) => path.join(root, file);
 const readJson = async (file) => JSON.parse(await readFile(fromRoot(file), "utf8"));
 const sha256 = async (file) => createHash("sha256").update(await readFile(fromRoot(file))).digest("hex");
 const withoutVolatileKerrFields = (report) => {
-  const { generatedAt: _generatedAt, canonicalEvidenceSha256: _declared, ...evidence } = report;
+  const evidence = { ...report };
+  delete evidence.generatedAt;
+  delete evidence.canonicalEvidenceSha256;
   return evidence;
 };
 

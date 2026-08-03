@@ -54,7 +54,7 @@ function download(url, dest) {
 
 const args = process.argv.slice(2);
 const use21600 = args.includes("--21600");
-let outArgIdx = args.indexOf("--out");
+const outArgIdx = args.indexOf("--out");
 const out =
   outArgIdx >= 0 && args[outArgIdx + 1]
     ? args[outArgIdx + 1]

@@ -5,7 +5,7 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
-import { SPIRAL_ARMS, CENTRAL_BAR, SUN_DISTANCE_PC } from "../data/galacticStructure";
+import { SPIRAL_ARMS, CENTRAL_BAR } from "../data/galacticStructure";
 
 const DISK_STAR_COUNT = 12000;
 const HALO_STAR_COUNT = 1600;

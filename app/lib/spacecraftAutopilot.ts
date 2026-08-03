@@ -2,10 +2,9 @@
 
 import {
   EARTH_BODY_INDEX,
-  MOON_BODY_INDEX,
   SPACECRAFT_BODY_INDEX,
 } from "../data/planetsJ2000";
-import { AU_METERS, DAY_SECONDS } from "./physicalConstants";
+import { DAY_SECONDS } from "./physicalConstants";
 import type { SolarSystemPhysicsRef } from "./solarSystemRef";
 import {
   SLS_BLOCK_1,
@@ -78,7 +77,7 @@ type MissionState = {
 const EARTH_ROT_RATE_RAD_S = (2 * Math.PI) / 86164.0905;
 const EARTH_RADIUS_M = 6_378_137;
 
-let _state: MissionState = {
+const _state: MissionState = {
   enabled: false,
   phase: "idle",
   phaseElapsedS: 0,
@@ -97,7 +96,7 @@ let _state: MissionState = {
 
 // ─── Pending thrust buffer ──────────────────────────────────────
 
-let _pendingThrust = {
+const _pendingThrust = {
   active: false,
   dirX: 0,
   dirY: 0,
@@ -194,7 +193,7 @@ export function startLaunchSequence(): void {
   _state.currentGForce = 0;
 }
 
-export function stopLaunchSequence(p?: SolarSystemPhysicsRef | null): void {
+export function stopLaunchSequence(): void {
   _state.enabled = false;
   _state.phase = "idle";
   _state.phaseElapsedS = 0;

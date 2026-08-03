@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 /**
  * Global orbit trail opacity before LOD / selection / body-size boost.
@@ -141,13 +142,8 @@ export function orbitHairlineColorForReferenceId(id: string): THREE.Color {
  * Backward-compatible: maps body index to body ID, then looks up color.
  */
 export function orbitHairlineColorForBodyIndex(bodyIndex: number): THREE.Color {
-  try {
-    const { SOLAR_SYSTEM_BODIES } = require("../data/planetsJ2000");
-    const def = SOLAR_SYSTEM_BODIES[bodyIndex];
-    if (def) return orbitColorForBodyId(def.id);
-  } catch {
-    // Fall through to hash-based fallback
-  }
+  const def = SOLAR_SYSTEM_BODIES[bodyIndex];
+  if (def) return orbitColorForBodyId(def.id);
   return orbitColorForBodyId(`body-${bodyIndex}`);
 }
 

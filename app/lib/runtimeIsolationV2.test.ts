@@ -4,7 +4,8 @@ import { describe, expect, it } from "vitest";
 const page = readFileSync("app/UniverseRuntimeController.tsx", "utf8");
 const navigatorRuntime = readFileSync("app/components/AtlasNavigatorRuntimePanel.tsx", "utf8");
 const historyBar = readFileSync("app/components/SimulationHistoryBar.tsx", "utf8");
-const middleware = readFileSync("middleware.ts", "utf8");
+const proxy = readFileSync("proxy.ts", "utf8");
+const proxyContract = readFileSync("app/lib/atlasProxyContractV562.ts", "utf8");
 const catalogPackManager = readFileSync("app/components/CatalogPackManager.tsx", "utf8");
 const galaxyEnvironment = readFileSync("app/components/GalaxyEnvironmentSphere.tsx", "utf8");
 const freshBrowserConfig = readFileSync("playwright.atlas.fresh.config.ts", "utf8");
@@ -25,9 +26,10 @@ describe("v155 runtime isolation", () => {
   });
 
   it("does not redirect same-origin catalog APIs into the SPA page", () => {
-    expect(middleware).toContain('pathname.startsWith("/api/")');
-    expect(middleware.indexOf('pathname.startsWith("/api/")')).toBeLessThan(
-      middleware.indexOf("const url = request.nextUrl.clone()"),
+    expect(proxyContract).toContain('pathname.startsWith("/api/")');
+    expect(proxy).toContain("classifyAtlasProxyPathV562");
+    expect(proxy.indexOf("authorizeDesktopRequest(request)")).toBeLessThan(
+      proxy.indexOf("const url = request.nextUrl.clone()"),
     );
   });
 
@@ -43,7 +45,8 @@ describe("v155 runtime isolation", () => {
   });
 
   it("runs fresh browser acceptance against a built production server", () => {
-    expect(freshBrowserConfig).toContain("npm run build && node scripts/start-atlas-standalone.mjs");
+    expect(freshBrowserConfig).toContain("node scripts/start-atlas-standalone.mjs");
+    expect(freshBrowserConfig).toContain("--dist-dir .next-atlas-standalone-current");
     expect(freshBrowserConfig).toContain("reuseExistingServer: false");
     expect(freshBrowserConfig).toContain("globalTeardown");
     expect(standaloneStarter).toContain('join(standaloneRoot, "public")');

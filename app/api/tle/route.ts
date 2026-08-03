@@ -44,7 +44,7 @@ export async function GET() {
     const records = [...stations, ...qzss, ...starlink];
     cache = { ts: now, records };
     return NextResponse.json({ at: new Date(now).toISOString(), records }, { headers: ATLAS_TLE_RESPONSE_HEADERS });
-  } catch (e) {
+  } catch {
     if (cache) {
       return NextResponse.json({
         at: new Date(cache.ts).toISOString(),

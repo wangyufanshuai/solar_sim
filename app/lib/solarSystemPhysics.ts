@@ -202,8 +202,7 @@ export class SolarSystemPhysics {
   integrateOneFrame(
     dtSimS: number,
     invC2: number,
-    tier: PhysicsPrecisionTier,
-    _simDeltaDays: number
+    tier: PhysicsPrecisionTier
   ): PhysicsStepMetrics {
     this.setPrecisionTier(tier);
     const inv = tier === "newton" ? 0 : invC2;

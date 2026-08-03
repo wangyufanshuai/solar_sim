@@ -1,3 +1,5 @@
+/* Dynamic legacy evidence JSON is validated below before promotion decisions. */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createHash } from "node:crypto";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";

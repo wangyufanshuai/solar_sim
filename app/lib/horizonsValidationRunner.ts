@@ -5,7 +5,7 @@ import {
   rk4Step,
   stateAuToSi,
 } from "./physicsEngine";
-import { AU_METERS, C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
+import { C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
 import {
   compareStateToHorizonsCheckpoint,
   modeResultFromCheckpoints,

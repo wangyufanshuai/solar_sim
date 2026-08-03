@@ -1,13 +1,11 @@
 import type {
   AtlasMissionHubItem,
   AtlasMissionHubSummary,
-  AtlasNavigatorItem,
   AtlasNavigatorSummary,
   AtlasObservatoryDeckAction,
   AtlasObservatoryDeckSummary,
   AtlasObservatoryDeckVersion,
   AtlasObservatoryDeckZone,
-  AtlasObservatoryZoneId,
   AtlasPerformanceBudgetSummary,
   AtlasChineseDeepSpaceFidelitySummary,
   AtlasCinematicDeepSpaceCameraSummary,

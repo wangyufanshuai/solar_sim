@@ -19,6 +19,7 @@ import {
   preloadPlanetTextureUrls,
   type BodyTextureSlots,
 } from "../lib/planetTextureManager";
+import { acquireAtlasTextureResourceV289 } from "../lib/atlasResourceLifecycle";
 
 const TEXTURE_PROGRESS_MESSAGE = "正在载入本地行星纹理";
 
@@ -65,6 +66,7 @@ export function PlanetTextureAssetsProvider({
   >({});
   const disposedRef = useRef(false);
   const texturesRef = useRef<Map<string, THREE.Texture>>(new Map());
+  const textureReleaseRef = useRef<Map<string, () => void>>(new Map());
 
   const extraNormalById = useMemo(() => {
     const m: Record<string, string | undefined> = {};
@@ -109,6 +111,12 @@ export function PlanetTextureAssetsProvider({
         return;
       }
       texturesRef.current = byUrl;
+      byUrl.forEach((texture, url) => {
+        textureReleaseRef.current.set(
+          url,
+          acquireAtlasTextureResourceV289(texture, "atlas", `planet-texture:${url}`, "solar-textures"),
+        );
+      });
       setTexturesById(
         assembleBodyTextureSlots(bodyIds, byUrl, extraNormalById),
       );
@@ -116,11 +124,15 @@ export function PlanetTextureAssetsProvider({
       reportProgress(tasks.length, tasks.length);
     });
 
+    const textureReleases = textureReleaseRef.current;
+    const loadedTextures = texturesRef.current;
     return () => {
       cancelled = true;
       disposedRef.current = true;
-      texturesRef.current.forEach((texture) => texture.dispose());
-      texturesRef.current.clear();
+      textureReleases.forEach((release) => release());
+      textureReleases.clear();
+      loadedTextures.forEach((texture) => texture.dispose());
+      loadedTextures.clear();
       setTexturesById({});
       setReady(false);
     };

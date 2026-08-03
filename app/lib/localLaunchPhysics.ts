@@ -211,22 +211,18 @@ function computeApsides(
   const eps = vMs * vMs / 2 - gm / rM;
   if (eps >= 0) {
     // Hyperbolic — no apoapsis
-    const a = -gm / (2 * eps); // negative for hyperbolic
-    const p = a * (1); // approximate
     return { apoapsisKm: Infinity, periapsisKm: (rM - EARTH_RADIUS_M) / 1000 };
   }
   const a = -gm / (2 * eps); // semi-major axis
   // Specific angular momentum magnitude
   // h = |r × v|, but we need eccentricity
   // For simplicity, compute from vis-viva:
-  const h2 = rM * rM * vMs * vMs - (rM * vMs * vMs - gm) * rM * rM / (gm / (2 * a));
   // Use energy-based approach:
   // v² = gm (2/r - 1/a) → already known
   // e = sqrt(1 - h²/(gm*a))
   // Instead, use: r_apo = a(1+e), r_peri = a(1-e)
   // and r = a(1-e²)/(1+e*cos(θ)) — at current point
   // Simplified: just use a and compute e from current r
-  const e = Math.sqrt(Math.max(0, 1 - (rM * vMs * vMs / gm - 2) * rM / a + (rM / a) * (rM / a)));
   // Actually let's use the simpler formula:
   // From angular momentum: h = r × v (magnitude)
   // We don't have the cross product easily from scalars, so use:

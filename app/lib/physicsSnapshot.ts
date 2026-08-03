@@ -184,7 +184,6 @@ export function parseSnapshotFile(json: unknown): SolarSystemSnapshotFile | null
 }
 
 export function filePayloadToHistoryEntry(f: SolarSystemSnapshotFile): HistoryEntry {
-  const n = f.massKg.length;
   const posAu = Float64Array.from(f.posAu);
   const velAuPerDay = Float64Array.from(f.velAuPerDay);
   const massKg = Float64Array.from(f.massKg);

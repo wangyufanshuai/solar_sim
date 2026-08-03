@@ -16,7 +16,6 @@ import type {
   LaunchConfig,
   LaunchEvent,
   LaunchSimState,
-  INITIAL_LAUNCH_STATE,
 } from "./launchTelemetryTypes";
 
 /** Max trajectory points in the ring buffer (500k = ~500s at 1ms). */
@@ -60,7 +59,7 @@ export default function useLaunchWebSocket(
   const isStreamingRef = useRef(false);
 
   // Tick counter to trigger re-renders at 60fps
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
 
   // Allocate state once
   const [launchState] = useState<LaunchSimState>(() => ({

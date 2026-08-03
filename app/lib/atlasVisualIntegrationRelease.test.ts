@@ -1,9 +1,6 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { describe, expect, it } from "vitest";
 import { ATLAS_VISUAL_REVIEW_SCENES, createAtlasVisualIntegrationReleaseSummary, percentile } from "./atlasVisualIntegrationRelease";
-const read = (path: string) => readFileSync(resolve(process.cwd(), path), "utf8");
-
 describe("v119 visual integration release gate", () => {
   it("locks eight review scenes and baseline thresholds", () => {
     const summary = createAtlasVisualIntegrationReleaseSummary();
@@ -17,7 +14,7 @@ describe("v119 visual integration release gate", () => {
     expect(percentile([40, 10, 30, 20], 0.95)).toBe(40);
   });
   it("wires root markers, runtime probe, docs, evidence and Browser QA", () => {
-    const all = ["app/UniverseRuntimeController.tsx", "app/components/AtlasRuntimePerformanceProbe.tsx", "app/lib/evidenceLedger.ts", "README.md", "docs/TECHNICAL_OVERVIEW.md", "tests/atlas-browser/atlas-browser-acceptance.spec.ts", "package.json"].map(read).join("\n");
+    const all = ["app/UniverseRuntimeController.tsx", "app/components/AtlasRuntimePerformanceProbe.tsx", "app/lib/evidenceLedger.ts", "README.md", "docs/TECHNICAL_OVERVIEW.md", "tests/atlas-browser/atlas-browser-acceptance.spec.ts", "package.json", "scripts/atlas-legacy-command-map-v256.json"].map((file) => readProjectSourceBundle(file)).join("\n");
     for (const marker of ["v119-visual-integration-release-gate", "data-atlas-runtime-median-fps", "data-atlas-runtime-frame-p95-ms", "test:atlas:visual-integration-release"]) expect(all).toContain(marker);
   });
 });

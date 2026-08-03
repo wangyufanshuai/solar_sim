@@ -3,7 +3,7 @@
 import * as THREE from "three";
 import { useMemo } from "react";
 import { useThree } from "@react-three/fiber";
-import { BRIGHT_STARS_TIER1, BRIGHT_STARS_TIER2, type BrightStarDef } from "../data/brightStarCatalog";
+import { BRIGHT_STARS_TIER1, BRIGHT_STARS_TIER2 } from "../data/brightStarCatalog";
 
 const SPHERE_RADIUS = 8000;
 

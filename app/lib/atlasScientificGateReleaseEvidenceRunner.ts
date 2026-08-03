@@ -3,7 +3,6 @@ import {
   runAtlasScientificGateMaintenanceRunbookAudit,
 } from "./atlasScientificGateMaintenanceRunbookRunner";
 import {
-  V90_HORIZONS_PROVENANCE_FREEZE_ROW,
   V90_LEGACY_V75_FIXTURE_SHA256,
   V90_MIGRATED_FIXTURE_SHA256,
 } from "./atlasHorizonsProvenanceFreeze";

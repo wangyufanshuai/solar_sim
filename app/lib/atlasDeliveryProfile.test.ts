@@ -25,4 +25,10 @@ describe("v171 dual web delivery", () => {
       launchDemo: true,
     });
   });
+
+  it("keeps local-shadow on full local capabilities without promoting formal defaults", () => {
+    expect(getAtlasDeliveryProfile("local-shadow")).toBe("local-shadow");
+    expect(atlasPublicAssetUrl("/textures/planets/earth.jpg", "local-shadow")).toBe("/textures/planets/earth.jpg");
+    expect(atlasDeliveryCapabilities("local-shadow")).toMatchObject({ localContentPacks: true, millionStarCatalog: true });
+  });
 });

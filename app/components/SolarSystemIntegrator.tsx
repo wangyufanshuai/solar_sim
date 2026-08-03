@@ -77,7 +77,7 @@ export default function SolarSystemIntegrator({
       p.integrateOneFrame(dtSimS, invC2, precisionTier, simDeltaDays);
       mainThreadLastAcceptedSubsteps.value = p.getStepsLastFrame();
     } else {
-      const m = p.integrateOneFrame(dtSimS, invC2, precisionTier, simDeltaDays);
+      const m = p.integrateOneFrame(dtSimS, invC2, precisionTier);
       mainThreadLastAcceptedSubsteps.value = m.acceptedSubsteps;
     }
   });

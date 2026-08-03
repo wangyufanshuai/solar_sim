@@ -1,8 +1,9 @@
 import { readdirSync, writeFileSync } from "node:fs";
-import { dirname } from "node:path";
+import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const configuredDistDir = process.env.ATLAS_NEXT_DIST_DIR?.trim();
+const configuredTsconfigPath = process.env.ATLAS_TSCONFIG_PATH?.trim();
 const projectRoot = dirname(fileURLToPath(import.meta.url));
 const deliveryProfile = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE?.trim() || "standalone-full";
 const isDevelopment = process.env.NODE_ENV === "development";
@@ -45,6 +46,7 @@ const generatedNextTraceExcludes = readdirSync(projectRoot, { withFileTypes: tru
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: "standalone",
+  ...(configuredTsconfigPath ? { typescript: { tsconfigPath: configuredTsconfigPath } } : {}),
   outputFileTracingRoot: projectRoot,
   // Keep the Windows standalone trace explicit across the Next 15 -> 16
   // migration; the server loads these lazy logging dependencies at runtime.
@@ -75,17 +77,18 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react"],
     sri: { algorithm: "sha384" },
   },
-  webpack(config, { dev, isServer, nextRuntime }) {
+  webpack(config, { dev, isServer, nextRuntime, webpack }) {
     if (dev) {
       config.watchOptions = {
         ...(config.watchOptions ?? {}),
-        ignored: [
-          "**/node_modules/**",
-          "**/.next/**",
-          /[\\/]pagefile\.sys$/i,
-          /[\\/]DumpStack\.log\.tmp$/i,
-        ],
+        ignored: /[\\/](?:node_modules|\.next(?:-[^\\/]+)?)(?:[\\/]|$)|[\\/](?:pagefile\.sys|DumpStack\.log\.tmp)$/i,
       };
+    }
+    if (!dev && deliveryProfile !== "local-shadow" && process.env.ATLAS_RESEARCH_WORKBENCH !== "full") {
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /RelativityResearchWorkbenchV280$/,
+        resolve(projectRoot, "app/components/RelativityResearchWorkbenchReleaseBoundaryV564.tsx"),
+      ));
     }
     const statsOutput = process.env.ATLAS_WEBPACK_STATS?.trim();
     if (!dev && !isServer && !nextRuntime && statsOutput) {
@@ -97,11 +100,14 @@ const nextConfig = {
               chunks: true,
               chunkModules: true,
               chunkModulesSpace: Infinity,
+              dependentModules: true,
               ids: true,
               modules: true,
               modulesSpace: Infinity,
               nestedModules: true,
+              orphanModules: true,
               reasons: true,
+              runtimeModules: true,
             })));
           });
         },
@@ -120,7 +126,7 @@ const nextConfig = {
           { key: "Cross-Origin-Resource-Policy", value: "same-origin" },
           { key: "X-Content-Type-Options", value: "nosniff" },
           { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
-          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(), browsing-topics=()" },
+          { key: "Permissions-Policy", value: "camera=(), microphone=(), geolocation=(self), browsing-topics=()" },
         ],
       },
       {

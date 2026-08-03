@@ -126,11 +126,11 @@ export function useAtlasLaunchController({
     launchConfigRef.current = null;
     selection.resetCameraOrigin();
     const stopLegacySequence = (module: AtlasAutopilotModule) => {
-      if (module.isLaunchActivePhase()) module.stopLaunchSequence(physicsRef.current);
+      if (module.isLaunchActivePhase()) module.stopLaunchSequence();
     };
     if (atlasAutopilotModule) stopLegacySequence(atlasAutopilotModule);
     else void preloadAtlasAutopilot().then(stopLegacySequence);
-  }, [physicsRef, selection]);
+  }, [selection]);
 
   const handleLocalLaunchHandoff = useCallback((heliocentric: AtlasLaunchHandoffState) => {
     if (!writeAtlasLaunchHandoffToPhysics(

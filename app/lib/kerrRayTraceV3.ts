@@ -328,7 +328,6 @@ export function kerrThinDiskRedshiftFactorV3(spinA: number, radiusM: number, imp
   const a = spinA;
   const r = Math.max(kerrOuterHorizonRadiusV3(a) + 1e-6, radiusM);
   const omega = 1 / (r ** 1.5 + a);
-  const sin2 = 1;
   const gtt = -(1 - 2 / r);
   const gtphi = -2 * a / r;
   const gphiphi = r * r + a * a + 2 * a * a / r;
