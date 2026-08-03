@@ -1,0 +1,26 @@
+{
+  "version": "v568-ixpe-cyg-x1-primary-holdout-acquisition-manifest-v1",
+  "target": "Cyg X-1",
+  "archive": "HEASARC",
+  "automaticRetry": false,
+  "automaticTargetReplacement": false,
+  "measuredAuthorityGranted": false,
+  "urls": [
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/event_l2/ixpe01002901_det1_evt2_v01.fits.gz","fileName":"primary/ixpe01002901_det1_evt2_v01.fits.gz","role":"science-event-list","observationId":"01002901","detector":"DU1"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/event_l2/ixpe01002901_det2_evt2_v01.fits.gz","fileName":"primary/ixpe01002901_det2_evt2_v01.fits.gz","expectedBytes":198942090,"role":"science-event-list","observationId":"01002901","detector":"DU2"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/event_l2/ixpe01002901_det3_evt2_v01.fits.gz","fileName":"primary/ixpe01002901_det3_evt2_v01.fits.gz","expectedBytes":186981192,"role":"science-event-list","observationId":"01002901","detector":"DU3"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/hk/ixpe01002901_det1_att_v02.fits.gz","fileName":"primary/ixpe01002901_det1_att_v02.fits.gz","expectedBytes":260737470,"role":"attitude","observationId":"01002901","detector":"DU1"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/hk/ixpe01002901_det2_att_v02.fits.gz","fileName":"primary/ixpe01002901_det2_att_v02.fits.gz","expectedBytes":259913883,"role":"attitude","observationId":"01002901","detector":"DU2"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/hk/ixpe01002901_det3_att_v02.fits.gz","fileName":"primary/ixpe01002901_det3_att_v02.fits.gz","expectedBytes":258901869,"role":"attitude","observationId":"01002901","detector":"DU3"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/hk/ixpe01002901_all_orb_v02.fits.gz","fileName":"primary/ixpe01002901_all_orb_v02.fits.gz","expectedBytes":61455284,"role":"orbit","observationId":"01002901","detector":"ALL"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01002901/README","fileName":"primary/README-01002901.txt","expectedBytes":1561,"role":"observation-release-notes","observationId":"01002901","detector":"ALL"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/event_l2/ixpe01250101_det1_evt2_v01.fits.gz","fileName":"holdout/ixpe01250101_det1_evt2_v01.fits.gz","expectedBytes":83370546,"role":"holdout-event-list","observationId":"01250101","detector":"DU1"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/event_l2/ixpe01250101_det2_evt2_v01.fits.gz","fileName":"holdout/ixpe01250101_det2_evt2_v01.fits.gz","expectedBytes":78004736,"role":"holdout-event-list","observationId":"01250101","detector":"DU2"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/event_l2/ixpe01250101_det3_evt2_v01.fits.gz","fileName":"holdout/ixpe01250101_det3_evt2_v01.fits.gz","expectedBytes":74749177,"role":"holdout-event-list","observationId":"01250101","detector":"DU3"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/hk/ixpe01250101_det1_att_v01.fits.gz","fileName":"holdout/ixpe01250101_det1_att_v01.fits.gz","expectedBytes":89913750,"role":"holdout-attitude","observationId":"01250101","detector":"DU1"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/hk/ixpe01250101_det2_att_v01.fits.gz","fileName":"holdout/ixpe01250101_det2_att_v01.fits.gz","expectedBytes":90303030,"role":"holdout-attitude","observationId":"01250101","detector":"DU2"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/hk/ixpe01250101_det3_att_v01.fits.gz","fileName":"holdout/ixpe01250101_det3_att_v01.fits.gz","expectedBytes":91082239,"role":"holdout-attitude","observationId":"01250101","detector":"DU3"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/ixpe/data/obs/01/01250101/hk/ixpe01250101_all_orb_v01.fits.gz","fileName":"holdout/ixpe01250101_all_orb_v01.fits.gz","expectedBytes":20588132,"role":"holdout-orbit","observationId":"01250101","detector":"ALL"},
+    {"url":"https://heasarc.gsfc.nasa.gov/FTP/caldb/data/ixpe/gpd/index/caldb.indx20260610","fileName":"caldb/caldb.indx20260610","expectedBytes":486720,"role":"calibration-index","observationId":"CALDB-20260610","detector":"ALL"}
+  ]
+}
