@@ -1,0 +1,13 @@
+"use client";
+
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
+import { parseKerrResponseAwareReplayKitApiV541, type KerrResponseAwareReplayKitSummaryV541 } from "./kerrResponseAwareReplayKitV541";
+
+type SnapshotV541 = Readonly<{ status: "idle" | "loading" | "ready" | "unavailable"; reason: string | null; requestCount: 0 | 1; responseBytes: number; summary: KerrResponseAwareReplayKitSummaryV541 | null }>;
+const INITIAL: SnapshotV541 = Object.freeze({ status: "idle", reason: null, requestCount: 0, responseBytes: 0, summary: null }), listeners = new Set<() => void>(); let snapshot = INITIAL; let requestPromise: Promise<KerrResponseAwareReplayKitSummaryV541> | null = null;
+const publish = (next: SnapshotV541) => { snapshot = Object.freeze(next); listeners.forEach((listener) => listener()); };
+export function loadKerrResponseAwareReplayKitSummaryV541(): Promise<KerrResponseAwareReplayKitSummaryV541> { if (requestPromise) return requestPromise; publish({ status: "loading", reason: null, requestCount: 1, responseBytes: 0, summary: null }); requestPromise = fetch("/api/atlas/relativity-evidence/v541/response-aware-replay-kit", { cache: "no-store" }).then(async (response) => { const body = await response.text(), responseBytes = new TextEncoder().encode(body).byteLength; if (responseBytes > 128 * 1024) throw new Error("response-too-large"); const api = parseKerrResponseAwareReplayKitApiV541(JSON.parse(body)); if (!response.ok || !api.available || !api.summary) throw new Error(`v541-replay-kit-${api.reason}`); publish({ status: "ready", reason: null, requestCount: 1, responseBytes, summary: api.summary }); return api.summary; }).catch((error: unknown) => { publish({ status: "unavailable", reason: error instanceof Error ? error.message : "request-failed", requestCount: 1, responseBytes: snapshot.responseBytes, summary: null }); throw error; }); return requestPromise; }
+export const getKerrResponseAwareReplayKitSnapshotV541 = () => snapshot;
+export function subscribeKerrResponseAwareReplayKitV541(listener: () => void): () => void { listeners.add(listener); const release = acquireAtlasResource("subscription", "relativity-lab", "v541-response-aware-replay-kit", { owner: "v541-response-aware-replay-kit", estimatedBytes: 0 }); let done = false; return () => { if (done) return; done = true; listeners.delete(listener); release(); }; }
+export function getKerrResponseAwareReplayKitTelemetryV541() { return Object.freeze({ listenerCount: listeners.size, requestCount: snapshot.requestCount, status: snapshot.status }); }
+export function resetKerrResponseAwareReplayKitClientForTestsV541(): void { if (listeners.size) throw new Error("v541-listener-leak"); snapshot = INITIAL; requestPromise = null; }

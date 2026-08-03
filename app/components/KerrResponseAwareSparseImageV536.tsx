@@ -1,0 +1,22 @@
+"use client";
+
+import { useEffect, useState, useSyncExternalStore, type CSSProperties } from "react";
+
+import { getKerrResponseAwareSparseImageSnapshotV536, loadKerrResponseAwareSparseImageSummaryV536, subscribeKerrResponseAwareSparseImageV536 } from "../lib/kerrResponseAwareSparseImageClientV536";
+import { createKerrResponseAwareSparseImageHudEncodingV536, resolveKerrResponseAwareSparseImageHudProfileV536, type KerrResponseAwareSparseImageHudModeV536 } from "../lib/kerrResponseAwareSparseImageV536";
+
+const exp = (value: number) => value.toExponential(5);
+
+export default function KerrResponseAwareSparseImageV536() {
+  const [mode, setMode] = useState<KerrResponseAwareSparseImageHudModeV536>("science");
+  const state = useSyncExternalStore(subscribeKerrResponseAwareSparseImageV536, getKerrResponseAwareSparseImageSnapshotV536, getKerrResponseAwareSparseImageSnapshotV536);
+  const profile = resolveKerrResponseAwareSparseImageHudProfileV536(mode);
+  const summary = state.summary;
+  const encoding = summary ? createKerrResponseAwareSparseImageHudEncodingV536(summary, mode) : null;
+  useEffect(() => { void loadKerrResponseAwareSparseImageSummaryV536().catch(() => undefined); }, []);
+  const style = { "--v536-panel": profile.panel, "--v536-raised": profile.panelRaised, "--v536-ink": profile.ink, "--v536-muted": profile.muted, "--v536-sample": profile.sample, "--v536-orientation": profile.orientation, "--v536-unavailable": profile.unavailable } as CSSProperties;
+  return <section style={style} className="mt-7 overflow-hidden rounded-[48px] border border-white/10 bg-[var(--v536-panel)] p-6 font-mono text-[var(--v536-ink)]" data-atlas-response-aware-sparse-image-v536 data-atlas-v536-mode={mode} data-atlas-v536-sparse-samples={encoding?.scientificGeometryInputCount ?? 0} data-atlas-v536-raster-pixels="0" data-atlas-v536-canvas-created="false" data-atlas-v536-scene-revision-delta="0">
+    <header className="border-b border-white/10 pb-6"><div className="flex justify-between gap-4"><div><div className="text-[9px] uppercase tracking-[.44em] text-[var(--v536-muted)]">V536 / Science Cinematic V8.5</div><h2 className="mt-4 font-serif text-4xl">四个可定位样本，不是一张伪造图像</h2></div><div>{(["science", "cinematic"] as const).map((item) => <button key={item} type="button" className="px-3 py-2 text-[8px]" onClick={() => setMode(item)}>{item}</button>)}</div></div><p className="mt-4 max-w-4xl text-[10px] leading-6 text-[var(--v536-muted)]">连续 WCS、EVPA 方向、候选可见光 photon radiance 与 bandpass Jacobian 已原子联接。禁止插值、最近像素赋值或把四个点栅格化。</p></header>
+    {!summary ? <div className="mt-6 text-[10px] text-[var(--v536-muted)]">正在读取稀疏 image-plane 样本…</div> : <div className="mt-6 space-y-4"><div className="grid gap-4 xl:grid-cols-2">{encoding?.scientificRows.map((row) => <article key={row.rayIndex} className="rounded-[26px] border border-white/10 bg-[var(--v536-raised)] p-4"><div className="flex justify-between"><span className="text-[var(--v536-sample)]">{row.rayId} · ray {row.rayIndex}</span><span className="text-[var(--v536-muted)]">disk-hit</span></div><dl className="mt-4 grid grid-cols-2 gap-3 text-[9px]"><div><dt className="text-[var(--v536-muted)]">continuous WCS</dt><dd>{row.coordinate.continuousPixelX.toFixed(6)}, {row.coordinate.continuousPixelY.toFixed(6)}</dd></div><div><dt className="text-[var(--v536-muted)]">screen α / β</dt><dd>{row.screen.alphaM.toFixed(3)} / {row.screen.betaM.toFixed(3)} M</dd></div><div><dt className="text-[var(--v536-muted)]">EVPA / q̂ / û</dt><dd className="text-[var(--v536-orientation)]">{row.polarization.evpaDeg.toFixed(6)}° / {row.polarization.orientationQHat.toFixed(5)} / {row.polarization.orientationUHat.toFixed(5)}</dd></div><div><dt className="text-[var(--v536-muted)]">photon radiance</dt><dd>{exp(row.responseAwareRadiometry.observerBandpassPhotonRadiancePerSM2Sr)}</dd></div><div><dt className="text-[var(--v536-muted)]">response J</dt><dd>{row.responseAwareRadiometry.responseShiftLogJacobian.toFixed(9)}</dd></div><div><dt className="text-[var(--v536-muted)]">pixel / σphysical</dt><dd className="text-[var(--v536-unavailable)]">null / unavailable</dd></div></dl></article>)}</div><div className="rounded-2xl border border-[var(--v536-unavailable)]/20 p-4 text-[9px] leading-5 text-[var(--v536-muted)]">Sparse image-plane sample table only: 4 continuous coordinates, 0 pixel samples, 0 raster pixels, 0 FITS images and 0 PNG images. Science and Cinematic consume identical rows.</div></div>}
+  </section>;
+}
