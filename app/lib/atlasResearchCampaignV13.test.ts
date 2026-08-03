@@ -20,7 +20,28 @@ describe("AtlasResearchCampaignManifestV13", () => {
   it("never treats partial Kerr or smoke STM evidence as release qualification", () => {
     const manifest = ATLAS_RESEARCH_CAMPAIGN_MANIFEST_V13;
     expect(manifest.denseKerr.campaignVersion).toBe("finite-observer-v8");
+    expect(manifest.denseKerr.freezeCommitSha).toMatch(/^[a-f0-9]{40}$/);
+    expect(manifest.denseKerr.freezeBranch).toBe("codex/orbit-atlas-v241-science-freeze");
+    expect(manifest.denseKerr.campaignStatus).toBe("failed");
     expect(manifest.denseKerr.plannedShardCount).toBe(49);
+    expect(manifest.denseKerr.completedReleaseShardCount).toBe(3);
+    expect(manifest.denseKerr.completedRayCount).toBe(192);
+    expect(manifest.denseKerr.completedExecutionCount).toBe(1536);
+    expect(manifest.denseKerr.attemptedRayCount).toBe(256);
+    expect(manifest.denseKerr.attemptedExecutionCount).toBe(2048);
+    expect(manifest.denseKerr.failedShardIndex).toBe(3);
+    expect(manifest.denseKerr.noAutomaticRetry).toBe(true);
+    expect(manifest.denseKerr.failedShardEvidence).toMatchObject({
+      shardIndex: 3,
+      complete: false,
+      rayCount: 64,
+      executionCount: 512,
+      watchdogSeconds: 180,
+      incompleteExecutionCount: 4,
+      watchdogTimeoutExecutionCount: 4,
+      affectedRayIds: ["low-discrepancy-0174", "low-discrepancy-0204"],
+      retainedAsImmutableNegativeEvidence: true,
+    });
     expect(manifest.denseKerr.shortGatePassed).toBe(true);
     expect(manifest.denseKerr.shortGateEvaluation.criticalTransitionCount).toBe(40);
     expect(manifest.denseKerr.shortGateEvaluation.criticalTransitionExpected).toBe(40);
@@ -31,6 +52,7 @@ describe("AtlasResearchCampaignManifestV13", () => {
     expect(manifest.denseKerr.complete).toBe(false);
     expect(manifest.denseKerr.gatePassed).toBe(false);
     expect(manifest.variationalStm.releaseQualificationAvailable).toBe(false);
-    expect(manifest.outcome).toBe("relativity-v13-research-candidate-shadow-retained");
+    expect(manifest.denseKerr.blocker).toBe("v8-dense-campaign-failed-no-retry-no-partial-aggregation");
+    expect(manifest.outcome).toBe("relativity-v13-product-candidate-science-failed-shadow-retained");
   });
 });

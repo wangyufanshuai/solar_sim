@@ -57,11 +57,14 @@ const sourceFiles = {
   densePlan: "dist/science/kerr-dense-execution-plan-v8-release.json",
   denseAggregate: "dist/science/kerr-dense-cross-validation-v8.json",
   kerrGateV8: "dist/science/kerr-dense-gate-v8.json",
+  kerrCampaignProgressV8: "dist/science/kerr-dense-campaign-progress-v8.json",
+  v6ShardQuarantine: "dist/science/quarantine/kerr-shards-v6-pre-v8/quarantine-manifest.json",
   stmSmoke: "dist/science/relativity-variational-stm-v12-smoke-evidence.json",
-  bundleStandalone: "dist/science/client-bundle-v236-standalone-full.json",
-  bundleLite: "dist/science/client-bundle-v236-vercel-lite.json",
+  bundleStandalone: "dist/science/client-bundle-v253-standalone-full.json",
+  bundleLite: "dist/science/client-bundle-v253-vercel-lite.json",
   lifecycle: "dist/science/lifecycle-soak-v236-report.json",
   contentPacks: "dist/science/content-pack-integrity-v232.json",
+  catalogExpansion: "dist/science/catalog-expansion-v255.json",
   security: "dist/science/production-security-v232.json",
 };
 const optionalSources = {
@@ -99,10 +102,31 @@ invariant(reports.kerrGateV8.provenance?.codeSha256 === reports.densePlan.codeSh
 invariant(reports.kerrGateV8.provenance?.environmentSha256 === reports.densePlan.environmentSha256, "V8 gate environment provenance drifted");
 invariant(reports.kerrGateV8.provenance?.planInputSha256 === reports.densePlan.inputSha256, "V8 gate plan provenance drifted");
 invariant(reports.denseScreen.manifestSha256 === reports.densePlan.finiteObserverScreenManifestSha256, "V8 screen and plan identities disagree");
+invariant(reports.kerrCampaignProgressV8.version === "v248-kerr-dense-campaign-progress-v8", "unexpected V8 campaign-progress version");
+invariant(reports.kerrCampaignProgressV8.freezeBranch === "codex/orbit-atlas-v241-science-freeze", "V8 campaign freeze branch drifted");
+invariant(/^[a-f0-9]{40}$/.test(reports.kerrCampaignProgressV8.freezeCommitSha), "V8 campaign freeze commit is invalid");
+invariant(reports.kerrCampaignProgressV8.shortGatePassed === true, "V8 campaign progress did not retain the passing gate");
+invariant(reports.kerrCampaignProgressV8.finiteObserverScreenManifestSha256 === reports.densePlan.finiteObserverScreenManifestSha256, "V8 campaign screen provenance drifted");
+invariant(reports.kerrCampaignProgressV8.codeSha256 === reports.densePlan.codeSha256, "V8 campaign code provenance drifted");
+invariant(reports.kerrCampaignProgressV8.environmentSha256 === reports.densePlan.environmentSha256, "V8 campaign environment provenance drifted");
+invariant(reports.kerrCampaignProgressV8.planInputSha256 === reports.densePlan.inputSha256, "V8 campaign plan provenance drifted");
+invariant(reports.kerrCampaignProgressV8.shortGateCanonicalEvidenceSha256 === reports.kerrGateV8.canonicalEvidenceSha256, "V8 campaign gate evidence drifted");
+invariant(reports.kerrCampaignProgressV8.v6QuarantineManifestSha256 === reports.v6ShardQuarantine.manifestSha256, "V6 quarantine provenance drifted");
+invariant(reports.v6ShardQuarantine.reusableByV8 === false && reports.v6ShardQuarantine.deleted === false, "V6 shards must be quarantined without deletion or V8 reuse");
+invariant(await fileSha256("scripts/run-kerr-dense-campaign-v8.py") === reports.kerrCampaignProgressV8.controllerSha256, "V8 campaign controller drifted after preparation");
 invariant(optionalReports.historicalKerrGateV7?.evaluation?.gatePassed === false, "V7 negative gate evidence must remain failed");
 invariant(optionalReports.historicalKerrGateV7?.evaluation?.criticalTransitionCount === 0, "V7 negative gate evidence must retain 0 transitions");
 invariant(optionalReports.historicalKerrGateV7?.evaluation?.criticalTransitionExpected === 40, "V7 negative gate evidence must retain the 40-transition expectation");
 invariant(reports.stmSmoke.version === "v229-relativity-variational-stm-evidence-v12", "unexpected STM smoke evidence");
+invariant(reports.catalogExpansion.version === "v255-catalog-expansion", "unexpected catalog expansion evidence");
+invariant(reports.catalogExpansion.status === "ready", "catalog expansion evidence is not ready");
+invariant(reports.catalogExpansion.defaultScientificKernel === "legacy-eih-1pn", "catalog expansion changed the default kernel");
+invariant(
+  reports.catalogExpansion.livePhysicsMutation === "not-applied" &&
+  reports.catalogExpansion.workerPhysicsMutation === "not-applied" &&
+  reports.catalogExpansion.eihOnePnMutation === "not-applied",
+  "catalog expansion crossed the presentation-only boundary",
+);
 
 const shardDirectory = "dist/science/kerr-shards-v8";
 const shardFiles = await optionalDirectoryFiles(shardDirectory, /^shard-\d{4}\.json$/);
@@ -127,6 +151,59 @@ for (const { file, document } of completeShards) {
   );
   seenIndices.add(document.shardIndex);
 }
+
+const failedShardIndex = reports.kerrCampaignProgressV8.failedShardIndex;
+const failedShardEntry = Number.isInteger(failedShardIndex)
+  ? shardEntries.find(({ document }) => document.shardIndex === failedShardIndex) ?? null
+  : null;
+if (reports.kerrCampaignProgressV8.status === "failed") {
+  invariant(reports.kerrCampaignProgressV8.noAutomaticRetry === true, "failed V8 campaign must prohibit automatic retry");
+  invariant(failedShardEntry !== null, "failed V8 campaign is missing its negative shard evidence");
+  invariant(failedShardEntry.document.complete === false, "failed V8 shard must remain incomplete negative evidence");
+  invariant(failedShardEntry.document.profile === "release", "failed V8 shard is not a release shard");
+  invariant(failedShardEntry.document.codeSha256 === reports.densePlan.codeSha256, "failed V8 shard code hash drifted");
+  invariant(failedShardEntry.document.environmentSha256 === reports.densePlan.environmentSha256, "failed V8 shard environment hash drifted");
+  invariant(failedShardEntry.document.version === reports.densePlan.version, "failed V8 shard version drifted");
+  invariant(failedShardEntry.document.finiteObserverScreenManifestSha256 === reports.densePlan.finiteObserverScreenManifestSha256, "failed V8 shard screen hash drifted");
+  invariant(failedShardEntry.document.rays?.length === failedShardEntry.document.rayCount, "failed V8 shard ray evidence is incomplete");
+  invariant(failedShardEntry.document.rays.every((ray) => ray.executions?.length === 8), "failed V8 shard lacks eight attempted executions per ray");
+}
+
+const failedExecutions = failedShardEntry === null
+  ? []
+  : failedShardEntry.document.rays.flatMap((ray) => ray.executions);
+const incompleteExecutions = failedExecutions.filter((execution) =>
+  execution.status !== "captured" && execution.status !== "escaped" && execution.status !== "disk-hit");
+const failedExecutionStatusCounts = Object.fromEntries(
+  [...new Set(incompleteExecutions.map((execution) => execution.status))]
+    .sort()
+    .map((status) => [status, incompleteExecutions.filter((execution) => execution.status === status).length]),
+);
+const affectedRayIds = failedShardEntry === null
+  ? []
+  : failedShardEntry.document.rays
+      .filter((ray) => ray.executions.some((execution) =>
+        execution.status !== "captured" && execution.status !== "escaped" && execution.status !== "disk-hit"))
+      .map((ray) => ray.id);
+const failedShardFileSha256 = failedShardEntry === null
+  ? null
+  : await fileSha256(failedShardEntry.file);
+const failedShardEvidence = failedShardEntry === null ? null : {
+  shardIndex: failedShardEntry.document.shardIndex,
+  file: failedShardEntry.file,
+  fileSha256: failedShardFileSha256,
+  outputSha256: failedShardEntry.document.outputSha256,
+  complete: false,
+  rayCount: failedShardEntry.document.rayCount,
+  executionCount: failedExecutions.length,
+  watchdogSeconds: failedShardEntry.document.watchdogSeconds,
+  incompleteExecutionCount: incompleteExecutions.length,
+  watchdogTimeoutExecutionCount:
+    incompleteExecutions.filter((execution) => execution.status === "watchdog-timeout").length,
+  incompleteExecutionStatusCounts: failedExecutionStatusCounts,
+  affectedRayIds,
+  retainedAsImmutableNegativeEvidence: true,
+};
 
 const executions = completeShards.flatMap(({ document }) =>
   document.rays.flatMap((ray) => ray.executions),
@@ -164,6 +241,8 @@ const attributionCounts = attributionRows.reduce((total, row) => {
 
 const rawAggregate = reports.jointValidation.rawPropagation.aggregates.dop853;
 const denseComplete = completeShards.length === reports.densePlan.shardCount;
+invariant(reports.kerrCampaignProgressV8.completedShardCount === completeShards.length, "V8 progress/shard coverage disagrees");
+invariant(JSON.stringify(reports.kerrCampaignProgressV8.completedShardIndices) === JSON.stringify([...seenIndices].sort((left, right) => left - right)), "V8 progress/shard indices disagree");
 const denseGatePassed = denseComplete && reports.denseAggregate.gatePassed === true;
 const stmEvidence = optionalReports.stmReleaseEvidence ?? reports.stmSmoke;
 const stmReleaseQualified = optionalReports.stmReleaseEvidence?.releaseQualificationAvailable === true;
@@ -229,6 +308,14 @@ const core = {
   },
   denseKerr: {
     campaignVersion: "finite-observer-v8",
+    freezeCommitSha: reports.kerrCampaignProgressV8.freezeCommitSha,
+    freezeBranch: reports.kerrCampaignProgressV8.freezeBranch,
+    campaignStatus: reports.kerrCampaignProgressV8.status,
+    campaignProgressSha256: reports.kerrCampaignProgressV8.progressSha256,
+    v6QuarantineManifestSha256: reports.v6ShardQuarantine.manifestSha256,
+    failedShardIndex,
+    failure: reports.kerrCampaignProgressV8.failure,
+    noAutomaticRetry: reports.kerrCampaignProgressV8.noAutomaticRetry === true,
     profile: "release",
     plannedRayCount: 3097,
     plannedShardCount: reports.densePlan.shardCount,
@@ -236,6 +323,10 @@ const core = {
     completedRayCount: completeShards.reduce((total, { document }) => total + document.rayCount, 0),
     completedExecutionCount: executions.length,
     completedShardIndices: [...seenIndices].sort((left, right) => left - right),
+    attemptedRayCount: completeShards.reduce((total, { document }) => total + document.rayCount, 0) +
+      (failedShardEntry?.document.rayCount ?? 0),
+    attemptedExecutionCount: executions.length + failedExecutions.length,
+    failedShardEvidence,
     rayClassCounts: classCounts,
     codeSha256: reports.densePlan.codeSha256,
     environmentSha256: reports.densePlan.environmentSha256,
@@ -274,7 +365,9 @@ const core = {
     partialResultsAggregated: false,
     blocker: denseGatePassed
       ? null
-      : "v8-dense-release-shards-incomplete-no-partial-aggregation",
+      : reports.kerrCampaignProgressV8.status === "failed"
+        ? "v8-dense-campaign-failed-no-retry-no-partial-aggregation"
+        : "v8-dense-release-shards-incomplete-no-partial-aggregation",
   },
   variationalStm: {
     evidenceVersion: stmEvidence.version,
@@ -290,19 +383,33 @@ const core = {
   },
   product: {
     localGatesPassed:
-      reports.bundleStandalone.transferBytes <= 614_400 &&
-      reports.bundleLite.transferBytes <= 614_400 &&
+      reports.bundleStandalone.transferBytes <= 604_160 &&
+      reports.bundleLite.transferBytes <= 604_160 &&
       reports.lifecycle.passed === true &&
       reports.contentPacks.passed === true &&
+      reports.contentPacks.verifiedFileCount === reports.contentPacks.manifestFileCount &&
+      reports.catalogExpansion.status === "ready" &&
       reports.security.status === "passed",
     standaloneTransferBytes: reports.bundleStandalone.transferBytes,
     liteTransferBytes: reports.bundleLite.transferBytes,
     contentPackVerifiedFiles: reports.contentPacks.verifiedFileCount,
+    catalogExpansion: {
+      version: reports.catalogExpansion.version,
+      canonicalSha256: reports.catalogExpansion.canonicalSha256,
+      gaiaRowCount: reports.catalogExpansion.gaia.rowCount,
+      iauConstellationCount: reports.catalogExpansion.visualCounts.iauConstellations,
+      asterismCount: reports.catalogExpansion.visualCounts.asterisms,
+      starClusterCount: reports.catalogExpansion.visualCounts.starClusters,
+      nebulaCount: reports.catalogExpansion.visualCounts.nebulae,
+      activeRenderBudget: reports.catalogExpansion.activeRenderBudget,
+    },
   },
-  outcome: supportingGatesPassed && perBodyNoRegression && effectIsolationComplete &&
+  outcome: reports.kerrCampaignProgressV8.status === "failed"
+    ? "relativity-v13-product-candidate-science-failed-shadow-retained"
+    : supportingGatesPassed && perBodyNoRegression && effectIsolationComplete &&
       jointEvaluation.aggregateImprovement === true
-    ? "relativity-v13-promotion-qualified-not-applied"
-    : "relativity-v13-research-candidate-shadow-retained",
+      ? "relativity-v13-promotion-qualified-not-applied"
+      : "relativity-v13-research-candidate-shadow-retained",
   defaultKernel: "legacy-eih-1pn",
   runtimePromotionApplied: false,
   boundary: "offline-research-campaign-no-root-contract-or-runtime-physics-mutation",

@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -18,8 +19,8 @@ describe("v112 launch gameplay and OpenRocket bridge heavy audit", () => {
       openRocketBridgeText: read("app/lib/openRocketImportBridge.ts"),
       universePageText: read("app/UniverseRuntimeController.tsx"),
       useLaunchWebSocketText: read("app/lib/useLaunchWebSocket.ts"),
-      relativityPanelText: read("app/components/RelativityObservableAtlasPanel.tsx"),
-      evidenceText: read("app/lib/evidenceLedger.ts"),
+      relativityPanelText: readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
+      evidenceText: readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       validationText: read("app/lib/atlasValidationConsole.ts"),
       docsText: `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`,
       browserSpecText: read("tests/atlas-browser/atlas-browser-acceptance.spec.ts"),

@@ -11,31 +11,63 @@ import SimClockReadout from "./SimClockReadout";
 import SimulationHistoryBar from "./SimulationHistoryBar";
 import { preloadAtlasSceneModule } from "./AtlasSceneLazyModules";
 import { atlasRuntimeStore, useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
-import type { AtlasRuntimeWorkbenchSurfaceScope } from "./AtlasRuntimeWorkbenchSurface";
+import type {
+  AtlasRuntimeEvidenceMissionDomain,
+  AtlasRuntimeLaunchDomain,
+  AtlasRuntimeNavigationFocusDomain,
+  AtlasRuntimePanelsDomain,
+  AtlasRuntimeSceneDomain,
+  AtlasRuntimeShellHudDomain,
+  AtlasRuntimeTimelinePhysicsDomain,
+} from "./atlasRuntimeWorkbenchDomains";
 
 export default function AtlasRuntimeDockLayer({
-  scope,
+  scene,
+  shellHud,
+  panels,
+  navigationFocus,
+  evidenceMission,
+  launch,
+  timelinePhysics,
 }: {
-  scope: AtlasRuntimeWorkbenchSurfaceScope;
+  scene: AtlasRuntimeSceneDomain;
+  shellHud: AtlasRuntimeShellHudDomain;
+  panels: AtlasRuntimePanelsDomain;
+  navigationFocus: AtlasRuntimeNavigationFocusDomain;
+  evidenceMission: AtlasRuntimeEvidenceMissionDomain;
+  launch: AtlasRuntimeLaunchDomain;
+  timelinePhysics: AtlasRuntimeTimelinePhysicsDomain;
 }) {
   const experienceMode = useAtlasRuntimeStore((snapshot) => snapshot.experienceMode);
   const {
-    importStateInputRef, handleImportStateFile, missionCapsuleImportInputRef,
-    handleImportMissionCapsuleFile, atlasRuntimeQualityTier, atlasSceneMode,
-    selectedExoplanetSystemId, clearFocusLock, localLaunchActive, handleLaunchAbort,
-    launchState, localTelemetryRef, orbitAtlas, isPlaying, setIsPlaying, simDaysRef,
-    daysPerSecond, presentation, viewSettings, setViewSettings, handleSearch,
-    handleZoomIn, handleZoomOut, setActiveSection, setLaunchMode, selectedBodyIndex,
-    orbitAnalysisOpen, setOrbitAnalysisOpen, atlasWorkflowOpen, openAtlasWorkflows,
+    atlasRuntimeQualityTier, atlasSceneMode, orbitAtlas, presentation, atlasReady,
+  } = scene;
+  const { activeSection, setActiveSection, viewSettings, setViewSettings } = shellHud;
+  const { setRelativityObservableAtlasOpen } = panels;
+  const {
+    selectedExoplanetSystemId, clearFocusLock, selectedBodyIndex, orbitAnalysisOpen,
+    setOrbitAnalysisOpen, handleSearch, handleZoomIn, handleZoomOut, handleFocus,
+    handleEarthMoon,
+  } = navigationFocus;
+  const {
+    missionCapsuleImportInputRef, handleImportMissionCapsuleFile,
+    atlasWorkflowOpen, openAtlasWorkflows,
     atlasMissionHubOpen, openAtlasMissionHub, atlasObservatoryDeckOpen,
     openAtlasObservatoryDeck, atlasScientificReportOpen, openAtlasScientificReport,
     atlasValidationConsoleOpen, openAtlasValidationConsole, evidenceLedgerOpen,
-    setEvidenceInitialClaimId, setEvidenceLedgerOpen, activeSection, handleFocus,
-    handleEarthMoon, simSlower, simFaster, simRewind, simFastForward,
-    relativityEnabled, toggleRelativity, setRelativityObservableAtlasOpen,
+    setEvidenceInitialClaimId, setEvidenceLedgerOpen,
+  } = evidenceMission;
+  const {
+    localLaunchActive, handleLaunchAbort, launchState, localTelemetryRef, setLaunchMode,
+    handleLaunchStart,
+  } = launch;
+  const {
+    importStateInputRef, handleImportStateFile, isPlaying, setIsPlaying, simDaysRef,
+    daysPerSecond, simSlower, simFaster, simRewind, simFastForward,
+    relativityEnabled, toggleRelativity,
     timeTravelScrubURef, timeTravelScrubbingRef, physicsHistoryRef, timeTravelScrubUi,
-    setTimeTravelScrubUi, syncTimeTravelSuspension, atlasReady, handleLaunchStart,
-  } = scope;
+    setTimeTravelScrubUi, syncTimeTravelSuspension,
+  } = timelinePhysics;
 
   const closeLaunchPanel = () => {
     setLaunchMode(false);
@@ -204,4 +236,3 @@ export default function AtlasRuntimeDockLayer({
     </div>
   );
 }
-

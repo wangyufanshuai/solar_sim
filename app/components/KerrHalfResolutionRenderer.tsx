@@ -112,7 +112,10 @@ export function KerrHalfResolutionRenderer({
   useEffect(
     () => {
       const releaseTarget = target
-        ? acquireAtlasResource("gpu-render-target", "kerr", "kerr-half-resolution")
+        ? acquireAtlasResource("gpu-render-target", "kerr", "kerr-half-resolution", {
+          owner: "kerr-presentation",
+          estimatedBytes: targetSize * targetSize * 4,
+        })
         : () => {};
       const spriteMaterial = spriteMaterialRef.current;
       return () => {
@@ -127,7 +130,7 @@ export function KerrHalfResolutionRenderer({
         releaseTarget();
       };
     },
-    [offscreen, target],
+    [offscreen, target, targetSize],
   );
 
   useFrame((state) => {

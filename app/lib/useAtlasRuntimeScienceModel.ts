@@ -81,15 +81,22 @@ export function useAtlasRuntimeScienceModel({
     }),
     [mobile, renderBudget],
   );
-  const details = detailsFactory
-    ? detailsFactory({ diagnostics: diagnosticsRef.current, kerrStudioSummary })
-    : ATLAS_RUNTIME_SCIENCE_FALLBACK_V198;
+  const diagnostics = diagnosticsRef.current;
+  const details = useMemo(
+    () => detailsFactory
+      ? detailsFactory({ diagnostics, kerrStudioSummary })
+      : ATLAS_RUNTIME_SCIENCE_FALLBACK_V198,
+    [detailsFactory, diagnostics, kerrStudioSummary],
+  );
 
-  return {
-    kerrTrackSet,
-    kerrStudioSummary,
-    ...details,
-    atlasGaiaStarfieldEnhancementSummary,
-    ...STATIC_LEGACY_RELEASE_SUMMARIES_V177,
-  };
+  return useMemo(
+    () => ({
+      kerrTrackSet,
+      kerrStudioSummary,
+      ...details,
+      atlasGaiaStarfieldEnhancementSummary,
+      ...STATIC_LEGACY_RELEASE_SUMMARIES_V177,
+    }),
+    [atlasGaiaStarfieldEnhancementSummary, details, kerrStudioSummary, kerrTrackSet],
+  );
 }

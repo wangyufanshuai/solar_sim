@@ -1,5 +1,5 @@
 ﻿import AxeBuilder from "@axe-core/playwright";
-import { expect, test, type Locator, type Page } from "@playwright/test";
+import { expect, test, type Locator, type Page } from "./atlasBrowserTestV263";
 import { mkdir } from "node:fs/promises";
 import { dirname } from "node:path";
 
@@ -118,6 +118,11 @@ test("Orbit Atlas browser acceptance contracts", async ({ page }, testInfo) => {
   await expect(page.locator(ROOT_SELECTOR)).toHaveAttribute(
     "data-atlas-kerr-3d-renderer-version",
     "v129-kerr-3d-geodesics-black-hole-renderer",
+  );
+  await expect(page.locator(ROOT_SELECTOR)).toHaveAttribute(
+    "data-orbit-atlas-ready",
+    "true",
+    { timeout: 30_000 },
   );
   const atlasLaunchEntry = page.locator('[data-atlas-launch-entry="orbit-atlas"]');
   await expect(atlasLaunchEntry).toHaveCount(1);

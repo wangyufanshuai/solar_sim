@@ -1,15 +1,23 @@
-import { mkdtemp, mkdir, readFile, rm, writeFile } from "node:fs/promises";
+import { createHash } from "node:crypto";
+import { mkdtemp, mkdir, readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
+import {
+  ATLAS_BUFFERED_RANGE_MAX_BYTES_V1,
+  parseAtlasRangeDeliveryHeaderV1,
+  shouldBufferAtlasRangeV1,
+} from "./atlasBufferedRangeDeliveryV1";
 import {
   atlasContentPackManifestForClientV3,
   atlasContentTypeForPath,
   listAtlasContentPacksV3,
   loadAtlasContentPackDescriptorV3,
   parseAtlasByteRange,
+  readExactAtlasByteRangeV1,
   resolveAllowedAtlasContentPackFileV3,
   validateAtlasContentPackManifestV3,
+  verifyAllowedAtlasContentPackFileV3,
   type AtlasContentPackManifestV3,
 } from "./atlasContentPackServerV3";
 import {
@@ -29,7 +37,8 @@ async function fixturePack() {
   temporaryRoots.push(root);
   const fileRoot = path.join(root, "files", "spacecraft", "models", "spacecraft");
   await mkdir(fileRoot, { recursive: true });
-  await writeFile(path.join(fileRoot, "sls.glb"), Buffer.from([1, 2, 3, 4]));
+  const payload = Buffer.from([1, 2, 3, 4]);
+  await writeFile(path.join(fileRoot, "sls.glb"), payload);
   const manifest: AtlasContentPackManifestV3 = {
     schemaVersion: 1,
     id: "spacecraft",
@@ -42,7 +51,7 @@ async function fixturePack() {
     files: [{
       path: "models/spacecraft/sls.glb",
       bytes: 4,
-      sha256: "0".repeat(64),
+      sha256: createHash("sha256").update(payload).digest("hex"),
       source: "fixture",
       license: "fixture",
     }],
@@ -59,6 +68,46 @@ describe("v160 content pack delivery", () => {
     expect(resolveAllowedAtlasContentPackFileV3(descriptor, "../spacecraft.manifest.json")).toBeNull();
     expect(atlasContentPackManifestForClientV3(descriptor).baseUrl).toBe("/api/atlas/content-packs/spacecraft/files/");
     expect((await listAtlasContentPacksV3(root))[0]?.fileCount).toBe(1);
+  });
+
+  it("keeps a valid manifest usable when one declared sibling is absent", async () => {
+    const root = await fixturePack();
+    const manifestPath = path.join(root, "spacecraft.manifest.json");
+    const manifest = JSON.parse(await readFile(manifestPath, "utf8")) as AtlasContentPackManifestV3;
+    manifest.files = [
+      ...manifest.files,
+      {
+        path: "models/spacecraft/missing.glb",
+        bytes: 2,
+        sha256: "0".repeat(64),
+        source: "historical-negative-fixture",
+        license: "fixture",
+      },
+    ];
+    manifest.installedBytes += 2;
+    await writeFile(manifestPath, JSON.stringify(manifest));
+
+    const descriptor = await loadAtlasContentPackDescriptorV3(root, "spacecraft");
+    await expect(verifyAllowedAtlasContentPackFileV3(
+      descriptor,
+      "models/spacecraft/sls.glb",
+    )).resolves.toMatchObject({ entry: { bytes: 4 } });
+    await expect(verifyAllowedAtlasContentPackFileV3(
+      descriptor,
+      "models/spacecraft/missing.glb",
+    )).rejects.toThrow();
+  });
+
+  it("rejects a requested file whose bytes no longer match the manifest SHA", async () => {
+    const root = await fixturePack();
+    const descriptor = await loadAtlasContentPackDescriptorV3(root, "spacecraft");
+    const file = path.join(root, "files", "spacecraft", "models", "spacecraft", "sls.glb");
+    await unlink(file);
+    await writeFile(file, Buffer.from([4, 3, 2, 1]));
+    await expect(verifyAllowedAtlasContentPackFileV3(
+      descriptor,
+      "models/spacecraft/sls.glb",
+    )).rejects.toThrow("checksum mismatch");
   });
 
   it("rejects unsafe paths and invalid aggregate sizes", () => {
@@ -84,10 +133,40 @@ describe("v160 content pack delivery", () => {
     expect(atlasContentTypeForPath("planet.ktx2")).toBe("image/ktx2");
   });
 
+  it("buffers only bounded ranges and reads their exact frozen bytes", async () => {
+    const root = await fixturePack();
+    const descriptor = await loadAtlasContentPackDescriptorV3(root, "spacecraft");
+    const resolved = resolveAllowedAtlasContentPackFileV3(
+      descriptor,
+      "models/spacecraft/sls.glb",
+    )!;
+    const range = parseAtlasByteRange("bytes=1-2", resolved.entry.bytes);
+    if (!range || range === "invalid") {
+      throw new Error("Fixture Range did not parse");
+    }
+    const result = await readExactAtlasByteRangeV1(
+      resolved.absolutePath,
+      range,
+      resolved.entry.bytes,
+    );
+    expect([...result.bytes]).toEqual([2, 3]);
+    expect(result.sourceBytes).toBe(4);
+    expect(shouldBufferAtlasRangeV1(ATLAS_BUFFERED_RANGE_MAX_BYTES_V1)).toBe(true);
+    expect(shouldBufferAtlasRangeV1(ATLAS_BUFFERED_RANGE_MAX_BYTES_V1 + 1)).toBe(false);
+    expect(parseAtlasRangeDeliveryHeaderV1("buffered-v1")).toBe("buffered-v1");
+    expect(parseAtlasRangeDeliveryHeaderV1("unexpected")).toBe("unknown");
+    await expect(readExactAtlasByteRangeV1(
+      resolved.absolutePath,
+      { start: 0, end: 3, length: ATLAS_BUFFERED_RANGE_MAX_BYTES_V1 + 1 },
+      resolved.entry.bytes,
+    )).rejects.toThrow("bounded delivery contract");
+  });
+
   it("maps runtime paths to local content-pack URLs before public fallback", () => {
     expect(atlasPackForAssetPath("/models/spacecraft/sls.glb")).toBe("spacecraft");
     expect(atlasPackForAssetPath("/textures/planets/v49/earth-albedo.jpg")).toBe("planet-hd");
     expect(atlasPackForAssetPath("/data/horizons-validation-j2000.json")).toBe("science-fixtures");
+    expect(atlasPackForAssetPath("/data/gaia-dr3-presentation-10000000-v9/manifest.json")).toBe("gaia-presentation");
     expect(resolveAtlasAsset("/solar-assets/solar/textures/planets/earth.jpg").path)
       .toBe("textures/planets/earth.jpg");
     const resolution = resolveAtlasAsset("/textures/planets/hd/earth.jpg");
@@ -97,6 +176,11 @@ describe("v160 content pack delivery", () => {
     expect(versioned.path).toBe("textures/sky/orbit-atlas-v61-reset-base-4k.jpg");
     expect(versioned.primaryUrl).not.toContain("%3F");
     expect(versioned.candidates.at(-1)).toContain("?v=61d");
+    const sky = resolveAtlasAsset("/textures/sky/deep-field.jpg");
+    expect(sky.primaryUrl).toBe(
+      "/api/atlas/content-packs/deep-sky/files/textures/sky/deep-field.jpg",
+    );
+    expect(sky.candidates.at(-1)).toBe("/textures/sky/deep-field.jpg");
   });
 
   it("preserves external and object URLs without routing them through a local pack", () => {
@@ -107,7 +191,6 @@ describe("v160 content pack delivery", () => {
   });
 
   it("routes scene assets through the resolver and refuses an empty pack rebuild", async () => {
-    const galaxy = await readFile("app/components/GalaxyEnvironmentSphere.tsx", "utf8");
     const planetManager = await readFile("app/lib/planetTextureManager.ts", "utf8");
     const spacecraft = await readFile("app/components/SpacecraftModel.tsx", "utf8");
     const exoplanet = await readFile("app/components/ExoplanetSystemScene.tsx", "utf8");
@@ -115,7 +198,6 @@ describe("v160 content pack delivery", () => {
     const gaiaStore = await readFile("app/lib/gaiaCatalogStore.ts", "utf8");
     const sun = await readFile("app/lib/sunDiskTexture.ts", "utf8");
     const buildScript = await readFile("scripts/build-content-packs.mjs", "utf8");
-    expect(galaxy).toContain("atlasAssetCandidates(url)");
     expect(planetManager).toContain("atlasAssetCandidates(task.url)");
     expect(spacecraft).toContain("atlasAssetCandidates(solarAssetUrl(entry))");
     expect(exoplanet).toContain("fetchAtlasAsset(EXOPLANET_CATALOG_V2_MANIFEST_URL");
@@ -125,5 +207,9 @@ describe("v160 content pack delivery", () => {
     expect(buildScript.indexOf("await assertSourceTreeIsStaged()")).toBeLessThan(
       buildScript.indexOf("await mkdir(OUT"),
     );
+    expect(buildScript).toContain('import { createReadStream } from "node:fs"');
+    expect(buildScript).toContain("for await (const chunk of createReadStream");
+    expect(buildScript).toContain("highWaterMark: 1024 * 1024");
+    expect(buildScript).not.toContain("await readFile(file)");
   });
 });

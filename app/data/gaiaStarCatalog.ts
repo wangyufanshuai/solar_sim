@@ -1,8 +1,9 @@
 /**
  * Gaia DR3 star catalog data interface.
  *
- * Stores the brightest 5000 stars within 200 parsecs of the Sun.
- * Catalog JSON is loaded from `public/data/gaia-dr3-bright-5000.json`.
+ * Stores the active offline Gaia presentation subset.
+ * The v255 runtime loads `public/data/gaia-dr3-nearby-46000-v255.json` and
+ * retains the historical bright-5000 asset as a compatibility fallback.
  *
  * Coordinate conversion: RA/Dec/Parallax -> galactic (l, b, d) -> XYZ in parsecs.
  * Color from BP-RP color index mapped to blackbody RGB.
@@ -46,7 +47,9 @@ export type GaiaStarCatalogData = {
   count: number;
 };
 
-export const GAIA_DR3_CATALOG_URL = atlasPublicAssetUrl("data/gaia-dr3-bright-5000.json");
+export const GAIA_DR3_CATALOG_URL = atlasPublicAssetUrl("data/gaia-dr3-nearby-46000-v255.json");
+export const GAIA_DR3_LEGACY_CATALOG_URL = atlasPublicAssetUrl("data/gaia-dr3-bright-5000.json");
+export const GAIA_DR3_CATALOG_VERSION = "v255-gaia-dr3-nearby-46000" as const;
 export const GAIA_V105_SELECTION_POLICY = "deterministic-bright-near-color-spread-sky-binned" as const;
 
 // ── Catalog lifecycle ────────────────────────────────────────────────

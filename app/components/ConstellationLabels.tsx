@@ -1,6 +1,6 @@
 "use client";
 
-import { Html } from "@react-three/drei";
+import { Html } from "@react-three/drei/web/Html";
 import { useThree } from "@react-three/fiber";
 import { useMemo } from "react";
 import * as THREE from "three";

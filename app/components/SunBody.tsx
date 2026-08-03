@@ -9,92 +9,20 @@ import {
   useMemo,
   useRef,
   useState,
-  type MutableRefObject,
 } from "react";
 import BodyLabel from "./BodyLabel";
 import { AU_TO_SCENE } from "../data/planetsJ2000";
-import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { useOptionalBloomSceneActions } from "../context/BloomSceneContext";
 import { useOptionalLabelOcclusion } from "../context/LabelOcclusionContext";
 import {
   DEFAULT_SPHERE_SEGMENTS,
   getSunHaloGlowTexture,
 } from "../lib/celestialTextures";
-import type { OrbitAtlasBodyVisualProfile } from "../lib/orbitAtlasPresentation";
 import { V76_CLOSEUP_VISUAL_BUDGETS } from "../lib/atlasCloseupVisualFidelity";
-import type {
-  AtlasReferenceGradePlanetMaterialProfile,
-  AtlasSelectedBodyAtmosphereDepthProfile,
-  AtlasSelectedBodyColorGradeProfile,
-  AtlasSelectedBodyDepthLightingProfile,
-  AtlasSelectedBodyKeyLightProfile,
-  AtlasSelectedBodyLightingProfile,
-  AtlasSelectedBodyMaterialProfile,
-  AtlasSelectedBodyTerminatorProfile,
-  AtlasSelectedBodySolarSurfaceProfile,
-  AtlasGlobalColorGradeProfile,
-} from "../lib/simulationDiagnosticsTypes";
-
-export type SunBodyProps = {
-  variant: "sun";
-  radius?: number;
-  position?: [number, number, number];
-  map?: THREE.Texture | null;
-  normalMap?: THREE.Texture | null;
-  color?: THREE.ColorRepresentation;
-  emissive?: THREE.ColorRepresentation;
-  emissiveIntensity?: number;
-  roughness?: number;
-  metalness?: number;
-  envMapIntensity?: number;
-  sphereSegments?: [number, number];
-  sunCastPointLight?: boolean;
-  pointLightIntensity?: number;
-  pointLightColor?: THREE.ColorRepresentation;
-  label?: string;
-  labelFadeNear?: number;
-  labelFadeFar?: number;
-  labelDistanceFactor?: number;
-  labelFontSizePx?: number;
-  labelBodyIndex?: number;
-  labelSurfaceFadeNear?: number;
-  labelSurfaceFadeFar?: number;
-  labelLodDiscWorldRadius?: number;
-  onBodyPointerDown?: (e: ThreeEvent<PointerEvent>) => void;
-  onBodyDoubleClick?: (e: ThreeEvent<PointerEvent>) => void;
-  selected?: boolean;
-  opticsBodyIndex?: number;
-  opticsPhysicsRef?: MutableRefObject<SolarSystemPhysicsRef | null>;
-  detailShadowBodyIndex?: number;
-  detailShadowPhysicsRef?: MutableRefObject<SolarSystemPhysicsRef | null>;
-  detailShadowMaxCameraDist?: number;
-  /** Sim-driven visual spin angle; affects the solar disk only. */
-  spinAngleRef?: MutableRefObject<number>;
-  /** Presentation-only profile used by compressed Orbit Atlas. */
-  atlasVisualProfile?: OrbitAtlasBodyVisualProfile;
-  /** Presentation-only close-up lighting profile; does not affect physics. */
-  cinematicLightingProfile?: AtlasSelectedBodyLightingProfile;
-  /** Presentation-only v48 material/readability profile; does not affect physics. */
-  referenceGradePlanetMaterialProfile?: AtlasReferenceGradePlanetMaterialProfile;
-  /** Presentation-only v49 material composition profile; does not affect physics. */
-  selectedBodyMaterialProfile?: AtlasSelectedBodyMaterialProfile;
-  /** Presentation-only v49 atmosphere-depth profile; does not affect physics. */
-  selectedBodyAtmosphereDepthProfile?: AtlasSelectedBodyAtmosphereDepthProfile;
-  /** Presentation-only v49 terminator profile; does not affect physics. */
-  selectedBodyTerminatorProfile?: AtlasSelectedBodyTerminatorProfile;
-  /** Presentation-only v51 key-light / phase profile; does not affect physics. */
-  selectedBodyKeyLightProfile?: AtlasSelectedBodyKeyLightProfile;
-  /** Presentation-only v52 solar limb/granulation depth profile; does not affect physics. */
-  selectedBodyDepthLightingProfile?: AtlasSelectedBodyDepthLightingProfile;
-  /** Presentation-only v53 solar photosphere color-depth profile; does not affect physics. */
-  selectedBodyColorGradeProfile?: AtlasSelectedBodyColorGradeProfile;
-  /** Presentation-only v55 solar surface art profile; does not affect physics. */
-  selectedBodySolarSurfaceProfile?: AtlasSelectedBodySolarSurfaceProfile;
-  /** Presentation-only v55 global color grade; does not affect physics. */
-  globalColorGradeProfile?: AtlasGlobalColorGradeProfile;
-  /** Accepted for CelestialBody API symmetry; SunBody always renders as surface. */
-  forceSurface?: boolean;
-};
+import type { SunBodyProps } from "./SunBodyProps";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+export type { SunBodyProps } from "./SunBodyProps";
 
 const SHADOW_FAR_DIST = 4200;
 const SHADOW_MAP_NEAR = 1024;
@@ -105,7 +33,6 @@ const _solarBackdropLocal = new THREE.Vector3();
 const _solarBackdropOrigin = new THREE.Vector3();
 
 export default function SunBody({
-  variant: _variant,
   radius = 1,
   position = [0, 0, 0],
   map = null,
@@ -151,6 +78,7 @@ export default function SunBody({
   const bloomActions = useOptionalBloomSceneActions();
   const labelOcclusion = useOptionalLabelOcclusion();
   const { camera, size } = useThree();
+  const visualRendererProfile = useAtlasRuntimeStore((snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile));
   const sunWorld = useRef(new THREE.Vector3());
   const shadowMapSizeRef = useRef(SHADOW_MAP_NEAR);
   const shadowMapCooldownRef = useRef(0);
@@ -283,7 +211,7 @@ export default function SunBody({
     }
     glowMat.uniforms.uColor.value.set(solarCloseup ? "#ffb15f" : "#ff4a12");
     glowMat.uniforms.uPower.value = solarCloseup ? v55SolarSurface ? 6.2 : v53SolarColor ? 5.8 : v52SolarDepth ? 5.45 : v51SolarKey ? 5.1 : v49SolarEdge ? 4.8 : referenceSolar ? 4.45 : 4.1 : 1.95;
-    glowMat.uniforms.uOpacity.value = solarCloseup ? (mobileSolarCloseup ? V76_CLOSEUP_VISUAL_BUDGETS.sun.mobileGlowOpacity : V76_CLOSEUP_VISUAL_BUDGETS.sun.glowOpacity) : 0.32;
+    glowMat.uniforms.uOpacity.value = (solarCloseup ? (mobileSolarCloseup ? V76_CLOSEUP_VISUAL_BUDGETS.sun.mobileGlowOpacity : V76_CLOSEUP_VISUAL_BUDGETS.sun.glowOpacity) : 0.32) * visualRendererProfile.groups.solar.sunSurfaceLuminance;
     glowMat.uniforms.uPulse.value = solarCloseup ? 0.55 + Math.sin(t * 0.32) * 0.025 : 0.72 + Math.sin(t * 0.55) * 0.035;
 
     if (L?.castShadow && mesh && shadowAuditFrameRef.current % 72 === 0) {
@@ -499,7 +427,7 @@ export default function SunBody({
         <pointLight
           ref={sunLightRef}
           color={pointLightColor}
-          intensity={pointLightIntensity}
+          intensity={pointLightIntensity * visualRendererProfile.groups.solar.sunSurfaceLuminance}
           distance={0}
           decay={2}
           castShadow={false}

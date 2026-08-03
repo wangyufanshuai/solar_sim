@@ -35,8 +35,21 @@ import {
   KERR_RAY_TRACE_V3_VERSION,
   type KerrRayTraceQualityV3,
 } from "../lib/kerrRayTraceV3";
-
-const SUN_MASS_KG = 1.98847e30;
+import type { StrongGravityRenderModeV299 } from "../lib/strongGravityRenderingV299";
+import {
+  KerrMetricRow as MetricRow,
+  KerrStrongGravityModeControlV299,
+  RAY_TRACE_QUALITY_OPTIONS,
+  RENDER_MODE_OPTIONS,
+  STUDIO_MODE_OPTIONS,
+  SUN_MASS_KG,
+  formatTeachingScale,
+  studioModeForPreset,
+  trackLabel,
+} from "./KerrBlackHolePanelSupport";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import KerrScienceBandHudV322 from "./KerrScienceBandHudV322";
 
 export type KerrBlackHoleUiState = {
   massSolar: number;
@@ -49,78 +62,13 @@ export type KerrBlackHoleUiState = {
   renderMode: KerrGeodesicRenderMode;
   studioMode?: KerrRelativityStudioMode;
   rayTraceQuality?: KerrRayTraceQualityV3;
+  strongGravityRenderMode?: StrongGravityRenderModeV299;
 };
 
 type KerrBlackHolePanelProps = {
   value: KerrBlackHoleUiState;
   onChange: (next: KerrBlackHoleUiState) => void;
 };
-
-function formatTeachingScale(value: number): string {
-  return value >= 1e9 ? `${(value / 1e9).toFixed(2)} x10^9` : value.toExponential(1);
-}
-
-function trackLabel(kind: KerrGeodesicTrackKind): string {
-  switch (kind) {
-    case "photon-sphere":
-      return "photon sphere";
-    case "isco":
-      return "Schw. ISCO";
-    case "capture":
-      return "capture";
-    case "escape":
-      return "escape";
-    case "kerr-prograde":
-      return "Kerr prograde";
-    case "kerr-retrograde":
-      return "Kerr retrograde";
-    case "probe-null":
-      return "probe null";
-  }
-}
-
-function MetricRow({ label, value }: { label: string; value: string }) {
-  return (
-    <div className="science-metric-row">
-      <span>{label}</span>
-      <span className="science-mono text-right">{value}</span>
-    </div>
-  );
-}
-
-const RENDER_MODE_OPTIONS: ReadonlyArray<{ value: KerrGeodesicRenderMode; label: string }> = [
-  { value: "geodesic-tracks", label: "Geodesic tracks" },
-  { value: "teaching-particles", label: "Teaching particles" },
-  { value: "both", label: "Both" },
-];
-
-const RAY_TRACE_QUALITY_OPTIONS: ReadonlyArray<{ value: KerrRayTraceQualityV3; label: string }> = [
-  { value: "mobile-safe", label: "Mobile safe" },
-  { value: "interactive", label: "Interactive" },
-  { value: "science-still", label: "Science still" },
-];
-
-const STUDIO_MODE_OPTIONS: ReadonlyArray<{ value: KerrRelativityStudioMode; label: string }> = [
-  { value: "overview", label: "Overview" },
-  { value: "probe", label: "Probe" },
-  { value: "isco", label: "ISCO" },
-  { value: "error", label: "Error" },
-  { value: "boundary", label: "Boundary" },
-];
-
-function studioModeForPreset(presetId: KerrOrbitPresetId): KerrRelativityStudioMode {
-  switch (presetId) {
-    case "isco-comparison":
-    case "frame-drag-split":
-      return "isco";
-    case "capture-cone":
-    case "wide-deflection":
-      return "probe";
-    case "photon-ring-demo":
-    default:
-      return "overview";
-  }
-}
 
 export default function KerrBlackHolePanel({
   value,
@@ -136,6 +84,9 @@ export default function KerrBlackHolePanel({
   const highlightTrackKind = value.highlightTrackKind ?? "probe-null";
   const studioMode = value.studioMode ?? "overview";
   const rayTraceQuality = value.rayTraceQuality ?? "interactive";
+  const strongGravityRenderMode = value.strongGravityRenderMode ?? "cinematic";
+  const visualProfile = useAtlasRuntimeStore((snapshot) => snapshot.visualProfile);
+  const resolvedVisualProfile = useMemo(() => resolveAtlasVisualProfileV299(visualProfile), [visualProfile]);
 
   const mKg = value.massSolar * SUN_MASS_KG;
   const rgKm = useMemo(() => schwarzschildRadiusMeters(mKg) / 1000, [mKg]);
@@ -230,6 +181,7 @@ export default function KerrBlackHolePanel({
       data-kerr-accretion-boundary="display-model-not-grmhd"
       data-kerr-ray-trace-version={KERR_RAY_TRACE_V3_VERSION}
       data-kerr-ray-trace-quality={rayTraceQuality}
+      data-kerr-v299-render-mode={strongGravityRenderMode}
       data-kerr-ray-trace-boundary={rayTraceSummary.boundary}
       data-atlas-accessibility-surface-id="kerr-relativity-studio"
       data-atlas-accessibility-focus-target="true"
@@ -318,6 +270,13 @@ export default function KerrBlackHolePanel({
               );
             })}
           </div>
+
+          <KerrStrongGravityModeControlV299
+            value={strongGravityRenderMode}
+            onChange={(mode) => onChange({ ...value, strongGravityRenderMode: mode })}
+          />
+
+          {strongGravityRenderMode === "science" ? <KerrScienceBandHudV322 profile={resolvedVisualProfile} mode="science" /> : null}
 
           <div>
             <div className="mb-1 flex items-center justify-between text-ui-muted">

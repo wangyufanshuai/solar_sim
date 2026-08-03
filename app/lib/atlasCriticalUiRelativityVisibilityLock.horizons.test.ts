@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -14,10 +15,10 @@ describe("v110 critical UI and relativity visibility heavy audit", () => {
     const result = await runAtlasCriticalUiRelativityVisibilityAudit({
       bottomBarText: read("app/components/BottomControlBar.tsx"),
       launchControlText: read("app/components/LaunchControlPanel.tsx"),
-      relativityPanelText: read("app/components/RelativityObservableAtlasPanel.tsx"),
+      relativityPanelText: readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
       navigatorText: read("app/lib/atlasNavigator.ts"),
       universePageText: read("app/UniverseRuntimeController.tsx"),
-      evidenceText: read("app/lib/evidenceLedger.ts"),
+      evidenceText: readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       validationText: read("app/lib/atlasValidationConsole.ts"),
       docsText: `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`,
       browserSpecText: read("tests/atlas-browser/atlas-browser-acceptance.spec.ts"),

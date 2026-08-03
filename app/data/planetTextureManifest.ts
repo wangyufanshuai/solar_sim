@@ -46,7 +46,6 @@ const FETCHED_2K_ALBEDO_FILE: Record<string, string> = {
   mercury: "mercury.jpg",
   venus: "venus.jpg",
   earth: "earth.jpg",
-  moon: "moon.jpg",
   mars: "mars.jpg",
   jupiter: "jupiter.jpg",
   saturn: "saturn.jpg",

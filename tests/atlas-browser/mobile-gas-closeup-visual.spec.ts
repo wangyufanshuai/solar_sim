@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./atlasBrowserTestV263";
 
 test("mobile gas giant close-up keeps a low-noise background", async ({ page }, testInfo) => {
   test.skip(!testInfo.project.name.startsWith("mobile-"), "mobile composition regression");

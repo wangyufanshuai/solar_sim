@@ -15,9 +15,10 @@ import { applyFloatingOffsetScene, updateFloatingOrigin, type FloatingOriginStat
 import { lodConfigForTier } from "../lib/galacticLod";
 import { AU_TO_SCENE, SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 import { CAMERA_ZOOM_EVENT, type CameraZoomDetail } from "../lib/camera-bridge";
-import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { atlasRuntimeStore, useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { atlasCameraPresentationCanWriteV273, getAtlasCameraPresentationLeaseV273 } from "../lib/atlasCameraPresentationLeaseV273";
+import { ATLAS_SCALE_ORBIT_LIMITS_V273 } from "../lib/atlasScalePresentationV273";
 import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
-import { shouldWriteRuntimeMarker, type AtlasSceneMode } from "../lib/atlasRuntimeSceneFocusPerformance";
 import { mapOrbitAtlasPositionAu, orbitAtlasBodyDisplayRadius, ORBIT_ATLAS_CAMERA_FOV, ORBIT_ATLAS_CAMERA_POSITION, ORBIT_ATLAS_CAMERA_TARGET, SANDBOX_CAMERA_POSITION, type OrbitAtlasScaleMode, type SolarPresentationMode } from "../lib/orbitAtlasPresentation";
 import { useAtlasCameraRuntimeMarkerWriter } from "./AtlasCameraRuntimeMarker";
 export { CameraFocusBodyBridge } from "./AtlasSceneFocusCameraBridge";
@@ -76,8 +77,9 @@ export function PresentationCameraBridge({
       } else {
         controls.target.set(0, 0, 0);
       }
-      controls.minDistance = presentationMode === "orbit-atlas" ? 80 : 0.05;
-      controls.maxDistance = presentationMode === "orbit-atlas" ? 2400 : 50000;
+      const limits = ATLAS_SCALE_ORBIT_LIMITS_V273[atlasRuntimeStore.getSnapshot().scaleBand];
+      controls.minDistance = presentationMode === "orbit-atlas" ? limits.minDistance : 0.05;
+      controls.maxDistance = presentationMode === "orbit-atlas" ? limits.maxDistance : 50000;
       controls.update();
     }
   }, [camera, controlsRef, presentationMode, scaleMode]);
@@ -92,12 +94,24 @@ export function FloatingOriginBridge({ floatingOriginRef }: { floatingOriginRef:
 }
 
 export function LodOrbitControlsBridge({ floatingOriginRef, controlsRef, presentationMode }: { floatingOriginRef: MutableRefObject<FloatingOriginState>; controlsRef: MutableRefObject<OrbitControlsImpl | null>; presentationMode: SolarPresentationMode }) {
+  const scaleBand = useAtlasRuntimeStore((snapshot) => snapshot.scaleBand);
+  const appliedRef = useRef("");
   useFrame(() => {
     const controls = controlsRef.current;
     if (controls) {
-      controls.maxDistance = presentationMode === "orbit-atlas"
-        ? 2400
+      const owner = getAtlasCameraPresentationLeaseV273()?.owner;
+      if (owner) return;
+      const limits = ATLAS_SCALE_ORBIT_LIMITS_V273[scaleBand];
+      const minDistance = presentationMode === "orbit-atlas" ? limits.minDistance : controls.minDistance;
+      const maxDistance = presentationMode === "orbit-atlas"
+        ? limits.maxDistance
         : lodConfigForTier(floatingOriginRef.current.lodTier).maxDistance;
+      const key = `${presentationMode}:${scaleBand}:${minDistance}:${maxDistance}`;
+      if (appliedRef.current === key) return;
+      appliedRef.current = key;
+      controls.minDistance = minDistance;
+      controls.maxDistance = maxDistance;
+      controls.update();
     }
   });
   return null;
@@ -109,7 +123,7 @@ export function BrightStarTierBridge({ floatingOriginRef, children }: { floating
   return <>{children(tier2)}</>;
 }
 
-export function GalacticOverlayGate({ floatingOriginRef, children }: { floatingOriginRef: MutableRefObject<FloatingOriginState>; children: ReactNode }) {
+export function GalacticOverlayGate({ children }: { floatingOriginRef: MutableRefObject<FloatingOriginState>; children: ReactNode }) {
   const [enabled, setEnabled] = useState(false);
   useFrame(() => { if (!enabled) setEnabled(true); });
   return enabled ? <>{children}</> : null;
@@ -118,6 +132,7 @@ export function GalacticOverlayGate({ floatingOriginRef, children }: { floatingO
 export function CameraZoomBridge({ controlsRef }: { controlsRef: MutableRefObject<OrbitControlsImpl | null> }) {
   const camera = useThree((s) => s.camera);
   const zoomDeltaRef = useRef(0);
+  const directionRef = useRef(new THREE.Vector3());
   const writeCameraMarker = useAtlasCameraRuntimeMarkerWriter();
   useEffect(() => {
     const onZoom = (e: Event) => {
@@ -140,7 +155,8 @@ export function CameraZoomBridge({ controlsRef }: { controlsRef: MutableRefObjec
     if (!controls || zoomDeltaRef.current === 0) return;
     const delta = zoomDeltaRef.current;
     zoomDeltaRef.current = 0;
-    const dir = new THREE.Vector3().subVectors(camera.position, controls.target);
+    if (!atlasCameraPresentationCanWriteV273("ordinary-orbit")) return;
+    const dir = directionRef.current.subVectors(camera.position, controls.target);
     const currentDistance = dir.length();
     if (currentDistance < 1e-8 || !Number.isFinite(currentDistance)) return;
     const nextDistance = THREE.MathUtils.clamp(

@@ -1,10 +1,10 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./atlasBrowserTestV263";
 
 const ROOT = '[data-atlas-browser-acceptance-version="v38-browser-acceptance-harness"]';
-const RELEASE_TARGET_BYTES = 600 * 1024;
-const STOP_LINE_BYTES = 610 * 1024;
+const RELEASE_TARGET_BYTES = Number(process.env.ATLAS_BUNDLE_RELEASE_TARGET_BYTES ?? 600 * 1024);
+const STOP_LINE_BYTES = Number(process.env.ATLAS_BUNDLE_STOP_LINE_BYTES ?? 610 * 1024);
 const EVIDENCE_VERSION = process.env.ATLAS_BUNDLE_EVIDENCE_VERSION ?? "v198";
 
 test(`${EVIDENCE_VERSION} cold Canvas-ready JavaScript transfer stays at or below the release target`, async ({ page }) => {

@@ -14,6 +14,7 @@ import {
   parseAtlasMissionHubStoredState,
   serializeAtlasMissionHubStoredState,
 } from "./atlasMissionHub";
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
 import {
   ATLAS_MISSION_CAPSULE_HASH_KEY,
   ATLAS_MISSION_CAPSULE_VERSION,
@@ -149,14 +150,22 @@ export function useAtlasMissionSession({
     const capsule = createCurrentCapsule();
     const blob = new Blob([JSON.stringify(capsule, null, 2)], { type: "application/json" });
     const url = URL.createObjectURL(blob);
+    const releaseUrl = acquireAtlasResource("object-url", "atlas", "mission-capsule-export", {
+      owner: "export",
+      estimatedBytes: blob.size,
+    });
     const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = `orbit-atlas-mission-capsule-v27-${new Date()
-      .toISOString()
-      .slice(0, 19)
-      .replace(/:/g, "-")}.json`;
-    anchor.click();
-    URL.revokeObjectURL(url);
+    try {
+      anchor.href = url;
+      anchor.download = `orbit-atlas-mission-capsule-v27-${new Date()
+        .toISOString()
+        .slice(0, 19)
+        .replace(/:/g, "-")}.json`;
+      anchor.click();
+    } finally {
+      URL.revokeObjectURL(url);
+      releaseUrl();
+    }
     setRestoreSummary(restoreAtlasMissionCapsule({
       capsule,
       source: "export-json",

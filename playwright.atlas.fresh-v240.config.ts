@@ -19,6 +19,7 @@ export default defineConfig({
     ...(typeof baseConfig.use === "object" ? baseConfig.use : {}),
     baseURL,
     bypassCSP: true,
+    trace: "on-first-retry",
   },
   webServer: {
     command:

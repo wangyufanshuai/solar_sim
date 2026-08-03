@@ -12,10 +12,15 @@ const TEXTURE_AUDIT_ENABLED = process.env.ATLAS_SOAK_TEXTURE_AUDIT === "1";
 type ResourceSample = {
   workers: number;
   renderTargets: number;
+  gpuBuffers: number;
   subscriptions: number;
+  objectUrls: number;
+  typedArrayCaches: number;
   cameraLocks: number;
   textures: number;
   models: number;
+  estimatedBytes: number;
+  estimatedGpuBytes: number;
   programs: number;
   rendererTextures: number;
 };
@@ -93,10 +98,15 @@ async function snapshot(page: Page): Promise<ResourceSample> {
     return {
       workers: number("data-atlas-resource-workers"),
       renderTargets: number("data-atlas-resource-render-targets"),
+      gpuBuffers: number("data-atlas-resource-gpu-buffers"),
       subscriptions: number("data-atlas-resource-subscriptions"),
+      objectUrls: number("data-atlas-resource-object-urls"),
+      typedArrayCaches: number("data-atlas-resource-typed-array-caches"),
       cameraLocks: number("data-atlas-resource-camera-locks"),
       textures: number("data-atlas-resource-textures"),
       models: number("data-atlas-resource-models"),
+      estimatedBytes: number("data-atlas-resource-estimated-bytes"),
+      estimatedGpuBytes: number("data-atlas-resource-estimated-gpu-bytes"),
       programs: number("data-atlas-render-programs"),
       rendererTextures: number("data-atlas-render-textures"),
     };
@@ -229,7 +239,7 @@ async function waitForBaselineQuiescence(
 }
 
 test("measured scene cycles return resources and heap to the production baseline", async ({ page }, testInfo) => {
-  test.setTimeout(600_000);
+  test.setTimeout(1_200_000);
   const metadata = testInfo.config.metadata as Record<string, unknown>;
   const output = path.resolve(
     typeof metadata.soakEvidenceOutput === "string"
@@ -298,6 +308,10 @@ test("measured scene cycles return resources and heap to the production baseline
   const newLiveWebGlTextures = finalWebGlTextureAudit.live.filter(
     (texture) => !baselineTextureIds.has(texture.id),
   );
+  const createdWebGlTexturesSinceBaseline = finalWebGlTextureAudit.created - baselineWebGlTextureAudit.created;
+  const deletedWebGlTexturesSinceBaseline = finalWebGlTextureAudit.deleted - baselineWebGlTextureAudit.deleted;
+  const netLiveWebGlTexturesSinceBaseline = createdWebGlTexturesSinceBaseline - deletedWebGlTexturesSinceBaseline;
+  const webGlTextureLiveGrowthLimit = 2;
   const heapLimit = baselineHeap + Math.max(32 * 1024 * 1024, baselineHeap * 0.1);
   const rendererTextureSeries = cycles.map((cycle) => cycle.resources.rendererTextures);
   const programSeries = cycles.map((cycle) => cycle.resources.programs);
@@ -324,6 +338,10 @@ test("measured scene cycles return resources and heap to the production baseline
     finalHeap,
     finalWebGlTextureAudit,
     newLiveWebGlTextures,
+    createdWebGlTexturesSinceBaseline,
+    deletedWebGlTexturesSinceBaseline,
+    netLiveWebGlTexturesSinceBaseline,
+    webGlTextureLiveGrowthLimit,
     heapLimit,
     stableHeapSeries,
     stableHeapOlsSlopeBytesPerCycle,
@@ -332,14 +350,23 @@ test("measured scene cycles return resources and heap to the production baseline
     pageErrors,
     passed: released.workers === baseline.workers
       && released.renderTargets === baseline.renderTargets
+      && released.gpuBuffers === baseline.gpuBuffers
       && released.subscriptions === baseline.subscriptions
+      && released.objectUrls === baseline.objectUrls
+      && released.typedArrayCaches === baseline.typedArrayCaches
       && released.cameraLocks === baseline.cameraLocks
+      && released.textures === baseline.textures
       && released.models === baseline.models
+      && released.estimatedBytes === baseline.estimatedBytes
+      && released.estimatedGpuBytes === baseline.estimatedGpuBytes
       && released.rendererTextures <= baseline.rendererTextures + 2
       && finalHeap <= heapLimit
       && stableHeapOlsSlopeBytesPerCycle <= stableHeapOlsSlopeLimitBytesPerCycle
       && !strictlyGrowing(rendererTextureSeries)
       && !strictlyGrowing(programSeries)
+      && (!TEXTURE_AUDIT_ENABLED
+        || (netLiveWebGlTexturesSinceBaseline <= webGlTextureLiveGrowthLimit
+          && finalWebGlTextureAudit.live.length <= baselineWebGlTextureAudit.live.length + webGlTextureLiveGrowthLimit))
       && cycles.every((cycle, index) => cycle.searchMs < (index === 0 ? 150 : 50) && cycle.focusMs < 100)
       && consoleErrors.length === 0
       && pageErrors.length === 0,

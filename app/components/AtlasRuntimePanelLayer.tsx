@@ -9,18 +9,53 @@ import {
   RelativityObservableAtlasPanel,
 } from "./AtlasRuntimeWorkbenchLazySurfaces";
 import { ORBIT_ATLAS_ORBIT_RENDERER, ORBIT_ATLAS_VISUAL_PROFILE } from "../lib/orbitAtlasPresentation";
-import type { AtlasRuntimeWorkbenchSurfaceScope } from "./AtlasRuntimeWorkbenchSurface";
+import type {
+  AtlasRuntimeEvidenceMissionDomain,
+  AtlasRuntimeLaunchDomain,
+  AtlasRuntimeNavigationFocusDomain,
+  AtlasRuntimePanelsDomain,
+  AtlasRuntimeSceneDomain,
+  AtlasRuntimeShellHudDomain,
+  AtlasRuntimeTimelinePhysicsDomain,
+} from "./atlasRuntimeWorkbenchDomains";
 
 export default function AtlasRuntimePanelLayer({
-  scope,
+  scene,
+  shellHud,
+  panels,
+  navigationFocus,
+  evidenceMission,
+  launch,
+  timelinePhysics,
 }: {
-  scope: AtlasRuntimeWorkbenchSurfaceScope;
+  scene: AtlasRuntimeSceneDomain;
+  shellHud: AtlasRuntimeShellHudDomain;
+  panels: AtlasRuntimePanelsDomain;
+  navigationFocus: AtlasRuntimeNavigationFocusDomain;
+  evidenceMission: AtlasRuntimeEvidenceMissionDomain;
+  launch: AtlasRuntimeLaunchDomain;
+  timelinePhysics: AtlasRuntimeTimelinePhysicsDomain;
 }) {
   const {
-    launchRuntimeActive, panelSurfaceActivated, isMobileViewport,
-    ATLAS_RUNTIME_MODAL_PANEL_IDS, viewSettings, setViewSettings, openKerrLab, clearFocusLock,
-    setEvidenceLedgerOpen, evidenceInitialClaimId, simulationDiagnosticsRef,
-    gaiaCatalogSource, atlasReady, presentation, atlasPerformanceBudgetSummary,
+    panelSurfaceActivated, isMobileViewport, ATLAS_RUNTIME_MODAL_PANEL_IDS,
+    deferredEvidenceModules, legacyRelativityPanelProps, relativityObservableAtlasSummary,
+    relativityObservableExplainerSummary, atlasRelativityVerificationSummary,
+    atlasRelativityChartSummary, atlasPhysicsBenchmarkGateSummary,
+    atlasHorizonsGateAuditSummary, atlasPhysicsGateSplitSummary,
+    atlasScientificGatePreflightSummary, atlasHorizonsResidualDecompositionSummary,
+    atlasGaiaStarfieldEnhancementSummary, atlasRelativitySimulationOptimizationSummary,
+    setRelativityObservableAtlasOpen, setObservationalAstrophysicsOpen,
+  } = panels;
+  const { launchRuntimeActive } = launch;
+  const { viewSettings, setViewSettings } = shellHud;
+  const { orbitAtlas, atlasReady, presentation, atlasPerformanceBudgetSummary } = scene;
+  const {
+    openKerrLab, clearFocusLock, selectedExoplanetSystemId, selectedBodyIndex, gaiaIndex,
+    setAtlasNavigatorOpen, handleAtlasNavigatorExecute, setOrbitAnalysisOpen,
+    celestialObjectPassport, setSelectedCelestialCatalogId,
+  } = navigationFocus;
+  const {
+    setEvidenceLedgerOpen, evidenceInitialClaimId, gaiaCatalogSource,
     atlasWorkflowSummary, atlasWorkflowSelectedId, atlasWorkflowActiveStepId,
     setAtlasWorkflowSelectedId, setAtlasWorkflowActiveStepId,
     handleAtlasWorkflowRunStep, openAtlasMissionHub, setAtlasWorkflowOpen,
@@ -28,7 +63,7 @@ export default function AtlasRuntimePanelLayer({
     handleCopyMissionCapsuleLink, handleExportMissionCapsule,
     missionCapsuleImportInputRef, handleClearMissionCapsuleHash,
     openAtlasScientificReport, openAtlasValidationConsole, openAtlasObservatoryDeck,
-    setAtlasMissionHubOpen, deferredEvidenceModules, atlasScientificReportSummary,
+    setAtlasMissionHubOpen, atlasScientificReportSummary,
     atlasReportStudioSummary, atlasScientificReportExportFormat,
     handleAtlasReportTemplateChange, handleAtlasReportSectionToggle,
     handleExportScientificReportMarkdown, handleExportScientificReportJson,
@@ -38,20 +73,13 @@ export default function AtlasRuntimePanelLayer({
     handleValidationDomainAction, handleValidationIssueAction,
     setAtlasValidationConsoleOpen, atlasObservatoryDeckSummary,
     atlasObservatoryActiveZoneId, setAtlasObservatoryActiveZoneId,
-    handleObservatoryDeckAction, setAtlasObservatoryDeckOpen,
-    legacyRelativityPanelProps, relativityObservableAtlasSummary,
-    relativityObservableExplainerSummary, atlasRelativityVerificationSummary,
-    atlasRelativityChartSummary, atlasPhysicsBenchmarkGateSummary,
-    atlasHorizonsGateAuditSummary, atlasPhysicsGateSplitSummary,
-    atlasScientificGatePreflightSummary, atlasHorizonsResidualDecompositionSummary,
-    atlasGaiaStarfieldEnhancementSummary, atlasRelativitySimulationOptimizationSummary,
-    setEvidenceInitialClaimId, setRelativityObservableAtlasOpen,
-    selectedExoplanetSystemId, setObservationalAstrophysicsOpen,
-    navigatorEvidenceSummary, orbitAtlas, selectedBodyIndex, gaiaIndex,
-    setAtlasNavigatorOpen, handleAtlasNavigatorExecute, setOrbitAnalysisOpen,
-    physicsRef, simDaysRef, celestialObjectPassport, setSelectedCelestialCatalogId,
-    bodyMetricsRef, telemetrySeriesRef, relativityEnabled, daysPerSecond,
-  } = scope;
+    handleObservatoryDeckAction, setAtlasObservatoryDeckOpen, setEvidenceInitialClaimId,
+    navigatorEvidenceSummary,
+  } = evidenceMission;
+  const {
+    simulationDiagnosticsRef, physicsRef, simDaysRef, bodyMetricsRef, telemetrySeriesRef,
+    relativityEnabled, daysPerSecond,
+  } = timelinePhysics;
 
   if (launchRuntimeActive || !panelSurfaceActivated) return null;
 

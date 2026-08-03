@@ -39,4 +39,43 @@ describe("v131 external runtime store", () => {
     unsubscribe();
     expect(notifications).toBe(1);
   });
+
+  it("coordinates one research overlay without mutating scene revision", () => {
+    atlasRuntimeStore.setExperienceMode("explore");
+    const before = atlasRuntimeStore.getSnapshot().sceneRevision;
+    atlasRuntimeStore.openResearchOverlay("observing-planner");
+    expect(atlasRuntimeStore.getSnapshot()).toMatchObject({
+      experienceMode: "research",
+      researchOverlay: "observing-planner",
+    });
+    atlasRuntimeStore.setObserverPresentation({
+      enabled: true,
+      targetId: "nearby-star:vega",
+      widthDeg: 1.6,
+      heightDeg: 1.1,
+      rotationDeg: 15,
+    });
+    atlasRuntimeStore.openResearchOverlay("gaia-analysis");
+    expect(atlasRuntimeStore.getSnapshot().researchOverlay).toBe("gaia-analysis");
+    atlasRuntimeStore.closeResearchOverlay("observing-planner");
+    expect(atlasRuntimeStore.getSnapshot().researchOverlay).toBe("gaia-analysis");
+    atlasRuntimeStore.closeResearchOverlay("gaia-analysis");
+    expect(atlasRuntimeStore.getSnapshot().observerPresentation.enabled).toBe(false);
+    expect(atlasRuntimeStore.getSnapshot().sceneRevision).toBe(before);
+  });
+
+  it("advances adjacent scale journey steps without rebuilding the scene", () => {
+    atlasRuntimeStore.setScaleBand("solar");
+    atlasRuntimeStore.setSelectedObject("earth");
+    const before = atlasRuntimeStore.getSnapshot().sceneRevision;
+    const journey = atlasRuntimeStore.requestScaleJourney("local-group", 100);
+    expect(journey.route).toEqual(["solar", "stellar", "galactic", "local-group"]);
+    atlasRuntimeStore.completeScaleJourneyStep(journey.requestId - 1, 1_000);
+    expect(atlasRuntimeStore.getSnapshot().scaleBand).toBe("solar");
+    atlasRuntimeStore.completeScaleJourneyStep(journey.requestId, 1_000);
+    expect(atlasRuntimeStore.getSnapshot().scaleBand).toBe("stellar");
+    expect(atlasRuntimeStore.getSnapshot().scaleJourney.to).toBe("galactic");
+    expect(atlasRuntimeStore.getSnapshot().sceneRevision).toBe(before);
+    atlasRuntimeStore.cancelScaleJourney();
+  });
 });

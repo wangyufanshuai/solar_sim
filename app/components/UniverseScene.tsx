@@ -1,6 +1,6 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei/core/OrbitControls";
 import { Suspense, useRef } from "react";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import {
@@ -12,6 +12,7 @@ import {
   LazyExoplanetSystemScene,
   LazyLaunchSceneView,
 } from "./AtlasSceneLazyModules";
+import StableGaiaOverlay from "./StableGaiaOverlay";
 
 /*
  * Historical v111/v115 source-audit compatibility. The executable camera rig
@@ -281,9 +282,11 @@ export default function UniverseScene({
   simulationGroups: AtlasCanvasSimulationGroups;
 }) {
   const { interactiveState } = simulationGroups;
+  const selectionEpochRef = useRef(0);
   return (
     <>
       <AtlasRenderMetricsProbe />
+      <StableGaiaOverlay simulationGroups={simulationGroups} selectionEpochRef={selectionEpochRef} />
       {interactiveState.sceneMode === "launch" ? (
         <LaunchRuntimeScene simulationGroups={simulationGroups} />
       ) : interactiveState.sceneMode === "exoplanet-system" && interactiveState.exoplanetSystemId ? (
@@ -291,7 +294,7 @@ export default function UniverseScene({
           <LazyExoplanetSystemScene systemId={interactiveState.exoplanetSystemId} />
         </Suspense>
       ) : (
-        <AtlasUniverseSceneRuntime simulationGroups={simulationGroups} />
+        <AtlasUniverseSceneRuntime simulationGroups={simulationGroups} selectionEpochRef={selectionEpochRef} />
       )}
     </>
   );

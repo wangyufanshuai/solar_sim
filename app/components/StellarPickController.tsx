@@ -7,7 +7,6 @@ import {
   BRIGHT_STARS_TIER1,
   type BrightStarDef,
 } from "../data/brightStarCatalog";
-import { rankGaiaStarsForOverlay } from "../data/gaiaStarCatalog";
 import {
   chooseStellarPickCandidate,
   stellarPointerIsShortClick,
@@ -15,6 +14,7 @@ import {
 } from "../lib/atlasFocusV2";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import {
+  getGaiaPickEntries,
   gaiaStarToOverlayScenePosition,
   selectGaiaLabelStars,
   type GaiaIndexedStar,
@@ -68,13 +68,7 @@ export default function StellarPickController({
 
   const gaiaPickEntries = useMemo(() => {
     if (!gaiaEnabled || maxGaiaCandidates <= 0) return [];
-    const bySourceId = new Map(gaiaIndex.map((entry) => [entry.sourceId, entry]));
-    return rankGaiaStarsForOverlay(
-      gaiaIndex.map((entry) => entry.star),
-      maxGaiaCandidates,
-    )
-      .map((star) => bySourceId.get(star.sourceId))
-      .filter((entry): entry is GaiaIndexedStar => Boolean(entry));
+    return getGaiaPickEntries(gaiaIndex, maxGaiaCandidates);
   }, [gaiaEnabled, gaiaIndex, maxGaiaCandidates]);
 
   const labelledGaiaIds = useMemo(

@@ -1,21 +1,29 @@
 "use client";
 
 import AtlasSceneHost from "./AtlasSceneHost";
-import type { AtlasRuntimeWorkbenchSurfaceScope } from "./AtlasRuntimeWorkbenchSurface";
+import type {
+  AtlasRuntimeLaunchDomain,
+  AtlasRuntimeNavigationFocusDomain,
+  AtlasRuntimeSceneDomain,
+  AtlasRuntimeShellHudDomain,
+  AtlasRuntimeTimelinePhysicsDomain,
+} from "./atlasRuntimeWorkbenchDomains";
 
 export default function AtlasRuntimeSceneLayer({
-  scope,
+  scene,
+  shellHud,
+  navigationFocus,
+  launch,
+  timelinePhysics,
 }: {
-  scope: AtlasRuntimeWorkbenchSurfaceScope;
+  scene: AtlasRuntimeSceneDomain;
+  shellHud: AtlasRuntimeShellHudDomain;
+  navigationFocus: AtlasRuntimeNavigationFocusDomain;
+  launch: AtlasRuntimeLaunchDomain;
+  timelinePhysics: AtlasRuntimeTimelinePhysicsDomain;
 }) {
   const {
-    atlasSceneMode, selectedExoplanetSystemId, simDaysRef, isPlaying, daysPerSecond,
-    physicsRef, relativityEnabledRef, precisionTierRef, floatingOriginRef, onSelectBody,
-    orbitAtlas, onAtlasBodyCanvasPick, onBodyCanvasPick, onBrightStarFocus,
-    requestGaiaStarFocus, requestCatalogObjectFocus, selectedBodyIndex,
-    cameraBodyFocusRequest, cameraOriginResetNonce, bodyMetricsRef,
-    simulationDiagnosticsRef, earthMoonView, telemetrySeriesRef, kerrBlackHole,
-    visualEnhance, viewSettings, selectedCelestialCatalogId, selectedStellarSearchDocument,
+    atlasSceneMode, orbitAtlas,
     atlasPerformanceBudgetSummary, presentation, selectedBodyCloseupActive,
     atlasSkyCloseupProfile, selectedBodyLightingProfile, atlasCinematicCameraProfile,
     atlasCinematicSkyCompositionProfile, atlasCinematicBackgroundNoiseProfile,
@@ -35,11 +43,26 @@ export default function AtlasRuntimeSceneLayer({
     atlasSparseDeepSpaceNebulaProfile, atlasSparseDeepSpaceNegativeSpaceProfile,
     atlasCloseupCompositionProfile, atlasCloseupPanelAvoidanceProfile,
     atlasCloseupRingShowcaseProfile, atlasCinematicLightingSummary, handleCanvasReady,
-    setSkyReady, handleCoreBodiesReady, lagrangeSpawnNonceRef, integrationSuspendedRef,
-    timeTravelScrubURef, timeTravelScrubbingRef, physicsHistoryRef, clearFocusLock,
+    setSkyReady, handleCoreBodiesReady, lagrangeSpawnNonceRef, atlasRuntimeQualityTier,
+    kerrBlackHole,
+  } = scene;
+  const { visualEnhance, viewSettings } = shellHud;
+  const {
+    selectedExoplanetSystemId, selectedCelestialCatalogId, selectedBodyIndex,
+    selectedStellarSearchDocument, onSelectBody, onAtlasBodyCanvasPick, onBodyCanvasPick,
+    onBrightStarFocus, requestGaiaStarFocus, requestCatalogObjectFocus, cameraBodyFocusRequest,
+    cameraOriginResetNonce, earthMoonView, clearFocusLock,
+  } = navigationFocus;
+  const {
     launchMode, localLaunchActive, localLaunchActiveRef, handleLocalLaunchHandoff,
-    handleLaunchAbort, localTelemetryRef, launchConfigRef, atlasRuntimeQualityTier,
-  } = scope;
+    handleLaunchAbort, localTelemetryRef, launchConfigRef,
+  } = launch;
+  const {
+    simDaysRef, isPlaying, daysPerSecond, physicsRef, relativityEnabledRef,
+    precisionTierRef, floatingOriginRef, bodyMetricsRef, simulationDiagnosticsRef,
+    telemetrySeriesRef, integrationSuspendedRef, timeTravelScrubURef,
+    timeTravelScrubbingRef, physicsHistoryRef,
+  } = timelinePhysics;
 
   return (
     <div className="absolute inset-0 touch-none" data-atlas-runtime-domain="scene-overlay">
@@ -135,4 +158,3 @@ export default function AtlasRuntimeSceneLayer({
     </div>
   );
 }
-

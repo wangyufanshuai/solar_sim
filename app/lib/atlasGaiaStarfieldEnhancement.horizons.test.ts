@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -33,8 +34,8 @@ describe("v97 Gaia starfield enhancement", () => {
       readFileSync(resolve(process.cwd(), "app/components/GaiaStarField.tsx"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/components/ConstellationLines.tsx"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/components/NebulaMarkers.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/components/RelativityObservableAtlasPanel.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/lib/evidenceLedger.ts"), "utf8"),
+      readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
+      readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasValidationConsole.ts"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasGaiaStarfieldEnhancement.ts"), "utf8"),
     ].join("\n");

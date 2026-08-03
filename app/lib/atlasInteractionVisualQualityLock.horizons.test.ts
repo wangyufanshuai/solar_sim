@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -61,7 +62,7 @@ describe("v109 interaction visual quality heavy audit", () => {
       "app/lib/atlasInteractionRepairLaunchUxLock.ts",
       "app/lib/atlasInteractionVisualQualityLock.ts",
     ];
-    const surfaceText = surfaceFiles.map(read).join("\n");
+    const surfaceText = surfaceFiles.map((file) => readProjectSourceBundle(file)).join("\n");
     const docsText = `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`;
     const browserSpecText = read("tests/atlas-browser/atlas-browser-acceptance.spec.ts");
     const baselineDataset = loadHorizonsValidationDatasetFromJson(

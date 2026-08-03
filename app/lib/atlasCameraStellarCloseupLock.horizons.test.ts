@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -17,8 +18,8 @@ describe("v111 camera and stellar close-up heavy audit", () => {
       gaiaStarLabelsText: read("app/components/GaiaStarLabels.tsx"),
       gaiaStarFieldText: read("app/components/GaiaStarField.tsx"),
       universePageText: read("app/UniverseRuntimeController.tsx"),
-      relativityPanelText: read("app/components/RelativityObservableAtlasPanel.tsx"),
-      evidenceText: read("app/lib/evidenceLedger.ts"),
+      relativityPanelText: readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
+      evidenceText: readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       validationText: read("app/lib/atlasValidationConsole.ts"),
       docsText: `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`,
       browserSpecText: read("tests/atlas-browser/atlas-browser-acceptance.spec.ts"),

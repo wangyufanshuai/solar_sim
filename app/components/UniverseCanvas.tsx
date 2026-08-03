@@ -4,6 +4,8 @@ import { Canvas, useThree } from "@react-three/fiber";
 import { memo, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
 import UniverseScene, {
   normalizeAtlasCanvasSimulationProps,
   stabilizeAtlasCanvasSimulationGroups,
@@ -15,6 +17,7 @@ import {
   ORBIT_ATLAS_CAMERA_POSITION,
 } from "../lib/orbitAtlasPresentation";
 import { createAtlasVisualDirectorV4 } from "../lib/atlasVisualDirectorV4";
+import { setAtlasRenderExposureV274 } from "../lib/atlasRenderExposureV274";
 
 export type { AtlasCanvasSimulationGroups, UniverseCanvasSimulationProps };
 
@@ -111,10 +114,14 @@ function UniverseCanvas({
 
 function RenderExposureDirector({ sceneMode, qualityTier }: { sceneMode: UniverseCanvasSimulationProps["sceneMode"]; qualityTier: NonNullable<UniverseCanvasSimulationProps["runtimeQualityTier"]> }) {
   const gl = useThree((state) => state.gl);
+  const visualProfile = useAtlasRuntimeStore((snapshot) => snapshot.visualProfile);
   useEffect(() => {
     const profile = createAtlasVisualDirectorV4(sceneMode, qualityTier);
-    gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE * profile.exposure;
-  }, [gl, qualityTier, sceneMode]);
+    const visual = resolveAtlasVisualProfileV299(visualProfile);
+    const exposure = TRUE_VOID_TONE_MAPPING_EXPOSURE * profile.exposure * visual.exposureMultiplier[sceneMode] * visual.groups.sky.backgroundExposure;
+    setAtlasRenderExposureV274(exposure);
+    gl.toneMappingExposure = exposure;
+  }, [gl, qualityTier, sceneMode, visualProfile]);
   return null;
 }
 

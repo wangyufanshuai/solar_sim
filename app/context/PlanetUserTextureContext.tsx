@@ -17,10 +17,13 @@ import {
   userTextureIdbGetAllKeys,
   userTextureIdbSet,
 } from "../lib/planetTextureUserStore";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
 
 type TextureEntry = {
   texture: THREE.Texture;
   objectUrl: string;
+  releaseObjectUrl: () => void;
+  releaseTexture: () => void;
 };
 
 function configureUserAlbedoTexture(tex: THREE.Texture, maxAnisotropy: number) {
@@ -38,6 +41,8 @@ function disposeEntry(entry: TextureEntry | undefined) {
   if (!entry) return;
   URL.revokeObjectURL(entry.objectUrl);
   entry.texture.dispose();
+  entry.releaseObjectUrl();
+  entry.releaseTexture();
 }
 
 type PlanetUserTextureValue = {
@@ -71,6 +76,7 @@ export function usePlanetUserTextures(): PlanetUserTextureValue {
 
 export function PlanetUserTextureProvider({ children }: { children: ReactNode }) {
   const entriesRef = useRef<Map<string, TextureEntry>>(new Map());
+  const mountedRef = useRef(false);
   const [ready, setReady] = useState(false);
   const [epoch, setEpoch] = useState(0);
 
@@ -96,35 +102,59 @@ export function PlanetUserTextureProvider({ children }: { children: ReactNode })
 
   const bump = useCallback(() => setEpoch((e) => e + 1), []);
 
-  const hydrateFromIdb = useCallback(async () => {
+  const hydrateFromIdb = useCallback(async (isCancelled: () => boolean) => {
     entriesRef.current.forEach(disposeEntry);
     entriesRef.current.clear();
     try {
       const keys = await userTextureIdbGetAllKeys();
+      if (isCancelled()) return;
       const loader = new THREE.TextureLoader();
       const maxA = maxAnisoRef.current;
       for (const bodyId of keys) {
         const blob = await userTextureIdbGet(bodyId);
+        if (isCancelled()) return;
         if (!blob || blob.size === 0) continue;
         const objectUrl = URL.createObjectURL(blob);
+        const releaseObjectUrl = acquireAtlasResource("object-url", "atlas", `planet-user-texture-url:${bodyId}`, {
+          owner: "user-texture",
+          estimatedBytes: blob.size,
+        });
+        let texture: THREE.Texture | null = null;
         try {
-          const texture = await loader.loadAsync(objectUrl);
+          texture = await loader.loadAsync(objectUrl);
+          if (isCancelled()) {
+            texture.dispose();
+            URL.revokeObjectURL(objectUrl);
+            releaseObjectUrl();
+            return;
+          }
           configureUserAlbedoTexture(texture, maxA);
-          entriesRef.current.set(bodyId, { texture, objectUrl });
+          const releaseTexture = acquireAtlasResource("texture", "atlas", `planet-user-texture:${bodyId}`, {
+            owner: "user-texture",
+            estimatedBytes: blob.size,
+          });
+          entriesRef.current.set(bodyId, { texture, objectUrl, releaseObjectUrl, releaseTexture });
         } catch {
+          texture?.dispose();
           URL.revokeObjectURL(objectUrl);
+          releaseObjectUrl();
         }
       }
     } catch {
       /* private mode / blocked IDB */
     }
+    if (isCancelled()) return;
     setReady(true);
     bump();
   }, [bump]);
 
   useEffect(() => {
-    void hydrateFromIdb();
+    let cancelled = false;
+    mountedRef.current = true;
+    void hydrateFromIdb(() => cancelled);
     return () => {
+      cancelled = true;
+      mountedRef.current = false;
       /* Dispose latest entries on unmount (texture cache ref, not a DOM node). */
       // eslint-disable-next-line react-hooks/exhaustive-deps -- read ref at unmount to dispose current textures
       const m = entriesRef.current;
@@ -157,15 +187,38 @@ export function PlanetUserTextureProvider({ children }: { children: ReactNode })
     async (bodyId: string, file: File) => {
       const blob = file.slice(0, file.size, file.type || "image/jpeg");
       await userTextureIdbSet(bodyId, blob);
+      if (!mountedRef.current) return;
       const prev = entriesRef.current.get(bodyId);
       disposeEntry(prev);
       entriesRef.current.delete(bodyId);
       const objectUrl = URL.createObjectURL(blob);
+      const releaseObjectUrl = acquireAtlasResource("object-url", "atlas", `planet-user-texture-url:${bodyId}`, {
+        owner: "user-texture",
+        estimatedBytes: blob.size,
+      });
       const loader = new THREE.TextureLoader();
-      const texture = await loader.loadAsync(objectUrl);
-      configureUserAlbedoTexture(texture, maxAnisoRef.current);
-      entriesRef.current.set(bodyId, { texture, objectUrl });
-      bump();
+      let texture: THREE.Texture | null = null;
+      try {
+        texture = await loader.loadAsync(objectUrl);
+        if (!mountedRef.current) {
+          texture.dispose();
+          URL.revokeObjectURL(objectUrl);
+          releaseObjectUrl();
+          return;
+        }
+        configureUserAlbedoTexture(texture, maxAnisoRef.current);
+        const releaseTexture = acquireAtlasResource("texture", "atlas", `planet-user-texture:${bodyId}`, {
+          owner: "user-texture",
+          estimatedBytes: blob.size,
+        });
+        entriesRef.current.set(bodyId, { texture, objectUrl, releaseObjectUrl, releaseTexture });
+        bump();
+      } catch (error) {
+        texture?.dispose();
+        URL.revokeObjectURL(objectUrl);
+        releaseObjectUrl();
+        throw error;
+      }
     },
     [bump],
   );
@@ -173,6 +226,7 @@ export function PlanetUserTextureProvider({ children }: { children: ReactNode })
   const clearUserAlbedo = useCallback(
     async (bodyId: string) => {
       await userTextureIdbDelete(bodyId);
+      if (!mountedRef.current) return;
       const prev = entriesRef.current.get(bodyId);
       disposeEntry(prev);
       entriesRef.current.delete(bodyId);

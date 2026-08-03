@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import type { GaiaIndexedStar } from "./gaiaCatalogIndex";
 import type {
   AtlasNavigatorSummary,
@@ -67,23 +67,26 @@ export function useAtlasRuntimeJourneySummariesV198({
     };
   }, [factories, requested]);
 
-  if (!factories) {
-    return {
-      atlasNavigatorSummary: NAVIGATOR_FALLBACK,
-      atlasWorkflowSummary: WORKFLOW_FALLBACK,
-      detailedJourneyIndexReady: false,
-    };
-  }
-
-  const atlasNavigatorSummary = factories.navigator({
-    query: "",
-    evidenceLedgerSummary,
-    orbitAnalysisAvailable,
-    gaiaIndex,
-  });
+  const atlasNavigatorSummary = useMemo(
+    () => factories
+      ? factories.navigator({
+        query: "",
+        evidenceLedgerSummary,
+        orbitAnalysisAvailable,
+        gaiaIndex,
+      })
+      : NAVIGATOR_FALLBACK,
+    [evidenceLedgerSummary, factories, gaiaIndex, orbitAnalysisAvailable],
+  );
+  const atlasWorkflowSummary = useMemo(
+    () => factories
+      ? factories.workflow({ navigatorSummary: atlasNavigatorSummary })
+      : WORKFLOW_FALLBACK,
+    [atlasNavigatorSummary, factories],
+  );
   return {
     atlasNavigatorSummary,
-    atlasWorkflowSummary: factories.workflow({ navigatorSummary: atlasNavigatorSummary }),
-    detailedJourneyIndexReady: true,
+    atlasWorkflowSummary,
+    detailedJourneyIndexReady: Boolean(factories),
   };
 }

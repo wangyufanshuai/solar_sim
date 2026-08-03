@@ -1,9 +1,10 @@
 "use client";
 
-import { OrbitControls } from "@react-three/drei";
-import { useFrame, useThree } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei/core/OrbitControls";
+import { addAfterEffect, addEffect, useFrame, useThree } from "@react-three/fiber";
 import { lazy, Suspense, useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
+import type { MutableRefObject } from "react";
 import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { BloomSceneProvider } from "../context/BloomSceneContext";
 import { LabelOcclusionProvider } from "../context/LabelOcclusionContext";
@@ -12,10 +13,10 @@ import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 import type { AtlasGaiaStarfieldEnhancementQualityTier } from "../lib/simulationDiagnosticsTypes";
 import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
 import { getAtlasResourceSnapshot } from "../lib/atlasResourceLifecycle";
-import { useGaiaCatalogSnapshot } from "../lib/gaiaCatalogStore";
-import { getGaiaStarIndex } from "../lib/gaiaCatalogIndex";
-import { stellarDocumentToGaiaIndex } from "../lib/stellarSearchCatalog";
-import { ATLAS_GAIA_STARFIELD_RENDER_BUDGET } from "../lib/atlasGaiaStarfieldEnhancement";
+import {
+  publishAtlasBrowserObservabilityV294,
+  startAtlasBrowserObservabilityResourceBridgeV300,
+} from "../lib/atlasBrowserObservabilityV294";
 import { TRUE_VOID_CINEMATIC_AMBIENT_INTENSITY, TRUE_VOID_CINEMATIC_HEMISPHERE_INTENSITY } from "../lib/trueVoid";
 import SolarSystemIntegrator from "./SolarSystemIntegrator";
 import SolarSystemBodies from "./SolarSystemBodies";
@@ -24,21 +25,6 @@ import ReferenceOrbitDecor from "./ReferenceOrbitDecor";
 import PostProcessingGate from "./PostProcessingGate";
 import RelativisticOpticsBridge from "./RelativisticOpticsBridge";
 import LagrangePointsViz from "./LagrangePointsViz";
-import GalacticScaleField from "./GalacticScaleField";
-import GalacticLandmarks from "./GalacticLandmarks";
-import MajorStarBeacons from "./MajorStarBeacons";
-import ConstellationLines from "./ConstellationLines";
-import ConstellationLabels from "./ConstellationLabels";
-import GaiaStarOverlay from "./GaiaStarOverlay";
-import GaiaStarLabels from "./GaiaStarLabels";
-import NebulaMarkers from "./NebulaMarkers";
-import StarClusterMarkers from "./StarClusterMarkers";
-import PulsarField from "./PulsarField";
-import BrightGalaxyMarkers from "./BrightGalaxyMarkers";
-import CelestialCatalogFocusMarker from "./CelestialCatalogFocusMarker";
-import CelestialCatalogLabels from "./CelestialCatalogLabels";
-import SelectedSkyTargetProxy from "./SelectedSkyTargetProxy";
-import StellarPickController from "./StellarPickController";
 import OrbitAtlasLabels from "./OrbitAtlasLabels";
 import AtlasLabelLayoutCoordinator from "./AtlasLabelLayoutCoordinator";
 import {
@@ -47,7 +33,6 @@ import {
   CameraZoomBridge,
   CinematicSubjectFramingBridge,
   FloatingOriginBridge,
-  GalacticOverlayGate,
   LodOrbitControlsBridge,
   PresentationCameraBridge,
   SelectionMetricsBridge,
@@ -59,8 +44,19 @@ import type {
 } from "./AtlasCanvasSimulationContract";
 import { LazyKerrBlackHole } from "./AtlasSceneLazyModules";
 import KerrCameraFramingBridge from "./KerrCameraFramingBridge";
+import ObservationFovOverlayV266 from "./ObservationFovOverlayV266";
+import AtlasScaleTransitionBridgeV268 from "./AtlasScaleTransitionBridgeV268";
+import AtlasScaleLayerGroupV273 from "./AtlasScaleLayerGroupV273";
+import {
+  createAtlasPerformanceRingV275,
+  pushAtlasPerformanceSampleV275,
+  readAtlasPerformanceRingV275,
+} from "../lib/atlasPerformanceRingV275";
+import { percentile } from "../lib/atlasVisualIntegrationRelease";
 
 const DiagnosticsMonitorBridge = lazy(() => import("./AtlasSceneDiagnostics"));
+const AtlasDeepSpacePresentationSubtreeV275 = lazy(() => import("./AtlasDeepSpacePresentationSubtreeV275"));
+const AtlasSolarSkyPrimerV286 = lazy(() => import("./AtlasSolarSkyPrimerV286"));
 
 export {
   ATLAS_CANVAS_SIMULATION_ACTION_KEYS,
@@ -79,10 +75,12 @@ export type { AtlasReferenceGradeSubjectState } from "./AtlasSceneCameraBridges"
 
 export function AtlasUniverseSceneRuntime({
   simulationGroups,
+  selectionEpochRef: externalSelectionEpochRef,
 }: {
   simulationGroups: AtlasCanvasSimulationGroups;
+  selectionEpochRef?: MutableRefObject<number>;
 }) {
-  return <AtlasRuntimeScene simulationGroups={simulationGroups} />;
+  return <AtlasRuntimeScene simulationGroups={simulationGroups} selectionEpochRef={externalSelectionEpochRef} />;
 }
 
 export function AtlasRenderMetricsProbe() {
@@ -92,6 +90,10 @@ export function AtlasRenderMetricsProbe() {
   const rootRef = useRef<HTMLElement | null>(null);
   const lastRef = useRef(0);
   const textureMemoryMbRef = useRef(0);
+  const r3fFrameRingRef = useRef(createAtlasPerformanceRingV275(720));
+  const gpuFrameRingRef = useRef(createAtlasPerformanceRingV275(240));
+  const lastFrameMsRef = useRef<number | null>(null);
+  const gpuTimerStatusRef = useRef("unavailable-no-disjoint-query");
 
   useEffect(() => {
     const auditTextures = () => {
@@ -118,6 +120,7 @@ export function AtlasRenderMetricsProbe() {
         ?? document.querySelector<HTMLElement>("[data-atlas-browser-acceptance-version]");
       rootRef.current = root;
       root?.setAttribute("data-atlas-render-texture-audit-revision", String(sceneRevision));
+      root?.setAttribute("data-atlas-scene-revision-v294", String(sceneRevision));
     };
 
     auditTextures();
@@ -125,8 +128,64 @@ export function AtlasRenderMetricsProbe() {
     return () => window.clearTimeout(settledAudit);
   }, [scene, sceneRevision]);
 
+  useEffect(() => {
+    if (!gl.capabilities.isWebGL2) return;
+    const context = gl.getContext() as WebGL2RenderingContext;
+    const extension = context.getExtension("EXT_disjoint_timer_query_webgl2") as {
+      TIME_ELAPSED_EXT: number;
+      GPU_DISJOINT_EXT: number;
+    } | null;
+    if (!extension) return;
+    const pending: WebGLQuery[] = [];
+    let active: WebGLQuery | null = null;
+    let disposed = false;
+    gpuTimerStatusRef.current = "active-ext-disjoint-timer-query-webgl2";
+
+    const releaseBefore = addEffect(() => {
+      while (pending.length > 0) {
+        const query = pending[0]!;
+        const available = Boolean(context.getQueryParameter(query, context.QUERY_RESULT_AVAILABLE));
+        if (!available) break;
+        pending.shift();
+        const disjoint = Boolean(context.getParameter(extension.GPU_DISJOINT_EXT));
+        if (!disjoint) {
+          const nanoseconds = Number(context.getQueryParameter(query, context.QUERY_RESULT));
+          pushAtlasPerformanceSampleV275(gpuFrameRingRef.current, nanoseconds / 1_000_000);
+        }
+        context.deleteQuery(query);
+      }
+      if (disposed || active || pending.length >= 4) return;
+      const query = context.createQuery();
+      if (!query) return;
+      context.beginQuery(extension.TIME_ELAPSED_EXT, query);
+      active = query;
+    });
+    const releaseAfter = addAfterEffect(() => {
+      if (!active) return;
+      context.endQuery(extension.TIME_ELAPSED_EXT);
+      pending.push(active);
+      active = null;
+    });
+    return () => {
+      disposed = true;
+      releaseBefore();
+      releaseAfter();
+      if (active) {
+        try { context.endQuery(extension.TIME_ELAPSED_EXT); } catch { /* Context may already be lost. */ }
+        context.deleteQuery(active);
+      }
+      for (const query of pending) context.deleteQuery(query);
+      gpuTimerStatusRef.current = "released";
+    };
+  }, [gl]);
+
   useFrame(({ clock }) => {
     const now = clock.elapsedTime;
+    const nowMs = now * 1000;
+    if (lastFrameMsRef.current !== null) {
+      pushAtlasPerformanceSampleV275(r3fFrameRingRef.current, nowMs - lastFrameMsRef.current);
+    }
+    lastFrameMsRef.current = nowMs;
     if (now - lastRef.current < 0.2) return;
     lastRef.current = now;
     rootRef.current ??= document.querySelector<HTMLElement>("[data-atlas-browser-acceptance-version]");
@@ -139,6 +198,17 @@ export function AtlasRenderMetricsProbe() {
     root.setAttribute("data-atlas-render-textures", String(gl.info.memory.textures));
     root.setAttribute("data-atlas-render-texture-memory-estimate-mb", textureMemoryMbRef.current.toFixed(1));
     root.setAttribute("data-atlas-render-targets", String(resources.gpuRenderTargets));
+    root.setAttribute("data-atlas-render-resource-estimated-bytes", String(resources.estimatedBytes));
+    root.setAttribute("data-atlas-render-resource-estimated-gpu-bytes", String(resources.estimatedGpuBytes));
+    const r3fFrames = readAtlasPerformanceRingV275(r3fFrameRingRef.current);
+    root.setAttribute("data-atlas-render-r3f-frame-p50-ms", percentile(r3fFrames, 0.5).toFixed(1));
+    root.setAttribute("data-atlas-render-r3f-frame-p95-ms", percentile(r3fFrames, 0.95).toFixed(1));
+    root.setAttribute("data-atlas-render-r3f-frame-samples", String(r3fFrames.length));
+    const gpuFrames = readAtlasPerformanceRingV275(gpuFrameRingRef.current);
+    root.setAttribute("data-atlas-render-gpu-frame-p50-ms", percentile(gpuFrames, 0.5).toFixed(2));
+    root.setAttribute("data-atlas-render-gpu-frame-p95-ms", percentile(gpuFrames, 0.95).toFixed(2));
+    root.setAttribute("data-atlas-render-gpu-frame-samples", String(gpuFrames.length));
+    root.setAttribute("data-atlas-render-gpu-timer", gpuTimerStatusRef.current);
     const context = gl.getContext();
     const viewport = context.getParameter(context.VIEWPORT) as Int32Array;
     const scissor = context.getParameter(context.SCISSOR_BOX) as Int32Array;
@@ -149,7 +219,13 @@ export function AtlasRenderMetricsProbe() {
   return null;
 }
 
-function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvasSimulationGroups }) {
+function AtlasRuntimeScene({
+  simulationGroups,
+  selectionEpochRef: externalSelectionEpochRef,
+}: {
+  simulationGroups: AtlasCanvasSimulationGroups;
+  selectionEpochRef?: MutableRefObject<number>;
+}) {
   const simulation = useMemo<UniverseCanvasSimulationProps>(() => ({
     ...simulationGroups.refs,
     ...simulationGroups.actions,
@@ -158,28 +234,16 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
   }), [simulationGroups.actions, simulationGroups.interactiveState, simulationGroups.refs, simulationGroups.visualProfiles]);
   const controlsRef = useRef<OrbitControlsImpl | null>(null);
   const researchDiagnosticsEnabled = useAtlasRuntimeStore(
-    (snapshot) => snapshot.experienceMode === "research",
+    (snapshot) => snapshot.panels.sessions["relativity-observables"].isOpen
+      || snapshot.panels.sessions["kerr-lab"].isOpen
+      || snapshot.panels.sessions["observational-astrophysics"].isOpen,
   );
-  const selectionEpochRef = useRef(0);
+  const scaleBand = useAtlasRuntimeStore((snapshot) => snapshot.scaleBand);
+  const researchOverlay = useAtlasRuntimeStore((snapshot) => snapshot.researchOverlay);
+  const visualProfile = useAtlasRuntimeStore((snapshot) => snapshot.visualProfile);
+  const localSelectionEpochRef = useRef(0);
+  const selectionEpochRef = externalSelectionEpochRef ?? localSelectionEpochRef;
   const viewportSize = useThree((state) => state.size);
-  const gaiaCatalogSnapshot = useGaiaCatalogSnapshot();
-  const gaiaBaseIndex = useMemo(
-    () =>
-      gaiaCatalogSnapshot.catalog
-        ? getGaiaStarIndex(gaiaCatalogSnapshot.catalog.stars)
-        : [],
-    [gaiaCatalogSnapshot.catalog],
-  );
-  const gaiaIndex = useMemo(() => {
-    const supplemental = simulation.selectedStellarSearchDocument;
-    if (
-      !supplemental ||
-      gaiaBaseIndex.some((star) => star.sourceId === supplemental.sourceId)
-    ) {
-      return gaiaBaseIndex;
-    }
-    return [stellarDocumentToGaiaIndex(supplemental), ...gaiaBaseIndex];
-  }, [gaiaBaseIndex, simulation.selectedStellarSearchDocument]);
   const orbitAtlas = simulation.presentationMode === "orbit-atlas";
   const selectedBodyLightingProfile = simulation.selectedBodyLightingProfile ?? "overview";
   const cinematicCameraProfile = simulation.cinematicCameraProfile ?? "overview-atlas";
@@ -217,7 +281,6 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
     simulation.selectedBodyEarthCloudNightProfile ?? "overview-no-earth-cloud-night-art";
   const selectedBodySolarSurfaceProfile =
     simulation.selectedBodySolarSurfaceProfile ?? "overview-no-solar-surface-art";
-  const runtimeQualityTier = simulation.runtimeQualityTier ?? "balanced";
   const globalColorGradeProfile =
     simulation.globalColorGradeProfile ?? "overview-neutral-grade";
   const backgroundArtGradeProfile =
@@ -248,13 +311,6 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
     radius: 0,
   });
   const showSelectedCatalogFocus = simulation.selectedCelestialCatalogId !== "";
-  const selectedGaiaSourceId = gaiaIndex.find(
-    (entry) => entry.id === simulation.selectedCelestialCatalogId,
-  )?.sourceId ?? (
-    simulation.selectedCelestialCatalogId.startsWith("gaia-dr3:")
-      ? simulation.selectedCelestialCatalogId.slice("gaia-dr3:".length)
-      : ""
-  );
   const atlasCloseupBudgetActive = orbitAtlas && !!simulation.selectedBodyCloseupActive;
   const launchRuntimeActive = !!simulation.localLaunchActive;
   const showKerrSceneVisual =
@@ -271,14 +327,8 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
       : simulation.atlasRenderBudget === "dense"
         ? "dense"
         : "balanced";
-  const maxGaiaPickCandidates = ATLAS_GAIA_STARFIELD_RENDER_BUDGET[gaiaOverlayQualityTier];
   const gaiaOverlayCloseupSuppressed =
     !!simulation.selectedBodyCloseupActive || cinematicCameraProfile === "selected-body-cinematic";
-  const showGaiaOverlay =
-    !launchRuntimeActive &&
-    !showKerrSceneVisual &&
-    simulation.viewSettings.showDeepSkyObjects &&
-    (!orbitAtlas || simulation.atlasRenderBudget === "dense");
   const showConstellationOverlay =
     simulation.viewSettings.showConstellationLines && atlasDecorativeOverlayEnabled;
   const showDeepSkyOverlay =
@@ -290,11 +340,36 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
     (!orbitAtlas || simulation.atlasRenderBudget === "dense" || showSelectedCatalogFocus);
   const showSyntheticGalacticScaleField =
     !launchRuntimeActive && !orbitAtlas && simulation.atlasRenderBudget === "dense";
+  const deepSpaceIntent =
+    orbitAtlas ||
+    scaleBand !== "solar" ||
+    researchOverlay !== "none" ||
+    showConstellationOverlay ||
+    showDeepSkyOverlay ||
+    showCatalogLabels ||
+    showSelectedCatalogFocus ||
+    simulation.selectedStellarSearchDocument != null;
+  const strongGravityRenderMode = showKerrSceneVisual
+    ? simulation.kerrBlackHole.strongGravityRenderMode ?? "cinematic"
+    : "inactive";
+  const postFxPolicy = strongGravityRenderMode === "science"
+    ? "science-bypassed"
+    : strongGravityRenderMode === "cinematic"
+      ? "cinematic-enabled"
+      : "scene-default";
+  useEffect(() => {
+    publishAtlasBrowserObservabilityV294({ deepSpaceIntent, visualProfile, strongGravityRenderMode, postFxPolicy });
+  }, [deepSpaceIntent, postFxPolicy, strongGravityRenderMode, visualProfile]);
+  useEffect(() => {
+    const root = document.querySelector<HTMLElement>("[data-atlas-app-shell]");
+    return root ? startAtlasBrowserObservabilityResourceBridgeV300(root) : undefined;
+  }, []);
 
   return (
     <RelativisticOpticsProvider>
       <BloomSceneProvider>
         <AtlasLabelLayoutCoordinator />
+        <ObservationFovOverlayV266 />
         <ambientLight intensity={TRUE_VOID_CINEMATIC_AMBIENT_INTENSITY} />
         <hemisphereLight intensity={TRUE_VOID_CINEMATIC_HEMISPHERE_INTENSITY} groundColor="#020204" color="#17223a" />
         <RelativisticOpticsBridge daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} viewSettings={simulation.viewSettings} />
@@ -329,106 +404,26 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
             />
           )}
         </BrightStarTierBridge>
-        <GaiaStarOverlay
-          floatingOriginRef={simulation.floatingOriginRef}
-          enabled={showGaiaOverlay}
-          qualityTier={gaiaOverlayQualityTier}
-          closeupSuppressed={gaiaOverlayCloseupSuppressed}
-        />
-        <GaiaStarLabels
-          floatingOriginRef={simulation.floatingOriginRef}
-          index={gaiaIndex}
-          enabled={showCatalogLabels && showGaiaOverlay}
-          selectedSourceId={selectedGaiaSourceId}
-          closeupSuppressed={gaiaOverlayCloseupSuppressed}
-          onSelectStar={(entry) => {
-            selectionEpochRef.current += 1;
-            simulation.onSelectGaiaStar?.(entry);
-          }}
-        />
-        <StellarPickController
-          floatingOriginRef={simulation.floatingOriginRef}
-          gaiaIndex={gaiaIndex}
-          gaiaEnabled={showGaiaOverlay && !gaiaOverlayCloseupSuppressed}
-          maxGaiaCandidates={maxGaiaPickCandidates}
-          selectedGaiaSourceId={selectedGaiaSourceId}
-          selectionEpochRef={selectionEpochRef}
-          onPickBrightStar={simulation.onSelectBrightStar}
-          onPickGaiaStar={simulation.onSelectGaiaStar}
-        />
-        <SelectedSkyTargetProxy
-          selectedCatalogId={simulation.selectedCelestialCatalogId}
-          gaiaIndex={gaiaIndex}
-          enabled={showSelectedCatalogFocus}
-        />
-        {!orbitAtlas || showConstellationOverlay || showDeepSkyOverlay || showCatalogLabels || showSelectedCatalogFocus ? (
-          <GalacticOverlayGate floatingOriginRef={simulation.floatingOriginRef}>
-            {!orbitAtlas ? (
-              <>
-                {showSyntheticGalacticScaleField ? (
-                  <GalacticScaleField floatingOriginRef={simulation.floatingOriginRef} />
-                ) : null}
-                <GalacticLandmarks floatingOriginRef={simulation.floatingOriginRef} />
-                <MajorStarBeacons floatingOriginRef={simulation.floatingOriginRef} />
-              </>
-            ) : null}
-            <ConstellationLines
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showConstellationOverlay}
+        {!orbitAtlas ? (
+          <Suspense fallback={null}>
+            <AtlasSolarSkyPrimerV286 floatingOriginRef={simulation.floatingOriginRef} />
+          </Suspense>
+        ) : null}
+        {deepSpaceIntent ? (
+          <Suspense fallback={null}>
+            <AtlasDeepSpacePresentationSubtreeV275
+              simulation={simulation}
+              selectionEpochRef={selectionEpochRef}
               orbitAtlas={orbitAtlas}
-              cinematicCameraProfile={cinematicCameraProfile}
               qualityTier={gaiaOverlayQualityTier}
-            />
-            <ConstellationLabels
-              enabled={showConstellationOverlay && showCatalogLabels}
-              selectedCatalogId={simulation.selectedCelestialCatalogId}
+              showConstellationOverlay={showConstellationOverlay}
+              showDeepSkyOverlay={showDeepSkyOverlay}
+              showCatalogLabels={showCatalogLabels}
+              showSelectedCatalogFocus={showSelectedCatalogFocus}
+              showSyntheticGalacticScaleField={showSyntheticGalacticScaleField}
               closeupSuppressed={gaiaOverlayCloseupSuppressed}
             />
-            <NebulaMarkers
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showDeepSkyOverlay}
-              orbitAtlas={orbitAtlas}
-              cinematicCameraProfile={cinematicCameraProfile}
-              qualityTier={gaiaOverlayQualityTier}
-            />
-            <StarClusterMarkers
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showDeepSkyOverlay}
-              orbitAtlas={orbitAtlas}
-              cinematicCameraProfile={cinematicCameraProfile}
-            />
-            <BrightGalaxyMarkers
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showDeepSkyOverlay}
-              orbitAtlas={orbitAtlas}
-              cinematicCameraProfile={cinematicCameraProfile}
-            />
-            <PulsarField
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showDeepSkyOverlay}
-              orbitAtlas={orbitAtlas}
-            />
-            <CelestialCatalogLabels
-              floatingOriginRef={simulation.floatingOriginRef}
-              enabled={showCatalogLabels || showSelectedCatalogFocus}
-              orbitAtlas={orbitAtlas}
-              selectedCatalogId={simulation.selectedCelestialCatalogId}
-              labelBudget={
-                gaiaOverlayQualityTier === "mobile" && typeof simulation.catalogLabelBudget === "number"
-                  ? Math.min(simulation.catalogLabelBudget, 4)
-                  : simulation.catalogLabelBudget
-              }
-              onSelectCatalogObject={(catalogId) => {
-                selectionEpochRef.current += 1;
-                simulation.onSelectCatalogObject?.(catalogId);
-              }}
-            />
-            <CelestialCatalogFocusMarker
-              selectedCatalogId={simulation.selectedCelestialCatalogId}
-              enabled={showSelectedCatalogFocus}
-              orbitAtlas={orbitAtlas}
-            />
-          </GalacticOverlayGate>
+          </Suspense>
         ) : null}
         <SelectionMetricsBridge selectedBodyIndex={simulation.selectedBodyIndex} physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} bodyMetricsRef={simulation.bodyMetricsRef} />
         <CinematicSubjectFramingBridge selectedBodyIndex={simulation.selectedBodyIndex} physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} presentationMode={simulation.presentationMode} atlasScaleMode={simulation.atlasScaleMode} backgroundSubjectVisibilityProfile={simulation.backgroundSubjectVisibilityProfile} closeupRingShowcaseProfile={closeupRingShowcaseProfile} subjectMatteRef={subjectMatteRef} />
@@ -447,6 +442,7 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
         <SolarSystemIntegrator physicsRef={simulation.physicsRef} simDaysRef={simulation.simDaysRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} relativityEnabledRef={simulation.relativityEnabledRef} precisionTierRef={simulation.precisionTierRef} integrationSuspendedRef={simulation.integrationSuspendedRef} localLaunchActiveRef={simulation.localLaunchActiveRef} floatingOriginRef={simulation.floatingOriginRef} />
         <OrbitControls ref={controlsRef} makeDefault enableDamping dampingFactor={0.06} maxDistance={50000} enabled />
         <PresentationCameraBridge presentationMode={simulation.presentationMode} scaleMode={simulation.atlasScaleMode} controlsRef={controlsRef} />
+        <AtlasScaleTransitionBridgeV268 controlsRef={controlsRef} />
         <CameraFocusBodyBridge physicsRef={simulation.physicsRef} floatingOriginRef={simulation.floatingOriginRef} earthMoonView={simulation.earthMoonView} cameraBodyFocusRequest={simulation.cameraBodyFocusRequest} cameraOriginResetNonce={simulation.cameraOriginResetNonce} controlsRef={controlsRef} presentationMode={simulation.presentationMode} atlasScaleMode={simulation.atlasScaleMode} />
         {simulation.viewSettings.showReferenceOrbits && !showKerrSceneVisual ? (
           <ReferenceOrbitDecor
@@ -473,6 +469,7 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
                 isPlaying={simulation.isPlaying}
                 daysPerSecond={simulation.daysPerSecond}
                 rayTraceQuality={simulation.kerrBlackHole.rayTraceQuality ?? "interactive"}
+                strongGravityRenderMode={simulation.kerrBlackHole.strongGravityRenderMode ?? "cinematic"}
               />
             </Suspense>
           </>
@@ -480,7 +477,7 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
         <LagrangePointsViz physicsRef={simulation.physicsRef} earthMoonView={simulation.earthMoonView} enabled={!showKerrSceneVisual && simulation.viewSettings.showLagrangePoints} spawnNonceRef={simulation.lagrangeSpawnNonceRef} isPlaying={simulation.isPlaying} daysPerSecond={simulation.daysPerSecond} />
         <LodOrbitControlsBridge floatingOriginRef={simulation.floatingOriginRef} controlsRef={controlsRef} presentationMode={simulation.presentationMode} />
         <CameraZoomBridge controlsRef={controlsRef} />
-        {!showKerrSceneVisual ? <LabelOcclusionProvider>
+        {!showKerrSceneVisual ? <AtlasScaleLayerGroupV273 band="solar"><LabelOcclusionProvider>
               <SolarSystemBodies
                 physicsRef={simulation.physicsRef}
                 floatingOriginRef={simulation.floatingOriginRef}
@@ -518,7 +515,7 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
                 onReady={simulation.onCoreBodiesReady}
               />
               {orbitAtlas && simulation.viewSettings.showBodyLabels ? <OrbitAtlasLabels physicsRef={simulation.physicsRef} scaleMode={simulation.atlasScaleMode} /> : null}
-        </LabelOcclusionProvider> : null}
+        </LabelOcclusionProvider></AtlasScaleLayerGroupV273> : null}
         <PostProcessingGate
           visualEnhance={simulation.visualEnhance}
           presentationMode={simulation.presentationMode}
@@ -526,6 +523,7 @@ function AtlasRuntimeScene({ simulationGroups }: { simulationGroups: AtlasCanvas
           cinematicPostFxProfile={simulation.cinematicPostFxProfile}
           referenceGradeCompositeProfile={simulation.referenceGradeCompositeProfile}
           globalColorGradeProfile={globalColorGradeProfile}
+          scienceDisplayMode={showKerrSceneVisual && (simulation.kerrBlackHole.strongGravityRenderMode ?? "cinematic") === "science"}
         />
       </BloomSceneProvider>
     </RelativisticOpticsProvider>

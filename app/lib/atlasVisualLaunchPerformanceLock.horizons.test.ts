@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -17,7 +18,7 @@ describe("v114 visual launch performance heavy audit", () => {
       launchSequenceDirectorText: read("app/lib/launchSequenceDirector.ts"),
       universeSceneText: read("app/components/UniverseScene.tsx"),
       universePageText: read("app/UniverseRuntimeController.tsx"),
-      evidenceText: read("app/lib/evidenceLedger.ts"),
+      evidenceText: readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       evidencePanelText: read("app/components/EvidenceLedgerPanel.tsx"),
       validationText: read("app/lib/atlasValidationConsole.ts"),
       docsText: `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`,

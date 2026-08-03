@@ -49,6 +49,10 @@ const NAMED_STAR_ENTRIES = CELESTIAL_CATALOG_ENTRIES.filter(
 );
 let cachedStars: readonly GaiaStarRecord[] | null = null;
 let cachedIndex: readonly GaiaIndexedStar[] = [];
+const sourceMapCache = new WeakMap<readonly GaiaIndexedStar[], ReadonlyMap<string, GaiaIndexedStar>>();
+const pickEntriesCache = new WeakMap<readonly GaiaIndexedStar[], Map<number, readonly GaiaIndexedStar[]>>();
+const labelEntriesCache = new WeakMap<readonly GaiaIndexedStar[], Map<string, readonly GaiaIndexedStar[]>>();
+const searchEntriesCache = new WeakMap<readonly GaiaIndexedStar[], Map<string, readonly GaiaIndexedStar[]>>();
 
 export function getGaiaStarIndex(
   stars: readonly GaiaStarRecord[],
@@ -57,6 +61,35 @@ export function getGaiaStarIndex(
   cachedStars = stars;
   cachedIndex = buildGaiaStarIndex(stars);
   return cachedIndex;
+}
+
+function getSourceMap(index: readonly GaiaIndexedStar[]): ReadonlyMap<string, GaiaIndexedStar> {
+  const cached = sourceMapCache.get(index);
+  if (cached) return cached;
+  const map = new Map(index.map((entry) => [entry.sourceId, entry] as const));
+  sourceMapCache.set(index, map);
+  return map;
+}
+
+/** Reuses bounded pick candidates across scene-mode mounts for one immutable index. */
+export function getGaiaPickEntries(
+  index: readonly GaiaIndexedStar[],
+  maxResults: number,
+): readonly GaiaIndexedStar[] {
+  if (maxResults <= 0 || index.length === 0) return [];
+  let byBudget = pickEntriesCache.get(index);
+  if (!byBudget) {
+    byBudget = new Map();
+    pickEntriesCache.set(index, byBudget);
+  }
+  const cached = byBudget.get(maxResults);
+  if (cached) return cached;
+  const sourceMap = getSourceMap(index);
+  const entries = rankGaiaStarsForOverlay(index.map((entry) => entry.star), maxResults)
+    .map((star) => sourceMap.get(star.sourceId))
+    .filter((entry): entry is GaiaIndexedStar => Boolean(entry));
+  byBudget.set(maxResults, entries);
+  return entries;
 }
 
 export function buildGaiaStarIndex(
@@ -97,7 +130,15 @@ export function searchGaiaStarIndex(
 ): readonly GaiaIndexedStar[] {
   const normalized = query.trim().toLocaleLowerCase();
   if (normalized.length < 2 || maxResults <= 0) return [];
-  return index
+  const cacheKey = `${normalized}\u0000${maxResults}`;
+  let byQuery = searchEntriesCache.get(index);
+  if (!byQuery) {
+    byQuery = new Map();
+    searchEntriesCache.set(index, byQuery);
+  }
+  const cached = byQuery.get(cacheKey);
+  if (cached) return cached;
+  const results = index
     .flatMap((entry) => {
       if (!entry.searchText.includes(normalized)) return [];
       let score = 0;
@@ -111,6 +152,8 @@ export function searchGaiaStarIndex(
     .sort((a, b) => b.score - a.score || a.entry.sourceId.localeCompare(b.entry.sourceId))
     .slice(0, maxResults)
     .map(({ entry }) => entry);
+  byQuery.set(cacheKey, results);
+  return results;
 }
 
 export function selectGaiaLabelStars(
@@ -119,7 +162,15 @@ export function selectGaiaLabelStars(
   selectedSourceId = "",
 ): readonly GaiaIndexedStar[] {
   const budget = mobile ? GAIA_LABEL_MOBILE_BUDGET : GAIA_LABEL_DESKTOP_BUDGET;
-  const bySourceId = new Map(index.map((entry) => [entry.sourceId, entry]));
+  const cacheKey = `${mobile ? "mobile" : "desktop"}\u0000${selectedSourceId}`;
+  let bySelection = labelEntriesCache.get(index);
+  if (!bySelection) {
+    bySelection = new Map();
+    labelEntriesCache.set(index, bySelection);
+  }
+  const cached = bySelection.get(cacheKey);
+  if (cached) return cached;
+  const bySourceId = getSourceMap(index);
   const ranked = rankGaiaStarsForOverlay(
     index.map((entry) => entry.star),
     budget,
@@ -128,9 +179,12 @@ export function selectGaiaLabelStars(
     .filter((entry): entry is GaiaIndexedStar => Boolean(entry));
   const selected = bySourceId.get(selectedSourceId);
   if (!selected || ranked.some((entry) => entry.sourceId === selected.sourceId)) {
+    bySelection.set(cacheKey, ranked);
     return ranked;
   }
-  return [selected, ...ranked.slice(0, Math.max(0, budget - 1))];
+  const result = [selected, ...ranked.slice(0, Math.max(0, budget - 1))];
+  bySelection.set(cacheKey, result);
+  return result;
 }
 
 export function gaiaStarToOverlayScenePosition(

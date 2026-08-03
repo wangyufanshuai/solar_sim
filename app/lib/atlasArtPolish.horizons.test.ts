@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -19,8 +20,8 @@ describe("v99 art polish audit", () => {
       readFileSync(resolve(process.cwd(), "app/components/ConstellationLines.tsx"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/components/NebulaMarkers.tsx"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/components/UniverseScene.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/components/RelativityObservableAtlasPanel.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/lib/evidenceLedger.ts"), "utf8"),
+      readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
+      readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasValidationConsole.ts"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasArtPolish.ts"), "utf8"),
     ].join("\n");

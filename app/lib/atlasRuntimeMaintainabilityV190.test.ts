@@ -25,11 +25,14 @@ describe("v190 runtime maintainability boundaries", () => {
 
   it("keeps one scene host and portable evidence composition types", () => {
     const workbench = read("app/AtlasRuntimeWorkbench.tsx");
-    const surface = read("app/components/AtlasRuntimeWorkbenchSurface.tsx");
+    const sceneSurface = [
+      read("app/components/AtlasRuntimeWorkbenchSurface.tsx"),
+      read("app/components/AtlasRuntimeSceneLayer.tsx"),
+    ].join("\n");
     const evidence = read("app/lib/atlasRuntimeEvidenceCompositionV190.ts");
     expect(workbench.match(/<AtlasRuntimeWorkbenchSurface\b/g)).toHaveLength(1);
     expect(workbench).not.toContain("<AtlasSceneHost");
-    expect(surface.match(/<AtlasSceneHost\b/g)).toHaveLength(1);
+    expect(sceneSurface.match(/<AtlasSceneHost\b/g)).toHaveLength(1);
     expect(evidence).not.toMatch(/import\(["'][A-Z]:\//);
     expect(evidence).toContain("createAtlasRuntimeEvidenceViewModelV177");
   });

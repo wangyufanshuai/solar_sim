@@ -7,6 +7,8 @@ import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
 import { dispatchCameraFocusOrigin } from "../lib/camera-bridge";
 import { smootherstep01 } from "../lib/cameraFocusCommand";
 import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
+import { releaseAtlasCameraPresentationLeaseV273, requestAtlasCameraPresentationLeaseV273 } from "../lib/atlasCameraPresentationLeaseV273";
 
 const DESKTOP_KERR_DISTANCE = 350;
 const MOBILE_KERR_DISTANCE = 155;
@@ -41,8 +43,12 @@ export default function KerrCameraFramingBridge({
     transitioningRef.current = true;
     atlasRuntimeStore.beginFocusCommand("kerr-strong-field", startedAtRef.current);
     atlasRuntimeStore.setFocusTransition("transition");
+    const lease = requestAtlasCameraPresentationLeaseV273("scene-handoff", Math.max(0, Math.floor(startedAtRef.current)));
+    const releaseResource = acquireAtlasResource("camera-lock", "atlas", "kerr-scene-handoff-v273", { owner: "camera-presentation" });
     return () => {
       transitioningRef.current = false;
+      releaseAtlasCameraPresentationLeaseV273(lease);
+      releaseResource();
       dispatchCameraFocusOrigin();
     };
   }, [camera, controlsRef, viewportWidth]);

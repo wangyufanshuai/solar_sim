@@ -14,7 +14,7 @@ export type AtlasAssetLoadState = "idle" | "probing" | "ready" | "fallback" | "e
 
 export type AtlasAssetResolution = {
   version: typeof ATLAS_ASSET_RESOLVER_VERSION;
-  packId: "core" | "planet-hd" | "deep-sky" | "spacecraft" | "science-fixtures" | "runtime-codecs";
+  packId: "core" | "planet-hd" | "deep-sky" | "spacecraft" | "science-fixtures" | "runtime-codecs" | "gaia-presentation";
   path: string;
   primaryUrl: string;
   candidates: readonly string[];
@@ -38,6 +38,7 @@ function assetUrlSuffix(value: string): string {
 
 export function atlasPackForAssetPath(assetPath: string): AtlasAssetResolution["packId"] {
   const path = cleanAssetPath(assetPath);
+  if (path.startsWith("data/gaia-dr3-presentation-10000000-v9/")) return "gaia-presentation";
   if (/^data\/(?:horizons|kerr|observation-fixtures)/.test(path)) return "science-fixtures";
   if (path.startsWith("models/spacecraft/")) return "spacecraft";
   if (path.startsWith("textures/ktx2/") || path.startsWith("textures/planets/hd/") || path.startsWith("textures/planets/v49/") || path.startsWith("textures/planets/v55/")) return "planet-hd";

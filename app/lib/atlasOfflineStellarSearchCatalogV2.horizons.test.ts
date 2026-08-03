@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -9,7 +10,7 @@ describe("v116 offline stellar search integration", () => {
     const page = read("app/UniverseRuntimeController.tsx");
     const scene = read("app/components/UniverseScene.tsx");
     const worker = read("app/workers/stellarSearch.worker.ts");
-    const evidence = read("app/lib/evidenceLedger.ts");
+    const evidence = readProjectSourceBundle("app/lib/evidenceLedger.ts");
     const validation = read("app/lib/atlasValidationConsole.ts");
     const docs = `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`;
     const browser = read("tests/atlas-browser/atlas-browser-acceptance.spec.ts");

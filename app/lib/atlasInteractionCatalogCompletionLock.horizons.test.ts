@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -54,7 +55,7 @@ describe("v107 interaction and catalog completion heavy audit", () => {
       "app/lib/atlasRcEvidenceClosureLock.ts",
       "app/lib/atlasInteractionCatalogCompletionLock.ts",
     ];
-    const surfaceText = priorSurfaceFiles.map(read).join("\n");
+    const surfaceText = priorSurfaceFiles.map((file) => readProjectSourceBundle(file)).join("\n");
     const docsText = `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`;
     const browserSpecText = read("tests/atlas-browser/atlas-browser-acceptance.spec.ts");
     const baselineDataset = loadHorizonsValidationDatasetFromJson(

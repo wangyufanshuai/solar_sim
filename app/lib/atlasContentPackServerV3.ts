@@ -1,7 +1,10 @@
 import { promises as fs } from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
-import { ATLAS_CONTENT_PACK_DELIVERY_VERSION } from "./atlasContentPackContractV3";
-
+import {
+  ATLAS_BUFFERED_RANGE_DELIVERY_VERSION,
+  shouldBufferAtlasRangeV1,
+} from "./atlasBufferedRangeDeliveryV1";
 export { ATLAS_CONTENT_PACK_DELIVERY_VERSION } from "./atlasContentPackContractV3";
 export const ATLAS_CONTENT_PACK_API_PREFIX = "/api/atlas/content-packs" as const;
 
@@ -36,6 +39,11 @@ export type AtlasContentPackDescriptorV3 = {
 const PACK_ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const SHA256 = /^[a-f0-9]{64}$/;
 const DESCRIPTOR_CACHE = new Map<string, Promise<AtlasContentPackDescriptorV3>>();
+const VERIFIED_FILE_CACHE = new Map<string, {
+  bytes: number;
+  mtimeMs: number;
+  ino: number | bigint;
+}>();
 
 function normalizePackPath(value: string): string | null {
   const normalized = value.replaceAll("\\", "/").replace(/^\/+/, "");
@@ -100,8 +108,6 @@ export async function loadAtlasContentPackDescriptorV3(
     const normalized = normalizePackPath(entry.path)!;
     const candidate = path.resolve(fileRoot, ...normalized.split("/"));
     if (!candidate.startsWith(`${fileRoot}${path.sep}`)) throw new Error(`Content pack path escapes root: ${entry.path}`);
-    const info = await fs.stat(candidate);
-    if (!info.isFile() || info.size !== entry.bytes) throw new Error(`Content pack file mismatch: ${entry.path}`);
     allowedFiles.set(normalized, { ...entry, path: normalized });
   }
   return { root: resolvedRoot, fileRoot, manifestPath, manifest, allowedFiles };
@@ -166,7 +172,135 @@ export function resolveAllowedAtlasContentPackFileV3(
   return { absolutePath, entry };
 }
 
+export async function verifyAllowedAtlasContentPackFileV3(
+  descriptor: AtlasContentPackDescriptorV3,
+  requestedPath: string,
+): Promise<{ absolutePath: string; entry: AtlasContentPackFileV3 } | null> {
+  const resolved = resolveAllowedAtlasContentPackFileV3(descriptor, requestedPath);
+  if (!resolved) return null;
+
+  const linkInfo = await fs.lstat(resolved.absolutePath);
+  if (!linkInfo.isFile() || linkInfo.size !== resolved.entry.bytes) {
+    throw new Error(`Content pack file mismatch: ${resolved.entry.path}`);
+  }
+
+  const cacheKey = `${resolved.absolutePath}\0${resolved.entry.sha256}`;
+  const cached = VERIFIED_FILE_CACHE.get(cacheKey);
+  if (
+    cached &&
+    cached.bytes === linkInfo.size &&
+    cached.mtimeMs === linkInfo.mtimeMs &&
+    cached.ino === linkInfo.ino
+  ) {
+    return resolved;
+  }
+
+  const handle = await fs.open(resolved.absolutePath, "r");
+  try {
+    const before = await handle.stat();
+    if (!before.isFile() || before.size !== resolved.entry.bytes) {
+      throw new Error(`Content pack file mismatch: ${resolved.entry.path}`);
+    }
+    const digest = createHash("sha256");
+    for await (const chunk of handle.createReadStream({ autoClose: false })) {
+      digest.update(chunk);
+    }
+    const after = await handle.stat();
+    if (
+      after.size !== before.size ||
+      after.mtimeMs !== before.mtimeMs ||
+      after.ino !== before.ino
+    ) {
+      throw new Error(`Content pack file changed during verification: ${resolved.entry.path}`);
+    }
+    if (digest.digest("hex") !== resolved.entry.sha256) {
+      throw new Error(`Content pack file checksum mismatch: ${resolved.entry.path}`);
+    }
+    VERIFIED_FILE_CACHE.set(cacheKey, {
+      bytes: after.size,
+      mtimeMs: after.mtimeMs,
+      ino: after.ino,
+    });
+    return resolved;
+  } finally {
+    await handle.close();
+  }
+}
+
 export type AtlasByteRange = { start: number; end: number; length: number };
+
+export type AtlasExactBufferedRangeResultV1 = {
+  version: typeof ATLAS_BUFFERED_RANGE_DELIVERY_VERSION;
+  bytes: Uint8Array;
+  sourceBytes: number;
+  sourceMtimeMs: number;
+};
+
+function throwIfAborted(signal?: AbortSignal): void {
+  if (signal?.aborted) {
+    throw new DOMException("Catalog Range request was cancelled", "AbortError");
+  }
+}
+
+export async function readExactAtlasByteRangeV1(
+  absolutePath: string,
+  range: AtlasByteRange,
+  expectedFileBytes: number,
+  signal?: AbortSignal,
+): Promise<AtlasExactBufferedRangeResultV1> {
+  if (!shouldBufferAtlasRangeV1(range.length)) {
+    throw new RangeError("Atlas buffered Range exceeds its bounded delivery contract");
+  }
+  if (
+    !Number.isSafeInteger(expectedFileBytes) ||
+    expectedFileBytes <= 0 ||
+    range.start < 0 ||
+    range.end >= expectedFileBytes ||
+    range.end - range.start + 1 !== range.length
+  ) {
+    throw new RangeError("Atlas buffered Range is outside the frozen content-pack file");
+  }
+  throwIfAborted(signal);
+  const handle = await fs.open(absolutePath, "r");
+  try {
+    const before = await handle.stat();
+    if (!before.isFile() || before.size !== expectedFileBytes) {
+      throw new Error("Atlas content-pack file changed before buffered Range delivery");
+    }
+    const bytes = new Uint8Array(range.length);
+    let offset = 0;
+    while (offset < bytes.byteLength) {
+      throwIfAborted(signal);
+      const { bytesRead } = await handle.read(
+        bytes,
+        offset,
+        bytes.byteLength - offset,
+        range.start + offset,
+      );
+      if (bytesRead <= 0) {
+        throw new Error("Atlas content-pack buffered Range ended before its declared length");
+      }
+      offset += bytesRead;
+    }
+    throwIfAborted(signal);
+    const after = await handle.stat();
+    if (
+      after.size !== before.size ||
+      after.mtimeMs !== before.mtimeMs ||
+      after.ino !== before.ino
+    ) {
+      throw new Error("Atlas content-pack file changed during buffered Range delivery");
+    }
+    return {
+      version: ATLAS_BUFFERED_RANGE_DELIVERY_VERSION,
+      bytes,
+      sourceBytes: after.size,
+      sourceMtimeMs: after.mtimeMs,
+    };
+  } finally {
+    await handle.close();
+  }
+}
 
 export function parseAtlasByteRange(value: string | null, size: number): AtlasByteRange | null | "invalid" {
   if (!value) return null;

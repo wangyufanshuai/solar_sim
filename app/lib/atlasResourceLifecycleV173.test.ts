@@ -31,8 +31,12 @@ describe("v173 runtime resource observability", () => {
   });
 
   it("samples material traversal outside the continuous frame callback", () => {
-    const source = readFileSync("app/components/UniverseScene.tsx", "utf8");
-    const probe = source.slice(source.indexOf("function RenderMetricsProbe"), source.indexOf("function LaunchRuntimeScene"));
+    const source = readFileSync("app/components/AtlasUniverseSceneRuntime.tsx", "utf8");
+    const start = source.indexOf("export function AtlasRenderMetricsProbe");
+    const end = source.indexOf("function AtlasRuntimeScene", start);
+    expect(start).toBeGreaterThanOrEqual(0);
+    expect(end).toBeGreaterThan(start);
+    const probe = source.slice(start, end);
     const frameCallback = probe.slice(probe.indexOf("useFrame"));
     expect(probe).toContain("sceneRevision");
     expect(probe).toContain("data-atlas-render-texture-audit-revision");

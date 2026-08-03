@@ -3,7 +3,11 @@
 import { useEffect, useRef, type HTMLAttributes, type ReactNode } from "react";
 import type { AtlasRuntimeQualityTier } from "../lib/simulationDiagnosticsTypes";
 import { atlasRuntimeStore, type AtlasSceneModeV2 } from "../lib/atlasRuntimeStore";
-import { useAtlasResourceSnapshot } from "../lib/atlasResourceLifecycle";
+import {
+  getAtlasResourceSnapshot,
+  subscribeAtlasResourceSnapshot,
+  type AtlasRuntimeResourceSnapshot,
+} from "../lib/atlasResourceLifecycle";
 import { CURRENT_ATLAS_PRODUCT_RELEASE_V167 } from "../lib/atlasProductReleaseV167";
 import {
   atlasDeliveryCapabilities,
@@ -25,6 +29,26 @@ const LEGACY_ROOT_COMPATIBILITY = {
   finalReleaseVersion: "v140-windows-scientific-cinematic-atlas-1.0",
 } as const;
 
+function writeResourceAttributes(node: HTMLDivElement, resources: AtlasRuntimeResourceSnapshot): void {
+  node.dataset.atlasResourceTotal = String(resources.total);
+  node.dataset.atlasResourceWorkers = String(resources.workers);
+  node.dataset.atlasResourceRenderTargets = String(resources.gpuRenderTargets);
+  node.dataset.atlasResourceGpuBuffers = String(resources.gpuBuffers);
+  node.dataset.atlasResourceGpuPipelines = String(resources.gpuComputePipelines);
+  node.dataset.atlasResourceGpuQueries = String(resources.gpuQueries);
+  node.dataset.atlasResourceTextures = String(resources.textures);
+  node.dataset.atlasResourceModels = String(resources.models);
+  node.dataset.atlasResourceSubscriptions = String(resources.subscriptions);
+  node.dataset.atlasResourceObjectUrls = String(resources.objectUrls);
+  node.dataset.atlasResourceTypedArrayCaches = String(resources.typedArrayCaches);
+  node.dataset.atlasResourceCameraLocks = String(resources.cameraLocks);
+  node.dataset.atlasResourceEstimatedBytes = String(resources.estimatedBytes);
+  node.dataset.atlasResourceEstimatedGpuBytes = String(resources.estimatedGpuBytes);
+  node.dataset.atlasResourceIdentityDigest = resources.identityDigest;
+  node.dataset.atlasResourceOwnerCount = String(Object.keys(resources.byOwner).length);
+  node.dataset.atlasResourceRevision = String(resources.revision);
+}
+
 export default function AtlasAppShell({
   children,
   sceneMode,
@@ -32,7 +56,7 @@ export default function AtlasAppShell({
   selectedObjectId = "",
   ...divProps
 }: AtlasAppShellProps) {
-  const resources = useAtlasResourceSnapshot();
+  const shellRef = useRef<HTMLDivElement>(null);
   const renderCountRef = useRef(0);
   renderCountRef.current += 1;
 
@@ -44,8 +68,17 @@ export default function AtlasAppShell({
     });
   }, [qualityTier, sceneMode, selectedObjectId]);
 
+  useEffect(() => {
+    const publish = () => {
+      if (shellRef.current) writeResourceAttributes(shellRef.current, getAtlasResourceSnapshot());
+    };
+    publish();
+    return subscribeAtlasResourceSnapshot(publish);
+  }, []);
+
   return (
     <div
+      ref={shellRef}
       {...divProps}
       data-atlas-app-shell="v131-runtime-simplification-resource-lifecycle"
       data-atlas-delivery-profile={DELIVERY_PROFILE}
@@ -74,13 +107,21 @@ export default function AtlasAppShell({
       data-atlas-orbit-director-version={CURRENT_RELEASE.orbitDirectorVersion}
       data-atlas-launch-cinematic-version={CURRENT_RELEASE.launchVersion}
       data-atlas-scientific-experience-version={CURRENT_RELEASE.scienceVersion}
-      data-atlas-resource-total={resources.total}
-      data-atlas-resource-workers={resources.workers}
-      data-atlas-resource-render-targets={resources.gpuRenderTargets}
-      data-atlas-resource-textures={resources.textures}
-      data-atlas-resource-models={resources.models}
-      data-atlas-resource-subscriptions={resources.subscriptions}
-      data-atlas-resource-camera-locks={resources.cameraLocks}
+      data-atlas-resource-total="0"
+      data-atlas-resource-workers="0"
+      data-atlas-resource-render-targets="0"
+      data-atlas-resource-gpu-buffers="0"
+      data-atlas-resource-gpu-pipelines="0"
+      data-atlas-resource-gpu-queries="0"
+      data-atlas-resource-textures="0"
+      data-atlas-resource-models="0"
+      data-atlas-resource-subscriptions="0"
+      data-atlas-resource-object-urls="0"
+      data-atlas-resource-typed-array-caches="0"
+      data-atlas-resource-camera-locks="0"
+      data-atlas-resource-estimated-bytes="0"
+      data-atlas-resource-estimated-gpu-bytes="0"
+      data-atlas-resource-revision="0"
     >
       {children}
     </div>

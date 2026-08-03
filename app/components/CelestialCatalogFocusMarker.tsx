@@ -1,6 +1,6 @@
 "use client";
 
-import { Html } from "@react-three/drei";
+import { Html } from "@react-three/drei/web/Html";
 import { useMemo } from "react";
 import { celestialEntryToDirection, selectCelestialCatalogEntry } from "../lib/celestialCatalog";
 

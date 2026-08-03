@@ -1,12 +1,16 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
 import type { AtlasCinematicCameraProfile } from "../lib/simulationDiagnosticsTypes";
 import { STAR_CLUSTERS } from "../data/starClusterCatalog";
+import type { StarClusterDef } from "../data/starClusterCatalog";
+import { getStarClustersV255Sync, loadStarClustersV255 } from "../lib/deepSkyCatalogRuntimeV255";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
 
 const GALAXY_VISUAL_SCALE = 36;
 
@@ -78,16 +82,31 @@ export default function StarClusterMarkers({
   cinematicCameraProfile?: AtlasCinematicCameraProfile;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
+  const profileOpacity = useAtlasRuntimeStore((snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile).groups.catalog.deepSkyMarkerOpacity);
+  const [starClusters, setStarClusters] = useState<readonly StarClusterDef[]>(() => getStarClustersV255Sync());
+
+  useEffect(() => {
+    if (!enabled) return;
+    let disposed = false;
+    void loadStarClustersV255()
+      .then((next) => {
+        if (!disposed && next.length > STAR_CLUSTERS.length) setStarClusters((previous) => previous === next ? previous : next);
+      })
+      .catch(() => undefined);
+    return () => {
+      disposed = true;
+    };
+  }, [enabled]);
 
   const { geometry, material } = useMemo(() => {
-    const count = STAR_CLUSTERS.length;
+    const count = starClusters.length;
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
     const intensities = new Float32Array(count);
 
     for (let i = 0; i < count; i++) {
-      const c = STAR_CLUSTERS[i];
+      const c = starClusters[i]!;
       const pos = galacticToScene(c.galLonDeg, c.galLatDeg, c.distancePc);
       positions[i * 3] = pos[0];
       positions[i * 3 + 1] = pos[1];
@@ -123,7 +142,7 @@ export default function StarClusterMarkers({
     });
 
     return { geometry: geo, material: mat };
-  }, []);
+  }, [starClusters]);
 
   useFrame(() => {
     const pts = pointsRef.current;
@@ -138,7 +157,7 @@ export default function StarClusterMarkers({
           ? 0.76
           : 1;
     const baseOpacity = orbitAtlas ? 0.012 : tier === "solar" ? 0 : tier === "mid" ? 0.072 : 0.24;
-    mat.uniforms.uOpacity.value = !enabled ? 0 : baseOpacity * cinematicScale;
+    mat.uniforms.uOpacity.value = !enabled ? 0 : baseOpacity * cinematicScale * profileOpacity;
   });
 
   return (

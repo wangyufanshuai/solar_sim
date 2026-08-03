@@ -33,6 +33,7 @@ export default function PostProcessingGate({
   cinematicPostFxProfile,
   referenceGradeCompositeProfile,
   globalColorGradeProfile,
+  scienceDisplayMode = false,
 }: {
   visualEnhance: boolean;
   presentationMode: SolarPresentationMode;
@@ -40,6 +41,7 @@ export default function PostProcessingGate({
   cinematicPostFxProfile?: string;
   referenceGradeCompositeProfile?: AtlasReferenceGradeCompositeProfile;
   globalColorGradeProfile?: AtlasGlobalColorGradeProfile;
+  scienceDisplayMode?: boolean;
 }) {
   const gl = useThree((s) => s.gl);
   const [, setCtxTick] = useState(0);
@@ -56,7 +58,7 @@ export default function PostProcessingGate({
     };
   }, [gl]);
 
-  if (!ready) return null;
+  if (!ready || scienceDisplayMode) return null;
   return (
     <UniversePostProcessing
       visualEnhance={visualEnhance}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useGLTF } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei/core/Gltf";
 import { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
 import {

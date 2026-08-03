@@ -24,6 +24,29 @@ export type KerrDenseCampaignProgressV7 = {
 
 export type KerrDenseCampaignProgressV8 = KerrDenseCampaignProgressV7 & {
   campaignVersion: "finite-observer-v8";
+  freezeCommitSha: string;
+  freezeBranch: "codex/orbit-atlas-v241-science-freeze";
+  campaignStatus: "prepared" | "running" | "failed" | "complete";
+  failedShardIndex: number | null;
+  failure: string | null;
+  noAutomaticRetry: boolean;
+  attemptedRayCount: number;
+  attemptedExecutionCount: number;
+  failedShardEvidence: {
+    readonly shardIndex: number;
+    readonly file: string;
+    readonly fileSha256: string;
+    readonly outputSha256: string;
+    readonly complete: false;
+    readonly rayCount: number;
+    readonly executionCount: number;
+    readonly watchdogSeconds: number;
+    readonly incompleteExecutionCount: number;
+    readonly watchdogTimeoutExecutionCount: number;
+    readonly incompleteExecutionStatusCounts: Readonly<Record<string, number>>;
+    readonly affectedRayIds: readonly string[];
+    readonly retainedAsImmutableNegativeEvidence: true;
+  } | null;
   finiteObserverScreenManifestSha256: string;
   shortGatePassed: boolean;
 };

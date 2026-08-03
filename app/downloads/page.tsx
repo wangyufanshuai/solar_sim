@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { createAtlasReleaseManifestV1 } from "../lib/atlasReleaseManifestV1";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export default function DownloadsPage() {
   return (
     <main className="min-h-dvh bg-[#030613] px-5 py-10 text-slate-100 sm:px-10">
       <div className="mx-auto max-w-5xl">
-        <a href="/" className="text-sm text-cyan-200 hover:text-cyan-100">← 返回图谱</a>
+        <Link href="/" className="text-sm text-cyan-200 hover:text-cyan-100">← 返回图谱</Link>
         <p className="mt-8 text-xs uppercase tracking-[0.24em] text-amber-200/70">Orbit Atlas 1.0.0</p>
         <h1 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">下载与能力矩阵</h1>
         <p className="mt-5 max-w-3xl text-sm leading-7 text-slate-300 sm:text-base">

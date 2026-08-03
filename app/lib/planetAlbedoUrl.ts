@@ -45,7 +45,6 @@ export const KNOWN_PLANET_ALBEDO_IDS: ReadonlySet<string> = new Set([
   "mercury",
   "venus",
   "earth",
-  "moon",
   "mars",
   "jupiter",
   "saturn",

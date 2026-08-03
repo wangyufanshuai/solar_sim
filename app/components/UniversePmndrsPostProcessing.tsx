@@ -16,7 +16,10 @@ import { useBloomScene } from "../context/BloomSceneContext";
 import LightBender from "../effects/LightBender";
 import { readLensingEnv } from "../effects/lightBenderBridge";
 import SunLensFlare from "../effects/SunLensFlare";
-import { TRUE_VOID_TONE_MAPPING_EXPOSURE } from "../lib/trueVoid";
+import { getAtlasRenderExposureV274 } from "../lib/atlasRenderExposureV274";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
 import type { UniversePostProcessingProps } from "./UniversePostProcessing";
 
 const LENSING_ENABLED = readLensingEnv().enabled;
@@ -51,7 +54,7 @@ const BLOOM_CINEMATIC_CLOSEUP = {
 function PmndrsToneMappingExposureSync() {
   const gl = useThree((state) => state.gl);
   useFrame(() => {
-    gl.toneMappingExposure = TRUE_VOID_TONE_MAPPING_EXPOSURE;
+    gl.toneMappingExposure = getAtlasRenderExposureV274();
   });
   return null;
 }
@@ -64,6 +67,13 @@ export default function UniversePmndrsPostProcessing({
   globalColorGradeProfile,
 }: UniversePostProcessingProps) {
   const { bloomTargets, sunLight } = useBloomScene();
+  const visualProfile = useAtlasRuntimeStore((snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile));
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualProfile.id,
+    group: "postFx",
+    consumer: "UniversePmndrsPostProcessing",
+    tokenSignature: createAtlasVisualTokenSignatureV300(visualProfile.groups.postFx),
+  });
   const lights = useMemo(() => (sunLight ? [sunLight] : []), [sunLight]);
   const canSelective = lights.length > 0 && bloomTargets.length > 0;
   const lensingOptions = readLensingEnv();
@@ -78,6 +88,11 @@ export default function UniversePmndrsPostProcessing({
         ? { ...BLOOM_CINEMATIC_CLOSEUP, luminanceThreshold: 0.972, intensity: 0.15, radius: 0.14 }
         : BLOOM_CINEMATIC_CLOSEUP
     : visualEnhance ? BLOOM_ENHANCE : BLOOM_BASE;
+  const profiledBloom = {
+    ...bloom,
+    luminanceThreshold: Math.min(1, bloom.luminanceThreshold * visualProfile.groups.postFx.bloomThreshold),
+    intensity: bloom.intensity * visualProfile.groups.postFx.bloomStrength,
+  };
 
   return (
     <EffectComposer
@@ -115,11 +130,11 @@ export default function UniversePmndrsPostProcessing({
         <SelectiveBloom
           lights={lights}
           selection={bloomTargets}
-          luminanceThreshold={bloom.luminanceThreshold}
-          luminanceSmoothing={bloom.luminanceSmoothing}
-          intensity={bloom.intensity}
-          radius={bloom.radius}
-          levels={bloom.levels}
+          luminanceThreshold={profiledBloom.luminanceThreshold}
+          luminanceSmoothing={profiledBloom.luminanceSmoothing}
+          intensity={profiledBloom.intensity}
+          radius={profiledBloom.radius}
+          levels={profiledBloom.levels}
           mipmapBlur
           ignoreBackground
         />
@@ -134,7 +149,7 @@ export default function UniversePmndrsPostProcessing({
         />
       ) : <></>}
       <Vignette
-        darkness={v55GlobalColor ? (cinematicCloseup ? 0.5 : 0.46) : cinematicCloseup ? 0.44 : visualEnhance ? 0.42 : 0.48}
+        darkness={(v55GlobalColor ? (cinematicCloseup ? 0.5 : 0.46) : cinematicCloseup ? 0.44 : visualEnhance ? 0.42 : 0.48) * visualProfile.groups.postFx.vignetteStrength}
         offset={v55GlobalColor ? (cinematicCloseup ? 0.98 : 1.0) : referenceGradeCloseup ? 1.0 : cinematicCloseup ? 1.04 : visualEnhance ? 1.02 : 1.1}
         eskil={false}
       />

@@ -1,6 +1,8 @@
 "use client";
 
-import { Html, Line, OrbitControls } from "@react-three/drei";
+import { Html } from "@react-three/drei/web/Html";
+import { Line } from "@react-three/drei/core/Line";
+import { OrbitControls } from "@react-three/drei/core/OrbitControls";
 import { useFrame, useThree } from "@react-three/fiber";
 import { Orbit, Pause, Play, RotateCcw } from "lucide-react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
@@ -16,6 +18,9 @@ import {
 import { stellarMaterialProfile } from "../lib/stellarMaterialProfile";
 import { createStellarPortraitProfileV7 } from "../lib/stellarPortraitProfileV7";
 import { fetchAtlasAsset } from "../lib/atlasAssetResolver";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
 import StellarPortraitMaterial from "./StellarPortraitMaterial";
 
 type OrbitView = "system" | "transit";
@@ -32,6 +37,15 @@ export default function ExoplanetSystemScene({ systemId }: { systemId: string })
   const [view, setView] = useState<OrbitView>("system");
   const controls = useRef<OrbitControlsImpl | null>(null);
   const camera = useThree((state) => state.camera);
+  const visualRendererProfile = useAtlasRuntimeStore(
+    (snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile),
+  );
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualRendererProfile.id,
+    group: "exoplanet",
+    consumer: "ExoplanetSystemScene",
+    tokenSignature: createAtlasVisualTokenSignatureV300(visualRendererProfile.runtimeTokens.exoplanet),
+  });
 
   const restore = useCallback(() => {
     camera.position.set(0, 180, 320);
@@ -100,6 +114,7 @@ export default function ExoplanetSystemScene({ systemId }: { systemId: string })
           speed={speed}
           selectedPlanetId={selectedPlanetId}
           view={view}
+          visualRendererProfile={visualRendererProfile}
         />
       ) : null}
       <Html fullscreen style={{ pointerEvents: "none" }}>
@@ -227,12 +242,14 @@ function ExoplanetOrbitSystem({
   speed,
   selectedPlanetId,
   view,
+  visualRendererProfile,
 }: {
   system: ExoplanetSystemDocument;
   paused: boolean;
   speed: number;
   selectedPlanetId: string;
   view: OrbitView;
+  visualRendererProfile: ReturnType<typeof resolveAtlasVisualProfileV299>;
 }) {
   const refs = useRef<Array<THREE.Mesh | null>>([]);
   const elapsed = useRef(0);
@@ -326,6 +343,8 @@ function ExoplanetOrbitSystem({
                     ? "#425b6d"
                     : "#478ba2"
               }
+              opacity={visualRendererProfile.runtimeTokens.exoplanet.orbitOpacity}
+              transparent={visualRendererProfile.runtimeTokens.exoplanet.orbitOpacity < 1}
               lineWidth={selected ? 2.5 : planet.eccentricity == null ? 1 : 1.4}
               dashed={planet.eccentricity == null}
               dashSize={3}
@@ -339,8 +358,17 @@ function ExoplanetOrbitSystem({
               <sphereGeometry args={[planetRadius(planet), 24, 16]} />
               <meshStandardMaterial
                 emissive={selected ? "#183d4a" : "#000000"}
-                color={planetColor(planet, index)}
-                roughness={0.72}
+                color={planetColor(
+                  planet,
+                  index,
+                  system.stellarTeffK,
+                  system.stellarRadiusSolar,
+                  visualRendererProfile.runtimeTokens.exoplanet.temperatureColorMix,
+                )}
+                roughness={Math.max(
+                  visualRendererProfile.planetRoughnessMinimum,
+                  0.72 * visualRendererProfile.planetRoughnessMultiplier,
+                )}
               />
             </mesh>
           </group>
@@ -362,10 +390,50 @@ function planetRadius(planet: ExoplanetOrbitDocument): number {
   return Math.max(0.45, Math.min(1.45, (planet.radiusEarth ?? 1) * 0.17));
 }
 
-function planetColor(planet: ExoplanetOrbitDocument, index: number): string {
-  if ((planet.radiusEarth ?? 0) > 8) return "#d6a060";
-  if ((planet.massEarth ?? 0) > 10) return "#8ab8d3";
-  return ["#bd7553", "#72a3bd", "#b8b09b", "#8b9a7a"][index % 4];
+function planetColor(
+  planet: ExoplanetOrbitDocument,
+  index: number,
+  stellarTeffK: number | null,
+  stellarRadiusSolar: number | null,
+  temperatureMix: number,
+): string {
+  const base = new THREE.Color(
+    (planet.radiusEarth ?? 0) > 8
+      ? "#d6a060"
+      : (planet.massEarth ?? 0) > 10
+        ? "#8ab8d3"
+        : ["#bd7553", "#72a3bd", "#b8b09b", "#8b9a7a"][index % 4],
+  );
+  const equilibriumTemperatureK = estimateEquilibriumTemperatureK(
+    stellarTeffK,
+    stellarRadiusSolar,
+    planet.semiMajorAxisAu,
+  );
+  if (equilibriumTemperatureK == null || temperatureMix <= 0) return `#${base.getHexString()}`;
+  const temperatureColor = new THREE.Color(
+    equilibriumTemperatureK < 220
+      ? "#6f9fc4"
+      : equilibriumTemperatureK < 420
+        ? "#9bb9b0"
+        : equilibriumTemperatureK < 850
+          ? "#d2aa72"
+          : "#d87552",
+  );
+  return `#${base.lerp(temperatureColor, temperatureMix).getHexString()}`;
+}
+
+function estimateEquilibriumTemperatureK(
+  stellarTeffK: number | null,
+  stellarRadiusSolar: number | null,
+  semiMajorAxisAu: number | null,
+): number | null {
+  if (
+    stellarTeffK == null || !Number.isFinite(stellarTeffK) || stellarTeffK <= 0 ||
+    stellarRadiusSolar == null || !Number.isFinite(stellarRadiusSolar) || stellarRadiusSolar <= 0 ||
+    semiMajorAxisAu == null || !Number.isFinite(semiMajorAxisAu) || semiMajorAxisAu <= 0
+  ) return null;
+  const solarRadiusAu = 0.00465047;
+  return stellarTeffK * Math.sqrt((stellarRadiusSolar * solarRadiusAu) / (2 * semiMajorAxisAu));
 }
 
 function hostColorForTeff(teffK: number | null): string {

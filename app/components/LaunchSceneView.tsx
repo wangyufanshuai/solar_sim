@@ -1,58 +1,32 @@
 "use client";
 
-import { useFrame, useThree } from "@react-three/fiber";
-import { Html } from "@react-three/drei";
+import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import { Suspense, useCallback, useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
-import type { OrbitControls as OrbitControlsImpl } from "three-stdlib";
-import type { LaunchConfig } from "../lib/launchTelemetryTypes";
+import { useEffect } from "react";
 import {
   createLocalLaunchState,
   stepLocalLaunch,
   convertToHeliocentric,
   getLocalTelemetry,
   localMToScene,
-  EARTH_SCENE_RADIUS,
-  type LocalLaunchState,
-  type LocalTelemetry,
 } from "../lib/localLaunchPhysics";
 import {
   SPACECRAFT_BODY_INDEX,
   EARTH_BODY_INDEX,
   MOON_BODY_INDEX,
 } from "../data/planetsJ2000";
-import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
-import EarthAtmosphereGlow from "./EarthAtmosphereGlow";
-import GalaxyEnvironmentSphere from "./GalaxyEnvironmentSphere";
-import BrightStarCatalog from "./BrightStarCatalog";
-import { useOptionalTexture } from "../lib/useOptionalTexture";
 import { LAUNCH_CAMERA_FOLLOW_EVENT } from "../lib/launchCameraControl";
-import {
-  LAUNCH_VISUAL_PROFILE_MANIFEST_VERSION,
-  getLaunchVisualProfile,
-} from "../lib/launchVisualProfiles";
-import {
-  getAtlasRuntimeQualityProfile,
-  getLaunchSequenceDirectorPhase,
-  launchDirectorPhaseLabel,
-} from "../lib/launchSequenceDirector";
-import type {
-  AtlasLaunchSequenceDirectorPhase,
-  AtlasRuntimeQualityTier,
-} from "../lib/simulationDiagnosticsTypes";
-import LaunchSpacecraftAsset from "./LaunchSpacecraftAsset";
-import LaunchPadEnvironmentV3 from "./LaunchPadEnvironmentV3";
-import type { AtlasAssetLoadState } from "../lib/atlasAssetResolver";
+import { getLaunchSequenceDirectorPhase } from "../lib/launchSequenceDirector";
 import {
   LAUNCH_COMPOSITION_V2_VERSION,
   solveLaunchFrameV2,
 } from "../lib/launchCompositionV2";
+import { PARTICLE_COUNT, TRAJECTORY_POINTS, useLaunchSceneResources } from "./useLaunchSceneResources";
+import LaunchScenePresentation from "./LaunchScenePresentation";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
 
 const EARTH_RADIUS_M = 6_378_137;
 const PHYSICS_SUB_STEPS = 8;
-const PARTICLE_COUNT = 72;
-const TRAJECTORY_POINTS = 180;
-const V109_LAUNCH_VISUAL_COMPAT_PROFILE = "heavy-lift-rocket";
 // v112/v114 compatibility markers now render in LaunchDirectorOverlay:
 // data-launch-mission-scene, data-launch-stage-marker, data-launch-director-phase,
 // data-launch-runtime-quality, data-launch-plume-budget; Max-Q; Satellite deploy.
@@ -65,20 +39,8 @@ const LAUNCH_SITES: Record<string, { lat: number; lon: number }> = {
   xichang: { lat: 28.25, lon: 102.03 },
 };
 
-export type LaunchSceneViewProps = {
-  physicsRef: React.MutableRefObject<SolarSystemPhysicsRef | null>;
-  onHandoff: (heliocentric: {
-    posM: [number, number, number];
-    velMs: [number, number, number];
-    massKg: number;
-  }) => void;
-  onAbort: () => void;
-  telemetryRef?: React.MutableRefObject<LocalTelemetry | null>;
-  active: boolean;
-  launchConfigRef?: React.MutableRefObject<LaunchConfig | null>;
-  controlsRef?: MutableRefObject<OrbitControlsImpl | null>;
-  runtimeQualityTier?: AtlasRuntimeQualityTier;
-};
+import type { LaunchSceneViewProps } from "./LaunchSceneViewProps";
+export type { LaunchSceneViewProps } from "./LaunchSceneViewProps";
 
 export default function LaunchSceneView({
   physicsRef,
@@ -90,254 +52,32 @@ export default function LaunchSceneView({
   controlsRef,
   runtimeQualityTier = "balanced",
 }: LaunchSceneViewProps) {
-  const { camera } = useThree();
-  const destinationLabel = launchConfigRef?.current?.destination ?? "Moon";
-  const runtimeQuality = useMemo(
-    () => getAtlasRuntimeQualityProfile(runtimeQualityTier),
-    [runtimeQualityTier],
-  );
-  const localStateRef = useRef<LocalLaunchState | null>(null);
-  const initializedRef = useRef(false);
-  const manualCameraRef = useRef(false);
-  const [, setCameraModeTick] = useState(0);
-  const [directorPhase, setDirectorPhase] =
-    useState<AtlasLaunchSequenceDirectorPhase>("prelaunch");
-  const directorPhaseRef = useRef<AtlasLaunchSequenceDirectorPhase>("prelaunch");
-  const particleFrameRef = useRef(0);
-
-  const camTargetPos = useMemo(() => new THREE.Vector3(0, 0, 3), []);
-  const camTargetLookAt = useMemo(() => new THREE.Vector3(0, 0, 0), []);
-  const camTargetUp = useMemo(() => new THREE.Vector3(0, 1, 0), []);
-  const sunDir = useMemo(() => new THREE.Vector3(1, 0.2, 0.5).normalize(), []);
-
-  const earthDay = useOptionalTexture("/textures/planets/hd/earth.jpg");
-  const earthClouds = useOptionalTexture("/textures/planets/hd/earth-clouds.jpg");
-  const [slsAssetState, setSlsAssetState] = useState<AtlasAssetLoadState>("probing");
-
-  const spacecraftRef = useRef<THREE.Group>(null);
-  const launchPadRef = useRef<THREE.Group>(null);
-  const exhaustCoreRef = useRef<THREE.Mesh>(null);
-  const exhaustHaloRef = useRef<THREE.Mesh>(null);
-  const shockRingRef = useRef<THREE.Mesh>(null);
-  const particlesRef = useRef<THREE.Points>(null);
-  const particlePositions = useMemo(() => new Float32Array(PARTICLE_COUNT * 3), []);
-  const particleAlphas = useMemo(() => new Float32Array(PARTICLE_COUNT), []);
-  const particleVelocities = useMemo(
-    () => Array.from({ length: PARTICLE_COUNT }, () => new THREE.Vector3()),
-    [],
-  );
-  const particleAges = useMemo(() => new Float32Array(PARTICLE_COUNT).fill(999), []);
-  const particleLifetimes = useMemo(() => new Float32Array(PARTICLE_COUNT).fill(1), []);
-  const nextParticleIdx = useRef(0);
-  const scratchScPos = useMemo(() => new THREE.Vector3(), []);
-  const scratchVelDir = useMemo(() => new THREE.Vector3(), []);
-  const scratchUp = useMemo(() => new THREE.Vector3(), []);
-  const scratchSide = useMemo(() => new THREE.Vector3(), []);
-  const scratchOffset = useMemo(() => new THREE.Vector3(), []);
-  const scratchUpOffset = useMemo(() => new THREE.Vector3(), []);
-  const scratchQuat = useMemo(() => new THREE.Quaternion(), []);
-  const scratchLookDir = useMemo(() => new THREE.Vector3(), []);
-  const scratchTargetDir = useMemo(() => new THREE.Vector3(), []);
-  const scratchWorldAxis = useMemo(() => new THREE.Vector3(), []);
-  const scratchOrigin = useMemo(() => new THREE.Vector3(0, 0, 0), []);
-  const scratchProjected = useMemo(() => new THREE.Vector3(), []);
-  const scratchBounds = useMemo(() => new THREE.Box3(), []);
-  const scratchBoundsCenter = useMemo(() => new THREE.Vector3(), []);
-  const scratchBoundsSize = useMemo(() => new THREE.Vector3(), []);
-  const scratchBoundsCorner = useMemo(() => new THREE.Vector3(), []);
-  const runtimeMarkerRootRef = useRef<HTMLElement | null>(null);
-  const lastRuntimeMarkerWriteRef = useRef(0);
-
-  useEffect(() => {
-    runtimeMarkerRootRef.current = document.querySelector<HTMLElement>("[data-atlas-app-shell]");
-    return () => {
-      const root = runtimeMarkerRootRef.current;
-      for (const attribute of [
-        "data-launch-subject-ndc-x",
-        "data-launch-subject-ndc-y",
-        "data-launch-subject-coverage-x",
-        "data-launch-subject-coverage-y",
-        "data-launch-camera-distance",
-        "data-launch-camera-mode",
-        "data-launch-director-phase",
-        "data-launch-composition-version",
-        "data-launch-composition-coverage",
-        "data-launch-asset-profile",
-        "data-launch-asset-load-state",
-        "data-launch-camera-view-offset",
-      ]) root?.removeAttribute(attribute);
-      runtimeMarkerRootRef.current = null;
-    };
-  }, []);
-
-  const particleGeom = useMemo(() => {
-    const geom = new THREE.BufferGeometry();
-    geom.setAttribute("position", new THREE.BufferAttribute(particlePositions, 3));
-    geom.setAttribute("alpha", new THREE.BufferAttribute(particleAlphas, 1));
-    return geom;
-  }, [particlePositions, particleAlphas]);
-
-  const trajectoryPositions = useMemo(() => new Float32Array(TRAJECTORY_POINTS * 3), []);
-  const trajectoryIndexRef = useRef(0);
-  const trajectoryCountRef = useRef(0);
-  const trajectoryGeom = useMemo(() => {
-    const geom = new THREE.BufferGeometry();
-    geom.setAttribute("position", new THREE.BufferAttribute(trajectoryPositions, 3));
-    return geom;
-  }, [trajectoryPositions]);
-  const missionTargetRef = useRef<THREE.Group>(null);
-  const cameraFillRef = useRef<THREE.PointLight>(null);
-  const guidanceLinePositions = useMemo(() => new Float32Array(6), []);
-  const guidanceLineGeom = useMemo(() => {
-    const geom = new THREE.BufferGeometry();
-    geom.setAttribute("position", new THREE.BufferAttribute(guidanceLinePositions, 3));
-    return geom;
-  }, [guidanceLinePositions]);
-  const guidanceLineMat = useMemo(
-    () =>
-      new THREE.LineBasicMaterial({
-        color: (launchConfigRef?.current?.destination ?? "Moon") === "Mars" ? "#ff9d73" : "#90caff",
-        transparent: true,
-        opacity: 0.3,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        toneMapped: false,
-      }),
-    [launchConfigRef],
-  );
-  const guidanceLine = useMemo(() => {
-    const line = new THREE.Line(guidanceLineGeom, guidanceLineMat);
-    line.renderOrder = 3;
-    return line;
-  }, [guidanceLineGeom, guidanceLineMat]);
-  const trajectoryMat = useMemo(
-    () =>
-      new THREE.LineBasicMaterial({
-        color: (launchConfigRef?.current?.destination ?? "Moon") === "Mars" ? "#ff9d73" : "#a7d8ff",
-        transparent: true,
-        opacity: 0.46,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        toneMapped: false,
-      }),
-    [launchConfigRef],
-  );
-  const trajectoryLine = useMemo(() => {
-    const line = new THREE.Line(trajectoryGeom, trajectoryMat);
-    line.renderOrder = 4;
-    return line;
-  }, [trajectoryGeom, trajectoryMat]);
-
-  const particleMat = useMemo(
-    () =>
-      new THREE.ShaderMaterial({
-        transparent: true,
-        depthWrite: false,
-        blending: THREE.AdditiveBlending,
-        toneMapped: false,
-        uniforms: {},
-        vertexShader: `
-          attribute float alpha;
-          varying float vAlpha;
-          void main() {
-            vAlpha = alpha;
-            vec4 mv = modelViewMatrix * vec4(position, 1.0);
-            gl_PointSize = max(3.0, 110.0 / max(1.0, -mv.z));
-            gl_Position = projectionMatrix * mv;
-          }
-        `,
-        fragmentShader: `
-          varying float vAlpha;
-          void main() {
-            float dist = length(gl_PointCoord - vec2(0.5));
-            if (dist > 0.5) discard;
-            float soft = 1.0 - smoothstep(0.0, 0.5, dist);
-            vec3 col = mix(vec3(1.0, 0.32, 0.05), vec3(1.0, 0.92, 0.65), soft);
-            gl_FragColor = vec4(col, vAlpha * soft);
-          }
-        `,
-      }),
-    [],
-  );
-  const exhaustCoreMat = useMemo(
-    () =>
-      new THREE.MeshBasicMaterial({
-        color: "#ffd08a",
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        toneMapped: false,
-        side: THREE.DoubleSide,
-      }),
-    [],
-  );
-  const exhaustHaloMat = useMemo(
-    () =>
-      new THREE.MeshBasicMaterial({
-        color: "#ff5c19",
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        toneMapped: false,
-        side: THREE.DoubleSide,
-      }),
-    [],
-  );
-  const shockRingMat = useMemo(
-    () =>
-      new THREE.MeshBasicMaterial({
-        color: "#9ed8ff",
-        transparent: true,
-        opacity: 0,
-        blending: THREE.AdditiveBlending,
-        depthWrite: false,
-        toneMapped: false,
-        side: THREE.DoubleSide,
-      }),
-    [],
-  );
-  const activeProfile = launchConfigRef?.current?.profile ?? "";
-  const launchVisualProfile = getLaunchVisualProfile(activeProfile);
-  const isLeoSatellite = launchVisualProfile.payloadKind === "deployable-satellite";
-  const usesSlsAsset = launchVisualProfile.id === "sls-artemis-stack";
-
-  const emitParticle = useCallback(
-    (
-      origin: THREE.Vector3,
-      thrustDir: THREE.Vector3,
-      thrustFraction: number,
-      particleBudget: number,
-    ) => {
-      const budget = Math.max(1, Math.min(PARTICLE_COUNT, particleBudget));
-      const i = nextParticleIdx.current % budget;
-      nextParticleIdx.current = (nextParticleIdx.current + 1) % budget;
-
-      const speed = 0.028 + 0.06 * thrustFraction;
-      const spread = 0.012;
-      const vel = particleVelocities[i]!;
-      vel.copy(thrustDir).multiplyScalar(-speed);
-      vel.x += (Math.random() - 0.5) * spread;
-      vel.y += (Math.random() - 0.5) * spread;
-      vel.z += (Math.random() - 0.5) * spread;
-
-      particlePositions[i * 3] = origin.x + (Math.random() - 0.5) * 0.003;
-      particlePositions[i * 3 + 1] = origin.y + (Math.random() - 0.5) * 0.003;
-      particlePositions[i * 3 + 2] = origin.z + (Math.random() - 0.5) * 0.003;
-      particleAges[i] = 0;
-      particleLifetimes[i] = 0.35 + Math.random() * 0.5;
-    },
-    [particlePositions, particleVelocities, particleAges, particleLifetimes],
-  );
-
-  useEffect(() => {
-    for (let i = runtimeQuality.particleBudget; i < PARTICLE_COUNT; i++) {
-      particleAlphas[i] = 0;
-      particleAges[i] = 999;
-    }
-    particleGeom.attributes.alpha.needsUpdate = true;
-  }, [runtimeQuality.particleBudget, particleAlphas, particleAges, particleGeom]);
+  const launchResources = useLaunchSceneResources({ launchConfigRef, runtimeQualityTier });
+  const {
+    camTargetLookAt, camTargetPos, camTargetUp, camera,
+    cameraFillRef, directorPhaseRef, emitParticle, exhaustCoreMat,
+    exhaustCoreRef, exhaustHaloMat, exhaustHaloRef, guidanceLine,
+    guidanceLineGeom, guidanceLineMat, guidanceLinePositions, initializedRef,
+    lastRuntimeMarkerWriteRef, launchPadRef, localStateRef, manualCameraRef,
+    missionTargetRef,
+    particleAges, particleAlphas, particleFrameRef, particleGeom,
+    particleLifetimes, particleMat, particlePositions, particleVelocities,
+    runtimeMarkerRootRef, runtimeQuality, visualRendererProfile,
+    scratchBounds, scratchBoundsCenter, scratchBoundsCorner, scratchBoundsSize,
+    scratchLookDir, scratchOffset, scratchOrigin, scratchProjected,
+    scratchQuat, scratchScPos, scratchSide, scratchTargetDir,
+    scratchUp, scratchUpOffset, scratchVelDir, scratchWorldAxis,
+    setCameraModeTick, setDirectorPhase, shockRingMat,
+    shockRingRef, slsAssetState, spacecraftRef, sunDir,
+    trajectoryCountRef, trajectoryGeom, trajectoryIndexRef,
+    trajectoryMat, trajectoryPositions, usesSlsAsset,
+  } = launchResources;
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualRendererProfile.id,
+    group: "launch",
+    consumer: "LaunchSceneView",
+    tokenSignature: createAtlasVisualTokenSignatureV300(visualRendererProfile.runtimeTokens.launch),
+  });
 
   useEffect(() => {
     if (!active || initializedRef.current) return;
@@ -393,6 +133,7 @@ export default function LaunchSceneView({
       localMToScene(EARTH_RADIUS_M * nz),
     );
     const tangent = new THREE.Vector3(ny, -nx, 0).normalize();
+
     const up = new THREE.Vector3(nx, ny, nz).normalize();
     const initialFrame = solveLaunchFrameV2({
       phase: "prelaunch",
@@ -404,6 +145,7 @@ export default function LaunchSceneView({
       .add(up.clone().multiplyScalar(initialFrame.elevationDistance))
       .add(tangent.multiplyScalar(initialFrame.sideDistance));
     if (camera instanceof THREE.PerspectiveCamera && camera.view) {
+
       camera.clearViewOffset();
       camera.updateProjectionMatrix();
     }
@@ -422,7 +164,7 @@ export default function LaunchSceneView({
     trajectoryIndexRef.current = 0;
     trajectoryCountRef.current = 0;
     initializedRef.current = true;
-  }, [active, physicsRef, launchConfigRef, sunDir, camera, camTargetPos, camTargetLookAt, camTargetUp, runtimeQualityTier]);
+  }, [active, physicsRef, launchConfigRef, sunDir, camera, camTargetPos, camTargetLookAt, camTargetUp, runtimeQualityTier, initializedRef, launchPadRef, localStateRef, trajectoryCountRef, trajectoryIndexRef]);
 
   useEffect(() => {
     if (!active) {
@@ -430,7 +172,7 @@ export default function LaunchSceneView({
       localStateRef.current = null;
       if (telemetryRef) telemetryRef.current = null;
     }
-  }, [active, telemetryRef]);
+  }, [active, telemetryRef, initializedRef, localStateRef]);
 
   useEffect(() => {
     if (!active) return;
@@ -458,7 +200,7 @@ export default function LaunchSceneView({
       controls?.removeEventListener("start", setManual);
       window.removeEventListener(LAUNCH_CAMERA_FOLLOW_EVENT, restoreFollow);
     };
-  }, [active, controlsRef]);
+  }, [active, controlsRef, manualCameraRef, setCameraModeTick]);
 
   useEffect(() => {
     return () => {
@@ -532,7 +274,10 @@ export default function LaunchSceneView({
         scratchVelDir.set(state.velX, state.velY, state.velZ).normalize();
       }
       scratchScPos.set(scX, scY, scZ);
-      const plumeScale = runtimeQuality.plumeBudget === "full-plume" ? 1 : 0.58;
+      const altitudePlumeScale = visualRendererProfile.interfaceDensity !== "legacy"
+        ? THREE.MathUtils.lerp(1.12, 0.72, THREE.MathUtils.clamp(state.altitudeM / 90_000, 0, 1))
+        : 1;
+      const plumeScale = (runtimeQuality.plumeBudget === "full-plume" ? 1 : 0.58) * altitudePlumeScale;
       const emitCount = Math.ceil((1 + 3 * thrustFraction) * plumeScale);
       for (let i = 0; i < emitCount; i++) {
         emitParticle(
@@ -551,9 +296,9 @@ export default function LaunchSceneView({
       engineCore.visible = flame > 0;
       engineHalo.visible = flame > 0;
       shockRing.visible = flame > 0;
-      exhaustCoreMat.opacity = flame * (0.2 + Math.sin(stateClock.clock.elapsedTime * 24) * 0.025);
-      exhaustHaloMat.opacity = flame * 0.055;
-      shockRingMat.opacity = flame * 0.045;
+      exhaustCoreMat.opacity = flame * (visualRendererProfile.runtimeTokens.launch.coreOpacity + Math.sin(stateClock.clock.elapsedTime * 24) * 0.025);
+      exhaustHaloMat.opacity = flame * visualRendererProfile.runtimeTokens.launch.haloOpacity;
+      shockRingMat.opacity = flame * visualRendererProfile.runtimeTokens.launch.shockOpacity;
       engineCore.scale.set(0.18 + flame * 0.1, 0.34 + flame * 0.2, 0.18 + flame * 0.1);
       engineHalo.scale.set(0.22 + flame * 0.12, 0.4 + flame * 0.24, 0.22 + flame * 0.12);
       shockRing.scale.setScalar(0.3 + flame * 0.18 + Math.sin(stateClock.clock.elapsedTime * 18) * 0.012);
@@ -581,6 +326,7 @@ export default function LaunchSceneView({
       particleGeom.attributes.position.needsUpdate = true;
       particleGeom.attributes.alpha.needsUpdate = true;
     }
+
 
     const scPos = scratchScPos.set(scX, scY, scZ);
     const shouldRecordTrajectory =
@@ -784,200 +530,10 @@ export default function LaunchSceneView({
   });
 
   return (
-    <>
-      <GalaxyEnvironmentSphere visible />
-      <BrightStarCatalog opacity={runtimeQuality.starOpacity} />
-
-      <directionalLight
-        position={[sunDir.x * 100, sunDir.y * 100, sunDir.z * 100]}
-        intensity={1.65}
-        color="#fff4e6"
-      />
-      <hemisphereLight intensity={0.22} color="#dcecff" groundColor="#172334" />
-      <ambientLight intensity={0.08} color="#607da5" />
-      <pointLight ref={cameraFillRef} intensity={1.8} distance={3.2} decay={1.6} color="#dce9ff" />
-
-      <mesh position={[0, 0, 0]}>
-        <sphereGeometry args={[EARTH_SCENE_RADIUS, runtimeQuality.earthSegments, runtimeQuality.earthSegments]} />
-        <meshStandardMaterial
-          map={earthDay ?? undefined}
-          color="#9dc3ff"
-          roughness={0.92}
-          metalness={0.02}
-        />
-      </mesh>
-      {earthClouds ? (
-        <mesh position={[0, 0, 0]}>
-          <sphereGeometry args={[EARTH_SCENE_RADIUS * 1.008, runtimeQuality.earthSegments, runtimeQuality.earthSegments]} />
-          <meshStandardMaterial
-            map={earthClouds}
-            color="#ffffff"
-            transparent
-            opacity={0.34}
-            depthWrite={false}
-          />
-        </mesh>
-      ) : null}
-
-      <EarthAtmosphereGlow
-        radius={EARTH_SCENE_RADIUS}
-        sunDirection={sunDir}
-        atmosphereColor="#66a3ff"
-        atmospherePower={3.2}
-        atmosphereIntensity={0.46}
-      />
-
-      <LaunchPadEnvironmentV3
-        ref={launchPadRef}
-        towerHeight={launchVisualProfile.serviceTowerHeight}
-        accentColor={launchVisualProfile.accentColor}
-        qualityTier={runtimeQuality.tier}
-      />
-
-      <points ref={particlesRef} geometry={particleGeom} material={particleMat} renderOrder={5} />
-
-      <primitive object={guidanceLine} />
-      <primitive object={trajectoryLine} />
-
-      <group ref={missionTargetRef} visible={false} renderOrder={6}>
-        <Html center distanceFactor={8} position={[0, 0.34, 0]} style={{ pointerEvents: "none" }}>
-          <div className="rounded border border-white/15 bg-black/45 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.16em] text-slate-200 shadow-[0_0_16px_rgba(120,180,255,0.18)] backdrop-blur">
-            {destinationLabel} target
-          </div>
-        </Html>
-        <mesh>
-          <torusGeometry args={[0.24, 0.004, 8, 96]} />
-          <meshBasicMaterial
-            color={(launchConfigRef?.current?.destination ?? "Moon") === "Mars" ? "#ff9d73" : "#8fc7ff"}
-            transparent
-            opacity={0.58}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </mesh>
-        <mesh rotation={[Math.PI / 2, 0, 0]}>
-          <torusGeometry args={[0.24, 0.003, 8, 96]} />
-          <meshBasicMaterial
-            color="#ffffff"
-            transparent
-            opacity={0.22}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </mesh>
-        <mesh>
-          <sphereGeometry args={[0.025, 16, 16]} />
-          <meshBasicMaterial
-            color={(launchConfigRef?.current?.destination ?? "Moon") === "Mars" ? "#ff6d4d" : "#dceeff"}
-            transparent
-            opacity={0.78}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-            toneMapped={false}
-          />
-        </mesh>
-      </group>
-
-      <group
-        ref={spacecraftRef}
-        scale={[
-          launchVisualProfile.vehicleScale,
-          launchVisualProfile.vehicleScale,
-          launchVisualProfile.vehicleScale,
-        ]}
-        name={`${launchVisualProfile.id}:${V109_LAUNCH_VISUAL_COMPAT_PROFILE}`}
-      >
-        {usesSlsAsset ? (
-          <Suspense fallback={null}>
-            <LaunchSpacecraftAsset asset="sls-block-1" onLoadState={setSlsAssetState} />
-          </Suspense>
-        ) : null}
-        <group visible={!usesSlsAsset || slsAssetState !== "ready"}>
-        <mesh position={[0, 0.017, 0]}>
-          <cylinderGeometry args={[0.009, 0.011, 0.074, 28]} />
-          <meshStandardMaterial color={launchVisualProfile.primaryColor} metalness={0.58} roughness={0.25} />
-        </mesh>
-        <mesh position={[0, 0.061, 0]}>
-          <coneGeometry args={[0.0105, 0.026, 28]} />
-          <meshStandardMaterial color="#f8fafc" metalness={0.18} roughness={0.35} />
-        </mesh>
-        <mesh position={[0, 0.026, 0.0108]}>
-          <boxGeometry args={[0.014, 0.004, 0.0012]} />
-          <meshStandardMaterial color="#1f2937" metalness={0.24} roughness={0.42} />
-        </mesh>
-        <mesh position={[0, -0.018, 0]}>
-          <cylinderGeometry args={[0.0105, 0.012, 0.018, 28]} />
-          <meshStandardMaterial color="#64748b" metalness={0.66} roughness={0.32} />
-        </mesh>
-        {isLeoSatellite && directorPhase === "payload-deploy" ? (
-          <>
-            <mesh position={[0, 0.078, 0]}>
-              <boxGeometry args={[0.022, 0.010, 0.018]} />
-              <meshStandardMaterial color="#94a3b8" metalness={0.62} roughness={0.28} />
-            </mesh>
-            <mesh position={[-0.030, 0.078, 0]} rotation={[0, 0, 0.08]}>
-              <boxGeometry args={[0.042, 0.004, 0.001]} />
-              <meshStandardMaterial color="#1e3a8a" metalness={0.32} roughness={0.36} emissive="#0f172a" emissiveIntensity={0.2} />
-            </mesh>
-            <mesh position={[0.030, 0.078, 0]} rotation={[0, 0, -0.08]}>
-              <boxGeometry args={[0.042, 0.004, 0.001]} />
-              <meshStandardMaterial color="#1e3a8a" metalness={0.32} roughness={0.36} emissive="#0f172a" emissiveIntensity={0.2} />
-            </mesh>
-          </>
-        ) : (
-          <>
-            <mesh position={[-0.017, 0.0, 0]}>
-              <cylinderGeometry args={[0.0046, 0.0058, 0.066, 16]} />
-              <meshStandardMaterial color="#dce3ed" metalness={0.54} roughness={0.34} />
-            </mesh>
-            <mesh position={[0.017, 0.0, 0]}>
-              <cylinderGeometry args={[0.0046, 0.0058, 0.066, 16]} />
-              <meshStandardMaterial color="#dce3ed" metalness={0.54} roughness={0.34} />
-            </mesh>
-            <mesh position={[-0.017, 0.037, 0]}>
-              <coneGeometry args={[0.005, 0.016, 16]} />
-              <meshStandardMaterial color="#f8fafc" metalness={0.2} roughness={0.38} />
-            </mesh>
-            <mesh position={[0.017, 0.037, 0]}>
-              <coneGeometry args={[0.005, 0.016, 16]} />
-              <meshStandardMaterial color="#f8fafc" metalness={0.2} roughness={0.38} />
-            </mesh>
-          </>
-        )}
-        <mesh position={[-0.010, -0.041, 0]}>
-          <coneGeometry args={[0.0045, 0.014, 16]} />
-          <meshStandardMaterial color="#3f4754" metalness={0.7} roughness={0.28} />
-        </mesh>
-        <mesh position={[0.010, -0.041, 0]}>
-          <coneGeometry args={[0.0045, 0.014, 16]} />
-          <meshStandardMaterial color="#3f4754" metalness={0.7} roughness={0.28} />
-        </mesh>
-        </group>
-        <mesh position={[0, -0.02, 0]} name="engineBellGlow" renderOrder={6}>
-          <coneGeometry args={[0.009, 0.034, 18]} />
-          <meshBasicMaterial
-            color="#ff9258"
-            transparent
-            opacity={0.42}
-            blending={THREE.AdditiveBlending}
-            depthWrite={false}
-            toneMapped={false}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
-        <mesh ref={exhaustCoreRef} position={[0, -0.052, 0]} material={exhaustCoreMat} renderOrder={7} visible={false}>
-          <coneGeometry args={[0.007, 0.05, 18, 1, true]} />
-        </mesh>
-        <mesh ref={exhaustHaloRef} position={[0, -0.074, 0]} material={exhaustHaloMat} renderOrder={6} visible={false}>
-          <coneGeometry args={[0.014, 0.076, 24, 1, true]} />
-        </mesh>
-        <mesh ref={shockRingRef} position={[0, -0.09, 0]} rotation={[Math.PI / 2, 0, 0]} material={shockRingMat} renderOrder={6} visible={false}>
-          <torusGeometry args={[0.016, 0.0012, 8, 40]} />
-        </mesh>
-      </group>
-    </>
+    <LaunchScenePresentation
+      resources={launchResources}
+      launchConfigRef={launchConfigRef}
+    />
   );
 }
 

@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./atlasBrowserTestV263";
 
 const ROOT = '[data-atlas-browser-acceptance-version="v38-browser-acceptance-harness"]';
 

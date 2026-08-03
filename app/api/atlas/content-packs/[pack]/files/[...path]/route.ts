@@ -1,11 +1,16 @@
 import { createReadStream } from "node:fs";
 import { Readable } from "node:stream";
 import {
+  shouldBufferAtlasRangeV1,
+  type AtlasBufferedRangeDeliveryV1,
+} from "../../../../../../lib/atlasBufferedRangeDeliveryV1";
+import {
   atlasContentTypeForPath,
   loadCachedAtlasContentPackDescriptorV3,
   parseAtlasByteRange,
-  resolveAllowedAtlasContentPackFileV3,
+  readExactAtlasByteRangeV1,
   resolveAtlasContentPackRoot,
+  verifyAllowedAtlasContentPackFileV3,
 } from "../../../../../../lib/atlasContentPackServerV3";
 
 export const runtime = "nodejs";
@@ -27,7 +32,7 @@ export async function GET(
 
   try {
     const descriptor = await loadCachedAtlasContentPackDescriptorV3(root, pack);
-    const resolved = resolveAllowedAtlasContentPackFileV3(
+    const resolved = await verifyAllowedAtlasContentPackFileV3(
       descriptor,
       path.join("/"),
     );
@@ -51,10 +56,23 @@ export async function GET(
       });
     }
 
-    const stream = Readable.toWeb(createReadStream(
-      resolved.absolutePath,
-      range ? { start: range.start, end: range.end } : undefined,
-    )) as ReadableStream<Uint8Array>;
+    let body: BodyInit;
+    let rangeDelivery: AtlasBufferedRangeDeliveryV1 = "streamed-v1";
+    if (range && shouldBufferAtlasRangeV1(range.length)) {
+      const buffered = await readExactAtlasByteRangeV1(
+        resolved.absolutePath,
+        range,
+        resolved.entry.bytes,
+        request.signal,
+      );
+      body = buffered.bytes as BodyInit;
+      rangeDelivery = "buffered-v1";
+    } else {
+      body = Readable.toWeb(createReadStream(
+        resolved.absolutePath,
+        range ? { start: range.start, end: range.end } : undefined,
+      )) as ReadableStream<Uint8Array>;
+    }
     const headers = new Headers({
       "Content-Type": atlasContentTypeForPath(resolved.entry.path),
       "Content-Length": String(range?.length ?? resolved.entry.bytes),
@@ -63,12 +81,13 @@ export async function GET(
       "Cross-Origin-Resource-Policy": "same-origin",
       "X-Content-Type-Options": "nosniff",
       "X-Atlas-Asset-SHA256": resolved.entry.sha256,
+      "X-Atlas-Range-Delivery": rangeDelivery,
       ETag: etag,
     });
     if (range) {
       headers.set("Content-Range", `bytes ${range.start}-${range.end}/${resolved.entry.bytes}`);
     }
-    return new Response(stream, { status: range ? 206 : 200, headers });
+    return new Response(body, { status: range ? 206 : 200, headers });
   } catch (error) {
     return notFound(error instanceof Error ? error.message : String(error));
   }

@@ -2,18 +2,68 @@
 
 ## Current Product Architecture
 
-Orbit Atlas is a scientific-cinematic astronomy atlas. The current reproducible baseline is the v233 governance candidate with one WebGL2 scene host, 603 frozen root attributes, standalone/Lite delivery and six local content packs. Product delivery and scientific promotion remain separate: the local Web candidate is validated, while every candidate scientific model remains offline and shadow-retained.
+Orbit Atlas is a scientific-cinematic astronomy atlas. The current reproducible baseline is the v233 governance candidate with one WebGL2 scene host, 603 frozen root attributes, standalone/Lite delivery and six local content packs. Product delivery and scientific promotion remain separate: focused, build and dedicated product gates pass, but the combined v262 fresh browser matrix remains blocked after a profile-routing correction and the local candidate is not promoted. Every candidate scientific model remains offline and shadow-retained. The terminal V8 dense campaign failure is retained as immutable negative evidence and does not block explicitly decoupled product architecture work.
+
+The current v271-v275 implementation is a capability-level local shadow candidate. Its generated authority is `dist/release/orbit-atlas-current-local-shadow-candidate-v275.json`; phase status, source hashes, resource preflight and qualification boundaries must be read from that pointer rather than copied into this document. The architecture adds resumable research/catalog pipelines, five-band camera leases and layer composition, the four-way visual A/B contract, lazy deep-space chunks, bounded local/online API routes, fixed-ring R3F/RAF/Long Task/GPU sampling and byte-aware resource ownership. The formal product pointer stays at v263, Legacy V9 remains the default, and no scientific or deployment promotion is implied.
 
 ## v233 Current Evidence Authority
 
-- `AtlasCurrentEvidenceManifestV233` is generated from the checksummed weak-field, Kerr shard, STM, bundle, lifecycle, content-pack and security reports.
+- `AtlasCurrentEvidenceManifestV233` remains the scientific authority generated from the checksummed weak-field, Kerr shard and STM chain. v256+ mutable product results are published separately through `dist/release/orbit-atlas-current-product-evidence-v262.json`, which points to the checksummed v262 product manifest without rewriting the science source.
 - `ScientificPromotionDecisionV7` retains its fail-closed decision logic; its current input is generated from the manifest instead of the historical V5 constants.
-- The weak-field candidate improves aggregate ten-year RMS in the current V7 report but retains 15 per-body regressions, so the default remains `legacy-eih-1pn`.
-- Dense Kerr progress is 1/49 release shards, 64/3097 rays and 512 executions. Partial results are never aggregated.
+- The current fitted-blind weak-field evidence does not demonstrate aggregate improvement. Fifteen historical per-body regressions remain in scope and ten are confirmed, so the default remains `legacy-eih-1pn`.
+- Dense Kerr V8 terminated failed at shard 3. Three of 49 shards are accepted (192/3097 rays and 1,536 complete executions). The failed shard attempted another 64 rays and 512 executions; four Carter–Mino executions hit the frozen 180-second watchdog. Failed-shard work is immutable negative evidence, is excluded from release coverage, is never partially aggregated and is not automatically retried.
 - Variational STM remains smoke-only. Thirty-day calibration, three fit iterations and ten-year blind holdout are release-qualification work, not completed evidence.
 - The 603 root attributes remain a historical Browser compatibility snapshot. Mutable research progress is published on a non-root diagnostics surface.
 - The current governance dossier and classified dirty-worktree inventory are generated with `npm run build:dossier:v233`; no Git mutation is part of that process.
+- Evidence precedence is terminal aggregate/STM when available, otherwise terminal campaign progress plus immutable failed-shard evidence, then V13, current evidence, the dossier and finally README/Technical Overview. Historical V6/V7 artifacts cannot replace current evidence.
+- Current bundle, content-pack, browser, visual, soak and hardware measurements are read from `dist/release/orbit-atlas-v262-local-candidate-evidence.json`; this document does not maintain a second set of mutable product numbers.
 - The v160-v232 high-level timeline is archived in `docs/archive/RELEASE_TRACKS_V160_V232.md`.
+
+## v249-v250 Evidence and Type Architecture
+
+- v249 makes the terminal V8 failure, V13 campaign manifest and v233 current-evidence manifest agree on `science-failed-shadow-retained`. The failed campaign is retained as negative evidence; product refactoring does not imply scientific promotion, and `legacy-eih-1pn` remains the applied kernel.
+- `app/lib/simulationDiagnosticsTypes.ts` is a compatibility-only type facade over seven domain modules: visual, workbench, catalog, relativity, evidence, release and physics. The public import path and all 623 exported type names remain unchanged; the canonical exported-name SHA-256 is `e96c8f8508dc1af682d32dbf035d6c9fc62b6217797ceb903a5fec3e11f84848`.
+- `app/lib/evidenceLedger.ts` is a compatibility facade over product, workbench, visual, catalog, weak-field and Kerr claim modules plus shared passport helpers. `createEvidenceLedgerSummary()`, `selectEvidenceClaim()` and synchronous return semantics remain unchanged.
+- The Evidence Ledger compatibility lock remains 84 claims in 78 ordered groups. Claim ids, status, passports and canonical serialization are unchanged; the canonical JSON SHA-256 is `e7d7e2984983714d80cc726e621b7d4fdb171622917ff8e052c57836d0a18dec`.
+- Historical source-audit tests read a composed facade-plus-domain source bundle through `app/test-utils/sourceBundles.ts`. An A/B run against the unsplit backups produced the same 20 pre-existing failures and the same nine passing tests as the split source, with no split-only failure.
+- This modularization changes code ownership only. It does not change the single Canvas, the 603 root attributes, Mission Capsule or Navigator ids, panel ids, focus/camera behavior, launch handoff, Worker protocols, live/Worker physics, Kerr implementation or scientific runners.
+
+## v251 Workbench Domains
+
+- `AtlasRuntimeWorkbenchDomains` replaces the former three aliases that all referenced one 201-field scope. The seven internal domains are `scene`, `shellHud`, `panels`, `navigationFocus`, `evidenceMission`, `launch` and `timelinePhysics`; their key sets are exhaustive, disjoint and create seven distinct objects.
+- `AtlasRuntimeWorkbenchSurface` accepts one seven-domain contract. `AtlasRuntimeSceneLayer`, `AtlasRuntimePanelLayer` and `AtlasRuntimeDockLayer` consume explicit domain props and no longer import or receive the complete compatibility scope.
+- Readiness state and panel activation live in `useAtlasWorkbenchReadinessDomain`. Gaia loading, indexes, Object Passport, visual-layer state and performance-budget derivation live in `useAtlasWorkbenchCatalogDomain`. Panel sessions and report UI state live in `useAtlasWorkbenchPanelSessions` over the existing `atlasRuntimeStore`; no Context, Redux or second state library is introduced.
+- `AtlasRuntimeWorkbench.tsx` is 490 lines with no direct `useState`; local UI selection/ref state and derived summaries live in focused hooks over the existing store. `AtlasRuntimeWorkbenchSurface` consumes the read-only `AtlasLegacyRootAttributesV256` alias instead of carrying a 603-key inline union. The scene host remains unconditional and singular, so panel visibility changes do not key or remount the Canvas.
+- Focused v251 verification passes the seven-domain contract, Canvas groups, panel/Canvas isolation, panel coordination, runtime stores, 603-key root facade and view-model ordering. The historical `sceneRevision` source audit and shared Tauri resource expectation remain pre-existing dirty-baseline failures outside this refactor.
+
+## v252 Relativity Observable Sections
+
+- `RelativityObservableAtlasPanel.tsx` remains the default-export compatibility surface with the same 45 ordered props, but is reduced from 2,167 lines to 439 lines. The props-name SHA-256 remains `257b0332726c7cdf697c72d8b24354f26cd75071b6c826185522069563b64888`.
+- Overview, historical boundary/gate evidence, chart/readout content and the research workspace now live in dedicated section files. The chart section exposes separate weak-field Mercury and Kerr ISCO/Hamiltonian components while preserving their existing DOM order and copy.
+- `RelativityResearchWorkspaceV9` remains behind `lazy(() => import(...))`; the main panel imports only the small workspace boundary component. Heavy research workspace code is not statically reintroduced into the base panel.
+- The composed panel source retains all 405 historical `data-*` marker occurrences and 403 unique marker names. The sorted marker multiset SHA-256 before and after the split is `4c4b92b399e95d5014d9f05797b962e6d649c56fed57263a0629a46404429761`.
+- Historical source audits read the main panel plus five sections through the shared source-bundle reader. The 22-test Observable subset retains its four passing tests and 18 previously identified dirty-baseline failures; the split adds no missing-marker or missing-source regression.
+- v252 changes component ownership only. It does not change public props, panel ids, mobile foreground sheets, modal inertness, Escape/focus return, Kerr/weak-field values, live/Worker physics, shader/material parameters or research evidence claims.
+
+## v253 Performance Convergence Status
+
+- Seven-domain reconciliation now preserves each unchanged domain object's identity and preserves the complete domains container when no field changes. A single Evidence-panel change replaces only `evidenceMission`; the other six domain references remain stable. `AtlasRuntimeWorkbenchSurface` reads those domains directly and no longer creates a merged 201-field object.
+- Standalone and Lite production builds both completed successfully with Next 16.2.10 webpack, TypeScript, 10/10 static pages and build traces. The v253 Webpack stats contain dependent, orphan and runtime module detail for module-level attribution.
+- Both profiles contain 93 client chunks. Unminified module-source attribution is 4,081,613 bytes Orbit Atlas app code, 2,541,466 bytes Three/R3F vendor, 2,499,328 bytes framework vendor and 3,817,497 bytes other vendor. These figures are attribution evidence only, not browser transfer evidence.
+- The first standalone Canvas-ready browser gate failed before transfer measurement with Renderer Fault / minified React error 310. The cause was a v253 memoization ref declared after the `physicsReady` early return, producing inconsistent Hook counts across initial and ready renders. The ref is now before every conditional return and focused/static verification passes.
+- The final v253 passing reports remain historical performance evidence; current v262 transfer and lifecycle values are generated from the latest production builds into the v262 product manifest.
+- `client-bundle-v253-standalone-full-failure.json`, the first-attempt screenshot, trace and error context remain immutable negative evidence. Later passing product reports do not alter the failed Kerr campaign or qualify STM.
+
+## v256-v262 Local Research Candidate
+
+- `AtlasRuntimeStateV256` publishes scene, catalog, observer, analysis, evidence, performance and release state on an independent JSON surface. The 603-key root contract and 84-claim Evidence Ledger canonical output remain compatibility snapshots and do not grow.
+- The V7 SQLite mother catalog is packaged as one checksummed NESTED HEALPix archive plus fixed index and is consumed through a dedicated Range-stream Worker. The v255 and historical 5k catalogs remain ordered fallbacks; mutable counts, byte sizes, hashes and active budgets are read from the generated v262 manifest.
+- Observing Planner calculations are offline and deterministic; weather and live Gaia queries are explicit, bounded and `canonical:false`. The frozen Gaia analysis subset, covariance/Monte Carlo contract and GaiaUnlimited negative evidence remain separate from runtime physics and scientific promotion.
+- Five scale bands use independent local origins and explicit handoff anchors. OpenNGC attribution is packaged; Cosmicflows remains a local-only candidate with `publicDeploymentBlocked=true` until redistribution permission is confirmed.
+- Science Cinematic is a visual-only A/B candidate. Legacy V9 remains the default, Kerr presentation is not GRMHD, launch presentation does not change flight dynamics, and no candidate is promoted automatically.
+- The authoritative product status, build IDs, bundle gates, content-pack integrity, browser/Axe matrix, 48-frame evidence split, 30-cycle soak, RTX adapter/FPS/P95 results and counter-provenance limitations are generated in `dist/release/orbit-atlas-v262-local-candidate-evidence.json`. The human-readable rendering is `dist/release/orbit-atlas-v262-local-ab-dossier.md`.
+- Dedicated standalone, Lite boundary, mobile A/B, 48-frame visual, formal 30-cycle soak and RTX gates are recorded independently. The combined fresh config originally mixed standalone, Lite, soak and visual profiles, produced preserved negative evidence and timed out without a reporter summary. The corrected single-worker 22-test matrix then ran once against the final standalone build with `trace: on-first-retry` and returned `20 passed / 1 skipped / 1 failed` in 13.8 minutes (exit code 1). Its only failure was a mobile test routing through the hidden desktop experience-mode control. The test now branches through the visible mobile More menu, but it has not been rerun under the no-automatic-retry policy, so validation remains `blocked-fresh-matrix-not-reclosed`.
+- v262 is local only. No Vercel, production, DNS, signing or Desktop Beta action is authorized or recorded.
 
 ## v225-v232 Final Product Track
 
@@ -156,7 +206,7 @@ Current generated artifact:
 - Build source: ten deterministic Gaia DR3 random-index ranges, `astrophysical_parameters`, explicit Hipparcos best-neighbour matches and local HYG/IAU/NASA data.
 - Runtime network access: none.
 
-The visible Gaia starfield remains fixed at 1,000 / 1,800 / 3,000 objects. Search scale does not increase scene draw budgets.
+The active v255 Gaia starfield budgets are 1,000 / 4,000 / 8,000 objects with a 1,200 closeup cap. The older 1,000 / 1,800 / 3,000 values remain frozen historical v97/v100 evidence and are not rewritten. Search scale does not bypass the active bounded sector selector.
 
 ### Data tiers
 
@@ -667,6 +717,14 @@ Provenance is additive. Evidence Ledger and Validation Console expose the deep-s
 DOM contracts: the page root exposes `data-atlas-cinematic-deep-space-backdrop-version="v56-cinematic-deep-space-backdrop"`, `data-atlas-cinematic-backdrop-reference-mode`, `data-atlas-cinematic-backdrop-source-policy`, `data-atlas-cinematic-backdrop-sky-manifest`, `data-atlas-cinematic-backdrop-starfield-profile`, `data-atlas-cinematic-backdrop-nebula-profile`, `data-atlas-cinematic-backdrop-negative-space-profile`, and `data-atlas-cinematic-backdrop-boundary`. Browser acceptance verifies these markers alongside v35-v55 contracts, the preserved Kerr kernel id `eih-1pn+kerr-geodesic-v17`, desktop/mobile overflow checks, console/page-error capture, v41 focus/Axe/reduced-motion checks, selected-body close-up profile checks, non-brittle background pixel budgets, and v56 local screenshot review without committed golden snapshots.
 
 This version is a local visual backdrop pass only. Runtime reads local `public/textures` and local catalog data only, does not copy Universe Sandbox assets, does not claim a Universe Sandbox clone, online validation, online asset completeness, formal AAA art certification, WCAG certification, scientific certification, CI/runtime command status, full numerical relativity, Einstein field-equation solving, cosmological N-body, or physics mutation, and does not change `SolarSystemIntegrator`, `physicsEngine`, EIH 1PN dynamics, worker physics, stable panel ids, or the Kerr kernel id `eih-1pn+kerr-geodesic-v17`.
+
+## v255 Catalog Expansion
+
+Orbit Atlas v255 adds an independent presentation/catalog expansion over the immutable v97/v99 contracts. The generated `gaia-dr3-nearby-46000-v255` manifest records 46,000 deterministic nearby Gaia rows selected from the local catalog-v7 SQLite snapshot (46,748 finite candidates with parallax above 5 mas). The runtime loads this asset only for Orbit Atlas, Workbench/catalog or renderable deep-space intent and falls back to the historical bright-5000 asset before using placeholders; a browser network gate verifies sandbox solar makes no 46k request and Orbit Atlas makes exactly one.
+
+The active renderer remains one WebGL Canvas and one Gaia InstancedMesh. A deterministic 48x24 sky-sector index bounds camera-sector candidates at mobile 1,000, balanced 4,000 and dense 8,000 instances; selected-body closeups are capped at 1,200. The formal IAU layer remains 88 constellations. A separate 32-entry asterism layer is explicitly non-official, and composed curated presentation layers contain 96 star clusters and 128 nebula markers. None of these objects enter the SolarSystemIntegrator, Worker physics, EIH 1PN, Kerr gates or scientific fixtures.
+
+The v255 expansion is not a Gaia archive, official astrometric quality gate, formal constellation revision, scientific model upgrade or certification. Active counts, budgets and mutation boundaries are recorded in `dist/science/catalog-expansion-v255.json`; Gaia source/output hashes and selection policy are recorded in `dist/science/gaia-dr3-nearby-46000-v255.manifest.json`. v97/v99 historical lock runners continue to validate their original budgets and counts.
 
 ## v125-v130 Data, Material and Relativity Architecture
 

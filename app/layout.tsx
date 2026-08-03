@@ -17,6 +17,29 @@ const jetbrainsMono = localFont({
   variable: "--font-mono",
 });
 
+const ibmPlexSans = localFont({
+  src: [
+    { path: "../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2", weight: "400" },
+    { path: "../node_modules/@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2", weight: "600" },
+  ],
+  display: "swap",
+  variable: "--font-science-sans",
+});
+
+const ibmPlexCondensed = localFont({
+  src: "../node_modules/@fontsource/ibm-plex-sans-condensed/files/ibm-plex-sans-condensed-latin-500-normal.woff2",
+  display: "swap",
+  weight: "500",
+  variable: "--font-science-condensed",
+});
+
+const ibmPlexMono = localFont({
+  src: "../node_modules/@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2",
+  display: "swap",
+  weight: "400",
+  variable: "--font-science-mono",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://solar.wangyufan.xyz"),
   title: "Orbit Atlas | 相对论宇宙图谱",
@@ -48,7 +71,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className={jetbrainsMono.variable}>
+    <html lang="zh-CN" className={`${jetbrainsMono.variable} ${ibmPlexSans.variable} ${ibmPlexCondensed.variable} ${ibmPlexMono.variable}`}>
       <body
         className={`${inter.className} antialiased`}
         style={{

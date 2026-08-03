@@ -3,6 +3,7 @@
 import { useSyncExternalStore } from "react";
 import {
   GAIA_DR3_CATALOG_URL,
+  GAIA_DR3_LEGACY_CATALOG_URL,
   generatePlaceholderCatalog,
   loadGaiaCatalogFromJson,
   type GaiaStarCatalogData,
@@ -36,18 +37,25 @@ export function ensureGaiaCatalogLoaded(): Promise<GaiaCatalogSnapshot> {
   emit({ ...snapshot, status: "loading" });
   loadPromise = fetchAtlasAsset(GAIA_DR3_CATALOG_URL, { cache: "force-cache" })
     .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`Gaia DR3 fetch failed: ${response.status}`);
-      }
+      if (!response.ok) throw new Error(`Gaia v255 fetch failed: ${response.status}`);
       const catalog = loadGaiaCatalogFromJson(await response.text());
       setGaiaCatalogSource("gaia-dr3");
       return emit({ status: "ready", catalog, source: "gaia-dr3" });
     })
-    .catch(() => {
-      const catalog = generatePlaceholderCatalog(5000);
-      setGaiaCatalogSource("placeholder");
-      return emit({ status: "ready", catalog, source: "placeholder" });
-    });
+    .catch(() =>
+      fetchAtlasAsset(GAIA_DR3_LEGACY_CATALOG_URL, { cache: "force-cache" })
+        .then(async (response) => {
+          if (!response.ok) throw new Error(`Legacy Gaia fetch failed: ${response.status}`);
+          const catalog = loadGaiaCatalogFromJson(await response.text());
+          setGaiaCatalogSource("gaia-dr3");
+          return emit({ status: "ready", catalog, source: "gaia-dr3" });
+        })
+        .catch(() => {
+          const catalog = generatePlaceholderCatalog(5000);
+          setGaiaCatalogSource("placeholder");
+          return emit({ status: "ready", catalog, source: "placeholder" });
+        }),
+    );
   return loadPromise;
 }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import type {
   OrbitAtlasRenderBudget,
   OrbitAtlasScaleMode,
@@ -101,12 +101,22 @@ export function useSolarPresentation() {
     [persist, presentationMode, scaleMode],
   );
 
-  return {
-    presentationMode,
-    scaleMode,
-    renderBudget,
-    setPresentationMode,
-    setScaleMode,
-    setRenderBudget,
-  };
+  return useMemo(
+    () => ({
+      presentationMode,
+      scaleMode,
+      renderBudget,
+      setPresentationMode,
+      setScaleMode,
+      setRenderBudget,
+    }),
+    [
+      presentationMode,
+      renderBudget,
+      scaleMode,
+      setPresentationMode,
+      setRenderBudget,
+      setScaleMode,
+    ],
+  );
 }

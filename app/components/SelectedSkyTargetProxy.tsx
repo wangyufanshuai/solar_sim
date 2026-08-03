@@ -1,6 +1,7 @@
 "use client";
 
-import { Billboard, Html } from "@react-three/drei";
+import { Billboard } from "@react-three/drei/core/Billboard";
+import { Html } from "@react-three/drei/web/Html";
 import { useMemo } from "react";
 import type { GaiaIndexedStar } from "../lib/gaiaCatalogIndex";
 import { selectedSkyTargetDescriptor } from "../lib/selectedSkyTarget";

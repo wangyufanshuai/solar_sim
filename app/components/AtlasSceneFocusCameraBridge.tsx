@@ -11,6 +11,14 @@ import { EARTH_BODY_INDEX, MOON_BODY_INDEX, SOLAR_SYSTEM_BODIES } from "../data/
 import { CAMERA_FOCUS_BODY_EVENT, CAMERA_FOCUS_DIRECTION_EVENT, CAMERA_FOCUS_EARTH_MOON_EVENT, CAMERA_FOCUS_ORIGIN_EVENT, CAMERA_ZOOM_EVENT, type CameraFocusBodyDetail, type CameraFocusDirectionDetail, type CameraZoomDetail } from "../lib/camera-bridge";
 import { smootherstep01, type CameraFocusMode } from "../lib/cameraFocusCommand";
 import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import {
+  atlasCameraPresentationCanWriteV273,
+  getAtlasCameraPresentationLeaseV273,
+  releaseAtlasCameraPresentationLeaseV273,
+  requestAtlasCameraPresentationLeaseV273,
+  type AtlasCameraPresentationLeaseV273,
+} from "../lib/atlasCameraPresentationLeaseV273";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
 import { SKY_TARGET_CAMERA_HEIGHT_SCENE, SKY_TARGET_DISTANCE_SCENE, SKY_TARGET_ZOOM_MAX_DISTANCE_SCENE, SKY_TARGET_ZOOM_MIN_DISTANCE_SCENE, clampSkyTargetZoomDistance } from "../lib/skyTargetFocus";
 import { ORBIT_ATLAS_CAMERA_POSITION, ORBIT_ATLAS_CAMERA_TARGET, type OrbitAtlasScaleMode, type SolarPresentationMode } from "../lib/orbitAtlasPresentation";
 import {
@@ -73,10 +81,18 @@ export function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoon
   const focusStartTarget = useRef(new THREE.Vector3());
   const focusViewDirRef = useRef(new THREE.Vector3(0.28, 0.38, 0.88).normalize());
   const frameProjectionKeyRef = useRef("");
+  const focusLeaseRef = useRef<AtlasCameraPresentationLeaseV273 | null>(null);
+  const focusLeaseResourceReleaseRef = useRef<(() => void) | null>(null);
+  const focusLeaseRequestIdRef = useRef(0);
   const writeCameraMarker = useAtlasCameraRuntimeMarkerWriter();
 
   useEffect(() => () => {
     clearCameraFrameProjection(camera, frameProjectionKeyRef);
+    const lease = focusLeaseRef.current;
+    if (lease) releaseAtlasCameraPresentationLeaseV273(lease);
+    focusLeaseRef.current = null;
+    focusLeaseResourceReleaseRef.current?.();
+    focusLeaseResourceReleaseRef.current = null;
   }, [camera]);
 
   useEffect(() => {
@@ -131,6 +147,7 @@ export function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoon
     const onControlStart = () => { userControllingRef.current = true; focusRef.current = null; };
     const onControlEnd = () => { userControllingRef.current = false; };
     const onBody = (event: Event) => {
+      if (!atlasCameraPresentationCanWriteV273("focus-lock")) return;
       const detail = (event as CustomEvent<CameraFocusBodyDetail>).detail;
       if (detail?.bodyIndex == null || detail.bodyIndex < 0) return;
       const mode: FocusMode = detail.mode === "inspect" ? "inspect" : detail.mode === "lock" ? "lock" : "orbit";
@@ -156,12 +173,14 @@ export function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoon
       };
     };
     const onEarthMoon = () => {
+      if (!atlasCameraPresentationCanWriteV273("focus-lock")) return;
       clearLock(); captureFocusStart();
       const now = performance.now();
       focusRef.current = { kind: "earthMoon", start: now, until: now + runtimeFocusDurationMs(Math.PI / 2, 4, focusViewport) };
       atlasRuntimeStore.setFocusTransition("transition");
     };
     const onDirection = (event: Event) => {
+      if (!atlasCameraPresentationCanWriteV273("focus-lock")) return;
       const detail = (event as CustomEvent<CameraFocusDirectionDetail>).detail;
       if (!detail?.direction) return;
       const direction = new THREE.Vector3(...detail.direction);
@@ -237,9 +256,36 @@ useEffect(() => {
   useFrame((_, dt) => {
     const controls = controlsRef.current;
     if (!controls) return;
+    const request = cameraBodyFocusRequest;
+    const pendingRequest = Boolean(request && request.nonce !== lastRequestNonceRef.current);
+    const focusActive = pendingRequest || focusRef.current !== null || lockBodyIndexRef.current !== null || skyLockDirectionRef.current !== null;
+    const currentLease = getAtlasCameraPresentationLeaseV273();
+    if (focusActive) {
+      if (currentLease && currentLease.owner !== "focus-lock") return;
+      if (!focusLeaseRef.current || currentLease?.token !== focusLeaseRef.current.token) {
+        if (focusLeaseRef.current) releaseAtlasCameraPresentationLeaseV273(focusLeaseRef.current);
+        focusLeaseRef.current = null;
+        focusLeaseResourceReleaseRef.current?.();
+        focusLeaseResourceReleaseRef.current = null;
+        const lease = requestAtlasCameraPresentationLeaseV273("focus-lock", ++focusLeaseRequestIdRef.current);
+        if (!lease.active) return;
+        focusLeaseRef.current = lease;
+        focusLeaseResourceReleaseRef.current = acquireAtlasResource(
+          "camera-lock",
+          atlasRuntimeStore.getSnapshot().sceneMode,
+          `focus-lock-v273-${lease.requestId}`,
+          { owner: "camera-presentation" },
+        );
+      }
+    } else if (focusLeaseRef.current) {
+      releaseAtlasCameraPresentationLeaseV273(focusLeaseRef.current);
+      focusLeaseRef.current = null;
+      focusLeaseResourceReleaseRef.current?.();
+      focusLeaseResourceReleaseRef.current = null;
+    }
+    if (!atlasCameraPresentationCanWriteV273("focus-lock")) return;
     const p = physicsRef.current;
     if (!p) return;
-    const request = cameraBodyFocusRequest;
     if (request && request.nonce !== lastRequestNonceRef.current) {
       lastRequestNonceRef.current = request.nonce;
       focusRef.current = null;

@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -37,8 +38,8 @@ describe("v91 offline/runtime boundary audit", () => {
     ].join("\n");
     const surfaceText = [
       readFileSync(resolve(process.cwd(), "app/UniverseRuntimeController.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/components/RelativityObservableAtlasPanel.tsx"), "utf8"),
-      readFileSync(resolve(process.cwd(), "app/lib/evidenceLedger.ts"), "utf8"),
+      readProjectSourceBundle("app/components/RelativityObservableAtlasPanel.tsx"),
+      readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasValidationConsole.ts"), "utf8"),
       readFileSync(resolve(process.cwd(), "app/lib/atlasOfflineRuntimeBoundaryAudit.ts"), "utf8"),
     ].join("\n");

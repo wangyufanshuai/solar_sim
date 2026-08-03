@@ -59,4 +59,4 @@ NEXT_PUBLIC_PLANET_TEXTURE_BASE=/textures/planets/nasa-hd
 
 Copy or symlink the other bodies’ `mercury.jpg` … `neptune.jpg`, `moon.jpg` into that same folder (e.g. from `npm run fetch-planet-textures`), so every `id` resolves. For PNG maps: `NEXT_PUBLIC_PLANET_TEXTURE_EXT=png`.
 
-Other worlds: use [NASA Photojournal](https://photojournal.jpl.nasa.gov/), [NASA SVS](https://svs.gsfc.nasa.gov), [USGS Astrogeology](https://astrogeology.usgs.gov/) — export or convert to equirectangular **JPG/PNG** with the same filenames as the table above. Check each product’s **use policy** (many NASA media are public domain; some composites may request attribution).
+Other worlds: use [NASA Photojournal](https://photojournal.jpl.nasa.gov/), [NASA SVS](https://svs.gsfc.nasa.gov/), [USGS Astrogeology](https://astrogeology.usgs.gov/) — export or convert to equirectangular **JPG/PNG** with the same filenames as the table above. Check each product’s **use policy** (many NASA media are public domain; some composites may request attribution).

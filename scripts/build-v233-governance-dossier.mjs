@@ -74,7 +74,9 @@ const inventory = {
 const dossier = {
   version: "v233-release-governance-dossier",
   generatedAt: inventory.generatedAt,
-  status: "governance-verified-product-candidate-science-shadow-retained",
+  status: evidence.denseKerr.campaignStatus === "failed"
+    ? "governance-verified-product-candidate-science-failed-shadow-retained"
+    : "governance-verified-product-candidate-science-shadow-retained",
   releaseLabelsApplied: { webGa: false, desktopBeta: false, researchPromotion: false },
   currentEvidence: {
     file: evidenceFile,
@@ -91,9 +93,11 @@ const dossier = {
   },
   product: evidence.product,
   science: {
-    decision: evidence.promotionInput.perBodyNoRegression && evidence.promotionInput.supportingGatesPassed
-      ? "promotion-qualified-not-applied"
-      : "shadow-retained",
+    decision: evidence.denseKerr.campaignStatus === "failed"
+      ? "failed-shadow-retained"
+      : evidence.promotionInput.perBodyNoRegression && evidence.promotionInput.supportingGatesPassed
+        ? "promotion-qualified-not-applied"
+        : "shadow-retained",
     weakField: evidence.weakField,
     denseKerr: evidence.denseKerr,
     variationalStm: evidence.variationalStm,
@@ -105,11 +109,13 @@ const dossier = {
     categoryCounts,
   },
   blockers: [
-    "Dense Kerr release execution is incomplete; partial results are not aggregated.",
+    evidence.denseKerr.campaignStatus === "failed"
+      ? `Dense Kerr V8 failed at shard ${evidence.denseKerr.failedShardIndex}; ${evidence.denseKerr.failedShardEvidence?.watchdogTimeoutExecutionCount ?? 0} watchdog timeouts are retained as immutable negative evidence and automatic retry is prohibited.`
+      : "Dense Kerr release execution is incomplete; partial results are not aggregated.",
     "Variational STM evidence is smoke-only; 30-day calibration and ten-year blind qualification are pending.",
     "The worktree has no authorized Git release baseline.",
-    "Vercel preview, domain migration, DNS rollback, signing and external Windows install QA were not performed.",
-    "Standalone and Lite pass 600 KiB but have not reached the 590 KiB engineering target.",
+    "Vercel Lite staging is verified at 599 files / 71.9 MiB with no loopback fallback, but Preview deployment is not confirmed: the claimable upload returned no URL or deployment id and the official CLI credential check timed out without output.",
+    "Production deployment, domain migration, DNS rollback, signing and external Windows install QA were not performed.",
   ],
   boundary: "local-governance-evidence-only-no-deployment-signing-or-git-mutation",
 };
@@ -130,7 +136,10 @@ Status: **${dossier.status}**
 - Manifest SHA-256: \`${evidence.manifestSha256}\`
 - Default scientific kernel: \`legacy-eih-1pn\`
 - Scientific status: **${dossier.science.decision}**
-- Dense Kerr: **${evidence.denseKerr.completedReleaseShardCount}/${evidence.denseKerr.plannedShardCount} shards**, ${evidence.denseKerr.completedRayCount}/${evidence.denseKerr.plannedRayCount} rays, no partial aggregation
+- Dense Kerr campaign: **${evidence.denseKerr.campaignStatus}**
+- Dense Kerr accepted coverage: **${evidence.denseKerr.completedReleaseShardCount}/${evidence.denseKerr.plannedShardCount} shards**, ${evidence.denseKerr.completedRayCount}/${evidence.denseKerr.plannedRayCount} rays, no partial aggregation
+- Dense Kerr attempted coverage: **${evidence.denseKerr.attemptedRayCount} rays / ${evidence.denseKerr.attemptedExecutionCount} executions**
+- Dense Kerr failed shard: **${evidence.denseKerr.failedShardIndex ?? "none"}**, watchdog timeouts ${evidence.denseKerr.failedShardEvidence?.watchdogTimeoutExecutionCount ?? 0}, automatic retry ${evidence.denseKerr.noAutomaticRetry ? "prohibited" : "not recorded"}
 - Variational STM: **${evidence.variationalStm.profile}**, release qualification ${evidence.variationalStm.releaseQualificationAvailable ? "available" : "pending"}
 - Weak-field per-body regressions: **${evidence.weakField.perBodyRegressionCount}**
 
@@ -139,6 +148,8 @@ Status: **${dossier.status}**
 - Content packs: ${evidence.product.contentPacks.verifiedFileCount}/${evidence.product.contentPacks.manifestFileCount}
 - Standalone Canvas-ready JavaScript: ${evidence.product.bundles.standaloneTransferBytes} B
 - Lite Canvas-ready JavaScript: ${evidence.product.bundles.liteTransferBytes} B
+- v255 catalog expansion: Gaia ${evidence.product.catalogExpansion.gaiaRowCount}; IAU ${evidence.product.catalogExpansion.iauConstellationCount}; asterisms ${evidence.product.catalogExpansion.asterismCount}; clusters ${evidence.product.catalogExpansion.starClusterCount}; nebulae ${evidence.product.catalogExpansion.nebulaCount}
+- v255 active Gaia budgets: mobile ${evidence.product.catalogExpansion.activeRenderBudget.mobile}; balanced ${evidence.product.catalogExpansion.activeRenderBudget.balanced}; dense ${evidence.product.catalogExpansion.activeRenderBudget.dense}; closeup ${evidence.product.catalogExpansion.activeRenderBudget.closeup}
 - Local product gates: ${evidence.product.localProductGatesPassed ? "passed" : "failed"}
 
 ## Compatibility boundary
@@ -147,6 +158,16 @@ Status: **${dossier.status}**
 - Current research progress is published on the non-root evidence surface.
 - Root key hash remains \`${dossier.contracts.rootKeyHash}\`.
 - No runtime or Worker physics, frozen scientific gate, fixture, V9 asset or visual budget was modified.
+
+## Evidence precedence
+
+1. Terminal aggregate/STM evidence when available; otherwise terminal campaign progress plus immutable failed-shard evidence.
+2. Research campaign V13.
+3. Current evidence V233.
+4. This governance dossier.
+5. README and Technical Overview summaries.
+
+Historical V6/V7 reports remain immutable negative evidence and cannot replace the current authority.
 
 ## Dirty worktree inventory
 
@@ -157,7 +178,7 @@ ${Object.entries(categoryCounts).map(([category, count]) => `- ${category}: ${co
 
 ${dossier.blockers.map((blocker) => `- ${blocker}`).join("\n")}
 
-No deployment, signing, staging, commit, reset, revert or clean operation was performed.
+No confirmed deployment URL or id was produced. No production deployment, DNS migration, signing, Git staging, commit, reset, revert or clean operation was performed.
 `;
 await writeFile(fromRoot(markdownFile), markdown);
 const checksumFile = "dist/release/orbit-atlas-v233-governance.sha256";

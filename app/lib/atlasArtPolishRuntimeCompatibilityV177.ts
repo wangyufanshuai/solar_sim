@@ -12,3 +12,7 @@ export const ATLAS_ART_POLISH_RUNTIME_OPACITY_CAPS_V177: AtlasArtPolishOpacityCa
   dense: 1.2,
   closeup: 0.18,
 } as const;
+
+// Compatibility alias for the frozen closeup cap used by presentation-only
+// surfaces. This module stays outside the historical evidence graph.
+export const ATLAS_ART_POLISH_OPACITY_CAPS = ATLAS_ART_POLISH_RUNTIME_OPACITY_CAPS_V177;

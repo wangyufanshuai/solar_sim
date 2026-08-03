@@ -1,5 +1,4 @@
 "use client";
-
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useMemo, useRef, useEffect } from "react";
@@ -19,7 +18,14 @@ import type {
   KerrGeodesicTrack,
 } from "../lib/simulationDiagnosticsTypes";
 import { KerrRayTraceRendererV3 } from "./KerrRayTraceRendererV3";
+import { KerrStrongGravityRendererV299 } from "./KerrStrongGravityRendererV299";
 import type { KerrRayTraceQualityV3 } from "../lib/kerrRayTraceV3";
+import type { StrongGravityRenderModeV299 } from "../lib/strongGravityRenderingV299";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
+import { acquireAtlasTextureResourceV289 } from "../lib/atlasResourceLifecycle";
+import { createKerrFlowNoiseTextureV299 } from "../lib/kerrCinematicNoiseV299";
 
 /** Fixed demo offset (AU) so the BH does not disturb the solar N-body ephemeris. */
 export const KERR_BLACK_HOLE_OFFSET_AU: readonly [number, number, number] = [
@@ -37,25 +43,6 @@ const RK_A1 = new THREE.Vector3();
 const RK_A2 = new THREE.Vector3();
 const RK_A3 = new THREE.Vector3();
 const RK_A4 = new THREE.Vector3();
-
-function createFlowNoiseTexture(): THREE.DataTexture {
-  const w = 64;
-  const h = 64;
-  const data = new Uint8Array(w * h * 4);
-  for (let i = 0; i < w * h; i++) {
-    data[i * 4] = Math.floor(Math.random() * 256);
-    data[i * 4 + 1] = Math.floor(Math.random() * 256);
-    data[i * 4 + 2] = Math.floor(Math.random() * 200 + 28);
-    data[i * 4 + 3] = 255;
-  }
-  const tex = new THREE.DataTexture(data, w, h, THREE.RGBAFormat);
-  tex.wrapS = THREE.RepeatWrapping;
-  tex.wrapT = THREE.RepeatWrapping;
-  tex.minFilter = THREE.LinearFilter;
-  tex.magFilter = THREE.LinearFilter;
-  tex.needsUpdate = true;
-  return tex;
-}
 
 const ergosphereVert = /* glsl */ `
 uniform float uChi;
@@ -392,6 +379,7 @@ export type KerrBlackHoleRuntimeProps = {
   isPlaying: boolean;
   daysPerSecond: number;
   rayTraceQuality?: KerrRayTraceQualityV3;
+  strongGravityRenderMode?: StrongGravityRenderModeV299;
 };
 
 export default function KerrBlackHole({
@@ -405,9 +393,22 @@ export default function KerrBlackHole({
   isPlaying,
   daysPerSecond,
   rayTraceQuality = "interactive",
+  strongGravityRenderMode = "cinematic",
 }: KerrBlackHoleRuntimeProps) {
   const groupRef = useRef<THREE.Group>(null);
   const ergoMatRef = useRef<THREE.ShaderMaterial>(null);
+  const visualRendererProfile = useAtlasRuntimeStore(
+    (snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile),
+  );
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualRendererProfile.id,
+    group: "strongGravity",
+    consumer: "KerrBlackHole",
+    tokenSignature: createAtlasVisualTokenSignatureV300({
+      base: visualRendererProfile.runtimeTokens.strongGravity,
+      cinematic: visualRendererProfile.runtimeTokens.strongGravityV6 ?? visualRendererProfile.runtimeTokens.strongGravityV5 ?? null,
+    }),
+  });
 
   const posBuf = useRef<Float32Array>(new Float32Array(PARTICLE_COUNT * 3));
   const velBuf = useRef<Float32Array>(new Float32Array(PARTICLE_COUNT * 3));
@@ -444,16 +445,25 @@ export default function KerrBlackHole({
   const showGeodesicTracks = renderMode !== "teaching-particles";
   const showTeachingParticles = renderMode !== "geodesic-tracks";
 
-  const flowNoiseTex = useMemo(() => createFlowNoiseTexture(), []);
+  const flowNoiseTex = useMemo(() => createKerrFlowNoiseTextureV299(), []);
 
   useEffect(
-    () => () => {
+    () => {
       const material = ergoMatRef.current;
-      if (material) {
-        material.uniforms.uFlowNoise.value = null;
-        material.dispose();
-      }
-      flowNoiseTex.dispose();
+      const releaseTexture = acquireAtlasTextureResourceV289(
+        flowNoiseTex,
+        "kerr",
+        "kerr-flow-noise-v289",
+        "strong-gravity",
+      );
+      return () => {
+        if (material) {
+          material.uniforms.uFlowNoise.value = null;
+          material.dispose();
+        }
+        releaseTexture();
+        flowNoiseTex.dispose();
+      };
     },
     [flowNoiseTex]
   );
@@ -497,6 +507,9 @@ export default function KerrBlackHole({
       mat.uniforms.uHorizonRadius.value = horizonScene;
       mat.uniforms.uRgScene.value = rgScene;
       mat.uniforms.uTime.value = state.clock.elapsedTime;
+      mat.uniforms.uOpacity.value = visualRendererProfile.runtimeTokens.strongGravity.opacity;
+      mat.uniforms.uFlowSpeed.value = visualRendererProfile.runtimeTokens.strongGravity.flowSpeed;
+      mat.uniforms.uFlowStrength.value = visualRendererProfile.runtimeTokens.strongGravity.flowStrength;
     }
 
     if (!showTeachingParticles || !isPlaying || daysPerSecond <= 0) return;
@@ -532,7 +545,11 @@ export default function KerrBlackHole({
 
   return (
     <group ref={groupRef} position={worldPos}>
-      <KerrRayTraceRendererV3 radiusScene={horizonScene} spinA={aOverM} quality={rayTraceQuality} />
+      {visualRendererProfile.v5TokensApplied || strongGravityRenderMode === "science" ? (
+        <KerrStrongGravityRendererV299 mode={strongGravityRenderMode} radiusScene={horizonScene} spinA={aOverM} quality={rayTraceQuality} />
+      ) : (
+        <KerrRayTraceRendererV3 radiusScene={horizonScene} spinA={aOverM} quality={rayTraceQuality} />
+      )}
       <mesh renderOrder={-18}>
         <sphereGeometry args={[horizonScene * 1.002, 48, 48]} />
         <meshBasicMaterial color="#030308" depthWrite />

@@ -17,6 +17,7 @@ import {
 } from "./physicsSnapshot";
 import { PHYSICS_ACTIVE_BODY_COUNT } from "./physicsSharedBuffer";
 import type { SolarSystemPhysicsRef } from "./solarSystemRef";
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
 
 const TIME_TRAVEL_LIVE_U = 0.9995;
 
@@ -52,14 +53,22 @@ export function useAtlasSimulationSession({
       type: "application/json",
     });
     const url = URL.createObjectURL(blob);
+    const releaseUrl = acquireAtlasResource("object-url", "atlas", "simulation-state-export", {
+      owner: "export",
+      estimatedBytes: blob.size,
+    });
     const anchor = document.createElement("a");
-    anchor.href = url;
-    anchor.download = `solar-system-state-${new Date()
-      .toISOString()
-      .slice(0, 19)
-      .replace(/:/g, "-")}.json`;
-    anchor.click();
-    URL.revokeObjectURL(url);
+    try {
+      anchor.href = url;
+      anchor.download = `solar-system-state-${new Date()
+        .toISOString()
+        .slice(0, 19)
+        .replace(/:/g, "-")}.json`;
+      anchor.click();
+    } finally {
+      URL.revokeObjectURL(url);
+      releaseUrl();
+    }
   }, [physicsRef, simDaysRef]);
 
   const handleImportStateFile = useCallback(

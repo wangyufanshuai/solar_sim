@@ -1,3 +1,4 @@
+import { readProjectSourceBundle } from "../test-utils/sourceBundles";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -17,7 +18,7 @@ describe("v115 runtime scene focus performance heavy audit", () => {
       universeCanvasText: read("app/components/UniverseCanvas.tsx"),
       universeSandboxHudText: read("app/components/UniverseSandboxHud.tsx"),
       cameraFocusCommandText: read("app/lib/cameraFocusCommand.ts"),
-      evidenceText: read("app/lib/evidenceLedger.ts"),
+      evidenceText: readProjectSourceBundle("app/lib/evidenceLedger.ts"),
       validationText: read("app/lib/atlasValidationConsole.ts"),
       docsText: `${read("README.md")}\n${read("docs/TECHNICAL_OVERVIEW.md")}`,
       browserSpecText: read("tests/atlas-browser/atlas-browser-acceptance.spec.ts"),

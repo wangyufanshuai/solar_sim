@@ -8,12 +8,17 @@ describe("v230 compact relativity evidence", () => {
     const evidence = ATLAS_RELATIVITY_RESEARCH_STATUS_V230;
     expect(evidence.defaultSolarKernel).toBe("legacy-eih-1pn");
     expect(evidence.runtimePromotionApplied).toBe(false);
-    expect(evidence.denseKerr.completedReleaseShardCount).toBe(0);
+    expect(evidence.denseKerr.campaignStatus).toBe("failed");
+    expect(evidence.denseKerr.completedReleaseShardCount).toBe(3);
+    expect(evidence.denseKerr.completedRayCount).toBe(192);
+    expect(evidence.denseKerr.attemptedRayCount).toBe(256);
+    expect(evidence.denseKerr.failedShardEvidence?.watchdogTimeoutExecutionCount).toBe(4);
+    expect(evidence.denseKerr.noAutomaticRetry).toBe(true);
     expect(evidence.denseKerr.shortGatePassed).toBe(true);
     expect(evidence.denseKerr.partialResultsAggregated).toBe(false);
     expect(evidence.denseKerr.gatePassed).toBe(false);
     expect(evidence.variationalStm.gatePassed).toBe(false);
-    expect(evidence.releaseClassification).toContain("research-candidate-shadow-retained");
+    expect(evidence.releaseClassification).toContain("science-failed-shadow-retained");
   });
 
   it("freezes the dense manifest and integrated STM dimensions", () => {

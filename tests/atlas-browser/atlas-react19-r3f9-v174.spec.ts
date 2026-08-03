@@ -1,4 +1,4 @@
-import { expect, test } from "@playwright/test";
+import { expect, test } from "./atlasBrowserTestV263";
 
 test("Next 15 App Router mounts the React 19 / R3F 9 Canvas", async ({ page }) => {
   const errors: string[] = [];
