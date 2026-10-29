@@ -58,10 +58,14 @@ export function BloomSceneProvider({ children }: { children: ReactNode }) {
   );
 
   const state = useMemo(
-    () => ({
-      bloomTargets: Array.from(bloomSetRef.current),
-      sunLight: sunLightRef.current,
-    }),
+    () => {
+      // registryVersion invalidates this snapshot of mutable refs.
+      void registryVersion;
+      return {
+        bloomTargets: Array.from(bloomSetRef.current),
+        sunLight: sunLightRef.current,
+      };
+    },
     [registryVersion]
   );
 
@@ -82,7 +86,7 @@ export function useBloomScene(): BloomSceneValue {
   }
   return useMemo(
     () => ({ ...actions, ...st }),
-    [actions, st.bloomTargets, st.sunLight]
+    [actions, st]
   );
 }
 

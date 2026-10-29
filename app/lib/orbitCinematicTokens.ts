@@ -1,4 +1,5 @@
 import * as THREE from "three";
+import { SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 
 /**
  * Global orbit trail opacity before LOD / selection / body-size boost.
@@ -8,6 +9,24 @@ export const ORBIT_CINEMATIC_BASE_OPACITY = 0.12;
 /** Spline resampling bounds for closed orbit polylines. */
 export const ORBIT_SPLINE_MAX_SAMPLES = 500;
 export const ORBIT_SPLINE_MIN_SAMPLES = 80;
+
+export const ORBIT_VELOCITY_MIN_KM_S = 0.5;
+export const ORBIT_VELOCITY_MAX_KM_S = 60;
+
+export function normalizeOrbitVelocityKmS(speedKmS: number): number {
+  if (!Number.isFinite(speedKmS) || speedKmS <= ORBIT_VELOCITY_MIN_KM_S) return 0;
+  const minLog = Math.log1p(ORBIT_VELOCITY_MIN_KM_S);
+  const maxLog = Math.log1p(ORBIT_VELOCITY_MAX_KM_S);
+  return THREE.MathUtils.clamp((Math.log1p(speedKmS) - minLog) / (maxLog - minLog), 0, 1);
+}
+
+export function orbitVelocityColor(normalizedSpeed: number): THREE.Color {
+  const t = THREE.MathUtils.clamp(normalizedSpeed, 0, 1);
+  const cold = new THREE.Color("#65c7d4");
+  const mid = new THREE.Color("#d9b45f");
+  const hot = new THREE.Color("#ef765f");
+  return t < 0.5 ? cold.lerp(mid, t * 2) : mid.lerp(hot, (t - 0.5) * 2);
+}
 
 /**
  * Body-ID → orbit trail color.
@@ -123,13 +142,8 @@ export function orbitHairlineColorForReferenceId(id: string): THREE.Color {
  * Backward-compatible: maps body index to body ID, then looks up color.
  */
 export function orbitHairlineColorForBodyIndex(bodyIndex: number): THREE.Color {
-  try {
-    const { SOLAR_SYSTEM_BODIES } = require("../data/planetsJ2000");
-    const def = SOLAR_SYSTEM_BODIES[bodyIndex];
-    if (def) return orbitColorForBodyId(def.id);
-  } catch {
-    // Fall through to hash-based fallback
-  }
+  const def = SOLAR_SYSTEM_BODIES[bodyIndex];
+  if (def) return orbitColorForBodyId(def.id);
   return orbitColorForBodyId(`body-${bodyIndex}`);
 }
 

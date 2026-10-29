@@ -1,3 +1,9 @@
+# 服务器候选分支（Node.js + Nginx）
+
+本分支为 A 线美术的私有服务器候选。请先阅读 [Ubuntu / Debian 部署说明](docs/SERVER-CANDIDATE.md)。使用 Node.js 24.x，并单独传输带 SHA-256 的完整静态资源包；运行 npm run build:server-candidate，不要把原 Windows 构建搬到 Linux。人工、最终权利、实体设备和公开发布仍待验收。
+
+以下为项目原有说明。
+
 # Solar Sim
 
 Solar Sim 是一个直接运行在浏览器中的太阳系物理与可视化项目。它使用 Next.js、React Three Fiber、Three.js 和 TypeScript 构建，目标是在 Web 中提供接近 Universe Sandbox 的太阳系观察、星体锁定放大、轨道、发射和深空背景体验，同时保留完整源码、资源和物理管线的可改造能力。

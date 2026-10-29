@@ -1,0 +1,52 @@
+{
+  "schema": "mainline-a-r65-long-run-v643",
+  "version": "v643-mainline-a-r65-independent-long-run-lifecycle",
+  "generatedAt": "2026-09-29T10:10:12.006Z",
+  "build": {
+    "buildId": "pending-r65-v643",
+    "runtimeBuildId": "pending-runtime-r65-v643",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "route": "/",
+    "source": "release-receipt"
+  },
+  "requestedDevices": [
+    "desktop",
+    "mobile"
+  ],
+  "requestedObservations": 2,
+  "minDurationMs": 1800000,
+  "observations": [],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "physicalDevicePromotion": "closed"
+  },
+  "status": "pending",
+  "evidenceClass": "browser-runtime-long-run-observation",
+  "staticEvidence": {
+    "schemaValid": true,
+    "digest": "d58741fa",
+    "verifiedAt": "2026-09-29T10:10:12.006Z"
+  },
+  "blockers": [],
+  "claims": {
+    "desktopViewport": false,
+    "mobileViewport": false,
+    "twoIndependentLongRuns": false,
+    "resourceLifecycle": false,
+    "physicalMobile": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  },
+  "notes": [
+    "R65 requires two independent browser-runtime observations of at least thirty minutes.",
+    "A mobile viewport remains simulated viewport evidence; physical mobile is a separate gate.",
+    "This receipt never promotes candidate art or writes scientific payloads."
+  ]
+}

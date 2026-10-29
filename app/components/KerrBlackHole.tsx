@@ -1,5 +1,4 @@
 "use client";
-
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useMemo, useRef, useEffect } from "react";
@@ -10,10 +9,27 @@ import {
   schwarzschildRadiusMeters,
 } from "../lib/kerrGeometry";
 import { kerrWeakFieldAcceleration } from "../lib/kerrFrameDraggingAccel";
+import { kerrOuterHorizonRadiusM } from "../lib/kerrGeodesicKernel";
+import { createKerrGeodesicTrackSet } from "../lib/kerrGeodesicVisualization";
+import type {
+  KerrGeodesicTrackKind,
+  KerrGeodesicRenderMode,
+  KerrOrbitPresetId,
+  KerrGeodesicTrack,
+} from "../lib/simulationDiagnosticsTypes";
+import { KerrRayTraceRendererV3 } from "./KerrRayTraceRendererV3";
+import { KerrStrongGravityRendererV299 } from "./KerrStrongGravityRendererV299";
+import type { KerrRayTraceQualityV3 } from "../lib/kerrRayTraceV3";
+import type { StrongGravityRenderModeV299 } from "../lib/strongGravityRenderingV299";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
+import { acquireAtlasTextureResourceV289 } from "../lib/atlasResourceLifecycle";
+import { createKerrFlowNoiseTextureV299 } from "../lib/kerrCinematicNoiseV299";
 
 /** Fixed demo offset (AU) so the BH does not disturb the solar N-body ephemeris. */
 export const KERR_BLACK_HOLE_OFFSET_AU: readonly [number, number, number] = [
-  52, 5, 0,
+  0, 0, 0,
 ];
 
 const SUN_MASS_KG = 1.98847e30;
@@ -27,25 +43,6 @@ const RK_A1 = new THREE.Vector3();
 const RK_A2 = new THREE.Vector3();
 const RK_A3 = new THREE.Vector3();
 const RK_A4 = new THREE.Vector3();
-
-function createFlowNoiseTexture(): THREE.DataTexture {
-  const w = 64;
-  const h = 64;
-  const data = new Uint8Array(w * h * 4);
-  for (let i = 0; i < w * h; i++) {
-    data[i * 4] = Math.floor(Math.random() * 256);
-    data[i * 4 + 1] = Math.floor(Math.random() * 256);
-    data[i * 4 + 2] = Math.floor(Math.random() * 200 + 28);
-    data[i * 4 + 3] = 255;
-  }
-  const tex = new THREE.DataTexture(data, w, h, THREE.RGBAFormat);
-  tex.wrapS = THREE.RepeatWrapping;
-  tex.wrapT = THREE.RepeatWrapping;
-  tex.minFilter = THREE.LinearFilter;
-  tex.magFilter = THREE.LinearFilter;
-  tex.needsUpdate = true;
-  return tex;
-}
 
 const ergosphereVert = /* glsl */ `
 uniform float uChi;
@@ -263,23 +260,155 @@ function seedParticles(
   }
 }
 
+function KerrGeodesicTrackVisual({
+  track,
+  scaleMToScene,
+  opacityScale,
+  pointScale,
+}: {
+  track: KerrGeodesicTrack;
+  scaleMToScene: number;
+  opacityScale: number;
+  pointScale: number;
+}) {
+  const geometry = useMemo(() => {
+    const positions = new Float32Array(track.samples.length * 3);
+    for (let i = 0; i < track.samples.length; i++) {
+      const sample = track.samples[i]!;
+      const o = i * 3;
+      positions[o] = sample.x * scaleMToScene;
+      positions[o + 1] = sample.y * scaleMToScene;
+      positions[o + 2] = sample.z * scaleMToScene;
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return g;
+  }, [scaleMToScene, track.samples]);
+
+  const haloLineMaterial = useMemo(
+    () =>
+      new THREE.LineBasicMaterial({
+        color: track.haloColor,
+        transparent: true,
+        opacity: track.opacity * 0.28 * opacityScale,
+        depthTest: false,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    [opacityScale, track.haloColor, track.opacity],
+  );
+
+  const coreLineMaterial = useMemo(
+    () =>
+      new THREE.LineBasicMaterial({
+        color: track.color,
+        transparent: true,
+        opacity: track.opacity * opacityScale,
+        depthTest: false,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending,
+      }),
+    [opacityScale, track.color, track.opacity],
+  );
+
+  const haloLine = useMemo(() => {
+    const line = new THREE.Line(geometry, haloLineMaterial);
+    line.renderOrder = -15;
+    line.frustumCulled = false;
+    return line;
+  }, [geometry, haloLineMaterial]);
+
+  const coreLine = useMemo(() => {
+    const line = new THREE.Line(geometry, coreLineMaterial);
+    line.renderOrder = -13;
+    line.frustumCulled = false;
+    return line;
+  }, [coreLineMaterial, geometry]);
+
+  useEffect(
+    () => () => {
+      geometry.dispose();
+      haloLineMaterial.dispose();
+      coreLineMaterial.dispose();
+    },
+    [coreLineMaterial, geometry, haloLineMaterial],
+  );
+
+  const pointSize = Math.max(1.05, track.width * 1.08 * pointScale);
+
+  return (
+    <group renderOrder={-15} frustumCulled={false}>
+      <primitive object={haloLine} />
+      <points geometry={geometry} renderOrder={-14} frustumCulled={false}>
+        <pointsMaterial
+          color={track.haloColor}
+          size={pointSize * 2.7}
+          sizeAttenuation={false}
+          transparent
+          opacity={track.opacity * 0.13 * opacityScale}
+          depthTest={false}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </points>
+      <primitive object={coreLine} />
+      <points geometry={geometry} renderOrder={-12} frustumCulled={false}>
+        <pointsMaterial
+          color={track.color}
+          size={pointSize}
+          sizeAttenuation={false}
+          transparent
+          opacity={track.opacity * 0.82 * opacityScale}
+          depthTest={false}
+          depthWrite={false}
+          blending={THREE.AdditiveBlending}
+        />
+      </points>
+    </group>
+  );
+}
+
 export type KerrBlackHoleRuntimeProps = {
   massSolar: number;
   aOverM: number;
+  impactParameterM: number;
+  orbitPresetId: KerrOrbitPresetId;
+  highlightTrackKind: KerrGeodesicTrackKind | null;
   frameDragTeachingScale: number;
+  renderMode: KerrGeodesicRenderMode;
   isPlaying: boolean;
   daysPerSecond: number;
+  rayTraceQuality?: KerrRayTraceQualityV3;
+  strongGravityRenderMode?: StrongGravityRenderModeV299;
 };
 
 export default function KerrBlackHole({
   massSolar,
   aOverM,
+  impactParameterM,
+  orbitPresetId,
+  highlightTrackKind,
   frameDragTeachingScale,
+  renderMode,
   isPlaying,
   daysPerSecond,
+  rayTraceQuality = "interactive",
+  strongGravityRenderMode = "cinematic",
 }: KerrBlackHoleRuntimeProps) {
   const groupRef = useRef<THREE.Group>(null);
   const ergoMatRef = useRef<THREE.ShaderMaterial>(null);
+  const visualRendererProfile = useAtlasRuntimeStore(
+    (snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile),
+  );
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualRendererProfile.id,
+    group: "strongGravity",
+    consumer: "KerrBlackHole",
+    tokenSignature: createAtlasVisualTokenSignatureV300({
+      base: visualRendererProfile.runtimeTokens.strongGravity,
+      cinematic: visualRendererProfile.runtimeTokens.strongGravityV6 ?? visualRendererProfile.runtimeTokens.strongGravityV5 ?? null,
+    }),
+  });
 
   const posBuf = useRef<Float32Array>(new Float32Array(PARTICLE_COUNT * 3));
   const velBuf = useRef<Float32Array>(new Float32Array(PARTICLE_COUNT * 3));
@@ -301,11 +430,40 @@ export default function KerrBlackHole({
     [massSolar]
   );
 
-  const flowNoiseTex = useMemo(() => createFlowNoiseTexture(), []);
+  const trackSet = useMemo(
+    () => createKerrGeodesicTrackSet({ spinA: aOverM, impactParameterM, presetId: orbitPresetId }),
+    [aOverM, impactParameterM, orbitPresetId],
+  );
+  const scaleMToScene = useMemo(
+    () =>
+      Math.max(
+        horizonScene / Math.max(1e-6, kerrOuterHorizonRadiusM(aOverM)),
+        Math.min(1.25, horizonScene * 2.8),
+      ),
+    [aOverM, horizonScene],
+  );
+  const showGeodesicTracks = renderMode !== "teaching-particles";
+  const showTeachingParticles = renderMode !== "geodesic-tracks";
+
+  const flowNoiseTex = useMemo(() => createKerrFlowNoiseTextureV299(), []);
 
   useEffect(
-    () => () => {
-      flowNoiseTex.dispose();
+    () => {
+      const material = ergoMatRef.current;
+      const releaseTexture = acquireAtlasTextureResourceV289(
+        flowNoiseTex,
+        "kerr",
+        "kerr-flow-noise-v289",
+        "strong-gravity",
+      );
+      return () => {
+        if (material) {
+          material.uniforms.uFlowNoise.value = null;
+          material.dispose();
+        }
+        releaseTexture();
+        flowNoiseTex.dispose();
+      };
     },
     [flowNoiseTex]
   );
@@ -333,6 +491,8 @@ export default function KerrBlackHole({
     return g;
   }, []);
 
+  useEffect(() => () => pointsGeom.dispose(), [pointsGeom]);
+
   useEffect(() => {
     seedParticles(posBuf.current, velBuf.current, horizonScene, massKg, mps);
     const attr = pointsGeom.getAttribute("position") as THREE.BufferAttribute;
@@ -347,9 +507,12 @@ export default function KerrBlackHole({
       mat.uniforms.uHorizonRadius.value = horizonScene;
       mat.uniforms.uRgScene.value = rgScene;
       mat.uniforms.uTime.value = state.clock.elapsedTime;
+      mat.uniforms.uOpacity.value = visualRendererProfile.runtimeTokens.strongGravity.opacity;
+      mat.uniforms.uFlowSpeed.value = visualRendererProfile.runtimeTokens.strongGravity.flowSpeed;
+      mat.uniforms.uFlowStrength.value = visualRendererProfile.runtimeTokens.strongGravity.flowStrength;
     }
 
-    if (!isPlaying || daysPerSecond <= 0) return;
+    if (!showTeachingParticles || !isPlaying || daysPerSecond <= 0) return;
 
     const dtSim = dtWall * daysPerSecond * DAY_SECONDS;
     if (dtSim <= 0) return;
@@ -382,6 +545,11 @@ export default function KerrBlackHole({
 
   return (
     <group ref={groupRef} position={worldPos}>
+      {visualRendererProfile.v5TokensApplied || strongGravityRenderMode === "science" ? (
+        <KerrStrongGravityRendererV299 mode={strongGravityRenderMode} radiusScene={horizonScene} spinA={aOverM} quality={rayTraceQuality} />
+      ) : (
+        <KerrRayTraceRendererV3 radiusScene={horizonScene} spinA={aOverM} quality={rayTraceQuality} />
+      )}
       <mesh renderOrder={-18}>
         <sphereGeometry args={[horizonScene * 1.002, 48, 48]} />
         <meshBasicMaterial color="#030308" depthWrite />
@@ -399,17 +567,33 @@ export default function KerrBlackHole({
           blending={THREE.NormalBlending}
         />
       </mesh>
-      <points geometry={pointsGeom} renderOrder={-16} frustumCulled={false}>
-        <pointsMaterial
-          color="#7dd3fc"
-          size={Math.max(0.45, horizonScene * 0.14)}
-          sizeAttenuation
-          transparent
-          opacity={0.92}
-          depthWrite={false}
-          blending={THREE.AdditiveBlending}
-        />
-      </points>
+      {showGeodesicTracks
+        ? trackSet.tracks.map((track) => {
+            const highlighted = highlightTrackKind == null || track.kind === highlightTrackKind;
+            return (
+              <KerrGeodesicTrackVisual
+                key={track.id}
+                track={track}
+                scaleMToScene={scaleMToScene}
+                opacityScale={highlighted ? 1.12 : 0.34}
+                pointScale={highlighted ? 1.22 : 0.82}
+              />
+            );
+          })
+        : null}
+      {showTeachingParticles ? (
+        <points geometry={pointsGeom} renderOrder={-16} frustumCulled={false}>
+          <pointsMaterial
+            color="#7dd3fc"
+            size={Math.max(0.45, horizonScene * 0.14)}
+            sizeAttenuation
+            transparent
+            opacity={renderMode === "both" ? 0.34 : 0.92}
+            depthWrite={false}
+            blending={THREE.AdditiveBlending}
+          />
+        </points>
+      ) : null}
     </group>
   );
 }

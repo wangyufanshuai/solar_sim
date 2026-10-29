@@ -1,0 +1,125 @@
+{
+  "schema": "mainline-a-beta-stellar-fresh-capture-v618",
+  "generatedAt": "2026-08-25T11:26:00Z",
+  "input": {
+    "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+    "sourceSchema": "mainline-a-beta-stellar-source-closure-v616",
+    "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061"
+  },
+  "service": {
+    "endpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+    "license": "ODbL-1.0",
+    "citation": "Wenger et al. 2000, A&AS, 143, 9",
+    "responseSchema": "mainline-a-stellar-capture-response-v618"
+  },
+  "counts": {
+    "total": 4,
+    "requestRequired": 4,
+    "responseCaptured": 0,
+    "reviewPending": 0,
+    "cleared": 0,
+    "runtimeAdmitted": 0,
+    "measurementAdmitted": 0
+  },
+  "boundary": {
+    "freshCaptureOnly": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "legalDecision": "not-granted"
+  },
+  "records": [
+    {
+      "request": {
+        "requestId": "mainline-a-v618-acrux-6283e0cf5cb9",
+        "id": "acrux",
+        "queryIdentifier": "* alf01 Cru",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+        "serviceEndpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+        "method": "GET",
+        "requestedAt": null,
+        "expectedSnapshotRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+        "expectedProjectionRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+        "expectedResolutionClass": "exact-component",
+        "responseRequired": true,
+        "scientificPayloadWriteback": false
+      },
+      "state": "required",
+      "response": null,
+      "patch": null,
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "request": {
+        "requestId": "mainline-a-v618-spica-81276ed6687b",
+        "id": "spica",
+        "queryIdentifier": "* alf Vir",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+        "serviceEndpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+        "method": "GET",
+        "requestedAt": null,
+        "expectedSnapshotRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+        "expectedProjectionRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+        "expectedResolutionClass": "system-only-component-ambiguous",
+        "responseRequired": true,
+        "scientificPayloadWriteback": false
+      },
+      "state": "required",
+      "response": null,
+      "patch": null,
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "request": {
+        "requestId": "mainline-a-v618-regulus-a30e3e314621",
+        "id": "regulus",
+        "queryIdentifier": "* alf Leo",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+        "serviceEndpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+        "method": "GET",
+        "requestedAt": null,
+        "expectedSnapshotRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+        "expectedProjectionRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+        "expectedResolutionClass": "system-only-component-ambiguous",
+        "responseRequired": true,
+        "scientificPayloadWriteback": false
+      },
+      "state": "required",
+      "response": null,
+      "patch": null,
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "request": {
+        "requestId": "mainline-a-v618-polaris-5c70e01ec2c0",
+        "id": "polaris",
+        "queryIdentifier": "* alf UMi",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+        "serviceEndpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+        "method": "GET",
+        "requestedAt": null,
+        "expectedSnapshotRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+        "expectedProjectionRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+        "expectedResolutionClass": "system-only-component-ambiguous",
+        "responseRequired": true,
+        "scientificPayloadWriteback": false
+      },
+      "state": "required",
+      "response": null,
+      "patch": null,
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    }
+  ]
+}

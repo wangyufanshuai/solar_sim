@@ -1,0 +1,2043 @@
+{
+  "schema": "mainline-a-nebula-rights-pack-v613",
+  "generatedAt": "2026-08-20T00:00:00Z",
+  "inputPack": {
+    "path": "app/data/mainlineANebulaReviewPackV612.generated.json",
+    "sha256": "547302ffb5ff250ff741f2de4a5dc1906b75302779e77b10af76b1545531d893"
+  },
+  "projection": {
+    "path": "app/data/mainlineABetaNebulaProjectionV609.generated.ts",
+    "sha256": "ea7f65be9619f4e4a4cc4d09a0ea9cad01310ab659e59eafd6a1efd2c3815fa1"
+  },
+  "manifestSeals": [
+    {
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestRawSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "receiptPath": "docs/release/v592/nebula-visual-assets-receipt-v592.json",
+      "receiptSha256": "38c713d8d439f298518662727877c1190759f16b4b4e55feada07843015aa948",
+      "receiptManifestSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54"
+    },
+    {
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestRawSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "receiptPath": "docs/release/v592/nebula-extended-visual-assets-receipt-v592.json",
+      "receiptSha256": "0af48b6d98ab469da8c7e8584dd09fb04d5674c850c7373e04f7058139813e77",
+      "receiptManifestSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18"
+    },
+    {
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestRawSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "receiptPath": "docs/release/v592/nebula-closure-visual-assets-receipt-v592.json",
+      "receiptSha256": "ec6feb403c8e946a116a3e9c60bf032a4ecc4d5873968b5002105bb00aff52f3",
+      "receiptManifestSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea"
+    }
+  ],
+  "candidateCount": 18,
+  "rightsDecisionCounts": {
+    "unreviewed": 18,
+    "cleared": 0,
+    "rejected": 0
+  },
+  "evidenceStatusCounts": {
+    "pending": 18,
+    "verified": 0,
+    "rejected": 0
+  },
+  "runtimeAdmissionCount": 0,
+  "rightsPolicy": {
+    "requiredLicense": "source-declared item license",
+    "requiredLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "itemLevelDecisionRequired": true
+  },
+  "receiptLinkage": {
+    "candidates": 18,
+    "receiptReferences": 42,
+    "validCandidates": 18,
+    "payloadLinked": 18,
+    "identityLinked": 42,
+    "referenceOnly": 0,
+    "missing": 0,
+    "status": "linked-but-not-a-rights-grant",
+    "contentHashVerification": "receipt-content-and-item-linkage-checked",
+    "itemLevelReviewRequired": true
+  },
+  "records": [
+    {
+      "candidateId": "heart-nebula",
+      "nasaId": "PIA13112",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/heart-nebula-PIA13112-orig.jpg",
+      "sourceBytes": 5117802,
+      "sourceWidth": 7252,
+      "sourceHeight": 5142,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "heart-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "heart-nebula",
+        "sourceSha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "soul-nebula",
+      "nasaId": "PIA13014",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/soul-nebula-PIA13014-orig.jpg",
+      "sourceBytes": 2079063,
+      "sourceWidth": 6660,
+      "sourceHeight": 3482,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "soul-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "soul-nebula",
+        "sourceSha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "witch-head-nebula",
+      "nasaId": "PIA17553",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/witch-head-nebula-PIA17553-orig.jpg",
+      "sourceBytes": 7891119,
+      "sourceWidth": 9163,
+      "sourceHeight": 9163,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "witch-head-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "witch-head-nebula",
+        "sourceSha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "flame-nebula",
+      "nasaId": "PIA15635",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/flame-nebula-PIA15635-orig.jpg",
+      "sourceBytes": 1772081,
+      "sourceWidth": 5525,
+      "sourceHeight": 5535,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "flame-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "flame-nebula",
+        "sourceSha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "pacman-nebula",
+      "nasaId": "PIA14731",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/pacman-nebula-PIA14731-orig.jpg",
+      "sourceBytes": 803172,
+      "sourceWidth": 3600,
+      "sourceHeight": 2719,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "X-ray: NASA/CXC/CfA/S.Wolk; IR: NASA/JPL/CfA/S.Wolk",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "pacman-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "pacman-nebula",
+        "sourceSha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "running-chicken-nebula",
+      "nasaId": "PIA13451",
+      "manifestPath": "public/data/living-universe-v592/nebula-visual-assets.json",
+      "manifestSha256": "8af3bd6ba721197e4df86704334ce0646b18d65e85eed133f49b255e168f95a8",
+      "sourceSha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual/running-chicken-nebula-PIA13451-orig.jpg",
+      "sourceBytes": 1411185,
+      "sourceWidth": 3700,
+      "sourceHeight": 3700,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+        "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "visualAnalysisReceiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+      },
+      "receiptLinkage": {
+        "candidateId": "running-chicken-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/acquisition-receipt-nebula-visual-sources-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "licenseReviewReceiptSha256",
+            "declaredSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-item-license-review-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "visualAnalysisReceiptSha256",
+            "declaredSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-source-visual-analysis-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": true,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 3,
+        "missing": 0
+      },
+      "manifestSealSha256": "e001775c78dff817edcab53ebb8bada2da8d98990a79d57ff8274839e5792c54",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "running-chicken-nebula",
+        "sourceSha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "jellyfish-nebula",
+      "nasaId": "PIA13449",
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "sourceSha256": "7febb68c311f1559567fb95b79424812be44210ccd7c217e022bc8837eaa7116",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13449/PIA13449~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/jellyfish-nebula-PIA13449-orig.jpg",
+      "sourceBytes": 1222062,
+      "sourceWidth": 4095,
+      "sourceHeight": 4095,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+        "metadataReceiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93"
+      },
+      "receiptLinkage": {
+        "candidateId": "jellyfish-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "jellyfish-nebula",
+        "sourceSha256": "7febb68c311f1559567fb95b79424812be44210ccd7c217e022bc8837eaa7116",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13449/PIA13449~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "cocoon-nebula",
+      "nasaId": "PIA13441",
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "sourceSha256": "ac9db8adcec26e591ab28f3627a4449a918b443085769fa4ca452e2658df8d6c",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13441/PIA13441~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/cocoon-nebula-PIA13441-orig.jpg",
+      "sourceBytes": 638924,
+      "sourceWidth": 3124,
+      "sourceHeight": 2325,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+        "metadataReceiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93"
+      },
+      "receiptLinkage": {
+        "candidateId": "cocoon-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "cocoon-nebula",
+        "sourceSha256": "ac9db8adcec26e591ab28f3627a4449a918b443085769fa4ca452e2658df8d6c",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13441/PIA13441~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "rho-ophiuchi-cloud",
+      "nasaId": "PIA10182",
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "sourceSha256": "4a6db3ea3e6c3d1db83aa5dd283f283b337edefdca48bb4654e0e567e33c0601",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA10182/PIA10182~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/rho-ophiuchi-cloud-PIA10182-orig.jpg",
+      "sourceBytes": 1070248,
+      "sourceWidth": 6020,
+      "sourceHeight": 2905,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+        "metadataReceiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93"
+      },
+      "receiptLinkage": {
+        "candidateId": "rho-ophiuchi-cloud",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "rho-ophiuchi-cloud",
+        "sourceSha256": "4a6db3ea3e6c3d1db83aa5dd283f283b337edefdca48bb4654e0e567e33c0601",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA10182/PIA10182~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "cepheus-c-nebula",
+      "nasaId": "PIA23127",
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "sourceSha256": "23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA23127/PIA23127~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/cepheus-c-nebula-PIA23127-orig.jpg",
+      "sourceBytes": 9239217,
+      "sourceWidth": 14391,
+      "sourceHeight": 6232,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+        "metadataReceiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93"
+      },
+      "receiptLinkage": {
+        "candidateId": "cepheus-c-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "cepheus-c-nebula",
+        "sourceSha256": "23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA23127/PIA23127~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "dragon-lair-nebula",
+      "nasaId": "PIA13240",
+      "manifestPath": "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "manifestSha256": "73a4d7dea6899f0467c25df21f9cf59710539492c0a49b999bf74b914f8cb349",
+      "sourceSha256": "a370891822e1a92951b785e2c9712a6d4435c57c2235750505d9c158844d0f78",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13240/PIA13240~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/dragon-lair-nebula-PIA13240-orig.jpg",
+      "sourceBytes": 6571810,
+      "sourceWidth": 7600,
+      "sourceHeight": 3700,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/Penn State/DSS",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+        "metadataReceiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93"
+      },
+      "receiptLinkage": {
+        "candidateId": "dragon-lair-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4f223cd5919aca249eedfcf968f253697fa2b81670afdb02217a90f1d80ee23c",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-extended-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "e4683d19449c7f554c36fa1ba190b244b102823e7d3cbdd4c5dff9b3d0bc0d93",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "fb0b6800c07ed1def39e67a314c0bfb17b2aa21e3faa4cc72a459e3e8acddb18",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "dragon-lair-nebula",
+        "sourceSha256": "a370891822e1a92951b785e2c9712a6d4435c57c2235750505d9c158844d0f78",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13240/PIA13240~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "monkey-head-nebula",
+      "nasaId": "PIA19836",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "3c14acaa461f0fb5ea6fe78adbeba054eb4df26ee3dec74d11358a899a197607",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA19836/PIA19836~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/monkey-head-nebula-PIA19836-orig.jpg",
+      "sourceBytes": 449971,
+      "sourceWidth": 3050,
+      "sourceHeight": 2630,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+        "metadataReceiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178"
+      },
+      "receiptLinkage": {
+        "candidateId": "monkey-head-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "monkey-head-nebula",
+        "sourceSha256": "3c14acaa461f0fb5ea6fe78adbeba054eb4df26ee3dec74d11358a899a197607",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA19836/PIA19836~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "w40-nebula",
+      "nasaId": "PIA23121",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA23121/PIA23121~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/w40-nebula-PIA23121-orig.jpg",
+      "sourceBytes": 1243620,
+      "sourceWidth": 4600,
+      "sourceHeight": 3000,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+        "metadataReceiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178"
+      },
+      "receiptLinkage": {
+        "candidateId": "w40-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "w40-nebula",
+        "sourceSha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA23121/PIA23121~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "sh2-235-nebula",
+      "nasaId": "PIA13995",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "17349f31edba474f71dfcdef5803aa034e3aa8854ea3e55653b16f4e9c5028ae",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13995/PIA13995~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/sh2-235-nebula-PIA13995-orig.jpg",
+      "sourceBytes": 3007526,
+      "sourceWidth": 6400,
+      "sourceHeight": 6400,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+        "metadataReceiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178"
+      },
+      "receiptLinkage": {
+        "candidateId": "sh2-235-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "sh2-235-nebula",
+        "sourceSha256": "17349f31edba474f71dfcdef5803aa034e3aa8854ea3e55653b16f4e9c5028ae",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13995/PIA13995~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "flaming-star-nebula",
+      "nasaId": "PIA13447",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "245b7046a5bc4e585e5721dcc52c85c1ac355d0b7b45e7ea0d9610f3d0757563",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13447/PIA13447~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/flaming-star-nebula-PIA13447-orig.jpg",
+      "sourceBytes": 1229639,
+      "sourceWidth": 4095,
+      "sourceHeight": 4095,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+        "metadataReceiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178"
+      },
+      "receiptLinkage": {
+        "candidateId": "flaming-star-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "flaming-star-nebula",
+        "sourceSha256": "245b7046a5bc4e585e5721dcc52c85c1ac355d0b7b45e7ea0d9610f3d0757563",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13447/PIA13447~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "spider-nebula",
+      "nasaId": "PIA20357",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "d0e34641df917d32f99ee50eba14f44e6b5b60e6623d985496a71812dcdc2b50",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA20357/PIA20357~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/spider-nebula-PIA20357-orig.jpg",
+      "sourceBytes": 1310281,
+      "sourceWidth": 4165,
+      "sourceHeight": 2343,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/2MASS",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+        "metadataReceiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178"
+      },
+      "receiptLinkage": {
+        "candidateId": "spider-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "2193d10a2b9d1c46c9e1afd45da48e7f67c4fdc1fd0800398ff665fe05698edc",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-final-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "ea74ebd2d89b73eb5b2551c10009c4bc15554fd9605f4212b397b055971ed178",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "spider-nebula",
+        "sourceSha256": "d0e34641df917d32f99ee50eba14f44e6b5b60e6623d985496a71812dcdc2b50",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA20357/PIA20357~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "tarantula-nebula",
+      "nasaId": "PIA23646",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA23646/PIA23646~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/tarantula-nebula-closure-PIA23646-orig.jpg",
+      "sourceBytes": 5079804,
+      "sourceWidth": 8832,
+      "sourceHeight": 4968,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "0f961cfff8d479fea895634d92996deaca666e2bc5e4939ad4ec52032eb0ec5a",
+        "metadataReceiptSha256": "725c9ad617db7a6cb8e1d13b4c1b5933fa1325c0cd2503cbd90f42d055fb7792"
+      },
+      "receiptLinkage": {
+        "candidateId": "tarantula-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "0f961cfff8d479fea895634d92996deaca666e2bc5e4939ad4ec52032eb0ec5a",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-closure-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "0f961cfff8d479fea895634d92996deaca666e2bc5e4939ad4ec52032eb0ec5a",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": true,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "725c9ad617db7a6cb8e1d13b4c1b5933fa1325c0cd2503cbd90f42d055fb7792",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-closure-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "725c9ad617db7a6cb8e1d13b4c1b5933fa1325c0cd2503cbd90f42d055fb7792",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": true,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "tarantula-nebula",
+        "sourceSha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA23646/PIA23646~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    },
+    {
+      "candidateId": "tadpole-nebula",
+      "nasaId": "PIA13110",
+      "manifestPath": "public/data/living-universe-v592/nebula-closure-visual-assets.json",
+      "manifestSha256": "b24458b07b90f173afaaaea6692b3cf4f0f5ed91bd313d6edbdadc39030958ae",
+      "sourceSha256": "43a8fe1d011cea9981a40de0a7f3a157d94c9c6b91178add8502ddf8d1b46471",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13110/PIA13110~orig.jpg",
+      "sourceLocalPath": "source-cache/v592/nebulae/visual-extended/tadpole-nebula-PIA13110-orig.jpg",
+      "sourceBytes": 1167945,
+      "sourceWidth": 3270,
+      "sourceHeight": 4053,
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "receiptRefs": {
+        "acquisitionReceiptSha256": "da95bf7a9d2f979c1f5edc61c901e1412095d5ccc259c498bb131a6a513e1a5a",
+        "metadataReceiptSha256": "4b87bcb718234df2577f2aaf9ecac509e5d6e8cc0f680cae80de4f43661ebd36"
+      },
+      "receiptLinkage": {
+        "candidateId": "tadpole-nebula",
+        "links": [
+          {
+            "key": "acquisitionReceiptSha256",
+            "declaredSha256": "da95bf7a9d2f979c1f5edc61c901e1412095d5ccc259c498bb131a6a513e1a5a",
+            "requiredLevel": "payload",
+            "status": "payload-linked",
+            "identityLinked": true,
+            "payloadLinked": true,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-closure2-visual-acquisition-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "da95bf7a9d2f979c1f5edc61c901e1412095d5ccc259c498bb131a6a513e1a5a",
+                "identityMatch": true,
+                "exactRowMatch": true,
+                "alias": false,
+                "sourceMatch": true,
+                "pathMatch": true,
+                "bytesMatch": true,
+                "digestMatch": true,
+                "payloadMatch": true,
+                "fileSha256": null
+              }
+            ]
+          },
+          {
+            "key": "metadataReceiptSha256",
+            "declaredSha256": "4b87bcb718234df2577f2aaf9ecac509e5d6e8cc0f680cae80de4f43661ebd36",
+            "requiredLevel": "identity",
+            "status": "identity-linked",
+            "identityLinked": true,
+            "payloadLinked": false,
+            "candidates": [
+              {
+                "path": "docs/release/v592/nebula-closure2-item-metadata-v592.json",
+                "parseable": true,
+                "sealValid": true,
+                "receiptSha256": "4b87bcb718234df2577f2aaf9ecac509e5d6e8cc0f680cae80de4f43661ebd36",
+                "identityMatch": true,
+                "exactRowMatch": false,
+                "alias": false,
+                "sourceMatch": false,
+                "pathMatch": false,
+                "bytesMatch": false,
+                "digestMatch": false,
+                "payloadMatch": false,
+                "fileSha256": null
+              }
+            ]
+          }
+        ],
+        "valid": true,
+        "payloadLinked": 1,
+        "identityLinked": 2,
+        "missing": 0
+      },
+      "manifestSealSha256": "b0ab049e7664b61f571b5a4e89fa0d002e546f1a4689eb4fc8cfc6cd033236ea",
+      "evidence": {
+        "schema": "mainline-a-nebula-rights-pack-v613",
+        "candidateId": "tadpole-nebula",
+        "sourceSha256": "43a8fe1d011cea9981a40de0a7f3a157d94c9c6b91178add8502ddf8d1b46471",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA13110/PIA13110~orig.jpg",
+        "sourceLicense": "NASA-media-guidelines-public-use-candidate-item-credit",
+        "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "decision": "unreviewed",
+        "status": "pending",
+        "rightsPage": null,
+        "policyPage": null,
+        "evidencePath": null,
+        "evidenceSha256": null,
+        "reviewer": null,
+        "reviewedAt": null,
+        "creditConfirmed": false,
+        "notes": null
+      },
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      }
+    }
+  ]
+}

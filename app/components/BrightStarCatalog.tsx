@@ -1,9 +1,9 @@
 "use client";
 
 import * as THREE from "three";
-import { useMemo } from "react";
+import { useEffect, useMemo } from "react";
 import { useThree } from "@react-three/fiber";
-import { BRIGHT_STARS_TIER1, BRIGHT_STARS_TIER2, type BrightStarDef } from "../data/brightStarCatalog";
+import { BRIGHT_STARS_TIER1, BRIGHT_STARS_TIER2 } from "../data/brightStarCatalog";
 
 const SPHERE_RADIUS = 8000;
 
@@ -33,13 +33,16 @@ void main() {
   vec2 c = gl_PointCoord - 0.5;
   float d = length(c);
   if (d > 0.5) discard;
-  float edge = smoothstep(0.5, 0.16, d);
-  float core = exp(-d * d * 22.0);
-  float halo = exp(-d * d * 6.0) * 0.075;
-  float alpha = core + halo;
+  float edge = 1.0 - smoothstep(0.36, 0.5, d);
+  float core = exp(-d * d * 18.0);
+  // Reserve the broad halo for the largest curated points so hero stars read
+  // as intentional anchors without lifting the whole faint-star field.
+  float heroHalo = mix(0.08, 0.22, smoothstep(5.5, 9.0, vPS));
+  float halo = exp(-d * d * 7.0) * heroHalo;
+  float alpha = 0.78 + core * 0.22 + halo;
   float sizeAlpha = smoothstep(1.4, 3.2, vPS);
-  vec3 col = vColor * (0.68 + core * 0.95);
-  gl_FragColor = vec4(col, alpha * edge * (0.18 + 0.72 * sizeAlpha) * uOpacity);
+  vec3 col = vColor * (1.25 + core * 0.95);
+  gl_FragColor = vec4(col, alpha * edge * (0.72 + 0.28 * sizeAlpha) * uOpacity);
   #include <logdepthbuf_fragment>
 }
 `;
@@ -51,11 +54,6 @@ function raDecToXYZ(raHours: number, decDeg: number, radius: number): [number, n
   const y = radius * Math.sin(dec);
   const z = -radius * Math.cos(dec) * Math.sin(ra);
   return [x, y, z];
-}
-
-function magnitudeIntensity(magV: number): number {
-  const relative = Math.pow(10, -0.4 * (magV + 1.46));
-  return THREE.MathUtils.clamp(Math.pow(relative, 0.42), 0.08, 1.25);
 }
 
 export default function BrightStarCatalog({
@@ -85,11 +83,15 @@ export default function BrightStarCatalog({
       pos[i * 3] = x;
       pos[i * 3 + 1] = y;
       pos[i * 3 + 2] = z;
-      const intensity = magnitudeIntensity(star.magV);
-      colors[i * 3] = (0.82 + star.r * 0.18) * intensity;
-      colors[i * 3 + 1] = (0.84 + star.g * 0.16) * intensity;
-      colors[i * 3 + 2] = (0.88 + star.b * 0.12) * intensity;
-      sizes[i] = (0.34 + Math.pow(intensity, 0.72) * 1.08) * dpr;
+      colors[i * 3] = star.r;
+      colors[i * 3 + 1] = star.g;
+      colors[i * 3 + 2] = star.b;
+      const bright = Math.max(0, (3.5 - star.magV) / 5.0);
+      // Keep the curated catalogue legible after the V9 sky is downsampled to
+      // the display.  Sub-pixel points disappear at common desktop sampling
+      // phases; a restrained 3.8-8.6 px point remains sparse while preserving
+      // the catalogue position, colour and magnitude ordering.
+      sizes[i] = (3.8 + bright * 4.8) * dpr;
     }
 
     const geom = new THREE.BufferGeometry();
@@ -112,6 +114,11 @@ export default function BrightStarCatalog({
 
     return { geometry: geom, material: mat };
   }, [dpr, opacity, stars]);
+
+  useEffect(() => () => {
+    geometry.dispose();
+    material.dispose();
+  }, [geometry, material]);
 
   material.uniforms.uOpacity.value = opacity;
 

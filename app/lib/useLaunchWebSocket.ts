@@ -11,11 +11,11 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AU_METERS } from "./physicalConstants";
 import { decodeLaunchFrame, encodeLaunchConfig } from "./launchBinaryProtocol";
+import { runtimeWsUrl } from "./runtimeUrls";
 import type {
   LaunchConfig,
   LaunchEvent,
   LaunchSimState,
-  INITIAL_LAUNCH_STATE,
 } from "./launchTelemetryTypes";
 
 /** Max trajectory points in the ring buffer (500k = ~500s at 1ms). */
@@ -32,8 +32,15 @@ export type LaunchWebSocketActions = {
   seekTo: (timeS: number) => void;
 };
 
+function defaultLaunchWsUrl(): string {
+  return runtimeWsUrl(
+    "/ws/launch",
+    process.env.NEXT_PUBLIC_LAUNCH_WS_URL
+  );
+}
+
 export default function useLaunchWebSocket(
-  url: string = "ws://127.0.0.1:8766/ws/launch",
+  url: string = defaultLaunchWsUrl(),
   enabled: boolean = true
 ): LaunchWebSocketActions {
   const wsRef = useRef<WebSocket | null>(null);
@@ -52,7 +59,7 @@ export default function useLaunchWebSocket(
   const isStreamingRef = useRef(false);
 
   // Tick counter to trigger re-renders at 60fps
-  const [tick, setTick] = useState(0);
+  const [, setTick] = useState(0);
 
   // Allocate state once
   const [launchState] = useState<LaunchSimState>(() => ({

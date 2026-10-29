@@ -7,6 +7,8 @@
  * - PNG: `NEXT_PUBLIC_PLANET_TEXTURE_EXT=png`
  */
 
+import { solarAssetUrl } from "./runtimeUrls";
+
 function stripTrailingSlash(s: string): string {
   return s.replace(/\/+$/, "");
 }
@@ -26,7 +28,7 @@ export function planetAlbedoBasePath(): string {
       ? process.env.NEXT_PUBLIC_PLANET_TEXTURE_BASE?.trim()
       : undefined;
   if (env && env !== "") return stripTrailingSlash(env);
-  return "/textures/planets";
+  return solarAssetUrl("/textures/planets");
 }
 
 /** Public URL for equirectangular albedo (`id` = `sun`, `mercury`, `earth`, …). */
@@ -35,33 +37,19 @@ export function planetAlbedoUrl(bodyId: string): string {
 }
 
 /**
- * IDs that typically have a real file after `npm run fetch-nasa-hd-all` (or SSS 2K pack).
- * Other bodies still render with solid `color` and avoid 404 spam / failed proxy to :8765.
+ * IDs that have a real file after `npm run fetch-planet-textures`.
+ * Other bodies use procedural material fallback and avoid default 404 spam.
  * Set `NEXT_PUBLIC_PLANET_TEXTURE_TRY_ALL=1` to request a URL for every body (if you added JPGs).
  */
 export const KNOWN_PLANET_ALBEDO_IDS: ReadonlySet<string> = new Set([
-  "sun",
   "mercury",
   "venus",
   "earth",
-  "moon",
   "mars",
   "jupiter",
   "saturn",
   "uranus",
   "neptune",
-  "pluto",
-  "ceres",
-  "io",
-  "europa",
-  "ganymede",
-  "callisto",
-  "titan",
-  "enceladus",
-  // Dwarf planets with fictional textures
-  "eris",
-  "makemake",
-  "haumea",
 ]);
 
 function tryAllPlanetTextures(): boolean {

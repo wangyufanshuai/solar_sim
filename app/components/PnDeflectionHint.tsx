@@ -79,7 +79,7 @@ export default function PnDeflectionHint({
     const line = lineRef.current;
     const p = physicsRef.current;
     if (!line || !p || bodyIndex <= 0 || bodyIndex >= p.n) {
-      line && (line.visible = false);
+      if (line) line.visible = false;
       return;
     }
     line.raycast = noopRaycast;

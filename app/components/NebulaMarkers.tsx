@@ -1,11 +1,19 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
+import type {
+  AtlasCinematicCameraProfile,
+  AtlasGaiaStarfieldEnhancementQualityTier,
+} from "../lib/simulationDiagnosticsTypes";
 import { NEBULAE } from "../data/nebulaCatalog";
+import type { NebulaDef } from "../data/nebulaCatalog";
+import { getNebulaeV255Sync, loadNebulaeV255 } from "../lib/deepSkyCatalogRuntimeV255";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
 
 const GALAXY_VISUAL_SCALE = 36;
 
@@ -16,6 +24,7 @@ attribute float aIntensity;
 varying vec3 vColor;
 varying float vIntensity;
 varying float vPS;
+varying float vDistanceBand;
 uniform float uPixelRatio;
 #include <common>
 #include <logdepthbuf_pars_vertex>
@@ -27,6 +36,9 @@ void main() {
   gl_PointSize = aSize * uPixelRatio * (36000.0 / dist);
   gl_PointSize = clamp(gl_PointSize, 10.0, 118.0);
   vPS = gl_PointSize;
+  // Keep remote catalog markers present while reserving the brightest layer
+  // for nearby, larger nebulae. This is a display cue, not a distance rewrite.
+  vDistanceBand = smoothstep(14.0, 58.0, gl_PointSize);
   gl_Position = projectionMatrix * mv;
   #include <logdepthbuf_vertex>
 }
@@ -36,6 +48,7 @@ const NEBULA_FRAGMENT = /* glsl */ `
 varying vec3 vColor;
 varying float vIntensity;
 varying float vPS;
+varying float vDistanceBand;
 uniform float uOpacity;
 #include <logdepthbuf_pars_fragment>
 void main() {
@@ -49,8 +62,9 @@ void main() {
   float veil = exp(-d * d * 2.1);
   float edge = smoothstep(0.5, 0.12, d);
   float texture = mix(0.58, 1.18, filament * 0.55 + clump * 0.45);
-  float alpha = (core * 0.45 + veil * 0.62) * edge * texture * vIntensity * uOpacity;
-  vec3 col = vColor * (0.42 + core * 1.35 + veil * 0.36);
+  float markerSeparation = mix(0.76, 1.0, vDistanceBand);
+  float alpha = (core * 0.32 + veil * 0.52) * edge * texture * vIntensity * uOpacity * markerSeparation;
+  vec3 col = mix(vColor, vec3(0.88, 0.9, 0.96), 0.18) * (0.34 + core * 1.04 + veil * 0.3);
   gl_FragColor = vec4(col, alpha);
   #include <logdepthbuf_fragment>
 }
@@ -70,21 +84,43 @@ function galacticToScene(lonDeg: number, latDeg: number, distPc: number): [numbe
 
 export default function NebulaMarkers({
   floatingOriginRef,
+  enabled = true,
+  orbitAtlas = false,
+  cinematicCameraProfile = "overview-atlas",
+  qualityTier = "balanced",
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  enabled?: boolean;
+  orbitAtlas?: boolean;
+  cinematicCameraProfile?: AtlasCinematicCameraProfile;
+  qualityTier?: AtlasGaiaStarfieldEnhancementQualityTier;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
-  const lastTierRef = useRef<string | null>(null);
+  const profileOpacity = useAtlasRuntimeStore((snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile).groups.sky.nebulaOpacity);
+  const [nebulae, setNebulae] = useState<readonly NebulaDef[]>(() => getNebulaeV255Sync());
+
+  useEffect(() => {
+    if (!enabled) return;
+    let disposed = false;
+    void loadNebulaeV255()
+      .then((next) => {
+        if (!disposed && next.length > NEBULAE.length) setNebulae((previous) => previous === next ? previous : next);
+      })
+      .catch(() => undefined);
+    return () => {
+      disposed = true;
+    };
+  }, [enabled]);
 
   const { geometry, material } = useMemo(() => {
-    const count = NEBULAE.length;
+    const count = nebulae.length;
     const positions = new Float32Array(count * 3);
     const colors = new Float32Array(count * 3);
     const sizes = new Float32Array(count);
     const intensities = new Float32Array(count);
 
     for (let i = 0; i < count; i++) {
-      const n = NEBULAE[i];
+      const n = nebulae[i]!;
       const pos = galacticToScene(n.galLonDeg, n.galLatDeg, n.distancePc || 5000);
       positions[i * 3] = pos[0];
       positions[i * 3 + 1] = pos[1];
@@ -95,8 +131,8 @@ export default function NebulaMarkers({
       colors[i * 3 + 1] = col.g;
       colors[i * 3 + 2] = col.b;
 
-      sizes[i] = Math.max(16, Math.min(72, 14 + Math.sqrt(n.sizeArcmin) * 5.2));
-      intensities[i] = Math.min(1.25, n.intensity * 0.82);
+      sizes[i] = Math.max(14, Math.min(68, 13 + Math.sqrt(n.sizeArcmin) * 4.75));
+      intensities[i] = Math.min(1.08, n.intensity * 0.76);
     }
 
     const geo = new THREE.BufferGeometry();
@@ -120,16 +156,29 @@ export default function NebulaMarkers({
     });
 
     return { geometry: geo, material: mat };
-  }, []);
+  }, [nebulae]);
+
+  useEffect(() => () => {
+    geometry.dispose();
+    material.dispose();
+  }, [geometry, material]);
 
   useFrame(() => {
     const pts = pointsRef.current;
     if (!pts) return;
     const tier = floatingOriginRef.current.lodTier;
-    if (lastTierRef.current === tier) return;
-    lastTierRef.current = tier;
+    pts.visible = enabled && (orbitAtlas || tier !== "solar");
     const mat = pts.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0.34 : tier === "mid" ? 0.26 : 0.42;
+    const cinematicScale =
+      cinematicCameraProfile === "selected-body-cinematic"
+        ? 0.22
+        : cinematicCameraProfile === "showcase-deep-space"
+          ? 0.82
+          : 1;
+    const nebulaMobileScale = qualityTier === "mobile" ? 0.58 : 1;
+    const nebulaDenseScale = qualityTier === "dense" ? 1.16 : 1.02;
+    const baseOpacity = orbitAtlas ? 0.014 : tier === "solar" ? 0 : tier === "mid" ? 0.078 : 0.29;
+    mat.uniforms.uOpacity.value = !enabled ? 0 : baseOpacity * cinematicScale * nebulaMobileScale * nebulaDenseScale * profileOpacity;
   });
 
   return (

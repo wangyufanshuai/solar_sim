@@ -1,4 +1,3 @@
-import { stateAuToSi } from "./physicsEngine";
 import { isPhysicsRuntime } from "./physicsRuntime";
 import type { SolarSystemPhysicsRef } from "./solarSystemRef";
 import type { HistoryEntry } from "./physicsSnapshot";

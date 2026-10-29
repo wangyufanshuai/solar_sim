@@ -11,26 +11,18 @@
  *   - Earth atmosphere glow activation
  */
 
-import { useRef, useCallback, useState } from "react";
+import { useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import useLaunchWebSocket from "../lib/useLaunchWebSocket";
 import { AU_METERS } from "../lib/physicalConstants";
 import LaunchTrajectoryLine from "./LaunchTrajectoryLine";
-import LaunchTelemetryStrip from "./LaunchTelemetryStrip";
-import type { LaunchConfig } from "../lib/launchTelemetryTypes";
 
 /** AU → scene unit scale from the existing rendering pipeline. */
 const AU_TO_SCENE = 52;
 
 export default function LaunchSceneBridge() {
-  const {
-    launchState,
-    startLaunch,
-    pauseLaunch,
-    resumeLaunch,
-    setTimeScale,
-  } = useLaunchWebSocket();
+  const { launchState } = useLaunchWebSocket();
 
   const spacecraftRef = useRef<THREE.Group>(null);
   const targetPos = useRef(new THREE.Vector3());

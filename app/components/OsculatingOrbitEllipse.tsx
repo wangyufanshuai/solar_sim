@@ -29,6 +29,7 @@ import {
   ORBIT_SCREEN_LOD_FADE_START_PX,
   screenDiscDiameterPx,
 } from "../lib/screenSpaceBodyLod";
+import { MAJOR_PLANET_IDS } from "../data/planetsJ2000";
 
 const FRAME_STRIDE = 14;
 const _anchorWorld = new THREE.Vector3();
@@ -63,7 +64,7 @@ export default function OsculatingOrbitEllipse({
   const planetWorldRef = useRef(new THREE.Vector3());
   const nPointsRef = useRef(0);
   const bloomActions = useOptionalBloomSceneActions();
-  const { camera, size } = useThree();
+  const { size } = useThree();
 
   const pointPool = useMemo(
     () => Array.from({ length: segments }, () => new THREE.Vector3()),
@@ -79,15 +80,16 @@ export default function OsculatingOrbitEllipse({
     () => orbitColorForBodyId(bodyId ?? `body-${bodyIndex}`),
     [bodyId, bodyIndex]
   );
+  const atlasProminentOrbit = MAJOR_PLANET_IDS.has(bodyId ?? "");
 
   const bundle = useMemo(
     () =>
       createHairlineOrbitLineBundle(hairlineColor, {
-        linewidthPx: selected ? 0.9 : 0.55,
-        glowWidthPx: selected ? 2.2 : 1.35,
+        linewidthPx: selected ? 0.94 : atlasProminentOrbit ? 0.72 : 0.48,
+        glowWidthPx: selected ? 2.2 : atlasProminentOrbit ? 1.65 : 1.12,
         renderOrder,
       }),
-    [hairlineColor, renderOrder, selected]
+    [atlasProminentOrbit, hairlineColor, renderOrder, selected]
   );
 
   useFrame((state) => {
@@ -173,7 +175,7 @@ export default function OsculatingOrbitEllipse({
     const base =
       ORBIT_CINEMATIC_BASE_OPACITY *
       sizeMul *
-      (selected ? 1.1 : 0.52) *
+      (selected ? 1.1 : atlasProminentOrbit ? 0.52 : 0.28) *
       lodA;
     const opacity = THREE.MathUtils.clamp(base, 0, 1);
     setHairlineOrbitBundleOpacity(bundle, opacity);

@@ -5,10 +5,33 @@ import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
-import { MAJOR_GAIA_STARS } from "../data/majorGaiaStars";
-import { gaiaColorToRgb } from "../data/gaiaStarCatalog";
+import { BRIGHT_STARS_TIER1 } from "../data/brightStarCatalog";
 
 const SPHERE_RADIUS = 8400;
+const FEATURED_STAR_IDS = new Set([
+  "sirius",
+  "canopus",
+  "arcturus",
+  "vega",
+  "capella",
+  "rigel",
+  "procyon",
+  "betelgeuse",
+  "achernar",
+  "altair",
+  "aldebaran",
+  "antares",
+  "spica",
+  "pollux",
+  "fomalhaut",
+  "deneb",
+  "regulus",
+  "bellatrix",
+  "alnilam",
+  "alnitak",
+  "saiph",
+  "polaris",
+]);
 
 const STAR_VERTEX = /* glsl */ `
 attribute vec3 aColor;
@@ -47,8 +70,8 @@ void main() {
 }
 `;
 
-function raDegDecToXYZ(raDeg: number, decDeg: number, radius: number): [number, number, number] {
-  const ra = (raDeg / 180) * Math.PI;
+function raDecToXYZ(raHours: number, decDeg: number, radius: number): [number, number, number] {
+  const ra = (raHours / 24) * Math.PI * 2;
   const dec = (decDeg / 180) * Math.PI;
   return [
     radius * Math.cos(dec) * Math.cos(ra),
@@ -63,23 +86,21 @@ export default function MajorStarBeacons({
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
-  const lastTierRef = useRef<string | null>(null);
 
   const { geometry, material } = useMemo(() => {
-    const stars = MAJOR_GAIA_STARS;
+    const stars = BRIGHT_STARS_TIER1.filter((star) => FEATURED_STAR_IDS.has(star.id));
     const positions = new Float32Array(stars.length * 3);
     const colors = new Float32Array(stars.length * 3);
     const sizes = new Float32Array(stars.length);
 
     for (let i = 0; i < stars.length; i++) {
       const star = stars[i]!;
-      const position = raDegDecToXYZ(star.raDeg, star.decDeg, SPHERE_RADIUS);
+      const position = raDecToXYZ(star.raHours, star.decDeg, SPHERE_RADIUS);
       positions.set(position, i * 3);
-      const color = gaiaColorToRgb(star.gaiaBpRp ?? 0.45);
-      colors[i * 3] = color[0];
-      colors[i * 3 + 1] = color[1];
-      colors[i * 3 + 2] = color[2];
-      sizes[i] = THREE.MathUtils.clamp(9.8 - star.visualMag * 1.65, 4.8, 12.5);
+      colors[i * 3] = star.r;
+      colors[i * 3 + 1] = star.g;
+      colors[i * 3 + 2] = star.b;
+      sizes[i] = THREE.MathUtils.clamp(9 - star.magV * 1.8, 4.6, 11.5);
     }
 
     const geo = new THREE.BufferGeometry();
@@ -108,10 +129,9 @@ export default function MajorStarBeacons({
     const points = pointsRef.current;
     if (!points) return;
     const tier = floatingOriginRef.current.lodTier;
-    if (lastTierRef.current === tier) return;
-    lastTierRef.current = tier;
+    points.visible = tier !== "solar";
     const mat = points.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0.26 : tier === "mid" ? 0.56 : 0.76;
+    mat.uniforms.uOpacity.value = tier === "solar" ? 0 : tier === "mid" ? 0.5 : 0.72;
   });
 
   return (

@@ -977,10 +977,27 @@ function buildBodies(): SolarSystemBodyDef[] {
 
 export const SOLAR_SYSTEM_BODIES: SolarSystemBodyDef[] = buildBodies();
 
-/** Name tags for every simulated body when “显示天体名称” is on. */
-export const MAJOR_BODY_LABEL_IDS: ReadonlySet<string> = new Set(
-  SOLAR_SYSTEM_BODIES.map((b) => b.id)
-);
+/**
+ * Atlas-default label set.
+ * Keep the scene readable by default; the object browser still exposes everything.
+ */
+export const MAJOR_BODY_LABEL_IDS: ReadonlySet<string> = new Set([
+  "sun",
+  "mercury",
+  "venus",
+  "earth",
+  "moon",
+  "mars",
+  "jupiter",
+  "saturn",
+  "uranus",
+  "neptune",
+  "ceres",
+  "pluto",
+  "eris",
+  "haumea",
+  "makemake",
+]);
 
 /** `SOLAR_SYSTEM_BODIES` 中的下标（供相机 / UI 引用）。 */
 export const EARTH_BODY_INDEX = SOLAR_SYSTEM_BODIES.findIndex(

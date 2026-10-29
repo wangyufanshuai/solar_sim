@@ -12,10 +12,14 @@ import {
   type GravitationalTimeDilationResult,
   type Rk4Workspaces,
 } from "./physicsEngine";
-import { AU_METERS, C_LIGHT, G_SI } from "./physicalConstants";
+import { AU_METERS, C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
 import { BODY_J2, BODY_REQ_M } from "./planetJ2Data";
 import type { PhysicsPrecisionTier } from "./physicsPrecision";
 import { galacticAccelFromAuPosition, DEFAULT_GALACTIC_POTENTIAL, type GalacticPotentialParams } from "./galacticPotential";
+import {
+  assertScientificFrameStep, normalizePhysicsExecutionPolicy, scientificFrameStep,
+  type PhysicsExecutionPolicy, type PhysicsExecutionPolicyInput, type ScientificPhysicsFailure,
+} from "./physicsExecutionPolicy";
 
 const MAX_SUBSTEPS = 256;
 /** Legacy fixed RK4: max substep length (s). */
@@ -65,6 +69,8 @@ export type SolarSystemPhysicsOptions = {
   capacity?: number;
   /** Override fixed RK4 mode (else env). */
   forceFixedRk4?: boolean;
+  /** Opt-in locked, transactional legacy science run; default interactive behavior is unchanged. */
+  executionPolicy?: PhysicsExecutionPolicyInput;
 };
 
 export type PhysicsStepMetrics = {
@@ -72,7 +78,12 @@ export type PhysicsStepMetrics = {
   acceptedSubsteps: number;
   /** Simulated seconds advanced (may be < dt if aborted). */
   simSecondsAdvanced: number;
-  mode: "dp" | "rk4";
+  /** Actual integrator used for this call, including safety fallbacks. */
+  mode: "dp" | "rk4" | "rk4-fallback" | "galactic-verlet";
+  /** Number of rejected adaptive DP trials in this call. */
+  rejectedSubsteps: number;
+  /** Why adaptive DP was abandoned, when a fallback occurred. */
+  fallbackReason?: "max-attempts" | "max-accel-evals";
 };
 
 /**
@@ -94,6 +105,9 @@ export class SolarSystemPhysics {
   private readonly phiTd: Float64Array;
   private readonly scratchVelAu: Float64Array;
   private readonly useFixedRk4: boolean;
+  private readonly executionPolicy: PhysicsExecutionPolicy;
+  private scientificFailure: ScientificPhysicsFailure | null = null;
+  private initialized = false;
 
   private rtol: number;
   private maxAccelEvalsPerStep: number;
@@ -106,12 +120,21 @@ export class SolarSystemPhysics {
   readonly integratesOnMainThread = true;
 
   constructor(options?: SolarSystemPhysicsOptions) {
+    this.executionPolicy = normalizePhysicsExecutionPolicy(options?.executionPolicy);
+    this.useFixedRk4 = options?.forceFixedRk4 ?? readFixedRk4FromEnv();
+    if (this.executionPolicy.mode === "scientific-shadow" && this.useFixedRk4) {
+      throw new Error("Scientific adaptive-DP policy rejects fixed RK4, including environment overrides");
+    }
     const bodies = SOLAR_SYSTEM_BODIES;
     const activeN = options?.activeN ?? bodies.length;
     const cap =
       options?.capacity ??
       (options?.buffers ? options.buffers.posM.length / 3 : activeN);
     const cap3 = cap * 3;
+    if (this.executionPolicy.mode === "scientific-shadow" && (
+      !Number.isInteger(activeN) || activeN < 1 || activeN > bodies.length
+      || !Number.isInteger(cap) || cap < activeN
+    )) throw new Error("Scientific body count and capacity must be valid positive integers");
 
     if (options?.buffers) {
       const b = options.buffers;
@@ -138,17 +161,20 @@ export class SolarSystemPhysics {
     this.eps2 = defaultEps2Meters();
     this.phiTd = new Float64Array(this.n);
     this.scratchVelAu = new Float64Array(cap3);
-    this.useFixedRk4 = options?.forceFixedRk4 ?? readFixedRk4FromEnv();
     this.rtol = DEFAULT_RTOL;
     this.maxAccelEvalsPerStep = DEFAULT_MAX_ACCEL_EVALS;
+    this.setPrecisionTier(scientificFrameStep(this.executionPolicy)?.tier ?? "full");
 
     this.rk4 = createRk4Workspaces(this.n);
     this.dp54 = createDp54Workspaces(this.n);
 
     this.resetFromEphemeris();
+    this.initialized = true;
   }
 
   setPrecisionTier(tier: PhysicsPrecisionTier): void {
+    const fixed = scientificFrameStep(this.executionPolicy);
+    if (fixed && tier !== fixed.tier) throw new Error("Scientific precision tier is locked");
     this.precisionTier = tier;
     if (tier === "economy") {
       this.rtol = ECONOMY_RTOL;
@@ -157,6 +183,7 @@ export class SolarSystemPhysics {
       this.rtol = DEFAULT_RTOL;
       this.maxAccelEvalsPerStep = DEFAULT_MAX_ACCEL_EVALS;
     }
+    if (this.executionPolicy.mode === "scientific-shadow") this.maxAccelEvalsPerStep = this.executionPolicy.maxAccelEvals;
   }
 
   getPrecisionTier(): PhysicsPrecisionTier {
@@ -165,6 +192,9 @@ export class SolarSystemPhysics {
 
   /** Switch between N-body and analytical galactic potential. */
   setGalacticMode(enabled: boolean, params?: GalacticPotentialParams): void {
+    if (this.executionPolicy.mode === "scientific-shadow" && (enabled || params !== undefined)) {
+      throw new Error("Scientific N-body regime is locked; galactic potential cannot be injected");
+    }
     this.galacticMode = enabled;
     if (params) this.galacticParams = params;
   }
@@ -173,7 +203,12 @@ export class SolarSystemPhysics {
     return this.galacticMode;
   }
 
+  getExecutionPolicy(): PhysicsExecutionPolicy { return this.executionPolicy; }
+
+  getScientificFailure(): ScientificPhysicsFailure | null { return this.scientificFailure; }
+
   resetFromEphemeris(): void {
+    if (this.initialized && this.executionPolicy.mode === "scientific-shadow") throw new Error("Scientific state is locked; reset requires a new run");
     const bodies = SOLAR_SYSTEM_BODIES;
     if (bodies.length !== this.n) {
       console.warn("SolarSystemPhysics.resetFromEphemeris: body count mismatch");
@@ -202,9 +237,11 @@ export class SolarSystemPhysics {
   integrateOneFrame(
     dtSimS: number,
     invC2: number,
-    tier: PhysicsPrecisionTier,
-    _simDeltaDays: number
+    tier: PhysicsPrecisionTier
   ): PhysicsStepMetrics {
+    assertScientificFrameStep(this.executionPolicy, {
+      dtSimS, invC2, tier, simDeltaDays: dtSimS / DAY_SECONDS, galacticMode: this.galacticMode,
+    });
     this.setPrecisionTier(tier);
     const inv = tier === "newton" ? 0 : invC2;
     return this.stepSimulatedSeconds(dtSimS, inv);
@@ -226,6 +263,7 @@ export class SolarSystemPhysics {
     massKgIn: ArrayLike<number>,
     activeN: number,
   ): void {
+    if (this.executionPolicy.mode === "scientific-shadow") throw new Error("Scientific state is locked; snapshots require a new run");
     if (activeN !== this.n) {
       console.warn("SolarSystemPhysics.applySnapshotFromAu: n mismatch");
       return;
@@ -288,10 +326,43 @@ export class SolarSystemPhysics {
    * @param invC2  `1/c²` for 1PN, or `0` for pure Newton.
    */
   stepSimulatedSeconds(dtTotalS: number, invC2: number): PhysicsStepMetrics {
+    const fixed = scientificFrameStep(this.executionPolicy);
+    if (!fixed) return this.stepSimulatedSecondsUnchecked(dtTotalS, invC2);
+    if (this.scientificFailure) throw new Error(`Scientific run terminated: ${this.scientificFailure.reason}; create a new run`);
+    if (dtTotalS !== fixed.dtSimS || invC2 !== fixed.invC2) throw new Error("Scientific model and timestep are locked");
+    // Worker-backed arrays are restored in place; no reference swapping or partial accepted time.
+    const before = [this.posM.slice(), this.velM.slice(), this.posAu.slice()];
+    try {
+      if (![this.posM, this.velM].every((a) => a.subarray(0, this.n * 3).every(Number.isFinite))
+          || !this.mass.subarray(0, this.n).every((m) => Number.isFinite(m) && m > 0)) {
+        throw new Error("non-finite-or-invalid-initial-state");
+      }
+      const result = this.stepSimulatedSecondsUnchecked(dtTotalS, invC2);
+      if (![this.posM, this.velM, this.posAu].every((a) => a.subarray(0, this.n * 3).every(Number.isFinite))) {
+        this.abortScientificStep("non-finite-final-state", result);
+      }
+      if (result.mode !== "dp" || Math.abs(result.simSecondsAdvanced - dtTotalS) > 8 * Number.EPSILON * dtTotalS) {
+        this.abortScientificStep("incomplete-or-wrong-integrator", result);
+      }
+      return result;
+    } catch (error) {
+      this.posM.set(before[0]); this.velM.set(before[1]); this.posAu.set(before[2]);
+      this.scientificFailure ??= Object.freeze({ reason: error instanceof Error ? error.message : "integration-error", attemptedSubsteps: 0, attemptedSeconds: 0 });
+      throw error;
+    }
+  }
+
+  private abortScientificStep(reason: string, metrics: PhysicsStepMetrics): never {
+    this.scientificFailure = Object.freeze({ reason, attemptedSubsteps: metrics.acceptedSubsteps, attemptedSeconds: metrics.simSecondsAdvanced });
+    throw new Error(`Scientific step aborted: ${reason}; state rolled back`);
+  }
+
+  private stepSimulatedSecondsUnchecked(dtTotalS: number, invC2: number): PhysicsStepMetrics {
     const metrics: PhysicsStepMetrics = {
       acceptedSubsteps: 0,
       simSecondsAdvanced: 0,
       mode: "dp",
+      rejectedSubsteps: 0,
     };
     if (dtTotalS <= 0) return metrics;
 
@@ -333,12 +404,20 @@ export class SolarSystemPhysics {
     let accelEvals = 0;
 
     while (tRem > 0) {
-      if (attempts++ > MAX_DP_ATTEMPTS_PER_STEP) {
+      const scientific = this.executionPolicy.mode === "scientific-shadow";
+      if (scientific ? attempts >= this.executionPolicy.maxDpAttempts : attempts > MAX_DP_ATTEMPTS_PER_STEP) {
+        if (scientific) this.abortScientificStep("max-attempts", metrics);
+        metrics.mode = "rk4-fallback";
+        metrics.fallbackReason = "max-attempts";
         this.stepRemainderFixedRk4(tRem, invC2, metrics);
         metrics.simSecondsAdvanced += tRem;
         break;
       }
+      attempts += 1;
       if (accelEvals + ACCEL_EVALS_PER_DP_TRIAL > this.maxAccelEvalsPerStep) {
+        if (scientific) this.abortScientificStep("max-accel-evals", metrics);
+        metrics.mode = "rk4-fallback";
+        metrics.fallbackReason = "max-accel-evals";
         this.stepRemainderFixedRk4(tRem, invC2, metrics);
         metrics.simSecondsAdvanced += tRem;
         break;
@@ -365,6 +444,7 @@ export class SolarSystemPhysics {
         ADAPTIVE_ATOL_VEL_MS
       );
       accelEvals += ACCEL_EVALS_PER_DP_TRIAL;
+      if (scientific && !Number.isFinite(err)) this.abortScientificStep("non-finite-error-estimate", metrics);
 
       const ok = Number.isFinite(err) && err <= 1;
       if (ok) {
@@ -377,6 +457,7 @@ export class SolarSystemPhysics {
         hTry =
           h * Math.min(ADAPTIVE_FACMAX, Math.max(ADAPTIVE_FACMIN, grow));
       } else {
+        metrics.rejectedSubsteps += 1;
         const shrink =
           ADAPTIVE_SAFETY * Math.pow(1 / Math.max(err, 1e-30), 1 / 4);
         hTry = h * Math.max(ADAPTIVE_FACMIN, shrink);
@@ -397,7 +478,7 @@ export class SolarSystemPhysics {
     const posM = this.posM;
     const velM = this.velM;
     const params = this.galacticParams;
-    metrics.mode = "dp";
+    metrics.mode = "galactic-verlet";
 
     // Substeps: use adaptive step sizing similar to fixed RK4 path.
     const nSteps = Math.min(MAX_SUBSTEPS, Math.max(1, Math.ceil(dtTotalS / MAX_DT_SUBSTEP_S)));

@@ -6,7 +6,7 @@ type VisualEnhanceToggleProps = {
 };
 
 /**
- * 顶栏「视觉增强」开关：控制画布后处理（对比度 / Bloom / 光晕）。
+ * Top-bar visual enhancement switch for contrast / bloom / glow.
  */
 export default function VisualEnhanceToggle({
   enabled,
@@ -16,7 +16,7 @@ export default function VisualEnhanceToggle({
     <div
       className="pointer-events-auto fixed left-1/2 top-[max(0.5rem,env(safe-area-inset-top))] z-[91] -translate-x-1/2"
       role="group"
-      aria-label="视觉增强"
+      aria-label="Visual enhance"
     >
       <button
         type="button"
@@ -28,7 +28,7 @@ export default function VisualEnhanceToggle({
             ? "text-ui-primary ring-1 ring-ui-strong"
             : "text-ui-muted hover:bg-[var(--ui-hover-bg)] hover:text-ui-primary"
         }`}
-        title="提高对比度与发光强度（Bloom / 光晕）"
+        title="Increase contrast and glow strength"
       >
         <span
           className={`inline-block h-2 w-2 rounded-full ${
@@ -37,7 +37,7 @@ export default function VisualEnhanceToggle({
           aria-hidden
         />
         Visual Enhance
-        <span className="text-[10px] font-normal text-ui-dim">视觉增强</span>
+        <span className="text-[10px] font-normal text-ui-dim">Enhance</span>
       </button>
     </div>
   );

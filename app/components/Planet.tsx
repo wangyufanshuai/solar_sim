@@ -9,12 +9,11 @@ import {
   useMemo,
   useRef,
   useState,
-  type MutableRefObject,
 } from "react";
 import BodyLabel from "./BodyLabel";
 import EarthAtmosphereGlow from "./EarthAtmosphereGlow";
 import { useRelativisticOpticsStateRef } from "../context/RelativisticOpticsContext";
-import { AU_TO_SCENE, SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
+import { AU_TO_SCENE } from "../data/planetsJ2000";
 import {
   applyDopplerTint,
   bodyVelScenePerRealSec,
@@ -23,7 +22,6 @@ import {
   opticsEffectStrength,
   searchlightBrightnessFactor,
 } from "../lib/relativisticOptics";
-import type { SolarSystemPhysicsRef } from "../lib/solarSystemRef";
 import { useOptionalBloomSceneActions } from "../context/BloomSceneContext";
 import { useOptionalLabelOcclusion } from "../context/LabelOcclusionContext";
 import {
@@ -33,153 +31,23 @@ import {
   SPRITE_LOD_ENTER_PX,
   SPRITE_LOD_EXIT_PX,
 } from "../lib/celestialTextures";
-import { VISUAL_CALIBRATION } from "../lib/visualCalibration";
-import { solarOcclusionFactor } from "../lib/solarOcclusion";
+import { V76_CLOSEUP_VISUAL_BUDGETS } from "../lib/atlasCloseupVisualFidelity";
+import { SCIENTIFIC_VISUAL_FIDELITY_V152_BUDGETS } from "../lib/scientificVisualFidelityV152";
+import { useAtlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasVisualProfileV299 } from "../lib/atlasVisualProfileV299";
+import { createAtlasVisualTokenSignatureV300, useAtlasVisualRuntimeConsumerV300 } from "../lib/atlasVisualRuntimeConsumptionV300";
+import { usePlanetPresentationMaterials } from "./usePlanetPresentationMaterials";
 
-const OCCLUSION_TARGETS = new Set(["earth", "moon", "jupiter", "saturn"]);
-const SOLAR_BODY_IDS = SOLAR_SYSTEM_BODIES.map((body) => body.id);
+const _nightLayerWorldPos = new THREE.Vector3();
 
-const illuminatedLayerVertexShader = `
-  varying vec2 vUvLayer;
-  varying vec3 vNormalWorldLayer;
-  #include <common>
-  #include <logdepthbuf_pars_vertex>
-  void main() {
-    vUvLayer = uv;
-    vNormalWorldLayer = normalize((modelMatrix * vec4(normal, 0.0)).xyz);
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-    #include <logdepthbuf_vertex>
-  }
-`;
-
-const nightLayerFragmentShader = `
-  uniform sampler2D uMap;
-  uniform vec3 uSunDirection;
-  uniform float uIntensity;
-  uniform float uSolarVisibility;
-  uniform float uTerminatorFeather;
-  uniform float uNightCutoff;
-  varying vec2 vUvLayer;
-  varying vec3 vNormalWorldLayer;
-  #include <logdepthbuf_pars_fragment>
-  void main() {
-    vec3 texel = texture2D(uMap, vUvLayer).rgb;
-    float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float night = 1.0 - smoothstep(-0.16 - uTerminatorFeather, 0.12 + uTerminatorFeather, sunDot);
-    night *= 1.0 - uSolarVisibility * smoothstep(-0.03, 0.18, sunDot);
-    night *= 1.0 - smoothstep(uNightCutoff, uNightCutoff + 0.24, sunDot);
-    float luminance = dot(texel, vec3(0.2126, 0.7152, 0.0722));
-    gl_FragColor = vec4(texel * uIntensity * night, luminance * night);
-    #include <logdepthbuf_fragment>
-  }
-`;
-
-const cloudLayerFragmentShader = `
-  uniform sampler2D uMap;
-  uniform vec3 uSunDirection;
-  uniform float uDayOpacity;
-  uniform float uNightOpacity;
-  uniform float uSolarVisibility;
-  uniform float uTerminatorFeather;
-  uniform float uSilverLining;
-  varying vec2 vUvLayer;
-  varying vec3 vNormalWorldLayer;
-  #include <logdepthbuf_pars_fragment>
-  void main() {
-    vec4 texel = texture2D(uMap, vUvLayer);
-    float density = max(texel.a, dot(texel.rgb, vec3(0.3333)));
-    float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float day = smoothstep(-0.22 - uTerminatorFeather, 0.48 + uTerminatorFeather, sunDot) * uSolarVisibility;
-    float edge = smoothstep(-0.12, 0.1, sunDot) * (1.0 - smoothstep(0.1, 0.42, sunDot));
-    float opacity = mix(uNightOpacity, uDayOpacity, day) * density;
-    vec3 color = mix(vec3(0.32, 0.38, 0.46), vec3(1.0, 0.98, 0.94), day);
-    color += vec3(0.18, 0.22, 0.28) * edge * uSilverLining * uSolarVisibility;
-    gl_FragColor = vec4(color, opacity);
-    #include <logdepthbuf_fragment>
-  }
-`;
-
-const cloudShadowFragmentShader = `
-  uniform sampler2D uMap;
-  uniform vec3 uSunDirection;
-  uniform float uSolarVisibility;
-  varying vec2 vUvLayer;
-  varying vec3 vNormalWorldLayer;
-  #include <logdepthbuf_pars_fragment>
-  void main() {
-    vec4 texel = texture2D(uMap, vUvLayer);
-    float density = max(texel.a, dot(texel.rgb, vec3(0.3333)));
-    float sunDot = dot(normalize(vNormalWorldLayer), normalize(uSunDirection));
-    float day = smoothstep(-0.08, 0.42, sunDot) * uSolarVisibility;
-    float shadow = density * day * 0.2;
-    gl_FragColor = vec4(vec3(0.12), shadow);
-    #include <logdepthbuf_fragment>
-  }
-`;
-
-export type PlanetBodyProps = {
-  variant: "planet";
-  bodyId?: string;
-  radius?: number;
-  position?: [number, number, number];
-  sunEmissiveIntensity?: number;
-  sunCoronaRadiusScale?: number;
-  sunCoronaOpacity?: number;
-  map?: THREE.Texture | null;
-  nightMap?: THREE.Texture | null;
-  normalMap?: THREE.Texture | null;
-  roughnessMap?: THREE.Texture | null;
-  color?: THREE.ColorRepresentation;
-  emissive?: THREE.ColorRepresentation;
-  emissiveIntensity?: number;
-  roughness?: number;
-  metalness?: number;
-  envMapIntensity?: number;
-  sphereSegments?: [number, number];
-  sunCastPointLight?: boolean;
-  pointLightIntensity?: number;
-  pointLightColor?: THREE.ColorRepresentation;
-  label?: string;
-  labelFadeNear?: number;
-  labelFadeFar?: number;
-  labelDistanceFactor?: number;
-  labelFontSizePx?: number;
-  labelBodyIndex?: number;
-  labelSurfaceFadeNear?: number;
-  labelSurfaceFadeFar?: number;
-  labelLodDiscWorldRadius?: number;
-  onBodyPointerDown?: (e: ThreeEvent<PointerEvent>) => void;
-  onBodyDoubleClick?: (e: ThreeEvent<PointerEvent>) => void;
-  selected?: boolean;
-  /** When set with `opticsPhysicsRef`, applies Doppler / searchlight from sim velocity vs camera. */
-  opticsBodyIndex?: number;
-  opticsPhysicsRef?: MutableRefObject<SolarSystemPhysicsRef | null>;
-  /** Show atmospheric scattering glow (Earth only). */
-  showAtmosphere?: boolean;
-  /** Atmosphere glow color (defaults to Earth blue). */
-  atmosphereColor?: THREE.ColorRepresentation;
-  /** Cloud layer texture (semi-transparent sphere slightly larger than planet). */
-  clouds?: THREE.Texture | null;
-  illuminationBodyIndex?: number;
-  illuminationPhysicsRef?: MutableRefObject<SolarSystemPhysicsRef | null>;
-  normalScaleIntensity?: number;
-  calibratedEnvMapIntensity?: number;
-  calibratedFillIntensity?: number;
-  calibratedRimIntensity?: number;
-  calibratedBandContrast?: number;
-  calibratedCloudSilverLining?: number;
-  calibratedNightTerminatorCutoff?: number;
-  /** Sim-driven visual spin angle; affects surface/clouds only, not physics or labels. */
-  spinAngleRef?: MutableRefObject<number>;
-};
+import type { PlanetBodyProps } from "./PlanetBodyProps";
+export type { PlanetBodyProps } from "./PlanetBodyProps";
 
 export default function Planet({
-  variant: _variant,
-  bodyId,
+  bodyId = "body",
   radius = 1,
   position = [0, 0, 0],
   map = null,
-  nightMap = null,
   normalMap = null,
   roughnessMap = null,
   color,
@@ -206,30 +74,45 @@ export default function Planet({
   showAtmosphere = false,
   atmosphereColor = "#4488ff",
   clouds = null,
-  illuminationBodyIndex,
-  illuminationPhysicsRef,
-  normalScaleIntensity = 1.9,
-  calibratedEnvMapIntensity,
-  calibratedFillIntensity,
-  calibratedRimIntensity,
-  calibratedBandContrast,
-  calibratedCloudSilverLining,
-  calibratedNightTerminatorCutoff,
+  cloudAlphaMap = null,
+  nightMap = null,
+  nightMaskMap = null,
+  bandMask = null,
   spinAngleRef,
+  forceSurface = false,
+  atlasVisualProfile,
+  cinematicLightingProfile = "overview",
+  referenceGradePlanetMaterialProfile = "overview-local-hd",
+  selectedBodyMaterialProfile = "overview-local-material",
+  selectedBodyAtmosphereDepthProfile = "overview-atmosphere",
+  selectedBodyTerminatorProfile = "overview-terminator",
+  selectedBodyKeyLightProfile = "overview-natural-phase",
+  selectedBodyDepthLightingProfile = "overview-no-depth-lighting",
+  selectedBodyColorGradeProfile = "overview-neutral-color",
+  selectedBodyGasGiantArtProfile = "overview-no-gas-giant-art",
+  selectedBodyEarthCloudNightProfile = "overview-no-earth-cloud-night-art",
+  globalColorGradeProfile = "overview-neutral-grade",
+  closeupCompositionProfile = "overview-no-closeup-director",
 }: PlanetBodyProps) {
   const [wSeg, hSeg] = sphereSegments;
   const visualRef = useRef<THREE.Mesh>(null);
   const cloudsRef = useRef<THREE.Mesh>(null);
-  const cloudShadowRef = useRef<THREE.Mesh>(null);
-  const nightLayerRef = useRef<THREE.Mesh>(null);
-  const nightMaterialRef = useRef<THREE.ShaderMaterial>(null);
-  const cloudMaterialRef = useRef<THREE.ShaderMaterial>(null);
-  const cloudShadowMaterialRef = useRef<THREE.ShaderMaterial>(null);
+  const selectedFillRef = useRef<THREE.Mesh>(null);
+  const bandMaskRef = useRef<THREE.Mesh>(null);
   const spriteRef = useRef<THREE.Sprite>(null);
   const lastPointerDownMs = useRef(0);
   const bloomActions = useOptionalBloomSceneActions();
   const labelOcclusion = useOptionalLabelOcclusion();
   const { camera, size } = useThree();
+  const visualRendererProfile = useAtlasRuntimeStore(
+    (snapshot) => resolveAtlasVisualProfileV299(snapshot.visualProfile),
+  );
+  useAtlasVisualRuntimeConsumerV300({
+    profile: visualRendererProfile.id,
+    group: "solar",
+    consumer: "Planet",
+    tokenSignature: createAtlasVisualTokenSignatureV300(visualRendererProfile.groups.solar),
+  });
   const opticsStateRef = useRelativisticOpticsStateRef();
   const worldPos = useMemo(() => new THREE.Vector3(), []);
   const baseColorStore = useRef(new THREE.Color());
@@ -242,31 +125,7 @@ export default function Planet({
   const [spriteTex, setSpriteTex] = useState<THREE.CanvasTexture | null>(null);
   const closeQualityRef = useRef(false);
   const closeLightRef = useRef(0);
-  const solarVisibilityRef = useRef(1);
-  const occlusionFrameRef = useRef(0);
-  const sunDirectionWorld = useRef(new THREE.Vector3(1, 0, 0));
-  const nightUniforms = useMemo(() => ({
-    uMap: { value: nightMap },
-    uSunDirection: { value: sunDirectionWorld.current.clone() },
-    uIntensity: { value: VISUAL_CALIBRATION.closeups.earth.nightIntensity },
-    uSolarVisibility: { value: 1 },
-    uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
-    uNightCutoff: { value: calibratedNightTerminatorCutoff ?? VISUAL_CALIBRATION.closeups.earth.nightTerminatorCutoff },
-  }), [calibratedNightTerminatorCutoff, nightMap]);
-  const cloudUniforms = useMemo(() => ({
-    uMap: { value: clouds },
-    uSunDirection: { value: sunDirectionWorld.current.clone() },
-    uDayOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudDayOpacity },
-    uNightOpacity: { value: VISUAL_CALIBRATION.closeups.earth.cloudNightOpacity },
-    uSolarVisibility: { value: 1 },
-    uTerminatorFeather: { value: VISUAL_CALIBRATION.closeups.earth.terminatorFeather },
-    uSilverLining: { value: calibratedCloudSilverLining ?? VISUAL_CALIBRATION.closeups.earth.cloudSilverLining },
-  }), [calibratedCloudSilverLining, clouds]);
-  const cloudShadowUniforms = useMemo(() => ({
-    uMap: { value: clouds },
-    uSunDirection: { value: sunDirectionWorld.current.clone() },
-    uSolarVisibility: { value: 1 },
-  }), [clouds]);
+  const nightLayerRef = useRef<THREE.Mesh>(null);
 
   useLayoutEffect(() => {
     setSpriteTex(getSharedPlanetGlowTexture());
@@ -279,6 +138,7 @@ export default function Planet({
   // Register initial bloom target (mesh mode) and clean up on unmount.
   useLayoutEffect(() => {
     const mesh = visualRef.current;
+    const sprite = spriteRef.current;
     if (!bloomActions || !mesh) return;
     if (!spriteLodRef.current) {
       bloomActions.registerBloomTarget(mesh);
@@ -289,9 +149,8 @@ export default function Planet({
         bloomActions.unregisterBloomTarget(mesh);
         bloomMeshRegistered.current = false;
       }
-      const sp = spriteRef.current;
-      if (sp && bloomSpriteRegistered.current) {
-        bloomActions.unregisterBloomTarget(sp);
+      if (sprite && bloomSpriteRegistered.current) {
+        bloomActions.unregisterBloomTarget(sprite);
         bloomSpriteRegistered.current = false;
       }
     };
@@ -300,51 +159,19 @@ export default function Planet({
   useFrame((_, dt) => {
     const mesh = visualRef.current;
     if (!mesh) return;
+    const gasCloseupTiltX = selected && v55GasArt ? (v55SaturnGasArt ? -0.24 : -0.42) : 0;
+    const gasCloseupTiltZ = selected && v55GasArt ? (v55SaturnGasArt ? 0.03 : 0.02) : 0;
+    const spinY = spinAngleRef ? spinAngleRef.current : mesh.rotation.y;
     if (spinAngleRef) {
-      mesh.rotation.y = spinAngleRef.current;
-      if (cloudsRef.current) cloudsRef.current.rotation.y = spinAngleRef.current * 1.018;
-      if (cloudShadowRef.current) cloudShadowRef.current.rotation.y = spinAngleRef.current * 1.018;
-      if (nightLayerRef.current) nightLayerRef.current.rotation.y = spinAngleRef.current;
+      mesh.rotation.y = spinY;
+      if (cloudsRef.current) cloudsRef.current.rotation.y = spinY * 1.018;
     }
-    const illumination = illuminationPhysicsRef?.current;
-    if (
-      illumination &&
-      illuminationBodyIndex !== undefined &&
-      illuminationBodyIndex >= 0 &&
-      illuminationBodyIndex < illumination.n
-    ) {
-      const offset = illuminationBodyIndex * 3;
-      sunDirectionWorld.current.set(
-        (illumination.posAu[0] ?? 0) - (illumination.posAu[offset] ?? 0),
-        (illumination.posAu[1] ?? 0) - (illumination.posAu[offset + 1] ?? 0),
-        (illumination.posAu[2] ?? 0) - (illumination.posAu[offset + 2] ?? 0),
-      ).normalize();
-      nightMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
-      cloudMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
-      cloudShadowMaterialRef.current?.uniforms.uSunDirection.value.copy(sunDirectionWorld.current);
-      occlusionFrameRef.current += 1;
-      if (occlusionFrameRef.current % 12 === 1) {
-        solarVisibilityRef.current =
-          bodyId && OCCLUSION_TARGETS.has(bodyId)
-            ? solarOcclusionFactor(illumination, illuminationBodyIndex, SOLAR_BODY_IDS)
-            : 1;
-      }
-      if (cloudMaterialRef.current) {
-        cloudMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
-      }
-      if (cloudShadowMaterialRef.current) {
-        cloudShadowMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
-      }
-      if (nightMaterialRef.current) {
-        nightMaterialRef.current.uniforms.uSolarVisibility.value = solarVisibilityRef.current;
-        nightMaterialRef.current.uniforms.uNightCutoff.value =
-          calibratedNightTerminatorCutoff ?? VISUAL_CALIBRATION.closeups.earth.nightTerminatorCutoff;
-      }
-      limbMaterial.uniforms.uOpacity.value =
-        (showAtmosphere ? 0.32 : 0.13) *
-        (calibratedRimIntensity ?? VISUAL_CALIBRATION.planets.rimIntensity) *
-        (0.18 + 0.82 * solarVisibilityRef.current);
-    }
+    mesh.rotation.x = gasCloseupTiltX;
+    mesh.rotation.z = gasCloseupTiltZ;
+    if (selectedFillRef.current) selectedFillRef.current.rotation.set(gasCloseupTiltX, spinY, gasCloseupTiltZ);
+    if (bandMaskRef.current) bandMaskRef.current.rotation.set(gasCloseupTiltX, spinY, gasCloseupTiltZ);
+    if (nightLayerRef.current && v55GasArt) nightLayerRef.current.rotation.set(gasCloseupTiltX, spinY, gasCloseupTiltZ);
+    if (cloudsRef.current && v55GasArt) cloudsRef.current.rotation.set(gasCloseupTiltX, spinY * 1.018, gasCloseupTiltZ);
     mesh.getWorldPosition(worldPos);
     const dist = worldPos.distanceTo(camera.position);
     const persp = camera as THREE.PerspectiveCamera;
@@ -356,13 +183,13 @@ export default function Planet({
   const wasSprite = spriteLodRef.current;
     let next = wasSprite;
     closeQualityRef.current = selected || diameterPx > 92;
-    if (closeQualityRef.current) {
+    if (forceSurface || closeQualityRef.current) {
       next = false;
     } else if (!wasSprite && diameterPx < SPRITE_LOD_ENTER_PX) next = true;
     if (wasSprite && diameterPx > SPRITE_LOD_EXIT_PX) next = false;
     if (next !== wasSprite) {
       spriteLodRef.current = next;
-      // Imperative visibility toggle — no React setState, no re-render flicker.
+      // Imperative visibility toggle: no React setState, no re-render flicker.
       mesh.visible = !next;
       const sp = spriteRef.current;
       if (sp) sp.visible = next;
@@ -393,7 +220,7 @@ export default function Planet({
     }
 
     if (next && spriteRef.current && frustumH > 1e-8) {
-      const targetPx = Math.max(MIN_PLANET_ICON_PX, diameterPx);
+      const targetPx = Math.max(atlasBodyStyle?.spriteMinPx ?? MIN_PLANET_ICON_PX, diameterPx);
       const world = (targetPx / size.height) * frustumH;
       spriteRef.current.scale.setScalar(world);
     }
@@ -405,12 +232,24 @@ export default function Planet({
       closeLight,
       1 - Math.pow(0.0015, Math.max(0.001, dt))
     );
-    const fillBase = calibratedFillIntensity ?? (showAtmosphere ? 0.18 : 0.1);
-    const textureFill = nightMap
-      ? fillBase * (0.55 + closeLightRef.current * 1.15)
+    const textureFill = atlasTextureFillRuntime !== undefined
+      ? atlasTextureFillRuntime
       : map
-        ? closeLightRef.current * fillBase * (showAtmosphere ? 1.6 : 1.25)
-        : 0;
+        ? closeLightRef.current * (selected ? 0.105 : showAtmosphere ? 0.055 : 0.04)
+        : closeLightRef.current * 0.045;
+    if (nightSideMaterial) {
+      const nightMesh = nightLayerRef.current;
+      if (nightMesh) {
+        nightMesh.getWorldPosition(_nightLayerWorldPos);
+        _nightLayerWorldPos.negate().normalize();
+        nightSideMaterial.uniforms.uSunDirection.value.copy(_nightLayerWorldPos);
+        depthLightingMaterial.uniforms.uSunDirection.value.copy(_nightLayerWorldPos);
+        colorGradeMaterial.uniforms.uSunDirection.value.copy(_nightLayerWorldPos);
+      }
+        nightSideMaterial.uniforms.uOpacity.value = (selected
+        ? v55EarthCloudNight ? V76_CLOSEUP_VISUAL_BUDGETS.earth.nightLayerOpacity : cinematicEarth ? referenceCloseupMaterial ? 0.52 : 0.64 : 0.68
+        : 0.42) * visualRendererProfile.groups.solar.nightSideExposure;
+    }
     const st = opticsStateRef?.current;
     const spMat = spriteRef.current?.material as THREE.SpriteMaterial | undefined;
     if (
@@ -419,21 +258,21 @@ export default function Planet({
       !mat ||
       !st
     ) {
-      if (mat) mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
-      if (mat) mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
+      if (mat) mat.color.copy(baseColorStore.current);
+      if (mat) mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }
     if (!st.active) {
-      mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
-      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
+      mat.color.copy(baseColorStore.current);
+      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }
     const p = opticsPhysicsRef.current;
     if (!p || opticsBodyIndex < 0 || opticsBodyIndex >= p.n) {
-      mat.color.copy(baseColorStore.current).multiplyScalar(0.42 + 0.58 * solarVisibilityRef.current);
-      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill) * (0.45 + 0.55 * solarVisibilityRef.current);
+      mat.color.copy(baseColorStore.current);
+      mat.emissiveIntensity = Math.max(baseEmissiveStore.current, textureFill);
       if (spMat) spMat.color.copy(baseColorStore.current);
       return;
     }
@@ -466,6 +305,7 @@ export default function Planet({
     const ratio = dopplerFrequencyRatio(betaLos);
     applyDopplerTint(baseColorStore.current, ratio, strength, shiftedColor.current);
     const g = searchlightBrightnessFactor(betaLos, strength);
+
     const bright = THREE.MathUtils.clamp(Math.sqrt(g), 0.62, 1.5);
     mat.color.copy(shiftedColor.current).multiplyScalar(bright);
     mat.emissiveIntensity = THREE.MathUtils.clamp(
@@ -490,84 +330,35 @@ export default function Planet({
     return () => labelOcclusion.unregisterOccluder(mesh);
   }, [labelOcclusion, labelBodyIndex, radius]);
 
-  const planetColor = useMemo(() => {
-    if (color !== undefined) return new THREE.Color(color);
-    return new THREE.Color("#c8c8d8");
-  }, [color]);
-
-  const emissiveBaseColor = useMemo(() => {
-    if (emissive !== undefined && emissive !== null) {
-      const ec = new THREE.Color(emissive as THREE.ColorRepresentation);
-      if (ec.r + ec.g + ec.b > 1e-5) return ec;
-    }
-    return planetColor.clone();
-  }, [emissive, planetColor]);
-
-  useLayoutEffect(() => {
-    baseColorStore.current.copy(planetColor);
-    baseEmissiveStore.current = emissiveIntensity;
-  }, [planetColor, emissiveIntensity]);
-
-  const spriteTint = useMemo(() => {
-    const c = planetColor.clone();
-    const t = Math.min(0.58, emissiveIntensity * 0.14 + 0.32);
-    c.lerp(emissiveBaseColor, t);
-    return c;
-  }, [planetColor, emissiveBaseColor, emissiveIntensity]);
-
-  const normalScale = useMemo(
-    () => new THREE.Vector2(normalScaleIntensity, normalScaleIntensity),
-    [normalScaleIntensity]
-  );
-
-  const limbMaterial = useMemo(
-    () =>
-      new THREE.ShaderMaterial({
-        transparent: true,
-        depthWrite: false,
-        depthTest: true,
-        blending: THREE.AdditiveBlending,
-        toneMapped: false,
-        side: THREE.FrontSide,
-        uniforms: {
-          uColor: { value: planetColor.clone().lerp(new THREE.Color("#9fc8ff"), showAtmosphere ? 0.62 : 0.24) },
-          uOpacity: { value: (showAtmosphere ? 0.32 : 0.13) * (calibratedRimIntensity ?? VISUAL_CALIBRATION.planets.rimIntensity) },
-        },
-        vertexShader: `
-          varying vec3 vNormal;
-          varying vec3 vView;
-          #include <common>
-          #include <logdepthbuf_pars_vertex>
-          void main() {
-            vNormal = normalize(normalMatrix * normal);
-            vec4 mv = modelViewMatrix * vec4(position, 1.0);
-            vView = mv.xyz;
-            gl_Position = projectionMatrix * mv;
-            #include <logdepthbuf_vertex>
-          }
-        `,
-        fragmentShader: `
-          varying vec3 vNormal;
-          varying vec3 vView;
-          uniform vec3 uColor;
-          uniform float uOpacity;
-          #include <logdepthbuf_pars_fragment>
-          void main() {
-            float rim = pow(1.0 - max(dot(normalize(vNormal), normalize(-vView)), 0.0), 2.7);
-            float edge = smoothstep(0.18, 1.0, rim);
-            gl_FragColor = vec4(uColor, edge * uOpacity);
-            #include <logdepthbuf_fragment>
-          }
-        `,
-      }),
-    [calibratedRimIntensity, planetColor, showAtmosphere]
-  );
-
-  useLayoutEffect(() => {
-    return () => {
-      limbMaterial.dispose();
-    };
-  }, [limbMaterial]);
+  const {
+    atlasBodyStyle, atlasBumpScale, atlasEmissiveIntensity,
+    atlasGasGiant,
+    atlasSpriteBlending, atlasSpriteColor, atlasSpriteOpacity,
+    atlasSurface, atlasTerrestrial, atlasTextureFillRuntime,
+    cinematicCloseup, cinematicEarth, cinematicGasGiant,
+    colorGradeMaterial, depthLightingMaterial, hasRealTexture,
+    keyLightFillMaterial, limbMaterial, materialColor,
+    materialEnvMapIntensity, materialRoughness, nightSideMaterial,
+    normalScale, referenceCloseupMaterial, referenceGasGiantMaterial,
+    selectedSurfaceFillColor, selectedSurfaceFillOpacity, surfaceMap,
+    textureEmissiveColor, v152EarthInspect, v152JupiterInspect,
+    v49AtmosphereDepth, v49EarthMaterial, v49GasMaterial,
+    v50GasPortrait, v51EarthKeyBalance, v51GasKeyFill,
+    v51SaturnKeyFill, v52EarthDepth, v52GasDepth,
+    v52SaturnDepth, v53EarthColor, v55EarthCloudNight,
+    v55GasArt, v55GlobalColor, v55SaturnGasArt,
+  } = usePlanetPresentationMaterials({
+    bodyId, radius, map,
+    color, emissive, emissiveIntensity,
+    roughness, envMapIntensity, selected,
+    terminatorSoftness: visualRendererProfile.groups.solar.terminatorSoftness,
+    showAtmosphere, nightMap, nightMaskMap,
+    atlasVisualProfile, cinematicLightingProfile, referenceGradePlanetMaterialProfile,
+    selectedBodyMaterialProfile, selectedBodyAtmosphereDepthProfile, selectedBodyTerminatorProfile,
+    selectedBodyKeyLightProfile, selectedBodyDepthLightingProfile, selectedBodyColorGradeProfile,
+    selectedBodyGasGiantArtProfile, selectedBodyEarthCloudNightProfile, globalColorGradeProfile,
+    closeupCompositionProfile, baseColorStore, baseEmissiveStore,
+  });
 
   const handlePickPointerDown = useCallback(
     (e: ThreeEvent<PointerEvent>) => {
@@ -583,6 +374,15 @@ export default function Planet({
     },
     [onBodyPointerDown, onBodyDoubleClick]
   );
+
+  const colorGradeLayerActive = selected && hasRealTexture && (
+    selectedBodyColorGradeProfile !== "overview-neutral-color" ||
+    v55EarthCloudNight ||
+    v55GlobalColor
+  );
+  const depthLightingLayerActive = selected && hasRealTexture && !v55GasArt &&
+    selectedBodyDepthLightingProfile !== "overview-no-depth-lighting" &&
+    !colorGradeLayerActive;
 
   return (
     <group position={position} frustumCulled={false}>
@@ -607,43 +407,89 @@ export default function Planet({
       >
         <sphereGeometry args={[radius, wSeg, hSeg]} />
         <meshPhysicalMaterial
-          color={planetColor}
-          map={map ?? undefined}
+          color={materialColor}
+          map={surfaceMap}
           normalMap={normalMap ?? undefined}
           normalScale={normalMap ? normalScale : undefined}
-          bumpMap={!normalMap && map ? map : undefined}
-          bumpScale={!normalMap && map ? radius * 0.024 : 0}
+          bumpMap={!normalMap ? surfaceMap : undefined}
+          bumpScale={!normalMap ? atlasBumpScale ?? radius * (hasRealTexture ? 0.026 : 0.011) : 0}
           roughnessMap={roughnessMap ?? undefined}
-          roughness={Math.max(0.48, roughness)}
+          roughness={Math.max(
+            visualRendererProfile.planetRoughnessMinimum,
+            materialRoughness * visualRendererProfile.planetRoughnessMultiplier,
+          )}
           metalness={metalness}
-          emissive={map ? "#ffffff" : emissiveBaseColor}
-          emissiveMap={map ?? undefined}
-          emissiveIntensity={Math.max(emissiveIntensity * (selected ? 0.68 : 0.5), selected ? (map ? 0.12 : 0.1) : 0)}
-          envMapIntensity={calibratedEnvMapIntensity ?? (selected ? Math.min(Math.max(envMapIntensity, 0.18), 0.32) : Math.min(Math.max(envMapIntensity, 0.08), 0.2))}
-          clearcoat={selected ? 0.2 : showAtmosphere ? 0.18 : 0.055}
-          clearcoatRoughness={showAtmosphere ? 0.38 : 0.78}
-          sheen={showAtmosphere ? 0.16 : 0.035}
+          emissive={textureEmissiveColor}
+          emissiveMap={hasRealTexture && selected ? surfaceMap : undefined}
+          emissiveIntensity={
+            atlasSurface
+              ? Math.max(atlasTextureFillRuntime ?? (v55GasArt ? 0.036 : 0.055), v152EarthInspect ? SCIENTIFIC_VISUAL_FIDELITY_V152_BUDGETS.earth.minimumTextureEmissive : v55GasArt ? Math.min(atlasEmissiveIntensity ?? 0, 0.045) : atlasEmissiveIntensity ?? 0)
+              : Math.max(
+                  emissiveIntensity * (selected ? (v55GasArt || v55EarthCloudNight ? 0.13 : 0.22) : 0.28),
+                  selected ? (hasRealTexture ? (v55GasArt ? 0.058 : v55EarthCloudNight ? 0.048 : 0.105) : 0.08) : 0,
+                )
+          }
+          envMapIntensity={Math.min(
+            visualRendererProfile.planetEnvironmentMaximum,
+            materialEnvMapIntensity + visualRendererProfile.planetEnvironmentOffset,
+          )}
+          clearcoat={atlasSurface ? (atlasTerrestrial ? (v55EarthCloudNight ? 0.035 : v49EarthMaterial ? 0.045 : 0.08) : v55GasArt ? 0.018 : 0.035) : selected ? (v55GasArt ? 0.04 : v55EarthCloudNight ? 0.085 : v49EarthMaterial ? 0.11 : 0.18) : showAtmosphere ? 0.14 : 0.035}
+          clearcoatRoughness={showAtmosphere ? (cinematicCloseup ? (v55EarthCloudNight ? 0.68 : v49EarthMaterial ? 0.62 : 0.5) : 0.42) : v55GasArt ? 0.96 : 0.82}
+          sheen={showAtmosphere ? (cinematicCloseup ? (v55EarthCloudNight ? 0.055 : v49AtmosphereDepth ? 0.075 : 0.1) : 0.13) : v55GasArt ? 0.014 : 0.026}
           sheenRoughness={0.72}
-          iridescence={bodyId === "jupiter" || bodyId === "saturn" ? Math.min(0.1, calibratedBandContrast ?? 0) : 0}
-          iridescenceIOR={1.2}
           wireframe={false}
         />
       </mesh>
-      <mesh renderOrder={3} frustumCulled={false}>
-        <sphereGeometry args={[radius * (showAtmosphere ? 1.018 : 1.01), wSeg, hSeg]} />
-        <primitive object={limbMaterial} attach="material" />
-      </mesh>
+      {selected && hasRealTexture && selectedSurfaceFillOpacity > 0 ? (
+        <mesh ref={selectedFillRef} renderOrder={2.66} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.0016, wSeg, hSeg]} />
+          <meshBasicMaterial
+            map={surfaceMap}
+            color={selectedSurfaceFillColor}
+            transparent
+            opacity={selectedSurfaceFillOpacity}
+            depthWrite={false}
+            depthTest
+            toneMapped={false}
+            blending={v152EarthInspect ? THREE.AdditiveBlending : THREE.NormalBlending}
+          />
+        </mesh>
+      ) : null}
+      {selected && hasRealTexture && (v51GasKeyFill || v55GasArt) ? (
+        <mesh renderOrder={2.72} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.0025, wSeg, hSeg]} />
+          <primitive object={keyLightFillMaterial} attach="material" />
+        </mesh>
+      ) : null}
+      {depthLightingLayerActive ? (
+        <mesh renderOrder={2.86} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.0032, wSeg, hSeg]} />
+          <primitive object={depthLightingMaterial} attach="material" />
+        </mesh>
+      ) : null}
+      {colorGradeLayerActive ? (
+        <mesh renderOrder={2.9} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.0038, wSeg, hSeg]} />
+          <primitive object={colorGradeMaterial} attach="material" />
+        </mesh>
+      ) : null}
+      {!showAtmosphere ? (
+        <mesh renderOrder={3} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.01, wSeg, hSeg]} />
+          <primitive object={limbMaterial} attach="material" />
+        </mesh>
+      ) : null}
       {spriteTex ? (
         <sprite ref={spriteRef} visible={false} renderOrder={2}>
           <spriteMaterial
             map={spriteTex}
-            color={planetColor}
+            color={atlasSpriteColor}
             transparent
-            opacity={1}
+            opacity={atlasSpriteOpacity}
             toneMapped={false}
             depthTest
             depthWrite={false}
-            blending={THREE.AdditiveBlending}
+            blending={atlasSpriteBlending}
           />
         </sprite>
       ) : null}
@@ -651,66 +497,51 @@ export default function Planet({
         <EarthAtmosphereGlow
           radius={radius}
           atmosphereColor={atmosphereColor}
-          atmosphereIntensity={bodyId === "earth" ? VISUAL_CALIBRATION.closeups.earth.atmosphereIntensity : undefined}
+          atmospherePower={selected ? 3.85 : 3.25}
+          atmosphereIntensity={
+            bodyId === "earth"
+              ? selected ? (v55EarthCloudNight ? V76_CLOSEUP_VISUAL_BUDGETS.earth.atmosphereIntensity : v52EarthDepth ? 0.22 : v51EarthKeyBalance ? 0.29 : v49EarthMaterial ? 0.27 : cinematicEarth ? 0.34 : 0.42) : 0.32
+              : v49GasMaterial || cinematicGasGiant || atlasGasGiant || v55GasArt
+                ? selected ? v55GasArt ? 0.115 : v52GasDepth ? 0.155 : v51GasKeyFill ? 0.205 : v50GasPortrait ? 0.17 : v49GasMaterial ? 0.13 : referenceGasGiantMaterial ? 0.16 : 0.2 : 0.12
+                : selected ? (v49AtmosphereDepth ? 0.14 : 0.26) : 0.18
+          }
         />
       ) : null}
-      {bodyId === "earth" && nightMap ? (
-        <mesh ref={nightLayerRef} renderOrder={4} frustumCulled={false}>
-          <sphereGeometry args={[radius * 1.002, wSeg, hSeg]} />
-          <shaderMaterial
-            ref={nightMaterialRef}
-            vertexShader={illuminatedLayerVertexShader}
-            fragmentShader={nightLayerFragmentShader}
-            uniforms={nightUniforms}
-            transparent
-            depthWrite={false}
-            depthTest
-            blending={THREE.AdditiveBlending}
-            toneMapped={false}
-          />
-        </mesh>
-      ) : null}
-      {bodyId === "earth" && clouds ? (
-        <>
-          <mesh ref={cloudShadowRef} renderOrder={3} frustumCulled={false}>
-            <sphereGeometry args={[radius * 1.0035, wSeg, hSeg]} />
-            <shaderMaterial
-              ref={cloudShadowMaterialRef}
-              vertexShader={illuminatedLayerVertexShader}
-              fragmentShader={cloudShadowFragmentShader}
-              uniforms={cloudShadowUniforms}
-              transparent
-              depthWrite={false}
-              depthTest
-              blending={THREE.MultiplyBlending}
-            />
-          </mesh>
-          <mesh ref={cloudsRef} renderOrder={4} frustumCulled={false}>
-            <sphereGeometry args={[radius * 1.008, wSeg, hSeg]} />
-            <shaderMaterial
-              ref={cloudMaterialRef}
-              vertexShader={illuminatedLayerVertexShader}
-              fragmentShader={cloudLayerFragmentShader}
-              uniforms={cloudUniforms}
-              transparent
-              depthWrite={false}
-              depthTest
-              blending={THREE.NormalBlending}
-            />
-          </mesh>
-        </>
-      ) : clouds ? (
+      {clouds ? (
         <mesh ref={cloudsRef} renderOrder={4} frustumCulled={false}>
-          <sphereGeometry args={[radius * 1.008, wSeg, hSeg]} />
+          <sphereGeometry args={[radius * (v55EarthCloudNight ? 1.006 : 1.008), wSeg, hSeg]} />
           <meshStandardMaterial
             map={clouds}
+            alphaMap={cloudAlphaMap ?? undefined}
             transparent
-            opacity={0.5 * VISUAL_CALIBRATION.planets.cloudIntensity}
+            opacity={(selected ? (v55EarthCloudNight ? V76_CLOSEUP_VISUAL_BUDGETS.earth.cloudOpacity : v53EarthColor ? 0.36 : v49EarthMaterial ? 0.38 : cinematicEarth ? referenceCloseupMaterial ? 0.5 : 0.44 : 0.54) : 0.34) * visualRendererProfile.groups.solar.cloudOpacity}
             depthWrite={false}
             depthTest
             metalness={0}
             roughness={1}
+            blending={THREE.NormalBlending}
           />
+        </mesh>
+      ) : null}
+      {bandMask && selected && (v49GasMaterial || v51GasKeyFill || v52GasDepth || v55GasArt) ? (
+        <mesh ref={bandMaskRef} renderOrder={3.25} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.002, wSeg, hSeg]} />
+          <meshBasicMaterial
+            map={bandMask}
+          color={v55GasArt ? (v55SaturnGasArt ? "#d1b982" : "#f0bf86") : v51SaturnKeyFill ? "#dfc38b" : "#d8c4a4"}
+          transparent
+            opacity={v152JupiterInspect ? SCIENTIFIC_VISUAL_FIDELITY_V152_BUDGETS.jupiter.bandMaskOpacity : v55GasArt ? (v55SaturnGasArt ? 0.2 : V76_CLOSEUP_VISUAL_BUDGETS.jupiter.bandMaskOpacity) : v52GasDepth ? (v52SaturnDepth ? 0.12 : 0.14) : v51GasKeyFill ? (v51SaturnKeyFill ? 0.085 : 0.105) : v50GasPortrait ? 0.18 : 0.105}
+            blending={v55GasArt ? THREE.AdditiveBlending : v51GasKeyFill ? THREE.AdditiveBlending : THREE.MultiplyBlending}
+            depthWrite={false}
+            depthTest
+            toneMapped={false}
+          />
+        </mesh>
+      ) : null}
+      {nightMap ? (
+        <mesh ref={nightLayerRef} renderOrder={4} frustumCulled={false}>
+          <sphereGeometry args={[radius * 1.004, wSeg, hSeg]} />
+          <primitive object={nightSideMaterial} attach="material" />
         </mesh>
       ) : null}
       {label ? (

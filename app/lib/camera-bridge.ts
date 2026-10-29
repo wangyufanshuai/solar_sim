@@ -45,14 +45,16 @@ export function dispatchCameraFocusEarthMoon() {
 export const CAMERA_FOCUS_DIRECTION_EVENT = "solar-sim-camera-focus-direction";
 export type CameraFocusDirectionDetail = {
   direction: [number, number, number];
+  constellationCatalogId?: string;
 };
 
 export function dispatchCameraFocusDirection(
-  direction: [number, number, number]
+  direction: [number, number, number],
+  constellationCatalogId?: string,
 ) {
   window.dispatchEvent(
     new CustomEvent<CameraFocusDirectionDetail>(CAMERA_FOCUS_DIRECTION_EVENT, {
-      detail: { direction },
+      detail: constellationCatalogId ? { direction, constellationCatalogId } : { direction },
     })
   );
 }

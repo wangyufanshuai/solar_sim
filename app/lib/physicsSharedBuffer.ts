@@ -14,6 +14,19 @@ export const META_F64_COUNT = 8;
 
 /** Int32 meta — sequence bump after each worker step (reserved slots follow). */
 export const META_I32_SEQ = 0;
+export const META_I32_MODE = 1;
+export const META_I32_REJECTED_SUBSTEPS = 2;
+export const META_I32_FALLBACK_REASON = 3;
+
+/** Stable worker metrics codes; keep these language-neutral for manifests. */
+export const PHYSICS_MODE_DP = 0;
+export const PHYSICS_MODE_RK4 = 1;
+export const PHYSICS_MODE_RK4_FALLBACK = 2;
+export const PHYSICS_MODE_GALACTIC_VERLET = 3;
+export const PHYSICS_FALLBACK_NONE = 0;
+export const PHYSICS_FALLBACK_MAX_ATTEMPTS = 1;
+export const PHYSICS_FALLBACK_MAX_ACCEL_EVALS = 2;
+
 export const META_I32_COUNT = 16;
 
 export function physicsSharedBufferByteLength(): number {

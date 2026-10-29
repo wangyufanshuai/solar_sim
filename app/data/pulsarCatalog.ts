@@ -27,7 +27,9 @@ export type PulsarDef = {
 
 export const PULSARS: PulsarDef[] = [
   // ── Famous/Historical Pulsars ────────────────────────────
-  { id: "b0531+21", name: "PSR B0531+21", commonName: "Crab Pulsar", subtitleCn: "蟹状星云脉冲星", galLonDeg: 184.6, galLatDeg: -5.8, distancePc: 650, periodS: 0.0335, color: "#00ffaa", intensity: 1.0 },
+  // NASA Messier 1: 6,500 ly, approximately 2,000 pc; same remnant as the J alias below.
+  // https://science.nasa.gov/mission/hubble/science/explore-the-night-sky/hubble-messier-catalog/messier-1/
+  { id: "b0531+21", name: "PSR B0531+21", commonName: "Crab Pulsar", subtitleCn: "蟹状星云脉冲星", galLonDeg: 184.6, galLatDeg: -5.8, distancePc: 2000, periodS: 0.0335, color: "#00ffaa", intensity: 1.0 },
   { id: "b0833-45", name: "PSR B0833-45", commonName: "Vela Pulsar", subtitleCn: "船帆座脉冲星", galLonDeg: 263.6, galLatDeg: -2.8, distancePc: 287, periodS: 0.0894, color: "#00eeff", intensity: 0.95 },
   { id: "b1919+21", name: "PSR B1919+21", commonName: "First Pulsar (LGM-1)", subtitleCn: "第一颗脉冲星", galLonDeg: 56.8, galLatDeg: -1.7, distancePc: 330, periodS: 1.337, color: "#44ffcc", intensity: 0.70 },
   { id: "b0329+54", name: "PSR B0329+54", commonName: "PSR B0329+54", subtitleCn: "最强射电脉冲星", galLonDeg: 145.0, galLatDeg: -1.2, distancePc: 1030, periodS: 0.7145, color: "#22ffdd", intensity: 0.75 },
@@ -55,7 +57,7 @@ export const PULSARS: PulsarDef[] = [
   // ── Notable Regular Pulsars ──────────────────────────────
   { id: "b0540-69", name: "PSR B0540-69", commonName: "B0540-69 (LMC)", subtitleCn: "大麦哲伦脉冲星", galLonDeg: 279.6, galLatDeg: -31.3, distancePc: 50000, periodS: 0.0505, color: "#44ffdd", intensity: 0.65 },
   { id: "b1509-58", name: "PSR B1509-58", commonName: "B1509-58", subtitleCn: "B1509-58脉冲星", galLonDeg: 320.3, galLatDeg: -1.2, distancePc: 4100, periodS: 0.1507, color: "#55ffcc", intensity: 0.70 },
-  { id: "j0534+2200", name: "PSR J0534+2200", commonName: "Crab Pulsar (J)", subtitleCn: "蟹状星云脉冲星J", galLonDeg: 184.6, galLatDeg: -5.8, distancePc: 650, periodS: 0.0335, color: "#00ffbb", intensity: 0.90 },
+  { id: "j0534+2200", name: "PSR J0534+2200", commonName: "Crab Pulsar (J)", subtitleCn: "蟹状星云脉冲星J", galLonDeg: 184.6, galLatDeg: -5.8, distancePc: 2000, periodS: 0.0335, color: "#00ffbb", intensity: 0.90 },
   { id: "geminga", name: "PSR J0633+1746", commonName: "Geminga", subtitleCn: "双子座γ射线源", galLonDeg: 195.1, galLatDeg: -4.3, distancePc: 190, periodS: 0.2371, color: "#88ffcc", intensity: 0.75 },
   { id: "b0823+26", name: "PSR B0823+26", commonName: "B0823+26", subtitleCn: "B0823+26脉冲星", galLonDeg: 199.4, galLatDeg: 31.7, distancePc: 310, periodS: 0.5307, color: "#44eedd", intensity: 0.55 },
   { id: "b0950+08", name: "PSR B0950+08", commonName: "B0950+08", subtitleCn: "B0950+08脉冲星", galLonDeg: 228.9, galLatDeg: 43.7, distancePc: 260, periodS: 0.2531, color: "#55ddcc", intensity: 0.55 },

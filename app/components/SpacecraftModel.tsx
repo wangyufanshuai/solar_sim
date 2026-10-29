@@ -2,7 +2,12 @@
 
 import { useEffect, useMemo, useState } from "react";
 import * as THREE from "three";
-import { createSpacecraftGltfLoader } from "../lib/spacecraftGltfLoader";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { atlasAssetCandidates } from "../lib/atlasAssetResolver";
+import { solarAssetUrl } from "../lib/runtimeUrls";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
+import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
+import { resolveAtlasUnderlyingCanvasModeV595 } from "../lib/atlasProductSceneFamilyContractV595";
 
 type SpacecraftModelProps = {
   modelUrls: readonly string[];
@@ -24,15 +29,22 @@ export default function SpacecraftModel({
   radiusScene,
 }: SpacecraftModelProps) {
   const [sceneObj, setSceneObj] = useState<THREE.Object3D | null>(null);
-  const loaderBundle = useMemo(() => createSpacecraftGltfLoader(), []);
+  const loader = useMemo(() => new GLTFLoader(), []);
 
   useEffect(() => {
     let disposed = false;
     let loadedObj: THREE.Object3D | null = null;
+    let releaseModel: (() => void) | null = null;
+    const resourceSceneMode = resolveAtlasUnderlyingCanvasModeV595(
+      atlasRuntimeStore.getSnapshot().sceneMode,
+    );
     (async () => {
-      for (const url of modelUrls) {
+      const candidates = Array.from(new Set(
+        modelUrls.flatMap((entry) => atlasAssetCandidates(solarAssetUrl(entry))),
+      ));
+      for (const url of candidates) {
         try {
-          const gltf = await loaderBundle.loader.loadAsync(url);
+          const gltf = await loader.loadAsync(url);
           loadedObj = gltf.scene.clone(true);
           loadedObj.traverse((n) => {
             const mesh = n as THREE.Mesh;
@@ -50,15 +62,21 @@ export default function SpacecraftModel({
         if (loadedObj) disposeObject3D(loadedObj);
         return;
       }
+      if (loadedObj) {
+        releaseModel = acquireAtlasResource(
+          "model",
+          resourceSceneMode,
+          "spacecraft-model",
+        );
+      }
       setSceneObj(loadedObj);
     })();
     return () => {
       disposed = true;
+      releaseModel?.();
       if (loadedObj) disposeObject3D(loadedObj);
     };
-  }, [loaderBundle, modelUrls]);
-
-  useEffect(() => () => loaderBundle.dispose(), [loaderBundle]);
+  }, [loader, modelUrls]);
 
   if (!sceneObj) return null;
   const scale = Math.max(0.01, radiusScene * 0.11);

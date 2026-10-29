@@ -20,12 +20,6 @@ export type FloatingOriginState = {
   offsetScene: THREE.Vector3;
 };
 
-const _identity: FloatingOriginState = {
-  offsetAu: [0, 0, 0],
-  lodTier: "solar",
-  offsetScene: new THREE.Vector3(0, 0, 0),
-};
-
 /** Create a zero-origin state (solar tier). */
 export function createFloatingOrigin(): FloatingOriginState {
   return {

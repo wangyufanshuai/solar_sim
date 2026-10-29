@@ -1,0 +1,386 @@
+{
+  "schema": "mainline-a-beta-nebula-expansion-v617",
+  "generatedAt": "2026-08-20T00:00:00Z",
+  "base": {
+    "path": "app/data/mainlineANebulaRightsPackV613.generated.json",
+    "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7",
+    "candidateCount": 18
+  },
+  "sourceBoundary": {
+    "licenseReviewPath": "docs/release/v592/nebula-item-license-review-v592.json",
+    "metadataAdmissionPath": "docs/release/v592/nebula-asset-metadata-admission-v592.json",
+    "policyUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "legalDecision": "not-granted",
+    "visualAssetAdmission": false,
+    "scienceImagePayloadWriteback": false
+  },
+  "counts": {
+    "baseCandidates": 18,
+    "expansionCandidates": 6,
+    "candidateTotal": 24,
+    "localPayloadPresent": 1,
+    "payloadAcquisitionPending": 5,
+    "blocked": 6,
+    "runtimeAdmitted": 0
+  },
+  "records": [
+    {
+      "candidateId": "ring-nebula",
+      "expansionRank": 1,
+      "status": "metadata-only-acquisition-blocked",
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "source": {
+        "nasaId": "GSFC_20171208_Archive_e001464",
+        "sourceUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/ring-nebula-GSFC_20171208_Archive_e001464.json",
+        "metadataSha256": "a891d8b6e3fa81970dd24c2668b5dc3702a0af393184a0953ee2e13fbc69c2e8",
+        "creator": "NASA Goddard",
+        "secondaryCreator": "",
+        "credit": "NASA Goddard",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "blocked-item-license-identity-or-texture-suitability-review"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "payload-acquisition-pending",
+        "localPath": null,
+        "bytes": null,
+        "sha256": null,
+        "width": null,
+        "height": null,
+        "format": null
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "先完成明确许可下的单次 HTTPS payload 采集，再做权利与视觉复核"
+    },
+    {
+      "candidateId": "dumbbell-nebula",
+      "expansionRank": 2,
+      "status": "metadata-only-acquisition-blocked",
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "source": {
+        "nasaId": "PIA04249",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/dumbbell-nebula-PIA04249.json",
+        "metadataSha256": "e6844bf79c770149e389dc10c1608dc385d2e11d2abf9e4a1d290197e106f3bc",
+        "creator": null,
+        "secondaryCreator": "NASA/JPL/STScI",
+        "credit": "NASA/JPL/STScI",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "blocked-item-license-identity-or-texture-suitability-review"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "payload-acquisition-pending",
+        "localPath": null,
+        "bytes": null,
+        "sha256": null,
+        "width": null,
+        "height": null,
+        "format": null
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:source-resolution",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "先完成明确许可下的单次 HTTPS payload 采集，再做权利与视觉复核"
+    },
+    {
+      "candidateId": "california-nebula",
+      "expansionRank": 3,
+      "status": "payload-present-rights-pending",
+      "acquisitionDecision": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "source": {
+        "nasaId": "PIA23650",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/california-nebula-PIA23650.json",
+        "metadataSha256": "558e9f7b16403e2f4aed536b3491916efe6de721a18b674acf48f2430dbf2200",
+        "creator": null,
+        "secondaryCreator": "NASA/JPL-Caltech/Palomar Digitized Sky Survey",
+        "credit": "NASA/JPL-Caltech/Palomar Digitized Sky Survey",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "eligible-for-explicit-single-request-visual-source-acquisition"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "local-payload-present",
+        "localPath": "source-cache/v592/nebulae/visual/california-nebula-PIA23650-orig.jpg",
+        "bytes": 758960,
+        "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396",
+        "width": 3317,
+        "height": 1902,
+        "format": "jpeg"
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "补齐逐图权利证据、视觉 signoff，再申请接入"
+    },
+    {
+      "candidateId": "bubble-nebula",
+      "expansionRank": 4,
+      "status": "metadata-only-acquisition-blocked",
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "source": {
+        "nasaId": "GSFC_20171208_Archive_e000382",
+        "sourceUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/bubble-nebula-GSFC_20171208_Archive_e000382.json",
+        "metadataSha256": "163af0c466af9507ac98d62fe1a9f6a7ea2e7eb2c7074404be7a9854572d6629",
+        "creator": "NASA Goddard",
+        "secondaryCreator": "",
+        "credit": "NASA Goddard",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "blocked-item-license-identity-or-texture-suitability-review"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "payload-acquisition-pending",
+        "localPath": null,
+        "bytes": null,
+        "sha256": null,
+        "width": null,
+        "height": null,
+        "format": null
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "先完成明确许可下的单次 HTTPS payload 采集，再做权利与视觉复核"
+    },
+    {
+      "candidateId": "cats-eye-nebula",
+      "expansionRank": 5,
+      "status": "metadata-only-acquisition-blocked",
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "source": {
+        "nasaId": "GSFC_20171208_Archive_e002155",
+        "sourceUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/cats-eye-nebula-GSFC_20171208_Archive_e002155.json",
+        "metadataSha256": "8f56ed6017c92a0427b2136c77c58e60940c725b810655229414528a23a999fd",
+        "creator": "NASA Goddard",
+        "secondaryCreator": "",
+        "credit": "NASA Goddard",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "blocked-item-license-identity-or-texture-suitability-review"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "payload-acquisition-pending",
+        "localPath": null,
+        "bytes": null,
+        "sha256": null,
+        "width": null,
+        "height": null,
+        "format": null
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "license:target-identity",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "先完成明确许可下的单次 HTTPS payload 采集，再做权利与视觉复核"
+    },
+    {
+      "candidateId": "omega-nebula",
+      "expansionRank": 6,
+      "status": "metadata-only-acquisition-blocked",
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "source": {
+        "nasaId": "PIA23409",
+        "sourceUrl": "https://images-assets.nasa.gov/image/PIA23409/PIA23409~orig.jpg",
+        "previewUrl": "https://images-assets.nasa.gov/image/PIA23409/PIA23409~orig.jpg",
+        "metadataPath": "source-cache/v592/nebulae/metadata/omega-nebula-PIA23409.json",
+        "metadataSha256": "3ad170042d3a99d166c46cef6b3c897ad2c57b1858e1c6124207c5e916c234ca",
+        "creator": null,
+        "secondaryCreator": "NASA/SOFIA/Lim, De Buizer, & Radomski et al.; ESA/Herschel; NASA/JPL-Caltech",
+        "credit": "NASA/SOFIA/Lim, De Buizer, & Radomski et al.; ESA/Herschel; NASA/JPL-Caltech",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicenseState": "blocked-item-license-identity-or-texture-suitability-review"
+      },
+      "metadata": {
+        "state": "candidate-explicit-https-acquisition-required",
+        "receiptSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "candidate": {
+          "httpsUrl": "https://images-assets.nasa.gov/image/PIA23409/PIA23409~orig.jpg",
+          "extension": "jpg",
+          "requested": false,
+          "bytes": null,
+          "sha256": null,
+          "licenseReview": "required-before-acquisition"
+        }
+      },
+      "payload": {
+        "state": "payload-acquisition-pending",
+        "localPath": null,
+        "bytes": null,
+        "sha256": null,
+        "width": null,
+        "height": null,
+        "format": null
+      },
+      "receipts": {
+        "licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+        "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641",
+        "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ea4dda0ef43d23fb3b1c4a38c",
+        "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtime": {
+        "candidateOnly": true,
+        "visualAssetAdmitted": false,
+        "scienceImagePayloadAllowed": false
+      },
+      "nextAction": "先完成明确许可下的单次 HTTPS payload 采集，再做权利与视觉复核"
+    }
+  ]
+}

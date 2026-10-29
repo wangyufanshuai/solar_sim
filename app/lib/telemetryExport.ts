@@ -1,5 +1,6 @@
 import type { TelemetrySample, TelemetrySeriesState } from "./telemetryTypes";
 import { telemetrySamplesChronological } from "./telemetryTypes";
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
 
 export function telemetryToJson(
   state: TelemetrySeriesState,
@@ -53,11 +54,19 @@ export function telemetryToCsv(state: TelemetrySeriesState): string {
 export function downloadText(filename: string, text: string, mime: string): void {
   const blob = new Blob([text], { type: mime });
   const url = URL.createObjectURL(blob);
+  const releaseUrl = acquireAtlasResource("object-url", "atlas", `download:${filename}`, {
+    owner: "export",
+    estimatedBytes: blob.size,
+  });
   const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  a.click();
-  URL.revokeObjectURL(url);
+  try {
+    a.href = url;
+    a.download = filename;
+    a.click();
+  } finally {
+    URL.revokeObjectURL(url);
+    releaseUrl();
+  }
 }
 
 export type { TelemetrySample };

@@ -1,0 +1,419 @@
+{
+  "version": "post-v593-relativity-trajectory-evidence-v3",
+  "generatedAt": "2026-08-25T16:30:00.000Z",
+  "status": "qualified-shadow-only-three-kernel-full-trajectory-reference",
+  "runner": {
+    "version": "post-v593-relativity-trajectory-reference-v1",
+    "boundary": "offline-fixed-step-rk4-shadow-no-live-or-worker-state-mutation",
+    "resultSha256": "631443a8dcd61e4ff5dd742841f4b7a5c7f633af593490d40f9bf83e3445768a"
+  },
+  "source": {
+    "files": [
+      {
+        "path": "app/lib/relativityTrajectoryReferenceV3.ts",
+        "sha256": "ae8377fba0b7df961738681af716aa31f9e54f955eb4e1148fbc6fd2a3a90b58"
+      },
+      {
+        "path": "app/lib/physicsEngine.ts",
+        "sha256": "8c0f316c76e096e0ffa09d728199d28d0cd5e0423a06e15a8d0515781c01bc5f"
+      },
+      {
+        "path": "app/lib/relativityForceModelV2.ts",
+        "sha256": "1638f67552aa74f45db8fccb42b9e77de4621ed32344a5733d3836e3abf341a1"
+      },
+      {
+        "path": "app/lib/physicalConstants.ts",
+        "sha256": "15fa41b22dad78aa4f9ba58dfac5f977ae7b0a5570ea0b52a695c22899725160"
+      },
+      {
+        "path": "app/lib/sha256BrowserV566.ts",
+        "sha256": "6f2150f7385de4f92107aa0dc9c0782dcff1622f55867f5ca31255111783d7da"
+      },
+      {
+        "path": "scripts/build-post-v593-relativity-trajectory-evidence.ts",
+        "sha256": "8c8264b176386bd6559816bff83aa8903d22a0aa2cb81dddbd97fdadbdee268a"
+      }
+    ],
+    "sourceBundleSha256": "44473d1ee10326661a8fa497d7186e2fe1bdc8090515f9696f055905ac07081d"
+  },
+  "experiment": {
+    "bodyIds": [
+      "sun",
+      "earth",
+      "jupiter"
+    ],
+    "initialState": {
+      "sampleId": "j2000",
+      "positionM": [
+        0,
+        0,
+        0,
+        149597870700,
+        0,
+        0,
+        0,
+        778570000000,
+        0
+      ],
+      "velocityMS": [
+        0,
+        0,
+        0,
+        0,
+        29784.6918,
+        0,
+        -13070,
+        0,
+        0
+      ],
+      "massKg": [
+        1.98847e+30,
+        5.9722e+24,
+        1.89813e+27
+      ]
+    },
+    "durationSeconds": 691200,
+    "coarseStepSeconds": 21600,
+    "mediumStepSeconds": 10800,
+    "fineStepSeconds": 5400,
+    "coordinateGauge": "harmonic",
+    "timeScale": "TDB-compatible-SI-shadow"
+  },
+  "gates": {
+    "deterministicReplay": true,
+    "callerArraysUnchanged": true,
+    "threeKernelObservedOrderQualified": true,
+    "fullTrajectoryReverseTimeQualified": true,
+    "v2ReverseSpinPolicyQualified": true,
+    "perBodyQualified": true,
+    "aggregateQualified": true,
+    "effectIsolationQualified": true,
+    "boundaryQualified": true,
+    "allQualified": true
+  },
+  "result": {
+    "version": "post-v593-relativity-trajectory-reference-v1",
+    "boundary": "offline-fixed-step-rk4-shadow-no-live-or-worker-state-mutation",
+    "mode": "shadow-read-only",
+    "integrator": "classic-rk4-fixed-step",
+    "coordinateGauge": "harmonic",
+    "timeScale": "TDB-compatible-SI-shadow",
+    "bodyIds": [
+      "sun",
+      "earth",
+      "jupiter"
+    ],
+    "bodyCount": 3,
+    "initialSampleId": "j2000",
+    "durationSeconds": 691200,
+    "convergence": {
+      "status": "evaluated",
+      "method": "three-level-richardson-observed-order",
+      "rows": [
+        {
+          "kernel": "newton",
+          "coarseStepSeconds": 21600,
+          "mediumStepSeconds": 10800,
+          "fineStepSeconds": 5400,
+          "coarseStepCount": 32,
+          "mediumStepCount": 64,
+          "fineStepCount": 128,
+          "coarseMediumPositionRmsM": 0.01828025574013473,
+          "mediumFinePositionRmsM": 0.0011433158172722605,
+          "coarseMediumVelocityRmsMS": 3.2516286081901173e-9,
+          "mediumFineVelocityRmsMS": 2.0495741076690101e-10,
+          "observedPositionOrder": 3.998990375503108,
+          "observedVelocityOrder": 3.9877664258708876,
+          "expectedMethodOrder": 4,
+          "orderFloor": 3.5,
+          "qualified": true,
+          "finite": true,
+          "fineFinalState": {
+            "positionM": [
+              4054.8729792124213,
+              50118.9354045357,
+              0,
+              148183481734.11737,
+              20522305175.673843,
+              0,
+              -9033781684.821861,
+              778517699809.709,
+              0
+            ],
+            "velocityMS": [
+              0.011434088462464534,
+              0.1453000083647346,
+              0,
+              -4086.100872142106,
+              29503.23095706118,
+              0,
+              -13069.121941203366,
+              -151.32987054987,
+              0
+            ]
+          }
+        },
+        {
+          "kernel": "legacy-eih-1pn",
+          "coarseStepSeconds": 21600,
+          "mediumStepSeconds": 10800,
+          "fineStepSeconds": 5400,
+          "coarseStepCount": 32,
+          "mediumStepCount": 64,
+          "fineStepCount": 128,
+          "coarseMediumPositionRmsM": 0.01828259794289717,
+          "mediumFinePositionRmsM": 0.0011496375004634767,
+          "coarseMediumVelocityRmsMS": 3.253138822840223e-9,
+          "mediumFineVelocityRmsMS": 2.040081857698405e-10,
+          "observedPositionOrder": 3.991220158195086,
+          "observedVelocityOrder": 3.9951334423538496,
+          "expectedMethodOrder": 4,
+          "orderFloor": 3.5,
+          "qualified": true,
+          "finite": true,
+          "fineFinalState": {
+            "positionM": [
+              4054.8728540804213,
+              50118.935114685715,
+              0,
+              148183481776.14554,
+              20522305177.60962,
+              0,
+              -9033781684.823019,
+              778517699810.0068,
+              0
+            ],
+            "velocityMS": [
+              0.01143408810142318,
+              0.14530000751750988,
+              0,
+              -4086.1007503457663,
+              29503.23096550216,
+              0,
+              -13069.121941208377,
+              -151.32986968799267,
+              0
+            ]
+          }
+        },
+        {
+          "kernel": "eih-1pn-plus-v2-shadow",
+          "coarseStepSeconds": 21600,
+          "mediumStepSeconds": 10800,
+          "fineStepSeconds": 5400,
+          "coarseStepCount": 32,
+          "mediumStepCount": 64,
+          "fineStepCount": 128,
+          "coarseMediumPositionRmsM": 0.018282753593410434,
+          "mediumFinePositionRmsM": 0.0011490937884444596,
+          "coarseMediumVelocityRmsMS": 3.251904467582952e-9,
+          "mediumFineVelocityRmsMS": 2.0345617804393866e-10,
+          "observedPositionOrder": 3.9919149133314518,
+          "observedVelocityOrder": 3.9984948811294343,
+          "expectedMethodOrder": 4,
+          "orderFloor": 3.5,
+          "qualified": true,
+          "finite": true,
+          "fineFinalState": {
+            "positionM": [
+              4054.872854078794,
+              50118.93511468405,
+              1.1504599242520819e-9,
+              148183481776.1461,
+              20522305177.609646,
+              0.00012435276319175653,
+              -9033781684.823019,
+              778517699810.0068,
+              -0.0000015964736966969393
+            ],
+            "velocityMS": [
+              0.011434088101418476,
+              0.14530000751750488,
+              3.4369317666333484e-15,
+              -4086.100750344194,
+              29503.23096550225,
+              3.2462766873272596e-10,
+              -13069.121941208377,
+              -151.32986968798778,
+              -4.62190528214773e-12
+            ]
+          }
+        }
+      ],
+      "allQualified": true
+    },
+    "reverseTimeRoundTrip": {
+      "status": "evaluated",
+      "method": "forward-velocity-reversal-backward-round-trip",
+      "rows": [
+        {
+          "kernel": "newton",
+          "stepSeconds": 5400,
+          "stepCountEachDirection": 128,
+          "positionRmsErrorM": 5.027286581391355e-7,
+          "velocityRmsErrorMS": 1.1389058218840648e-13,
+          "positionRelativeError": 1.9023250074696673e-18,
+          "velocityRelativeError": 1.0504513138854376e-17,
+          "solarSpinAngularMomentumReversedForBackwardLeg": false,
+          "relativeErrorLimit": 1e-9,
+          "qualified": true,
+          "finite": true
+        },
+        {
+          "kernel": "legacy-eih-1pn",
+          "stepSeconds": 5400,
+          "stepCountEachDirection": 128,
+          "positionRmsErrorM": 7.316421251381661e-7,
+          "velocityRmsErrorMS": 1.777223992703326e-13,
+          "positionRelativeError": 2.7685334596210427e-18,
+          "velocityRelativeError": 1.639193726409779e-17,
+          "solarSpinAngularMomentumReversedForBackwardLeg": false,
+          "relativeErrorLimit": 1e-9,
+          "qualified": true,
+          "finite": true
+        },
+        {
+          "kernel": "eih-1pn-plus-v2-shadow",
+          "stepSeconds": 5400,
+          "stepCountEachDirection": 128,
+          "positionRmsErrorM": 0.00000151781491603761,
+          "velocityRmsErrorMS": 1.5212230708312815e-13,
+          "positionRelativeError": 5.7434109330001765e-18,
+          "velocityRelativeError": 1.403075427978825e-17,
+          "solarSpinAngularMomentumReversedForBackwardLeg": true,
+          "relativeErrorLimit": 1e-9,
+          "qualified": true,
+          "finite": true
+        }
+      ],
+      "allQualified": true,
+      "fullTimeIntegration": true
+    },
+    "perBody": [
+      {
+        "bodyId": "sun",
+        "bodyIndex": 0,
+        "legacyMinusNewtonPositionM": [
+          -0.00012513199999375502,
+          -0.000289849987893831,
+          0
+        ],
+        "legacyMinusNewtonVelocityMS": [
+          -3.6104135306413987e-10,
+          -8.472247348123574e-10,
+          0
+        ],
+        "v2MinusLegacyPositionM": [
+          -1.627540768822655e-9,
+          -1.6661942936480045e-9,
+          1.1504599242520819e-9
+        ],
+        "v2MinusLegacyVelocityMS": [
+          -4.704570066849101e-15,
+          -4.9960036108132044e-15,
+          3.4369317666333484e-15
+        ],
+        "legacyMinusNewtonPositionNormM": 0.0003157071948886992,
+        "legacyMinusNewtonVelocityNormMS": 9.209454977903167e-10,
+        "v2MinusLegacyPositionNormM": 2.597816470745214e-9,
+        "v2MinusLegacyVelocityNormMS": 7.674993912808308e-15,
+        "finite": true
+      },
+      {
+        "bodyId": "earth",
+        "bodyIndex": 1,
+        "legacyMinusNewtonPositionM": [
+          42.028167724609375,
+          1.9357757568359375,
+          0
+        ],
+        "legacyMinusNewtonVelocityMS": [
+          0.00012179633949926938,
+          0.000008440980309387669,
+          0
+        ],
+        "v2MinusLegacyPositionM": [
+          0.00054931640625,
+          0.000026702880859375,
+          0.00012435276319175653
+        ],
+        "v2MinusLegacyVelocityMS": [
+          1.572516339365393e-9,
+          9.094947017729282e-11,
+          3.2462766873272596e-10
+        ],
+        "legacyMinusNewtonPositionNormM": 42.07272406284921,
+        "legacyMinusNewtonVelocityNormMS": 0.00012208848620572194,
+        "v2MinusLegacyPositionNormM": 0.0005638485326176083,
+        "v2MinusLegacyVelocityNormMS": 1.6082482914660628e-9,
+        "finite": true
+      },
+      {
+        "bodyId": "jupiter",
+        "bodyIndex": 2,
+        "legacyMinusNewtonPositionM": [
+          -0.0011577606201171875,
+          0.2978515625,
+          0
+        ],
+        "legacyMinusNewtonVelocityMS": [
+          -5.011315806768835e-9,
+          8.61877339275452e-7,
+          0
+        ],
+        "v2MinusLegacyPositionM": [
+          0,
+          0,
+          -0.0000015964736966969393
+        ],
+        "v2MinusLegacyVelocityMS": [
+          0,
+          4.888534022029489e-12,
+          -4.62190528214773e-12
+        ],
+        "legacyMinusNewtonPositionNormM": 0.29785381262180427,
+        "legacyMinusNewtonVelocityNormMS": 8.61891908096745e-7,
+        "v2MinusLegacyPositionNormM": 0.0000015964736966969393,
+        "v2MinusLegacyVelocityNormMS": 6.727538429595546e-12,
+        "finite": true
+      }
+    ],
+    "aggregate": {
+      "legacyMinusNewtonPositionRmsM": 14.024592792908127,
+      "legacyMinusNewtonVelocityRmsMS": 0.00004069717615444609,
+      "v2MinusLegacyPositionRmsM": 0.000187950264245637,
+      "v2MinusLegacyVelocityRmsMS": 5.360874541875646e-10,
+      "finite": true
+    },
+    "effectIsolation": {
+      "method": "independent-trajectory-integrations",
+      "twoPnPositionRmsM": 1.9705718538413444e-12,
+      "twoPnVelocityRmsMS": 1.5158245029602846e-12,
+      "lenseThirringPositionRmsM": 0.00018795026424563873,
+      "lenseThirringVelocityRmsMS": 5.377179141850319e-10,
+      "combinedPositionRmsM": 0.000187950264245637,
+      "combinedVelocityRmsMS": 5.360874541875646e-10,
+      "additivityResidualPositionRmsM": 1.3642420526593924e-12,
+      "additivityResidualVelocityRmsMS": 1.430025976038659e-12,
+      "finite": true
+    },
+    "deterministic": true,
+    "callerStateMutated": false,
+    "liveStateMutated": false,
+    "workerStateMutated": false,
+    "scientificPayloadWriteback": false,
+    "promotion": "not-a-promotion-decision",
+    "resultSha256": "631443a8dcd61e4ff5dd742841f4b7a5c7f633af593490d40f9bf83e3445768a"
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow",
+    "promotionDecision": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "productionReleaseAuthorized": false
+  },
+  "formalProductPointer": "v263",
+  "evidenceSha256": "8071c51b68861e56774dba33cd3997f8444d3eb15b93663ebdff06e153007b09"
+}

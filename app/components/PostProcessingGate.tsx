@@ -4,7 +4,12 @@ import { useThree } from "@react-three/fiber";
 import { useEffect, useState } from "react";
 import type { WebGLRenderer } from "three";
 import UniversePostProcessing from "./UniversePostProcessing";
-import type { CinematicPostProfileId } from "../lib/cinematicPostProfile";
+import type { SolarPresentationMode } from "../lib/orbitAtlasPresentation";
+import type {
+  AtlasReferenceGradeCompositeProfile,
+  AtlasSelectedBodyLightingProfile,
+  AtlasGlobalColorGradeProfile,
+} from "../lib/simulationDiagnosticsTypes";
 
 /**
  * pmndrs/postprocessing reads `gl.getContext().getContextAttributes().alpha` with no null check.
@@ -23,12 +28,20 @@ function webGlContextAttributesReady(gl: WebGLRenderer): boolean {
  */
 export default function PostProcessingGate({
   visualEnhance,
-  profileId,
-  dofEnabled,
+  presentationMode,
+  selectedBodyLightingProfile = "overview",
+  cinematicPostFxProfile,
+  referenceGradeCompositeProfile,
+  globalColorGradeProfile,
+  scienceDisplayMode = false,
 }: {
   visualEnhance: boolean;
-  profileId: CinematicPostProfileId;
-  dofEnabled: boolean;
+  presentationMode: SolarPresentationMode;
+  selectedBodyLightingProfile?: AtlasSelectedBodyLightingProfile;
+  cinematicPostFxProfile?: string;
+  referenceGradeCompositeProfile?: AtlasReferenceGradeCompositeProfile;
+  globalColorGradeProfile?: AtlasGlobalColorGradeProfile;
+  scienceDisplayMode?: boolean;
 }) {
   const gl = useThree((s) => s.gl);
   const [, setCtxTick] = useState(0);
@@ -45,6 +58,15 @@ export default function PostProcessingGate({
     };
   }, [gl]);
 
-  if (!ready) return null;
-  return <UniversePostProcessing visualEnhance={visualEnhance} profileId={profileId} dofEnabled={dofEnabled} />;
+  if (!ready || scienceDisplayMode) return null;
+  return (
+    <UniversePostProcessing
+      visualEnhance={visualEnhance}
+      presentationMode={presentationMode}
+      selectedBodyLightingProfile={selectedBodyLightingProfile}
+      cinematicPostFxProfile={cinematicPostFxProfile}
+      referenceGradeCompositeProfile={referenceGradeCompositeProfile}
+      globalColorGradeProfile={globalColorGradeProfile}
+    />
+  );
 }

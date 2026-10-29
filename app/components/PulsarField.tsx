@@ -1,7 +1,7 @@
 "use client";
 
 import { useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import * as THREE from "three";
 import type { MutableRefObject } from "react";
 import type { FloatingOriginState } from "../lib/floatingOrigin";
@@ -84,8 +84,12 @@ function galacticToScene(lonDeg: number, latDeg: number, distPc: number): [numbe
 
 export default function PulsarField({
   floatingOriginRef,
+  enabled = true,
+  orbitAtlas = false,
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
+  enabled?: boolean;
+  orbitAtlas?: boolean;
 }) {
   const pointsRef = useRef<THREE.Points>(null);
   const clockRef = useRef(0);
@@ -138,13 +142,18 @@ export default function PulsarField({
     return { geometry: geo, material: mat };
   }, []);
 
+  useEffect(() => () => {
+    geometry.dispose();
+    material.dispose();
+  }, [geometry, material]);
+
   useFrame((_, delta) => {
     const pts = pointsRef.current;
     if (!pts) return;
     const tier = floatingOriginRef.current.lodTier;
-    pts.visible = tier !== "solar";
+    pts.visible = enabled && (orbitAtlas || tier !== "solar");
     const mat = pts.material as THREE.ShaderMaterial;
-    mat.uniforms.uOpacity.value = tier === "solar" ? 0 : tier === "mid" ? 0.5 : 0.85;
+    mat.uniforms.uOpacity.value = !enabled ? 0 : orbitAtlas ? 0.035 : tier === "solar" ? 0 : tier === "mid" ? 0.5 : 0.85;
 
     clockRef.current += delta;
     mat.uniforms.uTime.value = clockRef.current;

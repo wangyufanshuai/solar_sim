@@ -1,76 +1,33 @@
 /**
- * View toggles aligned with a Universe Sandbox-style Graphics / View panel.
+ * View toggles aligned with a Universe Sandbox–style “Graphics / View” panel.
  */
 export type SimulationViewSettings = {
-  renderBudget: "safe" | "balanced" | "quality";
   showBodyLabels: boolean;
   showOrbitTrails: boolean;
   showOsculatingOrbits: boolean;
   showReferenceOrbits: boolean;
-  showGalaxyBackground: boolean;
-  showGaiaStars: boolean;
-  showConstellations: boolean;
-  showNebulaImages: boolean;
-  showDeepSkyMarkers: boolean;
-  showMissionTrajectory: boolean;
-  highQualityRendering: boolean;
   showKerrBlackHole: boolean;
-  /** CR3BP L1-L5 and effective-potential contours. */
+  /** CR3BP L1–L5、有效势能等高线；地月视角为地月系，否则为日心系。 */
   showLagrangePoints: boolean;
-  /** Doppler/searchlight/aberration visual teaching layer. */
+  /** 高时间缩放 / 相对论速度下的多普勒、探照灯、星光行差（视觉近似）。 */
   showRelativisticOptics: boolean;
-};
-
-export type SimulationLayerCost = "low" | "medium" | "high";
-
-export const SIMULATION_LAYER_COSTS: Record<
-  keyof Pick<
-    SimulationViewSettings,
-    | "showBodyLabels"
-    | "showOrbitTrails"
-    | "showOsculatingOrbits"
-    | "showReferenceOrbits"
-    | "showGalaxyBackground"
-    | "showGaiaStars"
-    | "showConstellations"
-    | "showNebulaImages"
-    | "showDeepSkyMarkers"
-    | "showMissionTrajectory"
-    | "showLagrangePoints"
-    | "showRelativisticOptics"
-    | "highQualityRendering"
-  >,
-  SimulationLayerCost
-> = {
-  showBodyLabels: "medium",
-  showOrbitTrails: "medium",
-  showOsculatingOrbits: "medium",
-  showReferenceOrbits: "low",
-  showGalaxyBackground: "medium",
-  showGaiaStars: "high",
-  showConstellations: "medium",
-  showNebulaImages: "high",
-  showDeepSkyMarkers: "medium",
-  showMissionTrajectory: "medium",
-  showLagrangePoints: "medium",
-  showRelativisticOptics: "medium",
-  highQualityRendering: "high",
+  showConstellationLines: boolean;
+  showDeepSkyObjects: boolean;
+  showCatalogLabels: boolean;
 };
 
 export const DEFAULT_SIMULATION_VIEW_SETTINGS: SimulationViewSettings = {
-  renderBudget: "balanced",
-  showBodyLabels: false,
+  showBodyLabels: true,
+  /** Energy-tail trails: short fading tails behind each body. */
   showOrbitTrails: true,
+  /** Closed Kepler ellipses OFF — eliminates ring clutter. */
   showOsculatingOrbits: true,
+  /** Static reference orbit rings OFF by default — only comet-tail trails shown. */
   showReferenceOrbits: true,
-  showGalaxyBackground: true,
-  showGaiaStars: false,
-  showConstellations: true,
-  showNebulaImages: true,
-  showDeepSkyMarkers: false,
-  showMissionTrajectory: true,
-  highQualityRendering: false,
   showKerrBlackHole: false,
   showLagrangePoints: false,
   showRelativisticOptics: true,
+  showConstellationLines: true,
+  showDeepSkyObjects: true,
+  showCatalogLabels: false,
 };

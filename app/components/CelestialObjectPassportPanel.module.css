@@ -1,0 +1,61 @@
+.panel {
+  position: fixed;
+  inset-inline: 8px;
+  bottom: calc(var(--ui-dock-height, 58px) + 8px + env(safe-area-inset-bottom));
+  z-index: 120;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  max-height: min(45dvh, calc(100dvh - var(--ui-dock-height, 58px) - 24px));
+  overflow: hidden;
+  border: 1px solid rgb(186 208 220 / 22%);
+  border-radius: 12px;
+  color: #e5edf1;
+  background: #091015;
+  box-shadow: 0 16px 48px rgb(0 0 0 / 38%);
+  pointer-events: auto;
+}
+
+.panel[data-mainline-a-passport-state="collapsed"] { height: 104px; min-height: 104px; max-height: 104px; }
+.panel[data-mainline-a-passport-state="half"] { height: 45dvh; }
+.panel[data-mainline-a-passport-state="details"] { height: 80dvh; max-height: min(80dvh, calc(100dvh - var(--ui-dock-height, 58px) - 24px)); }
+.header { display: flex; flex: 0 0 auto; align-items: center; gap: 6px; min-height: 60px; padding: 8px 10px; }
+.identity { min-width: 0; flex: 1; }
+.eyebrow { display: flex; align-items: center; gap: 5px; color: #b8c6cc; font-size: 10px; line-height: 15px; }
+.title { margin-top: 3px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 15px; font-weight: 600; line-height: 20px; outline: none; }
+.actions { display: flex; flex: 0 0 auto; align-items: center; gap: 2px; }
+.action { display: inline-flex; min-height: 44px; min-width: 44px; align-items: center; justify-content: center; gap: 5px; border-radius: 7px; padding: 6px; color: #c4d7e1; font-size: 11px; }
+.action:hover { background: rgb(190 224 241 / 8%); }
+.action:focus-visible, .tabs button:focus-visible, .content button:focus-visible, .content summary:focus-visible, .content a:focus-visible { outline: 2px solid #b5e6ec; outline-offset: -3px; }
+.boundary { display: flex; flex: 0 0 auto; min-height: 34px; align-items: center; justify-content: space-between; gap: 8px; border-top: 1px solid rgb(255 255 255 / 8%); padding: 5px 12px; color: #cdbb96; font-size: 10px; line-height: 17px; }
+.boundary span { min-width: 0; }
+.tabs { display: grid; flex: 0 0 auto; grid-template-columns: repeat(3, minmax(0, 1fr)); border-block: 1px solid rgb(255 255 255 / 9%); padding: 3px; }
+.tabs button { min-height: 44px; border-radius: 6px; color: #a8bbc6; font-size: 12px; }
+.tabs button[aria-pressed="true"] { background: rgb(156 204 223 / 10%); color: #e8f2f4; }
+.content { min-height: 0; flex: 1; overflow-y: auto; overscroll-behavior: contain; scrollbar-gutter: stable; padding: 12px; }
+.content[hidden], .tabs[hidden] { display: none; }
+.content button, .content summary, .content a { min-height: 44px; }
+.content a { display: flex; align-items: center; }
+.expandArt { display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 8px; margin-top: 12px; border: 1px solid rgb(190 211 225 / 24%); border-radius: 8px; padding: 8px 11px; color: #d5e6ec; background: #14212b; font-size: 12px; }
+.sources { margin-top: 10px; border-top: 1px solid rgb(255 255 255 / 10%); }
+.sources summary { display: flex; align-items: center; cursor: pointer; color: #bdd7df; font-size: 12px; }
+.sources a { overflow-wrap: anywhere; color: #b8cbd5; font-size: 10px; line-height: 16px; text-decoration: underline; text-underline-offset: 3px; }
+.compactFacts { display: grid; gap: 5px; margin-top: 10px; color: #b7c5cf; font-size: 11px; line-height: 18px; }
+.summary { margin-top: 8px; color: #dce5e9; font-size: 12px; line-height: 20px; }
+.detailAction { display: flex; width: 100%; min-height: 44px; align-items: center; justify-content: center; border-top: 1px solid rgb(255 255 255 / 10%); color: #b9dbe6; font-size: 12px; }
+.exitLabel { display: none; }
+
+@media (min-width: 640px) {
+  .panel { inset-inline: auto 16px; top: max(84px, var(--mainline-a-header-bottom, 84px)); bottom: calc(var(--ui-dock-height, 58px) + 10px); z-index: 103; width: 336px; max-width: calc(100vw - 32px); max-height: none; }
+  .panel[data-mainline-a-passport-state="half"], .panel[data-mainline-a-passport-state="details"], .panel[data-mainline-a-passport-state="collapsed"] { height: auto; min-height: 0; max-height: none; }
+  .mobileToggle { display: none; }
+  .exitLabel { display: inline; }
+  .header { padding: 10px 12px; }
+  .title { font-size: 16px; }
+  .boundary { min-height: 39px; }
+  .detailAction { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel, .panel * { scroll-behavior: auto; }
+}

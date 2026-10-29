@@ -15,11 +15,11 @@ const UniversePage = dynamic(() => import("./UniversePage"), {
           Universe Sandbox
         </div>
         <div className="text-base font-medium text-slate-100">
-          正在接入星图与物理场景
+          Loading scene and physics
         </div>
       </div>
       <div className="max-w-md text-sm text-slate-400">
-        如果长时间停在白屏，请优先使用 Chrome 或 Edge，并确认浏览器硬件加速已开启。
+        If it stays blank for too long, try Chrome or Edge with hardware acceleration enabled.
       </div>
     </div>
   ),
@@ -46,14 +46,11 @@ class RootSceneErrorBoundary extends Component<
             Renderer Fault
           </p>
           <p className="text-base font-medium text-rose-100">
-            3D 场景没有成功启动
+            3D scene failed to start
           </p>
-          <p className="max-w-md text-sm text-slate-400">
-            {this.state.error.message}
-          </p>
+          <p className="max-w-md text-sm text-slate-400">{this.state.error.message}</p>
           <p className="max-w-lg text-sm text-slate-500">
-            可以先尝试更新显卡驱动、切换到 Chrome 或 Edge，或关闭浏览器里强制软件渲染
-            WebGL 的实验项后刷新。
+            Try updating your GPU driver or switching to Chrome / Edge with WebGL hardware acceleration enabled.
           </p>
         </div>
       );

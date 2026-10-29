@@ -8,6 +8,8 @@ import { createPhysicsBufferViews, createSharedPhysicsArrayBuffer } from "./phys
 import { PhysicsRuntime } from "./physicsRuntime";
 import { SolarSystemPhysics } from "./solarSystemPhysics";
 import type { SolarSystemPhysicsRef } from "./solarSystemRef";
+import { acquireAtlasResource } from "./atlasResourceLifecycle";
+import { normalizePhysicsExecutionPolicy, type PhysicsExecutionPolicyInput } from "./physicsExecutionPolicy";
 
 export type { SolarSystemPhysicsRef } from "./solarSystemRef";
 
@@ -20,14 +22,41 @@ export function useSolarSystemPhysics(): {
   physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
   physicsReady: boolean;
   physicsUsesSharedBuffer: boolean;
+};
+export function useSolarSystemPhysics(options?: Readonly<{
+  forceMainThread?: boolean;
+  executionPolicy?: PhysicsExecutionPolicyInput;
+}>): {
+  physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
+  physicsReady: boolean;
+  physicsUsesSharedBuffer: boolean;
+};
+export function useSolarSystemPhysics(options: Readonly<{
+  forceMainThread?: boolean;
+  executionPolicy?: PhysicsExecutionPolicyInput;
+}> = {}): {
+  physicsRef: MutableRefObject<SolarSystemPhysicsRef | null>;
+  physicsReady: boolean;
+  physicsUsesSharedBuffer: boolean;
 } {
   const physicsRef = useRef<SolarSystemPhysicsRef | null>(null);
   const workerRef = useRef<Worker | null>(null);
   const [physicsReady, setPhysicsReady] = useState(false);
   const [usesShared, setUsesShared] = useState(false);
+  const policyKey = JSON.stringify(normalizePhysicsExecutionPolicy(options.executionPolicy));
 
   useLayoutEffect(() => {
+    const executionPolicy = normalizePhysicsExecutionPolicy(JSON.parse(policyKey));
     let cancelled = false;
+    if (options.forceMainThread === true) {
+      physicsRef.current = new SolarSystemPhysics({ executionPolicy });
+      setUsesShared(false);
+      setPhysicsReady(true);
+      return () => {
+        physicsRef.current = null;
+        setPhysicsReady(false);
+      };
+    }
     const isolated =
       typeof self !== "undefined" && self.crossOriginIsolated === true;
     const sabOk = typeof SharedArrayBuffer !== "undefined";
@@ -38,12 +67,17 @@ export function useSolarSystemPhysics(): {
       const w = new Worker(
         new URL("../workers/physics.worker.ts", import.meta.url)
       );
+      const releaseWorker = acquireAtlasResource("worker", "atlas", "solar-system-physics");
 
       const onMsg = (e: MessageEvent) => {
         if (cancelled) return;
         if (e.data?.type === "ready") {
+          if (JSON.stringify(e.data.executionPolicy) !== policyKey) {
+            console.error("[physics] Worker execution policy mismatch; refusing initialization.");
+            return;
+          }
           w.removeEventListener("message", onMsg);
-          physicsRef.current = new PhysicsRuntime(views, w);
+          physicsRef.current = new PhysicsRuntime(views, w, executionPolicy);
           workerRef.current = w;
           setUsesShared(true);
           setPhysicsReady(true);
@@ -54,14 +88,22 @@ export function useSolarSystemPhysics(): {
         type: "init",
         sab,
         forceFixedRk4: readFixedRk4FromEnv(),
+        executionPolicy,
       });
 
       const t = window.setTimeout(() => {
         if (!cancelled && !physicsRef.current) {
+          if (executionPolicy.mode === "scientific-shadow") {
+            w.terminate();
+            releaseWorker();
+            console.error("[physics] Scientific worker init failed; automatic backend fallback is disabled.");
+            return;
+          }
           console.warn(
             "[physics] Worker init timeout; falling back to main-thread integrator."
           );
           w.terminate();
+          releaseWorker();
           physicsRef.current = new SolarSystemPhysics();
           workerRef.current = null;
           setUsesShared(false);
@@ -73,7 +115,9 @@ export function useSolarSystemPhysics(): {
         cancelled = true;
         window.clearTimeout(t);
         w.removeEventListener("message", onMsg);
-        workerRef.current?.terminate();
+        // Also stop a worker whose ready message has not arrived yet.
+        w.terminate();
+        releaseWorker();
         workerRef.current = null;
         physicsRef.current = null;
         setPhysicsReady(false);
@@ -81,14 +125,14 @@ export function useSolarSystemPhysics(): {
       };
     }
 
-    physicsRef.current = new SolarSystemPhysics();
+    physicsRef.current = new SolarSystemPhysics({ executionPolicy });
     setUsesShared(false);
     setPhysicsReady(true);
     return () => {
       physicsRef.current = null;
       setPhysicsReady(false);
     };
-  }, []);
+  }, [options.forceMainThread, policyKey]);
 
   return {
     physicsRef,

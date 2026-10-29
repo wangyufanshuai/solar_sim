@@ -1,0 +1,23 @@
+[Unit]
+Description=Solar Sim candidate preview
+After=network.target
+
+[Service]
+Type=simple
+User=solar
+Group=solar
+WorkingDirectory=/srv/solar/current
+Environment=NODE_ENV=production
+Environment=HOSTNAME=127.0.0.1
+Environment=PORT=3151
+Environment=ATLAS_MAINLINE_A_LOCAL_REVIEW_IMAGES=0
+EnvironmentFile=-/etc/solar-sim.env
+ExecStart=/usr/bin/node --max-old-space-size=1536 /srv/solar/current/.next/standalone/server.js
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+UMask=0027
+
+[Install]
+WantedBy=multi-user.target

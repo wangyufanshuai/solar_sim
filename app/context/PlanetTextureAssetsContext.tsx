@@ -19,9 +19,9 @@ import {
   preloadPlanetTextureUrls,
   type BodyTextureSlots,
 } from "../lib/planetTextureManager";
+import { acquireAtlasTextureResourceV289 } from "../lib/atlasResourceLifecycle";
 
-const TEXTURE_PROGRESS_MESSAGE =
-  "正在从本地同步 NASA 级别高分快照…";
+const TEXTURE_PROGRESS_MESSAGE = "正在载入本地行星纹理";
 
 export type TextureAssetProgress = {
   ratio: number;
@@ -66,6 +66,7 @@ export function PlanetTextureAssetsProvider({
   >({});
   const disposedRef = useRef(false);
   const texturesRef = useRef<Map<string, THREE.Texture>>(new Map());
+  const textureReleaseRef = useRef<Map<string, () => void>>(new Map());
 
   const extraNormalById = useMemo(() => {
     const m: Record<string, string | undefined> = {};
@@ -75,10 +76,7 @@ export function PlanetTextureAssetsProvider({
     return m;
   }, []);
 
-  const bodyIds = useMemo(
-    () => SOLAR_SYSTEM_BODIES.map((b) => b.id),
-    [],
-  );
+  const bodyIds = useMemo(() => SOLAR_SYSTEM_BODIES.map((b) => b.id), []);
 
   const reportProgress = useCallback(
     (loaded: number, total: number) => {
@@ -100,29 +98,41 @@ export function PlanetTextureAssetsProvider({
 
     let cancelled = false;
 
-    preloadPlanetTextureUrls(tasks, gl, (loaded, total) => {
-      if (!cancelled) reportProgress(loaded, total);
-    }, "high").then((byUrl) => {
+    preloadPlanetTextureUrls(
+      tasks,
+      gl,
+      (loaded, total) => {
+        if (!cancelled) reportProgress(loaded, total);
+      },
+      "high",
+    ).then((byUrl) => {
       if (cancelled || disposedRef.current) {
-        byUrl.forEach((t) => t.dispose());
+        byUrl.forEach((texture) => texture.dispose());
         return;
       }
       texturesRef.current = byUrl;
-      const assembled = assembleBodyTextureSlots(
-        bodyIds,
-        byUrl,
-        extraNormalById,
+      byUrl.forEach((texture, url) => {
+        textureReleaseRef.current.set(
+          url,
+          acquireAtlasTextureResourceV289(texture, "atlas", `planet-texture:${url}`, "solar-textures"),
+        );
+      });
+      setTexturesById(
+        assembleBodyTextureSlots(bodyIds, byUrl, extraNormalById),
       );
-      setTexturesById(assembled);
       setReady(true);
       reportProgress(tasks.length, tasks.length);
     });
 
+    const textureReleases = textureReleaseRef.current;
+    const loadedTextures = texturesRef.current;
     return () => {
       cancelled = true;
       disposedRef.current = true;
-      texturesRef.current.forEach((t) => t.dispose());
-      texturesRef.current.clear();
+      textureReleases.forEach((release) => release());
+      textureReleases.clear();
+      loadedTextures.forEach((texture) => texture.dispose());
+      loadedTextures.clear();
       setTexturesById({});
       setReady(false);
     };
@@ -134,11 +144,7 @@ export function PlanetTextureAssetsProvider({
   );
 
   const value = useMemo<PlanetTextureAssetsValue>(
-    () => ({
-      ready,
-      texturesById,
-      getSlots,
-    }),
+    () => ({ ready, texturesById, getSlots }),
     [ready, texturesById, getSlots],
   );
 

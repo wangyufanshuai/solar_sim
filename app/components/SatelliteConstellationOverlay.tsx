@@ -13,6 +13,7 @@ import {
   setSatelliteSelection,
   subscribeSatelliteUi,
 } from "../lib/satelliteUiState";
+import { acquireAtlasResource } from "../lib/atlasResourceLifecycle";
 
 const TOKYO_LAT_RAD = (35.6764 * Math.PI) / 180;
 const TOKYO_LON_RAD = (139.6500 * Math.PI) / 180;
@@ -52,13 +53,20 @@ export default function SatelliteConstellationOverlay({ physicsRef }: Props) {
   const tmpObj = useMemo(() => new THREE.Object3D(), []);
   const workerRef = useRef<Worker | null>(null);
 
-  useEffect(
-    () => subscribeSatelliteUi(() => setGroupFilter(getSatelliteUiSnapshot().groupFilter)),
-    []
-  );
+  useEffect(() => {
+    const releaseSubscription = acquireAtlasResource("subscription", "atlas", "satellite-ui", { owner: "satellite" });
+    const unsubscribe = subscribeSatelliteUi(() => setGroupFilter(getSatelliteUiSnapshot().groupFilter));
+    return () => {
+      unsubscribe();
+      releaseSubscription();
+    };
+  }, []);
 
   useEffect(() => {
     const w = new Worker(new URL("../workers/satellite.worker.ts", import.meta.url));
+    const releaseWorker = acquireAtlasResource("worker", "atlas", "satellite-propagation", {
+      owner: "satellite",
+    });
     workerRef.current = w;
     w.onmessage = (ev: MessageEvent<{ type: "poses"; poses: SatPose[] }>) => {
       const msg = ev.data;
@@ -73,6 +81,7 @@ export default function SatelliteConstellationOverlay({ physicsRef }: Props) {
     };
     return () => {
       w.terminate();
+      releaseWorker();
       workerRef.current = null;
     };
   }, []);

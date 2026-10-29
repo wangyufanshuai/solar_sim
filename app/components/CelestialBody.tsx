@@ -7,9 +7,7 @@ import Planet from "./Planet";
 
 export type CelestialBodyProps = SunBodyProps | PlanetBodyProps;
 
-/**
- * 路由到 {@link SunBody} 或 {@link Planet}；保持 `SolarSystemBodies` 等处的 `CelestialBody` API 不变。
- */
+/** Routes to SunBody or Planet while keeping the shared CelestialBody API stable. */
 export default function CelestialBody(props: CelestialBodyProps) {
   if (props.variant === "sun") {
     return <SunBody {...props} />;

@@ -1,3 +1,5 @@
+import { MAINLINE_A_CONSTELLATION_FIGURES_V607, type MainlineACoordinateSegmentV607 } from "./mainlineAConstellationFiguresV607";
+
 /**
  * 88 IAU constellation stick-figure catalog.
  * Waypoints use [RA degrees (J2000), Dec degrees (J2000)].
@@ -9,23 +11,18 @@ export type ConstellationLineDef = {
   name: string;
   nameCn: string;
   waypoints: [number, number][];
+  coordinateSegments?: readonly MainlineACoordinateSegmentV607[];
+  sourceComplete?: boolean;
+  sourceIssues?: readonly string[];
 };
 
-export const CONSTELLATION_LINES: ConstellationLineDef[] = [
+const LEGACY_CONSTELLATION_LINES: ConstellationLineDef[] = [
   // ═══════════════════════════════════════════════════════════
   // NORTHERN CIRCUMPOLAR & HIGH DECLINATION
   // ═══════════════════════════════════════════════════════════
 
   // Ursa Major — Big Dipper asterism
-  { iauCode: "UMa", name: "Ursa Major", nameCn: "大熊座", waypoints: [
-    [158.63, 61.75],  // Dubhe α
-    [165.46, 55.96],  // Merak β
-    [178.46, 53.69],  // Phecda γ
-    [183.86, 57.03],  // Megrez δ
-    [194.0, 55.96],   // Alioth ε
-    [201.3, 54.93],   // Mizar ζ
-    [206.89, 49.31],  // Alkaid η
-  ]},
+  { iauCode: "UMa", name: "Ursa Major", nameCn: "大熊座", waypoints: MAINLINE_A_CONSTELLATION_FIGURES_V607.UMa.waypoints },
 
   // Ursa Minor — Little Dipper
   { iauCode: "UMi", name: "Ursa Minor", nameCn: "小熊座", waypoints: [
@@ -39,13 +36,7 @@ export const CONSTELLATION_LINES: ConstellationLineDef[] = [
   ]},
 
   // Cassiopeia — W shape
-  { iauCode: "Cas", name: "Cassiopeia", nameCn: "仙后座", waypoints: [
-    [2.29, 59.15],    // Caph β
-    [10.13, 56.54],   // Schedar α
-    [14.18, 60.72],   // γ Cas
-    [21.45, 60.24],   // Ruchbah δ
-    [28.60, 63.67],   // Segin ε
-  ]},
+  { iauCode: "Cas", name: "Cassiopeia", nameCn: "仙后座", waypoints: MAINLINE_A_CONSTELLATION_FIGURES_V607.Cas.waypoints },
 
   // Cepheus — house shape
   { iauCode: "Cep", name: "Cepheus", nameCn: "仙王座", waypoints: [
@@ -360,18 +351,7 @@ export const CONSTELLATION_LINES: ConstellationLineDef[] = [
   ]},
 
   // Scorpius — scorpion
-  { iauCode: "Sco", name: "Scorpius", nameCn: "天蝎座", waypoints: [
-    [247.35, -26.43],  // Antares α
-    [245.3, -22.6],
-    [242.0, -19.8],    // Dschubba δ
-    [240.1, -22.6],    // β Sco (Acrab)
-    [243.0, -28.2],
-    [246.0, -34.2],
-    [248.5, -38.0],    // ε Sco
-    [252.0, -39.0],
-    [256.0, -37.1],    // Shaula λ
-    [258.0, -34.2],    // Lesath υ
-  ]},
+  { iauCode: "Sco", name: "Scorpius", nameCn: "天蝎座", waypoints: MAINLINE_A_CONSTELLATION_FIGURES_V607.Sco.waypoints },
 
   // Sagittarius — archer (teapot asterism)
   { iauCode: "Sgr", name: "Sagittarius", nameCn: "人马座", waypoints: [
@@ -441,15 +421,7 @@ export const CONSTELLATION_LINES: ConstellationLineDef[] = [
   // ═══════════════════════════════════════════════════════════
 
   // Orion — hunter
-  { iauCode: "Ori", name: "Orion", nameCn: "猎户座", waypoints: [
-    [88.79, 7.41],     // Betelgeuse α
-    [83.0, -1.2],      // Bellatrix γ
-    [83.63, -1.94],    // Mintaka δ
-    [84.05, -1.2],     // Alnilam ε
-    [84.53, -1.2],     // Alnitak ζ
-    [85.19, -2.4],     // Saiph κ
-    [89.0, -8.2],      // Rigel β
-  ]},
+  { iauCode: "Ori", name: "Orion", nameCn: "猎户座", waypoints: MAINLINE_A_CONSTELLATION_FIGURES_V607.Ori.waypoints },
 
   // Canis Major — great dog
   { iauCode: "CMa", name: "Canis Major", nameCn: "大犬座", waypoints: [
@@ -871,3 +843,12 @@ export const CONSTELLATION_LINES: ConstellationLineDef[] = [
   ]},
 
 ];
+
+// The twelve selected figures, their camera bounds and the passport charts use
+// one presentation source. Independent branches remain independent segments.
+export const CONSTELLATION_LINES: ConstellationLineDef[] = LEGACY_CONSTELLATION_LINES.map((entry) => {
+  const figure = MAINLINE_A_CONSTELLATION_FIGURES_V607[entry.iauCode];
+  if (!figure) return entry;
+  return { ...entry, waypoints: figure.waypoints, coordinateSegments: figure.coordinateSegments,
+    sourceComplete: figure.sourceComplete, sourceIssues: figure.sourceIssues };
+});

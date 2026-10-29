@@ -1,0 +1,42 @@
+{
+  "schema": "solar-server-candidate-local-validation/v1",
+  "at": "2026-10-29T19:34:50.2294480+08:00",
+  "sourceAndConfigPins": {
+    "count": 2193,
+    "issues": 0
+  },
+  "typescript": {
+    "command": "node --max-old-space-size=1792 node_modules/typescript/bin/tsc -p tsconfig.server.json --noEmit --incremental false --pretty false",
+    "exitCode": 0,
+    "scope": "formal-lite deployment source only",
+    "retainedAttempts": [
+      "Initial 1024 MiB heap exhausted",
+      "Second attempt located two missing public JSON imports; copied original bytes and rechecked successfully"
+    ]
+  },
+  "scriptSyntax": {
+    "buildServerCandidate": "passed",
+    "verifyServerAssets": "passed"
+  },
+  "publicAssets": {
+    "files": 2340,
+    "originalVerification": "passed",
+    "archiveExtractionVerification": "passed",
+    "archiveSha256": "5236efee1728a822e41da045379f6395df97d37b5a5f247f0c5671bcfb5fda7b"
+  },
+  "credentialScan": {
+    "operationalCredentialFindings": 0,
+    "knownSyntheticSigningFixture": "app/lib/kerrHighEnergyMeasuredImportV435.ts contains an inherited explicitly synthetic/nonpublishable validator fixture, not an operational credential; unchanged"
+  },
+  "whitespace": {
+    "status": "inherited-whitespace-retained",
+    "detail": "32 output lines from git diff --check with CRLF allowed; source byte identity preserved"
+  },
+  "linuxBuild": "not-run",
+  "nginxConfigurationTest": "not-run-on-Windows",
+  "serverRuntime": "not-run",
+  "browserForLinuxBuild": "not-run",
+  "scope": "Deployment preparation and source push, no public deployment or new art acceptance",
+  "candidateOnly": true,
+  "publicReleaseApproved": false
+}

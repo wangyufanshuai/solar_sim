@@ -1,0 +1,5 @@
+import type { AtlasDeliveryProfile } from "./atlasDeliveryProfile";
+import type { KerrPhotonMetrologyDetailSurfaceV537 } from "./kerrPhotonMetrologyObservatoryIntentV537";
+
+export type KerrPhotonMetrologyDetailSurfaceV538 = KerrPhotonMetrologyDetailSurfaceV537 | "response-aware-fits-column-schema";
+export function resolveKerrPhotonMetrologyObservatoryIntentV538(deliveryProfile: AtlasDeliveryProfile, active: boolean) { const authorized = deliveryProfile === "local-shadow" && active; return Object.freeze({ version: "v538-kerr-photon-metrology-observatory-intent-v1" as const, observatoryImportAuthorized: authorized, detailComponentCatalogSize: 40 as const, concurrentDetailSurfaceBudget: (authorized ? 1 : 0) as 0 | 1, qualifiedColumnCount: 17 as const, physicalUncertaintyValueCount: 0 as const, fitsImageHduCount: 0 as const, rasterPixelCount: 0 as const, canvasCreated: false as const, sceneRevisionDelta: 0 as const, physicsMutationAllowed: false as const, reason: authorized ? "enabled" : !active ? "inactive" : deliveryProfile === "vercel-lite" ? "lite-boundary" : "standalone-boundary" }); }
