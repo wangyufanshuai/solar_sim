@@ -1,0 +1,63 @@
+{
+  "schema": "mainline-a-code-change-continuation-v633",
+  "round": "R65-continuation",
+  "newDevelopmentRound": false,
+  "status": "acceptance-pending",
+  "createdAt": "2026-09-27T03:01:47.532Z",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-053.json",
+    "sha256": "7ff07a8d503e4092a7ef39c8f94f8cd0ca54236185fec19b2f66703797613903"
+  },
+  "incrementalEffectiveProductionLines": 76,
+  "cumulativeEffectiveProductionLines": 1171,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 268,
+  "incrementalRemovedLines": 33,
+  "cumulativeAddedLines": 2431,
+  "cumulativeRemovedLines": 62,
+  "method": "Count added or replacement target lines from exact before/after diff after TypeScript scanner removes comment trivia; tests excluded. Earlier count is carried once within the same unsealed batch.",
+  "files": [
+    {
+      "path": "app/lib/mainlineAFreezePreflightV622.ts",
+      "before": "tmp/mainline-a-v622-before-20260927-054/mainlineAFreezePreflightV622.ts",
+      "category": "production",
+      "sha256": "623be7e53bd5aab0d04960c204562ee9a06ca2f4dcb37b3f96f85d4ac90029bc",
+      "beforeSha256": "f228253b1919286a875d8ff2c4b352ac635ba9bff561fa325949108ae1d57670",
+      "addedLines": 39,
+      "removedLines": 10,
+      "countedEffectiveLines": 39
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-coverage-v622.ts",
+      "before": "tmp/mainline-a-v622-before-20260927-054/replay-mainline-a-canonical-coverage-v622.ts",
+      "category": "tool",
+      "sha256": "d9a693a142dbc6cadaab6d1349b9d321a91ecddf97705452512255e8b1d9fbd1",
+      "beforeSha256": "21c6dc63c0b1ef66d99a24583d0338f60e066a63b8f05e193d2ffa199533dc03",
+      "addedLines": 38,
+      "removedLines": 18,
+      "countedEffectiveLines": 37
+    },
+    {
+      "path": "app/lib/mainlineAFreezePreflightV622.test.ts",
+      "before": "tmp/mainline-a-v622-before-20260927-054/mainlineAFreezePreflightV622.test.ts",
+      "category": "test",
+      "sha256": "1c0c4b11605de1b85527b8cd5d460dbbe03fa3a77dc866903664971580ce41f8",
+      "beforeSha256": "ee2088ea0648772f5c0a7608503a71fd8f0045ce2a161855811b1274923fb2b6",
+      "addedLines": 73,
+      "removedLines": 5,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-coverage-v622.test.ts",
+      "before": null,
+      "category": "test",
+      "sha256": "68ee980ea00c6b4d23941b5d96c0e890b9f5a027eca237b02b1e48145d361ba8",
+      "beforeSha256": null,
+      "addedLines": 118,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "physicsKernelMutation": false
+}

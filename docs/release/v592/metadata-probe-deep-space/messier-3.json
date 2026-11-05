@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:35.901Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "messier-3",
+  "category": "cluster",
+  "query": "Messier 3 globular cluster",
+  "requiredTermGroups": [
+    [
+      "messier 3",
+      "m3",
+      "ngc 5272"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Messier%203%20globular%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Messier%203%20globular%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 179,
+    "responseSha256": "7a8d376f8f375e4244a0b59c3844f3f2f04892023e57296a5a554cde3382db75"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "da3fc0f947a93d7f82b87e77e39e7ebaec99e7fe41a094c7fba5b1eb3ff1dbdd"
+}

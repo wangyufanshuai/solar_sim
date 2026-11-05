@@ -1,0 +1,55 @@
+{
+  "round": 58,
+  "date": "2026-09-14",
+  "title": "beta-stellar-fresh-capture-v618",
+  "status": "fresh-capture-intake-registered-0-of-4",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "stellarCandidates": 4,
+    "captureRequests": 4,
+    "responsesCaptured": 0,
+    "reviewPending": 0,
+    "runtimeAdmitted": 0,
+    "measurementAdmitted": 0,
+    "currentStars": 20,
+    "betaHeroStars": 24,
+    "currentNebulaCandidates": 24,
+    "currentConstellations": 12
+  },
+  "implementation": [
+    "Added V618 deterministic fresh-capture intake bound to the V616 Acrux, Spica, Regulus and Polaris closure identities.",
+    "Each request preserves query identifier, HTTPS SIMBAD endpoint, expected snapshot/projection digests, service ODbL attribution and immutable response requirements.",
+    "Added raw-response hash, strict past UTC timestamp, resolution, component-source-reference and stale-identity checks; HTTP pages alone cannot become structured scientific measurements.",
+    "Generated a required-only pack with four request rows and zero responses; all records remain hold, candidate-only, not-admitted and scientific writeback false.",
+    "Connected V618 to the Beta hero review panel with four visible request rows, request IDs, endpoint, next action and explicit 0/4 boundary."
+  ],
+  "tests": {
+    "freshCaptureNode": {"passed": 9, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-stellar-fresh-capture-v618.test.mjs"},
+    "freshCaptureVitest": {"passed": 15, "failed": 0, "files": 2},
+    "combinedRegressionNode": {"passed": 28, "failed": 0, "files": 4, "note": "V615/V616/V617/V618 generator regression; negative stale-pack cases are asserted."},
+    "combinedVitest": {"passed": 39, "failed": 0, "files": 5},
+    "eslint": {"passed": true, "scope": "V618 generator, utility, tests and Beta hero review panel"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "tQgAqPxPi1d-E61btR03G", "buildIdSha256": "5a7a8502782e116dfa4d0d88f27422021f1ede0bdd1915f287d7a7774339c1a3"}
+  },
+  "http": {"productionUrl": "http://127.0.0.1:3019/", "checks": [{"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697}, {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241, "defaultScientificKernel": "legacy-eih-1pn"}]},
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "panel": "mainline-a-beta-hero-review-v611", "freshCaptureSummary": "0/4 responses sealed", "freshCaptureRows": 4, "ledgerRows": 4, "endpointVisible": true, "candidateOnlyVisible": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "In-app viewport override remains unavailable in this run; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not physical-device performance, public deployment, legal clearance, real-user validation or scientific validation"
+  },
+  "screenshots": [{"path": "docs/release/v607/screenshots/mainline-a-r58-stellar-fresh-capture-desktop.png", "bytes": 69920, "sha256": "e9a429d9060c8dc2d4c114d96db0f1ad006dcd58ed897b0e53779aa7e7b42bb1"}],
+  "artifacts": {
+    "freshCapturePack": {"schema": "mainline-a-beta-stellar-fresh-capture-v618", "path": "app/data/mainlineABetaStellarFreshCaptureV618.generated.json", "sha256": "b6938d150d8553a01455bc2280458d5850bbb95cd67b4d674f30df4a4430e38f", "requests": 4, "responsesCaptured": 0, "runtimeAdmitted": 0, "measurementAdmitted": 0},
+    "service": {"endpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync", "license": "ODbL-1.0", "citation": "Wenger et al. 2000, A&AS, 143, 9"},
+    "boundary": {"freshCaptureOnly": true, "legalDecision": "not-granted", "runtimeWrites": false, "measurementWrites": false, "scientificPayloadWriteback": false}
+  },
+  "openGates": [
+    "Acrux、Spica、Regulus、Polaris 仍需真实 HTTPS 响应、可重算 raw hash、结构化身份/视差/引用证据、组件来源引用和人工审核；V618 入口不等于来源闭环完成。",
+    "SIMBAD HTML raw page 不能自动填充 parallax 或组件身份；结构化查询稳定性和现场网络仍需独立验证。",
+    "24 条星云候选仍需逐图 NASA 权利、视觉 signoff 和 payload 采集；12 个重点星座仍需最终视觉 signoff。",
+    "多设备 GPU/FPS/资源生命周期、移动端、root/next-web 对齐、公共部署和最终发布包仍未完成。"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

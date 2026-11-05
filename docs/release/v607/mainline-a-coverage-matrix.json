@@ -1,0 +1,28 @@
+{
+  "stage": "A2-in-progress",
+  "statusLegend": { "ready": "metadata and narrative contract present", "pending": "requires source or rights work", "proxy": "presentation approximation" },
+  "rows": {
+    "constellations": ["Ori", "UMa", "Cas", "Sco"],
+    "nebulae": ["m42", "m1", "m8", "m16", "m20", "m57", "ngc7293", "ngc6543", "ngc2237", "ngc6960", "carina", "b33"],
+    "stars": ["alpha-centauri-a", "achernar", "betelgeuse", "sirius-a", "rigel", "antares"]
+  },
+  "coverage": {
+    "catalogFacts": "ready",
+    "narrativeCards": "ready",
+    "provenanceLinks": "ready",
+    "constellationFormalBoundaries": "ready-first-set-iau-j2000",
+    "nebulaPerImageLicense": "partial-6-of-12-cleared",
+    "stellarPortraits": "proxy"
+  },
+  "nebulaAssetCoverage": {
+    "firstSet": 12,
+    "licensed": 6,
+    "manifestCandidates": 0,
+    "catalogMarkers": 6,
+    "licensedObjectIds": ["m42", "m1", "m8", "m16", "m20", "m57"],
+    "pendingObjectIds": ["ngc7293", "ngc6543", "ngc2237", "ngc6960", "carina", "b33"],
+    "totalLocalByteSize": 1971256,
+    "rightsReview": "docs/release/v607/mainline-a-stage-a3-rights-review.json",
+    "localDelivery": "docs/release/v607/mainline-a-stage-a3-local-delivery.json"
+  }
+}

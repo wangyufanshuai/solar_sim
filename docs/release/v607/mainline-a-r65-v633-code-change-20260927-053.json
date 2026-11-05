@@ -1,0 +1,58 @@
+{
+  "schema": "mainline-a-code-change-continuation-v633",
+  "round": "R65-continuation",
+  "createdAt": "2026-09-27T02:46:28.823Z",
+  "newDevelopmentRound": false,
+  "status": "acceptance-pending",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-052.json",
+    "sha256": "18ec31410168cbb3467f7c2b14f679cf8017ad10e4c20f52fe4f7607924df343",
+    "effectiveProductionLines": 1077
+  },
+  "scope": "Incremental source-evidence integration and real-ledger compatibility fix within the existing unsealed batch; no extra round claimed.",
+  "incrementalEffectiveProductionLines": 18,
+  "cumulativeEffectiveProductionLines": 1095,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 266,
+  "incrementalRemovedLines": 20,
+  "cumulativeAddedLines": 2163,
+  "cumulativeRemovedLines": 29,
+  "method": "18 substantive added/replacement lines in the existing ledger tool; tests, generated candidate data, source HTML, image downloads and receipts excluded. Previous 1077 lines counted once in the same open batch.",
+  "files": [
+    {
+      "path": "scripts/build-mainline-a-source-rights-ledger-v629.mjs",
+      "before": "tmp/mainline-a-v629-before-20260927-053/build-mainline-a-source-rights-ledger-v629.mjs",
+      "category": "production-tool",
+      "addedLines": 18,
+      "removedLines": 2,
+      "replacementPairs": 2,
+      "countedEffectiveLines": 18,
+      "sha256": "250f5abf389c8bfee5de0c01b4555428b3bf43a6eb1355a86ebe145c45cd0f50",
+      "beforeSha256": "c88e9383857f6f7202a5ccf8a75aff906f2240a697b47d747797b9fc1f84dd06"
+    },
+    {
+      "path": "scripts/build-mainline-a-source-rights-ledger-v629.test.mjs",
+      "before": "tmp/mainline-a-v629-before-20260927-053/build-mainline-a-source-rights-ledger-v629.test.mjs",
+      "category": "test",
+      "addedLines": 114,
+      "removedLines": 0,
+      "replacementPairs": 0,
+      "countedEffectiveLines": 0,
+      "sha256": "fb313e5b5ca9cba4874e1b6ab95971439bf28ef7186f995e38b99807bee93922",
+      "beforeSha256": "09f0e724832f4c13569dfb0db79511a2d00f5707f8ccff35c8cfd494c8583449"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV628.generated.json",
+      "before": "docs/release/v607/nebula-batch-ledger/r68/a268999956b256a376195b7a4807e674e79a29ce198b3a541eef259586927e26.json",
+      "category": "generated-candidate-telemetry",
+      "addedLines": 134,
+      "removedLines": 18,
+      "replacementPairs": 18,
+      "countedEffectiveLines": 0,
+      "sha256": "9634b677ffc2b8552dd78b9d73501efb007b0266615bdf8647b9558a27a4b32f",
+      "beforeSha256": "a268999956b256a376195b7a4807e674e79a29ce198b3a541eef259586927e26"
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "physicsKernelMutation": false
+}

@@ -1,0 +1,82 @@
+{
+  "schema": "mainline-a-code-change-receipt-v645",
+  "round": "R65-continuation",
+  "generatedAt": "2026-10-07T04:41:51.432Z",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "priorReceipt": {
+    "path": "docs/release/v607/mainline-a-r65-v644-code-change-20261007.json",
+    "sha256": "ef188dfb1df39b567b1c40c847dc5ffe5fb7e2103211b16302373c1768d5e3e0"
+  },
+  "effectiveAddedSinceV644Conservative": 76,
+  "effectiveModifiedSinceV644Counted": 0,
+  "modifiedLinesNotIndependentlyReconstructed": true,
+  "cumulativeEffectiveProductionAndToolLinesLowerBound": 2084,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "V645 new production module counts nonblank noncomment lines. Existing V643/V644 files were edited but their preimage is unavailable; those edits are listed and conservatively excluded from the numeric threshold. Prior V644 receipt is pinned. Tests, screenshots, generated files and receipts are excluded.",
+  "newProductionFile": {
+    "path": "app/lib/mainlineAR65SceneActivityV645.ts",
+    "effectiveLines": 76,
+    "bytes": 3987,
+    "sha256": "4aabe274d83cecd151ea1edab40df5bd928b4fffb9f88c0402c15b9fa9d28463"
+  },
+  "editedProductionFiles": [
+    {
+      "path": "app/lib/mainlineAR65LongRunV643.ts",
+      "bytes": 43882,
+      "sha256": "bb8a2cbe410ed5daeb44809bff7fb1b376699c99293cc601df504292f31ac223",
+      "incrementalEffectiveLinesCounted": 0
+    },
+    {
+      "path": "app/components/MainlineAR65LongRunPanelV643.tsx",
+      "bytes": 31298,
+      "sha256": "b838c52aa478c758f8d77fe7a7011fc2436f2cce7f8923417cf15429cc3b4981",
+      "incrementalEffectiveLinesCounted": 0
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.tsx",
+      "bytes": 21028,
+      "sha256": "b7039db334391f93d6dfd372e2f8c8ae969d85ac84ebcada7088b7e7e2fd02aa",
+      "incrementalEffectiveLinesCounted": 0
+    },
+    {
+      "path": "app/components/MainlineAPerformanceSurfaceV637.tsx",
+      "bytes": 3913,
+      "sha256": "d2f93ea0b5e13beebbf47b1622495f01b627ea30f95b3967f75bdad38f5c034b",
+      "incrementalEffectiveLinesCounted": 0
+    },
+    {
+      "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "bytes": 49120,
+      "sha256": "bb7772bc6d0d4e99b026655f93af8e68d0f8c815ac53a97ad49194702efbbd1b",
+      "incrementalEffectiveLinesCounted": 0
+    }
+  ],
+  "testFiles": [
+    "app/lib/mainlineAR65SceneActivityV645.test.ts",
+    "app/lib/mainlineAR65LongRunV643.test.ts",
+    "scripts/build-mainline-a-r65-longrun-v643.test.ts"
+  ],
+  "buildReceipt": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json",
+  "validation": {
+    "node": "passed 3/3 builder tests",
+    "vitest": "passed 18/18",
+    "eslint": "passed targeted",
+    "typescript": "passed",
+    "productionBuild": "passed",
+    "http": "page and health 200",
+    "desktopBrowser": "observed, first long run still pending",
+    "mobileViewport": "not-run on V645 build",
+    "physicalMobile": "not-run",
+    "longRun": "0/2 while live"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:38.163Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "messier-5",
+  "category": "cluster",
+  "query": "Messier 5 globular cluster",
+  "requiredTermGroups": [
+    [
+      "messier 5",
+      "m5 globular",
+      "ngc 5904"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Messier+5+globular+cluster&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Messier+5+globular+cluster&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 2798,
+    "responseSha256": "e0f73c99255f5fb083d2ea9a6d58a51e692d1c71a52f338a04f353e6f5bb79d8"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "GSFC_20171208_Archive_e001116",
+      "title": "Cosmic Fairy Lights",
+      "description": "This sparkling jumble is Messier 5 — a globular cluster consisting of hundreds of thousands of stars bound together by their collective gravity. But Messier 5 is no normal globular cluster. At 13 billion years old it dates back to close to the beginning of the Universe, which is some 13.8 billion years of age. It is also one of the biggest clusters known, and at only 24 500 light-years away, it is no wonder that Messier 5 is a popular site for astronomers to train their telescopes on. Messier 5 also presents a puzzle. Stars in globular clusters grow old and wise together. So Messier 5 should, by now, consist of old, low-mass red giants and other ancient stars. But it is actually teeming with young blue stars known as blue stragglers. These stars spring to life when stars collide, or rip material from one another. Credit: ESA/NASA <b><a href=\"http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html\" rel=\"nofollow\">NASA image use policy.</a></b> <b><a href=\"http://www.nasa.gov/centers/goddard/home/index.html\" rel=\"nofollow\">NASA Goddard Space Flight Center</a></b> enables NASA’s mission through four scientific endeavors: Earth Science, Heliophysics, Solar System Exploration, and Astrophysics. Goddard plays a leading role in NASA’s accomplishments by contributing compelling scientific knowledge to advance the Agency’s mission. <b>Follow us on <a href=\"http://twitter.com/NASAGoddardPix\" rel=\"nofollow\">Twitter</a></b> <b>Like us on <a href=\"http://www.facebook.com/p",
+      "center": "GSFC",
+      "creator": null,
+      "dateCreated": "2017-12-08T00:00:00Z",
+      "keywords": [
+        "Cosmic Fairy Lights",
+        "messier5"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/collection.json"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "5f77a192d7a64961f0072d9d7ac168519cc7e5f69889136aab13eb4a463e8d43"
+}

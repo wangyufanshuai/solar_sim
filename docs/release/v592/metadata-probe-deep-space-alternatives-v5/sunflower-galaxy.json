@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v5",
+  "probedAt": "2026-08-19T13:17:46.036Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "sunflower-galaxy",
+  "category": "galaxy",
+  "query": "NGC 5055",
+  "requiredTermGroups": [
+    [
+      "ngc 5055",
+      "m63",
+      "sunflower"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v4/sunflower-galaxy.json",
+    "receiptSha256": "1d5789580e187dd7e28af7557cdcc51c8388a0331b2eebff5514253b1f135196",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M63+galaxy+NASA+Goddard&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+5055&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+5055&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "7962d9c6ab24d8fc484d554e686fec377baa253ea3e6d30cd904c6e17a865ec1"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "7c9e8d464511b4e558e1724a8bf50fb3875a523df6ec98291325e477d77bef36"
+}

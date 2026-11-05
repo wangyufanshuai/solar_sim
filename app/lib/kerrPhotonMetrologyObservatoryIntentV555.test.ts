@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { resolveKerrPhotonMetrologyObservatoryIntentV555 } from "./kerrPhotonMetrologyObservatoryIntentV555";
+describe("v555 photon metrology intent", () => { it("keeps the sparse image local-shadow-only", () => { expect(resolveKerrPhotonMetrologyObservatoryIntentV555("local-shadow", true)).toMatchObject({ observatoryImportAuthorized: true, detailComponentCatalogSize: 56, sparseScienceSampleCount: 16, observedFrameCount: 0, measuredPixelCount: 0, canvasCreated: false }); expect(resolveKerrPhotonMetrologyObservatoryIntentV555("vercel-lite", true).reason).toBe("lite-boundary"); }); });

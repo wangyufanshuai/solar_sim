@@ -1,0 +1,210 @@
+{
+  "schema": "mainline-a-b2-preflight-browser-v638",
+  "recordedAt": "2026-09-27T14:45:33.965Z",
+  "status": "issues-found-incomplete-local",
+  "newDevelopmentRound": false,
+  "build": {
+    "buildId": "iKoGl6qEAF6z0z7ouSq06",
+    "runtimeBuildId": "mainline-a-280138c149008279",
+    "sourceSha256": "280138c149008279dff06dca2330250154911de8d3406f9a83141920044b2aae",
+    "sourceStableAtBuild": true,
+    "artifact": {
+      "path": "docs/release/v607/mainline-a-r66-build-20260927-068d.json",
+      "bytes": 467440,
+      "sha256": "40f665f328a65fa770e5a1d048ddd0f1533247075401d5448d256b14ead3b6e6"
+    }
+  },
+  "static": {
+    "productionBuild": "passed",
+    "vitest": {
+      "passed": 550,
+      "total": 550,
+      "files": 26,
+      "artifact": {
+        "path": "tmp/mainline-a-b2-vitest-068d.json",
+        "bytes": 227848,
+        "sha256": "7520b18ab8cc59d222682c68528e892bed59bb034d77c59eea4fb41a7dc54c91"
+      }
+    },
+    "eslint": {
+      "files": 59,
+      "errors": 0,
+      "warnings": 0,
+      "artifact": {
+        "path": "tmp/mainline-a-b2-eslint-068d.json",
+        "bytes": 15408,
+        "sha256": "825d5b21a1affd50a9705b9927f4379bdc08387d5774874ca52a17836fd0ccb7"
+      }
+    },
+    "node": {
+      "buildToolPassed": 13,
+      "evidencePipelinePassed": 63,
+      "artifacts": [
+        {
+          "path": "tmp/mainline-a-b2-node-build-068d.log",
+          "bytes": 1268,
+          "sha256": "e93b6ebcabeb85c1e1461ce991dbc107712bac2e5fe6a9eee952c559af9e9fe9"
+        },
+        {
+          "path": "tmp/mainline-a-b2-node-evidence-068d.log",
+          "bytes": 5761,
+          "sha256": "705cc9b3337c4abdac583d6af4c49b71d7ee08c03d487470bd0d7c413155e858"
+        }
+      ]
+    },
+    "typeScriptScope": "Passed preserved production build; no claim that all historical test and script types pass"
+  },
+  "http": {
+    "status": "passed",
+    "artifacts": [
+      {
+        "path": "docs/release/v607/mainline-a-b2-http-20260927-068d.json",
+        "bytes": 13317,
+        "sha256": "a257e12407fc36dfe8a39102c3d631a82f8c93004c6a313a73fa6dda658e027d"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-b2-nebula-http-20260927-068d.json",
+        "bytes": 43885,
+        "sha256": "f194b97df4240e0edee348c030f9afc8bda59d2ad39d132d98c4ce0c37d87d82"
+      }
+    ],
+    "canonicalNebulaImages": "12/12"
+  },
+  "browser": {
+    "surface": "Codex in-app Browser",
+    "url": "http://127.0.0.1:3070/",
+    "desktopViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "raw": {
+      "path": "tmp/mainline-a-b2-browser-nebula-m42-01-keyboard-recovery-068d.json",
+      "bytes": 49086,
+      "sha256": "65b9a16b3a36ba41bf7575e79bf31a32c88cf9ada982dfad5cc46cb1e57b66f9"
+    },
+    "replay": {
+      "path": "docs/release/v607/mainline-a-b2-m42-replay-20260927-068d.json",
+      "bytes": 3786,
+      "sha256": "2af0c6d3a1270a115cd8a7635b4f49d7fa163edd236dd2dd40ed42eabccad58d"
+    },
+    "replayStatus": "measured-local",
+    "observation": {
+      "target": {
+        "kind": "nebula",
+        "id": "m42",
+        "route": "mainline-a3-nebula-visual",
+        "assetHash": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+      },
+      "elapsedMs": 161461.74500000104,
+      "requestedDurationMs": 30000,
+      "clock": {
+        "source": "document-timeline",
+        "sessionStartMs": 70449.66999999806,
+        "callbackCount": 28993,
+        "acceptedCount": 28992,
+        "firstCallbackMs": 70449.435,
+        "firstAcceptedMs": 70455.035,
+        "lastAcceptedMs": 231908.095,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "issues": []
+    },
+    "keyboardRecovery": "Mouse restore click missed because root telemetry mirror was mistaken for the passport. Enter on the restore button recovered the still-mounted observation; UI mouse gate remains failed.",
+    "mouseRestorePassed": false,
+    "canonicalCoverage": "1/36 on this build",
+    "dockFailure": {
+      "path": "tmp/mainline-a-b2-dock-hit-failure-068d.json",
+      "bytes": 1089,
+      "sha256": "da6a6560fe9dee1975aecdd01401a2bf07fdc289d8ceabe61ad27c40275056eb"
+    }
+  },
+  "visual": {
+    "status": "stellar-repair-observed-dock-still-failed",
+    "stars": [
+      {
+        "id": "vega",
+        "artifact": {
+          "path": "tmp/mainline-a-b2-stellar-paint-vega-068d.jpg",
+          "bytes": 59503,
+          "sha256": "5c6d8bf37dbc8026c99acaa21df69d9995f5785b8b500349f3262bea77de02b5"
+        },
+        "review": "AI frame inspection: former discrete disk points not seen; outline complete; halo remains visible",
+        "scope": "one inspected frame, not continuous dynamic or human acceptance"
+      },
+      {
+        "id": "capella-a",
+        "artifact": {
+          "path": "tmp/mainline-a-b2-stellar-paint-capella-a-068d.jpg",
+          "bytes": 102792,
+          "sha256": "edc613ad4b2e3cb56e27d4d6b626130fb49df8dee833d4a82bdcb0442e11ef1b"
+        },
+        "review": "AI frame inspection: former discrete disk points not seen; outline complete; halo remains visible",
+        "scope": "one inspected frame, not continuous dynamic or human acceptance"
+      },
+      {
+        "id": "aldebaran",
+        "artifact": {
+          "path": "tmp/mainline-a-b2-stellar-paint-aldebaran-068d.jpg",
+          "bytes": 101853,
+          "sha256": "db173cd15d6724fd316b8e06ea5c82361b0864b00c1427a1330289093d22ea4f"
+        },
+        "review": "AI frame inspection: former discrete disk points not seen; outline complete; halo remains visible",
+        "scope": "one inspected frame, not continuous dynamic or human acceptance"
+      }
+    ],
+    "desktopOrion": {
+      "artifact": {
+        "path": "tmp/mainline-a-b2-orion-desktop-068d.jpg",
+        "bytes": 78360,
+        "sha256": "79aa431ff5bfa8bbf4dcc59d98e88fbd693e9a530bcdaada0c34b02e47bd2d33"
+      },
+      "review": "Complete desktop figure remains in viewport"
+    },
+    "m42": {
+      "path": "tmp/mainline-a-b2-nebula-m42-01-desktop-068d.jpg",
+      "bytes": 103151,
+      "sha256": "9a002fa4a6838f12c5803bf5c139565393d4945fff3b9171ef80d3349d3f48bb"
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "limited-not-full-scene-pass",
+      "physicalMobile": "not-run",
+      "artifact": {
+        "path": "tmp/mainline-a-b2-mobile-close-passport-068d.json",
+        "bytes": 1069,
+        "sha256": "4f5d5f874052cae20c8f1c101ff30579ae4cfa36e573255468974a6892138600"
+      },
+      "screenshot": {
+        "path": "tmp/mainline-a-b2-orion-mobile-scene-068d.jpg",
+        "bytes": 28616,
+        "sha256": "9f3ae115f2513cf470a83f372755df2b4e5b9bb84b5eaf184eb8f0b114971393"
+      },
+      "limitation": "Passport covers scene; close clears selected object and returns to solar view. The captured post-close frame is not an Orion scene pass."
+    }
+  },
+  "performance": {
+    "status": "short-local-diagnostic-only",
+    "longRun": "not-run",
+    "rendererFrameTimeClaim": false,
+    "productionPerformanceClaim": false
+  },
+  "externalSource": {
+    "fourStarIdentityReview": "pending",
+    "additionalNebulaSignatures": "0/12",
+    "scientificValidityClaim": false,
+    "rightsApproval": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "realUserValidation": false
+  },
+  "nextAction": "Repair dock selection of mirrored root attributes; validate on new preserved build 068e and complete canonical36. This preflight is not a completed B2 round. Mobile full-scene interaction remains an explicit multi-device follow-up."
+}

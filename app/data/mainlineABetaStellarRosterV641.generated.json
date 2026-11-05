@@ -1,0 +1,3135 @@
+{
+  "schema": "mainline-a-beta-stellar-roster-v641",
+  "generatedAt": "2026-09-29T00:00:00.000Z",
+  "source": {
+    "existingRoster": "app/data/mainlineABetaHeroRosterV607.ts",
+    "structuredCandidatePack": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "componentEvidencePack": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+    "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061"
+  },
+  "counts": {
+    "total": 24,
+    "runtimeExisting": 20,
+    "candidateHold": 4,
+    "sourceArtifactBacked": 4,
+    "componentConfirmed": 0
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "snapshotMutation": false
+  },
+  "records": [
+    {
+      "id": "sirius-a",
+      "displayName": "Sirius A",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "sirius-a-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "sirius-a-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20CMa",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "sirius-a-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "101.287155, -16.716116",
+          "unit": "deg",
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A1V",
+          "unit": null,
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 379.21,
+          "unit": "mas",
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 379.21 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 2.637,
+          "unit": "pc",
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "sirius-a-source-0",
+            "sirius-a-source-1",
+            "sirius-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "91f2d9b5f99a83f0f92ed33cea9470e4b837a9799da292409f0f5728023753b0"
+    },
+    {
+      "id": "canopus",
+      "displayName": "Canopus",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "canopus-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "canopus-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Car",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "canopus-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "95.987958, -52.695661",
+          "unit": "deg",
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A9II",
+          "unit": null,
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 10.55,
+          "unit": "mas",
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 10.55 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 94.8,
+          "unit": "pc",
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "canopus-source-0",
+            "canopus-source-1",
+            "canopus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "fab21b920c637486b506c27fe745ab6ba88fb4924ac7e63c3086e1250ba340e6"
+    },
+    {
+      "id": "alpha-centauri-a",
+      "displayName": "Alpha Centauri A",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "alpha-centauri-a-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alpha-centauri-a-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Cen%20A",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alpha-centauri-a-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/1997A%26A...323L..49P/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "219.902058, -60.833993",
+          "unit": "deg",
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "G2V",
+          "unit": null,
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 742.12,
+          "unit": "mas",
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 742.12 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 1.338,
+          "unit": "pc",
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "alpha-centauri-a-source-0",
+            "alpha-centauri-a-source-1",
+            "alpha-centauri-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "df8614ebc7c2e13e457969b07a092b63ca4a3442a924849a93405622fb1955a0"
+    },
+    {
+      "id": "alpha-centauri-b",
+      "displayName": "Alpha Centauri B",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "alpha-centauri-b-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alpha-centauri-b-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Cen%20B",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alpha-centauri-b-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/1997A%26A...323L..49P/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "219.90085, -60.83556",
+          "unit": "deg",
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "K1V",
+          "unit": null,
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 742.12,
+          "unit": "mas",
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 742.12 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 1.338,
+          "unit": "pc",
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "alpha-centauri-b-source-0",
+            "alpha-centauri-b-source-1",
+            "alpha-centauri-b-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "02194b0c4f097939a00097a20eb537caed5a3764927c94005b324accbf56d111"
+    },
+    {
+      "id": "arcturus",
+      "displayName": "Arcturus",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "arcturus-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "arcturus-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Boo",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "arcturus-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "213.9153, 19.18241",
+          "unit": "deg",
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "K1.5III",
+          "unit": null,
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 88.83,
+          "unit": "mas",
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 88.83 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 11.26,
+          "unit": "pc",
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "arcturus-source-0",
+            "arcturus-source-1",
+            "arcturus-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "40cad0b2f4a9074dd6bef223bcd46ff86820aa9518854ca93c517eabcb4a3abf"
+    },
+    {
+      "id": "vega",
+      "displayName": "Vega",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "vega-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "vega-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Lyr",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "vega-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "279.234735, 38.783689",
+          "unit": "deg",
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A0V",
+          "unit": null,
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 130.23,
+          "unit": "mas",
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 130.23 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 7.68,
+          "unit": "pc",
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "vega-source-0",
+            "vega-source-1",
+            "vega-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "0e2ef44983da4699be33f0356ce90d687aaa7aecde7356818bc0313c0f61bd73"
+    },
+    {
+      "id": "capella-a",
+      "displayName": "Capella A",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "capella-a-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "capella-a-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Aur",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "capella-a-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "79.172327, 45.997991",
+          "unit": "deg",
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "G8III",
+          "unit": null,
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 76.2,
+          "unit": "mas",
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 76.2 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 13.04,
+          "unit": "pc",
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "candidate",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "capella-a-source-0",
+            "capella-a-source-1",
+            "capella-a-source-2"
+          ],
+          "rawEvidence": "system-level source; component A identity is not independently confirmed",
+          "confidence": "candidate"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "7a7feedd147c307427f428ff71d391cacb37cf3d359decde55bb51cba7ed980d"
+    },
+    {
+      "id": "rigel",
+      "displayName": "Rigel",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "rigel-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "rigel-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Ori",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "rigel-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "78.634467, -8.201639",
+          "unit": "deg",
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "B8Ia",
+          "unit": null,
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 3.78,
+          "unit": "mas",
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 3.78 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 264,
+          "unit": "pc",
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "rigel-source-0",
+            "rigel-source-1",
+            "rigel-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "8946fac3343056b4d8e37333a73325334cf3c7043a3dc66ead44057a24cbb43d"
+    },
+    {
+      "id": "procyon-a",
+      "displayName": "Procyon A",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "procyon-a-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "procyon-a-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20CMi",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "procyon-a-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "114.825493, 5.224993",
+          "unit": "deg",
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "F5IV-V",
+          "unit": null,
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 284.56,
+          "unit": "mas",
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 284.56 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 3.51,
+          "unit": "pc",
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "procyon-a-source-0",
+            "procyon-a-source-1",
+            "procyon-a-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "0c1bf2f0eb4fd1a99f3c68762e14151b9ed837b7d5232d6857d309098f3f0d43"
+    },
+    {
+      "id": "betelgeuse",
+      "displayName": "Betelgeuse",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "betelgeuse-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "betelgeuse-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Ori",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "betelgeuse-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "88.792939, 7.407064",
+          "unit": "deg",
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "M1-2Ia-Iab",
+          "unit": null,
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 6.55,
+          "unit": "mas",
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 6.55 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 200,
+          "unit": "pc",
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "betelgeuse-source-0",
+            "betelgeuse-source-1",
+            "betelgeuse-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "67e9f959bbcf783e5844ef44a922c581ea28c405ddcd8cc572bfe8f7f9b33fff"
+    },
+    {
+      "id": "aldebaran",
+      "displayName": "Aldebaran",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "aldebaran-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "aldebaran-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Tau",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "aldebaran-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "68.980163, 16.509302",
+          "unit": "deg",
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "K5III",
+          "unit": null,
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 48.94,
+          "unit": "mas",
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 48.94 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 20.01,
+          "unit": "pc",
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "aldebaran-source-0",
+            "aldebaran-source-1",
+            "aldebaran-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "b402947e55367127a76f5389d09d72e7ec7d85406f5b035969adec9f98a8d1fd"
+    },
+    {
+      "id": "antares",
+      "displayName": "Antares",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "antares-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "antares-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Sco",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "antares-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "247.351915, -26.432002",
+          "unit": "deg",
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "M1.5Iab-Ib",
+          "unit": null,
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 5.89,
+          "unit": "mas",
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 5.89 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 170,
+          "unit": "pc",
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "antares-source-0",
+            "antares-source-1",
+            "antares-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "7c177898f212767c22a16b698b72b307de63835f27669b4a2702ec50104aa8d9"
+    },
+    {
+      "id": "achernar",
+      "displayName": "Achernar",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "achernar-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "achernar-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Eri",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "achernar-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "achernar-source-3",
+          "url": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+          "path": null,
+          "role": "literature",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "24.428523, -57.236753",
+          "unit": "deg",
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "B6Vep",
+          "unit": null,
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 23.39,
+          "unit": "mas",
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": "SIMBAD compilation 23.39 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 42.8,
+          "unit": "pc",
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "achernar-source-0",
+            "achernar-source-1",
+            "achernar-source-2",
+            "achernar-source-3"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "896af6f8ca6d92c2741b37b1e21e534573955f0e607d6e5cd186cd58d4da879e"
+    },
+    {
+      "id": "hadar",
+      "displayName": "Hadar",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "hadar-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "hadar-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Cen",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "hadar-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "210.955856, -60.373039",
+          "unit": "deg",
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "B1III",
+          "unit": null,
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 8.32,
+          "unit": "mas",
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 8.32 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 120,
+          "unit": "pc",
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "hadar-source-0",
+            "hadar-source-1",
+            "hadar-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "2ca3ae6e0357a7d2f7b01986bc00386428f62764ff644958b863221417cfd7d7"
+    },
+    {
+      "id": "altair",
+      "displayName": "Altair",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "altair-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "altair-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Aql",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "altair-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "297.695827, 8.868322",
+          "unit": "deg",
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A7V",
+          "unit": null,
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 194.95,
+          "unit": "mas",
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 194.95 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 5.13,
+          "unit": "pc",
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "altair-source-0",
+            "altair-source-1",
+            "altair-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "1a6b8a5e2c8fd65495afea80c4dd8a32fda09451cc6d00012aa758811326a000"
+    },
+    {
+      "id": "acrux",
+      "displayName": "Acrux A",
+      "phase": "candidate-hold",
+      "sourceClass": "raw-structured-candidate",
+      "runtimeRoute": "candidate-review-only",
+      "decision": "hold",
+      "sourceRefs": [
+        {
+          "id": "acrux-simbad",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+          "path": null,
+          "role": "object-page",
+          "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "acrux-simbad-raw",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+          "path": "docs/release/v607/raw-artifacts/r60/acrux-6283e0cf5cb9.raw",
+          "role": "raw-artifact",
+          "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "acrux-wds",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+          "path": null,
+          "role": "catalogue",
+          "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "acrux-wds-raw",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+          "role": "raw-artifact",
+          "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+          "evidenceClass": "artifact"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "candidate",
+          "value": "186.6495666666667, -63.099091666666666",
+          "unit": "deg",
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": "12 26 35.896 -63 05 56.73 (Optical) [ 18 17 0 ] B 2002A&A...384..180F",
+          "confidence": "candidate"
+        },
+        {
+          "field": "properMotion",
+          "state": "candidate",
+          "value": "-35.4, -14.7",
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": "-35.4 -14.7 [0.6 0.7 90] B",
+          "confidence": "candidate"
+        },
+        {
+          "field": "spectralType",
+          "state": "candidate",
+          "value": "B0.5IV",
+          "unit": null,
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": "B0.5IV E",
+          "confidence": "candidate"
+        },
+        {
+          "field": "parallax",
+          "state": "missing",
+          "value": null,
+          "unit": "mas",
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "distance",
+          "state": "missing",
+          "value": null,
+          "unit": "pc",
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "component",
+          "state": "candidate",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "acrux-simbad",
+            "acrux-simbad-raw",
+            "acrux-wds",
+            "acrux-wds-raw"
+          ],
+          "rawEvidence": "catalogue hints identify a WDS/CCDM system; component identity remains unresolved",
+          "confidence": "candidate"
+        }
+      ],
+      "componentReview": {
+        "status": "unresolved",
+        "hints": [
+          "CCDM: CCDM J12266-6306A",
+          "WDS: WDS J12266-6306A"
+        ],
+        "sourceArtifactSha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+        "reason": "WDS/CCDM rows are real catalogue candidates; a human identity review is still required"
+      },
+      "rightsStatus": "odbl-attribution-required",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "2b5688a3ed58549000196b7c25db86ef418faa7dd904efdfe8da98f215bc3d68"
+    },
+    {
+      "id": "spica",
+      "displayName": "Spica A",
+      "phase": "candidate-hold",
+      "sourceClass": "raw-structured-candidate",
+      "runtimeRoute": "candidate-review-only",
+      "decision": "hold",
+      "sourceRefs": [
+        {
+          "id": "spica-simbad",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+          "path": null,
+          "role": "object-page",
+          "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "spica-simbad-raw",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+          "path": "docs/release/v607/raw-artifacts/r60/spica-81276ed6687b.raw",
+          "role": "raw-artifact",
+          "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "spica-wds",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+          "path": null,
+          "role": "catalogue",
+          "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "spica-wds-raw",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+          "role": "raw-artifact",
+          "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+          "evidenceClass": "artifact"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "candidate",
+          "value": "201.298247375, -11.161319472222223",
+          "unit": "deg",
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": "13 25 11.57937 -11 09 40.7501 (Optical) [ 5.46 3.26 82 ] A 2007A&A...474..653V",
+          "confidence": "candidate"
+        },
+        {
+          "field": "properMotion",
+          "state": "candidate",
+          "value": "-42.35, -30.67",
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": "-42.35 -30.67 [0.62 0.37 0] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "spectralType",
+          "state": "candidate",
+          "value": "B1V",
+          "unit": null,
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": "B1V C",
+          "confidence": "candidate"
+        },
+        {
+          "field": "parallax",
+          "state": "candidate",
+          "value": 13.06,
+          "unit": "mas",
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": "13.06 [0.70] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "distance",
+          "state": "missing",
+          "value": null,
+          "unit": "pc",
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "component",
+          "state": "candidate",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "spica-simbad",
+            "spica-simbad-raw",
+            "spica-wds",
+            "spica-wds-raw"
+          ],
+          "rawEvidence": "catalogue hints identify a WDS/CCDM system; component identity remains unresolved",
+          "confidence": "candidate"
+        }
+      ],
+      "componentReview": {
+        "status": "unresolved",
+        "hints": [
+          "CCDM: CCDM J13252-1109A",
+          "WDS: WDS J13252-1110A"
+        ],
+        "sourceArtifactSha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+        "reason": "WDS/CCDM rows are real catalogue candidates; a human identity review is still required"
+      },
+      "rightsStatus": "odbl-attribution-required",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "d34b14daccf493389346cef74acfcece47834960c68437b0b3533af2ec794d00"
+    },
+    {
+      "id": "pollux",
+      "displayName": "Pollux",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "pollux-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "pollux-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20bet%20Gem",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "pollux-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "116.328958, 28.026183",
+          "unit": "deg",
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "K0III",
+          "unit": null,
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 96.54,
+          "unit": "mas",
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 96.54 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 10.36,
+          "unit": "pc",
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "pollux-source-0",
+            "pollux-source-1",
+            "pollux-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "3c9d45e03aa2e22d4ec9a72be0b7a328830b0ec9dd0d5a0ea330e08cb37df5f0"
+    },
+    {
+      "id": "fomalhaut",
+      "displayName": "Fomalhaut",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "fomalhaut-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "fomalhaut-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20PsA",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "fomalhaut-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "344.41275, -29.622236",
+          "unit": "deg",
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A3V",
+          "unit": null,
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 129.81,
+          "unit": "mas",
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 129.81 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 7.7,
+          "unit": "pc",
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "fomalhaut-source-0",
+            "fomalhaut-source-1",
+            "fomalhaut-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "bf9024ca5e641b75127969ac5a100e9a49df557cf455bf6951f0353c4285b5b1"
+    },
+    {
+      "id": "deneb",
+      "displayName": "Deneb",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "deneb-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "deneb-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Cyg",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "deneb-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "310.357979, 45.280338",
+          "unit": "deg",
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "A2Ia",
+          "unit": null,
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 2.31,
+          "unit": "mas",
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 2.31 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 802,
+          "unit": "pc",
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "deneb-source-0",
+            "deneb-source-1",
+            "deneb-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "5e216e1eda3e7bdbff4be7ef731c3124230b3696fc7efbaf719ea7a15f661eaa"
+    },
+    {
+      "id": "regulus",
+      "displayName": "Regulus A",
+      "phase": "candidate-hold",
+      "sourceClass": "raw-structured-candidate",
+      "runtimeRoute": "candidate-review-only",
+      "decision": "hold",
+      "sourceRefs": [
+        {
+          "id": "regulus-simbad",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+          "path": null,
+          "role": "object-page",
+          "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "regulus-simbad-raw",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+          "path": "docs/release/v607/raw-artifacts/r60/regulus-a30e3e314621.raw",
+          "role": "raw-artifact",
+          "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "regulus-wds",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+          "path": null,
+          "role": "catalogue",
+          "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "regulus-wds-raw",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+          "role": "raw-artifact",
+          "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+          "evidenceClass": "artifact"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "candidate",
+          "value": "152.09296245833335, 11.967208777777778",
+          "unit": "deg",
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": "10 08 22.31099 +11 58 01.9516 (Optical) [ 3.08 1.85 90 ] A 2007A&A...474..653V",
+          "confidence": "candidate"
+        },
+        {
+          "field": "properMotion",
+          "state": "candidate",
+          "value": "-248.73, 5.59",
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": "-248.73 5.59 [0.35 0.21 0] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "spectralType",
+          "state": "candidate",
+          "value": "B8IVn",
+          "unit": null,
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": "B8IVn C",
+          "confidence": "candidate"
+        },
+        {
+          "field": "parallax",
+          "state": "candidate",
+          "value": 41.13,
+          "unit": "mas",
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": "41.13 [0.35] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "distance",
+          "state": "missing",
+          "value": null,
+          "unit": "pc",
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "component",
+          "state": "candidate",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "regulus-simbad",
+            "regulus-simbad-raw",
+            "regulus-wds",
+            "regulus-wds-raw"
+          ],
+          "rawEvidence": "catalogue hints identify a WDS/CCDM system; component identity remains unresolved",
+          "confidence": "candidate"
+        }
+      ],
+      "componentReview": {
+        "status": "unresolved",
+        "hints": [
+          "CCDM: CCDM J10083+1159A",
+          "WDS: WDS J10084+1158A"
+        ],
+        "sourceArtifactSha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+        "reason": "WDS/CCDM rows are real catalogue candidates; a human identity review is still required"
+      },
+      "rightsStatus": "odbl-attribution-required",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "a15e90ba72ef5c583da329a7455176ad69325dfcc666dff4adf775b96ac9e800"
+    },
+    {
+      "id": "polaris",
+      "displayName": "Polaris Aa",
+      "phase": "candidate-hold",
+      "sourceClass": "raw-structured-candidate",
+      "runtimeRoute": "candidate-review-only",
+      "decision": "hold",
+      "sourceRefs": [
+        {
+          "id": "polaris-simbad",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+          "path": null,
+          "role": "object-page",
+          "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "polaris-simbad-raw",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+          "path": "docs/release/v607/raw-artifacts/r60/polaris-5c70e01ec2c0.raw",
+          "role": "raw-artifact",
+          "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+          "evidenceClass": "artifact"
+        },
+        {
+          "id": "polaris-wds",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+          "path": null,
+          "role": "catalogue",
+          "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "polaris-wds-raw",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+          "role": "raw-artifact",
+          "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+          "evidenceClass": "artifact"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "candidate",
+          "value": "37.954560666666666, 89.26410897222222",
+          "unit": "deg",
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": "02 31 49.09456 +89 15 50.7923 (Optical) [ 1.14 0.97 90 ] A 2007A&A...474..653V",
+          "confidence": "candidate"
+        },
+        {
+          "field": "properMotion",
+          "state": "candidate",
+          "value": "44.48, -11.85",
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": "44.48 -11.85 [0.11 0.13 0] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "spectralType",
+          "state": "candidate",
+          "value": "F8Ib",
+          "unit": null,
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": "F8Ib C",
+          "confidence": "candidate"
+        },
+        {
+          "field": "parallax",
+          "state": "candidate",
+          "value": 7.54,
+          "unit": "mas",
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": "7.54 [0.11] A",
+          "confidence": "candidate"
+        },
+        {
+          "field": "distance",
+          "state": "missing",
+          "value": null,
+          "unit": "pc",
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "component",
+          "state": "candidate",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "polaris-simbad",
+            "polaris-simbad-raw",
+            "polaris-wds",
+            "polaris-wds-raw"
+          ],
+          "rawEvidence": "catalogue hints identify a WDS/CCDM system; component identity remains unresolved",
+          "confidence": "candidate"
+        }
+      ],
+      "componentReview": {
+        "status": "unresolved",
+        "hints": [
+          "CCDM: CCDM J02319+8915A",
+          "WDS: WDS J02318+8916A",
+          "WDS: WDS J02318+8916Aa,Ab"
+        ],
+        "sourceArtifactSha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+        "reason": "WDS/CCDM rows are real catalogue candidates; a human identity review is still required"
+      },
+      "rightsStatus": "odbl-attribution-required",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "ed7e06183c0b2ee0af6f8df6195a7633c6034667da8536c8da463e620f7295a4"
+    },
+    {
+      "id": "bellatrix",
+      "displayName": "Bellatrix",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "bellatrix-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "bellatrix-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20gam%20Ori",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "bellatrix-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "81.282764, 6.349703",
+          "unit": "deg",
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "B2III",
+          "unit": null,
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 12.92,
+          "unit": "mas",
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 12.92 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 77,
+          "unit": "pc",
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "bellatrix-source-0",
+            "bellatrix-source-1",
+            "bellatrix-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "8acc57244472338f70f095759c98fe41cb29f8a9d5ee1808147e0818719ee8c6"
+    },
+    {
+      "id": "alnilam",
+      "displayName": "Alnilam",
+      "phase": "runtime-existing",
+      "sourceClass": "sealed-local-projection",
+      "runtimeRoute": "existing-mainline-a-runtime",
+      "decision": "existing-reference",
+      "sourceRefs": [
+        {
+          "id": "alnilam-source-0",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Gaia_archive/chap_datamodel/sec_dm_main_source_catalogue/ssec_dm_gaia_source.html",
+          "path": null,
+          "role": "render-anchor",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alnilam-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20eps%20Ori",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        },
+        {
+          "id": "alnilam-source-2",
+          "url": "https://ui.adsabs.harvard.edu/abs/2007A%26A...474..653V/abstract",
+          "path": null,
+          "role": "object-page",
+          "sha256": null,
+          "evidenceClass": "external-source"
+        }
+      ],
+      "fieldLedger": [
+        {
+          "field": "coordinates",
+          "state": "catalog-derived",
+          "value": "84.053389, -1.201917",
+          "unit": "deg",
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": "ICRS-J2000 catalogue coordinates",
+          "confidence": "derived"
+        },
+        {
+          "field": "properMotion",
+          "state": "missing",
+          "value": null,
+          "unit": "mas/yr",
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        },
+        {
+          "field": "spectralType",
+          "state": "catalog-derived",
+          "value": "B0Ia",
+          "unit": null,
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "parallax",
+          "state": "catalog-derived",
+          "value": 1.65,
+          "unit": "mas",
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": "SIMBAD compilation 1.65 mas",
+          "confidence": "derived"
+        },
+        {
+          "field": "distance",
+          "state": "catalog-derived",
+          "value": 606,
+          "unit": "pc",
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "derived"
+        },
+        {
+          "field": "component",
+          "state": "missing",
+          "value": null,
+          "unit": null,
+          "sourceRefIds": [
+            "alnilam-source-0",
+            "alnilam-source-1",
+            "alnilam-source-2"
+          ],
+          "rawEvidence": null,
+          "confidence": "unavailable"
+        }
+      ],
+      "componentReview": {
+        "status": "not-reviewed",
+        "hints": [],
+        "sourceArtifactSha256": null,
+        "reason": "existing runtime reference is preserved; this batch does not promote a component identity"
+      },
+      "rightsStatus": "catalogue-terms-review",
+      "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "fingerprint": "6edfca045be486d2055236fafbea28493518ac001a9f1950232f073cc22fbc56"
+    }
+  ]
+}

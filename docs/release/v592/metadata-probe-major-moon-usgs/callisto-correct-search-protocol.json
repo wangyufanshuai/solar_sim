@@ -1,0 +1,64 @@
+{
+  "version": "v592-callisto-usgs-results-probe-v1",
+  "probedAt": "2026-08-19T13:39:14.644Z",
+  "status": "usgs-results-metadata-probe-complete-no-visual-payload",
+  "target": "callisto",
+  "query": "global mosaic",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "visualPayloadDownloaded": false,
+    "redirectFollowed": false,
+    "itemLevelLicenseReviewRequired": true,
+    "metadataDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://astrogeology.usgs.gov/search/results?target=Callisto&system=&p=1&accscope=&searchBar=global+mosaic",
+    "finalUrl": "https://astrogeology.usgs.gov/search/results?target=Callisto&system=&p=1&accscope=&searchBar=global+mosaic",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 6695,
+    "responseSha256": "3c48adae8ed6daec2bdac55c998d302a05b65f5dfddfc2d921def66b1709daee",
+    "outputPath": "source-cache/v592/major-moons/usgs-search/callisto-correct-search-protocol.json",
+    "redirectLocation": null,
+    "networkError": null
+  },
+  "total": 2,
+  "results": [
+    {
+      "id": null,
+      "title": "Callisto Galileo/Voyager Global Mosaic 1km",
+      "slug": null,
+      "target": null,
+      "description": "This global map of Callisto utilizes the best image quality and moderate resolution coverage supplied by Galileo SSI (Solid State Imaging instrument) and Voyager 1 and 2. This mosaic was prepared using",
+      "rawKeys": [
+        "abstract",
+        "geoform",
+        "name",
+        "onlink",
+        "pubdate",
+        "thumb",
+        "title"
+      ]
+    },
+    {
+      "id": null,
+      "title": "Jupiter Voyager and Galileo Global Mosaics",
+      "slug": null,
+      "target": null,
+      "description": "These Jupiter global mosaics utilized the best image quality and moderate resolution coverage supplied by Galileo SSI (Solid State Imaging instrument) and Voyager 1 and 2. The image processing was performed at",
+      "rawKeys": [
+        "abstract",
+        "geoform",
+        "name",
+        "onlink",
+        "pubdate",
+        "thumb",
+        "title"
+      ]
+    }
+  ],
+  "visualAssetAdmission": false,
+  "receiptSha256": "c9f6d993843f56d18c4599a683a09ef336ba87488f3466a3e884a060c2461160"
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "mainline-a-r79-static-v666",
+  "round": 79,
+  "date": "2026-10-13",
+  "status": "passed-current-source-local",
+  "appSourceSha256": "5acf2252241c7e133b208d9e53b89bafbe2ad21794051a210bf4c544e751e63d",
+  "node": {
+    "status": "passed",
+    "command": "node --import tsx --test scripts/audit-mainline-a-r79-visual-v666.test.mjs scripts/verify-mainline-a-r79-http-v666.test.mjs scripts/capture-mainline-a-r79-browser-v666.test.mjs scripts/verify-mainline-a-r79-external-v666.test.mjs",
+    "passed": 26,
+    "failed": 0
+  },
+  "vitest": {
+    "status": "passed",
+    "passed": 43,
+    "failed": 0,
+    "files": [
+      "app/lib/mainlineAR79VisualReviewV666.test.ts",
+      "app/lib/mainlineAR79ImageProbeV666.test.ts",
+      "app/lib/mainlineAWebAcceptanceV662.test.tsx",
+      "app/components/MainlineANebulaReviewPanelV610.test.tsx"
+    ]
+  },
+  "targetedEslint": {
+    "status": "passed-zero-warnings",
+    "scope": "16 R79 and directly modified app, tool, and test files"
+  },
+  "productionBuildTypeScript": "passed-in-preserved-build-web03",
+  "genericRepositoryTsc": "not-claimed-preexisting-and-temporary-diagnostics-outside-r79",
+  "visualFileAudit": "docs/release/v607/mainline-a-r79-v666-visual-static-20261013v666r79visual03.json",
+  "visualFileReplay": "docs/release/v607/mainline-a-r79-v666-visual-replay-20261013v666r79visual03.json",
+  "externalSourceReplay": "docs/release/v607/mainline-a-r79-v666-external-source-20261013v666r79external01.json",
+  "claims": {
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false
+  }
+}

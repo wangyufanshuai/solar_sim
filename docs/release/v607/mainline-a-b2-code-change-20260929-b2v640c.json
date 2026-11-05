@@ -1,0 +1,152 @@
+{
+  "schema": "mainline-a-b2-code-change-receipt-v1",
+  "batch": "B2",
+  "round": "R66-B2 browser coverage closure",
+  "recordedAt": "2026-09-29T04:48:01.614Z",
+  "status": "verification-closure; implementation-credit-carried-forward",
+  "sourceStableAtBuild": true,
+  "build": {
+    "receipt": "docs/release/v607/mainline-a-r66-build-20260929-b2v640c.json",
+    "receiptSha256": "331257bc5870b2c1509a9d2d09c9896b471060a5d66c3c5ffddee52fe39e9c06",
+    "runtimeBuildId": "mainline-a-7b39ef613eb99d02",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "implementationCredit": {
+    "receipt": "docs/release/v607/mainline-a-r66-v637-code-change-20260927-066.json",
+    "receiptSha256": "5c3ba88df6c8b055c7988896e6ad192b0f3d9705956183707add93378376379c",
+    "originatingBatch": "B1",
+    "originatingRound": "R66-continuation",
+    "effectiveProductionLines": 1245,
+    "addedLines": 2374,
+    "removedLines": 140,
+    "modifiedLinePairs": 137,
+    "productionEffectiveMinimum": 1000,
+    "testsExcludedFromEffective": true,
+    "files": [
+      {
+        "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+        "effectiveLines": 9,
+        "addedLines": 9,
+        "removedLines": 12,
+        "modifiedLinePairs": 9,
+        "sha256": "4e9033db19b053b13c5b8f43634f55f6186bd27c61115ad21eb59910957351d6"
+      },
+      {
+        "path": "app/components/AtlasScaleNavigatorV260.tsx",
+        "effectiveLines": 2,
+        "addedLines": 2,
+        "removedLines": 2,
+        "modifiedLinePairs": 2,
+        "sha256": "7762f0082e108c0f209fba314c31742109684fbbe2ddd3c09c1be2f963b7c0a3"
+      },
+      {
+        "path": "app/components/MainlineANebulaAtlasV609.tsx",
+        "effectiveLines": 202,
+        "addedLines": 208,
+        "removedLines": 46,
+        "modifiedLinePairs": 46,
+        "sha256": "7c3096973cf63d4e83effe31176e24d98830a16037f1173bde20511077681a97"
+      },
+      {
+        "path": "app/components/MainlineAPerformanceSurfaceV637.tsx",
+        "effectiveLines": 33,
+        "addedLines": 38,
+        "removedLines": 0,
+        "modifiedLinePairs": 0,
+        "sha256": "6297ae66c478003ee6a8d309d019eadb71e6305ee6dd4970a1cce6405ef4dc67"
+      },
+      {
+        "path": "app/components/MainlineAWorkspaceNavigationV637.tsx",
+        "effectiveLines": 66,
+        "addedLines": 71,
+        "removedLines": 0,
+        "modifiedLinePairs": 0,
+        "sha256": "392f0253c1608f3d1168f70d307ca2c71934f02da074c7b6398060b9a5f857c8"
+      },
+      {
+        "path": "app/components/OrbitAtlasHud.tsx",
+        "effectiveLines": 1,
+        "addedLines": 1,
+        "removedLines": 1,
+        "modifiedLinePairs": 1,
+        "sha256": "a5c5d52362a92a4dece194596d72ab8b83ff93c69f71daa36767a7233d761a79"
+      },
+      {
+        "path": "app/components/PostV593StellarRosterPanel.tsx",
+        "effectiveLines": 78,
+        "addedLines": 81,
+        "removedLines": 28,
+        "modifiedLinePairs": 28,
+        "sha256": "88ffdfa0ccd204a351219224ad050c298041f2bf102fe7d8e07880d76fd2fcf1"
+      },
+      {
+        "path": "app/lib/mainlineANebulaAtlasV609.ts",
+        "effectiveLines": 67,
+        "addedLines": 68,
+        "removedLines": 48,
+        "modifiedLinePairs": 48,
+        "sha256": "78e6fd4701685ee7c0c008e73d78412046ea56bacfe1d594e9bcd6f5429513a8"
+      },
+      {
+        "path": "app/lib/mainlineANebulaPresentationV637.ts",
+        "effectiveLines": 245,
+        "addedLines": 279,
+        "removedLines": 0,
+        "modifiedLinePairs": 0,
+        "sha256": "4f24622ae399c7034d93a39a2710c1611b62561230a0e79d0e90d6a6fa2fdc5f"
+      },
+      {
+        "path": "app/lib/mainlineANebulaReviewV610.ts",
+        "effectiveLines": 1,
+        "addedLines": 1,
+        "removedLines": 1,
+        "modifiedLinePairs": 1,
+        "sha256": "7a2bb90712710d896086a6a471cff5b92776c5d76ce6ea457853bee2045e2acc"
+      },
+      {
+        "path": "app/lib/mainlineAPanelNavigationV637.ts",
+        "effectiveLines": 265,
+        "addedLines": 282,
+        "removedLines": 0,
+        "modifiedLinePairs": 0,
+        "sha256": "5263f2c09c0776d4318593ea9e92a66e31045cf720f2683fca708ae54922f2b7"
+      },
+      {
+        "path": "app/lib/useMainlineAPanelNavigationV637.ts",
+        "effectiveLines": 99,
+        "addedLines": 111,
+        "removedLines": 0,
+        "modifiedLinePairs": 0,
+        "sha256": "92f44cd8d090f128a45f31caacc85ffd8f082d9fb7087e19ac60472e03ea5175"
+      }
+    ]
+  },
+  "continuationDelta": {
+    "productionFilesChanged": 0,
+    "effectiveProductionLines": 0,
+    "reason": "B2 closure work only exported and audited browser evidence; no source edit was made after the bound preserved build."
+  },
+  "validation": {
+    "nodeTests": "17 passed",
+    "vitest": "72 passed",
+    "eslint": "passed",
+    "productionBuild": "passed; preserved build receipt",
+    "http": "passed; build-bound local HTTP receipts",
+    "browser": "36/36 latest measured-local"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "physicsKernelChanged": false,
+    "parentGitMutated": false
+  },
+  "limits": [
+    "This receipt does not promote any candidate, approve rights, establish scientific validity, or claim production performance.",
+    "The 1245 effective lines are credited to the prior R66 implementation batch; this closure continuation added no production lines."
+  ]
+}

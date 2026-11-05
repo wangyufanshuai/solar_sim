@@ -1,0 +1,67 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "nebula-helix",
+  "probedAt": "2026-08-13T10:30:06.629Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "helix-nebula",
+  "role": "real-coordinate-nebula-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Helix%20Nebula%20NGC%207293&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Helix%20Nebula%20NGC%207293&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3319,
+    "responseSha256": "d7c821b82a1c33b25251506559eb92f0d33e6bdda3444196044405ac38f6b77f"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA07902",
+      "title": "Planetary Nebula NGC 7293 also Known as the Helix Nebula",
+      "description": "This ultraviolet image from NASA Galaxy Evolution Explorer is of the planetary nebula NGC 7293 also known as the Helix Nebula. It is the nearest example of what happens to a star, like our own Sun, as it approaches the end of its life when it runs out of fuel, expels gas outward and evolves into a much hotter, smaller and denser white dwarf star. http://photojournal.jpl.nasa.gov/catalog/PIA07902",
+      "dateCreated": "2005-05-05T20:02:51Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Helix Nebula",
+        "Galaxy Evolution Explorer GALEX",
+        "NGC 7293"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA07902/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA07902/PIA07902~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA15658",
+      "title": "NGC 7293, the Helix Nebula",
+      "description": "NGC 7293, better known as the Helix nebula, displays its ultraviolet glow courtesy of NASA GALEX. The Helix is the nearest example of a planetary nebula, which is the eventual fate of a star, like our own Sun, as it approaches the end of its life.",
+      "dateCreated": "2012-05-16T21:26:20Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Helix Nebula",
+        "Galaxy Evolution Explorer GALEX"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15658/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA15658/PIA15658~thumb.jpg"
+    }
+  ],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "46af85e4e466eb0dd73b801658bdde4b948bbfbd9cbb9bbd1bfbfaee3c28280a"
+}

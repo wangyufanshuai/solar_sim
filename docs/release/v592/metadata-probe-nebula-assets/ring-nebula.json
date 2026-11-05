@@ -1,0 +1,94 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:39.135Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "ring-nebula",
+  "selection": {
+    "metadataProbe": "ring-nebula",
+    "metadataReceiptSha256": "49e0a6a67ad17b2e545b53b7a7aaa1f2368cc452cb9089fc232fdaf647117490",
+    "nasaId": "GSFC_20171208_Archive_e001464",
+    "title": "Hubble reveals the Ring Nebula’s true shape",
+    "description": "Caption: In this composite image, visible-light observations by NASA’s Hubble Space Telescope are combined with infrared data from the ground-based Large Binocular Telescope in Arizona to assemble a dramatic view of the well-known Ring Nebula. Credit: NASA, ESA, C.R. Robert O’Dell (Vanderbilt University), G.J. Ferland (University of Kentucky), W.J. Henney and M. Peimbert (National Autonomous University of Mexico) Credit for Large Binocular Telescope data: David Thompson (University of Arizona) ---- The Ring Nebula's distinctive shape makes it a popular illustration for astronomy books. But new observations by NASA's Hubble Space Telescope of the glowing gas shroud around an old, dying, sun-like star reveal a new twist. &quot;The nebula is not like a bagel, but rather, it's like a jelly doughnut, because it's filled with material in the middle,&quot; said C. Robert O'Dell of Vanderbilt Un",
+    "center": "GSFC",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/collection.json",
+    "status": 200,
+    "responseBytes": 409,
+    "responseSha256": "8840339193ab61c6cf761c3ef2a41c50c9610c4fd3d02ed7024bfa8f46be5813"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001464~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001464~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001464~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "89cfde3843030975b4d9f66240cb5fc4504ae0ec7a1d5e4449584cd20067a927"
+}

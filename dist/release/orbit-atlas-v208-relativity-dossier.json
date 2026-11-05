@@ -1,0 +1,822 @@
+{
+  "version": "v208-relativity-v9-research-dossier",
+  "generatedAt": "2026-07-16T13:59:37.678Z",
+  "status": "relativity-v9-research-candidate-shadow-retained",
+  "releaseLabelApplied": false,
+  "baseline": {
+    "dossier": "dist/release/orbit-atlas-v200-beta-rc-dossier.json",
+    "dossierSha256": "257e569e4fb673cf012ee4351d0294bb89675c81e263d798dcbb6c7421e9f361",
+    "status": "host-validated-install-qa-pending"
+  },
+  "runtime": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "r3f": "9.6.1",
+    "three": "^0.170.0",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "candidateKernel": "barycentric-eih-1pn-j2-2pn-lt-v9",
+    "candidateStatus": "shadow-retained",
+    "liveWorkerPhysicsMutated": false,
+    "scientificPromotionApplied": false
+  },
+  "weakField": {
+    "researchAssets": {
+      "passed": true,
+      "count": 6,
+      "assets": [
+        {
+          "id": "de440s.bsp",
+          "relativePath": "tools/science-cache/naif-v201/de440s.bsp",
+          "sha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/planets/de440s.bsp",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "c1c7feeab882263fc493a9d5a5b2ddd71b54826cdf65d8d17a76126b260a49f2",
+          "webIncluded": false,
+          "passed": true
+        },
+        {
+          "id": "naif0012.tls",
+          "relativePath": "tools/science-cache/naif-v201/naif0012.tls",
+          "sha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/lsk/naif0012.tls",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "678e32bdb5a744117a467cd9601cd6b373f0e9bc9bbde1371d5eee39600a039b",
+          "webIncluded": false,
+          "passed": true
+        },
+        {
+          "id": "gm_de440.tpc",
+          "relativePath": "tools/science-cache/naif-v201/gm_de440.tpc",
+          "sha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/gm_de440.tpc",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "924ddf4fb9ead9fe8a1aa55780bcabde40b09d00065d58226e24b68d8092f140",
+          "webIncluded": false,
+          "passed": true
+        },
+        {
+          "id": "codes_300ast_20100725.bsp",
+          "relativePath": "tools/science-cache/naif-v201/codes_300ast_20100725.bsp",
+          "sha256": "7bb92faaadac29ec0b62aa96041a37c92ae24b9a5460de03d3fcaa2f63fe51f0",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/asteroids/codes_300ast_20100725.bsp",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "7bb92faaadac29ec0b62aa96041a37c92ae24b9a5460de03d3fcaa2f63fe51f0",
+          "webIncluded": false,
+          "passed": true
+        },
+        {
+          "id": "codes_300ast_20100725.tf",
+          "relativePath": "tools/science-cache/naif-v201/codes_300ast_20100725.tf",
+          "sha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/spk/asteroids/codes_300ast_20100725.tf",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "15ee3b1731817774672725ccc226b249eb9ca5aa5d0a6a7805c91e5f57497f40",
+          "webIncluded": false,
+          "passed": true
+        },
+        {
+          "id": "pck00011.tpc",
+          "relativePath": "tools/science-cache/naif-v201/pck00011.tpc",
+          "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+          "sourceUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+          "license": "NASA-NAIF-public-domain",
+          "actualSha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+          "webIncluded": false,
+          "passed": true
+        }
+      ]
+    },
+    "gate": {
+      "reportClass": "joint-raw-propagation-negative-result",
+      "rejectedLegacySmoke": true,
+      "frameReady": true,
+      "timeScaleReady": true,
+      "allSixModesPresent": true,
+      "dop853FineFinerComplete": true,
+      "ias15FineFinerComplete": true,
+      "independentRerunsComplete": true,
+      "rawPropagationComplete": true,
+      "fittedBlindHoldoutComplete": true,
+      "allFifteenRegressionsPresent": true,
+      "allFifteenRegressionsResolved": false,
+      "aggregateImprovement": false,
+      "confirmedRegressionCount": 10,
+      "promotionQualified": false,
+      "reason": "Cross-solver regressions remain, raw and fitted-blind aggregate position RMS are not improved, and 2PN isolation is unresolved."
+    },
+    "priorV8AttributionCounts": {
+      "cross-solver-regression-confirmed": 6,
+      "solver-disagreement": 8,
+      "provenance-mismatch": 0,
+      "inconclusive": 1
+    },
+    "priorPromotionDecision": "shadow-retained",
+    "mercuryTenYearRegressionMeters": 42.29510369440148,
+    "jointValidation": {
+      "file": "dist/science/relativity-joint-validation-v9.json",
+      "sha256": "d89f596a4c97841071ae713eb3d86aa2948c473c173e80f069a8e6bb6d9841e8",
+      "deterministicReruns": {
+        "dop853": {
+          "primaryHash": "d401f2d97a0252c9b8adedaa4b08724f69add898aa58a0bc53ca0a1199bc568e",
+          "rerunHash": "d401f2d97a0252c9b8adedaa4b08724f69add898aa58a0bc53ca0a1199bc568e",
+          "passed": true
+        },
+        "ias15": {
+          "primaryHash": "7a36fbb60a52e24c058bf67609f5b6a7ada185efd78d05a96924252290e68619",
+          "rerunHash": "7a36fbb60a52e24c058bf67609f5b6a7ada185efd78d05a96924252290e68619",
+          "passed": true
+        }
+      },
+      "closure": {
+        "cross-solver-regression-confirmed": 7,
+        "solver-disagreement": 0,
+        "inconclusive": 2,
+        "no-confirmed-regression": 6,
+        "provenance-mismatch": 0
+      },
+      "mercuryTenYear": {
+        "dop853PositionDeltaMeters": 45.58964892497097,
+        "ias15PositionDeltaMeters": 45.31713287080819,
+        "positionJointUncertaintyMeters": 1.5270384855753094,
+        "positionOutcome": "cross-solver-regression-confirmed",
+        "physicalCauseEstablished": false
+      },
+      "aggregates": {
+        "dop853": {
+          "legacyPositionRmsKm": 97.4962129987326,
+          "candidatePositionRmsKm": 97.49777481741557,
+          "legacyVelocityRmsMS": 0.16038441711601498,
+          "candidateVelocityRmsMS": 0.16038507156539808
+        },
+        "ias15": {
+          "legacyPositionRmsKm": 97.49636541773889,
+          "candidatePositionRmsKm": 97.49790345890789,
+          "legacyVelocityRmsMS": 0.16038508817947988,
+          "candidateVelocityRmsMS": 0.1603855859648377
+        }
+      },
+      "effectIsolation": [
+        {
+          "effectId": "solar-j2",
+          "unresolvedRows": [
+            {
+              "offsetDays": 30,
+              "bodyId": "jupiter",
+              "positionSnr": 0.2126951396669331,
+              "velocitySnr": 0.180153343503876
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "saturn",
+              "positionSnr": 0,
+              "velocitySnr": 0.015575513499841803
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "uranus",
+              "positionSnr": 0,
+              "velocitySnr": 0.0016790627860325319
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "neptune",
+              "positionSnr": 0,
+              "velocitySnr": 0.0011872766820415802
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "pluto",
+              "positionSnr": 0,
+              "velocitySnr": 0.0008395313930162659
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "ceres",
+              "positionSnr": 3.3266592896534304,
+              "velocitySnr": 2.5841919629134025
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "saturn",
+              "positionSnr": 3.1337232577303,
+              "velocitySnr": 0.2221410218960791
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "uranus",
+              "positionSnr": 0.5478353968367542,
+              "velocitySnr": 0.03201687006595334
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "neptune",
+              "positionSnr": 0,
+              "velocitySnr": 0.028251198129376275
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "pluto",
+              "positionSnr": 0,
+              "velocitySnr": 0.027696902814420266
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "uranus",
+              "positionSnr": 4.00903826021659,
+              "velocitySnr": 0.1577198036166129
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "neptune",
+              "positionSnr": 2.6706459154715483,
+              "velocitySnr": 0.09550698196761305
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "pluto",
+              "positionSnr": 1.630079230445032,
+              "velocitySnr": 0.08585335128775273
+            }
+          ],
+          "allBodiesResolved": false
+        },
+        {
+          "effectId": "solar-2pn",
+          "unresolvedRows": [
+            {
+              "offsetDays": 30,
+              "bodyId": "mercury",
+              "positionSnr": 0.5804010723374328,
+              "velocitySnr": 0.7020363105487926
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "venus",
+              "positionSnr": 0.08189369207677344,
+              "velocitySnr": 0.06016576569644981
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "earth",
+              "positionSnr": 0.024913050072905566,
+              "velocitySnr": 0.01851542664039428
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "moon",
+              "positionSnr": 0.024913050072905566,
+              "velocitySnr": 0.026356472700986573
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "mars",
+              "positionSnr": 0.008304350024301854,
+              "velocitySnr": 0.005414814782628211
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "jupiter",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "saturn",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "uranus",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "neptune",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "pluto",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "ceres",
+              "positionSnr": 0.004152175012150927,
+              "velocitySnr": 0.0016790627860325319
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "mercury",
+              "positionSnr": 0.7677033680780692,
+              "velocitySnr": 0.7016082624795188
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "venus",
+              "positionSnr": 0.3194657257158115,
+              "velocitySnr": 0.30749810483700135
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "earth",
+              "positionSnr": 0.10975287875403958,
+              "velocitySnr": 0.14667594225526606
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "moon",
+              "positionSnr": 0.11986736849177278,
+              "velocitySnr": 0.7174534521936309
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "mars",
+              "positionSnr": 0.03711606579968448,
+              "velocitySnr": 0.020985766080093813
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "jupiter",
+              "positionSnr": 0.36387838669829603,
+              "velocitySnr": 0.005864714182392846
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "saturn",
+              "positionSnr": 0.3044425006701729,
+              "velocitySnr": 0.0016790627860325319
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "uranus",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "neptune",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "pluto",
+              "positionSnr": 0.19999999999999998,
+              "velocitySnr": 0.00037544985280589256
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "ceres",
+              "positionSnr": 0.3877340066733204,
+              "velocitySnr": 0.015768893817847487
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "venus",
+              "positionSnr": 0.38667560435693804,
+              "velocitySnr": 0.3878281192154007
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "earth",
+              "positionSnr": 0.20980621946269082,
+              "velocitySnr": 0.2811914506841245
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "moon",
+              "positionSnr": 0.046622671162274004,
+              "velocitySnr": 0.01946858380278069
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "mars",
+              "positionSnr": 0.23801070342998912,
+              "velocitySnr": 0.22153502974602468
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "jupiter",
+              "positionSnr": 0.03852477312571877,
+              "velocitySnr": 0.021969431374344057
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "saturn",
+              "positionSnr": 0.04162680059010894,
+              "velocitySnr": 0.006664234887304593
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "uranus",
+              "positionSnr": 0.05808327540520617,
+              "velocitySnr": 0.0015956618744250434
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "neptune",
+              "positionSnr": 0.018391917267197026,
+              "velocitySnr": 0.0008602636850715154
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "pluto",
+              "positionSnr": 0.042924820439784385,
+              "velocitySnr": 0.0005983732029093912
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "ceres",
+              "positionSnr": 0.011460414628048542,
+              "velocitySnr": 0.010212365780483611
+            }
+          ],
+          "allBodiesResolved": false
+        },
+        {
+          "effectId": "lense-thirring",
+          "unresolvedRows": [
+            {
+              "offsetDays": 30,
+              "bodyId": "mars",
+              "positionSnr": 2.83042231109487,
+              "velocitySnr": 2.1876502531221598
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "jupiter",
+              "positionSnr": 0.06643480019441483,
+              "velocitySnr": 0.02436666652182695
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "saturn",
+              "positionSnr": 0,
+              "velocitySnr": 0.0028096094302287136
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "uranus",
+              "positionSnr": 0,
+              "velocitySnr": 0.0007508997056117851
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "neptune",
+              "positionSnr": 0,
+              "velocitySnr": 0.000774009700120649
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "pluto",
+              "positionSnr": 0,
+              "velocitySnr": 0
+            },
+            {
+              "offsetDays": 30,
+              "bodyId": "ceres",
+              "positionSnr": 0.3044425006701729,
+              "velocitySnr": 0.26109291349564223
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "jupiter",
+              "positionSnr": 2.3892839271236963,
+              "velocitySnr": 0.3041248097565305
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "saturn",
+              "positionSnr": 0.7888695439924949,
+              "velocitySnr": 0.03349930140598195
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "uranus",
+              "positionSnr": 0.37581198179395275,
+              "velocitySnr": 0.002404052052442006
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "neptune",
+              "positionSnr": 0.5314784015553187,
+              "velocitySnr": 0.002314428330049285
+            },
+            {
+              "offsetDays": 365,
+              "bodyId": "pluto",
+              "positionSnr": 0.19999999999999998,
+              "velocitySnr": 0.0017205273701430307
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "jupiter",
+              "positionSnr": 4.826746041697334,
+              "velocitySnr": 4.608615127254662
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "saturn",
+              "positionSnr": 1.7881935445908796,
+              "velocitySnr": 0.6224461487548533
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "uranus",
+              "positionSnr": 0.1511623877394903,
+              "velocitySnr": 0.03052247975415375
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "neptune",
+              "positionSnr": 0.052810362331087664,
+              "velocitySnr": 0.010816605351806643
+            },
+            {
+              "offsetDays": 3652.5,
+              "bodyId": "pluto",
+              "positionSnr": 0.04442818143470224,
+              "velocitySnr": 0.008405547680177077
+            }
+          ],
+          "allBodiesResolved": false
+        }
+      ],
+      "promotionEvaluation": {
+        "absoluteGatePassed": true,
+        "aggregateImprovement": false,
+        "confirmedRegressionCount": 10,
+        "allEffectsResolved": false,
+        "fittedBlindComplete": true,
+        "promotionQualified": false,
+        "decision": "shadow-retained",
+        "reason": "Cross-solver regressions remain, raw and fitted-blind aggregate position RMS are not improved, and 2PN isolation is unresolved."
+      }
+    },
+    "fittedBlindValidation": {
+      "file": "dist/science/relativity-fitted-blind-v9.json",
+      "sha256": "077c987c2a184bca0b06595604167c67c0a365720d77eed36991482c7fa5b916",
+      "independentRerunCount": 2,
+      "rerunHashesMatch": true,
+      "calibration": {
+        "windowDays": [
+          0,
+          30
+        ],
+        "sampleCount": 31,
+        "owner": "scipy-dop853-research-runner",
+        "method": "linear-heliocentric-position-residual-fit",
+        "barycentricRebalance": true
+      },
+      "mercuryTenYear": {
+        "bodyId": "mercury",
+        "dop853PositionDeltaKm": 0.01604711879743065,
+        "ias15PositionDeltaKm": 0.016114434428970648,
+        "positionJointUncertaintyKm": 0.00020351932763365454,
+        "outcome": "cross-solver-regression-confirmed"
+      },
+      "aggregateImprovement": false,
+      "rawPropagationReplaced": false,
+      "physicalCauseEstablished": false
+    }
+  },
+  "strongField": {
+    "version": "v205-kerr-ray-reference-dop853-v3",
+    "canonicalEvidenceSha256": "c04fa51baffce2a0cc32aa23855f81aca99b73fc92b3fd62a91049513b3d8077",
+    "rerunCanonicalEvidenceSha256": "c04fa51baffce2a0cc32aa23855f81aca99b73fc92b3fd62a91049513b3d8077",
+    "gate": {
+      "deterministicRerun": true,
+      "solverGate": true,
+      "criticalCurveGate": true,
+      "invariantGate": true,
+      "passed": true
+    },
+    "solver": {
+      "name": "scipy.integrate.solve_ivp",
+      "method": "DOP853",
+      "rtol": 1e-12,
+      "atol": 1e-14,
+      "maxStepMino": 0.02
+    },
+    "observer": {
+      "kind": "ZAMO",
+      "spinA": 0.9,
+      "radiusM": 50,
+      "thetaRad": 1.2217304763960306
+    },
+    "rayCount": 5,
+    "maxNullConstraint": 8.049684420730882e-12,
+    "maxCarterDrift": 0,
+    "criticalCurve": {
+      "sampleCount": 7174,
+      "schwarzschildRadiusErrorM": 8.881784197001252e-16
+    },
+    "boundary": "float64-offline-kerr-test-particle-reference-not-grmhd"
+  },
+  "browserImplementation": {
+    "entry": "app/components/KerrRayTraceRendererV3.tsx",
+    "qualityTiers": [
+      "mobile-safe",
+      "interactive",
+      "science-still",
+      "offline-reference"
+    ],
+    "mobileSafeAllocatesRayTraceTarget": false,
+    "interactiveMaxSteps": 192,
+    "scienceStillMaxSteps": 1024,
+    "desktopActiveRenderTargets": 1,
+    "mobileSafeActiveRenderTargets": 0,
+    "exitRenderTargets": 0,
+    "lifecycleFocusedTest": "2/2 passed",
+    "classification": "interactive-preview-reference-backed-not-yet-gpu-certified"
+  },
+  "webValidation": {
+    "standaloneBuild": {
+      "passed": true,
+      "buildId": "5aqyD9S7HAHQ-o6xGF6Ke",
+      "initialJsTransferBytes": 624244,
+      "maximumBytes": 624640,
+      "marginBytes": 396
+    },
+    "vercelLiteBuild": {
+      "passed": true,
+      "buildId": "nJ6o3aZ_1i1JkpG0ZTgbo",
+      "initialJsTransferBytes": 624245,
+      "maximumBytes": 624640,
+      "marginBytes": 395,
+      "manifest": "595 files / 65.9 MiB / no loopback fallback"
+    },
+    "contentPacks": {
+      "packCount": 6,
+      "verifiedFileCount": 805,
+      "manifestFileCount": 805,
+      "failureCount": 0,
+      "passed": true
+    },
+    "browserQa": {
+      "standalone": "9 passed / 1 viewport skip",
+      "vercelLite": "2/2 passed",
+      "kerrLifecycleFocused": "2/2 passed",
+      "consoleErrors": 0,
+      "pageErrors": 0
+    },
+    "lifecycleSoak": {
+      "passed": true,
+      "measuredCycles": 10,
+      "baseline": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "released": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "baselineHeap": 39430960,
+      "finalHeap": 42566436,
+      "heapLimit": 72985392
+    },
+    "namedHardwarePerformance": {
+      "passed": true,
+      "adapter": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)"
+      },
+      "softwareRenderer": false,
+      "samples": [
+        {
+          "id": "overview",
+          "sceneMode": "atlas",
+          "medianFps": 80.4,
+          "frameP50Ms": 12.4,
+          "frameP95Ms": 16.5,
+          "longestTaskMs": 0,
+          "frameSamples": 865,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 25,
+          "textures": 18,
+          "renderTargets": 0
+        },
+        {
+          "id": "earth-inspect",
+          "sceneMode": "inspect",
+          "medianFps": 79.4,
+          "frameP50Ms": 12.6,
+          "frameP95Ms": 16.8,
+          "longestTaskMs": 386,
+          "frameSamples": 659,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 31,
+          "textures": 24,
+          "renderTargets": 0
+        },
+        {
+          "id": "gaia-stellar",
+          "sceneMode": "inspect",
+          "medianFps": 239.8,
+          "frameP50Ms": 4.2,
+          "frameP95Ms": 4.3,
+          "longestTaskMs": 0,
+          "frameSamples": 2350,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 28,
+          "textures": 18,
+          "renderTargets": 0
+        },
+        {
+          "id": "launch",
+          "sceneMode": "launch",
+          "medianFps": 240,
+          "frameP50Ms": 4.2,
+          "frameP95Ms": 4.3,
+          "longestTaskMs": 0,
+          "frameSamples": 2398,
+          "drawCalls": 40,
+          "triangles": 89696,
+          "programs": 15,
+          "textures": 6,
+          "renderTargets": 0
+        },
+        {
+          "id": "kerr",
+          "sceneMode": "kerr",
+          "medianFps": 80.1,
+          "frameP50Ms": 12.5,
+          "frameP95Ms": 16.6,
+          "longestTaskMs": 0,
+          "frameSamples": 815,
+          "drawCalls": 1,
+          "triangles": 2,
+          "programs": 28,
+          "textures": 20,
+          "renderTargets": 1
+        }
+      ],
+      "drawCallBoundary": "observational-only-not-used-as-optimization-proof"
+    }
+  },
+  "regression": {
+    "v200Baseline": {
+      "command": "npm run test:atlas",
+      "filesPassed": 107,
+      "filesTotal": 107,
+      "passed": 674,
+      "total": 674,
+      "failed": 0
+    },
+    "focusedV208": "29/29 passed",
+    "fullPostChangeRun": "674/674 passed across 107/107 files",
+    "typescript": "passed"
+  },
+  "blockers": [
+    "The prior 15-row inventory still contains two inconclusive rows; no unknown or solver-disagreement row remains.",
+    "The completed 0-30 day fitted-initial-state blind holdout still confirms a Mercury ten-year regression and does not improve aggregate ten-year position RMS.",
+    "Solar 2PN is unresolved at the required effect/U >= 5 threshold; full six-mode DOP853 effect isolation remains pending.",
+    "An independent horizon-penetrating Kerr-Schild Hamiltonian reference is not yet present.",
+    "GPU/offline 99.9% ray classification, redshift, polarization and pixel-error gates have not been measured.",
+    "MSI/NSIS were not rebuilt for this research checkpoint and external clean-Windows installation QA remains pending."
+  ],
+  "boundaries": {
+    "numericalRelativity": "not-claimed",
+    "blackHoleMerger": "not-implemented",
+    "grmhd": "not-claimed-analytic-thin-disk-only",
+    "cloudDeployment": "not-performed",
+    "signing": "not-performed",
+    "gitMutation": "no-reset-revert-clean-stage-or-commit"
+  },
+  "sourceSha256": {
+    "app/lib/relativityResearchV9.ts": "8d7e11c5fc7f6a92f2e2904daa7634b2630ff14ae6f859e885fe1eab22eb25cf",
+    "app/lib/relativityResearchEvidenceV208.ts": "93ed1ffc0409bb3adfc27180fd24af6263c79876597d36fd4aab598792ce6af7",
+    "app/lib/relativityJointValidationV9.ts": "136f70f4a10c699172a1e28db0df2324bcd64ccd9687ae8d9c8598e0fc162fc3",
+    "app/lib/kerrRayTraceV3.ts": "9dd107d7d14a3bb47725bc466396f13d545ea31ccb58ea0d5896e1325dcf7887",
+    "app/components/KerrRayTraceRendererV3.tsx": "b280f051605d7b9370d311582cfb2dc9b8bd02c9d6434e547cf417424a7c0f23",
+    "app/components/RelativityResearchWorkspaceV9.tsx": "8f6700632a2d462fd6483b85d4f688a3c113d49b9b08478827f53eb4c018613c",
+    "scripts/run-relativity-reference-v9.py": "e8d194e73fb64748523570bdba7527178ebffad150b3568f2663bd9ec1277a07",
+    "scripts/build-relativity-reference-fixture-v9.py": "8113715e1e9a97e09fcfe819048ed8cf33265974de6f464f893636e2dd24d244",
+    "scripts/run-relativity-ias15-v9.py": "1bf49c32241ae422fa0a389d2a8c999aedc572721e8cc0ecc4fb27d6688e2707",
+    "scripts/run-relativity-fitted-blind-v9.py": "3311afd6c14a8816d17da2ee4fdb2635b4eece74c39623e7558d1bd7ee6b2c4a",
+    "scripts/build-relativity-joint-validation-v9.mjs": "aab7bf2b65baf6263e7dddce90cce99187507c8c7c96003d70b68ca37115f7ba",
+    "scripts/run-kerr-ray-reference-v3.py": "6b277790d180a2192c522db15e72a59a078c1220e478e6dffbcbaa9b6966843e",
+    "tests/atlas-browser/atlas-kerr-raytrace-v208.spec.ts": "844c4f86e46091bceb89847aeb46314dd7d5a93403ed8dcbbff0e9d1a7b251d3",
+    "playwright.atlas.kerr-v208.config.ts": "b522fdb4e0cb381c814d6534979a4dab66a488878b051aa7d8ab7afd80ea8455"
+  }
+}

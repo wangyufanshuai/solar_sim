@@ -1,0 +1,10 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { createKerrDetectorElectronExpectationSummaryV445, parseKerrDetectorElectronExpectationPreflightV445 } from "./kerrDetectorElectronExpectationPreflightV445";
+
+const artifact = JSON.parse(readFileSync("dist/science/kerr-detector-electron-expectation-v445/electron-expectation-preflight.json", "utf8"));
+describe("v445 detector electron expectation preflight", () => {
+  it("connects four photon rows while keeping detector values null", () => { const summary = createKerrDetectorElectronExpectationSummaryV445(artifact); expect(summary.rows).toHaveLength(4); expect(summary.counts).toMatchObject({ photonResponseRows: 4, computationalElectronExpectationRows: 0, observedCountRows: 0, scienceImageRows: 0 }); expect(summary.gates).toHaveLength(7); expect(summary.qualification.detectorCalibrationAuthority).toBe(false); expect(summary.boundary.computationalExpectation).toBe("blocked-calibration-inputs"); expect(summary.rows.every((row) => row.computationalElectronExpectationPerPixel === null && row.observedCount === null && row.scienceImagePixel === null)).toBe(true); });
+  it("rejects mutations that introduce an electron row or raster authority", () => { expect(() => parseKerrDetectorElectronExpectationPreflightV445({ ...artifact, counts: { ...artifact.counts, computationalElectronExpectationRows: 1 } })).toThrow("v445-preflight-identity"); expect(() => parseKerrDetectorElectronExpectationPreflightV445({ ...artifact, qualification: { ...artifact.qualification, scienceImageAvailable: true } })).toThrow("v445-preflight-identity"); });
+  it("keeps the formal product and dense campaign boundaries frozen", () => { const parsed = parseKerrDetectorElectronExpectationPreflightV445(artifact); expect(parsed.formalProductPointer).toBe("v263"); expect(parsed.denseCampaignStatus).toBe("incomplete-0-of-49"); expect(parsed.networkAttempted).toBe(false); expect(parsed.automaticRetryApplied).toBe(false); });
+});

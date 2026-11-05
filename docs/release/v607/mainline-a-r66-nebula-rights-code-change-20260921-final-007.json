@@ -1,0 +1,131 @@
+{
+  "schema": "mainline-a-r66-nebula-rights-closure-code-change-v627",
+  "round": "R66",
+  "generatedAt": "2026-09-21T02:22:31.515Z",
+  "status": "pending",
+  "effectiveProductionLines": 1989,
+  "minimumEffectiveProductionLines": 500,
+  "files": {
+    "app/lib/mainlineANebulaRightsClosureV627.ts": {
+      "effectiveLines": 942,
+      "bytes": 55683,
+      "sha256": "bf23d41f405299f8f6f0d3b7bb26656c23d85d8714f74a8720cccd5752261e63"
+    },
+    "scripts/build-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 575,
+      "bytes": 41122,
+      "sha256": "50e6adf560d23e1dafdd40ca0466c916a16da594beb6ba0a7666757cfb4ef0ae"
+    },
+    "scripts/verify-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 175,
+      "bytes": 11350,
+      "sha256": "b69501be1489c938c6f45b6e5ed5b1b50b518e7e31c6f01517ab69a93fa5b7bd"
+    },
+    "scripts/replay-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 178,
+      "bytes": 8866,
+      "sha256": "fde6ffc3311983d6c7d77128dbd72881c1a6c0d3e724b78c5caf0272ecdd3b8b"
+    },
+    "app/components/MainlineANebulaRightsClosurePanelV627.tsx": {
+      "effectiveLines": 119,
+      "bytes": 13100,
+      "sha256": "65b097b275c75e152328bd189d9a5bf1c46d58a3996b70145c26422f97fed726"
+    }
+  },
+  "tests": [
+    {
+      "path": "app/lib/mainlineANebulaRightsClosureV627.test.ts",
+      "sha256": "c7a50b589c2f1a0485fab643167a7a07605df8e96059e193dcc33eada4a9e0db",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "app/components/MainlineANebulaRightsClosurePanelV627.test.tsx",
+      "sha256": "d6cd3c98a17d1ddc4a18ee34e36d14588e2c4031d780b328a4b3287e8ea9d3f4",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.test.tsx",
+      "sha256": "7eea649e35a4c993428aeae0c1f1898f024eacca806656212d9ea644c7b141e9",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "scripts/build-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "12bfe97a581d5711c6e90b6b1bd6c006125d0a102335f3966d27b1879d0f3344",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "7c6baae9cf1d1108630b40720dca946f0d18a7959bab7d296892e97846ccefbf",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "5f75dd10f8ca5dd157f34759977dc0c8fd444797f0d267eefdda6184eb31fb20",
+      "excludedFromEffectiveLines": true
+    }
+  ],
+  "integrationFiles": [
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "sha256": "7352111361b02265511bda6797d9d6b7c6af12437850e91968c82b23d18c1d63",
+      "role": "production panel integration"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "sha256": "c38c35e9f4b3e15178cc55eadfa052780f8494aeb6c1dd4fd48eb942581c1d19",
+      "role": "release evidence integration"
+    },
+    {
+      "path": "package.json",
+      "sha256": "1b5e046d337f70cdb6ebbdb68fd6815d201411800a58b93a1adbc23f708726b3",
+      "role": "package scripts"
+    }
+  ],
+  "validation": {
+    "node": "23/23 pass",
+    "vitest": "27/27 pass",
+    "eslint": "pass",
+    "tsc": "V627 filtered pass",
+    "build": "passed: preserved build 20260921-017"
+  },
+  "evidence": {
+    "static": [
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.jsonl",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.csv",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json"
+    ],
+    "http": "docs/release/v607/mainline-a-r66-http-20260921-017.json",
+    "visual": [
+      "docs/release/v607/screenshots/mainline-a-r66-desktop-20260921-017.png",
+      "docs/release/v607/screenshots/mainline-a-r66-mobile-20260921-017.png"
+    ],
+    "browser": "docs/release/v607/mainline-a-r66-browser-20260921-017.json",
+    "performance": "R65 receipt retained; no new performance claim",
+    "externalSource": [
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json"
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "copyrightApproval": false,
+    "physicsKernelMutation": false
+  },
+  "blockers": [
+    "rights-signoff-pending",
+    "source-page-evidence-pending"
+  ],
+  "claimsClosed": {
+    "rights": false,
+    "runtime": false,
+    "scientificPayloadWriteback": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

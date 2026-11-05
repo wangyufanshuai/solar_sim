@@ -1,0 +1,37 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:04:07.995Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "thors-helmet-nebula-common",
+  "query": "Thor's Helmet Nebula",
+  "requiredTerms": [
+    "thor",
+    "helmet",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Thor%27s%20Helmet%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Thor%27s%20Helmet%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 173,
+    "responseSha256": "6f4251a2ee2b118db0969f71971e646459c81f83fbe226d30d3a897b5816afaf"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "62c59eebe233b7c5cf1b7077eaa3d678562216a15b09efbfc01afe8a6565f92d"
+}

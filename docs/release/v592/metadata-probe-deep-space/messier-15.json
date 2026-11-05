@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:37.594Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "messier-15",
+  "category": "cluster",
+  "query": "Messier 15 globular cluster",
+  "requiredTermGroups": [
+    [
+      "messier 15",
+      "m15",
+      "ngc 7078"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Messier%2015%20globular%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Messier%2015%20globular%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 180,
+    "responseSha256": "07586e552bbb97e841ae242b9ab52a768e50d80141b427fb22c4eefa87569213"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "3aba44c706479c25bd0d01e6521964dae18ada9273e59d25deab5df186ab2008"
+}

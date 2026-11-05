@@ -1,0 +1,72 @@
+{
+  "schema": "mainline-a5-route-browser-matrix-v1",
+  "capturedAt": "2026-09-13T02:56:11Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "viewport": { "width": 1280, "height": 720 },
+  "routes": [
+    {
+      "id": "orion-clouds-and-stars",
+      "entry": "constellation:Ori",
+      "selectedCatalogIds": ["constellation:Ori", "nebula:m42", "nebula:b33", "nearby-star:betelgeuse", "nearby-star:rigel"],
+      "focusSequences": [1, 2, 3, 4, 5],
+      "commandSource": "object-browser"
+    },
+    {
+      "id": "stellar-shells",
+      "entry": "nebula:m57",
+      "selectedCatalogIds": ["nebula:m57", "nebula:ngc7293", "nebula:ngc6543"],
+      "focusSequences": [1, 2, 3],
+      "commandSource": "object-browser"
+    },
+    {
+      "id": "massive-star-feedback",
+      "entry": "constellation:Sco",
+      "selectedCatalogIds": ["constellation:Sco", "nearby-star:antares", "nebula:carina", "nebula:m1", "pulsar:b0531+21"],
+      "focusSequences": [1, 2, 3, 4, 5],
+      "commandSource": "object-browser"
+    },
+    {
+      "id": "sky-anchors-and-portraits",
+      "entry": "constellation:UMa",
+      "selectedCatalogIds": ["constellation:UMa", "constellation:Cas", "nearby-star:alpha-centauri", "nearby-star:sirius", "nearby-star:achernar"],
+      "focusSequences": [1, 2, 3, 4, 5],
+      "commandSource": "object-browser"
+    },
+    {
+      "id": "nebula-morphology-and-wavelengths",
+      "entry": "nebula:m8",
+      "selectedCatalogIds": ["nebula:m8", "nebula:m16", "nebula:m20", "nebula:ngc2237", "nebula:ngc6960"],
+      "focusSequences": [1, 2, 3, 4, 5],
+      "commandSource": "object-browser"
+    }
+  ],
+  "coverage": {
+    "routeCount": 5,
+    "stepCount": 23,
+    "uniqueTargetCount": 23,
+    "expectedAndObservedMatch": true,
+    "allFocusCommandsCatalogObject": true,
+    "externalEdgeInRoute": "nebula:m1 -> pulsar:b0531+21"
+  },
+  "directRelationSmoke": {
+    "external": "M1 -> pulsar:b0531+21 -> M1 was verified in mainline-a5-relation-browser-current-20260913.json",
+    "internal": "Ori relatedObjectIds nebula:m42 clicked; selected catalog ID nebula:m42 and focus sequence advanced to 2",
+    "emptyCase": "UMa passport exposes zero relatedObjectIds and zero relatedCatalogIds controls without error",
+    "internalAndEmptyCases": "passed on Rb2"
+  },
+  "boundaries": {
+    "presentationOnly": true,
+    "physicsKernelsMutated": false,
+    "cameraDirectionVector": "not exposed; catalog-object focus marker is the available dispatch evidence",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "status": "current-rb2-five-route-click-matrix-and-direct-relation-empty-case-passed-camera-vector-and-lifecycle-pending"
+}

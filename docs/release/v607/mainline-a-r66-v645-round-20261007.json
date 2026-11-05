@@ -1,0 +1,263 @@
+{
+  "schema": "mainline-a-round-receipt-v645",
+  "round": "R66",
+  "generatedAt": "2026-10-07T05:34:54.168Z",
+  "status": "candidate-package-verified-release-blocked",
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "build": {
+    "buildId": "Iqw1CWm3s4HLCWkMskxXP",
+    "runtimeBuildId": "mainline-a-93b297e97cc3a2ce",
+    "sourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json",
+      "bytes": 471927,
+      "sha256": "966e4675acb61bc6125ef2112d2bc8780c4d2bad053c5d3558f06f1c1ff807a5"
+    }
+  },
+  "effectiveCode": {
+    "productionAndToolLinesLowerBound": 1788,
+    "minimumRequired": 1000,
+    "minimumMet": true,
+    "testsExcluded": true,
+    "modifiedLinesNotIndependentlyCounted": true,
+    "codeChangeReceipt": {
+      "path": "docs/release/v607/mainline-a-r66-v645c-code-change-20261007.json",
+      "bytes": 2725,
+      "sha256": "bc8e5893f635c7564cddbadffde408d809ae8813e0d8115f2b313ed71bf3ab96"
+    }
+  },
+  "evidence": {
+    "static": {
+      "node": "94/94 R66 focused passed; 5/5 R65 builder passed",
+      "vitest": "68/68 combined focused passed",
+      "eslint": "targeted passed",
+      "typescript": "targeted R65 entrypoints passed; full repository check hit Node 4 GiB heap",
+      "productionBuild": "passed preserved V645",
+      "alignment": {
+        "path": "docs/release/v607/mainline-a-r66-alignment-20261007-v645-final-candidate.json",
+        "bytes": 119417,
+        "sha256": "eb05ac1d30a478f26cc4129c21c542d005bcb62eb6d092e283c889030c01047e"
+      },
+      "sourceBindingValid": true,
+      "rootReadOnly": {
+        "path": "docs/release/v607/mainline-a-r66-root-source-audit-20261007-v645.json",
+        "bytes": 11644,
+        "sha256": "69aa557b675f7f7bc9cf3584abd7d1343540eabdc03b1ec7665747d206a28f5e"
+      },
+      "rootManifestProbe": {
+        "path": "docs/release/v607/mainline-a-r66-root-manifest-probe-20261007-v645.json",
+        "bytes": 5914,
+        "sha256": "013c1220668d2364b66518cb4333c26071e179a32fb75de0e59a40795400eb91"
+      }
+    },
+    "http": {
+      "status": "passed-local",
+      "pageAndHealth": {
+        "path": "docs/release/v607/mainline-a-r66-http-20261007-v645.json",
+        "bytes": 5797,
+        "sha256": "d59c20462891f99b007db57ff230bb5d9c53de4da4d426e1e45c3a1f7692d4f0"
+      },
+      "canonicalImages": {
+        "path": "docs/release/v607/mainline-a-canonical-assets-http-20261007-v645b.json",
+        "bytes": 11569,
+        "sha256": "c89792a6860bce83851beaffe3f610a0f8bcd1c11f94ccc1dbd3858a4dc1f9d6"
+      },
+      "canonicalImagesPassed": 12
+    },
+    "visual": {
+      "status": "inspected-local",
+      "desktop": {
+        "path": "docs/release/v607/mainline-a-r66-browser-desktop-20261007-v645.png",
+        "bytes": 686683,
+        "sha256": "400e3e7bdb5de78d0110e3e2a093d71c9b4a1bd20bb6799377d0ca722cf17f3b"
+      },
+      "mobileViewport": {
+        "path": "docs/release/v607/mainline-a-r66-browser-mobile-20261007-v645.png",
+        "bytes": 118736,
+        "sha256": "9f83ac5a799cf7f7055e555c618bd6242fcaa2a2e6b9cb64dab02688b7c8a229"
+      }
+    },
+    "browser": {
+      "status": "passed-local",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-browser-20261007-v645.json",
+        "bytes": 3893,
+        "sha256": "0c6e972948462d2f0c68a7a48e6c9d4c76b656a69d41cdc282f095a4d0190c04"
+      },
+      "desktop": "1280x720",
+      "mobileViewport": "390x844 simulated",
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "qualified-local-only",
+      "raw": {
+        "path": "docs/release/v607/mainline-a-r65-v645-two-run-raw-20261007.json",
+        "bytes": 74637224,
+        "sha256": "302cc47d2895a5044fd57125dc2ea4887c0b41630dd07aa9ab3747f81ad644ae"
+      },
+      "roundReceipt": {
+        "path": "docs/release/v607/mainline-a-r65-v645-round-20261007.json",
+        "bytes": 6204,
+        "sha256": "b10121646a870fdccb532681f87f5ad2ab09bf25d20281be9ca1a8fca3a3b111"
+      },
+      "independentLongRuns": 2,
+      "resourceRegistryReturnedToBaseline": true,
+      "productionPerformance": false
+    },
+    "externalSource": {
+      "canonicalNebulaFilesVerified": 12,
+      "extensionRawImagesVerified": 12,
+      "totalDistinctNebulae": 24,
+      "stellarRawResponses": 4,
+      "stellarStructuredCandidates": 4,
+      "stellarComponentConfirmed": 0,
+      "rightsSigned": 0,
+      "rightsPending": 12,
+      "legalClearance": false
+    }
+  },
+  "package": {
+    "status": "blocked",
+    "candidateOnly": true,
+    "runtimePayloadIncluded": false,
+    "manifest": {
+      "path": "docs/release/v607/mainline-a-r66-package-20261007-v645-final-candidate/manifest.json",
+      "bytes": 2350,
+      "sha256": "90ae026b0e6a29d54d24fa267c51fe8a5aff669dc824489954a807f01c064373"
+    },
+    "verification": {
+      "path": "docs/release/v607/mainline-a-r66-package-verification-20261007-v645-final-candidate.json",
+      "bytes": 1765,
+      "sha256": "2b848892cd5add4c325b92be2d22155949214befd281dc2cedc9997cbd4e70ac"
+    },
+    "evidenceReferencesVerified": 300,
+    "packageFilesVerified": 7,
+    "rollback": {
+      "path": "docs/release/v607/mainline-a-r66-package-20261007-v645-final-candidate/rollback.json",
+      "bytes": 827,
+      "sha256": "1c44eaecb0b7835f576b675020924e30382c8acbff22b64aed2902a18743db80"
+    }
+  },
+  "gates": {
+    "build-current-source": {
+      "state": "passed",
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    "root-readonly-input": {
+      "state": "passed",
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    "next-web-identity": {
+      "state": "passed",
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    "manifest-parity": {
+      "state": "pending",
+      "evidenceClass": "static",
+      "blockers": [
+        "root-manifest-not-present-or-mismatched"
+      ]
+    },
+    "canonical-coverage": {
+      "state": "passed",
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    "canonical-runtime": {
+      "state": "pending",
+      "evidenceClass": "browser",
+      "blockers": [
+        "canonical-runtime-clearance-pending"
+      ]
+    },
+    "http": {
+      "state": "passed",
+      "evidenceClass": "http",
+      "blockers": []
+    },
+    "desktop-browser": {
+      "state": "passed",
+      "evidenceClass": "browser",
+      "blockers": []
+    },
+    "mobile-viewport": {
+      "state": "passed",
+      "evidenceClass": "browser",
+      "blockers": []
+    },
+    "visual": {
+      "state": "passed",
+      "evidenceClass": "visual",
+      "blockers": []
+    },
+    "performance": {
+      "state": "passed",
+      "evidenceClass": "performance",
+      "blockers": []
+    },
+    "lifecycle": {
+      "state": "passed",
+      "evidenceClass": "performance",
+      "blockers": []
+    },
+    "nebula-file-integrity": {
+      "state": "passed",
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    "stellar-component-identity": {
+      "state": "pending",
+      "evidenceClass": "external-source",
+      "blockers": [
+        "stellar-component-identity-pending"
+      ]
+    },
+    "rights-closure": {
+      "state": "pending",
+      "evidenceClass": "external-source",
+      "blockers": [
+        "human-rights-signoff-pending"
+      ]
+    },
+    "physical-mobile": {
+      "state": "not-run",
+      "evidenceClass": "performance",
+      "blockers": [
+        "physical-device-not-run"
+      ]
+    },
+    "long-run": {
+      "state": "passed",
+      "evidenceClass": "performance",
+      "blockers": []
+    }
+  },
+  "blockers": [
+    "canonical-runtime-clearance-pending",
+    "human-rights-signoff-pending",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  },
+  "claims": {
+    "releaseApproved": false,
+    "runtimeAdmission": false,
+    "scientificValidity": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "copyrightApproval": false
+  }
+}

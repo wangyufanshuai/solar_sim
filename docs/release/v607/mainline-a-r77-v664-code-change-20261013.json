@@ -1,0 +1,70 @@
+{
+  "schema": "mainline-a-r77-code-change-v664",
+  "round": 77,
+  "date": "2026-10-13",
+  "status": "effective-web-batch-counted-current-source",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouchedByRound": false,
+    "parallelRelativityWindowExcludedFromCounts": true
+  },
+  "identity": {
+    "buildReceipt": "docs/release/v607/mainline-a-r77-build-20261013v664r77web01.json",
+    "buildId": "7E47aPkOGA-FgCclu-0MW",
+    "appSourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528"
+  },
+  "effectiveCodeFiles": {
+    "newProduction": [
+      "app/lib/mainlineAReviewNavigationV664.ts"
+    ],
+    "newDataAndVerificationTools": [
+      "scripts/build-mainline-a-r77-web-freeze-v664.mjs",
+      "scripts/verify-mainline-a-r77-web-freeze-v664.mjs",
+      "scripts/capture-mainline-a-r77-matrix-browser-v664.mjs",
+      "scripts/verify-mainline-a-r77-http-v664.mjs",
+      "scripts/audit-mainline-a-r77-evidence-v664.mjs"
+    ],
+    "modifiedProductionAndBrowserTools": [
+      "app/components/MainlineAWebAcceptancePanelV662.tsx",
+      "app/components/MainlineAWebReadinessPanelV663.tsx",
+      "scripts/capture-mainline-a-web-canonical-scene-v648.mjs"
+    ],
+    "newSubstantiveTests": [
+      "app/lib/mainlineAReviewNavigationV664.test.ts",
+      "scripts/build-mainline-a-r77-web-freeze-v664.test.mjs",
+      "scripts/verify-mainline-a-r77-http-v664.test.mjs",
+      "scripts/audit-mainline-a-r77-evidence-v664.test.mjs"
+    ]
+  },
+  "lineMethod": "Count nonempty noncomment lines in six new production/tool files and four new test files. Diff the two existing UI files against the immediately preceding preserved R76 app source. The pre-R77 copy of the canonical-scene browser tool is not preserved, so its changes are excluded from every line threshold. Generated manifests, receipts, screenshots, documents, lockfiles, and concurrent physics changes are excluded.",
+  "counts": {
+    "newProductionAndToolFiles": 6,
+    "newSubstantiveTestFiles": 4,
+    "existingCodeFilesModified": 3,
+    "effectiveNewProductionAndToolLines": 1476,
+    "effectiveSubstantiveTestLines": 361,
+    "effectiveNewCodeLinesExcludingExistingModifications": 1837,
+    "existingUiAddedNonemptyNoncommentLines": 128,
+    "existingUiRemovedOrReplacedNonemptyNoncommentLines": 19,
+    "existingCanonicalSceneToolDeltaCredited": 0,
+    "minimum500MetWithoutTestsOrExistingModifications": true,
+    "target1000MetWithoutTestsOrExistingModifications": true
+  },
+  "behavior": [
+    "Mobile web review uses a list/detail flow with back, previous, and next navigation for all 96 A and Beta entry rows and nine held readiness rows.",
+    "A frozen 96-row, 36-scene, 49-asset candidate matrix cross-checks 20 prior raw source pins and immutable V616 snapshot/projection digests.",
+    "Offline replay rejects missing, forged, promoted, or byte-drifted records and rechecks 57 file pins.",
+    "Local HTTP checks distinguish enabled candidate preview from default-off denial for 19 review images and five policy-held routes.",
+    "Browser checks traverse every review row and canonical A-line scene on desktop and simulated mobile, with screenshot byte and dimension replay."
+  ],
+  "boundary": {
+    "physicsKernelEditedByRound": false,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

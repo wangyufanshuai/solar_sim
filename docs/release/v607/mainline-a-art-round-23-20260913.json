@@ -1,0 +1,24 @@
+{
+  "round": 23,
+  "date": "2026-09-13",
+  "title": "Beta hero evidence intake ledger",
+  "status": "verified-static",
+  "scope": {
+    "artifact": "app/data/mainlineABetaHeroEvidenceIntakeV607.ts",
+    "artChange": "Created a source-addressable intake ledger for the 12 pending hero stars, including SIMBAD identifiers and explicit not-admitted measurement status."
+  },
+  "coverage": {
+    "pendingHeroes": 12,
+    "simbadSourceLinks": 12,
+    "measurementAdmitted": 0
+  },
+  "validation": {
+    "vitest": "mainlineABetaHeroEvidenceIntakeV607.test.ts + mainlineABetaHeroRosterV607.test.ts: 2/2",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This ledger provides source entry points only; it does not assert fresh SIMBAD values or Gaia identity.",
+    "Pending heroes remain outside runtime admission and browser art acceptance."
+  ]
+}

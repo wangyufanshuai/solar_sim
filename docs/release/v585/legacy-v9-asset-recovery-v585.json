@@ -1,0 +1,222 @@
+{
+  "version": "v585-legacy-v9-asset-recovery-v1",
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "status": "recovered-original-byte-complete",
+  "searchScope": [
+    "reachable Git objects and reflogs",
+    "old worktrees",
+    "public/atlas-lite historical package",
+    "dist/content-packs",
+    "dist/desktop-stage",
+    "src-tauri build outputs",
+    "tmp release verification trees",
+    "_codex_backups"
+  ],
+  "recoveryRule": "only original bytes matching frozen bytes/SHA/dimensions/provenance; no regeneration, recompression or substitute",
+  "assets": [
+    {
+      "id": "base-desktop-8k",
+      "path": "public/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "expectedBytes": 14122321,
+      "expectedSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "expectedDimensions": [
+        8192,
+        4096
+      ],
+      "gitRecoverySpec": "1eecca0f^:solar_sim/next-web/public/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "actualBytes": 14122321,
+      "actualSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "historicalBytes": 14122321,
+      "historicalSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "dimensions": [
+        8192,
+        4096
+      ],
+      "format": "jpeg",
+      "colorSpace": "srgb-assumed-untagged",
+      "iccProfileEmbedded": false,
+      "provenance": {
+        "source": "NASA Scientific Visualization Studio Deep Star Maps 2020",
+        "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+        "processingSource": "scripts/build-universe-sandbox-sky.py",
+        "projection": "plate-carree-equirectangular"
+      },
+      "qualified": true
+    },
+    {
+      "id": "base-mobile-4k",
+      "path": "public/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "expectedBytes": 2594446,
+      "expectedSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "expectedDimensions": [
+        4096,
+        2048
+      ],
+      "gitRecoverySpec": "1eecca0f^:solar_sim/next-web/public/atlas-lite/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "actualBytes": 2594446,
+      "actualSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "historicalBytes": 2594446,
+      "historicalSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "format": "jpeg",
+      "colorSpace": "srgb-assumed-untagged",
+      "iccProfileEmbedded": false,
+      "provenance": {
+        "source": "NASA Scientific Visualization Studio Deep Star Maps 2020",
+        "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+        "processingSource": "scripts/build-universe-sandbox-sky.py",
+        "projection": "plate-carree-equirectangular"
+      },
+      "qualified": true
+    },
+    {
+      "id": "stars-desktop-4k",
+      "path": "public/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "expectedBytes": 381732,
+      "expectedSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "expectedDimensions": [
+        4096,
+        2048
+      ],
+      "gitRecoverySpec": "1eecca0f^:solar_sim/next-web/public/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "actualBytes": 381732,
+      "actualSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "historicalBytes": 381732,
+      "historicalSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "dimensions": [
+        4096,
+        2048
+      ],
+      "format": "jpeg",
+      "colorSpace": "srgb-assumed-untagged",
+      "iccProfileEmbedded": false,
+      "provenance": {
+        "source": "NASA Scientific Visualization Studio Deep Star Maps 2020",
+        "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+        "processingSource": "scripts/build-universe-sandbox-sky.py",
+        "projection": "plate-carree-equirectangular"
+      },
+      "qualified": true
+    },
+    {
+      "id": "stars-mobile-2k",
+      "path": "public/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "expectedBytes": 122612,
+      "expectedSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "expectedDimensions": [
+        2048,
+        1024
+      ],
+      "gitRecoverySpec": "HEAD:solar_sim/next-web/public/atlas-lite/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "actualBytes": 122612,
+      "actualSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "historicalBytes": 122612,
+      "historicalSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "format": "jpeg",
+      "colorSpace": "srgb-assumed-untagged",
+      "iccProfileEmbedded": false,
+      "provenance": {
+        "source": "NASA Scientific Visualization Studio Deep Star Maps 2020",
+        "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+        "processingSource": "scripts/build-universe-sandbox-sky.py",
+        "projection": "plate-carree-equirectangular"
+      },
+      "qualified": true
+    },
+    {
+      "id": "dust-shared-2k",
+      "path": "public/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "expectedBytes": 700773,
+      "expectedSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "expectedDimensions": [
+        2048,
+        1024
+      ],
+      "gitRecoverySpec": "1eecca0f^:solar_sim/next-web/public/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "actualBytes": 700773,
+      "actualSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "historicalBytes": 700773,
+      "historicalSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "dimensions": [
+        2048,
+        1024
+      ],
+      "format": "jpeg",
+      "colorSpace": "linear-grayscale-untagged",
+      "iccProfileEmbedded": false,
+      "provenance": {
+        "source": "NASA Scientific Visualization Studio Deep Star Maps 2020",
+        "sourceUrl": "https://svs.gsfc.nasa.gov/4851/",
+        "processingSource": "scripts/build-universe-sandbox-sky.py",
+        "projection": "plate-carree-equirectangular"
+      },
+      "qualified": true
+    }
+  ],
+  "qualification": {
+    "allFivePresent": true,
+    "allFiveShaMatch": true,
+    "dimensionsMatch": true,
+    "provenanceRecorded": true,
+    "stableRuntimeRestorationAllowed": true,
+    "syntheticOrSimilarSubstitutionUsed": false,
+    "historicalManifestRewritten": false,
+    "historicalEvidenceRewritten": false
+  },
+  "sourceManifest": [
+    {
+      "path": "public/atlas-lite/manifest.json",
+      "bytes": 157047,
+      "sha256": "e38eeb5e26e8030a2bbad06689f69b2f7a4f73cb46dcf278a58a5f1334591638"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "bytes": 2594446,
+      "sha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "bytes": 14122321,
+      "sha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "bytes": 700773,
+      "sha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "bytes": 122612,
+      "sha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "bytes": 381732,
+      "sha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c"
+    },
+    {
+      "path": "public/textures/sky/README.md",
+      "bytes": 11843,
+      "sha256": "59b22119aa1acb18997136c36eceeaf1df2d6e0d81b547c3e3b2568d69888435"
+    },
+    {
+      "path": "scripts/build-universe-sandbox-sky.py",
+      "bytes": 47109,
+      "sha256": "917c58d336def32767f8e5530e81a58f717f3b91e2d1bfb6716887ffafe20a66"
+    },
+    {
+      "path": "scripts/release-source-policy-v241.mjs",
+      "bytes": 3116,
+      "sha256": "d0d6667d24f4e28dde940ced78b9f5cb4ddb2d1d793b4526b3e07b4e27f69194"
+    }
+  ],
+  "sourceSha256": "7669d83c4ce511186d54d099b2b9a1701153652530a3ebcd6d0be7a67f97670e",
+  "artifactSha256": "075fc10592e65e72b0d850a3d4a4fa03786827812f2c6181225fb656e0b3c3e8"
+}

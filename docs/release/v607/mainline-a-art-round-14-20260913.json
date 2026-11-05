@@ -1,0 +1,19 @@
+{
+  "round": 14,
+  "date": "2026-09-13",
+  "title": "Constellation chart information hierarchy",
+  "status": "verified",
+  "scope": {
+    "component": "app/components/MainlineAConstellationChartV607.tsx",
+    "artChange": "Added a compact anchor-count cue and responsive truncation guard to the chart header, preserving the dark field and boundary toggle while keeping narrow viewports legible."
+  },
+  "validation": {
+    "eslint": "passed",
+    "vitest": "mainlineAConstellationFiguresV607.test.ts + mainlineAMetadataV607.test.ts: 26/26",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Browser screenshot evidence for all four additive charts remains pending.",
+    "Beta remains open at 12 hero stars, 8 current constellations, and 12 rights-cleared nebulae."
+  ]
+}

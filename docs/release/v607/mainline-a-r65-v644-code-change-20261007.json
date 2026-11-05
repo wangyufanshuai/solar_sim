@@ -1,0 +1,27 @@
+{
+  "schema": "mainline-a-code-change-receipt-v644",
+  "round": "R65-continuation",
+  "generatedAt": "2026-10-07T04:07:25Z",
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "priorR65EffectiveProductionAndToolLines": 1726,
+  "incrementalEffectiveNonblankNoncommentLines": 282,
+  "cumulativeR65EffectiveProductionAndToolLines": 2008,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "New V644 module counts nonblank noncomment lines. Existing component and contract count effective added diff lines against the preserved 2026-09-29 source stage. Builder counts its two effective new lines; tests, receipts, build outputs and screenshots are excluded.",
+  "files": [
+    { "path": "app/lib/mainlineAR65LongRunArchiveV644.ts", "effectiveAdded": 208, "role": "production browser archive" },
+    { "path": "app/components/MainlineAR65LongRunPanelV643.tsx", "effectiveAdded": 67, "removed": 5, "role": "runtime integration and export" },
+    { "path": "app/lib/mainlineAR65LongRunV643.ts", "effectiveAdded": 5, "removed": 2, "role": "attempt-ledger qualification" },
+    { "path": "scripts/build-mainline-a-r65-longrun-v643.ts", "effectiveAdded": 2, "removed": 7, "role": "true SHA-256 source fingerprint" }
+  ],
+  "substantiveTestsExcludedFromCount": [
+    "app/lib/mainlineAR65LongRunArchiveV644.test.ts",
+    "app/lib/mainlineAR65LongRunV643.test.ts",
+    "scripts/build-mainline-a-r65-longrun-v643.test.ts"
+  ],
+  "buildReceipt": "docs/release/v607/mainline-a-r65-build-20261007-v644r65b.json",
+  "boundary": { "candidateOnly": true, "hold": true, "notAdmitted": true, "scientificPayloadWriteback": false, "physicsKernelMutation": false, "parentGitMutation": false }
+}

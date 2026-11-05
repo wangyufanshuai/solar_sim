@@ -1,0 +1,142 @@
+{
+  "schema": "mainline-a-b3-stellar-roster-audit-v641",
+  "generatedAt": "2026-09-29T05:17:23.356Z",
+  "input": {
+    "path": "app/data/mainlineABetaStellarRosterV641.generated.json",
+    "sha256": "250e3657e32b89bea7d097b062453d6484f7b0096be5dd8ca3bb659b4a303dd2"
+  },
+  "status": "verified-candidate-only",
+  "counts": {
+    "roster": 24,
+    "runtimeExisting": 20,
+    "candidateHold": 4,
+    "sourceArtifactBacked": 8,
+    "artifactRecomputed": 8,
+    "componentConfirmed": 0
+  },
+  "validation": {
+    "issueCount": 0,
+    "issues": [],
+    "negativeCases": [
+      {
+        "name": "duplicate-id",
+        "rejected": true,
+        "issueCount": 3,
+        "firstIssue": "duplicate-id"
+      },
+      {
+        "name": "admission",
+        "rejected": true,
+        "issueCount": 3,
+        "firstIssue": "runtime-route"
+      },
+      {
+        "name": "synthetic-source",
+        "rejected": true,
+        "issueCount": 2,
+        "firstIssue": "fingerprint-mismatch"
+      },
+      {
+        "name": "fingerprint",
+        "rejected": true,
+        "issueCount": 1,
+        "firstIssue": "fingerprint-mismatch"
+      },
+      {
+        "name": "component-promotion",
+        "rejected": true,
+        "issueCount": 2,
+        "firstIssue": "fingerprint-mismatch"
+      }
+    ],
+    "negativePassed": 5
+  },
+  "artifacts": [
+    {
+      "id": "acrux",
+      "path": "docs/release/v607/raw-artifacts/r60/acrux-6283e0cf5cb9.raw",
+      "declaredSha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+      "exists": true,
+      "bytes": 41374,
+      "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30"
+    },
+    {
+      "id": "acrux",
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+      "declaredSha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+      "exists": true,
+      "bytes": 5406,
+      "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99"
+    },
+    {
+      "id": "spica",
+      "path": "docs/release/v607/raw-artifacts/r60/spica-81276ed6687b.raw",
+      "declaredSha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+      "exists": true,
+      "bytes": 58748,
+      "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b"
+    },
+    {
+      "id": "spica",
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+      "declaredSha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+      "exists": true,
+      "bytes": 4321,
+      "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3"
+    },
+    {
+      "id": "regulus",
+      "path": "docs/release/v607/raw-artifacts/r60/regulus-a30e3e314621.raw",
+      "declaredSha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+      "exists": true,
+      "bytes": 58144,
+      "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801"
+    },
+    {
+      "id": "regulus",
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+      "declaredSha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+      "exists": true,
+      "bytes": 4323,
+      "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346"
+    },
+    {
+      "id": "polaris",
+      "path": "docs/release/v607/raw-artifacts/r60/polaris-5c70e01ec2c0.raw",
+      "declaredSha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+      "exists": true,
+      "bytes": 54527,
+      "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5"
+    },
+    {
+      "id": "polaris",
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+      "declaredSha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+      "exists": true,
+      "bytes": 4633,
+      "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8"
+    }
+  ],
+  "gates": {
+    "betaRoster24": "verified",
+    "componentIdentity": "pending",
+    "rights": "pending",
+    "runtimeAdmission": "closed",
+    "scientificPayloadWriteback": "closed"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "snapshotMutation": false
+  },
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

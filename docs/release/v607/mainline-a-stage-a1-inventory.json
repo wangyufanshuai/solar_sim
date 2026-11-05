@@ -1,0 +1,57 @@
+{
+  "stage": "A1",
+  "generatedAt": "2026-09-09",
+  "existingAssets": {
+    "iauConstellationLineDefs": 88,
+    "nebulaCatalogEntries": 80,
+    "brightStarCatalogApproxEntries": 369,
+    "stellarHeroRecords": 24,
+    "nebulaTextureManifests": 18,
+    "nebulaSourcePageCandidatesFirstSet": 6,
+    "iauBoundaryFilesFirstSet": 4,
+    "deepSpaceVisualAssetManifests": 24
+  },
+  "firstImplementationSet": {
+    "constellations": [
+      "Ori",
+      "UMa",
+      "Cas",
+      "Sco"
+    ],
+    "nebulae": [
+      "m42",
+      "m1",
+      "m8",
+      "m16",
+      "m20",
+      "m57",
+      "ngc7293",
+      "ngc6543",
+      "ngc2237",
+      "ngc6960",
+      "carina",
+      "b33"
+    ],
+    "stars": [
+      "alpha-centauri-a",
+      "achernar",
+      "betelgeuse",
+      "sirius-a",
+      "rigel",
+      "antares"
+    ]
+  },
+  "knownGaps": [
+    "Formal IAU constellation boundary polygons are ingested for the first set (Ori, UMa, Cas, Sco); other constellations still use asterism presentation geometry.",
+    "Most nebula visuals are markers or color proxies; each texture needs a per-image license and credit audit.",
+    "Six first-set nebulae now have local CC BY 4.0 observation JPEGs with per-image reviews and complete credits. The other six remain catalog markers. The earlier in-memory-only acquisition receipt is preserved as historical evidence.",
+    "Bright-star RGB and stellar portrait palettes are presentation approximations. Gaia proximity or render-anchor identity alone does not establish a named-star photometric measurement.",
+    "Photosphere portraits are generated presentation models and must not be described as observation textures."
+  ],
+  "newAssets": {
+    "licensedFirstSetNebulaImages": 6,
+    "totalImageBytes": 1971256,
+    "constellationCharts": 4,
+    "stellarPortraits": 6
+  }
+}

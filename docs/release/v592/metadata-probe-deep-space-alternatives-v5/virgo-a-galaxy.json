@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v5",
+  "probedAt": "2026-08-19T13:17:46.487Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "query": "NGC 4486",
+  "requiredTermGroups": [
+    [
+      "ngc 4486",
+      "m87",
+      "virgo a"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v4/virgo-a-galaxy.json",
+    "receiptSha256": "1fce0b84e9efcf976eb38dbd1f440f59c8a5589c73db7ffbd41b1ccfa18247c8",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M87+galaxy+NASA+Goddard&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+4486&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+4486&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "0697fa0ebac40a56e2053f6d4ab1859ec1e83b8624f14ee0ab7645999b4994ee"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "207cd2c4c9238f1064b93b5fc0891b17e44b1118dd2c1ecb337e19f7fe29d859"
+}

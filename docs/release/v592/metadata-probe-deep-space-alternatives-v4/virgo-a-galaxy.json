@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v4",
+  "probedAt": "2026-08-19T13:15:17.746Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "query": "M87 galaxy NASA Goddard",
+  "requiredTermGroups": [
+    [
+      "m87",
+      "virgo a"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v3/virgo-a-galaxy.json",
+    "receiptSha256": "cf9d451f86cc7cbc2f9187402b1b882f8cb187547ba7495697a67049df5c7a4a",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M87+Chandra+galaxy&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M87+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M87+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "991e0a7f7238305e8cf1f8f2964d3a8cdee147c1e5bcd989b8aba67d732b181a"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "1fce0b84e9efcf976eb38dbd1f440f59c8a5589c73db7ffbd41b1ccfa18247c8"
+}

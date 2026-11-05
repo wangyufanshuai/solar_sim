@@ -1,0 +1,69 @@
+{
+  "version": "v591-nasa-3d-tree-metadata-probe-v1",
+  "probedAt": "2026-08-13T05:42:34.641Z",
+  "status": "metadata-probe-complete-no-model-payload",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA 3D Resources official GitHub mirror",
+    "repository": "https://github.com/nasa/NASA-3D-Resources",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/trees/master?recursive=1",
+    "finalUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/trees/master?recursive=1",
+    "status": 200,
+    "contentType": "application/json",
+    "capture": "system-http-single-request",
+    "responseBytes": 422454,
+    "responseSha256": "014a214af8611fd0cba308617aa4e2effa946b4e756c6aa0f1352f9ab052b43f",
+    "treeTruncated": false
+  },
+  "candidates": {
+    "ceres": [],
+    "eros": [
+      {
+        "path": "3D Printing/Asteroid 433 Eros/Asteroid 433 Eros.png",
+        "bytes": 1383473,
+        "gitBlobSha1": "ca22c9a8eb937f0887e1c1c8a82390b6c8ec4b9b",
+        "apiUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/ca22c9a8eb937f0887e1c1c8a82390b6c8ec4b9b"
+      },
+      {
+        "path": "3D Printing/Asteroid 433 Eros/Asteroid 433 Eros.stl",
+        "bytes": 10042884,
+        "gitBlobSha1": "62a3387878bf475d634819d5960806457d22763d",
+        "apiUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/62a3387878bf475d634819d5960806457d22763d"
+      }
+    ],
+    "kleopatra": [
+      {
+        "path": "3D Printing/Asteroid 216 Kleopatra/Asteroid 216 Kleopatra.png",
+        "bytes": 876101,
+        "gitBlobSha1": "8ce5a698e68ac142aea4828281df2e5ed29a9b3b",
+        "apiUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/8ce5a698e68ac142aea4828281df2e5ed29a9b3b"
+      },
+      {
+        "path": "3D Printing/Asteroid 216 Kleopatra/Asteroid 216 Kleopatra.stl",
+        "bytes": 204684,
+        "gitBlobSha1": "fb3429e7d0810650a877a1a8cbb644942ead9643",
+        "apiUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/blobs/fb3429e7d0810650a877a1a8cbb644942ead9643"
+      }
+    ],
+    "tempel-1": []
+  },
+  "admissionSummary": {
+    "ceres": "asset-blocked-no-official-model-in-tree",
+    "eros": "official-model-metadata-present",
+    "kleopatra": "official-model-metadata-present",
+    "tempel-1": "asset-blocked-no-official-model-in-tree"
+  },
+  "receiptSha256": "f6f0469a290fdcb4ae0a00ef890cc1119b24c9dc04283e8da9a189fcac7a456b"
+}

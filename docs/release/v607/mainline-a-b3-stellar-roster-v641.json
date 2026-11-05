@@ -1,0 +1,52 @@
+{
+  "schema": "mainline-a-b3-stellar-roster-receipt-v641",
+  "round": "B3",
+  "generatedAt": "2026-09-29T05:13:20.338Z",
+  "status": "candidate-only",
+  "output": "app/data/mainlineABetaStellarRosterV641.generated.json",
+  "outputSha256": "b2ee2bcb455177c4f50e354d726500b3d9dc8b7dc806329452cd07d0314eb7ee",
+  "sourceFiles": {
+    "existingRoster": {
+      "path": "app/data/mainlineABetaHeroRosterV607.ts",
+      "sha256": "9aa7deab1a879a0e0df0ab56452351805311103d2068a55b4f271b39d89521e3"
+    },
+    "structuredCandidatePack": {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    },
+    "componentEvidencePack": {
+      "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+      "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+    }
+  },
+  "counts": {
+    "total": 24,
+    "runtimeExisting": 20,
+    "candidateHold": 4,
+    "sourceArtifactBacked": 4,
+    "componentConfirmed": 0
+  },
+  "gates": {
+    "roster24": "verified",
+    "existingRuntimeReferences": "observed",
+    "pendingCandidates": "held",
+    "componentIdentity": "pending",
+    "rights": "pending",
+    "scientificPayloadWriteback": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "snapshotMutation": false
+  },
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

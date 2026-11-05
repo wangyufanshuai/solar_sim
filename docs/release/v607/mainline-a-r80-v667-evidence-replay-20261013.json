@@ -1,0 +1,119 @@
+{
+  "schema": "mainline-a-r80-evidence-replay-v667",
+  "status": "replayed-current-source-local-web-candidate-hold",
+  "generatedAt": "2026-10-13T10:14:14.005Z",
+  "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+  "buildId": "OzXlBUCmLBXsMtceBdR7h",
+  "inputs": {
+    "build": {
+      "path": "docs/release/v607/mainline-a-r80-build-20261013v667r80web01.json",
+      "bytes": 481311,
+      "sha256": "f245a774dfad568355d544f9b8eb384f6377a8f597470a576745c10824d04a52"
+    },
+    "audit": {
+      "path": "docs/release/v607/mainline-a-r79-v666-visual-static-20261013v666r79visual04.json",
+      "bytes": 20342,
+      "sha256": "aada298e7a25db1dc869394c438bd3dfb1bd7a94348d736afd84cda6e3f7489c"
+    },
+    "httpEnabled": {
+      "path": "docs/release/v607/mainline-a-r80-v667-http-enabled-20261013v667r80http01.json",
+      "bytes": 20919,
+      "sha256": "f939a3e5eb1f02d630d21a49b852a1492820c401339968499d584ce15ce3ad4b"
+    },
+    "httpDefaultOff": {
+      "path": "docs/release/v607/mainline-a-r80-v667-http-default-off-20261013v667r80http02.json",
+      "bytes": 19402,
+      "sha256": "c12ca41428556300826ac6dd221f4c945dbe3e271d053e1a99c5e04da70e3b88"
+    },
+    "browser": {
+      "path": "docs/release/v607/mainline-a-r80-v667-browser-20261013v667r80browser02.json",
+      "bytes": 95622,
+      "sha256": "bbd469bd586a41682991d2a638a37e0a3b4c203c9b2331719e583276defd2cb2"
+    },
+    "visual": {
+      "path": "docs/release/v607/mainline-a-r80-v667-visual-20261013v667r80browser02.json",
+      "bytes": 557,
+      "sha256": "b2eb38374abfc5c53402f8b506fed4b2805b8c71ea4e305d60b3edf2cccea76c"
+    },
+    "scenes": {
+      "path": "docs/release/v607/mainline-a-r80-v667-scene-verification-20261013.json",
+      "bytes": 26935,
+      "sha256": "fd23b85ce34b4646553b9af739e5d95b4efae922f4e524c2f79d8605256b1f35"
+    },
+    "external": {
+      "path": "docs/release/v607/mainline-a-r79-v666-external-source-20261013v666r79external02.json",
+      "bytes": 6506,
+      "sha256": "205f9fcd249982552ce93a532a8dfedfc4ebde2982537e25ef289a48ae4ab63d"
+    },
+    "readiness": {
+      "path": "app/data/mainlineAWebReadinessV663.generated.json",
+      "bytes": 19609,
+      "sha256": "cbd39d11703ef2044dde8f7f7865f35281932f09b7d1d1018874f2b1bf9c356f"
+    }
+  },
+  "inspection": {
+    "ok": true,
+    "issues": [],
+    "currentSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+    "buildId": "OzXlBUCmLBXsMtceBdR7h",
+    "localImageCycles": 62,
+    "canonicalSceneSelections": 72,
+    "screenshotPinsExpected": 137,
+    "priorExternalSourcePins": 20,
+    "stellarComponentHolds": 4,
+    "imageAcquisitionHolds": 5,
+    "rightsSignatures": 0,
+    "publicWebReleaseApproved": false
+  },
+  "auditReplay": {
+    "schema": "mainline-a-r79-visual-replay-v666",
+    "status": "replayed-candidate-hold",
+    "ok": true,
+    "issues": [],
+    "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+    "fingerprint": "2128c8180617263a74645864a827f06aefda0dc60650f8dee916470020b5d07d",
+    "releaseAllowed": false
+  },
+  "screenshotReplay": {
+    "ok": true,
+    "issues": [],
+    "screenshotCount": 65,
+    "humanVisualSignoff": false
+  },
+  "canonicalSceneReplay": {
+    "status": "verified-local-browser-scenes-candidate",
+    "screenshotPinsRecomputed": 72,
+    "desktopSelectedReady": 36,
+    "mobileViewportSelectedReady": 36
+  },
+  "externalReplay": {
+    "ok": true,
+    "issues": [],
+    "priorSourcePinsRecomputed": 20,
+    "stellarPhysicalComponentsConfirmed": 0,
+    "stellarComponentHolds": 4,
+    "nebulaImageAcquisitionHolds": 5,
+    "heldImageResponsesCaptured": 0,
+    "aNebulaRightsSigned": 0,
+    "betaNebulaRightsSigned": 0,
+    "currentLocalImagesRecomputed": 31,
+    "newHttpsRequests": 0,
+    "scientificValidityApproved": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "humanVisualSignoff": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "realUserValidation": false,
+    "productionPerformance": false
+  }
+}

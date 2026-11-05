@@ -1,0 +1,249 @@
+{
+  "version": "v595-final-sealed-browser-gate-v1",
+  "generatedAt": "2026-08-28T07:45:48.449Z",
+  "status": "passed-current-v595-full-lite-exact-stellar-24x2-and-six-scene-family-browser-gates-human-signoff-pending",
+  "candidate": {
+    "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+    "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+    "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "matrices": {
+    "full": {
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "frameCount": 13,
+      "stageReceiptSha256": "78a178fed77de0ce51a0e7052fa19550a5889e1d079704e0cebe5844e6436c0a",
+      "batchSha256": "6a2e09c4107039d3684b507ce3d9aee34552d91d5f705e9397d6d8fa72bb865e",
+      "stage": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/stage-receipt.json",
+        "bytes": 2586,
+        "sha256": "695e078acbe3f02bb8966767ca52e4ab30e03aee9402f5f9e01da6d03cbee96e"
+      },
+      "batch": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/batch.json",
+        "bytes": 812326,
+        "sha256": "6725109e2ab1b58fd81645db5b1c26efafa25de7a7eea1a250bb87bbf0338b2b"
+      }
+    },
+    "lite": {
+      "frameCount": 8,
+      "receiptSha256": "453dec2b1ac857a13bd3f2d4e872e80cbc06b7f6b403dbb1c3b4fe539a505147",
+      "receipt": {
+        "path": "docs/release/v595/lite-browser-matrix-v595.json",
+        "bytes": 2047,
+        "sha256": "71a51d79526b04a2bf28da24406debc9eda4875160fc77f71444d982dd716073"
+      },
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-231539cc0f7d473686ce838a0bf9e3350d91b966f2f8abb4418fdd70df2e30f2",
+        "buildFingerprint": "231539cc0f7d473686ce838a0bf9e3350d91b966f2f8abb4418fdd70df2e30f2",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "vercel-lite"
+      }
+    },
+    "exactAb": {
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "pairCount": 8,
+      "frameCount": 16,
+      "passes": [
+        "hot-radiative",
+        "blue-supergiant-wind",
+        "solar-like-convective",
+        "cool-convective",
+        "red-giant-supergiant",
+        "warm-radiative-convective",
+        "rapid-rotator-gravity-darkened",
+        "relativity-workbench"
+      ],
+      "lanes": [
+        "baseline-v594",
+        "candidate-v595"
+      ],
+      "relativityObservationMarkerVerified": true,
+      "stageReceiptSha256": "867d4f4a14c3dae8fb69a5f9f3a350fc974adc08e352825867590084bcb81926",
+      "batchSha256": "d359689249821b7feb472063686d7695e8c14f146b49057975ab39b6e950b3a1",
+      "stage": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/stage-receipt.json",
+        "bytes": 2907,
+        "sha256": "d2efb57a30daaee730725d4f4d5fbb74056c0638e9d3a16b43e5ab96a206ab0f"
+      },
+      "batch": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/batch.json",
+        "bytes": 1190244,
+        "sha256": "9141f597374db1a27fe2b631c9c86590e0d7d5a084c69c7846940a6bb6eb6919"
+      }
+    },
+    "stellarScienceCinematic": {
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "targetCount": 24,
+      "modeCount": 2,
+      "frameCount": 48,
+      "targetIds": [
+        "sirius-a",
+        "canopus",
+        "alpha-centauri-a",
+        "alpha-centauri-b",
+        "arcturus",
+        "vega",
+        "capella-a",
+        "rigel",
+        "procyon-a",
+        "betelgeuse",
+        "aldebaran",
+        "antares",
+        "achernar",
+        "hadar",
+        "altair",
+        "acrux",
+        "spica",
+        "pollux",
+        "fomalhaut",
+        "deneb",
+        "regulus",
+        "polaris",
+        "bellatrix",
+        "alnilam"
+      ],
+      "modes": [
+        "science",
+        "cinematic"
+      ],
+      "receiptSha256": "99f1f43c69c3e1e591ce87172834d389a0b30fca4436cbb3f4daa6530ca333ac",
+      "formalEvidence": true,
+      "promotion": "none",
+      "receipt": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/batch.json",
+        "bytes": 931831,
+        "sha256": "c19d90272ae2b057ec4a66495fbece411b51ab145af60a38284e67db0a15d618"
+      }
+    },
+    "productSceneFamilies": {
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "familyCount": 6,
+      "orderedFamilies": [
+        "orbit-atlas-overview",
+        "object-inspect",
+        "stellar-exoplanet-systems",
+        "mission-launch",
+        "relativity-lab",
+        "scene-lab"
+      ],
+      "singleCanvasPolicy": "one-shared-main-canvas",
+      "receiptSha256": "0dcf49bf56c2f4321d8e6a6d1700d03c506915f5bab6f8d448850dd1ae3ddc56",
+      "supplementalOnly": true,
+      "formalEvidence": false,
+      "promotion": "none",
+      "receipt": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/receipt.json",
+        "bytes": 76469,
+        "sha256": "f9ebbf03b06dcb5e80b8d5c15a1c109dfaecceff10f910cb0dc0a545a5b80a2d"
+      }
+    }
+  },
+  "supplemental": {
+    "realDesktopChrome": {
+      "candidate": {
+        "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+        "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+        "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+        "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "status": "passed-supplemental-real-desktop-eligible",
+      "supplementalOnly": true,
+      "formalEvidence": false,
+      "promotion": "none",
+      "realDesktopEligible": true,
+      "realMobileEligible": false,
+      "receiptSha256": "1bb747d7e103c884b3b05795fc6e16f4027739d27e2522d1189e6951a224d72c",
+      "receipt": {
+        "path": "tmp/v595-staging/supplemental-e06febbe18cd-332b5ce6a0b5-real-desktop/receipt.json",
+        "bytes": 10098,
+        "sha256": "616dd669d6e42ad41b7716ed1217618b566a7b116c23d55e2cbe6a142466767d"
+      }
+    },
+    "physicalMobile": {
+      "status": "not-present-not-faked",
+      "evidence": null,
+      "formalEvidence": false,
+      "promotion": "none",
+      "emulatedViewportSubstitutionAllowed": false
+    }
+  },
+  "fullLiteIndependentBuilds": true,
+  "exactAbSameStandaloneBuild": true,
+  "exactRelativityObservationMarkerVerified": true,
+  "priorV594HumanDecisionInherited": false,
+  "humanDecision": "separate-pending-not-generated",
+  "boundaries": {
+    "formalProductPointer": "v263",
+    "priorV594IdentityReused": false,
+    "priorV594HumanDecisionInherited": false,
+    "priorV594HumanDecisionReceiptSha256": null,
+    "scientificPayloadMutationAllowed": false,
+    "productionPromotionAllowed": false,
+    "timelikeKerr": {
+      "referenceCandidateOnly": true,
+      "admissionSha256": "52123a1ee9f0d08526176964815b9679c578590bdced6cec4891bc4cb3e61e0d",
+      "admissionReceiptSha256": "98777b240f911dbcf3c21b4a6d067d42a03f31fd8cf2fce9edd2b596e219656a",
+      "formalEvidence": false,
+      "promotion": "none",
+      "defaultKernel": "legacy-eih-1pn"
+    }
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "393897f003702cc3b71e6624d9d98e925b6218558e7fd5a36410bfb9909bb727"
+}

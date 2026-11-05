@@ -1,0 +1,578 @@
+{
+  "schema": "mainline-a-art-round-receipt-v633",
+  "round": "R61-R65-R66-continuation",
+  "date": "2026-09-27",
+  "newDevelopmentRound": false,
+  "status": "technical-batch-implemented-acceptance-pending",
+  "accepted": false,
+  "goalStatus": "active",
+  "title": "Correct raw stellar field parsing and pin the current candidate package to build055",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-art-round-65-v633-20260927-054.json",
+    "sha256": "dc250afed62e132914d06ce1d5e3d6273127630accf6c3aeb8473ee5b18abef1"
+  },
+  "buildId": "5rNh-LDg27PJw_iRAQIsi",
+  "runtimeBuildId": "mainline-a-23083e477407c19d",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "noProgressAudit": {
+    "previousGoalTurn": "progress",
+    "currentGoalTurn": "progress",
+    "reason": "Corrected real candidate fields, replaced stale release selection, produced and independently replayed a current candidate package.",
+    "browserBlockerRepeated": true,
+    "atImpasse": false
+  },
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-055.json",
+    "sha256": "953ffa7b867721432acfade5a8c19c7cde1d2603f879e6f06a801595759ddb72"
+  },
+  "incrementalEffectiveProductionLines": 1029,
+  "cumulativeEffectiveProductionLines": 2200,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 2161,
+  "incrementalRemovedLines": 1637,
+  "cumulativeAddedLines": 4592,
+  "cumulativeRemovedLines": 1699,
+  "changedFiles": [
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "category": "production-tool",
+      "sha256": "dc254620d6b00dac52b3792cde944ba7857dfc810e3eb77901176b3c62bd45b6"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.test.mjs",
+      "category": "test",
+      "sha256": "7a6371e219361a7df47158dcaf0e1634252f38008b6644d90eb5209d2ed17fdc"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-identity-bridge-v626.mjs",
+      "category": "production-tool",
+      "sha256": "825942bf427dc3645fbbeebc0158062438a5d1c636a9ffb2cd34a38284092565"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-identity-bridge-v626.test.mjs",
+      "category": "test",
+      "sha256": "1fac6970f97798014fdbdbe874e4d8ba85ef24ddc42dbaa7432f18fbedbac0f1"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "category": "production-tool",
+      "sha256": "9f6763b7ae054b163d45bf92f46919a690cac9270a6ad15a5972dbc7d0542e5e"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.test.mjs",
+      "category": "test",
+      "sha256": "71015ccf7284f28b99ffa9f2c5c460ddb2b77bfb85be51b3eb85106f4aeda7ec"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.mjs",
+      "category": "production-tool",
+      "sha256": "bcf52bb0ec530b07e030b0ef7c493d5e53dd6106333d25637995f652b5c64790"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.test.mjs",
+      "category": "test",
+      "sha256": "f07be8f81e42dc8ae8d1d17496dc949c32d99a16da0dc13505208739ea8d8295"
+    },
+    {
+      "path": "scripts/mainline-a-release.test-support.mjs",
+      "category": "test",
+      "sha256": "ba89c131574514ae4fdd7742f4746781efe2f29bb394a8a1dce6bec2029b73cb"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.mjs",
+      "category": "production-tool",
+      "sha256": "4fb32746fd3588c2ac58ec12bb4eef1a69685f2fbab321bc3a8aeb96834fd897"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.test.mjs",
+      "category": "test",
+      "sha256": "9ef7987a9c4023650b99e6448e98ba38a2f9caa9ea3485e80232f6bbc16a7968"
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarStructuredCandidateV621.ts",
+      "category": "production",
+      "sha256": "b33b5946a4585f757cb27245184dc9526858e6c3ac7d2e39cc92d0e654c04576"
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarStructuredCandidateV621.test.ts",
+      "category": "test",
+      "sha256": "e792f1afde6d21d167ec322a76038d18d59c8a395ab47d00deff23561d817bc4"
+    },
+    {
+      "path": "scripts/build-mainline-a-beta-stellar-structured-candidate-v621.ts",
+      "category": "production-tool",
+      "sha256": "6209281fe14307e5227ee571e253fc8cd28d2fc168f3eb0caf932ebf5dd9f5d2"
+    },
+    {
+      "path": "scripts/replay-mainline-a-beta-stellar-structured-v621.ts",
+      "category": "production-tool",
+      "sha256": "b5dc4c3df8b43dd3208caa8ee38b937fcc3b979cbc60d602dd9b338aa95c68a8"
+    },
+    {
+      "path": "scripts/build-mainline-a-beta-stellar-structured-candidate-v621.test.ts",
+      "category": "test",
+      "sha256": "8d7a6c0c55639c3549a2b34960305f6e4ec4273c4cd6de79e6336430034ead88"
+    },
+    {
+      "path": "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+      "category": "production",
+      "sha256": "b05a724064bb3bbc618e74640fe1cd8f0a6750a537e361b71394cbc5e8661fbd"
+    },
+    {
+      "path": "app/components/MainlineABetaHeroReviewPanelV611.test.tsx",
+      "category": "test",
+      "sha256": "69bf78f68d9feed702a8421731b2d460d46aa2c6bb662cddf806d607d71c9543"
+    },
+    {
+      "path": "scripts/probe-mainline-a-root-manifest-v626.mjs",
+      "category": "production-tool",
+      "sha256": "0f2fc24934223f692e4ca4726297f8dfa4c9c076f55ee9acbe2a2514732ef461"
+    },
+    {
+      "path": "scripts/probe-mainline-a-root-manifest-v626.test.mjs",
+      "category": "test",
+      "sha256": "8fe542b84fd1d8c2d2a7e22bc4efaca69f244791a177f7d86a1c41e62181dac4"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "category": "generated-candidate-telemetry",
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    }
+  ],
+  "implementation": [
+    "Parse SIMBAD table cells instead of the first matching tooltip word; correct four proper-motion pairs, separate spectral quality, limit identifiers to their actual table and record UTF-8 field locations.",
+    "Recompute captured raw SHA/bytes and validate HTTPS/plan/object/path metadata before candidate parsing; reject fixture or forged capture metadata and tampered pack summary/boundaries.",
+    "Recompute V621 candidate data against independently located real raw fields while preserving the previous exact candidate pack and immutable V616/V619/V620 files.",
+    "Show corrected candidate fields and provenance in the review panel; derive 12/12/12 from actual roster rows and mark route/visual/lifecycle observation not-run.",
+    "Replace implicit historical build selection with explicit SHA-pinned evidence input; verify current source bytes and derive gates from actual referenced inputs.",
+    "Create a candidate metadata package with identity, evidence index, rollback and gates; offline verifier recomputes the evidence and rejects synchronized forged gate copies.",
+    "Report actual false writeback flags in root manifest probe, with boundary validity separate from the underlying values."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "nodePassed": 76,
+      "vitestPassed": 39,
+      "nodeSuites": [
+        {
+          "command": "node --import tsx --test scripts/build-mainline-a-beta-stellar-structured-candidate-v621.test.ts",
+          "exitCode": 0,
+          "passed": 14,
+          "log": {
+            "path": "tmp/mainline-a-v621-node-20260927-055-metadata.log",
+            "sha256": "2dd04fc4865300948ca751538013723afbab1732884a5babb9b59ccf4edcb919"
+          }
+        },
+        {
+          "command": "node --test scripts/probe-mainline-a-root-manifest-v626.test.mjs",
+          "exitCode": 0,
+          "passed": 9,
+          "log": {
+            "path": "tmp/mainline-a-root-probe-node-20260927-055.log",
+            "sha256": "bfd86529ed0ccfa2d0c51cf59b1976e7583df7677890138c4b12a43a303159a1"
+          }
+        },
+        {
+          "command": "node --test scripts/mainline-a-release-evidence.test.mjs scripts/audit-mainline-a-release-alignment-v626.test.mjs scripts/build-mainline-a-release-identity-bridge-v626.test.mjs scripts/build-mainline-a-release-package-v626.test.mjs scripts/verify-mainline-a-release-package.test.mjs",
+          "exitCode": 0,
+          "passed": 53,
+          "log": {
+            "path": "tmp/mainline-a-r66-pinned-node-20260927-055.log",
+            "sha256": "0209fa30750f9e003db65ae21d4f44e70f1f1198ecb36d08a7e4ac504a014b5f"
+          }
+        }
+      ],
+      "vitest": {
+        "command": "npx vitest run app/lib/mainlineABetaStellarStructuredCandidateV621.test.ts app/components/MainlineABetaHeroReviewPanelV611.test.tsx --exclude tmp/** --exclude **/.next*/**",
+        "exitCode": 0,
+        "passed": 39,
+        "log": {
+          "path": "tmp/mainline-a-stellar-ui-vitest-20260927-055.log",
+          "sha256": "180a9e15547b015ad441697501e970a8b64957dfa1fa93d419eebfc9f63d2bc3"
+        }
+      },
+      "targetedEslint": {
+        "status": "passed",
+        "filesChecked": 20,
+        "logs": [
+          {
+            "path": "tmp/mainline-a-combined-eslint-20260927-055.json",
+            "sha256": "70a715821a1b7cf4e198ad4fca1203bc64d5f4837c003faacb87d0d0235d4c30"
+          }
+        ]
+      },
+      "diffCheck": "passed",
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-055.json",
+        "sha256": "d1a190abddb2f3dba1288a9af7ca1454063eb29dde1613386ae7ff8a4a4e5e70"
+      },
+      "buildScope": "preserved vercel-lite production build; script tools tested separately",
+      "fieldVerification": {
+        "path": "docs/release/v607/mainline-a-stellar-field-verification-20260927-055.json",
+        "sha256": "65f903dee2abfcf1e8c2e35c68c39504f1bf6bb82dea1a8649f71c3e533b6697"
+      },
+      "structuredAudit": {
+        "path": "docs/release/v607/mainline-a-r61-structured-audit-20260927-055.json",
+        "sha256": "31af8b9914e8b3c04555f7fbbf375b112613450637db9e629dc6dcc7e6feb136"
+      },
+      "structuredReplay": {
+        "path": "docs/release/v607/mainline-a-r61-structured-evidence-report-20260927-055.json",
+        "sha256": "c5c3329d0f064455f35c610f220b9cf85ea288e34ce881c75e007ae9611c34c1"
+      },
+      "inputIntegrity": {
+        "buildInputFiles": 2353,
+        "uniqueLatestCodeFiles": 42,
+        "sourceDrift": [],
+        "codeDrift": [],
+        "protectedFiles": [
+          {
+            "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+            "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2",
+            "bytes": 17429
+          },
+          {
+            "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+            "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd",
+            "bytes": 7536
+          },
+          {
+            "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+            "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310",
+            "bytes": 6448
+          }
+        ],
+        "protectedFilesUnchanged": true,
+        "changedAppInputsSince054": [
+          "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+          "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "app/lib/mainlineABetaStellarStructuredCandidateV621.ts"
+        ]
+      },
+      "v619Check": {
+        "status": "verified",
+        "total": 4,
+        "pending": 4,
+        "command": "node scripts/build-mainline-a-beta-stellar-raw-capture-v619.mjs --check"
+      },
+      "currentAssetHashCoverage": {
+        "canonicalFiles": 12,
+        "extensionRawFiles": 12,
+        "derivedUniqueFiles": 132,
+        "copyrightApproval": false
+      },
+      "previousStaticAssetReceipt": {
+        "path": "docs/release/v607/mainline-a-nebula-technical-assets-20260927-053.json",
+        "sha256": "2ebfd1bbdce703af9eb76645ec1007d43dd6d2dd94dd4f84f321a4caa69ce5ce"
+      }
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-055.json",
+        "sha256": "bbcd817639f373fc725c14ebe8b77a7b72c89b360aed5c0f627c5d340b34d9cf"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "scriptAssetsMatched": 6,
+      "canonicalNebulaFilesMatched": 12,
+      "canonicalAssets": {
+        "path": "docs/release/v607/mainline-a-canonical-assets-http-20260927-055.json",
+        "sha256": "0920d4e3e594f0cad98fb6b1dc99f0343308b872f0116146d3ffc455694d1aab"
+      },
+      "performanceClaim": false
+    },
+    "visual": {
+      "status": "not-run",
+      "screenshots": [],
+      "reason": "browser security check unavailable before navigation"
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v633-20260927-055.json",
+        "sha256": "5e35fc9a700472834783fee60dc05391d4cb58a901b86b61a50155a4b2497195"
+      },
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "realUserValidation": false
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v633-20260927-055.json",
+        "sha256": "e2b7c86a13a7614ab8fe8cb858ab5bcd942ce8114b020374897d7ebc6c4ebfaf"
+      },
+      "frameTime": null,
+      "memory": null,
+      "resourceReleaseObserved": false,
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "existing-raw-replayed-component-and-rights-pending",
+      "newNetworkCaptures": 0,
+      "stellarRawFilesVerified": 4,
+      "structuredCandidates": 4,
+      "componentConfirmed": 0,
+      "componentIdentity": "unresolved",
+      "sourceLedger": {
+        "path": "docs/release/v607/mainline-a-source-rights-ledger-v629-20260927-055.json",
+        "sha256": "d61e885125502aebaa1219a40a8cf466fb6150b7ccb4d7cf4188100f8e233a7e"
+      },
+      "nebulaSourceClosure": {
+        "path": "docs/release/v607/mainline-a-nebula-source-artifact-closure-20260927-053.json",
+        "sha256": "a2927a93ebf4faa2aed2648cf8750657d92c6455f1c8fe42c5e010012df74113"
+      },
+      "rightsSigned": 0,
+      "extensionRightsPending": 12,
+      "scientificValidityClaim": false,
+      "copyrightApproval": false
+    },
+    "release": {
+      "status": "blocked",
+      "scope": "candidate metadata/evidence package; not a production release",
+      "alignment": {
+        "path": "docs/release/v607/mainline-a-r66-alignment-20260927-055.json",
+        "sha256": "ee6a7b2c9dd237daf7293970f205df423e35150da0721658ce1e2fee30079494"
+      },
+      "bridge": {
+        "path": "docs/release/v607/mainline-a-r66-identity-bridge-20260927-055.json",
+        "sha256": "29f44a508393f4750dadc270a360f9e1f1c12b6fdc73d845e603a477443d842c"
+      },
+      "manifest": {
+        "path": "docs/release/v607/mainline-a-r66-package-20260927-055/manifest.json",
+        "sha256": "64b69cc363bd9b3fca08bf7340b563009fde2eebf15f5a4f67a1fefb0f86de52"
+      },
+      "evidenceInput": {
+        "path": "docs/release/v607/mainline-a-release-evidence-input-20260927-055.json",
+        "sha256": "0d8f00eeecea3969bff008a4b9eda9198111bf7905770c4000d670e5c6034ba6"
+      },
+      "offlineVerification": {
+        "path": "tmp/mainline-a-package-verify-current-20260927-055.log",
+        "sha256": "e2565b77b5ada9945970e1ce291812f52eb6236397d5cbbe9aadd9e52f13760f"
+      },
+      "integrity": {
+        "files": 263,
+        "status": "verified",
+        "evidenceClass": "static",
+        "scientificValidity": false,
+        "rightsApproval": false,
+        "packageFiles": 7,
+        "offlineReplay": true
+      },
+      "currentSourceVerified": true,
+      "releaseApproved": false,
+      "gates": [
+        {
+          "id": "build-current-source",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "root-readonly-input",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "next-web-identity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "manifest-parity",
+          "evidenceClass": "static",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "root-manifest-not-present-or-mismatched"
+          ]
+        },
+        {
+          "id": "canonical-coverage",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "canonical-runtime",
+          "evidenceClass": "browser",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "canonical-runtime-clearance-pending"
+          ]
+        },
+        {
+          "id": "http",
+          "evidenceClass": "http",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "desktop-browser",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "desktop-browser-not-run"
+          ]
+        },
+        {
+          "id": "mobile-viewport",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "mobile-viewport-not-run"
+          ]
+        },
+        {
+          "id": "visual",
+          "evidenceClass": "visual",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "visual-evidence-not-observed"
+          ]
+        },
+        {
+          "id": "performance",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "lifecycle",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "nebula-file-integrity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "stellar-component-identity",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "stellar-component-identity-pending"
+          ]
+        },
+        {
+          "id": "rights-closure",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "human-rights-signoff-pending"
+          ]
+        },
+        {
+          "id": "physical-mobile",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "physical-device-not-run"
+          ]
+        },
+        {
+          "id": "long-run",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "long-run-not-run"
+          ]
+        }
+      ],
+      "blockers": [
+        "canonical-runtime-clearance-pending",
+        "desktop-browser-not-run",
+        "human-rights-signoff-pending",
+        "lifecycle-not-passed",
+        "long-run-not-run",
+        "mobile-viewport-not-run",
+        "performance-not-passed",
+        "physical-device-not-run",
+        "root-manifest-not-present-or-mismatched",
+        "stellar-component-identity-pending",
+        "visual-evidence-not-observed"
+      ]
+    }
+  },
+  "humanReview": {
+    "status": "pending",
+    "rightsSigned": 0,
+    "extensionRightsPending": 12,
+    "reviewer": null,
+    "userDirective": {
+      "path": "docs/release/v607/mainline-a-rights-pending-directive-20260927-053.json",
+      "sha256": "92b4d97376e36df886dc753f0e834e60e954d477d98dcf632c292130a273bcf2"
+    },
+    "userReply": "暂时保持 pending，继续技术验收",
+    "humanSignatureGranted": false
+  },
+  "preservation": {
+    "candidateIntegration": {
+      "path": "docs/release/v607/mainline-a-stellar-parser-integration-20260927-055.json",
+      "sha256": "c125de5fd5d513af7b61128a9a4571a7995c00511e0e4ae3d2ccec3a9c2f46e2"
+    },
+    "historicalReceiptsOverwritten": false,
+    "rootProbeCorrection": {
+      "path": "docs/release/v607/mainline-a-root-manifest-probe-20260927-055-corrected.json",
+      "sha256": "b8a8cbe4a8f8eb343efb7dffe500527d25241375a17b75d3800f2c1ca5d02b4e"
+    },
+    "priorIncorrectProbePreserved": {
+      "path": "docs/release/v607/mainline-a-root-manifest-probe-20260927-055.json",
+      "sha256": "b3e2b74061ef56a92ffacdc75a1f22dfe7f9290430457a01164314fe15f30de1"
+    },
+    "fixtureDirectoriesRetained": true,
+    "ownedServer": {
+      "pid": 7276,
+      "status": "stopped-after-evidence"
+    }
+  },
+  "openGates": [
+    "canonical-runtime-clearance-pending",
+    "desktop-browser-not-run",
+    "human-rights-signoff-pending",
+    "lifecycle-not-passed",
+    "long-run-not-run",
+    "mobile-viewport-not-run",
+    "performance-not-passed",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending",
+    "visual-evidence-not-observed"
+  ],
+  "nextWork": [
+    "Capture and parse independent component catalogue responses if real network access succeeds; keep identities unresolved until the evidence supports them.",
+    "Obtain actual desktop/mobile scene, resource lifecycle and long-run observations once Browser permissions can be verified.",
+    "Keep rights signatures pending by user directive and root parity pending while the actual root manifest is absent."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

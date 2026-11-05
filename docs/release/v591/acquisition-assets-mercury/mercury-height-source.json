@@ -1,0 +1,33 @@
+{
+  "version": "v591-mercury-visual-asset-acquisition-receipt-v1",
+  "status": "committed-single-request-no-retry",
+  "asset": {
+    "id": "mercury-height-source",
+    "body": "mercury",
+    "role": "height-source",
+    "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+    "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+    "redirectChain": [],
+    "httpStatus": 200,
+    "mediaType": "image/tiff",
+    "etag": "310bf08bf1388369d2e31b1379739bf4-64",
+    "lastModified": "Thu, 10 Nov 2022 06:02:51 GMT",
+    "outputPath": "source-cache/celestial-convergence-v591/mercury/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+    "bytes": 530934581,
+    "sha256": "defce776241dcaf44cb0f081ee508c17dbea28aa5a22880bf7a5e8c25f96cbea",
+    "width": 23040,
+    "height": 11520,
+    "format": "tiff",
+    "bitDepth": 16,
+    "sampleFormat": null,
+    "license": {
+      "id": "USGS-public-domain",
+      "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+    },
+    "observationIdentity": "Mercury MESSENGER USGS DEM Global 665m v2",
+    "observationLimit": "global topography product used for presentation normal, height and roughness derivation; not measured photometry",
+    "presentationOnly": true,
+    "metadataReceiptSha256": "1db99d85d855fc6ee4d4f8483842d105af64cd464191400743203ea6020a413f"
+  },
+  "receiptSha256": "fcfb26eba0be7ea16b66c5ff8dee47f29ae9e48ff7b0e4099fa60ba881f475b4"
+}

@@ -1,0 +1,81 @@
+{
+  "version": "v591-mars-acquisition-url-ledger-v1",
+  "entries": [
+    {
+      "assetId": "mars-albedo-source-v591",
+      "url": "https://photojournal.jpl.nasa.gov/tiff/PIA00407.tif",
+      "outcome": "blocked-redirect-host",
+      "redirectHost": "science.nasa.gov",
+      "payloadWritten": false
+    },
+    {
+      "assetId": "mars-albedo-source-v591",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00407/PIA00407.jpg",
+      "httpStatus": 200,
+      "outcome": "rejected-non-equirectangular",
+      "observedDimensions": "6787x6787",
+      "bytes": 3638446,
+      "sha256": "fc62a86416794444988338e55591d23290e1de2c7c32f3613b872caa8413ea2f",
+      "partFileRemoved": true
+    },
+    {
+      "assetId": "mars-albedo-source-v591",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/7131d503-cdc9-45a5-8f83-5126c0fd397e/resource/5ea881c6-01b3-41fa-a7af-42d2131b54f1/download/mars_viking_mdim21_clrmosaic_1km.jpg",
+      "httpStatus": 200,
+      "outcome": "validated-but-discarded-by-legacy-batch-cleanup",
+      "payloadWritten": false,
+      "repeatForbidden": true
+    },
+    {
+      "assetId": "mars-mola-label-source-v591",
+      "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_3001/meg016/megt90n000eb.lbl",
+      "httpStatus": 404,
+      "outcome": "http-error-no-retry",
+      "payloadWritten": false
+    },
+    {
+      "assetId": "mars-albedo-source-v591",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+      "outcome": "blocked-redirect-host",
+      "redirectHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+      "payloadWritten": false,
+      "automaticRetry": false
+    },
+    {
+      "assetId": "mars-albedo-source-v591",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+      "requestedAt": "2026-08-11T03:00:05.738Z",
+      "httpStatus": 200,
+      "outcome": "response-received",
+      "mediaType": "image/jpeg"
+    },
+    {
+      "assetId": "mars-mola-label-source-v591",
+      "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.lbl",
+      "requestedAt": "2026-08-11T03:00:07.655Z",
+      "httpStatus": 200,
+      "outcome": "response-received",
+      "mediaType": "text/plain"
+    },
+    {
+      "assetId": "mars-mola-height-source-v591",
+      "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.img",
+      "requestedAt": "2026-08-11T03:00:07.986Z",
+      "httpStatus": 200,
+      "outcome": "response-received",
+      "mediaType": "application/octet-stream"
+    },
+    {
+      "assetId": "mars-usgs-full-albedo-source-v591",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+      "httpStatus": 200,
+      "outcome": "blocked-resource-throughput",
+      "expectedBytes": 797888177,
+      "partialBytesObserved": 24283736,
+      "payloadWritten": false,
+      "partFileRemoved": true,
+      "repeatForbidden": true
+    }
+  ],
+  "receiptSha256": "a1a5d2ce6fc7185db01561dcd2621bb48c77511bc8857652c7068af01889a76c"
+}

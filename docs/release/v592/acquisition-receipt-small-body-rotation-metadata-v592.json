@@ -1,0 +1,92 @@
+{
+  "version": "v592-small-body-rotation-metadata-acquisition-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "committed-two-urls-single-request-each-no-retry",
+  "requestCount": 2,
+  "requestCountPerUrl": 1,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "redirectFollowed": false,
+  "assets": [
+    {
+      "id": "bennu-jpl-sbdb-physical-parameters",
+      "bodyId": "bennu",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=101955&phys-par=1&full-prec=1",
+      "host": "ssd-api.jpl.nasa.gov",
+      "outputPath": "source-cache/v592/rotation/bennu-jpl-sbdb.json",
+      "finalUrl": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=101955&phys-par=1&full-prec=1",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "lastModified": null,
+      "etag": null,
+      "bytes": 5734,
+      "sha256": "0106c6c0f2e5210d8b7d7b5b22d35053895d4b8e64912d23fe806bd004979137",
+      "objectIdentity": {
+        "fullname": "101955 Bennu (1999 RQ36)",
+        "shortname": "101955 Bennu",
+        "spkid": "20101955",
+        "neo": true
+      },
+      "physicalParameterNames": [
+        "H",
+        "G",
+        "diameter",
+        "extent",
+        "GM",
+        "density",
+        "rot_per",
+        "rot_acc",
+        "pole",
+        "albedo",
+        "I",
+        "BV",
+        "UB",
+        "IR",
+        "spec_B"
+      ],
+      "license": "NASA-JPL-public-domain"
+    },
+    {
+      "id": "kleopatra-jpl-sbdb-physical-parameters",
+      "bodyId": "kleopatra",
+      "url": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=216&phys-par=1&full-prec=1",
+      "host": "ssd-api.jpl.nasa.gov",
+      "outputPath": "source-cache/v592/rotation/kleopatra-jpl-sbdb.json",
+      "finalUrl": "https://ssd-api.jpl.nasa.gov/sbdb.api?sstr=216&phys-par=1&full-prec=1",
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "lastModified": null,
+      "etag": null,
+      "bytes": 7441,
+      "sha256": "afa9525705474ae19dac6ecfc7bae5e818c37eeb76baa9aaedf436fb55a7d6c0",
+      "objectIdentity": {
+        "fullname": "216 Kleopatra (A880 GB)",
+        "shortname": "216 Kleopatra",
+        "spkid": "20000216",
+        "neo": false
+      },
+      "physicalParameterNames": [
+        "H",
+        "G",
+        "diameter",
+        "extent",
+        "rot_per",
+        "pole",
+        "albedo",
+        "BV",
+        "UB",
+        "spec_T",
+        "spec_B"
+      ],
+      "license": "NASA-JPL-public-domain"
+    }
+  ],
+  "failures": [],
+  "authority": {
+    "purpose": "catalog-rotation-pole-and-period-metadata-only",
+    "scientificPayload": false,
+    "measuredAuthorityGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "receiptSha256": "71f859ed53d5cfc0e13822b870201a457404a2458111e6e967ce5ccf7f37a418"
+}

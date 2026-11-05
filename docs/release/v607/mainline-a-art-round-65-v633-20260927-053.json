@@ -1,0 +1,161 @@
+{
+  "schema": "mainline-a-art-round-receipt-v633",
+  "round": "R65-continuation",
+  "date": "2026-09-27",
+  "newDevelopmentRound": false,
+  "title": "Existing V633 batch continuation with real Beta nebula raw and source-page completion",
+  "status": "in-progress-browser-and-signoff-pending",
+  "accepted": false,
+  "goalStatus": "active",
+  "previousGoalTurnClassification": "progress",
+  "buildId": "vg-AGvh4WczZfrlBXiK09",
+  "runtimeBuildId": "mainline-a-8953acc2064dae48",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-053.json",
+    "sha256": "7ff07a8d503e4092a7ef39c8f94f8cd0ca54236185fec19b2f66703797613903"
+  },
+  "incrementalEffectiveProductionLines": 18,
+  "cumulativeEffectiveProductionLines": 1095,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 266,
+  "incrementalRemovedLines": 20,
+  "implementation": [
+    "Captured three missing NASA image responses and integrated all six V628 candidates with complete attempt history.",
+    "Preserved prior candidate manifest in hash-addressed archive before updating review telemetry.",
+    "Captured twelve official object pages plus NASA policy as exact raw HTML with attempts, fingerprints and recomputable SHA-256.",
+    "Fixed per-collection retry-count and sequence validation and made transport errors block the source ledger."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "currentContinuation": {
+        "nodePassed": 45,
+        "nodeScope": "19 V628 pipeline tests plus 26 V629 source-ledger tests",
+        "vitestPassed": 19,
+        "vitestScope": "V628 model and V628/V610 review panel tests",
+        "targetedEslint": "passed",
+        "diffCheck": "passed"
+      },
+      "previousUnchangedV633": {
+        "nodePassed": 38,
+        "vitestPassed": 81,
+        "receipt": {
+          "path": "docs/release/v607/mainline-a-art-round-65-v633-20260927-052.json",
+          "sha256": "f01b69c85e0eebdd4ef32427a9a9fa805b4524d4fc65b419c6f6ba2052233f05"
+        },
+        "rerunClaim": false
+      },
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-053.json",
+        "sha256": "3439757f248cf1ab6cd2d524fe2b7cbd9cee59dd8c9bc174ad35f0a872dd5ab9"
+      },
+      "buildScope": "vercel-lite app source/config build; scripts tested independently and excluded from build input hash",
+      "nodeLog": {
+        "path": "tmp/mainline-a-nebula-v628-node-20260927-053.log",
+        "sha256": "ee82534e38dca64f048d515f53fa8b7d365003d5a4a95e1c072fce55037c3dfd"
+      },
+      "vitestLog": {
+        "path": "tmp/mainline-a-nebula-v628-vitest-20260927-053.log",
+        "sha256": "df281b80a4ce28e016bbe38977a62ea55f6037f9f99697eee13222d037b39df0"
+      }
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-053.json",
+        "sha256": "adf08f934fb2be44cdbc3934007294965fd7e75b33593323ce974bb9e60313bb"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "scriptAssetsMatched": 6,
+      "performanceClaim": false
+    },
+    "visual": {
+      "browserVisual": "not-run",
+      "rawImageInspection": {
+        "status": "observed-local-asset-preview-only",
+        "ids": [
+          "jellyfish-nebula",
+          "cepheus-c-nebula",
+          "dragon-lair-nebula"
+        ],
+        "method": "view_image resized previews of saved raw artifacts",
+        "finding": "Three image files displayed as nonblank astronomical imagery; no application rendering, scientific validity or rights acceptance claim."
+      }
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v633-20260927-053.json",
+        "sha256": "e652da50e066c67b8c37e01d23ed62fc3ed006f8ea39012d73502b202341b283"
+      },
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v633-20260927-053.json",
+        "sha256": "5f0ddb45da6dc3bef4682d68240c5529f3612417a0e52619cf1b19e0d6edf044"
+      }
+    },
+    "externalSource": {
+      "status": "raw-evidence-captured-review-pending",
+      "closure": {
+        "path": "docs/release/v607/mainline-a-nebula-source-artifact-closure-20260927-053.json",
+        "sha256": "a2927a93ebf4faa2aed2648cf8750657d92c6455f1c8fe42c5e010012df74113"
+      },
+      "newRawImages": 3,
+      "betaExtensionRawImagesTotal": 12,
+      "sourcePagesCaptured": 12,
+      "policyPagesCaptured": 1,
+      "rightsSigned": 0,
+      "rightsPending": 12,
+      "scientificAdmissions": 0
+    },
+    "sourceLedger": {
+      "status": "blocked",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-source-rights-ledger-v629-20260927-053.json",
+        "sha256": "f1591298c14ccb3ab29b9cc6ec6ed0084420ccc3fc142d7bc85ea02959fc166f"
+      },
+      "replay": {
+        "path": "docs/release/v607/mainline-a-source-rights-replay-v629-20260927-053.json",
+        "sha256": "cbd609827cc3d421c476a73b09f6ffe2b1ea67adb212ba01291681ef9185e695"
+      },
+      "captured": 10,
+      "scope": "four stellar candidates plus six V628 nebula candidates; does not represent full Beta roster",
+      "rightsSigned": 0
+    }
+  },
+  "openGates": [
+    "Actual browser/visual acceptance and real V633 three-checkpoint resource observations on build053",
+    "Desktop repetitions, mobile viewport, physical mobile and long-run measurements",
+    "True item-level source/rights signoffs for twelve extension images",
+    "DSS/UK Schmidt partner rights scope for PIA13240",
+    "Four stellar component identities and source admission",
+    "A-line canonical human signoff and root/next-web parity",
+    "Final release package rebinding after unresolved gates pass"
+  ],
+  "humanReview": {
+    "status": "pending",
+    "reviewer": null,
+    "questionAsked": true,
+    "signatureInferredFromSilence": false,
+    "checklists": [
+      "docs/release/v607/nebula-source-pages/20260927-053/HUMAN-REVIEW-CHECKLIST.md",
+      "docs/release/v607/nebula-source-pages/20260927-053-v624/HUMAN-REVIEW-CHECKLIST.md"
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

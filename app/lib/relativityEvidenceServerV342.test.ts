@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadAtlasRelativityEvidenceSnapshotV342, resetRelativityEvidenceServerV342CacheForTests } from "./relativityEvidenceServerV342";
+describe("v342 raster evidence server", () => { it("returns 12 cells with explicit dense incomplete boundary", async () => { resetRelativityEvidenceServerV342CacheForTests(); const snapshot = await loadAtlasRelativityEvidenceSnapshotV342(); expect(snapshot).toMatchObject({ version: "v342-relativity-evidence-snapshot", status: "ready", current: { v342: { rowCount: 4, columnCount: 3, cellCount: 12, denseStatus: "incomplete-0-of-49", browserQualification: "not-run" } } }); expect(JSON.stringify(snapshot)).not.toMatch(/(?:absolutePath|peakRssGiB|freeMemoryGiB|freeDiskGiB|pid|host)/); }); });

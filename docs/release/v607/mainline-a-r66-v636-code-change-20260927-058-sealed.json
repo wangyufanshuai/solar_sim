@@ -1,0 +1,173 @@
+{
+  "schema": "mainline-a-code-change-continuation-v636",
+  "round": "R62-R65-R66-continuation",
+  "newDevelopmentRound": false,
+  "createdAt": "2026-09-27T05:46:20.857Z",
+  "status": "acceptance-pending",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-r65-v635-code-change-20260927-057-sealed.json",
+    "sha256": "ec20125084dc857706a41f272036753baa3b8095751586f7474a4ea9e6d2e2ff"
+  },
+  "incrementalEffectiveProductionLines": 1053,
+  "cumulativeEffectiveProductionLines": 5367,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 2041,
+  "incrementalRemovedLines": 20,
+  "cumulativeAddedLines": 12634,
+  "cumulativeRemovedLines": 1791,
+  "method": "Exact before/after diff target lines intersected with TypeScript AST leaf-token nonblank lines; tests, artifacts, receipts, documents, whitespace and comments excluded. Deletions reported separately, never counted as added effective code.",
+  "files": [
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "before": "tmp/mainline-a-release-before-20260927-058/scripts/build-mainline-a-release-package-v626.mjs",
+      "beforeSha256": "9f6763b7ae054b163d45bf92f46919a690cac9270a6ad15a5972dbc7d0542e5e",
+      "sha256": "b3e5c879c871ec4751446e1ace114fc6f387ce2fc4a68666de4e8f5adcde98a9",
+      "category": "production-tool",
+      "addedLines": 42,
+      "removedLines": 7,
+      "countedEffectiveLines": 42
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.mjs",
+      "before": "tmp/mainline-a-release-before-20260927-058/scripts/verify-mainline-a-release-package.mjs",
+      "beforeSha256": "4fb32746fd3588c2ac58ec12bb4eef1a69685f2fbab321bc3a8aeb96834fd897",
+      "sha256": "e280c259e957defadcefaaf650ba753275b7e2d54ebbdcf08383a730c0aa2b87",
+      "category": "production-tool",
+      "addedLines": 40,
+      "removedLines": 3,
+      "countedEffectiveLines": 39
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.test.mjs",
+      "before": "tmp/mainline-a-release-before-20260927-058/scripts/verify-mainline-a-release-package.test.mjs",
+      "beforeSha256": "9ef7987a9c4023650b99e6448e98ba38a2f9caa9ea3485e80232f6bbc16a7968",
+      "sha256": "6fd0315c9a4b0e80231b07262f6b1302f0f7b7148526cb1423bb3a58d67ee42f",
+      "category": "test",
+      "addedLines": 35,
+      "removedLines": 1,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/components/MainlineAPerformancePanelV625.tsx",
+      "beforeSha256": "941a8f61ea1ee4aa65410ff3ade0d7e0201569b104027eb9cc673f656597f7f9",
+      "sha256": "9bb7e2cff8e597a2c90487e9fbea8327786d901e2b5ac42fe7c4065b735ab60d",
+      "category": "production",
+      "addedLines": 23,
+      "removedLines": 3,
+      "countedEffectiveLines": 23
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.test.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/components/MainlineAPerformancePanelV625.test.tsx",
+      "beforeSha256": "94b566200b3ad6c5e189cce10a18680dd98ba8174a923f408e57e714610b4d35",
+      "sha256": "3522c77528537e740c45fb81d1c7c8d4799e5f5adf4b928155f18a94d55012c4",
+      "category": "test",
+      "addedLines": 99,
+      "removedLines": 1,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/components/SelectedSkyTargetProxy.tsx",
+      "beforeSha256": "1f99b892c4e3c2a0bba2a5cc41bbecdeeb9bb90ce4338b6585f8bcd88055e906",
+      "sha256": "129467a80ac5938d498f74c29723aa6ad3a80c529464d58ec37b551f0f07e472",
+      "category": "production",
+      "addedLines": 15,
+      "removedLines": 4,
+      "countedEffectiveLines": 15
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.test.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/components/SelectedSkyTargetProxy.test.tsx",
+      "beforeSha256": "dddfcacadd926392884618ce6b961327cede65cba1bd9024d3bed2003ba9cc0e",
+      "sha256": "f332d012517a449260a9ef025c0127dd4fe5ca99575fa410f76c181f46d6fa02",
+      "category": "test",
+      "addedLines": 11,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.ts",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/lib/mainlineACanonicalProducerV635.ts",
+      "beforeSha256": "cc2856c47c687d3bfd9e7c581501f772a6a850649e7c740e9f7c2b3a2f7714cf",
+      "sha256": "6e10667b0b6a49c001fe86c84ff2e9089490ec665dc0c292db4af42828a2e370",
+      "category": "production",
+      "addedLines": 13,
+      "removedLines": 0,
+      "countedEffectiveLines": 11
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.test.ts",
+      "before": "tmp/mainline-a-runtime-before-20260927-058/app/lib/mainlineACanonicalProducerV635.test.ts",
+      "beforeSha256": "b068b1329a482d8d896bac85f0d3206ffa7c08aa0d48dccca6e8e7e75c8e9024",
+      "sha256": "f7097cca6115d5e8ff3fdc0521329f275e6dcaf58d38712fec15f74b25a288eb",
+      "category": "test",
+      "addedLines": 150,
+      "removedLines": 1,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/mainline-a-runtime-payload-v636.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "f6810add467ce67fbec716827041f260cfca4dcd7dc0c1a3513ebc52a419fe2e",
+      "category": "production-tool",
+      "addedLines": 456,
+      "removedLines": 0,
+      "countedEffectiveLines": 434
+    },
+    {
+      "path": "scripts/mainline-a-runtime-payload-v636.test.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "03a4cddd7dd66904e8b1ec539ce4a93ba23a95506da7df5cec8c1a9b0635dcf6",
+      "category": "test",
+      "addedLines": 265,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/restore-mainline-a-runtime-v636.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "b981e1bf3648870e7f3b6ca10e55808addd69f67383c6082078c346a491f033f",
+      "category": "production-tool",
+      "addedLines": 143,
+      "removedLines": 0,
+      "countedEffectiveLines": 136
+    },
+    {
+      "path": "scripts/restore-mainline-a-runtime-v636.test.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "9a98319d8b66ad6c7d908819e1de7e23f92dfeb0f2e8a276527187aa3456a0a9",
+      "category": "test",
+      "addedLines": 106,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/smoke-mainline-a-restored-runtime-v636.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "c3ce548236cd60f149b2651b71462e356fb7edbfb48b6534ce5d41f5e87ffe44",
+      "category": "production-tool",
+      "addedLines": 374,
+      "removedLines": 0,
+      "countedEffectiveLines": 353
+    },
+    {
+      "path": "scripts/smoke-mainline-a-restored-runtime-v636.test.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "41bc09f2c204cd0bc5067cb61ae06bb26de8211f7e9f7412eb8f52c6ffb70aaf",
+      "category": "test",
+      "addedLines": 269,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "physicsKernelMutation": false
+}

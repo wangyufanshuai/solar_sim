@@ -1,0 +1,155 @@
+{
+  "schema": "mainline-a-stellar-primary-source-capture-audit-v1",
+  "generatedAt": "2026-09-27T06:11:36.771Z",
+  "runId": "20260927-059b",
+  "evidenceClass": "external-source",
+  "scope": "Raw primary documents for component review; no automatic measurement or runtime admission",
+  "newDevelopmentRound": false,
+  "productionCodeChanged": false,
+  "collector": {
+    "path": "tmp/capture-mainline-a-stellar-primary-20260927-059b.mjs",
+    "sha256": "7545dc93d46ce033ca1ea95691da72bb007292a2b333790d13716cd03c81391b"
+  },
+  "fingerprintAlgorithm": "SHA-256 of UTF-8 JSON.stringify(request) with stored method,url,accept field order",
+  "counts": {
+    "requested": 3,
+    "responseCaptured": 3,
+    "componentConfirmed": 0
+  },
+  "records": [
+    {
+      "id": "acrux-hip-main-tsv",
+      "star": "acrux",
+      "kind": "tsv",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fhip_main&HIP=60718&-out.all=1",
+      "request": {
+        "method": "GET",
+        "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fhip_main&HIP=60718&-out.all=1",
+        "accept": "text/plain,text/tab-separated-values"
+      },
+      "requestFingerprint": "a2e18ab1925930968e9e78703ff2f229dbdf088dbd561fc98b132a4a3f650cfe",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/acrux-hip-main-tsv-a0726b22307a1dbb7ca2397a6f597de531ee33d58f160f869e330f6ad751b7ca.tsv",
+        "sha256": "a0726b22307a1dbb7ca2397a6f597de531ee33d58f160f869e330f6ad751b7ca",
+        "bytes": 9767
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T06:11:30.688Z",
+          "endedAt": "2026-09-27T06:11:32.838Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fhip_main&HIP=60718&-out.all=1",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "a2e18ab1925930968e9e78703ff2f229dbdf088dbd561fc98b132a4a3f650cfe",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    },
+    {
+      "id": "hip-main-readme",
+      "star": "acrux",
+      "kind": "txt",
+      "url": "https://cdsarc.cds.unistra.fr/ftp/I/239/ReadMe",
+      "request": {
+        "method": "GET",
+        "url": "https://cdsarc.cds.unistra.fr/ftp/I/239/ReadMe",
+        "accept": "text/plain,text/tab-separated-values"
+      },
+      "requestFingerprint": "2bfe49e877591699bd7c2231aca2b215ff59ca844b6c5034de027a20f7301869",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/hip-main-readme-7a7d54903d16460a76c240f07c41b019d57becfd27b5dfa2908e828f52f90c27.txt",
+        "sha256": "7a7d54903d16460a76c240f07c41b019d57becfd27b5dfa2908e828f52f90c27",
+        "bytes": 69036
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T06:11:32.838Z",
+          "endedAt": "2026-09-27T06:11:34.935Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "text/plain; charset=utf-8",
+          "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/I/239/ReadMe",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "2bfe49e877591699bd7c2231aca2b215ff59ca844b6c5034de027a20f7301869",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    },
+    {
+      "id": "regulus-companion-paper",
+      "star": "regulus",
+      "kind": "pdf",
+      "url": "https://arxiv.org/pdf/2009.02409",
+      "request": {
+        "method": "GET",
+        "url": "https://arxiv.org/pdf/2009.02409",
+        "accept": "application/pdf"
+      },
+      "requestFingerprint": "910a5e524ea44a1daac72cae18972afaf3a431e943a880d1151d84bf83e38853",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/regulus-companion-paper-e4b8f9d99dc4f6d07a570cd6fe5988221fcfd6959baa1b41de1e2a0533a69c2b.pdf",
+        "sha256": "e4b8f9d99dc4f6d07a570cd6fe5988221fcfd6959baa1b41de1e2a0533a69c2b",
+        "bytes": 670832
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T06:11:34.935Z",
+          "endedAt": "2026-09-27T06:11:36.770Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "application/pdf",
+          "finalUrl": "https://arxiv.org/pdf/2009.02409",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "910a5e524ea44a1daac72cae18972afaf3a431e943a880d1151d84bf83e38853",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false
+  }
+}

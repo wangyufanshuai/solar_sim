@@ -1,0 +1,51 @@
+{
+  "version": "v592-major-moon-secondary-visual-projection-review-v1",
+  "generatedAt": "2026-08-20T04:02:59.442Z",
+  "status": "blocked-non-equirectangular-hemispherical-globe-composite",
+  "target": "callisto",
+  "nasaId": "PIA03876",
+  "source": {
+    "path": "source-cache/v592/major-moons/jpl-photojournal/PIA03876.tif",
+    "bytes": 49382190,
+    "sha256": "44a81bfcb854d767e2ddcc9b9fb645cc23fba2f5b84c18b2488134cb57fe32d4",
+    "acquisitionReceiptSha256": "12f62dc08f449c62afaaa92da33ca27d56881bd1a0d8a9126cc9b454514fb96f",
+    "metadataReceiptSha256": "e080d0673ab780b20d4e4aa82de14c040f6b11141607355631e5d2f530cbc36a"
+  },
+  "image": {
+    "format": "tiff",
+    "width": 8860,
+    "height": 4490,
+    "aspectRatio": 1.9732739420935412,
+    "channels": 3,
+    "colorSpace": "srgb",
+    "hasAlpha": false,
+    "pages": 1,
+    "whiteBackgroundFractionAtReviewScale": 0.330752563
+  },
+  "findings": [
+    "The raster contains two polar/hemispherical globe panels laid out on a white page, with wedge-shaped map sectors and cartographic labels.",
+    "The white page background and panel gaps are not valid planetary surface coverage.",
+    "The image is not a 2:1 equirectangular global albedo map and cannot be sampled as a seamless sphere texture.",
+    "Reverse projection, gap removal, label removal, inpainting, or synthetic coverage generation is prohibited by the v592 policy."
+  ],
+  "admission": {
+    "globalTexture": false,
+    "heroAdmission": false,
+    "runtimeAssetAdmission": false,
+    "presentationOnly": true,
+    "scientificAuthorityGranted": false,
+    "proceduralFallbackAllowed": false,
+    "syntheticCoverageFill": false
+  },
+  "nextAction": "Keep Callisto asset-blocked and continue searching only for a directly published global mosaic or registered 3D model; do not retry PIA03876.tif.",
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "noInpainting": true,
+    "noAnnotationRemoval": true,
+    "noSyntheticCoverageFill": true,
+    "scientificPayloadWriteback": false
+  },
+  "receiptSha256": "81c7c54d3e197ddb0a411510546c96547c3372f9541b3aca47b9ba9ea09ad9b6"
+}

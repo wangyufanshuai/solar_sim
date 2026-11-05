@@ -1,0 +1,63 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:11.161Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "soul-nebula",
+  "query": "Soul Nebula",
+  "requiredTerms": [
+    "soul",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Soul%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Soul%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3092,
+    "responseSha256": "210ab2d8f9732921be7d8da516a90828c4f4d8d01883e9226e05a6326f2effa4"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA13014",
+      "title": "Soul Nebula",
+      "description": "This mosaic from NASA WISE Telescope is of the Soul Nebula. It is an open cluster of stars surrounded by a cloud of dust and gas located about 6,500 light-years from Earth in the constellation Cassiopeia, near the Heart Nebula.",
+      "dateCreated": "2010-04-05T21:11:05Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13014/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA13112",
+      "title": "Heart and Soul",
+      "description": "NASA Wide-field Infrared Survey Explorer has captured a huge mosaic of two bubbling clouds in space, known as the Heart and Soul nebulae.",
+      "dateCreated": "2010-05-24T17:20:01Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13112/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "da24199206c6e5169c86d45027f66767aa8be03bdea6db66a5a5ee9742eecfbb"
+}

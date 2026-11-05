@@ -1,0 +1,14 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 6,
+  "title": "relationship-camera-route-rhythm",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:21:38 UTC",
+  "status": "round-06-code-and-dev-browser-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged", "camera targets continue to derive from existing presentation and catalog state"],
+  "code": {"file": "app/components/AtlasSceneFocusCameraBridge.tsx", "changes": ["added atlas-camera-focus-state marker", "added atlas-camera-focus-kind, progress and eased progress markers", "kept smootherstep easing, leases, frame solver and trajectory data unchanged"]},
+  "browser": {"mode": "in-app browser", "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite", "route": "银河系 -> 聚焦恒星 Castor", "runtime": {"mid": {"state": "transition", "kind": "origin", "progress": 0.523, "ease": 0.543}, "settled": {"state": "idle", "progress": 0, "ease": 0}, "consoleErrors": 0}, "screenshot": "docs/release/v607/screenshots/mainline-a-round-06-camera-route-rhythm-20260913.png", "screenshotBytes": 136297, "evidenceBoundary": "development preview visual/runtime evidence; no performance claim"},
+  "tests": {"eslint": {"command": "npx eslint app/components/AtlasSceneFocusCameraBridge.tsx", "passed": true}, "vitest": {"command": "npx vitest run app/lib/cameraFocusCommand.test.ts app/lib/atlasSceneFocusCameraRuntime.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "passed": true, "tests": 8}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "packet regenerated after round 06 receipt"}
+}

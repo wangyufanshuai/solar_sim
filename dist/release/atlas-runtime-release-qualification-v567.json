@@ -1,0 +1,490 @@
+{
+  "version": "v567-atlas-runtime-release-qualification-v1",
+  "generatedAt": "2026-08-03T05:00:00Z",
+  "status": "qualified-lite-overview-visual-scientific-performance-soak-hero-transition-blocked",
+  "browserSurface": "Codex In-app Browser",
+  "hardware": {
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "vendor": "Google Inc. (NVIDIA)",
+    "softwareRenderer": false
+  },
+  "liteBuild": {
+    "qualified": true,
+    "profile": "vercel-lite",
+    "distDir": ".next-atlas-lite-current",
+    "heapMb": 8192,
+    "buildId": "W3yD_JO0bB7dpQaVtHdlb",
+    "rollbackSlotAvailable": true,
+    "desktop": {
+      "deliveryProfile": "vercel-lite",
+      "millionCatalog": "disabled",
+      "fullObservations": "disabled",
+      "sceneMode": "atlas",
+      "medianFps": 236.1,
+      "frameP95Ms": 8.4,
+      "frameSamples": 720,
+      "canvasCount": 1,
+      "overflow": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "output/playwright/orbit-atlas-v562-lite-desktop-iab-1440x900.jpg"
+    },
+    "mobile": {
+      "canvasCount": 1,
+      "deliveryProfile": "vercel-lite",
+      "frameP95Ms": 8.4,
+      "frameSamples": 720,
+      "fullObservations": "disabled",
+      "medianFps": 239.2,
+      "millionCatalog": "disabled",
+      "overflow": 0,
+      "sceneMode": "atlas",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "output/playwright/orbit-atlas-v562-lite-mobile-iab-390x844.jpg"
+    }
+  },
+  "visualRegression": {
+    "qualified": false,
+    "overviewQualified": true,
+    "heroScreenshotSimilarityQualified": true,
+    "heroInteractionTransitionQualified": false,
+    "baseline": "sealed-v562-built-in-browser-captures",
+    "automaticBaselineReplacement": false,
+    "perceptualSimilarityFloor": 0.94,
+    "comparisonCount": 8,
+    "minimumPerceptualSimilarity": 0.9877993373275236,
+    "comparisons": [
+      {
+        "id": "overview-desktop",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-final-desktop-iab-1440x900.jpg",
+          "bytes": 61848,
+          "sha256": "ed5b75d37252ce2650cae9ba748779c214f576de2f5b40d4d7888598ab3d4deb"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-visual-regression-desktop-iab-1440x900.jpg",
+          "bytes": 61861,
+          "sha256": "e6fb42b4a8835dad73ee305a17a7c9c7f9af76fff6fa362b89ff08585917bd68"
+        },
+        "perceptualSimilarity": 0.9999634622367466
+      },
+      {
+        "id": "overview-mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-final-mobile-iab-390x844.jpg",
+          "bytes": 24138,
+          "sha256": "f4476b0d882eae45d93876f06c1aa861a811e7c48e1febb764541a367f8bc230"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-visual-regression-mobile-iab-390x844.jpg",
+          "bytes": 24135,
+          "sha256": "7453e2eebaa713bcf51fd94599c930b980bffd25fffac4ebcaf910480ce2bb29"
+        },
+        "perceptualSimilarity": 0.9998343318809005
+      },
+      {
+        "id": "desktop-science-01",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-desktop-science-iab-1440x900.jpg",
+          "bytes": 72378,
+          "sha256": "febc7bee431c360d6ffb05b9f3d42b9fe62c16e1cd4a1c965ffc7f07a1f7c427"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-01-iab-1440x900.jpg",
+          "bytes": 72052,
+          "sha256": "6f0e02d3fc4b4e9d6a106d0de8e4901528642d901a66b182ad5bf92bc6d78954"
+        },
+        "perceptualSimilarity": 0.9999346405228758
+      },
+      {
+        "id": "desktop-science-02",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-desktop-02-science-iab.jpg",
+          "bytes": 73931,
+          "sha256": "57f76cd1b74c39221032cf4c670c7c7bc010d28856f912bf03fec2e84627946e"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-02-iab-1440x900.jpg",
+          "bytes": 73019,
+          "sha256": "f920f0f826a9caa0b76a31c999dd5f035948920a70109ab59463d21425b50715"
+        },
+        "perceptualSimilarity": 0.9935228304284677
+      },
+      {
+        "id": "desktop-science-03",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-desktop-03-science-iab.jpg",
+          "bytes": 71223,
+          "sha256": "1ac226563c3738af8493694a06dc1644495b0ced0675dcb63b1fd8c0f4a383dc"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-03-iab-1440x900.jpg",
+          "bytes": 73150,
+          "sha256": "e9723a670a3882349233f69ba6e64d56e65a14a5a19d25cbf05e2378b1ae1d79"
+        },
+        "perceptualSimilarity": 0.9923109567901235
+      },
+      {
+        "id": "desktop-science-04",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-desktop-04-science-iab.jpg",
+          "bytes": 83353,
+          "sha256": "61892da2b0290a7945cd7b6d72294a28a6eaea9d9d51dadee289c12b5fac7cfe"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-04-iab-1440x900.jpg",
+          "bytes": 73253,
+          "sha256": "20a5f676b14c0a222f80028990663f700476c62b9cd124084c1176f8b1d0497b"
+        },
+        "perceptualSimilarity": 0.9928721859114016
+      },
+      {
+        "id": "desktop-cinematic-04",
+        "viewport": {
+          "width": 1440,
+          "height": 900
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-desktop-cinematic-iab-1440x900.jpg",
+          "bytes": 78902,
+          "sha256": "1377daa555e6ba990859895e24eaa49ecd5296d18e8f6d6c4a73bcb26a5f0f96"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-desktop-cinematic-04-iab-1440x900.jpg",
+          "bytes": 72876,
+          "sha256": "92a9f529339b3590ea7705274d19b5e5bb44b8b18700fdab9d18472cdb5f5234"
+        },
+        "perceptualSimilarity": 0.9877993373275236
+      },
+      {
+        "id": "mobile-science-01",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "baseline": {
+          "path": "output/playwright/orbit-atlas-v562-hero-mobile-science-reloaded-iab-390x844.jpg",
+          "bytes": 30776,
+          "sha256": "ae062a07524858ef7074d89dacbccae01f1fbf11d7ab1a98fce2da78b0725c43"
+        },
+        "candidate": {
+          "path": "output/playwright/orbit-atlas-v567-hero-mobile-science-01-iab-390x844.jpg",
+          "bytes": 31156,
+          "sha256": "b7fa33be3a4928148fc331a55760822df5ac5f8532871decad716fbeff50248d"
+        },
+        "perceptualSimilarity": 0.9979268790849674
+      }
+    ]
+  },
+  "scientificPerformance": {
+    "qualified": true,
+    "threshold": {
+      "medianFpsMin": 45,
+      "frameP95MsMax": 50,
+      "minimumFrameSamples": 241
+    },
+    "samples": {
+      "earth": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 16.7,
+        "frameP95Ms": 21,
+        "frameSamples": 720,
+        "medianFps": 59.8,
+        "overflow": 0,
+        "programs": 28,
+        "renderTargets": 0,
+        "rendererTextures": 23,
+        "resources": {
+          "cameraLocks": 1,
+          "estimatedGpuBytes": 100759369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 15,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "inspect",
+        "triangles": 1
+      },
+      "gaia": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 8.4,
+        "frameSamples": 720,
+        "medianFps": 239.2,
+        "overflow": 0,
+        "programs": 32,
+        "renderTargets": 0,
+        "rendererTextures": 23,
+        "resources": {
+          "cameraLocks": 1,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 15,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "inspect",
+        "triangles": 1
+      },
+      "launch": {
+        "canvasCount": 1,
+        "drawCalls": 39,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "medianFps": 240,
+        "overflow": 0,
+        "programs": 14,
+        "renderTargets": 0,
+        "rendererTextures": 10,
+        "resources": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 13,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "launch",
+        "triangles": 71456
+      },
+      "kerr": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "medianFps": 240,
+        "overflow": 0,
+        "programs": 23,
+        "renderTargets": 1,
+        "rendererTextures": 25,
+        "resources": {
+          "cameraLocks": 2,
+          "estimatedGpuBytes": 102822253,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 12,
+          "total": 18,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "kerr",
+        "triangles": 2
+      }
+    },
+    "resourcesReturned": true,
+    "pageLogs": []
+  },
+  "soak": {
+    "qualified": true,
+    "type": "kerr-enter-exit",
+    "cycles": 10,
+    "resourcesReturnedEveryCycle": true,
+    "baselineHeapUsedSize": 95942780,
+    "finalHeapUsedSize": 79326456,
+    "peakHeapUsedSize": 113090056,
+    "heapStrictlyGrowing": false,
+    "finalHeapBelowBaseline": true,
+    "pageLogs": []
+  },
+  "qualification": {
+    "liteBuild": true,
+    "liteDesktopMobile": true,
+    "overviewVisualRegression": true,
+    "heroVisualRegression": false,
+    "visualRegression": false,
+    "scientificScenePerformance": true,
+    "soak": true,
+    "productionPromotionAllowed": false
+  },
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalDefaultKernel": "legacy-eih-1pn",
+    "measuredAuthorityGranted": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "gpuShadowRun": false,
+    "publicDeploymentAllowed": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/components/OrbitAtlasHeroScenesV562.test.tsx",
+      "bytes": 1479,
+      "sha256": "d5f30d0c9e212a10825654760cd826042e120e5008a0263faec306fe003139eb"
+    },
+    {
+      "path": "app/components/OrbitAtlasHeroScenesV562.tsx",
+      "bytes": 11009,
+      "sha256": "55583b32baf83838c51d9200b203db50f6e789d68d84465ff055be239f98b222"
+    },
+    {
+      "path": "dist/release/atlas-browser-qualification-v562.json",
+      "bytes": 8919,
+      "sha256": "388ef5607b14246b540a13085a7f423f7137a8c26800bd08586e43d932cb6e08"
+    },
+    {
+      "path": "dist/release/atlas-browser-runtime-observation-v567.raw.json",
+      "bytes": 12356,
+      "sha256": "96ef259bafdda944cd1e9aa2f5472968c62ef9e17ebc04c81b38440d488b8652"
+    },
+    {
+      "path": "dist/release/atlas-hero-visual-regression-observation-v567.raw.json",
+      "bytes": 2210,
+      "sha256": "67199f5242b65d13668795223ffedbb77e3e023f1510a38a82247d7ec8357b57"
+    },
+    {
+      "path": "dist/release/atlas-lite-build-resource-v562.json",
+      "bytes": 464,
+      "sha256": "606f8bdad8d6259bcd67de429ac5a2824a16711214980efb24266ba86ab55004"
+    },
+    {
+      "path": "dist/science/atlas-visual-candidate-v562/manifest.json",
+      "bytes": 7384,
+      "sha256": "4207e5c1cce58185e16b98903d2bfed8f6f8822e8f19534c41167e978c025e55"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-final-desktop-iab-1440x900.jpg",
+      "bytes": 61848,
+      "sha256": "ed5b75d37252ce2650cae9ba748779c214f576de2f5b40d4d7888598ab3d4deb"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-final-mobile-iab-390x844.jpg",
+      "bytes": 24138,
+      "sha256": "f4476b0d882eae45d93876f06c1aa861a811e7c48e1febb764541a367f8bc230"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-desktop-02-science-iab.jpg",
+      "bytes": 73931,
+      "sha256": "57f76cd1b74c39221032cf4c670c7c7bc010d28856f912bf03fec2e84627946e"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-desktop-03-science-iab.jpg",
+      "bytes": 71223,
+      "sha256": "1ac226563c3738af8493694a06dc1644495b0ced0675dcb63b1fd8c0f4a383dc"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-desktop-04-science-iab.jpg",
+      "bytes": 83353,
+      "sha256": "61892da2b0290a7945cd7b6d72294a28a6eaea9d9d51dadee289c12b5fac7cfe"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-desktop-cinematic-iab-1440x900.jpg",
+      "bytes": 78902,
+      "sha256": "1377daa555e6ba990859895e24eaa49ecd5296d18e8f6d6c4a73bcb26a5f0f96"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-desktop-science-iab-1440x900.jpg",
+      "bytes": 72378,
+      "sha256": "febc7bee431c360d6ffb05b9f3d42b9fe62c16e1cd4a1c965ffc7f07a1f7c427"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-hero-mobile-science-reloaded-iab-390x844.jpg",
+      "bytes": 30776,
+      "sha256": "ae062a07524858ef7074d89dacbccae01f1fbf11d7ab1a98fce2da78b0725c43"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-lite-desktop-iab-1440x900.jpg",
+      "bytes": 61973,
+      "sha256": "c3af7e41e6c3be58f0e5ec7db84809389d859322e3f5667250117a18ad4318a7"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v562-lite-mobile-iab-390x844.jpg",
+      "bytes": 22319,
+      "sha256": "a76a8a9dbcd9eb4eec2a14dac5f103b18fc8387183a826fffa6c30f548e69cd7"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-desktop-cinematic-04-iab-1440x900.jpg",
+      "bytes": 72876,
+      "sha256": "92a9f529339b3590ea7705274d19b5e5bb44b8b18700fdab9d18472cdb5f5234"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-01-iab-1440x900.jpg",
+      "bytes": 72052,
+      "sha256": "6f0e02d3fc4b4e9d6a106d0de8e4901528642d901a66b182ad5bf92bc6d78954"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-02-iab-1440x900.jpg",
+      "bytes": 73019,
+      "sha256": "f920f0f826a9caa0b76a31c999dd5f035948920a70109ab59463d21425b50715"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-03-iab-1440x900.jpg",
+      "bytes": 73150,
+      "sha256": "e9723a670a3882349233f69ba6e64d56e65a14a5a19d25cbf05e2378b1ae1d79"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-desktop-science-04-iab-1440x900.jpg",
+      "bytes": 73253,
+      "sha256": "20a5f676b14c0a222f80028990663f700476c62b9cd124084c1176f8b1d0497b"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-hero-mobile-science-01-iab-390x844.jpg",
+      "bytes": 31156,
+      "sha256": "b7fa33be3a4928148fc331a55760822df5ac5f8532871decad716fbeff50248d"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-visual-regression-desktop-iab-1440x900.jpg",
+      "bytes": 61861,
+      "sha256": "e6fb42b4a8835dad73ee305a17a7c9c7f9af76fff6fa362b89ff08585917bd68"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-v567-visual-regression-mobile-iab-390x844.jpg",
+      "bytes": 24135,
+      "sha256": "7453e2eebaa713bcf51fd94599c930b980bffd25fffac4ebcaf910480ce2bb29"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "bytes": 15935,
+      "sha256": "6f4ffd84b2ddae13e01dfa361cbf42ff6112f14b3cbee016eab623258e3d714d"
+    },
+    {
+      "path": "scripts/build-runtime-release-gates-v567.mjs",
+      "bytes": 16188,
+      "sha256": "426a94b85f721233829fa5d3f7378a4cd8096e03b1a37e2c675b9d877281fc1f"
+    },
+    {
+      "path": "scripts/verify-runtime-release-gates-v567.mjs",
+      "bytes": 3953,
+      "sha256": "fc92bf410a499711d967de7afb2241c427c482e216d8e88c2f68070998e51bc1"
+    }
+  ],
+  "sourceSha256": "e5e109643216c8936b978a168315607fe16cd8edb7c552d0b9f6ff215f52a1a9",
+  "receiptSha256": "f55a19f5d1f408f16ceb7e6adb1a1cc5250205792479d838ad8fe4d7eeb8527a"
+}

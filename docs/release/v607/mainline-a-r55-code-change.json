@@ -1,0 +1,21 @@
+{
+  "round": 55,
+  "date": "2026-09-14",
+  "scope": "Beta hero stellar art evidence pack v615",
+  "effectiveChangedLines": 502,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R55 pack/utility files; panel integration and generated JSON are additional.",
+  "files": [
+    {"path": "scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.mjs", "lines": 177, "sha256": "d94a98749e34dcca28b280e450a8339699e46ec697cb973f1fe60e4f0a6a34bd"},
+    {"path": "scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs", "lines": 82, "sha256": "5b16b26a919867bbbf5ead39988470c5120937340106954d9af8130f1c0bf83a"},
+    {"path": "app/lib/mainlineABetaHeroArtEvidenceV615.ts", "lines": 144, "sha256": "570a95f41c95e0b3b3617633a47a8ba276c7960a9389e71b980d14f87749f93b"},
+    {"path": "app/lib/mainlineABetaHeroArtEvidenceV615.test.ts", "lines": 99, "sha256": "663d5182dd87b45e3bdd5760b21e298d4c5417cf166488c0cb6b771fa3987f16"}
+  ],
+  "integrationFiles": [
+    "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+    "app/components/MainlineABetaHeroReviewPanelV611.test.tsx",
+    "app/data/mainlineABetaHeroArtEvidencePackV615.generated.json",
+    "package.json"
+  ]
+}

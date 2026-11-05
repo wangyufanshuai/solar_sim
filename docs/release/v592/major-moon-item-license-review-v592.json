@@ -1,0 +1,271 @@
+{
+  "version": "v592-major-moon-item-license-review-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "six-visual-source-acquisitions-eligible-two-texture-suitability-blocked",
+  "policy": {
+    "licenseBasis": "NASA media usage guidelines with item-level NASA/JPL/USGS credit and restriction scan",
+    "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "legalOpinionClaimed": false,
+    "publicDomainAssetIdentityClaimedBeforeDownload": false,
+    "explicitSingleRequestAcquisitionRequired": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "visualAssetAdmissionGranted": false,
+    "derivedRuntimeAssetAdmissionGranted": false
+  },
+  "sourceReceipts": {
+    "metadataAcquisitionReceiptSha256": "fd74ad692fef04fa3d7d82f0da724485ddb60837e75d8ee2be9cef5efaf4500d",
+    "metadataAdmissionReceiptSha256": "784e80da3243f134b6ee5c3b8a935c1edce0774c8e96ae4f867e6df429fd679e"
+  },
+  "summary": {
+    "reviewedCount": 8,
+    "eligibleForAcquisitionCount": 6,
+    "blockedCount": 2,
+    "sourceImageDownloadedCount": 0,
+    "visualAssetAdmittedCount": 0
+  },
+  "eligibleTargets": [
+    "titan",
+    "enceladus",
+    "rhea",
+    "iapetus",
+    "triton",
+    "charon"
+  ],
+  "blockedTargets": [
+    "io",
+    "ganymede"
+  ],
+  "reviews": [
+    {
+      "target": "io",
+      "nasaId": "PIA26486",
+      "title": " Surface Changes on Io",
+      "center": "JPL",
+      "credit": "Image data: NASA/JPL-Caltech/SwRI/MSSS Image processing by Jason Perry",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/io-PIA26486.json",
+      "sourceMetadataSha256": "28b3e722436b5e48153dd3527cbaafafba5588bcab8ad590cca374b6c2cb1eb0",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA26486/PIA26486~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3372,
+        "metadataHeight": 1889,
+        "metadataFileSize": "617 KiB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "blocked-item-license-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "ganymede",
+      "nasaId": "PIA17902",
+      "title": "Rotating Globe of Ganymede Geology",
+      "center": "JPL",
+      "credit": "USGS Astrogeology Science Center/Wheaton/ASU/NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/ganymede-PIA17902.json",
+      "sourceMetadataSha256": "461e55368b73c01ef824affa8700b298beba4f589d0d5137e9ddb7b632d3f618",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 797,
+        "metadataHeight": 754,
+        "metadataFileSize": "44 kB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "blocked-item-license-or-texture-suitability-review",
+      "blocker": [
+        "global-map-identity",
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "titan",
+      "nasaId": "PIA19658",
+      "title": "Titan Global Map - June 2015",
+      "center": "JPL",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/titan-PIA19658.json",
+      "sourceMetadataSha256": "39a45d9873335e28454c45e3bd62556260e57e24390a5b25f9baf80c81d5e1a9",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 4374,
+        "metadataHeight": 2430,
+        "metadataFileSize": "986 kB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "enceladus",
+      "nasaId": "PIA14937",
+      "title": "Map of Enceladus - December 2011",
+      "center": "JPL",
+      "credit": "NASA/JPL-Caltech/Space Science Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/enceladus-PIA14937.json",
+      "sourceMetadataSha256": "078689fbca465b122f60ec4e478741b9cc2bb8a16ee5e966e88c8edd588956e8",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 7480,
+        "metadataHeight": 3930,
+        "metadataFileSize": "4.8 MB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "rhea",
+      "nasaId": "PIA12803",
+      "title": "Map of Rhea - November 2009",
+      "center": "JPL",
+      "credit": "NASA/JPL/Space Science Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/rhea-PIA12803.json",
+      "sourceMetadataSha256": "52e0a4801a4dbd48f5d4c280fd01a2e975544cd9a11eb54bb6d0a501d25e5686",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA12803/PIA12803~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 11520,
+        "metadataHeight": 5760,
+        "metadataFileSize": "4.5 MB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "iapetus",
+      "nasaId": "PIA07778",
+      "title": "Map of Iapetus -- December 2005",
+      "center": "JPL",
+      "credit": "NASA/JPL/Space Science Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/iapetus-PIA07778.json",
+      "sourceMetadataSha256": "c31e369e4765d0318e2d82ae06bfdf8b3cc31dad13613133096ce8c45b01b63e",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA07778/PIA07778~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 7748,
+        "metadataHeight": 4250,
+        "metadataFileSize": "1522 kB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "triton",
+      "nasaId": "PIA18668",
+      "title": "Map of Triton",
+      "center": "JPL",
+      "credit": "NASA/JPL-Caltech/Lunar & Planetary Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/triton-PIA18668.json",
+      "sourceMetadataSha256": "d9a1c21b6c8dc8f0501ea18aca9149e5d3a741bd41b6daf7db9233a9258795b3",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA18668/PIA18668~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 14138,
+        "metadataHeight": 7069,
+        "metadataFileSize": "4.1 MB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "charon",
+      "nasaId": "PIA19866",
+      "title": "Global Map of Pluto Moon Charon",
+      "center": "JPL",
+      "credit": "NASA/Johns Hopkins University Applied Physics Laboratory/Southwest Research Institute",
+      "sourceMetadataPath": "source-cache/v592/major-moons/metadata/charon-PIA19866.json",
+      "sourceMetadataSha256": "ca51dcebe2b3780643e80aefcedb44645450edf6a7a3264cef68eefcef794f1b",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA19866/PIA19866~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 9520,
+        "metadataHeight": 4760,
+        "metadataFileSize": "1129 kB"
+      },
+      "checks": {
+        "identityPassed": true,
+        "creditPassed": true,
+        "mapIdentityPassed": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "noRestrictionFlagFound": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    }
+  ],
+  "receiptSha256": "4eb60a17b866cdaaafb9bcbc773a7a691ed5edf9c5eb6c12c3ce897bd20aad8f"
+}

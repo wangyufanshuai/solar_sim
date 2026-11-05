@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-alternative-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T12:43:43.592Z",
+  "status": "alternative-asset-manifest-probe-complete-no-payload",
+  "selectionId": "centaurus-a--0202374",
+  "target": "centaurus-a",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbePath": "docs/release/v592/metadata-probe-deep-space-alternatives-v3/centaurus-a.json",
+    "metadataReceiptSha256": "2f49f6d1ebec4c3b23c238716d4bbc318408ff7125d8aa44ba6b90c6f7a0562f",
+    "nasaId": "0202374",
+    "title": "History of Chandra X-Ray Observatory",
+    "description": "This is a photo taken by NASA's Chandra X-ray Observatory that reveals the remains of an explosion in the form of two enormous arcs of multimillion-degree gas in the galaxy Centaurus A that appear to be part of a ring 25,000 light years in diameter. The size and location of the ring suggest that it could have been an explosion that occurred about 10 million years ago. A composite image made with radio (red and green), optical (yellow-orange), and X-ray data (blue) presents a sturning tableau of a turbulent galaxy. A broad band of dust and cold gas is bisected at an angle by opposing jets of high-energy particles blasting away from the supermassive black hole in the nucleus. Lying in a plane perpendicular to the jets are the two large arcs of x-ray emitting multi-million degree gas. This discovery can help astronomers better understand the cause and effect of violent outbursts from the vicinity of supermassive black holes of active galaxies. The Chandra program is managed by the Marshall Space Flight Center in Huntsville, Alabama.",
+    "center": "MSFC",
+    "identityTerms": [
+      "centaurus"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/0202374/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/0202374/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/0202374/collection.json",
+    "status": 200,
+    "responseBytes": 387,
+    "responseSha256": "a98a2fdb40a22595aa40335f056febb567266390dc66183cbdbae96834306c78"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/0202374~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "0202374~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/0202374~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/0202374~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "0202374~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/0202374~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/0202374~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "0202374~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/0202374~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/0202374~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "0202374~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/0202374~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/0202374~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "0202374~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/0202374~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/0202374/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/0202374/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "4cf66b4f35370132d9f5f4bb31a2036241c16f5777d4804e79b8891726387b7d"
+}

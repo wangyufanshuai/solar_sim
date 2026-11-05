@@ -1,0 +1,61 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-10-13T15:40:07 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-10-13T15:40:07	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_102026
+#Name: B/wds
+#Title: The Washington Visual Double Star Catalog (Mason+ 2001-) Supersedes {\bf I/237}
+#INFO	ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	creator=Mason B.D.	    First author or institution
+#INFO	cites=bibcode:2001AJ....122.3466M	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2001	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/wds	    Dataset landing page
+#INFO	publication_date=2026-09-21	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	B_wds_wds:
+#Name: B/wds/wds
+#Title: The Washington Double Star Catalog (main part)
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	WDS	(A10)	WDS name (based on J2000 position)	[ucd=meta.id;meta.main]
+#Column	Disc	(A7)	Discoverer Code (1 to 4 letters) and Number (5)	[ucd=meta.id]
+#Column	Comp	(A5)	Components when more than 2 (1)	[ucd=meta.code.multip]
+#Column	Obs1	(I4)	? Date of first satisfactory observation	[ucd=time]
+#Column	Obs2	(I4)	? Date of last satisfactory observation	[ucd=time]
+#Column	Nobs	(I4)	Number of Observations (up to 9999)	[ucd=meta.number]
+#Column	pa1	(I3)	? Position Angle at date Obs1 (2)	[ucd=pos.posAng]
+#Column	pa2	(I3)	? Position Angle at date Obs2 (2)	[ucd=pos.posAng]
+#Column	sep1	(F5.1)	? Separation at date Obs1	[ucd=pos.angDistance;src.orbital]
+#Column	sep2	(F6.2)	? Separation at date Obs12	[ucd=pos.angDistance;src.orbital]
+#Column	mag1	(F6.3)	? Magnitude of First Component	[ucd=phot.mag;em.opt]
+#Column	mag2	(F5.2)	? Magnitude of Second Component	[ucd=phot.mag;em.opt]
+#Column	SpType	(A10)	Spectral Type (Primary/Secondary)	[ucd=src.spType]
+#Column	pmRA1	(I4)	? Primary Proper Motion RA (6)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE1	(I4)	? Primary Proper Motion Dec (6)	[ucd=pos.pm;pos.eq.dec]
+#Column	pmRA2	(I4)	? Secondary Proper Motion RA (6)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE2	(I4)	? Secondary Proper Motion Dec (6)	[ucd=pos.pm;pos.eq.dec]
+#Column	DM	(A9)	Durchmusterung Number (3)	[ucd=meta.id]
+#Column	Notes	(A4)	[B-Z ] Notes about the binary (4)	[ucd=meta.note]
+#Column	n_RAh	(A1)	[!P] indicates a position derived from WDS name	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Right Ascension J2000 (Ep=J2000, hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000 (Ep=J2000, sign)	[ucd=pos.eq.dec;meta.main]
+recno	WDS	Disc	Comp	Obs1	Obs2	Nobs	pa1	pa2	sep1	sep2	mag1	mag2	SpType	pmRA1	pmDE1	pmRA2	pmDE2	DM	Notes	n_RAh	RAJ2000	DEJ2000
+ 	 	 	 	yr	yr	 	deg	deg	arcsec	arcsec	mag	mag	 	mas/yr	mas/yr	mas/yr	mas/yr	 	 	 	"h:m:s"	"d:m:s"
+--------	----------	-------	-----	----	----	----	---	---	-----	------	------	-----	----------	----	----	----	----	---------	----	-	-----------	-----------
+   65933	10084+1158	STFB  6	AB   	1779	2023	  69	307	308	168.3	175.90	 1.400	 8.24	B7V       	-249	   6	-254	   8	+12 2149 	NT  	 	10 08 22.31	+11 58 01.9
+   65934	10084+1158	HDO 127	AD   	1924	2015	   7	274	274	217.0	195.30	 1.400	12.10	B7V       	-249	   6	 -23	 -16	         	NU  	 	10 08 22.31	+11 58 01.9
+   65935	10084+1158	HDO 127	BC   	1867	2021	  22	 89	 94	  4.0	  2.10	 8.240	13.20	K2V       	-254	   8	-225	   9	+12 2147 	NT  	 	10 08 12.79	+11 59 49.0
+   65936	10084+1158	HDO 127	BD   	1907	2015	  10	221	211	120.7	109.10	 8.240	12.10	K2V       	-254	   8	 -23	 -16	         	NU  	 	10 08 12.79	+11 59 49.0
+

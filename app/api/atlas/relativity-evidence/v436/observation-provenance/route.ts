@@ -1,0 +1,29 @@
+import { atlasJsonResponseV275, atlasStrongEtagV275, consumeAtlasApiPolicyV275 } from "../../../../../lib/atlasApiPolicyV275";
+import { KERR_OBSERVATION_PROVENANCE_API_VERSION_V436, type KerrObservationApiV436 } from "../../../../../lib/kerrObservationProvenanceV436";
+import { loadKerrObservationProvenanceV436 } from "../../../../../lib/kerrObservationProvenanceServerV436";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+const EXPORTS = new Set(["oracle", "contract"] as const);
+
+export async function GET(request: Request): Promise<Response> {
+  const delivery = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE ?? "standalone-full";
+  if (delivery !== "local-shadow") return atlasJsonResponseV275("relativity-evidence", { version: KERR_OBSERVATION_PROVENANCE_API_VERSION_V436, available: false, reason: delivery === "vercel-lite" ? "lite-boundary" : "local-shadow-only", summary: null } satisfies KerrObservationApiV436, { status: 200, headers: { "Cache-Control": "no-store" } });
+  const limited = consumeAtlasApiPolicyV275(request, "relativity-evidence");
+  if (limited) return limited;
+  try {
+    const loaded = await loadKerrObservationProvenanceV436();
+    const format = new URL(request.url).searchParams.get("download");
+    if (format !== null) {
+      if (!EXPORTS.has(format as never)) return atlasJsonResponseV275("relativity-evidence", { error: "unsupported-export" }, { status: 400, headers: { "Cache-Control": "no-store" } });
+      const entry = loaded.exports[format as keyof typeof loaded.exports];
+      const body = entry.bytes.buffer.slice(entry.bytes.byteOffset, entry.bytes.byteOffset + entry.bytes.byteLength) as ArrayBuffer;
+      return new Response(body, { status: 200, headers: { "Content-Type": entry.contentType, "Content-Disposition": `attachment; filename=${entry.name}`, "Cache-Control": "no-store", ETag: `"${entry.fileSha256}"`, "X-Atlas-Kerr-Observation-Provenance": `v436-${format}` } });
+    }
+    const body = JSON.stringify({ version: KERR_OBSERVATION_PROVENANCE_API_VERSION_V436, available: true, reason: "ready", summary: loaded.summary } satisfies KerrObservationApiV436);
+    if (Buffer.byteLength(body, "utf8") > 128 * 1024) throw new Error("v436-summary-size");
+    return new Response(body, { status: 200, headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ETag: atlasStrongEtagV275(body), "X-Atlas-Kerr-Observation-Provenance": "v436-summary" } });
+  } catch {
+    return atlasJsonResponseV275("relativity-evidence", { version: KERR_OBSERVATION_PROVENANCE_API_VERSION_V436, available: false, reason: "evidence-corrupt", summary: null } satisfies KerrObservationApiV436, { status: 503, headers: { "Cache-Control": "no-store" } });
+  }
+}

@@ -1,0 +1,1348 @@
+{
+  "schema": "mainline-a-resource-observation-v633",
+  "runId": "r65-registry-326a40e2-125d-43f6-aac3-a7d78c1ddd47",
+  "build": {
+    "buildId": "mainline-a-21d29a851e728824",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "devicePixelRatio": 1,
+    "device": "desktop"
+  },
+  "startedAt": "2026-09-27T13:30:55.133Z",
+  "endedAt": "2026-09-27T13:31:25.316Z",
+  "checkpoints": [
+    {
+      "phase": "baseline",
+      "capturedAt": "2026-09-27T13:30:55.133Z",
+      "elapsedMs": 0,
+      "scene": "inspect",
+      "snapshot": {
+        "total": 31,
+        "workers": 1,
+        "gpuRenderTargets": 0,
+        "gpuBuffers": 1,
+        "gpuComputePipelines": 0,
+        "gpuQueries": 0,
+        "textures": 11,
+        "models": 16,
+        "subscriptions": 1,
+        "objectUrls": 0,
+        "typedArrayCaches": 0,
+        "cameraLocks": 1,
+        "estimatedBytes": 67656889,
+        "estimatedGpuBytes": 67428937,
+        "byOwner": {
+          "atlas": {
+            "count": 10,
+            "estimatedBytes": 0
+          },
+          "camera-presentation": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "catalog": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "mainline-a-constellation-lines": {
+            "count": 10,
+            "estimatedBytes": 20196
+          },
+          "mainline-a-stellar-portrait": {
+            "count": 6,
+            "estimatedBytes": 207756
+          },
+          "sky-backdrop": {
+            "count": 3,
+            "estimatedBytes": 67108865
+          }
+        },
+        "byKind": {
+          "worker": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "gpu-render-target": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-buffer": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "gpu-compute-pipeline": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-query": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "texture": {
+            "count": 11,
+            "estimatedBytes": 67108865
+          },
+          "model": {
+            "count": 16,
+            "estimatedBytes": 227952
+          },
+          "subscription": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "object-url": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "typed-array-cache": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "camera-lock": {
+            "count": 1,
+            "estimatedBytes": 0
+          }
+        },
+        "byIdentity": {
+          "[\"camera-lock\",\"inspect\",\"camera-presentation\",\"focus-lock-v273-1\",null,null]": {
+            "kind": "camera-lock",
+            "sceneMode": "inspect",
+            "owner": "camera-presentation",
+            "label": "focus-lock-v273-1",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"gpu-buffer\",\"atlas\",\"catalog\",\"catalog-bright-instanced-stars\",null,null]": {
+            "kind": "gpu-buffer",
+            "sceneMode": "atlas",
+            "owner": "catalog",
+            "label": "catalog-bright-instanced-stars",
+            "count": 1,
+            "estimatedBytes": 320072,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-geometry",
+            "count": 1,
+            "estimatedBytes": 2832,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-geometry",
+            "count": 1,
+            "estimatedBytes": 2664,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-geometry",
+            "count": 1,
+            "estimatedBytes": 9624,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-geometry",
+            "count": 1,
+            "estimatedBytes": 5076,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected:none:geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected:none:geometry",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:corona-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:corona-geometry",
+            "count": 1,
+            "estimatedBytes": 69600,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:corona-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:corona-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:halo-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:halo-geometry",
+            "count": 1,
+            "estimatedBytes": 140,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:halo-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:halo-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:surface-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:surface-geometry",
+            "count": 1,
+            "estimatedBytes": 138016,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:surface-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:surface-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"subscription\",\"atlas\",\"atlas\",\"camera-zoom-bridge\",null,null]": {
+            "kind": "subscription",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "camera-zoom-bridge",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/earth.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/earth.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/jupiter.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/jupiter.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mars.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mars.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mercury.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mercury.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/neptune.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/neptune.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/saturn.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/saturn.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/uranus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/uranus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/venus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/venus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-base\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-base",
+            "count": 1,
+            "estimatedBytes": 44739243,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-dust-mask\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-dust-mask",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-stars\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-stars",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"worker\",\"atlas\",\"atlas\",\"solar-system-physics\",null,null]": {
+            "kind": "worker",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "solar-system-physics",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          }
+        },
+        "identityDigest": "59eb133b",
+        "revision": 63
+      },
+      "canonical": {
+        "selection": {
+          "kind": "star",
+          "id": "alpha-centauri-a",
+          "route": "mainline-a-stellar-parametric",
+          "assetHash": null,
+          "loading": "ready",
+          "error": null
+        },
+        "revision": 18,
+        "publishedAt": "2026-09-27T13:28:36.463Z",
+        "cleanupErrors": []
+      }
+    },
+    {
+      "phase": "active",
+      "capturedAt": "2026-09-27T13:30:57.485Z",
+      "elapsedMs": 2352.010000001639,
+      "scene": "inspect",
+      "snapshot": {
+        "total": 31,
+        "workers": 1,
+        "gpuRenderTargets": 0,
+        "gpuBuffers": 1,
+        "gpuComputePipelines": 0,
+        "gpuQueries": 0,
+        "textures": 11,
+        "models": 16,
+        "subscriptions": 1,
+        "objectUrls": 0,
+        "typedArrayCaches": 0,
+        "cameraLocks": 1,
+        "estimatedBytes": 67656889,
+        "estimatedGpuBytes": 67428937,
+        "byOwner": {
+          "atlas": {
+            "count": 10,
+            "estimatedBytes": 0
+          },
+          "camera-presentation": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "catalog": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "mainline-a-constellation-lines": {
+            "count": 10,
+            "estimatedBytes": 20196
+          },
+          "mainline-a-stellar-portrait": {
+            "count": 6,
+            "estimatedBytes": 207756
+          },
+          "sky-backdrop": {
+            "count": 3,
+            "estimatedBytes": 67108865
+          }
+        },
+        "byKind": {
+          "worker": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "gpu-render-target": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-buffer": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "gpu-compute-pipeline": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-query": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "texture": {
+            "count": 11,
+            "estimatedBytes": 67108865
+          },
+          "model": {
+            "count": 16,
+            "estimatedBytes": 227952
+          },
+          "subscription": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "object-url": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "typed-array-cache": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "camera-lock": {
+            "count": 1,
+            "estimatedBytes": 0
+          }
+        },
+        "byIdentity": {
+          "[\"camera-lock\",\"inspect\",\"camera-presentation\",\"focus-lock-v273-1\",null,null]": {
+            "kind": "camera-lock",
+            "sceneMode": "inspect",
+            "owner": "camera-presentation",
+            "label": "focus-lock-v273-1",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"gpu-buffer\",\"atlas\",\"catalog\",\"catalog-bright-instanced-stars\",null,null]": {
+            "kind": "gpu-buffer",
+            "sceneMode": "atlas",
+            "owner": "catalog",
+            "label": "catalog-bright-instanced-stars",
+            "count": 1,
+            "estimatedBytes": 320072,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-geometry",
+            "count": 1,
+            "estimatedBytes": 2832,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-geometry",
+            "count": 1,
+            "estimatedBytes": 2664,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-geometry",
+            "count": 1,
+            "estimatedBytes": 9624,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-geometry",
+            "count": 1,
+            "estimatedBytes": 5076,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected:none:geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected:none:geometry",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:achernar:corona-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:achernar:corona-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:achernar:halo-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:achernar:halo-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:achernar:surface-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:achernar:surface-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:corona-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:corona-geometry",
+            "count": 1,
+            "estimatedBytes": 69600,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:halo-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:halo-geometry",
+            "count": 1,
+            "estimatedBytes": 140,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:surface-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:surface-geometry",
+            "count": 1,
+            "estimatedBytes": 138016,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"subscription\",\"atlas\",\"atlas\",\"camera-zoom-bridge\",null,null]": {
+            "kind": "subscription",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "camera-zoom-bridge",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/earth.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/earth.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/jupiter.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/jupiter.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mars.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mars.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mercury.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mercury.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/neptune.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/neptune.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/saturn.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/saturn.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/uranus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/uranus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/venus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/venus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-base\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-base",
+            "count": 1,
+            "estimatedBytes": 44739243,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-dust-mask\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-dust-mask",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-stars\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-stars",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"worker\",\"atlas\",\"atlas\",\"solar-system-physics\",null,null]": {
+            "kind": "worker",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "solar-system-physics",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          }
+        },
+        "identityDigest": "cfadad05",
+        "revision": 71
+      },
+      "canonical": {
+        "selection": {
+          "kind": "star",
+          "id": "achernar",
+          "route": "mainline-a-stellar-parametric",
+          "assetHash": null,
+          "loading": "ready",
+          "error": null
+        },
+        "revision": 22,
+        "publishedAt": "2026-09-27T13:30:57.033Z",
+        "cleanupErrors": []
+      }
+    },
+    {
+      "phase": "returned",
+      "capturedAt": "2026-09-27T13:31:25.315Z",
+      "elapsedMs": 30182.64500000328,
+      "scene": "inspect",
+      "snapshot": {
+        "total": 31,
+        "workers": 1,
+        "gpuRenderTargets": 0,
+        "gpuBuffers": 1,
+        "gpuComputePipelines": 0,
+        "gpuQueries": 0,
+        "textures": 11,
+        "models": 16,
+        "subscriptions": 1,
+        "objectUrls": 0,
+        "typedArrayCaches": 0,
+        "cameraLocks": 1,
+        "estimatedBytes": 67656889,
+        "estimatedGpuBytes": 67428937,
+        "byOwner": {
+          "atlas": {
+            "count": 10,
+            "estimatedBytes": 0
+          },
+          "camera-presentation": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "catalog": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "mainline-a-constellation-lines": {
+            "count": 10,
+            "estimatedBytes": 20196
+          },
+          "mainline-a-stellar-portrait": {
+            "count": 6,
+            "estimatedBytes": 207756
+          },
+          "sky-backdrop": {
+            "count": 3,
+            "estimatedBytes": 67108865
+          }
+        },
+        "byKind": {
+          "worker": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "gpu-render-target": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-buffer": {
+            "count": 1,
+            "estimatedBytes": 320072
+          },
+          "gpu-compute-pipeline": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "gpu-query": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "texture": {
+            "count": 11,
+            "estimatedBytes": 67108865
+          },
+          "model": {
+            "count": 16,
+            "estimatedBytes": 227952
+          },
+          "subscription": {
+            "count": 1,
+            "estimatedBytes": 0
+          },
+          "object-url": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "typed-array-cache": {
+            "count": 0,
+            "estimatedBytes": 0
+          },
+          "camera-lock": {
+            "count": 1,
+            "estimatedBytes": 0
+          }
+        },
+        "byIdentity": {
+          "[\"camera-lock\",\"inspect\",\"camera-presentation\",\"focus-lock-v273-1\",null,null]": {
+            "kind": "camera-lock",
+            "sceneMode": "inspect",
+            "owner": "camera-presentation",
+            "label": "focus-lock-v273-1",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"gpu-buffer\",\"atlas\",\"catalog\",\"catalog-bright-instanced-stars\",null,null]": {
+            "kind": "gpu-buffer",
+            "sceneMode": "atlas",
+            "owner": "catalog",
+            "label": "catalog-bright-instanced-stars",
+            "count": 1,
+            "estimatedBytes": 320072,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-geometry",
+            "count": 1,
+            "estimatedBytes": 2832,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-asterisms-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-asterisms-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-geometry",
+            "count": 1,
+            "estimatedBytes": 2664,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-boundaries-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-boundaries-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-geometry",
+            "count": 1,
+            "estimatedBytes": 9624,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-figures-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-figures-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-geometry",
+            "count": 1,
+            "estimatedBytes": 5076,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-nodes-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-nodes-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected-material\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected-material",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-constellation-lines\",\"constellation-selected:none:geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-constellation-lines",
+            "label": "constellation-selected:none:geometry",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:corona-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:corona-geometry",
+            "count": 1,
+            "estimatedBytes": 69600,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:corona-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:corona-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:halo-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:halo-geometry",
+            "count": 1,
+            "estimatedBytes": 140,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:halo-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:halo-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:surface-geometry\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:surface-geometry",
+            "count": 1,
+            "estimatedBytes": 138016,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"model\",\"atlas\",\"mainline-a-stellar-portrait\",\"stellar-hero:alpha-centauri-a:surface-material-0\",null,null]": {
+            "kind": "model",
+            "sceneMode": "atlas",
+            "owner": "mainline-a-stellar-portrait",
+            "label": "stellar-hero:alpha-centauri-a:surface-material-0",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"subscription\",\"atlas\",\"atlas\",\"camera-zoom-bridge\",null,null]": {
+            "kind": "subscription",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "camera-zoom-bridge",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/earth.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/earth.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/jupiter.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/jupiter.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mars.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mars.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/mercury.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/mercury.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/neptune.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/neptune.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/saturn.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/saturn.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/uranus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/uranus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"atlas\",\"/solar-assets/solar/textures/planets/venus.jpg\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "/solar-assets/solar/textures/planets/venus.jpg",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-base\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-base",
+            "count": 1,
+            "estimatedBytes": 44739243,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-dust-mask\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-dust-mask",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"texture\",\"atlas\",\"sky-backdrop\",\"galaxy-environment-stars\",null,null]": {
+            "kind": "texture",
+            "sceneMode": "atlas",
+            "owner": "sky-backdrop",
+            "label": "galaxy-environment-stars",
+            "count": 1,
+            "estimatedBytes": 11184811,
+            "contentSha256": null,
+            "manifestSha256": null
+          },
+          "[\"worker\",\"atlas\",\"atlas\",\"solar-system-physics\",null,null]": {
+            "kind": "worker",
+            "sceneMode": "atlas",
+            "owner": "atlas",
+            "label": "solar-system-physics",
+            "count": 1,
+            "estimatedBytes": 0,
+            "contentSha256": null,
+            "manifestSha256": null
+          }
+        },
+        "identityDigest": "59eb133b",
+        "revision": 79
+      },
+      "canonical": {
+        "selection": {
+          "kind": "star",
+          "id": "alpha-centauri-a",
+          "route": "mainline-a-stellar-parametric",
+          "assetHash": null,
+          "loading": "ready",
+          "error": null
+        },
+        "revision": 26,
+        "publishedAt": "2026-09-27T13:30:59.415Z",
+        "cleanupErrors": []
+      }
+    }
+  ],
+  "frameSummary": {
+    "sampleCount": 4593,
+    "totalMs": 30171.699999999953,
+    "minMs": 6.034999999974389,
+    "p50Ms": 6.5,
+    "p95Ms": 7.25,
+    "maxMs": 129.1699999999837
+  },
+  "memory": {
+    "source": "performance.memory",
+    "beforeBytes": 137726901,
+    "afterBytes": 138183668
+  },
+  "visibility": {
+    "startedVisible": true,
+    "endedVisible": true,
+    "interruptions": 0
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "objectCycle": {
+    "mode": "canonical-object",
+    "target": {
+      "kind": "star",
+      "id": "achernar",
+      "route": "mainline-a-stellar-parametric",
+      "assetHash": null
+    },
+    "manifestDigest": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+  },
+  "session": {
+    "state": "finished",
+    "requestedDurationMs": 30000,
+    "durationSatisfied": true,
+    "issues": [],
+    "physicalMobile": "not-run",
+    "frameSummarySource": "requestAnimationFrame",
+    "frameSummaryMethod": "fixed-histogram-upper-bound",
+    "histogramBinWidthMs": 0.25,
+    "timeline": [
+      {
+        "elapsedMs": 1.0450000017881393,
+        "event": "baseline",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 2352.25,
+        "event": "active",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 30183.245000001043,
+        "event": "returned",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 30183.265000000596,
+        "event": "finished",
+        "scene": "inspect"
+      }
+    ]
+  }
+}

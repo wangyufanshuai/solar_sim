@@ -1,0 +1,64 @@
+{
+  "schema": "mainline-a-browser-evidence-v625",
+  "observedAt": "2026-09-20T13:42:15.111Z",
+  "url": "http://127.0.0.1:3038/",
+  "surface": "Codex in-app browser",
+  "buildId": "mainline-a-872a1ad59b33f974",
+  "buildReport": "docs/release/v607/mainline-a-r65-build-20260920-004.json",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "panel": "v625",
+    "runs": 1,
+    "runId": "r65-desktop-001-fe35fa4c",
+    "frameSamples": 717,
+    "frameP95Ms": 5.649999999994179,
+    "medianFps": 180.0180017999348,
+    "heapUsedBytes": 143102926,
+    "resourceStatus": "baseline",
+    "consoleErrors": 0,
+    "visualScreenshot": "docs/release/v607/screenshots/mainline-a-r65-desktop-20260920.png"
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "panel": "v625",
+    "runs": 1,
+    "runId": "r65-mobile-002-d0eebd28",
+    "frameSamples": 718,
+    "frameP95Ms": 5.615750000003755,
+    "medianFps": 180.0180017999348,
+    "heapUsedBytes": 145627041,
+    "resourceStatus": "baseline",
+    "consoleErrors": 0,
+    "visualScreenshot": "docs/release/v607/screenshots/mainline-a-r65-mobile-20260920.png"
+  },
+  "resources": {
+    "desktopBeforeAfter": "f6448291 → f6448291",
+    "mobileBeforeAfter": "38a923ae → 38a923ae",
+    "registryCurrent": {
+      "total": 14,
+      "estimatedBytes": 67188937,
+      "identityDigest": "38a923ae"
+    }
+  },
+  "logs": [],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "evidenceClass": "local-browser-interaction-and-viewport-plus-runtime-observation",
+  "physicalMobileDevice": "not-run",
+  "realUserValidation": false,
+  "productionPerformanceClaim": false,
+  "notes": [
+    "Browser viewport and runtime observation only; screenshot is visual evidence separate from performance evidence.",
+    "Four-second samples are repeatable local observations, not long-run or production performance qualification."
+  ]
+}

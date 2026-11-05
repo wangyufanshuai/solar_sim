@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-alternative-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T10:12:05.670Z",
+  "status": "alternative-asset-manifest-probe-complete-no-payload",
+  "selectionId": "cigar-galaxy--PIA18840",
+  "target": "cigar-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbePath": "docs/release/v592/metadata-probe-deep-space-alternatives-v2/cigar-galaxy.json",
+    "metadataReceiptSha256": "dcb082abcb7103392da38c4f0ef609b9cd49042c7110ef65847a53ca9bcdc1b3",
+    "nasaId": "PIA18840",
+    "title": "Galaxy in Different Lights",
+    "description": "The comparison from NASA Hubble telescope and Chandra X-ray Observatory highlights how different the universe can look when viewed in other wavelengths of light. M82 is located 12 million light-years away in the Ursa Major constellation.",
+    "center": "JPL",
+    "identityTerms": [
+      "galaxy"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA18840/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA18840/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA18840/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "021dfda72df576074179a893e2fe755c43b9ac2f25661a5184f271ba45990b60"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA18840/PIA18840~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA18840~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA18840/PIA18840~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA18840/PIA18840~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA18840~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA18840/PIA18840~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA18840/PIA18840~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA18840~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA18840/PIA18840~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA18840/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA18840/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "7aa90259cd7bd11e312ac75553caf9751b3a6bb9f67f92783999067413b8c848"
+}

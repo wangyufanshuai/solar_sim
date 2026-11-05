@@ -1,0 +1,141 @@
+{
+  "schema": "mainline-a-art-round-receipt-v626",
+  "round": "R66",
+  "generatedAt": "2026-09-20T15:57:49.289Z",
+  "objective": "R66 final continuation: release identity bridge, receipt drift prevention, replay and candidate package rebind",
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r66-identity-bridge-code-change-20260920-final.json",
+  "build": {
+    "status": "passed",
+    "receipt": "docs/release/v607/mainline-a-r66-build-20260920-011.json",
+    "buildId": "nmSiBNf01OCs4mJYGw-Eb",
+    "runtimeBuildId": "mainline-a-47712d5dbe99e886",
+    "sourceStable": true,
+    "profile": "vercel-lite"
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "receipts": [
+        "docs/release/v607/mainline-a-r66-alignment-v626.json",
+        "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-004.json"
+      ],
+      "claim": "static and identity contract evidence only"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260920-011.json",
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "allScriptAssetsOk": true,
+      "claim": "local preserved-build HTTP/build binding only"
+    },
+    "visual": {
+      "status": "passed",
+      "screenshots": [
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260920-011.png",
+          "sha256": "5a26d57e6055bbee2248034befed865957be300db2ed09c7e8bf8420f8f66c32"
+        },
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260920-011.png",
+          "sha256": "d3034ce7e61c4223c9450c3e834e8a1cc6627ee99e42125274de2a53fa7b73fd"
+        }
+      ],
+      "claim": "visual evidence only"
+    },
+    "browser": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260920-011.json",
+      "desktopViewport": [
+        1280,
+        720
+      ],
+      "mobileViewport": [
+        390,
+        844
+      ],
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "claim": "Codex in-app browser local observation only"
+    },
+    "performance": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "blockers": [
+        "long-run-observation-required",
+        "physical-device-not-run"
+      ],
+      "claim": "R65 samples retained; not production or real-user performance"
+    },
+    "externalSource": {
+      "status": "blocked",
+      "receipts": [
+        "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+        "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+        "app/data/mainlineANebulaBatchV624.generated.json"
+      ],
+      "claim": "source and rights closure pending"
+    },
+    "releasePackage": {
+      "status": "blocked",
+      "pointer": "docs/release/v607/mainline-a-r66-release-package-v626-20260920-013.json",
+      "directory": "docs/release/v607/mainline-a-r66-package-20260920-013",
+      "identityVerifier": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-004.json",
+      "claim": "candidate package metadata and rollback only"
+    }
+  },
+  "alignment": {
+    "receipt": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "status": "blocked",
+    "rootMirror": "E:\\86137\\myai\\solar_sim\\web",
+    "rootReadOnly": true,
+    "packageRuntimeNames": {
+      "root": "solar-sim-viz",
+      "nextWeb": "solar-next-web"
+    },
+    "releaseIdentity": "solar-sim-mainline-a",
+    "releaseIdentityMatch": true,
+    "sourceIdentityMatch": false,
+    "manifestParity": false,
+    "blockers": [
+      "beta-nebula-source-closure-pending",
+      "canonical-rights-signoff-pending",
+      "canonical-runtime-clearance-pending",
+      "long-run-not-run",
+      "nebula-rights-review-pending",
+      "nebula-rights-signoff-pending",
+      "performance-receipt-blocked",
+      "physical-mobile-not-run",
+      "root-manifest-not-present",
+      "stellar-component-identity-pending"
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "openGates": [
+    "physical mobile device",
+    "30-minute soak",
+    "12 canonical signoffs",
+    "Beta 24 nebula rights and source closure",
+    "4 stellar component identities",
+    "root manifest parity"
+  ],
+  "claimsClosed": {
+    "publicDeployment": false,
+    "legalClearance": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  },
+  "notes": [
+    "Runtime package names remain different and are mapped through explicit release identity solar-sim-mainline-a; this does not claim source parity.",
+    "Canonical alignment was regenerated from the real root mirror after negative fixture tests were moved to --no-write.",
+    "No root file was written, no parent Git state was touched, and no physics kernel was modified."
+  ]
+}\n

@@ -1,0 +1,453 @@
+{
+  "version": "v595-source-manifest-v1",
+  "generatedAt": "2026-08-28T00:00:00.000Z",
+  "identityStage": "ready-for-v595-delta-source-identity",
+  "status": "complete-explicit-v595-delta-and-closure-boundary",
+  "sealAlgorithm": "sha256-canonical-json-object-keys-v1",
+  "formalProductPointer": "v263",
+  "parentVersion": "v594",
+  "baseSourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+  "baseCandidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+  "baseReleaseDossierSha256": "a70645f4a124b6fb6d1eb3a061eb15cf66618154c1a2884acc1730cb41bd3865",
+  "baseResealReceiptSha256": "406bb72a58aade66c877c75f4bea220e8b42181217efee1e4d9a1d20b46e4664",
+  "parentV594": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "releaseDossierSha256": "a70645f4a124b6fb6d1eb3a061eb15cf66618154c1a2884acc1730cb41bd3865",
+    "resealReceiptSha256": "406bb72a58aade66c877c75f4bea220e8b42181217efee1e4d9a1d20b46e4664",
+    "sourceFiles": 107,
+    "closureSourcePaths": 8,
+    "sourceManifestPath": "docs/release/v594/source-manifest-v594.json",
+    "candidateManifestPath": "public/data/stellar-relativity-v594/manifest.json",
+    "releaseDossierPath": "docs/release/v594/release-export-v594.json",
+    "resealReceiptPath": "docs/release/v594/reseal-receipt-v594.json"
+  },
+  "baseCounts": {
+    "files": 107,
+    "closureSourcePaths": 8
+  },
+  "files": [
+    {
+      "path": "app/components/AtlasAppShell.tsx",
+      "bytes": 8120,
+      "sha256": "7d7e386794077f3c497c91a8b4c23ae6a9e97aaa4277a8afb4607600952a8ba7"
+    },
+    {
+      "path": "app/components/AtlasCanvasSimulationContract.ts",
+      "bytes": 14376,
+      "sha256": "f214d745537abce4969a69c8bca16ced44b925db3c3863a7dfd6b94c6b6df827"
+    },
+    {
+      "path": "app/components/AtlasRuntimeSceneLayer.tsx",
+      "bytes": 8647,
+      "sha256": "c94c50ce29d87e8a02943ded1a2b9434d2c4f374084d53bf63fe80718fca58c7"
+    },
+    {
+      "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "bytes": 44122,
+      "sha256": "b1991573eb2fca3428c62e29fa08a06f37adbc41e7258f5c6ececec334a1f8e7"
+    },
+    {
+      "path": "app/components/AtlasSceneCameraBridges.tsx",
+      "bytes": 14207,
+      "sha256": "2e8d947aef7d6bcdf3e1c31fbb7359408bd7a6ac3656aed252b8870c837a609c"
+    },
+    {
+      "path": "app/components/AtlasSceneFocusCameraBridge.tsx",
+      "bytes": 28838,
+      "sha256": "f5a20e9ec02e1bd389f2dd2b52e2aa8f537e94c88b01a9a5bcb55eb9e99ae3a5"
+    },
+    {
+      "path": "app/components/AtlasUniverseSceneRuntime.tsx",
+      "bytes": 32002,
+      "sha256": "af77ab32ae3abe2d3196a943506d366e50e6472559a52621bfa1e61aeb8c6211"
+    },
+    {
+      "path": "app/components/BodyDetailSidebar.tsx",
+      "bytes": 16269,
+      "sha256": "deb01654a0fe55958610af3464c9dec43ac1cfaf2cc8f9dae5f9cb0d4539477d"
+    },
+    {
+      "path": "app/components/PostV593RelativityWorkbenchPanel.test.tsx",
+      "bytes": 2240,
+      "sha256": "1718f65a2d22a6a72beaa70ad4e738439b611ca81c7d3722e599a5f8c3970676"
+    },
+    {
+      "path": "app/components/PostV593RelativityWorkbenchPanel.tsx",
+      "bytes": 12036,
+      "sha256": "3d2fddc704e76d5a5dbe5a57730c75f0e8bfb1aea4cac475469af2f344481a06"
+    },
+    {
+      "path": "app/components/PostV595RelativityExactPresentationNode.tsx",
+      "bytes": 10735,
+      "sha256": "cd0e89a3bcf1afff467317913dfa8416d3e81e6c98427e2f219cb782fd71125c"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.test.tsx",
+      "bytes": 7639,
+      "sha256": "dddfcacadd926392884618ce6b961327cede65cba1bd9024d3bed2003ba9cc0e"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "bytes": 18093,
+      "sha256": "56e3969670b96e5b7bf7bfcccba1ebe8e7908a6cef7e18804d79085d43a2ed01"
+    },
+    {
+      "path": "app/components/SolarSystemBodies.tsx",
+      "bytes": 25728,
+      "sha256": "f3c80eebfd7f01ca48ca50247a80fb4b74ff8d5453da90ed6d8cd4d19af841e7"
+    },
+    {
+      "path": "app/components/SpacecraftModel.tsx",
+      "bytes": 2774,
+      "sha256": "13f26135a1778873a7617a3ba38275cde3c7e0fc8e57b7776773128f918fefa2"
+    },
+    {
+      "path": "app/components/UniverseCanvas.tsx",
+      "bytes": 25876,
+      "sha256": "bd39203b79fac83546c479d42f98375c4f4404e071d7f093d06aad037bb2d1bc"
+    },
+    {
+      "path": "app/components/V594CdpSoakSurface.tsx",
+      "bytes": 18144,
+      "sha256": "016c1ca5d6f418abe18492ba8287a4b7d48fb31452212f53ac9b4d561d25793e"
+    },
+    {
+      "path": "app/components/V595ExactAbDomSurface.tsx",
+      "bytes": 7100,
+      "sha256": "4481e60080b44d9e9a7bc52d3d84cf4e68fc198d9d9283d55c0dd5bdd28617cd"
+    },
+    {
+      "path": "app/components/V595ExactAbR3fConsumer.tsx",
+      "bytes": 14802,
+      "sha256": "7458ea89dc51461248927b0cba2b3965b7cec0021566a815585c368e9f3de3ed"
+    },
+    {
+      "path": "app/lib/atlasProductSceneFamilyContractV595.test.ts",
+      "bytes": 3868,
+      "sha256": "a26847c59168efe8dbb30f043e600641ca64cffaeeba0359835480ce44d9f282"
+    },
+    {
+      "path": "app/lib/atlasProductSceneFamilyContractV595.ts",
+      "bytes": 6041,
+      "sha256": "004938066c4f1f4884700cfad99236d278d602669fd44ef877a0dd802b372522"
+    },
+    {
+      "path": "app/lib/atlasV595BuildIdentity.test.ts",
+      "bytes": 2131,
+      "sha256": "fd45537ce3f9e75e69beaf81f25d7e22a78459ec028eb570aff033ee0198b069"
+    },
+    {
+      "path": "app/lib/atlasV595BuildIdentity.ts",
+      "bytes": 4520,
+      "sha256": "405c79f73f0b7b295b459e1260fbaea51f2ff02e2b741990132586d0e1540ea9"
+    },
+    {
+      "path": "app/lib/postV594SameRealmLifecycle.test.ts",
+      "bytes": 23074,
+      "sha256": "10832f4f3c60725149e358837b39caafe894ffc3901f56984c7df0e3ba749634"
+    },
+    {
+      "path": "app/lib/timelikeKerrReferenceV595.test.ts",
+      "bytes": 4034,
+      "sha256": "d7e0fdd89f32332c06983fcc18096fce65f7f4ec50cf0dfff3f1a0127f797125"
+    },
+    {
+      "path": "app/lib/timelikeKerrReferenceV595.ts",
+      "bytes": 5686,
+      "sha256": "970fa376aee6fbfd0f60d409791eb96e7b5372a9991cbc9b41ac12a04f0ec958"
+    },
+    {
+      "path": "app/lib/useOptionalTexture.test.ts",
+      "bytes": 19348,
+      "sha256": "f2c01059ca3033ff7756cbbedc17d07158be67e02fdc4daef5fe70f96f120dd2"
+    },
+    {
+      "path": "app/lib/useOptionalTexture.ts",
+      "bytes": 24851,
+      "sha256": "03891ee5fb45e6c519fe83612cb87dbb50740fdf2cdf8e65a8ecd51b03950555"
+    },
+    {
+      "path": "app/lib/v594CdpSoakSurface.test.ts",
+      "bytes": 8515,
+      "sha256": "95f90917f220c73cd03f10bdca198b1a88db488077bcd2c82ec8904d1388847c"
+    },
+    {
+      "path": "app/lib/v595ExactAbContract.test.ts",
+      "bytes": 10253,
+      "sha256": "37162fadda7c71c7e3f9302bee11491890295e5ca686425c3231e97ae2576db3"
+    },
+    {
+      "path": "app/lib/v595ExactAbContract.ts",
+      "bytes": 21508,
+      "sha256": "8b97644c80ce240bfe4e42147e8b55260149f2f3b67c8a3cee8d59310c9e5d72"
+    },
+    {
+      "path": "app/lib/v595ExactAbSelection.ts",
+      "bytes": 1538,
+      "sha256": "827d661bb3a66b16b3ced2027892cbfcdd47c2b69cf623c0bafbb96772b92795"
+    },
+    {
+      "path": "docs/release/post-v593/timelike-kerr-reference-receipt-v595.json",
+      "bytes": 2666,
+      "sha256": "c45153d17368003cf3394974b4762ce97e32b05933b4d62fce90ff1d505b6579"
+    },
+    {
+      "path": "next.config.mjs",
+      "bytes": 7522,
+      "sha256": "51ded0a990ff76ce897adb64e0e4c65f7926ebfe50bce515ffe3e26345e48b20"
+    },
+    {
+      "path": "package.json",
+      "bytes": 19717,
+      "sha256": "5939f0a5dba1beb166eddab93bfbda7eb660824ea100d51b43f22c7ca10c051a"
+    },
+    {
+      "path": "public/data/catalog-lite-v7/astrophysical-parameters.json.gz",
+      "bytes": 5053786,
+      "sha256": "74ca668d2a0f1613f45cbeff0fc0293630df0455fd7ce41b92f79c62db380001"
+    },
+    {
+      "path": "public/data/catalog-lite-v7/hr-statistics.json",
+      "bytes": 7202,
+      "sha256": "217019c747fcc53722c4d48e42754d671636e15485e81633f4dfdbf545553387"
+    },
+    {
+      "path": "public/data/post-v593-stellar-relativity/timelike-kerr-reference-v595.json",
+      "bytes": 14032,
+      "sha256": "519fad3fa98bbbdffc51f0e65d7364ee14db98daf60a4d4fd0a803e92417b56d"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "bytes": 22948,
+      "sha256": "c1df629cd57e43b6b2f2513daef65d8f8fa1d634fd8b24e9f8ff38931772fb5a"
+    },
+    {
+      "path": "scripts/build-atlas-v595-profile.mjs",
+      "bytes": 12545,
+      "sha256": "37723a4a3d5135d3784f7566d6e0e7acef7cd7c288d9e1a7acacb267e47c44b1"
+    },
+    {
+      "path": "scripts/build-atlas-v595-profile.test.mjs",
+      "bytes": 2940,
+      "sha256": "f72307c7d6ea476e0e882979177b94c6478e6b2debc90a187baef8cdf6dd4011"
+    },
+    {
+      "path": "scripts/build-catalog-v7.py",
+      "bytes": 12610,
+      "sha256": "c5e6e64101072dccaaeffe04a3814f9e791c95c39cd9615938f918d25651c8f2"
+    },
+    {
+      "path": "scripts/build-v595-closure-dossier.test.mjs",
+      "bytes": 17983,
+      "sha256": "7df68b0e57740959df363baae2cbc55abe34d73273284d33973b3feb683fbd9c"
+    },
+    {
+      "path": "scripts/build-v595-current-lite-matrix.test.mjs",
+      "bytes": 10413,
+      "sha256": "67233e879de596c4d937d65ece7ae190f2d4d1143a303eca583ce0662284e459"
+    },
+    {
+      "path": "scripts/build-v595-current-source-lifecycle.test.mjs",
+      "bytes": 9235,
+      "sha256": "4b92c13dc7b8e9862951b2ae2f15893844d255c4ba6917d5cbf4f381abbd856e"
+    },
+    {
+      "path": "scripts/build-v595-current-source-soak.test.mjs",
+      "bytes": 14411,
+      "sha256": "6699d4047b83fd86362611cf3b41977d982a6ef5aa48bffa96f6c7901369a352"
+    },
+    {
+      "path": "scripts/build-v595-final-sealed-browser-gate.test.mjs",
+      "bytes": 14566,
+      "sha256": "3a8c0f0f9b508d88a1f1fc7598d7607c5caf18923f7de50f5d18e652e1ef99ce"
+    },
+    {
+      "path": "scripts/build-v595-human-visual-signoff.test.mjs",
+      "bytes": 15187,
+      "sha256": "eec0d6a194d68507768e9f8fd508bf497c97e27e4858c06103245f80e9ff5be1"
+    },
+    {
+      "path": "scripts/build-v595-source-manifest.mjs",
+      "bytes": 11456,
+      "sha256": "02c3fe5c31d528005025c26256863a9f7ee124203be319211b82a33df42a0c82"
+    },
+    {
+      "path": "scripts/build-v595-source-manifest.test.mjs",
+      "bytes": 3160,
+      "sha256": "a575e06516073e12663f51fee54b0b8eb0773b04973310902d881872f6fa6783"
+    },
+    {
+      "path": "scripts/build-v595-stellar-relativity-candidate.mjs",
+      "bytes": 21258,
+      "sha256": "48390afb7256ac188495ac2b7b2d21f6a29ae586d7ab3ec4be2456760a02a9b3"
+    },
+    {
+      "path": "scripts/build-v595-stellar-relativity-candidate.test.mjs",
+      "bytes": 4079,
+      "sha256": "5624ccdb5721a7726455b58e21b0242c82a9e437f13529f9a3cd748f7245bb12"
+    },
+    {
+      "path": "scripts/build-v595-timelike-kerr-admission.mjs",
+      "bytes": 23588,
+      "sha256": "406e235a7d62ed530766677dc684a5a571bc220fbf2cb1a830079f9aeb66cd20"
+    },
+    {
+      "path": "scripts/seal-v595-stellar-relativity-candidate.test.mjs",
+      "bytes": 5434,
+      "sha256": "e0a19a8cc40ca134cb2e2b24f4a354299215498f5a78e985d1ab50ee8d684491"
+    },
+    {
+      "path": "scripts/v595-formal-contract.mjs",
+      "bytes": 23477,
+      "sha256": "5f03de8a89944c43d95f5d093b0942c5ccdfbe1e371d5cabafa5960175cbf904"
+    },
+    {
+      "path": "scripts/v595-formal-contract.test.mjs",
+      "bytes": 10833,
+      "sha256": "a0042644c901d00f0916837c74b5244b850e554b2c79be5c8383f3d114ba25fe"
+    },
+    {
+      "path": "scripts/v595-source-paths.mjs",
+      "bytes": 5224,
+      "sha256": "272f2f2d2fa71972059278bfabdffea6e64d4c5b8ceb02f5c990f5694347f0e2"
+    },
+    {
+      "path": "scripts/v595-source-paths.test.mjs",
+      "bytes": 2099,
+      "sha256": "377f9c0feb64aa89f7b8393d5fc5c5093f58d6f762c7d1e98655e7970c3afad1"
+    },
+    {
+      "path": "scripts/verify-v595-stellar-relativity-candidate.test.mjs",
+      "bytes": 10848,
+      "sha256": "7d71c4b1c52a99c21194b6e10aa22c685f4d4a0222e7b0a7ac86489f7703d326"
+    },
+    {
+      "path": "tmp/audit-v595-browser-evidence.mjs",
+      "bytes": 44937,
+      "sha256": "d7e0aff8fd84e068b13aed40ed1cfe7bd831b14b1eca18f7a13e10d4c7273b14"
+    },
+    {
+      "path": "tmp/audit-v595-browser-evidence.test.mjs",
+      "bytes": 50403,
+      "sha256": "bb3ff45a159afcfc5c1444bc34b2eea07c504518f9f9a484728c9c6331e59a94"
+    },
+    {
+      "path": "tmp/v595-24x2-stellar-browser-matrix.mjs",
+      "bytes": 31960,
+      "sha256": "bf3ad84b37687c79075799a99ccde52933362482d8d78efc2f8e89b3029b4133"
+    },
+    {
+      "path": "tmp/v595-24x2-stellar-browser-matrix.test.mjs",
+      "bytes": 9072,
+      "sha256": "37d5320593f088ae1cac3ab146e5fcb7736ccea16fd4a3043b61f620fa72eba4"
+    },
+    {
+      "path": "tmp/v595-browser-evidence-collector.mjs",
+      "bytes": 52284,
+      "sha256": "26900cd4badc02cf03a6de08420eb3d40ee6bc4994899740b91cdd6e6496531c"
+    },
+    {
+      "path": "tmp/v595-browser-evidence-contract.mjs",
+      "bytes": 22590,
+      "sha256": "e00577290232c4c15dc52974ea0d2250643713331e0dec03c80b90aaccdd7a20"
+    },
+    {
+      "path": "tmp/v595-browser-evidence-contract.test.mjs",
+      "bytes": 4217,
+      "sha256": "49f2b3ccc11b4af9d82cc13aabd9a5852e5d228bbd82a0dfe55e2beff56a4ae0"
+    },
+    {
+      "path": "tmp/v595-cdp-renderer-soak-runner.mjs",
+      "bytes": 35768,
+      "sha256": "e86c37cf5b03db9642135e9b5cc246336af44d812991e85fc1f2caeb94b0c10d"
+    },
+    {
+      "path": "tmp/v595-cdp-renderer-soak-runner.test.mjs",
+      "bytes": 9789,
+      "sha256": "9b1cb7aab2af43db3a16ac0e642906eae52b267c9279f263e0b355b56242c1ee"
+    },
+    {
+      "path": "tmp/v595-product-scene-family-browser-journeys.mjs",
+      "bytes": 52589,
+      "sha256": "65bfa0c01829e18432d7f6673d36e04b7f5e5706f4bfb1e547f62e65c842f66d"
+    },
+    {
+      "path": "tmp/v595-product-scene-family-browser-journeys.test.mjs",
+      "bytes": 11164,
+      "sha256": "07d1a4ed87e59d3b1ff0d4db6cb9ec0acc08ad825f99632b227ec714ae7a5076"
+    },
+    {
+      "path": "tmp/v595-real-desktop-chrome-evidence.mjs",
+      "bytes": 30257,
+      "sha256": "9ea723c0e2ab429937ce0e7cbf5d3dd00ed2be478afa1e2c9b4cc45f1b67f007"
+    },
+    {
+      "path": "tmp/v595-real-desktop-chrome-evidence.test.mjs",
+      "bytes": 11453,
+      "sha256": "2c2cd9d0682c2d408cb29132a45738bbbe5b5167189eba476da27e9fde125f18"
+    },
+    {
+      "path": "tmp/v595-same-realm-lifecycle-runner.mjs",
+      "bytes": 20922,
+      "sha256": "0421162991bdff32f3e54383024a392c3e436239b0ffc576ba5670217da530cc"
+    },
+    {
+      "path": "tmp/v595-same-realm-lifecycle-runner.test.mjs",
+      "bytes": 9431,
+      "sha256": "f7981e57f77cb3cb30ca26aa0189b945e0de6b91ec4761262f6b5cada09c8c48"
+    }
+  ],
+  "closureSourcePaths": [
+    {
+      "path": "scripts/build-v595-current-source-lifecycle.mjs",
+      "bytes": 16906,
+      "sha256": "f4d2fd84daddda38999026b148b1d5469dbdd740424453b8c9e334684ebbe7cd",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v595-current-source-soak.mjs",
+      "bytes": 28883,
+      "sha256": "98f47c3fe9259faa345cd4b0727ca996c9988025eb9af3880d9cb1ccb7d71c9c",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v595-current-lite-matrix.mjs",
+      "bytes": 17005,
+      "sha256": "302663f3036b082c62082f437ecda340764d329b505bcf09d955c16e22f05b8b",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v595-final-sealed-browser-gate.mjs",
+      "bytes": 33093,
+      "sha256": "1d4d1714ac172da193f36eac22bbe1641dc76780feda1edd4b6db5f9f3077136",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v595-human-visual-signoff.mjs",
+      "bytes": 23205,
+      "sha256": "736fc9361999521524668aa6e7eb5cd830f6cb2e53ed7cb387fbc387a4520004",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v595-closure-dossier.mjs",
+      "bytes": 31337,
+      "sha256": "2cfc0e20f4fe849c26fecffe7328f93d532cd0c1f21d0af53d0231c4b599c318",
+      "state": "present"
+    },
+    {
+      "path": "scripts/seal-v595-stellar-relativity-candidate.mjs",
+      "bytes": 16955,
+      "sha256": "5b9713d2e34446bd1e7ebf79e24bac5926d4a1416ea5d3fa0651f56b5264ab42",
+      "state": "present"
+    },
+    {
+      "path": "scripts/verify-v595-stellar-relativity-candidate.mjs",
+      "bytes": 22140,
+      "sha256": "630d3e7e1fa6ac8e3a003d25329e0a4f7684db850d833be07ed3be0cbc596bbd",
+      "state": "present"
+    }
+  ],
+  "pendingClosurePaths": [],
+  "receiptSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186"
+}

@@ -1,0 +1,52 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:03:25.092Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "ngc-7129-nebula",
+  "query": "NGC 7129 Nebula",
+  "requiredTerms": [
+    "7129",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC%207129%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC%207129%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3975,
+    "responseSha256": "5be9590a9d9b210cc4faadaf4c2d5d25eab3d2fd7105e8b6fbb2af6fde993e93"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA05266",
+      "title": "Spitzer Telescope Sends Rose for Valentine Day",
+      "description": "A cluster of newborn stars herald their birth in this interstellar Valentine Day commemorative picture obtained with NASA Spitzer Space Telescope. These bright young stars are found in a rosebud-shaped and rose-colored nebulosity known as NGC 7129. The star cluster and its associated nebula are located at a distance of 3300 light-years in the constellation Cepheus. A recent census of the cluster reveals the presence of 130 young stars. The stars formed from a massive cloud of gas and dust that contains enough raw materials to create a thousand Sun-like stars. In a process that astronomers still poorly understand, fragments of this molecular cloud became so cold and dense that they collapsed into stars. Most stars in our Milky Way galaxy are thought to form in such clusters. The Spitzer Space Telescope image was obtained with an infrared array camera that is sensitive to invisible infrare",
+      "dateCreated": "2004-02-12T19:59:55Z",
+      "center": "JPL",
+      "keywords": [
+        "Cepheus",
+        "Spitzer Space Telescope",
+        "NGC 7129"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA05266/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA05266/PIA05266~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "c686d74219889ae433b7781fdddd67a966e7131cd4047c19b6db71786faaa374"
+}

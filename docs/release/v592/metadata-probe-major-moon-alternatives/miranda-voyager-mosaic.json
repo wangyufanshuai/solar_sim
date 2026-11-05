@@ -1,0 +1,67 @@
+{
+  "version": "v592-major-moon-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-20T15:00:51.942Z",
+  "status": "metadata-probe-complete-no-payload",
+  "probeId": "miranda-voyager-mosaic",
+  "target": "miranda",
+  "query": "Miranda Uranus Voyager mosaic",
+  "requiredTerms": [
+    "miranda"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Miranda%20Uranus%20Voyager%20mosaic&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Miranda%20Uranus%20Voyager%20mosaic&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 2474,
+    "responseSha256": "3cfeaae404410fe6294f763ac24a802784b38c065d60042d44b4bbacee778789"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA01490",
+      "title": "South Polar View of Miranda",
+      "description": "Uranus moon Miranda is shown in a computer-assembled mosaic of images obtained Jan. 24, 1986, by NASA Voyager 2 spacecraft. Miranda is the innermost and smallest of the five major Uranian satellites,",
+      "dateCreated": "1998-10-30T15:05:27Z",
+      "center": "JPL",
+      "keywords": [
+        "Miranda",
+        "Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA01490/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA01490/PIA01490~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA01354",
+      "title": "Uranus Innermost Satellite Miranda",
+      "description": "Miranda, innermost of Uranus large satellites, is seen at close range in this Voyager 2 image, taken Jan. 24, 1986, as part of a high-resolution mosaicing sequence.",
+      "dateCreated": "1998-11-13T03:04:12Z",
+      "center": "JPL",
+      "keywords": [
+        "Miranda",
+        "Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA01354/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA01354/PIA01354~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "c525127044929b61f09816a6008324a7117ee42c00fcbc677b1ba2c5919ef19c"
+}

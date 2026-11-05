@@ -1,0 +1,45 @@
+{
+  "schema": "mainline-a-art-code-change-receipt",
+  "version": "r65-browser-receipt-increment-v625",
+  "round": 65,
+  "runId": "20260922-041",
+  "generatedAt": "2026-09-22T02:16:00.000Z",
+  "status": "blocked-open-gates",
+  "effectiveChangedLines": 226,
+  "minimumRequired": 1000,
+  "minimumMet": false,
+  "countingPolicy": "226 non-empty production/tooling lines in the new receipt builder; tests, receipts, screenshots and manifests are excluded. The full R65 development batch remains the authoritative >=1000-line batch receipt.",
+  "productionAndToolingFiles": [
+    {
+      "path": "scripts/build-mainline-a-r65-browser-receipt-v625.mjs",
+      "effectiveLines": 226,
+      "role": "fail-closed browser DOM observation to performance receipt builder"
+    }
+  ],
+  "supportingFiles": [
+    "scripts/build-mainline-a-r65-browser-receipt-v625.test.mjs",
+    "app/components/MainlineAPerformancePanelV625.tsx",
+    "app/components/MainlineAPerformancePanelV625.test.tsx",
+    "scripts/audit-mainline-a-performance-v625.mjs",
+    "scripts/replay-mainline-a-performance-v625.mjs",
+    "package.json"
+  ],
+  "validation": {
+    "nodeReceiptTest": "3/3 passed",
+    "vitest": "13/13 passed",
+    "eslint": "passed",
+    "build": "docs/release/v607/mainline-a-r65-build-20260922-041.json",
+    "browserSurface": "Codex in-app browser",
+    "browserRuns": "3 desktop + 3 mobile viewport",
+    "physicalMobile": "not-run",
+    "longRun": "not-run"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "physicsKernelMutation": false
+  }
+}

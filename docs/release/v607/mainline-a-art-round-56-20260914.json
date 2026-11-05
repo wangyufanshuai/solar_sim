@@ -1,0 +1,72 @@
+{
+  "round": 56,
+  "date": "2026-09-14",
+  "title": "beta-stellar-source-closure-v616",
+  "status": "source-closure-contract-ready-fresh-capture-required",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "betaHeroTotal": 24,
+    "stellarSourceClosureRecords": 4,
+    "freshCaptureRequired": 4,
+    "sourceEvidenceGaps": 8,
+    "candidateOnly": 4,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added V616 source-closure pack for Acrux, Spica, Regulus and Polaris, derived from the sealed SIMBAD snapshot and V607 projection without inventing replacement parallax or component identity values.",
+    "Recorded candidate-specific missing evidence: Acrux requires positive parallax and upstream reference; Spica, Regulus and Polaris require component identity and component-source reference decisions.",
+    "Added HTTPS source-page identity, snapshot/projection digests, fresh-capture slots, reviewer/decision fields, next-action labels, patch validation, capture-review transition and immutable runtime/measurement boundaries.",
+    "Added fail-closed tests for stale input, unknown candidate, mismatched identity, fake capture, opened runtime admission, invalid capture patch, deterministic temporary-root generation and closure fingerprints.",
+    "Extended the hero review panel with V616 source closure status, source URL, missing evidence, next action, capture state and explicit candidate-only boundary."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in four new R56 source-closure files. Existing panel integration and generated closure JSON are additional.",
+    "files": [
+      {"path": "scripts/build-mainline-a-beta-stellar-source-closure-v616.mjs", "baseline": "new-in-r56", "effectiveChangedLines": 140, "sha256": "4f1d792c8a9940fdf935d8826a1519f88ba3e7820eb6bfb601ba4c86d461fdda"},
+      {"path": "scripts/build-mainline-a-beta-stellar-source-closure-v616.test.mjs", "baseline": "new-in-r56", "effectiveChangedLines": 64, "sha256": "722aee1a1037f0bd135d95a062db6a3685e389d5184034de2f9f26ea1a359753"},
+      {"path": "app/lib/mainlineABetaStellarSourceClosureV616.ts", "baseline": "new-in-r56", "effectiveChangedLines": 187, "sha256": "0355cad59f5d7fbae9b24693519bb9857ad2778906d08d9e30cf5d21d3bc5ec3"},
+      {"path": "app/lib/mainlineABetaStellarSourceClosureV616.test.ts", "baseline": "new-in-r56", "effectiveChangedLines": 112, "sha256": "01dade49713fdb81eafb2dc6c5d0ff9d71a60688f32583e0b7f7f828f76d5377"}
+    ],
+    "effectiveChangedLines": 503,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "sourceClosureNode": {"passed": 6, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-stellar-source-closure-v616.test.mjs"},
+    "sourceClosureVitest": {"passed": 24, "failed": 0, "files": 3, "command": "npx vitest run app/lib/mainlineABetaStellarSourceClosureV616.test.ts app/lib/mainlineABetaHeroArtEvidenceV615.test.ts app/components/MainlineABetaHeroReviewPanelV611.test.tsx"},
+    "combinedRegressionNode": {"passed": 56, "failed": 0, "command": "node --test --test-concurrency=1 scripts/build-mainline-a-beta-stellar-source-closure-v616.test.mjs scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "note": "Expected stale-pack child-process failure is asserted; aggregate exit code is 0."},
+    "combinedVitest": {"passed": 67, "failed": 0, "files": 7},
+    "eslint": {"passed": true, "scope": "V616 source closure, V615 art evidence, hero panel and tests"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "uNtoS5QwPMnwjBZ5PHRuF", "buildIdSha256": "30d20107b8848f49676851f5035dfe57633a57c33c52a967854e73c340eb5e0c"}
+  },
+  "http": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "checks": [
+      {"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697},
+      {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241, "defaultScientificKernel": "legacy-eih-1pn"}
+    ]
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "panel": "mainline-a-beta-hero-review-v611", "heroRecords": 4, "artSummary": "美术基线 20/24 · candidate-only 4 · evidence pending 4", "sourceSummary": "来源闭环 4 条 · 缺口 8 项 · 新快照采集 0/4", "selectedCandidate": "acrux", "sourceClosureStatus": "待重新采集来源", "sourceClosureNextAction": "补采视差与上游引用", "spicaIdentityGapVerified": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "In-app viewport override remains unavailable in this run; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, legal rights, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r56-stellar-source-closure-desktop.png", "bytes": 68864, "sha256": "8d9cc2aa3aa5a2946221ada5b551f79bad3ad4d515dfd9ab210f19c0419b314e"}
+  ],
+  "artifacts": {
+    "sourceClosurePack": {"schema": "mainline-a-beta-stellar-source-closure-v616", "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json", "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310", "total": 4, "freshCaptureRequired": 4, "missingEvidence": 8, "candidateOnly": 4, "fingerprint": "edc395d373601e4423342fa317d9b0c61b111b39e0bbc239397305225dff09ab"},
+    "sourceBoundary": {"snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061", "license": "ODbL-1.0", "legalDecision": "not-granted", "runtimeWrites": false, "measurementWrites": false}
+  },
+  "openGates": [
+    "4 条恒星仍需真实新来源快照、组件身份决策和人工审核；V616 只建立采集与审核契约，不宣称来源闭环",
+    "4 颗恒星仍 candidate-only，20/24 是当前运行时基线，不是 Beta 24/24 完成",
+    "星云 18→24、12 个重点星座最终视觉 signoff、多设备 GPU/FPS/资源生命周期、移动端视口证据、root/next-web 对齐、公共部署和最终发布包仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "mainline-a4-static-portrait-render-v1",
+  "renderer": "React SSR SVG + sharp/libvips",
+  "scope": "static-portrait-rasterization-only-not-browser-or-interaction-validation",
+  "objects": [
+    "alpha-centauri-a",
+    "achernar",
+    "betelgeuse",
+    "sirius-a",
+    "rigel",
+    "antares",
+    "canopus",
+    "arcturus",
+    "vega",
+    "capella-a",
+    "procyon-a",
+    "aldebaran",
+    "alpha-centauri-b",
+    "hadar",
+    "altair",
+    "pollux",
+    "fomalhaut",
+    "deneb",
+    "bellatrix",
+    "alnilam"
+  ],
+  "image": {
+    "path": "docs/release/v607/visuals/stellar-portraits-v607.png",
+    "width": 1160,
+    "height": 2632,
+    "bytes": 1767580,
+    "sha256": "11ba2fa87b20f4bcbac710ff2af26f26cc9b0048106393b734d4be965a39fddd"
+  },
+  "sources": [
+    {
+      "path": "app/components/MainlineAStellarPortraitV607.tsx",
+      "sha256": "28c17e2c1f0be837a25a3b347780b967b1f28b9dbd7f8fbfbaabbe51e445eeda"
+    },
+    {
+      "path": "app/data/mainlineAMetadataV607.ts",
+      "sha256": "a2de61c9e822e7e9bd06f1ac04233cd0044c80ac0a285ca8d3c440dac9307a70"
+    },
+    {
+      "path": "app/data/mainlineAStellarEvidenceV607.ts",
+      "sha256": "5fdf7948677effe0b12aa9ee46126ee4553e7c2fc389c26da538fcf1055af792"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarNarrativesV607.ts",
+      "sha256": "2983f2cbc0770dcc0cc5ebf7938435f35ea1b29fea0717186c62adac3f629eb8"
+    },
+    {
+      "path": "app/data/stellarHeroesV592.generated.ts",
+      "sha256": "21d9d19d779eccc172d607ca1d868d419799ed1f0714032ccf8b4f6abbb055af"
+    },
+    {
+      "path": "scripts/render-mainline-a4-portraits.ts",
+      "sha256": "4d1e66338e0194e672e1fbefb2c05ba42e72206f8ee4434ae3b7890aac2fc8e3"
+    }
+  ]
+}

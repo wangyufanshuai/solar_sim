@@ -1,0 +1,771 @@
+{
+  "schema": "mainline-a-nebula-source-page-evidence-v628-20260927-053",
+  "startedAt": "2026-09-27T02:40:38.554Z",
+  "endedAt": "2026-09-27T02:40:40.853Z",
+  "scope": "existing-V628-source-evidence-only-no-new-development-round",
+  "transport": "Node-HTTPS-verified-TLS-manual-redirects",
+  "byteSemantics": "exact-HTTP-response-body-bytes-after-transfer-framing-before-content-decoding",
+  "captureScope": "official-source-page-and-policy-HTML-not-image-payload-not-structured-scientific-response",
+  "requestCount": 7,
+  "responseCaptured": 7,
+  "itemCount": 6,
+  "policyPageCount": 1,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWriteback": false,
+    "productionCodeChanged": false,
+    "rightsApproval": "pending",
+    "humanSigned": false,
+    "physicsKernelChanged": false
+  },
+  "rows": [
+    {
+      "id": "jellyfish-nebula",
+      "expectedPia": "PIA13449",
+      "sourceUrl": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.556Z",
+          "endedAt": "2026-09-27T02:40:40.258Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "eed09bcd7d11f92296f0d2388cb6cadbd610a80a67feeb2e4c83580901e475da",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 272952,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/jellyfish-nebula-attempt-1.html",
+          "sha256": "53fcbade90bbd643686e8ac493e6aa691efb4c2da01b67d00b8af608cbeca898",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "An Explosion of Infrared Color",
+            "expectedPia": "PIA13449",
+            "observedPiaIds": [
+              "PIA13449"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13449/PIA13449.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "An Explosion of Infrared Color",
+        "expectedPia": "PIA13449",
+        "observedPiaIds": [
+          "PIA13449"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13449/PIA13449.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "cocoon-nebula",
+      "expectedPia": "PIA13441",
+      "sourceUrl": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.573Z",
+          "endedAt": "2026-09-27T02:40:40.312Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "0ef047ba2fcd9153348e5734f073b109fc94dc4778605add973ae675faf74780",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 268755,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/cocoon-nebula-attempt-1.html",
+          "sha256": "a7bf4bd7145a2868e270db48e452b7e7e656d99d44e5d2fed0ab4b1a981ee4a3",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Cosmic Cocoon",
+            "expectedPia": "PIA13441",
+            "observedPiaIds": [
+              "PIA13441"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13441/PIA13441.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Cosmic Cocoon",
+        "expectedPia": "PIA13441",
+        "observedPiaIds": [
+          "PIA13441"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13441/PIA13441.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "rho-ophiuchi-cloud",
+      "expectedPia": "PIA10182",
+      "sourceUrl": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.574Z",
+          "endedAt": "2026-09-27T02:40:40.354Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "3a85a03ecfbede5e5f30e5da618851bd7f17dac2838798513e6a53587abf238b",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 271531,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/rho-ophiuchi-cloud-attempt-1.html",
+          "sha256": "63b81a9b3498b843ccb50221b362db33de7c48616a71de3dcfe04d3cee41a72c",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Young Stars in Their Baby Blanket of Dust",
+            "expectedPia": "PIA10182",
+            "observedPiaIds": [
+              "PIA10182"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia10/pia10182/PIA10182.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Young Stars in Their Baby Blanket of Dust",
+        "expectedPia": "PIA10182",
+        "observedPiaIds": [
+          "PIA10182"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia10/pia10182/PIA10182.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "cepheus-c-nebula",
+      "expectedPia": "PIA23127",
+      "sourceUrl": "https://science.nasa.gov/photojournal/cepheus-c-and-cepheus-b-region-by-spitzer-one-instrument/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.575Z",
+          "endedAt": "2026-09-27T02:40:40.589Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/cepheus-c-and-cepheus-b-region-by-spitzer-one-instrument/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/cepheus-c-and-cepheus-b-region-by-spitzer-one-instrument/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "7538febb32d828f8b41d86def8fcbb8812aba17cd360562835b34a72e826ac43",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/cepheus-c-and-cepheus-b-region-by-spitzer-one-instrument/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/cepheus-c-and-cepheus-b-region-by-spitzer-one-instrument/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 270901,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/cepheus-c-nebula-attempt-1.html",
+          "sha256": "aaf154f85cea5cd9dc190398ec8f53024075bd6ee49bb79fbcad6a07f6c4ba09",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Cepheus C and Cepheus B Region by Spitzer (One-Instrument)",
+            "expectedPia": "PIA23127",
+            "observedPiaIds": [
+              "PIA23127"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23127/PIA23127.jpg",
+              "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia23/pia23127/figures/PIA23127_fig1.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Cepheus C and Cepheus B Region by Spitzer (One-Instrument)",
+        "expectedPia": "PIA23127",
+        "observedPiaIds": [
+          "PIA23127"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23127/PIA23127.jpg",
+          "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia23/pia23127/figures/PIA23127_fig1.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "dragon-lair-nebula",
+      "expectedPia": "PIA13240",
+      "sourceUrl": "https://science.nasa.gov/photojournal/dragons-lair/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.575Z",
+          "endedAt": "2026-09-27T02:40:40.852Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/dragons-lair/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/dragons-lair/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "90badad52d5c533206e2ee3e84853ca13af2f304f757803007d14e2eb4035973",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/dragons-lair/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/dragons-lair/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 268509,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/dragon-lair-nebula-attempt-1.html",
+          "sha256": "8e12665c6cba99b4c65a18496da416be2a97d6bd69d67f677de921da0408c9ee",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Dragon’s Lair",
+            "expectedPia": "PIA13240",
+            "observedPiaIds": [
+              "PIA13240"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/Penn State/DSS",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13240/PIA13240.jpg",
+              "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia13/pia13240/figures/PIA13240_fig1.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Dragon’s Lair",
+        "expectedPia": "PIA13240",
+        "observedPiaIds": [
+          "PIA13240"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/Penn State/DSS",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13240/PIA13240.jpg",
+          "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia13/pia13240/figures/PIA13240_fig1.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "monkey-head-nebula",
+      "expectedPia": "PIA19836",
+      "sourceUrl": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.576Z",
+          "endedAt": "2026-09-27T02:40:40.382Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "43bbb3d79180716b920a21ede9b6db6d7682674dd1235cace01f42b31ed1058e",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 269928,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/monkey-head-nebula-attempt-1.html",
+          "sha256": "740ce65ba3026becb10888389b00e7979ba47e3fe14d0913c849a42710b3d710",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Seeing Beyond the ‘Monkey Head’",
+            "expectedPia": "PIA19836",
+            "observedPiaIds": [
+              "PIA19836"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19836/PIA19836.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Seeing Beyond the ‘Monkey Head’",
+        "expectedPia": "PIA19836",
+        "observedPiaIds": [
+          "PIA19836"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19836/PIA19836.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "nasa-images-and-media-policy",
+      "expectedPia": null,
+      "sourceUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:40:38.576Z",
+          "endedAt": "2026-09-27T02:40:39.631Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "2269088bd4ab60bc7514bda66ca2b100fc65b0630c0675662a8c55a403acc7d5",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+          "redirectChain": [
+            {
+              "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 321424,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/nasa-images-and-media-policy-attempt-1.html",
+          "sha256": "175fc5f5386cc1f782b5628846617aa65c0d32f740cb78545fe480da90878238",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Images and Media",
+            "expectedPia": null,
+            "observedPiaIds": [],
+            "sourceIdentityMatched": true,
+            "credit": null,
+            "jpegDownloadLinks": [
+              "https://www.nasa.gov/wp-content/uploads/2023/07/nasawormbook-spread10-2400.jpg",
+              "https://www.nasa.gov/wp-content/uploads/2019/07/108-ksc-69p-3253-copy.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space",
+              "NASA content – images, audio, video, and media files used in the rendition of 3-dimensional models, such as texture maps and polygon data in any format – generally are not subject to copyright in the United States. You may use this material for educational or informational purposes, including photo collections, textbooks, public exhibits, computer graphical simulations and Internet Web pages. This general permission extends to personal Web pages.",
+              "News outlets, schools, and text-book authors may use NASA content without needing explicit permission, subject to compliance with these guidelines. NASA content used in a factual manner that does not imply endorsement may be used without needing explicit permission. NASA should be acknowledged as the source of the material. NASA occasionally uses copyright-protected material of third parties with permission on its website. Those images will be marked identified as copyright protected with the name of the copyright holder. NASA’s use does not convey any rights to others to use the same material. Those wishing to use copyright protected material of third parties must contact the copyright holder directly.",
+              "NASA content – images, audio, video, related media and files used in the rendition of 3-dimensional models, such as texture maps and polygon data in any format – generally are not subject to copyright in the United States. You may use this material for educational or informational purposes, including photo collections, textbooks, public exhibits, computer graphical simulations and Internet Web pages. This general permission extends to personal Web pages.",
+              "If the NASA material is to be used for commercial purposes, including advertisements, it must not explicitly or implicitly convey NASA’s endorsement of commercial goods or services.",
+              "Commercials and promotional content cannot be filmed on NASA property.",
+              "For commercial use of NASA’s images, intellectual property, emblems, or logos on merchandise or products refer to the Merchandise Guidelines and Approvals page.",
+              "If a NASA image, audio, video or media includes an identifiable person, using the media for commercial purposes may infringe that person’s right of privacy or publicity, and permission should be obtained from the person.",
+              "Astronauts or employees who are currently employed by NASA cannot have their names, likenesses or other personality traits displayed or position title used on any commercial products, advertisements, promotional material or commercial product packaging.",
+              "For guidance on commercial use on merchandise please refer to NASA’s Merchandise Guidelines.",
+              "For more information on using NASA content for commercial purposes, please read NASA Advertising Guidelines and Merchandise Guidelines. Any questions regarding use of NASA content, or any NASA emblems, should be directed to nasa-merchandise-&-brand-team@mail.nasa.gov in NASA’s Office of Communications at NASA Headquarters in Washington.",
+              "Astronauts or NASA employees who are retired from the agency can grant permission for the use of their names, likenesses or other personality traits in their discretion, but their former affiliation with NASA may not be used to promote any product, service or activity. For deceased astronauts or employees, their estates may retain rights in the deceased person’s name, likeness or other personality traits, so permission may still be needed.",
+              "There are many images (moving and still) which have been made publicly available by NASA featuring astronauts in space suits where the astronauts face may be shielded or not easily recognizable, but where some other aspect of the photo may indicate the astronaut’s identity – like a name tag or simply the historical context of the photo. In such a case, the restrictions set forth above may still be applicable, so permission may still be necessary.",
+              "As a U.S. government agency, NASA makes its imagery and video publicly available for educational and information purposes, however, since NFTs are, in essence, digital tokens owned by someone as a “one of a kind” digital asset, NASA doesn’t wish for its materials to be used for these purposes. The agency also doesn’t approve any merchandising applications involving NFTs, and it’s unlawful to falsely claim copyright or other rights in NASA materials.",
+              "NASA will not promote or endorse or appear to promote or endorse a commercial product, service or activity. This includes cryptocurrency.",
+              "Further, astronauts or employees who are currently employed by NASA cannot have their names, likenesses or other personality traits displayed or position title used on any commercial products, advertisements, promotional material or commercial product packaging.",
+              "Source Disclosure (No Permission Implied): As a statement of fact, you can acknowledge your AI tool includes NASA source material, but do not imply any review or permission was granted by NASA for its specific use.",
+              "AI Model Attribution: All outputs from the AI model should be attributed to the AI product itself, not NASA. References like “according to NASA” or similar are prohibited in AI products.",
+              "Endorsement: Use of NASA content to train AI models does not constitute endorsement by NASA."
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Images and Media",
+        "expectedPia": null,
+        "observedPiaIds": [],
+        "sourceIdentityMatched": true,
+        "credit": null,
+        "jpegDownloadLinks": [
+          "https://www.nasa.gov/wp-content/uploads/2023/07/nasawormbook-spread10-2400.jpg",
+          "https://www.nasa.gov/wp-content/uploads/2019/07/108-ksc-69p-3253-copy.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space",
+          "NASA content – images, audio, video, and media files used in the rendition of 3-dimensional models, such as texture maps and polygon data in any format – generally are not subject to copyright in the United States. You may use this material for educational or informational purposes, including photo collections, textbooks, public exhibits, computer graphical simulations and Internet Web pages. This general permission extends to personal Web pages.",
+          "News outlets, schools, and text-book authors may use NASA content without needing explicit permission, subject to compliance with these guidelines. NASA content used in a factual manner that does not imply endorsement may be used without needing explicit permission. NASA should be acknowledged as the source of the material. NASA occasionally uses copyright-protected material of third parties with permission on its website. Those images will be marked identified as copyright protected with the name of the copyright holder. NASA’s use does not convey any rights to others to use the same material. Those wishing to use copyright protected material of third parties must contact the copyright holder directly.",
+          "NASA content – images, audio, video, related media and files used in the rendition of 3-dimensional models, such as texture maps and polygon data in any format – generally are not subject to copyright in the United States. You may use this material for educational or informational purposes, including photo collections, textbooks, public exhibits, computer graphical simulations and Internet Web pages. This general permission extends to personal Web pages.",
+          "If the NASA material is to be used for commercial purposes, including advertisements, it must not explicitly or implicitly convey NASA’s endorsement of commercial goods or services.",
+          "Commercials and promotional content cannot be filmed on NASA property.",
+          "For commercial use of NASA’s images, intellectual property, emblems, or logos on merchandise or products refer to the Merchandise Guidelines and Approvals page.",
+          "If a NASA image, audio, video or media includes an identifiable person, using the media for commercial purposes may infringe that person’s right of privacy or publicity, and permission should be obtained from the person.",
+          "Astronauts or employees who are currently employed by NASA cannot have their names, likenesses or other personality traits displayed or position title used on any commercial products, advertisements, promotional material or commercial product packaging.",
+          "For guidance on commercial use on merchandise please refer to NASA’s Merchandise Guidelines.",
+          "For more information on using NASA content for commercial purposes, please read NASA Advertising Guidelines and Merchandise Guidelines. Any questions regarding use of NASA content, or any NASA emblems, should be directed to nasa-merchandise-&-brand-team@mail.nasa.gov in NASA’s Office of Communications at NASA Headquarters in Washington.",
+          "Astronauts or NASA employees who are retired from the agency can grant permission for the use of their names, likenesses or other personality traits in their discretion, but their former affiliation with NASA may not be used to promote any product, service or activity. For deceased astronauts or employees, their estates may retain rights in the deceased person’s name, likeness or other personality traits, so permission may still be needed.",
+          "There are many images (moving and still) which have been made publicly available by NASA featuring astronauts in space suits where the astronauts face may be shielded or not easily recognizable, but where some other aspect of the photo may indicate the astronaut’s identity – like a name tag or simply the historical context of the photo. In such a case, the restrictions set forth above may still be applicable, so permission may still be necessary.",
+          "As a U.S. government agency, NASA makes its imagery and video publicly available for educational and information purposes, however, since NFTs are, in essence, digital tokens owned by someone as a “one of a kind” digital asset, NASA doesn’t wish for its materials to be used for these purposes. The agency also doesn’t approve any merchandising applications involving NFTs, and it’s unlawful to falsely claim copyright or other rights in NASA materials.",
+          "NASA will not promote or endorse or appear to promote or endorse a commercial product, service or activity. This includes cryptocurrency.",
+          "Further, astronauts or employees who are currently employed by NASA cannot have their names, likenesses or other personality traits displayed or position title used on any commercial products, advertisements, promotional material or commercial product packaging.",
+          "Source Disclosure (No Permission Implied): As a statement of fact, you can acknowledge your AI tool includes NASA source material, but do not imply any review or permission was granted by NASA for its specific use.",
+          "AI Model Attribution: All outputs from the AI model should be attributed to the AI product itself, not NASA. References like “according to NASA” or similar are prohibited in AI products.",
+          "Endorsement: Use of NASA content to train AI models does not constitute endorsement by NASA."
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    }
+  ]
+}

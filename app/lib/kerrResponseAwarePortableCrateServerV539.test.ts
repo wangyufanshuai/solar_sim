@@ -1,0 +1,4 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrResponseAwarePortableCrateV539, resetKerrResponseAwarePortableCrateServerCacheForTestsV539 } from "./kerrResponseAwarePortableCrateServerV539";
+
+describe("v539 portable-crate server", () => { it("loads exact ZIP bytes through a bounded fingerprint cache", async () => { resetKerrResponseAwarePortableCrateServerCacheForTestsV539(); const first = await loadKerrResponseAwarePortableCrateV539(); const second = await loadKerrResponseAwarePortableCrateV539(); expect(first).toBe(second); expect(first.exports.crate.fileSha256).toBe(first.artifact.crate.fileSha256); expect(first.exports.crate.bytes.byteLength).toBe(first.artifact.crate.bytes); expect(Array.from(first.exports.crate.bytes.slice(0, 4))).toEqual([0x50, 0x4b, 0x03, 0x04]); }); });

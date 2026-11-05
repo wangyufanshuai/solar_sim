@@ -1,0 +1,173 @@
+{
+  "schema": "mainline-a-beta-stellar-source-closure-v616",
+  "generatedAt": "2026-08-25T11:26:00Z",
+  "source": {
+    "snapshotPath": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+    "projectionPath": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+    "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+    "snapshotContentSha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+    "projectionContentSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+    "serviceLicense": "ODbL-1.0",
+    "citation": "Wenger et al. 2000, A&AS, 143, 9"
+  },
+  "counts": {
+    "total": 4,
+    "freshCaptureRequired": 4,
+    "missingEvidence": 8,
+    "candidateOnly": 4
+  },
+  "boundary": {
+    "legalDecision": "not-granted",
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "queryIdentifier": "* alf01 Cru",
+      "sourcePageUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+      "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "snapshotRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "projectionRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "resolutionClass": "exact-component",
+      "completeness": {
+        "sourceIdentifier": true,
+        "queryResolved": true,
+        "positiveParallax": false,
+        "parallaxError": true,
+        "upstreamReference": false,
+        "componentIdentity": true
+      },
+      "requiredEvidence": [
+        "positive-parallax",
+        "parallax-error",
+        "upstream-reference",
+        "component-identity"
+      ],
+      "missingEvidence": [
+        "positive-parallax",
+        "upstream-reference"
+      ],
+      "status": "fresh-capture-required",
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "freshCapture": {
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+        "capturedAt": null,
+        "captureSha256": null,
+        "reviewer": null
+      }
+    },
+    {
+      "id": "spica",
+      "queryIdentifier": "* alf Vir",
+      "sourcePageUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+      "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "snapshotRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "projectionRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "resolutionClass": "system-only-component-ambiguous",
+      "completeness": {
+        "sourceIdentifier": true,
+        "queryResolved": true,
+        "positiveParallax": true,
+        "parallaxError": true,
+        "upstreamReference": true,
+        "componentIdentity": false
+      },
+      "requiredEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "missingEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "status": "fresh-capture-required",
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "freshCapture": {
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+        "capturedAt": null,
+        "captureSha256": null,
+        "reviewer": null
+      }
+    },
+    {
+      "id": "regulus",
+      "queryIdentifier": "* alf Leo",
+      "sourcePageUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+      "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "snapshotRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "projectionRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "resolutionClass": "system-only-component-ambiguous",
+      "completeness": {
+        "sourceIdentifier": true,
+        "queryResolved": true,
+        "positiveParallax": true,
+        "parallaxError": true,
+        "upstreamReference": true,
+        "componentIdentity": false
+      },
+      "requiredEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "missingEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "status": "fresh-capture-required",
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "freshCapture": {
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+        "capturedAt": null,
+        "captureSha256": null,
+        "reviewer": null
+      }
+    },
+    {
+      "id": "polaris",
+      "queryIdentifier": "* alf UMi",
+      "sourcePageUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+      "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+      "snapshotRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "projectionRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "resolutionClass": "system-only-component-ambiguous",
+      "completeness": {
+        "sourceIdentifier": true,
+        "queryResolved": true,
+        "positiveParallax": true,
+        "parallaxError": true,
+        "upstreamReference": true,
+        "componentIdentity": false
+      },
+      "requiredEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "missingEvidence": [
+        "component-identity",
+        "component-source-reference"
+      ],
+      "status": "fresh-capture-required",
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "freshCapture": {
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+        "capturedAt": null,
+        "captureSha256": null,
+        "reviewer": null
+      }
+    }
+  ]
+}

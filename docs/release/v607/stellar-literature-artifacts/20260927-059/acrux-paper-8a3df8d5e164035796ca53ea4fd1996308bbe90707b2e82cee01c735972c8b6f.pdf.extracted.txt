@@ -1,0 +1,1386 @@
+                                                 Version March 13, 2026
+                                                 Preprint typeset using LATEX style openjournal v. 09/06/15
+
+
+
+
+                                                                             UPGRADING ALPHA CRUCIS TO A SEVEN STAR SYSTEM.
+                                                                               DISCOVERY OF Bb AND ORBITAL MISALIGNMENT
+
+                                                                                                                   1                   2
+                                                                                                Idel Waisberg          & Boaz Katz
+                                                                                           1 Independent researcher, Lambda Ophiuchi Ltda and
+                                                               2 Department of Particle Physics and Astrophysics, Weizmann Institute of Science, Rehovot 76100, Israel
+
+                                                                                                         Version March 13, 2026
+
+                                                                                                       ABSTRACT
+
+
+
+
+arXiv:2603.11194v1 [astro-ph.SR] 11 Mar 2026
+                                                          Alpha Crucis is the closest very high multiplicity massive star to the Sun. At its heart is the
+                                                        4” ↔ 430 au binary α1 (A) + α2 (B) Cru, which combined make up the 13th visually brightest star in
+                                                        the night sky. Here we make use of archival VLTI data of α Cru A+B in order to study its multiplicity
+                                                        and orbital architecture. The data spatially resolved the close (6 mas) companion in α Cru A (a known
+                                                        spectroscopic binary) and revealed that α Cru B is also a close (17 mas) binary, which upgrades α Cru
+                                                        to a seven star system. By combining the interferometric data with radial velocities, we solve for the
+                                                        full orbit of Aa+Ab and find dynamical masses MAa = 17.2 ± 1.2M⊙ and MAb = 6.8 ± 0.3M⊙ . While
+                                                        the data on Alpha Cru B are not yet sufficient to tightly constrain all orbital parameters, we find that
+                                                        the orbital period is most likely 405 days (with 203 days also a possibility). The orientation of the
+                                                        orbital planes are sufficiently constrained to yield a mutual inclination between Aa+Ab and Ba+Bb of
+                                                                      ◦          ◦
+                                                        either 50±5 or 137±5 , pointing to a dynamical formation scenario for the system. The photometric
+                                                        masses MBa = 12.4M⊙ and MBb = 9.8M⊙ together with the less massive wide component α Cru
+                                                        Ca+Cb+D yield a total mass M ≃ 52M⊙ . At larger distances, the seven-star nature of Alpha Crucis
+                                                        would be arguably very challenging to unveil, suggesting that the companion frequency in massive
+                                                        star surveys may be underestimated.
+                                                        Subject headings: Multiple stars (1801) — orbital dynamics (1184) — optical interferometry (1168)
+                                                                            — stars: individual: Acrux, Alpha Crucis
+
+                                                                     1. INTRODUCTION                                    III). At a projected separation of 90” ↔ 9, 600 au, there
+                                                  Alpha Crucis (α Cru, HIP 60718) is the 13th visually                  is a 2.1” ↔ 225 au visual binary consisting of VT = 4.8
+                                               brightest star in the night sky (V=0.80) and also the                    B4V (Houk & Cowley 1975) star α Cru C (HD 108250,
+                                               closest very high multiplicity massive star system to the                HR 4729) and a faint V = 15.0 M0V (M ∼ 0.5M⊙ )
+                                               Sun (plx = 10.17 ± 0.67 mas ↔ d = 98 ± 6 pc; Hip 1997).                  companion α Cru D (Tokovinin et al. 1999). α Cru
+                                               As the brightest member of the Southern Cross (Figure                    C is itself a short period (PC = 1.225 day) and circu-
+                                               1, II), it has played a major role in many cultures of                   lar (e = 0.024 ± 0.014) spectroscopic binary (Hernan-
+                                               the southern hemisphere; in particular, it represents the                dez & de Hernandez 1979). α Cru C was not part
+                                               first author’s native state of São Paulo in the Brazilian               of the Hipparcos catalog but was solved in Gaia DR3
+                                               flag (Figure 1, I) and it also features in the logo of the               (Gaia Collaboration et al. 2023); its consistent parallax
+                                               European Southern Observatory. α Cru is also known                       (plx = 9.37 ± 0.13 mas ↔ d = 106.7 ± 1.5 pc) and similar
+                                               by its IAU-approved proper name Acrux, which now for-                    proper motion to α Cru A/B leave little doubt that they
+                                               mally applies to component α Cru Aa. In Brazil it is                     are gravitationally bound. We therefore adopt the more
+                                               also popularly known as “Estrela de Magalhães” after                    precise Gaia DR3 distance d = 106.7 ± 1.5 pc of α Cru C
+                                               the Portuguese explorer Ferdinand Magellan.                              also for α Cru A+B. Figure 2 shows a schematic of the
+                                                  At its heart is the 4” ↔ 430 au visual binary WDS                     entire α Cru system including the results of this paper.
+                                               J12266-6306, which consists of the VT = 1.28 B0.5IV                         α Cru has long been a strong candidate member
+                                               (Houk & Cowley 1975) star Alpha1 Crucis (α1 Cru, α                       of the Lower Centaurus–Crux subgroup of the Scor-
+                                               Cru A, HD 108248, HR 4730) and the VT = 1.58 B1V                         pius–Centaurus OB association (e.g. Rizzuto et al. 2011,
+                                                                                                                        reported a 66% membership probability.). More recently,
+                                               (Houk & Cowley 1975) star Alpha2 Crucis (α2 Cru, α
+                                                                                                                        the wealth of astrometric information in Gaia DR3 has
+                                               Cru B, HD 108249, HR 4731). α Cru A is itself a single-
+                                                                                                                        allowed to study the kinematic structure of Sco-Cen in
+                                               lined spectroscopic binary (Thackeray & Hill 1974) with
+                                                                                                                        unprecedented detail; in particular, α Cru was found to
+                                               period PA = 75.8 days (Thackeray & Wegner 1980) while
+                                                                                                                        be a member of one of the 37 different subgroups (clus-
+                                               for α Cru B there are contradictory reports on whether
+                                                                                                                        ters) in Sco-Cen OB2 (Ratzenböck et al. 2023a,b). The
+                                               it has (Neubauer 1932; Luyten 1935) or does not have
+                                                                                                                        so-called Acrux cluster has 394 identified members at a
+                                               (Thackeray & Hill 1974) a variable radial velocity.
+                                                                                                                        distance of 106 pc and an age of about 11 Myr (see also
+                                                  Furthermore, α Cru has a wide companion (Figure 1,
+                                                                                                                        Torosyan et al. 2024, for a similar conclusion); α Cru is
+                                                 email: idelwaisberg@gmail.com                                          by far its brightest member, with the B3V star ζ Cru a
+                                                    Based on observations collected at the European Southern            far second. The members are spread over a large area
+                                                 Observatory, Chile, Program IDs 60.A-9801(U), 073.C-0337,              of several square degrees; in particular, there is no other
+                                                 076.C-0503, 077.C-0547, 097.D-0156 and 0100.D-0203(D,F,H,J)
+2                                                        I. Waisberg & B. Katz
+
+
+
+     I                                                                II                                              2o
+                                                                                         γ
+
+                                                                                                                 δ
+
+
+
+                                                                           β
+
+
+
+
+         III                             90”↔9,600 au                                                             ⍺
+
+
+
+                     A+B                                                    IV
+                                                                                                             A
+
+
+                                      C+D
+                                                                                             B         4”↔430 au
+
+
+
+                               Ba+Bb                            V                    VI                              Aa+Ab
+
+
+
+
+               17.0 mas ↔1.8 au                                              5.7 mas ↔0.6 au
+
+ Fig. 1.— I: Alpha Crucis highlighted in the Brazilian flag. II: Smartphone photo of the Southern Cross as viewed from Socorro, SP, Brazil.
+III: 2MASS H band image of α Cru. IV: VLTI/GRAVITY acquisition camera H band image of α Cru A+B. V/VI: VLTI/GRAVITY
+interferometric data resolving α Cru Aa+Ab and Ba+Bb.
+                                         Upgrading Alpha Crucis to a seven star system                                                  3
+
+                                                                      calibrator. The dual-field (technical observatory) data
+                                                                      do not include interferometric calibrators. For the epoch
+                                                                      2018-03-27, we used the K1III star HD 127193 (K1III,
+                                                                      angular diameter 0.92 mas) observed about 4 hrs later
+                                                                      in the same night as interferometric calibrator. For the
+                                                                      epochs 2018-03-04 and 2019-03-26 there was no calibra-
+                                                                      tor available. In these cases, we still make use of the data
+                                                                      for α Cru B to obtain astrometric positions because the
+                                                                      binary is well resolved; the only changes are that we fix
+                                                                      the flux ratio to the value obtained in the other fits and
+                                                                      include one scaling factor per baseline when fitting the
+                                                                      squared visibilities in order to approximate the calibra-
+                                                                      tion (the closure phases are more robust and the calibra-
+  Fig. 2.— Updated multiplicity diagram for the septuple system
+                                                                      tion typically corrects for small linear slopes of the order
+Alpha Crucis. The main quadruple A+B is the focus of this paper.      of a few degrees, which are much smaller than the binary
+The Ba+Bb orbit refers to the most likely period solution (see text   signatures in this case). For α Cru A, however, the dual
+for details).                                                         data without a calibrator cannot be directly used because
+                                                                      the binary is only partially resolved and the binary signa-
+member within 5′ ↔ 0.15 pc of α Cru.
+                                                                      tures are comparable to or smaller than the calibration
+  This paper presents a deeper investigation of this iconic
+                                                                      signatures. While in principle it would be possible to
+star based on archival VLTI interferometry and spec-
+                                                                      calibrate α Cru A using α Cru B based on the latter’s
+tra. Section 2 summarizes the observations. Section 3
+                                                                      best fit binary model, we refrain from doing so because
+presents the results, including the discovery of compo-
+                                                                      the three epochs with calibrators are already enough to
+nent Bb, a spectral analysis of α Cru A, the determina-
+                                                                      constrain the orbit. Adding further two epochs (which
+tion of orbital parameters for both subsystems and pho-
+                                                                      are only one day apart from epochs already available)
+tometric masses, temperature and radii. The orbital mis-
+                                                                      would have only a minor effect in measuring the orbital
+aligmnent and very high mulpliticy are briefly discussed
+                                                                      parameters.
+in Section 4. A conclusion can be found in Section 5.
+                                                                                           2.2. VLTI/PIONIER
+                      2. OBSERVATIONS
+                                                                         We downloaded VLTI/PIONIER (Le Bouquin et al.
+                    2.1. VLTI/GRAVITY                                 2011) data on α Cru from the ESO archive (PI: Domi-
+  We       downloaded        near-infrared       K     band           ciano). There are two epochs for α Cru A (2018-02-03
+VLTI/GRAVITY (Gravity Collaboration et al. 2017)                      and 2018-02-04) and one epoch (2018-02-06) for α Cru
+interferometric data on α Cru from the ESO archive.                   B2 . All observations were obtained with the 1.8-meter
+There are four epochs of observations, including two                  Auxiliary Telescopes (ATs). VLTI/PIONIER works in
+consecutive nights in March 2018 and another two                      the near-infrared H band at low spectral resolution (in
+consecutive nights in March 2019. The observations in                 this case, with six spectral channels over the H band).
+2018-03-03 and 2018-03-04 (PI: Domiciano) were taken                  The individual exposure time is 0.75 ms and each obser-
+in single-field mode, in which both the fringe tracker                vation block consists of five files with 51,200 exposures
+(operating at high time and low spectral resolution                   each. The star HD 116244 (K0III, angular diameter 1.5
+R = 22) and the science fibers (at high spectral resolu-              mas) was observed as interferometric calibrator. A sum-
+tion R = 4000 and integration times of 30s) are pointed               mary of the observations can be found in Tables 3 and
+at the same object. Both α Cru A and α Cru B were                     4.
+observed in the first epoch and only α Cru B on the                      The data were reduced using the default settings in
+second epoch. The observations in 2018-03-04, 2019-03-                the PIONIER data reduction software pndrs v3.94 (Le
+26 and 2019-03-27 are technical observatory data and                  Bouquin et al. 2011). The reduced product consists of
+were taken in dual-field mode: first α Cru A was used                 squared visibilities for six baselines and closure phases
+as the fringe tracker star and α Cru B was observed                   for four triangles. For the epoch 2018-02-03, the pipeline
+with the science fiber (at medium spectral resolution                 only returns data for three baselines and one triangle
+R = 500 and integration times of 3s) and then they were               because one telescope was inoperative; the available data
+swapped and observed again. All observations were                     is still enough to extract the binary parameters.
+made with the 1.8-meter Auxiliary Telescopes (ATs).
+A summary of the observations, including the mean                                    2.3. Historical radial velocities
+Modified Julian Date, the seeing, AT configuration,                     Radial velocities for α Cru A were taken from the ta-
+maximum projected baseline and corresponding angular                  bles provided in Thackeray & Hill (1974) (2 epochs in
+resolution, are reported in Tables 3 and 4.                           1907, 3 epochs in 1914, 10 epochs in 1924, 3 epochs in
+  The data were reduced with the ESO GRAVITY                          1925, 1 epoch in 1966, 1 epoch in 1969, 3 epochs in 1970
+pipeline v.1.6.6 (Lapeyrere et al. 2014) and the final data           and 2 epochs in 1973) and Thackeray & Wegner (1980)
+include spectra, squared visibilities and closure phases              (6 epochs in 1978).
+(as well as differential visibilities, which are not used in            2 Formally, the target in the 2018-02-03 epoch is labeled as α
+this case). We always make use of the science fiber data              Cru B in the file. However, we found the data are completely
+at high or medium spectral resolution for data analysis.              inconsistent with its flux ratio as measured from the other files.
+For the single-field data, the star HD 120913 (K2III, an-             Instead, we found that the data are consistent with it being α Cru
+gular diameter 1.7 mas) was observed as interferometric               A, including the flux ratio and the position within the orbital fit.
+4                                                 I. Waisberg & B. Katz
+
+   While there are 13 RVs from 1924-25 for α Cru B listed     band flux ratio of the companion and its projected sep-
+in Neubauer (1932), we concluded that they are not reli-      aration relative to the primary in the East and North
+able. This is because the RVs for α Cru A listed in this      directions (∆α∗ , ∆δ). The angular diameters of the
+same reference were very significantly revised in Thack-      stars were fixed to θAa = 0.59 mas, θAb = 0.28 mas,
+eray & Hill (1974), who had access to the same plates.        θBa = 0.47 mas and θBb = 0.38 mas based on the photo-
+The revisions were often larger than the RV values them-      metric radii calculated in 3.4 and have a negligible effect
+selves and were not systematic in any way.                    on the binary fits because they are well below the inter-
+   Thackeray & Hill (1974) also lists RVs for 4 epochs        ferometric resolutions. The fit results for each interfero-
+from 1969-70 of α Cru B. These have quite large intra-        metric epoch can be found in Tables 3 and 4.
+epoch scatter but show no obvious change, leading the            Figure 1 (panels VI and V) show the squared visibil-
+authors to conclude that α Cru B was a single star.           ities (colored) and best fit binary model (black) for the
+However, as we will see below the interferometric data        VLTI/GRAVITY data on Alpha Cru A (epoch 2018-03-
+revealed α Cru B to be a binary with relatively low con-      03) and B (epoch 2018-03-04). Figures for all interfero-
+trast, so that both components should contribute to the       metric data and binary fits (including squared visibilities
+spectrum and the RV measured assuming a single compo-         and closure phases) can be found in Appendix A.
+nent is highly biased (it would be constant in the case of       Formal interferometric fit errors are often of the or-
+equal components with blended lines). Therefore, there        der of tens of µas but are expected to be somewhat un-
+is currently no usable radial velocity data for α Cru B.      derestimated due to systematic errors and correlations
+                                                              between spectral channels. We therefore adopt a conser-
+                       2.4. Spectra
+                                                              vative minimum error of 0.1 mas in order to not have the
+   We downloaded “ready-to-use” reduced spectra of Al-        orbital fit dominated by epochs with possibly underesti-
+pha Crucis from the ESO archive. The spectra include          mated errors.
+two epochs of FEROS (Kaufer et al. 1999), two epochs
+of VLT/UVES (Dekker et al. 2000) and one epoch of                     3.2. Spectral parameters of Alpha Cru A
+HARPS (Mayor et al. 2003). Table 5 provide details              A plot of the UVES (λ < 3985Å) and FEROS (λ >
+of the spectral observations including dates, wavelength      3985Å) spectra (both corrected to zero velocity) is shown
+coverage, spectral resolution and exposure times.             in Figures 3 and 4. The strongest lines are that of He I
+   We used telluric absorption lines to confirm that the      and H I but there are also many other transitions includ-
+FEROS and HARPS spectra were already corrected to             ing He II, C II, N II, O II, Ne II, Mg II, Al III, Si III,
+the heliocentric frame, while for the the UVES spectra        Si IV and S III. A list of the about 250 line transitions
+this additional correction was needed. The spectra were       identified can be found in Table 6. There is no sign of
+normalized by fitting a cubic spline through carefully se-    the companion Ab, which is expected given its relatively
+lected continuum regions. All the wavelengths are in air.     low flux contribution and the relatively broad lines of the
+   The UVES and HARPS spectra have Alpha Cru A la-            primary.
+beled as the target while the FEROS spectrum has Alpha          The projected rotational velocity v sin i = 84 km s−1
+Cru B. However, when studying the FEROS spectrum              was calculated by finding the first zero crossing of the
+we noticed that it was essentially identical to the UVES      Fourier transform of the Si III 4552.62, 4567.82 and
+and HARPS spectra of Alpha Cru A: it had the same
+line transitions with the same strengths and the exact        4574.76Å lines. The effective temperature Teff = 29 kK
+same projected rotational velocity v sin i. We therefore      was estimated by comparing the Equivalent Width ratio
+became very suspicious that the actual target observed        of the He II 4685.68Å and He I 4921.93Å lines with those
+was Alpha Cru A, which would not be very surprising           in the publicly available NLTE, line-blanketed model at-
+given that their on-sky separation of 4” would require        mosphere grid BSTAR2006 (Lanz & Hubeny 2007). The
+a dedicated observing plan to pick the correct (and in        grid covers the temperature range 15-30 kK in steps of
+this case fainter) component. Rather definitive evidence      1kK and log g 1.75-4.75 in steps of 0.25 and has a solar
+came from the radial velocity, which (as will be shown be-    abundance and a microturbulent velocity ξt = 2 km s−1 .
+low) is perfectly consistent with the radial velocity curve   The T = 29 kK, log g = 4.0 model (after appropriate ro-
+of Alpha Cru A. Therefore, we were left with no archival      tational and instrumental broadening and radial velocity
+spectrum of Alpha Cru B.                                      shift) is shown on top of the data in Figures 3 and 4.
+                                                              Some of the metal lines such as Si are somewhat weaker
+                       3. RESULTS                             in the model compared to the data, suggesting supersolar
+       3.1. Discovery of Bb and separation vectors            abundances. A more detailed spectral analysis including
+  The VLTI/GRAVITY acquisition camera image (H                a fit for the microturbulent velocity and individual ele-
+band) of Alpha Cru A+B is shown in Figure 1, IV. The          ment abundances is beyond the scope of this paper.
+interferometric data for Alpha Crucis A revealed a close        Radial velocities and their errors for the primary Aa
+(projected separations 5-7 mas) and relatively faint com-     were calculated by cross-correlating the data and the
+panion with an H/K band flux ratio of about 13% that          template spectrum over different wavelength regions rich
+could be readily identified as the spectroscopic compan-      in absorption lines and are reported in Table 5.
+ion. Meanwhile, the interferometric data for Alpha Cru-                        3.3. Orbital parameters
+cis B revealed that it is also a close (projected separa-
+tions 10-17 mas) binary, with a companion that has a                             3.3.1. (P, e, Tp ) grids
+H/K band flux ratio of about 56%.                               The orbital parameter space for Keplerian orbits is no-
+  The inteferometric data was fit with a binary model         toriously non-convex and requires grid approaches to find
+(detailed in Waisberg et al. 2023) consisting of the H/K      the global minimum. When dealing with astrometric
+                                                                                                                                                                        normalized flux                                          normalized flux                                          normalized flux                                          normalized flux
+                                                                                                                                                   0.5            0.6   0.7   0.8   0.9   1.0   1.1                0.5     0.6   0.7   0.8   0.9   1.0   1.1         0.5            0.6   0.7   0.8   0.9   1.0   1.1         0.5            0.6   0.7   0.8   0.9   1.0   1.1
+                                                                                                                                                          SiIV
+                                                                                                                                                                                                                    OII
+                                                                                                                                                          SiIII                                                                                                                                                                      HeI
+                                                                                                                                                                                                            3950    OII                                                     NeII                                         3450
+                                                                                                                                                          NII                                                       HeI                                         3700        H16
+                                                                                                                                                                                                                                                                            HeI
+                                                                                                                                                          NII                                                       H                                                       SIII
+                                                                                                                                                                                                                                                                            SIII
+                                                                                                                                                                                                                    OII                                                     H15                                                      OII
+                                                                                                                                              4250        SIII                                                      OII                                                     H14
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                                                                                                                                            OII
+                                                                                                                                                          CII                                                       NII                                                     HeI                                                      SiIII
+                                                                                                                                                                                                                                                                            H13
+                                                                                                                                                          OII                                               4000                                                                                                                     SIII
+                                                                                                                                                                                                                                                                                                                                     HeI
+                                                                                                                                                          SIII                                                      HeI                                                                                                  3500
+                                                                                                                                                          CII                                                                                                               H12
+                                                                                                                                                          OII                                                                                                   3750
+                                                                                                                                                          OII                                                                                                               NeII
+                                                                                                                                                                                                                                                                            OII
+                                                                                                                                                                                                                                                                            NeII                                                     HeI
+                                                                                                                                                                                                                    HeI                                                     OII
+                                                                                                                                                                                                                                                                            OII
+                                                                                                                                              4300        OII
+                                                                                                                                                                                                                    NII                                                     H11
+                                                                                                                                                          OII                                                       NII                                                     OII                                                      HeI
+                                                                                                                                                          OII
+                                                                                                                                                          OII
+                                                                                                                                                          SIII                                              4050                                                            SiIII                                                    NeII
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                          H                                                         OII                                                     H10
+                                                                                                                                                          OII
+                                                                                                                                                          OII                                                       OII                                                     HeI                                                      HeI
+                                                                                                                                                                                                                    OII
+                                                                                                                                           4350           SIII                                                      OII                                    3800                                                     3550
+                                                                                                                                                          SIII                                                      OII
+                                                                                                                                                          OII                                                       OII                                                     HeI                                                      NeII
+                                                                                                                                         wavelength [Å]                                                             SiIV                                                                                                             NeII
+                                                                                                                                                                                                  wavelength [Å]                                           wavelength [Å]                                           wavelength [Å]
+                                                                                                                                                          OII
+                                                                                                                                                          CII                                                                                                                                                                        NeII
+                                                                                                                                                                                                                    OII
+                                                                                                                                                                                                                    OII
+                                                                                                                                                          OII                                                       OII
+                                                                                                                                                                                                                    OII
+                                                                                                                                                          NII                                                       OII                                                     HeI
+                                                                                                                                                                                                                    H                                                       H9
+                                                                                                                                                          HeI                                               4100                                                                                                                     HeI
+                                                                                                                                                                                                                    OII                                                                                                              CII
+                                                                                                                                                          OII                                                       OII
+                                                                                                                                                          OII                                                       SiIV                                                    OII
+                                                                                                                                                                                                                                                                            OII
+                                                                                                                                              4400                                                                  HeI                                         3850                                                                 NeII
+                                                                                                                                                                                                                                                                            OII                                          3600        NeII
+                                                                                                                                                                                                                                                                                                                                                                                 Upgrading Alpha Crucis to a seven star system
+
+
+
+                                                                                                                                                          OII                                                       OII
+                                                                                                                                                          OII                                                       OII                                                     HeI                                                      HeI
+                                                                                                                                                                                                                                                                            HeI
+                                                                                                                                                                                                                    HeI                                                     CII
+                                                                                                                                                          HeI                                                                                                               OII                                                      NeII
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                                                                            4150    OII
+                                                                                                                                                          OII                                                       CII
+                                                                                                                                                                                                                    OII                                                     H8                                                       HeI
+                                                                                                                                                          NII
+                                                                                                                                              4450        OII
+                                                                                                                                                                                                                    HeI                                                                                                              NeII
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                                                                                                                                3900
+                                                                                                                                                          OII
+                                                                                                                                                          OII
+                                                                                                                                                          OII                                                                                                                                                                        NeII
+                                                                                                                                                                                                                                                                                                                                     NeII
+                                                                                                                                                          OII                                                                                                               OII                                          3650
+                                                                                                                                                          HeI                                                       OII
+                                                                                                                                                                                                                    OII                                                     OII
+                                                                                                                                                          MgII                                                                                                                                                                       NeII
+                                                                                                                                                                                                                                                                            HeI
+                                                                                                                                                          OII                                                       HeII
+                                                                                                                                                          OII                                               4200                                                            i.s. CaII
+
+                                                                                                                                              4500
+Fig. 3.— Spectral atlas of Alpha Crucis A. The red line shows a BSTAR2006 model with Teff = 29 kK, log g = 4 and v sin i = 84 km s−1 .
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                 5
+6                                                                                 I. Waisberg & B. Katz
+
+                  1.1
+
+                  1.0
+
+                  0.9
+
+
+normalized flux
+                  0.8
+
+                  0.7
+
+                  0.6
+                                      HeII    SiIII                                                               HeII
+                                                        SiIII                                  OII
+                                                                                               OII
+                                                                                               NII                       OII
+                                NII
+                                                                     OII       OII
+                                                                                         NII                OII
+                  0.5
+                                                                     OII       NII             OII
+                                                                                               OII                       OII
+                                                        SiIII        NII       CII
+                                                                               CII
+                                                                               NII             SiIV
+                                                                                               NII
+                                                                                               OII          OII          OII
+                                                                                                                         HeI
+                    4500                     4550                          4600                 4650                      4700                        4750
+                                                                                           wavelength [Å]
+                  1.1
+
+                  1.0
+
+                  0.9
+
+
+normalized flux
+                  0.8
+
+                  0.7
+
+                  0.6
+                        NII
+                                                             HeI                                                                 OII                 SIII
+                                                                                   NII          NII
+                        SiIII   OII              OII   OII         OII   OII                                                     SIII          OII
+                  0.5                                                                                                      CII
+                        SiIII         H                      OII   OII             NII
+                                                                                   NII
+                                                                                   NII          HeI
+                        SiIII                                                      HeI
+                        4800                          4900                        5000                       5100                             5200                            5300
+                                                                                           wavelength [Å]
+                  1.1
+
+                  1.0
+
+                  0.9
+
+
+normalized flux
+                  0.8
+
+                  0.7
+
+                  0.6
+                                          HeII
+                                                                                                      NII
+                                                                                                      NII
+                                                                                                                                                HeI
+                                                                                                      AlIII
+                  0.5
+                                                                                                      NII
+                                                                                                      AlIII
+                                                                                                      SiIII
+                    5300              5400                         5500             5600            5700                        5800                    5900                  6000
+                                                                                       wavelength [Å]
+                  1.1
+
+                  1.0
+
+                  0.9
+
+
+normalized flux
+                  0.8
+
+                  0.7
+
+                  0.6
+                                                                                                                                                       OII     HeI      OII
+                  0.5
+                                                                                                                                        H
+                                                                                                                                        CII
+                                                                                                                                        CII
+                    6000              6100                    6200                6300             6400                  6500                 6600                   6700
+                                                                                           wavelength [Å]
+
+Fig. 4.— Continuation of Figure 3. Starting at about 5900Å there are strong telluric features.
+                                       Upgrading Alpha Crucis to a seven star system                                            7
+
+data alone, the most efficient way to do this is to created                              TABLE 1
+three-dimensional grids in orbital period (P ), eccentric-      Best fit orbital parameters for Alpha Crucis Aa+Ab and
+ity (e) and time of periastron (Tp ) and at each point in        range of acceptable solutions for Ba+Bb for the two
+the grid quickly compute the optimal Thiele-Innes ele-                               possible periods.
+ments A, B, F, G (which map to the remaining orbital                                   Aa+Ab                 Ba+Bb
+parameters, namely semi-major axis a, orbital inclina-
+tion i, argument of pericenter ω and longitude of the                                                     P1 : 28.2+0.8
+                                                                                                                   −0.8
+ascending node Ω) by linear regression according to                                                          (3.0 au)
+                                                                       a              9.48 ± 0.30         P2 : 17.8+0.5
+                                                                                                                   −0.5
+                      ∆α∗ = BX + GY                      (1)         (mas)         (1.01 ± 0.04 au)         (1.90 au)
+                       ∆δ = AX + F Y                     (2)                                              P1 : 0.36+0.45
+                                                                                                                   −0.07
+                        X = cos E − e                    (3)            e           0.369 ± 0.015         P2 : 0.64+0.17
+                                                                                                                   −0.10
+                              2 1/2
+                   Y = (1 − e )       sin E              (4)                                              P1 : 94.4+2.6
+                                                                        i                                          −0.3
+where E is the eccentric anomaly computed from Ke-                    (deg)           66.2 ± 1.4          P2 : 96.8+2.1
+                                                                                                                   −0.9
+pler’s Equation.
+                                                                                                          P1 : 86.0+3.4
+                                                                                                                   −6.1
+                                                                                                                        ∗
+                                                                        Ω
+                    3.3.2. Alpha Cru A                                (deg)          225.0 ± 2.0          P2 : 85.2+1.7 ∗
+                                                                                                                   −3.7
+  In this case, we also have the radial velocities listed
+in Thackeray & Hill (1974); Thackeray & Wegner (1980)                                                    P1 : 105.2+32.1
+                                                                                                                   −55.3
+                                                                                                                         ∗
+                                                                        ω
+and our own four new radial velocity measurements (Ta-                (deg)          229.5 ± 2.2         P2 : 130.9+4.4
+                                                                                                                   −7.6
+                                                                                                                        ∗
+
+ble 5).
+  In theory, a truly joint fit breaks the linearity since vz                                             P1 = 405.4+0.4
+                                                                                                                   −0.3
+                                                                       P
+depends non-linearly on A, B, F, G. We adopt a hybrid                (days)        75.7469 ± 0.0017      P2 = 202.9+0.0
+                                                                                                                   −0.0
+approach in which we first find the optimum A, B, F, G
+using the astrometric data alone and from them compute                 Tp                               P1 : 2458099+258
+                                                                                                                    −145
+the corresponding a, i, Ω, ω. The radial velocity of the              (JD)         2458183.1 ± 0.4      P2 : 2458091+22.0
+                                                                                                                    −17.0
+primary is then given by
+                                                                      Ka
+                                                                    (km s−1 )         40.6 ± 0.9                 -
+    vz,a = γ + K1 (e cos(ω + π) + cos(ω + π + f ))       (5)
+                                                                       γ
+                              2π q       a sin i                    (km s−1 )         19.2 ± 0.8                 -
+                        Ka =                             (6)
+                              P 1 + q (1 − e2 )1/2
+            Mb                                                         rp
+where q = M   a
+                is the mass ratio, γ is the systemic velocity
+and π is added to ω because the astrometric solution al-              (au)           0.64 ± 0.03                 -
+ways refers to the position of the secondary star relative           Mdyn
+to the primary. In practice, since the astrometric-only              (M⊙ )            24.1 ± 3.1                 -
+solution is degenerate between (ω, Ω) and (ω + π, Ω + π),
+we need to test both possible values of ω anyway. We per-
+form a linear fit for Ka and γ (for both possible values of            MAb
+                                                                    q= M             0.40 ± 0.02                 -
+ω) to the RV data and add the corresponding minimum                         Aa
+
+χ2 to the one from the astrometric solution. This proce-                         MAa = 17.2 ± 1.2M⊙
+dure yields a clear global minimum, which is then used as                        MAb = 6.8 ± 0.3M⊙               -
+the starting point for a non-linear least squares fit with
+all parameters free to vary. In practice, this procedure is        Notes:
+                                                                   The uncertainties correspond to the 2.3% and 97.7% percentiles.
+not strictly necessary in this case because the period is          For the physical semi-major axis and dynamical mass, the
+already well constrained from the previous RV solution.         adopted distance is d = 106.7 ± 1.5 pc (1σ).
+                                                                                                             ◦                  ◦
+The fact that our resulting best fit period is consistent          *: Degenerate solutions with Ω → Ω + 180 and ω → ω + 180
+with it is nonetheless reassuring. Also reassuring is the       also possible.
+fact that the historical RV data and our new RV data
+are fully consistent. We note that there was only one           percentiles). The resulting dynamical mass is calculated
+RV point (JD=2420604.710) listed in Thackeray & Hill            from Kepler’s Third Law and the mass ratio q is calcu-
+(1974) that was an extreme outlier and it was removed           lated from Eq. 6.
+from the fit. The astrometric and the radial velocity data
+are plotted in Figure 5 together with the best fit solution.                          3.3.3. Alpha Cru B
+   To find the orbital parameter distributions, we gener-         As can be seen in Figure 6 only a relatively small arch
+ated 20,000 resamples of the data according to the errors       of the Ba+Bb orbit has been covered by the interfer-
+and refit the orbit. The resulting distributions of the best    ometric observations. While this does hinder a precise
+fit parameters are shown in Figure 11. Table 1 reports          determination of all the orbital parameters, we can put
+the results (defined as the median of the distribution)         meaningful constraints on them with the available data.
+and their uncertainties (defined as the 2.3% and 97.7%            First,  we note after the first observation
+8                                                                I. Waisberg & B. Katz
+
+
+
+
+                                                 6
+                                                 4       58180
+
+
+                                                 2
+
+                                 (North) [mas]
+                                                                                          58153
+                                                 0                                           58152
+
+
+                                                 2
+                                                 4                         58569
+
+
+                                                 6
+                                                 8
+                                                     5                0            5                     10
+                                                                       * (East) [mas]
+
+
+                            80
+                                           Thackeray & Wegner 1980
+                            60             This paper
+
+                            40
+
+              vz [km s 1]   20
+
+                            0
+
+                            20
+
+                                        0.0                0.2        0.4       0.6               0.8           1.0
+                                                                      orbital phase
+   Fig. 5.— Data and best joint fit for the orbit of Alpha Cru Aa+Ab. Top: VLTI/GRAVITY and VLTI/PIONIER astrometric data
+(blue, labeled by MJD) and best fit orbital solution (red). The black star marks the position of the fixed primary. The dashed magenta
+line shows the line of apsides and the dashed orange line shows the line of nodes. Bottom: Radial velocity data (blue, green) and best fit
+orbit (red) for the primary Aa. The dashed black line shows the systemic velocity.
+                                     Upgrading Alpha Crucis to a seven star system                                        9
+
+(MJD=58155), the secondary moved about 7.0 mas in                From the VLTI/GRAVITY acquisition camera image
+25 days (MJD=58180-1), and then returned just past its         (Figure 1, IV) we calculated the H band flux ratio be-
+initial position by 2.2 mas 387 days later (MJD=58568-         tween α Cru B and A through aperture photometry, find-
+9). Therefore, the orbital period must be of the order         ing
+387 + 25 − 2.2
+             7.0 × 25 = 404 days or its higher harmonics.
+Using the photometric mass of Ba+Bb MB ≃ 22.2M⊙                                 fB
+calculated in Section 3.4 below and Kepler’s Third Law,                                   = 75.4 ± 2.8%                (12)
+we have the following possibilities for the period and                          fA H band
+semi-major axis                                                  From the 2MASS H band magnitude of the system
+                                                               HA+B = 1.328 ± 0.282 (Skrutskie et al. 2006), we then
+          P1 ≃ 404 days; a1 ≃ 3.0 au ↔ 28 mas           (7)    have
+         P2 ≃ 202 days; a2 ≃ 1.9 au ↔ 17.8 mas          (8)
+                                                                                    HA = 1.94 ± 0.30                   (13)
+         P3 ≃ 135 days; a3 ≃ 1.4 au ↔ 13.5 mas          (9)
+                                                                                    HB = 2.24 ± 0.30                   (14)
+         P4 ≃ 101 days; a4 ≃ 1.2 au ↔ 11.2 mas         (10)
+           P5 ≃ 81 days; a5 ≃ 1.0 au ↔ 9.6 mas         (11)    Using the VLTI/PIONIER interferometric H band flux
+                                                               ratios
+  Given the maximum measured projected separation
+ρ ∼ 17 mas, shorter periods are not allowed because their
+semi-major axis would be too small even for a face on or-                       fAb
+                                                                                           = 12.7 ± 0.1%               (15)
+bit with e ≈ 1. In practice, periods shorter than P3 can                        fAa H band
+also be readily excluded because in 25 days only a short                        fBb
+portion of the orbit must be covered.                                                      = 56.3 ± 0.1%               (16)
+  In order to find the allowed orbital parameters, we ran                       fBa H band
+grids in (P, e, Tp ) and at each point in the grid found the   – where we used the result for the best epoch (2018-02-
+corresponding optimal A,B,F,G constants as described in        04) for Aa+Ab – we can then calculate the individual H
+3.3.1. The remaining orbital parameters are calculated         band magnitudes of each component
+from A,B,F,G. The acceptable solutions must satisfy the
+following conditions:
+                                                                                   HAa = 2.07 ± 0.31                   (17)
+   1. the resulting dynamical mass must be within 20.2
+      and 24.2 M⊙ based on the photometric mass of 22.2                            HAb = 4.31 ± 0.31                   (18)
+      M⊙ .                                                                         HBa = 2.72 ± 0.30                   (19)
+   2. the resulting χ2 (sum of weigthed squared residu-                            HBb = 3.35 ± 0.30                   (20)
+      als) must be smaller than 13.3, corresponding to            Even though we have a precise distance d = 106.7 ±
+      the 99% percentile for a χ2 distribution with 4 de-      1.5 pc, we are still limited by the relatively large error in
+      grees of freedom, that is 10 data points minus 6         the 2MASS magnitude of this very bright star.
+      parameters (the dynamical mass constraint essen-            We can overcome this by appealing to stellar evolu-
+      tially fixes a for a given P )                           tion tracks. Specifically, we make use of MIST isochrones
+                                                               (Dotter 2016; Choi et al. 2016; Paxton et al. 2011, 2013,
+  We ran three grids within ±10 days of the possible           2015) with solar metallicity and initial rotational veloc-
+periods P1 , P2 and P3 in steps of 0.1 day, 0 ≤ e ≤ 0.95 in    ity of 0.4 times the critical velocity. Further constraints
+steps of 0.01 and − P2 ≤ Tp ≤ + P2 in steps of 1 day. There    come from the Tycho2 magnitudes (Høg et al. 2000) of
+were no acceptable solutions for P3 , which can therefore      A and B
+be excluded. There were 9132 acceptable solutions for
+P1 compared to 173 for P2 ; hence P1 is the preferred
+period but P2 cannot as of now be completely excluded.                           VT,A = 1.245 ± 0.013                  (21)
+A sample of 60 acceptable solutions for P1 and 20 for P2                         VT,B = 1.547 ± 0.016                  (22)
+are plotted against the data in Figure 6.
+                                                                                 BT,A = 1.053 ± 0.016                  (23)
+  In Table 1 we report the median and the uncertainties
+(defined as the 2.3% and 97.7% percentiles) of the ac-                           BT,B = 1.366 ± 0.014                  (24)
+ceptable solutions for both P1 and P2 . Note that due to
+                                                               , the spectroscopic temperature of Aa TAa ≈ 29 kK and
+the lack of radial velocity data, the degenerate solutions
+                    ◦              ◦                           the fact that all components should be co-eval. We
+with Ω → Ω + 180 and ω → 180 are also allowed.                 neglect interstellar extinction since α Cru is relatively
+  As expected, some orbital parameters are better con-         nearby and still approximately within the local bubble
+strained than others. Interestingly, for both possible pe-     (e.g. the 3D dust map in Wang et al. (2025) gives
+riods i and Ω are quite well-constrained and consistent        AV ∼ 0.02 ± 0.01).
+with each other, so that the orientation of the orbital           Alpha Cru A: For a given H band magnitude of the
+plane appears to be rather tightly constrained by the          system HA within 1.34 and 2.54 (±2σ), we computed
+data despite the limited orbital coverage.                     the individual H band magnitudes from the interfero-
+                                                               metric flux ratio. For each isochrone, we find the cor-
+                  3.4. Isochrone masses                        responding stars and choose the isochrone for which the
+10                                                    I. Waisberg & B. Katz
+
+
+
+
+                                                                                             P=405.4 days
+                   4                                                                         P=202.9 days
+
+
+
+   (North) [mas]
+                   2
+
+                   0
+                                                     58180-1
+                                                           58568-9
+                   2                                         58155
+
+
+
+
+                       40                      20                  0                               20
+                                                             * (East) [mas]
+  Fig. 6.— VLTI/PIONIER and VLTI/GRAVITY astrometric data (blue, labeled by MJD) for Alpha Crucis Ba+Bb and examples
+of acceptable orbital solutions for the two possible orbital periods (red and green). The dynamical mass of the binary was fixed to
+20.2M⊙ ≤ Mdyn ≤ 24.2M⊙ . The black star marks the fixed position of the primary.
+
+primary temperature is the closest to the spectroscopic                                      TABLE 2
+tempature TAa ≈ 29 kK. We then compare the cor-                       Isochrone fitting results to Alpha Crucis photometry.
+responding combined VT and BT magnitudes with the
+                                                                                        Masses   Radii   Temperature     Age
+measured ones from Tycho2. We found HA = 2.13 for
+                                                                                        (M⊙ )    (R⊙ )      (K)         (Myr)
+a best fit isochrone of 7 Myr. The corresponding pho-
+tometric masses, radii and temperatures are reported in                                  15.3     6.8      28,950∗
+Table 2. The photometric masses agree with the dynam-                   α Cru Aa+Ab      6.5      3.2       19,750       7.1
+ical masses (Table 1) within their uncertainties. The
+                                                                                         12.4     5.4       26,950
+isochrone age is somewhat younger than the estimated                    α Cru Ba+Bb      9.8      4.4       24,350        -
+age of the Acrux cluster (11 Myr) but a more careful
+investigation of the systematic uncertainties of both es-                                4.5      2.5       15,900
+timates is needed to assess whether this discrepancy is                 α Cru Ca+Cb     ≳ 0.64     -           -          -
+significant. We note that fixing the isochrone age to 11
+Myr does not work because MIST isochrones cannot yield                * Fixed to match spectroscopic temperature.
+a temperature higher than 26,000 K for such an age.
+  Alpha Cru B : Based on the the analysis of Alpha Cru A            temperatures.
+we have that HB = 2.43 (HA and HB are perfectly cor-                  Alpha Cru C : Using the best fit isochrone for Alpha
+related). The VLTI/PIONIER interferometric flux ra-                 Cru A we can also estimate the masses for Alpha Cru
+tio yields the individual H band magnitudes. Requiring              Ca+Cb. Assuming the flux contribution of Cb is small
+the isochrone to be the same as Alpha Cru A, we can                 (Hernandez & de Hernandez (1979) did not find any sign
+then find the photometric masses MBa ≃ 12.4M⊙ and                   of it in their spectra) and using the Tycho2 VT = 4.799±
+MBb ≃ 9.8M⊙ . The photometric radii and temperatures                0.009 and BT = 4.644 ± 0.014 magnitudes of Alpha Cru
+are also reported in Table 2. Spectral observations of α            C, we find MCa ≃ 4.5M⊙ . The mass function of the SB1
+Cru B are encouraged in order to test our photometric               solution in Hernandez & de Hernandez (1979)
+                                    Upgrading Alpha Crucis to a seven star system                                       11
+
+                                                              This raises the possibility that the multiplicity of mas-
+                                                              sive stars is still underesimated. A dedicated literature
+                  3
+                MCb                                           search and follow up observations of the massive stars
+                          sin3 i = 0.010M⊙            (25)    in the Sco-Cen association is probably warranted to test
+            (MCb + MCa )2
+                                                              this possibility.
+then implies a minimum mass MCb ≳ 0.64M⊙ for the                       5. CONCLUSIONS AND FUTURE WORK
+companion. The photometric temperature and radius of            In this paper we have done a deeper investigation of
+Ca are also reported in Table 2.                              the quadruple system at the heart of the first-magnitude
+                                                              star Alpha Crucis, which happens to be the brightest and
+                     4. DISCUSSION                            closest very high multiplicity massive star to the Sun.
+                                                              Our results can be summarized as follows:
+                4.1. Orbital misalignment
+  Despite the orbit of Ba+Bb being still not fully con-          1. A combination of interferometric and radial ve-
+strained, the orientation of its orbital plane is already           locity data allowed for a complete orbital solu-
+rather tightly constrained. This allows to calculate the            tion for the previously known spectroscopic binary
+mutual inclination betwen the orbits Aa+Ab and Ba+Bb                Aa+Ab. In particular, we find dynamical masses
+                                                                    MAa = 17.2 ± 1.2M⊙ and MAb = 6.8 ± 0.3M⊙ .
+                                                                    The photometric masses of Aa and Ab are consis-
+  imut =                                                            tent with these values.
+                                                      (26)
+  arccos(cos iA cos iB + sin iA sin iB cos(ΩA − ΩB ))            2. We presented a spectral atlas for Alpha Cru A
+                               ◦
+                                                                    with more than 250 lines identified. The spectrum
+which is imut = 48.9 ± 4.5         or 136.1+7.2
+                                           −4.7 if PB =             constrains the temperature TAa ≃ 29 kK and pro-
+                                   ◦                                jected rotatinal velocity v sin i ≃ 84 km s−1 of the
+405.4 days and imut = 49.5 ± 4.0 or 138.0+4.9−4.2 if PB =           primary star in the system.
+202.9 days (there are two possibilities for each period
+                                ◦          ◦
+due to the (Ω, ω) ↔ (Ω + 180 , ω + 180 ) degeneracy              3. The interferometric data showed that Alpha Cru
+of the orbital solutions due to the lack of radial veloci-          B is also a close binary, which updates the multi-
+ties). Therefore, we can conclude that the two orbits are           plicity of the whole system to a septuple. While
+rather significantly misaligned. It would be interesting            the data is still insufficient to tightly constrain all
+to also measure the mutual inclination between the inner            the orbital parameters, we found that the orbital
+binaries and the outer orbit A+B, but given the period              period of Ba+Bb is most likely P ≃ 405.4 days,
+PA+B ≃ 1.3 kyr this will require a very long monitoring             although the second harmonic P ≃ 203 days can-
+time.                                                               not yet be fully excluded. The photometric masses
+   The misalignment is a hint for a dynamical formation             are MBa ≃ 12.4M⊙ and MBb ≃ 9.8M⊙ . The total
+scenario for the inner quadruple of Alpha Crucis. The               mass of the Alpha Crucis system is about 52M⊙ .
+system was likely formed by dynamical unfolding in an
+unstable multiple system.                                        4. The orbits Aa+Ab and Ba+Bb are significantly
+                                                                                                  ◦        ◦
+                                                                    misaligned by either about 50 or 137 , which
+                                                                    points to a dynamical formation scenario for the
+               4.2. Very high multiplicity                          quadruple.
+   The discovery of component Bb upgrades the multi-
+plicity of Alpha Crucis to a septuple. Figure 2 summa-          Further interferometric observations of Ba+Bb should
+rizes our current knowledge of the entire Alpha Crucis        easily allow for a full orbital solution including a confir-
+system. The total mass in the main quadruple A+B is           mation of the orbital period. The discrepancy between
+MA+B ≃ 46.3M⊙ and the total mass in the system is             the age of our best fit MIST isochorne (7 Myr) and the
+M ≃ 52M⊙ .                                                    previously inferred age of the Acrux cluster (11 Myr)
+   It is interesting to note that the multiplicity of α Cru   should also be investigated. Finally, the very high mul-
+is significantly higher than the bias-corrected companion     tiplicity of Alpha Crucis compared to the bias-corrected
+frequency of early B-type stars (CF = 1.8±0.4) and even       companion frequency of massive stars inferred from sur-
+of O-type stars (CF = 2.1 ± 0.3) estimated from surveys       veys of more distant stars should also be considered.
+combining high-angular resolution and spectroscopy ob-
+                                                                                ACKNOWLEDGMENTS
+servations (Offner et al. 2023, and references therein).
+   At the typical distances d ≳ 1 kpc for the massive            This research has made use of CDS Astronomi-
+stars in such surveys α Cru A+B would appear as an            cal Databases SIMBAD and VIZIER, NASA’s Astro-
+unresolved quadruple system for spectroscopic observa-        physics Data System Bibliographic Services, NumPy
+tions and as a binary or triple system to interferomet-       (Van Der Walt et al. 2011) and matplotlib, a Python
+ric observations depending on the resolution and field of     library for publication quality graphics (Hunter 2007).
+view (Aa+Ab would be unresolved). It is questionable
+                                                                                 DATA AVAILABILITY
+whether its quadruple nature could be unveiled even with
+dedicated observations and analysis. It is also question-       The data underlying this article is publicly available
+able whether the faint M0V companion to α Cru C could         from the ESO archive. Reduced data can be provided by
+be unveiled were it at a projected separation of just 0.2”.   the authors upon request.
+12                                                        I. Waisberg & B. Katz
+
+                                                         TABLE 3
+                    VLTI observations of Alpha Crucis A and best-fit binary model parameters for Aa+Ab.
+                               seeing
+     date                     @500 nm                                 Bproj,max (m)    calibrator                     ∆α∗            ∆δ
+                                          λ                                                          fA
+                                                                                                       b
+     MJD      Instrument         (”)      ∆λ
+                                                AT configuration       θmax (mas)     θdiam (mas)    fAa
+                                                                                                           (%)       (mas)          (mas)
+
+                                                                                       HD116244
+ 2018-02-03    PIONIER                                                    128.7         K0III
+  58152.39      H band          0.9       40      A0-B2-J2-J3             2.46           1.5         15.4 ± 0.1   −6.76 ± 0.05   −0.65 ± 0.2
+
+                                                                                       HD116244
+ 2018-02-04    PIONIER                                                    129.0         K0III
+  58153.38      H band          1.0       40      A0-G1-J2-J3             2.45           1.5         12.7 ± 0.1   −6.23 ± 0.01    0.64 ± 0.01
+
+               GRAVITY                                                                 HD120913
+ 2018-03-03    single field                                               126.7         K2III
+  58180.34       K band       0.6-0.8    4000     A0-G1-J2-J3              3.6           1.7         13.3 ± 0.5   4.59 ± 0.11     3.44 ± 0.08
+
+               GRAVITY                                                                 HD127193
+ 2019-03-27    dual field                                                 31.9          K1III           13.3
+  58569.15      K band          0.6       500     A0-G1-J2-J3             14.2           0.92          fixed      −1.20 ± 0.14   −4.67 ± 0.05
+
+
+                                                              REFERENCES
+1997, ESA Special Publication, Vol. 1200, The HIPPARCOS and               Neubauer, F. J. 1932, Lick Observatory Bulletin, 441, 190,
+  TYCHO catalogues. Astrometric and photometric star                        doi: 10.5479/ADS/bib/1932LicOB.15.190N
+  catalogues derived from the ESA HIPPARCOS Space                         Offner, S. S. R., Moe, M., Kratter, K. M., et al. 2023, in
+  Astrometry Mission                                                        Astronomical Society of the Pacific Conference Series, Vol. 534,
+Choi, J., Dotter, A., Conroy, C., et al. 2016, ApJ, 823, 102,               Protostars and Planets VII, ed. S. Inutsuka, Y. Aikawa,
+  doi: 10.3847/0004-637X/823/2/102                                          T. Muto, K. Tomida, & M. Tamura, 275,
+Dekker, H., D’Odorico, S., Kaufer, A., Delabre, B., & Kotzlowski,           doi: 10.48550/arXiv.2203.10066
+  H. 2000, in Society of Photo-Optical Instrumentation Engineers          Paxton, B., Bildsten, L., Dotter, A., et al. 2011, ApJS, 192, 3,
+  (SPIE) Conference Series, Vol. 4008, Optical and IR Telescope             doi: 10.1088/0067-0049/192/1/3
+  Instrumentation and Detectors, ed. M. Iye & A. F. Moorwood,             Paxton, B., Cantiello, M., Arras, P., et al. 2013, ApJS, 208, 4,
+  534–545, doi: 10.1117/12.395512                                           doi: 10.1088/0067-0049/208/1/4
+Dotter, A. 2016, ApJS, 222, 8, doi: 10.3847/0067-0049/222/1/8             Paxton, B., Marchant, P., Schwab, J., et al. 2015, ApJS, 220, 15,
+Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023,            doi: 10.1088/0067-0049/220/1/15
+  A&A, 674, A1, doi: 10.1051/0004-6361/202243940                          Ratzenböck, S., Großschedl, J. E., Möller, T., et al. 2023a, A&A,
+Gravity Collaboration, Abuter, R., Accardo, M., et al. 2017,                677, A59, doi: 10.1051/0004-6361/202243690
+  A&A, 602, A94, doi: 10.1051/0004-6361/201730838                         Ratzenböck, S., Großschedl, J. E., Alves, J., et al. 2023b, A&A,
+Hernandez, C. A., & de Hernandez, E. B. 1979, Rev. Mexicana                 678, A71, doi: 10.1051/0004-6361/202346901
+  Astron. Astrofis., 4, 297                                               Rizzuto, A. C., Ireland, M. J., & Robertson, J. G. 2011, MNRAS,
+Høg, E., Fabricius, C., Makarov, V. V., et al. 2000, A&A, 355, L27          416, 3108, doi: 10.1111/j.1365-2966.2011.19256.x
+Houk, N., & Cowley, A. P. 1975, University of Michigan                    Skrutskie, M. F., Cutri, R. M., Stiening, R., et al. 2006, AJ, 131,
+  Catalogue of two-dimensional spectral types for the HD stars.             1163, doi: 10.1086/498708
+  Volume I. Declinations -90 to -53 ƒ0.                                   Thackeray, A. D., & Hill, G. 1974, MNRAS, 168, 55,
+Hunter, J. D. 2007, Computing In Science & Engineering, 9, 90               doi: 10.1093/mnras/168.1.55
+Kaufer, A., Stahl, O., Tubbesing, S., et al. 1999, The Messenger,         Thackeray, A. D., & Wegner, G. 1980, MNRAS, 191, 217,
+  95, 8                                                                     doi: 10.1093/mnras/191.2.217
+Lanz, T., & Hubeny, I. 2007, ApJS, 169, 83, doi: 10.1086/511270           Tokovinin, A. A., Chalabaev, A., Shatsky, N. I., & Beuzit, J. L.
+Lapeyrere, V., Kervella, P., Lacour, S., et al. 2014, in Society of         1999, A&A, 346, 481
+  Photo-Optical Instrumentation Engineers (SPIE) Conference               Torosyan, M., Azatyan, N., Nikoghosyan, E., Samsonyan, A., &
+  Series, Vol. 9146, Optical and Infrared Interferometry IV, ed.            Andreasyan, D. 2024, Communications of the Byurakan
+  J. K. Rajagopal, M. J. Creech-Eakman, & F. Malbet, 91462D,                Astrophysical Observatory, 71, 42,
+  doi: 10.1117/12.2056850                                                   doi: 10.52526/25792776-24.71.1-42
+Le Bouquin, J.-B., Berger, J.-P., Lazareff, B., et al. 2011, A&A,         Van Der Walt, S., Colbert, S. C., & Varoquaux, G. 2011,
+  535, A67, doi: 10.1051/0004-6361/201117586                                Computing in Science & Engineering, 13, 22
+Luyten, W. J. 1935, PASP, 47, 263, doi: 10.1086/124606                    Waisberg, I., Klein, Y., & Katz, B. 2023, MNRAS, 521, 5232,
+Mayor, M., Pepe, F., Queloz, D., et al. 2003, The Messenger, 114,           doi: 10.1093/mnras/stad872
+  20                                                                      Wang, T., Yuan, H., Chen, B., et al. 2025, ApJS, 280, 15,
+                                                                            doi: 10.3847/1538-4365/adea39
+
+
+
+
+                                                                APPENDIX
+                                        A. VLTI OBSERVATIONS AND BEST-FIT PARAMETERS
+  Tables 3 and 4 show details of the VLTI observations of Alpha Crucis A and B as well as the best-fit binary model
+parameters for each epoch.
+  Figures 7 and 8 show the interferometric data (colored) and best-fit binary model (black) for the VLTI/GRAVITY
+and VLTI/PIONIER observations of Alpha Cru A. Figures 10 and 9 are the corresponding figures for Alpha Cru B.
+  The full distributions of the best fit orbital parameters for α Cru A are shown in Figure 11. The values marked by
+the blue lines show the best fit parameters for the original data, while the distributions refer to the best fit parameters
+                                                            Upgrading Alpha Crucis to a seven star system                                                                             13
+
+                                                                           TABLE 4
+                                      VLTI observations of Alpha Crucis B and best-fit binary model parameters for Ba+Bb.
+                                                 seeing
+       date                                     @500 nm                              Bproj,max (m)                           calibrator                      ∆α∗               ∆δ
+                                                             λ                                                                              fB
+                                                                                                                                              b
+       MJD                     Instrument          (”)       ∆λ
+                                                                     AT config.       θmax (mas)                            θdiam (mas)     fBa
+                                                                                                                                                  (%)       (mas)             (mas)
+
+                                                                                                                             HD116244
+ 2018-02-06                     PIONIER                                                     129.1                             K0III
+  58155.37                       H band            0.4       40     A0-G1-J2-J3              2.45                              1.5         56.3 ± 0.1   9.682 ± 0.002    −2.173 ± 0.005
+
+                               GRAVITY                                                                                       HD120913
+ 2018-03-03                    single field                                                 123.5                             K2III
+  58180.39                       K band          0.7-1.1    4000    A0-G1-J2-J3              3.7                               1.7         56.2 ± 1.2    16.70 ± 0.01     −1.40 ± 0.02
+
+                               GRAVITY                                                                                       HD120913
+ 2018-03-04                    single field                                                 126.0                             K2III
+  58181.35                       K band          0.6-0.7    4000    A0-G1-J2-J3              3.6                               1.7         57.2 ± 0.2   16.914 ± 0.006   −1.375 ± 0.016
+
+                               GRAVITY
+ 2018-03-04                    dual field                                                   123.2                                              56.5
+  58181.40                      K band             0.7      500     A0-G1-J2-J3              3.7                                    -         fixed      16.96 ± 0.01     −1.37 ± 0.01
+
+                               GRAVITY
+ 2019-03-26                    dual field                                                      31.4                                            56.5
+  58568.18                      K band           0.5-0.7    500    A0-B2-D0-C1                 14.5                                 -         fixed      11.82 ± 0.04     −1.82 ± 0.03
+
+                               GRAVITY                                                                                       HD127193
+ 2019-03-27                    dual field                                                      32.0                           K1III
+  58569.13                      K band           0.5-0.6    500    A0-B2-D0-C1                 14.2                            0.92        56.8 ± 0.6    12.14 ± 0.01     −1.89 ± 0.03
+
+
+
+
+                       1.0 AT 4-3                                                                                   20
+                             AT 4-2                                                                                 15
+                       0.9 AT 4-1
+                             AT 3-2                                                                                 10
+
+
+
+                                                                                        closure phase [deg]
+                             AT 3-1
+
+
+
+  squared visibility
+                       0.8   AT 2-1                                                                                  5
+                       0.7                                                                                           0
+                                                                                                                     5
+                       0.6
+                                                                                                                    10 AT 4-3-2
+                       0.5                                                                                               AT 4-3-1
+                                                                                                                    15 AT 4-2-1
+                                                                                                                         AT 3-2-1
+                       0.4                                                                                          20
+                              0.10        0.15        0.20       0.25         0.30                                        0.20 0.22 0.24 0.26 0.28 0.30 0.32
+                                           spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+
+                       1.0                                                                                           6 AT 4-3-2
+                                                                                                                         AT 4-3-1
+                                                                                                                     4   AT 4-2-1
+                       0.9                                                                                               AT 3-2-1
+
+
+
+
+  squared visibility                                                                          closure phase [deg]
+                                                                                                                     2
+                       0.8
+                                                                                                                     0
+                       0.7 AT 4-3                                                                                    2
+                             AT 4-2
+                             AT 4-1
+                       0.6   AT 3-2                                                                                  4
+                             AT 3-1
+                             AT 2-1                                                                                  6
+                       0.5
+                             0.02      0.03       0.04 0.05 0.06          0.07       0.08                            0.035 0.040 0.045 0.050 0.055 0.060 0.065 0.070 0.075 0.080
+                                              spatial frequency [mas 1]                                                 spatial frequency of largest baseline in triangle [mas 1]
+ Fig. 7.— VLTI/GRAVITY data (colored) for Alpha Crucis Aa+Ab and best fit binary model (solid black) for Epochs 2018-03-03 (top)
+and 2019-03-27 (bottom). The dashed lines show the expected values for a single unresolved star.
+14                                                                               I. Waisberg & B. Katz
+
+                                                                                                                       25
+                       1.0
+                       0.9                                                                                             20
+                       0.8                                                                                             15
+
+
+
+  squared visibility                                                                            closure phase (deg)
+                       0.7                                                                                             10
+                       0.6
+                                                                                                                        5
+                       0.5
+                                                                                                                        0
+                       0.4
+                             AT 4-3
+                       0.3   AT 4-2                                                                                     5
+                             AT 4-1                                                                                           AT 4-3-2
+                       0.2                                                                                             10
+                          0.05      0.10     0.15 0.20 0.25 0.30 0.35              0.40                                     0.35      0.36     0.37      0.38     0.39       0.40
+                                               spatial frequency [mas 1]                                                      spatial frequency of largest baseline in triangle [mas 1]
+                                                                                                                      150
+                       1.0 AT 4-3
+                             AT 4-2
+                             AT 4-1                                                                                   100
+                       0.8   AT 3-2
+                             AT 3-1
+
+
+
+                                                                                          closure phase (deg)
+                                                                                                                       50
+
+
+  squared visibility
+                             AT 2-1
+                       0.6
+                                                                                                                        0
+                       0.4
+                                                                                                                       50
+                                                                                                                              AT 4-3-2
+                       0.2                                                                                            100 AT 4-3-1
+                                                                                                                              AT 4-2-1
+                                                                                                                              AT 3-2-1
+                       0.0                                                                                            150
+                             0.15          0.20        0.25      0.30     0.35     0.40                                      0.28 0.30 0.32 0.34 0.36 0.38 0.40
+                                                  spatial frequency [mas 1]                                                   spatial frequency of largest baseline in triangle [mas 1]
+ Fig. 8.— VLTI/PIONIER data (colored) for Alpha Crucis Aa+Ab and best fit binary model (solid black) for Epochs 2018-02-03 (top)
+and 2018-02-04 (bottom). The dashed lines show the expected values for a single unresolved star.
+
+
+                                                                                                                       30
+                       1.0
+                                                                                                                       20
+                       0.9
+
+
+
+
+                                                                                                closure phase (deg)
+                                                                                                                       10
+
+
+  squared visibility
+                       0.8
+                                                                                                                        0
+                       0.7
+                             AT 4-3
+                       0.6 AT 4-2                                                                                      10
+                             AT 4-1                                                                                           AT 4-3-2
+                             AT 3-2                                                                                    20 AT 4-3-1
+                       0.5   AT 3-1                                                                                           AT 4-2-1
+                             AT 2-1                                                                                           AT 3-2-1
+                       0.4                                                                                             30
+                             0.15          0.20      0.25     0.30     0.35        0.40                                      0.28 0.30 0.32 0.34 0.36 0.38 0.40
+                                               spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+ Fig. 9.— VLTI/PIONIER data (colored) for Alpha Crucis Ba+Bb and best fit binary model (solid black) for Epoch 2018-02-06. The
+dashed lines show the expected values for a single unresolved star.
+of the 20,000 resamples of the data.
+                                                                                 B. SPECTRA DETAILS
+  Table 5 summarizes the spectral observations of Alpha Cru A.
+  Table 6 lists the transitions identified in the 3440-6750Å spectrum of Alpha Cru A.
+                                                            Upgrading Alpha Crucis to a seven star system                                                                               15
+
+                       1.0 AT 4-3                                                                                      100
+                                                                                                                             AT 4-3-2
+                             AT 4-2                                                                                     75 AT 4-3-1
+                             AT 4-1                                                                                          AT 4-2-1
+                       0.8   AT 3-2                                                                                     50 AT 3-2-1
+
+
+
+                                                                                           closure phase [deg]
+                             AT 3-1
+
+
+
+  squared visibility
+                       0.6
+                             AT 2-1                                                                                     25
+                                                                                                                         0
+                       0.4                                                                                              25
+                                                                                                                        50
+                       0.2
+                                                                                                                        75
+                       0.0                                                                                             100
+                                0.10           0.15        0.20       0.25          0.30                                 0.18 0.20 0.22 0.24 0.26 0.28 0.30
+                                              spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+                       1.0 AT 4-3                                                                                      100 AT 4-3-2
+                             AT 4-2                                                                                          AT 4-3-1
+                             AT 4-1                                                                                     75 AT 4-2-1
+                       0.8   AT 3-2                                                                                     50 AT 3-2-1
+
+
+
+                                                                                           closure phase [deg]
+                             AT 3-1
+
+
+
+  squared visibility
+                             AT 2-1                                                                                     25
+                       0.6
+                                                                                                                         0
+                       0.4                                                                                              25
+                                                                                                                        50
+                       0.2                                                                                              75
+                                                                                                                       100
+                       0.0
+                                0.10           0.15        0.20       0.25          0.30                                 0.18 0.20 0.22 0.24 0.26 0.28 0.30
+                                              spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+                       1.0                                                                                              80 AT 4-3-2
+                                                                                                                             AT 4-3-1
+                       0.8                                                                                              60 AT 4-2-1
+                                                                                                                             AT 3-2-1
+
+
+
+
+                                                                                                 closure phase [deg]
+                                                                                                                        40
+
+
+  squared visibility
+                       0.6
+                                                                                                                        20
+                       0.4 AT 4-3                                                                                        0
+                             AT 4-2
+                             AT 4-1                                                                                     20
+                       0.2   AT 3-2
+                             AT 3-1                                                                                     40
+                             AT 2-1
+                       0.0
+                             0.02      0.03       0.04 0.05 0.06             0.07     0.08                               0.035 0.040 0.045 0.050 0.055 0.060 0.065 0.070 0.075 0.080
+                                              spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+                       1.0                                                                                              40 AT 4-3-2
+                                                                                                                             AT 4-3-1
+                                                                                                                        30 AT 4-2-1
+                       0.8
+                                                                                                                        20 AT 3-2-1
+
+
+
+  squared visibility                                                                             closure phase [deg]
+                       0.6                                                                                              10
+                                                                                                                         0
+                       0.4 AT 4-3                                                                                       10
+                             AT 4-2
+                             AT 4-1                                                                                     20
+                       0.2   AT 3-2                                                                                     30
+                             AT 3-1
+                             AT 2-1                                                                                     40
+                       0.0
+                             0.02      0.03       0.04 0.05 0.06             0.07     0.08                               0.035 0.040 0.045 0.050 0.055 0.060 0.065 0.070 0.075 0.080
+                                              spatial frequency [mas 1]                                                     spatial frequency of largest baseline in triangle [mas 1]
+  Fig. 10.— VLTI/GRAVITY data (colored) for Alpha Crucis Ba+Bb and best fit binary model (solid black) for Epochs 2018-03-03,
+2018-03-04, 2019-03-26 and 2019-03-27 (top to bottom). The dashed lines show the expected values for a single unresolved star.
+                                                                                                                                                                                                                                                                        16
+                                                                                       (km/s)       K(km/s)              Tp 0 0 P0(day)                         (deg)                (deg)              i(deg)               e
+                                                                               18 18 19 19 20 39 40 40 41                        . . . 0. 2 2 2 2 2 2 2 2 2 2                                                     0.3 0.3 0.3 0.3 0.3
+                                                                                 .0 .6 .2 .8 .4 .2 .0 .8 .6      2.7 3.0 3.3 3.6 0050 0065 0080 009252.0 23.5 25.0 26.5 28.026.528.029.531.032.5 64.5 66.0 67.5      5 6 7 8 9
+                                                                         9.2
+                                                                         9.55
+                                                                         9.70                                                                             +7.574e1
+                                                                  a(mas)                                                           +2.45818e6                                                                                                           a = 9.48+0.30
+                                                                        10 5
+                                                                           .0
+                                                                         0.30
+                                                                         0.35
+                                                                  e      0.36
+                                                                         0.37                                                                                                                                                           e = 0.37+0.01
+                                                                         0.38
+                                                                              9
+                                                                         64
+                                                                            .5
+                                                                         66
+                                                                            .0
+                                                                  i(deg) 67
+                                                                            .5                                                                                                                                    i = 66.18+1.34
+                                                                                                                                                                                                                            1.34
+                                                                        22
+                                                                        226.5
+                                                                        228.0
+                                                                  (deg) 239.5
+                                                                        231.0                                                                                                                   = 229.53+2.11
+                                                                                                                                                                                                         2.19
+Fig. 11.— Orbital parameters distributions for Alpha Crucis A.
+
+
+
+
+                                                                        222.5
+                                                                           2
+                                                                        22 .0
+                                                                           3
+                                                                        22 .5
+                                                                           5
+                                                                  (deg) 22 .0
+                                                                           6
+                                                                        22 .5                                                                                              = 224.97+1.90
+                                                                                                                                                                                    1.85
+                                                                       0.0 8.0
+                                                                          0
+                                                                                                                                                                                                                                                                        I. Waisberg & B. Katz
+                                                                       0.0 50
+                                                                          0
+                                                                       0.0 65
+                                                                          0                                                                               P = 75.75+0.00
+                                                                 P(day)0.0 80
+                                                                  +7.574e1                                                                                          0.00
+                                                                          09
+                                                                              5
+                                                                           2.7
+                                                                           3.0
+                                                                  +2.45818e6
+                                                                           3.3
+                                                                     Tp    3.6                                                     Tp = 2458183.12+0.40
+                                                                         39                                                                        0.40
+                                                                            .
+                                                                         40 2
+                                                                            .
+                                                                         40 0
+                                                                  K(km/s)   .
+                                                                         41 8                                 K = 40.62+0.91
+                                                                            .6                                          0.95
+                                                                         18
+                                                                         18.0
+                                                                         19.6
+                                                                  (km/s) 19.2
+                                                                         20.8                  = 19.23+0.85
+                                                                                                       0.80
+                                                                            .4
+                       Upgrading Alpha Crucis to a seven star system                                   17
+
+                                           TABLE 5
+                       Details of spectral observations of Alpha Cru A.
+
+            date                                                               vhelio     vradial,Aa
+                                                    λ
+ target     MJD        Instrument       λ           ∆λ
+                                                            Exposure time   ( km s−1 )   ( km s−1 )
+
+          2006-01-12                3300-4500Å   65,030
+α Cru A   53747.372      UVES       4800-6800Å   74,450         5s          +17.20      −0.6 ± 2.4
+
+          2006-04-10                3050-3850Å   58,640       12.6 s
+α Cru A   53835.164      UVES       4800-6800Å   87,410       7.5 s          +6.90      13.7 ± 3.0
+
+          2016-04-06
+α Cru A   57484.977     HARPS       3780-6900Å   115,000        1s             -        44.3 ± 4.5
+
+          2004-05-03
+α Cru A   53128.090      FEROS      3500-9200Å   48,000        20 s            -        −12.1 ± 2.7
+18                I. Waisberg & B. Katz
+     TABLE 6 Identified spectral lines in Alpha Cru A.
+
+       Ion     Wavelength (Å)         Wavelength (Å)
+
+     H I
+      H16           3703.85      H15      3711.97
+      H14           3721.94      H13      3734.37
+      H12           3750.15      H11      3770.63
+      H10           3797.90      H9        3835.38
+       H8          3889.05       Hϵ       3970.07
+       Hδ          4101.735      Hγ       4340.463
+       Hβ          4861.325      Hα       6562.80
+     HeI
+      HeI          3447.59                 3498.64
+      HeI          3512.51                 3530.49
+      HeI          3554.41                 3587.27
+      HeI          3613.64                 3634.23
+      HeI          3705.00                 3732.88
+      HeI          3805.74                 3819.60
+      HeI          3833.57                 3867.48
+      HeI          3871.69                 3926.41
+      HeI          3964.73                 4009.26
+      HeI          4026.20                 4120.82
+      HeI          4143.76                 4168.97
+      HeI          4387.93                 4437.55
+      HeI          4471.50                 4713.17
+      HeI          4921.93                 5015.70
+      HeI          5047.74                 5875.64
+      HeI          6678.15
+     HeII
+      HeII         4199.80                 4541.6
+      HeII         4685.68                 5411.5
+     CII
+       CII         3590.82                  3876.4
+       CII         4156.33                 4267.26
+       CII         4289.88                 4372.35
+       CII         4372.49                 4618.40
+       CII         4619.23                 4620.35
+       CII         5145.16                 6578.01
+       CII         6582.88
+     NII
+       NII         3995.00                 4035.08
+       NII         4041.31                 4236.91
+       NII         4241.78                 4379.59
+       NII         4530.41                 4630.54
+       NII         4447.03                 4601.48
+       NII         4613.87                 4621.39
+       NII         4643.09                 4654.53
+       NII         4803.29                 5001.13
+       NII         5001.48                 5002.70
+       NII         5005.15                 5007.33
+       NII         5010.62                 5011.31
+       NII         5012.04                 5045.10
+       NII         5679.56                 5686.21
+       NII         5710.77
+     OII
+      OII          3470.28                 3470.68
+      OII          3727.32                 3759.06
+      OII          3761.40                 3762.47
+      OII          3777.42                 3847.89
+      OII          3850.80                 3851.03
+      OII          3851.47                 3856.62
+      OII          3882.45                 3911.97
+      OII          3919.27                 3945.04
+      OII          3954.36                 3973.26
+      OII          3982.72                 4060.60
+      OII          4061.03                 4069.62
+      OII          4069.88                 4072.15
+      OII          4075.86                 4078.84
+      OII          4085.11                 4092.93
+      OII          4094.14                 4095.64
+      OII          4096.19                 4096.53
+      OII          4096.93                 4097.26
+      OII          4098.24                 4110.79
+      OII          4112.02                 4129.32
+      OII          4132.80                 4153.23
+      OII          4156.53                 4185.44
+      OII          4189.79                  4276
+      OII          4291.25                 4294.78
+      OII          4303.61                 4317.14
+      OII          4319.63                 4325.77
+      OII          4345.56                 4349.43
+      OII          4366.89                 4371.62
+      OII          4378.03                 4378.43
+      OII          4395.94                 4397.86
+      OII          4414.90                 4416.97
+      OII          4443.00                 4443.52
+      OII          4452.38                 4465.42
+      OII          4466.24                 4466.42
+      OII          4467.48                 4467.72
+      OII          4467.92                 4469.37
+      OII          4488.20                 4491.23
+      OII          4590.97                 4596.18
+      OII          4609.44                 4610.20
+      OII          4638.86                 4641.81
+      OII          4649.14                 4650.84
+      OII          4661.63                 4673.73
+      OII          4676.24                 4699.00
+      OII          4699.22                 4705.35
+      OII          4710.01                 4843.37
+      OII          4844.91                 4890.86
+      OII          4906.88                 4924.53
+      OII          4941.07                 4943.00
+      OII          4955.71                 5159.94
+      OII          5206.65                 6641.05
+      OII          6721.36
+     NeII
+      NeII         3480.72                 3481.93
+      NeII         3542.24                 3542.85
+      NeII         3543.79                 3568.50
+      NeII         3572.02                 3572.38
+      NeII         3574.61                 3601.06
+      NeII         3602.78                 3626.54
+      NeII         3628.03                 3643.93
+                                 Upgrading Alpha Crucis to a seven star system                                  19
+
+                                     Ion       Wavelength (Å)   Wavelength (Å)
+                                    NeII          3644.86            3651.26
+                                    NeII          3652.81            3664.07
+                                    NeII          3694.21            3756.39
+                                    NeII          3760.51
+                                   MgII
+                                    MgII          4481.21
+                                   AlIII
+                                     AlIII        5696.60            5722.73
+                                   SiIII
+                                      SiIII       3486.91            3791.41
+                                      SiIII       4219.96            4552.62
+                                      SiIII       4567.82            4574.76
+                                      SiIII       4813.33            4819.72
+                                      SiIII       4828.95            5739.73
+                                   SiIV
+                                      SiIV        4088.85            4116.10
+                                      SiIV        4212.41            4654.32
+                                   SIII
+                                      SIII        3497.29            3709.33
+                                      SIII        3710.41            4253.50
+                                      SIII        4284.89            4332.65
+                                      SIII        4354.52            4361.47
+                                      SIII        5160.08            5219.32
+                                   CaII
+                                   i.s. CaII      3933.66
+
+
+
+
+  This paper was built using the Open Journal of Astrophysics LATEX template. The OJA is a journal which provides
+fast and easy peer review for new papers in the astro-ph section of the arXiv, making the reviewing process simpler
+for authors and referees alike. Learn more at http://astro.theoj.org.
+

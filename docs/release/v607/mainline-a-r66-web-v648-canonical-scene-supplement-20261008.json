@@ -1,0 +1,137 @@
+{
+  "schema": "mainline-a-r66-web-v648-canonical-scene-supplement",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T16:07:42.000Z",
+  "status": "verified-local-36-by-2-browser-scene-candidate-release-blocked",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+  "baseRoundReceipt": "docs/release/v607/mainline-a-r66-web-v648-final-technical-round-20261007.json",
+  "coverage": {
+    "canonicalManifest": { "stars": 12, "constellations": 12, "nebulae": 12 },
+    "desktopSelectedAndRuntimeReady": 36,
+    "mobileViewportSelectedAndRuntimeReady": 36,
+    "screenshotsIndividuallyRehashed": 72,
+    "humanNebulaRightsSigned": 0,
+    "physicalMobile": "not-run"
+  },
+  "evidence": {
+    "static": {
+      "manifest": {
+        "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+        "bytes": 38349,
+        "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+      },
+      "codeChange": {
+        "path": "docs/release/v607/mainline-a-r66-web-v648-scene-code-change-20261008.json",
+        "bytes": 2139,
+        "sha256": "db14df7fd8250532d45d42d8fdbffdc330db3ef3bbcdb10ad31f2b5e17692427",
+        "newEffectiveToolLines": 486,
+        "newTestLinesExcluded": 116,
+        "cumulativeV648EffectiveLowerBound": 3043
+      },
+      "nodeSyntax": "passed-for-three-scene-scripts",
+      "nodePositiveNegativeAndReplayTests": "10/10 passed",
+      "targetedEslint": "passed-no-warnings",
+      "vitest": "11/11 focused resource-observation-and-nebula-portrait tests passed",
+      "productionBuild": "passed-preserved-V648-build-source-hash-unchanged",
+      "buildReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+        "bytes": 472504,
+        "sha256": "d386a191a28502aa0785fbd7f16d149be151cccb05c540299e20f8ab8385bf14"
+      }
+    },
+    "HTTP": {
+      "origin": "http://127.0.0.1:3091",
+      "homeStatus": 200,
+      "healthStatus": 200,
+      "assetHttpReceipt": "docs/release/v607/mainline-a-r66-web-nebula-http-20261007-v648web01.json"
+    },
+    "visual": {
+      "screenshotsCaptured": 72,
+      "screenshotsIndividuallyRehashed": 72,
+      "manuallyInspectedExamples": [
+        "output/playwright/mainline-a-web-canonical-scene-desktop-star-alpha-centauri-a-20261007-v648scene05.png",
+        "output/playwright/mainline-a-web-canonical-scene-desktop-constellation-Ori-20261007-v648scene05.png",
+        "output/playwright/mainline-a-web-canonical-scene-desktop-nebula-m42-20261007-v648scene05.png",
+        "output/playwright/mainline-a-web-canonical-scene-mobile-star-alpha-centauri-a-20261007-v648scene05.png",
+        "output/playwright/mainline-a-web-canonical-scene-mobile-constellation-Ori-20261007-v648scene05.png",
+        "output/playwright/mainline-a-web-canonical-scene-mobile-nebula-m42-20261007-v648scene05.png"
+      ],
+      "scope": "desktop examples show scene and passport together; mobile screenshots show the expanded passport art while the actual scene target and readiness are checked in DOM; no manual review claim for all 72 images"
+    },
+    "browser": {
+      "desktopRaw": {
+        "path": "docs/release/v607/mainline-a-r66-web-canonical-scene-desktop-raw-20261007-v648scene05.json",
+        "bytes": 53201,
+        "sha256": "3c15d2b6c0ca353f749beee2e50d914b9fd4a4dac070eac5dbf078b66f9ceafc"
+      },
+      "mobileViewportRaw": {
+        "path": "docs/release/v607/mainline-a-r66-web-canonical-scene-mobile-raw-20261007-v648scene05.json",
+        "bytes": 53091,
+        "sha256": "3ccfc055aeabd077d5c3d974a3661fd0ee9f0cf2106abb7f01b775952f3fa68e"
+      },
+      "verification": {
+        "path": "docs/release/v607/mainline-a-r66-web-canonical-scene-verification-20261007-v648scene05.json",
+        "bytes": 26367,
+        "sha256": "36a43aac73c736c245abf90047796c9b5bb06937cdc4a2f97645ce4c142804bf",
+        "replay": "passed"
+      },
+      "desktopViewport": [1280, 720],
+      "mobileSimulationViewport": [390, 844],
+      "mobileNebulaInteraction": "real-keyboard-Enter-on-browser-controls-after-pointer-occlusion",
+      "mobilePointerOcclusion": "open-deep-sky-and-close-browser-controls-intercepted-by-panel-slots; unresolved-UX-defect",
+      "unpromotedAttempts": [
+        "docs/release/v607/mainline-a-r66-web-canonical-scene-mobile-attempt-20261007-v648scene01.json",
+        "docs/release/v607/mainline-a-r66-web-canonical-scene-mobile-attempt-20261007-v648scene02.json",
+        "docs/release/v607/mainline-a-r66-web-canonical-scene-mobile-attempt-20261007-v648scene03.json",
+        "docs/release/v607/mainline-a-r66-web-canonical-scene-mobile-attempt-20261007-v648scene04.json"
+      ]
+    },
+    "performance": {
+      "newLongRun": "not-run-in-this-supplement",
+      "sameSourceExistingTwoIndependentLongRuns": {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-20261007-v648long01.json",
+        "sha256": "0b56764b3b1771fe85040f93e5cee10960f37e948fcec6ee6847aae49d228929",
+        "durationSecondsEach": 1802,
+        "productionPerformanceClaim": false
+      }
+    },
+    "externalSource": {
+      "newScientificOrRightsEvidence": "none",
+      "aLineStarEvidencePending": "12/12",
+      "aLineConstellationSignoffPending": "12/12",
+      "aLineNebulaHumanRightsSignoffPending": "12/12",
+      "betaFourPhysicalStellarComponentsConfirmed": "0/4",
+      "betaB2NebulaSourcePagesPending": "6/6"
+    }
+  },
+  "remainingGates": [
+    "Mobile browser pointer controls overlap the object-browser deep-sky and close controls; keyboard selection works but pointer UX is not accepted.",
+    "A-line 12 star evidence, 12 constellation signoffs and 12 nebula rights signoffs remain pending.",
+    "Acrux, Spica, Regulus and Polaris physical component identity admission remains pending 0/4.",
+    "The six B2 nebula source pages and rights decisions remain pending.",
+    "Physical mobile is not available; the mobile evidence is Chrome viewport simulation.",
+    "Root-app parity remains outside this next-web-only delivery scope and is not closed.",
+    "Public web release, scientific admission and copyright approval remain blocked."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "canonicalV622DigestChanged": false,
+    "applicationSourceChanged": false,
+    "physicsKernelChangedByThisBatch": false,
+    "parentGitOperated": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

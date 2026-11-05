@@ -1,0 +1,63 @@
+{
+  "schema": "mainline-a-r79-code-change-v666",
+  "round": 79,
+  "date": "2026-10-13",
+  "status": "effective-web-visual-review-batch-counted-release-gates-pending",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "appSourceSha256": "5acf2252241c7e133b208d9e53b89bafbe2ad21794051a210bf4c544e751e63d",
+    "parentGitTouchedByRound": false,
+    "parallelRelativityWindowExcludedFromCounts": true
+  },
+  "newProductionAndOperationalCode": [
+    "app/lib/mainlineAR79VisualReviewV666.ts",
+    "app/lib/mainlineAR79ImageProbeV666.ts",
+    "app/components/MainlineAR79VisualInspectionV666.tsx",
+    "app/components/MainlineAR79ReviewLanesV666.tsx",
+    "scripts/audit-mainline-a-r79-visual-v666.mjs",
+    "scripts/verify-mainline-a-r79-http-v666.mjs",
+    "scripts/capture-mainline-a-r79-browser-v666.mjs",
+    "scripts/verify-mainline-a-r79-external-v666.mjs"
+  ],
+  "newSubstantiveTests": [
+    "app/lib/mainlineAR79VisualReviewV666.test.ts",
+    "app/lib/mainlineAR79ImageProbeV666.test.ts",
+    "scripts/audit-mainline-a-r79-visual-v666.test.mjs",
+    "scripts/verify-mainline-a-r79-http-v666.test.mjs",
+    "scripts/capture-mainline-a-r79-browser-v666.test.mjs",
+    "scripts/verify-mainline-a-r79-external-v666.test.mjs"
+  ],
+  "existingAppFilesModifiedWithoutLineCredit": [
+    "app/components/MainlineAWebAcceptancePanelV662.tsx",
+    "app/components/MainlineANebulaReviewPanelV610.tsx"
+  ],
+  "lineMethod": "Count nonempty noncomment lines with rg in eight new production or operational code files and six new substantive test files. Existing files have no independently preserved pre-R79 line baseline and receive zero credit. Generated manifests, receipts, screenshots, logs, documentation, lockfiles, and concurrent relativity changes are excluded.",
+  "counts": {
+    "newProductionAndOperationalCodeFiles": 8,
+    "newSubstantiveTestFiles": 6,
+    "existingAppFilesModifiedWithoutLineCredit": 2,
+    "effectiveNewProductionAndToolLines": 1960,
+    "effectiveNewSubstantiveTestLines": 815,
+    "effectiveNewCodeLinesTotal": 2775,
+    "existingFileModifiedLinesCredited": 0,
+    "minimum500MetWithoutTestsOrExistingModifications": true,
+    "target1000MetWithoutTestsOrExistingModifications": true
+  },
+  "behavior": [
+    "Build a fail-closed 96-row art review plan with 31 requestable existing A and Beta images and nine held image or stellar rows kept request-free.",
+    "Provide explicit same-origin manual image inspection with byte, MIME, dimension, SHA-256, timeout, retry, failure, and resource-release handling.",
+    "Add a focused desktop and simulated-mobile review pane with candidate state, source pins, fit or native image scale, and default-off feedback.",
+    "Recompute local image files and immutable V616 pins; replay 20 prior source pins without new HTTPS, rights promotion, or scientific payload writeback.",
+    "Verify all 31 image routes in enabled and default-off modes, five held routes, four manual browser image cycles, and screenshot or short-diagnostic boundaries."
+  ],
+  "boundary": {
+    "physicsKernelEditedByRound": false,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

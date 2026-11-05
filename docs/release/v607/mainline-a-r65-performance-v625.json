@@ -1,0 +1,468 @@
+{
+  "schema": "mainline-a-performance-evidence-v625",
+  "version": "v625-mainline-a-multi-device-lifecycle-evidence",
+  "generatedAt": "2026-09-20T13:40:22.040Z",
+  "build": {
+    "buildId": "mainline-a-872a1ad59b33f974",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "route": "/",
+    "source": "runtime-marker"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed"
+  },
+  "requestedDevices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "runId": "r65-desktop-001-fe35fa4c",
+      "device": "desktop",
+      "scenario": "atlas",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "orientation": "landscape",
+        "userAgentClass": "desktop-browser"
+      },
+      "build": {
+        "buildId": "mainline-a-872a1ad59b33f974",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-20T13:00:00.000Z",
+      "endedAt": "2026-09-20T13:00:04.000Z",
+      "durationMs": 4000,
+      "frame": {
+        "sampleCount": 717,
+        "durationMs": 4000,
+        "p50Ms": 5.555000000007567,
+        "p95Ms": 5.649999999994179,
+        "maxMs": 5.649999999994179,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "medianFps": 180.0180017999348,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 143102926,
+        "jsHeapTotalBytes": null,
+        "jsHeapLimitBytes": null,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "total": 14,
+          "workers": 1,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "models": 0,
+          "subscriptions": 1,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 67188937,
+          "estimatedGpuBytes": 67188937,
+          "byOwner": {},
+          "byKind": {
+            "worker": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-render-target": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-buffer": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-compute-pipeline": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-query": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "texture": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "model": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "subscription": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "object-url": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "typed-array-cache": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "camera-lock": {
+              "count": 0,
+              "estimatedBytes": 0
+            }
+          },
+          "byIdentity": {},
+          "identityDigest": "f6448291",
+          "revision": 22
+        },
+        "after": {
+          "total": 14,
+          "workers": 1,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "models": 0,
+          "subscriptions": 1,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 67188937,
+          "estimatedGpuBytes": 67188937,
+          "byOwner": {},
+          "byKind": {
+            "worker": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-render-target": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-buffer": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-compute-pipeline": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-query": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "texture": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "model": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "subscription": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "object-url": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "typed-array-cache": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "camera-lock": {
+              "count": 0,
+              "estimatedBytes": 0
+            }
+          },
+          "byIdentity": {},
+          "identityDigest": "f6448291",
+          "revision": 22
+        },
+        "diff": {
+          "status": "baseline",
+          "total": 0,
+          "workers": 0,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 0,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 0,
+          "models": 0,
+          "subscriptions": 0,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 0,
+          "estimatedGpuBytes": 0,
+          "identityChanged": false,
+          "ownerChanged": false
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 0
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "interactive-four-second-sample",
+        "physical-device-not-run",
+        "long-run-observation-required"
+      ]
+    },
+    {
+      "runId": "r65-mobile-002-d0eebd28",
+      "device": "mobile",
+      "scenario": "atlas",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1.0000000298023224,
+        "orientation": "portrait",
+        "userAgentClass": "mobile-viewport"
+      },
+      "build": {
+        "buildId": "mainline-a-872a1ad59b33f974",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-20T13:01:00.000Z",
+      "endedAt": "2026-09-20T13:01:04.000Z",
+      "durationMs": 4000,
+      "frame": {
+        "sampleCount": 718,
+        "durationMs": 4000,
+        "p50Ms": 5.555000000007567,
+        "p95Ms": 5.615750000003755,
+        "maxMs": 5.615750000003755,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "medianFps": 180.0180017999348,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 145627041,
+        "jsHeapTotalBytes": null,
+        "jsHeapLimitBytes": null,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "total": 14,
+          "workers": 1,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "models": 0,
+          "subscriptions": 1,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 67188937,
+          "estimatedGpuBytes": 67188937,
+          "byOwner": {},
+          "byKind": {
+            "worker": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-render-target": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-buffer": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-compute-pipeline": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-query": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "texture": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "model": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "subscription": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "object-url": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "typed-array-cache": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "camera-lock": {
+              "count": 0,
+              "estimatedBytes": 0
+            }
+          },
+          "byIdentity": {},
+          "identityDigest": "38a923ae",
+          "revision": 22
+        },
+        "after": {
+          "total": 14,
+          "workers": 1,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "models": 0,
+          "subscriptions": 1,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 67188937,
+          "estimatedGpuBytes": 67188937,
+          "byOwner": {},
+          "byKind": {
+            "worker": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-render-target": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-buffer": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-compute-pipeline": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "gpu-query": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "texture": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "model": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "subscription": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "object-url": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "typed-array-cache": {
+              "count": 0,
+              "estimatedBytes": 0
+            },
+            "camera-lock": {
+              "count": 0,
+              "estimatedBytes": 0
+            }
+          },
+          "byIdentity": {},
+          "identityDigest": "38a923ae",
+          "revision": 22
+        },
+        "diff": {
+          "status": "baseline",
+          "total": 0,
+          "workers": 0,
+          "gpuRenderTargets": 0,
+          "gpuBuffers": 0,
+          "gpuComputePipelines": 0,
+          "gpuQueries": 0,
+          "textures": 0,
+          "models": 0,
+          "subscriptions": 0,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "estimatedBytes": 0,
+          "estimatedGpuBytes": 0,
+          "identityChanged": false,
+          "ownerChanged": false
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 0
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "interactive-four-second-sample",
+        "physical-device-not-run",
+        "long-run-observation-required"
+      ]
+    }
+  ],
+  "repeatRuns": 0,
+  "longRunRequestedMs": 1800000,
+  "longRunObservedMs": 0,
+  "status": "blocked",
+  "evidenceClass": "browser-runtime-observation",
+  "blockers": [
+    "long-run-observation-required",
+    "physical-device-not-run"
+  ],
+  "notes": [
+    "R65 browser runtime observation from Codex in-app browser on local preserved build.",
+    "Screenshots, tests, timeout artifacts and this receipt are not real-user or production performance proof.",
+    "No scientific payload writeback; candidate-only / hold / not-admitted."
+  ],
+  "staticEvidence": {
+    "schemaValid": true,
+    "digest": "73e1d69a",
+    "verifiedAt": "2026-09-20T13:40:22.040Z"
+  }
+}

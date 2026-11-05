@@ -1,0 +1,137 @@
+{
+  "version": "v590-celestial-rendering-capability-report-v1",
+  "generatedAt": "2026-08-10T00:00:00Z",
+  "status": "implemented-core-with-blocked-gates",
+  "candidate": {
+    "route": "/local-shadow-v590",
+    "manifestSha256": "c090d15cfb853de04865f5fe98faf8534a0400dddba2c9f866f710fac6038355",
+    "formalProductPointer": "v263",
+    "scientificPayloadWriteback": false
+  },
+  "capabilities": {
+    "singleCanvas": true,
+    "scienceCinematicSharedGeometry": true,
+    "cleanViewPresentationOnly": true,
+    "ktx2SentinelPrewarm": true,
+    "ktx2AssetFailureIsolation": true,
+    "verifiedFallback": true,
+    "fullQualityDimensionGate": true,
+    "actualFileDimensionChecks": "100/100",
+    "mobileDeviceStrictSelection": true,
+    "fullMobileRasterSemantic": "exact-fullMobile-raster-can-pass;lite-raster-remains-fallback",
+    "rendererCapabilityGate": true,
+    "scientificProjectionProbe": {
+      "source": "/data/kerr-observation-v587/observation-summary.json",
+      "parser": "ObservationSummaryV3",
+      "unavailableStatus": "blocked-not-connected",
+      "selfCertificationAllowed": false
+    },
+    "operationalSourceCoverage": "5/5",
+    "v589SourceFreezeCoverage": "22/22",
+    "budgetChecks": {
+      "sourceCache": {
+        "actualBytes": 207313639,
+        "maximumBytes": 2147483648,
+        "status": "passed"
+      },
+      "fullCompressed": {
+        "actualBytes": 114019851,
+        "maximumBytes": 786432000,
+        "status": "passed"
+      },
+      "liteIncrement": {
+        "actualBytes": 0,
+        "maximumBytes": 9437184,
+        "status": "passed"
+      },
+      "liteTotal": {
+        "actualBytes": 75427134,
+        "baselineBytes": 75427134,
+        "assetProjectionBytes": 27253687,
+        "maximumBytes": 85983232,
+        "status": "passed"
+      }
+    },
+    "buildGates": {
+      "standalone": {
+        "kind": "standalone",
+        "status": "passed",
+        "receiptPath": "dist/release/atlas-v590-standalone-build-resource.json",
+        "receiptSha256": "1ea8bbb862365d2cce429053469390b4415638d6ea892d17bf622ab163c7203f",
+        "distDir": ".next-atlas-v590-standalone-current",
+        "deliveryTier": "standalone-full",
+        "buildId": "WtLAhARJ0fnmUuIGJF2hJ",
+        "sourceManifestSha256": "0629d7c08b570c8d26ee90f1117863eda31301ebbf5aa7d2afd8f7d4eb69710d",
+        "heapMb": 8192,
+        "swcRuntime": "official-wasm-fallback",
+        "rollbackSlotAvailable": true,
+        "reasons": []
+      },
+      "lite": {
+        "kind": "lite",
+        "status": "passed",
+        "receiptPath": "dist/release/atlas-v590-lite-build-resource.json",
+        "receiptSha256": "c118d6bc9b4903555484b1dd6d24d0d43dd045308e059024646cdfed8f14f173",
+        "distDir": ".next-atlas-v590-lite-current",
+        "deliveryTier": "vercel-lite",
+        "buildId": "3qjqY7EdGVdC_EWg2XhGw",
+        "sourceManifestSha256": "0629d7c08b570c8d26ee90f1117863eda31301ebbf5aa7d2afd8f7d4eb69710d",
+        "heapMb": 8192,
+        "swcRuntime": "official-wasm-fallback",
+        "rollbackSlotAvailable": true,
+        "reasons": []
+      }
+    },
+    "inheritedSkyIdentity": {
+      "base": "v588-readonly",
+      "catalogStars": "V9-readonly",
+      "dustMask": "V9-readonly"
+    },
+    "heroAdmittedBodies": [
+      "earth",
+      "uranus",
+      "neptune"
+    ],
+    "heroBlockedBodies": [
+      "sun",
+      "mercury",
+      "venus",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "ceres",
+      "vesta",
+      "bennu",
+      "eros",
+      "kleopatra",
+      "tempel-1"
+    ],
+    "blockedNebulae": [
+      "orion-nebula",
+      "lagoon-nebula",
+      "eagle-nebula",
+      "helix-nebula",
+      "veil-nebula",
+      "north-america-nebula"
+    ]
+  },
+  "blockedGates": {
+    "allSixteenHeroAdmission": "blocked:sun,mercury,venus,moon,mars,jupiter,saturn,ceres,vesta,bennu,eros,kleopatra,tempel-1",
+    "allSixNebulaAdmission": "blocked:orion-nebula,lagoon-nebula,eagle-nebula,helix-nebula,veil-nebula,north-america-nebula",
+    "frozenHistory": "blocked-preexisting-frozen-drift",
+    "browserVisualMatrix": "not-run",
+    "fps": "not-run",
+    "soak30Minutes": "not-run",
+    "standaloneBuild": "passed",
+    "liteBuild": "passed",
+    "productionRelease": "not-authorized"
+  },
+  "evidence": {
+    "verificationReceiptSha256": "dc0758e451dcd46f2d548849b3a7419969261f216591015ac4cb4ef4d130128b",
+    "freezeAfterSha256": "49b426796f010d68fcc3c0a0ce5040b9a5f750c288b2e481e02f3e60053f7191",
+    "sourceManifestSha256": "0629d7c08b570c8d26ee90f1117863eda31301ebbf5aa7d2afd8f7d4eb69710d"
+  },
+  "releaseAuthorized": false,
+  "reportSha256": "6183ea87d3f2df4611dec267f27e5e2cce1dfad564d86024e5b345331ba887ba"
+}

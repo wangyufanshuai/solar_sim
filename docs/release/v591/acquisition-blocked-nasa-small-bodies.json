@@ -1,0 +1,44 @@
+{
+  "version": "v591-nasa-small-body-acquisition-blocked-v1",
+  "status": "blocked-no-automatic-retry",
+  "attempts": [
+    {
+      "failedAt": "2026-08-11T15:02:45.089Z",
+      "error": "terminated",
+      "committedAssetIds": [
+        "vesta-nasa-shape-source"
+      ],
+      "requestedUrls": [
+        "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%204%20Vesta%20%28A%29/Asteroid%204%20Vesta%20%28A%29.stl",
+        "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20433%20Eros/Asteroid%20433%20Eros.stl"
+      ]
+    },
+    {
+      "failedAt": "2026-08-11T15:07:22.167Z",
+      "error": "v591-nasa-small-body-acquisition-incomplete:eros-nasa-shape-source,kleopatra-nasa-shape-source",
+      "committedAssetIds": [
+        "vesta-nasa-shape-source"
+      ],
+      "requestedUrls": [
+        "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%204%20Vesta%20%28A%29/Asteroid%204%20Vesta%20%28A%29.stl",
+        "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20433%20Eros/Asteroid%20433%20Eros.stl",
+        "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20216%20Kleopatra/Asteroid%20216%20Kleopatra.stl"
+      ],
+      "failures": [
+        {
+          "assetId": "eros-nasa-shape-source",
+          "reason": "previous-request-failed-no-retry",
+          "sourceUrl": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20433%20Eros/Asteroid%20433%20Eros.stl"
+        },
+        {
+          "assetId": "kleopatra-nasa-shape-source",
+          "reason": "fetch failed",
+          "sourceUrl": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20216%20Kleopatra/Asteroid%20216%20Kleopatra.stl"
+        }
+      ]
+    }
+  ],
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "receiptSha256": "19974be6657cc7a5bebf6142e9841192b72da341881f374c8a7a491a85bbab85"
+}

@@ -1,0 +1,68 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-09-27T03:52:56 [V7.6]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-09-27T03:52:56	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+
+#RESOURCE=yCat_102026
+#Name: B/wds
+#Title: The Washington Visual Double Star Catalog (Mason+ 2001-) Supersedes {\bf I/237}
+#INFO	ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/b/wds	    IVOID of underlying data collection
+#INFO	creator=Mason B.D.	    First author or institution
+#INFO	cites=bibcode:2001AJ....122.3466M	    Article or Data origin sources
+#INFO	journal=AJ	    Journal name
+#INFO	original_date=2001	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/B/wds	    Dataset landing page
+#INFO	publication_date=2026-09-21	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_2000.000:	eq_FK5 J2000
+#Table	B_wds_wds:
+#Name: B/wds/wds
+#Title: The Washington Double Star Catalog (main part)
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	WDS	(A10)	WDS name (based on J2000 position)	[ucd=meta.id;meta.main]
+#Column	Disc	(A7)	Discoverer Code (1 to 4 letters) and Number (5)	[ucd=meta.id]
+#Column	Comp	(A5)	Components when more than 2 (1)	[ucd=meta.code.multip]
+#Column	Obs1	(I4)	? Date of first satisfactory observation	[ucd=time]
+#Column	Obs2	(I4)	? Date of last satisfactory observation	[ucd=time]
+#Column	Nobs	(I4)	Number of Observations (up to 9999)	[ucd=meta.number]
+#Column	pa1	(I3)	? Position Angle at date Obs1 (2)	[ucd=pos.posAng]
+#Column	pa2	(I3)	? Position Angle at date Obs2 (2)	[ucd=pos.posAng]
+#Column	sep1	(F5.1)	? Separation at date Obs1	[ucd=pos.angDistance;src.orbital]
+#Column	sep2	(F6.2)	? Separation at date Obs12	[ucd=pos.angDistance;src.orbital]
+#Column	mag1	(F6.3)	? Magnitude of First Component	[ucd=phot.mag;em.opt]
+#Column	mag2	(F5.2)	? Magnitude of Second Component	[ucd=phot.mag;em.opt]
+#Column	SpType	(A10)	Spectral Type (Primary/Secondary)	[ucd=src.spType]
+#Column	pmRA1	(I4)	? Primary Proper Motion RA (6)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE1	(I4)	? Primary Proper Motion Dec (6)	[ucd=pos.pm;pos.eq.dec]
+#Column	pmRA2	(I4)	? Secondary Proper Motion RA (6)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE2	(I4)	? Secondary Proper Motion Dec (6)	[ucd=pos.pm;pos.eq.dec]
+#Column	DM	(A9)	Durchmusterung Number (3)	[ucd=meta.id]
+#Column	Notes	(A4)	[B-Z ] Notes about the binary (4)	[ucd=meta.note]
+#Column	n_RAh	(A1)	[!P] indicates a position derived from WDS name	[ucd=meta.note]
+#Column	RAJ2000	(A11)	? Right Ascension J2000 (Ep=J2000, hours)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(A11)	Declination J2000 (Ep=J2000, sign)	[ucd=pos.eq.dec;meta.main]
+recno	WDS	Disc	Comp	Obs1	Obs2	Nobs	pa1	pa2	sep1	sep2	mag1	mag2	SpType	pmRA1	pmDE1	pmRA2	pmDE2	DM	Notes	n_RAh	RAJ2000	DEJ2000
+ 	 	 	 	yr	yr	 	deg	deg	arcsec	arcsec	mag	mag	 	mas/yr	mas/yr	mas/yr	mas/yr	 	 	 	"h:m:s"	"d:m:s"
+--------	----------	-------	-----	----	----	----	---	---	-----	------	------	-----	----------	----	----	----	----	---------	----	-	-----------	-----------
+   78378	12266-6306	DUN 252	AB   	1826	2024	 104	114	111	  5.4	  3.50	 1.250	 1.55	B0.5V+B1V 	 -35	 -15	 -43	  -8	-62 2745 	NL  	 	12 26 35.94	-63 05 56.6
+   78379	12266-6306	DUN 252	AC   	1750	2020	  36	216	203	 92.5	 89.00	 1.250	 4.80	B0.5V+B4V 	 -35	 -15	 -40	 -14	-62 2742 	N   	 	12 26 35.94	-63 05 56.6
+   78380	12266-6306	ANT   1	AG   	2000	2014	   5	147	145	 55.5	 58.70	 1.250	12.00	B0.5IV    	 -35	 -15	    	    	         	N   	 	12 26 35.94	-63 05 56.6
+   78381	12266-6306	ANT   1	AH   	2007	2013	   3	167	167	 47.4	 47.30	 1.250	13.00	B0.5IV    	 -35	 -15	    	    	         	N   	 	12 26 35.94	-63 05 56.6
+   78382	12266-6306	ANT   1	AI   	2000	2013	   4	228	227	 65.2	 63.30	 1.250	12.00	B0.5IV    	 -35	 -15	    	    	         	N   	 	12 26 35.94	-63 05 56.6
+   78383	12266-6306	ANT   7	AJ   	2000	2010	   2	340	344	 30.5	 29.60	 1.250	12.00	B1V       	 -35	 -15	    	    	         	N   	 	12 26 35.94	-63 05 56.6
+   78384	12266-6306	ANT   7	AK   	2000	2010	   2	219	218	126.3	125.20	 1.250	13.00	B1V       	 -35	 -15	    	    	         	N   	 	12 26 35.94	-63 05 56.6
+   78385	12266-6306	DUN 252	BC   	1826	2020	  18	204	203	 87.0	 89.00	 1.550	 4.80	B1V+B4V   	 -43	  -8	 -40	 -14	         	N   	 	12 26 36.44	-63 05 58.2
+   78386	12266-6306	TOK   7	CD   	1997	2000	   2	 52	 53	  2.2	  2.40	 5.400	10.50	B4IV      	 -38	 -15	    	    	         	N  K	 	12 26 30.88	-63 07 20.0
+   78387	12266-6306	TOK   7	CE   	1997	1997	   1	214	214	  4.9	  4.90	 5.400	17.00	B4IV      	 -38	 -15	    	    	         	N  K	 	12 26 30.88	-63 07 20.0
+   78388	12266-6306	TOK   7	CF   	1997	2015	   2	119	114	  6.7	  7.40	 5.400	15.97	B4IV      	 -38	 -15	  -7	   0	         	NU K	 	12 26 30.88	-63 07 20.0
+

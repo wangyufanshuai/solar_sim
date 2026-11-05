@@ -1,0 +1,156 @@
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+import { describe, expect, it } from "vitest";
+import {
+  ATLAS_VISUAL_PROFILE_CANDIDATE_V299,
+  ATLAS_VISUAL_PROFILE_CANDIDATE_V300,
+  ATLAS_VISUAL_PROFILE_CANDIDATE_V340,
+  ATLAS_VISUAL_PROFILE_CANDIDATE_V349,
+  resolveAtlasVisualProfileV299,
+  type AtlasVisualRendererProfileV299,
+} from "./atlasVisualProfileV299";
+import { KERR_DENSE_RAY_PLAN_FILE_SHA256_V298R1 } from "./kerrCampaignV298R1";
+import {
+  KERR_INTERACTIVE_COMPUTE_V299_VERSION,
+  type KerrInteractiveComputeResponseV299,
+} from "./kerrInteractiveComputeV299";
+import {
+  createKerrCinematicRgbaV305,
+  createKerrScienceRgbaV305,
+  resolveKerrStrongGravityVisualContractV305,
+  type KerrCinematicVisualContractV305,
+} from "./kerrStrongGravityVisualV305";
+import {
+  cloneKerrScienceTransferPayloadV299,
+  createSparseKerrSciencePayloadV299,
+} from "./strongGravityRenderingV299";
+
+function createSparsePayload() {
+  const geometry = JSON.parse(readFileSync(resolve(process.cwd(), "dist/science/kerr-reference-v296/geometry-redshift-short-gate.json"), "utf8"));
+  const polarization = JSON.parse(readFileSync(resolve(process.cwd(), "dist/science/kerr-reference-v297/polarization-short-gate.json"), "utf8"));
+  const rayPlan = JSON.parse(readFileSync(resolve(process.cwd(), "dist/science/kerr-campaign-v298r1/ray-plan.json"), "utf8"));
+  return createSparseKerrSciencePayloadV299(geometry, polarization, {
+    version: "v299-kerr-canonical-ray-view-v1",
+    planSha256: rayPlan.planSha256,
+    planFileSha256: KERR_DENSE_RAY_PLAN_FILE_SHA256_V298R1,
+    canonicalRays: rayPlan.rays.slice(0, 16),
+  });
+}
+
+function createInteractiveResponse(): KerrInteractiveComputeResponseV299 {
+  return {
+    version: KERR_INTERACTIVE_COMPUTE_V299_VERSION,
+    requestId: "v305-visual-contract-fixture",
+    backend: "bounded-worker",
+    authoritative: false,
+    width: 2,
+    height: 2,
+    rayCount: 4,
+    values: new Float32Array([
+      1, 0, 0, 0,
+      2, 0, 0, 0,
+      3, 0.72, 7.5, 0.006,
+      3, 1.34, 11.25, 0.004,
+    ]),
+    estimatedGpuBytes: 0,
+    resources: { buffers: 0, pipelines: 0, queries: 0 },
+    error: null,
+  };
+}
+
+describe("v305 strong-gravity visual truth boundary", () => {
+  it("resolves every V5, V6, V7 and V8 strong-gravity presentation token into an immutable contract", () => {
+    for (const profileId of [ATLAS_VISUAL_PROFILE_CANDIDATE_V299, ATLAS_VISUAL_PROFILE_CANDIDATE_V300, ATLAS_VISUAL_PROFILE_CANDIDATE_V340, ATLAS_VISUAL_PROFILE_CANDIDATE_V349]) {
+      const profile = resolveAtlasVisualProfileV299(profileId);
+      const source = profile.runtimeTokens.strongGravityV8 ?? profile.runtimeTokens.strongGravityV7 ?? profile.runtimeTokens.strongGravityV6 ?? profile.runtimeTokens.strongGravityV5;
+      const contract = resolveKerrStrongGravityVisualContractV305(profile, "cinematic");
+      expect(source).toBeDefined();
+      expect(contract).toMatchObject({
+        mode: "cinematic",
+        profileId,
+        tokenSource: profileId === ATLAS_VISUAL_PROFILE_CANDIDATE_V349 ? "v8" : profileId === ATLAS_VISUAL_PROFILE_CANDIDATE_V340 ? "v7" : profileId === ATLAS_VISUAL_PROFILE_CANDIDATE_V300 ? "v6" : "v5",
+        exposure: source?.cinematicExposure,
+        bloom: source?.cinematicBloom,
+        detailSeed: source?.diskDetailSeed,
+        redshiftColorStrength: source?.redshiftColorStrength,
+        dopplerColorStrength: source?.dopplerColorStrength,
+        scienceBufferMutationAllowed: false,
+      });
+      expect(contract.bloomScale).toBeCloseTo(1.035 + Number(source?.cinematicBloom) * 0.075, 14);
+      expect(Object.isFrozen(contract)).toBe(true);
+      if (profileId === ATLAS_VISUAL_PROFILE_CANDIDATE_V349) expect(contract).toMatchObject({ spectralRibbonOpacity: 0.72, reticleLuminance: 0.82, channelSeparation: 0.64 });
+    }
+  });
+
+  it("fails closed if any Science display token is relaxed", () => {
+    const profile = resolveAtlasVisualProfileV299(ATLAS_VISUAL_PROFILE_CANDIDATE_V299);
+    expect(resolveKerrStrongGravityVisualContractV305(profile, "science")).toMatchObject({
+      displayTransform: "linear-no-grade",
+      exposure: 1,
+      bloom: 0,
+      noise: 0,
+      toneMapped: false,
+      textureFilter: "nearest",
+      source: "immutable-cpu-authority-payload",
+    });
+    const tampered = {
+      ...profile,
+      runtimeTokens: {
+        ...profile.runtimeTokens,
+        strongGravityV5: { ...profile.runtimeTokens.strongGravityV5, scienceBloom: 0.01 },
+      },
+    } as unknown as AtlasVisualRendererProfileV299;
+    expect(() => resolveKerrStrongGravityVisualContractV305(tampered, "science"))
+      .toThrow("v305-science-display-boundary-violated");
+  });
+
+  it("renders Science bytes without mutating or aliasing the authority payload", () => {
+    const payload = createSparsePayload();
+    const before = cloneKerrScienceTransferPayloadV299(payload);
+    const first = createKerrScienceRgbaV305(payload);
+    const second = createKerrScienceRgbaV305(payload);
+    expect(first).toEqual(second);
+    expect(first).not.toBe(second);
+    expect(payload).toEqual(before);
+    first[0] = 255;
+    expect(second[0]).not.toBe(255);
+    expect(payload.classification.buffer).not.toBe(first.buffer);
+  });
+
+  it("keeps Cinematic output deterministic, seeded and isolated from Worker response", () => {
+    const response = createInteractiveResponse();
+    const valuesBefore = response.values.slice();
+    const profile = resolveAtlasVisualProfileV299(ATLAS_VISUAL_PROFILE_CANDIDATE_V299);
+    const contract = resolveKerrStrongGravityVisualContractV305(profile, "cinematic") as KerrCinematicVisualContractV305;
+    const first = createKerrCinematicRgbaV305(response, contract);
+    const replay = createKerrCinematicRgbaV305(response, contract);
+    const changedSeed = createKerrCinematicRgbaV305(response, { ...contract, detailSeed: contract.detailSeed + 1 });
+    expect(first).toEqual(replay);
+    expect(first).not.toBe(replay);
+    expect(changedSeed).not.toEqual(first);
+    expect(response.values).toEqual(valuesBefore);
+    first[0] = 255;
+    expect(response.values[0]).toBe(valuesBefore[0]);
+  });
+
+  it("keeps Science and Cinematic byte buffers physically separate", () => {
+    const science = createKerrScienceRgbaV305(createSparsePayload());
+    const profile = resolveAtlasVisualProfileV299(ATLAS_VISUAL_PROFILE_CANDIDATE_V300);
+    const contract = resolveKerrStrongGravityVisualContractV305(profile, "cinematic") as KerrCinematicVisualContractV305;
+    const cinematic = createKerrCinematicRgbaV305(createInteractiveResponse(), contract);
+    expect(science.buffer).not.toBe(cinematic.buffer);
+    expect(science.byteLength).not.toBe(cinematic.byteLength);
+  });
+
+  it("locks the runtime consumer to seeded presentation bloom and the non-authority legacy fallback", () => {
+    const source = readFileSync(resolve(process.cwd(), "app/components/KerrStrongGravityRendererV299.tsx"), "utf8");
+    expect(source).toContain("contract.bloom > 0");
+    expect(source).toContain("THREE.AdditiveBlending");
+    expect(source).toContain("atlasCinematicBloom");
+    expect(source).toContain("contract.detailSeed");
+    expect(source).toContain("atlasScienceBufferMutationAllowed");
+    expect(source).toContain("KerrRayTraceRendererV3");
+    expect(source).toContain("legacy-visual-approximation-not-science-authority");
+    expect(source).not.toContain("Math.random(");
+  });
+});

@@ -1,0 +1,35 @@
+{
+  "version": "v591-mars-nasa3d-source-acquisition-v1",
+  "sourcePage": "https://science.nasa.gov/3d-resources/mars/",
+  "asset": {
+    "id": "mars-nasa3d-albedo-source-v591",
+    "body": "mars",
+    "role": "full-albedo-source",
+    "sourceUrl": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/image/mars/Mars.tif",
+    "outputPath": "source-cache/celestial-convergence-v591/mars/NASA-3D-Resources-Mars.tif",
+    "allowedHosts": [
+      "assets.science.nasa.gov"
+    ],
+    "expectedMediaTypes": [
+      "image/tiff",
+      "image/tif",
+      "application/octet-stream",
+      "binary/octet-stream"
+    ],
+    "minimumWidth": 4096,
+    "minimumHeight": 2048,
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://science.nasa.gov/3d-resources/mars/"
+    },
+    "observationIdentity": "NASA 3D Resources Mars equirectangular image texture",
+    "observationLimit": "Presentation albedo resource; source dimensions are preserved as the observational-detail ceiling and any delivery resize is disclosed.",
+    "presentationOnly": true
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final"
+  }
+}

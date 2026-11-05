@@ -1,0 +1,1588 @@
+{
+  "version": "v233-npm-command-index",
+  "generatedAt": "2026-07-17T13:50:50.308Z",
+  "commandCount": 315,
+  "counts": {
+    "canonical-current": 9,
+    "historical-versioned": 192,
+    "supported-specialized": 114
+  },
+  "commands": [
+    {
+      "name": "audit:production:evidence:v232",
+      "command": "node scripts/run-production-audit-v232.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "audit:production:v232",
+      "command": "npm audit --omit=dev --registry=https://registry.npmjs.org",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "bootstrap:ktx-tools",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/bootstrap-ktx-tools.ps1",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "bootstrap:science-env",
+      "command": "node scripts/bootstrap-science-env.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build",
+      "command": "next build --webpack",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "build-planet-materials",
+      "command": "python scripts/build-planet-materials-v49.py",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build-planetary-art",
+      "command": "python scripts/build-planetary-art-v55.py",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build-sky",
+      "command": "python scripts/build-universe-sandbox-sky.py",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:atlas:lite-v180",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v180-lite",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite-v186",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v186-lite",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite-v192",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v192-lite",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite-v200",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v200-lite --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite-v216",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v216-lite --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite-v224",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-v224-lite --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:lite:current",
+      "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-atlas-lite-current --previous-dist-dir .next-atlas-lite-previous --rotate --preserve-active-dev",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "build:atlas:standalone-v180",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v180",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone-v186",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v186",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone-v192",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v192",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone-v200",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v200 --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone-v216",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v216 --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone-v224",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-v224 --preserve-active-dev",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:atlas:standalone:current",
+      "command": "node scripts/build-atlas-profile.mjs --profile standalone-full --dist-dir .next-atlas-standalone-current --previous-dist-dir .next-atlas-standalone-previous --rotate --preserve-active-dev",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "build:browser-evidence:v192",
+      "command": "node scripts/build-v192-browser-qa-evidence.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-lite-v6",
+      "command": "node scripts/build-catalog-lite-v6.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-million-v6",
+      "command": "node scripts/build-catalog-million-v6.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-million-v7",
+      "command": "node scripts/build-catalog-million-v7.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-v5",
+      "command": "python scripts/build-stellar-catalog-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-v5:gaia",
+      "command": "python scripts/build-stellar-catalog-v5.py --gaia-csv tools/asset-cache/gaia-dr3-random-index-1m.csv",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:catalog-v7",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-catalog-v7.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:command-index:v233",
+      "command": "node scripts/build-npm-command-index-v233.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:content-packs",
+      "command": "node scripts/build-content-packs.mjs && node scripts/build-runtime-codec-pack.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:desktop",
+      "command": "npm run build:desktop:release",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:desktop-evidence:v192",
+      "command": "node scripts/build-desktop-evidence-v192.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:desktop-evidence:v200",
+      "command": "node scripts/build-desktop-evidence-v200.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:desktop:release",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop-release.ps1",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:desktop:signed",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop-release.ps1 -Signed",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:desktop:v186",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop-v186.ps1",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:desktop:v192",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop-v192.ps1",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:desktop:v200",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build-desktop-v200.ps1",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v192",
+      "command": "node scripts/build-v192-readiness-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v200",
+      "command": "node scripts/build-v200-readiness-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v208",
+      "command": "node scripts/build-v208-relativity-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v216",
+      "command": "node scripts/build-v216-relativity-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v224",
+      "command": "node scripts/build-v224-visual-relativity-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v232",
+      "command": "node scripts/build-v232-release-dossier.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:dossier:v233",
+      "command": "node scripts/build-v233-governance-dossier.mjs",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "build:evidence:current",
+      "command": "node scripts/build-current-evidence-manifest-v233.mjs",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "build:exoplanet-catalog",
+      "command": "node scripts/build-exoplanet-catalog.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:exoplanet-catalog-v2",
+      "command": "node scripts/build-exoplanet-catalog-v2.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:final-release-v186",
+      "command": "node scripts/build-final-release-v186.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:final-web-release-v174",
+      "command": "node scripts/build-final-web-release-v174.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:final-web-release-v180",
+      "command": "node scripts/build-final-web-release-v180.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:gaia-astrophysical-v1",
+      "command": "python scripts/build-gaia-astrophysical-v1.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:kerr-evidence-v4",
+      "command": "vitest run app/lib/kerrEvidenceV4.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:kerr-fixtures-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-kerr-fixtures-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:kerr-v2-fixtures",
+      "command": "python scripts/generate-kerr-v2-fixtures.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:observation-fixtures-v2",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-observation-fixtures-v2.py && tsx scripts/build-observation-evidence-v2.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:product-release-evidence-v167",
+      "command": "node scripts/build-product-release-evidence-v167.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:regression-evidence-v166",
+      "command": "node scripts/build-regression-evidence-v166.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:regression-evidence-v174",
+      "command": "node scripts/build-regression-evidence-v174.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:regression-evidence-v180",
+      "command": "node scripts/build-regression-evidence-v180.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:regression-evidence-v4",
+      "command": "node scripts/build-regression-evidence-v4.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:regression-evidence-v5",
+      "command": "node scripts/build-regression-evidence-v5.mjs --confirmed",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:runtime-catalog-pack",
+      "command": "node scripts/promote-runtime-catalog-pack.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:runtime-codec-pack",
+      "command": "node scripts/build-runtime-codec-pack.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:science:kerr-dense-screen-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-kerr-dense-screen-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:science:regression-explanation-v196",
+      "command": "tsx scripts/build-relativity-regression-explanation-v196.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:science:relativity-bundle-v10",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-relativity-reference-bundle-v10.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:science:relativity-fixture-v9",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-relativity-reference-fixture-v9.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:science:relativity-joint-v9",
+      "command": "node scripts/build-relativity-joint-validation-v9.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:science:relativity-v11",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-relativity-v11-evidence.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:scientific-evidence-v4",
+      "command": "node scripts/build-scientific-evidence-v4.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:scientific-evidence-v5",
+      "command": "tsx scripts/build-scientific-evidence-v5.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:scientific-evidence-v7",
+      "command": "tsx scripts/build-scientific-evidence-v7.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:stellar-catalog-v3",
+      "command": "node scripts/build-stellar-catalog-v3.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:stellar-catalog-v4",
+      "command": "node scripts/build-stellar-catalog-v4.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:stellar-search-index",
+      "command": "node scripts/build-stellar-search-index.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:vercel:lite",
+      "command": "node scripts/build-vercel-preview.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "build:visual-hd-v2",
+      "command": "node scripts/build-visual-hd-v2.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:visual-hd-v3",
+      "command": "node scripts/build-visual-hd-v3.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "build:visual-review:v220",
+      "command": "node scripts/build-v220-visual-review.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "check:evidence:current",
+      "command": "node scripts/build-current-evidence-manifest-v233.mjs --check",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "clean",
+      "command": "node -e \"try{require('fs').rmSync('.next',{recursive:true,force:true})}catch(e){}\"",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "desktop:dev",
+      "command": "tauri dev",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "desktop:rust:release",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-desktop-rust-release.ps1 -Mode verify",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "desktop:rust:v186",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-desktop-rust-v186.ps1 -Mode verify",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "desktop:rust:v192",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-desktop-rust-v192.ps1 -Mode verify",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "desktop:rust:v200",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/run-desktop-rust-v200.ps1 -Mode verify",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "desktop:stage",
+      "command": "node scripts/stage-desktop-runtime.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "desktop:stage:release",
+      "command": "node scripts/stage-desktop-runtime.mjs --profile release --next-root .next-atlas-standalone-current",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "desktop:stage:v186",
+      "command": "node scripts/stage-desktop-runtime.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "desktop:stage:v192",
+      "command": "node scripts/stage-desktop-runtime.mjs --version v192 --next-root .next-v192",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "desktop:stage:v200",
+      "command": "node scripts/stage-desktop-runtime.mjs --version v200 --next-root .next-v200",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "dev",
+      "command": "next dev -H 127.0.0.1 -p 3001",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "dev:3000",
+      "command": "next dev -H 127.0.0.1 -p 3000",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "dev:3002",
+      "command": "next dev -H 127.0.0.1 -p 3002",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "dev:3015",
+      "command": "next dev -H 127.0.0.1 -p 3015",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-nasa-earth-hd",
+      "command": "node scripts/fetch-nasa-earth-hd.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-nasa-hd-all",
+      "command": "node scripts/fetch-nasa-hd-bundle.mjs --extras",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-nasa-hd-extras",
+      "command": "node scripts/fetch-nasa-hd-bundle.mjs --extras-only",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-nasa-hd-with-extras",
+      "command": "node scripts/fetch-nasa-hd-bundle.mjs --extras",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-planet-textures",
+      "command": "node scripts/fetch-planet-textures.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-planet-textures-8k",
+      "command": "node scripts/fetch-planet-textures-8k.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch-sky-eso",
+      "command": "node scripts/fetch-sky-eso.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "fetch:catalog-v5:gaia",
+      "command": "python scripts/fetch-gaia-catalog-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "fetch:exoplanet-observations-v2",
+      "command": "node scripts/fetch-exoplanet-observations-v2.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "fetch:gaia-ap-v2",
+      "command": ".venv-science\\Scripts\\python.exe scripts/fetch-gaia-ap-v2.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "import:openrocket",
+      "command": "node scripts/import-openrocket.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "lint",
+      "command": "eslint app proxy.ts next.config.mjs scripts tests",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "optimize:planet-textures",
+      "command": "node scripts/optimize-planet-textures.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "optimize:planet-textures-v2",
+      "command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/optimize-planet-textures-v2.ps1",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "optimize:spacecraft-assets",
+      "command": "python scripts/optimize-spacecraft-assets.py",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "promote:v9-core-assets",
+      "command": "node scripts/promote-v9-core-assets.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-cross-v4",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-kerr-cross-validation-v4.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-cross-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/build-kerr-cross-validation-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-radiative-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-kerr-radiative-transfer-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-reference-v3",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-kerr-ray-reference-v3.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-schild-v4",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-kerr-schild-reference-v4.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:kerr-schild-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-kerr-schild-reference-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-100y-v10",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-100y-diagnostic-v10.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-dop853-v4",
+      "command": "python scripts/run-relativity-dop853-v4.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-dop853-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-dop853-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-dop853-v7",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-dop853-v7.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-fitted-blind-v9",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-fitted-blind-v9.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-ias15-v9",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-ias15-v9.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-rebound-v8",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-rebound-v8.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-rebound-v8:smoke",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-rebound-v8.py --max-days 30 --reruns 1 --output dist/science/relativity-cross-validation-v8-smoke.json",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-reference-v9",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-reference-v9.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "run:science:relativity-stm-v10",
+      "command": ".venv-science\\Scripts\\python.exe scripts/run-relativity-stm-fit-v10.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "scan:secrets:v232",
+      "command": "node scripts/scan-release-secrets-v232.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "stage:vercel:lite",
+      "command": "node scripts/stage-vercel-lite.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "start",
+      "command": "next start -H 127.0.0.1 -p 3001",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "start:atlas:standalone",
+      "command": "node scripts/start-atlas-standalone.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas",
+      "command": "vitest run app/lib/orbitAtlasPresentation.test.ts app/lib/osculatingElements.test.ts app/data/gaiaStarCatalog.test.ts app/data/planetTextureManifest.test.ts app/data/planetaryArtDirectionManifest.test.ts app/lib/researchValidation.test.ts app/lib/relativityValidation.test.ts app/lib/relativityObservableAtlas.test.ts app/lib/relativityGuidedTour.test.ts app/lib/atlasRelativityVerification.test.ts app/lib/atlasRelativityCharts.test.ts app/lib/atlasPhysicsBenchmarkGate.test.ts app/lib/atlasHorizonsGateAudit.test.ts app/lib/atlasPhysicsGateSplit.test.ts app/lib/atlasReleaseReadiness.test.ts app/lib/atlasScientificGatePreflight.test.ts app/lib/atlasHorizonsResidualDecomposition.test.ts app/lib/atlasHorizonsCandidateLab.test.ts app/lib/atlasPlutoResidualIsolation.test.ts app/lib/atlasOuterSystemForceModelPreflight.test.ts app/lib/atlasOuterSystemReferenceAdoption.test.ts app/lib/atlasHorizonsCandidateScientificGate.test.ts app/lib/atlasStrictHorizonsMigrationDryRun.test.ts app/lib/atlasStrictHorizonsShadowMigrationGate.test.ts app/lib/atlasDefaultStrictHorizonsMigration.test.ts app/lib/atlasHorizonsProvenanceFreeze.test.ts app/lib/atlasOfflineRuntimeBoundaryAudit.test.ts app/lib/atlasScientificGateMaintenanceRunbook.test.ts app/lib/atlasScientificGateReleaseEvidence.test.ts app/lib/atlasBrowserCiStabilityLock.test.ts app/lib/atlasReleaseArtifactManifestLock.test.ts app/lib/atlasFinalMaintenanceBaseline.test.ts app/lib/atlasGaiaStarfieldEnhancement.test.ts app/lib/atlasRelativitySimulationOptimization.test.ts app/lib/atlasArtPolish.test.ts app/lib/atlasPostEnhancementMaintenanceBaseline.test.ts app/lib/atlasBrowserResourcePerformanceLock.test.ts app/lib/atlasMaintenanceEvidenceIndex.test.ts app/lib/atlasPresentationRuntimePerformanceLock.test.ts app/lib/atlasBrowserAcceptanceRuntimeCostLock.test.ts app/lib/atlasFinalGaiaArtEnhancementLock.test.ts app/lib/atlasRcEvidenceClosureLock.test.ts app/lib/atlasInteractionCatalogCompletionLock.test.ts app/lib/atlasInteractionRepairLaunchUxLock.test.ts app/lib/atlasInteractionVisualQualityLock.test.ts app/lib/atlasCriticalUiRelativityVisibilityLock.test.ts app/lib/atlasCameraStellarCloseupLock.test.ts app/lib/atlasLaunchGameplayOpenRocketBridgeLock.test.ts app/lib/atlasScientificModelUpgradeContract.test.ts app/lib/atlasVisualLaunchPerformanceLock.test.ts app/lib/stellarMaterialProfile.test.ts app/lib/skyTargetFocus.test.ts app/lib/selectedSkyTarget.test.ts app/lib/cameraFocusCommand.test.ts app/lib/gaiaCatalogIndex.test.ts app/lib/launchMissionProfiles.test.ts app/lib/atlasBrowserAcceptance.test.ts app/lib/atlasWorkbenchAccessibility.test.ts app/lib/atlasCinematicWorkbench.test.ts app/lib/atlasPlanetaryVisualFidelity.test.ts app/lib/atlasCinematicLightingComposition.test.ts app/lib/atlasChineseDeepSpaceFidelity.test.ts app/lib/atlasCinematicDeepSpaceCamera.test.ts app/lib/atlasUniverseSandboxReferenceBackdrop.test.ts app/lib/atlasReferenceGradeSpaceArt.test.ts app/lib/atlasPlanetaryMaterialComposition.test.ts app/lib/atlasCinematicCloseupDirector.test.ts app/lib/atlasCinematicKeyLightDirector.test.ts app/lib/atlasPlanetaryDepthLighting.test.ts app/lib/atlasPlanetaryColorGrading.test.ts app/lib/atlasNumericalIntegrity.test.ts app/lib/atlasCinematicPlanetaryArtDirection.test.ts app/lib/atlasCinematicDeepSpaceBackdrop.test.ts app/lib/atlasSparseDeepSpaceDirector.test.ts app/lib/atlasCloseupPresentationTruth.test.ts app/lib/atlasCloseupVisualFidelity.test.ts app/lib/galacticDynamicsValidation.test.ts app/lib/frwCosmologyValidation.test.ts app/lib/kerrGeodesicKernel.test.ts app/lib/kerrGeodesicVisualization.test.ts app/lib/kerrRelativityStudio.test.ts app/lib/celestialCatalog.test.ts app/lib/atlasPerformanceBudget.test.ts app/lib/atlasReleaseGate.test.ts app/lib/evidenceLedger.test.ts app/lib/atlasNavigator.test.ts app/lib/atlasWorkflows.test.ts app/lib/atlasMissionHub.test.ts app/lib/atlasMissionCapsule.test.ts app/lib/atlasScientificReport.test.ts app/lib/atlasValidationConsole.test.ts app/lib/atlasObservatoryDeck.test.ts app/lib/atlasInstrumentUi.test.ts app/lib/atlasRuntimeSceneFocusPerformance.test.ts app/lib/stellarSearchCatalog.test.ts app/lib/atlasOfflineStellarSearchCatalogV2.test.ts app/lib/atlasScientificCinematicArt.test.ts app/lib/openRocketReplay.test.ts app/lib/atlasLaunchSceneOpenRocketReplay.test.ts app/lib/atlasVisualIntegrationRelease.test.ts app/lib/stellarSearchCatalogV4.test.ts app/lib/stellarPortraitProfileV3.test.ts app/lib/planetTextureKtx2.test.ts app/lib/exoplanetCatalogV2.test.ts app/lib/relativityForceModelV2.test.ts app/lib/kerrPhaseSpaceV2.test.ts app/lib/atlasScientificPromotionV2.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:art-polish",
+      "command": "vitest run app/lib/atlasArtPolish.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser",
+      "command": "playwright test -c playwright.atlas.config.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser-acceptance-runtime-cost",
+      "command": "vitest run app/lib/atlasBrowserAcceptanceRuntimeCostLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser-ci-stability",
+      "command": "vitest run app/lib/atlasBrowserCiStabilityLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser-resource-performance",
+      "command": "vitest run app/lib/atlasBrowserResourcePerformanceLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser:fresh",
+      "command": "playwright test -c playwright.atlas.fresh.config.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser:fresh-v167",
+      "command": "playwright test -c playwright.atlas.fresh-v167.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:fresh-v174",
+      "command": "playwright test -c playwright.atlas.fresh-v174.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:fresh-v180",
+      "command": "playwright test -c playwright.atlas.fresh-v180.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:fresh-v186",
+      "command": "playwright test -c playwright.atlas.fresh-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:fresh-v200",
+      "command": "playwright test -c playwright.atlas.fresh-v200.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:fresh:review",
+      "command": "node tests/atlas-browser/run-fresh-review.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser:release",
+      "command": "playwright test -c playwright.atlas.release.config.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:browser:vercel-lite-v174",
+      "command": "playwright test -c playwright.atlas.vercel-lite-v174.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:vercel-lite-v180",
+      "command": "playwright test -c playwright.atlas.vercel-lite-v180.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:vercel-lite-v186",
+      "command": "playwright test -c playwright.atlas.vercel-lite-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:browser:vercel-lite-v200",
+      "command": "playwright test -c playwright.atlas.vercel-lite-v200.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v177",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v177.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v186",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v192",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v192.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v198",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v198.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v216",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v224",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-lite-v232",
+      "command": "playwright test -c playwright.atlas.bundle-lite-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v177",
+      "command": "playwright test -c playwright.atlas.bundle-v177.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v186",
+      "command": "playwright test -c playwright.atlas.bundle-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v192",
+      "command": "playwright test -c playwright.atlas.bundle-v192.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v198",
+      "command": "playwright test -c playwright.atlas.bundle-v198.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v216",
+      "command": "playwright test -c playwright.atlas.bundle-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v224",
+      "command": "playwright test -c playwright.atlas.bundle-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:bundle-v232",
+      "command": "playwright test -c playwright.atlas.bundle-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:camera-stellar-closeup",
+      "command": "vitest run app/lib/atlasCameraStellarCloseupLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:catalog-delivery-v7",
+      "command": "vitest run app/lib/catalogPackServerV7.test.ts app/lib/catalogV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:catalog-pack-v6",
+      "command": "vitest run app/lib/catalogV6.test.ts app/lib/stellarSearchCatalogV4.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:catalog-universal-search",
+      "command": "vitest run app/lib/stellarSearchCatalogV4.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:critical-ui-relativity-visibility",
+      "command": "vitest run app/lib/atlasCriticalUiRelativityVisibilityLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:current-evidence-v233",
+      "command": "vitest run app/lib/atlasCurrentEvidenceManifestV233.test.ts app/lib/scientificPromotionDecisionV7.test.ts app/lib/relativityResearchEvidenceV230.test.ts",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "test:atlas:delivery-v171",
+      "command": "vitest run app/lib/atlasDeliveryProfile.test.ts app/lib/atlasContentPackServerV3.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:exoplanet-atlas-complete",
+      "command": "vitest run app/lib/exoplanetCatalogV2.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:exoplanet-orbit-atlas",
+      "command": "vitest run app/lib/exoplanetCatalog.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:extreme-release-v166",
+      "command": "vitest run app/lib/atlasExtremeReleaseV166.test.ts app/lib/runtimeArchitectureV3.test.ts app/lib/materialVisualV7.test.ts app/lib/millionDiscoveryOrbits.test.ts app/lib/launchCinematicV3.test.ts app/lib/scientificExperienceEvidenceV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:final-gaia-art-enhancement",
+      "command": "vitest run app/lib/atlasFinalGaiaArtEnhancementLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:final-maintenance-baseline",
+      "command": "vitest run app/lib/atlasFinalMaintenanceBaseline.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:final-web-v174",
+      "command": "vitest run app/lib/atlasFinalWebReleaseV174.test.ts app/lib/atlasDeliveryProfile.test.ts app/lib/atlasRuntimeEvidenceFacadeV168.test.ts app/lib/atlasRuntimeStoreV169.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:fresh-v216",
+      "command": "playwright test -c playwright.atlas.fresh-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:fresh-v224",
+      "command": "playwright test -c playwright.atlas.fresh-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:fresh-v232",
+      "command": "playwright test -c playwright.atlas.fresh-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:gaia-starfield-enhancement",
+      "command": "vitest run app/lib/atlasGaiaStarfieldEnhancement.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v166",
+      "command": "playwright test -c playwright.atlas.performance-v166.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v174",
+      "command": "playwright test -c playwright.atlas.performance-v174.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v180",
+      "command": "playwright test -c playwright.atlas.performance-v180.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v186",
+      "command": "playwright test -c playwright.atlas.performance-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v192",
+      "command": "playwright test -c playwright.atlas.performance-v192.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v200",
+      "command": "playwright test -c playwright.atlas.performance-v200.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:hardware-performance-v5",
+      "command": "playwright test -c playwright.atlas.performance-v5.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:horizons-candidate-scientific-gate",
+      "command": "vitest run app/lib/atlasHorizonsCandidateScientificGate.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-candidates",
+      "command": "vitest run app/lib/atlasHorizonsCandidateLab.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-default-migration",
+      "command": "vitest run app/lib/atlasDefaultStrictHorizonsMigration.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-gate",
+      "command": "npm run test:atlas:horizons-scientific-gate",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-migration-dry-run",
+      "command": "vitest run app/lib/atlasStrictHorizonsMigrationDryRun.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-outer-system-preflight",
+      "command": "vitest run app/lib/atlasOuterSystemForceModelPreflight.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-pluto-isolation",
+      "command": "vitest run app/lib/atlasPlutoResidualIsolation.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-provenance-freeze",
+      "command": "vitest run app/lib/atlasHorizonsProvenanceFreeze.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-reference-adoption",
+      "command": "vitest run app/lib/atlasOuterSystemReferenceAdoption.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-scientific-gate",
+      "command": "vitest run app/lib/atlasPhysicsBenchmarkGate.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:horizons-scientific-gate:legacy-v75",
+      "command": "vitest run app/lib/atlasPhysicsBenchmarkGate.legacy-v75.horizons.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:horizons-shadow-migration-gate",
+      "command": "vitest run app/lib/atlasStrictHorizonsShadowMigrationGate.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:interaction-catalog-completion",
+      "command": "vitest run app/lib/atlasInteractionCatalogCompletionLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:interaction-repair-launch-ux",
+      "command": "vitest run app/lib/atlasInteractionRepairLaunchUxLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:interaction-visual-quality",
+      "command": "vitest run app/lib/atlasInteractionVisualQualityLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:kerr-3d-renderer",
+      "command": "vitest run app/lib/kerrPhaseSpaceV2.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:kerr-v208",
+      "command": "playwright test -c playwright.atlas.kerr-v208.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:kerr-v216",
+      "command": "playwright test -c playwright.atlas.kerr-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:kerr-v224",
+      "command": "playwright test -c playwright.atlas.kerr-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:kerr-v232",
+      "command": "playwright test -c playwright.atlas.kerr-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:launch-cinematic-v3",
+      "command": "vitest run app/lib/launchCinematicV3.test.ts app/lib/launchCompositionV2.test.ts app/lib/openRocketReplay.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:launch-composition-v2",
+      "command": "vitest run app/lib/launchCompositionV2.test.ts app/lib/openRocketReplay.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:launch-gameplay-openrocket-bridge",
+      "command": "vitest run app/lib/atlasLaunchGameplayOpenRocketBridgeLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:launch-scene-openrocket-replay",
+      "command": "vitest run app/lib/atlasLaunchSceneOpenRocketReplay.test.ts app/lib/atlasLaunchSceneOpenRocketReplay.horizons.test.ts app/lib/openRocketReplay.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:lifecycle-soak-v178",
+      "command": "playwright test -c playwright.atlas.soak-v178.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:lifecycle-soak-v186",
+      "command": "playwright test -c playwright.atlas.soak-v186.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:lifecycle-soak-v192",
+      "command": "playwright test -c playwright.atlas.soak-v192.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:lifecycle-soak-v200",
+      "command": "playwright test -c playwright.atlas.soak-v200.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:maintenance-evidence-index",
+      "command": "vitest run app/lib/atlasMaintenanceEvidenceIndex.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:material-camera-v5",
+      "command": "vitest run app/lib/materialCameraV5.test.ts app/lib/atlasCameraFrameSolverV4.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:material-framing-v6",
+      "command": "vitest run app/lib/materialFramingV6.test.ts app/lib/materialCameraV5.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:material-visual-v7",
+      "command": "vitest run app/lib/materialVisualV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:million-discovery-orbits",
+      "command": "vitest run app/lib/millionDiscoveryOrbits.test.ts app/lib/atlasFocusV2.test.ts app/lib/catalogV7.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:observational-lab-v1",
+      "command": "vitest run app/lib/observationalAstrophysics.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:offline-runtime-boundary",
+      "command": "vitest run app/lib/atlasOfflineRuntimeBoundaryAudit.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:performance-v216",
+      "command": "playwright test -c playwright.atlas.performance-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:performance-v224",
+      "command": "playwright test -c playwright.atlas.performance-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:performance-v232",
+      "command": "playwright test -c playwright.atlas.performance-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:post-enhancement-baseline",
+      "command": "vitest run app/lib/atlasPostEnhancementMaintenanceBaseline.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:presentation-runtime-performance",
+      "command": "vitest run app/lib/atlasPresentationRuntimePerformanceLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:product-release-v167",
+      "command": "vitest run app/lib/atlasProductReleaseV167.test.ts app/lib/atlasExtremeReleaseV166.test.ts app/lib/scientificExperienceEvidenceV7.test.ts app/lib/runtimeArchitectureV3.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:rc-evidence-closure",
+      "command": "vitest run app/lib/atlasRcEvidenceClosureLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:relativity-force-model-v2",
+      "command": "vitest run app/lib/relativityForceModelV2.test.ts app/lib/relativityForceModelV2WorkerProtocol.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:relativity-simulation-optimization",
+      "command": "vitest run app/lib/atlasRelativitySimulationOptimization.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:release-artifact-manifest",
+      "command": "vitest run app/lib/atlasReleaseArtifactManifestLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:release-v146",
+      "command": "vitest run app/lib/atlasConvergenceProgramV146.test.ts app/lib/catalogV6.test.ts app/lib/materialCameraV5.test.ts app/lib/observationalAstrophysics.test.ts app/lib/scientificEvidenceBundleV4.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:release-v153",
+      "command": "vitest run app/lib/scientificDataSnapshot.test.ts app/lib/catalogV7.test.ts app/lib/observationalAstrophysicsV2.test.ts app/lib/kerrIndependentFixturesV5.test.ts app/lib/scientificEvidenceBundleV5.test.ts app/lib/atlasScientificDataProgramV153.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:release-v159",
+      "command": "vitest run app/lib/atlasCoreExperienceReleaseV159.test.ts app/lib/atlasFocusV2.test.ts app/lib/runtimeIsolationV2.test.ts app/lib/catalogPackServerV7.test.ts app/lib/materialFramingV6.test.ts app/lib/launchCompositionV2.test.ts app/lib/scientificPromotionDecisionV6.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:render-foundation-v2",
+      "command": "vitest run app/lib/atlasRenderDirectorV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:resource-observability-v173",
+      "command": "vitest run app/lib/atlasResourceLifecycleV173.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:runtime-architecture-v3",
+      "command": "vitest run app/lib/runtimeArchitectureV3.test.ts app/lib/atlasContentPackServerV3.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:runtime-framing-v4",
+      "command": "vitest run app/lib/atlasCameraFrameSolverV4.test.ts app/lib/atlasRuntimeStore.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:runtime-isolation-v2",
+      "command": "vitest run app/lib/runtimeIsolationV2.test.ts app/lib/atlasRuntimeStore.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:runtime-scene-focus-performance",
+      "command": "vitest run app/lib/atlasRuntimeSceneFocusPerformance.test.ts app/lib/atlasRuntimeSceneFocusPerformance.horizons.test.ts app/lib/cameraFocusCommand.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:runtime-simplification-v3",
+      "command": "vitest run app/lib/atlasReleaseProgram.test.ts app/lib/atlasRuntimeStore.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:science-runtime-v151",
+      "command": "vitest run app/lib/atlasRuntimeStore.test.ts app/lib/scientificDataSnapshot.test.ts app/lib/catalogV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:scientific-cinematic-art",
+      "command": "vitest run app/lib/atlasScientificCinematicArt.test.ts app/lib/atlasScientificCinematicArt.horizons.test.ts app/lib/stellarMaterialProfile.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:scientific-gate-release-evidence",
+      "command": "vitest run app/lib/atlasScientificGateReleaseEvidence.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:scientific-gate-runbook",
+      "command": "vitest run app/lib/atlasScientificGateMaintenanceRunbook.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:scientific-promotion-v2",
+      "command": "vitest run app/lib/atlasScientificPromotionV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:scientific-visual-v152",
+      "command": "vitest run app/lib/materialCameraV5.test.ts app/lib/stellarPortraitProfileV3.test.ts app/lib/scientificVisualFidelityV152.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:soak-v216",
+      "command": "playwright test -c playwright.atlas.soak-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:soak-v224",
+      "command": "playwright test -c playwright.atlas.soak-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:soak-v232",
+      "command": "playwright test -c playwright.atlas.soak-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:stellar-art-v3",
+      "command": "vitest run app/lib/stellarPortraitProfileV3.test.ts app/lib/planetTextureKtx2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:stellar-catalog-v3",
+      "command": "vitest run app/lib/stellarSearchCatalogV3.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:stellar-material-v2",
+      "command": "vitest run app/lib/stellarPortraitProfileV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:stellar-search-catalog-v2",
+      "command": "vitest run app/lib/stellarSearchCatalog.test.ts app/lib/atlasOfflineStellarSearchCatalogV2.test.ts app/lib/atlasOfflineStellarSearchCatalogV2.horizons.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:universal-stellar-picking",
+      "command": "vitest run app/lib/atlasFocusV2.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:v190-maintainability",
+      "command": "vitest run app/lib/atlasRuntimeMaintainabilityV190.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:vercel-lite-v216",
+      "command": "playwright test -c playwright.atlas.vercel-lite-v216.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:visual-final",
+      "command": "vitest run app/lib/atlasFinalProgram.test.ts app/lib/stellarPortraitProfileV3.test.ts app/lib/planetTextureKtx2.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:visual-integration-release",
+      "command": "vitest run app/lib/atlasVisualIntegrationRelease.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:visual-integration-v2",
+      "command": "vitest run app/lib/atlasVisualIntegrationV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:visual-journeys-v193",
+      "command": "vitest run app/lib/atlasVisualJourneyManifestV193.test.ts app/lib/atlasLabelLayout.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:visual-journeys-v197",
+      "command": "playwright test -c playwright.atlas.visual-v197.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:visual-launch-performance",
+      "command": "vitest run app/lib/atlasVisualLaunchPerformanceLock.horizons.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:atlas:visual-v224",
+      "command": "playwright test -c playwright.atlas.visual-v224.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:atlas:visual-v232",
+      "command": "playwright test -c playwright.atlas.visual-v232.config.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:desktop:contracts",
+      "command": "vitest run app/lib/desktopBridge.test.ts app/lib/contentPackManifest.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:desktop:e2e",
+      "command": "playwright test -c playwright.desktop.config.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "test:science:cross-validation-v8",
+      "command": "vitest run app/lib/relativityCrossValidationV8.test.ts app/lib/atlasRelativityRegressionExplanationV196.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:experience-evidence-v7",
+      "command": "vitest run app/lib/scientificExperienceEvidenceV7.test.ts app/lib/scientificPromotionDecisionV6.test.ts app/lib/scientificEvidenceBundleV5.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:observation-v2",
+      "command": "vitest run app/lib/observationalAstrophysics.test.ts app/lib/observationalAstrophysicsV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:promotion-integrity-v6",
+      "command": "vitest run app/lib/scientificPromotionDecisionV6.test.ts app/lib/scientificEvidenceBundleV5.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:promotion-v3",
+      "command": "vitest run app/lib/atlasFinalProgram.test.ts app/lib/relativityForceModelV2.test.ts app/lib/relativityPromotionV3Runner.test.ts app/lib/kerrPhaseSpaceV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:promotion-v3:ephemeris",
+      "command": "vitest run app/lib/relativityPromotionV3Runner.horizons.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:promotion-v7",
+      "command": "vitest run app/lib/scientificPromotionDecisionV7.test.ts app/lib/relativityPromotionEvidenceV7.test.ts app/lib/scientificEvidenceBundleV5.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:regression-explanation-v196",
+      "command": "vitest run app/lib/atlasRelativityRegressionExplanationV196.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:relativity-kerr-v4",
+      "command": "vitest run app/lib/scientificEvidenceBundleV4.test.ts app/lib/relativityForceModelV2.test.ts app/lib/kerrPhaseSpaceV2.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:relativity-kerr-v5",
+      "command": "vitest run app/lib/scientificEvidenceBundleV5.test.ts app/lib/relativityForceModelV2.test.ts app/lib/kerrPhaseSpaceV2.test.ts app/lib/kerrIndependentFixturesV5.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:relativity-v208",
+      "command": "vitest run app/lib/relativityResearchV9.test.ts app/lib/relativityJointValidationV9.test.ts app/lib/kerrRayTraceV3.test.ts app/lib/atlasRelativityExtremeV208.test.ts app/lib/relativityCrossValidationV8.test.ts app/lib/scientificPromotionDecisionV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:relativity-v216",
+      "command": "vitest run app/lib/relativityResearchV10.test.ts app/lib/relativityResearchEvidenceV216.test.ts app/lib/kerrReferenceV4.test.ts app/lib/relativityResearchV9.test.ts app/lib/relativityJointValidationV9.test.ts app/lib/kerrRayTraceV3.test.ts app/lib/relativityCrossValidationV8.test.ts app/lib/scientificPromotionDecisionV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "test:science:relativity-v9",
+      "command": "vitest run app/lib/relativityResearchV9.test.ts app/lib/kerrRayTraceV3.test.ts app/lib/relativityCrossValidationV8.test.ts app/lib/scientificPromotionDecisionV7.test.ts",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:asset-delivery-v3",
+      "command": "node scripts/verify-asset-delivery-v3.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:atlas",
+      "command": "npm run lint && npx tsc --noEmit && npm run test:atlas && npm run build",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:browser-acceptance-runtime",
+      "command": "npm run test:atlas:browser-acceptance-runtime-cost && npm run test:atlas:browser:fresh",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:browser-resource",
+      "command": "npm run test:atlas:browser-resource-performance && npm run test:atlas:browser:fresh",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:camera-stellar-closeup",
+      "command": "npm run test:atlas:camera-stellar-closeup && npm run verify:atlas:critical-ui-relativity-visibility",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:critical-ui-relativity-visibility",
+      "command": "npm run test:atlas:critical-ui-relativity-visibility && npm run verify:atlas:interaction-visual-quality",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:current:focused",
+      "command": "npm run check:evidence:current && npm run test:atlas:current-evidence-v233 && npx tsc --noEmit",
+      "classification": "canonical-current"
+    },
+    {
+      "name": "verify:atlas:final-gaia-art",
+      "command": "npm run test:atlas:final-gaia-art-enhancement && npm run verify:atlas:browser-acceptance-runtime",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:full",
+      "command": "npm run verify:atlas && npm run test:atlas:browser:fresh",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:interaction-catalog",
+      "command": "npm run test:atlas:interaction-catalog-completion && npm run verify:atlas:rc-evidence",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:interaction-repair-launch-ux",
+      "command": "npm run test:atlas:interaction-repair-launch-ux && npm run verify:atlas:interaction-catalog",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:interaction-visual-quality",
+      "command": "npm run test:atlas:interaction-visual-quality && npm run verify:atlas:interaction-repair-launch-ux",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:launch-gameplay-openrocket-bridge",
+      "command": "npm run test:atlas:launch-gameplay-openrocket-bridge && npm run verify:atlas:camera-stellar-closeup",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:launch-scene-openrocket-replay",
+      "command": "npm run test:atlas:launch-scene-openrocket-replay && npx tsc --noEmit",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:maintenance-evidence",
+      "command": "npm run test:atlas:maintenance-evidence-index && npm run verify:atlas:browser-resource",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:post-enhancement",
+      "command": "npm run test:atlas:post-enhancement-baseline && npm run verify:atlas:scientific",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:presentation-runtime",
+      "command": "npm run test:atlas:presentation-runtime-performance && npm run verify:atlas:maintenance-evidence",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:rc-evidence",
+      "command": "npm run test:atlas:rc-evidence-closure && npm run verify:atlas:final-gaia-art",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:runtime-scene-focus-performance",
+      "command": "npm run test:atlas:runtime-scene-focus-performance && npx tsc --noEmit",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:scientific",
+      "command": "npm run verify:atlas && npm run test:atlas:horizons-scientific-gate && npm run test:atlas:browser:fresh",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:scientific-cinematic-art",
+      "command": "npm run test:atlas:scientific-cinematic-art && npx tsc --noEmit",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:stellar-search-catalog-v2",
+      "command": "npm run test:atlas:stellar-search-catalog-v2 && npx tsc --noEmit",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:atlas:visual",
+      "command": "npm run lint && npx tsc --noEmit && npm run test:atlas && npm run build && npm run test:atlas:browser",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:visual-integration-release",
+      "command": "npm run test:atlas:visual-integration-release && npx tsc --noEmit",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:atlas:visual-launch-performance",
+      "command": "npm run test:atlas:visual-launch-performance && npm run verify:atlas:launch-gameplay-openrocket-bridge",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:browser-network-preflight",
+      "command": "node scripts/verify-browser-network-preflight.mjs",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:catalog-pack-local",
+      "command": "vitest run app/lib/catalogPackServerV7.test.ts",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:content-packs:v192",
+      "command": "node scripts/verify-content-pack-integrity-v192.mjs",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:content-packs:v232",
+      "command": "node scripts/verify-content-pack-integrity-v192.mjs --version v232",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:release:desktop",
+      "command": "npx tsc --noEmit && npm run test:atlas:runtime-simplification-v3 && npm run test:desktop:contracts && npm run test:atlas:visual-final && npm run test:science:promotion-v3 && npm run build:content-packs && npm run build",
+      "classification": "supported-specialized"
+    },
+    {
+      "name": "verify:science:kerr-radiative-v5",
+      "command": ".venv-science\\Scripts\\python.exe scripts/compare-kerr-radiative-v5.py",
+      "classification": "historical-versioned"
+    },
+    {
+      "name": "verify:vercel:thin-preview",
+      "command": "node scripts/verify-vercel-thin-preview.mjs",
+      "classification": "supported-specialized"
+    }
+  ],
+  "boundary": "inventory-only-no-pre-1.0-historical-command-removal"
+}

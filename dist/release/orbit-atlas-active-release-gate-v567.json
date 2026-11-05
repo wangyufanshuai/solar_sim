@@ -1,0 +1,130 @@
+{
+  "version": "v567-orbit-atlas-active-release-gate-v1",
+  "generatedAt": "2026-08-03T05:10:00Z",
+  "status": "lite-scientific-performance-soak-qualified-hero-visual-regression-blocked",
+  "activeCandidate": {
+    "visual": "v562-visual-candidate-ktx2-first",
+    "heroSceneCount": 4,
+    "sharedScientificGeometry": true,
+    "singleCanvas": true,
+    "scienceLinearDisplay": true,
+    "cinematicScienceWriteback": false
+  },
+  "releaseGates": {
+    "currentWorktreeRevalidation": true,
+    "standaloneBuild": true,
+    "liteBuild": true,
+    "desktopBrowser": true,
+    "mobileBrowser": true,
+    "heroSceneBrowser": true,
+    "overviewVisualRegression": true,
+    "heroVisualRegression": false,
+    "visualRegression": false,
+    "scientificScenePerformance": true,
+    "soak": true,
+    "publicPreview": false
+  },
+  "runtimeQualification": {
+    "receiptSha256": "f55a19f5d1f408f16ceb7e6adb1a1cc5250205792479d838ad8fe4d7eeb8527a",
+    "status": "qualified-lite-overview-visual-scientific-performance-soak-hero-transition-blocked",
+    "liteBuildId": "W3yD_JO0bB7dpQaVtHdlb",
+    "minimumVisualSimilarity": 0.9877993373275236,
+    "visualComparisonCount": 8,
+    "overviewVisualRegressionQualified": true,
+    "heroVisualRegressionQualified": false,
+    "scientificSamples": [
+      "earth",
+      "gaia",
+      "launch",
+      "kerr"
+    ],
+    "soakCycles": 10,
+    "qualified": false
+  },
+  "scienceAdmission": {
+    "receiptSha256": "be6884275b0889e556261b93d93583466acd72b926b939893d1517ba42dffc65",
+    "status": "blocked-radiative-measured-dense-gpu-public-promotion",
+    "transportQualified": true,
+    "radiativeTransferQualified": false,
+    "measuredAuthorityGranted": false,
+    "denseCpuAuthorityQualified": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "denseControllerPreflight": "blocked-v313-source-manifest-drift",
+    "gpuShadowQualified": false,
+    "publicResearchRelease": false
+  },
+  "blocker": {
+    "primary": "hero-interaction-transition-not-qualified",
+    "radiativeTransfer": "production-radiative-transfer-not-qualified",
+    "measured": "ixpe-metadata-identity-conflict",
+    "dense": "v313-source-manifest-drift",
+    "gpu": "cpu-authority-prerequisites-not-qualified",
+    "publicRelease": "runtime-and-science-admission-prerequisites-blocked"
+  },
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalDefaultKernel": "legacy-eih-1pn",
+    "legacyV9Mutated": false,
+    "legacyEih1pnMutated": false,
+    "v559EvidenceRewritten": false,
+    "priorV562GateRewritten": false,
+    "productionPromotionAllowed": false,
+    "publicDeploymentAllowed": false,
+    "denseRunAllowed": false,
+    "gpuRunAllowed": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/lib/atlasActiveReleaseGateV567.test.ts",
+      "bytes": 1335,
+      "sha256": "d99e2091551de309d40e77c01b7d7287e419e55b3d1a07e5dfa67effc9225235"
+    },
+    {
+      "path": "app/lib/atlasRuntimeReleaseQualificationV567.test.ts",
+      "bytes": 2731,
+      "sha256": "9eb65fce5dc5af996ea40c073095a71afa0806a0219ce18b2499fadcdc9544f7"
+    },
+    {
+      "path": "dist/release/atlas-runtime-release-qualification-v567.json",
+      "bytes": 16612,
+      "sha256": "a5721da4801c1c708dbadc25c2e9d4993e1e362c2286b80109cbfa8eb3dbc874"
+    },
+    {
+      "path": "dist/release/atlas-science-admission-v567.json",
+      "bytes": 5673,
+      "sha256": "ff074ed88885f7c6435a8f8ccda0c888b7b8e627009d9dfb2ba72a6f01d874ea"
+    },
+    {
+      "path": "dist/release/orbit-atlas-active-release-gate-v562.json",
+      "bytes": 12007,
+      "sha256": "de4af254c493edfa1ffda0b882fff990a8e7cf359bbac7240bdbbe2ece8f6dd0"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+      "bytes": 581,
+      "sha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b"
+    },
+    {
+      "path": "scripts/build-active-release-gate-v567.mjs",
+      "bytes": 6396,
+      "sha256": "180da6e0e56eaed96ccb008bb03bdd8d40a9bb5e91f32887f774be66f05f958c"
+    },
+    {
+      "path": "scripts/build-runtime-release-gates-v567.mjs",
+      "bytes": 16188,
+      "sha256": "426a94b85f721233829fa5d3f7378a4cd8096e03b1a37e2c675b9d877281fc1f"
+    },
+    {
+      "path": "scripts/verify-active-release-gate-v567.mjs",
+      "bytes": 3255,
+      "sha256": "d7bb389158bf4f013cebe01a49000d3ccf5b2cf5853a641ca04664ac22cb1f51"
+    },
+    {
+      "path": "scripts/verify-runtime-release-gates-v567.mjs",
+      "bytes": 3953,
+      "sha256": "fc92bf410a499711d967de7afb2241c427c482e216d8e88c2f68070998e51bc1"
+    }
+  ],
+  "sourceSha256": "b324c8125f5a08b05435b1fed00361cade9fdc4398a4e7d8e6c74e80e86c0bac",
+  "artifactSha256": "3727435688a7c20f594f787ec481ea33a91b4a9b4f79ae8efd12f7863434427f"
+}

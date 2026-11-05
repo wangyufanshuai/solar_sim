@@ -1,0 +1,19 @@
+{
+  "round": 26,
+  "date": "2026-09-13",
+  "title": "Beta hero coverage badge",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/PostV593StellarRosterPanel.tsx",
+    "artChange": "Added a compact Mainline A coverage badge to the 24-entry stellar roster, showing 12 runtime-cleared heroes and 12 evidence-pending heroes directly in the panel."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.ts + mainlineABetaHeroRosterV607.test.ts: 4/4",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The badge is a truthful status surface; it does not promote evidence-pending heroes into runtime art.",
+    "Beta remains open at 24 runtime-admitted hero stars and 24 rights-cleared nebulae."
+  ]
+}

@@ -1,0 +1,17 @@
+import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+const root = process.cwd(); const node = process.execPath;
+function run(label, command, args) { const result = spawnSync(command, args, { cwd: root, stdio: "inherit", shell: false }); if (result.error) throw result.error; if (result.status !== 0) throw new Error(`${label} failed with ${result.status}`); }
+run("v336-vitest", node, [resolve(root, "node_modules/vitest/vitest.mjs"), "run", "app/lib/atlasRuntimeStateReplayV336.test.ts", "app/lib/atlasShadowCapabilityPointerV336.test.ts"]);
+run("v336-types", node, [resolve(root, "node_modules/typescript/bin/tsc"), "--noEmit"]);
+run("v336-eslint", node, [resolve(root, "node_modules/eslint/bin/eslint.js"), "--max-warnings=0", "scripts/build-atlas-runtime-state-replay-v336.ts", "scripts/build-shadow-candidate-v336.mjs", "scripts/verify-shadow-v336-light.mjs", "scripts/atlas.mjs", "app/lib/atlasRuntimeStateReplayV336.ts", "app/lib/atlasRuntimeStateReplayV336.test.ts", "app/lib/atlasShadowCapabilityPointerV336.ts", "app/lib/atlasShadowCapabilityPointerV336.test.ts"]);
+const read = (relative) => JSON.parse(readFileSync(resolve(root, relative), "utf8"));
+const evidence = read("dist/science/orbit-atlas-shadow-v336-evidence.json"); const pointer = read("dist/release/orbit-atlas-current-local-shadow-candidate-v336.json"); const state = read("dist/science/kerr-campaign-v314/campaign-state.json"); const formal = read("dist/release/orbit-atlas-current-product-evidence-v263.json"); const formalEvidence = read(formal.source);
+if (evidence.replay?.transitionCount !== 3 || evidence.replay?.sceneRevisionDelta !== 0 || evidence.replay?.selectionStable !== true || evidence.replay?.sceneModeStable !== true || evidence.replay?.scaleBandStable !== true || evidence.replay?.researchStateStable !== true || evidence.replay?.focusStateStable !== true || evidence.replay?.allModifiedGlobalStoreFieldsRestored !== true || evidence.replay?.profileResourceDriftAbsent !== true
+  || evidence.cameraLease?.afterStatus !== "baseline" || evidence.cameraLease?.identityReturnedToBaseline !== true || evidence.canvas?.stable !== true || evidence.canvas?.browserQualification !== "not-run"
+  || evidence.frozenBoundary?.defaultKernel !== "legacy-eih-1pn" || evidence.frozenBoundary?.workerPhysicsMutation !== "not-applied" || evidence.frozenBoundary?.eihOnePnMutation !== "not-applied" || evidence.frozenBoundary?.legacyRootAttributes !== 603 || evidence.frozenBoundary?.evidenceLedgerClaims !== 84
+  || pointer.capabilities?.v336SceneRevision !== "zero-increment" || pointer.capabilities?.v336CameraLease !== "identity-returned-to-baseline-idempotent" || pointer.formalProductPointer !== "v263" || pointer.localShadowDefaultApplied !== false
+  || state.status !== "incomplete-0-of-49" || state.completedShardCount !== 0 || state.attemptConsumed !== false || state.aggregateAvailable !== false
+  || formal.version !== "v263-current-product-evidence-pointer" || formalEvidence.science?.defaultKernel !== "legacy-eih-1pn") throw new Error("v336 fail-closed validation failed");
+console.log(JSON.stringify({ status: "passed-v336-low-memory", evidenceSha256: evidence.evidenceSha256, pointerSha256: pointer.pointerSha256, transitions: evidence.replay.transitionCount, sceneRevisionDelta: evidence.replay.sceneRevisionDelta, cameraBaseline: evidence.cameraLease.afterStatus, dense: pointer.capabilities.v314CorrectedDense }, null, 2));

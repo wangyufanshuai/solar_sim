@@ -1,0 +1,136 @@
+{
+  "schema": "mainline-a-b2-controlled-fault-checkpoint-v638",
+  "recordedAt": "2026-09-28T03:21:55.239Z",
+  "status": "observed-local",
+  "evidenceClass": "browser-controlled-fault",
+  "build": {
+    "buildId": "mainline-a-5b7be2f948fa9171",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "buildReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-build-20260928-068f.json",
+    "bytes": 467629,
+    "sha256": "642929f7a5459b45139806b42333916a5823c148779e1d6eda5ddf6488192818"
+  },
+  "observedBuild": {
+    "path": "tmp/mainline-a-b2-fault-build-068f.json",
+    "bytes": 247,
+    "sha256": "09da133360e5678a8805ccfd4c0281d17e54072bb695adfc807e7d802b1e8ece"
+  },
+  "origin": "http://127.0.0.1:3073/",
+  "upstream": "http://127.0.0.1:3072/",
+  "helper": {
+    "path": "tmp/mainline-a-b2-controlled-fault-068f.mjs",
+    "bytes": 9206,
+    "sha256": "b07f8472026359217900b503c4a46920374b165041e6f209a9eeda10feab25a1"
+  },
+  "ledgerAtCheckpoint": {
+    "path": "tmp/mainline-a-b2-controlled-fault-068f.ndjson",
+    "bytes": 25301,
+    "sha256": "7069820a7e007576b58d120fbdd6424d99237c2f667237d276705cba6521a0be"
+  },
+  "observedActions": [
+    "Selected Helix through actual search UI.",
+    "Observed HTTP 404 and clicked retry.",
+    "Clicked cancel during the second, delayed request.",
+    "Clicked retry again and observed actual ready after rendering."
+  ],
+  "rows": [
+    {
+      "method": "GET",
+      "url": "/textures/mainline-a/opo0432d.jpg?sha256=172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0",
+      "path": "/textures/mainline-a/opo0432d.jpg",
+      "status": 404,
+      "timing": {
+        "startedAt": "2026-09-28T03:13:35.573Z",
+        "endedAt": "2026-09-28T03:13:35.573Z",
+        "durationMs": 0.54,
+        "delayMs": 0
+      },
+      "attempt": 1,
+      "abort": false,
+      "injected": "http-404",
+      "bytes": 0,
+      "sha256": null
+    },
+    {
+      "method": "GET",
+      "url": "/textures/mainline-a/opo0432d.jpg?sha256=172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0",
+      "path": "/textures/mainline-a/opo0432d.jpg",
+      "status": null,
+      "timing": {
+        "startedAt": "2026-09-28T03:13:58.891Z",
+        "endedAt": "2026-09-28T03:13:59.226Z",
+        "durationMs": 335.147,
+        "delayMs": 10000
+      },
+      "attempt": 2,
+      "abort": true,
+      "injected": "delay-10000ms",
+      "bytes": 0,
+      "sha256": null
+    },
+    {
+      "method": "GET",
+      "url": "/textures/mainline-a/opo0432d.jpg?sha256=172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0",
+      "path": "/textures/mainline-a/opo0432d.jpg",
+      "status": 200,
+      "timing": {
+        "startedAt": "2026-09-28T03:14:54.813Z",
+        "endedAt": "2026-09-28T03:14:54.822Z",
+        "durationMs": 8.624,
+        "delayMs": 0
+      },
+      "attempt": 3,
+      "abort": false,
+      "injected": "none",
+      "bytes": 149625,
+      "sha256": "172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "tmp/mainline-a-b2-fault-404-068f.json",
+      "bytes": 1723,
+      "sha256": "5f3836c88343ad03f6c774ba0ad27ea850e97d41dcb4f40b2f0367979bfa5796"
+    },
+    {
+      "path": "tmp/mainline-a-b2-fault-404-068f.jpg",
+      "bytes": 91746,
+      "sha256": "d5dd112fd643125fa2e38288c199760670c05821a8cced7f5d98503125b93a40"
+    },
+    {
+      "path": "tmp/mainline-a-b2-fault-cancelled-068f.json",
+      "bytes": 1729,
+      "sha256": "2802a7257ae02ae62365062834264ad318156334430ff3ec5b2ebcab26ee2a3d"
+    },
+    {
+      "path": "tmp/mainline-a-b2-fault-cancelled-068f.jpg",
+      "bytes": 91511,
+      "sha256": "607a62e894588af6fd02792d6dae8066d3adc93c5ba4634326be03e8c73428f8"
+    },
+    {
+      "path": "tmp/mainline-a-b2-fault-recovered-068f.json",
+      "bytes": 1540,
+      "sha256": "28f2119dae1c9ba886cff6ac37b6ef59fc5119bf43c9a8be182f7897c2ebf68a"
+    },
+    {
+      "path": "tmp/mainline-a-b2-fault-recovered-068f.jpg",
+      "bytes": 96339,
+      "sha256": "49bd3bf78ea11944993a654e86b34cf89e23a3c99d9f774ff37bbebd41d2cd1c"
+    }
+  ],
+  "limits": [
+    "Controlled loopback failure injection; not an external-source network observation.",
+    "Not included in canonical36 or performance results.",
+    "Later source repairs require a new-build regression check."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsApproval": false
+  }
+}

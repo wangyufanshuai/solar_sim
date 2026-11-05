@@ -1,0 +1,19 @@
+{
+  "round": 31,
+  "date": "2026-09-13",
+  "title": "Beta hero admission-state regression contract",
+  "status": "verified-static",
+  "scope": {
+    "test": "app/components/PostV593StellarRosterPanel.test.tsx",
+    "artChange": "Added a regression assertion for the Mainline A per-object status marker, visible labels, and legend hooks."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 5/5",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The contract protects presentation wiring; it does not establish observational authority or production readiness.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

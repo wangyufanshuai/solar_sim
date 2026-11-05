@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { KERR_PHOTON_METROLOGY_DETAILS_V545, KERR_PHOTON_METROLOGY_DETAIL_IDS_V545, KERR_PHOTON_METROLOGY_LABELS_V545 } from "./kerrPhotonMetrologyDetailCatalogV545";
+describe("v545 detail catalog", () => { it("has 47 unique, label-complete, lazy details", () => { expect(KERR_PHOTON_METROLOGY_DETAIL_IDS_V545).toHaveLength(47); expect(new Set(KERR_PHOTON_METROLOGY_DETAIL_IDS_V545).size).toBe(47); expect(Object.keys(KERR_PHOTON_METROLOGY_DETAILS_V545)).toEqual(Object.keys(KERR_PHOTON_METROLOGY_LABELS_V545)); expect(KERR_PHOTON_METROLOGY_DETAIL_IDS_V545.at(-1)).toBe("supplemental-calibration-intake"); }); });

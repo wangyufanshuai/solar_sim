@@ -1,0 +1,94 @@
+{
+  "version": "v592-major-moon-secondary-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T13:28:36.597Z",
+  "status": "secondary-asset-manifest-probe-complete-no-payload",
+  "probeId": "io-pia00585",
+  "target": "io",
+  "selection": {
+    "nasaId": "PIA00585",
+    "title": "Color Global Mosaic of Io",
+    "description": "Color Global Mosaic of Io",
+    "center": "JPL",
+    "metadataReceiptSha256": "cfee371056bc1fb6195acc6faabc9c1faedd5cc56289182f628d6f202ef883e2",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00585/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA00585/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA00585/collection.json",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 262,
+    "responseSha256": "12109c4d656d85886d6f2684c7207ba71888782e01533ab838cc0cad3a8a9516"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00585/PIA00585~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00585~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00585/PIA00585~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00585/PIA00585~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00585~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00585/PIA00585~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00585/PIA00585~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00585~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00585/PIA00585~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00585/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00585/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "9f3a7d2e369306f679183659b07050a9ee1edb3a19bb11aa4f2a8816a77ed761"
+}

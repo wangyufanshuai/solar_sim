@@ -1,0 +1,149 @@
+{
+  "schema": "mainline-a-browser-preflight-v638",
+  "capturedAt": "2026-09-27T13:59:42.384Z",
+  "status": "issues-found-incomplete-local",
+  "build": {
+    "buildId": "2ilObVfOFkSeWEfzc7oSL",
+    "runtimeBuildId": "mainline-a-21d29a851e728824",
+    "sourceSha256": "21d29a851e7288241483e003932339702946506ec4b22527318706e239721af8",
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r66-build-20260927-068c.json",
+      "bytes": 467064,
+      "sha256": "bb2e0dcb88df32d0ba77838f2dc9c40ecdf81a56e6f6327518bdbf0c8a235919"
+    }
+  },
+  "static": {
+    "vitest": {
+      "passed": 424,
+      "failed": 0,
+      "receipt": {
+        "path": "tmp/mainline-a-b2-vitest-068c.json",
+        "bytes": 178191,
+        "sha256": "c3752e35de6fb883e8ebe303312a7e5396ab11549b328b3eb3cd105c8b125135"
+      }
+    },
+    "eslint": {
+      "files": 48,
+      "errors": 0,
+      "warnings": 0,
+      "receipt": {
+        "path": "tmp/mainline-a-b2-eslint-068c.json",
+        "bytes": 12523,
+        "sha256": "4304037dda12d30e8aa7c60a1bf32519a4934d9cd6e6509d7f98c72e54025513"
+      }
+    },
+    "node": {
+      "intake": 9,
+      "buildTool": 13
+    }
+  },
+  "http": {
+    "entry": {
+      "path": "docs/release/v607/mainline-a-b2-http-20260927-068c.json",
+      "bytes": 13315,
+      "sha256": "94eaeb7495877693277b706170260110ec80e0e28e9f86233bc50b6e714b9617"
+    },
+    "nebula12": {
+      "path": "docs/release/v607/mainline-a-b2-nebula-http-20260927-068c.json",
+      "bytes": 43887,
+      "sha256": "dacdbcc43540f04c6e2de4240aa5a2d0175b0984c156df95d5444428872bfc18"
+    }
+  },
+  "browser": {
+    "surface": "Codex in-app Browser",
+    "url": "http://127.0.0.1:3069/",
+    "desktopViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "physicalMobile": "not-run",
+    "rawRecords": 13,
+    "locallyVerified": 12,
+    "batch": {
+      "path": "tmp/mainline-a-b2-preflight-batch-recovered-068c.json",
+      "bytes": 726393,
+      "sha256": "718dadd718ff82a3035a5db32ff261a8845477e471be9ba67a6411e29ebd24c8"
+    },
+    "replay": {
+      "path": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068c/intake.json",
+      "bytes": 24207,
+      "sha256": "b9558b518e221031e9fbca9ae90c35aa2bf1c4a4bf152aeef22b81094e63054a"
+    },
+    "interactions": {
+      "path": "tmp/mainline-a-b2-repair-interactions-068c.json",
+      "bytes": 1519,
+      "sha256": "26eeedeeb230d5fea9257201a557082791cb10877141f2b239f7dd7396a3ffa7"
+    },
+    "failedRecords": [
+      {
+        "target": "nebula:m42",
+        "artifact": {
+          "path": "tmp/mainline-a-b2-browser-nebula-m42-068c.json",
+          "bytes": 48778,
+          "sha256": "0137f287ed395a815bede576d2f45e984707b802178d7bbd3eb229254b959f8e"
+        },
+        "issue": "frame-timestamp-invalid",
+        "retained": true,
+        "historicalCauseProven": false,
+        "diagnosis": "Original session has no offending timestamps. Valid initial RAF timestamps can precede performance.now start; first-window handling and bounded diagnostics are being added. Existing raw record remains failed."
+      }
+    ],
+    "exportRecovery": {
+      "failedTruncatedOutput": {
+        "path": "tmp/mainline-a-b2-preflight-batch-068c.json",
+        "bytes": 200011,
+        "sha256": "63613b5e1e19b51aa61c6308eb07235d5e84a4e12fd71135f323e83063f3ff6a"
+      },
+      "visibleTextareaCharacters": 726393,
+      "method": "13 sequential read-only DOM chunks, exact join and JSON parse; no content edits"
+    }
+  },
+  "visual": {
+    "status": "issues-found",
+    "stars": {
+      "path": "docs/release/v607/mainline-a-b2-stars-visual-review-20260927-068c.json",
+      "bytes": 31577,
+      "sha256": "57c1343508a1d26b8878d5aa369997fdeccf805381f8025f5f30042f09ccaac9"
+    },
+    "orionDesktop": {
+      "path": "tmp/mainline-a-b2-orion-desktop-068c.png",
+      "bytes": 78415,
+      "sha256": "8e45bfb1d8e7133a557bce4e68a53912c5bd818cb6a1dfefab5a6e0c2127236c"
+    },
+    "orionMobile": {
+      "path": "tmp/mainline-a-b2-orion-mobile-068c.png",
+      "bytes": 40508,
+      "sha256": "4c817acd90af6a4375563e5bc1a9fed1939825e344ffae47b5f1073834520bf2"
+    },
+    "note": "Desktop Orion figure no longer cropped. Mobile full passport covers scene; inspected passport only, not a full scene visual pass. Screenshot bytes are JPEG despite legacy .png paths; preserve original bytes.",
+    "followup": [
+      "Dock restore button covers passport prose",
+      "Transparent background paint can overlay opaque selected stellar disk; fix confirmed paint queue order"
+    ]
+  },
+  "performance": {
+    "status": "diagnostic-only",
+    "rendererFrameTimeClaim": false,
+    "productionPerformanceClaim": false,
+    "longRun": "not-run"
+  },
+  "externalSource": {
+    "scientificValidityClaim": false,
+    "rightsApproval": false,
+    "fourStarReview": "pending",
+    "additionalNebulaSignatures": "0/12",
+    "rafDocumentation": "https://developer.mozilla.org/en-US/docs/Web/API/Window/requestAnimationFrame"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "realUserValidation": false
+  },
+  "nextAction": "Finish dock, stellar paint and RAF clock repairs; new preserved build then full canonical36. Do not use 068c evidence for revised source."
+}

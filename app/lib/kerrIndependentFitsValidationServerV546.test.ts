@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrIndependentFitsValidationV546, resetKerrIndependentFitsValidationServerCacheForTestsV546 } from "./kerrIndependentFitsValidationServerV546";
+describe("v546 independent FITS server", () => { it("loads three SHA-locked bounded exports through one cache entry", async () => { resetKerrIndependentFitsValidationServerCacheForTestsV546(); const first = await loadKerrIndependentFitsValidationV546(), second = await loadKerrIndependentFitsValidationV546(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "receipt", "validator"]); expect(first.receipt.qualification.syntheticAuthorityGranted).toBe(false); expect(first.exports.validator.bytes.byteLength).toBeGreaterThan(0); }); });

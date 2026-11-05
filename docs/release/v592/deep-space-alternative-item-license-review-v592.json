@@ -1,0 +1,1026 @@
+{
+  "version": "v592-deep-space-alternative-item-license-review-v1",
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "status": "9-alternative-visual-sources-eligible-12-blocked",
+  "policy": {
+    "licenseBasis": "NASA media usage guidelines plus item-level NASA/JPL/GSFC credit and restricted-partner scan",
+    "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "explicitlyBlockedPartnerTokens": [
+      "ESA",
+      "European Space Agency",
+      "CSA",
+      "Canadian Space Agency"
+    ],
+    "legalOpinionClaimed": false,
+    "explicitSingleRequestAcquisitionRequired": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "mappedColorMustRemainLabeled": true,
+    "visualAssetAdmissionGranted": false,
+    "derivedRuntimeAssetAdmissionGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "selectionManifestPath": "scripts/v592-deep-space-alternative-asset-selections.json",
+  "selectionManifestSha256": "175c6a0c8eb283bb3cd1c4e44da364e10ba479076363551eb3743284d85a1116",
+  "summary": {
+    "reviewedCount": 21,
+    "eligibleForAcquisitionCount": 9,
+    "eligibleUniqueTargetCount": 6,
+    "blockedCount": 12,
+    "restrictedPartnerBlockedCount": 3,
+    "sourceImageDownloadedCount": 0,
+    "visualAssetAdmittedCount": 0
+  },
+  "eligibleSelectionIds": [
+    "sombrero-galaxy--PIA07899",
+    "cigar-galaxy--PIA23010",
+    "whirlpool-galaxy--PIA23005",
+    "bodes-galaxy--PIA09337",
+    "southern-pinwheel-galaxy--PIA10373",
+    "southern-pinwheel-galaxy--PIA10374",
+    "pleiades--PIA09262",
+    "pleiades--PIA09263",
+    "pleiades--PIA13121"
+  ],
+  "blockedSelectionIds": [
+    "sombrero-galaxy--PIA15427",
+    "sombrero-galaxy--PIA15426",
+    "centaurus-a--0202374",
+    "cigar-galaxy--PIA08093",
+    "cigar-galaxy--GSFC_20171208_Archive_e001206",
+    "centaurus-a--PIA04624",
+    "centaurus-a--PIA06007",
+    "cigar-galaxy--PIA04218",
+    "cigar-galaxy--PIA18840",
+    "pinwheel-galaxy--PIA04630",
+    "pinwheel-galaxy--PIA04632",
+    "southern-pinwheel-galaxy--PIA13117"
+  ],
+  "reviews": [
+    {
+      "selectionId": "sombrero-galaxy--PIA15427",
+      "target": "sombrero-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA15427",
+      "title": "Sombrero Galaxy Not So Flat After All",
+      "description": "New observations from NASA Spitzer Space Telescope reveal the Sombrero galaxy is not simply a regular flat disk galaxy of stars as previously believed, but a more round elliptical galaxy with a flat disk tucked inside.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/sombrero-galaxy--PIA15427.json",
+      "sourceMetadataSha256": "c95330b2fe13c85652bfd5a1c66b67c6d22d6a81a836c9ae65d29ef7eefdbed9",
+      "metadataAcquisitionReceiptSha256": "66ca11331be715482463e33c5ca78cc3c471a9bb53e464180dd7f8ff236c2b81",
+      "assetManifestReceiptSha256": "38f9c9e41fdf21150b028ed2e3138ea12ea11dc10c6659652c5435f0135b8dad",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1970,
+        "metadataHeight": 2400,
+        "metadataFileSize": "336 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "sombrero-galaxy--PIA15426",
+      "target": "sombrero-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA15426",
+      "title": "The Sombrero Galaxy Split Personality",
+      "description": "This infrared vision of NASA Spitzer Space Telescope has revealed that the Sombrero galaxy, named after its appearance in visible light to a wide-brimmed hat, is in fact two galaxies in one.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/sombrero-galaxy--PIA15426.json",
+      "sourceMetadataSha256": "00c4d87b8ad8b1a8fedffb8226722308fd6f2820cd7f4ee4c007e726646c3194",
+      "metadataAcquisitionReceiptSha256": "a00b9ac6a83fece4d7449e41d61cdf83267a5cfd21b9a067621221e820a92e2b",
+      "assetManifestReceiptSha256": "0dcce501d9b24b02f67ad72a80a6debfb3273510ce616d4864d5d45a16740c5d",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA15426/PIA15426~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1970,
+        "metadataHeight": 2400,
+        "metadataFileSize": "433 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "sombrero-galaxy--PIA07899",
+      "target": "sombrero-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA07899",
+      "title": "Spitzer Spies Spectacular Sombrero",
+      "description": "NASA's Spitzer Space Telescope set its infrared eyes on one of the most famous objects in the sky, Messier 104, also called the Sombrero galaxy. In this striking infrared picture, Spitzer sees an exciting new view of a galaxy that in visible light has been likened to a \"sombrero,\" but here looks more like a \"bulls-eye.\" Recent observations using Spitzer's infrared array camera uncovered the bright, smooth ring of dust circling the galaxy, seen in red. In visible light, because this galaxy is seen nearly edge-on, only the near rim of dust can be clearly seen in silhouette. Spitzer's full view shows the disk is warped, which is often the result of a gravitational encounter with another galaxy, and clumpy areas spotted in the far edges of the ring indicate young star-forming regions. Spitzer's infrared view of the starlight from this galaxy, seen in blue, can pierce through obscuring murky ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/University of Arizona;<br .>Figures 1 and 2: NASA/JPL-Caltech/University of Arizona/STScI;<br .>Figure 3: NASA/STScI/AURA;<br .>Animation: NASA/JPL-Caltech/University of Arizona/STScI",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/sombrero-galaxy--PIA07899.json",
+      "sourceMetadataSha256": "4a8cd46ef4bee03f6d60b98679a8fe60e0e061342478b370de23bb87f9f141a5",
+      "metadataAcquisitionReceiptSha256": "a57945cc736964a127918d375cca0a3fe1e448392b35d2b575ca424a062974fc",
+      "assetManifestReceiptSha256": "8047dd91020611a9b94f12ce336f98698d1ea9eea4087cf4b8a6b7c669b06129",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA07899/PIA07899~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3000,
+        "metadataHeight": 1681,
+        "metadataFileSize": "215 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "centaurus-a--0202374",
+      "target": "centaurus-a",
+      "category": "galaxy",
+      "nasaId": "0202374",
+      "title": "History of Chandra X-Ray Observatory",
+      "description": "This is a photo taken by NASA's Chandra X-ray Observatory that reveals the remains of an explosion in the form of two enormous arcs of multimillion-degree gas in the galaxy Centaurus A that appear to be part of a ring 25,000 light years in diameter. The size and location of the ring suggest that it could have been an explosion that occurred about 10 million years ago. A composite image made with radio (red and green), optical (yellow-orange), and X-ray data (blue) presents a sturning tableau of a turbulent galaxy. A broad band of dust and cold gas is bisected at an angle by opposing jets of high-energy particles blasting away from the supermassive black hole in the nucleus. Lying in a plane perpendicular to the jets are the two large arcs of x-ray emitting multi-million degree gas. This discovery can help astronomers better understand the cause and effect of violent outbursts from the vi",
+      "center": "MSFC",
+      "creator": null,
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/centaurus-a--0202374.json",
+      "sourceMetadataSha256": "fb3b72f98cde7f055959796c94a6b36457f82e3b0080d8bdf068d078e92fc914",
+      "metadataAcquisitionReceiptSha256": "cc0262e5ea66eacafa57a9cf37c8918118cf4e8478af69d9be1fd1995a464036",
+      "assetManifestReceiptSha256": "4cf66b4f35370132d9f5f4bb31a2036241c16f5777d4804e79b8891726387b7d",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/0202374/0202374~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": false,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "archive-identity",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "cigar-galaxy--PIA08093",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA08093",
+      "title": "Great Observatories Present Rainbow of a Galaxy",
+      "description": "NASA Spitzer, Hubble and Chandra space observatories teamed up to create this multi-wavelength, false-colored view of the M82 galaxy. The lively portrait celebrates Hubble weet sixteen birthday.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/STScI/CXC/UofA/ESA/AURA/JHU",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/cigar-galaxy--PIA08093.json",
+      "sourceMetadataSha256": "a84c5ab116babfbe2596d903e5f9e42e72a07a118034547bac89054d42a3747f",
+      "metadataAcquisitionReceiptSha256": "40566aeb71e37aaf379ba327c8c5a75b6ed7f4a590ff2332f31362f98579ab83",
+      "assetManifestReceiptSha256": "4a0c410fe836430554a00bcf119a45284e6c9d988fe082d04bd1b7a5950d61ac",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA08093/PIA08093~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 4299,
+        "metadataHeight": 3490,
+        "metadataFileSize": "786 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "cigar-galaxy--PIA23010",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23010",
+      "title": "The Cigar Galaxy's Magnetic Field",
+      "description": "A composite image of the Cigar Galaxy (also called M82), a starburst galaxy about 12 million light-years away in the constellation Ursa Major. The magnetic field detected by the High-resolution Airborne Wideband Camera-Plus instrument (known as HAWC+) on SOFIA (the Stratospheric Observatory for Infrared Astronomy), shown as streamlines, appears to follow the bipolar outflows (red) generated by the intense nuclear starburst. The image combines visible starlight (gray) and a tracing of hydrogen gas (red) observed from the Kitt Peak Observatory, with near-infrared and mid-infrared starlight and dust (yellow) observed by SOFIA and the Spitzer Space Telescope. https://photojournal.jpl.nasa.gov/catalog/PIA23010",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/SOFIA/E. Lopez-Rodiguez; NASA/Spitzer/J. Moustakas et al.",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/cigar-galaxy--PIA23010.json",
+      "sourceMetadataSha256": "b8f0c3b499d998a30d10db841b603e005a3a36770447f17d63fb00009954cb62",
+      "metadataAcquisitionReceiptSha256": "80b4e0aa9969b200bb1bf8b8589bb60ec0180353bbd6cca2fb85fdd13bcdd978",
+      "assetManifestReceiptSha256": "19cb7c82c5d20a7e99c62c8cb8bda2fd60eabc3dc3359d5afe40f34f69cd9c44",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA23010/PIA23010~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2412,
+        "metadataHeight": 1713,
+        "metadataFileSize": "129 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "cigar-galaxy--GSFC_20171208_Archive_e001206",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "GSFC_20171208_Archive_e001206",
+      "title": "Hubble Monitors Supernova In Nearby Galaxy M82",
+      "description": "This is a Hubble Space Telescope composite image of a supernova explosion designated SN 2014J in the galaxy M82. At a distance of approximately 11.5 million light-years from Earth it is the closest supernova of its type discovered in the past few decades. The explosion is categorized as a Type Ia supernova, which is theorized to be triggered in binary systems consisting of a white dwarf and another star — which could be a second white dwarf, a star like our sun, or a giant star. Astronomers using a ground-based telescope discovered the explosion on January 21, 2014. This Hubble photograph was taken on January 31, as the supernova approached its peak brightness. The Hubble data are expected to help astronomers refine distance measurements to Type Ia supernovae. In addition, the observations could yield insights into what kind of stars were involved in the explosion. Hubble’s ultraviolet-l",
+      "center": "GSFC",
+      "creator": "NASA Goddard",
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/cigar-galaxy--GSFC_20171208_Archive_e001206.json",
+      "sourceMetadataSha256": "97d86567fd325b1d1a9e6ca4bcbfb30e7a6dc4677a8c84bb09772d4e6f7c6642",
+      "metadataAcquisitionReceiptSha256": "641b56211596b193214af19ae04ce90e00b046de9cee1ce5dedd275b955915ec",
+      "assetManifestReceiptSha256": "ea30c56f985d700b7bc6618b5be521a38cc2b9a3d5df1e2733cbadf4a8f9c9b3",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001206/GSFC_20171208_Archive_e001206~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "x-ray",
+          "ultraviolet",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "whirlpool-galaxy--PIA23005",
+      "target": "whirlpool-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23005",
+      "title": "A Hard X-ray Look at M51",
+      "description": "Bright green sources of high-energy X-ray light captured by NASA's NuSTAR mission are overlaid on an optical-light image of the Whirlpool galaxy (the spiral in the center of the image) and its companion galaxy, M51b (the bright greenish-white spot above the Whirlpool), taken by the Sloan Digital Sky Survey. The bright green spots at the center of the Whirlpool and M51b are created by material surrounding supermassive black holes; additional X-ray sources in the vicinity contribute to the emission. The known ultraluminous neutron star is located on the left side of the Whirlpool. https://photojournal.jpl.nasa.gov/catalog/PIA23005",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech, IPAC",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/whirlpool-galaxy--PIA23005.json",
+      "sourceMetadataSha256": "3baeed1b27093e02ac7a3cac06d809dc36e10864f7f830819700dee853449d50",
+      "metadataAcquisitionReceiptSha256": "3686fd2bdb2d1dffc4a5b5c0678a29e84e3759052ad33f8acdf399b8eb7c3f92",
+      "assetManifestReceiptSha256": "47662b92bede09043ebabcd78092b5fe1e905e04eb087b530dabcc332e9d8676",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA23005/PIA23005~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2500,
+        "metadataHeight": 2500,
+        "metadataFileSize": "223 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "centaurus-a--PIA04624",
+      "target": "centaurus-a",
+      "category": "galaxy",
+      "nasaId": "PIA04624",
+      "title": "Galaxy Centaurus A",
+      "description": "This image of the active galaxy Centaurus A was taken by NASA's Galaxy Evolution Explorer on June 7, 2003. The galaxy is located 30 million light-years from Earth and is seen edge on, with a prominent dust lane across the major axis. In this image the near ultraviolet emission is represented as green, and the far ultraviolet emission as blue. The galaxy exhibits jets of high energy particles, which were traced by the X-ray emission and measured by NASA's Chandra X-ray Observatory. These X-ray emissions are seen as red in the image. Several regions of ultraviolet emission can be seen where the jets of high energy particles intersect with hydrogen clouds in the upper left corner of the image. The emission shown may be the result of recent star formation triggered by the compression of gas by the jet. http://photojournal.jpl.nasa.gov/catalog/PIA04624",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL/Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/centaurus-a--PIA04624.json",
+      "sourceMetadataSha256": "fb124860d356565cabdea745809d4de595011845187ddf4d427c8fb7d7b2b330",
+      "metadataAcquisitionReceiptSha256": "c4bbb7b3aa6abfbb2113e03309e6b6b6771e3c69f83e3bb4c532ed5d44188866",
+      "assetManifestReceiptSha256": "02411565e1391d7a737928e09dc88365de51dbb4e782fbc56f1250993ec56a38",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA04624/PIA04624~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1600,
+        "metadataHeight": 1496,
+        "metadataFileSize": "235 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "x-ray",
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "centaurus-a--PIA06007",
+      "target": "centaurus-a",
+      "category": "galaxy",
+      "nasaId": "PIA06007",
+      "title": "The Making of a Galactic Parallelogram",
+      "description": "This image taken by NASA Spitzer Space Telescope shows in unprecedented detail the galaxy Centaurus A last big meal: a spiral galaxy seemingly twisted into a parallelogram-shaped structure of dust. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/centaurus-a--PIA06007.json",
+      "sourceMetadataSha256": "a5bb90e7aa009bb56a3b0ce43cf9e34e032fc3f63cb5e5e0f721e4cf33b988c7",
+      "metadataAcquisitionReceiptSha256": "f92b03e37d1ebcf8aeac86a648da1a152cbb060cd26ab0330529fd7511e085e0",
+      "assetManifestReceiptSha256": "f7b2b0473d173ea3a36065b2b2ed602b1e7c275b40f7438c3140899e82d5dff5",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA06007/PIA06007~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1627,
+        "metadataHeight": 1227,
+        "metadataFileSize": "151 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "bodes-galaxy--PIA09337",
+      "target": "bodes-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA09337",
+      "title": "Galaxy Mission Completes Four Star-Studded Years in Space",
+      "description": "NASA Galaxy Evolution Explorer is celebrates its fourth year in space with some of M81 hottest stars. In this ultraviolet image, the magnificent M81 spiral galaxy is shown at the center.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/bodes-galaxy--PIA09337.json",
+      "sourceMetadataSha256": "1cc48b3fdda38a2f3703de6880186f4f07eb90396318efa89bf2c88b08f3e8b6",
+      "metadataAcquisitionReceiptSha256": "becfd448fa9b0d8f5f3fbd5e039e719d1b73cc82b5183eedc7faed11a6ce94b0",
+      "assetManifestReceiptSha256": "28d20d4c33f7a66700988e0a52d86d9db687f81381b7018326f14d1d9911e77d",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA09337/PIA09337~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2250,
+        "metadataHeight": 2550,
+        "metadataFileSize": "582 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "cigar-galaxy--PIA04218",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA04218",
+      "title": "Galaxy M82",
+      "description": "A colorful image showing violent star formation triggered when two galaxies bumped into each other has been captured by NASA Hubble Space Telescope.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA, ESA, R. de Grijs Institute of Astronomy, Cambridge, UK",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/cigar-galaxy--PIA04218.json",
+      "sourceMetadataSha256": "f66ccd38d39b311c76c49a71204f10e7cafc78383fa8b71f8ac6406aea379c21",
+      "metadataAcquisitionReceiptSha256": "6a2b2e414cdf9c4167b4303b468fbbaa0d1ba50ad10e7a869306ab7f12c5c931",
+      "assetManifestReceiptSha256": "60e480ebc46246e3bf2de910f4617814c3227280f88cd3211267d58c3dae49a5",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA04218/PIA04218~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1487,
+        "metadataHeight": 1522,
+        "metadataFileSize": "188 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "visible"
+        ],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "cigar-galaxy--PIA18840",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA18840",
+      "title": "Galaxy in Different Lights",
+      "description": "The comparison from NASA Hubble telescope and Chandra X-ray Observatory highlights how different the universe can look when viewed in other wavelengths of light. M82 is located 12 million light-years away in the Ursa Major constellation.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/STScI/SAO",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/cigar-galaxy--PIA18840.json",
+      "sourceMetadataSha256": "4b8a9e079afd1588b667b92f9a5c0321d966acee432aa6c382735b6ae1ce126b",
+      "metadataAcquisitionReceiptSha256": "a6149167328a6a98de52c6bb2413e2bf41dc67d3c5d00766aa66547e42945f32",
+      "assetManifestReceiptSha256": "7aa90259cd7bd11e312ac75553caf9751b3a6bb9f67f92783999067413b8c848",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA18840/PIA18840~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1200,
+        "metadataHeight": 675,
+        "metadataFileSize": "62 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "pinwheel-galaxy--PIA04630",
+      "target": "pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA04630",
+      "title": "Galaxy M101",
+      "description": "This three-color image of galaxy M101 was taken by NASA's Galaxy Evolution Explorer on June 20, 2003. The far ultraviolet emissions are shown in blue, the near ultraviolet emissions are green, and the red emissions, which were taken from NASA's Digital Sky Survey, represent visible light. This image combines short, medium, and long \"exposure\" pictures to best display the evolution of star formation in a spiral galaxy. http://photojournal.jpl.nasa.gov/catalog/PIA04630",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL/Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/pinwheel-galaxy--PIA04630.json",
+      "sourceMetadataSha256": "05741400952cff1a04f3fe550c452c2e5ebfd8863cb83353aa12b8f1c6ba27dc",
+      "metadataAcquisitionReceiptSha256": "586a394fcbd87cb06235af04581f103ac55b7fd389672b7e1c29c13ef37e85a9",
+      "assetManifestReceiptSha256": "dc0baef1bc310c63bb9bf465b0b558193a80cea77ba66198732fd8f55a68787c",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA04630/PIA04630~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1771,
+        "metadataHeight": 1401,
+        "metadataFileSize": "242 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "pinwheel-galaxy--PIA04632",
+      "target": "pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA04632",
+      "title": "Messier 101 Single Orbit Exposure",
+      "description": "This single orbit exposure, ultraviolet color image of Messier 101 was taken by NASA's Galaxy Evolution Explorer on June 20, 2003. Messier 101 is a large spiral galaxy located 20 million light-years from Earth. This image is a short and medium \"exposure\" picture of the evolution of star formation in a spiral galaxy. The far ultraviolet emission detects the younger stars as concentrated in tight spiral arms, while the near ultraviolet emission, which traces stars living for more than 100 million years, displays the movement of the spiral pattern over a 100 million year period. The red stars in the foreground of the image are Milky Way stars. http://photojournal.jpl.nasa.gov/catalog/PIA04632",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL/Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/pinwheel-galaxy--PIA04632.json",
+      "sourceMetadataSha256": "a9fe7a11eb03e24c260a1c801083071227f5a2c241ab7779f5c7bf3218529fe5",
+      "metadataAcquisitionReceiptSha256": "8b67bbd504b4a1e253524a4336ee38d3d018b4ae2329171b8f1370cae8c7470c",
+      "assetManifestReceiptSha256": "20336f268ee75ba82c562066cd44aafd551329ea70df1367e06f1abbf33bf0cb",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA04632/PIA04632~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 991,
+        "metadataHeight": 1008,
+        "metadataFileSize": "73 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "southern-pinwheel-galaxy--PIA13117",
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA13117",
+      "title": "Southern Pinwheel",
+      "description": "This image from NASA Wide-field Infrared Survey Explorer shows the nearby galaxy M83. This is a spiral galaxy approximately 15 million light-years away in the constellation Hydra, sometimes referred to as the southern Pinwheel galaxy.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/UCLA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/southern-pinwheel-galaxy--PIA13117.json",
+      "sourceMetadataSha256": "aace81d0cc65731dcb033b6dae9f4836161be7b5796be1a84e9aae649f2ec89c",
+      "metadataAcquisitionReceiptSha256": "7d37a20d4723b9fd65cb43dc0168b9ba866edd32f86f58bbca8a29cc60becb80",
+      "assetManifestReceiptSha256": "376ce4d7723792092c2c8a526d7e8098986f5590d512c2eeec82ff1c67f3d272",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA13117/PIA13117~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1800,
+        "metadataHeight": 1800,
+        "metadataFileSize": "182 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "southern-pinwheel-galaxy--PIA10373",
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA10373",
+      "title": "Beyond the Borders of a Galaxy",
+      "description": "The outlying regions around the Southern Pinwheel galaxy, or M83, are highlighted in this composite image from NASA Galaxy Evolution Explorer and the National Science Foundation Very Large Array in New Mexico.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/VLA/MPIA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/southern-pinwheel-galaxy--PIA10373.json",
+      "sourceMetadataSha256": "82368c89f8be3070cfd2c75ff34f38086defd063dcbc24d3db5d8f7655e78dba",
+      "metadataAcquisitionReceiptSha256": "146bc55dad1b3389699c738a4331d8af15cd00a240f365ad65f247744383edcb",
+      "assetManifestReceiptSha256": "2883c89d0cb557fad2dd0561dd86024ddfa6922e630f15528051c478747bd08d",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA10373/PIA10373~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2852,
+        "metadataHeight": 2852,
+        "metadataFileSize": "958 kB"
+      },
+      "observationEncoding": {
+        "bands": [],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "southern-pinwheel-galaxy--PIA10374",
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA10374",
+      "title": "Ultraviolet Extensions",
+      "description": "This ultraviolet image from NASA Galaxy Evolution Explorer shows the Southern Pinwheel galaxy, also know as Messier 83 or M83. It is located 15 million light-years away in the southern constellation Hydra.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/MPIA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/southern-pinwheel-galaxy--PIA10374.json",
+      "sourceMetadataSha256": "e6d0ba1bb68877c872f6751a1dc1774f277ac5edd4697867c09bba99b891da18",
+      "metadataAcquisitionReceiptSha256": "de5b19c1e725ec5a5f74123f4cc75faea2bb330ea569542ed7e80fa0b8cab237",
+      "assetManifestReceiptSha256": "8004467b24bf9aaa630f3c5972a432da767718a63cc68aa930e97d4b71922c56",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA10374/PIA10374~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2852,
+        "metadataHeight": 2852,
+        "metadataFileSize": "1083 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "pleiades--PIA09262",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA09262",
+      "title": "Pink Pleiades",
+      "description": "The Seven Sisters, also known as the Pleiades star cluster, seem to float on a bed of feathers in a new infrared image from NASA Spitzer Space Telescope. Clouds of dust sweep around the stars, swaddling them in a cushiony veil. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/pleiades--PIA09262.json",
+      "sourceMetadataSha256": "bcd39dd2d7f0db56c070fe065c7ae443d1b53f6a91f5674a3d3ac4eeb056b3dc",
+      "metadataAcquisitionReceiptSha256": "03a239b95705846602f4eae508383282d9fcbd4049c0cef1faa5532b6ecfb493",
+      "assetManifestReceiptSha256": "f55563e5d5ac9473daf2dfa0206127298a0c53609774acaec1c1281147b281f2",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA09262/PIA09262~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2855,
+        "metadataHeight": 2855,
+        "metadataFileSize": "963 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "pleiades--PIA09263",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA09263",
+      "title": "The Seven Sisters Pose for Spitzer",
+      "description": "The Seven Sisters, also known as the Pleiades star cluster, seem to float on a bed of feathers in a new infrared image from NASA Spitzer Space Telescope. Clouds of dust sweep around the stars, swaddling them in a cushiony veil. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/pleiades--PIA09263.json",
+      "sourceMetadataSha256": "1db7f2c6022b029e5b54c4cac75eff59399a7f57b116b432dae4140d9e450963",
+      "metadataAcquisitionReceiptSha256": "57df0ef0657105079fe471003dda46c3450b4eb8fdbdf714d72ca000ef186a99",
+      "assetManifestReceiptSha256": "396bd4e99b91808d908b5d004024a1fb39619526dfddc2234574a2525fde10db",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA09263/PIA09263~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2855,
+        "metadataHeight": 2855,
+        "metadataFileSize": "766 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "selectionId": "pleiades--PIA13121",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA13121",
+      "title": "Seven Sisters Get WISE",
+      "description": "This image shows the famous Pleiades cluster of stars as seen through the eyes of NASA Wide-field Infrared Survey Explorer; they are what astronomers call an open cluster of stars, loosely bound to each other to eventually go their separate ways.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/UCLA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/alternative-metadata/pleiades--PIA13121.json",
+      "sourceMetadataSha256": "7b56589fa279d6d80460ed0f50abbb43edad1fd583d31e1f8962fb7b895cbb06",
+      "metadataAcquisitionReceiptSha256": "a030d215ae477911900ec93623a7b3827c11cae4bec817515cfebcc8799aad4c",
+      "assetManifestReceiptSha256": "ce3a4ba52ffd032c3c04283d06659fb4527678fad0a3b0a835bec30adbca2313",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA13121/PIA13121~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 4007,
+        "metadataHeight": 3061,
+        "metadataFileSize": "1637 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    }
+  ],
+  "receiptSha256": "e67c2476e9f6e582a17cea2ebeb439ec12c4c1a72a12dd654a84f6a366c679c7"
+}

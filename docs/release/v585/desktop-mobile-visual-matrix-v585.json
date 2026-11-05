@@ -1,0 +1,611 @@
+{
+  "version": "v585-desktop-mobile-visual-matrix-v1",
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "status": "qualified-exact-dual-viewport-stable-preview-matrix",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844
+    }
+  },
+  "browserObservation": {
+    "version": "v585-desktop-mobile-visual-observation-v1",
+    "generatedAt": "2026-08-04T14:39:29.588Z",
+    "browserSurface": "Playwright Chrome",
+    "profiles": {
+      "standalone": {
+        "id": "standalone",
+        "gpu": {
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "software": false
+        },
+        "baseline": {
+          "total": 14,
+          "workers": 1,
+          "renderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuPipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "ownerCount": 3
+        },
+        "releasedAfterResize": {
+          "total": 14,
+          "workers": 1,
+          "renderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuPipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "ownerCount": 3
+        },
+        "desktop": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/standalone-stable-desktop-1440x900.png",
+            "bytes": 1872357,
+            "sha256": "bbdc9063d95eb6d3ddd9d3ae25557dbb9027ad21e98b8a66d84fa493b82868c8"
+          },
+          "medianFps": 238.9,
+          "frameP95Ms": 8.4,
+          "frameSamples": 720,
+          "canvasCount": 1
+        },
+        "mobile": {
+          "width": 390,
+          "height": 844,
+          "screenshot": {
+            "path": "output/playwright/v585/standalone-stable-mobile-390x844.png",
+            "bytes": 370660,
+            "sha256": "bcec357ca60e8bb504e02a2e4afdc9d33810b55edec7b415eaf236621fc4c739"
+          },
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "frameSamples": 720,
+          "canvasCount": 1
+        },
+        "afterResize": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/standalone-stable-desktop-return-1440x900.png",
+            "bytes": 1871577,
+            "sha256": "3553f9e526df3467795cf2ad57e33b02420a6a687fed1a45f443d80637471f64"
+          },
+          "medianFps": 120.1,
+          "frameP95Ms": 12.5,
+          "frameSamples": 140,
+          "canvasCount": 1
+        },
+        "desktopOverflow": 0,
+        "mobileOverflow": 0,
+        "returnOverflow": 0,
+        "soak": [
+          {
+            "cycle": 1,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 144728202
+          },
+          {
+            "cycle": 2,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 139372805
+          },
+          {
+            "cycle": 3,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 145454646
+          },
+          {
+            "cycle": 4,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 155841353
+          },
+          {
+            "cycle": 5,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 154815768
+          },
+          {
+            "cycle": 6,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 161455521
+          },
+          {
+            "cycle": 7,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 147788738
+          },
+          {
+            "cycle": 8,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 128623563
+          },
+          {
+            "cycle": 9,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 154972523
+          },
+          {
+            "cycle": 10,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 144133880
+          }
+        ],
+        "errors": {
+          "console": [],
+          "page": [],
+          "renderer": [],
+          "responses": []
+        },
+        "assetResponses": [],
+        "requestedUrls": [
+          "http://127.0.0.1:3158/_next/static/css/68bc275f73364418.css",
+          "http://127.0.0.1:3158/_next/static/css/5e0f40cbf57061ed.css",
+          "http://127.0.0.1:3158/_next/static/chunks/webpack-17bab13f08b286ed.js",
+          "http://127.0.0.1:3158/_next/static/chunks/4bd1b696-8a4ab4fdf0ae305a.js",
+          "http://127.0.0.1:3158/_next/static/chunks/3794-d7cddff008311ab3.js",
+          "http://127.0.0.1:3158/_next/static/chunks/main-app-a6633aa9e0a03b19.js",
+          "http://127.0.0.1:3158/_next/static/chunks/app/page-1eae69a87c42b110.js",
+          "http://127.0.0.1:3158/_next/static/media/6c596dfcddeca1e9-s.p.woff2",
+          "http://127.0.0.1:3158/_next/static/chunks/b536a0f1.ca09b8f6269b263b.js",
+          "http://127.0.0.1:3158/_next/static/chunks/b79b7286.28a0768ae43d98fa.js",
+          "http://127.0.0.1:3158/_next/static/chunks/6720.954a9ce1623a50c0.js",
+          "http://127.0.0.1:3158/_next/static/chunks/4807.c40e4589855a00a7.js",
+          "http://127.0.0.1:3158/icon.svg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/data/gaia-dr3-nearby-46000-v255.json",
+          "http://127.0.0.1:3158/_next/static/chunks/7260.433c56c7035ff91a.js",
+          "http://127.0.0.1:3158/_next/static/chunks/6939.a250a5b6cfd76d22.js",
+          "http://127.0.0.1:3158/_next/static/chunks/5399.d592855e3da16f07.js",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/sky/orbit-atlas-v9-base-8k.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/mercury.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/venus.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/earth.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/mars.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/jupiter.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/saturn.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/uranus.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/textures/planets/neptune.jpg",
+          "http://127.0.0.1:3158/api/atlas/content-packs/core/files/data/asterisms-v255.json"
+        ]
+      },
+      "lite": {
+        "id": "lite",
+        "gpu": {
+          "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+          "vendor": "Google Inc. (NVIDIA)",
+          "software": false
+        },
+        "baseline": {
+          "total": 14,
+          "workers": 1,
+          "renderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuPipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "ownerCount": 3
+        },
+        "releasedAfterResize": {
+          "total": 14,
+          "workers": 1,
+          "renderTargets": 0,
+          "gpuBuffers": 1,
+          "gpuPipelines": 0,
+          "gpuQueries": 0,
+          "textures": 11,
+          "objectUrls": 0,
+          "typedArrayCaches": 0,
+          "cameraLocks": 0,
+          "ownerCount": 3
+        },
+        "desktop": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/lite-stable-desktop-1440x900.png",
+            "bytes": 1874913,
+            "sha256": "b5c35b66977ee6abc2fc391e6b789e6ec2f9b2a543265834be0aa00cb327d44a"
+          },
+          "medianFps": 120.3,
+          "frameP95Ms": 12.6,
+          "frameSamples": 561,
+          "canvasCount": 1
+        },
+        "mobile": {
+          "width": 390,
+          "height": 844,
+          "screenshot": {
+            "path": "output/playwright/v585/lite-stable-mobile-390x844.png",
+            "bytes": 372216,
+            "sha256": "eb26de561ef53accad003da3b254183b8e82f8da2fec05c8cdabcca328d50143"
+          },
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "frameSamples": 720,
+          "canvasCount": 1
+        },
+        "afterResize": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/lite-stable-desktop-return-1440x900.png",
+            "bytes": 1875522,
+            "sha256": "d904ca6de5aca5b8e56119564e1ba1e06744f206efb4f0b14aaa3d69e27145dd"
+          },
+          "medianFps": 238.9,
+          "frameP95Ms": 8.4,
+          "frameSamples": 298,
+          "canvasCount": 1
+        },
+        "desktopOverflow": 0,
+        "mobileOverflow": 0,
+        "returnOverflow": 0,
+        "soak": [
+          {
+            "cycle": 1,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 237653965
+          },
+          {
+            "cycle": 2,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 138632644
+          },
+          {
+            "cycle": 3,
+            "resources": {
+              "total": 14,
+              "workers": 1,
+              "renderTargets": 0,
+              "gpuBuffers": 1,
+              "gpuPipelines": 0,
+              "gpuQueries": 0,
+              "textures": 11,
+              "objectUrls": 0,
+              "typedArrayCaches": 0,
+              "cameraLocks": 0,
+              "ownerCount": 3
+            },
+            "heapUsedSize": 141668100
+          }
+        ],
+        "errors": {
+          "console": [],
+          "page": [],
+          "renderer": [],
+          "responses": []
+        },
+        "assetResponses": [],
+        "requestedUrls": [
+          "http://127.0.0.1:3159/_next/static/css/68bc275f73364418.css",
+          "http://127.0.0.1:3159/_next/static/css/5e0f40cbf57061ed.css",
+          "http://127.0.0.1:3159/_next/static/chunks/webpack-2368d4c2d261a00d.js",
+          "http://127.0.0.1:3159/_next/static/chunks/4bd1b696-8a4ab4fdf0ae305a.js",
+          "http://127.0.0.1:3159/_next/static/chunks/3794-d7cddff008311ab3.js",
+          "http://127.0.0.1:3159/_next/static/chunks/main-app-a6633aa9e0a03b19.js",
+          "http://127.0.0.1:3159/_next/static/chunks/app/page-1eae69a87c42b110.js",
+          "http://127.0.0.1:3159/_next/static/media/6c596dfcddeca1e9-s.p.woff2",
+          "http://127.0.0.1:3159/_next/static/chunks/b536a0f1.ca09b8f6269b263b.js",
+          "http://127.0.0.1:3159/_next/static/chunks/b79b7286.28a0768ae43d98fa.js",
+          "http://127.0.0.1:3159/_next/static/chunks/6720.954a9ce1623a50c0.js",
+          "http://127.0.0.1:3159/_next/static/chunks/4807.a2ff46513ba80f77.js",
+          "http://127.0.0.1:3159/icon.svg",
+          "http://127.0.0.1:3159/atlas-lite/data/gaia-dr3-nearby-46000-v255.json",
+          "http://127.0.0.1:3159/_next/static/chunks/7260.433c56c7035ff91a.js",
+          "http://127.0.0.1:3159/_next/static/chunks/6939.a250a5b6cfd76d22.js",
+          "http://127.0.0.1:3159/_next/static/chunks/5399.d592855e3da16f07.js",
+          "http://127.0.0.1:3159/atlas-lite/textures/sky/orbit-atlas-v9-base-8k.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/mercury.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/venus.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/earth.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/mars.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/jupiter.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/saturn.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/uranus.jpg",
+          "http://127.0.0.1:3159/atlas-lite/textures/planets/neptune.jpg",
+          "http://127.0.0.1:3159/atlas-lite/data/asterisms-v255.json"
+        ]
+      },
+      "candidate": {
+        "scienceDesktop": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/candidate-v562-science-desktop-1440x900.png",
+            "bytes": 144726,
+            "sha256": "511385c1fa0fc0ce4770847a638fecd930449a11ea71b16977a31de7672bebde"
+          }
+        },
+        "cinematicDesktop": {
+          "width": 1440,
+          "height": 900,
+          "screenshot": {
+            "path": "output/playwright/v585/candidate-v562-cinematic-desktop-1440x900.png",
+            "bytes": 158409,
+            "sha256": "ed111b0eb0b96e8f74e5b052a4371ad8dca69b9001b970401f56127bc17bbde4"
+          }
+        },
+        "scienceMobile": {
+          "width": 390,
+          "height": 844,
+          "screenshot": {
+            "path": "output/playwright/v585/candidate-v562-science-mobile-390x844.png",
+            "bytes": 71877,
+            "sha256": "bc7864297691624f9e470021e26ef8c0c7eb38032b1a100e7141a4a06fdf4185"
+          }
+        },
+        "sciencePerformance": {
+          "medianFps": 240.1,
+          "frameP95Ms": 4.3,
+          "frameSamples": 480
+        },
+        "mobilePerformance": {
+          "medianFps": 240.1,
+          "frameP95Ms": 4.3,
+          "frameSamples": 240
+        },
+        "desktopOverflow": 0,
+        "mobileOverflow": 0,
+        "errors": {
+          "console": [],
+          "page": [],
+          "renderer": [],
+          "responses": []
+        },
+        "canvasCount": 0,
+        "sharedGeometry": true,
+        "cinematicWriteback": false
+      }
+    },
+    "qualification": {
+      "exactViewports": true,
+      "overviewFps": true,
+      "resourceReturned": true,
+      "soakResourcesReturned": true,
+      "heapStrictlyGrowing": false,
+      "zeroErrors": true,
+      "stableCandidateRequestCount": 0,
+      "stableV9BaseRequestCount": 2,
+      "singleCanvas": true,
+      "horizontalOverflowZero": true,
+      "scienceLinear": true,
+      "cinematicWriteback": false
+    },
+    "boundary": {
+      "formalProductPointer": "v263",
+      "stableLane": "stable-v263-legacy-v9",
+      "candidateLane": "candidate-v562",
+      "productionAliasSwitched": false
+    }
+  },
+  "visualRegression": {
+    "baselinePolicy": "cross-delivery-stable-binding-plus-resource-return-capture-no-automatic-baseline-replacement",
+    "similarityFloor": 0.94,
+    "comparisons": [
+      {
+        "id": "desktop-standalone-lite",
+        "width": 1440,
+        "height": 900,
+        "left": {
+          "path": "output/playwright/v585/standalone-stable-desktop-1440x900.png",
+          "sha256": "bbdc9063d95eb6d3ddd9d3ae25557dbb9027ad21e98b8a66d84fa493b82868c8"
+        },
+        "right": {
+          "path": "output/playwright/v585/lite-stable-desktop-1440x900.png",
+          "sha256": "b5c35b66977ee6abc2fc391e6b789e6ec2f9b2a543265834be0aa00cb327d44a"
+        },
+        "perceptualSimilarity": 0.9991171931735657
+      },
+      {
+        "id": "mobile-standalone-lite",
+        "width": 390,
+        "height": 844,
+        "left": {
+          "path": "output/playwright/v585/standalone-stable-mobile-390x844.png",
+          "sha256": "bcec357ca60e8bb504e02a2e4afdc9d33810b55edec7b415eaf236621fc4c739"
+        },
+        "right": {
+          "path": "output/playwright/v585/lite-stable-mobile-390x844.png",
+          "sha256": "eb26de561ef53accad003da3b254183b8e82f8da2fec05c8cdabcca328d50143"
+        },
+        "perceptualSimilarity": 0.997041802832244
+      },
+      {
+        "id": "desktop-resource-return",
+        "width": 1440,
+        "height": 900,
+        "left": {
+          "path": "output/playwright/v585/standalone-stable-desktop-1440x900.png",
+          "sha256": "bbdc9063d95eb6d3ddd9d3ae25557dbb9027ad21e98b8a66d84fa493b82868c8"
+        },
+        "right": {
+          "path": "output/playwright/v585/standalone-stable-desktop-return-1440x900.png",
+          "sha256": "3553f9e526df3467795cf2ad57e33b02420a6a687fed1a45f443d80637471f64"
+        },
+        "perceptualSimilarity": 0.9990706699346406
+      }
+    ],
+    "qualified": true
+  },
+  "qualification": {
+    "browserExecuted": true,
+    "browserQualified": true,
+    "visualRegressionQualified": true,
+    "scienceLinearNoBloomGradeGrain": true,
+    "cinematicScienceWriteback": false,
+    "requiredAsset404Count": 0,
+    "singleCanvas": true,
+    "horizontalOverflowZero": true,
+    "productionPromotionAllowed": false
+  },
+  "rawObservation": {
+    "path": "output/playwright/v585/browser-observation.json",
+    "bytes": 17461,
+    "sha256": "eaf2b69871a28e416a8df0b29f67891b31f040498e6cf2b376e728e45b8f0f2d"
+  },
+  "artifactSha256": "7db08992e60ce66c783f5eaf5e224c11723005d8dc5b412e97c91eddebaf250c"
+}

@@ -1,0 +1,56 @@
+{
+  "schema": "mainline-a-r74-code-change-v661",
+  "round": 74,
+  "date": "2026-10-13",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "baselineForExistingIntegration": ".next-mainline-a-r73-20261013v660r73web02/app/components/MainlineANebulaReviewPanelV610.tsx",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "concurrentRelativityWindowExcludedFromCounts": true
+  },
+  "method": "Count newly created nonempty noncomment source lines; exclude blank/comment-only lines, generated JSON, historical raw HTML, screenshots, docs, build outputs and receipts. Compare the existing integration component to the preserved R73 source copy, but credit zero of its raw diff to avoid overstating a shared dirty worktree.",
+  "productionAndToolFiles": [
+    { "path": "scripts/mainline-a-r74-alternative-contract-v661.mjs", "effectiveNewLines": 260, "role": "strict source allowlist and NASA HTML identity/credit/download parsing" },
+    { "path": "scripts/collect-mainline-a-r74-alternatives-v661.mjs", "effectiveNewLines": 255, "role": "real HTTPS raw collector, bounded transport and attempt ledger" },
+    { "path": "scripts/verify-mainline-a-r74-alternatives-v661.mjs", "effectiveNewLines": 309, "role": "offline raw-byte replay, negative-state verification and candidate overlay" },
+    { "path": "scripts/verify-mainline-a-r74-http-v661.mjs", "effectiveNewLines": 110, "role": "current-build HTTP route and hold verification" },
+    { "path": "scripts/capture-mainline-a-r74-browser-v661.mjs", "effectiveNewLines": 259, "role": "desktop and mobile-viewport browser, visual and short diagnostic capture" },
+    { "path": "scripts/audit-mainline-a-r74-evidence-v661.mjs", "effectiveNewLines": 203, "role": "layered evidence replay, snapshot digest and screenshot pin audit" },
+    { "path": "app/lib/mainlineANebulaR74AlternativesV661.ts", "effectiveNewLines": 280, "role": "fail-closed web candidate data model, filters and state labels" },
+    { "path": "app/components/MainlineANebulaR74AlternativePanelV661.tsx", "effectiveNewLines": 216, "role": "five-item official page arbitration and no-image review panel" }
+  ],
+  "substantiveTestFiles": [
+    { "path": "scripts/mainline-a-r74-alternatives-v661.test.mjs", "effectiveNewLines": 228, "role": "transport, real raw replay, fixture rejection, forged-state and layered-evidence negative tests" },
+    { "path": "app/lib/mainlineANebulaR74AlternativesV661.test.tsx", "effectiveNewLines": 95, "role": "web overlay, identity conflict, promotion rejection, filters and guarded rendering tests" }
+  ],
+  "existingIntegration": {
+    "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "comparison": "R73 preserved app source versus final R74 file via git diff --no-index --numstat inside next-web",
+    "rawAddedLines": 47,
+    "rawRemovedLines": 3,
+    "effectiveLinesCredited": 0,
+    "change": "mount R74 panel, synchronize selection with the right-hand detail, preserve R73 and earlier selection flows"
+  },
+  "totals": {
+    "newProductionAndToolEffectiveLines": 1892,
+    "newSubstantiveTestEffectiveLines": 323,
+    "newEffectiveLinesIncludingTests": 2215,
+    "existingIntegrationRawAddedLines": 47,
+    "existingIntegrationRawRemovedLines": 3,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "excluded": [
+    "app/data/mainlineANebulaR74AlternativesV661.generated.json",
+    "docs/release/v607/nebula-r74-v661/raw/*.html",
+    "docs/release/v607/mainline-a-r74-v661-*.json",
+    "docs/release/v607/mainline-a-r74-v661-*.png",
+    "docs/release/v607/mainline-a-r74-build-*.json",
+    "docs/release/v607/mainline-a-web-r67-r70-plan-20261012.md",
+    "all existing relativity and physics kernel files"
+  ]
+}

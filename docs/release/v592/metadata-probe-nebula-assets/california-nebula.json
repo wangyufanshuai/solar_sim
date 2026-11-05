@@ -1,0 +1,106 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:43.010Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "california-nebula",
+  "selection": {
+    "metadataProbe": "california-nebula",
+    "metadataReceiptSha256": "c747a2b980421512b17d4d34018b6382bc0f9cede66e34bc03e8f052a9011d39",
+    "nasaId": "PIA23650",
+    "title": "Spitzer California Nebula Mosaic",
+    "description": "This series of image taken by NASA's Spitzer Space Telescope on Jan. 25, 2020, shows part of the California Nebula, which is located about 1,000 light-years from Earth. This is the final mosaic taken by the mission before it was decommissioned on Jan. 30, 2020. Spitzer's infrared detectors reveal the presence of warm dust, similar to soot, mixed in with the gas. The dust absorbs visible and ultraviolet light from nearby stars and then re-emits the absorbed energy as infrared light. The image displays Spitzer's observations much the way that research astronomers would view them: From 2009 to 2020, Spitzer operated two detectors simultaneously that imaged adjacent areas of the sky. The detectors captured different wavelengths of infrared light (referred to by their physical wavelength): 3.6 micrometers (shown in cyan) and 4.5 micrometers (shown in red). Different wavelengths of light can r",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA23650/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA23650/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA23650/collection.json",
+    "status": 200,
+    "responseBytes": 330,
+    "responseSha256": "aa96bda3a48abb7191ef1e49261f81fd9d47d960effef868a0b824810da4d381"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23650~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23650/PIA23650~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23650~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23650/PIA23650~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23650~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23650/PIA23650~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23650~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23650/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23650/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 5,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 5,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "39841a0cfd9b5fe4b885775ddf1f6fb5d86e0b33515112ff13110f3369b417bc"
+}

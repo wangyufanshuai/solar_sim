@@ -1,0 +1,40 @@
+{
+  "schema": "mainline-a2-visual-screenshots-v1",
+  "capturedAt": "2026-09-13T03:40:12Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "viewport": { "width": 1280, "height": 720 },
+  "mode": { "scaleBand": "stellar", "qualityTier": "balanced", "presentationLodTier": "mid" },
+  "runtimeMarkers": {
+    "figureSegmentCount": 401,
+    "boundarySegmentCount": 111,
+    "asterismSegmentCount": 118,
+    "asterismReady": true,
+    "boundaryVisible": true,
+    "asterismVisible": true,
+    "boundaryOpacity": 0.02142,
+    "asterismOpacity": 0.02448,
+    "asterismSource": "asterisms-v255.json"
+  },
+  "screenshots": [
+    { "target": "constellation:Ori", "path": "docs/release/v607/screenshots/mainline-a2-rb2-Ori.png", "visualReview": "constellation passport, IAU/J2000 tags, figure and stars readable" },
+    { "target": "constellation:UMa", "path": "docs/release/v607/screenshots/mainline-a2-rb2-UMa.png", "visualReview": "Ursa Major figure, Alioth anchor and passport readable" },
+    { "target": "constellation:Cas", "path": "docs/release/v607/screenshots/mainline-a2-rb2-Cas.png", "visualReview": "Cassiopeia figure, Schedar anchor and passport readable" },
+    { "target": "constellation:Sco", "path": "docs/release/v607/screenshots/mainline-a2-rb2-Sco.png", "visualReview": "Scorpius figure, Antares anchor and passport readable" }
+  ],
+  "mobileScreenshots": [
+    { "target": "scale:solar", "viewport": "390x844", "path": "docs/release/v607/screenshots/mainline-a2-rb2-mobile-solar.png", "visualReview": "solar-scale controls and orbit field fit viewport without horizontal overflow" },
+    { "target": "scale:stellar", "viewport": "390x844", "path": "docs/release/v607/screenshots/mainline-a2-rb2-mobile-stellar.png", "visualReview": "local-stellar scale controls and orbit field fit viewport without horizontal overflow" },
+    { "target": "scale:galactic", "viewport": "390x844", "path": "docs/release/v607/screenshots/mainline-a2-rb2-mobile-galactic.png", "visualReview": "galactic scale controls, Milky Way field and workbench fit viewport without horizontal overflow" }
+  ],
+  "status": "current-rb2-desktop-and-mobile-visual-capture-passed-quality-matrix-bound-separately",
+  "boundaries": [
+    "Screenshots prove current desktop presentation readability only; they do not prove mobile visual acceptance or performance.",
+    "Geometry and navigation remain presentation-only and do not mutate EIH, Newton N-body, 2PN/Lense-Thirring or Kerr kernels."
+  ]
+}

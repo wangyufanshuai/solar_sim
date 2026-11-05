@@ -1,0 +1,106 @@
+{
+  "version": "v589-bennu-lod-receipt-v1",
+  "body": "bennu",
+  "source": {
+    "url": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005069/g_00880mm_alt_ptm_0000n00000_v020.glb",
+    "path": "public/vendor/celestial-art-v589/sources/bennu-v20.glb",
+    "bytes": 60591548,
+    "sha256": "bd580d0d01ee7e93b25e0262b5c986cacb21ff240a8600158fa570c7d085b95f",
+    "license": "NASA-public-domain",
+    "licenseUrl": "https://svs.gsfc.nasa.gov/5069/"
+  },
+  "pipeline": {
+    "import": "trimesh",
+    "importVersion": "4.12.2",
+    "transform": "glTF-Transform",
+    "transformVersion": "4.4.2",
+    "operations": [
+      "weld",
+      "simplify",
+      "meshopt",
+      "quantize"
+    ],
+    "deterministic": true,
+    "stablePivot": "bounds-midpoint",
+    "generatedNormals": true
+  },
+  "lods": [
+    {
+      "path": "public/models/candidate-v589/bennu/bennu-lod0.glb",
+      "bytes": 875748,
+      "sha256": "b18127153437a6ea8ed9c29fe0af7341bb464efe08870f12b63778a0763f2083",
+      "lod": 0,
+      "vertexCount": 100985,
+      "triangleCount": 201962,
+      "normals": true,
+      "meshopt": true,
+      "bounds": [
+        [
+          -1,
+          -0.881344035157323,
+          -0.9625232703634754
+        ],
+        [
+          1,
+          0.881344035157323,
+          0.9625232703634754
+        ]
+      ],
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "source-frame-y-up"
+    },
+    {
+      "path": "public/models/candidate-v589/bennu/bennu-lod1.glb",
+      "bytes": 230012,
+      "sha256": "b9991bd5bac057a79d8f860b70d9120444261a4f454f859635b2b98c101c1ebb",
+      "lod": 1,
+      "vertexCount": 25206,
+      "triangleCount": 50416,
+      "normals": true,
+      "meshopt": true,
+      "bounds": [
+        [
+          -1,
+          -0.8814661091952269,
+          -0.9627674184392834
+        ],
+        [
+          1,
+          0.8814661091952269,
+          0.9627674184392834
+        ]
+      ],
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "source-frame-y-up"
+    },
+    {
+      "path": "public/models/candidate-v589/bennu/bennu-lod2.glb",
+      "bytes": 48904,
+      "sha256": "5b494905c23d3fd905025679035b22597b7f4442c6bcc7bc7ad4f19cdae2714c",
+      "lod": 2,
+      "vertexCount": 5017,
+      "triangleCount": 10028,
+      "normals": true,
+      "meshopt": true,
+      "bounds": [
+        [
+          -1,
+          -0.8819544053468429,
+          -0.9637440107425154
+        ],
+        [
+          1,
+          0.8819544053468429,
+          0.9637440107425154
+        ]
+      ],
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "source-frame-y-up"
+    }
+  ],
+  "presentationOnly": true,
+  "receiptSha256": "1329e20befa500150b8eadbb81577c69d4b2c7c42a3f849ecad1fe9e65375195"
+}

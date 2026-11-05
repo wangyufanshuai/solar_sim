@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:48.821Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "47-tucanae",
+  "category": "cluster",
+  "selection": {
+    "metadataProbeFile": "47-tucanae.json",
+    "metadataReceiptSha256": "541d3bd985a5c0564e506a296108fad55022dfd24ab34eeede3bdc00c5783fd7",
+    "nasaId": "GSFC_20171208_Archive_e000161",
+    "title": "Hubble Takes Flight with the Toucan and the Cluster",
+    "description": "It may be famous for hosting spectacular sights such as the Tucana Dwarf Galaxy and 47 Tucanae (heic1510), the second brightest globular cluster in the night sky, but the southern constellation of Tucana (The Toucan) also possesses a variety of unsung cosmic beauties. One such beauty is NGC 299, an open star cluster located within the Small Magellanic Cloud just under 200,000 light-years away. Open clusters such as this are collections of stars weakly bound by the shackles of gravity, all of which formed from the same massive molecular cloud of gas and dust. Because of this, all the stars have the same age and composition, but vary in their mass because they formed at different positions within the cloud. This unique property not only ensures a spectacular sight when viewed through a sophisticated instrument attached to a telescope such as Hubble’s Advanced Camera for Surveys, but gives astronomers a cosmic laboratory in which to study the formation and evolution of stars — a process that is thought to depend strongly on a star’s mass. Credit: ESA/Hubble &amp; NASA <b><a href=\"http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html\" rel=\"nofollow\">NASA image use pol",
+    "center": "GSFC",
+    "identityTerms": [
+      "47 tuc"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/collection.json",
+    "status": 200,
+    "responseBytes": 409,
+    "responseSha256": "3acf0508ce48fd247bee5209a10842df8dae14fbd75b12085153f1daf54abd9e"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000161~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000161~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000161~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "71bc669f7124fbddc81340896660086697f615812e21e652a3cd36afd9d68f4c"
+}

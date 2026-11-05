@@ -1,0 +1,1691 @@
+{
+  "version": "v595-release-export-and-closure-dossier-v1",
+  "generatedAt": "2026-08-28T00:00:00.000Z",
+  "status": "passed-current-v595-stellar-relativity-full-lite-exact-24x2-six-family-lifecycle-soak-real-desktop-and-human-signoff-approved",
+  "candidate": {
+    "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+    "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+    "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "parentV594": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "releaseDossierSha256": "a70645f4a124b6fb6d1eb3a061eb15cf66618154c1a2884acc1730cb41bd3865",
+    "resealReceiptSha256": "406bb72a58aade66c877c75f4bea220e8b42181217efee1e4d9a1d20b46e4664",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "immutable": true,
+    "relationship": "sealed-parent-not-current-build"
+  },
+  "governance": {
+    "additiveOnly": true,
+    "parentV594Immutable": true,
+    "priorV594HumanDecisionInherited": false,
+    "currentV595HumanDecisionRequiredAndBound": true,
+    "formalProductPointer": "v263"
+  },
+  "stellar": {
+    "rosterCount": 24,
+    "presentationAdmittedCount": 24,
+    "measurementAdmittedCount": 0,
+    "scienceCinematicTargetCount": 24,
+    "scienceCinematicModeCount": 2,
+    "scienceCinematicFrameCount": 48,
+    "presentationOnly": true,
+    "scientificAuthorityGranted": false
+  },
+  "productSceneFamilies": {
+    "familyCount": 6,
+    "orderedFamilies": [
+      "orbit-atlas-overview",
+      "object-inspect",
+      "stellar-exoplanet-systems",
+      "mission-launch",
+      "relativity-lab",
+      "scene-lab"
+    ],
+    "sharedMainCanvas": true,
+    "webglCanvasCount": 1,
+    "independentWebglSceneCountClaim": false
+  },
+  "relativity": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "timelikeKerr": {
+      "admissionSha256": "52123a1ee9f0d08526176964815b9679c578590bdced6cec4891bc4cb3e61e0d",
+      "receiptSha256": "98777b240f911dbcf3c21b4a6d067d42a03f31fd8cf2fce9edd2b596e219656a",
+      "fixtureCount": 4,
+      "analyticAnchorCount": 3,
+      "referenceCandidateOnly": true,
+      "formalEvidence": false,
+      "promotion": "none"
+    }
+  },
+  "fullBuild": {
+    "path": "dist/release/atlas-v595-standalone-build-resource.json",
+    "bytes": 1543,
+    "sha256": "8c064d5cdc3e08b7966ac19964b42f3275cfed20226328736037a73604043487"
+  },
+  "liteBuild": {
+    "path": "dist/release/atlas-v595-lite-build-resource.json",
+    "bytes": 1539,
+    "sha256": "7467131463c0f6bb1f99a095e79810fa5e4e6cd8cb824a5e558bf46f66736c3a"
+  },
+  "lifecycle": {
+    "receiptSha256": "4fc501a1d755ba69d19d631d5d769ef31d2f19d0050df522a186c354455d7b61",
+    "evidence": {
+      "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lifecycle/batch.json",
+      "bytes": 70510,
+      "sha256": "1d6a3df2468ed023c5f120199ead9b1e216438678ceb505b572cb2c0e5fef348"
+    }
+  },
+  "soak": {
+    "receiptSha256": "c3ea5ec3c8d79ef351a5453a5216ea76c42ff5497d8ae2269468a8664c7cef59",
+    "evidence": {
+      "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-soak/batch.json",
+      "bytes": 410091,
+      "sha256": "f47e7f1060a1803019b3c3e81a229aa066d93eb69d68722a7e390fa54aaceb98"
+    },
+    "heapQualification": {
+      "telemetry": "chromium-cdp-runtime-getHeapUsage",
+      "finalHeapWithinAllowance": true,
+      "tailOlsWithinLimit": true,
+      "sustainedGrowth": false,
+      "noSyntheticSubstitution": true
+    }
+  },
+  "liteBrowser": {
+    "receiptSha256": "453dec2b1ac857a13bd3f2d4e872e80cbc06b7f6b403dbb1c3b4fe539a505147",
+    "evidence": {
+      "stage": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/stage-receipt.json",
+        "bytes": 2580,
+        "sha256": "de02d31c568d7c178e647da3e12e658b6fa867dde72fdaf344d8e51e5f4b0301"
+      },
+      "batch": {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/batch.json",
+        "bytes": 474519,
+        "sha256": "bd893de6b7a2a3d4a6c897b0b9fba9cc705b149139c526a83b6deceb646ee465"
+      }
+    }
+  },
+  "browserGate": {
+    "receiptSha256": "393897f003702cc3b71e6624d9d98e925b6218558e7fd5a36410bfb9909bb727",
+    "exactPairCount": 8,
+    "stellarFrameCount": 48,
+    "productSceneFamilyCount": 6,
+    "realDesktopEligible": true,
+    "physicalMobileStatus": "not-present-not-faked"
+  },
+  "humanReview": {
+    "receiptSha256": "93690f136fece347846617c303fafebb581f6908b051ede12f581e0bbb35753b",
+    "decisionSha256": "d3731b1177b4ca1d6b5617bd98940d5b638f1e2a2c87ea274452ed59f6eadb03",
+    "challengeSha256": "3b6c2912e1106647a4563c5a07aa9924a62158e6ed1195d14f8eabb66dd4ca0d",
+    "priorV594HumanDecisionInherited": false
+  },
+  "qualification": {
+    "version": "v595-stellar-relativity-qualification-layer-v1",
+    "status": "qualified-additive-v595-stellar-relativity-candidate",
+    "candidate": {
+      "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+      "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+      "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+      "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+      "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+      "formalProductPointer": "v263",
+      "deliveryTier": "standalone-full"
+    },
+    "sourceAndCandidateIdentityMutatedByQualification": false,
+    "productionPromotionAllowed": false
+  },
+  "evidenceGraph": {
+    "recursivelyReopened": true,
+    "recordCount": 301,
+    "totalBytes": 179038607,
+    "records": [
+      {
+        "path": "app/components/AtlasAppShell.tsx",
+        "bytes": 8120,
+        "sha256": "7d7e386794077f3c497c91a8b4c23ae6a9e97aaa4277a8afb4607600952a8ba7"
+      },
+      {
+        "path": "app/components/AtlasCanvasSimulationContract.ts",
+        "bytes": 14376,
+        "sha256": "f214d745537abce4969a69c8bca16ced44b925db3c3863a7dfd6b94c6b6df827"
+      },
+      {
+        "path": "app/components/AtlasRuntimeSceneLayer.tsx",
+        "bytes": 8647,
+        "sha256": "c94c50ce29d87e8a02943ded1a2b9434d2c4f374084d53bf63fe80718fca58c7"
+      },
+      {
+        "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+        "bytes": 44122,
+        "sha256": "b1991573eb2fca3428c62e29fa08a06f37adbc41e7258f5c6ececec334a1f8e7"
+      },
+      {
+        "path": "app/components/AtlasSceneCameraBridges.tsx",
+        "bytes": 14207,
+        "sha256": "2e8d947aef7d6bcdf3e1c31fbb7359408bd7a6ac3656aed252b8870c837a609c"
+      },
+      {
+        "path": "app/components/AtlasSceneFocusCameraBridge.tsx",
+        "bytes": 28838,
+        "sha256": "f5a20e9ec02e1bd389f2dd2b52e2aa8f537e94c88b01a9a5bcb55eb9e99ae3a5"
+      },
+      {
+        "path": "app/components/AtlasUniverseSceneRuntime.tsx",
+        "bytes": 32002,
+        "sha256": "af77ab32ae3abe2d3196a943506d366e50e6472559a52621bfa1e61aeb8c6211"
+      },
+      {
+        "path": "app/components/BodyDetailSidebar.tsx",
+        "bytes": 16269,
+        "sha256": "deb01654a0fe55958610af3464c9dec43ac1cfaf2cc8f9dae5f9cb0d4539477d"
+      },
+      {
+        "path": "app/components/PostV593RelativityWorkbenchPanel.test.tsx",
+        "bytes": 2240,
+        "sha256": "1718f65a2d22a6a72beaa70ad4e738439b611ca81c7d3722e599a5f8c3970676"
+      },
+      {
+        "path": "app/components/PostV593RelativityWorkbenchPanel.tsx",
+        "bytes": 12036,
+        "sha256": "3d2fddc704e76d5a5dbe5a57730c75f0e8bfb1aea4cac475469af2f344481a06"
+      },
+      {
+        "path": "app/components/PostV595RelativityExactPresentationNode.tsx",
+        "bytes": 10735,
+        "sha256": "cd0e89a3bcf1afff467317913dfa8416d3e81e6c98427e2f219cb782fd71125c"
+      },
+      {
+        "path": "app/components/SelectedSkyTargetProxy.test.tsx",
+        "bytes": 7639,
+        "sha256": "dddfcacadd926392884618ce6b961327cede65cba1bd9024d3bed2003ba9cc0e"
+      },
+      {
+        "path": "app/components/SelectedSkyTargetProxy.tsx",
+        "bytes": 18093,
+        "sha256": "56e3969670b96e5b7bf7bfcccba1ebe8e7908a6cef7e18804d79085d43a2ed01"
+      },
+      {
+        "path": "app/components/SolarSystemBodies.tsx",
+        "bytes": 25728,
+        "sha256": "f3c80eebfd7f01ca48ca50247a80fb4b74ff8d5453da90ed6d8cd4d19af841e7"
+      },
+      {
+        "path": "app/components/SpacecraftModel.tsx",
+        "bytes": 2774,
+        "sha256": "13f26135a1778873a7617a3ba38275cde3c7e0fc8e57b7776773128f918fefa2"
+      },
+      {
+        "path": "app/components/UniverseCanvas.tsx",
+        "bytes": 25876,
+        "sha256": "bd39203b79fac83546c479d42f98375c4f4404e071d7f093d06aad037bb2d1bc"
+      },
+      {
+        "path": "app/components/V594CdpSoakSurface.tsx",
+        "bytes": 18144,
+        "sha256": "016c1ca5d6f418abe18492ba8287a4b7d48fb31452212f53ac9b4d561d25793e"
+      },
+      {
+        "path": "app/components/V595ExactAbDomSurface.tsx",
+        "bytes": 7100,
+        "sha256": "4481e60080b44d9e9a7bc52d3d84cf4e68fc198d9d9283d55c0dd5bdd28617cd"
+      },
+      {
+        "path": "app/components/V595ExactAbR3fConsumer.tsx",
+        "bytes": 14802,
+        "sha256": "7458ea89dc51461248927b0cba2b3965b7cec0021566a815585c368e9f3de3ed"
+      },
+      {
+        "path": "app/lib/atlasProductSceneFamilyContractV595.test.ts",
+        "bytes": 3868,
+        "sha256": "a26847c59168efe8dbb30f043e600641ca64cffaeeba0359835480ce44d9f282"
+      },
+      {
+        "path": "app/lib/atlasProductSceneFamilyContractV595.ts",
+        "bytes": 6041,
+        "sha256": "004938066c4f1f4884700cfad99236d278d602669fd44ef877a0dd802b372522"
+      },
+      {
+        "path": "app/lib/atlasV595BuildIdentity.test.ts",
+        "bytes": 2131,
+        "sha256": "fd45537ce3f9e75e69beaf81f25d7e22a78459ec028eb570aff033ee0198b069"
+      },
+      {
+        "path": "app/lib/atlasV595BuildIdentity.ts",
+        "bytes": 4520,
+        "sha256": "405c79f73f0b7b295b459e1260fbaea51f2ff02e2b741990132586d0e1540ea9"
+      },
+      {
+        "path": "app/lib/postV594SameRealmLifecycle.test.ts",
+        "bytes": 23074,
+        "sha256": "10832f4f3c60725149e358837b39caafe894ffc3901f56984c7df0e3ba749634"
+      },
+      {
+        "path": "app/lib/timelikeKerrReferenceV595.test.ts",
+        "bytes": 4034,
+        "sha256": "d7e0fdd89f32332c06983fcc18096fce65f7f4ec50cf0dfff3f1a0127f797125"
+      },
+      {
+        "path": "app/lib/timelikeKerrReferenceV595.ts",
+        "bytes": 5686,
+        "sha256": "970fa376aee6fbfd0f60d409791eb96e7b5372a9991cbc9b41ac12a04f0ec958"
+      },
+      {
+        "path": "app/lib/useOptionalTexture.test.ts",
+        "bytes": 19348,
+        "sha256": "f2c01059ca3033ff7756cbbedc17d07158be67e02fdc4daef5fe70f96f120dd2"
+      },
+      {
+        "path": "app/lib/useOptionalTexture.ts",
+        "bytes": 24851,
+        "sha256": "03891ee5fb45e6c519fe83612cb87dbb50740fdf2cdf8e65a8ecd51b03950555"
+      },
+      {
+        "path": "app/lib/v594CdpSoakSurface.test.ts",
+        "bytes": 8515,
+        "sha256": "95f90917f220c73cd03f10bdca198b1a88db488077bcd2c82ec8904d1388847c"
+      },
+      {
+        "path": "app/lib/v595ExactAbContract.test.ts",
+        "bytes": 10253,
+        "sha256": "37162fadda7c71c7e3f9302bee11491890295e5ca686425c3231e97ae2576db3"
+      },
+      {
+        "path": "app/lib/v595ExactAbContract.ts",
+        "bytes": 21508,
+        "sha256": "8b97644c80ce240bfe4e42147e8b55260149f2f3b67c8a3cee8d59310c9e5d72"
+      },
+      {
+        "path": "app/lib/v595ExactAbSelection.ts",
+        "bytes": 1538,
+        "sha256": "827d661bb3a66b16b3ced2027892cbfcdd47c2b69cf623c0bafbb96772b92795"
+      },
+      {
+        "path": "data/openngc-v260/openngc-v260.json.gz",
+        "bytes": 379233,
+        "sha256": "cd208d02ab7ad585d79d005a50c322d38d61d2db4f4b56c63f4a83d5e2e40a10"
+      },
+      {
+        "path": "dist/gaia-science-v8/gaia-science-v8.sqlite",
+        "bytes": 78626816,
+        "sha256": "ad899ccac3e95ef7702b071694da257ea41af963155c8e686c6daed4c2ba795a"
+      },
+      {
+        "path": "dist/local-candidate/cosmicflows4-v260/cosmicflows4-v260.csv.gz",
+        "bytes": 2531909,
+        "sha256": "774e11c0b5385247d19c47823c4832e8c372f90b2a853916ae2976e803a07e16"
+      },
+      {
+        "path": "dist/release/atlas-v595-lite-build-resource.json",
+        "bytes": 1539,
+        "sha256": "7467131463c0f6bb1f99a095e79810fa5e4e6cd8cb824a5e558bf46f66736c3a"
+      },
+      {
+        "path": "dist/release/atlas-v595-standalone-build-resource.json",
+        "bytes": 1543,
+        "sha256": "8c064d5cdc3e08b7966ac19964b42f3275cfed20226328736037a73604043487"
+      },
+      {
+        "path": "dist/release/orbit-atlas-current-evidence-v233.json",
+        "bytes": 7814,
+        "sha256": "db80197791bc5a6ecbca26ddeba0cd5088217d5d5fcabcd8711a1b06f887d660"
+      },
+      {
+        "path": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+        "bytes": 581,
+        "sha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b"
+      },
+      {
+        "path": "dist/release/orbit-atlas-v263-local-validation-evidence.json",
+        "bytes": 15402,
+        "sha256": "00d2c6b1f55abb4e7be110d9f0f81ab35f86c1e6beb0fe7291a5e984da742757"
+      },
+      {
+        "path": "dist/science/browser-fresh-v262-corrected-attempt/error-context.md",
+        "bytes": 10822,
+        "sha256": "33cc753c766094a1294e5934cf7c436da9539e02e653eaddc7067bbf4b01de46"
+      },
+      {
+        "path": "dist/science/browser-fresh-v262-corrected-attempt/last-run.json",
+        "bytes": 96,
+        "sha256": "e0470b3e70b365d100ea7ac7ebf16ce35dcc2d372dcb476d34802353bf32a875"
+      },
+      {
+        "path": "dist/science/browser-fresh-v262-corrected-attempt/test-failed-1.png",
+        "bytes": 298701,
+        "sha256": "e8429b3ad6613c2d3734844d4d2d0ded84713a7919acd956c21abca86ad7ecbd"
+      },
+      {
+        "path": "docs/release/post-v593/timelike-kerr-reference-receipt-v595.json",
+        "bytes": 2666,
+        "sha256": "c45153d17368003cf3394974b4762ce97e32b05933b4d62fce90ff1d505b6579"
+      },
+      {
+        "path": "docs/release/v595/capability-pointer-v595.json",
+        "bytes": 1497,
+        "sha256": "a1a508a214051b85e38c83ed5320efeac1d234664a6ebb1a81f69a46c613a5fd"
+      },
+      {
+        "path": "docs/release/v595/final-sealed-browser-gate-v595.json",
+        "bytes": 10333,
+        "sha256": "6024c9473651f0f007eb49ee8a22aa48fa484abcaece287c34c75af44337e02f"
+      },
+      {
+        "path": "docs/release/v595/human-visual-signoff-v595.json",
+        "bytes": 8868,
+        "sha256": "b2f18bf59e707f82117feac5769c460e7e596531c32fcab9e20b36c5cda5b732"
+      },
+      {
+        "path": "docs/release/v595/lite-browser-matrix-v595.json",
+        "bytes": 2047,
+        "sha256": "71a51d79526b04a2bf28da24406debc9eda4875160fc77f71444d982dd716073"
+      },
+      {
+        "path": "docs/release/v595/resource-lifecycle-v595.json",
+        "bytes": 2319,
+        "sha256": "590b9e9e6c97232405be07380936941f0ed9f94815378aa1427f5163f9205f61"
+      },
+      {
+        "path": "docs/release/v595/soak-v595.json",
+        "bytes": 4127,
+        "sha256": "b1f847d1c55cf2aeb3421854ab453fa69e29733de2256343130ee43fa6492ec0"
+      },
+      {
+        "path": "docs/release/v595/source-manifest-v595.json",
+        "bytes": 16511,
+        "sha256": "e44d4d0b36b021f896b1daafce71c930bd829c65ec80e6307d0e211667991909"
+      },
+      {
+        "path": "next.config.mjs",
+        "bytes": 7522,
+        "sha256": "51ded0a990ff76ce897adb64e0e4c65f7926ebfe50bce515ffe3e26345e48b20"
+      },
+      {
+        "path": "package.json",
+        "bytes": 19717,
+        "sha256": "5939f0a5dba1beb166eddab93bfbda7eb660824ea100d51b43f22c7ca10c051a"
+      },
+      {
+        "path": "public/data/catalog-lite-v7/astrophysical-parameters.json.gz",
+        "bytes": 5053786,
+        "sha256": "74ca668d2a0f1613f45cbeff0fc0293630df0455fd7ce41b92f79c62db380001"
+      },
+      {
+        "path": "public/data/catalog-lite-v7/hr-statistics.json",
+        "bytes": 7202,
+        "sha256": "217019c747fcc53722c4d48e42754d671636e15485e81633f4dfdbf545553387"
+      },
+      {
+        "path": "public/data/post-v593-stellar-relativity/timelike-kerr-reference-v595.json",
+        "bytes": 14032,
+        "sha256": "519fad3fa98bbbdffc51f0e65d7364ee14db98daf60a4d4fd0a803e92417b56d"
+      },
+      {
+        "path": "public/data/stellar-relativity-v595/manifest.json",
+        "bytes": 7898,
+        "sha256": "0f7bfb299331bde5e6004c4d16ab3fa8911da8cdfea0fe8c0b9832051d99595b"
+      },
+      {
+        "path": "scripts/build-atlas-profile.mjs",
+        "bytes": 22948,
+        "sha256": "c1df629cd57e43b6b2f2513daef65d8f8fa1d634fd8b24e9f8ff38931772fb5a"
+      },
+      {
+        "path": "scripts/build-atlas-v595-profile.mjs",
+        "bytes": 12545,
+        "sha256": "37723a4a3d5135d3784f7566d6e0e7acef7cd7c288d9e1a7acacb267e47c44b1"
+      },
+      {
+        "path": "scripts/build-atlas-v595-profile.test.mjs",
+        "bytes": 2940,
+        "sha256": "f72307c7d6ea476e0e882979177b94c6478e6b2debc90a187baef8cdf6dd4011"
+      },
+      {
+        "path": "scripts/build-catalog-v7.py",
+        "bytes": 12610,
+        "sha256": "c5e6e64101072dccaaeffe04a3814f9e791c95c39cd9615938f918d25651c8f2"
+      },
+      {
+        "path": "scripts/build-v595-closure-dossier.mjs",
+        "bytes": 31337,
+        "sha256": "2cfc0e20f4fe849c26fecffe7328f93d532cd0c1f21d0af53d0231c4b599c318"
+      },
+      {
+        "path": "scripts/build-v595-closure-dossier.test.mjs",
+        "bytes": 17983,
+        "sha256": "7df68b0e57740959df363baae2cbc55abe34d73273284d33973b3feb683fbd9c"
+      },
+      {
+        "path": "scripts/build-v595-current-lite-matrix.mjs",
+        "bytes": 17005,
+        "sha256": "302663f3036b082c62082f437ecda340764d329b505bcf09d955c16e22f05b8b"
+      },
+      {
+        "path": "scripts/build-v595-current-lite-matrix.test.mjs",
+        "bytes": 10413,
+        "sha256": "67233e879de596c4d937d65ece7ae190f2d4d1143a303eca583ce0662284e459"
+      },
+      {
+        "path": "scripts/build-v595-current-source-lifecycle.mjs",
+        "bytes": 16906,
+        "sha256": "f4d2fd84daddda38999026b148b1d5469dbdd740424453b8c9e334684ebbe7cd"
+      },
+      {
+        "path": "scripts/build-v595-current-source-lifecycle.test.mjs",
+        "bytes": 9235,
+        "sha256": "4b92c13dc7b8e9862951b2ae2f15893844d255c4ba6917d5cbf4f381abbd856e"
+      },
+      {
+        "path": "scripts/build-v595-current-source-soak.mjs",
+        "bytes": 28883,
+        "sha256": "98f47c3fe9259faa345cd4b0727ca996c9988025eb9af3880d9cb1ccb7d71c9c"
+      },
+      {
+        "path": "scripts/build-v595-current-source-soak.test.mjs",
+        "bytes": 14411,
+        "sha256": "6699d4047b83fd86362611cf3b41977d982a6ef5aa48bffa96f6c7901369a352"
+      },
+      {
+        "path": "scripts/build-v595-final-sealed-browser-gate.mjs",
+        "bytes": 33093,
+        "sha256": "1d4d1714ac172da193f36eac22bbe1641dc76780feda1edd4b6db5f9f3077136"
+      },
+      {
+        "path": "scripts/build-v595-final-sealed-browser-gate.test.mjs",
+        "bytes": 14566,
+        "sha256": "3a8c0f0f9b508d88a1f1fc7598d7607c5caf18923f7de50f5d18e652e1ef99ce"
+      },
+      {
+        "path": "scripts/build-v595-human-visual-signoff.mjs",
+        "bytes": 23205,
+        "sha256": "736fc9361999521524668aa6e7eb5cd830f6cb2e53ed7cb387fbc387a4520004"
+      },
+      {
+        "path": "scripts/build-v595-human-visual-signoff.test.mjs",
+        "bytes": 15187,
+        "sha256": "eec0d6a194d68507768e9f8fd508bf497c97e27e4858c06103245f80e9ff5be1"
+      },
+      {
+        "path": "scripts/build-v595-source-manifest.mjs",
+        "bytes": 11456,
+        "sha256": "02c3fe5c31d528005025c26256863a9f7ee124203be319211b82a33df42a0c82"
+      },
+      {
+        "path": "scripts/build-v595-source-manifest.test.mjs",
+        "bytes": 3160,
+        "sha256": "a575e06516073e12663f51fee54b0b8eb0773b04973310902d881872f6fa6783"
+      },
+      {
+        "path": "scripts/build-v595-stellar-relativity-candidate.mjs",
+        "bytes": 21258,
+        "sha256": "48390afb7256ac188495ac2b7b2d21f6a29ae586d7ab3ec4be2456760a02a9b3"
+      },
+      {
+        "path": "scripts/build-v595-stellar-relativity-candidate.test.mjs",
+        "bytes": 4079,
+        "sha256": "5624ccdb5721a7726455b58e21b0242c82a9e437f13529f9a3cd748f7245bb12"
+      },
+      {
+        "path": "scripts/build-v595-timelike-kerr-admission.mjs",
+        "bytes": 23588,
+        "sha256": "406e235a7d62ed530766677dc684a5a571bc220fbf2cb1a830079f9aeb66cd20"
+      },
+      {
+        "path": "scripts/seal-v595-stellar-relativity-candidate.mjs",
+        "bytes": 16955,
+        "sha256": "5b9713d2e34446bd1e7ebf79e24bac5926d4a1416ea5d3fa0651f56b5264ab42"
+      },
+      {
+        "path": "scripts/seal-v595-stellar-relativity-candidate.test.mjs",
+        "bytes": 5434,
+        "sha256": "e0a19a8cc40ca134cb2e2b24f4a354299215498f5a78e985d1ab50ee8d684491"
+      },
+      {
+        "path": "scripts/v595-formal-contract.mjs",
+        "bytes": 23477,
+        "sha256": "5f03de8a89944c43d95f5d093b0942c5ccdfbe1e371d5cabafa5960175cbf904"
+      },
+      {
+        "path": "scripts/v595-formal-contract.test.mjs",
+        "bytes": 10833,
+        "sha256": "a0042644c901d00f0916837c74b5244b850e554b2c79be5c8383f3d114ba25fe"
+      },
+      {
+        "path": "scripts/v595-source-paths.mjs",
+        "bytes": 5224,
+        "sha256": "272f2f2d2fa71972059278bfabdffea6e64d4c5b8ceb02f5c990f5694347f0e2"
+      },
+      {
+        "path": "scripts/v595-source-paths.test.mjs",
+        "bytes": 2099,
+        "sha256": "377f9c0feb64aa89f7b8393d5fc5c5093f58d6f762c7d1e98655e7970c3afad1"
+      },
+      {
+        "path": "scripts/verify-v595-stellar-relativity-candidate.mjs",
+        "bytes": 22140,
+        "sha256": "630d3e7e1fa6ac8e3a003d25329e0a4f7684db850d833be07ed3be0cbc596bbd"
+      },
+      {
+        "path": "scripts/verify-v595-stellar-relativity-candidate.test.mjs",
+        "bytes": 10848,
+        "sha256": "7d71c4b1c52a99c21194b6e10aa22c685f4d4a0222e7b0a7ac86489f7703d326"
+      },
+      {
+        "path": "timelike_kerr_io_v595.py",
+        "bytes": 22568,
+        "sha256": "f1e9060b9cd55d26e085808bf15ffb5169e51a922315e695ab7819d6eb7db46a"
+      },
+      {
+        "path": "timelike_kerr_v595.py",
+        "bytes": 64156,
+        "sha256": "939f3a03e2b768fdeaa2a8bd707188a95ef7103e9c18474c254c59ac4cbda94e"
+      },
+      {
+        "path": "timelike-kerr-invariants-v595.fits",
+        "bytes": 11520,
+        "sha256": "f81294756eb49a5050f4e4ea5aba6b0d42ba00120b455ab35030c8ed05028aa8"
+      },
+      {
+        "path": "timelike-kerr-summary-v595.json",
+        "bytes": 29325,
+        "sha256": "1edfe5f0a53e0bc5e0de4f675abc4861a49ccf1b0ef443c94a5868a4b4526329"
+      },
+      {
+        "path": "timelike-kerr-trajectories-v595.h5",
+        "bytes": 292966,
+        "sha256": "140e539035923a8b27ddda6e69aa4120323bb63c5b31d6c8cdf5622280a509f7"
+      },
+      {
+        "path": "tmp/audit-v595-browser-evidence.mjs",
+        "bytes": 44937,
+        "sha256": "d7e0aff8fd84e068b13aed40ed1cfe7bd831b14b1eca18f7a13e10d4c7273b14"
+      },
+      {
+        "path": "tmp/audit-v595-browser-evidence.test.mjs",
+        "bytes": 50403,
+        "sha256": "bb3ff45a159afcfc5c1444bc34b2eea07c504518f9f9a484728c9c6331e59a94"
+      },
+      {
+        "path": "tmp/v595-24x2-stellar-browser-matrix.mjs",
+        "bytes": 31960,
+        "sha256": "bf3ad84b37687c79075799a99ccde52933362482d8d78efc2f8e89b3029b4133"
+      },
+      {
+        "path": "tmp/v595-24x2-stellar-browser-matrix.test.mjs",
+        "bytes": 9072,
+        "sha256": "37d5320593f088ae1cac3ab146e5fcb7736ccea16fd4a3043b61f620fa72eba4"
+      },
+      {
+        "path": "tmp/v595-browser-evidence-collector.mjs",
+        "bytes": 52284,
+        "sha256": "26900cd4badc02cf03a6de08420eb3d40ee6bc4994899740b91cdd6e6496531c"
+      },
+      {
+        "path": "tmp/v595-browser-evidence-contract.mjs",
+        "bytes": 22590,
+        "sha256": "e00577290232c4c15dc52974ea0d2250643713331e0dec03c80b90aaccdd7a20"
+      },
+      {
+        "path": "tmp/v595-browser-evidence-contract.test.mjs",
+        "bytes": 4217,
+        "sha256": "49f2b3ccc11b4af9d82cc13aabd9a5852e5d228bbd82a0dfe55e2beff56a4ae0"
+      },
+      {
+        "path": "tmp/v595-cdp-renderer-soak-runner.mjs",
+        "bytes": 35768,
+        "sha256": "e86c37cf5b03db9642135e9b5cc246336af44d812991e85fc1f2caeb94b0c10d"
+      },
+      {
+        "path": "tmp/v595-cdp-renderer-soak-runner.test.mjs",
+        "bytes": 9789,
+        "sha256": "9b1cb7aab2af43db3a16ac0e642906eae52b267c9279f263e0b355b56242c1ee"
+      },
+      {
+        "path": "tmp/v595-product-scene-family-browser-journeys.mjs",
+        "bytes": 52589,
+        "sha256": "65bfa0c01829e18432d7f6673d36e04b7f5e5706f4bfb1e547f62e65c842f66d"
+      },
+      {
+        "path": "tmp/v595-product-scene-family-browser-journeys.test.mjs",
+        "bytes": 11164,
+        "sha256": "07d1a4ed87e59d3b1ff0d4db6cb9ec0acc08ad825f99632b227ec714ae7a5076"
+      },
+      {
+        "path": "tmp/v595-real-desktop-chrome-evidence.mjs",
+        "bytes": 30257,
+        "sha256": "9ea723c0e2ab429937ce0e7cbf5d3dd00ed2be478afa1e2c9b4cc45f1b67f007"
+      },
+      {
+        "path": "tmp/v595-real-desktop-chrome-evidence.test.mjs",
+        "bytes": 11453,
+        "sha256": "2c2cd9d0682c2d408cb29132a45738bbbe5b5167189eba476da27e9fde125f18"
+      },
+      {
+        "path": "tmp/v595-same-realm-lifecycle-runner.mjs",
+        "bytes": 20922,
+        "sha256": "0421162991bdff32f3e54383024a392c3e436239b0ffc576ba5670217da530cc"
+      },
+      {
+        "path": "tmp/v595-same-realm-lifecycle-runner.test.mjs",
+        "bytes": 9431,
+        "sha256": "f7981e57f77cb3cb30ca26aa0189b945e0de6b91ec4761262f6b5cada09c8c48"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/batch.json",
+        "bytes": 1190244,
+        "sha256": "9141f597374db1a27fe2b631c9c86590e0d7d5a084c69c7846940a6bb6eb6919"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-blue-supergiant-wind-baseline-v594.png",
+        "bytes": 1204711,
+        "sha256": "e56f60ec859c13d9f90126db49a5a09273d661bd5c9f1a5266f5b73f54045f0f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-blue-supergiant-wind-candidate-v595.png",
+        "bytes": 1204325,
+        "sha256": "02a6d10aa6668abe13730c395d8dd46b08360f35b33fb74da0b3c0a9168f1847"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-cool-convective-baseline-v594.png",
+        "bytes": 1303919,
+        "sha256": "ef25c465be2012a831f67ef08ca268368665b253b1c8a1184633118ac1e23ddc"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-cool-convective-candidate-v595.png",
+        "bytes": 1303225,
+        "sha256": "c04e57ef5bdafea0d503e1a9fd93190a6d41cb795484bae1323f41e5464a4528"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-hot-radiative-baseline-v594.png",
+        "bytes": 645467,
+        "sha256": "a4fc7913a8b470c80bae2d761d31d851fa3c8521ce3dcca9aea71f937bbafe22"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-hot-radiative-candidate-v595.png",
+        "bytes": 645570,
+        "sha256": "5a7baffa7156663ad24a97b88839261523aa322d2aa297616326a9b763bb0c2f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-rapid-rotator-gravity-darkened-baseline-v594.png",
+        "bytes": 922802,
+        "sha256": "2cc921c339b1e77a01cae001a30fcfcaf55f06bae33eb69e2eac3751e74e5cad"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-rapid-rotator-gravity-darkened-candidate-v595.png",
+        "bytes": 923241,
+        "sha256": "b4576959162aceba74a67d39abc1e82f77c1360097da0b72a9698872db56823d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-red-giant-supergiant-baseline-v594.png",
+        "bytes": 1474176,
+        "sha256": "31c20b11f2d91853ac0dd8c9b7205aa7db0acd22a750b0cac2578b5b69b56b85"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-red-giant-supergiant-candidate-v595.png",
+        "bytes": 1474096,
+        "sha256": "506712a39220ef503d1796bed4a43070f3f313afd3cf9c39ab35c32d678907e3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-relativity-workbench-baseline-v594.png",
+        "bytes": 391748,
+        "sha256": "5db6137f71379d5278aa01b613f87fc0892f7e09f93f72395c4de21c7c375574"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-relativity-workbench-candidate-v595.png",
+        "bytes": 392109,
+        "sha256": "8a907ba4e673d8a8413eae3ea212093c27309a916adeee7018746a1770e9d3c2"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-solar-like-convective-baseline-v594.png",
+        "bytes": 744934,
+        "sha256": "849e296d59cf8d3742690646fc909a503cfec288583daed4788b6c958e719607"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-solar-like-convective-candidate-v595.png",
+        "bytes": 744854,
+        "sha256": "2eda596d4684ee6373eba459648c105cb7c5b84e00ce42661e43c45af67e3d58"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-warm-radiative-convective-baseline-v594.png",
+        "bytes": 1222206,
+        "sha256": "8f3a228c08e5a0a3a3665136f4a5c76e2af2191f9c8726c95d986d74e3630caa"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/screenshots/exact-warm-radiative-convective-candidate-v595.png",
+        "bytes": 1222023,
+        "sha256": "1f87e7c9944d860bcb20c8410f70f662130178634a42bd24458cf5c8ece49514"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/stage-receipt.json",
+        "bytes": 2907,
+        "sha256": "d2efb57a30daaee730725d4f4d5fbb74056c0638e9d3a16b43e5ab96a206ab0f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-blue-supergiant-wind-baseline-v594.json",
+        "bytes": 60150,
+        "sha256": "e99580fbf03e93c7b9eb02294c42d3cb65887b7f32123e3825a9e76d7464c01f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-blue-supergiant-wind-candidate-v595.json",
+        "bytes": 60158,
+        "sha256": "9a76020c90512293e3186a38fe7b590e1313942d12562dc193fbcc3f3b06627c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-cool-convective-baseline-v594.json",
+        "bytes": 59967,
+        "sha256": "d82cc6ede2b2be1a5a4baa2553974bebda1452e4013b0f3d58ceeff96c907cfe"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-cool-convective-candidate-v595.json",
+        "bytes": 59973,
+        "sha256": "23c8c67fa1aac8e120f8ea662a3190d1dfbe3f3221ec0a25425d493b3b6748c3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-hot-radiative-baseline-v594.json",
+        "bytes": 60066,
+        "sha256": "e29f6fcb829f9021859d57881d0543aed2b8d0e95857c08587412c14f9808c0c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-hot-radiative-candidate-v595.json",
+        "bytes": 60072,
+        "sha256": "d56e0d4f0b155fabb25bc666e8f8daaa3a9a1703f826c789804e08293ab9db2e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-rapid-rotator-gravity-darkened-baseline-v594.json",
+        "bytes": 60284,
+        "sha256": "d27f28cfefd3f152f47c9b94cb7905b28a0ac03f98c860a8503e1dbd70f248d2"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-rapid-rotator-gravity-darkened-candidate-v595.json",
+        "bytes": 60280,
+        "sha256": "28e78cbf77f6d115466388c2ae7a15e7ba0950153baa6893346850a97ac197a1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-red-giant-supergiant-baseline-v594.json",
+        "bytes": 60139,
+        "sha256": "68977ccfa2cc569878f5be1992fab936eb8cd404611598f887e547a3c8f6d1e0"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-red-giant-supergiant-candidate-v595.json",
+        "bytes": 60145,
+        "sha256": "dc0090f3e25a95991f51412e67ca830b3780c309b2f8e90ad8ff7202d309b62d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-relativity-workbench-baseline-v594.json",
+        "bytes": 57213,
+        "sha256": "840e3f947afb4fd544da964e6f4bbda4ac3c7dcbc7bc14676143ad5f46e122c7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-relativity-workbench-candidate-v595.json",
+        "bytes": 57302,
+        "sha256": "21e7e6ea19f9ad8e1cb29ad017f7f0df96f486dfef5015f8257c59690dedbbed"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-solar-like-convective-baseline-v594.json",
+        "bytes": 60565,
+        "sha256": "396e91f328625c9cb6bfa274dfc4a2f544fe5a16aadb4c6b9a6cdc4b6b748bf2"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-solar-like-convective-candidate-v595.json",
+        "bytes": 60574,
+        "sha256": "103be3f1256a3ff9bab2cedb6de84920e11549d1468a9f2d1a8e6fd78b0ca7df"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-warm-radiative-convective-baseline-v594.json",
+        "bytes": 60316,
+        "sha256": "99389cf81b3ea1f35ea6af033dd8983e6fa4aff5bfff8cd9fb57de081a32b8e3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-exact-ab/telemetry/exact-warm-radiative-convective-candidate-v595.json",
+        "bytes": 60322,
+        "sha256": "22a0f02353998a9388f3f4c197f10aa60efa429c7a15f9997509c1bf743efe36"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/batch.json",
+        "bytes": 812326,
+        "sha256": "6725109e2ab1b58fd81645db5b1c26efafa25de7a7eea1a250bb87bbf0338b2b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-deep-sky-andromeda.png",
+        "bytes": 550879,
+        "sha256": "eb5814043e7b690e169106b63d8706814701aec3f4ee1e915c9af9abf6ed6ff8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-earth.png",
+        "bytes": 676655,
+        "sha256": "7c0ce82b355cb1cde1a9fb394aff71ef8fe84a9413749bd4664ba20ce0cd3ecf"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-jupiter.png",
+        "bytes": 696957,
+        "sha256": "58cc08ea8197eda6b126624a2fd351db8f894c0c619a0f7516f06f285d90a6b8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-saturn.png",
+        "bytes": 635179,
+        "sha256": "1613d21cb6296fcae5c834ca99c58171db73e129c19d8d6554e76dfcd094efd5"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-blue-supergiant-wind.png",
+        "bytes": 1009128,
+        "sha256": "74cd03a2fa0da128761e2ee3b7676cb94dd003011d4328f9bb8b633435f0d2d1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-cool-convective.png",
+        "bytes": 1388698,
+        "sha256": "1e6f2756fec850a00b5b540c246afc4818d8d8e77568a826626cb804deaf9319"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-hot-radiative.png",
+        "bytes": 527309,
+        "sha256": "4533b2603bcbe734c65e85f451711249072550ebb0d80d32fca34eba34a49aeb"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-rapid-rotator-gravity-darkened.png",
+        "bytes": 843377,
+        "sha256": "1912b1cb842f432d3410afafec831967d3f906d8650d24cd3536345a2e35e3ea"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-red-giant-supergiant.png",
+        "bytes": 1257677,
+        "sha256": "f30b9fe86bf04fce1d30a867a3fcaf57e46ffbd9cf6b437e982c434d1ee08227"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-solar-like-convective.png",
+        "bytes": 695183,
+        "sha256": "84d9501e7759c0402a994260e56c6bcfdcdba17b3c51191e61e9a9cfcc9bf301"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-stellar-warm-radiative-convective.png",
+        "bytes": 947625,
+        "sha256": "e3c95dac5bead2e01c8df11f1de4186148acd1132a9a242c588a8b493833f29b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-sun.png",
+        "bytes": 219321,
+        "sha256": "d6fb8764d2edeb172d42bb179d75fa38f15e82d5508546283c86c1fe068e873d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/screenshots/full-validation.png",
+        "bytes": 173022,
+        "sha256": "e811b96ea1c794a8d7d92437ff7dc48f51b52f54b116327a3aa90923c0a0edb9"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/stage-receipt.json",
+        "bytes": 2586,
+        "sha256": "695e078acbe3f02bb8966767ca52e4ab30e03aee9402f5f9e01da6d03cbee96e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-deep-sky-andromeda.json",
+        "bytes": 46356,
+        "sha256": "3bf9f3963c34d84b93412eb6f35e414a5460e5d7d809da39b0f08bc771db042e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-earth.json",
+        "bytes": 53546,
+        "sha256": "5affbb46752dee9b330c4fdc63891e74b00212ce46a56df15d6281142da84ff3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-jupiter.json",
+        "bytes": 49954,
+        "sha256": "fbc447bbfb4e9da29b15ba9b5621c9227e2f2ac96b1f41d5a0daf4c422a70333"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-saturn.json",
+        "bytes": 52372,
+        "sha256": "5aabdb541882766567fc2edb6c2b52eb7400e6434a2c2b86ca8a05e4afba2f6d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-blue-supergiant-wind.json",
+        "bytes": 48954,
+        "sha256": "c66e8100d6d37f21e65906c3b3f42b4ae6d244449fd32ed556089a347cc415a8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-cool-convective.json",
+        "bytes": 48901,
+        "sha256": "6de25f66b019e448aa526fe2126d4350eb64f94683c4a9a3fdf0c73db3ffc19a"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-hot-radiative.json",
+        "bytes": 48915,
+        "sha256": "91e648365dfad2977202b993becfe6f48c20053cbd334a9310f4db790b5fced7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-rapid-rotator-gravity-darkened.json",
+        "bytes": 48991,
+        "sha256": "128c046f51f93191a2799997231a1efe92bd395fc1dc960827d766b7194d60c1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-red-giant-supergiant.json",
+        "bytes": 48962,
+        "sha256": "8fec04fca89ed4659884769a9b0dd2cfecbe02bce2895c0a609058474187a699"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-solar-like-convective.json",
+        "bytes": 48996,
+        "sha256": "051ee6cee689a46fa03aa19d7f03b083e6de11997069cbbb5d3472c79c7dd55f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-stellar-warm-radiative-convective.json",
+        "bytes": 48969,
+        "sha256": "6868a01248c61808456ea1b796313381ef875441c12bad6a1cce47583ee39415"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-sun.json",
+        "bytes": 46289,
+        "sha256": "f76b1008f17884dd2f57b3b857d4e434f50f10e216b3858fc404ae0548afbfba"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-full/telemetry/full-validation.json",
+        "bytes": 61055,
+        "sha256": "1fbb88413196658662129e2186a374c8d15c4acb9e3d8e0adc930b822957a4dd"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-human-review/user-decision-v595.json",
+        "bytes": 1792,
+        "sha256": "720b64c9a3b4a78fcf1070a2340cea7ace104b5897b130b72c58f6abbad62e61"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lifecycle/batch.json",
+        "bytes": 70510,
+        "sha256": "1d6a3df2468ed023c5f120199ead9b1e216438678ceb505b572cb2c0e5fef348"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/batch.json",
+        "bytes": 474519,
+        "sha256": "bd893de6b7a2a3d4a6c897b0b9fba9cc705b149139c526a83b6deceb646ee465"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-deep-sky-andromeda.png",
+        "bytes": 33461,
+        "sha256": "15722c2db95ea9658a8233002032aa8ec30c6f7485d9b4a05161908013b296f1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-earth.png",
+        "bytes": 182105,
+        "sha256": "b56a16103a6aaab78e0a90bfbd532809643a0489333e0959dc4b3519d5d94636"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-jupiter.png",
+        "bytes": 56831,
+        "sha256": "447265efa0a143016d998831c2bd63df14465f1f27d2757b1666340da6d61b38"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-saturn.png",
+        "bytes": 69796,
+        "sha256": "64a96db41e610b5a33f1970596d48cfe1d36bf6c292182a2cc02fc67dfe9f351"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-stellar-hot.png",
+        "bytes": 55898,
+        "sha256": "89da40711ca5e1ac0890e74c6bc9a625322a6a42587c823264c959b479ffb999"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-stellar-rapid.png",
+        "bytes": 98009,
+        "sha256": "ca0acde12146726fc7282960500656a43819687a4beaf128cad74756cbada7de"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-sun.png",
+        "bytes": 61389,
+        "sha256": "84636b8fef47b1a1636c068f809ea891807e45efa5c054efa5ead332e04b2413"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/screenshots/lite-validation.png",
+        "bytes": 71074,
+        "sha256": "1e203f25901c34bca7e993d6189bb513b0c79f5d0ecee9a83e040645153af1d7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/stage-receipt.json",
+        "bytes": 2580,
+        "sha256": "de02d31c568d7c178e647da3e12e658b6fa867dde72fdaf344d8e51e5f4b0301"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-deep-sky-andromeda.json",
+        "bytes": 44274,
+        "sha256": "09556c09df2fd9375aff00d0c3c5f36d13126a7705fa561b36f125bd198f2936"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-earth.json",
+        "bytes": 44212,
+        "sha256": "91dc06c5f5c169cb5409cb1d39d289746897e1e7b2c91a0965b63203c44f8281"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-jupiter.json",
+        "bytes": 44226,
+        "sha256": "8972efa960bf8f85bd7de05538f5833b439868cb047216908bddb83c9df312f8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-saturn.json",
+        "bytes": 44217,
+        "sha256": "9c5a5a73674aeff3147cb2e1fe29d6e533a90b6b18f3517bcb49e1dfccab9bcb"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-stellar-hot.json",
+        "bytes": 46823,
+        "sha256": "ebb49a7ac49abf91cf3a488b047af4a9619b567003ebfd3687e1249f26e278fd"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-stellar-rapid.json",
+        "bytes": 46883,
+        "sha256": "e5b0ef994ee5e267d441a567db7cc9acf77fba3e8125983d6f9cd41e27457326"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-sun.json",
+        "bytes": 44206,
+        "sha256": "f24ad1664a737c5ba8a797baa166660396c6b7be2d556fe5d7c7e5adaaffa62b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-lite/telemetry/lite-validation.json",
+        "bytes": 58972,
+        "sha256": "8f31228a3b931340fd0f60307cb3f20c3e3d7e0819b181a4c3054d9ac7cc8dbc"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/receipt.json",
+        "bytes": 76469,
+        "sha256": "f9ebbf03b06dcb5e80b8d5c15a1c109dfaecceff10f910cb0dc0a545a5b80a2d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/mission-launch.png",
+        "bytes": 1111425,
+        "sha256": "1fdf2ae6816908a77dfab04f65d62df8e3a70c235577d12e59aa4913bfd59aba"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/object-inspect.png",
+        "bytes": 557639,
+        "sha256": "827742c8a6259941695d70e66eaf562a0d22f06811f581ff363a129e13a256c7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/orbit-atlas-overview.png",
+        "bytes": 1293975,
+        "sha256": "bb2051633e238086758b25401a4899aa282e7c153af1401e1a253aad6d1771dd"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/relativity-lab.png",
+        "bytes": 1489641,
+        "sha256": "8b7459f209476310df40171c0d8518081dbf3738c3022b1955175d55da6ecf2b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/scene-lab.png",
+        "bytes": 875776,
+        "sha256": "1690f3a596be20e8b5ca92612a4eeaa38434af1189d3932d770860f4e210a7b0"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/screenshots/stellar-exoplanet-systems.png",
+        "bytes": 139276,
+        "sha256": "d8d9d2cf2302a742bfe4906bd3b88734fd57606909cf6010f86c83bc03e358da"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/mission-launch.json",
+        "bytes": 9783,
+        "sha256": "e9fb5343aa9a638e4c2bb5c1475c572bb60beff181bf8fba95b5064c63614b1e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/object-inspect.json",
+        "bytes": 9398,
+        "sha256": "b6b827b0a7c9b9c67ac27f1d465a2335f92617cc2dd78b436ff7fe1939e324f3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/orbit-atlas-overview.json",
+        "bytes": 10305,
+        "sha256": "34addeb21fc4500659f1947552e7a61f9db940bfab24913cc98e67f26e0b0857"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/relativity-lab.json",
+        "bytes": 9520,
+        "sha256": "e4c1051c8619cba041ea737a456aec0184d75d13fd6eeef9034e97b35f1b55b4"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/scene-lab.json",
+        "bytes": 9434,
+        "sha256": "6c1f701b284642d6560a26b2cfe976d67dffc429bda63665ad4ea94dacd0738e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-scene-families/telemetry/stellar-exoplanet-systems.json",
+        "bytes": 9584,
+        "sha256": "cc042c99ad53298899d40a1728cfdcb821d6dbdac9650b53e706aa02b49f0da5"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-soak/batch.json",
+        "bytes": 410091,
+        "sha256": "f47e7f1060a1803019b3c3e81a229aa066d93eb69d68722a7e390fa54aaceb98"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/batch.json",
+        "bytes": 931831,
+        "sha256": "c19d90272ae2b057ec4a66495fbece411b51ab145af60a38284e67db0a15d618"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-achernar-cinematic.png",
+        "bytes": 923014,
+        "sha256": "127f9924f313391e898e1e82858c807f749c0e0605a125f4b2b045faebd63c23"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-achernar-science.png",
+        "bytes": 903231,
+        "sha256": "8d9ce5dc11476f36f6404df63d033bb84edfb311ddac03703ca3e00b554343d7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-acrux-cinematic.png",
+        "bytes": 431612,
+        "sha256": "93d433a4a6b721cd4a3426af8339a110799117e4b5a5c14934c86004dc0c7a92"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-acrux-science.png",
+        "bytes": 390169,
+        "sha256": "7c45cf5f179c9ea4481b18df79b5317f3676c6e5bb847ed82cfcc74afbb233f7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-aldebaran-cinematic.png",
+        "bytes": 1716182,
+        "sha256": "76632036d6e5dc28b8be1205ed5c04a2e5465eb5d033bc64e4b43b96a110dc75"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-aldebaran-science.png",
+        "bytes": 1730311,
+        "sha256": "f6b39ed3c73eec48d11d99e6346356c587d33eeffd2ba15f75f83b2238aaf8da"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alnilam-cinematic.png",
+        "bytes": 1310208,
+        "sha256": "88450e7d2e5f3723387e563c023f9f28c7558cc962ce33e99daabcef3253dfad"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alnilam-science.png",
+        "bytes": 1278768,
+        "sha256": "98f46a0795a3184e97fb9e56711098b5b3812d1066067d82c6c86f7f038bdb21"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alpha-centauri-a-cinematic.png",
+        "bytes": 744766,
+        "sha256": "f42e615f12c081532c722d2160e7055e7836e5eff781498633571f15a3d54057"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alpha-centauri-a-science.png",
+        "bytes": 717512,
+        "sha256": "4e2f5b5a01e03597b3cb9e276a285dcb8ab6770a2389f16073fbecb5a4addad0"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alpha-centauri-b-cinematic.png",
+        "bytes": 743566,
+        "sha256": "4477c36941cf218a9b500304960f5fac123f3bff4cdb5f3174185fe46da080e7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-alpha-centauri-b-science.png",
+        "bytes": 719652,
+        "sha256": "ecdcf11fcbb69e816ae425f05b9eda4c303aae40625df62d2c6bfa3a2f783950"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-altair-cinematic.png",
+        "bytes": 711094,
+        "sha256": "4fdc8a49328d9daebb7d86b657bc715cc27cd426adea576594ee044860329d32"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-altair-science.png",
+        "bytes": 672328,
+        "sha256": "0cc32646b2824a77debbc13c864f1a258d0217c26d7b7721573ed285faf01320"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-antares-cinematic.png",
+        "bytes": 1628813,
+        "sha256": "d640677328ad9bf09535c4d2861c66bd024513fa82b1082a702337bc684595aa"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-antares-science.png",
+        "bytes": 1644900,
+        "sha256": "a9e3394276a7ad418af511c58defe44c3021197ebd5c0378a1ff95bc4e987418"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-arcturus-cinematic.png",
+        "bytes": 1303566,
+        "sha256": "b04021fdf47bc965a8177bdb8b524a7604da8882bf64c9771a3bcc63f4724551"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-arcturus-science.png",
+        "bytes": 1307608,
+        "sha256": "7866747932738b944ac1b3b82478292ec1773383dfe8634f01d1c4a0217d61bd"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-bellatrix-cinematic.png",
+        "bytes": 1498471,
+        "sha256": "6069509f968ca3716fbb3b816329a6691db6743b57410ce010260424547eec06"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-bellatrix-science.png",
+        "bytes": 1487510,
+        "sha256": "f0d354edff426cf9f8470a544e25d241634e28aafa339933651c3640d1f1644f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-betelgeuse-cinematic.png",
+        "bytes": 1474564,
+        "sha256": "de4a94a61f3793c62140b79966ab1678e60b6e7c6297f026d2d79f722e493cb5"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-betelgeuse-science.png",
+        "bytes": 1477907,
+        "sha256": "0a39f4d8619818ce56612e0667467d91f3f20f8f226a342cd0614e39d61baf4d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-canopus-cinematic.png",
+        "bytes": 407227,
+        "sha256": "db7951f98b1929e71c7ba33530ee62f4034bbe39a8007f0a40078685797d0b55"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-canopus-science.png",
+        "bytes": 373362,
+        "sha256": "0f07d60ebef6439184fa8c6d1cea62274e6e202a02afb55db79801c36148deff"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-capella-a-cinematic.png",
+        "bytes": 1192592,
+        "sha256": "3657ae93ef1780bedafa57157d43d5c10e88ac9774d4d680bb93c877b9c9251b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-capella-a-science.png",
+        "bytes": 1187179,
+        "sha256": "847766a8ea7df26c294f4498ee9a6748f006fbf540c7a475bb4c98ae2a23a6a7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-deneb-cinematic.png",
+        "bytes": 368894,
+        "sha256": "d5f6d038db811665f3a05ac58642cff7725ec80b3fa3ff4abe754b24f2debe60"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-deneb-science.png",
+        "bytes": 333774,
+        "sha256": "c53e06b5448bed385662d09d082dde65cb08a7ea52fb5b574c85c1b88fc291ce"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-fomalhaut-cinematic.png",
+        "bytes": 1732296,
+        "sha256": "4b044042b9ee5b34d0879a422431af537b495273a3d3510465fce04429e6fd0c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-fomalhaut-science.png",
+        "bytes": 1746558,
+        "sha256": "1e975eb168eb62c417fde0624f3da97be6225ec6c201023ac4983ca696ea6218"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-hadar-cinematic.png",
+        "bytes": 640306,
+        "sha256": "5fe435939b9347654643ccb5100e9d859ccfe62e6ce5e140ed77b6c2c1cc3f70"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-hadar-science.png",
+        "bytes": 591323,
+        "sha256": "f14a16e8c20b03fe768fd4b27c830afd6c506aea47a58827d63b7990914ad2fe"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-polaris-cinematic.png",
+        "bytes": 455443,
+        "sha256": "95aea7c63d3c6a4f035f6c44fa8af539bb3b9f0e9c7e44526aae8e5215e45951"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-polaris-science.png",
+        "bytes": 430864,
+        "sha256": "c4fe11e5d8a19692fd02f9d0eba7853695175efc430146e53abb4f094b66b372"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-pollux-cinematic.png",
+        "bytes": 1623536,
+        "sha256": "794554e839447ef904f88f2fdf37621ed87a8983768444abfcda6b670754c56b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-pollux-science.png",
+        "bytes": 1633393,
+        "sha256": "c4340367abee98d65cb8bb8d26d4344b8b4d4f817d0aae3370144680648c1345"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-procyon-a-cinematic.png",
+        "bytes": 1221583,
+        "sha256": "9cc2fdf8f774f35bc2648187575d8d31667fcbb7fead8e4e570a401db0190571"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-procyon-a-science.png",
+        "bytes": 1208359,
+        "sha256": "9cca0189e8f1009459415508e0e30a1514f3ceb4cde9c4da4d7b97153d30bb92"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-regulus-cinematic.png",
+        "bytes": 1299173,
+        "sha256": "65e3bda9f89e5eb84d60730d823dc99f0294840f6934d352dd18b64248943bae"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-regulus-science.png",
+        "bytes": 1283091,
+        "sha256": "1b04ab5f483d578976c172d7d3fc6f264dd11faa36ff42426c3e5488e81636f1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-rigel-cinematic.png",
+        "bytes": 1205055,
+        "sha256": "d13b581503e7e93bbb905e9c95783cb917170482221bce4a9e64113f12ba63c3"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-rigel-science.png",
+        "bytes": 1171259,
+        "sha256": "4c80caeb50eb73d722f8d6957022a66e695ebdfe815f826788e66600c1524e98"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-sirius-a-cinematic.png",
+        "bytes": 645848,
+        "sha256": "9c63b5351922c1f698504c632589574fb135799b2a9bbf6ea3632cd28ee3024f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-sirius-a-science.png",
+        "bytes": 617025,
+        "sha256": "c148a2c2be13b8d72f4b10ee5048f105d1727545bdca75cf2f5f6317d8d22ad7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-spica-cinematic.png",
+        "bytes": 1272905,
+        "sha256": "ddfdf5458ba62c54a34ce9807433e9502b7123d94c9d92adcd0163dcab29ba46"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-spica-science.png",
+        "bytes": 1250031,
+        "sha256": "63f8ef44e2e32cf3e896e97c62eb3cec928971a6b5d9f8cb212b3c77358f033c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-vega-cinematic.png",
+        "bytes": 392082,
+        "sha256": "dff5012f8e7cecb5745d9a24f679f9d48f551060b6293b790d358b6cebe5d0f4"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/screenshots/stellar-vega-science.png",
+        "bytes": 358053,
+        "sha256": "fc4bdc413c9593c8f88ab7146936529abb152eb4c802025b797bc52db6c8600d"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-achernar-cinematic.json",
+        "bytes": 17350,
+        "sha256": "202cba79aaa29a4239fbc10cc809bc63e60a0a0da01872a3b5f3085b24461672"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-achernar-science.json",
+        "bytes": 17148,
+        "sha256": "3611ac5b361c6eb87a4b35ba011b89d2905e48b4e8950e3ffe7be81ea3f8cd6c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-acrux-cinematic.json",
+        "bytes": 17187,
+        "sha256": "b172c9dc73520657b42febf84cd1e5b72bdec7084c4fc8cffc582f873a6ba54b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-acrux-science.json",
+        "bytes": 16883,
+        "sha256": "25210c53149583b0520607cb2dcab1fcd32911829a1fae3d5a1358ac77c1c5b7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-aldebaran-cinematic.json",
+        "bytes": 17166,
+        "sha256": "c926d556f191b1147816cd629098d0321bb3ea9a1e430880d9ea3039c3e61f09"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-aldebaran-science.json",
+        "bytes": 16971,
+        "sha256": "6f450ae0035f019fb624543e94dab21f1147f8bbea89c37f45e9b2370845ce1b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alnilam-cinematic.json",
+        "bytes": 17125,
+        "sha256": "83170599b6302d2fd95a38e8795513c3404b69386d96c537e378a35e16a211fe"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alnilam-science.json",
+        "bytes": 16928,
+        "sha256": "92a784ff4c29eb2e6ce26f9d0c9696bf8b647f387337b47d6b195185539542c7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alpha-centauri-a-cinematic.json",
+        "bytes": 17660,
+        "sha256": "0525869ccfbd4650212b77932ecfc6522e4e833fcca966f9e15da96d2441f657"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alpha-centauri-a-science.json",
+        "bytes": 17127,
+        "sha256": "142e4b451c3e933aa92217ae26ae002f0563a1cb6e239a4847569e465c9e1913"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alpha-centauri-b-cinematic.json",
+        "bytes": 17653,
+        "sha256": "4f481447bfc8653c560f0e76994f73796b84f9178922811fb001fb7dcf500dbc"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-alpha-centauri-b-science.json",
+        "bytes": 17131,
+        "sha256": "adb5d3dd509b7db263f6136312e4d46f955d15902e30fdb385eef12bac1c3be0"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-altair-cinematic.json",
+        "bytes": 17276,
+        "sha256": "b567c1066b6e0bfd68e14e4c384091df6f546644db8cbf1dc57c39740d0c9888"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-altair-science.json",
+        "bytes": 17079,
+        "sha256": "e01e2eebe66680ad9285926c1459af2700d5d421147e578adf6ca000fc3592ac"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-antares-cinematic.json",
+        "bytes": 17284,
+        "sha256": "2689617cd841db3ef688a69eb504ddddb0a69dd7ef91c3cc24e04ea28173b7f8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-antares-science.json",
+        "bytes": 16963,
+        "sha256": "f04f6794bcbdf96d8d5ccc0b0480db492260d8de218823162b5d75b2e5a008e1"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-arcturus-cinematic.json",
+        "bytes": 17042,
+        "sha256": "84172956f021a15ce513e1eb78964648e83a9d1ee06e172997dd090c54517dd8"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-arcturus-science.json",
+        "bytes": 16819,
+        "sha256": "e4391fec08c4bba3ea3f73fafc16050b489a61751ea3f2fb8d170188ad3e5334"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-bellatrix-cinematic.json",
+        "bytes": 17148,
+        "sha256": "d80aedf2966c3a70d589c1e8b60cfc2c05df20c44b820bbd9fb9185f9f95a34e"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-bellatrix-science.json",
+        "bytes": 16942,
+        "sha256": "535efa9019881f91777ee1a0471e2b51dc2ea3f89874266c68fa36f5fd0f2117"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-betelgeuse-cinematic.json",
+        "bytes": 17216,
+        "sha256": "49b2788981dca2f5ba4bdeb604002f1ba706e99cacf797359d91f19c119c6607"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-betelgeuse-science.json",
+        "bytes": 17005,
+        "sha256": "3893336b6c00812fff4ef55215f64f3e54a3a1437d0593964e62f82535540562"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-canopus-cinematic.json",
+        "bytes": 16974,
+        "sha256": "b81b6512f3d0b391a49fc3f5e3550eea3de061482a26e1457efc663e001f080b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-canopus-science.json",
+        "bytes": 16766,
+        "sha256": "50939c5a6d2baeb5cd7be840cb27aa1a833b95a26e1e807b0f1be2fb6b2325c5"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-capella-a-cinematic.json",
+        "bytes": 17213,
+        "sha256": "0faa5aadfb221cd2d07aabfb0d241405fc96508cd2711943857558050d2f6052"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-capella-a-science.json",
+        "bytes": 16883,
+        "sha256": "5c2876535a292c09640d0f5e1343e16db0138f642484e66f58b78eb193d4e761"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-deneb-cinematic.json",
+        "bytes": 16945,
+        "sha256": "fe5028ab2952f47a73d333dabfd517b6724b40ce6837f7e9588063339f39fae7"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-deneb-science.json",
+        "bytes": 16755,
+        "sha256": "6281da80a6f5e3b6f56d439837f0148965eff3fe2c824bb6c2b8348505d70493"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-fomalhaut-cinematic.json",
+        "bytes": 17022,
+        "sha256": "0c6b3cf26ff54bd8ee4cf820464572de4c1bd72913f7f2aa2a5074117d91a07c"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-fomalhaut-science.json",
+        "bytes": 16806,
+        "sha256": "346d819f45d34f74fc90ba7ce7662fd4fb6a517f3dc48c69d03957fe93dea91f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-hadar-cinematic.json",
+        "bytes": 17211,
+        "sha256": "99b654a0d8e3e2890d2858d33dd63c37094386992391ccb4d82c4c57b6f3d8af"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-hadar-science.json",
+        "bytes": 16910,
+        "sha256": "f2a9f694dcfa9ece55a5717edeea765c43f7c069b937500a44dfa031135f19ab"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-polaris-cinematic.json",
+        "bytes": 17474,
+        "sha256": "a9853a88dcb5b1e99a3efe90b5a36cb911f9045680a61719781518c9f4b582c2"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-polaris-science.json",
+        "bytes": 17038,
+        "sha256": "a35fa9df0f495d2af063cba615b4d4fac609e79ae4bf4bf853dea8d5db9c387b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-pollux-cinematic.json",
+        "bytes": 16974,
+        "sha256": "6ba9d43309119ba58262b046234e981f09e023dcd3fedb9e204eb13959373a83"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-pollux-science.json",
+        "bytes": 16790,
+        "sha256": "7c03917929c27156a85ec7fa9a9e103d208367109961bcef5e153faf108792ae"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-procyon-a-cinematic.json",
+        "bytes": 17386,
+        "sha256": "73f4ecdf66a5942b55261b04929e1fb6bffe00efb25127752f975ce14f7afb65"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-procyon-a-science.json",
+        "bytes": 17044,
+        "sha256": "c236518a6cfc433966ae1d990579f17dbe976b8b5602c81a97bdc287f8359b0f"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-regulus-cinematic.json",
+        "bytes": 17442,
+        "sha256": "995ed40cfeb63cba063e223554656b8936cbd95e620d4f592eb1ec8413a03dee"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-regulus-science.json",
+        "bytes": 17123,
+        "sha256": "a850a5e593bf337bec143084f60ca049ce38ee6eedc62eaa4b43cdf84d021e22"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-rigel-cinematic.json",
+        "bytes": 17207,
+        "sha256": "e6da2b0cee23d6a3508feeead185a399fa6d7234b24ca6600b6697b29d5d3601"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-rigel-science.json",
+        "bytes": 16907,
+        "sha256": "40f32232464814805af1b4072f2d555a5d17333d7877ed0f61479b3a21f80eb6"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-sirius-a-cinematic.json",
+        "bytes": 17133,
+        "sha256": "5b8a11bacbc79fd2bc2afbd65c5dbfdd6597ecc4df0f6eadde70ed1fdd7d6b84"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-sirius-a-science.json",
+        "bytes": 17784,
+        "sha256": "f490fa4ea2255a9a6032e0eb373a1a8c1c5562b6eb59434d471a06c790bbec9b"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-spica-cinematic.json",
+        "bytes": 17221,
+        "sha256": "6e16b927822cfcde8e4758fc7c56c7152758733be9e042a7036919bd9d893867"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-spica-science.json",
+        "bytes": 16908,
+        "sha256": "7e4e46a1acaaef60f7c3ccdf828b88087b45cbe033dc45c5ab193fab787a7342"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-vega-cinematic.json",
+        "bytes": 17240,
+        "sha256": "31ca93e96b4f3f67a352cca85ab79fdfc92ecf8e4152f259c347d411e3717506"
+      },
+      {
+        "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-stellar-24x2/telemetry/stellar-vega-science.json",
+        "bytes": 17054,
+        "sha256": "522745e7f13d89671703bbd14ba24e319e168d0979deec1c34aef3c0045de46a"
+      },
+      {
+        "path": "tmp/v595-staging/supplemental-e06febbe18cd-332b5ce6a0b5-real-desktop/receipt.json",
+        "bytes": 10098,
+        "sha256": "616dd669d6e42ad41b7716ed1217618b566a7b116c23d55e2cbe6a142466767d"
+      },
+      {
+        "path": "tmp/v595-staging/supplemental-e06febbe18cd-332b5ce6a0b5-real-desktop/screenshots/real-desktop-chrome.png",
+        "bytes": 2454759,
+        "sha256": "0236a3a01b9ab75bb0e2968099be1a54b095a6920a6ebfb38f04dfc4680d6ed1"
+      }
+    ]
+  },
+  "gates": {
+    "fullLiteIndependentBuilds": true,
+    "exactAbEightPairsSixteenFrames": true,
+    "stellarScienceCinematic24x2": true,
+    "sixProductSceneFamilyJourneys": true,
+    "sharedSingleCanvas": true,
+    "sameRealmLifecycle": true,
+    "cdpRendererHeapSoak": true,
+    "realDesktopChromeSupplemental": true,
+    "physicalMobileNotPresentNotFaked": true,
+    "timelikeKerrReferenceCandidateOnly": true,
+    "humanVisualSignoff": true,
+    "unknownAndZeroFailClosed": true
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "productionPromotionAllowed": false,
+  "unresolved": [
+    "physical-mobile-real-device-evidence-not-present"
+  ],
+  "synthetic": false,
+  "dossierSha256": "ea6a5247cf9708162df26acead217e23159f0d8793466dd98071888831866765"
+}

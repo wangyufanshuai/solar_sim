@@ -1,0 +1,46 @@
+{
+  "version": "v592-deep-space-alternative-probes-v5",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHost": "images-api.nasa.gov",
+    "metadataOnly": true,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "explicitOperatorInvokedQueryRefinement": true,
+    "selectionRequiresManualVisualAndLicenseReview": true
+  },
+  "probes": [
+    {
+      "id": "cigar-galaxy",
+      "category": "galaxy",
+      "query": "NGC 3034",
+      "requiredTermGroups": [["ngc 3034", "m82", "cigar"]]
+    },
+    {
+      "id": "pinwheel-galaxy",
+      "category": "galaxy",
+      "query": "NGC 5457",
+      "requiredTermGroups": [["ngc 5457", "m101", "pinwheel"]]
+    },
+    {
+      "id": "virgo-a-galaxy",
+      "category": "galaxy",
+      "query": "NGC 4486",
+      "requiredTermGroups": [["ngc 4486", "m87", "virgo a"]]
+    },
+    {
+      "id": "black-eye-galaxy",
+      "category": "galaxy",
+      "query": "NGC 4826",
+      "requiredTermGroups": [["ngc 4826", "m64", "black eye"]]
+    },
+    {
+      "id": "sunflower-galaxy",
+      "category": "galaxy",
+      "query": "NGC 5055",
+      "requiredTermGroups": [["ngc 5055", "m63", "sunflower"]]
+    }
+  ]
+}

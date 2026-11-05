@@ -1,0 +1,295 @@
+{
+  "round": 48,
+  "date": "2026-09-13",
+  "recordedAtUtc": "2026-09-13T14:46:33.765609+00:00",
+  "title": "eight-source-backed-stars-and-interactive-stellar-atlas",
+  "status": "batch-implemented-not-final-goal-acceptance",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "measurementAdmission": false,
+  "counts": {
+    "stars": 20,
+    "constellations": 12,
+    "nebulae": 12,
+    "betaTarget": [
+      24,
+      12,
+      24
+    ]
+  },
+  "admittedForPresentation": [
+    "alpha-centauri-b",
+    "hadar",
+    "altair",
+    "pollux",
+    "fomalhaut",
+    "deneb",
+    "bellatrix",
+    "alnilam"
+  ],
+  "pendingStars": {
+    "acrux": [
+      "positive-parallax-missing",
+      "upstream-citation-missing"
+    ],
+    "spica": [
+      "system-only-component-ambiguous"
+    ],
+    "regulus": [
+      "system-only-component-ambiguous"
+    ],
+    "polaris": [
+      "system-only-component-ambiguous"
+    ]
+  },
+  "sourceSnapshot": {
+    "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+    "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+    "canonicalSeal": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+    "freshlyFetched": false
+  },
+  "codeChange": {
+    "added": 522,
+    "modified": 6,
+    "removed": 0,
+    "effective": 528,
+    "minimumMet": true,
+    "effectiveFiles": [
+      "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "app/components/MainlineAStellarAtlasV608.tsx",
+      "app/components/PostV593StellarRosterPanel.tsx",
+      "app/data/mainlineAMetadataV607.ts",
+      "app/data/mainlineAStellarEvidenceV607.ts",
+      "app/lib/mainlineAStellarAtlasV608.test.tsx",
+      "app/lib/mainlineAStellarAtlasV608.ts",
+      "scripts/project-mainline-a-beta-stellar.mjs",
+      "scripts/project-mainline-a-beta-stellar.test.mjs",
+      "app/data/mainlineABetaAssetIntakeV607.ts"
+    ],
+    "details": "docs/release/v607/mainline-a-r48-code-change.json",
+    "diff": "docs/release/v607/mainline-a-r48-code-change.diff"
+  },
+  "tests": {
+    "focusedVitest": {
+      "passed": 95,
+      "failed": 0,
+      "files": 10
+    },
+    "sourceProjectionNode": {
+      "passed": 7,
+      "failed": 0
+    },
+    "packetNode": {
+      "passed": 4,
+      "failed": 0
+    },
+    "portraitReceiptVitest": {
+      "passed": 1,
+      "failed": 0
+    },
+    "targetedEslint": "passed",
+    "independentFullRepositoryTsc": "not-run-in-r48"
+  },
+  "build": {
+    "command": "npm run build:atlas:lite:current",
+    "status": "passed",
+    "typecheckScope": "filtered .atlas-build-tsconfig.json",
+    "profile": {
+      "version": "v225-atlas-build-slot-v1",
+      "profile": "vercel-lite",
+      "slot": "current",
+      "distDir": ".next-atlas-lite-current",
+      "buildId": "lH0jsk21rWT378LStU-D7",
+      "deliveryTier": null,
+      "candidateSourceManifestSha256": null,
+      "deploymentId": null,
+      "directoryCount": 404,
+      "routeOverlay": {
+        "enabled": true,
+        "directoryCount": 264,
+        "versionedEvidenceDirectoryCount": 202,
+        "rootPageHeldForLocalShadow": false,
+        "boundary": "profile-scoped-routes-restored-after-build"
+      }
+    },
+    "firstAttempt": "EPERM route-overlay rename while dev service watched source; restored, owned dev stopped, retry passed"
+  },
+  "http": {
+    "url": "http://127.0.0.1:3019/",
+    "status": 200,
+    "responseBytes": 8697,
+    "ownedPid": 53256
+  },
+  "browser": {
+    "desktop": "docs/release/v607/mainline-a-r48-desktop-navigation.json",
+    "mobile": "docs/release/v607/mainline-a-r48-mobile-interactions.json",
+    "production": "docs/release/v607/mainline-a-r48-production-browser.json",
+    "productionScope": "20-card and radius-comparison smoke plus Alpha Centauri B portrait identity; not all eight production navigation routes"
+  },
+  "screenshots": [
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r48-atlas-desktop.png",
+      "bytes": 91727,
+      "sha256": "53c0224fcdaaedd8322facfc1c581ca07c73ff5cf432500cea9487b366531b23"
+    },
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r48-atlas-mobile.png",
+      "bytes": 32103,
+      "sha256": "83eadea15e98d98d6dd0737b56e34e780698131e7986ce0f71ee1fa9f4ad6d92"
+    },
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r48-production-atlas.png",
+      "bytes": 79363,
+      "sha256": "17ff846ba6b07013c616e3e07a78efcba715ccf93b01f3aaaf1ae5ccb77f44e1"
+    }
+  ],
+  "portraitContactSheet": {
+    "schema": "mainline-a4-static-portrait-render-v1",
+    "renderer": "React SSR SVG + sharp/libvips",
+    "scope": "static-portrait-rasterization-only-not-browser-or-interaction-validation",
+    "objects": [
+      "alpha-centauri-a",
+      "achernar",
+      "betelgeuse",
+      "sirius-a",
+      "rigel",
+      "antares",
+      "canopus",
+      "arcturus",
+      "vega",
+      "capella-a",
+      "procyon-a",
+      "aldebaran",
+      "alpha-centauri-b",
+      "hadar",
+      "altair",
+      "pollux",
+      "fomalhaut",
+      "deneb",
+      "bellatrix",
+      "alnilam"
+    ],
+    "image": {
+      "path": "docs/release/v607/visuals/stellar-portraits-v607.png",
+      "width": 1160,
+      "height": 2632,
+      "bytes": 1767580,
+      "sha256": "11ba2fa87b20f4bcbac710ff2af26f26cc9b0048106393b734d4be965a39fddd"
+    },
+    "sources": [
+      {
+        "path": "app/components/MainlineAStellarPortraitV607.tsx",
+        "sha256": "28c17e2c1f0be837a25a3b347780b967b1f28b9dbd7f8fbfbaabbe51e445eeda"
+      },
+      {
+        "path": "app/data/mainlineAMetadataV607.ts",
+        "sha256": "a2de61c9e822e7e9bd06f1ac04233cd0044c80ac0a285ca8d3c440dac9307a70"
+      },
+      {
+        "path": "app/data/mainlineAStellarEvidenceV607.ts",
+        "sha256": "5fdf7948677effe0b12aa9ee46126ee4553e7c2fc389c26da538fcf1055af792"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+        "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarNarrativesV607.ts",
+        "sha256": "2983f2cbc0770dcc0cc5ebf7938435f35ea1b29fea0717186c62adac3f629eb8"
+      },
+      {
+        "path": "app/data/stellarHeroesV592.generated.ts",
+        "sha256": "21d9d19d779eccc172d607ca1d868d419799ed1f0714032ccf8b4f6abbb055af"
+      },
+      {
+        "path": "scripts/render-mainline-a4-portraits.ts",
+        "sha256": "4d1e66338e0194e672e1fbefb2c05ba42e72206f8ee4434ae3b7890aac2fc8e3"
+      }
+    ]
+  },
+  "sourceIdentity": {
+    "scope": "selected R48 source hashes; not whole dirty repository manifest",
+    "files": [
+      {
+        "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+        "sha256": "5924fadf89c3393b682e0268e45aa15a4c4e844bfc8dbbadf32fd2611f7e30f4"
+      },
+      {
+        "path": "app/components/MainlineAStellarAtlasV608.tsx",
+        "sha256": "9c6b7cf5fba27c1a6ca25ef2658ee9f18ef385fdb1d8f394c29cf54fa4704b02"
+      },
+      {
+        "path": "app/components/MainlineAStellarPortraitV607.tsx",
+        "sha256": "28c17e2c1f0be837a25a3b347780b967b1f28b9dbd7f8fbfbaabbe51e445eeda"
+      },
+      {
+        "path": "app/components/PostV593StellarRosterPanel.tsx",
+        "sha256": "845e9382f25106294f4df600ac3f4cd10347dc389431f55379e0fef20200ac61"
+      },
+      {
+        "path": "app/data/mainlineABetaAssetIntakeV607.test.ts",
+        "sha256": "a19acaf0ec9ab359b30abe845fb81395481b88dd347147c475eab325faa835f2"
+      },
+      {
+        "path": "app/data/mainlineABetaAssetIntakeV607.ts",
+        "sha256": "bd8d96e56a106f9642810a2aae1d119f887b8847cdd78b784e22d525df75980a"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarNarrativesV607.ts",
+        "sha256": "2983f2cbc0770dcc0cc5ebf7938435f35ea1b29fea0717186c62adac3f629eb8"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+        "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+      },
+      {
+        "path": "app/data/mainlineAMetadataV607.ts",
+        "sha256": "a2de61c9e822e7e9bd06f1ac04233cd0044c80ac0a285ca8d3c440dac9307a70"
+      },
+      {
+        "path": "app/data/mainlineAStellarEvidenceV607.ts",
+        "sha256": "5fdf7948677effe0b12aa9ee46126ee4553e7c2fc389c26da538fcf1055af792"
+      },
+      {
+        "path": "app/data/stellarHeroesV592.generated.ts",
+        "sha256": "21d9d19d779eccc172d607ca1d868d419799ed1f0714032ccf8b4f6abbb055af"
+      },
+      {
+        "path": "app/lib/celestialCatalog.ts",
+        "sha256": "d08c0cfd1819b06541db48603834ce0402ee076e9b548b2da37a686a9bf5197b"
+      },
+      {
+        "path": "app/lib/mainlineAStellarAtlasV608.test.tsx",
+        "sha256": "5279196250af816f49a25275de077faf6f186dd9aefddb49c2d9a2dc78adf608"
+      },
+      {
+        "path": "app/lib/mainlineAStellarAtlasV608.ts",
+        "sha256": "a849bb7bd3b3847afebae719d5b4931ca50ba922c580b736fe6134ea7cce6012"
+      },
+      {
+        "path": "scripts/build-mainline-a6-release-packet.mjs",
+        "sha256": "464cee514ded97fa96b41641cf3f93475de015ac7a48f98eac30f76d77f5b00f"
+      },
+      {
+        "path": "scripts/project-mainline-a-beta-stellar.mjs",
+        "sha256": "31463c8bb4c08ef320a668442ae7722229b37f8584b54d5a6daded35653a88cc"
+      },
+      {
+        "path": "scripts/project-mainline-a-beta-stellar.test.mjs",
+        "sha256": "9dd038743417b040f096b5da979cb85503f95382b668059dbd4e48d82bf94e82"
+      },
+      {
+        "path": "scripts/render-mainline-a4-portraits.ts",
+        "sha256": "4d1e66338e0194e672e1fbefb2c05ba42e72206f8ee4434ae3b7890aac2fc8e3"
+      }
+    ]
+  },
+  "openGates": [
+    "4 remaining star references/component identity",
+    "12 additional individually rights-cleared nebula images and runtime art",
+    "multi-device GPU/FPS and lifecycle acceptance",
+    "root app and next-web code-line reconciliation",
+    "public deployment and final release acceptance"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

@@ -1,0 +1,43 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:26.993Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "bodes-galaxy",
+  "category": "galaxy",
+  "query": "Bode Galaxy M81",
+  "requiredTermGroups": [
+    [
+      "bode",
+      "m81"
+    ],
+    [
+      "galaxy"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Bode%20Galaxy%20M81&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Bode%20Galaxy%20M81&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 166,
+    "responseSha256": "08d5efaca3b25df95399fc240e45e97a99d0ae07fc50e45e4ad94a7db953b350"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "67ce1297b53873696b4b0e07e92004506ac52abed47b5251a65bea3264d51466"
+}

@@ -1,0 +1,120 @@
+{
+  "version": "v591-mars-visual-source-acquisition-v1",
+  "metadataProbe": {
+    "productIdentity": "USGS Mars Viking MDIM 2.1 colorized global mosaic plus MGS MOLA MEGDR 16 pixels/degree",
+    "mission": [
+      "Viking Orbiter",
+      "Mars Global Surveyor"
+    ],
+    "instruments": [
+      "Viking Orbiter imaging system",
+      "Mars Orbiter Laser Altimeter"
+    ],
+    "sourceCatalogs": [
+      "NASA/JPL Photojournal",
+      "USGS Astropedia",
+      "NASA PDS Geosciences Node"
+    ],
+    "observedAt": "2026-08-11T10:36:00+08:00",
+    "redirectReview": {
+      "originalUrl": "https://photojournal.jpl.nasa.gov/tiff/PIA00407.tif",
+      "result": "blocked-redirect-host",
+      "redirectHost": "science.nasa.gov",
+      "automaticRetry": false,
+      "automaticReplacement": false,
+      "canonicalContinuation": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00407/PIA00407.jpg",
+      "identityBasis": "same NASA/JPL Photojournal product PIA00407; canonical asset path recorded in the existing repository source catalog",
+      "canonicalContinuationResult": "blocked-non-equirectangular-6787x6787",
+      "canonicalPayloadWritten": false,
+      "usgsProjectionContinuation": "https://astrogeology.usgs.gov/ckan/dataset/7131d503-cdc9-45a5-8f83-5126c0fd397e/resource/5ea881c6-01b3-41fa-a7af-42d2131b54f1/download/mars_viking_mdim21_clrmosaic_1km.jpg",
+      "usgsProductPage": "https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m",
+      "usgsIdentityBasis": "NASA AMES Viking imagery colorized over MDIM 2.1, published by USGS Astrogeology in global equirectangular projection",
+      "continuationPolicy": "explicit approved-host projection correction; not an automatic retry or hidden fallback"
+    }
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "allowedHosts": [
+      "photojournal.jpl.nasa.gov",
+      "assets.science.nasa.gov",
+      "astrogeology.usgs.gov",
+      "planetarymaps.usgs.gov",
+      "pds-geosciences.wustl.edu"
+    ]
+  },
+  "assets": [
+    {
+      "id": "mars-albedo-source-v591",
+      "body": "mars",
+      "role": "albedo-source",
+      "sourceUrl": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/mars/mars_viking_clrmosaic_global_1024.jpg",
+      "expectedMediaTypes": [
+        "image/jpeg",
+        "image/jpg",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 1024,
+      "minimumHeight": 512,
+      "license": {
+        "id": "NASA-USGS-public-domain",
+        "url": "https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m"
+      },
+      "observationIdentity": "USGS Mars Viking Global Color Mosaic 925 m product preview in global equirectangular projection",
+      "observationLimit": "The 1024 px USGS preview is admitted only as product-identity and color-reference evidence. Runtime Full albedo remains exact-byte frozen v588 8K data and must pass a deterministic similarity audit; the preview is never upscaled and presented as 8K observation detail.",
+      "runtimeReadOnlyAsset": {
+        "path": "public/textures/candidate-v588/ktx2/mars-albedo.ktx2",
+        "sha256": "a6e64c0ce12e18ffe9f08bc48578db2ed302c36fb44283d264d5b1b3d3e5bfc1",
+        "fallbackPath": "public/textures/candidate-v588/fallback/desktop/mars-albedo.webp",
+        "fallbackSha256": "d6c72b2a2fff9b1a22696ab786e0a7ccc9ad7d3f2054422165e2e4d4bf4ffdd3",
+        "identityAdmission": "pending-usgs-preview-similarity-audit"
+      },
+      "presentationOnly": true
+    },
+    {
+      "id": "mars-mola-label-source-v591",
+      "body": "mars",
+      "role": "height-metadata",
+      "sourceUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.lbl",
+      "outputPath": "source-cache/celestial-convergence-v591/mars/megt90n000eb.lbl",
+      "expectedMediaTypes": [
+        "text/plain",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "license": {
+        "id": "NASA-PDS-public-domain",
+        "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_3001/"
+      },
+      "observationIdentity": "MGS MOLA MEGDR 16 pixels/degree PDS3 label",
+      "observationLimit": "The label supplies raster dimensions, signed big-endian encoding, missing-value semantics and elevation units for deterministic presentation derivatives.",
+      "presentationOnly": true
+    },
+    {
+      "id": "mars-mola-height-source-v591",
+      "body": "mars",
+      "role": "height-source",
+      "sourceUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.img",
+      "outputPath": "source-cache/celestial-convergence-v591/mars/megt90n000eb.img",
+      "expectedMediaTypes": [
+        "application/octet-stream",
+        "binary/octet-stream",
+        "image/img"
+      ],
+      "expectedWidth": 5760,
+      "expectedHeight": 2880,
+      "expectedBytes": 33177600,
+      "license": {
+        "id": "NASA-PDS-public-domain",
+        "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_3001/"
+      },
+      "observationIdentity": "MGS MOLA MEGDR 16 pixels/degree global topography, signed MSB 16-bit integer",
+      "observationLimit": "MOLA elevation drives presentation normal, relief and terrain-scale roughness only; it does not write to Orbit Atlas scientific state.",
+      "presentationOnly": true
+    }
+  ]
+}

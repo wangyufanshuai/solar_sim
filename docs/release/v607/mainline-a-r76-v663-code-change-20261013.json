@@ -1,0 +1,71 @@
+{
+  "schema": "mainline-a-r76-code-change-v663",
+  "round": 76,
+  "date": "2026-10-13",
+  "status": "effective-batch-counted-current-web-source",
+  "comparisonBase": {
+    "role": "immediately preceding preserved R75 web build",
+    "path": ".next-mainline-a-r75-20261013v662r75web02/app",
+    "appSourceSha256": "6e206331b2aecc4d6a480040a7d3ba99d40972435b3c0e82278b10c6832036db"
+  },
+  "currentBuild": {
+    "receipt": "docs/release/v607/mainline-a-r76-build-20261013v663r76web02.json",
+    "buildId": "BdJAn-4aFRC4fe7fB_Cdh",
+    "appSourceSha256": "742cfb27bc3e267343c7ada561cc05a7056d7ad8534b678e920fb6745e5f95e2"
+  },
+  "effectiveCodeFiles": {
+    "newProduction": [
+      "app/lib/mainlineAWebReadinessV663.ts",
+      "app/components/MainlineAWebReadinessPanelV663.tsx",
+      "app/api/atlas/mainline-a-web-readiness/route.ts"
+    ],
+    "newDataAndVerificationTools": [
+      "scripts/build-mainline-a-r76-readiness-v663.mjs",
+      "scripts/verify-mainline-a-r76-readiness-v663.mjs",
+      "scripts/verify-mainline-a-r76-http-v663.mjs",
+      "scripts/capture-mainline-a-r76-browser-v663.mjs",
+      "scripts/audit-mainline-a-r76-evidence-v663.mjs"
+    ],
+    "existingProductionIntegration": [
+      "app/components/CelestialObjectPassportPanel.tsx",
+      "app/components/MainlineANebulaReviewPanelV610.tsx"
+    ],
+    "newSubstantiveTests": [
+      "app/lib/mainlineAWebReadinessV663.test.tsx",
+      "scripts/mainline-a-r76-readiness-v663.test.mjs",
+      "scripts/verify-mainline-a-r76-http-v663.test.mjs",
+      "scripts/audit-mainline-a-r76-evidence-v663.test.mjs"
+    ]
+  },
+  "effectiveLineMethod": "Count nonempty non-comment lines in 12 new code files; compare two existing UI files against the preserved R75 app source and count the 22 added behavior lines. Generated data, receipts, screenshots, documentation, lockfiles and unrelated parallel-window changes are excluded.",
+  "counts": {
+    "newProductionFiles": 3,
+    "newDataAndVerificationToolFiles": 5,
+    "newTestFiles": 4,
+    "existingProductionFilesChanged": 2,
+    "effectiveNewProductionAndToolLinesInNewFiles": 1767,
+    "effectiveAddedProductionIntegrationLines": 22,
+    "effectiveProductionAndToolAddedLines": 1789,
+    "effectiveSubstantiveTestAddedLines": 362,
+    "effectiveAddedCodeLinesTotal": 2151,
+    "existingProductionLinesReplacedOrRemoved": 2,
+    "effectiveProductionUiLinesIncludingIntegration": 509,
+    "roundMinimum500MetWithoutTests": true,
+    "roundTarget1000MetWithoutTests": true
+  },
+  "behavior": [
+    "Replay 20 pinned real prior raw source artifacts and fail closed on forged image capture, component confirmation, source conflict deletion and byte drift.",
+    "Expose nine held source/release rows and six pending gates without raw artifact paths or scientific payload writeback.",
+    "Verify default-off HTTP denial for 19 candidate review routes plus five blocked image routes.",
+    "Give the mobile web passport a compact scene view that can expand back into details."
+  ],
+  "boundary": {
+    "parentGitTouchedByRound": false,
+    "physicsKernelEditedByRound": false,
+    "concurrentRelativityWindowExcludedFromCounts": true,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  }
+}

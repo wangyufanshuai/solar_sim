@@ -1,0 +1,4394 @@
+{
+  "schema": "mainline-a-m5-local-candidate-freeze/v1",
+  "at": "2026-10-28T15:14:34.585Z",
+  "status": "frozen-local-candidate-with-explicit-DOM-adjudication",
+  "candidateTechnicalFreeze": true,
+  "goalScope": "M3-M5 A12 stars/constellations/nebulae; no Beta expansion",
+  "binding": {
+    "buildId": "qg3f2Z6WY5qYWfo3vEjmq",
+    "runtimeBuildId": "mainline-a-183482b4a793d6d4",
+    "sourceSha256": "183482b4a793d6d4e22ade276d3bfd301155f809a3618b5ed07102c0a1441b60",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "finalBinding": {
+    "buildId": "qg3f2Z6WY5qYWfo3vEjmq",
+    "runtimeBuildId": "mainline-a-183482b4a793d6d4",
+    "sourceSha256": "183482b4a793d6d4e22ade276d3bfd301155f809a3618b5ed07102c0a1441b60",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "deliveryEntry": {
+    "path": "docs/release/v607/mainline-a-m5-candidate-delivery-20261028.md",
+    "bytes": 4378,
+    "sha256": "3bd6c0a5073f43d34250079b6809ae97622c2c0ca930e4d266f08ad3ad12bb98"
+  },
+  "requirements": [
+    {
+      "id": "M0-M2-preserve",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Preserve the completed baseline, six samples and unified A12 stars; do not restart or promote held components.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-stars-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m5-20261023/m2-default-visual-review01.json",
+        "docs/release/v607/mainline-a-current-art-preview-20261019.md",
+        "output/playwright/mainline-a-m5-20261023/protected-inputs-audit02.json"
+      ],
+      "assessment": "M0-M2 are inherited by the active goal; current M2 all24 normal groups and4 aliases retain56 images. No new human signoff inferred."
+    },
+    {
+      "id": "M3-A12-viewer",
+      "status": "verified-local-candidate-scope",
+      "requirement": "12 nebulae × desktop/mobile; normal viewing, fit,2x,viewer-source and scene-source states.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json"
+      ],
+      "assessment": "24groups×5normalviews=120; every normal view issues[] and viewer checks true."
+    },
+    {
+      "id": "M3-compose-credit",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Preserve aspect/composition, original credit and 2D/candidate meaning; explain imperfect original footprints.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m5-20261023/desktop-nebula-visual-review01.json",
+        "output/playwright/mainline-a-m5-20261023/mobile-nebula-visual-review01.json"
+      ],
+      "assessment": "All12 default views reviewed perdevice; fit/source subsets actually viewed. M42credit retained; M20stepped coverage and NGC2237localfield disclosed; no blocking finding in recorded scopes. Not all138images individually art-approved."
+    },
+    {
+      "id": "M3-input-focus-release",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Zoom/pan/reset, keyboard/pointer,close/Escape restore focus; borrowed image returns without new request.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json"
+      ],
+      "assessment": "All24 viewer groups have doubleScale,keyboardPan,pointerPan,reset,fullCredit,sourceFocus,Escape/buttonFocus,sameBorrowedNode,noAdditionalImageRequest,borrowedNodeReturned,scenePreserved true; wheel checked ondesktop."
+    },
+    {
+      "id": "M3-faults",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Explicit slow/cancel/retry,HTTP failure/retry,timeout/retry andlate-response switch with correct finalidentity.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json"
+      ],
+      "assessment": "8flows=4perdevice,18faultscreenshots,allchecks true andunexpectedErrors0. Controlled503errors retained; this is not zero-total-console-errors."
+    },
+    {
+      "id": "M4-A12-select-return",
+      "status": "verified-local-candidate-scope",
+      "requirement": "12constellations×2viewports,default/comparison/boundary and stable return.",
+      "evidence": [
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json"
+      ],
+      "assessment": "24groups×3views=72; normalissues[] andcomparisonReturn.validation.ok inall24."
+    },
+    {
+      "id": "M4-boundary-labels",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Distinguish line figure and IAU boundary; selected anchors/labels remain visible.",
+      "evidence": [
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json",
+        "output/playwright/mainline-a-m5-20261023/m4-desktop-visual-review01.json",
+        "output/playwright/mainline-a-m5-20261023/m4-root-visual-review01.json"
+      ],
+      "assessment": "Recorded agent reviews cover all12desktop andall12mobiledefaults, plusOrioncomparison/boundary. No blocking finding; no universal full-boundary-fit claim."
+    },
+    {
+      "id": "M4-five-stop-journey",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Five realstops Ori→M42→B33→Betelgeuse→Rigel.",
+      "evidence": [
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json"
+      ],
+      "assessment": "4profiles desktop/mobile/360narrow/reduced-motion,10views each. Five station and previous/story/externalpause/resume/return states retained."
+    },
+    {
+      "id": "M4-control-and-pose",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Forward/back,external interruption/resume,disabled ends,restore actual user-adjusted departure pose andfocus.",
+      "evidence": [
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json"
+      ],
+      "assessment": "All journeychecks true,poseReturn.ok true with0.001tolerance andreturnVisibility.ok true; mobile/narrow also preserve journey afterpassportclose."
+    },
+    {
+      "id": "M5-build-source",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Finalmatrix,HTTP,GL,responsive,gallery,longruns use same2465-input source/build/runtime.",
+      "evidence": [
+        "docs/release/v607/mainline-a-r85-build-20261019-m5web15.json",
+        "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json",
+        "output/playwright/mainline-a-m5-20261028/interruption-repair-handoff01.json",
+        "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/plan.json",
+        "output/playwright/mainline-a-m5-20261028/final-common-binding04.json"
+      ],
+      "assessment": "Final source/build/assets/images/protected inputs and tool pins re-read at candidate freeze; per-item evidence remains scoped."
+    },
+    {
+      "id": "M5-physics-data-invariants",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Preserve protected scientific/material/catalog inputs and scientificPayloadWriteback=false.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261023/protected-inputs-audit02.json",
+        "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json",
+        "output/playwright/mainline-a-m5-20261028/interruption-repair-handoff01.json",
+        "output/playwright/mainline-a-m5-20261028/final-common-binding04.json"
+      ],
+      "assessment": "Final source/build/assets/images/protected inputs and tool pins re-read at candidate freeze; per-item evidence remains scoped."
+    },
+    {
+      "id": "M5-tests-lint-build",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Applicable Node/Vitest/lint/productionbuild, with evidence tied to the actual product/tool version.",
+      "evidence": [
+        "docs/release/v607/mainline-a-r85-build-20261019-m5web15.json",
+        "output/playwright/mainline-a-m5-20261019/final15-app-validation.json",
+        "output/playwright/mainline-a-m5-20261019/final15-tools-validation.json",
+        "output/playwright/mainline-a-m5-20261028/single-device-tool-tests01.log",
+        "output/playwright/mainline-a-m5-20261028/interruption-repair-handoff01.json",
+        "output/playwright/mainline-a-m5-20261028/pair-adjudicator-tests01.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json"
+      ],
+      "assessment": "Build15 production build, 30 scoped app tests and targeted lint match unchanged product source. Current capture tools passed 48/48; the paired adjudicator passed its own 8/8 tests and independent code/evidence review. Earlier 70/42/37 test counts retain only their original version scopes."
+    },
+    {
+      "id": "M5-HTTP-rights-hold",
+      "status": "verified-local-candidate-scope",
+      "requirement": "31requestable image routes,5held routes,local bytes/dimensions/metadata; enabled anddefaultoff modes.",
+      "evidence": [
+        "docs/release/v607/mainline-a-m1-http-enabled-20261023-m5http21.json",
+        "docs/release/v607/mainline-a-m1-http-default-off-20261019-m5http20.json"
+      ],
+      "assessment": "Both current-build HTTPverifiers.ok true,issues[]; images are candidate-only andrights remain pending. No neednewexternal rights approval forprivatecandidate."
+    },
+    {
+      "id": "M5-A36-matrix",
+      "status": "verified-local-candidate-scope",
+      "requirement": "A12stars+A12constellations+A12nebulae,desktop/mobile andfullalias/fault/journey protocol.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-stars-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json",
+        "output/playwright/mainline-a-m5-final15-20261023/gallery-manifest.json",
+        "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json"
+      ],
+      "assessment": "36objects72devicegroups,240canonical+66supplementary=306PNG. Existing byteaudit confirmsall306hashes andsamebuild. Not a 360px fullA36 matrix."
+    },
+    {
+      "id": "M5-gallery-browser",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Complete unmodified-image gallery and actualdesktop/mobile gallerybrowser checks.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-final15-20261023/gallery-manifest.json",
+        "output/playwright/mainline-a-m5-final15-20261023/gallery-browser-check.json"
+      ],
+      "assessment": "Same-build gallery exists; both viewportchecks passed. Gallerybrowser pass is not individual human art signoff."
+    },
+    {
+      "id": "M5-sizes-samples",
+      "status": "verified-local-candidate-scope",
+      "requirement": "SiriusA/Orion/M42 at1440x900,768x1024,430x932; include360narrow check without enlarging claim.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261019/responsive15b-visual-audit.json",
+        "output/playwright/mainline-a-m5-20261023/20261023-pointer02/receipt.json",
+        "output/playwright/mainline-a-m4-final15-20261023/receipt.json",
+        "docs/release/v607/mainline-a-current-art-preview-20261019.md"
+      ],
+      "assessment": "Responsive15b9independent defaults+6supplement actualimages reviewed;360journey/pointer finite coverage. Six currentviews linked fromlocalreview."
+    },
+    {
+      "id": "M5-WebGL",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Actualdesktop/mobile WebGL contextloss/restoration andpostrecovery interaction/querycleanup.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261019/final15-webgl-audit.json"
+      ],
+      "assessment": "2cases trustedloss/restore events; pureinspectors pass; sameCanvas/context,drawsresume,viewer open/close/focusreturn. Does not prove OS/GPUdriver crash recovery."
+    },
+    {
+      "id": "M5-orbit-labels",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Suppress solarlabels in focus,restore explicit user preference onexit.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261018/orbit-layer-ui-20261023-orbitui08/receipt.json"
+      ],
+      "assessment": "Orbitui08 passed26mainstates+8supplementary,errors[] inbothdevices."
+    },
+    {
+      "id": "M5-required-pointer-controls",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Passportreopen andexit hit-test andactualpointer action atdesktop/mobile/360.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261023/20261023-pointer02/receipt.json"
+      ],
+      "assessment": "All3items passed,correctreopen selection andexit reset. LocalA/Bstrip overlap remains nonblocking because requiredcontrolsareusable."
+    },
+    {
+      "id": "M5-desktop30m",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Independentdesktop real>=1800000ms,6full5minwindows,fixedquality/clock/perf/resource/tail/heap.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261028/desktop07-review01.json",
+        "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-session.json",
+        "output/playwright/mainline-a-m5-20261028/dom02-independent-review01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json"
+      ],
+      "assessment": "Original full-duration independent raw, six-window routes, strict guard chains, clock, profile, resource/frame/heap checks and separately bound DOM adjudication passed. Original machine advisory remains unchanged."
+    },
+    {
+      "id": "M5-mobile30m",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Independentfresh390x844/DPR1 mobileobservation>=1800000ms with6completewindows andstrictguards.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/plan.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json"
+      ],
+      "assessment": "Original full-duration independent raw, six-window routes, strict guard chains, clock, profile, resource/frame/heap checks and separately bound DOM adjudication passed. Original machine advisory remains unchanged."
+    },
+    {
+      "id": "M5-paired-offline",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Recompute v643/v648/v650/v665,current-source,clock,quality,frame/tail/heap,6routes andindependence; retain alloriginalmachineflags and adjudicate only provenDOMreview.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261028/desktop07-review01.json",
+        "output/playwright/mainline-a-m5-20261028/dom02-independent-review01.json",
+        "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/plan.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json"
+      ],
+      "assessment": "Original full-duration independent raw, six-window routes, strict guard chains, clock, profile, resource/frame/heap checks and separately bound DOM adjudication passed. Original machine advisory remains unchanged."
+    },
+    {
+      "id": "M5-release-trend",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Warmbaseline and repeated exits withgeometry/material/texture/DOM/heap/renderer curves,stablebaseline orboundedcache.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261028/desktop07-review01.json",
+        "output/playwright/mainline-a-m5-20261028/dom02-independent-review01.json",
+        "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json",
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json"
+      ],
+      "assessment": "Original full-duration independent raw, six-window routes, strict guard chains, clock, profile, resource/frame/heap checks and separately bound DOM adjudication passed. Original machine advisory remains unchanged."
+    },
+    {
+      "id": "M5-capacity-interrupt",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Original2GiBphysical/2GiBcommit/10%every15s forformal,ownedbrowsercleanup/rawpreservation,failuresunchanged.",
+      "evidence": [
+        "output/playwright/mainline-a-m5-20261028/interruption-repair-handoff01.json",
+        "output/playwright/mainline-a-m5-20261028/single-device-tool-tests01.log",
+        "output/playwright/mainline-a-m5-20261028/desktop07-review01.json",
+        "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/plan.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+        "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+        "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json"
+      ],
+      "assessment": "Original full-duration independent raw, six-window routes, strict guard chains, clock, profile, resource/frame/heap checks and separately bound DOM adjudication passed. Original machine advisory remains unchanged."
+    },
+    {
+      "id": "M5-local-package-entry",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Usablebuild15 localentry,start/stop,controlleddefaultofffallback andstage dependency disclosure.",
+      "evidence": [
+        "docs/release/v607/mainline-a-art-local-review-20261024.md",
+        "docs/release/v607/mainline-a-current-art-preview-20261019.md",
+        "docs/release/v607/mainline-a-r85-build-20261019-m5web15.json",
+        "docs/release/v607/mainline-a-m1-http-default-off-20261019-m5http20.json",
+        "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json"
+      ],
+      "assessment": "Exactstartup instructions andthree-stepexperience available; node_modules/public links documented. This is workspace-dependent localcandidate, notportableinstaller/verifiedwhole-siterollback."
+    },
+    {
+      "id": "M5-final-freeze",
+      "status": "verified-local-candidate-scope",
+      "requirement": "Final manifest binds everyreceipt/path/bytes/SHA/run/build,306main+9supplement,visualreviews,pairraws/workloads/quality/clock/DOMadjudications andtool/source/assets,withpendingapprovals.",
+      "evidence": [
+        "docs/release/v607/mainline-a-art-master-plan-20261014.md",
+        "docs/release/v607/mainline-a-m4-m5-delivery-draft-20261015.md",
+        "docs/release/v607/mainline-a-art-local-review-20261024.md",
+        "output/playwright/mainline-a-m5-20261028/final-common-binding04.json",
+        "docs/release/v607/mainline-a-m5-candidate-delivery-20261028.md"
+      ],
+      "assessment": "This manifest binds all local required evidence and the standalone candidate delivery entry; external approvals remain pending."
+    },
+    {
+      "id": "BOUNDARY-human-rights-device-science-publish",
+      "status": "boundary-preserved-external-approvals-pending",
+      "requirement": "Retain candidate-only/hold/not-admitted/writeback=false; humanart,rights,physicaldevices,scientificvalidity/publicrelease separatelypending.",
+      "evidence": [
+        "docs/release/v607/mainline-a-art-master-plan-20261014.md",
+        "docs/release/v607/mainline-a-art-local-review-20261024.md",
+        "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json",
+        "output/playwright/mainline-a-m5-20261028/dom02-independent-review01.json"
+      ],
+      "assessment": "All local candidate boundaries retained; external approvals are separate and remain pending."
+    },
+    {
+      "id": "SCOPE-line-count-and-preservation",
+      "status": "scope-and-preservation-confirmed",
+      "requirement": "Preserve dirtytree/history; no Beta/kernel expansion to satisfy arbitrarylinecount ornewauditround.",
+      "evidence": [
+        "docs/release/v607/mainline-a-art-master-plan-20261014.md",
+        "docs/release/v607/mainline-a-m4-m5-delivery-draft-20261015.md"
+      ],
+      "assessment": "Acceptance-only closeout; no product feature quota was manufactured. Existing dirty tree and failure artifacts remain."
+    }
+  ],
+  "counts": {
+    "mainGallery": 240,
+    "additionalGallery": 66,
+    "responsiveDefault": 9,
+    "responsiveSupplement": 6,
+    "protected": 117,
+    "references": 44,
+    "assets31": 31,
+    "metadata6": 6,
+    "compiled": 3,
+    "uniquePinnedFiles": 717
+  },
+  "source": {
+    "scope": "app-source-config-package-lock-excludes-public-assets-and-tests",
+    "count": 2465,
+    "beforeSha256": "183482b4a793d6d4e22ade276d3bfd301155f809a3618b5ed07102c0a1441b60",
+    "afterSha256": "183482b4a793d6d4e22ade276d3bfd301155f809a3618b5ed07102c0a1441b60",
+    "fullInputManifestCompared": true,
+    "environmentValuesRecorded": false
+  },
+  "tools": [
+    {
+      "path": "scripts/capture-mainline-a-m5-longrun.mjs",
+      "bytes": 41948,
+      "sha256": "359c47a153be13a37fc6246a0422c760d6e3e2fe5c9b227ac303220e5a8cace1"
+    },
+    {
+      "path": "scripts/mainline-a-m5-longrun-workload.mjs",
+      "bytes": 40682,
+      "sha256": "97fd252240e4e30fede1046f68aa7cff6f0e6b96ab0d29c58b35df919f4cc63b"
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-r65-longrun-v650.mjs",
+      "bytes": 19215,
+      "sha256": "c7c075dcd98caf3a72f024e57e285791aa4b399eda65f91646e47caaadac2766"
+    },
+    {
+      "path": "scripts/mainline-a-r78-longrun-series-v665.mjs",
+      "bytes": 13213,
+      "sha256": "2f533d27515919638569663853e7ab42094ecefd8dfc5d6f235b259621bbb1f0"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-r65-current-v648.mjs",
+      "bytes": 11396,
+      "sha256": "dd6062975718aed46e4e5fcfc51fe96e32e86ea207ab81c7319ac9b9e0d2e1ee"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m1-browser.mjs",
+      "bytes": 26516,
+      "sha256": "3017642ecca58fdb34cee3a352faa5a23abdaf14afcd095ad268b85571793571"
+    },
+    {
+      "path": "scripts/build-mainline-a-preserved.mjs",
+      "bytes": 13731,
+      "sha256": "2f057ea22f1336926908fde9808d3e57b43658a6dacef4872efa12a3ba53bbd7"
+    },
+    {
+      "path": "scripts/mainline-a-browser-camera-observation.mjs",
+      "bytes": 5328,
+      "sha256": "f5eae5be3cece9a536f43d77e3cf349b09298b3b0fee0c742814c6b01e2625a9"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.mjs",
+      "bytes": 43639,
+      "sha256": "32d8a8a2183b038c0f90ba1ae9ee827515f43cf9b9f52f08a3f1f3b0ddea15d4"
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.mjs",
+      "bytes": 9716,
+      "sha256": "22811d4d6e814a44d47ae823f4dac4c3a91b71cc65c2ffe52427f8e43adb5c32"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m5-longrun.test.mjs",
+      "bytes": 37472,
+      "sha256": "3c016d81de925f64fff889f68c603ba014792198e965351b982ab14d10ad2b1c"
+    },
+    {
+      "path": "scripts/mainline-a-m5-longrun-workload.test.mjs",
+      "bytes": 22138,
+      "sha256": "2ae278b748d48607720e77e96d997f815b0762f39242edee2a5864dc4be74917"
+    },
+    {
+      "path": "scripts/mainline-a-browser-resource-guard.mjs",
+      "bytes": 4180,
+      "sha256": "d5ffaffc90110f5e45648e0d6d4c127e1e82382cd08975087efa4df9209a384b"
+    },
+    {
+      "path": "scripts/adjudicate-mainline-a-m5-longrun-pair.mjs",
+      "bytes": 30864,
+      "sha256": "36af3d26afad6208d07c970fad7fdf88270480924b4976f90d3ad05cc4b5672d"
+    },
+    {
+      "path": "scripts/adjudicate-mainline-a-m5-longrun-pair.test.mjs",
+      "bytes": 11407,
+      "sha256": "c4610b9f5a52ad0d3858d9f5b9bc2b91d5e49074a8ece80df571cd2fd27c6553"
+    }
+  ],
+  "tests": {
+    "current48Log": "output/playwright/mainline-a-m5-20261028/single-device-tool-tests01.log",
+    "paired8Receipt": "output/playwright/mainline-a-m5-20261028/pair-adjudicator-tests01.json",
+    "scope": "Version-bound existing tool evidence; tests were not rerun by this audit."
+  },
+  "pair": {
+    "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+    "sha256": "417efb711d050a9fda1be4eaf90dbb07c7949c4d72f419ef83d99c26be80950d",
+    "originalMachineOk": false,
+    "originalMachineDOMOk": false,
+    "adjudication": "passed-with-explicit-DOM-adjudication",
+    "checks": {
+      "originalNonDOMGates": true,
+      "desktopExplicitDOMReview": true,
+      "mobileSameSessionDOMReview": true,
+      "strictGuards": true
+    },
+    "machinePin": {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json",
+      "bytes": 118648,
+      "sha256": "a1b28cce9424c889774900062d147c159fe72e43457be11b80f857a812724287"
+    },
+    "combinedDerivedPin": {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/combined-derived-receipt.json",
+      "bytes": 65361238,
+      "sha256": "e30587acb7367fee0adda0101935cdc5a61ee9c9c0ddef39ba73bc6b6fe8a2ab"
+    },
+    "guards": [
+      {
+        "ok": true,
+        "issues": [],
+        "device": "desktop",
+        "policy": {
+          "intervalMs": 15000,
+          "freePhysicalBytesMin": 2147483648,
+          "commitHeadroomBytesMin": 2147483648,
+          "commitHeadroomRatioMin": 0.1
+        },
+        "samples": 118,
+        "firstAt": "2026-10-28T05:35:46.992Z",
+        "lastAt": "2026-10-28T06:07:03.315Z",
+        "maxObservedGapMs": 18676,
+        "minimumPhysicalBytes": 3066855424,
+        "minimumCommitHeadroomBytes": 6317264896,
+        "excludedOtherDeviceSamples": 102
+      },
+      {
+        "ok": true,
+        "issues": [],
+        "device": "mobile",
+        "policy": {
+          "intervalMs": 15000,
+          "freePhysicalBytesMin": 2147483648,
+          "commitHeadroomBytesMin": 2147483648,
+          "commitHeadroomRatioMin": 0.1
+        },
+        "samples": 118,
+        "firstAt": "2026-10-28T12:18:46.014Z",
+        "lastAt": "2026-10-28T12:49:56.545Z",
+        "maxObservedGapMs": 17845,
+        "minimumPhysicalBytes": 3130884096,
+        "minimumCommitHeadroomBytes": 10616795136,
+        "excludedOtherDeviceSamples": 0
+      }
+    ],
+    "targets": [
+      {
+        "device": "desktop",
+        "metric": "browser-animation-frame-interval-not-renderer-fps",
+        "target": {
+          "medianDerivedFpsMin": 55,
+          "p95MsMax": 33.3
+        },
+        "medianDerivedFps": 143.57501794754918,
+        "p95Ms": 7.1450000000186265,
+        "ok": true,
+        "rendererFpsMeasured": false
+      },
+      {
+        "device": "mobile",
+        "metric": "browser-animation-frame-interval-not-renderer-fps",
+        "target": {
+          "medianDerivedFpsMin": 30,
+          "p95MsMax": 50
+        },
+        "medianDerivedFps": 143.78145219353354,
+        "p95Ms": 7.130000000121072,
+        "ok": true,
+        "rendererFpsMeasured": false
+      }
+    ],
+    "sessions": [
+      {
+        "device": "desktop",
+        "browserLaunchId": "ba8ee5d6-9074-4395-b77a-ef8d92532752",
+        "contextId": "b2e0d302-c05d-4ad8-97c7-48852b6a3069",
+        "launchedAt": "2026-10-28T05:35:46.993Z",
+        "closedAt": "2026-10-28T06:07:05.464Z",
+        "browserClosed": true,
+        "profile": {
+          "sceneMode": "atlas",
+          "probeSceneMode": "atlas",
+          "qualityTier": "balanced",
+          "visualProfile": "legacy-v9",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "browserVersion": "156.0.8078.48",
+          "renderBudget": "balanced",
+          "presentation": {
+            "queryBudget": null,
+            "storedRenderBudget": null,
+            "storageReadable": true,
+            "url": "http://127.0.0.1:3151/"
+          },
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "devicePixelRatio": 1,
+          "canvasDPR": {
+            "width": 1280,
+            "height": 720,
+            "cssWidth": 1280,
+            "cssHeight": 720,
+            "x": 1,
+            "y": 1
+          },
+          "canvasCount": 1,
+          "renderer": {
+            "measurement": "rolling-window-samples-not-whole-run-percentiles",
+            "r3fWindowCapacity": 720,
+            "gpuWindowCapacity": 240,
+            "r3f": {
+              "p50Ms": 8,
+              "p95Ms": 447.5,
+              "samples": 23
+            },
+            "gpu": {
+              "p50Ms": 4.11,
+              "p95Ms": 126.62,
+              "samples": 22,
+              "timer": "active-ext-disjoint-timer-query-webgl2"
+            },
+            "drawCalls": 1,
+            "triangles": 1,
+            "textures": 34,
+            "programs": 23
+          },
+          "renderBudgetPreflight": {
+            "text": "轨道密度balanced",
+            "value": "balanced",
+            "source": "normal-HUD-layer-menu-props-backed-orbit-density-control"
+          }
+        }
+      },
+      {
+        "device": "mobile",
+        "browserLaunchId": "01f52563-a936-4bea-b58d-a11b1507c529",
+        "contextId": "dc184d83-06e7-4e06-a819-be2a7c2a73f7",
+        "launchedAt": "2026-10-28T12:18:46.015Z",
+        "closedAt": "2026-10-28T12:49:56.963Z",
+        "browserClosed": true,
+        "profile": {
+          "sceneMode": "atlas",
+          "probeSceneMode": "atlas",
+          "qualityTier": "mobile-safe",
+          "visualProfile": "legacy-v9",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/156.0.0.0 Safari/537.36",
+          "browserVersion": "156.0.8078.48",
+          "renderBudget": "balanced",
+          "presentation": {
+            "queryBudget": null,
+            "storedRenderBudget": null,
+            "storageReadable": true,
+            "url": "http://127.0.0.1:3151/"
+          },
+          "viewport": {
+            "width": 390,
+            "height": 844
+          },
+          "devicePixelRatio": 1,
+          "canvasDPR": {
+            "width": 390,
+            "height": 844,
+            "cssWidth": 390,
+            "cssHeight": 844,
+            "x": 1,
+            "y": 1
+          },
+          "canvasCount": 1,
+          "renderer": {
+            "measurement": "rolling-window-samples-not-whole-run-percentiles",
+            "r3fWindowCapacity": 720,
+            "gpuWindowCapacity": 240,
+            "r3f": {
+              "p50Ms": 18.6,
+              "p95Ms": 1514.1,
+              "samples": 17
+            },
+            "gpu": {
+              "p50Ms": 2.53,
+              "p95Ms": 213.34,
+              "samples": 14,
+              "timer": "active-ext-disjoint-timer-query-webgl2"
+            },
+            "drawCalls": 1,
+            "triangles": 1,
+            "textures": 34,
+            "programs": 22
+          },
+          "renderBudgetPreflight": {
+            "text": "轨道密度balanced",
+            "value": "balanced",
+            "source": "normal-HUD-layer-menu-props-backed-orbit-density-control"
+          }
+        }
+      }
+    ]
+  },
+  "evidencePins": [
+    {
+      "path": "docs/release/v607/mainline-a-r85-build-20261019-m5web15.json",
+      "bytes": 484328,
+      "sha256": "adc84b4e83c7717dd4aafd115c3da6f0523a8523bb2e9001a1f35423b4e90611"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-final15-20261023/gallery-manifest.json",
+      "bytes": 147565,
+      "sha256": "55f576601f7c58bb854f5d19431b5479d67e1f677f059654c258d2810ea4a78d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alpha-centauri-a-default.png",
+      "bytes": 348858,
+      "sha256": "ceaea7d7574dcc33e85096ad719bf4456a30037a92707d4055dd4c73d1cc61a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alpha-centauri-a-comparison.png",
+      "bytes": 383911,
+      "sha256": "ac928582791d3e490da000e1a322f1d87b9efc36678f037a14a821d210bdf457"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-achernar-default.png",
+      "bytes": 280157,
+      "sha256": "02fde69d3bf03074c3379d78316fdb8693b67906a8b1714db8b69f9b1dbfd29a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-achernar-comparison.png",
+      "bytes": 302362,
+      "sha256": "3e0a772c2b9a02c2a827afdb9902c2ac60467e170a4625b1fc006fe18e4d76ee"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-betelgeuse-default.png",
+      "bytes": 535994,
+      "sha256": "de505a739324716e9f2bc88a3ea45f6eaadb40ef554528785a7e967356802a89"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-betelgeuse-comparison.png",
+      "bytes": 559857,
+      "sha256": "2cfcd825c8c1400768d8581212b84f0e374584311fc60bf88e80cab111afb12b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-sirius-a-default.png",
+      "bytes": 158131,
+      "sha256": "6f58e955e8b74c39133595d1cec66bb3aef8e21aef92b07a8253aed827ebffd0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-sirius-a-comparison.png",
+      "bytes": 193198,
+      "sha256": "c7cf2135682a6ff504e8af9ec88bc75cb931133cf7bb2642ac154f99a5c92f18"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-rigel-default.png",
+      "bytes": 386988,
+      "sha256": "116c3563c7babb33006d703864b6ee89677deecb2a85a48044eda1cc60b386e0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-rigel-comparison.png",
+      "bytes": 416869,
+      "sha256": "7a2ce57b53689c2c33f82cabafe27a279ed761fbeccfeea442ed5c2b26e180d0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-antares-default.png",
+      "bytes": 715515,
+      "sha256": "c0c1bff05db006389ef881ee17350d0882b093681ffae5a00c46cf68bcacb886"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-antares-comparison.png",
+      "bytes": 750317,
+      "sha256": "142e0f6513f138ad44ea884e7408778106a66ceb13b2984b3e946ebad8b4e9da"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-canopus-default.png",
+      "bytes": 131347,
+      "sha256": "bd4816dfeed937aece6658bf5373e21dfa16f1b048ffc7d1e20f8d48e940834c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-canopus-comparison.png",
+      "bytes": 165283,
+      "sha256": "19520327e0a0c6201105bf96aebb7a4884d79e84fd3187d6ab778e282dd40998"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-arcturus-default.png",
+      "bytes": 617460,
+      "sha256": "2b6b106ee1c2479aae5f9466562cc794376236486146da43bf827a086c83e04a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-arcturus-comparison.png",
+      "bytes": 661698,
+      "sha256": "9b73ac526302ed90836be1354f5eeecb1a51f963266b6b916ea24ab2e07445c5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-vega-default.png",
+      "bytes": 134874,
+      "sha256": "805c06239529fa9ade5a721e29f90d5c4d9aace740a8035f380f0c0fa2696271"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-vega-comparison.png",
+      "bytes": 159169,
+      "sha256": "db3053d932fd5c41ea825900faf6979f593e326927d9eff62058c25e7c09a617"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-capella-a-default.png",
+      "bytes": 690305,
+      "sha256": "496011640b0f63bcb41f6193b535d250504dd07e95bb315a9b5be92d35ee2632"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-capella-a-comparison.png",
+      "bytes": 730305,
+      "sha256": "53e7903a6ec785b4a35d72d923c5cf0d1657c35eb45d8a46f65a28eba0bf7c68"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-procyon-a-default.png",
+      "bytes": 398224,
+      "sha256": "817f7228411a90ad25585b0513f0811ba14c466830d7a633fcf8c9469f312581"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-procyon-a-comparison.png",
+      "bytes": 427204,
+      "sha256": "3dd5019785e46c321b722708481ae88aa6c2760a8a37bf463db5d6b1f31d944c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-aldebaran-default.png",
+      "bytes": 782278,
+      "sha256": "3d50eda2d902b352a0b044483fea44b4ad53a233bb47b394edb5a64bebbcbd6b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-aldebaran-comparison.png",
+      "bytes": 823387,
+      "sha256": "434e8dc5e3ec7cae3912f883e450447094b22c33ba4d98124ebd56988aa244a4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-alpha-centauri-a-default.png",
+      "bytes": 70910,
+      "sha256": "444432314d01fcd08564d7c1f6a37b8791cb1f6820722e6127ae48aad18f9e8c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-alpha-centauri-a-comparison.png",
+      "bytes": 89050,
+      "sha256": "3f3783e0a86e556b6c9aeba71a32fbe7904c4362dbb0c7f727fe982bdb4d765d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-achernar-default.png",
+      "bytes": 83553,
+      "sha256": "978d863c020f7f622911e7a095c9f6d7213da5502afefc50293d3ba2aeac6c0b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-achernar-comparison.png",
+      "bytes": 71295,
+      "sha256": "f39383ff35f8a81fb8ec5926f546e45f072ede6e379506f8219160239e8cf884"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-betelgeuse-default.png",
+      "bytes": 200860,
+      "sha256": "66926b45decfb9411fdaa734b9fed0cbedd3ab7342f25e4496d37e5e9bb8c936"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-betelgeuse-comparison.png",
+      "bytes": 91296,
+      "sha256": "acfebe516dd283d601c97a6e31a7ec5c5a1de4b0d34cdf561ee8af24378ae404"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-sirius-a-default.png",
+      "bytes": 59793,
+      "sha256": "2dbc2f34e1fbef4b6d9814f6b30bfed63292d9d07f40a91f0c028120c8182b36"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-sirius-a-comparison.png",
+      "bytes": 86078,
+      "sha256": "887396659b6cc8b727a58df428b0eb6282b0c8b53bfbeea5298d3fa198ea5824"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-rigel-default.png",
+      "bytes": 134145,
+      "sha256": "0fc6405a25f8575c8e189b602c180b1b5d09b6bb336e50f0f0e38b42acb65e52"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-rigel-comparison.png",
+      "bytes": 88377,
+      "sha256": "625e38bc618534f6bb0b35b6d442748234b25259771a7e2d194f7c8d1f748f4b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-antares-default.png",
+      "bytes": 278768,
+      "sha256": "7f26e8281d110e66c715af3f8efda2fbfcfb85b996ebd73eb7554d7826c6c750"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-antares-comparison.png",
+      "bytes": 101123,
+      "sha256": "056034a66b9988bae1f8577cf71c563d4dc66bd0ef4e0b152529943457cfd5e1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-canopus-default.png",
+      "bytes": 56094,
+      "sha256": "967e8fa3fdbb3d799bebb75a92309fa116366d900b4def93b66939be5014d266"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-canopus-comparison.png",
+      "bytes": 87118,
+      "sha256": "179ef96c36ec922777d6247104cce3472a005049f1a9a08405e8f3ed18364b8e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-arcturus-default.png",
+      "bytes": 265990,
+      "sha256": "8f76af70a8a8d7f16062f3de0ae024d5caa346265fc64ff9bbf5c862cbcb71fe"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-arcturus-comparison.png",
+      "bytes": 106640,
+      "sha256": "3b57a100bb0ad141a4a323a477ae719be042c95f522e59f2a7e650c6b1582887"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-vega-default.png",
+      "bytes": 53967,
+      "sha256": "bb205f055f6ea32252751f0cf78aba9a3d165bb4a37e2165b85089217c27ebe9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-vega-comparison.png",
+      "bytes": 77034,
+      "sha256": "3c487c74319cd1596854f6b2660e372f417bbcb09d99447373ff167c669e58e0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-capella-a-default.png",
+      "bytes": 269708,
+      "sha256": "39f8b143dd2dd8c5418e92586c06da54c276f2acf686f823c0ebfb8d7a2b4ae3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-capella-a-comparison.png",
+      "bytes": 117771,
+      "sha256": "9a243273ff16aec15ebe8c823b68605bde56295f2aa2562e2240795329b334d5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-procyon-a-default.png",
+      "bytes": 139409,
+      "sha256": "5b5bd6e4f9ecabac7cf46828db4a421b19598c96f5614ac5b2f5b4ecb60a64aa"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-procyon-a-comparison.png",
+      "bytes": 84000,
+      "sha256": "92a8c77fe4c2a3b5ca4bb05912a408950877a531d83bb4498368e412ef978473"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-aldebaran-default.png",
+      "bytes": 323554,
+      "sha256": "4d0a55446187550fa238509d00f0fe220b089a3dc8fd25172ac556fc12bd6ab9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/mobile-aldebaran-comparison.png",
+      "bytes": 105210,
+      "sha256": "62ed4c916697f39aaafc97771bd8862338009aebaf43033f6757be36a9233a40"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Ori-default.png",
+      "bytes": 641208,
+      "sha256": "307f92fbaa7c7748d29dfaae0959785edccf57f48d112286db66e6d0a48a49db"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Ori-comparison.png",
+      "bytes": 670385,
+      "sha256": "ee3e223a3731d6ae7934837ec1e8c4960d4deafb434f4f3e1f4087778a6cffe9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Ori-boundary.png",
+      "bytes": 670795,
+      "sha256": "1c9605255f268a8ee0e21b06a174d6a1a2605a82d456b6fb28aa969212dfa9b0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-UMa-default.png",
+      "bytes": 176476,
+      "sha256": "1de16f64e002a9cb5f60bfb9d2503d88fadd626f73cf45d51adeb8247c6ca0a1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-UMa-comparison.png",
+      "bytes": 204162,
+      "sha256": "bc63acb9a25d39dfb12630437a12e593c2aa166d4821d356a1ae40272a4376ea"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-UMa-boundary.png",
+      "bytes": 204711,
+      "sha256": "a853eafefa8ef90f8ad12f042f47190c581c93c19a2d8c34f7f0fcd88a56de09"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cas-default.png",
+      "bytes": 166816,
+      "sha256": "99a4040fdecc292a318321ff17da9f95e9dc3715c1ce09aede2a67f0cd935d5a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cas-comparison.png",
+      "bytes": 188425,
+      "sha256": "ab756eedf9abeb5156e7c6102fe78f6d84e9c8bb01c4dd4053ef0b920b2b1c24"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cas-boundary.png",
+      "bytes": 188539,
+      "sha256": "ccd584a103131ef4108491d02fcae8c18ce3887da2e3cab926f87bd0fe04f2df"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sco-default.png",
+      "bytes": 818832,
+      "sha256": "5e661c8eb30bf3ed0aadd1d51a0cdce47a0d9ce0da61693933496e485e86d474"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sco-comparison.png",
+      "bytes": 846745,
+      "sha256": "81bc70bbc1681422dac8ca25ee47c0411d68f850f4ce9f08596f037d64e57ed9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sco-boundary.png",
+      "bytes": 847664,
+      "sha256": "a555729b9deb341bfae1b15adf375ea63ef12b05c8897302cf0ae4953da496f5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cyg-default.png",
+      "bytes": 80408,
+      "sha256": "9e5af7848f69f4a816678841b6910975eefd3a8a54693c46a443fb4cc5b7be51"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cyg-comparison.png",
+      "bytes": 107070,
+      "sha256": "abe6ebcdec4dc063ae0fab78e4cfb59d2e5a804f384cb33edbb984e18151d977"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cyg-boundary.png",
+      "bytes": 108343,
+      "sha256": "911446e02a758f6bc8b224643c6d0327d8ba2ef690159d76c9f4492fe6514b52"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Gem-default.png",
+      "bytes": 828437,
+      "sha256": "b22642a03a62cde70399e56dc5667a3baf29206b48e6f352acbe99828c1259c7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Gem-comparison.png",
+      "bytes": 860571,
+      "sha256": "b5551dd6e2849a505773f0a1262374e58a4f5cacf3ff42fa638c00619b03691a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Gem-boundary.png",
+      "bytes": 861584,
+      "sha256": "3903abaac4197fdab77fa3b245dc970f2f064675730db36fc78e636a22f9d901"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Leo-default.png",
+      "bytes": 690082,
+      "sha256": "d074e647d3a54a6d05988a72e093207cf1d08365805b4d003ad7323b9cf93a4c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Leo-comparison.png",
+      "bytes": 723491,
+      "sha256": "994627301fbbaa9365fef12eb02905118baf1e84de96a015bb47ef00e8b5f230"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Leo-boundary.png",
+      "bytes": 723724,
+      "sha256": "416e71f9d682f107b7b2280d5d8838bf21a688e32bd294381e1ce81803165fc3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cru-default.png",
+      "bytes": 155473,
+      "sha256": "c564fed1a6396dc7a0f400ea84b34a8413d750c8eddd3310064b25bba2f09c10"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cru-comparison.png",
+      "bytes": 177002,
+      "sha256": "b83fb9187b7804a10258808fc62fb5da03c4da3462d70edfb9672e8f57f1fc67"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Cru-boundary.png",
+      "bytes": 178488,
+      "sha256": "f7e57d478d71dd026a989f20326ee633bbb8447dc7503e44b315d89de899e8ff"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Lyr-default.png",
+      "bytes": 83666,
+      "sha256": "0fb612b46a69193d007b2e3b79e1d4ead8ad0ee76560676fe608fa2b767f1e9d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Lyr-comparison.png",
+      "bytes": 106977,
+      "sha256": "81df808e57b543231abb75539e7ce0c6259cd4a8539aada22558085f354d5287"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Lyr-boundary.png",
+      "bytes": 107170,
+      "sha256": "3e02cacafd1d290f7ea666226571f4eef0c7e67a3511287b1bba4f35efb7a6d7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Aql-default.png",
+      "bytes": 301340,
+      "sha256": "49d1d611f3bff71d3d1da8a78cb218679ca92f54e8376f8603b09ee2300255a2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Aql-comparison.png",
+      "bytes": 328870,
+      "sha256": "55bdf114010688c740d0922b2c05e6ac6d18dbc68b88d3ed6ce15e3e86d1bc2e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Aql-boundary.png",
+      "bytes": 329434,
+      "sha256": "b3a10080a06979cff91ac1ec7a8ae36da42b5d38bd2cc7af7f8dd59b232062f7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Tau-default.png",
+      "bytes": 897555,
+      "sha256": "fbd394181136243cc316003c0eeaec75f3b0489e2fe4efd56f2ec1ac09ad8197"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Tau-comparison.png",
+      "bytes": 936753,
+      "sha256": "59b4dfec8f9889df6e1a47eb9a83afe6214d41a95089b0d6b838276a0378edf6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Tau-boundary.png",
+      "bytes": 937795,
+      "sha256": "9caaf0aeb64800d4090594a96f6f48f64363bc66ffb28e42963d13bbec0a29a9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sgr-default.png",
+      "bytes": 874396,
+      "sha256": "7bcb7dd8e3f05c605dc2c460757332b43ef563df470335b3e389149c1b65f4c7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sgr-comparison.png",
+      "bytes": 915418,
+      "sha256": "9cce014afef760a7e4d8c11b0149f13811713c8303b74b73eadbb70568a9ca41"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-Sgr-boundary.png",
+      "bytes": 912766,
+      "sha256": "925002c153e70754777d9ee79e190ca6349c8e765a74fd79aa7db653eebbcb0b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Ori-default.png",
+      "bytes": 225309,
+      "sha256": "d01e04725ccff71ca62855b520d9fb94d331b1161b86c8254cd80a0a588b52e1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Ori-comparison.png",
+      "bytes": 98830,
+      "sha256": "39552a130267940d65d5270b8c38041f14a4e126228ef906d657b4a724dab039"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Ori-boundary.png",
+      "bytes": 99344,
+      "sha256": "20dc8265ecf42dd7b267d9562ec28cd3f00d43d060659a4cd1c4d1ac7db68b6a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-UMa-default.png",
+      "bytes": 63910,
+      "sha256": "3098ae79862a7b02935b27a8a361b4cc5cc75253c983b9a0643f380366401d91"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-UMa-comparison.png",
+      "bytes": 100608,
+      "sha256": "f476b15b37fec3fd63a07d0f7146a05478685b981aa21ded2b7a9bbb6f86512b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-UMa-boundary.png",
+      "bytes": 101159,
+      "sha256": "15912dd64c00b92d3faae2751176f9af95a853a5876f84ddd75b64f92e29582d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cas-default.png",
+      "bytes": 30959,
+      "sha256": "51617b31932b32de01d0a423f5fa6d878cccc1153d63bde4e6bdca024bdf7330"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cas-comparison.png",
+      "bytes": 81306,
+      "sha256": "1624d3134f722efe81a74d1eaa8dc142411c529a2fc47781c17295832d5b9e7c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cas-boundary.png",
+      "bytes": 81718,
+      "sha256": "9110999909c156697022c5e2a4d128c1485b7032181699af068e06d18359f423"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sco-default.png",
+      "bytes": 309480,
+      "sha256": "455a6e3b8b2f8b79d139f1517e33056ffed3d7d02e8ee79e6aa6d418c9a858fb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sco-comparison.png",
+      "bytes": 106851,
+      "sha256": "48a8ce08dbcb2f1b34bf06fdcc4cecbcec09e4921cd1e2103cee38d403fc8021"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sco-boundary.png",
+      "bytes": 107788,
+      "sha256": "c6b7c832e855dc8a6ca46657825113d68de1323424fd2029a5cfc320cfef63af"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cyg-default.png",
+      "bytes": 30202,
+      "sha256": "42ad6870c6a299cf3a924462e48555a73aa0ad66a51ff8edc83b4b0687f06b0d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cyg-comparison.png",
+      "bytes": 80796,
+      "sha256": "bd8f8b54a740f596e0c92818778f2841275db6c7a1a26c3411c142cd3f776559"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cyg-boundary.png",
+      "bytes": 81571,
+      "sha256": "611e9ad7b4b8adfeb1d9a750740170d6f8e7ae838823ec1c84ff99fe77ae3f89"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Gem-default.png",
+      "bytes": 322480,
+      "sha256": "095eefd94ea5e030870fe770b7b395f19f690970367b3c703db2a7aa2940f6ad"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Gem-comparison.png",
+      "bytes": 104962,
+      "sha256": "104a5209793dbdc01de1420d4f3addc7b9b5339d66626d6a15d0f4552f1774f1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Gem-boundary.png",
+      "bytes": 105507,
+      "sha256": "9b75ae93251170b3d15b7a41ec87b415df6a7d1b03f8f2b0850de653a975f74a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Leo-default.png",
+      "bytes": 250254,
+      "sha256": "87599e6dc3fe648795cbcef56056879815ee0c9a8ce9f3e0ca8e9c211270e25c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Leo-comparison.png",
+      "bytes": 98173,
+      "sha256": "96da3e678333c6d5990cb9cfae0bfd8713dc7425f6fbf42d6fd99c451610e1a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Leo-boundary.png",
+      "bytes": 98857,
+      "sha256": "b4b7be11530c58d26e611eeda05b8652e071c65e6d14cf382e2fd162c1b87fef"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cru-default.png",
+      "bytes": 29238,
+      "sha256": "235f93ec4a520c21ddcf5819d1b39a589596fc1760f2f25c15ca0011f2fc8161"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cru-comparison.png",
+      "bytes": 77234,
+      "sha256": "77139fb63780f15064225f2973ff56ef8db44de62b9c5d9c390084407ab5a897"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Cru-boundary.png",
+      "bytes": 78657,
+      "sha256": "e4d4d04e718374f2b97d4d52d25337d701c6c34d6cb696ac4e78a2bbebac1170"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Lyr-default.png",
+      "bytes": 31039,
+      "sha256": "eaf4b061cc00690563e822d7190df9ad6f698cfc844606ca08efdcbc6b4bb459"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Lyr-comparison.png",
+      "bytes": 79072,
+      "sha256": "4a8e4e7717829011857c48309a15c57083af3743fc244bc74ea20f58adf066cc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Lyr-boundary.png",
+      "bytes": 79547,
+      "sha256": "9544122639c2f45d011d392c024862017e7d95fc8ffe5770397527963a7c840a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Aql-default.png",
+      "bytes": 97111,
+      "sha256": "da5d842067486f8236c70a5752f9fca06bb39bc2947d1a61ae7f59c115bc1df7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Aql-comparison.png",
+      "bytes": 108868,
+      "sha256": "a6e4b32705218b7a912a9e94460b8fa916fd91fab9aa3fbf8428d08f2c08513b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Aql-boundary.png",
+      "bytes": 109015,
+      "sha256": "739bffd4aa5225a41f5a10a098d19c3976387fe176c7a964c82bde8e0e17bb7f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Tau-default.png",
+      "bytes": 355674,
+      "sha256": "caeabbac4f056fb2617fc891cdbe6002d12940c7cf32252396c2b47c763e2eaa"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Tau-comparison.png",
+      "bytes": 115679,
+      "sha256": "773d7671468e4a9278a653764d615bfc1486a220ec52cec4d550dba209e11323"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Tau-boundary.png",
+      "bytes": 115364,
+      "sha256": "3bd175d6c5e431d61f78ef8aa7b062ec7d8cf9d501fa07f3f6357e12d598dbc6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sgr-default.png",
+      "bytes": 345092,
+      "sha256": "9814f7eb9b79d6968a086b265f685ef7b296e2984486126229473ae2bc440e75"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sgr-comparison.png",
+      "bytes": 121223,
+      "sha256": "73479cfee83c51b31e59e042b79d6303cfbe1cf6e7c3a46552d3f67e18a9f3e9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-Sgr-boundary.png",
+      "bytes": 119288,
+      "sha256": "090e513e605043bdbae87b06c4243d7d912447af8ea89613eead943d1eacaf80"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m42-default.png",
+      "bytes": 727236,
+      "sha256": "db745b19ee75cf6f5495902e330d917f9ded657f66794faac17e5596220ab06c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m42-viewer-fit.png",
+      "bytes": 331225,
+      "sha256": "af8aa0cab74cf9dc7c15c0c7636f16f6ac50cbea4f99d93a75debed3bbe593a5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m42-viewer-2x.png",
+      "bytes": 557834,
+      "sha256": "5030346496810cedd00e675d362d8a7203abe8adf9ee9997eb44781537039c22"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m42-viewer-sources.png",
+      "bytes": 204871,
+      "sha256": "feeb3b23ccd0d848fe2a0949e0662e111ce567faeb70e0386ce35b689ecdfe04"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m42-sources.png",
+      "bytes": 679587,
+      "sha256": "4ff23e14ae33a64f7da6598831dfc419de77cc0d8fa5f82971816a7ff8d7fdb4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m1-default.png",
+      "bytes": 507681,
+      "sha256": "d5f59f63269b594b5da1b743d7cfea23d81e0ccb5ee81a6d8c57d49c511f37a0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m1-viewer-fit.png",
+      "bytes": 514725,
+      "sha256": "9aa85cf6a61e04e0c439a690567e0dfdcca7fa3de2b031a8b266dcdc26e4b13f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m1-viewer-2x.png",
+      "bytes": 631821,
+      "sha256": "c3b1c8fc001a667417490925b7e6b57db0169356249fadbff2c60b1a9fce387f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m1-viewer-sources.png",
+      "bytes": 298385,
+      "sha256": "5082aafe9f955ffe705dc20eb8117dc57f9dd8521f633e47634118df3a973dca"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m1-sources.png",
+      "bytes": 317452,
+      "sha256": "6c9ff1f8332e09d14749d177952510edfb87972ee3e23b031cf90a56b6cd814a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m8-default.png",
+      "bytes": 549876,
+      "sha256": "53a2ef70a64c7ee8fac86e199176491e333fcaad7f7f11b47b3a9bd2a51e3e20"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m8-viewer-fit.png",
+      "bytes": 553764,
+      "sha256": "bb0db05c8aa055b80094b9f0cd832d2219dd60b1d0df8a07f49e3782343aa455"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m8-viewer-2x.png",
+      "bytes": 1044159,
+      "sha256": "476238c8a39f527f9e054de492c44c74945f98d491bc73790f14153a1f4dd7d1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m8-viewer-sources.png",
+      "bytes": 279148,
+      "sha256": "daac2e63482141d05ce3b1aba74b8570b30da9b45f1bcbc45ec65436e9b55418"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m8-sources.png",
+      "bytes": 260213,
+      "sha256": "6bc8fda89d286489f89ee0e27e7c30f4ddbabca90df7126c5de2167f06316bff"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m16-default.png",
+      "bytes": 649390,
+      "sha256": "39d1dba05c934b17e35dba0acb29fcd5cc125bf57cfcda47dbb111e5cbfe3136"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m16-viewer-fit.png",
+      "bytes": 557609,
+      "sha256": "0edb3088977720aa9b60159619df454e828a78fe1776ae952a37ee18385cb114"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m16-viewer-2x.png",
+      "bytes": 1027802,
+      "sha256": "a9ddd990d6778c04fba7f96562da4e1a59f16e6aa3f78b43133803ab4c073392"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m16-viewer-sources.png",
+      "bytes": 306807,
+      "sha256": "00056be1c1a57762b8ed685b20a4f562c71b8b80efea1979d076e997e011e97f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m16-sources.png",
+      "bytes": 350773,
+      "sha256": "095ab5d2944fae826bfbf1b78e968dfb71996ba64cc7a7545731f4f8aada502a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m20-default.png",
+      "bytes": 356920,
+      "sha256": "3905c25304bbd6d93ad761bbfa0721ebbded51e6176159c7e8fafe2087cf5f3b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m20-viewer-fit.png",
+      "bytes": 343621,
+      "sha256": "e9c3b4d66e2a4b9392376beb59702eb34b169708196b4eb9d74e84eb82138dae"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m20-viewer-2x.png",
+      "bytes": 709950,
+      "sha256": "2a3dcf975ab3c3dd35d11ae845cefc203026e4dde20c18fed45be5307dab6e18"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m20-viewer-sources.png",
+      "bytes": 199572,
+      "sha256": "7a96f82dbea9e826b4e6878175e7d40ec78bb5ea31dfdb7a0c05cab7c75cb51b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m20-sources.png",
+      "bytes": 230396,
+      "sha256": "d0cdca0969b8019e60c2e8194e89f0e57733c1a644e78a7ca40ae28073ef2b36"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m57-default.png",
+      "bytes": 782421,
+      "sha256": "d70e13f3e665444d24badf52a29ff5d0596a2cbac96981a08761d393fae5316f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m57-viewer-fit.png",
+      "bytes": 367423,
+      "sha256": "ffb89fd259d25aca01afebded5a1c853e55f0eeeecb41b3a03e805d41696556f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m57-viewer-2x.png",
+      "bytes": 699578,
+      "sha256": "0d156f4ce0e85465328cafc301d7f50bfd22513d7b89d3b19560083cb57acca9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m57-viewer-sources.png",
+      "bytes": 221265,
+      "sha256": "1b2768fd4e199dd2d9b64d7d30e4e928ed78712e30bafaf06d3fcdc25f6f03a2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-m57-sources.png",
+      "bytes": 801054,
+      "sha256": "3cca6f7764db79eaa51761acdbddc6e2d633c529b713f466ab70c9ef6c217777"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc7293-default.png",
+      "bytes": 682691,
+      "sha256": "96abd746dd9ec2b8da4fd9d61ac70b994a3420e195e8a278fea89206b17eb273"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc7293-viewer-fit.png",
+      "bytes": 312154,
+      "sha256": "5141f8d19c7e8c74b4b0a816c0d45de04a1b86ad6628995d0223f4412ec77e96"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc7293-viewer-2x.png",
+      "bytes": 563637,
+      "sha256": "0ebb09aa6ddbb50d869827805124e352ecfde63f27db9d05ff58b8cdd0db651e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc7293-viewer-sources.png",
+      "bytes": 205245,
+      "sha256": "603cb445100580fb148386565547a80d5bb902bf5dc1090c270532d48c25d699"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc7293-sources.png",
+      "bytes": 706206,
+      "sha256": "1acbc7ca4ecabda787b53b1f7a3b0008d3477bb5749f533f29668919404a3293"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6543-default.png",
+      "bytes": 458518,
+      "sha256": "c510a305079b200c6281367b93c9090feac5363d10970ec1b0c02c578c9f3767"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6543-viewer-fit.png",
+      "bytes": 313842,
+      "sha256": "84a6aeaec7846db73e18a5af68a799623f3174f199117243f3711b2f40017891"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6543-viewer-2x.png",
+      "bytes": 516611,
+      "sha256": "998422cbac9085247849e4f18921ca1d8ea3b2afd1aa2c7359d73546bf6c6b91"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6543-viewer-sources.png",
+      "bytes": 199061,
+      "sha256": "a0c8f494043391a0d2e503fdce21b37060b852f270a3fbca1e7ec57d550c0827"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6543-sources.png",
+      "bytes": 361725,
+      "sha256": "2fb6f11392811d7387499310c7570612bc30d8d860a3f4c7132b8b54c35bfb5f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc2237-default.png",
+      "bytes": 787655,
+      "sha256": "fb4b963b5b4299f6d2b2d4c9805aaf03ae2d0fa72bbea391464373fcfcc6e1a4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc2237-viewer-fit.png",
+      "bytes": 490462,
+      "sha256": "814998e7b839e14476fcbeeb1594c043226a6e83c56ac944f9ca82de442dea81"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc2237-viewer-2x.png",
+      "bytes": 793152,
+      "sha256": "f11e996aeaa07fa4798d98cc46205b834fe5175e07dc6439ccf2a1fd67c8af2d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc2237-viewer-sources.png",
+      "bytes": 281056,
+      "sha256": "6313b9782a1ff47445a9a49a55a59102802fa178e6f77e52015ba628ad87d277"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc2237-sources.png",
+      "bytes": 614108,
+      "sha256": "313d28adbb93a334a31f93832194058bb0df8edf5924507c29eafcabb7cd0ede"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6960-default.png",
+      "bytes": 962186,
+      "sha256": "a9cdccf42672f1dd382e4757a928557bba7cc294ffdbf846f9bfa34e64280f32"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6960-viewer-fit.png",
+      "bytes": 736588,
+      "sha256": "5530e5d194a7a9514d7f54bb6d554750239189a7ca7761e36e756a487f9ef43c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6960-viewer-2x.png",
+      "bytes": 1089346,
+      "sha256": "ce898f398a8b4c720a7dab327227d034510123b9d823f5312e2a4f96ec62b298"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6960-viewer-sources.png",
+      "bytes": 394199,
+      "sha256": "033aa7d10f91b10b740acefa7ba3088e919cb18e8923f577b1ff0fa653138123"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-ngc6960-sources.png",
+      "bytes": 811100,
+      "sha256": "6312c6b88e7f75336071069bbbc98217a5cc3e8a64b82bf29e08a8bbb19866b4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-carina-default.png",
+      "bytes": 835700,
+      "sha256": "ed2372aa9c0a4323761ac01768edfbe2752091b9fafab4cd38ee17d6752124de"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-carina-viewer-fit.png",
+      "bytes": 845399,
+      "sha256": "ef108ccf160cddc5db1738f04ca4ca2b32ad64a6a5f1d3a49162554467e864db"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-carina-viewer-2x.png",
+      "bytes": 822556,
+      "sha256": "c6ca45177c5f39f0d5c9702227ff95779969b2ebeaba51ed56cd555dd540b322"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-carina-viewer-sources.png",
+      "bytes": 485946,
+      "sha256": "ab052b741e509798c47d2ff1fac7fa07b11ecef20ce7a72f54f6911bd143eea3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-carina-sources.png",
+      "bytes": 445352,
+      "sha256": "b1a321ae043fc26920fa6d14f7e1630e23b9eca47a751f230eea85e27578d7d6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-b33-default.png",
+      "bytes": 872472,
+      "sha256": "d6f6f6d18fbb2e079c8562a7a28d0c4e62b3a31b39ab53e170239887def28fee"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-b33-viewer-fit.png",
+      "bytes": 663072,
+      "sha256": "dd3bfa3975b80e20b2c9ec6fda02979c2ee8d84682b76fc986ef094191dadad4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-b33-viewer-2x.png",
+      "bytes": 1076239,
+      "sha256": "3899616727512cc044f68075534cffc17c2e00b366cd9d1c5b1e6ccd1e93ed48"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-b33-viewer-sources.png",
+      "bytes": 353926,
+      "sha256": "a84cc43e6bc94e5d0b998f80daf36a25326537ce4b51d6b075bfe9b51289342e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-b33-sources.png",
+      "bytes": 694099,
+      "sha256": "3da1ebc68be76be86c58740dcf8222901914e74d1cae59422f4e18f38425bb64"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m42-default.png",
+      "bytes": 285095,
+      "sha256": "068033a7a62bb9f3c5ad4c32df5a7a8598bda74640b3733d4bc6a8b448eb3ea4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m42-viewer-fit.png",
+      "bytes": 228168,
+      "sha256": "8c7c8e091830e7d005a757d0d1384cee2f94d3c43c10fd4dc888deb8c6e32f4a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m42-viewer-2x.png",
+      "bytes": 345818,
+      "sha256": "a6af7c35872f666d802e1e22bfc8f62cee8a5af778fa97fbe2a7785249a28ba7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m42-viewer-sources.png",
+      "bytes": 246689,
+      "sha256": "197f22ba2832a9c83d16589507a6cc7a94f8c53632fb857110cbb02f2695fd74"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m42-sources.png",
+      "bytes": 226320,
+      "sha256": "663b9c4311a1921a415761148f014ed20bbca0dedd3149b72c5849e33dd8952d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m1-default.png",
+      "bytes": 172570,
+      "sha256": "9897f7af2a7b6b474a9b9d90edf4ffedb99ff4b51c697b25403dee894744236e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m1-viewer-fit.png",
+      "bytes": 154885,
+      "sha256": "b5d2a4924e79c1a34982ef1659dea7d83c3023617f168f25048417fcdba1b817"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m1-viewer-2x.png",
+      "bytes": 276777,
+      "sha256": "a2c58e23bbff368ba2f75f8578c76b4d59b8ba7bff809016e7fdec0b596421e5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m1-viewer-sources.png",
+      "bytes": 170625,
+      "sha256": "2d91f9c5209c513b937a3d8e5fd1c6e593f3eb1f361dc2fcd43aaf83c7076d4f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m1-sources.png",
+      "bytes": 134776,
+      "sha256": "04fcb25981978e51a369341d3f489157a7d2aef6b25401c50ec9803537c43777"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m8-default.png",
+      "bytes": 357847,
+      "sha256": "40f0280d29c4b11cba84b8f38b33e988a5d3b7ee05736db25f1d2a83e4f95728"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m8-viewer-fit.png",
+      "bytes": 322385,
+      "sha256": "39d8ededf640fc7adc9d6c24291a05c56cfc47f0cd50001ca209093f7f22f134"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m8-viewer-2x.png",
+      "bytes": 533507,
+      "sha256": "4e58ccb5fb1c82252c643f9d865c2981c5c4b8d04aa2618ef032337e101566dd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m8-viewer-sources.png",
+      "bytes": 333482,
+      "sha256": "79dac8002af71447dd019852a447e3a050e25ba94f47b2b8205076846a2418ef"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m8-sources.png",
+      "bytes": 122873,
+      "sha256": "65d9bb02c9d6ccdfeebf97b3612f2c4223dbb2c8cb1f71fd6088bba4260a3dbd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m16-default.png",
+      "bytes": 298543,
+      "sha256": "7919386f2467cbed5c3a22a828afd58a91a280449214282c33e3974f7e1bd271"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m16-viewer-fit.png",
+      "bytes": 249032,
+      "sha256": "77b2557fa12b64ec0dd0d87d2c31067911cf58b609a63e03f1dab5595ccdb250"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m16-viewer-2x.png",
+      "bytes": 479015,
+      "sha256": "7c214ba4da9d8bfa5bc348ce8c23f9c7ac937b422911cad97ddee35a539f8bd1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m16-viewer-sources.png",
+      "bytes": 268210,
+      "sha256": "0fb99040f280018e08cbaeb4b160e9e78fa00eb832d2d66ac010b1c3d96a65e6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m16-sources.png",
+      "bytes": 145602,
+      "sha256": "6c1d3876b59fa26b75778a79b5fd56256019f69628def4a2b6081690a8f38169"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m20-default.png",
+      "bytes": 220216,
+      "sha256": "5df9ac0f5ea48a569b5dabed6e24688c2d8a6b406cdf9fcf2590dc617a6cd0ae"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m20-viewer-fit.png",
+      "bytes": 205572,
+      "sha256": "214e6502f428bdc35f5b57541349e1b41727a505e822efe4f046bbdd7f77d524"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m20-viewer-2x.png",
+      "bytes": 352151,
+      "sha256": "0146fa503cc8f0e3102b40dbd8d021c62ccd5bf047795fe7d85a8a72387e2858"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m20-viewer-sources.png",
+      "bytes": 226595,
+      "sha256": "3045e5da907ddc960f312288c71a214e62edf7f9641baa4cff289a359eb5d83c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m20-sources.png",
+      "bytes": 113205,
+      "sha256": "5a3cfed062b9cc262f1e47c6dc315d3727e2eb728e74b9be3e4f07b12a327969"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m57-default.png",
+      "bytes": 285803,
+      "sha256": "d16c9c8920f408f8ca1b7af9f5360dbe3db08976834d8ac3e224bd0e926af8a5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m57-viewer-fit.png",
+      "bytes": 211902,
+      "sha256": "b2de42e0d8bb5112b6e497e2b1a7c2f40f4cab8ce75081ccf07aca285a0be5a3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m57-viewer-2x.png",
+      "bytes": 358243,
+      "sha256": "9f2e427a1bcf7e5f9acca187f1d9ba2bec7a3e1cfe3b94a5c62cefcca8fdc38a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m57-viewer-sources.png",
+      "bytes": 236173,
+      "sha256": "43a2efda9b415657604277f485d35927cac729df1d5b458e0b69a4baa7d560f3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-m57-sources.png",
+      "bytes": 295561,
+      "sha256": "09e7f76cfb6fdfd97bdf558ae29b5a4c319839b05a7b2b2e642507ea8b671ac8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc7293-default.png",
+      "bytes": 247210,
+      "sha256": "e812930f44731d20fbab853c2a74e53f7ac3a73e33dd0c6a24b5b6b8da34a89a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc7293-viewer-fit.png",
+      "bytes": 205005,
+      "sha256": "4c7062263f234da88c370f13539c7fe7be7c72ca643d907e37152cff6b656e0c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc7293-viewer-2x.png",
+      "bytes": 309729,
+      "sha256": "d7d96b586bd1c40ee67c254ed455830ca5f4426200ad9af1326cdea4c79967f2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc7293-viewer-sources.png",
+      "bytes": 227679,
+      "sha256": "536876fc760ea88a79d6c53c37928ac11713c54eb734a07a40cb9179729c72f3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc7293-sources.png",
+      "bytes": 276463,
+      "sha256": "e73c56f4f9013ce134cf7cc6789028c03d0ab172e028f6d3132de589d32e4234"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6543-default.png",
+      "bytes": 211365,
+      "sha256": "6aae8d72d6816d81e5a29ec96a6cc4ce6c5c815b6d6857c060b985ccd4bbe963"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6543-viewer-fit.png",
+      "bytes": 216203,
+      "sha256": "adf26adfe709971fd4e03b0a272529a9a3b4bb6343296b7fa0e40d7905c4721a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6543-viewer-2x.png",
+      "bytes": 344627,
+      "sha256": "195b22348f7b55e36faf5939960a6ad9a692b85295f13490dd156afecde74830"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6543-viewer-sources.png",
+      "bytes": 231506,
+      "sha256": "b47e86069a19aa8637dd7ff316e25dde3e6d3d1451159616b1459fd60c56309c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6543-sources.png",
+      "bytes": 127827,
+      "sha256": "6d2d5d4526c758555b7480add8d533a95942ab03653c3eab20cf1e7ba36aa48f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc2237-default.png",
+      "bytes": 368241,
+      "sha256": "82cdfc61be5ad7127b0457840ed1f48e9c21866fe8accaaf7a26b7cb4fcabfd8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc2237-viewer-fit.png",
+      "bytes": 280138,
+      "sha256": "a47caf072e2467ac452d364b0a3802afb635e77a35b8d1b4d3b95fd41af45c6d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc2237-viewer-2x.png",
+      "bytes": 413072,
+      "sha256": "1ce6ee94fad6b8b0fb410892675357fcce0e26dfcc614fdb6ea51ba74d808d5e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc2237-viewer-sources.png",
+      "bytes": 300416,
+      "sha256": "7ccb80395c2e7c0b61b5149a58ee3be952d05a4e9eca1af714434087107fe68c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc2237-sources.png",
+      "bytes": 195477,
+      "sha256": "a26f7347745f0e4c76f00579af0690e33d54c63ad4bcfe75a3326c0c75d081d0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6960-default.png",
+      "bytes": 369254,
+      "sha256": "d20c9d3857c5e4b894f3f55521cf17eb18da00ff395b127ed10a6d04b62e40c3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6960-viewer-fit.png",
+      "bytes": 220154,
+      "sha256": "8e90b80b61ddb1556b529dd5bb43385a8b0a26fac2864c11eec8174cb5ac678a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6960-viewer-2x.png",
+      "bytes": 394989,
+      "sha256": "415f5ffec8c0e04c0e310d84bb544f2a93dc75a7a0c8a291dafff0ed67a1cd54"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6960-viewer-sources.png",
+      "bytes": 239237,
+      "sha256": "e40226e7bf7c37c188a6c27e42d9e5b3b833952f732ebc2bf8a906a4c5eec154"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-ngc6960-sources.png",
+      "bytes": 291133,
+      "sha256": "46bc3dc1d6cffae5909a1a6b2479bf1473e86b4672a73d7a0dc38430b102967b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-carina-default.png",
+      "bytes": 174831,
+      "sha256": "4f0f59f861bfc3c0b7d34a8e2ac50190a3d26fc9455cc6ef74783c0feb01e9b2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-carina-viewer-fit.png",
+      "bytes": 160746,
+      "sha256": "18277982014bfbf8f10db85f6209b00f91a2d8bc472c2f1d61db1e1250bd7a92"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-carina-viewer-2x.png",
+      "bytes": 278490,
+      "sha256": "271738810f614332742ff0514b93c64f360e715e6377d938ba2e42c5caa25e53"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-carina-viewer-sources.png",
+      "bytes": 184886,
+      "sha256": "9970dc5fb4d1697693b60466ba98b5044f130ba559a7e15ddf2cd1571fff4335"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-carina-sources.png",
+      "bytes": 150872,
+      "sha256": "d298e734702bd2d2d9c0d533e0f122f084dce70e550e5c92b2916df9150517cd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-b33-default.png",
+      "bytes": 341231,
+      "sha256": "2217d32f955d809b434d0fe096b92b1a997de00894d5a00bc6edc54ea5c6a773"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-b33-viewer-fit.png",
+      "bytes": 225205,
+      "sha256": "203acb66397f58f902c1891475759535505cb2ef41a1a4d129ad17a44c6e4ce9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-b33-viewer-2x.png",
+      "bytes": 416639,
+      "sha256": "31651b2cb4e83b40c9cc5e77735bb2daf6373f0ec42227c80ae959cd83c212c7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-b33-viewer-sources.png",
+      "bytes": 228377,
+      "sha256": "cfd1f9484e2f451b86ec3eb623992f11c2c71ef3dd0237ed20c11dae30ed610a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-b33-sources.png",
+      "bytes": 227148,
+      "sha256": "119e17d626bfecafad5249981e69da871a31159ef280dff209fde2e460114e63"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-sirius-default.png",
+      "bytes": 813707,
+      "sha256": "faedd1327d38cb4d498cf72b5875399b373d0982fc4ddde15feb9a2a8dee026e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-sirius-comparison.png",
+      "bytes": 847508,
+      "sha256": "7ad27150a1cea1c86b985454ebd6799d14c0fffd3cf5711c51a6c3bdf9f9b3cb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-alpha-centauri-default.png",
+      "bytes": 148659,
+      "sha256": "69d295379209c810b02a225b44295222c896aaf6e1a43b17939c008388352a59"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-alpha-centauri-comparison.png",
+      "bytes": 180872,
+      "sha256": "430e6924d5ccb86e487975c4988e1724ea80b781aedc248988ae550261bf9ce1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-capella-default.png",
+      "bytes": 65840,
+      "sha256": "3c3fdd2b7dc6e51a4453001d0b9f54a24fbf498458a90d249e7fef3e0c01220c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-capella-comparison.png",
+      "bytes": 92626,
+      "sha256": "9dbdb3a75c9eb956e43b68fdbee3cf557352321c8e87d9acd710fcbcbf3bd00d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-procyon-default.png",
+      "bytes": 649760,
+      "sha256": "91b06ea80c92c6bb3744d6e4996262b3e558ff6fed1b153cc5397d6984cf5e13"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/desktop-alias-nearby-star-procyon-comparison.png",
+      "bytes": 684662,
+      "sha256": "30c7397a2841a8afc8b4fb8d8fb13f96fa1316bd37f8e0f15fb6da18b6f20b55"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-slow-cancel-retry-loading.png",
+      "bytes": 768357,
+      "sha256": "95bb39aaa05b2ce452b42bd6575b6d6e1401818a14d2ae5e50c7afd922b45a0d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-slow-cancel-retry-cancelled.png",
+      "bytes": 664447,
+      "sha256": "cc51b08bd54323f0e3ced56cfe79c041b2f4b5024511ec4c91e3070a78e69913"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-slow-cancel-retry-recovered.png",
+      "bytes": 721954,
+      "sha256": "0ec686a3c7a90b20a6c246a06cfb3382ee7bae60c2aea3e3b9adfea696d15020"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-http-failure-retry-failed.png",
+      "bytes": 755205,
+      "sha256": "9d41330c9feb7482fff19c596030b395dfb91a2dfa3843cf67719436e9964c2e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-http-failure-retry-recovered.png",
+      "bytes": 721950,
+      "sha256": "b156b3e007261baa05a9f7edc80598ca261924fec4e8243324aae94835cf814c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-timeout-retry-failed.png",
+      "bytes": 669739,
+      "sha256": "70581ef5df6c5f1bded89dd0f5f746adcafe19489d790d081213e24660322da5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-timeout-retry-recovered.png",
+      "bytes": 722529,
+      "sha256": "61d6d8df4d134763f65717d106174e2b9e45eb23e2065050c9910f4670acbfc0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-late-response-switch-loading.png",
+      "bytes": 666836,
+      "sha256": "1ea709d172bc46dc3446af475a66ee9968e922c488e196532b8b8154ebc04054"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/desktop-fault-late-response-switch-recovered.png",
+      "bytes": 502486,
+      "sha256": "b42a5bd087a93a8f9d7b8a08b5267c46efa6de0823572f3aed5bcabc08905850"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-slow-cancel-retry-loading.png",
+      "bytes": 354296,
+      "sha256": "974f13741b62046b448286a8c7687d1f4d622f6197addf888e149d89d12ae375"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-slow-cancel-retry-cancelled.png",
+      "bytes": 285252,
+      "sha256": "3bce40918278c690efaf1ca5ef16462bd2aa4aa8fbfaa892ab281c5b144eafd1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-slow-cancel-retry-recovered.png",
+      "bytes": 285422,
+      "sha256": "e322a1d7f2e308d023d4c7e6fa84103390416bf21dc2f8e97f0ab3da8cc4686d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-http-failure-retry-failed.png",
+      "bytes": 309033,
+      "sha256": "4eb205abb1d59678f1d1c7a1f9f1e1b26b00b0d17d0e3124b79b7ad3a7d269a1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-http-failure-retry-recovered.png",
+      "bytes": 288590,
+      "sha256": "7bbc57a6d35954ed24a72865087c5843004a13da62b8c64276e70fa38cd04fc2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-timeout-retry-failed.png",
+      "bytes": 239447,
+      "sha256": "fecc7e2635c626b409a82b57812f9b62c5d71b9defc77c3821546e5bf939fccb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-timeout-retry-recovered.png",
+      "bytes": 283018,
+      "sha256": "23a8e8b5de084f9535272b52c00ae3972f5fa91d1db995df193e58511bd5576b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-late-response-switch-loading.png",
+      "bytes": 356699,
+      "sha256": "0e52fed2c034de66fd91aa0f01e342a77596f664c019b45fb0153fa5d6a940e1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/mobile-fault-late-response-switch-recovered.png",
+      "bytes": 172445,
+      "sha256": "068c3a54d71d7f40e3f9b11b7fded764ef6c05813d177e8602a8e19ba7cec95e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-station-0.png",
+      "bytes": 695067,
+      "sha256": "ced40c82d75e0be3e8b2683e17f46c3c9d5f01cf67d1ad8064bc42cd6123a26c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-station-1.png",
+      "bytes": 657678,
+      "sha256": "201577f6f8239fbc09fc4036c33c846ea5e7e004108a3e8c7a05a14be95c959f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-story-expanded-1.png",
+      "bytes": 636921,
+      "sha256": "2a52fbec5e3b02d70e8cd549b589f45b9e3d4936d3c009546c3133bf82289dcc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-station-2.png",
+      "bytes": 805466,
+      "sha256": "09f716cc1601aafbd3f1b450baaeeb4fa6fde42778e74e1882c9154ba5f80a69"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-previous-1.png",
+      "bytes": 657385,
+      "sha256": "8565b8299febcfcab8c7498530875faaf24a00c85280dfacd3ac90208ee14070"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-external-sirius-paused.png",
+      "bytes": 204577,
+      "sha256": "493bd2ec1f8d5d115f10d9c75e1f8666ab15c55f7298c7914f51666bdfbad8b9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-resumed-2.png",
+      "bytes": 804922,
+      "sha256": "271b542d050214dde237a0b169b68eea9960f6125e0e16a1eb8b6d8c5499791e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-station-3.png",
+      "bytes": 444647,
+      "sha256": "fa4f7280000ad1aa56488223dc9208423bdbd09733abe32af48dd22cd2e86e30"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-station-4.png",
+      "bytes": 614323,
+      "sha256": "a74a7967d1ec47e6a23721f6e205d0f29e7cbcb0880441402261ae95179e0b18"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/desktop-journey-returned.png",
+      "bytes": 403143,
+      "sha256": "9c7a87be01604077064e3e6fb81f9e17e1e546d880a4ed10b766ac4916eb21cd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-station-0.png",
+      "bytes": 193640,
+      "sha256": "367e7953b4e22db16357676d5c0ae0c17628de103660b17f9c34ca68833ec805"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-station-1.png",
+      "bytes": 229776,
+      "sha256": "fd238a1e51a5b1c9fb15f6a89086078f3f9b5a9546a03731e24d043a7e6d2e19"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-story-expanded-1.png",
+      "bytes": 187116,
+      "sha256": "d3d515a08e72ba25421c55ebf8ab77881de361be2d008e6d05b6e7c4919fb19f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-station-2.png",
+      "bytes": 283038,
+      "sha256": "18443c03b88455804bc957223c869ff9c047012f0d930736e7b7af39eef2cdbc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-previous-1.png",
+      "bytes": 230047,
+      "sha256": "b5d729ea272659a3087ceedd6ad9d710ecce633bc88a32436fb2c3326c31b857"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-external-sirius-paused.png",
+      "bytes": 69375,
+      "sha256": "772cf2e786ca770a7177fbfb95497b770e5dc43a69e0892a780e2f93bedf0165"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-resumed-2.png",
+      "bytes": 283816,
+      "sha256": "d0fa35d15d282e73052b8448cdb8ac4618255963c00f9056e2ca099f523bcc5e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-station-3.png",
+      "bytes": 111824,
+      "sha256": "c7caa665694c660d0bdfcc46e626e2d32da2a74d9c29342a96f789dcfe3700a7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-station-4.png",
+      "bytes": 203913,
+      "sha256": "20d6248f982dd3912d59bf6c43460000c66052041ff7e7c135e2100e2a38f109"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/mobile-journey-returned.png",
+      "bytes": 135228,
+      "sha256": "d7859d08fa5639fb5984757ce07ba5226374a55bb0fccaab22f643d94c487631"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-station-0.png",
+      "bytes": 170362,
+      "sha256": "19e2fc7f85d001c45c62d1fb161c2aeaa5e6617c6e2e56bf86e3ea8030fb2e75"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-station-1.png",
+      "bytes": 195471,
+      "sha256": "dc84b7098a9be90d84c20f5f1f1932d7e7f0d061eb321ee05792c6903e513f0a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-story-expanded-1.png",
+      "bytes": 155360,
+      "sha256": "c4a2b7ee1b4ca10ef29ea7a2f8812cdd8d61c4ff28192b59c6fba2ee5207bd0d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-station-2.png",
+      "bytes": 246724,
+      "sha256": "c9d0aa5322b1e8f3fe3543cbcbee4141c6bd015b3d0aafefd5759451ef4048ad"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-previous-1.png",
+      "bytes": 195376,
+      "sha256": "19087d0aa247c678024a60faaffd12c95688d07f431b6d1469e3ac9e834845c2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-external-sirius-paused.png",
+      "bytes": 61147,
+      "sha256": "9f6f90254bdd488aa3c97647f2a5b5e0fda73b4a88bed73d8e1bca649106c07f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-resumed-2.png",
+      "bytes": 246628,
+      "sha256": "0b59603b0e4b08560e597497cd2a3c92cad67b7a985a4de902b934685721f95b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-station-3.png",
+      "bytes": 95545,
+      "sha256": "8990574f64580be00ca8e16522f336686ae7f2e80d178597c71a643746930be3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-station-4.png",
+      "bytes": 175925,
+      "sha256": "e102149d13f618e501af012a17ec3a49da37206fd00d641b4e5ba12ce68b737d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/narrow-journey-returned.png",
+      "bytes": 116876,
+      "sha256": "152482547778cdcb8b69603a641ab90367bc5d50faef1eb9b16e0dad02d9e652"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-station-0.png",
+      "bytes": 694805,
+      "sha256": "e3dc739fa7b9953776ae0972dc2231e739df8ee72bef8ebdeae3a89a24648d99"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-station-1.png",
+      "bytes": 657467,
+      "sha256": "78396045919873489d7971cdee0fb41d876f79aae5df21e6788f2f201720546b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-story-expanded-1.png",
+      "bytes": 637298,
+      "sha256": "3c7ba9f621d6e7a66536a00792253a7260fc094302b49c7dcca599eac08ccb3c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-station-2.png",
+      "bytes": 805130,
+      "sha256": "ae97d550bd69381d5e427c5d14b06c3098d4bdfc80665f9542689690c92c3082"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-previous-1.png",
+      "bytes": 657245,
+      "sha256": "044bd78c37449e87712daa719da15ca62611d72cbd01be7f48d5d4250af0080e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-external-sirius-paused.png",
+      "bytes": 205037,
+      "sha256": "713b7bd7c412cc465598c0114e5fc450dee013ac065bcb15e7d66272cc475e40"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-resumed-2.png",
+      "bytes": 804720,
+      "sha256": "6a71d360ad248f200b126d9cb422776facc6c2a6afc5f413be9a5f845a4828b0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-station-3.png",
+      "bytes": 445014,
+      "sha256": "e45c0a6d8ddbea6cbe77ba621505ef5ca53e692c0fbc5f0097d8a11578724ccf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-station-4.png",
+      "bytes": 613960,
+      "sha256": "85660ffb864ff5bff5464e70671a1ee78cfe46e1ef9c911f3328f97ec3be5e10"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/reduced-motion-journey-returned.png",
+      "bytes": 402569,
+      "sha256": "65d5fa21981b3668c0713d1406e3f38ebf29e4c79672abc26a371cabdeab6d70"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/responsive15b-visual-audit.json",
+      "bytes": 40419,
+      "sha256": "34cbf13c7c70d64162a6b12cf1d000fe3328d95759516b66585c60117431a735"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/wide-1440-sirius-a-default.png",
+      "bytes": 210233,
+      "sha256": "e70615c9cb2d351cbbca2ce33e9864653c2a7ec05b4e6f06d1456d6b651e133a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/wide-1440-topline-unselected.png",
+      "bytes": 1465774,
+      "sha256": "8cf4c9fd966288a1b887523719bc741f923ba925cb8af2c67920b39193afe9f1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/wide-1440-topline-passport-closed.png",
+      "bytes": 227199,
+      "sha256": "a7d7370647966e8858fb03f12a82b4a2a9373a38c90888af3b94537f1902b7fc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/wide-1440-Ori-default.png",
+      "bytes": 863809,
+      "sha256": "8e48ae0fb61613b90f60e0a1dd3facbeddd41e5c623a2966456af8ed5a4d34c3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/wide-1440-m42-default.png",
+      "bytes": 1008809,
+      "sha256": "7f37c52956d088dd3b51819c5c9113de8490daaf551832846d7645f82c7664b9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/intermediate-768-sirius-a-default.png",
+      "bytes": 105026,
+      "sha256": "f50cf1b7ac5f66d96e8b88754eaadbed6bb8ed17b0ef6416f7d7e3aa4eba1daa"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/intermediate-768-topline-unselected.png",
+      "bytes": 865390,
+      "sha256": "940aa8317223f5200a1f98f4a4439f8e9c07aef3818fd45642f36d0c8ed4bf8d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/intermediate-768-topline-passport-closed.png",
+      "bytes": 103329,
+      "sha256": "f5393456a67221b515cbc5ede267cbc05b9cc512b75c1e209507745c1362966b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/intermediate-768-Ori-default.png",
+      "bytes": 429605,
+      "sha256": "c37d80ffa813dd83c8c3600dd35b4c4c6fe1712a9f2dcde4915d25c6c91b418c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/intermediate-768-m42-default.png",
+      "bytes": 477077,
+      "sha256": "63565332cdbf6105ac5ff81696a9751f6d2da41b36b62ea8ae0e421776b8496d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/mobile-430-sirius-a-default.png",
+      "bytes": 67201,
+      "sha256": "db9e484de3f8462ba78f27778d1863cf61d2d531630437a1b41c0dd4e03119ab"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/mobile-430-topline-unselected.png",
+      "bytes": 439745,
+      "sha256": "07dfe68c710f9c99c7810a9f62c64e37fa1c4fe41434bf7bc892ed52e9dfd931"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/mobile-430-topline-passport-closed.png",
+      "bytes": 69833,
+      "sha256": "b6d43710a7d0f047cdd4ccf5d76fe14d6cc796891d35bbfbcac7f55c7cd932e4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/mobile-430-Ori-default.png",
+      "bytes": 266447,
+      "sha256": "f926311be26d9d561204c8837029b375aea13fd997bbca9ddf60c300930c46a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-responsive15-20261019/attempts/20261019-responsive15b/mobile-430-m42-default.png",
+      "bytes": 352227,
+      "sha256": "c6811dff014287bb5dffe4b0b06e96841a126267b3366394de5db02914ea023d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/protected-inputs-audit02.json",
+      "bytes": 37967,
+      "sha256": "172d0da928fc79a8723cfd6374b74716e3445b0293ece8dc0df1c6a815186ce7"
+    },
+    {
+      "path": "app/data/asterismCatalog.ts",
+      "bytes": 6876,
+      "sha256": "1d4ae5bd9240b1d6bb639052af78429780983d93f0435aef791304dcae74ac63"
+    },
+    {
+      "path": "app/data/atlasVisualCandidateAssetsV562.json",
+      "bytes": 8704,
+      "sha256": "fb3269f4c81c5b406784a9ea22133c6bce61a98ec7f0ded227562512db530f77"
+    },
+    {
+      "path": "app/data/bodyDisplayFacts.ts",
+      "bytes": 4445,
+      "sha256": "bc3856aeef25c79397c2a6ac747b4b8ea851d1d9b43d4cc82f78c263266cc9ec"
+    },
+    {
+      "path": "app/data/brightGalaxyCatalog.ts",
+      "bytes": 6510,
+      "sha256": "49959de976e514ce071176d7d65b67524141ca510dd3200e915c7dba589cc368"
+    },
+    {
+      "path": "app/data/brightStarCatalog.ts",
+      "bytes": 23808,
+      "sha256": "bf33ea3e8534c622510a0d45a2ecea3cdc9021514f9248666d3f5d4ff29679c5"
+    },
+    {
+      "path": "app/data/celestialArtManifestV589.generated.ts",
+      "bytes": 467,
+      "sha256": "5d2e5641a7fdd78bff2fe56351c66f23c560b1cf035e810cf8315152559bd714"
+    },
+    {
+      "path": "app/data/celestialConstellationsV591.generated.ts",
+      "bytes": 727,
+      "sha256": "73b8343383bc61ed25ee2cd413f7fbe4286981144fa8f96b5c7f74c9b95c5293"
+    },
+    {
+      "path": "app/data/celestialConvergenceAssetsV591.generated.ts",
+      "bytes": 3035,
+      "sha256": "bdb2ae802cf0a0d910eb66b6d3b1070affe200b02147c7dd3923e601a44065a5"
+    },
+    {
+      "path": "app/data/celestialConvergenceManifestV591.generated.ts",
+      "bytes": 419,
+      "sha256": "e23fc2433ec4a2c0dc4cb06958bb148c51a2a63977733b7caddcb5cf9125ac0f"
+    },
+    {
+      "path": "app/data/celestialNebulaV591.generated.ts",
+      "bytes": 303,
+      "sha256": "3bcb666a491f916cf049cb37a8af7985f830fdf401ea1c1120426f47c3f7f78c"
+    },
+    {
+      "path": "app/data/celestialRenderingManifestV590.generated.ts",
+      "bytes": 346,
+      "sha256": "05ade2b6377dc627884a90bad1f31b95cd19e811f19e8bbd80c7ba4f9780e860"
+    },
+    {
+      "path": "app/data/celestialRotationV592.generated.ts",
+      "bytes": 12817,
+      "sha256": "4c141dc6f8bc0034d7cc56a3448b2071b866a4edd99dc3e4abd9c5856aa8ee70"
+    },
+    {
+      "path": "app/data/constellationCatalog.ts",
+      "bytes": 28934,
+      "sha256": "481d3748dd5de947bd7dd6df683de0277f928e3ed704ee217e3fbcdb31bb2efa"
+    },
+    {
+      "path": "app/data/deepSpaceReferenceV592.generated.ts",
+      "bytes": 25343,
+      "sha256": "dc74c2e59eb0f43fb35e836235609682a1bbc967b1be200496d3bca872d4b9ae"
+    },
+    {
+      "path": "app/data/deepSpaceVisualAssetsV592.generated.ts",
+      "bytes": 201512,
+      "sha256": "fa6f036a627bc0611dc08041b9ab6bdcd0e586eccba5a9a27a21da9ac7dd5e3f"
+    },
+    {
+      "path": "app/data/ephemerisGenerated.ts",
+      "bytes": 22330,
+      "sha256": "9050c7d45a9791e2de90e354dd261702c0c2276e4129fa7ef3cf8943f244628a"
+    },
+    {
+      "path": "app/data/finalArtDirectionManifestV593.generated.ts",
+      "bytes": 597,
+      "sha256": "380b178bfe6783fb3cb0eb15f0ac41c4b0ef5c97745989cc64768bf5b4a2abd8"
+    },
+    {
+      "path": "app/data/gaiaStarCatalog.ts",
+      "bytes": 12617,
+      "sha256": "1ea373f9349782bd3862d0530e1580cf0c0c5911425b1c9399e58525c000222d"
+    },
+    {
+      "path": "app/data/galacticStructure.ts",
+      "bytes": 4087,
+      "sha256": "9d98d99290333226a5c0212897eeafb167d0bea576c1b4081014aa1386bb3fe9"
+    },
+    {
+      "path": "app/data/horizonsReference.ts",
+      "bytes": 25464,
+      "sha256": "b9221374979e75aaba380b23e2884938cd28c29aec7ce0c31d65e0fa9ffc5542"
+    },
+    {
+      "path": "app/data/livingStarfieldV592.generated.ts",
+      "bytes": 618,
+      "sha256": "a333da02558dbf715eb2111a7fb2819f1784ccbc69924ecc0567c1c9c23d56ba"
+    },
+    {
+      "path": "app/data/livingUniverseManifestV592.generated.ts",
+      "bytes": 478,
+      "sha256": "b3d026b4e8e1c1b2d408fca191308581eabc1a6f4e1e914d16a52ac95464b58a"
+    },
+    {
+      "path": "app/data/mainlineAAssetCoverageV607.ts",
+      "bytes": 4831,
+      "sha256": "148c6bca9d77c4b60f9420b596f4a9989149cbc745198554803f050c6fd44efe"
+    },
+    {
+      "path": "app/data/mainlineABetaAssetIntakeV607.ts",
+      "bytes": 17173,
+      "sha256": "bd8d96e56a106f9642810a2aae1d119f887b8847cdd78b784e22d525df75980a"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroArtEvidencePackV615.generated.json",
+      "bytes": 28644,
+      "sha256": "2374d40d043c3d7b4ffb3c82679d3583489951a624dea4c1b057f9252e17e72a"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroEvidenceIntakeV607.ts",
+      "bytes": 1385,
+      "sha256": "bd385599f94fca438bdb292de3e5c43358f2fd84a3d421d344bdab6b902be9a2"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroReviewPackV611.generated.json",
+      "bytes": 3797,
+      "sha256": "3b15307dfe3b107afbc976a5f31886b5bedd1fc5158738ae120b930a338f4de5"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroRosterV607.ts",
+      "bytes": 1356,
+      "sha256": "9aa7deab1a879a0e0df0ab56452351805311103d2068a55b4f271b39d89521e3"
+    },
+    {
+      "path": "app/data/mainlineABetaNebulaExpansionV617.generated.json",
+      "bytes": 17184,
+      "sha256": "3806141883c14d43ad46fb4959945ffcac8f88b5d5cbd0a76d251a8ec4a78859"
+    },
+    {
+      "path": "app/data/mainlineABetaNebulaProjectionV609.generated.ts",
+      "bytes": 23026,
+      "sha256": "ea7f65be9619f4e4a4cc4d09a0ea9cad01310ab659e59eafd6a1efd2c3815fa1"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarFreshCaptureV618.generated.json",
+      "bytes": 4927,
+      "sha256": "b6938d150d8553a01455bc2280458d5850bbb95cd67b4d674f30df4a4430e38f"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarNarrativesV607.ts",
+      "bytes": 4912,
+      "sha256": "2983f2cbc0770dcc0cc5ebf7938435f35ea1b29fea0717186c62adac3f629eb8"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "bytes": 6135,
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+      "bytes": 17429,
+      "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+      "bytes": 7536,
+      "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRosterEvidenceV642.generated.json",
+      "bytes": 9619,
+      "sha256": "112214fd3057e2d06a2809e1bd6325fc7c17f2c6bf991ff68b5c656832b6b872"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRosterV641.generated.json",
+      "bytes": 100391,
+      "sha256": "b2ee2bcb455177c4f50e354d726500b3d9dc8b7dc806329452cd07d0314eb7ee"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+      "bytes": 6448,
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "bytes": 17973,
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    },
+    {
+      "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+      "bytes": 38349,
+      "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+    },
+    {
+      "path": "app/data/mainlineAConstellationAnchorSupplementV638.ts",
+      "bytes": 38590,
+      "sha256": "8cec458ac66c11ca9ae423110bf3f2d2d827a42451f1ca74d658dc1cd9961b5b"
+    },
+    {
+      "path": "app/data/mainlineAConstellationBoundaryDataV607.ts",
+      "bytes": 7149,
+      "sha256": "dd098eac77fc84e129c60fa9adc6a5fc09da18d2eef03f6a0958760b7d74aa0b"
+    },
+    {
+      "path": "app/data/mainlineAConstellationBoundaryV607.ts",
+      "bytes": 6878,
+      "sha256": "1195ef3443f7fd742d23f1b1e19d6e61f3534628bf0c44920362e2f51cae3cff"
+    },
+    {
+      "path": "app/data/mainlineAConstellationCurrentBoundaryDataV607.ts",
+      "bytes": 5762,
+      "sha256": "acf27cdf8bd15aaa471076525c10b232f35bf5253b546e268612a1f0089913d0"
+    },
+    {
+      "path": "app/data/mainlineAConstellationFiguresV607.ts",
+      "bytes": 9728,
+      "sha256": "c78918ab037fd39f3de2a0d5e0369a31a82f033f80d448cc98c0376b776f3c09"
+    },
+    {
+      "path": "app/data/mainlineAFirstSetNebulaCandidatesV607.ts",
+      "bytes": 6061,
+      "sha256": "5079ae462921d227c480c5e74489f7554153d9f7b06a1bcdeb861f8d2925fb5f"
+    },
+    {
+      "path": "app/data/mainlineAMetadataV607.ts",
+      "bytes": 31730,
+      "sha256": "a3b3fa4565a6f8bf9888e8e8c8303232e482b4757384d18fa7767adbb60983e0"
+    },
+    {
+      "path": "app/data/mainlineANebulaB1SourceV654.generated.json",
+      "bytes": 7045,
+      "sha256": "f68c8fc796b544cfcb7ea9f70f9bbb74e9b2a489c6dd0c0270e8b1f27fcd1bc9"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV624.generated.json",
+      "bytes": 27597,
+      "sha256": "0c4993a191e2dbbc535bc34fe73fd829f92ddad853dd94bc2d03551117846a64"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV628.generated.json",
+      "bytes": 29575,
+      "sha256": "9634b677ffc2b8552dd78b9d73501efb007b0266615bdf8647b9558a27a4b32f"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV628.offline.generated.json",
+      "bytes": 16384,
+      "sha256": "7068f5e35ca50c25e27e27a4fd59871422e3d4568615fa70cb7e7c4008e89a70"
+    },
+    {
+      "path": "app/data/mainlineANebulaCandidateReviewV655.generated.json",
+      "bytes": 30701,
+      "sha256": "92c098ec64ff03ef2fbae49a1cce940c6cb715d49f8ff0fb50e1f8219c19375a"
+    },
+    {
+      "path": "app/data/mainlineANebulaImageAttemptLedgerV623.generated.json",
+      "bytes": 10172,
+      "sha256": "f271d28d2b063090b756ce2230cc7eb6783650f54ccb4f224de63b82309f973b"
+    },
+    {
+      "path": "app/data/mainlineANebulaR71SourceV658.generated.json",
+      "bytes": 11368,
+      "sha256": "0b355f7d1631e9771a1c2adecaf53a319252181c1ba3572d3895955e287715df"
+    },
+    {
+      "path": "app/data/mainlineANebulaR72SourceV659.generated.json",
+      "bytes": 15073,
+      "sha256": "1ca68f4cfea87899f3e67f6e783a44a783cb72ab05b4d0157e78668014e9e9f7"
+    },
+    {
+      "path": "app/data/mainlineANebulaR73CatalogV660.generated.json",
+      "bytes": 62598,
+      "sha256": "3ab8bf639f8241cdfe042a4ac143031f76d6fe1f9ca0bdf133158b24d8f3b8db"
+    },
+    {
+      "path": "app/data/mainlineANebulaR74AlternativesV661.generated.json",
+      "bytes": 18161,
+      "sha256": "8f7c3c6247d1abc561ed19be26cc4254e51b6d94dc00375c508da02b3149f76f"
+    },
+    {
+      "path": "app/data/mainlineANebulaReviewPackV610.generated.json",
+      "bytes": 32582,
+      "sha256": "61fe9c5635ac2eac76342e3c0bdf685ec2f4c1fefeecb342ea86249a8627b551"
+    },
+    {
+      "path": "app/data/mainlineANebulaReviewPackV612.generated.json",
+      "bytes": 40729,
+      "sha256": "547302ffb5ff250ff741f2de4a5dc1906b75302779e77b10af76b1545531d893"
+    },
+    {
+      "path": "app/data/mainlineANebulaRightsPackV613.generated.json",
+      "bytes": 85147,
+      "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7"
+    },
+    {
+      "path": "app/data/mainlineANebulaVisualAssetsV607.all.generated.ts",
+      "bytes": 14158,
+      "sha256": "25e34b290ba49333b2dd47eb98b6e4288731f75da42658da6a74226a90d32cd9"
+    },
+    {
+      "path": "app/data/mainlineANebulaVisualAssetsV607.generated.ts",
+      "bytes": 7319,
+      "sha256": "1fd04e2dbf4101ee53514f1adc7f562400f8cd4d131e51cde1a288e395a03a30"
+    },
+    {
+      "path": "app/data/mainlineAObservationRoutesV607.ts",
+      "bytes": 14650,
+      "sha256": "f3c0e720bf0ff679b58af1b3256fae1a1c05191b6a4e20fe2ff585bd5689660f"
+    },
+    {
+      "path": "app/data/mainlineAR65LongRunV643.pending.generated.json",
+      "bytes": 1575,
+      "sha256": "a2642a1a95b99bdffcdab2534363fbc6f80886762ad7d4fd2d1a4678a4bbacf5"
+    },
+    {
+      "path": "app/data/mainlineARegistryV607.ts",
+      "bytes": 2983,
+      "sha256": "596e0403dacad4ff57cd57f5f281279f91020511b52f8a4847a2b7f3ae30f79b"
+    },
+    {
+      "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+      "bytes": 47878,
+      "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+    },
+    {
+      "path": "app/data/mainlineAStellarEvidenceV607.ts",
+      "bytes": 8960,
+      "sha256": "5fdf7948677effe0b12aa9ee46126ee4553e7c2fc389c26da538fcf1055af792"
+    },
+    {
+      "path": "app/data/mainlineAWebReadinessV663.generated.json",
+      "bytes": 19609,
+      "sha256": "cbd39d11703ef2044dde8f7f7865f35281932f09b7d1d1018874f2b1bf9c356f"
+    },
+    {
+      "path": "app/data/mainlineAWebSkyAtlasV656.generated.json",
+      "bytes": 27529,
+      "sha256": "8da5899d664e606357fd75babe4e2fdb131c25a652c2ee882ad1dccda7dd5c41"
+    },
+    {
+      "path": "app/data/majorMoonVisualAssetsV592.generated.ts",
+      "bytes": 39784,
+      "sha256": "31e7e0f810b63ce3a745c071968146c8b70eb046d9bc113935b6bc76af16a339"
+    },
+    {
+      "path": "app/data/majorMoonsV592.generated.ts",
+      "bytes": 21356,
+      "sha256": "bb84f24cfa916c57895eac96fdb9a285ef684736be0479c2ed42f81cf6966567"
+    },
+    {
+      "path": "app/data/nasaMasses.ts",
+      "bytes": 2109,
+      "sha256": "075c2e9aa0013287218a14f110d1afbc54de51470b5c2719a9bb6e3bcdbf6d1e"
+    },
+    {
+      "path": "app/data/nearbyStars.ts",
+      "bytes": 11456,
+      "sha256": "53fb90131c9fb47785a50c5eb157f76949c5fd03468be85acb7b7888de6b6cfb"
+    },
+    {
+      "path": "app/data/nebulaCatalog.ts",
+      "bytes": 20197,
+      "sha256": "fc4ea8bc93874ae048bc112c3eede42ecbc9230a4ac53c045c981f88330c1db7"
+    },
+    {
+      "path": "app/data/nebulaCatalogV255.ts",
+      "bytes": 10922,
+      "sha256": "39829dea7e200007df9eab0474a18507d4e2c7bb5beb68e66082dbd65bec70f6"
+    },
+    {
+      "path": "app/data/nebulaClosureVisualAssetsV592.generated.ts",
+      "bytes": 79142,
+      "sha256": "feebfdf0ba8b634fdd53e96027aa6ff00cafa8f91fddbce11338957da926f09d"
+    },
+    {
+      "path": "app/data/nebulaExtendedVisualAssetsV592.generated.ts",
+      "bytes": 56819,
+      "sha256": "03b6889f34afc752145db56f74bf5df9f4d783792f16b83a3e5ae7508350c37c"
+    },
+    {
+      "path": "app/data/nebulaVisualAssetsV592.generated.ts",
+      "bytes": 68088,
+      "sha256": "7441dbc58c82a826e9580301e69a11917bd4b1648d7e4bdf847faa1f35993f06"
+    },
+    {
+      "path": "app/data/planetTextureManifest.ts",
+      "bytes": 3024,
+      "sha256": "762a6ff03b296231f8ad75ae0a8b1e176bc7af791522dda4d56ea53b62be47f8"
+    },
+    {
+      "path": "app/data/planetaryArtDirectionManifest.ts",
+      "bytes": 2090,
+      "sha256": "6d2f074509997df610b8295d94f519fb9030389ebcc2ab23e69ec382d71f074e"
+    },
+    {
+      "path": "app/data/planetsJ2000.ts",
+      "bytes": 26805,
+      "sha256": "bcd2d3c71011a35b7a4f824471ba3c11160e705d2b029980268ae615140ab49e"
+    },
+    {
+      "path": "app/data/pulsarCatalog.ts",
+      "bytes": 6554,
+      "sha256": "54c34ece80fcaea8bae2acadad798cfd07b0de7cbc468f94c79e131166163129"
+    },
+    {
+      "path": "app/data/referenceKeplerOrbits.ts",
+      "bytes": 14712,
+      "sha256": "8eed8d446e426cdf404280be524138e40b225414f81ac7cf08b2232ee72da9c3"
+    },
+    {
+      "path": "app/data/starClusterCatalog.ts",
+      "bytes": 11133,
+      "sha256": "06076b70acfb0fd509052c2e313d8bc863cdb9e7f4e9e4fb2dcd825d8ab81865"
+    },
+    {
+      "path": "app/data/starClusterCatalogV255.ts",
+      "bytes": 15341,
+      "sha256": "6cda4a8a25f36ffe27fb4a15c196c0cb528fcb38dc64830f70df60906fa7cf44"
+    },
+    {
+      "path": "app/data/stellarHeroesV592.generated.ts",
+      "bytes": 33511,
+      "sha256": "21d9d19d779eccc172d607ca1d868d419799ed1f0714032ccf8b4f6abbb055af"
+    },
+    {
+      "path": "app/data/stellarProvenanceCandidate.generated.ts",
+      "bytes": 585572,
+      "sha256": "59df6a3d1ea695c0623f04fa6538bf17337db96f8e8aa78f51435a7f378d2aad"
+    },
+    {
+      "path": "app/data/sunResources.ts",
+      "bytes": 393,
+      "sha256": "7bad9ed98d72a056ad5de61dcf6f8afa2daa13163ede2ba600e316393ce57423"
+    },
+    {
+      "path": "app/components/StellarPortraitMaterialV596.tsx",
+      "bytes": 22076,
+      "sha256": "5ff75e65df354be156f3131e68b6053d45e9dfbeb8a36d857725ba14dd3bdc25"
+    },
+    {
+      "path": "app/lib/stellarPortraitRenderContractV594.ts",
+      "bytes": 37611,
+      "sha256": "2fc7405de7669636a25b9ef3700b8076f1403e228e65d0c403847922cbfa529a"
+    },
+    {
+      "path": "app/lib/stellarPortraitRenderContractV596.ts",
+      "bytes": 17263,
+      "sha256": "4ea425c4062cb7447c397d9581b8229812ff235cf18669d8174491623f0a6382"
+    },
+    {
+      "path": "app/lib/stellarArchetypeProfileV1.ts",
+      "bytes": 17186,
+      "sha256": "18680ff75e36cfc8f08b1f2befff68a1fd58104b028099fcb372b33d5bcc6e2d"
+    },
+    {
+      "path": "app/lib/stellarMaterialProfile.ts",
+      "bytes": 4632,
+      "sha256": "edaad3aadf8fbd9559d497198e96ef265562832fc0b01ff7899fd18d5d3bda43"
+    },
+    {
+      "path": "app/lib/stellarHeroesV592.ts",
+      "bytes": 3533,
+      "sha256": "16887947dd1386ffcdbb077eb60d41466a3e391e81972a036c36f1b6dde18c6b"
+    },
+    {
+      "path": "app/context/PhysicsPreStepContext.tsx",
+      "bytes": 2016,
+      "sha256": "f06a992beb0bb38ec338bff49d6271f3fc2ec4856df628d0792c613dec5f62bc"
+    },
+    {
+      "path": "app/context/PhysicsRenderInterpolationContext.tsx",
+      "bytes": 4882,
+      "sha256": "1e60ae6984a8db1191ddfad3a0641e7738b17dbee5c1992ba10dc48a809067a7"
+    },
+    {
+      "path": "app/lib/applyPhysicsSnapshot.ts",
+      "bytes": 877,
+      "sha256": "55385f514e8f0c3c238a9daee5993de703434f6c6f45bb5d83632903e4814095"
+    },
+    {
+      "path": "app/lib/atlasPhysicsBenchmarkGate.ts",
+      "bytes": 14144,
+      "sha256": "f5adc038913bae60d2e356ae5ecb4cd6fa2663046361d3a8a230ec121432f604"
+    },
+    {
+      "path": "app/lib/atlasPhysicsGateSplit.ts",
+      "bytes": 2752,
+      "sha256": "359ccdfeb7409ab93fa3bf0cd03ffc9c3443b0b90b64ec80a073356b00a4429d"
+    },
+    {
+      "path": "app/lib/localLaunchPhysics.ts",
+      "bytes": 27167,
+      "sha256": "605f29eac177cd56433dadaf6ceb0fde9b4c56cf9e1403db091bcf6077e7d263"
+    },
+    {
+      "path": "app/lib/observationalAstrophysics.ts",
+      "bytes": 14388,
+      "sha256": "2164119d2a392d3a8d879ded67b163be1aeda6ec895c69c8e18fd668ec694aba"
+    },
+    {
+      "path": "app/lib/physicsEngine.ts",
+      "bytes": 20247,
+      "sha256": "8c0f316c76e096e0ffa09d728199d28d0cd5e0423a06e15a8d0515781c01bc5f"
+    },
+    {
+      "path": "app/lib/physicsExecutionPolicy.ts",
+      "bytes": 3505,
+      "sha256": "1b2022d8c627c9f2792550199c34fbc733173dd9d6efec101e4eb9ca63ff31bc"
+    },
+    {
+      "path": "app/lib/physicsHistoryStack.ts",
+      "bytes": 1626,
+      "sha256": "58613b230bbedade4ae55c2b7794cfd3183f7880c5a2463eabc14bfe356dd7ea"
+    },
+    {
+      "path": "app/lib/physicsPrecision.ts",
+      "bytes": 67,
+      "sha256": "003339d2536f3285f35cb550817f060da60bb0049ec840af70d4034b39af0d6b"
+    },
+    {
+      "path": "app/lib/physicsRuntime.ts",
+      "bytes": 7285,
+      "sha256": "2d7aea289e9bc2200bf4cbaaf153aab8f9bf332ecc3d661bee0b4096bdea7767"
+    },
+    {
+      "path": "app/lib/physicsSharedBuffer.ts",
+      "bytes": 2550,
+      "sha256": "b599ca9dd6553a6ae9d8eca7de67fd443b9a75d157aa10bcbade5711630d1560"
+    },
+    {
+      "path": "app/lib/physicsSnapshot.ts",
+      "bytes": 5842,
+      "sha256": "ba575220d05da86cd6909dafa236e88f7499efc8a6f46692cf7567299b5cc32f"
+    },
+    {
+      "path": "app/lib/simulationDiagnosticsTypes/physics.ts",
+      "bytes": 58054,
+      "sha256": "042e047cc2e632c716326ef1ac46107bcdd2bfddc5c720444231486348a2dc44"
+    },
+    {
+      "path": "app/lib/solarSystemPhysics.ts",
+      "bytes": 18921,
+      "sha256": "25c3c3d7e509df57d1480d15814f545cb098450272279b52befd96857dfdf4c3"
+    },
+    {
+      "path": "app/lib/keplerianOrbit.ts",
+      "bytes": 2499,
+      "sha256": "cffeee3cb587e3d9610d7bca0dd3541133a2b0434a903d4a641cf3b79ac0acaa"
+    },
+    {
+      "path": "app/workers/physics.worker.ts",
+      "bytes": 5683,
+      "sha256": "bd8a7d2635da30c64db600cf3e761e36dfebb585262f7a58a44d301e68631951"
+    },
+    {
+      "path": "app/lib/mainlineAR65LongRunV643.ts",
+      "bytes": 43882,
+      "sha256": "bb8a2cbe410ed5daeb44809bff7fb1b376699c99293cc601df504292f31ac223"
+    },
+    {
+      "path": "app/components/MainlineAR65LongRunPanelV643.tsx",
+      "bytes": 31298,
+      "sha256": "b838c52aa478c758f8d77fe7a7011fc2436f2cce7f8923417cf15429cc3b4981"
+    },
+    {
+      "path": "app/lib/mainlineAStellarPresentationM2.ts",
+      "bytes": 9129,
+      "sha256": "52cccf9277da2ce6d068cbbda3c8c61d61acb12b11214ca0d361cc5c3775c4d8"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "bytes": 31799,
+      "sha256": "0ccb2145019349920c5a03234cd436b82882bc8e13d89a3947c38996e52e916b"
+    },
+    {
+      "path": "app/components/MainlineAStellarPortraitV607.tsx",
+      "bytes": 11536,
+      "sha256": "f7f578e94fc908a2a93ae6642061f4b4d044333017ea4f48003120fbdd40d712"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/same-build-gallery-assets-audit01.json",
+      "bytes": 88169,
+      "sha256": "b4c6326af635ea605bd73f8bd617ce06111ed8dd8ff91362dee2ce560a005bff"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-stars-final15-20261023/after/receipt.json",
+      "bytes": 1318909,
+      "sha256": "d8e6c5f7cb87312402f571c6595df7c5fc88b53b36d420a1fd2fd5529b39c790"
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-final15-20261023/receipt.json",
+      "bytes": 2601669,
+      "sha256": "d228f62bdb27d8b7972f9e132d1339fb5685a30d45321ec812cf9486171c8594"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-nebulae-final15-20261023/after/receipt.json",
+      "bytes": 1881891,
+      "sha256": "8e80febf27837a41f313360bb4e6d10b9a8358ef8dda103c42cb56e7c8b0708d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-final15-20261023/gallery.html",
+      "bytes": 44264,
+      "sha256": "8b6afdd50fcd5ddcff2c908e905efc3936d91490f4c37e437637ef9707828058"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/server.js",
+      "bytes": 8226,
+      "sha256": "7747fd792208997c4afcb6e885b705cbb45af4bc031e6cc89a9d8bd7b8253f8c"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/static/qg3f2Z6WY5qYWfo3vEjmq/_buildManifest.js",
+      "bytes": 1489,
+      "sha256": "b61d5ca2dcc2eb1a1e6b03e440afc9bd34f699e7a4b64ee4473b0b9393ffaa11"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/.next/static/qg3f2Z6WY5qYWfo3vEjmq/_buildManifest.js",
+      "bytes": 1489,
+      "sha256": "b61d5ca2dcc2eb1a1e6b03e440afc9bd34f699e7a4b64ee4473b0b9393ffaa11"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0205d.jpg",
+      "bytes": 181214,
+      "sha256": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+    },
+    {
+      "path": "public/textures/mainline-a/potw1644a.jpg",
+      "bytes": 156750,
+      "sha256": "f4953a80a364d5b9ba23b77d9d5dd8bfa94d7715604eb207b168278e5a35d61f"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1517b.jpg",
+      "bytes": 721718,
+      "sha256": "29f76f0a20aed10e08868ecedfffe27c983d30eabbb1904b982b616f9fbaa2af"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1501e.jpg",
+      "bytes": 493726,
+      "sha256": "9349f8d48d81a9998e46aab8cb0c87ef5a61c2fad093ce8c36fc9fa657e09e92"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0417c.jpg",
+      "bytes": 236179,
+      "sha256": "c56abd176306b9ea16c50fe20586b59cd9017203945d0ff1e4406054b86859d6"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1310a.jpg",
+      "bytes": 181669,
+      "sha256": "8a3003ab28b0a3a45e97d63ef879a5c55a2029ded9cb174818f09646aeb3b806"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0432d.jpg",
+      "bytes": 149625,
+      "sha256": "172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0"
+    },
+    {
+      "path": "public/textures/mainline-a/potm2602b.jpg",
+      "bytes": 144618,
+      "sha256": "69ab60734b2d03f3f07c3d114b35744d0f0973fbdcc1dd42141f14f3c6130721"
+    },
+    {
+      "path": "public/textures/mainline-a/potw1847a.jpg",
+      "bytes": 287379,
+      "sha256": "271752f5e51d29bc827e2cf171b2bb8ee3b81dc6798e511ebff6baaa17bd9598"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1520a.jpg",
+      "bytes": 313032,
+      "sha256": "f66c90025e6a284bf1834f35ebacfa9ce5fce2684bf2b3ac60a6e1fc740fb176"
+    },
+    {
+      "path": "public/textures/mainline-a/heic0707a.jpg",
+      "bytes": 178050,
+      "sha256": "8071632a2d895f0bfdb8b5ff80456eafc3ff71ee2b8fa8e28b84b5994fcec4d3"
+    },
+    {
+      "path": "public/textures/mainline-a/heic0105a.jpg",
+      "bytes": 280666,
+      "sha256": "81f1f34fc28d754b1521d86ea5e3cc5dd284ed62243b1911a6ba6c419191e7f8"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/heart-nebula-detail-3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c.webp",
+      "bytes": 334852,
+      "sha256": "3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/soul-nebula-detail-26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f.webp",
+      "bytes": 251874,
+      "sha256": "26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/witch-head-nebula-detail-4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd.webp",
+      "bytes": 247242,
+      "sha256": "4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/flame-nebula-detail-38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc.webp",
+      "bytes": 140844,
+      "sha256": "38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/pacman-nebula-detail-79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0.webp",
+      "bytes": 205082,
+      "sha256": "79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/running-chicken-nebula-detail-074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8.webp",
+      "bytes": 289312,
+      "sha256": "074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/jellyfish-nebula-detail-ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4.webp",
+      "bytes": 195446,
+      "sha256": "ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cocoon-nebula-detail-0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be.webp",
+      "bytes": 198784,
+      "sha256": "0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/rho-ophiuchi-cloud-detail-183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2.webp",
+      "bytes": 72106,
+      "sha256": "183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cepheus-c-nebula-detail-2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3.webp",
+      "bytes": 197838,
+      "sha256": "2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/dragon-lair-nebula-detail-0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe.webp",
+      "bytes": 376438,
+      "sha256": "0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/monkey-head-nebula-detail-c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697.webp",
+      "bytes": 101614,
+      "sha256": "c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-image-e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2.jpg",
+      "bytes": 1243620,
+      "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-image-e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c.jpg",
+      "bytes": 3002201,
+      "sha256": "e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-image-b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb.jpg",
+      "bytes": 1224232,
+      "sha256": "b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-image-03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726.jpg",
+      "bytes": 1305120,
+      "sha256": "03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-image-08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38.jpg",
+      "bytes": 5079804,
+      "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-image-9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07.jpg",
+      "bytes": 1162880,
+      "sha256": "9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-image-b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396.jpg",
+      "bytes": 758960,
+      "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396"
+    },
+    {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "bytes": 57424,
+      "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/source-stage-assets-audit01.json",
+      "bytes": 23872,
+      "sha256": "03413f2bc1dc0eece49266d84ffbe4ff58b0317323e7673f73ffdb0f13588450"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/BUILD_ID",
+      "bytes": 21,
+      "sha256": "3f715a5eaa6d1142fb87ef76efc16b31b945021a5400eb6408659cbba3e7b4ec"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/.next/BUILD_ID",
+      "bytes": 21,
+      "sha256": "3f715a5eaa6d1142fb87ef76efc16b31b945021a5400eb6408659cbba3e7b4ec"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/static/chunks/8785.4e59719a84350eb5.js",
+      "bytes": 2685052,
+      "sha256": "67223ad39a2ab3e50115e872c92fac65bc86b2ff3eba13f387804f31b2039d3c"
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/.next/static/chunks/8785.4e59719a84350eb5.js",
+      "bytes": 2685052,
+      "sha256": "67223ad39a2ab3e50115e872c92fac65bc86b2ff3eba13f387804f31b2039d3c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/completion-gap-audit03.json",
+      "bytes": 29192,
+      "sha256": "a865c560b2878a969fdd6ecdcc47bbd9089b17aebe08d5fbcee77c70075b7c4d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-final15-20261023/gallery-browser-check.json",
+      "bytes": 12865,
+      "sha256": "21db826d24399e47b1d62dc8f0ad79741632f845c23a20ff871a4b9c5adb75f7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/final15-app-validation.json",
+      "bytes": 4354,
+      "sha256": "426e1098f121a15e7337b9c19410977448e40c20e9d50858783f3dc587823f7c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/final15-tools-validation.json",
+      "bytes": 11061,
+      "sha256": "5d11c96d3c2f759b0c7bb74ef55d02be32cac8b94927365544e71a7db8f43db7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/single-device-tool-tests01.log",
+      "bytes": 5423,
+      "sha256": "4288cf6a9906ea247f6f600a1a4febf93e12fa491369537ac561ada6a6fb7c94"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/interruption-repair-handoff01.json",
+      "bytes": 116874,
+      "sha256": "3fad2e344407f4f4f7d52927706875f7ec23ea57494cf5c12edd9967a322987b"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-enabled-20261023-m5http21.json",
+      "bytes": 43408,
+      "sha256": "081624bc5ed0f001d97eac8f03420197b7b1297a494311f5a3940a1dd39b35c7"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-default-off-20261019-m5http20.json",
+      "bytes": 41891,
+      "sha256": "f5bde6b76358c7a651e82630648b2ca41a335a43fd081ae49a22a6a60871ca98"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/final15-webgl-audit.json",
+      "bytes": 12044,
+      "sha256": "9d233c1d0ef758ee41b6deaa308ff497602aaae23f1eb28902c59fa1ac6f1d8e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261018/orbit-layer-ui-20261023-orbitui08/receipt.json",
+      "bytes": 439220,
+      "sha256": "4f1e45b1fcb84910216cc045d200f208325e02ae3955f63ba45cd1265d6283c7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/20261023-pointer02/receipt.json",
+      "bytes": 33099,
+      "sha256": "07442a459e7e87703fc53c318cc1c8dfca0bc0527bac06aaf6840a1473da9bbf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/m2-default-visual-review01.json",
+      "bytes": 7893,
+      "sha256": "caf83b8d72dd762e53dfbdfdf2a0d8bc4f5db614ada457b14d220afe146a1c9c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/desktop-nebula-visual-review01.json",
+      "bytes": 31264,
+      "sha256": "d67f3c6f5ab35c477039b0cd6445631b0a0d24c6b58bc81c7ef2e43ff7084ab4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/mobile-nebula-visual-review01.json",
+      "bytes": 7569,
+      "sha256": "2dd4e1e07ad2151fc469fa3f33c75a446012c37cab964d0563f15f3050a198d7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/m4-desktop-visual-review01.json",
+      "bytes": 18895,
+      "sha256": "17dc3af1e38e9434496e83c8a9447305f0f6662c8e58fdcf09e06ac4b528c0ad"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261023/m4-root-visual-review01.json",
+      "bytes": 8593,
+      "sha256": "de691fb0e08d5a668ccd87300bac452c574e5dc83b7179a037b56c52a5e2d2cb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/desktop07-review01.json",
+      "bytes": 76220,
+      "sha256": "b2e4740949a9a715709a9714c75bf08bc0f0dd54d4470fdf0d24f27db03edce6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/dom02-independent-review01.json",
+      "bytes": 30173,
+      "sha256": "f8c88272711f4531e30bd92c55e007aec41c4b1cf36ad4e5bd6eef5408f841e1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-session.json",
+      "bytes": 2312,
+      "sha256": "43144280455a935b9f07656d5fbf1575ff7d157ea4eecd9b0ef85169bd96a6ac"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/plan.json",
+      "bytes": 12423,
+      "sha256": "4f3138f9a0f63f255b4287afc9190f3020c6cd4719462f2f3a51a239952afcc4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-browser-raw.json",
+      "bytes": 32212421,
+      "sha256": "57e8dd3a3d5b4224dc56e3d90ec1e3de01c212e33f1717403ef2fb1c01c88cd8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload.json",
+      "bytes": 2415572,
+      "sha256": "7ad68192deb398253ecb7174a9bb7a8fe78dd618ece724b7634f46493d8f1837"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/plan.json",
+      "bytes": 12243,
+      "sha256": "25d4ef060ffae31e2feca962d61744cbd899625c9fd6c9e3d3a95ce92f201b6e"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m5-longrun.mjs",
+      "bytes": 41948,
+      "sha256": "359c47a153be13a37fc6246a0422c760d6e3e2fe5c9b227ac303220e5a8cace1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/capture-mainline-a-m5-longrun.pre-single-device.mjs",
+      "bytes": 34157,
+      "sha256": "35c5ab0e2182b453b549d96310dbe4b65d6ab7bdba31373c123e4d52b846fcc9"
+    },
+    {
+      "path": "scripts/mainline-a-m5-longrun-workload.mjs",
+      "bytes": 40682,
+      "sha256": "97fd252240e4e30fede1046f68aa7cff6f0e6b96ab0d29c58b35df919f4cc63b"
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-r65-longrun-v650.mjs",
+      "bytes": 19215,
+      "sha256": "c7c075dcd98caf3a72f024e57e285791aa4b399eda65f91646e47caaadac2766"
+    },
+    {
+      "path": "scripts/mainline-a-r78-longrun-series-v665.mjs",
+      "bytes": 13213,
+      "sha256": "2f533d27515919638569663853e7ab42094ecefd8dfc5d6f235b259621bbb1f0"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-r65-current-v648.mjs",
+      "bytes": 11396,
+      "sha256": "dd6062975718aed46e4e5fcfc51fe96e32e86ea207ab81c7319ac9b9e0d2e1ee"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m1-browser.mjs",
+      "bytes": 26516,
+      "sha256": "3017642ecca58fdb34cee3a352faa5a23abdaf14afcd095ad268b85571793571"
+    },
+    {
+      "path": "scripts/build-mainline-a-preserved.mjs",
+      "bytes": 13731,
+      "sha256": "2f057ea22f1336926908fde9808d3e57b43658a6dacef4872efa12a3ba53bbd7"
+    },
+    {
+      "path": "scripts/mainline-a-browser-camera-observation.mjs",
+      "bytes": 5328,
+      "sha256": "f5eae5be3cece9a536f43d77e3cf349b09298b3b0fee0c742814c6b01e2625a9"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.mjs",
+      "bytes": 43639,
+      "sha256": "32d8a8a2183b038c0f90ba1ae9ee827515f43cf9b9f52f08a3f1f3b0ddea15d4"
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.mjs",
+      "bytes": 9716,
+      "sha256": "22811d4d6e814a44d47ae823f4dac4c3a91b71cc65c2ffe52427f8e43adb5c32"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-station-0.json",
+      "bytes": 33049,
+      "sha256": "e666abff08f99e565772c532550527d9ad43b09448ef5fd87ff9edb2a5f4948b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-station-1.json",
+      "bytes": 36373,
+      "sha256": "6d1cf2e9e7ff1976c2828f1fb5c81f24f39a3640fafb8354140061eba42c9a5f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-viewer-open.json",
+      "bytes": 4207,
+      "sha256": "92f6c1bbedefb1c2bd562180ed1015803efb7ce28160120642f560c4c0892ac7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-viewer-closed.json",
+      "bytes": 36382,
+      "sha256": "4d2209366bb4bee2449d844673b7370275bddc5ce29e8faff91460c17362bc70"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-station-2.json",
+      "bytes": 36369,
+      "sha256": "ad0a8af961504c2ab81f8ed7e6569c077c53fdeac693424dc4156bf3baef3cde"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-station-3.json",
+      "bytes": 38649,
+      "sha256": "65d432358d7d5a764f5fffcc29ed973700c6cca4572e8408244a5588587350b9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-station-4.json",
+      "bytes": 38579,
+      "sha256": "365ade9d7f8d39a9cc0ebcffed348bc78528643257b775322a9ffff4cd697ecf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-returned-orion.json",
+      "bytes": 33311,
+      "sha256": "b6968af5f6072da6fa760615f168c996e3346a217019859dfd0837a4b7c6eee4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-returned-baseline.json",
+      "bytes": 32307,
+      "sha256": "fe746070851edb6813b855beaa34439578f37b2256f94023449786a5d1bd0e4c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup--1-warmup-stable-confirmation.json",
+      "bytes": 32324,
+      "sha256": "587e764374dde17770f36025ed15fcff1afd1e2e88d2969dad0a5d2a507fc4cf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-station-0.json",
+      "bytes": 33054,
+      "sha256": "534ace0f1ccbb2e03463ec7590286a22d5020c9e8c21e2531ffda03e3bde3a3b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-station-1.json",
+      "bytes": 36381,
+      "sha256": "c3678a8513556facc02fd259f2acca19cdf3489aa24608359d8190a99b58f864"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-viewer-open.json",
+      "bytes": 4212,
+      "sha256": "c77ad4b0560996a5552c7ce453db9c8104111f4119c7238dbfceb02226a11482"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-viewer-closed.json",
+      "bytes": 36389,
+      "sha256": "aa0486b7c341c29b1e474af36fdeeca937ddcf24a8e0b78c2542a2db7ca1af72"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-station-2.json",
+      "bytes": 36377,
+      "sha256": "4738d51a0c5b05d01a9fa2d90d8512e8d8fa0ac293da88fe6f4b1c753a97e70e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-station-3.json",
+      "bytes": 38658,
+      "sha256": "f7f17ff74e159329fa0b1a3185c71037378fd11cc35e758c9b4e23abe5863e69"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-station-4.json",
+      "bytes": 38586,
+      "sha256": "0d35a24854e5ec0bee41012e35f2e958b2b670680ca64cab9c61b717a34abe9a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-returned-orion.json",
+      "bytes": 33317,
+      "sha256": "1c07d8cdb4bcb4c2f7126c420916282a33390e4c5bda750453b8dd3f4a3e3423"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-0-returned-baseline.json",
+      "bytes": 32312,
+      "sha256": "0d8b2afbd68f8f4212154869d39e6a94c579e7f2717d946c737cef9f583cca58"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-0.json",
+      "bytes": 304418,
+      "sha256": "44352174fe9a92f10bc24062dc3792bd6bd2695cd2477a6fa7cff61be7924c02"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-station-0.json",
+      "bytes": 33055,
+      "sha256": "f8464548dcf1f28130ccd8ed9e06832b8db7b558c4796c792cda121dc6ef1a33"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-station-1.json",
+      "bytes": 36377,
+      "sha256": "9753ac76603cb1c130780fb852c31f422cefcc897494c3c3cb1cad6373947878"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-viewer-open.json",
+      "bytes": 4211,
+      "sha256": "6abc88cf73789b9540f7e7b845dbd5ee713a66fb184d600d582e6a152937eac1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-viewer-closed.json",
+      "bytes": 36387,
+      "sha256": "45593361499adc29bfc3e10479f0e923a5d685d7f01272d7e70bb2cf910baf63"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-station-2.json",
+      "bytes": 36376,
+      "sha256": "4884df2265066ba64e15a9b318fccac84bb3a2f69af9b4bd418b329cbcbca15e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-station-3.json",
+      "bytes": 38658,
+      "sha256": "4737e47f4a5398709585d1334cab2f4ccd1ee1ea576cc2f1c7d66609793d8dd0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-station-4.json",
+      "bytes": 38586,
+      "sha256": "d17292f5eb6158f57517ede681bc701d8b7874c0da102f87fd4c85f1c960c4fe"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-returned-orion.json",
+      "bytes": 33314,
+      "sha256": "3a54211b7502a8a7eea35f7de4c34ed5547c9d93028475984c4496a148e40269"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-1-returned-baseline.json",
+      "bytes": 32311,
+      "sha256": "e73b48e4e320d4bc49d609493b5ccfaa29757bac95835f091588e09d9cc6feae"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-1.json",
+      "bytes": 304407,
+      "sha256": "15225f402660f8a5da2a439dbf4f5567c1ec8369850357fefbfaf3ac8ab9e10d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-station-0.json",
+      "bytes": 33044,
+      "sha256": "b970c8f0c6498a99fee3c59c4fb891c30f79afb88b8d81c3f709912007be633b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-station-1.json",
+      "bytes": 36380,
+      "sha256": "081995f1baf767d6b404edad04c317f537e5aee4fc36656d748d7cd71d1f0fd2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-viewer-open.json",
+      "bytes": 4212,
+      "sha256": "4a7add339adaa19d7da8e524b9e614a00658afbae6d23ff5277b0dc993eba1a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-viewer-closed.json",
+      "bytes": 36386,
+      "sha256": "965bbd4477d253b86ae017c42a9a21d3173e13761a7a4f597c1018f388023108"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-station-2.json",
+      "bytes": 36375,
+      "sha256": "1184fbbef5d4e0a4d54394e686623fb65d659e28dc53232d8811d357934ba743"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-station-3.json",
+      "bytes": 38657,
+      "sha256": "b7615102722cae1e22e6aaec84214af4019146c4dc57eea2d56d4b7b08221c81"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-station-4.json",
+      "bytes": 38583,
+      "sha256": "7be884f7999d940a6c25d34abe719e57bd3c62d98a22d6fd0c0e60bedc835710"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-returned-orion.json",
+      "bytes": 33317,
+      "sha256": "60a50420032ec9a6932313ca96958fe4dbee7d37d0943ba62ae46bc5c79878f2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-2-returned-baseline.json",
+      "bytes": 32313,
+      "sha256": "f5a6fdb056f1036373b6464673843bb024ed4abe7d9a9b8120de994e0174dd67"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-2.json",
+      "bytes": 304399,
+      "sha256": "856f62b700c17a4dbda67f63f968e749d9fd7aa2fd97f264324bd26ffa035c68"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-station-0.json",
+      "bytes": 33058,
+      "sha256": "d3cb6d02de8c3fbf983603693079276e2a659f598fb3445ec28931d148506176"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-station-1.json",
+      "bytes": 36379,
+      "sha256": "2a909f4d304f606e744d466a44e1ffd226303c2024809bcc1701fac5e03cc432"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-viewer-open.json",
+      "bytes": 4211,
+      "sha256": "f70d4992d10980b3d5a344622a85468db72781ad652143622eec0d199f4089b8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-viewer-closed.json",
+      "bytes": 36388,
+      "sha256": "14453ca4c9a7dad37c0e71fd388abd18a689656ad29ff40e9f677ee7069003b7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-station-2.json",
+      "bytes": 36378,
+      "sha256": "58c2b232e60e4b1b2f566c36bac5c74d72ae28b4e3c08d70296fc704b34e2ccb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-station-3.json",
+      "bytes": 38656,
+      "sha256": "12e466318dde64a490babc423c95092298ae3b39d30ec693b94cfe47ffc670a7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-station-4.json",
+      "bytes": 38586,
+      "sha256": "c36535b0ddab822e13559d89693509641062a438150f07f380cab826a5a66d56"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-returned-orion.json",
+      "bytes": 33314,
+      "sha256": "c3623f5a4b831189712bc60cb670de1b4651299da30a20c9972f9ce219ed0a23"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-3-returned-baseline.json",
+      "bytes": 32313,
+      "sha256": "7aefb687983b72fe6847dbcd0a176d3dd8c0c8b796c7271bfb9a86b8fce14189"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-3.json",
+      "bytes": 304415,
+      "sha256": "79413d2ff27e5916c75904567889b716b9206ef3f9d8df3d341775cee647f238"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-station-0.json",
+      "bytes": 33045,
+      "sha256": "c4c422cff169e0a736792a11f04805654f632273c430f1b5893dbf2a1b8438ec"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-station-1.json",
+      "bytes": 36381,
+      "sha256": "4b8b997f1da5e72c63c26eb8468d8a10cfcfa9c28183df2ee332a873429f2898"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-viewer-open.json",
+      "bytes": 4213,
+      "sha256": "20ea62eb308a07e8da1628ff12accc40605a8b7c26e598712cddc6f8c42f4b63"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-viewer-closed.json",
+      "bytes": 36374,
+      "sha256": "8709d5bfb61e6ca1a6b91d5922725926529b309b17c65b406c7b4af3ebaf3cbe"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-station-2.json",
+      "bytes": 36376,
+      "sha256": "ffec4ad71e5c95772087c9453ae3fadc42014ebd9e2b851847c601d27cc95671"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-station-3.json",
+      "bytes": 38657,
+      "sha256": "7955dd74804f09459a25f74ce94dda0a9284fee12103a598bde32c7a574ccc13"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-station-4.json",
+      "bytes": 38585,
+      "sha256": "34478935f7204496a03938f7cd62dd693bb48363ea9729bfd537f485bf35bcd9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-returned-orion.json",
+      "bytes": 33305,
+      "sha256": "ea7c5b38ed65ca0235d29f424cb4e5b8e4ea78516124f4e16df0eadc6f44697e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-4-returned-baseline.json",
+      "bytes": 32313,
+      "sha256": "87378541c07f759c417da90ae5cee914becfdf38ddc3de32b9ac8b5f6e82c352"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-4.json",
+      "bytes": 304381,
+      "sha256": "c854d0b994b69e34547ec117eff56f5bc80626eacf319624b2c8f4a0ccd20d66"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-station-0.json",
+      "bytes": 33053,
+      "sha256": "1f30c8d26978d122fae69e950b31029f9cde119ad2169181bf8d947a8e3dc6c4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-station-1.json",
+      "bytes": 36369,
+      "sha256": "d22f6155b7c9ba7e0ef1d2d02b64ef7d2b5510d5be630ab38cbb71139a9654f2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-viewer-open.json",
+      "bytes": 4203,
+      "sha256": "a678b4b7a418b2a3179033d17e856f0640ca02e28933aece14d3f2309d4771f1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-viewer-closed.json",
+      "bytes": 36389,
+      "sha256": "30f0e7f3aaf1b8a6c923e5007fc7f46dbbbda6b7e2df6fecc177372ee33c626d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-station-2.json",
+      "bytes": 36368,
+      "sha256": "0710da00b42ab297e9c4b40423aac5182f19d93f1235360c93b7127a3474aeab"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-station-3.json",
+      "bytes": 38648,
+      "sha256": "c554ca8e4fcd5b28f7ee1f40dde62520783613ac1b5ebae4ed2a7434fa20bd90"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-station-4.json",
+      "bytes": 38584,
+      "sha256": "efb0e4ad13177bf9d7c8167a1019d70ae4366690be954b6f9260841ef68d1146"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-returned-orion.json",
+      "bytes": 33313,
+      "sha256": "db242fedd1a142a32af06af3f8f74fa710c7f3470281a26214f5167a12f76ac6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-observation-5-returned-baseline.json",
+      "bytes": 32305,
+      "sha256": "08cf7ba46f31cb6a0d34523a7e92b830b270d4d4c3f6f54063890fe5a103d7a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-cycle-5.json",
+      "bytes": 304364,
+      "sha256": "b92dfa68c8ef6f7206275263da178b0e7e8ebba0434346fd9228dedf15d58672"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/desktop-workload-warmup.json",
+      "bytes": 377386,
+      "sha256": "a60ade204143350b460e97c313a7f03277a2f72976ca591c4af569df544ca0de"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/audit.json",
+      "bytes": 50474,
+      "sha256": "9f60f1e43cc820302ca0cdd656341da93d39cb291782bb75f1c072b8de1bf6b5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-0.json",
+      "bytes": 304407,
+      "sha256": "bfd8e4cecbd8984a5e7f6afc23a8b8fe79355c0c0ac8cd1977a0528e5f03158a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-1.json",
+      "bytes": 304401,
+      "sha256": "ba6e64d11e3e01c167348763f0a148c8cbd429198f33370fa341caf0d673a699"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-2.json",
+      "bytes": 304410,
+      "sha256": "1dc904b1168983d092b714e4dfd6fe033c593457000212c3cf7a27a97124ae11"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-3.json",
+      "bytes": 304415,
+      "sha256": "2909f7c8194c6278d55f6cfa9c93e176078b87c029d269e4ba2ab532d279cb50"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-4.json",
+      "bytes": 304396,
+      "sha256": "732338fc6252ec076d1a0b8f4b5c6d4b87c473982915669d3a8ce56d2419b08a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/cycle-5.json",
+      "bytes": 304402,
+      "sha256": "c3f79b977a8ad742f200504a875ef910550a8ed854bb5579ca27fbc59f586807"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/desktop-interrupted-browser-raw.json",
+      "bytes": 10222862,
+      "sha256": "c68991c0c6ee6af83bd211cdb051a7e78c559b20f53d8d4e413d8598cd98ab69"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/desktop-interrupted-session.json",
+      "bytes": 1242,
+      "sha256": "9c6ce406a12e361753c8b064ef73220e70b0e581c50c2d3d083ac22ed25b13aa"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-0-returned-baseline.json",
+      "bytes": 364848,
+      "sha256": "71890e77225d71bce34cb321eb94310ad194bc565899f3767ad348bf9f0ed7fd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-0-returned-orion.json",
+      "bytes": 553159,
+      "sha256": "e97fcde026be08f31c37234611bd47911c99dc3d91b252d3588c15544fc8f2f6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-1-returned-baseline.json",
+      "bytes": 364848,
+      "sha256": "e13e14dce0b3a99a30df83ba0170309cc3e9c6ea45e49fb427f81823e0fa6696"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-1-returned-orion.json",
+      "bytes": 553157,
+      "sha256": "23b4817f9447c4133491c91b78f84d9d2f0ab643b52d60cc640174eeb0081322"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-2-returned-baseline.json",
+      "bytes": 364847,
+      "sha256": "315bdbbbe09baa822d493f1155e53a45aa103ffe4de4208a9f0d5729cbf9e503"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-2-returned-orion.json",
+      "bytes": 553158,
+      "sha256": "3fe8afe908518b6a6aa0b15d8ccc9bf4e02206fcfa33220478fe6c5a9cf06c8e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-3-returned-baseline.json",
+      "bytes": 364844,
+      "sha256": "2b68972ac6775a960594974f76458f137511d65f2b97682e223cb696654022a4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-3-returned-orion.json",
+      "bytes": 553156,
+      "sha256": "b192413fd89ecc2297d73a8a02c6c62027e0488886ab67c9e7f0db4902f806e4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-4-returned-baseline.json",
+      "bytes": 366278,
+      "sha256": "f71e9e2aac8aa82066286bf86f29009d1e5632ce1d9038b4d6874dabf2735ff4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-4-returned-orion.json",
+      "bytes": 557592,
+      "sha256": "14536e7f878646ded988067a711726a806c89ecdb7ff0cc178e5da79e53b24af"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-5-returned-baseline.json",
+      "bytes": 366275,
+      "sha256": "1c2cc80dfe6b062ad52d4cd52d9aaacf934a56aff80f26910d55a06b8efe9e63"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-5-returned-orion.json",
+      "bytes": 557743,
+      "sha256": "6f738c9cafbabebcafedce1fe81166425325cbd7ee92b28c2557d05e01233b7a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/dom-idle-120000-final-returned-baseline.json",
+      "bytes": 366092,
+      "sha256": "9cb2b4ca97f4af25d3b0977bb926ed62b2051a2f5e4ad2e88db174bb3fd86e3b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/idle-120000.json",
+      "bytes": 1191,
+      "sha256": "0f31a06e1470f1735bbce9bc681df77ab8a069eed77bf96b1c7642380989f962"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/idle-15000.json",
+      "bytes": 1197,
+      "sha256": "2faf6c3bcd990cbff624ba13d5d88ea9fbf7e6de942769944074f4466ed4c448"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/idle-30000.json",
+      "bytes": 1197,
+      "sha256": "7b35c629a77c44b0c6ce7817f6cc29f20c68367f35525d44dce4c55ccb0bc0cf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/idle-60000.json",
+      "bytes": 1198,
+      "sha256": "e8502ed05b9ef3fe9f636cf921f908d71594e4147cadd2cf39adb4cedf972617"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-dom-diagnostic-20261028-dom02/session.json",
+      "bytes": 669,
+      "sha256": "fd7bb12750a27fe4ae7e240e677ad0a3958996a0fbadfc9be53428b4a8c0bcaf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/capture-only-audit.json",
+      "bytes": 89858,
+      "sha256": "ade04bba98fe4b84ac94e356cac2705cb1a89cae838303808c107a3e05407cc1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-browser-raw.json",
+      "bytes": 33150557,
+      "sha256": "fad8ad32d439c5e11decd3384149e1d3b594b3f49e90bdec3c4795c095d7de87"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-station-0.json",
+      "bytes": 33025,
+      "sha256": "32b1db8a24786ab22253ac2d03b87b4a748038484eb55c540c6a1644d4bc1ac3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-station-1.json",
+      "bytes": 36350,
+      "sha256": "6318b20d09ff3f27b93d77a1c0015a6ed5f01f4c78addaad4b80a09ce7f3801a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-viewer-open.json",
+      "bytes": 4199,
+      "sha256": "caaa1894a5ecb4f2ff2815a1ba8d3b1aad4d84a564427a6e1da34f7bddee3962"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-viewer-closed.json",
+      "bytes": 36358,
+      "sha256": "2827a579fd857cf44be1943e72533b2976f79f57c7dff3c9470f691a14b3719b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-station-2.json",
+      "bytes": 36348,
+      "sha256": "7ae42c571fb971741ab297fff4c5dbad19565564c16007aff62b69f7b5a93616"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-station-3.json",
+      "bytes": 38627,
+      "sha256": "0d45e70d986f54f9a36b2c2c080c2dea849a580063db3e1376c34836663af7a0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-station-4.json",
+      "bytes": 38557,
+      "sha256": "5b30a40ee177d4df9ba44d128543caa1369b4529abc1366f9da265b4a10bc5fd"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-returned-orion.json",
+      "bytes": 33294,
+      "sha256": "d0e70462f774e36c7eee99fe77f3599daa1af876e993e8e00afb4792bd519731"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-returned-baseline.json",
+      "bytes": 32290,
+      "sha256": "c6ddeb2194729ee9809e0e1b06fb476f72eb26a21bf5929aca64436975c6e0f0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup--1-warmup-stable-confirmation.json",
+      "bytes": 32313,
+      "sha256": "df76b34cddfee519c3032aaf651c1bed61ba6fc8f4399d98f32087c80d8b01e3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-warmup.json",
+      "bytes": 377139,
+      "sha256": "feed36a7db1e7e44774e270e8e225b91623507f007f220c3c06036427f22d7d8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-station-0.json",
+      "bytes": 33034,
+      "sha256": "f6a0b24a127eb7d14aaefbd904f8b67f10a8b6ca9037ee3fb5365f460b333737"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-station-1.json",
+      "bytes": 36357,
+      "sha256": "ca52f04972e478f1f9016b24478201b8b008c2661a0254420c5d8fbd5a1aefac"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-viewer-open.json",
+      "bytes": 4205,
+      "sha256": "e1136150a0bce9efce7a08648357099dcf5959424ea16aae84a69cd22f486500"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-viewer-closed.json",
+      "bytes": 36368,
+      "sha256": "550b2325edda465e95946d275d00a711eb5318949663f43d769624cc334e0e6d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-station-2.json",
+      "bytes": 36354,
+      "sha256": "a1356b9d118089443334969742637354371d625e04c4fcd77d5a895bc59ba9de"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-station-3.json",
+      "bytes": 38633,
+      "sha256": "615ce5f7e80155aa0dcf8a08b3ad54e2b4584935d688a82b323091453e38e411"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-station-4.json",
+      "bytes": 38563,
+      "sha256": "43bd73033c0d077256fce859a1dfffd44a5480153749eb3ab834f57c924ca5d5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-returned-orion.json",
+      "bytes": 33296,
+      "sha256": "d5760231e62a068ab25485ec4454bdeaa1b5d9ee63399fa859b4f0a23f9d67a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-0-returned-baseline.json",
+      "bytes": 32299,
+      "sha256": "d60649864d2f113b26db9f8222158ad4d206dbc06dfd059a97051e3c764c5c06"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-0.json",
+      "bytes": 304246,
+      "sha256": "15c38062bea87c545e9bbde79d07ce593fa3c09456fc31c7e545da2d0ef811d6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-station-0.json",
+      "bytes": 33032,
+      "sha256": "ff294d3c960ba5c262ad3039d83ad3337d24e3e41fdba0aab69691b5b7fd422a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-station-1.json",
+      "bytes": 36357,
+      "sha256": "7ef6734a2bbcf46223dc6fe47e1b997799a86ea211eadbb640cd75ec4c74a001"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-viewer-open.json",
+      "bytes": 4204,
+      "sha256": "9dc100a9aed0fd3ca0127e759b2f6569f1061f4a6e1c13103533c3183fead897"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-viewer-closed.json",
+      "bytes": 36365,
+      "sha256": "943f070f0c10a320729c46ec7d034e185f8da459f618032ba0d91e180f04a2d2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-station-2.json",
+      "bytes": 36355,
+      "sha256": "bb73832f436ba1c1db87881a4cd55d46145290fe868525404f2b83d54ac08854"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-station-3.json",
+      "bytes": 38629,
+      "sha256": "37a07f5c73c1f94a38e1ef7c11a871e1581a0cf58566cb4e6b1c287641e1bdeb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-station-4.json",
+      "bytes": 38563,
+      "sha256": "5d435ccabef70719c95b2f121df937ced425c7e95414437d6f80e5cbb49eb543"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-returned-orion.json",
+      "bytes": 33298,
+      "sha256": "c79801b8c775b39264044c1e1913e0dfc4ffcf2da3e1c7187449490255e01131"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-1-returned-baseline.json",
+      "bytes": 32289,
+      "sha256": "bb8684288c7d7fc4c44afaa550af679eec384f60c38018db5f34bbd8f62f520f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-1.json",
+      "bytes": 304229,
+      "sha256": "05f33dffa8fe35ec065d63c6ca775c1da8d1fbd6b83ecdf19892c4ed4276b8f1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-station-0.json",
+      "bytes": 33022,
+      "sha256": "c09b1305ee1ece2b7ea2515e9f830cad7d0638c2423b4a50198f30a8b6ec9582"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-station-1.json",
+      "bytes": 36356,
+      "sha256": "eead368a741b251e148acd1da53af9e1b669e2d83e160c7dbb5c469c52ad707a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-viewer-open.json",
+      "bytes": 4204,
+      "sha256": "b13681ebff83eab423b59e04726301032fca16d7857467d5d51f99dccd328bbb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-viewer-closed.json",
+      "bytes": 36364,
+      "sha256": "347c074436477e212e2b852695dfb6a5d724bbb25787dbe8aa7d2ba961c575f5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-station-2.json",
+      "bytes": 36355,
+      "sha256": "ec0d5d7e74efbacce338c22562dda676cde4553179e2fa3676b44d2580a94d41"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-station-3.json",
+      "bytes": 38631,
+      "sha256": "3fb4e739e85431760c5608f4a4e8ac8e6e76e900b7d3d0ecf5365e2e24bda84e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-station-4.json",
+      "bytes": 38563,
+      "sha256": "4fe7d584d43dc911585fb79a80200fd753713502afa3b3b871ecd9e2ee6188d3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-returned-orion.json",
+      "bytes": 33298,
+      "sha256": "70789736fd0600d5f6457dc0f7a82051d6e965ca755162eb35bfdd152fa5442f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-2-returned-baseline.json",
+      "bytes": 32294,
+      "sha256": "faa9f358dfe0a6cfa8337073c6f810a608eedb1bde0ca52d6e3ec24629822bde"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-2.json",
+      "bytes": 304224,
+      "sha256": "6db3d5e3243b7d4ee3019f9c8bf7ea76a01d20c746722f0ebc84970a9ed00728"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-station-0.json",
+      "bytes": 33033,
+      "sha256": "3e5c476bcb5671b53e196e7c98ae6488f4d9d0c4b86e83bf3709788e82a090df"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-station-1.json",
+      "bytes": 36347,
+      "sha256": "ba8d10dbf5a8224d35624cb313824cf39db7562eaefd99c9143466a18c0668ef"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-viewer-open.json",
+      "bytes": 4202,
+      "sha256": "2684a5fdd163f52099245b130d7c0228b01a61c8f376cf29dbb2a22f441ceefc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-viewer-closed.json",
+      "bytes": 36366,
+      "sha256": "f3132d33a61572938d766281026932d3712d03e7c7e6eb8cb8acc71298a1fef0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-station-2.json",
+      "bytes": 36356,
+      "sha256": "5c1de12e025860510dd26e5bc06008c02e74d15121957b9e6573f9d1e0597e42"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-station-3.json",
+      "bytes": 38632,
+      "sha256": "f00a8d37d967b523f88e299961f7ce3caf5011c0b24cc1d0ba4d09e04e8acd70"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-station-4.json",
+      "bytes": 38564,
+      "sha256": "c96f4bc8c4513e9b03438feb58cec1c3763f55018a3cde73b949448ca92f15d0"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-returned-orion.json",
+      "bytes": 33300,
+      "sha256": "8e7c9ecca621df21f296979edaa2fb711fb9292314a092e5b87286435bef05f6"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-3-returned-baseline.json",
+      "bytes": 32298,
+      "sha256": "7644103215f7d8a4c195ced1c8da2e76ec0a89a4952bb8ee91cbd1c3ae48f067"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-3.json",
+      "bytes": 304235,
+      "sha256": "7dbd8c6bf4d94fd23f887d3422df6bcf28f45bda87cb8a4f82dfd6e68099d8a2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-station-0.json",
+      "bytes": 33022,
+      "sha256": "335311e10e5af4b5202338a5812c24854fb63a73fce6d842e0653155c032891e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-station-1.json",
+      "bytes": 36360,
+      "sha256": "c011c32a70b6d727cd53933ae1e2ffeb4068ac4754a10e2e01892baddb669d18"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-viewer-open.json",
+      "bytes": 4202,
+      "sha256": "fc8e1b840b727ee89825ae01f8038e540cb2bc352837d9835ef5acc001ef6dd7"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-viewer-closed.json",
+      "bytes": 36359,
+      "sha256": "4334dfc7b891ab7778531e984cdd081443811ec60435623ec413cc7ca558c9eb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-station-2.json",
+      "bytes": 36357,
+      "sha256": "15cf6c7c5e422fe95d7ebb3169e2fb42a10480b98d45b67a808d596cf2d1eb69"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-station-3.json",
+      "bytes": 38635,
+      "sha256": "b42491bbf16f6c49110a9ecb427fcc782b8384feadf269c881786141008c7fd4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-station-4.json",
+      "bytes": 38564,
+      "sha256": "63e56f18e3fcfe513e700ed65ae8ba454c33e5228d31ade7e23f1c4c78e8cf47"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-returned-orion.json",
+      "bytes": 33299,
+      "sha256": "30f45f5c061e4fd21d5d7bd7f9323590c612216e8da710bed6bcb9be4f75b1bc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-4-returned-baseline.json",
+      "bytes": 32297,
+      "sha256": "57ea1f4d06746c9320bb198e6dded1eeff0eb3c9e8f58f1a9b5e1aaea51d72f8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-4.json",
+      "bytes": 304232,
+      "sha256": "9d3d02b0a3ede6b29e0c2f73c60971f3c1279e405a4ff9a8746faf50609bb119"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-station-0.json",
+      "bytes": 33034,
+      "sha256": "35923221acb8f8adb47ae44481e0cc8a71dfaa506b82016c661f38289f54efc1"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-station-1.json",
+      "bytes": 36358,
+      "sha256": "6d6e50fcee2955135ad9a5fc20b2a96a5358861d45a293136c5c19f75f7515c4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-viewer-open.json",
+      "bytes": 4204,
+      "sha256": "db3ef6c8f65d430c8107d59e21b2b95c76707f3c11bb55049b73cbe07a24194c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-viewer-closed.json",
+      "bytes": 36366,
+      "sha256": "b0f2e27d502e5c253a883bbe4957c1dd05440df2fb2d9975870da3ea30082abc"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-station-2.json",
+      "bytes": 36356,
+      "sha256": "650415125949aef7a9bd831e962e460d022695ce19d59bb8494b9b770ccde202"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-station-3.json",
+      "bytes": 38635,
+      "sha256": "054b12f2d87d627c5be90b5dc809fa01d7cd64ac81b03c529c2fe99dac6c3b32"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-station-4.json",
+      "bytes": 38563,
+      "sha256": "c343435cb5e392bfdf1c7cd08d7fd8a7888da7057029aa1a7e770e8f0c0b570d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-returned-orion.json",
+      "bytes": 33282,
+      "sha256": "569026007c535988cbd6e92f5a1ebbf64a54b5353a2e7c8e5b0cb6927674d103"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-observation-5-returned-baseline.json",
+      "bytes": 32287,
+      "sha256": "be0448de5f1ef756e4fae1e1c3d79fe7cb0ff9921d0faec2f68f42fd873ff885"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload-cycle-5.json",
+      "bytes": 304222,
+      "sha256": "92a59826500d05964511725123d69b4d880c4a20d775d3165c1e036813c87b3f"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-workload.json",
+      "bytes": 2414328,
+      "sha256": "4c6c14b3d668c3db40900ea2ac5450fffa40b781e15b12468f3df3129e8c6727"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle-0.json",
+      "bytes": 3941,
+      "sha256": "0267ac55467b69fe56497d97896bf757c7de37034a397d8dd84b8351583474d4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle-1.json",
+      "bytes": 3946,
+      "sha256": "f1473dc660366a243539148659b9c41f35e504171f292b705817857aff6b058e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle-2.json",
+      "bytes": 3945,
+      "sha256": "eacf117a2daefc2ed3c2dc33f59666ec3798009af4b1cc6b066883a47b4f1e6c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle-3.json",
+      "bytes": 3946,
+      "sha256": "d0c2c920357dc4ce8b0db381da9930fb967c6d465945bfc18c3755528c8b1858"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle-4.json",
+      "bytes": 3947,
+      "sha256": "408e508691289d1e2911dbcb9f55777376a59b13c1f0023b5a486e06a53cbe38"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-dom-settle.json",
+      "bytes": 22961,
+      "sha256": "287f9eb4e0afe475285a8cc7938497ebb130f28cd1679a34f808d4d483fa7ca9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/mobile-session.json",
+      "bytes": 2312,
+      "sha256": "e6d645ed3851e059cef59833f543b7b5343e4ba43d02c60f356c9cd54fb41860"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/resource-guard.json",
+      "bytes": 199186,
+      "sha256": "db6eb2c5c3807744beb75714e1f2180c52f483f9b4741ae14fc6530f06e163b8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5mobile08/progress.jsonl",
+      "bytes": 234587,
+      "sha256": "dca614cfdc63a4d22c40c8f513ceb6acd201cfb59a048390ca6699a4765ec0de"
+    },
+    {
+      "path": "app/components/CelestialObjectPassportM1.test.tsx",
+      "bytes": 8946,
+      "sha256": "4d2bf8e2f22a1872d2b434867f3e0050bb2af79fea9c305cf19f913662d59e81"
+    },
+    {
+      "path": "app/components/MainlineANebulaPortraitV648.test.tsx",
+      "bytes": 1938,
+      "sha256": "0c42265c9d07e81733c1ac24ce6aa7bfdd67b867af2b25b00a7063ea3ecacb99"
+    },
+    {
+      "path": "app/components/MainlineANebulaSceneCaption.test.tsx",
+      "bytes": 5832,
+      "sha256": "d7031682aa90d40aa1ee151ae31a67a9f7067dddac8103863b2948a17f011a98"
+    },
+    {
+      "path": "app/components/MainlineANebulaViewerM3.test.tsx",
+      "bytes": 4177,
+      "sha256": "157814527415f054d5252267fbce37e5eeee0c992e7c6bbe98904f0ff25c5cd7"
+    },
+    {
+      "path": "app/components/OrbitAtlasHudNavigationM5.test.tsx",
+      "bytes": 7000,
+      "sha256": "25c74bede96039ca0ca113d57337d96a49cc4bd0b899a549b3ecf97316fc75af"
+    },
+    {
+      "path": "app/components/OrbitAtlasHud.tsx",
+      "bytes": 18376,
+      "sha256": "fb83365f4c57df07fcfc632742643a53ed19e8cd27746917a9e88dbbf59606d5"
+    },
+    {
+      "path": "app/lib/mainlineANebulaImageNotesM3.ts",
+      "bytes": 2056,
+      "sha256": "4e845f26d681ee54628f3bd76f0e6a1cbd5f9cb416f793bbe184bb156f1113a3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/final15-app.log",
+      "bytes": 470,
+      "sha256": "70ad327fa744a55573cad50fd86af62aa75f18829f22b1fa9e2e0b35c08d25c4"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261019/final15-lint.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m5-longrun.test.mjs",
+      "bytes": 37472,
+      "sha256": "3c016d81de925f64fff889f68c603ba014792198e965351b982ab14d10ad2b1c"
+    },
+    {
+      "path": "scripts/mainline-a-m5-longrun-workload.test.mjs",
+      "bytes": 22138,
+      "sha256": "2ae278b748d48607720e77e96d997f815b0762f39242edee2a5864dc4be74917"
+    },
+    {
+      "path": "scripts/mainline-a-browser-resource-guard.mjs",
+      "bytes": 4180,
+      "sha256": "d5ffaffc90110f5e45648e0d6d4c127e1e82382cd08975087efa4df9209a384b"
+    },
+    {
+      "path": "scripts/adjudicate-mainline-a-m5-longrun-pair.mjs",
+      "bytes": 30864,
+      "sha256": "36af3d26afad6208d07c970fad7fdf88270480924b4976f90d3ad05cc4b5672d"
+    },
+    {
+      "path": "scripts/adjudicate-mainline-a-m5-longrun-pair.test.mjs",
+      "bytes": 11407,
+      "sha256": "c4610b9f5a52ad0d3858d9f5b9bc2b91d5e49074a8ece80df571cd2fd27c6553"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/pair-adjudicator-tests01.json",
+      "bytes": 838,
+      "sha256": "c053c2f830ffd9487707f01c87481af57191e4f326faed83b783a2677f83e80b"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/resource-guard.json",
+      "bytes": 369191,
+      "sha256": "986d80f4e79005d7c5dca1f938be555356be838aa3af4ea59587e8b939417e7c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-longrun-20261028-m5long07/progress.jsonl",
+      "bytes": 414321,
+      "sha256": "86c26a5b860c84a3152f8e8df6c0194801c96de993722c6007c5361d3a5a3272"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/dom-counter-diagnostic02.mjs",
+      "bytes": 13375,
+      "sha256": "aab54b4f1c579b639af18629eef61c150e41864891a0d6ed160722bb7d1bf679"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/original-machine-analysis.json",
+      "bytes": 118648,
+      "sha256": "a1b28cce9424c889774900062d147c159fe72e43457be11b80f857a812724287"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/combined-derived-receipt.json",
+      "bytes": 65361238,
+      "sha256": "e30587acb7367fee0adda0101935cdc5a61ee9c9c0ddef39ba73bc6b6fe8a2ab"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/offline-capacity-preflight.json",
+      "bytes": 278,
+      "sha256": "27500f1d01eb4753ca077bb74d1e670f991f784a53ae6da979236efb00bbd2d8"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/offline-capacity-before-analysis.json",
+      "bytes": 284,
+      "sha256": "7461897b7a220afb634ff2fd8ed07742135e414f7e28b1aab8bdd839461e7022"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/offline-capacity-after-analysis.json",
+      "bytes": 283,
+      "sha256": "60bd5d34ab3f05d1bc26814e4beb999b7b5dd2e0e646e4ec7288d674a525fd73"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/final-common-binding04.json",
+      "bytes": 514226,
+      "sha256": "84611e47094e46b7fc2a13417f17f26c988d3302fc8be7eb9f0878c066c19cb5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-pair-20261028-adjudication02/audit.json",
+      "bytes": 56762,
+      "sha256": "417efb711d050a9fda1be4eaf90dbb07c7949c4d72f419ef83d99c26be80950d"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/pair02-independent-audit01.json",
+      "bytes": 61157,
+      "sha256": "0be8b0cb59b335575ced5fb7ae8599271ba67bd0066598c01f0fd770d7821bf0"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-art-master-plan-20261014.md",
+      "bytes": 24749,
+      "sha256": "26f3d6c601e7d3059445955117d54d2160fef408f98d6a9dc83eee53fe4e7085"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-current-art-preview-20261019.md",
+      "bytes": 3136,
+      "sha256": "9b1bb02cb23dde962c6ea8597ecfd24b010088fc6fe490e65a7caadc6b3bfea3"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/finalize-candidate01.mjs",
+      "bytes": 12129,
+      "sha256": "39ca77d864c11d197b896a2143b7e6e99c8f17690fb664e4854df88a9accc85f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m5-candidate-delivery-20261028.md",
+      "bytes": 4378,
+      "sha256": "3bd6c0a5073f43d34250079b6809ae97622c2c0ca930e4d266f08ad3ad12bb98"
+    },
+    {
+      "path": "output/playwright/mainline-a-m5-20261028/candidate-freeze.pre-wording-correction01.json",
+      "bytes": 193089,
+      "sha256": "ba9218fa7e1aad06ce738caa98af749f07b87bd794887672a83ec5cc00352414"
+    }
+  ],
+  "stageDependencies": [
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/node_modules",
+      "target": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "actualLink": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "actualTarget": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "exists": true,
+      "isSymbolicLink": true,
+      "match": true
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/node_modules",
+      "target": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "actualLink": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "actualTarget": "E:\\86137\\myai\\solar_sim\\next-web\\node_modules",
+      "exists": true,
+      "isSymbolicLink": true,
+      "match": true
+    },
+    {
+      "path": ".next-mainline-a-r85-20261019-m5web15/.next/standalone/public",
+      "target": "E:\\86137\\myai\\solar_sim\\next-web\\public",
+      "actualLink": "E:\\86137\\myai\\solar_sim\\next-web\\public",
+      "actualTarget": "E:\\86137\\myai\\solar_sim\\next-web\\public",
+      "exists": true,
+      "isSymbolicLink": true,
+      "match": true
+    }
+  ],
+  "openApprovals": {
+    "humanArt": "pending",
+    "imageRights": "pending",
+    "physicalDevices": "not-run",
+    "scientificValidity": "not-granted",
+    "publicRelease": "not-approved",
+    "BetaExpansion": "out-of-scope"
+  },
+  "retainedFailures": "All prior long01-long07/mobilepartial, dom01 and offlinepair01 remain unchanged. Acceptance uses desktop07 and independent mobile08, never stitches partial observations.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "productionPerformance": false,
+    "physicalMobile": false,
+    "humanArtApproved": false,
+    "rightsApproved": false,
+    "publicWebReleaseApproved": false
+  },
+  "limits": [
+    "Local candidate technical freeze only. Frame interval is browser rAF, not renderer FPS.",
+    "Mobile is 390x844 DPR1 browser simulation, not physical-device validation.",
+    "Registered resource identities and DOM/heap observations have documented coverage limits.",
+    "Source/assets/dependency drift invalidates reuse; stage remains workspace-dependent.",
+    "Independent completion audit must still inspect this manifest before marking the Goal achieved."
+  ],
+  "documentRevision": 2,
+  "documentCorrection": {
+    "at": "2026-10-28T15:19:00.844Z",
+    "scope": "Only the carried-over tests assessment and its direct evidence links were corrected; all measurements, runtime/source bindings, tools and approvals remain unchanged.",
+    "preimage": {
+      "path": "output/playwright/mainline-a-m5-20261028/candidate-freeze.pre-wording-correction01.json",
+      "bytes": 193089,
+      "sha256": "ba9218fa7e1aad06ce738caa98af749f07b87bd794887672a83ec5cc00352414"
+    }
+  }
+}

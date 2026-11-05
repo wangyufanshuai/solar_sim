@@ -1,0 +1,32 @@
+{
+  "round": 42,
+  "date": "2026-09-13",
+  "title": "Production Lite reload lifecycle proof",
+  "status": "verified-browser-production-lite",
+  "scope": {
+    "build": ".next-atlas-lite-current",
+    "runtime": "start-atlas-standalone.mjs --profile vercel-lite",
+    "artChange": "Validated the Lite sky quality split in the production server and repeated the same route three times to separate cache reuse from dev-mode noise."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3019/",
+    "deliveryProfile": "vercel-lite",
+    "viewport": "390x844",
+    "runs": [
+      { "run": 1, "elapsedMs": 3593, "resources": 30, "sky4kRequests": 1, "sky8kRequests": 0, "heapBytes": 134580579 },
+      { "run": 2, "elapsedMs": 1597, "resources": 17, "sky4kRequests": 0, "sky8kRequests": 0, "heapBytes": 164436698 },
+      { "run": 3, "elapsedMs": 1549, "resources": 17, "sky4kRequests": 0, "sky8kRequests": 0, "heapBytes": 169235613 }
+    ],
+    "requestFailures": 0,
+    "uniqueFailed": []
+  },
+  "validation": {
+    "build": "build:atlas:lite:current completed successfully",
+    "playwright": "Chrome production server repeated loads: 3/3 completed, 0 failed requests",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This proves one production Lite viewport and cache-reuse behavior; it is not a sustained FPS, GPU, or full device-matrix qualification.",
+    "Heap rose from 134.6 MB to 169.2 MB across reload observations; longer same-context soak and explicit lifecycle instrumentation remain open."
+  ]
+}

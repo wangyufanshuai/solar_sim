@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v4",
+  "probedAt": "2026-08-19T13:15:17.182Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "black-eye-galaxy",
+  "category": "galaxy",
+  "query": "M64 galaxy NASA Goddard",
+  "requiredTermGroups": [
+    [
+      "m64",
+      "black eye"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v3/black-eye-galaxy.json",
+    "receiptSha256": "a696a92f735efb9de48cead643178cfba215deb54223627ff8f3401a42559f9e",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M64+Black+Eye+galaxy+NASA&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M64+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M64+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "96ace4d48797f5c542ad3820b18b2444839b3f26223b2410e45f074cbe7de116"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "6bc605c3dfa032de95a1276acd4e756f732018600186684e748029762cea28fc"
+}

@@ -1,0 +1,22 @@
+{
+  "round": 45,
+  "date": "2026-09-13",
+  "title": "Browser performance lock regression",
+  "status": "verified-static-performance-contract",
+  "scope": {
+    "tests": [
+      "app/lib/atlasBrowserResourcePerformanceLock.test.ts",
+      "app/lib/atlasPresentationRuntimePerformanceLock.test.ts",
+      "app/lib/atlasBrowserAcceptanceRuntimeCostLock.test.ts"
+    ],
+    "artChange": "Revalidated browser resource, presentation runtime, and acceptance-cost contracts after Lite sky quality changes."
+  },
+  "validation": {
+    "vitest": "3 files, 9/9 tests passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Static locks do not replace a fresh long-running browser FPS/GPU/heap receipt.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

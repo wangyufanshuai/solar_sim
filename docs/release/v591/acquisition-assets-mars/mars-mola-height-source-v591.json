@@ -1,0 +1,30 @@
+{
+  "version": "v591-mars-visual-asset-acquisition-receipt-v1",
+  "status": "committed-single-request-no-retry",
+  "asset": {
+    "id": "mars-mola-height-source-v591",
+    "body": "mars",
+    "role": "height-source",
+    "sourceUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.img",
+    "finalUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.img",
+    "redirectChain": [],
+    "httpStatus": 200,
+    "mediaType": "application/octet-stream",
+    "outputPath": "source-cache/celestial-convergence-v591/mars/megt90n000eb.img",
+    "bytes": 33177600,
+    "sha256": "d18d9b9ab8c5516d02e157dd2cde0f1d0d160c21940e953ba22391269a545e7b",
+    "license": {
+      "id": "NASA-PDS-public-domain",
+      "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_3001/"
+    },
+    "observationIdentity": "MGS MOLA MEGDR 16 pixels/degree global topography, signed MSB 16-bit integer",
+    "observationLimit": "MOLA elevation drives presentation normal, relief and terrain-scale roughness only; it does not write to Orbit Atlas scientific state.",
+    "presentationOnly": true,
+    "width": 5760,
+    "height": 2880,
+    "format": "pds3-img",
+    "bitDepth": 16,
+    "sampleType": "MSB_INTEGER"
+  },
+  "receiptSha256": "b7777d64d6e81eb71f09725ffd82d5fcce2ddc8b8373175191c794052574b9b4"
+}

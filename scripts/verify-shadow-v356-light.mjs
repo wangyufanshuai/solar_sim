@@ -1,0 +1,12 @@
+import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+const root = process.cwd(); const node = process.execPath;
+function run(label, command, args) { const result = spawnSync(command, args, { cwd: root, stdio: "inherit", shell: false }); if (result.error) throw result.error; if (result.status !== 0) throw new Error(`${label} failed with ${result.status}`); }
+run("v356-audit", node, [resolve(root, "node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-spectral-envelope-v356.ts"]);
+run("v356-evidence", node, ["scripts/build-shadow-candidate-v356.mjs"]);
+run("v356-tests", node, [resolve(root, "node_modules/vitest/vitest.mjs"), "run", "app/lib/kerrSpectralEnvelopeV356.test.ts", "app/lib/kerrSpectralEnvelopeServerV356.test.ts", "app/api/atlas/relativity-evidence/v356/spectral-envelope/route.test.ts", "app/components/KerrSpectralEnvelopeSurfaceV356.test.tsx", "app/lib/atlasShadowCapabilityPointerV356.test.ts"]);
+run("v356-types", node, [resolve(root, "node_modules/typescript/bin/tsc"), "--noEmit"]);
+const evidence = JSON.parse(readFileSync(resolve(root, "dist/science/orbit-atlas-shadow-v356-evidence.json"), "utf8")); const pointer = JSON.parse(readFileSync(resolve(root, "dist/release/orbit-atlas-current-local-shadow-candidate-v356.json"), "utf8"));
+if (evidence.spectralEnvelope?.envelope2DCount !== 12 || evidence.spectralEnvelope?.envelope3DPointCount !== 168 || evidence.spectralEnvelope?.reconstructionRelativeDifference > 1e-12 || evidence.spectralEnvelope?.maximumMahalanobisRadiusDifference > 1e-12 || pointer.capabilities?.v356Exports !== "qualified-sanitized-json-csv-path-pid-time-excluded" || pointer.capabilities?.v356MeasuredEnvelopeAuthority !== "unavailable-input-covariance-is-synthetic-not-measured" || pointer.capabilities?.v314CorrectedDense !== "incomplete-0-of-49") throw new Error("v356-fail-closed-validation");
+console.log(JSON.stringify({ status: "passed-v356-low-memory", evidenceSha256: evidence.evidenceSha256, pointerSha256: pointer.pointerSha256, artifactSha256: evidence.spectralEnvelope.artifactSha256, envelope2D: evidence.spectralEnvelope.envelope2DCount, envelope3DPoints: evidence.spectralEnvelope.envelope3DPointCount, reconstruction: evidence.spectralEnvelope.reconstructionRelativeDifference, mahalaRadius: evidence.spectralEnvelope.maximumMahalanobisRadiusDifference, measuredAuthority: evidence.spectralEnvelope.fullMeasuredEnvelopeAuthority, dense: pointer.capabilities.v314CorrectedDense }, null, 2));

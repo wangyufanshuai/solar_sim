@@ -1,0 +1,53 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 3,
+  "title": "nebula-observation-plate-hierarchy",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:03:16 UTC",
+  "status": "round-03-code-and-dev-visual-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": [
+    "EIH/Newton N-body kernels unchanged",
+    "2PN Lense-Thirring and Kerr kernels unchanged",
+    "nebula imagery remains 2D observation evidence and does not encode 3D depth"
+  ],
+  "code": {
+    "file": "app/components/MainlineANebulaScenePortraitV607.tsx",
+    "changes": [
+      "added dark observation-plate gradient and full/left focus borders",
+      "added title badge and bands metadata strip",
+      "preserved official composition, credit, source and CC BY 4.0 links"
+    ]
+  },
+  "browser": {
+    "mode": "in-app browser",
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "route": "object browser -> search M42 -> 猎户座大星云",
+    "visibleAssertions": [
+      "nebula observation figure visible",
+      "OIII · H-alpha · NII metadata visible",
+      "official composition retained label visible",
+      "NASA/ESA credit and CC BY 4.0 links visible",
+      "canvas=1 and no console/page errors observed"
+    ],
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-03-nebula-plate-20260913.png",
+    "screenshotBytes": 93162,
+    "evidenceBoundary": "development preview visual evidence; not release-performance acceptance"
+  },
+  "tests": {
+    "eslint": {
+      "command": "npx eslint app/components/MainlineANebulaScenePortraitV607.tsx",
+      "passed": true
+    },
+    "vitest": {
+      "command": "npx vitest run app/lib/mainlineANebulaSceneV607.test.ts app/lib/mainlineANebulaSceneTextureV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**",
+      "passed": true,
+      "tests": 9
+    }
+  },
+  "releaseBinding": {
+    "buildId": "h08Dhkk9omMt2ifEk6SBu",
+    "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b",
+    "note": "art round is source-bound to h08 identity; packet must be regenerated after this receipt"
+  }
+}

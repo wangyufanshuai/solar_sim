@@ -1,0 +1,497 @@
+{
+  "version": "v567-atlas-browser-runtime-observation-v1",
+  "generatedAt": "2026-08-03T04:13:04.093Z",
+  "browserSurface": "Codex In-app Browser",
+  "adapter": null,
+  "lite": {
+    "pageLogs": [],
+    "desktop": {
+      "deliveryProfile": "vercel-lite",
+      "millionCatalog": "disabled",
+      "fullObservations": "disabled",
+      "sceneMode": "atlas",
+      "medianFps": 236.1,
+      "frameP95Ms": 8.4,
+      "frameSamples": 720,
+      "canvasCount": 1,
+      "overflow": 0,
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "screenshot": "output/playwright/orbit-atlas-v562-lite-desktop-iab-1440x900.jpg"
+    },
+    "mobile": {
+      "canvasCount": 1,
+      "deliveryProfile": "vercel-lite",
+      "frameP95Ms": 8.4,
+      "frameSamples": 720,
+      "fullObservations": "disabled",
+      "medianFps": 239.2,
+      "millionCatalog": "disabled",
+      "overflow": 0,
+      "sceneMode": "atlas",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "screenshot": "output/playwright/orbit-atlas-v562-lite-mobile-iab-390x844.jpg"
+    }
+  },
+  "scientificPerformance": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "baseline": {
+      "canvasCount": 1,
+      "drawCalls": 1,
+      "frameP50Ms": 4.3,
+      "frameP95Ms": 8.4,
+      "frameSamples": 720,
+      "medianFps": 234.7,
+      "overflow": 0,
+      "programs": 25,
+      "renderTargets": 0,
+      "rendererTextures": 18,
+      "resources": {
+        "cameraLocks": 0,
+        "estimatedGpuBytes": 100983369,
+        "gpuBuffers": 1,
+        "objectUrls": 0,
+        "textures": 11,
+        "total": 14,
+        "typedArrayCaches": 0,
+        "workers": 1
+      },
+      "sceneMode": "atlas",
+      "triangles": 1
+    },
+    "samples": {
+      "earth": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 16.7,
+        "frameP95Ms": 21,
+        "frameSamples": 720,
+        "medianFps": 59.8,
+        "overflow": 0,
+        "programs": 28,
+        "renderTargets": 0,
+        "rendererTextures": 23,
+        "resources": {
+          "cameraLocks": 1,
+          "estimatedGpuBytes": 100759369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 15,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "inspect",
+        "triangles": 1
+      },
+      "gaia": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 8.4,
+        "frameSamples": 720,
+        "medianFps": 239.2,
+        "overflow": 0,
+        "programs": 32,
+        "renderTargets": 0,
+        "rendererTextures": 23,
+        "resources": {
+          "cameraLocks": 1,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 15,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "inspect",
+        "triangles": 1
+      },
+      "launch": {
+        "canvasCount": 1,
+        "drawCalls": 39,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "medianFps": 240,
+        "overflow": 0,
+        "programs": 14,
+        "renderTargets": 0,
+        "rendererTextures": 10,
+        "resources": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 13,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "launch",
+        "triangles": 71456
+      },
+      "kerr": {
+        "canvasCount": 1,
+        "drawCalls": 1,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "medianFps": 240,
+        "overflow": 0,
+        "programs": 23,
+        "renderTargets": 1,
+        "rendererTextures": 25,
+        "resources": {
+          "cameraLocks": 2,
+          "estimatedGpuBytes": 102822253,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 12,
+          "total": 18,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "sceneMode": "kerr",
+        "triangles": 2
+      }
+    },
+    "released": {
+      "canvasCount": 1,
+      "drawCalls": 1,
+      "frameP50Ms": 4.2,
+      "frameP95Ms": 8.3,
+      "frameSamples": 720,
+      "medianFps": 239.8,
+      "overflow": 0,
+      "programs": 28,
+      "renderTargets": 0,
+      "rendererTextures": 23,
+      "resources": {
+        "cameraLocks": 0,
+        "estimatedGpuBytes": 100983369,
+        "gpuBuffers": 1,
+        "objectUrls": 0,
+        "textures": 11,
+        "total": 14,
+        "typedArrayCaches": 0,
+        "workers": 1
+      },
+      "sceneMode": "atlas",
+      "triangles": 1
+    },
+    "pageLogs": []
+  },
+  "soak": {
+    "type": "kerr-enter-exit",
+    "cycles": 10,
+    "baselineHeap": {
+      "backingStorageSize": 68428264,
+      "embedderHeapUsedSize": 50900528,
+      "totalSize": 141045760,
+      "usedSize": 95942780
+    },
+    "baselineResources": {
+      "cameraLocks": 0,
+      "estimatedGpuBytes": 100983369,
+      "gpuBuffers": 1,
+      "objectUrls": 0,
+      "textures": 11,
+      "total": 14,
+      "typedArrayCaches": 0,
+      "workers": 1
+    },
+    "observations": [
+      {
+        "index": 1,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.4,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 78232880
+      },
+      {
+        "index": 2,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 90428288
+      },
+      {
+        "index": 3,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 83522020
+      },
+      {
+        "index": 4,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 78459708
+      },
+      {
+        "index": 5,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 91611788
+      },
+      {
+        "index": 6,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 65335196
+      },
+      {
+        "index": 7,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 93438788
+      },
+      {
+        "index": 8,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 83689120
+      },
+      {
+        "index": 9,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 113090056
+      },
+      {
+        "index": 10,
+        "entered": {
+          "medianFps": 240,
+          "frameP95Ms": 4.3,
+          "resources": {
+            "cameraLocks": 2,
+            "estimatedGpuBytes": 102822253,
+            "gpuBuffers": 1,
+            "objectUrls": 0,
+            "textures": 12,
+            "total": 18,
+            "typedArrayCaches": 0,
+            "workers": 1
+          }
+        },
+        "released": {
+          "cameraLocks": 0,
+          "estimatedGpuBytes": 100983369,
+          "gpuBuffers": 1,
+          "objectUrls": 0,
+          "textures": 11,
+          "total": 14,
+          "typedArrayCaches": 0,
+          "workers": 1
+        },
+        "heapUsedSize": 79326456
+      }
+    ],
+    "pageLogs": []
+  }
+}

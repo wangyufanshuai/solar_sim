@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-14",
+  "purpose": "Isolate Solar Sim next-web verification from the dirty parent myai repository",
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "parentRepository": "E:/86137/myai",
+  "parentState": "preserved and still independently dirty; no reset, clean, checkout or parent commit performed",
+  "localRepository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "baselineCommit": "af61a2f",
+    "trackedFileCount": 12518,
+    "status": "clean",
+    "scope": "next-web product source, tests, scripts, data, docs and release artifacts"
+  },
+  "excludedFromBaseline": [".agents/", ".codex/", ".playwright-cli/", ".playwright-mcp/", ".claude/", "*.png", "node_modules/", ".next*/"],
+  "operatingRules": [
+    "Run git status, diff and commits from next-web only.",
+    "Do not use the parent repository for product verification.",
+    "Do not reset, clean, checkout, delete or blanket-stage the parent repository.",
+    "Treat af61a2f as the local review baseline; each future round is an ordinary local diff from this commit."
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 2,
+  "title": "恒星核心与光晕层级",
+  "capturedAt": "2026-09-13T10:58:00Z",
+  "scope": "BrightStarCatalog fragment halo only",
+  "change": "The broad halo now scales from 0.08 to 0.22 only for the largest curated points (vPS 5.5-9.0), preserving faint-star restraint and magnitude ordering.",
+  "browser": {
+    "surface": "Codex In-app Browser",
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "viewport": { "width": 1280, "height": 720 },
+    "canvasCount": 1,
+    "horizontalOverflow": false,
+    "consoleErrors": 0,
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-02-stellar-optics-20260913.png",
+    "boundary": "dev source preview; not a release-build acceptance receipt"
+  },
+  "validation": {
+    "eslint": { "command": "npx eslint app/components/BrightStarCatalog.tsx", "status": "passed" },
+    "teardown": { "command": "npx vitest run app/components/stellarResourceTeardownV596.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "status": "passed", "tests": 2 }
+  },
+  "physicsBoundary": "No EIH, Newton N-body, 2PN/Lense-Thirring or Kerr source was modified.",
+  "status": "round-02-code-and-dev-visual-evidence-passed"
+}

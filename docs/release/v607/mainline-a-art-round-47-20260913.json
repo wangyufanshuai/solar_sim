@@ -1,0 +1,48 @@
+{
+  "round": 47,
+  "date": "2026-09-13",
+  "title": "beta-art-intake-pipeline-and-runtime-queue",
+  "status": "round-47-beta-intake-pipeline-implemented",
+  "scope": "Convert the 12 pending hero stars and 12 pending nebulae into a fail-closed, executable intake queue without admitting synthetic or unverified evidence.",
+  "codeChange": {
+    "effectiveAddedLines": 653,
+    "effectiveModifiedLines": 4,
+    "files": [
+      "app/data/mainlineABetaAssetIntakeV607.ts",
+      "app/data/mainlineABetaAssetIntakeV607.test.ts",
+      "app/components/MainlineABetaIntakePanelV607.tsx",
+      "app/components/MainlineABetaIntakePanelV607.test.tsx",
+      "app/components/AtlasRuntimeWorkbenchSurface.tsx"
+    ],
+    "excluded": ["format-only changes", "generated receipts", "screenshots", "lockfiles"]
+  },
+  "implementation": [
+    "Added a 24-record Beta queue: 12 pending hero stars and 12 pending nebula sources.",
+    "Added source snapshot, per-image rights, and local image manifest validation with fail-closed admission.",
+    "Added deterministic filtering, sorting, merging, summaries, and queue integrity assertions.",
+    "Added a runtime intake panel with search, kind/status filters, blockers, and explicit admission state.",
+    "Mounted the panel in the runtime workbench while preserving presentation-only measurement boundaries."
+  ],
+  "tests": {
+    "vitest": {
+      "command": "npx vitest run app/data/mainlineABetaAssetIntakeV607.test.ts app/components/MainlineABetaIntakePanelV607.test.tsx --exclude tmp/** --exclude **/.next*/**",
+      "passed": 23,
+      "failed": 0
+    },
+    "regression": {
+      "command": "npx vitest run app/components/PostV593StellarRosterPanel.test.tsx app/data/mainlineAMetadataV607.test.ts app/data/mainlineABetaHeroRosterV607.test.ts --exclude tmp/** --exclude **/.next*/**",
+      "passed": 27,
+      "failed": 0
+    },
+    "typescript": { "command": "npx tsc --noEmit --pretty false", "passed": true },
+    "eslint": { "command": "npm run lint -- --quiet", "passed": true },
+    "productionBuild": { "command": "npm run build:atlas:lite:current", "passed": true, "profile": "vercel-lite", "distDir": ".next-atlas-lite-current" }
+  },
+  "evidenceBoundary": {
+    "static": "queue and admission contracts verified",
+    "browser": "runtime panel mounted; fresh browser screenshot still required in a later gate batch",
+    "performance": "unchanged; R46 Lite soak remains the latest performance evidence",
+    "sourceAdmission": "pending records remain not-admitted until real snapshots, rights, and manifests are supplied"
+  },
+  "nextGate": "Batch the first six pending hero snapshots through this pipeline, then capture desktop/mobile browser evidence in the same round."
+}

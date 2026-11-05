@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:44:48.649Z",
+  "endedAt": "2026-09-27T02:44:50.517Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "781c64f505515ddbe6830790913f474913b1c7ad59cc6f2bc462b34ac6d9bea1",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 270320,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/witch-head-nebula-attempt-1.html",
+  "sha256": "59056479e23ab2f4eb4d4c32c1d051c6c5a32480df049d32f4a27b0c3ac9f05d",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "‘Witch Head’ Brews Baby Stars",
+    "expectedPia": "PIA17553",
+    "observedPiaIds": [
+      "PIA17553"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia17/pia17553/PIA17553.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

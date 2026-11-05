@@ -1,0 +1,584 @@
+{
+  "schema": "mainline-a-art-round-receipt-v634",
+  "round": "R61-R62-R65-R66-continuation",
+  "recordedAt": "2026-09-27T04:13:21.994Z",
+  "newDevelopmentRound": false,
+  "status": "technical-batch-implemented-acceptance-pending",
+  "accepted": false,
+  "goalStatus": "active",
+  "title": "Real WDS component catalogue pipeline, candidate review UI, and constellation resource registration",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-art-round-65-v633-20260927-055.json",
+    "sha256": "72c20774af55e672d3556ea1d5410ecdb24fdaeacdc7f0b1f67888c0e71b56f9"
+  },
+  "buildId": "1pqvjb1g0JSUIkAmEo4nF",
+  "runtimeBuildId": "mainline-a-68703f72499cd49b",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "noProgressAudit": {
+    "previousGoalTurn": "progress",
+    "currentGoalTurn": "progress",
+    "browserBlockerRepeated": true,
+    "atImpasse": false,
+    "reason": "Captured five real catalogue responses, added independent source replay and candidate UI, and connected eight unregistered rendering resources to lifecycle accounting."
+  },
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v634-code-change-20260927-056-sealed.json",
+    "sha256": "5984c318bf4db922abbd10fe7b0686a12c2c460e247eaaec1394aef2d46d38ca"
+  },
+  "incrementalEffectiveProductionLines": 1004,
+  "cumulativeEffectiveProductionLines": 3204,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 3461,
+  "incrementalRemovedLines": 11,
+  "cumulativeAddedLines": 8053,
+  "cumulativeRemovedLines": 1710,
+  "changedFiles": [
+    {
+      "path": "app/lib/mainlineAStellarComponentEvidenceV634.ts",
+      "category": "production",
+      "sha256": "f232ceba4c2c7c3670ad875913307d054aaf1ffee8775ddbb4ea921086d8d902"
+    },
+    {
+      "path": "app/lib/mainlineAStellarComponentEvidenceV634.test.ts",
+      "category": "test",
+      "sha256": "4348b93b3e8a6d5d75a39d95741e449c7710505e1a426e68e51479444451dfa9"
+    },
+    {
+      "path": "app/components/MainlineAStellarComponentPanelV634.tsx",
+      "category": "production",
+      "sha256": "33fdf59accd0ce9c3c2ff8d8a1e2f1845f600717fbc452370a52ed9e27e0ff5a"
+    },
+    {
+      "path": "app/components/MainlineAStellarComponentPanelV634.test.tsx",
+      "category": "test",
+      "sha256": "7b0ed5d245ac8996c2e6e302701bd7dc920068d63accd4ca9c5c29c6c3ff37ad"
+    },
+    {
+      "path": "scripts/collect-mainline-a-stellar-components-v634.mjs",
+      "category": "production-tool",
+      "sha256": "4db4a9afa3ecf151856dcece4203f47396dd021793429c36ecab63d91ba6be3d"
+    },
+    {
+      "path": "scripts/collect-mainline-a-stellar-components-v634.test.mjs",
+      "category": "test",
+      "sha256": "bccc8e77e57ff040d58897a8868960abdf13247f10efc203d38ae49aa9d4e72b"
+    },
+    {
+      "path": "scripts/build-mainline-a-stellar-component-evidence-v634.ts",
+      "category": "production-tool",
+      "sha256": "14d58869e5113d8fbfe9de598a28929563566d67144dcefdfd0d4f0f1476b3eb"
+    },
+    {
+      "path": "scripts/build-mainline-a-stellar-component-evidence-v634.test.ts",
+      "category": "test",
+      "sha256": "fc0979d745fe2f646205c4fac35632684dfb12c45151881b16bed0aa603ef6cb"
+    },
+    {
+      "path": "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+      "category": "production",
+      "sha256": "adad72f8e2dd2405cc9bc670eaf2afdc085913cee8a15cd8295e1fef92153fd9"
+    },
+    {
+      "path": "app/components/ConstellationEngravingV592.tsx",
+      "category": "production",
+      "sha256": "5958173340198133d951912769736960bd70c0f56dd67f3a240990137c5d57fb"
+    },
+    {
+      "path": "app/lib/constellationEngravingResourcesV592.ts",
+      "category": "production",
+      "sha256": "cf060cb101ff71838f83ef78005da433859d8edd80b3985d898570958748d347"
+    },
+    {
+      "path": "app/lib/constellationEngravingResourcesV592.test.ts",
+      "category": "test",
+      "sha256": "8989826c7ac3c8bf6a109024d712398393d925d1230df7791cb822b5ee03eda2"
+    },
+    {
+      "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+      "category": "generated-candidate-telemetry",
+      "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+    }
+  ],
+  "implementation": [
+    "Derive four WDS system queries from the frozen SIMBAD raw-replayed identifier hints; capture actual HTTPS TSV and ReadMe bytes with bounded retry, timeout, redirects, response metadata and immutable artifacts.",
+    "Replay current SIMBAD raw and V621 records before accepting any WDS hint binding, then rehash all five catalogue artifacts and independently reconstruct the candidate pack.",
+    "Parse catalogue columns and units, preserve separate pair hierarchies, missing values versus zero, exact source lines and UTF-8 offsets; reject query mismatch, overflow, malformed text, duplicate pairs, forged artifact metadata and invented component members.",
+    "Expose source identity, 25 catalogue pairs, full attempt history, raw SHA/bytes, filtering and failure states in the existing stellar review panel while retaining unresolved identity and hold.",
+    "Register four constellation geometries and four materials with the existing resource ledger, matching the existing effect cleanup; retain failed disposal entries and label byte counts as estimates.",
+    "Bind the candidate package to build056, its current source bytes and actual HTTP results, with the new catalogue raw/replay/tool references included."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "nodePassed": 38,
+      "vitestPassed": 196,
+      "node": {
+        "command": "node --import tsx --test scripts/collect-mainline-a-stellar-components-v634.test.mjs scripts/build-mainline-a-stellar-component-evidence-v634.test.ts",
+        "exitCode": 0,
+        "passed": 38,
+        "log": {
+          "path": "tmp/mainline-a-v634-combined-node-20260927-056-sealed.log",
+          "sha256": "274d02ff358c5d6e4c9a291f48fd10b2261db9a85997ea065ccf9b3c1fd94471"
+        }
+      },
+      "vitest": {
+        "files": [
+          "app/lib/mainlineAStellarComponentEvidenceV634.test.ts",
+          "app/components/MainlineAStellarComponentPanelV634.test.tsx",
+          "app/components/MainlineABetaHeroReviewPanelV611.test.tsx",
+          "app/lib/constellationEngravingResourcesV592.test.ts",
+          "app/lib/atlasResourceLifecycleV275.test.ts",
+          "app/lib/constellationArtV592.test.ts",
+          "app/components/OrbitAtlasLivingUniverseV592.test.tsx"
+        ],
+        "exitCode": 0,
+        "passed": 196,
+        "log": {
+          "path": "tmp/mainline-a-v634-combined-vitest-20260927-056.log",
+          "sha256": "b3e8a88ec45fb14f48ff3354d22da6c24ab65c1dc9deee56d079420a2b46c02c"
+        }
+      },
+      "targetedEslint": {
+        "status": "passed",
+        "filesChecked": 12,
+        "log": {
+          "path": "tmp/mainline-a-v634-combined-eslint-20260927-056.json",
+          "sha256": "8611544b198899156464f1e3687ce1f3e863afa6c577d30274a2daf05954fc01"
+        }
+      },
+      "diffCheck": "passed",
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-056.json",
+        "sha256": "3c368b5d3421153ba1107eda347893455de4fd126cf2204f5e3d5ec35eb5e291"
+      },
+      "buildScope": "preserved vercel-lite production build",
+      "sourceInputFiles": 2357,
+      "sourceDrift": [],
+      "codeDrift": [],
+      "sourceReplay": {
+        "path": "docs/release/v607/mainline-a-stellar-component-semantic-replay-20260927-056-sealed.json",
+        "sha256": "0e27200ff59a047fef588b977cb054c969f74831601badd0e0681315ee0378ce"
+      },
+      "latestSemanticCheck": {
+        "path": "tmp/mainline-a-v634-current-semantic-check-20260927-056.log",
+        "sha256": "0e27200ff59a047fef588b977cb054c969f74831601badd0e0681315ee0378ce"
+      },
+      "constellationResources": {
+        "registeredResources": 8,
+        "newHelperTests": 9,
+        "scope": "THREE objects and production effect binding checks; no real renderer mounting or GPU measurement",
+        "receipt": {
+          "path": "tmp/mainline-a-engraving-verification-20260927-056.json",
+          "sha256": "595f6eb2ed9ccef4997f8b3858cf15d315f06075de56e667c16c84fff1a9f232"
+        }
+      },
+      "protectedFiles": [
+        {
+          "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+          "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+          "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+        }
+      ],
+      "protectedFilesUnchanged": true,
+      "v619Check": {
+        "status": "verified",
+        "total": 4,
+        "pending": 4,
+        "command": "node scripts/build-mainline-a-beta-stellar-raw-capture-v619.mjs --check"
+      }
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-056.json",
+        "sha256": "37b4e7a1f3c99d8bde2e03ee2d3138ca46a15351d2790659b8146749a4b417e8"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "matchedScriptFiles": 6,
+      "canonicalFilesMatched": 12,
+      "canonicalAssets": {
+        "path": "docs/release/v607/mainline-a-canonical-assets-http-20260927-056.json",
+        "sha256": "a65a81c13e618aee953aea368aa98498365cd6bd59c35fb1cc677bc12fc79b2c"
+      },
+      "performanceClaim": false
+    },
+    "visual": {
+      "status": "not-run",
+      "screenshots": [],
+      "reason": "browser security check unavailable before navigation"
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v634-20260927-056.json",
+        "sha256": "75174e13a035e1411def8038fa133de9ab75340c43c8e94633a409a60ad15eec"
+      },
+      "realUserValidation": false,
+      "bypassUsed": false
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v634-20260927-056.json",
+        "sha256": "19d9fa6f59407b7709a0b39140be743b59e00113c0f933d8ed993b6aa92c05d5"
+      },
+      "frameTime": null,
+      "memory": null,
+      "resourceReleaseObserved": false,
+      "longRun": "not-run",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "real-catalogue-captured-identity-review-pending",
+      "newNetworkCaptures": 5,
+      "rawFilesRecomputed": 5,
+      "catalogueDefinitionsCaptured": 1,
+      "catalogueSystemsCaptured": 4,
+      "structuredPairRows": 25,
+      "capture": {
+        "path": "docs/release/v607/mainline-a-stellar-components-v634-20260927-056.json",
+        "sha256": "92e17d5ebd727af611aa7b12c781bef2d91568075b573e5f2f2bf52e88cbc06e"
+      },
+      "candidatePack": {
+        "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+        "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+      },
+      "sourceCandidatePack": {
+        "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+        "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+      },
+      "records": [
+        {
+          "id": "acrux",
+          "wdsSystemId": "12266-6306",
+          "raw": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+            "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+            "bytes": 5406,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306"
+          },
+          "pairRows": 11,
+          "semanticStatus": "catalogue-candidate",
+          "componentIdentityStatus": "unresolved"
+        },
+        {
+          "id": "spica",
+          "wdsSystemId": "13252-1110",
+          "raw": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+            "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+            "bytes": 4321,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110"
+          },
+          "pairRows": 4,
+          "semanticStatus": "catalogue-candidate",
+          "componentIdentityStatus": "unresolved"
+        },
+        {
+          "id": "regulus",
+          "wdsSystemId": "10084+1158",
+          "raw": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+            "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+            "bytes": 4323,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158"
+          },
+          "pairRows": 4,
+          "semanticStatus": "catalogue-candidate",
+          "componentIdentityStatus": "unresolved"
+        },
+        {
+          "id": "polaris",
+          "wdsSystemId": "02318+8916",
+          "raw": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+            "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+            "bytes": 4633,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916"
+          },
+          "pairRows": 6,
+          "semanticStatus": "catalogue-candidate",
+          "componentIdentityStatus": "unresolved"
+        }
+      ],
+      "definition": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51.txt",
+        "sha256": "262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51",
+        "bytes": 41416,
+        "contentType": "text/plain; charset=utf-8",
+        "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe"
+      },
+      "componentConfirmed": 0,
+      "identityPending": 4,
+      "scientificValidityClaim": false,
+      "rightsApproval": false,
+      "fixturePromotion": false,
+      "limitation": "WDS pair observations and shared system identifiers do not assign every measurement to a specific Hero component or establish physical association."
+    },
+    "release": {
+      "status": "blocked",
+      "scope": "candidate metadata and local evidence package",
+      "alignment": {
+        "path": "docs/release/v607/mainline-a-r66-alignment-20260927-056.json",
+        "sha256": "ff74d618421fb4f2352b20e894d22e8a648fca05b20de991f8a634ba87a13f3d"
+      },
+      "bridge": {
+        "path": "docs/release/v607/mainline-a-r66-identity-bridge-20260927-056.json",
+        "sha256": "1806b8e0d884f30da59df107bda7f54b238a0ebf948184564f1f00d32ecf0752"
+      },
+      "manifest": {
+        "path": "docs/release/v607/mainline-a-r66-package-20260927-056/manifest.json",
+        "sha256": "e24eb8b02ef55683e34798ed045495e73199566d82d10b468fbe4ac784a9785d"
+      },
+      "evidenceInput": {
+        "path": "docs/release/v607/mainline-a-release-evidence-input-20260927-056.json",
+        "sha256": "19e2b909049cc174c175c7bbee647effbc2dc7347c665c3e0271e329c5c45baf"
+      },
+      "offlineVerification": {
+        "path": "tmp/mainline-a-package-verify-current-20260927-056.log",
+        "sha256": "57f1d37e4ac3236c7d7f09ad9f360f1cc17700a9e61d9d7633d92da1091c66b2"
+      },
+      "integrity": {
+        "files": 278,
+        "status": "verified",
+        "evidenceClass": "static",
+        "scientificValidity": false,
+        "rightsApproval": false,
+        "packageFiles": 7,
+        "offlineReplay": true
+      },
+      "currentSourceVerified": true,
+      "releaseApproved": false,
+      "gates": [
+        {
+          "id": "build-current-source",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "root-readonly-input",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "next-web-identity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "manifest-parity",
+          "evidenceClass": "static",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "root-manifest-not-present-or-mismatched"
+          ]
+        },
+        {
+          "id": "canonical-coverage",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "canonical-runtime",
+          "evidenceClass": "browser",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "canonical-runtime-clearance-pending"
+          ]
+        },
+        {
+          "id": "http",
+          "evidenceClass": "http",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "desktop-browser",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "desktop-browser-not-run"
+          ]
+        },
+        {
+          "id": "mobile-viewport",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "mobile-viewport-not-run"
+          ]
+        },
+        {
+          "id": "visual",
+          "evidenceClass": "visual",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "visual-evidence-not-observed"
+          ]
+        },
+        {
+          "id": "performance",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "lifecycle",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "nebula-file-integrity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "stellar-component-identity",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "stellar-component-identity-pending"
+          ]
+        },
+        {
+          "id": "rights-closure",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "human-rights-signoff-pending"
+          ]
+        },
+        {
+          "id": "physical-mobile",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "physical-device-not-run"
+          ]
+        },
+        {
+          "id": "long-run",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "long-run-not-run"
+          ]
+        }
+      ],
+      "blockers": [
+        "canonical-runtime-clearance-pending",
+        "desktop-browser-not-run",
+        "human-rights-signoff-pending",
+        "lifecycle-not-passed",
+        "long-run-not-run",
+        "mobile-viewport-not-run",
+        "performance-not-passed",
+        "physical-device-not-run",
+        "root-manifest-not-present-or-mismatched",
+        "stellar-component-identity-pending",
+        "visual-evidence-not-observed"
+      ]
+    }
+  },
+  "humanReview": {
+    "userReply": "暂时保持 pending，继续技术验收",
+    "rightsSigned": 0,
+    "extensionRightsPending": 12,
+    "stellarIdentityPending": 4,
+    "humanSignatureGranted": false,
+    "directive": {
+      "path": "docs/release/v607/mainline-a-rights-pending-directive-20260927-053.json",
+      "sha256": "92b4d97376e36df886dc753f0e834e60e954d477d98dcf632c292130a273bcf2"
+    }
+  },
+  "preservation": {
+    "originalStellarPacksUnchanged": true,
+    "historicalReceiptsOverwritten": false,
+    "fixtureDirectoriesRetained": true,
+    "supersededProvisionalStats": {
+      "path": "docs/release/v607/mainline-a-r65-v634-code-change-20260927-056.json",
+      "sha256": "80e432341fade9fd5c274f7f033f17ad4ec03bedf5be279378ac222beac6199d"
+    },
+    "originalCandidateArchive": {
+      "path": "docs/release/v607/stellar-component-candidate-ledger/v634/c28e342ebdb9709f6acdd709575adb2d09f8977b3068ac6c3ffc2c2ea531e611.json",
+      "sha256": "c28e342ebdb9709f6acdd709575adb2d09f8977b3068ac6c3ffc2c2ea531e611"
+    },
+    "currentCandidateArchive": {
+      "path": "docs/release/v607/stellar-component-candidate-ledger/v634/6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb.json",
+      "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+    },
+    "ownedServersStopped": [
+      47596,
+      41428
+    ]
+  },
+  "openGates": [
+    "canonical-runtime-clearance-pending",
+    "desktop-browser-not-run",
+    "human-rights-signoff-pending",
+    "lifecycle-not-passed",
+    "long-run-not-run",
+    "mobile-viewport-not-run",
+    "performance-not-passed",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending",
+    "visual-evidence-not-observed"
+  ],
+  "nextWork": [
+    "Extend existing canonical lifecycle checkpoints to record object identity and actual loading state within the same atlas scene; replay complete 12/12/12 observations when Browser becomes usable.",
+    "Consume genuine long-run and repeated-run raw observations in the existing release gates; keep not-run until such observations exist.",
+    "Keep four stellar component assignments under scientific review, nebula rights pending by user directive, and root parity pending while its genuine manifest is missing."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

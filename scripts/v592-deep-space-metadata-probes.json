@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-metadata-probes-v1",
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "allowedHosts": ["images-api.nasa.gov", "images-assets.nasa.gov"]
+  },
+  "probes": [
+    { "id": "andromeda-galaxy", "category": "galaxy", "query": "Andromeda Galaxy M31", "requiredTermGroups": [["andromeda", "m31"], ["galaxy"]] },
+    { "id": "triangulum-galaxy", "category": "galaxy", "query": "Triangulum Galaxy M33", "requiredTermGroups": [["triangulum", "m33"], ["galaxy"]] },
+    { "id": "whirlpool-galaxy", "category": "galaxy", "query": "Whirlpool Galaxy M51", "requiredTermGroups": [["whirlpool", "m51"], ["galaxy"]] },
+    { "id": "sombrero-galaxy", "category": "galaxy", "query": "Sombrero Galaxy M104", "requiredTermGroups": [["sombrero", "m104"], ["galaxy"]] },
+    { "id": "centaurus-a", "category": "galaxy", "query": "Centaurus A Galaxy", "requiredTermGroups": [["centaurus a", "ngc 5128"], ["galaxy"]] },
+    { "id": "bodes-galaxy", "category": "galaxy", "query": "Bode Galaxy M81", "supplementalQuery": "M81", "requiredTermGroups": [["bode", "m81", "messier 81"], ["galaxy"]] },
+    { "id": "cigar-galaxy", "category": "galaxy", "query": "Cigar Galaxy M82", "requiredTermGroups": [["cigar", "m82"], ["galaxy"]] },
+    { "id": "pinwheel-galaxy", "category": "galaxy", "query": "Pinwheel Galaxy M101", "requiredTermGroups": [["pinwheel", "m101"], ["galaxy"]] },
+    { "id": "southern-pinwheel-galaxy", "category": "galaxy", "query": "Southern Pinwheel Galaxy M83", "requiredTermGroups": [["southern pinwheel", "m83"], ["galaxy"]] },
+    { "id": "virgo-a-galaxy", "category": "galaxy", "query": "M87 Virgo A Galaxy", "supplementalQuery": "M87", "requiredTermGroups": [["m87", "messier 87", "virgo a", "ngc 4486"], ["galaxy"]] },
+    { "id": "black-eye-galaxy", "category": "galaxy", "query": "Black Eye Galaxy M64", "requiredTermGroups": [["black eye", "m64"], ["galaxy"]] },
+    { "id": "sunflower-galaxy", "category": "galaxy", "query": "Sunflower Galaxy M63", "requiredTermGroups": [["sunflower", "m63"], ["galaxy"]] },
+
+    { "id": "pleiades", "category": "cluster", "query": "Pleiades M45 star cluster", "requiredTermGroups": [["pleiades", "m45"], ["cluster"]] },
+    { "id": "hyades", "category": "cluster", "query": "Hyades star cluster", "requiredTermGroups": [["hyades"], ["cluster"]] },
+    { "id": "omega-centauri", "category": "cluster", "query": "Omega Centauri star cluster", "requiredTermGroups": [["omega centauri", "ngc 5139"], ["cluster"]] },
+    { "id": "47-tucanae", "category": "cluster", "query": "47 Tucanae star cluster", "requiredTermGroups": [["47 tuc", "ngc 104"], ["cluster"]] },
+    { "id": "hercules-globular-cluster", "category": "cluster", "query": "Hercules Globular Cluster M13", "supplementalQuery": "M13", "requiredTermGroups": [["hercules", "m13", "messier 13"], ["cluster"]] },
+    { "id": "messier-3", "category": "cluster", "query": "Messier 3 globular cluster", "supplementalQuery": "M3 globular", "requiredTermGroups": [["messier 3", "m3", "ngc 5272"], ["cluster"]] },
+    { "id": "messier-5", "category": "cluster", "query": "Messier 5 globular cluster", "requiredTermGroups": [["messier 5", "m5", "ngc 5904"], ["cluster"]] },
+    { "id": "messier-15", "category": "cluster", "query": "Messier 15 globular cluster", "supplementalQuery": "M15", "requiredTermGroups": [["messier 15", "m15", "ngc 7078"], ["cluster"]] },
+    { "id": "messier-22", "category": "cluster", "query": "Messier 22 globular cluster", "supplementalQuery": "M22", "requiredTermGroups": [["messier 22", "m22", "ngc 6656"], ["cluster"]] },
+    { "id": "beehive-cluster", "category": "cluster", "query": "Beehive Cluster M44", "supplementalQuery": "M44 star cluster", "requiredTermGroups": [["beehive", "m44", "messier 44", "praesepe"], ["cluster"]] },
+    { "id": "double-cluster", "category": "cluster", "query": "Double Cluster NGC 869 NGC 884", "supplementalQuery": "NGC 869", "requiredTermGroups": [["double cluster", "ngc 869", "ngc 884"], ["cluster"]] },
+    { "id": "jewel-box-cluster", "category": "cluster", "query": "Jewel Box Cluster NGC 4755", "supplementalQuery": "NGC 4755", "requiredTermGroups": [["jewel box", "ngc 4755"], ["cluster"]] }
+  ]
+}

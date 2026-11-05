@@ -1,0 +1,487 @@
+{
+  "schema": "mainline-a-nebula-batch-v624",
+  "batchId": "r64-base-six",
+  "createdAt": "2026-09-14T10:20:05.717Z",
+  "sourceIdentity": {
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "unknown",
+    "inputs": [
+      {
+        "path": "app/data/mainlineANebulaRightsPackV613.generated.json",
+        "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7"
+      }
+    ]
+  },
+  "rows": [
+    {
+      "id": "heart-nebula",
+      "title": "heart-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/heart-nebula-PIA13112-orig.jpg",
+        "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+        "bytes": 5117802,
+        "width": 7252,
+        "height": 5142,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:19:48.824Z",
+            "endedAt": "2026-09-14T10:19:53.851Z",
+            "requestExecuted": true,
+            "timeout": true,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": null,
+            "contentType": null,
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+            "finalUrl": null,
+            "redirectChain": [],
+            "errorClass": "timeout",
+            "errorMessage": "This operation was aborted",
+            "requestFingerprint": "1a3e02fe1af85566ec4fd5f18147f1e318da2271d44687e8b093bf0beb1cda16",
+            "responseCaptured": 0,
+            "responseBytes": null,
+            "width": null,
+            "height": null,
+            "format": null,
+            "rawArtifactPath": null,
+            "rawPageSha256": null
+          },
+          {
+            "attempt": 2,
+            "startedAt": "2026-09-14T10:19:54.602Z",
+            "endedAt": "2026-09-14T10:19:58.461Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 1,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "1a3e02fe1af85566ec4fd5f18147f1e318da2271d44687e8b093bf0beb1cda16",
+            "responseCaptured": 1,
+            "responseBytes": 5117802,
+            "width": 7252,
+            "height": 5142,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112.jpg",
+            "rawPageSha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112.jpg",
+          "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+          "bytes": 5117802,
+          "width": 7252,
+          "height": 5142,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "soul-nebula",
+      "title": "soul-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/soul-nebula-PIA13014-orig.jpg",
+        "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+        "bytes": 2079063,
+        "width": 6660,
+        "height": 3482,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:19:58.482Z",
+            "endedAt": "2026-09-14T10:20:01.817Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "4058bfa864ab7afb606f0c0b721e9c6fa7ec34a9479d36afcfd53fa4518a1eb5",
+            "responseCaptured": 1,
+            "responseBytes": 2079063,
+            "width": 6660,
+            "height": 3482,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014.jpg",
+            "rawPageSha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014.jpg",
+          "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+          "bytes": 2079063,
+          "width": 6660,
+          "height": 3482,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "witch-head-nebula",
+      "title": "witch-head-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+        "credit": "NASA/JPL-Caltech",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/witch-head-nebula-PIA17553-orig.jpg",
+        "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+        "bytes": 7891119,
+        "width": 9163,
+        "height": 9163,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:20:01.824Z",
+            "endedAt": "2026-09-14T10:20:03.904Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "d2d88576997f8b332c876e9fc10876b9478941f717137c9c622797333f428bea",
+            "responseCaptured": 1,
+            "responseBytes": 7891119,
+            "width": 9163,
+            "height": 9163,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553.jpg",
+            "rawPageSha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553.jpg",
+          "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+          "bytes": 7891119,
+          "width": 9163,
+          "height": 9163,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "flame-nebula",
+      "title": "flame-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/flame-nebula-PIA15635-orig.jpg",
+        "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+        "bytes": 1772081,
+        "width": 5525,
+        "height": 5535,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:20:03.922Z",
+            "endedAt": "2026-09-14T10:20:04.691Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "532a5a083c40d59b4d6e5595b5f67730f2b36f8751bb6785c28420b84883bfd4",
+            "responseCaptured": 1,
+            "responseBytes": 1772081,
+            "width": 5525,
+            "height": 5535,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635.jpg",
+            "rawPageSha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635.jpg",
+          "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+          "bytes": 1772081,
+          "width": 5525,
+          "height": 5535,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "pacman-nebula",
+      "title": "pacman-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+        "credit": "X-ray: NASA/CXC/CfA/S.Wolk; IR: NASA/JPL/CfA/S.Wolk",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/pacman-nebula-PIA14731-orig.jpg",
+        "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+        "bytes": 803172,
+        "width": 3600,
+        "height": 2719,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:20:04.697Z",
+            "endedAt": "2026-09-14T10:20:05.153Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "7a22471d962738b718861d8b56e2e3887d61bb638dcfe32fe4236645d75d5c10",
+            "responseCaptured": 1,
+            "responseBytes": 803172,
+            "width": 3600,
+            "height": 2719,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731.jpg",
+            "rawPageSha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731.jpg",
+          "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+          "bytes": 803172,
+          "width": 3600,
+          "height": 2719,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "running-chicken-nebula",
+      "title": "running-chicken-nebula",
+      "source": {
+        "url": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+        "declaredLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"
+      },
+      "historical": {
+        "status": "verified",
+        "path": "source-cache/v592/nebulae/visual/running-chicken-nebula-PIA13451-orig.jpg",
+        "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+        "bytes": 1411185,
+        "width": 3700,
+        "height": 3700,
+        "issues": []
+      },
+      "network": {
+        "status": "captured",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "attempt": 1,
+            "startedAt": "2026-09-14T10:20:05.157Z",
+            "endedAt": "2026-09-14T10:20:05.712Z",
+            "requestExecuted": true,
+            "timeout": false,
+            "timeoutMs": 5000,
+            "retryCount": 0,
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "requestUrl": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+            "finalUrl": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+            "redirectChain": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "requestFingerprint": "dda2ab37c2a78386e09700797ffcde8a8860340df091cd38641ad59d6bb2194c",
+            "responseCaptured": 1,
+            "responseBytes": 1411185,
+            "width": 3700,
+            "height": 3700,
+            "format": "jpg",
+            "rawArtifactPath": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451.jpg",
+            "rawPageSha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451.jpg",
+          "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+          "bytes": 1411185,
+          "width": 3700,
+          "height": 3700,
+          "format": "jpg"
+        }
+      },
+      "rights": {
+        "status": "pending",
+        "blockers": [
+          "item-rights-review-pending"
+        ]
+      },
+      "blockers": [
+        "rights-signoff-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "counts": {
+    "total": 6,
+    "networkAttempted": 7,
+    "ledgerAttempts": 7,
+    "captured": 6,
+    "historicalVerified": 6,
+    "rightsPending": 6
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "evidence": {
+    "historical": "source-cache historical hash verification",
+    "network": "live-https-attempt",
+    "externalSourceEvidence": false,
+    "rights": "item-level review remains pending"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "round": 54,
+  "date": "2026-09-14",
+  "scope": "V614 nebula receipt linkage and typed review presentation",
+  "effectiveChangedLines": 513,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R54 linker and typed UI utility files; V613 generator, generated pack, and review-panel integration edits are additional.",
+  "files": [
+    {"path": "scripts/mainline-a-nebula-receipt-linker-v614.mjs", "lines": 199, "sha256": "f2cab98ca15d3ab5f0aaa1db0434b34628cf0dac5112818ec5368c5c7f845338"},
+    {"path": "scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "lines": 110, "sha256": "b5071c2287fe2520cd4f69e714294a86a668701ada583b788ea50f4cf1b0da02"},
+    {"path": "app/lib/mainlineANebulaReceiptLinkageV614.ts", "lines": 134, "sha256": "9a7deb2db649e9ba3c71e8c8b75b40d81f802c965cde234d0b88b634b1388a77"},
+    {"path": "app/lib/mainlineANebulaReceiptLinkageV614.test.ts", "lines": 70, "sha256": "481c31a83d1053c79eb30c5bd6f0d2be28b7ea337f158cdacb914ea3617b06c6"}
+  ],
+  "integrationFiles": [
+    "scripts/build-mainline-a-nebula-rights-pack-v613.mjs",
+    "scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs",
+    "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "app/data/mainlineANebulaRightsPackV613.generated.json"
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "version": "v591-nebula-asset-manifest-probes-v1",
+  "policy": {
+    "allowedHosts": ["images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloaded": false,
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "probes": [
+    {
+      "id": "orion",
+      "target": "orion-nebula",
+      "nasaId": "PIA25434",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-orion-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA25434/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-orion.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-orion-blocked.json",
+      "identityTerms": ["orion", "nebula"],
+      "fieldCoverage": "wide-target-field"
+    },
+    {
+      "id": "lagoon",
+      "target": "lagoon-nebula",
+      "nasaId": "PIA13453",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-lagoon-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13453/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-lagoon.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-lagoon-blocked.json",
+      "identityTerms": ["lagoon", "nebula"],
+      "fieldCoverage": "wide-target-field"
+    },
+    {
+      "id": "eagle",
+      "target": "eagle-nebula",
+      "nasaId": "PIA25433",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-eagle-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA25433/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-eagle.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-eagle-blocked.json",
+      "identityTerms": ["eagle", "nebula"],
+      "fieldCoverage": "wide-target-field"
+    },
+    {
+      "id": "helix",
+      "target": "helix-nebula",
+      "nasaId": "PIA18164",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-helix-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA18164/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-helix.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-helix-blocked.json",
+      "identityTerms": ["helix", "nebula"],
+      "fieldCoverage": "wide-target-field"
+    },
+    {
+      "id": "veil",
+      "target": "veil-nebula",
+      "nasaId": "GSFC_20171208_Archive_e000607",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-veil-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000607/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-veil.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-veil-blocked.json",
+      "identityTerms": ["veil", "nebula"],
+      "fieldCoverage": "explicit-partial-field"
+    },
+    {
+      "id": "north-america",
+      "target": "north-america-nebula",
+      "nasaId": "PIA13845",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-north-america-targeted.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13845/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-north-america.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-north-america-blocked.json",
+      "identityTerms": ["north", "america", "nebula"],
+      "fieldCoverage": "wide-target-field"
+    },
+    {
+      "id": "veil-cygnus-loop-alt",
+      "target": "veil-nebula",
+      "nasaId": "PIA15415",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-veil-cygnus-loop-simple.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15415/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-veil-cygnus-loop-alt.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-asset-manifest-veil-cygnus-loop-alt-blocked.json",
+      "identityTerms": ["cygnus", "loop", "nebula"],
+      "fieldCoverage": "wide-same-remnant-field"
+    },
+    {
+      "id": "ceres-global-map",
+      "target": "ceres",
+      "nasaId": "PIA20351",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-ceres-dawn-global-map.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA20351/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-ceres-global-map.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-ceres-global-map-blocked.json",
+      "identityTerms": ["ceres", "dawn"],
+      "fieldCoverage": "global-elliptical-map"
+    },
+    {
+      "id": "venus-global-clouds",
+      "target": "venus",
+      "nasaId": "PIA23791",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-venus-global-clouds-independent.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA23791/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-venus-global-clouds.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-venus-global-clouds-blocked.json",
+      "identityTerms": ["venus", "cloud"],
+      "fieldCoverage": "global-disk-cloud-reference"
+    },
+    {
+      "id": "venus-magellan-global-view",
+      "target": "venus",
+      "nasaId": "PIA00257",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-venus-magellan-global-map-independent.json",
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00257/collection.json",
+      "outputPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-venus-magellan-global-view.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nasa-image-asset-manifest-venus-magellan-global-view-blocked.json",
+      "identityTerms": ["venus", "magellan"],
+      "fieldCoverage": "global-disk-surface-reference"
+    }
+  ]
+}

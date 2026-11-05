@@ -1,0 +1,19 @@
+{
+  "round": 29,
+  "date": "2026-09-13",
+  "title": "Beta hero admission-state legend",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/PostV593StellarRosterPanel.tsx",
+    "artChange": "Added a compact color legend for runtime-cleared and evidence-pending hero cards next to the aggregate coverage cue."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 4/4",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The legend is a presentation aid and does not alter hero admission or measurement authority.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

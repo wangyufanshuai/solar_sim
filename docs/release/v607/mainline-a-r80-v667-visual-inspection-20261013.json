@@ -1,0 +1,38 @@
+{
+  "schema": "mainline-a-r80-agent-visual-inspection-v667",
+  "round": 80,
+  "date": "2026-10-13",
+  "status": "eight-current-build-samples-agent-inspected-human-signoff-pending",
+  "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+  "buildId": "OzXlBUCmLBXsMtceBdR7h",
+  "browserVisualReceipt": "docs/release/v607/mainline-a-r80-v667-visual-20261013v667r80browser02.json",
+  "canonicalSceneReceipt": "docs/release/v607/mainline-a-r80-v667-scene-verification-20261013.json",
+  "screenshotPinsRecomputed": {
+    "localImageAndContext": 65,
+    "canonicalScenes": 72,
+    "total": 137
+  },
+  "agentInspectedSample": [
+    "docs/release/v607/mainline-a-r80-v667-image-desktop-a-nebula-m42-20261013v667r80browser02.png",
+    "docs/release/v607/mainline-a-r80-v667-image-desktop-beta-nebula-heart-nebula-20261013v667r80browser02.png",
+    "docs/release/v607/mainline-a-r80-v667-image-mobile-viewport-beta-nebula-california-nebula-20261013v667r80browser02.png",
+    "docs/release/v607/mainline-a-r80-v667-mobile-viewport-review-context-20261013v667r80browser02.png",
+    "output/playwright/mainline-a-r80-web-canonical-scene-desktop-star-alpha-centauri-a-20261013-v667scene01.png",
+    "output/playwright/mainline-a-r80-web-canonical-scene-desktop-constellation-Ori-20261013-v667scene01.png",
+    "output/playwright/mainline-a-r80-web-canonical-scene-desktop-nebula-m42-20261013-v667scene01.png",
+    "output/playwright/mainline-a-r80-web-canonical-scene-mobile-nebula-m42-20261013-v667scene01.png"
+  ],
+  "observations": [
+    "Sampled image previews are visible with no white offscreen padding in the final run02 captures; the earlier run01 inspector-element captures are historical and not the final visual evidence.",
+    "The sampled desktop star, constellation, and nebula scenes and the sampled mobile nebula scene are readable without horizontal overflow.",
+    "The California raw image remains a candidate mosaic requiring human art and rights review; this inspection does not judge its scientific or copyright status."
+  ],
+  "limits": {
+    "all137ScreenshotsHumanInspected": false,
+    "perItemHumanVisualSignoff": false,
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "physicalMobile": "not-run",
+    "realUserValidation": false
+  }
+}

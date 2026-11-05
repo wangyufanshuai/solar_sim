@@ -1,0 +1,9 @@
+import { describe, expect, it, beforeEach } from "vitest";
+import { getAtlasResourceSnapshot } from "./atlasResourceLifecycle";
+import { getKerrScienceImageProductClientSnapshotV344 } from "./kerrScienceImageProductClientV344";
+import { getAtlasScienceImagePreviewTelemetryV345, publishAtlasScienceImagePreviewTelemetryV345, resetAtlasScienceImagePreviewTelemetryV345ForTests, startAtlasScienceImagePreviewTelemetryBridgeV345 } from "./atlasScienceImagePreviewTelemetryV345";
+beforeEach(() => resetAtlasScienceImagePreviewTelemetryV345ForTests());
+describe("v345 non-react preview telemetry", () => {
+  it("writes navigation, orientation and resources to DOM data without scene drift", () => { const node = { dataset: {} as DOMStringMap }; publishAtlasScienceImagePreviewTelemetryV345({ node, route: "research", intent: "png-preview", product: "png", orientation: "portrait" }); expect(node.dataset).toMatchObject({ atlasSciencePreviewRouteV345: "research", atlasSciencePreviewIntentV345: "png-preview", atlasSciencePreviewProductV345: "png", atlasSciencePreviewOrientationV345: "portrait", atlasSciencePreviewSceneRevisionDeltaV345: "0", atlasSciencePreviewCanvasCountV345: "1" }); expect(getAtlasScienceImagePreviewTelemetryV345()).toMatchObject({ route: "research", intent: "png-preview", product: "png", sceneRevisionDelta: 0, canvasCount: 1 }); });
+  it("returns to baseline on bridge cleanup", () => { const node = { dataset: {} as DOMStringMap }; const stop = startAtlasScienceImagePreviewTelemetryBridgeV345({ node, route: "kerr-lab", getOrientation: () => "landscape", getResources: getAtlasResourceSnapshot, getClient: getKerrScienceImageProductClientSnapshotV344 }); expect(node.dataset.atlasSciencePreviewRouteV345).toBe("kerr-lab"); stop(); expect(node.dataset.atlasSciencePreviewRouteV345).toBe("none"); expect(node.dataset.atlasSciencePreviewResourceBaselineV345).toBe("baseline"); });
+});

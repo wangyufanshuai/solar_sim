@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:59.061Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "pacman-nebula",
+  "selection": {
+    "metadataProbe": "pacman-nebula",
+    "metadataReceiptSha256": "e3f7fcc4248945b7bc0b271648633755750b5e0c502d4838aa341dbe566998eb",
+    "nasaId": "PIA14731",
+    "title": "The Pacman Nebula",
+    "description": "This composite image of the star cluster NGC 28 contains X-ray data from Chandra, in purple, with infrared observations from Spitzer, in red, green, blue. NGC 281 is known informally as the Pacman Nebula because of its appearance in optical images.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA14731/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA14731/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA14731/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "14a90251c46eba12445897364c9b166d02a29ad19526ab1ad5f549ee573eaa37"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14731~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/PIA14731~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14731~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/PIA14731~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14731~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/PIA14731~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14731~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/PIA14731~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14731~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14731/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14731/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "63be95e34192523b391e40858e174da6168955905e66d5bb34192a6ad39f36a9"
+}

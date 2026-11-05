@@ -1,0 +1,77 @@
+{
+  "schema": "mainline-a-code-change-receipt-v627",
+  "round": "R66-nebula-rights-closure",
+  "generatedAt": "2026-09-21T01:30:19.224Z",
+  "scope": "next-web only; R63/R64 source and rights closure continuation",
+  "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1900,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "testsExcluded": true,
+  "countMethod": "Nonblank noncomment production lines in V627 closure contract, builder, verifier, replay and panel; tests, receipts, screenshots and docs excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineANebulaRightsClosureV627.ts",
+      "effectiveLines": 870,
+      "bytes": 50705,
+      "sha256": "66ab9aed07a11dc2401ccc119338f1eac6563810b17d56ea739bdfe5b920c49d",
+      "role": "typed source/rights/artifact closure contract"
+    },
+    {
+      "path": "scripts/build-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 560,
+      "bytes": 40086,
+      "sha256": "c4ac8033a3ce012f1469dbc1aeff53439cebd015480d4ce6452c6ec5b63d7d44",
+      "role": "read-only closure receipt builder and sidecars"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 174,
+      "bytes": 11301,
+      "sha256": "169c00f73ed9e0d800ac0fbaeb1024ecd3fce54bb9be929ef9d02a9050dec878",
+      "role": "raw input/sidecar/boundary verifier"
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 177,
+      "bytes": 8817,
+      "sha256": "ecccfc3d32e74a48547cbbb7a1ce7bb4c9569c5bb1c7eb070fcfc0d4a4bc65bd",
+      "role": "offline deterministic replay"
+    },
+    {
+      "path": "app/components/MainlineANebulaRightsClosurePanelV627.tsx",
+      "effectiveLines": 119,
+      "bytes": 13100,
+      "sha256": "65b097b275c75e152328bd189d9a5bf1c46d58a3996b70145c26422f97fed726",
+      "role": "candidate-only runtime rights panel"
+    }
+  ],
+  "integrationFiles": [
+    "scripts/audit-mainline-a-release-alignment-v626.mjs",
+    "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "package.json"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "validation": {
+    "closureReceipt": "pending with rights-signoff-pending and 6 offline ledger rows",
+    "verifier": "valid=true; receipt status pending",
+    "replay": "pending; rightsCleared=0/12",
+    "vitest": "17/17 contract and panel tests",
+    "node": "22/22 builder/verifier tests",
+    "eslint": "targeted pass",
+    "preservedProductionBuild": "R66 build 011 remains passed",
+    "http": "R66 HTTP 011 remains passed",
+    "browser": "R66 browser 011 remains local observation",
+    "physicalMobile": "not-run",
+    "longRun": "not-run"
+  }
+}

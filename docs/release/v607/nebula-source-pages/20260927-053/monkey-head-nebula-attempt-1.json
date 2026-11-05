@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:40:38.576Z",
+  "endedAt": "2026-09-27T02:40:40.382Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "43bbb3d79180716b920a21ede9b6db6d7682674dd1235cace01f42b31ed1058e",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/seeing-beyond-the-monkey-head/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 269928,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/monkey-head-nebula-attempt-1.html",
+  "sha256": "740ce65ba3026becb10888389b00e7979ba47e3fe14d0913c849a42710b3d710",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Seeing Beyond the ‘Monkey Head’",
+    "expectedPia": "PIA19836",
+    "observedPiaIds": [
+      "PIA19836"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia19/pia19836/PIA19836.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "round": 53,
+  "date": "2026-09-14",
+  "title": "beta-nebula-item-rights-evidence-v613",
+  "status": "rights-evidence-contract-delivered-all-items-pending",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaNebulaCandidates": 18,
+    "rightsEvidenceRecords": 18,
+    "rightsEvidencePending": 18,
+    "rightsEvidenceCleared": 0,
+    "betaNebulaRuntimeAdmitted": 0,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added immutable V613 per-image rights evidence records with source identity, policy page, rights page, local evidence path and digest, reviewer, review time, credit confirmation, decision, and status.",
+    "Added fail-closed assessment and transition APIs: incomplete evidence stays pending, rejected decisions stay rejected, and cleared decisions require complete item-level evidence while candidate-only/runtime gates remain closed.",
+    "Added receipt reference preservation from the three sealed nebula manifests into the projection, V612 review pack, and V613 rights pack; references are explicitly descriptive and are not treated as a rights grant.",
+    "Added deterministic V613 pack generation, nested equality checks, schema/decision tamper tests, source identity checks, queue fingerprints, and serialization validation.",
+    "Updated the review panel to expose V613 pending rights evidence, NASA policy URL, reviewer/decision fields, receipt-pack boundary, and the fact that no review action opens visual or scientific runtime admission."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in the four new R53 utility/pack files. Integration edits to the existing review panel and projection pack are additional and are not needed to reach the threshold.",
+    "files": [
+      {"path": "app/lib/mainlineANebulaRightsEvidenceV613.ts", "baseline": "new-in-r53", "effectiveChangedLines": 228, "sha256": "7736caa4fe8e39f869551e224b6a6041eadb4b18a36a6483dec3645c3de58974"},
+      {"path": "app/lib/mainlineANebulaRightsEvidenceV613.test.ts", "baseline": "new-in-r53", "effectiveChangedLines": 123, "sha256": "ba7d75b6441af75f27d704f49c6782c4ffdb64945a36b916443bb9b734e7fb9e"},
+      {"path": "scripts/build-mainline-a-nebula-rights-pack-v613.mjs", "baseline": "new-in-r53", "effectiveChangedLines": 117, "sha256": "58c2922e029fa69baadc8460595afe21705cfc333d3c81c65acf9ed98fbeafa4"},
+      {"path": "scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs", "baseline": "new-in-r53", "effectiveChangedLines": 65, "sha256": "1dbc141e342ff2b15e79f0a6c8c6c4190d12a3e0f2439ceb2b681b44e1dc2b1a"}
+    ],
+    "effectiveChangedLines": 533,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "rightsEvidenceVitest": {"passed": 19, "failed": 0, "files": 2, "command": "npx vitest run app/lib/mainlineANebulaRightsEvidenceV613.test.ts app/components/MainlineANebulaReviewPanelV610.test.tsx"},
+    "rightsPackNode": {"passed": 8, "failed": 0, "command": "node --test scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs"},
+    "nebulaRegressionNode": {"passed": 24, "failed": 0, "command": "node --test --test-concurrency=1 scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs"},
+    "eslint": {"passed": true, "files": 8},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "bmtT1XCowHLBW1oxRahH-", "buildIdSha256": "9b1b29a2bcb30732f9d5494f75625ddfb2c1be7548c0676a44d0eb8ee4a83490"}
+  },
+  "http": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "checks": [
+      {"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697},
+      {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241}
+    ]
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "reviewRecords": 18, "schema": "mainline-a-nebula-review-pack-v612", "rightsSchema": "mainline-a-nebula-rights-pack-v613", "pendingText": true, "policyUrlVisible": true, "unreviewedDecisionVisible": true, "runtimeBoundaryText": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "R52 browser viewport control remained unable to change the in-app viewport; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r53-nebula-rights-desktop.png", "bytes": 40438, "sha256": "1144304750aeaeca3902e97d1c43fb64c06f12498db6d8d98c658e66c65926e9"}
+  ],
+  "artifacts": {
+    "rightsPack": {"schema": "mainline-a-nebula-rights-pack-v613", "path": "app/data/mainlineANebulaRightsPackV613.generated.json", "sha256": "973674551c7331f67535244ba8598fd65b7c6e16f5e2bd386f1fa29a27cf46d", "pending": 18, "cleared": 0, "runtimeAdmission": 0},
+    "reviewPack": {"schema": "mainline-a-nebula-review-pack-v612", "path": "app/data/mainlineANebulaReviewPackV612.generated.json", "sha256": "547302ffb5ff250ff741f2de4a5dc1906b75302779e77b10af76b1545531d893"}
+  },
+  "openGates": [
+    "18 条 NASA 候选仍没有完整逐图权利页、政策证据、审核人、审核时间和署名确认，V613 仅建立 contract，没有宣称清权",
+    "V613 receipt refs 目前是声明性来源链，仍需逐项核验 receipt 内 target/NASA ID/URL/bytes/SHA 与当前记录一致",
+    "18→24 星云仍缺 6 条候选记录及 runtime admission",
+    "4 颗 hero stars 仍未进入运行时，当前恒星为 20/24",
+    "12 个重点星座最终视觉 signoff、多设备 GPU/FPS/资源生命周期、移动端视口证据、root/next-web 对齐、公共部署和最终发布包仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

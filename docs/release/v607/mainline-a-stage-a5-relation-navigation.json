@@ -1,0 +1,26 @@
+{
+  "stage": "A5",
+  "status": "latest-bound-camera-telemetry-passed-prior-relation-matrix-rebind-pending",
+  "verifiedAt": "2026-09-13T04:26:46Z",
+  "focusLifecycleReceipt": "docs/release/v607/mainline-a5-focus-lifecycle-current-20260913.json",
+  "scope": "Cross-object observation routes, reversible external catalog edge, and passport relation controls",
+  "currentReceipt": "docs/release/v607/mainline-a5-relation-browser-current-20260913.json",
+  "routeMatrixReceipt": "docs/release/v607/mainline-a5-route-matrix-current-20260913.json",
+  "cameraTelemetryReceipt": "docs/release/v607/mainline-a5-camera-telemetry-current-20260913.json",
+  "staticCoverage": {
+    "routes": 5,
+    "currentMainlineObjects": 22,
+    "externalCatalogObjects": ["pulsar:b0531+21"]
+  },
+  "browserEvidence": {
+    "currentBoundM1CrabPulsar": "Rb2 forward pulsar:b0531+21 and reverse nebula:m1 focus markers observed; command markers include catalog-object/object-browser and M1 passport restored",
+    "currentBoundFiveRouteMatrix": "All 5 routes and 23 route steps clicked on Rb2; selected catalog IDs matched static route targets and focus sequence advanced monotonically.",
+    "currentBoundDirectRelations": "Ori -> nebula:m42 internal relation advanced focus; UMa passport empty relation case rendered zero controls without error.",
+    "historicalFiveRouteCoverage": "Five routes statically cover four constellations, six hero stars, twelve nebulae and the external pulsar; historical browser evidence is retained separately",
+    "physicsBoundary": "Relation navigation is presentation/catalog state only; EIH, Newton N-body, 2PN/Lense–Thirring and Kerr kernels are not mutated"
+  },
+  "remaining": [
+    "Re-run the five-route/direct-relation/lifecycle matrix on build h08Dhkk9omMt2ifEk6SBu before A5 exit; prior Rb2 receipts remain historical after the telemetry rebuild."
+  ],
+  "release": "not-qualified"
+}

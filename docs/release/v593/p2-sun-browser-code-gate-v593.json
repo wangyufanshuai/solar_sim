@@ -1,0 +1,379 @@
+{
+  "version": "v593-p2-sun-browser-code-gate-v1",
+  "generatedAt": "2026-08-22T12:00:00.000Z",
+  "status": "passed-current-dev-sun-code-gate-sealed-build-and-human-signoff-pending",
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "formalProductPointer": "v263",
+    "additiveOnly": true
+  },
+  "scope": {
+    "signaturePassesCodeImplemented": 4,
+    "signaturePassesComplete": 0,
+    "implemented": [
+      "sun",
+      "jupiter",
+      "saturn",
+      "stellar-archetypes"
+    ],
+    "pending": [
+      "earth",
+      "deep-sky"
+    ],
+    "finalGoldenFrameMatrixComplete": false,
+    "sealedBuildEvidence": false,
+    "humanVisualSignoff": false
+  },
+  "sourceMaterialCorrectness": {
+    "bridge": {
+      "path": "app/components/SignatureArtDirectionBridgeV593.tsx",
+      "bytes": 52682,
+      "sha256": "353c60ea70b44dff6e4fc96da35219c2fbd733247fd0e996e52b19fe829a1f74"
+    },
+    "shell": {
+      "path": "app/components/FinalArtObservatoryShellV593.tsx",
+      "bytes": 27042,
+      "sha256": "92a4263cfefed3723d3cb17b6098f10b2dbbc721ec38e381b690c930001deb33"
+    },
+    "overlay": {
+      "path": "public/data/celestial-convergence-v591/sun-asset-overlay.json",
+      "bytes": 8798,
+      "sha256": "53a47eafaeadceeb2d00a721beb798f783f16c8d4187005aacd54f05f6a7b1eb",
+      "receiptSha256": "d420c232741444a9802141b0ac11bf8bf15bd044a3f077a2b80cd1251f7148a7"
+    },
+    "verifiedSourceVariants": [
+      {
+        "path": "public/textures/candidate-v591/sun/full/desktop/sun-photosphere.ktx2",
+        "bytes": 31284870,
+        "sha256": "b173b0390917bfb6f8b522967ec8f5b1ae3446291c257d2b0b52229747a4284c"
+      },
+      {
+        "path": "public/textures/candidate-v591/sun/full/desktop/sun-chromosphere.ktx2",
+        "bytes": 9332669,
+        "sha256": "aa310a68472ede92fc583a86f2d5c72ac3d32cca9123e56f1550596b4797b8ec"
+      }
+    ],
+    "photosphere": "NASA-SDO-HMI-source-bound-local-contrast-sunspot-granulation-and-limb-darkening",
+    "chromosphere": "NASA-SDO-AIA-304-source-bound-bounded-rim-and-spicule-layer",
+    "corona": "inherited-v591-deterministic-presentation-corona-restrained-cinematic-only",
+    "mirroredHemisphereDisclosure": true,
+    "scientificObservationMapClaim": false
+  },
+  "captures": [
+    {
+      "id": "cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-solar-orientation",
+      "initialJulianDate": 2461287.99994,
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "photospherePatchCount": 1,
+        "chromospherePatchCount": 1,
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-v592-baseline-1440x900.png",
+        "bytes": 106449,
+        "sha256": "16f0aaabe771a3af7800c41fbb052fed9f01c7b695612ecef6247ebc05511a03",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-v593-signature-1440x900.png",
+        "bytes": 105928,
+        "sha256": "fc71f908265b142581c6e8815339227934fef0a9df7261744a875b70d79c4998",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-v592-baseline-1440x900-native-crop.png",
+        "bytes": 329217,
+        "sha256": "1fd8e1a5b5887ae2d5dbac7ab85833652af7822086ef9d8f19cc30ae0e9ff119",
+        "width": 540,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-v593-signature-1440x900-native-crop.png",
+        "bytes": 348249,
+        "sha256": "c053826b72f95c99de643149f4c9d98f62c1b8a7c873a623e7fc19d54212ea8b",
+        "width": 540,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.4709,
+        "changedChannelFractionGt2": 0.12555684,
+        "maximumChannelDiff255": 133
+      },
+      "baselineDiskMetrics": {
+        "centerMean255": 180.206189,
+        "centerStdDev255": 4.055398,
+        "limbMean255": 163.792847,
+        "centerToLimbRatio": 1.10020793,
+        "p01": 164.254,
+        "p05": 167.6792,
+        "median": 176.7566,
+        "p95": 184.771,
+        "darkStructureSpan255": 12.5026
+      },
+      "signatureDiskMetrics": {
+        "centerMean255": 182.24251,
+        "centerStdDev255": 3.225825,
+        "limbMean255": 151.83173,
+        "centerToLimbRatio": 1.20029265,
+        "p01": 160.5806,
+        "p05": 164.0832,
+        "median": 176.2328,
+        "p95": 184.8128,
+        "darkStructureSpan255": 15.6522
+      }
+    },
+    {
+      "id": "science",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-solar-orientation",
+      "initialJulianDate": 2461287.99994,
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "photospherePatchCount": 1,
+        "chromospherePatchCount": 1,
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-science-v592-baseline-1440x900.png",
+        "bytes": 113527,
+        "sha256": "05e43f3dc0b5e67d7685976efebfbfcd2dff3060e735cd4233c752f84e1e5b67",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-science-v593-signature-1440x900.png",
+        "bytes": 105043,
+        "sha256": "9170df780651689ef8e6faa2afaa48260b7f582b1ec3a8d83169be275405e1d1",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-science-v592-baseline-1440x900-native-crop.png",
+        "bytes": 335050,
+        "sha256": "5051515050fbdb270c1d86d644cf8939910034b98a20ec61576c3ddfd18ba1f3",
+        "width": 540,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sun-science-v593-signature-1440x900-native-crop.png",
+        "bytes": 258822,
+        "sha256": "e52404e4d7784d35e227e6ee882010cd33f12250ed12a00856799c54158b7be0",
+        "width": 540,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.625823,
+        "changedChannelFractionGt2": 0.12850643,
+        "maximumChannelDiff255": 133
+      },
+      "baselineDiskMetrics": {
+        "centerMean255": 154.883575,
+        "centerStdDev255": 4.713724,
+        "limbMean255": 137.678197,
+        "centerToLimbRatio": 1.12496807,
+        "p01": 137.6624,
+        "p05": 141.0916,
+        "median": 150.6624,
+        "p95": 160.224,
+        "darkStructureSpan255": 13
+      },
+      "signatureDiskMetrics": {
+        "centerMean255": 152.299704,
+        "centerStdDev255": 2.015779,
+        "limbMean255": 121.787385,
+        "centerToLimbRatio": 1.25053761,
+        "p01": 131.291,
+        "p05": 133.6492,
+        "median": 145.7764,
+        "p95": 153.7632,
+        "darkStructureSpan255": 14.4854
+      }
+    }
+  ],
+  "detailCrops": [
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/sun-v592-baseline-1440x900-surface-crop.png",
+      "bytes": 100577,
+      "sha256": "3456d7250a5f225fe58925d2606325666b642cc50c7ff6d477814fbcf1c1fe37",
+      "width": 320,
+      "height": 320,
+      "format": "png"
+    },
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/sun-v593-signature-1440x900-surface-crop.png",
+      "bytes": 101081,
+      "sha256": "b9e9be847ea02e0e5092a7424293f628c294aa8d054db6fb3d44092b65564983",
+      "width": 320,
+      "height": 320,
+      "format": "png"
+    },
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/sun-v592-baseline-1440x900-limb-crop.png",
+      "bytes": 117333,
+      "sha256": "fc40f3b8fd38c43a2e03ec3665d7094ad9c48bc241a9491709f1c01c2a39c3c0",
+      "width": 220,
+      "height": 460,
+      "format": "png"
+    },
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/sun-v593-signature-1440x900-limb-crop.png",
+      "bytes": 126691,
+      "sha256": "ebf9812356098f7450421a0a751fd4e22de69d3791ee6565dc083d4d7cd4f1b1",
+      "width": 220,
+      "height": 460,
+      "format": "png"
+    }
+  ],
+  "visualInspection": {
+    "currentDevNativeScale": "passed-code-gate",
+    "meridianSeam": "no-visible-hard-seam-at-fixed-orientation",
+    "poleAndLimb": "passed-bounded-pole-reconstruction-and-center-to-limb-contrast",
+    "darkStructure": "passed-source-bound-sunspot-structure-visible-without-synthetic-observation-claim",
+    "highlightClipping": "passed-no-flat-white-disk-or-full-screen-bloom",
+    "finalHumanArtSignoff": false
+  },
+  "browser": {
+    "runner": "Codex-in-app-browser",
+    "viewport": "1440x900",
+    "singleCanvas": true,
+    "consolePageWebglErrorCount": 0,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadUniqueCount": 1,
+    "scientificPayloadWriteback": false,
+    "performance": [
+      {
+        "id": "science",
+        "sampleCount": 30,
+        "medianFps": 174.064404,
+        "minimumSampledFps": 141.643059,
+        "gpuBytes": 156587462,
+        "drawCalls": 7,
+        "triangles": 78792,
+        "programs": 6,
+        "textures": 5
+      },
+      {
+        "id": "cinematic",
+        "sampleCount": 30,
+        "medianFps": 164.880462,
+        "minimumSampledFps": 74.654722,
+        "gpuBytes": 157636038,
+        "drawCalls": 8,
+        "triangles": 78794,
+        "programs": 8,
+        "textures": 8
+      }
+    ],
+    "resourceCycles": {
+      "baselineSignatureCycleCount": 4,
+      "sampledStateCount": 8,
+      "baselineStates": [
+        {
+          "programs": 7,
+          "textures": 6
+        },
+        {
+          "programs": 7,
+          "textures": 6
+        },
+        {
+          "programs": 7,
+          "textures": 6
+        },
+        {
+          "programs": 7,
+          "textures": 6
+        }
+      ],
+      "signatureStates": [
+        {
+          "programs": 9,
+          "textures": 8
+        },
+        {
+          "programs": 9,
+          "textures": 8
+        },
+        {
+          "programs": 9,
+          "textures": 8
+        },
+        {
+          "programs": 9,
+          "textures": 8
+        }
+      ],
+      "finalBaseline": {
+        "patchCount": 0,
+        "programs": 7,
+        "textures": 6
+      },
+      "sustainedGrowth": false
+    },
+    "rotation": {
+      "body": "sun",
+      "authority": "rotation-admitted-iau-linear-reference",
+      "poleRaDeg": 286.13,
+      "poleDecDeg": 63.87,
+      "signedRotationDegPerDay": 14.1844,
+      "rotationPeriodDays": 25.37999492,
+      "absolutePrimeMeridian": true,
+      "differentialRotation": "active-presentation-physics-model-one-material",
+      "timeLapse": {
+        "requestedRateSecondsPerSecond": 86400,
+        "startPrimeMeridianDeg": 42.78434894,
+        "endPrimeMeridianDeg": 59.93825308,
+        "observedPrimeMeridianDeltaDeg": 17.15390414,
+        "observedVisualDeltaDeg": 16.95014678
+      },
+      "realRate": {
+        "requestedRateSecondsPerSecond": 1,
+        "requestedVisibleWindowSeconds": 2.2,
+        "startPrimeMeridianDeg": 42.78434894,
+        "endPrimeMeridianDeg": 42.78476351,
+        "observedPrimeMeridianDeltaDeg": 0.00041457
+      },
+      "paused": {
+        "rateSecondsPerSecond": 0,
+        "observedPrimeMeridianDeltaDeg": 0
+      },
+      "w0BlockedDisclosed": [
+        "bennu",
+        "kleopatra"
+      ],
+      "presentationAccelerationWriteback": false
+    }
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "productionReleaseAuthorized": false
+  },
+  "receiptSha256": "3fcdfcddf1b1434a23c179f0911edce929f11dfc0de0720c5bb1be752a5a8c5e"
+}

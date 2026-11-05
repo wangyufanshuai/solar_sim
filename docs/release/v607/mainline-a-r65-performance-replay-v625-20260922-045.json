@@ -1,0 +1,103 @@
+{
+  "schema": "mainline-a-performance-replay-v625",
+  "generatedAt": "2026-09-22T04:26:34.272Z",
+  "sourceReceipt": "docs/release/v607/mainline-a-r65-performance-v625-20260922-045.json",
+  "sourceReceiptDigest": "f6e78748",
+  "replayMode": "deterministic-ledger-replay",
+  "evidenceClass": "static-replay",
+  "runs": [
+    {
+      "runId": "r65-desktop-001-38fae5d3",
+      "key": "desktop:atlas:1280:720:1.0000000298023224",
+      "device": "desktop",
+      "scenario": "atlas",
+      "frameSamples": 632,
+      "p95Ms": 11.119999999995343,
+      "medianFps": 179.85611510798898,
+      "resourceBefore": "f6448291",
+      "resourceAfter": "f6448291",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-desktop-002-a0763502",
+      "key": "desktop:atlas:1280:720:1.0000000298023224",
+      "device": "desktop",
+      "scenario": "atlas",
+      "frameSamples": 700,
+      "p95Ms": 5.655249999999069,
+      "medianFps": 180.01800180040638,
+      "resourceBefore": "f6448291",
+      "resourceAfter": "f6448291",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-desktop-003-c9c4525c",
+      "key": "desktop:atlas:1280:720:1.0000000298023224",
+      "device": "desktop",
+      "scenario": "atlas",
+      "frameSamples": 666,
+      "p95Ms": 11.10999999998603,
+      "medianFps": 179.85611510798898,
+      "resourceBefore": "f6448291",
+      "resourceAfter": "f6448291",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-mobile-004-e7f6faa0",
+      "key": "mobile:atlas:390:844:1.0000000298023224",
+      "device": "mobile",
+      "scenario": "atlas",
+      "frameSamples": 679,
+      "p95Ms": 11.070000000006985,
+      "medianFps": 180.01800179946324,
+      "resourceBefore": "38a923ae",
+      "resourceAfter": "38a923ae",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-mobile-005-a118e022",
+      "key": "mobile:atlas:390:844:1.0000000298023224",
+      "device": "mobile",
+      "scenario": "atlas",
+      "frameSamples": 699,
+      "p95Ms": 5.670500000013272,
+      "medianFps": 180.01800180040638,
+      "resourceBefore": "38a923ae",
+      "resourceAfter": "38a923ae",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-mobile-006-54e56580",
+      "key": "mobile:atlas:390:844:1.0000000298023224",
+      "device": "mobile",
+      "scenario": "atlas",
+      "frameSamples": 716,
+      "p95Ms": 5.649999999994179,
+      "medianFps": 180.01800180040638,
+      "resourceBefore": "38a923ae",
+      "resourceAfter": "38a923ae",
+      "lifecycle": "baseline",
+      "status": "complete"
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed"
+  },
+  "failures": [
+    "required-long-run-or-physical-device-missing"
+  ],
+  "status": "blocked",
+  "notes": [
+    "Replay validates ledger shape and resource identity only.",
+    "It does not create frames, memory samples, screenshots, device results, or scientific evidence."
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "version": "v592-major-moon-usgs-final-visual-source-acquisition-v1",
+  "generatedAt": "2026-08-20T07:06:32.561Z",
+  "status": "partial-usgs-pds-tiffs-with-terminal-failures-no-retry",
+  "definitionPath": "scripts/v592-major-moon-usgs-final-visual-sources.json",
+  "redirectAdmissionReceiptSha256": "feac7782ddebde747bc16b1edea85fd69d05d2bdd7b3519582ca60b623234701",
+  "policy": {
+    "exactHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "requestCountPerUrl": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "redirectFollowed": false,
+    "atomicWrite": ".part-to-final",
+    "sourceCacheMaximumBytes": 2147483648,
+    "finalSourceCacheBytes": 108345335,
+    "visualAssetAdmissionGrantedByAcquisition": false,
+    "scientificAuthorityGranted": false,
+    "presentationOnly": true
+  },
+  "requestedUrls": [
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.tif",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif"
+  ],
+  "assets": [],
+  "failures": [
+    {
+      "target": "io",
+      "id": "io-usgs-color-merged-global-mosaic-1km-final",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "terminated"
+    },
+    {
+      "target": "europa",
+      "id": "europa-usgs-global-mosaic-500m-final",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "target": "ganymede",
+      "id": "ganymede-usgs-color-global-mosaic-1435m-final",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "target": "callisto",
+      "id": "callisto-usgs-global-mosaic-1km-final",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "terminated"
+    }
+  ],
+  "receiptSha256": "d42d2757846dd53abe224c938c7ea9dd5895a5c2156ef462765e60686327a68c"
+}

@@ -1,0 +1,58 @@
+{
+  "schema": "mainline-a-r78-code-change-v665",
+  "round": 78,
+  "date": "2026-10-13",
+  "status": "effective-operational-web-batch-counted-runtime-gates-pending",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouchedByRound": false,
+    "parallelRelativityWindowExcludedFromCounts": true
+  },
+  "newProductionAndOperationalCode": [
+    "scripts/mainline-a-r78-longrun-series-v665.mjs",
+    "scripts/verify-mainline-a-r78-longrun-v665.mjs",
+    "scripts/audit-mainline-a-r78-longrun-v665.mjs",
+    "scripts/build-mainline-a-r78-web-candidate-v665.mjs",
+    "scripts/capture-mainline-a-r78-web-evidence-v665.mjs",
+    "scripts/verify-mainline-a-r78-external-boundary-v665.mjs"
+  ],
+  "modifiedExistingOperationalCode": [
+    "scripts/capture-mainline-a-web-r65-longrun-v650.mjs"
+  ],
+  "newSubstantiveTests": [
+    "scripts/mainline-a-r78-longrun-series-v665.test.mjs",
+    "scripts/verify-mainline-a-r78-longrun-v665.test.mjs",
+    "scripts/build-mainline-a-r78-web-candidate-v665.test.mjs",
+    "scripts/capture-mainline-a-r78-web-evidence-v665.test.mjs",
+    "scripts/verify-mainline-a-r78-external-boundary-v665.test.mjs"
+  ],
+  "lineMethod": "Count nonempty noncomment lines in six new operational production code files and five substantive test files. The modified pre-R78 long-run driver has no independently preserved source baseline, so its changes are excluded from all effective line thresholds. Generated manifests, receipts, screenshots, logs, documentation, lockfiles, and concurrent relativity changes are excluded.",
+  "counts": {
+    "newProductionAndOperationalCodeFiles": 6,
+    "newSubstantiveTestFiles": 5,
+    "existingOperationalCodeFilesModified": 1,
+    "effectiveNewProductionAndToolLines": 1736,
+    "effectiveNewSubstantiveTestLines": 594,
+    "effectiveNewCodeLinesTotal": 2330,
+    "modifiedExistingDriverLinesCredited": 0,
+    "minimum500MetWithoutTestsOrExistingModifications": true,
+    "target1000MetWithoutTestsOrExistingModifications": true
+  },
+  "behavior": [
+    "Read real browser long-run frame and heap samples into six five-minute windows, detect coverage gaps, report frame budgets and heap trend without making production-performance claims.",
+    "Independently verify two nonoverlapping 30-minute observations, build identity, clock agreement, real renderable resource acquisition, and complete baseline release.",
+    "Bind long-run raw bytes, the frozen 96-entry matrix, the 36 A-line scenes, screenshots, HTTP modes, and the preserved build into a fail-closed web candidate package.",
+    "Replay prior real raw source and asset pins without new network requests, keeping four stellar component identities, five nebula image chains, and rights signatures pending.",
+    "Capture fresh local enabled/default-off HTTP and desktop/simulated-mobile browser evidence from one frozen build; rehash screenshot bytes and dimensions."
+  ],
+  "boundary": {
+    "physicsKernelEditedByRound": false,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

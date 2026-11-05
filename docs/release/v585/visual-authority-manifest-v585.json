@@ -1,0 +1,94 @@
+{
+  "version": "v585-visual-authority-manifest-v1",
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "status": "preview-qualified-production-user-confirmation-required",
+  "formalPointers": {
+    "product": "v263",
+    "scienceKernel": "legacy-eih-1pn",
+    "visual": "stable-v263-legacy-v9",
+    "scienceVisualPointersIndependent": true,
+    "formalPointerAdvanced": false
+  },
+  "lanes": {
+    "stable": {
+      "id": "stable-v263-legacy-v9",
+      "authority": "Legacy V9",
+      "default": true,
+      "assetRecoverySha256": "075fc10592e65e72b0d850a3d4a4fa03786827812f2c6181225fb656e0b3c3e8",
+      "runtimeImportBoundarySha256": "c3c21c048261be4005b4c221c696492059e391f82f1c007d9c291d9b65ba99d5"
+    },
+    "candidate": {
+      "id": "candidate-v562",
+      "authority": "candidate-only-not-v263-not-legacy-v9",
+      "default": false,
+      "manifestSha256": "20c61d175655b66437fe8fe6f95f5efbce071d3c333db106e0469fa84e6e074e",
+      "namespace": "candidate-v562",
+      "publicPreviewOnly": true
+    },
+    "experimental": {
+      "id": "experimental-hero",
+      "authority": "presentation-only",
+      "default": false,
+      "sharedScientificGeometry": true,
+      "scienceWriteback": false,
+      "additionalCanvas": false
+    }
+  },
+  "evidence": {
+    "visualFreezeAuditSha256": "52ef884c13eccab0a48b6d290f9f1f3b0685fcd8813addaf126b7aa3b0a07782",
+    "legacyRecoverySha256": "075fc10592e65e72b0d850a3d4a4fa03786827812f2c6181225fb656e0b3c3e8",
+    "importBoundarySha256": "c3c21c048261be4005b4c221c696492059e391f82f1c007d9c291d9b65ba99d5",
+    "publicAvailabilitySha256": "ef21aa5ca5dfbf5d75ecd3e26cd6e588051964ae20bd6ef1c5db971901e4ee8d",
+    "visualMatrixSha256": "7db08992e60ce66c783f5eaf5e224c11723005d8dc5b412e97c91eddebaf250c",
+    "previewDeploymentReceiptSha256": "74e5250ec11a35aeb2b04994abb01ceec9ea5de9f2f75ec2d513aebd00b5a0b4",
+    "publicHeadBlockerReceiptSha256": "3d8bd25236323e005c5446fbba7a82aa0c3cc73771d0bce7336c6c2d41621e66",
+    "publicHeadAdmissionReceiptSha256": "ff8e192c69127ee6a854b8c06bab043eca0774b0ca22b65a7217399de4912e25",
+    "gitPushBlockerReceiptSha256": "8eaf85ee9c7a919f69c833a4f4fec84bb86564ca3120a554aa07f27dc05632ae"
+  },
+  "gates": {
+    "staticFreeze": true,
+    "buildProfiles": true,
+    "legacyAssetsComplete": true,
+    "stableCandidateSeparated": true,
+    "candidateNamespace": true,
+    "browserMatrix": true,
+    "visualRegression": true,
+    "previewDeploymentReady": true,
+    "previewBrowserRootReachable": true,
+    "previewHead200": true,
+    "gitRemoteConfigured": false,
+    "userPromotionConfirmation": false,
+    "productionAliasSwitchAllowed": false
+  },
+  "immutableBoundaries": {
+    "historicalV263EvidenceRewritten": false,
+    "historicalV9ManifestRewritten": false,
+    "legacyEih1pnMutated": false,
+    "productionAliasChanged": false,
+    "currentDeploymentDeleted": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/data/atlasVisualCandidateAssetsV562.json",
+      "bytes": 8704,
+      "sha256": "fb3269f4c81c5b406784a9ea22133c6bce61a98ec7f0ded227562512db530f77"
+    },
+    {
+      "path": "app/lib/atlasVisualAuthorityV585.ts",
+      "bytes": 1706,
+      "sha256": "6d20a5c9fb35eed534ef1fbdb6acfa6dde845be2b8624fb58ee6ef2a48d989ab"
+    },
+    {
+      "path": "dist/science/atlas-visual-candidate-v562/manifest.json",
+      "bytes": 20250,
+      "sha256": "b2a3cfa3d6c1184741ab1fbcabc7b8e6baf72b8ca1a20d1810c2674a828820d7"
+    },
+    {
+      "path": "scripts/build-visual-freeze-v585.mjs",
+      "bytes": 39799,
+      "sha256": "01569a70680020dd32bb85dd8afc55c1620c9d88322dbc8cb0c620f04e86c537"
+    }
+  ],
+  "sourceSha256": "3a41b11cf2adb998df7bc347d54d29d8869bf691a88c489695f0531092f6b606",
+  "artifactSha256": "b9ad5a2ce793f303691ed9ceb0e4df48cad25e5d8a4127b3e5335e001a6e983a"
+}

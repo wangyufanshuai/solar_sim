@@ -1,0 +1,37 @@
+{
+  "schema": "mainline-a-r77-static-v664",
+  "date": "2026-10-13",
+  "status": "passed-current-source-local",
+  "appSourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+  "node": {
+    "command": "npx tsx --test scripts/build-mainline-a-r77-web-freeze-v664.test.mjs scripts/verify-mainline-a-r77-http-v664.test.mjs scripts/audit-mainline-a-r77-evidence-v664.test.mjs",
+    "passed": 24,
+    "failed": 0
+  },
+  "vitest": {
+    "command": "npx vitest run app/lib/mainlineAReviewNavigationV664.test.ts app/lib/mainlineAWebReadinessV663.test.tsx app/lib/mainlineAWebAcceptanceV662.test.tsx",
+    "passed": 23,
+    "failed": 0,
+    "testFilesReported": 3
+  },
+  "targetedEslint": {
+    "status": "passed-zero-warnings",
+    "targetedFiles": 13
+  },
+  "freezeReplay": {
+    "status": "verified-candidate-hold",
+    "matrixRows": 96,
+    "canonicalScenes": 36,
+    "filePinChecks": 57,
+    "fingerprint": "560e375e07e288133e0644ce250366cd3e4d31c05e23fd275c1472608189a78a"
+  },
+  "v616SnapshotSha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+  "v616ProjectionSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+  "v616DigestsChanged": false,
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "realUserValidation": false,
+    "productionPerformance": false
+  }
+}

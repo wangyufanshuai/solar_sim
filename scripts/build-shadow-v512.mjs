@@ -1,0 +1,2 @@
+import { spawnSync } from "node:child_process"; import { resolve } from "node:path";
+for(const script of ["scripts/build-kerr-science-product-eligibility-graph-v512.ts","scripts/build-kerr-science-product-runtime-v512.ts"]){const result=spawnSync(process.execPath,[resolve("node_modules/tsx/dist/cli.mjs"),script],{cwd:process.cwd(),encoding:"utf8",stdio:"inherit"});if(result.status!==0)throw new Error(`v512-build-exit-${script}-${result.status}`);}await import("./build-shadow-candidate-v512.mjs");

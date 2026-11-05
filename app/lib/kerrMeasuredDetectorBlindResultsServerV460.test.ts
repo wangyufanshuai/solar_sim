@@ -1,0 +1,4 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { loadKerrMeasuredDetectorBlindResultsV460, resetKerrMeasuredDetectorBlindResultsServerCacheForTestsV460 } from "./kerrMeasuredDetectorBlindResultsServerV460";
+afterEach(() => resetKerrMeasuredDetectorBlindResultsServerCacheForTestsV460());
+describe("v460 blind results server", () => { it("single-flights bounded production-null artifact", async () => { const first = loadKerrMeasuredDetectorBlindResultsV460(); const second = loadKerrMeasuredDetectorBlindResultsV460(); const [left, right] = await Promise.all([first, second]); expect(left.artifact.artifactSha256).toBe(right.artifact.artifactSha256); expect(left.summary.production.metrics.holdoutCoverage).toBeNull(); expect(left.export.bytes.byteLength).toBeLessThanOrEqual(128 * 1024); }); });

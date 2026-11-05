@@ -1,0 +1,154 @@
+{
+  "version": "v591-nasa-small-body-model-lod-receipt-v1",
+  "status": "three-lod-nasa-shape-model-ready-for-runtime-admission",
+  "body": "eros",
+  "source": {
+    "acquisitionReceiptPath": "docs/release/v591/acquisition-assets-nasa-git-blobs/eros-nasa-shape-source.json",
+    "acquisitionReceiptSha256": "f4f69b8f7827676014576d23d9f1ad8d14a2f851635e4f0fdaecd513c965f281",
+    "path": "source-cache/celestial-convergence-v591/small-bodies/eros/eros-nasa.stl",
+    "bytes": 10042884,
+    "sha256": "deeff6a7a82b920ed907483339c4ee32bc8f18e5854dbf71d194039640336be9",
+    "repositoryPath": "3D Printing/Asteroid 433 Eros/Asteroid 433 Eros.stl",
+    "gitBlobSha1": "62a3387878bf475d634819d5960806457d22763d",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "observationIdentity": "NASA 3D Resources Asteroid 433 Eros/Asteroid 433 Eros.stl",
+    "observationLimit": "shape presentation source; no measured photometry claim",
+    "detailCeiling": "nasa-shape-200856-triangles"
+  },
+  "normalized": {
+    "receiptSha256": "1856226c5a78aa60106de609855ccf1fe55b02b2edc86d1b8a123f6980d99cf7",
+    "triangleCount": 198730,
+    "vertexCount": 99367,
+    "watertight": true,
+    "eulerNumber": 2,
+    "bounds": [
+      [
+        "-1",
+        "-0.366108380759",
+        "-0.51701751257"
+      ],
+      [
+        "1",
+        "0.366108380759",
+        "0.51701751257"
+      ]
+    ],
+    "units": "normalized-diameter-2",
+    "pivot": "bounds-midpoint",
+    "rotationAxis": "positive-y",
+    "printableSplitReconstruction": {
+      "sourceComponentCount": 2,
+      "sourceEulerNumber": 4,
+      "capFaceCounts": [
+        1063,
+        1063
+      ],
+      "capAreas": [
+        "841.79572564",
+        "841.795651924"
+      ],
+      "boundaryVertexCountPerHalf": 1065,
+      "secondHalfTransform": "reflect-x;rotate-z-minus-15deg;reflect-across-cap-plane",
+      "topologyOrderReversed": false,
+      "topologyCyclicShift": 630,
+      "seamRmsSourceUnits": "1.39818479344e-06",
+      "seamMaximumSourceUnits": "3.77152484251e-06",
+      "outputComponentCount": 1,
+      "outputEulerNumber": 2,
+      "boundaryEdgeCount": 0,
+      "nonManifoldEdgeCount": 0,
+      "watertight": true
+    }
+  },
+  "pipeline": {
+    "trimeshVersion": "4.12.2",
+    "gltfTransformVersion": "4.4.2",
+    "stages": [
+      "inspect",
+      "weld",
+      "independent-simplify",
+      "prune",
+      "meshopt",
+      "inspect"
+    ],
+    "sourceInspection": {
+      "triangles": 198730,
+      "vertices": 99367,
+      "extensionsUsed": "none"
+    },
+    "weldedInspection": {
+      "triangles": 198730,
+      "vertices": 99367,
+      "extensionsUsed": "none"
+    },
+    "deterministicParameters": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "path": "public/models/candidate-v591/eros/eros-lod0.glb",
+      "bytes": 403736,
+      "sha256": "48063daa902c943206313851cf034510122d447bf96b9a432d45579bbafe7183",
+      "triangleCount": 99364,
+      "vertexCount": 49684,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.5,
+        "error": 0.006,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 1,
+      "path": "public/models/candidate-v591/eros/eros-lod1.glb",
+      "bytes": 109700,
+      "sha256": "5403b26139b0a93ae95985737e8c37c5b822b1ab6e031575f559cd8741355306",
+      "triangleCount": 24840,
+      "vertexCount": 12422,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.125,
+        "error": 0.018,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 2,
+      "path": "public/models/candidate-v591/eros/eros-lod2.glb",
+      "bytes": 24628,
+      "sha256": "58fccef2e5af627903e2d4d5f403ca31c5bb6574affed18102cabd9fa0a8a382",
+      "triangleCount": 4966,
+      "vertexCount": 2485,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.025,
+        "error": 0.05,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    }
+  ],
+  "sourceDetailCeiling": "nasa-shape-200856-triangles",
+  "presentationOnly": true,
+  "proceduralFallback": false,
+  "measuredPhotometryClaim": false,
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "133e2f6194401c7afab1873fe22c93e2bd3044cc551dcb3c55affeefba02ff66"
+}

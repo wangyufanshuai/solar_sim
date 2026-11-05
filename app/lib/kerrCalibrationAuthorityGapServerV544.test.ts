@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrCalibrationAuthorityGapV544, resetKerrCalibrationAuthorityGapServerCacheForTestsV544 } from "./kerrCalibrationAuthorityGapServerV544";
+describe("v544 calibration gap server", () => { it("loads the SHA-locked ten-row matrix through one cache entry", async () => { resetKerrCalibrationAuthorityGapServerCacheForTestsV544(); const first = await loadKerrCalibrationAuthorityGapV544(), second = await loadKerrCalibrationAuthorityGapV544(); expect(first).toBe(second); expect(first.exports.matrix.fileSha256).toBe(first.artifact.export.matrixFileSha256); expect(new TextDecoder().decode(first.exports.matrix.bytes).trim().split("\n")).toHaveLength(11); }); });

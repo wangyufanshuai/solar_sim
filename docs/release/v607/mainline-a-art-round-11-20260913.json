@@ -1,0 +1,15 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 11,
+  "title": "constellation-roster-4-to-8",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 12:22:00 UTC",
+  "status": "round-11-current-roster-and-dev-browser-evidence-passed",
+  "scope": "Mainline A additive constellation art roster; historical A1 first-set remains frozen",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged", "boundary and line layers remain presentation-only"],
+  "roster": {"historicalA1Constellations": 4, "currentConstellations": 8, "added": ["Cyg", "Gem", "Leo", "Cru"], "currentObjects": 32},
+  "code": {"files": ["app/data/mainlineAConstellationCurrentBoundaryDataV607.ts", "app/data/mainlineAMetadataV607.ts", "app/data/mainlineARegistryV607.ts"], "changes": ["added four source-bound IAU J2000 boundary rings", "added bilingual narratives, seasons and representative-star anchors", "kept A1 four-constellation acceptance snapshot unchanged and included current roster in registry"]},
+  "browser": {"mode": "in-app browser", "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite", "route": "对象浏览器 -> 天鹅座 -> 天体档案", "viewport": {"width": 1280, "height": 720}, "runtime": {"knowledgeId": "Cyg", "kind": "constellation", "knowledgeCardWidth": 335.33, "knowledgeCardHeight": 339.5, "canvasCount": 1, "documentOverflow": false, "consoleErrors": 0, "sourcesVisible": 3}, "screenshot": "docs/release/v607/screenshots/mainline-a-round-11-constellation-current-20260913.png", "screenshotBytes": 105183, "screenshotSha256": "00DA5B76F61266743BD4FFB3DF4F240C8227C3D37ABF64B4490A4F4D67D19B45", "evidenceBoundary": "development preview visual/runtime evidence; no performance or production claim"},
+  "tests": {"eslint": {"command": "npx eslint app/data/mainlineAMetadataV607.ts app/data/mainlineARegistryV607.ts app/data/mainlineAConstellationCurrentBoundaryDataV607.ts", "passed": true}, "vitest": {"command": "npx vitest run app/data/mainlineAMetadataV607.test.ts app/data/mainlineAConstellationBoundaryV607.test.ts app/data/mainlineAConstellationFiguresV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "passed": true, "tests": 34}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "packet regenerated after round 11"}
+}

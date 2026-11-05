@@ -1,0 +1,32 @@
+{
+  "version": "v592-major-moon-usgs-ckan-probe-v1",
+  "probedAt": "2026-08-19T13:36:04.025Z",
+  "status": "blocked-no-automatic-retry",
+  "probeId": "io-ckan-global-mosaic",
+  "target": "io",
+  "query": "Io global mosaic",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "visualPayloadDownloaded": false,
+    "redirectFollowed": false,
+    "itemLevelLicenseReviewRequired": true,
+    "metadataDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://astrogeology.usgs.gov/ckan/api/3/action/package_search?q=Io%20global%20mosaic&rows=100",
+    "finalUrl": "https://astrogeology.usgs.gov/ckan/api/3/action/package_search?q=Io%20global%20mosaic&rows=100",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "responseBytes": 11945,
+    "responseSha256": "03b160974ce048c723c03da3389b8f2001aa1ff0258dd53d81f0b8eb839248d5",
+    "outputPath": "source-cache/v592/major-moons/usgs-ckan/io-ckan-global-mosaic.json",
+    "redirectLocation": null,
+    "networkError": null
+  },
+  "totalMatches": 0,
+  "packages": [],
+  "visualAssetAdmission": false,
+  "receiptSha256": "11e3b6094e48ba417f862db3f9e7807395dc8f848e226a38879b709b48241a50"
+}

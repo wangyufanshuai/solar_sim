@@ -1,0 +1,49 @@
+{
+  "schema": "mainline-a-code-change-receipt-v645",
+  "round": "R66-continuation",
+  "generatedAt": "2026-10-07T04:44:28.637Z",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "priorReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-code-change-final.json",
+    "sha256": "440daebd09c5af20afddfab7804fcf306eaf6fb66ec33d2c491567791ec392cd"
+  },
+  "effectiveAddedSincePriorConservative": 183,
+  "effectiveModifiedSincePriorCounted": 0,
+  "modifiedLinesNotIndependentlyReconstructed": true,
+  "cumulativeEffectiveProductionAndToolLinesLowerBound": 1651,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "The new R66 browser evidence collector counts nonblank noncomment production lines. R66 alignment replay code was modified, but its preimage is unavailable and these changes are excluded from this conservative lower bound. Prior receipt is pinned; tests, screenshots, receipts and generated data are excluded.",
+  "newProductionTool": {
+    "path": "scripts/collect-mainline-a-r66-browser-evidence-v645.mjs",
+    "effectiveLines": 183,
+    "bytes": 10395,
+    "sha256": "e07fe18cc4b04fe0b7c691b3cc20a44bea885bbbe50db512ce08f48154ecbba1"
+  },
+  "editedProductionTool": {
+    "path": "scripts/mainline-a-release-evidence.mjs",
+    "bytes": 43600,
+    "sha256": "942a7c1410404f670402c5bd9c26275edc996f906afb21482f0f309e0d6dba00",
+    "incrementalEffectiveLinesCounted": 0
+  },
+  "validation": {
+    "node": "passed 41/41 R66 alignment tests and 5/5 browser collector tests",
+    "vitest": "passed 54/54 release alignment and canonical runtime tests",
+    "eslint": "passed targeted",
+    "typescript": "passed",
+    "productionBuild": "passed current V645 preserved build",
+    "http": "page and health 200",
+    "browser": "desktop observed; mobile pending",
+    "performance": "R65 first long run pending",
+    "physicalMobile": "not-run"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

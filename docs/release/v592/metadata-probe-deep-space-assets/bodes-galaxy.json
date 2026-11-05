@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:38.711Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "bodes-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "bodes-galaxy-supplement.json",
+    "metadataReceiptSha256": "3f7995ec8dcdd310e41bd508d9ecf947aa5b55d7e2dad2606d2ea4ebad7bf347",
+    "nasaId": "PIA09579",
+    "title": "M81 Galaxy is Pretty in Pink",
+    "description": "The perfectly picturesque spiral galaxy known as Messier 81, or M81, looks sharp in this new composite from NASA Spitzer and Hubble space telescopes and NASA Galaxy Evolution Explorer. ",
+    "center": "JPL",
+    "identityTerms": [
+      "m81"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA09579/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA09579/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA09579/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "9f688b1815cdc1f962a6537123daa4c087aa9441b5dc748165b54a4fb5d8e843"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/PIA09579~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA09579~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/PIA09579~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA09579~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/PIA09579~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA09579~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/PIA09579~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA09579~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/PIA09579~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA09579~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA09579/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA09579/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "6e145fef592cab17777b1d9f9cfdf103ec6e66f90a1420d17b9f2392320a28ec"
+}

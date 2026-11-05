@@ -1,0 +1,49 @@
+{
+  "stage": "A5",
+  "status": "relation-integrity-qualified-camera-telemetry-passed-relation-matrix-rebind-pending",
+  "verifiedAt": "2026-09-13T04:26:46Z",
+  "scope": "Mainline A internal and external relation targets used by the read-only object passport",
+  "checks": {
+    "internalRelationTargets": "every relatedObjectIds target resolves in MAINLINE_A1_OBJECTS",
+    "externalCatalogTargets": "every relatedCatalogIds target resolves in CELESTIAL_CATALOG_ENTRIES",
+    "reciprocity": "every internal edge is represented by the reverse relatedObjectIds edge",
+    "brokenInternalEdges": 0,
+    "brokenExternalEdges": 0,
+    "nonReciprocalEdges": 0,
+    "focusPath": "CelestialObjectPassportPanel -> onSelectRelatedObject(catalogId) -> requestCatalogObjectFocus -> setSelectedCelestialCatalogId + dispatchCameraFocusDirection"
+  },
+  "automatedEvidence": {
+    "test": "app/data/mainlineARelationV607.test.ts",
+    "testCommand": "npx vitest run app/data/mainlineARelationV607.test.ts --pool=threads --maxWorkers=1",
+    "result": "5 route entries and 23 unique targets covered; 34 combined Mainline A tests passed",
+    "routeCoverage": "all 4 constellations, 6 hero stars, 12 nebulae and external pulsar have at least one route step",
+    "physicsBoundary": "presentation and navigation only; no EIH, Newton N-body, 2PN/Lense-Thirring, or Kerr kernel mutation"
+  },
+  "knownRelations": [
+    "constellation:Ori -> nebula:m42, nearby-star:betelgeuse, nearby-star:rigel",
+    "nebula:m42 -> constellation:Ori, nearby-star:betelgeuse, nearby-star:rigel",
+    "nearby-star:betelgeuse -> constellation:Ori, nebula:m42",
+    "nearby-star:rigel -> constellation:Ori, nebula:m42",
+    "constellation:Sco -> nearby-star:antares",
+    "nearby-star:antares -> constellation:Sco",
+    "nebula:m1 -> pulsar:b0531+21"
+  ],
+  "remaining": [
+    "Rebind the five-route/direct-relation/focus-lifecycle browser matrix to build h08Dhkk9omMt2ifEk6SBu."
+  ],
+  "browserEvidence": {
+    "scope": "current bound build browser plus earlier development browser",
+    "confirmedPassportTransitions": [
+      "Ori -> nebula:m42",
+      "Ori -> nearby-star:betelgeuse",
+      "Ori -> nearby-star:rigel"
+    ],
+    "currentReceipt": "docs/release/v607/mainline-a5-relation-browser-current-20260913.json",
+    "currentBuildId": "h08Dhkk9omMt2ifEk6SBu",
+    "cameraDispatchCaptured": "presentation command marker plus independent actual position/target/forward telemetry captured",
+    "cameraTelemetryReceipt": "docs/release/v607/mainline-a5-camera-telemetry-current-20260913.json",
+    "completeRelationMatrix": false,
+    "routeMatrixReceipt": "docs/release/v607/mainline-a5-route-matrix-current-20260913.json",
+    "focusLifecycleReceipt": "docs/release/v607/mainline-a5-focus-lifecycle-current-20260913.json"
+  }
+}

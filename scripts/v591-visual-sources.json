@@ -1,0 +1,42 @@
+{
+  "version": "v591-visual-source-acquisition-v1",
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "allowedHosts": [
+      "sdo.gsfc.nasa.gov"
+    ]
+  },
+  "assets": [
+    {
+      "id": "sun-photosphere-source",
+      "body": "sun",
+      "role": "photosphere-source",
+      "sourceUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_HMIIC.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/sun/hmi-continuum-4096.jpg",
+      "expectedMediaType": "image/jpeg",
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "SDO/HMI intensitygram, acquisition-time latest frame",
+      "presentationOnly": true
+    },
+    {
+      "id": "sun-chromosphere-source",
+      "body": "sun",
+      "role": "chromosphere-source",
+      "sourceUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0304.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/sun/aia-304-4096.jpg",
+      "expectedMediaType": "image/jpeg",
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "SDO/AIA 304 angstrom, acquisition-time latest frame",
+      "presentationOnly": true
+    }
+  ]
+}

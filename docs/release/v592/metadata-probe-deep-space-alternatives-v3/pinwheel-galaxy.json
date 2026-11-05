@@ -1,0 +1,73 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v3",
+  "probedAt": "2026-08-19T12:42:21.568Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "pinwheel-galaxy",
+  "category": "galaxy",
+  "query": "M101 GALEX galaxy",
+  "requiredTermGroups": [
+    [
+      "m101",
+      "pinwheel"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v2/pinwheel-galaxy.json",
+    "receiptSha256": "6d9ea9dc6ccc83941bcf0c00a1c0bac5a2b8a9ecd32ce82ea278001fb8cffd3f",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M101&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M101+GALEX+galaxy&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M101+GALEX+galaxy&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3547,
+    "responseSha256": "5daf999da195edfaa9681125f7d0c498eb5270619ef716d1df0cc094514f3c90"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA04632",
+      "title": "Messier 101 Single Orbit Exposure",
+      "description": "This single orbit exposure, ultraviolet color image of Messier 101 was taken by NASA's Galaxy Evolution Explorer on June 20, 2003. Messier 101 is a large spiral galaxy located 20 million light-years from Earth. This image is a short and medium \"exposure\" picture of the evolution of star formation in a spiral galaxy. The far ultraviolet emission detects the younger stars as concentrated in tight spiral arms, while the near ultraviolet emission, which traces stars living for more than 100 million years, displays the movement of the spiral pattern over a 100 million year period. The red stars in the foreground of the image are Milky Way stars. http://photojournal.jpl.nasa.gov/catalog/PIA04632",
+      "center": "JPL",
+      "creator": null,
+      "dateCreated": "2003-07-25T16:20:10Z",
+      "keywords": [
+        "Galaxy Evolution Explorer GALEX",
+        "M101"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04632/collection.json"
+    },
+    {
+      "nasaId": "PIA04630",
+      "title": "Galaxy M101",
+      "description": "This three-color image of galaxy M101 was taken by NASA's Galaxy Evolution Explorer on June 20, 2003. The far ultraviolet emissions are shown in blue, the near ultraviolet emissions are green, and the red emissions, which were taken from NASA's Digital Sky Survey, represent visible light. This image combines short, medium, and long \"exposure\" pictures to best display the evolution of star formation in a spiral galaxy. http://photojournal.jpl.nasa.gov/catalog/PIA04630",
+      "center": "JPL",
+      "creator": null,
+      "dateCreated": "2003-07-25T16:20:05Z",
+      "keywords": [
+        "Galaxy Evolution Explorer GALEX",
+        "M101"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04630/collection.json"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "5ec184f925fad4b884e5d97f711f2b43933996de3fb6855a4f5ab86263585dd5"
+}

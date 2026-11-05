@@ -1,0 +1,30 @@
+{
+  "round": 30,
+  "date": "2026-09-13",
+  "title": "Beta hero admission-state browser proof",
+  "status": "verified-browser-desktop",
+  "scope": {
+    "route": "local dev / object browser / Named stellar roster",
+    "artChange": "Verified the rendered 24-card roster exposes 12 runtime-cleared and 12 evidence-pending labels and one status legend."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "heroCards": 24,
+    "runtimeCleared": 12,
+    "evidencePending": 12,
+    "legendCount": 1,
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-30-beta-hero-status-20260913.png",
+    "screenshotBytes": 102169,
+    "screenshotSha256": "7F90D8B61F5A82A99C420BCE6DCA6DC13A9B06BB596ED012FD6DDEA8437F62E1",
+    "viewport": "browser bridge default desktop; no mobile override"
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 4/4",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Browser proof confirms presentation and status wiring, not fresh stellar measurements or production acceptance.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

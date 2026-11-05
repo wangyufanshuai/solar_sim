@@ -1,0 +1,62 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v3",
+  "probedAt": "2026-08-19T12:42:21.483Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "black-eye-galaxy",
+  "category": "galaxy",
+  "query": "M64 Black Eye galaxy NASA",
+  "requiredTermGroups": [
+    [
+      "m64",
+      "black eye"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v2/black-eye-galaxy.json",
+    "receiptSha256": "9641c6fa8a48e96cd74fa6ff97690917d7321862376bcacde7c42452eb5e81cb",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M64&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M64+Black+Eye+galaxy+NASA&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M64+Black+Eye+galaxy+NASA&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 2480,
+    "responseSha256": "5a840af707011c34afaa22103351e647e2e24598a26843e6372219c7ca9813c6"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "0400392",
+      "title": "History of Hubble Space Telescope (HST)",
+      "description": "Residing roughly 17 million light years from Earth, in the northern constellation Coma Berenices, is a merged star system known as Messier 64 (M64). First cataloged in the 18th century by the French astronomer Messier, M64 is a result of two colliding galaxies and has an unusual appearance as well as bizarre internal motions. It has a spectacular dark band of absorbing dust in front of its bright nucleus, lending to it the nickname of the \"Black Eye\" or \"Evil Eye\" galaxy. Fine details of the dark band can be seen in this image of the central portion of M64 obtained by the Wide Field Planetary Camera (WFPC2) of NASA's Hubble Space Telescope (HST). Appearing to be a fairly normal pinwheel-shaped galaxy, the M64 stars are rotating in the same direction, clockwise, as in the majority of galaxies. However, detailed studies in the 1990's led to the remarkable discovery that the interstellar gas in the outer regions of M64 rotates in the opposite direction from the gas and stars in the irner region. Astronomers believe that the oppositely rotating gas arose when M64 absorbed a satellite galaxy that collided with it, perhaps more than one billion years ago. The Marshall Space Flight Center had responsibility for design, development, and construction of the HST.",
+      "center": "MSFC",
+      "creator": null,
+      "dateCreated": "2004-01-01T00:00:00Z",
+      "keywords": [
+        "Messier 64",
+        "M64",
+        "Black Eye",
+        "Hubble Space Telescope",
+        "HST"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/0400392/collection.json"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "a696a92f735efb9de48cead643178cfba215deb54223627ff8f3401a42559f9e"
+}

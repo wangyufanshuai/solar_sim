@@ -1,0 +1,35 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "nebula-lagoon",
+  "probedAt": "2026-08-13T10:30:06.628Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "lagoon-nebula",
+  "role": "real-coordinate-nebula-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Lagoon%20Nebula%20M8&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Lagoon%20Nebula%20M8&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 168,
+    "responseSha256": "6d6992494d8b86208de486cfbc3d07d0a0c5e40603153db8e45aa83b26f34ade"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "2d084f9922e67953a5f58daa5d788357856144bb19d0244f9900fd25ca6ba651"
+}

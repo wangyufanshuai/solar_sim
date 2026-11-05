@@ -1,0 +1,15 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 10,
+  "title": "hero-star-roster-6-to-12",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 12:08:00 UTC",
+  "status": "round-10-static-roster-and-source-evidence-passed",
+  "scope": "Mainline A additive current art roster; historical A1 first-set remains frozen",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged", "all portraits remain presentation-model-only"],
+  "roster": {"historicalA1Stars": 6, "currentStars": 12, "added": ["canopus", "arcturus", "vega", "capella-a", "procyon-a", "aldebaran"], "currentObjects": 28},
+  "code": {"files": ["app/data/mainlineAMetadataV607.ts", "app/data/mainlineAStellarEvidenceV607.ts", "app/data/mainlineARegistryV607.ts", "scripts/render-mainline-a4-portraits.ts"], "changes": ["added six source-bound star narratives and evidence references", "added current 12-star roster while preserving A1 six-star snapshot", "added capella/procyon forward and reverse aliases", "rendered dynamic 12-panel contact sheet"]},
+  "staticVisual": {"image": "docs/release/v607/visuals/stellar-portraits-v607.png", "width": 1160, "height": 1540, "bytes": 1070951, "sha256": "FD3E7D3613B2C3B5B6F7982411D894ADFCB6285FDD99224E83EB646F9763D864", "objects": ["alpha-centauri-a", "achernar", "betelgeuse", "sirius-a", "rigel", "antares", "canopus", "arcturus", "vega", "capella-a", "procyon-a", "aldebaran"], "evidenceBoundary": "React SSR SVG plus sharp static visual only; does not prove browser or performance acceptance"},
+  "tests": {"eslint": {"passed": true, "command": "npx eslint app/components/MainlineAStellarPortraitV607.tsx app/data/mainlineAMetadataV607.ts app/data/mainlineAStellarEvidenceV607.ts app/data/mainlineARegistryV607.ts scripts/render-mainline-a4-portraits.ts"}, "vitest": {"passed": true, "tests": 45, "command": "npx vitest run app/data/mainlineAMetadataV607.test.ts app/data/mainlineAStellarEvidenceV607.test.ts app/data/mainlineAObservationRoutesV607.test.ts app/data/mainlineA3MetadataV607.test.ts app/lib/stellarHeroesV592.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**"}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "browser acceptance for added six remains a separate follow-up gate; packet regenerated after round 10"}
+}

@@ -1,0 +1,19 @@
+{
+  "round": 32,
+  "date": "2026-09-13",
+  "title": "Beta hero roster narrow-layout guard",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/PostV593StellarRosterPanel.tsx",
+    "artChange": "Added min-width and horizontal-overflow guards to the scroll container, grid, and hero cards, preserving two-column readability on narrow layouts."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 5/5",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The narrow-layout guard is statically verified; the current browser bridge still lacks viewport override support.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "schema": "mainline-a-blocked-audit-v1",
+  "recordedAt": "2026-09-27T07:26:37.341Z",
+  "runId": "20260927-062",
+  "previousGoalTurn": {
+    "runId": "20260927-061",
+    "classification": "completed-independent-review-no-gate-advancement",
+    "observation": "Independent review completed; no live job or browser run remained to wait for."
+  },
+  "latestAudit": {
+    "path": "docs/release/v607/mainline-a-technical-acceptance-audit-20260927-060.json",
+    "sha256": "59687d56266e9aeb6ebf8bcf1cb3522fa998e93eeed54613e6ce30335a8d029d",
+    "bytes": 10388
+  },
+  "latestCheckpoint": {
+    "path": "docs/release/v607/mainline-a-goal-checkpoint-20260927-061.json",
+    "sha256": "deef3b26d913b44b92761bc1c3675c0ca3389e0bc23887267d1267652c2c7531",
+    "bytes": 3567
+  },
+  "readOnlyDeploymentDiscovery": {
+    "localProjectFile": {
+      "path": ".vercel/project.json",
+      "sha256": "83af11450e24ed96000dc7e5b233b0d388e89dfa66de15d9126fa73372702554",
+      "bytes": 425
+    },
+    "projectName": "next-web",
+    "projectResult": {
+      "path": "tmp/mainline-a-vercel-project-20260927-062-tool.json",
+      "sha256": "12281ea3f525a973a93cc31f6c4812077254ac2b2aba1cc4aa033288736453dd",
+      "bytes": 346
+    },
+    "projectResultStatus": "connector-input-validation-error",
+    "deploymentListResult": {
+      "path": "tmp/mainline-a-vercel-deployments-20260927-062-tool.json",
+      "sha256": "4d0fd165a31c8b2d52f074b47c8bf35d1438cc87aec407095d9178a2de82879f",
+      "bytes": 602
+    },
+    "deploymentListStatus": "403-forbidden-team-reauthorization-required",
+    "previewUrlObtained": false,
+    "deploymentCreated": false,
+    "filesUploaded": false,
+    "credentialsRead": false,
+    "authenticationBypass": false
+  },
+  "static": {
+    "currentSourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+    "currentSourceFiles": 2359,
+    "previousCodeAndTestFilesUnchanged": 15,
+    "protectedFiles": [
+      {
+        "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+        "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+        "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+        "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+      },
+      {
+        "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+        "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+      }
+    ],
+    "protectedFilesUnchanged": true,
+    "v619Check": {
+      "status": "verified",
+      "total": 4,
+      "pending": 4
+    },
+    "priorBuildAndValidation": {
+      "path": "docs/release/v607/mainline-a-art-round-66-v636-20260927-058.json",
+      "sha256": "bca17735071944b9a3e5b6b068c2c3031f157cb4149cd80f873d40f4f183fd5b",
+      "bytes": 19362
+    },
+    "rootIndependentCheck": {
+      "observedFiles": 10,
+      "bytes": 60651,
+      "changedFiles": 0,
+      "explicitManifestPaths": 24,
+      "absent": 24,
+      "unexpectedErrors": 0,
+      "scope": "Paths already listed in root-source055 and acceptance-seal059; no recursive search or root Git"
+    }
+  },
+  "evidenceThisTurn": {
+    "static": "current-input-replay-and-limited-root-review",
+    "http": "application-not-run",
+    "visual": "application-not-run",
+    "browser": "application-not-run",
+    "performance": "not-run",
+    "externalSource": "no-new-scientific-source-capture; deployment-metadata-read-denied"
+  },
+  "codeChange": {
+    "newDevelopmentRound": false,
+    "productionAddedLines": 0,
+    "productionModifiedLines": 0,
+    "effectiveCodeFiles": [],
+    "checkpointAndReceiptsExcluded": true
+  },
+  "release": {
+    "gatesPassed": 6,
+    "gatesTotal": 17,
+    "gateStates": [
+      {
+        "id": "build-current-source",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "root-readonly-input",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "next-web-identity",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "manifest-parity",
+        "evidenceClass": "static",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "root-manifest-not-present-or-mismatched"
+        ]
+      },
+      {
+        "id": "canonical-coverage",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "canonical-runtime",
+        "evidenceClass": "browser",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "canonical-runtime-clearance-pending"
+        ]
+      },
+      {
+        "id": "http",
+        "evidenceClass": "http",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "desktop-browser",
+        "evidenceClass": "browser",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "desktop-browser-not-run"
+        ]
+      },
+      {
+        "id": "mobile-viewport",
+        "evidenceClass": "browser",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "mobile-viewport-not-run"
+        ]
+      },
+      {
+        "id": "visual",
+        "evidenceClass": "visual",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "visual-evidence-not-observed"
+        ]
+      },
+      {
+        "id": "performance",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "lifecycle",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "nebula-file-integrity",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "stellar-component-identity",
+        "evidenceClass": "external-source",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "stellar-component-identity-pending"
+        ]
+      },
+      {
+        "id": "rights-closure",
+        "evidenceClass": "external-source",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "human-rights-signoff-pending"
+        ]
+      },
+      {
+        "id": "physical-mobile",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "physical-device-not-run"
+        ]
+      },
+      {
+        "id": "long-run",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "long-run:browser-device-not-observed",
+          "long-run:two-independent-runs-required"
+        ]
+      }
+    ],
+    "releaseApproved": false,
+    "goalComplete": false,
+    "stellarComponentPending": 4,
+    "rightsPending": 12,
+    "candidatePackage": {
+      "path": "docs/release/v607/mainline-a-r66-package-20260927-058b/manifest.json",
+      "sha256": "a6d25e1a5b5bf59574f90800648181fb1a334a530b0527c495c85f729a058253"
+    }
+  },
+  "blockedAudit": {
+    "resumedAfter": "20260927-059",
+    "consecutiveResumedTurns": [
+      "20260927-060",
+      "20260927-061",
+      "20260927-062"
+    ],
+    "condition": "No authorized observable application target is currently available for required browser acceptance.",
+    "publicSourceBrowserCompletionDoesNotSatisfyAppGate": true,
+    "newEvidenceThisTurn": "Local Vercel project binding exists, but authenticated deployment-list access is denied; no existing preview URL obtained.",
+    "oldLocalPermissionFailureRetriedThisTurn": false,
+    "noOutstandingJobHandle": true,
+    "independentSourceReviewComplete": true,
+    "independentImplementationDefectIdentified": false,
+    "implementationExpansionWouldNotCloseMissingObservations": true,
+    "thresholdMet": true,
+    "recommendedGoalStatus": "blocked"
+  },
+  "requiredExternalChanges": [
+    "Provide an existing approved application test URL or restore local browser permission checks.",
+    "Re-authorize the Vercel connector for the linked team if deployment discovery is needed.",
+    "Provide an authoritative root canonical manifest as read-only input.",
+    "Complete real scientific component review and actual device/lifecycle observations."
+  ],
+  "rightsDirective": "Preserve 12 unsigned records pending; do not ask again whether to keep pending.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "releaseApproved": false
+  }
+}

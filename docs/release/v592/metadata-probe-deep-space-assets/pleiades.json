@@ -1,0 +1,85 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:45.778Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "pleiades",
+  "category": "cluster",
+  "selection": {
+    "metadataProbeFile": "pleiades.json",
+    "metadataReceiptSha256": "e8682b62d49c20865da61a82f834c609bc5c42cba70dc573759e063ee62c540a",
+    "nasaId": "PIA08260",
+    "title": "The Seven Sisters",
+    "description": "The stars of the Pleiades cluster, also known by the names M45 and the",
+    "center": "JPL",
+    "identityTerms": [
+      "pleiades"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA08260/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA08260/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA08260/collection.json",
+    "status": 200,
+    "responseBytes": 195,
+    "responseSha256": "44edf99abbdf4b77639de1bbdb7736671338f328e78ac9a0879f9c2765a00dbc"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA08260/PIA08260~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA08260~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA08260/PIA08260~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA08260/PIA08260~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA08260~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA08260/PIA08260~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA08260/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA08260/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 3,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 3,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "8cfec74a884cb22e0d50f78649e00cf8a6b2bdd401a3dc233d3b165de0874f96"
+}

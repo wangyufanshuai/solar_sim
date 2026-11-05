@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:40.801Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "pinwheel-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "pinwheel-galaxy.json",
+    "metadataReceiptSha256": "fead9a78e76e380a8c287daf815ba3017232bb225fe42667a0001857a8f14687",
+    "nasaId": "PIA15630",
+    "title": "Pinwheel Galaxy Rainbow",
+    "description": "This image of the Pinwheel Galaxy, or M101, in the constellation of Ursa Major, combines data from four of NASA space telescopes. The view shows that both young and old stars are evenly distributed along M101 tightly wound spiral arms.",
+    "center": "JPL",
+    "identityTerms": [
+      "pinwheel"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15630/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA15630/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA15630/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "aa655d55c803dae8bf91a4648855690897a8ea2a4d901a862a12f5b5c799657e"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/PIA15630~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15630~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/PIA15630~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15630~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/PIA15630~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15630~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/PIA15630~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15630~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/PIA15630~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15630~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15630/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15630/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "f835b04a6f040c93fe9af091feff1781cfaf1fcac93dc823f920ea10e21ee6f5"
+}

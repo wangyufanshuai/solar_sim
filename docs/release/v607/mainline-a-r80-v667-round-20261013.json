@@ -1,0 +1,109 @@
+{
+  "schema": "mainline-a-r80-web-round-v667",
+  "round": 80,
+  "date": "2026-10-13",
+  "status": "local-web-art-candidate-verified-public-release-blocked",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+    "parallelRelativityWindowExcludedFromCounts": true,
+    "physicsKernelEditedByRound": false
+  },
+  "codeChange": {
+    "receipt": "docs/release/v607/mainline-a-r80-v667-code-change-20261013.json",
+    "newEffectiveProductionAndToolLines": 1287,
+    "newEffectiveSubstantiveTestLines": 510,
+    "newEffectiveCodeLinesTotal": 1797,
+    "existingFileModifiedLinesCredited": 0
+  },
+  "evidence": {
+    "static": {
+      "receipt": "docs/release/v607/mainline-a-r80-v667-static-20261013.json",
+      "status": "passed-current-source-local",
+      "node": "37/37",
+      "vitest": "49/49",
+      "targetedEslint": "passed-zero-warnings",
+      "v616SnapshotAndProjectionChanged": false
+    },
+    "build": {
+      "receipt": "docs/release/v607/mainline-a-r80-build-20261013v667r80web01.json",
+      "status": "passed-preserved-local-production-build",
+      "buildId": "OzXlBUCmLBXsMtceBdR7h",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "enabledReceipt": "docs/release/v607/mainline-a-r80-v667-http-enabled-20261013v667r80http01.json",
+      "defaultOffReceipt": "docs/release/v607/mainline-a-r80-v667-http-default-off-20261013v667r80http02.json",
+      "status": "passed-31-image-and-five-held-routes-two-local-modes"
+    },
+    "browser": {
+      "receipt": "docs/release/v607/mainline-a-r80-v667-browser-20261013v667r80browser02.json",
+      "canonicalSceneReceipt": "docs/release/v607/mainline-a-r80-v667-scene-verification-20261013.json",
+      "status": "passed-local-desktop-and-simulated-mobile",
+      "manualImageCycles": 62,
+      "canonicalSceneSelections": 72,
+      "physicalMobile": "not-run"
+    },
+    "visual": {
+      "browserScreenshotReceipt": "docs/release/v607/mainline-a-r80-v667-visual-20261013v667r80browser02.json",
+      "agentInspectionReceipt": "docs/release/v607/mainline-a-r80-v667-visual-inspection-20261013.json",
+      "status": "137-screenshots-rehashed-eight-agent-samples-inspected",
+      "perItemHumanVisualSignoff": false
+    },
+    "performance": {
+      "receipt": "docs/release/v607/mainline-a-r80-v667-performance-20261013.json",
+      "status": "short-local-browser-diagnostic-only",
+      "currentSourceLongRun": "not-run",
+      "productionPerformanceEstablished": false
+    },
+    "externalSource": {
+      "receipt": "docs/release/v607/mainline-a-r80-v667-external-source-20261013.json",
+      "status": "20-prior-real-source-pins-recomputed-no-new-https",
+      "stellarPhysicalComponentsConfirmed": 0,
+      "stellarComponentHolds": 4,
+      "betaNebulaImageReviewable": 19,
+      "betaNebulaImageHolds": 5,
+      "aNebulaRightsSigned": 0,
+      "betaNebulaRightsSigned": 0
+    },
+    "crossEvidenceReplay": {
+      "receipt": "docs/release/v607/mainline-a-r80-v667-evidence-replay-20261013.json",
+      "status": "passed-current-source-local-candidate-hold"
+    }
+  },
+  "coverage": {
+    "aRuntime": { "stars": 12, "constellations": 12, "nebulae": 12 },
+    "betaReviewRows": { "stars": 24, "constellations": 12, "nebulae": 24 },
+    "requestableLocalImages": 31,
+    "heldBetaImageChains": 5,
+    "heldStellarPhysicalComponents": 4,
+    "releaseAllowed": false
+  },
+  "openGates": [
+    "Four Beta stellar physical component identities remain unconfirmed.",
+    "Five Beta nebula image chains have no admissible acquisition.",
+    "A and Beta nebula rights signatures remain zero; missing signatures remain pending by user decision.",
+    "Per-item human visual acceptance is pending; agent screenshot inspection is not signoff.",
+    "Current-source long-run performance observations remain not-run after R80 changes.",
+    "Physical mobile is not run within the web-only scope; simulated viewport is separate evidence.",
+    "Root application parity is deferred outside this web-only batch.",
+    "Public web release is blocked; no deployment was performed."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "humanVisualSignoff": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "publicDeployment": false
+  }
+}

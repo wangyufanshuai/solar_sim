@@ -1,0 +1,36 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:03:25.638Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "pelican-nebula",
+  "query": "IC 5070 Pelican Nebula",
+  "requiredTerms": [
+    "5070",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=IC%205070%20Pelican%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=IC%205070%20Pelican%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 175,
+    "responseSha256": "25d138256f2589ed92f5c130503f7046e3036f197da79628987ddc255611ece7"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "581975cf6c5e96b602420b1ff87e064f0945d5814a69a3a4f6f38758819a2281"
+}

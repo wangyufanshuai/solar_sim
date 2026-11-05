@@ -1,0 +1,19 @@
+{
+  "round": 28,
+  "date": "2026-09-13",
+  "title": "Beta hero visible evidence-state labels",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/PostV593StellarRosterPanel.tsx",
+    "artChange": "Added color-coded per-card labels for runtime-cleared and evidence-pending hero assets while retaining the machine-readable status marker."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 4/4",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Visible labels describe admission state and are not observational measurements.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

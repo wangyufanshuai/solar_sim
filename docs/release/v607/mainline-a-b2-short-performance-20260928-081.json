@@ -1,0 +1,4370 @@
+{
+  "schema": "mainline-a-b2-short-performance-checkpoint-v638",
+  "recordedAt": "2026-09-28T03:21:55.239Z",
+  "status": "measured-local-short-observations",
+  "evidenceClass": "performance-local-short-observation",
+  "build": {
+    "buildId": "mainline-a-5b7be2f948fa9171",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "buildReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-build-20260928-068f.json",
+    "bytes": 467629,
+    "sha256": "642929f7a5459b45139806b42333916a5823c148779e1d6eda5ddf6488192818"
+  },
+  "sourceBundle": {
+    "path": "tmp/mainline-a-b2-batch-36-068f.json",
+    "bytes": 1976270,
+    "sha256": "1716b18d65a8359bf9108e6a145792d7bef8c1abb40ac77ca5e0d0e2bdc13299"
+  },
+  "replay": {
+    "path": "tmp/mainline-a-b2-intake-36-068f/replay.json",
+    "bytes": 17626,
+    "sha256": "9488ae0af9c05c5709f62885dec5515ab6864d4e091fbfeaae6245d6712582f8"
+  },
+  "rows": [
+    {
+      "key": "star:achernar",
+      "runId": "r65-registry-7c54ec56-f638-4e7a-bff6-d31ccc94bca8",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-achernar-01-068f.json",
+        "bytes": 50206,
+        "sha256": "6524e7affc0be41fa546566ad3d97c0a2f66314aa7d39d48ef873af67b75f574"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.0000000298023224,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:00:59.026Z",
+      "endedAt": "2026-09-28T02:01:30.233Z",
+      "elapsedMs": 31207,
+      "frameSummary": {
+        "sampleCount": 5496,
+        "totalMs": 31199.544999999984,
+        "minMs": 5.284999999974389,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 205.55499999999302
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 285399.00500000035,
+        "callbackCount": 5497,
+        "acceptedCount": 5497,
+        "firstCallbackMs": 285401.25,
+        "firstAcceptedMs": 285401.25,
+        "lastAcceptedMs": 316600.795,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 133375880,
+        "afterBytes": 150626486
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:00:59.027Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:01:27.654Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "achernar",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:01:30.232Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:betelgeuse",
+      "runId": "r65-registry-c5c43bb5-9801-4107-8dd3-d51a6205994c",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-betelgeuse-01-068f.json",
+        "bytes": 50203,
+        "sha256": "2886a56766008bfbcc2a5373618aedce5e9f05c0727753c8032990a74ff7b535"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:29:46.630Z",
+      "endedAt": "2026-09-28T02:30:17.117Z",
+      "elapsedMs": 30487,
+      "frameSummary": {
+        "sampleCount": 5416,
+        "totalMs": 30477.284999999916,
+        "minMs": 5.185000000055879,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 138.78499999991618
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2013002.5900000003,
+        "callbackCount": 5418,
+        "acceptedCount": 5417,
+        "firstCallbackMs": 2013002.13,
+        "firstAcceptedMs": 2013007.79,
+        "lastAcceptedMs": 2043485.075,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 137219760,
+        "afterBytes": 142030335
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:29:46.630Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:30:03.196Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "betelgeuse",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:30:17.116Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:sirius-a",
+      "runId": "r65-registry-8be6781c-2aef-4699-8415-140f9fcc97f2",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-sirius-a-01-068f.json",
+        "bytes": 50195,
+        "sha256": "44f8f6c3b61027a18ca4c54df24323a12150b8fcce4138c9f649ccb4afe2cab7"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:30:51.856Z",
+      "endedAt": "2026-09-28T02:31:22.317Z",
+      "elapsedMs": 30461,
+      "frameSummary": {
+        "sampleCount": 5399,
+        "totalMs": 30455.064999999944,
+        "minMs": 5.300000000046566,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 172.08499999996275
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2078228.5299999998,
+        "callbackCount": 5400,
+        "acceptedCount": 5400,
+        "firstCallbackMs": 2078228.92,
+        "firstAcceptedMs": 2078228.92,
+        "lastAcceptedMs": 2108683.985,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 136315478,
+        "afterBytes": 135450568
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:30:51.856Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:30:54.503Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "sirius-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:31:22.317Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:rigel",
+      "runId": "r65-registry-4dcaeffc-0177-49db-b4c2-8040d5ebb96b",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-rigel-01-068f.json",
+        "bytes": 50165,
+        "sha256": "d14b9479632866e017308974e3ccefc85b9690be9248eaa4783555369e85ac13"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:32:01.238Z",
+      "endedAt": "2026-09-28T02:32:31.437Z",
+      "elapsedMs": 30199,
+      "frameSummary": {
+        "sampleCount": 5345,
+        "totalMs": 30194.055000000168,
+        "minMs": 5.024999999906868,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 172.27000000001863
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2147610.9499999997,
+        "callbackCount": 5346,
+        "acceptedCount": 5346,
+        "firstCallbackMs": 2147611.175,
+        "firstAcceptedMs": 2147611.175,
+        "lastAcceptedMs": 2177805.23,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 145453752,
+        "afterBytes": 157388719
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:32:01.238Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:32:03.905Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "rigel",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:32:31.437Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:antares",
+      "runId": "r65-registry-444ee832-a6f4-4921-a5d7-652df51b9f80",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-antares-01-068f.json",
+        "bytes": 50171,
+        "sha256": "752e850e347246708c9ced3b649475394c826db8de5b43637de45e2c1b13c1f4"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:32:51.876Z",
+      "endedAt": "2026-09-28T02:33:22.086Z",
+      "elapsedMs": 30210,
+      "frameSummary": {
+        "sampleCount": 5362,
+        "totalMs": 30205.185000000056,
+        "minMs": 4.559999999590218,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 144.55999999959022
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2198248.52,
+        "callbackCount": 5363,
+        "acceptedCount": 5363,
+        "firstCallbackMs": 2198249.27,
+        "firstAcceptedMs": 2198249.27,
+        "lastAcceptedMs": 2228454.455,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 158670855,
+        "afterBytes": 148561433
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:32:51.876Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:32:54.165Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "antares",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:33:22.086Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:canopus",
+      "runId": "r65-registry-c1bdffaf-82a4-4c26-bc7e-2f7c3f703c8c",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-canopus-01-068f.json",
+        "bytes": 50180,
+        "sha256": "af330eb576d57485da8a1cc8f91403ff2f1bd0764357b0ec4be018654cabcb7b"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:33:48.937Z",
+      "endedAt": "2026-09-28T02:34:19.185Z",
+      "elapsedMs": 30248,
+      "frameSummary": {
+        "sampleCount": 5380,
+        "totalMs": 30243.96000000043,
+        "minMs": 4.504999999888241,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 127.94000000040978
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2255309.3649999998,
+        "callbackCount": 5381,
+        "acceptedCount": 5381,
+        "firstCallbackMs": 2255309.51,
+        "firstAcceptedMs": 2255309.51,
+        "lastAcceptedMs": 2285553.47,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 161003967,
+        "afterBytes": 151407081
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:33:48.937Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:33:51.219Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "canopus",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:34:19.184Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:arcturus",
+      "runId": "r65-registry-fd81056f-7312-4888-87c5-0263f0ad79eb",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-arcturus-01-068f.json",
+        "bytes": 50198,
+        "sha256": "d6a0594f997cf9d5ac5232fbba9ec629040881ae699aaf3117433b6d0aec045d"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:37:32.157Z",
+      "endedAt": "2026-09-28T02:38:02.731Z",
+      "elapsedMs": 30574,
+      "frameSummary": {
+        "sampleCount": 5425,
+        "totalMs": 30566.225000000093,
+        "minMs": 5.2999999998137355,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.160000000149
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2478529.5350000006,
+        "callbackCount": 5427,
+        "acceptedCount": 5426,
+        "firstCallbackMs": 2478528.385,
+        "firstAcceptedMs": 2478533.82,
+        "lastAcceptedMs": 2509100.045,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 138059878,
+        "afterBytes": 150003372
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:37:32.157Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:37:34.781Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "arcturus",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:38:02.731Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:vega",
+      "runId": "r65-registry-6e9c9283-a0a1-48f0-9da5-a185849af952",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-vega-01-068f.json",
+        "bytes": 50138,
+        "sha256": "f9349970bb26f6d0c7c8fb52dd580f196c775182de2adb09b5d81ae2ec7e8605"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:38:31.971Z",
+      "endedAt": "2026-09-28T02:39:02.315Z",
+      "elapsedMs": 30344,
+      "frameSummary": {
+        "sampleCount": 5385,
+        "totalMs": 30338.48499999987,
+        "minMs": 5.194999999832362,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 150
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2538343.775,
+        "callbackCount": 5386,
+        "acceptedCount": 5386,
+        "firstCallbackMs": 2538344,
+        "firstAcceptedMs": 2538344,
+        "lastAcceptedMs": 2568682.485,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 138518330,
+        "afterBytes": 154809344
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:38:31.971Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:38:34.297Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "vega",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:39:02.314Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:capella-a",
+      "runId": "r65-registry-adf9761d-b7f7-4313-acd5-52440390af06",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-capella-a-01-068f.json",
+        "bytes": 50205,
+        "sha256": "b7cc894d6977cd5a52ddbe56d91dbdb5a53009c4e6f0eb0cd9a2424fbb209922"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:39:16.818Z",
+      "endedAt": "2026-09-28T02:39:47.385Z",
+      "elapsedMs": 30567,
+      "frameSummary": {
+        "sampleCount": 5438,
+        "totalMs": 30560.64500000002,
+        "minMs": 5.324999999720603,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 155.56499999994412
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2583191.0450000004,
+        "callbackCount": 5439,
+        "acceptedCount": 5439,
+        "firstCallbackMs": 2583193.3,
+        "firstAcceptedMs": 2583193.3,
+        "lastAcceptedMs": 2613753.945,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 155395033,
+        "afterBytes": 144603140
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:39:16.818Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:39:19.008Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "capella-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:39:47.385Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:procyon-a",
+      "runId": "r65-registry-c48e0709-98e1-4ade-92ec-31c3ee88082d",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-procyon-a-01-068f.json",
+        "bytes": 50208,
+        "sha256": "07411784f77fe943e364388b45343f696542d2b8aa0107f698493b52c54f45f5"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:40:33.844Z",
+      "endedAt": "2026-09-28T02:41:04.500Z",
+      "elapsedMs": 30656,
+      "frameSummary": {
+        "sampleCount": 5450,
+        "totalMs": 30649.600000000093,
+        "minMs": 5.209999999962747,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.20000000018626
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2660216.5350000006,
+        "callbackCount": 5451,
+        "acceptedCount": 5451,
+        "firstCallbackMs": 2660219.915,
+        "firstAcceptedMs": 2660219.915,
+        "lastAcceptedMs": 2690869.515,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 158487768,
+        "afterBytes": 160284262
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:40:33.844Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:40:36.146Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "procyon-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:41:04.500Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:aldebaran",
+      "runId": "r65-registry-11b069d2-689c-4c7e-896d-45de0ca95f6d",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-aldebaran-01-068f.json",
+        "bytes": 50200,
+        "sha256": "a14af23ba9716fdd14995e77de3b9efa73c95f699f0f8bdbd321a7b9f7266b14"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:41:16.989Z",
+      "endedAt": "2026-09-28T02:41:47.472Z",
+      "elapsedMs": 30483,
+      "frameSummary": {
+        "sampleCount": 5422,
+        "totalMs": 30477.290000000037,
+        "minMs": 5.2999999998137355,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 155.68000000016764
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2703362.065,
+        "callbackCount": 5423,
+        "acceptedCount": 5423,
+        "firstCallbackMs": 2703363.68,
+        "firstAcceptedMs": 2703363.68,
+        "lastAcceptedMs": 2733840.97,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 162042424,
+        "afterBytes": 153478475
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:41:16.989Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:41:19.283Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "aldebaran",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:41:47.472Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "star:alpha-centauri-a",
+      "runId": "r65-registry-c1ab8319-b0dd-4720-9e7d-149e2770b15c",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-star-alpha-centauri-a-01-068f.json",
+        "bytes": 50143,
+        "sha256": "8669bb0bac85c7ab40f50205621b4ec484124203325c74463fa7aef31cddcec7"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:42:15.350Z",
+      "endedAt": "2026-09-28T02:42:45.733Z",
+      "elapsedMs": 30383,
+      "frameSummary": {
+        "sampleCount": 5400,
+        "totalMs": 30377.279999999795,
+        "minMs": 5.324999999720603,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.464999999851
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2761722.805,
+        "callbackCount": 5401,
+        "acceptedCount": 5401,
+        "firstCallbackMs": 2761723.91,
+        "firstAcceptedMs": 2761723.91,
+        "lastAcceptedMs": 2792101.19,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 146537898,
+        "afterBytes": 156653706
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:42:15.350Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "achernar",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:42:17.687Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:42:45.733Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "achernar",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m42",
+      "runId": "r65-registry-279fbdc4-95d5-435c-adbe-cf28b5fb81e6",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m42-01-068f.json",
+        "bytes": 49090,
+        "sha256": "4df8bd38e16738f93a1c6980af2263c10095d86fa61e823da58f428adcc7cfe7"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:43:54.104Z",
+      "endedAt": "2026-09-28T02:44:45.548Z",
+      "elapsedMs": 51444,
+      "frameSummary": {
+        "sampleCount": 9214,
+        "totalMs": 51438.10000000009,
+        "minMs": 4.584999999962747,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.48499999986961
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2860476.685,
+        "callbackCount": 9215,
+        "acceptedCount": 9215,
+        "firstCallbackMs": 2860477.9,
+        "firstAcceptedMs": 2860477.9,
+        "lastAcceptedMs": 2911916,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 140971961,
+        "afterBytes": 153854693
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:43:54.104Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:44:43.305Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m42",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74504633,
+          "estimatedGpuBytes": 74484297
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:44:45.547Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m1",
+      "runId": "r65-registry-1fe47d1b-9c86-429f-b067-9a4a7092eb76",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m1-01-068f.json",
+        "bytes": 49098,
+        "sha256": "d6d4b25a90e4261158c7022756dcbaa1216371178ab7c332cf55d2155dca9fbb"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:45:38.286Z",
+      "endedAt": "2026-09-28T02:46:08.602Z",
+      "elapsedMs": 30316,
+      "frameSummary": {
+        "sampleCount": 5421,
+        "totalMs": 30310.64500000002,
+        "minMs": 5.240000000223517,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.35000000009313
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 2964658.9150000005,
+        "callbackCount": 5422,
+        "acceptedCount": 5422,
+        "firstCallbackMs": 2964659.665,
+        "firstAcceptedMs": 2964659.665,
+        "lastAcceptedMs": 2994970.31,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 151745155,
+        "afterBytes": 168108857
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:45:38.286Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:45:41.740Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m1",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "f4953a80a364d5b9ba23b77d9d5dd8bfa94d7715604eb207b168278e5a35d61f",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 71703993,
+          "estimatedGpuBytes": 71683657
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:46:08.602Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m8",
+      "runId": "r65-registry-394d4eca-2b02-4f57-b922-bca3f9b0f98b",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m8-01-068f.json",
+        "bytes": 49096,
+        "sha256": "249fbf318242e67d43a8b6c72def353494e90db250c6dba362ebcca3e27e8273"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:46:21.319Z",
+      "endedAt": "2026-09-28T02:46:51.924Z",
+      "elapsedMs": 30605,
+      "frameSummary": {
+        "sampleCount": 5466,
+        "totalMs": 30599.51500000013,
+        "minMs": 5.069999999832362,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.07500000018626
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3007691.8750000005,
+        "callbackCount": 5467,
+        "acceptedCount": 5467,
+        "firstCallbackMs": 3007692.315,
+        "firstAcceptedMs": 3007692.315,
+        "lastAcceptedMs": 3038291.83,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 139138489,
+        "afterBytes": 150191707
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:46:21.319Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:46:24.656Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m8",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "29f76f0a20aed10e08868ecedfffe27c983d30eabbb1904b982b616f9fbaa2af",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74018233,
+          "estimatedGpuBytes": 73997897
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:46:51.924Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m16",
+      "runId": "r65-registry-43f520b5-60f9-40df-b57a-77a0cdc9f6d2",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m16-01-068f.json",
+        "bytes": 49102,
+        "sha256": "81cc7c615f15aa331f15f5fc53b18ebcb9587cfb26e844d479cfcbcc3e298f9d"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:47:46.306Z",
+      "endedAt": "2026-09-28T02:48:16.917Z",
+      "elapsedMs": 30611,
+      "frameSummary": {
+        "sampleCount": 5465,
+        "totalMs": 30604.96999999974,
+        "minMs": 4.404999999795109,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 138.839999999851
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3092678.8000000003,
+        "callbackCount": 5467,
+        "acceptedCount": 5466,
+        "firstCallbackMs": 3092674.315,
+        "firstAcceptedMs": 3092679.97,
+        "lastAcceptedMs": 3123284.94,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 153846947,
+        "afterBytes": 144901341
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:47:46.306Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:47:49.568Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m16",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "9349f8d48d81a9998e46aab8cb0c87ef5a61c2fad093ce8c36fc9fa657e09e92",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 73060793,
+          "estimatedGpuBytes": 73040457
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:48:16.917Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m20",
+      "runId": "r65-registry-71fd7c14-6623-4da9-8944-743e6be66315",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m20-01-068f.json",
+        "bytes": 49099,
+        "sha256": "327cacf3dd2991665177dd53d7144cc2a655898349a4b7892b8a0495fca86cea"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:48:29.561Z",
+      "endedAt": "2026-09-28T02:49:00.100Z",
+      "elapsedMs": 30539,
+      "frameSummary": {
+        "sampleCount": 5453,
+        "totalMs": 30532.840000000317,
+        "minMs": 5.2999999998137355,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.32999999960884
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3135933.28,
+        "callbackCount": 5454,
+        "acceptedCount": 5454,
+        "firstCallbackMs": 3135934.775,
+        "firstAcceptedMs": 3135934.775,
+        "lastAcceptedMs": 3166467.615,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 140766849,
+        "afterBytes": 157519670
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:48:29.561Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:48:32.861Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m20",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "c56abd176306b9ea16c50fe20586b59cd9017203945d0ff1e4406054b86859d6",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74054073,
+          "estimatedGpuBytes": 74033737
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:49:00.100Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:m57",
+      "runId": "r65-registry-9fca20df-bb4c-4a42-9dc1-a4669927be3f",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-m57-01-068f.json",
+        "bytes": 49106,
+        "sha256": "daa7e622d0cf0781fd89ec1185d00f46b42bc3fb2dab264c5ab57612bb73adfc"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:49:26.697Z",
+      "endedAt": "2026-09-28T02:49:56.849Z",
+      "elapsedMs": 30152,
+      "frameSummary": {
+        "sampleCount": 5389,
+        "totalMs": 30143.955000000075,
+        "minMs": 5.330000000074506,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 155.52499999990687
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3193070.0050000004,
+        "callbackCount": 5390,
+        "acceptedCount": 5390,
+        "firstCallbackMs": 3193072.79,
+        "firstAcceptedMs": 3193072.79,
+        "lastAcceptedMs": 3223216.745,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 149236179,
+        "afterBytes": 156614108
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:49:26.697Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:49:30.098Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "m57",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "8a3003ab28b0a3a45e97d63ef879a5c55a2029ded9cb174818f09646aeb3b806",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74002873,
+          "estimatedGpuBytes": 73982537
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:49:56.849Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:ngc7293",
+      "runId": "r65-registry-775fcec2-9a04-4643-bfff-848b06529934",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-ngc7293-01-068f.json",
+        "bytes": 49137,
+        "sha256": "f5aa9df403d8f462c776ce8d9789dd5bd2b64fa6a6a4fa44c1ce5db6b0137faa"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:50:24.354Z",
+      "endedAt": "2026-09-28T02:50:54.777Z",
+      "elapsedMs": 30423,
+      "frameSummary": {
+        "sampleCount": 5428,
+        "totalMs": 30416.19999999972,
+        "minMs": 5.319999999832362,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.17499999981374
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3250726.6650000005,
+        "callbackCount": 5429,
+        "acceptedCount": 5429,
+        "firstCallbackMs": 3250727.435,
+        "firstAcceptedMs": 3250727.435,
+        "lastAcceptedMs": 3281143.635,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 162825973,
+        "afterBytes": 166588486
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:50:24.354Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:50:27.798Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "ngc7293",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74514873,
+          "estimatedGpuBytes": 74494537
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:50:54.776Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:ngc6543",
+      "runId": "r65-registry-0f5ac9a9-89a0-4382-9cd1-92b7c09f8069",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-ngc6543-01-068f.json",
+        "bytes": 49135,
+        "sha256": "fb52430c61de315343ecc95f352a67374111de991ae83756fe1df86e4a3fd660"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:52:08.623Z",
+      "endedAt": "2026-09-28T02:53:19.256Z",
+      "elapsedMs": 70633,
+      "frameSummary": {
+        "sampleCount": 12651,
+        "totalMs": 70621.10999999987,
+        "minMs": 2.0249999999068677,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 183.24500000011176
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3354995.5850000004,
+        "callbackCount": 12653,
+        "acceptedCount": 12652,
+        "firstCallbackMs": 3354992.495,
+        "firstAcceptedMs": 3355003.6,
+        "lastAcceptedMs": 3425624.71,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 162327012,
+        "afterBytes": 144207908
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:52:08.623Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:53:17.063Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "ngc6543",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "69ab60734b2d03f3f07c3d114b35744d0f0973fbdcc1dd42141f14f3c6130721",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 74263993,
+          "estimatedGpuBytes": 74243657
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:53:19.256Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:ngc2237",
+      "runId": "r65-registry-00af1cf1-34f3-4926-b263-20ccd63ba94d",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-ngc2237-01-068f.json",
+        "bytes": 49138,
+        "sha256": "fa30a3fbe13e51f36e147df92494469173a6916f42d2206a96728378436ce31a"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:55:56.843Z",
+      "endedAt": "2026-09-28T02:56:27.126Z",
+      "elapsedMs": 30283,
+      "frameSummary": {
+        "sampleCount": 5400,
+        "totalMs": 30277.294999999925,
+        "minMs": 5.320000000298023,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.45000000018626
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3583215.8700000006,
+        "callbackCount": 5401,
+        "acceptedCount": 5401,
+        "firstCallbackMs": 3583216.685,
+        "firstAcceptedMs": 3583216.685,
+        "lastAcceptedMs": 3613493.98,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 139312949,
+        "afterBytes": 160379504
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:55:56.843Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:56:00.225Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "ngc2237",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "271752f5e51d29bc827e2cf171b2bb8ee3b81dc6798e511ebff6baaa17bd9598",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 73782713,
+          "estimatedGpuBytes": 73762377
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:56:27.126Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:ngc6960",
+      "runId": "r65-registry-a48fa50b-60b8-4bae-82e7-f8ae2953df7b",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-ngc6960-01-068f.json",
+        "bytes": 49130,
+        "sha256": "69afabe3cdf9494b9a26e6673ff7183b3f54e3ff192c890dd4388101442f4d9c"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:56:43.598Z",
+      "endedAt": "2026-09-28T02:57:14.258Z",
+      "elapsedMs": 30660,
+      "frameSummary": {
+        "sampleCount": 5476,
+        "totalMs": 30655.174999999814,
+        "minMs": 5.319999999832362,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.04000000003725
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3629970.5100000002,
+        "callbackCount": 5477,
+        "acceptedCount": 5477,
+        "firstCallbackMs": 3629971.495,
+        "firstAcceptedMs": 3629971.495,
+        "lastAcceptedMs": 3660626.67,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 168991005,
+        "afterBytes": 163619341
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:56:43.598Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:56:46.993Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "ngc6960",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "f66c90025e6a284bf1834f35ebacfa9ce5fce2684bf2b3ac60a6e1fc740fb176",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 71816633,
+          "estimatedGpuBytes": 71796297
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:57:14.258Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:carina",
+      "runId": "r65-registry-5cd764d6-bbea-4501-835d-6124e93052c5",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-carina-01-068f.json",
+        "bytes": 49104,
+        "sha256": "05871ea79f7b44cd044fff48364d5f0b054d172bf5234673addb363f534559c0"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:57:39.474Z",
+      "endedAt": "2026-09-28T02:58:10.065Z",
+      "elapsedMs": 30591,
+      "frameSummary": {
+        "sampleCount": 5455,
+        "totalMs": 30583.46999999974,
+        "minMs": 4.209999999962747,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.43999999994412
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3685846.28,
+        "callbackCount": 5456,
+        "acceptedCount": 5456,
+        "firstCallbackMs": 3685848.43,
+        "firstAcceptedMs": 3685848.43,
+        "lastAcceptedMs": 3716431.9,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 186668269,
+        "afterBytes": 143992405
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:57:39.474Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:57:42.902Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "carina",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "8071632a2d895f0bfdb8b5ff80456eafc3ff71ee2b8fa8e28b84b5994fcec4d3",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 70623673,
+          "estimatedGpuBytes": 70603337
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:58:10.064Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "nebula:b33",
+      "runId": "r65-registry-2745d3fd-e618-49df-bb1d-6ff158c500d3",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-nebula-b33-01-068f.json",
+        "bytes": 49097,
+        "sha256": "afec03ee206d1fd8d44da1e6191b934057d49cffa55c5127312f9e05034597e2"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:58:29.435Z",
+      "endedAt": "2026-09-28T02:58:59.713Z",
+      "elapsedMs": 30278,
+      "frameSummary": {
+        "sampleCount": 5404,
+        "totalMs": 30271.72999999998,
+        "minMs": 4.870000000111759,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 138.86500000022352
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3735808.105,
+        "callbackCount": 5405,
+        "acceptedCount": 5405,
+        "firstCallbackMs": 3735808.755,
+        "firstAcceptedMs": 3735808.755,
+        "lastAcceptedMs": 3766080.485,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 161074155,
+        "afterBytes": 163167088
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:58:29.435Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T02:58:32.873Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "nebula",
+            "id": "b33",
+            "route": "mainline-a3-nebula-visual",
+            "assetHash": "81f1f34fc28d754b1521d86ea5e3cc5dd284ed62243b1911a6ba6c419191e7f8",
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 28,
+          "textures": 12,
+          "estimatedBytes": 72215993,
+          "estimatedGpuBytes": 72195657
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T02:58:59.712Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 3,
+        "releasedCount": 3,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Ori",
+      "runId": "r65-registry-4b2a34d1-40a0-4970-964c-d0689e829fb3",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Ori-01-068f.json",
+        "bytes": 47374,
+        "sha256": "39aa5a7a04cab511b7422bfa9229eff6f52669393b609596451ad8e6492c1d24"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T02:59:50.639Z",
+      "endedAt": "2026-09-28T03:00:30.713Z",
+      "elapsedMs": 40074,
+      "frameSummary": {
+        "sampleCount": 7158,
+        "totalMs": 40065.88499999978,
+        "minMs": 4.615000000223517,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 172.22999999998137
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3817012.14,
+        "callbackCount": 7159,
+        "acceptedCount": 7159,
+        "firstCallbackMs": 3817013.18,
+        "firstAcceptedMs": 3817013.18,
+        "lastAcceptedMs": 3857079.065,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 162664377,
+        "afterBytes": 152736113
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T02:59:50.639Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:00:28.406Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Ori",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449349,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:00:30.713Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:UMa",
+      "runId": "r65-registry-cdce4c71-a068-4451-a1d3-8f9dfdb9776b",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-UMa-01-068f.json",
+        "bytes": 47377,
+        "sha256": "e33230d65670a3a0357680f828327eb03909dfe0673fb47ce99867a4d0d39fa5"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:01:14.636Z",
+      "endedAt": "2026-09-28T03:01:44.933Z",
+      "elapsedMs": 30297,
+      "frameSummary": {
+        "sampleCount": 5414,
+        "totalMs": 30288.44999999972,
+        "minMs": 5.25,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 155.72500000009313
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3901009.06,
+        "callbackCount": 5415,
+        "acceptedCount": 5415,
+        "firstCallbackMs": 3901011.72,
+        "firstAcceptedMs": 3901011.72,
+        "lastAcceptedMs": 3931300.17,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 172622148,
+        "afterBytes": 160677503
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:01:14.636Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:01:17.916Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "UMa",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449325,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:01:44.933Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Cas",
+      "runId": "r65-registry-47f1d8df-a8f9-4d7a-8ade-7962fc4335e3",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Cas-01-068f.json",
+        "bytes": 47397,
+        "sha256": "9bf3d377ae93f7faac09ae880960a27bfb41cd4e3893548a037a989b089b90a1"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:02:33.485Z",
+      "endedAt": "2026-09-28T03:03:03.697Z",
+      "elapsedMs": 30212,
+      "frameSummary": {
+        "sampleCount": 5382,
+        "totalMs": 30205.044999999925,
+        "minMs": 4.845000000204891,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 177.62000000011176
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 3979857.9200000004,
+        "callbackCount": 5383,
+        "acceptedCount": 5383,
+        "firstCallbackMs": 3979860.52,
+        "firstAcceptedMs": 3979860.52,
+        "lastAcceptedMs": 4010065.565,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 150659122,
+        "afterBytes": 158911489
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:02:33.485Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:02:36.864Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Cas",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449229,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:03:03.697Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Sco",
+      "runId": "r65-registry-fe4f9afe-d509-41ad-8721-4015e3ca01d0",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Sco-01-068f.json",
+        "bytes": 47392,
+        "sha256": "f4ef24833d885fe19791bbe418969751734ea42a00f9eaefec9f478ce2648ee4"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:03:19.982Z",
+      "endedAt": "2026-09-28T03:03:50.717Z",
+      "elapsedMs": 30735,
+      "frameSummary": {
+        "sampleCount": 5486,
+        "totalMs": 30732.725000000093,
+        "minMs": 5.234999999869615,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 133.33499999996275
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4026354.305,
+        "callbackCount": 5487,
+        "acceptedCount": 5487,
+        "firstCallbackMs": 4026354.335,
+        "firstAcceptedMs": 4026354.335,
+        "lastAcceptedMs": 4057087.06,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 155090276,
+        "afterBytes": 180684959
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:03:19.982Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:03:23.370Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Sco",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449349,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:03:50.717Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Cyg",
+      "runId": "r65-registry-a55dd1e4-92eb-4be8-9460-553253110b22",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Cyg-01-068f.json",
+        "bytes": 47396,
+        "sha256": "e95e1f54ce7ed71767d2f14a1e6c4761b22291dce99b124bba8e6242008a8866"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:04:10.308Z",
+      "endedAt": "2026-09-28T03:04:40.694Z",
+      "elapsedMs": 30386,
+      "frameSummary": {
+        "sampleCount": 5428,
+        "totalMs": 30382.720000000205,
+        "minMs": 5.109999999869615,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 172.1699999999255
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4076680.3750000005,
+        "callbackCount": 5429,
+        "acceptedCount": 5429,
+        "firstCallbackMs": 4076681.34,
+        "firstAcceptedMs": 4076681.34,
+        "lastAcceptedMs": 4107064.06,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 169924580,
+        "afterBytes": 166243621
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:04:10.308Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:04:13.605Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Cyg",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449277,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:04:40.694Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Gem",
+      "runId": "r65-registry-7c084739-037f-43c1-bdda-dd8f6d3397c4",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Gem-01-068f.json",
+        "bytes": 47392,
+        "sha256": "c4d48a34d1aba94cba38bddc857e8a9c38c139b802cfab08df0f4816c35da019"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:04:53.700Z",
+      "endedAt": "2026-09-28T03:05:23.834Z",
+      "elapsedMs": 30134,
+      "frameSummary": {
+        "sampleCount": 5390,
+        "totalMs": 30127.319999999832,
+        "minMs": 5.205000000074506,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.11499999975786
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4120072.475,
+        "callbackCount": 5391,
+        "acceptedCount": 5391,
+        "firstCallbackMs": 4120074.955,
+        "firstAcceptedMs": 4120074.955,
+        "lastAcceptedMs": 4150202.275,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 170593968,
+        "afterBytes": 176123166
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:04:53.700Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:04:56.979Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Gem",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449277,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:05:23.833Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Leo",
+      "runId": "r65-registry-a882b676-f158-4a65-bd65-fd22b1fac50e",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Leo-01-068f.json",
+        "bytes": 47390,
+        "sha256": "0b405b0562b029cf5c0b229ba52e26c0eab9f50a5d2eca42f50aa40c47ddebd8"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:06:36.972Z",
+      "endedAt": "2026-09-28T03:07:07.603Z",
+      "elapsedMs": 30631,
+      "frameSummary": {
+        "sampleCount": 5470,
+        "totalMs": 30627.230000000447,
+        "minMs": 4.510000000707805,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 161.23500000033528
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4223344.404999999,
+        "callbackCount": 5471,
+        "acceptedCount": 5471,
+        "firstCallbackMs": 4223345.625,
+        "firstAcceptedMs": 4223345.625,
+        "lastAcceptedMs": 4253972.855,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 161934502,
+        "afterBytes": 169171563
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:06:36.972Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:06:40.253Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Leo",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449277,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:07:07.603Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Cru",
+      "runId": "r65-registry-ba41c7b1-50f2-4c70-bbb1-3985e7f799db",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Cru-01-068f.json",
+        "bytes": 47389,
+        "sha256": "0bc6aaaddfb697dfb18564c193ce132508d10a4473b3c87d0df673d9c420f9b9"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:07:43.011Z",
+      "endedAt": "2026-09-28T03:08:13.065Z",
+      "elapsedMs": 30054,
+      "frameSummary": {
+        "sampleCount": 5359,
+        "totalMs": 30043.930000000633,
+        "minMs": 4.060000000521541,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 155.4799999995157
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4289383.545,
+        "callbackCount": 5361,
+        "acceptedCount": 5360,
+        "firstCallbackMs": 4289383.43,
+        "firstAcceptedMs": 4289389.02,
+        "lastAcceptedMs": 4319432.95,
+        "skippedBeforeStartCount": 1,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 151729662,
+        "afterBytes": 188111249
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:07:43.011Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:07:46.282Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Cru",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449229,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:08:13.065Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Lyr",
+      "runId": "r65-registry-73906346-b0d0-4848-9e6a-bcd162675eba",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Lyr-01-068f.json",
+        "bytes": 47377,
+        "sha256": "4e4d3b78bb05d994694057ed74dfca30392a28db09dc25429640ae363313a58c"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:08:32.870Z",
+      "endedAt": "2026-09-28T03:09:03.548Z",
+      "elapsedMs": 30678,
+      "frameSummary": {
+        "sampleCount": 5458,
+        "totalMs": 30671.615000000224,
+        "minMs": 4.985000000335276,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 177.59999999962747
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4339242.635,
+        "callbackCount": 5459,
+        "acceptedCount": 5459,
+        "firstCallbackMs": 4339243.91,
+        "firstAcceptedMs": 4339243.91,
+        "lastAcceptedMs": 4369915.525,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 170945209,
+        "afterBytes": 144417833
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:08:32.870Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:08:36.259Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Lyr",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449253,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:09:03.548Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Aql",
+      "runId": "r65-registry-8bef9a2f-edba-4bd5-88e9-1c323e0a61ff",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Aql-01-068f.json",
+        "bytes": 47379,
+        "sha256": "e713ea3761bb5e95e00b9ecc9e1aba0bf50ed2d2f9aa4329cee9b3fd646eaa1b"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:09:31.125Z",
+      "endedAt": "2026-09-28T03:10:01.669Z",
+      "elapsedMs": 30544,
+      "frameSummary": {
+        "sampleCount": 5340,
+        "totalMs": 30538.419999999925,
+        "minMs": 5.070000000298023,
+        "p50Ms": 5.75,
+        "p95Ms": 5.75,
+        "maxMs": 283.1699999999255
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4397497.765000001,
+        "callbackCount": 5341,
+        "acceptedCount": 5341,
+        "firstCallbackMs": 4397498.4,
+        "firstAcceptedMs": 4397498.4,
+        "lastAcceptedMs": 4428036.82,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 165858435,
+        "afterBytes": 179614617
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:09:31.125Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:09:34.465Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Aql",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449277,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:10:01.669Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Tau",
+      "runId": "r65-registry-18ce03d2-0761-4f4f-a1f4-3bc1a1177a0f",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Tau-01-068f.json",
+        "bytes": 47391,
+        "sha256": "83c098eda6b8ce501cfe951b1c121e36ef940d1d5ca0e75c7059c2bb786f1d81"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:10:27.515Z",
+      "endedAt": "2026-09-28T03:10:57.907Z",
+      "elapsedMs": 30392,
+      "frameSummary": {
+        "sampleCount": 4632,
+        "totalMs": 30382.174999999814,
+        "minMs": 6.044999999925494,
+        "p50Ms": 6.5,
+        "p95Ms": 7.25,
+        "maxMs": 180.53000000026077
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4453888.01,
+        "callbackCount": 4633,
+        "acceptedCount": 4633,
+        "firstCallbackMs": 4453891.065,
+        "firstAcceptedMs": 4453891.065,
+        "lastAcceptedMs": 4484273.24,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 156418369,
+        "afterBytes": 185818301
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:10:27.516Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:10:30.935Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Tau",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449277,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:10:57.906Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    },
+    {
+      "key": "constellation:Sgr",
+      "runId": "r65-registry-e9f21364-cde9-4bbb-9c46-8f0ff4676e9a",
+      "raw": {
+        "path": "tmp/mainline-a-b2-browser-constellation-Sgr-01-068f.json",
+        "bytes": 47389,
+        "sha256": "a91f57e3da94cb5eaea7548e7dcacae346ce1e23a197bc72087b7028dfe03f69"
+      },
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1.5,
+        "device": "desktop"
+      },
+      "startedAt": "2026-09-28T03:11:18.437Z",
+      "endedAt": "2026-09-28T03:11:49.077Z",
+      "elapsedMs": 30640,
+      "frameSummary": {
+        "sampleCount": 4618,
+        "totalMs": 30628.424999999814,
+        "minMs": 6.035000000149012,
+        "p50Ms": 6.5,
+        "p95Ms": 7.25,
+        "maxMs": 132.1499999994412
+      },
+      "frameSummarySource": "requestAnimationFrame",
+      "frameSummaryMethod": "fixed-histogram-upper-bound",
+      "histogramBinWidthMs": 0.25,
+      "frameClock": {
+        "source": "document-timeline",
+        "sessionStartMs": 4504810.08,
+        "callbackCount": 4619,
+        "acceptedCount": 4619,
+        "firstCallbackMs": 4504814.195,
+        "firstAcceptedMs": 4504814.195,
+        "lastAcceptedMs": 4535442.62,
+        "skippedBeforeStartCount": 0,
+        "rejectedCount": 0,
+        "rejections": []
+      },
+      "memory": {
+        "source": "performance.memory",
+        "beforeBytes": 147551092,
+        "afterBytes": 179094216
+      },
+      "visibility": {
+        "startedVisible": true,
+        "endedVisible": true,
+        "interruptions": 0
+      },
+      "checkpoints": [
+        {
+          "phase": "baseline",
+          "capturedAt": "2026-09-28T03:11:18.437Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "active",
+          "capturedAt": "2026-09-28T03:11:21.713Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "constellation",
+            "id": "Sgr",
+            "route": "mainline-a-constellation-lines",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 25,
+          "textures": 11,
+          "estimatedBytes": 67449325,
+          "estimatedGpuBytes": 67428937
+        },
+        {
+          "phase": "returned",
+          "capturedAt": "2026-09-28T03:11:49.077Z",
+          "scene": "inspect",
+          "selection": {
+            "kind": "star",
+            "id": "alpha-centauri-a",
+            "route": "mainline-a-stellar-parametric",
+            "assetHash": null,
+            "loading": "ready",
+            "error": null
+          },
+          "cleanupErrors": [],
+          "total": 31,
+          "textures": 11,
+          "estimatedBytes": 67656889,
+          "estimatedGpuBytes": 67428937
+        }
+      ],
+      "evaluation": {
+        "status": "measured-local",
+        "issues": [],
+        "acquiredCount": 1,
+        "releasedCount": 1,
+        "retainedCount": 0,
+        "baselineRestored": true,
+        "resourceBehavior": "acquire-release",
+        "resourceReleaseObserved": true,
+        "registryEstimatedBytesDelta": 0,
+        "physicalGpuMemoryClaim": false,
+        "scientificPayloadWriteback": false
+      }
+    }
+  ],
+  "counts": {
+    "records": 36,
+    "acquireRelease": 36,
+    "reuseWithoutAllocation": 0,
+    "baselineRestored": 36,
+    "thirtyMinuteRuns": 0
+  },
+  "limits": [
+    "RAF callback intervals are not GPU render duration.",
+    "Registry estimated bytes are not physical GPU memory.",
+    "36 short runs cannot be summed into two independent 30-minute runs.",
+    "Not production or real-user performance."
+  ],
+  "longRunGate": "pending",
+  "physicalMobile": "not-run",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsApproval": false
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "round": 63,
+  "date": "2026-09-14",
+  "title": "beta-nebula-six-image-raw-ledger-v623",
+  "status": "ledger-and-policy-passed-payload-rights-pending",
+  "physicsKernelMutation": false,
+  "counts": {"candidates":6,"attempted":6,"responseCaptured":0,"payloadPresent":0,"rightsCleared":0,"runtimeAdmitted":0},
+  "implementation": [
+    "Added a real HTTPS image collector for Ring, Dumbbell, California, Bubble, Cat's Eye and Omega nebula candidates with retry, timeout, status, content type, final URL, redirect, fingerprint and raw artifact fields.",
+    "Added typed artifact replay, byte/SHA-256 recomputation, source/path/MIME/dimension checks, fixture and synthetic negative paths, and an acquisition policy ledger with retry/backoff and release gate summaries.",
+    "Connected the V623 expansion ledger to the nebula review panel while preserving candidate-only, hold, not-admitted and scientificPayloadWriteback=false boundaries."
+  ],
+  "validation": {
+    "collectorNode":{"passed":4,"failed":0,"command":"npm run test:atlas:mainline-a-nebula-images:v623"},
+    "artifactReplayVitest":{"passed":8,"failed":0,"command":"npm run test:atlas:mainline-a-nebula-artifact-replay:v623"},
+    "ledgerVitest":{"passed":5,"failed":0,"command":"npm run test:atlas:mainline-a-nebula-ledger:v623"},
+    "policyVitest":{"passed":4,"failed":0,"command":"npm run test:atlas:mainline-a-nebula-policy:v623"},
+    "audit":{"passed":true,"command":"npm run audit:atlas:mainline-a-nebula-images:v623","fingerprint":"0e8c6a6500a2266e293cc23a4a9cf0a7a5752059b6c96fd7c685b8d47e035406"},
+    "eslint":{"passed":true,"scope":"V623 collector, audit, ledger, policy, replay and nebula review panel"},
+    "productionBuild":{"passed":true,"command":"npm run build:atlas:lite:current","profile":"vercel-lite","distDir":".next-atlas-lite-current","buildId":"xQUjoWtlLf3UWkcdmMdoK"}
+  },
+  "http":{"productionUrl":"http://127.0.0.1:3019/","checks":[{"path":"/api/health","status":200,"defaultScientificKernel":"legacy-eih-1pn"}]},
+  "browser":{"productionUrl":"http://127.0.0.1:3019/","desktop":{"viewport":[1280,720],"expansionRecords":6,"payloadState":"5 pending acquisition plus 1 existing metadata payload; no V623 response captured","rightsState":"review-pending","boundaryHooksVisible":true,"consoleErrors":0,"consoleWarnings":4,"warningClass":"headless WebGL GPU stall; not a performance result"},"mobile":{"status":"not-run","reason":"No mobile viewport pass executed"},"screenshot":{"path":"docs/release/v607/screenshots/mainline-a-r63-nebula-expansion-desktop.png","bytes":249929,"sha256":"D6007D1BDD8D050C8EABC1680F6835AC0923A35E09C62EC04EDFA680D7D59B48"}},
+  "boundary":{"candidateOnly":true,"hold":true,"notAdmitted":true,"scientificPayloadWriteback":false,"runtimeWrites":false,"measurementWrites":false},
+  "evidenceBoundary":{"static":"V623 collector, ledger, policy, replay, tests and audit reports","http":"Local production HTTP response","visual":"Desktop nebula expansion review panel screenshot","browser":"Headless browser semantic hooks and console capture","performance":"Not measured; GPU warnings are not performance evidence","externalSource":"HTTPS source URLs and attempted collector policy only; no raw image response captured and no rights approval","legalDecision":"not-granted"},
+  "openGates":["All six network attempts remain responseCaptured=0; no raw image artifact or recomputable payload SHA-256 was obtained in this offline ledger run.","Rights, visual signoff, runtime admission, multi-device performance, R64 nebula expansion, root/next-web alignment and final release package remain open."]
+}

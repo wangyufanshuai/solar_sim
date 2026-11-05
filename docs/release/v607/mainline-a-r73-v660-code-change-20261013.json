@@ -1,0 +1,50 @@
+{
+  "schema": "mainline-a-r73-code-change-v660",
+  "round": 73,
+  "date": "2026-10-13",
+  "status": "meets-complete-batch-effective-code-threshold",
+  "method": "Count non-empty, non-comment physical lines in newly authored production, tool and substantive test files. Exclude generated catalog, raw evidence, receipts, screenshots, documentation, lock files and formatting. Compare the existing UI integration file to the preserved R72 source copy, report its raw delta and conservatively credit zero integration lines.",
+  "effectiveCode": {
+    "newProductionAndToolLines": 2086,
+    "newSubstantiveTestLines": 339,
+    "existingIntegrationRawAddedLines": 39,
+    "existingIntegrationRawRemovedLines": 4,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "newProductionAndToolFiles": [
+    {"path": "app/lib/mainlineANebulaR73CatalogV660.ts", "effectiveLines": 365, "role": "strict 24-item catalog, identities, source states and filters"},
+    {"path": "app/lib/useMainlineANebulaR73ImageV660.ts", "effectiveLines": 163, "role": "guarded local image loading, byte/SHA/size validation and object URL release"},
+    {"path": "app/components/MainlineANebulaR73UnifiedGalleryV660.tsx", "effectiveLines": 249, "role": "24-item browser gallery, source and rights detail, five policy holds"},
+    {"path": "scripts/build-mainline-a-r73-catalog-v660.mjs", "effectiveLines": 184, "role": "offline 24-row catalog construction and 85-file source-media replay"},
+    {"path": "scripts/verify-mainline-a-r73-http-v660.mjs", "effectiveLines": 202, "role": "local production HTTP coverage and negative route checks"},
+    {"path": "scripts/capture-mainline-a-r73-browser-v660.mjs", "effectiveLines": 359, "role": "desktop and simulated mobile 24-item browser and visual capture"},
+    {"path": "scripts/capture-mainline-a-r73-longrun-v660.mjs", "effectiveLines": 246, "role": "two sequential current-source 30-minute browser lifecycle observations"},
+    {"path": "scripts/build-mainline-a-r73-candidate-v660.mjs", "effectiveLines": 318, "role": "SHA-pinned rollback candidate and offline replay"}
+  ],
+  "newSubstantiveTestFiles": [
+    {"path": "app/lib/mainlineANebulaR73CatalogV660.test.ts", "effectiveLines": 104, "role": "catalog, filter, forged identity and candidate boundary negatives"},
+    {"path": "app/lib/useMainlineANebulaR73ImageV660.test.ts", "effectiveLines": 92, "role": "local image response, invalid bytes and policy failures"},
+    {"path": "scripts/build-mainline-a-r73-catalog-v660.test.mjs", "effectiveLines": 143, "role": "offline catalog/media replay, SHA, HTTP and browser negative checks"}
+  ],
+  "modifiedExistingIntegrationFiles": [
+    {"path": "app/components/MainlineANebulaReviewPanelV610.tsx", "rawAddedLinesComparedWithPreservedR72": 39, "rawRemovedLinesComparedWithPreservedR72": 4, "creditedEffectiveLines": 0, "role": "mount unified gallery and synchronize its selected item with the parent detail"}
+  ],
+  "behaviorChange": "The web review surface unifies 24 candidate nebulae; 19 have SHA-pinned local review images and five are explicit unserved policy holds. Every item retains traceable source and rights status, while the image loader releases object URLs and the candidate package binds build, HTTP, browser, visual, performance and external-source evidence.",
+  "excluded": [
+    "generated 24-row catalog and audit JSON",
+    "raw source pages, metadata and images",
+    "round, code, build, HTTP, browser, long-run and candidate receipts",
+    "screenshots, documentation and lock files",
+    "unrelated concurrent relativity or physics-window changes"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelEditsByRound": false,
+    "parentGitMutation": false
+  }
+}

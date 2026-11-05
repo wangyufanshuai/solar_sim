@@ -1,0 +1,20 @@
+{
+  "version": "v592-major-moon-secondary-asset-probes-v1",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHosts": ["images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "probes": [
+    { "id": "io-pia00585", "target": "io", "metadataProbeId": "io-global-mosaic", "nasaId": "PIA00585" },
+    { "id": "europa-pia16827", "target": "europa", "metadataProbeId": "europa-global-mosaic", "nasaId": "PIA16827" },
+    { "id": "europa-pia00723", "target": "europa", "metadataProbeId": "europa-global-mosaic", "nasaId": "PIA00723" },
+    { "id": "europa-pia19048", "target": "europa", "metadataProbeId": "europa-global-mosaic", "nasaId": "PIA19048" },
+    { "id": "ganymede-pia17901", "target": "ganymede", "metadataProbeId": "ganymede-global-mosaic", "nasaId": "PIA17901" },
+    { "id": "callisto-pia00844", "target": "callisto", "metadataProbeId": "callisto-global-mosaic", "nasaId": "PIA00844" }
+  ]
+}

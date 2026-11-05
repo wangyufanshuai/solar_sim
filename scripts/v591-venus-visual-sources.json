@@ -1,0 +1,83 @@
+{
+  "version": "v591-venus-visual-sources-v1",
+  "metadataProbe": {
+    "archive": "USGS Astrogeology / NASA PDS object storage",
+    "receiptPath": "docs/release/v591/metadata-probe-venus-usgs.json",
+    "receiptSha256": "68650ff4bd07c49f6380fcc891d026eb5e61962393c84bf72cecad4420749f58",
+    "observationIdentity": "Magellan global radar color mosaic and global topography v02",
+    "automaticReplacementAllowed": false
+  },
+  "policy": {
+    "allowedHosts": [
+      "asc-pds-services.s3.us-west-2.amazonaws.com"
+    ],
+    "maximumRedirectHops": 0,
+    "maximumSourceBytes": 268435456,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicPartRenameRequired": true
+  },
+  "cloudModel": {
+    "id": "venus-physical-inspired-cloud-primary-v591",
+    "kind": "deterministic-analytic-superrotation-cloud-deck",
+    "observationTextureClaim": false,
+    "resourceMissingFallback": false,
+    "presentationOnly": true,
+    "description": "A fixed-epoch, physically inspired sulfuric-acid cloud presentation model. It is not an observed Venus cloud texture and does not alter scientific state."
+  },
+  "assets": [
+    {
+      "id": "venus-magellan-surface-source",
+      "body": "venus",
+      "role": "observed-radar-color-surface-source",
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/venus/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif",
+      "expectedMediaTypes": [
+        "image/tiff",
+        "image/geotiff",
+        "application/geotiff",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 5000,
+      "minimumHeight": 2500,
+      "expectedBytes": 100762261,
+      "expectedEtag": "1a243fe2d734abafa743ad671cef2a5d-13",
+      "metadataKey": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif",
+      "license": {
+        "id": "USGS-public-domain",
+        "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      },
+      "observationIdentity": "Magellan C3-MIDR colorized global radar mosaic at 4641 m/pixel",
+      "observationLimit": "False-color radar presentation surface; delivery resampling cannot add observation detail.",
+      "presentationOnly": true
+    },
+    {
+      "id": "venus-magellan-topography-source",
+      "body": "venus",
+      "role": "observed-topography-source",
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/venus/Venus_Magellan_Topography_Global_4641m_v02.tif",
+      "expectedMediaTypes": [
+        "image/tiff",
+        "image/geotiff",
+        "application/geotiff",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 5000,
+      "minimumHeight": 2500,
+      "expectedBytes": 67142279,
+      "expectedEtag": "b040ee6d8fd4aa8473bb372d500dc503-9",
+      "metadataKey": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif",
+      "license": {
+        "id": "USGS-public-domain",
+        "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      },
+      "observationIdentity": "Magellan global topography 4641 m/pixel v02",
+      "observationLimit": "Global topography used only for bounded presentation height, normal and roughness derivation.",
+      "presentationOnly": true
+    }
+  ]
+}

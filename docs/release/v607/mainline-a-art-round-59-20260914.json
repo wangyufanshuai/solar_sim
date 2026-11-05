@@ -1,0 +1,58 @@
+{
+  "round": 59,
+  "date": "2026-09-14",
+  "title": "beta-stellar-raw-capture-v619",
+  "status": "raw-capture-plan-sealed-0-of-4-network-responses",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "stellarCandidates": 4,
+    "rawCapturePlans": 4,
+    "rawResponsesCaptured": 0,
+    "rawOnly": 0,
+    "structured": 0,
+    "blocked": 0,
+    "runtimeAdmitted": 0,
+    "measurementAdmitted": 0,
+    "currentStars": 20,
+    "betaHeroStars": 24,
+    "currentNebulaCandidates": 24,
+    "currentConstellations": 12
+  },
+  "implementation": [
+    "Added V619 raw capture plans for Acrux, Spica, Regulus and Polaris with explicit transport choices, timeout, retry backoff, request URL, endpoint and immutable V616 digests.",
+    "Added a sealed raw-response envelope validator requiring SIMBAD HTTPS identity, exact request URL, HTTP 200, allowlisted content type, non-empty body, byte count and recomputable SHA-256.",
+    "Added fixture-replay and raw-only boundaries; fixture HTML cannot be promoted to structured scientific evidence and no response is counted until an envelope is verified.",
+    "Added TypeScript status, transport, retry, integrity, digest and admission utilities and connected V619 pending rows/details to the Beta hero review panel.",
+    "Recorded a real external probe attempt separately: SIMBAD HTTPS page timed out after 10 seconds with TaskCanceledException; no synthetic response was created."
+  ],
+  "tests": {
+    "rawCaptureNode": {"passed": 9, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-stellar-raw-capture-v619.test.mjs"},
+    "rawCaptureVitest": {"passed": 15, "failed": 0, "files": 2},
+    "combinedRegressionNode": {"passed": 37, "failed": 0, "files": 5, "note": "V615 through V619 regression; stale and forged inputs are negative cases."},
+    "combinedVitest": {"passed": 47, "failed": 0, "files": 6},
+    "eslint": {"passed": true, "scope": "V619 generator, utility, tests and Beta hero review panel"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "YbmxrVYpYb0fxOJA5s97n", "buildIdSha256": "d32c5619c80b2b01d7831c517148e1c529d2a36db72fba6e5481d46a8b9c5eb6"}
+  },
+  "http": {"productionUrl": "http://127.0.0.1:3019/", "checks": [{"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697}, {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241, "defaultScientificKernel": "legacy-eih-1pn"}]},
+  "externalProbe": {"url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=%2A%20alf01%20Cru", "startedAt": "2026-09-14T03:00:10.8840799Z", "endedAt": "2026-09-14T03:00:20.9289831Z", "status": "timeout", "errorClass": "TaskCanceledException", "timeoutSeconds": 10, "responseCaptured": false, "scientificEvidence": false},
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "panel": "mainline-a-beta-hero-review-v611", "rawCaptureSummary": "0/4 raw responses captured", "rawCaptureRows": 4, "rawCaptureLedger": 1, "rawOnlyBoundaryVisible": true, "endpointVisible": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "In-app viewport override remains unavailable in this run; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not physical-device performance, public deployment, legal clearance, real-user validation or scientific validation"
+  },
+  "screenshots": [{"path": "docs/release/v607/screenshots/mainline-a-r59-stellar-raw-capture-desktop.png", "bytes": 77747, "sha256": "ebffc77e45a27632d1e2a11e80da5b996b6c08b4f306eaf990862940220d746b"}],
+  "artifacts": {
+    "rawCapturePack": {"schema": "mainline-a-beta-stellar-raw-capture-v619", "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json", "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd", "plans": 4, "pending": 4, "captured": 0},
+    "service": {"endpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync", "transports": ["https-html", "astroquery-sim-script", "fixture-replay"], "structuredReviewRequired": true},
+    "boundary": {"rawCaptureOnly": true, "fixtureReplayAllowed": true, "structuredAutoAdmission": false, "legalDecision": "not-granted", "runtimeWrites": false, "measurementWrites": false, "scientificPayloadWriteback": false}
+  },
+  "openGates": [
+    "SIMBAD 真实响应仍未获得；本轮 10 秒 HTTPS probe 超时，不能用 timeout 或 fixture 代替外部证据。",
+    "四颗恒星仍需真实 raw artifact、结构化解析、组件身份/来源引用、人工审核和 V616 requiredEvidence 闭环。",
+    "24 条星云候选仍需逐图 NASA 权利、视觉 signoff 和 payload 采集；12 个重点星座仍需最终视觉 signoff。",
+    "多设备 GPU/FPS/资源生命周期、移动端、root/next-web 对齐、公共部署和最终发布包仍未完成。"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

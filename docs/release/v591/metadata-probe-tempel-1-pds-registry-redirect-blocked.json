@@ -1,0 +1,28 @@
+{
+  "version": "v591-tempel-1-pds-registry-redirect-blocked-v1",
+  "reconciledAt": "2026-08-13T16:00:00.000Z",
+  "status": "blocked-whitelisted-redirect-not-followed",
+  "target": "tempel-1",
+  "requestCount": 1,
+  "request": {
+    "url": "https://pds.nasa.gov/api/search/1/products?q=%28%28title+like+%22*Tempel*%22%29%29&limit=100",
+    "finalUrl": "https://pds.nasa.gov/api/search/1/products?q=%28%28title+like+%22*Tempel*%22%29%29&limit=100",
+    "httpStatus": 307,
+    "location": "https://pds.mcp.nasa.gov/api/search/1/products?limit=100&q=%28%28title+like+%22*Tempel*%22%29%29",
+    "bodyBytesVerified": false,
+    "bodySha256": null
+  },
+  "query": "((title like \"*Tempel*\"))",
+  "payloadDownloaded": false,
+  "sciencePayloadDownloaded": false,
+  "automaticRedirectFollowed": false,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "reconciliationBasis": "captured-process-output-from-the-single-request;response-body-was-not-retained",
+  "nextAllowedAction": "explicit-new-single-request-to-whitelisted-pds.mcp.nasa.gov-url",
+  "license": {
+    "id": "NASA-PDS-public-data",
+    "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+  },
+  "receiptSha256": "3a76fc0841d9d2830e894ba6ad50179eaed192701c7fd902b166c7c2cf685514"
+}

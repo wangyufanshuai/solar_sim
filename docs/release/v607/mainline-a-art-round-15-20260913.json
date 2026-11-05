@@ -1,0 +1,19 @@
+{
+  "round": 15,
+  "date": "2026-09-13",
+  "title": "Constellation line finish and boundary cue",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/MainlineAConstellationChartV607.tsx",
+    "artChange": "Rounded constellation strokes for a cleaner atlas finish and added explicit boundary-state copy so the IAU ring remains visually distinguishable from illustrative star routes."
+  },
+  "validation": {
+    "eslint": "passed",
+    "vitest": "mainlineAConstellationFiguresV607.test.ts + mainlineAMetadataV607.test.ts: 26/26",
+    "browser": "not closed in this round; local route loaded but did not expose the passport chart through the default object-browser path"
+  },
+  "limitations": [
+    "No browser screenshot is claimed for this round.",
+    "Beta remains open at 12 hero stars, 8 current constellations, and 12 rights-cleared nebulae."
+  ]
+}

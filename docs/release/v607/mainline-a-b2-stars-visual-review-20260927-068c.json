@@ -1,0 +1,621 @@
+{
+  "schema": "mainline-a-stars-local-visual-review-v638",
+  "capturedAt": "2026-09-27T13:46:23.859Z",
+  "status": "issues-found",
+  "evidenceClass": "visual",
+  "reviewer": "AI independent screenshot inspection",
+  "scope": "Twelve original desktop still frames at 1280x720; visible scene framing, passport, footer, text and representation boundaries only",
+  "build": {
+    "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-068c.json",
+    "receiptSha256": "bb2e0dcb88df32d0ba77838f2dc9c40ecdf81a56e6f6327518bdbf0c8a235919",
+    "runtimeBuildId": "mainline-a-21d29a851e728824",
+    "sourceSha256": "21d29a851e7288241483e003932339702946506ec4b22527318706e239721af8",
+    "buildId": "2ilObVfOFkSeWEfzc7oSL",
+    "imageAssociation": "068c capture filenames and parent capture-session assignment; visible pixels do not independently expose runtime build ID. No browser identity was re-read during this review."
+  },
+  "counts": {
+    "expected": 12,
+    "inspected": 12,
+    "mainDiskFramingWithoutObservedIssue": 12,
+    "imagesWithConfirmedPassportTextOcclusion": 12,
+    "imagesWithBrightSpeckObservation": 5,
+    "imagesWithNoVisualIssueFound": 0,
+    "imageExtensionFormatMismatches": 12
+  },
+  "issues": [
+    {
+      "id": "observer-restore-overlays-passport-explanation",
+      "severity": "P2",
+      "classification": "confirmed-static-pixel-occlusion",
+      "description": "Restore observation control overlaps the right side of the passport explanation paragraph below the temperature/luminosity/radius row, obscuring words in the parametric representation disclaimer in all twelve screenshots.",
+      "approximateImageRect": {
+        "x": 1161,
+        "y": 565,
+        "width": 106,
+        "height": 47
+      },
+      "coordinateMethod": "Visual estimate in original 1280x720 pixels; not a DOM hit-test or measured layout rectangle.",
+      "recommendation": "Place observer restore control outside the open passport content, then inspect revised-build evidence. Preserve these failure images."
+    },
+    {
+      "id": "discrete-bright-specks-over-main-disk",
+      "severity": "needs-diagnosis",
+      "classification": "observed-pixels-cause-unconfirmed",
+      "objects": [
+        "antares",
+        "arcturus",
+        "vega",
+        "capella-a",
+        "aldebaran"
+      ],
+      "description": "Discrete bright points lie visibly over the selected disk; approximate locations and bounded interpretation recorded per row.",
+      "recommendation": "Inspect rendering/depth ownership before assigning a cause. Do not treat the specks as validated scientific surface features."
+    }
+  ],
+  "artifactNotes": [
+    {
+      "id": "jpeg-bytes-with-png-extension",
+      "severity": "P3",
+      "count": 12,
+      "description": "All original files have .png extension but actual JPEG signature ffd8ffe000104a46 and sharp format jpeg. Original bytes preserved; no rename/transcode performed.",
+      "recommendation": "Record actual media type and use matching extension for future captures. This naming issue alone does not invalidate visible pixels or content hashes."
+    }
+  ],
+  "rows": [
+    {
+      "id": "alpha-centauri-a",
+      "catalogKey": "star:alpha-centauri-a",
+      "imagePath": "tmp/mainline-a-b2-star-alpha-centauri-a-desktop-068c.png",
+      "bytes": 70211,
+      "sha256": "764aa70f2c21426fe8ac06a7c638791f140331d4df538c8ba7f1ab6f130a353f",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Alpha Centauri / Alpha Centauri A",
+        "subjectDescription": "Complete warm pale-yellow disk; portrait explicitly names component A.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "achernar",
+      "catalogKey": "star:achernar",
+      "imagePath": "tmp/mainline-a-b2-star-achernar-desktop-068c.png",
+      "bytes": 63883,
+      "sha256": "ee98d9b38be6aabf930606534f5c323939713192b243abc175f090a0a2e8e697",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Achernar",
+        "subjectDescription": "Complete flattened blue disk and flattened portrait; oblate shape is visible.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "betelgeuse",
+      "catalogKey": "star:betelgeuse",
+      "imagePath": "tmp/mainline-a-b2-star-betelgeuse-desktop-068c.png",
+      "bytes": 80418,
+      "sha256": "bf3c60af06af408be1b3847da35090b0a028b6df3d3abb6d1b03ebc1e9c441dd",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Betelgeuse",
+        "subjectDescription": "Complete orange disk with broad surface cells; portrait and target title visible.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "sirius-a",
+      "catalogKey": "star:sirius-a",
+      "imagePath": "tmp/mainline-a-b2-star-sirius-a-desktop-068c.png",
+      "bytes": 61145,
+      "sha256": "5684175a65f133ddd3cbb32fc2160e7519d13804748479c73d0cd3c5da77526f",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Sirius / Sirius A",
+        "subjectDescription": "Complete pale-blue disk; portrait explicitly names component A.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "rigel",
+      "catalogKey": "star:rigel",
+      "imagePath": "tmp/mainline-a-b2-star-rigel-desktop-068c.png",
+      "bytes": 68731,
+      "sha256": "6791b1f0a301de461d5738354d5934e4306979f7f79589781d40d5c2292b9b75",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Rigel",
+        "subjectDescription": "Complete pale-blue disk and surrounding glow; title and portrait visible.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "antares",
+      "catalogKey": "star:antares",
+      "imagePath": "tmp/mainline-a-b2-star-antares-desktop-068c.png",
+      "bytes": 95171,
+      "sha256": "fe93f87c23dd122609ec59d7b4fda5d4f60f3f28bae570732e380bb7a4229943",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Antares",
+        "subjectDescription": "Complete orange disk with broad surface texture.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": {
+          "status": "needs-runtime-source-diagnosis",
+          "approximateImagePoints": [
+            {
+              "x": 497,
+              "y": 249
+            },
+            {
+              "x": 524,
+              "y": 287
+            }
+          ],
+          "description": "Discrete bright points are visibly superimposed on the main disk and resemble surrounding field-star points. Pixels cannot identify source or prove a depth/layer defect."
+        },
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation",
+          "discrete-bright-specks-over-main-disk"
+        ]
+      }
+    },
+    {
+      "id": "canopus",
+      "catalogKey": "star:canopus",
+      "imagePath": "tmp/mainline-a-b2-star-canopus-desktop-068c.png",
+      "bytes": 60526,
+      "sha256": "a48b279670f43bfcf741cfb2cfd946431215ab071e4356e03dc56402dd5e4226",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Canopus",
+        "subjectDescription": "Complete pale-white disk; title and portrait visible.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "arcturus",
+      "catalogKey": "star:arcturus",
+      "imagePath": "tmp/mainline-a-b2-star-arcturus-desktop-068c.png",
+      "bytes": 93993,
+      "sha256": "018f7b31d44f8748d4f9ac3337dfd82856d7ec5ca95f519b22ccbb19c8cfda09",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Arcturus",
+        "subjectDescription": "Complete yellow-orange disk against bright Milky Way background.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": {
+          "status": "needs-runtime-source-diagnosis",
+          "approximateImagePoints": [
+            {
+              "x": 356,
+              "y": 330
+            }
+          ],
+          "description": "Discrete bright points are visibly superimposed on the main disk and resemble surrounding field-star points. Pixels cannot identify source or prove a depth/layer defect."
+        },
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation",
+          "discrete-bright-specks-over-main-disk"
+        ]
+      }
+    },
+    {
+      "id": "vega",
+      "catalogKey": "star:vega",
+      "imagePath": "tmp/mainline-a-b2-star-vega-desktop-068c.png",
+      "bytes": 61013,
+      "sha256": "1408ec17767e8a06889588a1c9309882f40dac1df0455936cd12eea08ff6e56c",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Vega",
+        "subjectDescription": "Complete flattened blue disk; portrait and target title visible.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": {
+          "status": "needs-runtime-source-diagnosis",
+          "approximateImagePoints": [
+            {
+              "x": 338,
+              "y": 266
+            },
+            {
+              "x": 423,
+              "y": 382
+            }
+          ],
+          "description": "Discrete bright points are visibly superimposed on the main disk and resemble surrounding field-star points. Pixels cannot identify source or prove a depth/layer defect."
+        },
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation",
+          "discrete-bright-specks-over-main-disk"
+        ]
+      }
+    },
+    {
+      "id": "capella-a",
+      "catalogKey": "star:capella-a",
+      "imagePath": "tmp/mainline-a-b2-star-capella-a-desktop-068c.png",
+      "bytes": 104270,
+      "sha256": "c683125d3efd0c223775fdde4f844bd8c78b0fa00dcc159e4fc8988b134d3e28",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Capella / Capella A",
+        "subjectDescription": "Complete warm-yellow disk; portrait explicitly names component A.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": {
+          "status": "needs-runtime-source-diagnosis",
+          "approximateImagePoints": [
+            {
+              "x": 448,
+              "y": 350
+            },
+            {
+              "x": 388,
+              "y": 429
+            },
+            {
+              "x": 413,
+              "y": 421
+            }
+          ],
+          "description": "Discrete bright points are visibly superimposed on the main disk and resemble surrounding field-star points. Pixels cannot identify source or prove a depth/layer defect."
+        },
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation",
+          "discrete-bright-specks-over-main-disk"
+        ]
+      }
+    },
+    {
+      "id": "procyon-a",
+      "catalogKey": "star:procyon-a",
+      "imagePath": "tmp/mainline-a-b2-star-procyon-a-desktop-068c.png",
+      "bytes": 69797,
+      "sha256": "17621025acb205bd4b82db6c72382bdb77fc9b8d51d3049ee7b482cbba6eb0f4",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Procyon / Procyon A",
+        "subjectDescription": "Complete pale-white disk; portrait explicitly names component A.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": null,
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation"
+        ]
+      }
+    },
+    {
+      "id": "aldebaran",
+      "catalogKey": "star:aldebaran",
+      "imagePath": "tmp/mainline-a-b2-star-aldebaran-desktop-068c.png",
+      "bytes": 103212,
+      "sha256": "b5808961abf753df0e503018656a9d32a81d48b05edc1656f3597ef48ea8163d",
+      "width": 1280,
+      "height": 720,
+      "actualFormat": "jpeg",
+      "fileExtension": "png",
+      "extensionMatchesFormat": false,
+      "inspection": {
+        "method": "AI direct inspection of original bytes via view_image; no crop, collage, enhancement, browser operation or image modification",
+        "status": "issues-found",
+        "visibleTitle": "Aldebaran",
+        "subjectDescription": "Complete orange disk against bright Milky Way background.",
+        "mainDiskFullyWithinViewport": true,
+        "mainDiskObscuredByPassportOrFooter": false,
+        "portraitDiskFullyWithinVisibleCard": true,
+        "mainSubjectFramingConclusion": "No main disk clipping or header/passport/footer occlusion visible in this still frame.",
+        "titleAndTabsReadable": true,
+        "explanationReadability": "partial-due-to-observer-control-occlusion",
+        "parametricBoundaryLabelVisible": true,
+        "parametricBoundaryText": {
+          "label": "参数化表达",
+          "visibleInterpretation": "Explanation presents illustrative surface texture/limb treatment and normalized portrait size rather than resolved observed photospheres or true relative scale.",
+          "fullDisclaimerReadable": false,
+          "reason": "Observation restore control covers right ends of part of this paragraph."
+        },
+        "footerControlsVisuallyClear": true,
+        "passportLowerContent": "Below-fold content is clipped by an evident scroll viewport; scrolling and hidden content not inspected.",
+        "secondaryType": "Fine labels are small at 1280x720; no formal contrast, font-size or accessibility conformance measurement.",
+        "brightSpeckObservation": {
+          "status": "needs-runtime-source-diagnosis",
+          "approximateImagePoints": [
+            {
+              "x": 362,
+              "y": 313
+            },
+            {
+              "x": 347,
+              "y": 335
+            },
+            {
+              "x": 332,
+              "y": 367
+            }
+          ],
+          "description": "Discrete bright points are visibly superimposed on the main disk and resemble surrounding field-star points. Pixels cannot identify source or prove a depth/layer defect."
+        },
+        "issueIds": [
+          "observer-restore-overlays-passport-explanation",
+          "discrete-bright-specks-over-main-disk"
+        ]
+      }
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "browserOperated": false,
+    "productionCodeChanged": false,
+    "imagesModified": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "humanSignoff": false,
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "performanceValidation": false,
+    "fullBrowserAcceptance": false,
+    "physicalMobileValidation": false
+  },
+  "limitations": [
+    "UI roundtrip/lifecycle passes were not used as a premise for visual acceptance.",
+    "Stills cannot establish animation stability, hit targeting, interaction success, all scroll positions, renderer frame time, memory behavior or resource release.",
+    "No mobile image was inspected in this task and no physical-device claim is made.",
+    "Illustrative parametric appearance is not an observed resolved surface or independent validation of astrophysical values.",
+    "Original failure images remain unchanged; findings need retesting on revised production builds."
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "version": "v567-atlas-hero-visual-regression-observation-v1",
+  "generatedAt": "2026-08-03T04:20:39.368Z",
+  "browserSurface": "Codex In-app Browser",
+  "baselineCandidate": "v562-visual-candidate-ktx2-first",
+  "captures": [
+    {
+      "id": "desktop-science-01",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-desktop-science-iab-1440x900.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-desktop-science-01-iab-1440x900.jpg"
+    },
+    {
+      "id": "desktop-science-02",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-desktop-02-science-iab.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-desktop-science-02-iab-1440x900.jpg"
+    },
+    {
+      "id": "desktop-science-03",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-desktop-03-science-iab.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-desktop-science-03-iab-1440x900.jpg"
+    },
+    {
+      "id": "desktop-science-04",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-desktop-04-science-iab.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-desktop-science-04-iab-1440x900.jpg"
+    },
+    {
+      "id": "desktop-cinematic-04",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-desktop-cinematic-iab-1440x900.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-desktop-cinematic-04-iab-1440x900.jpg"
+    },
+    {
+      "id": "mobile-science-01",
+      "baseline": "output/playwright/orbit-atlas-v562-hero-mobile-science-reloaded-iab-390x844.jpg",
+      "candidate": "output/playwright/orbit-atlas-v567-hero-mobile-science-01-iab-390x844.jpg"
+    }
+  ],
+  "observation": {
+    "sceneIds": [
+      "kerr-volume-disk",
+      "photon-ring-lensing",
+      "polarization-field",
+      "science-cinematic-ab"
+    ],
+    "observedSceneIds": [
+      "kerr-volume-disk"
+    ],
+    "scienceObserved": true,
+    "cinematicObserved": false,
+    "hydrated": false,
+    "sceneTransitionsQualified": false,
+    "modeTransitionsQualified": false,
+    "sharedGeometry": true,
+    "cinematicWriteback": false,
+    "canvasCount": 0,
+    "svgCount": 1,
+    "desktopOverflow": 0,
+    "mobileOverflow": 0,
+    "pageLogs": []
+  }
+}

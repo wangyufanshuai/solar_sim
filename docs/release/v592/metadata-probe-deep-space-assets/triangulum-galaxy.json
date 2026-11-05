@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:34.496Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "triangulum-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "triangulum-galaxy.json",
+    "metadataReceiptSha256": "f2109aa9fe382546342465b891b09eacaddbf8c77c3ea5858dc0c8a9af972231",
+    "nasaId": "PIA11969",
+    "title": "M33: A Close Neighbor Reveals its True Size and Splendor 3-color composite",
+    "description": "One of our closest galactic neighbors shows its awesome beauty in this new image from NASA Spitzer Space Telescope. M33, also known as the Triangulum Galaxy, is a member of what known as our Local Group of galaxies.",
+    "center": "JPL",
+    "identityTerms": [
+      "m33"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA11969/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA11969/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA11969/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "21c396bbb5b6ba6c2ac4fc1c6cffc686e734dc394d976fd9aed876cc96ee0edb"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/PIA11969~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA11969~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/PIA11969~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA11969~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/PIA11969~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA11969~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/PIA11969~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA11969~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/PIA11969~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA11969~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA11969/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA11969/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "67cca9e0c01d321ee4fe3f8de9358d68c41dd6900d51a34cefd06984749d119a"
+}

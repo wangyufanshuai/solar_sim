@@ -1,0 +1,94 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:49.720Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "bubble-nebula",
+  "selection": {
+    "metadataProbe": "bubble-nebula",
+    "metadataReceiptSha256": "fc05758cff92528b46c0491246fcf14305c1a02e5a6aa50106fc2679d5b8eee4",
+    "nasaId": "GSFC_20171208_Archive_e000382",
+    "title": "Hubble Sees a Star ‘Inflating’ a Giant Bubble",
+    "description": "For the 26th birthday of NASA’s Hubble Space Telescope, astronomers are highlighting a Hubble image of an enormous bubble being blown into space by a super-hot, massive star. The Hubble image of the Bubble Nebula, or NGC 7635, was chosen to mark the 26th anniversary of the launch of Hubble into Earth orbit by the STS-31 space shuttle crew on April 24, 1990 “As Hubble makes its 26th revolution around our home star, the sun, we celebrate the event with a spectacular image of a dynamic and exciting interaction of a young star with its environment. The view of the Bubble Nebula, crafted from WFC-3 images, reminds us that Hubble gives us a front row seat to the awe inspiring universe we live in,” said John Grunsfeld, Hubble astronaut and associate administrator of NASA’s Science Mission Directorate at NASA Headquarters, in Washington, D.C. The Bubble Nebula is seven light-years across—about o",
+    "center": "GSFC",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/collection.json",
+    "status": 200,
+    "responseBytes": 409,
+    "responseSha256": "85f111ee8b3e3f87cfb0af425087b4cc432d2cbb6020e5e1734bd2ccf13b5a9b"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000382~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000382~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e000382~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "b5867613dfb01e3ccdb3fd0f3734ed4c82325bb1df6a385fc6af492f7135a0d8"
+}

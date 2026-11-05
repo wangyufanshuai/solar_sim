@@ -1,0 +1,51 @@
+{
+  "version": "v594-resource-lifecycle-v4",
+  "generatedAt": "2026-08-27T12:45:51.410Z",
+  "status": "passed-current-v594-same-realm-mount-replace-detach-and-client-route-exit",
+  "candidate": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "buildFingerprint": "74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "evidence": {
+    "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-lifecycle-20260827/batch.json",
+    "bytes": 93145,
+    "sha256": "a800711525097a0745811c619007a6d7937fa8bbc68b736111d3883c60139287"
+  },
+  "stageReceiptSha256": "780cdcdb37b8f8c43fe2d2a24cd323499d41ab797711761959bad824fdb3cf3b",
+  "phaseCount": 9,
+  "sameRealm": true,
+  "releaseContractVersion": "v594-observed-scene-exit-release-contract-v4",
+  "detachedObservedReleaseContract": true,
+  "exitedObservedReleaseContract": true,
+  "snapshotReuseWitness": true,
+  "detachedAndExitedSnapshotCanonicalEqual": true,
+  "detachedRendererInfoCountsUnavailableAfterContextLoss": true,
+  "exitedRendererInfoCountsUnavailableAfterContextLoss": true,
+  "clientRouteExit": "/downloads",
+  "tooling": {
+    "runnerVersion": "v594-same-realm-scene-exit-runner-v4",
+    "auditorVersion": "v594-same-realm-scene-exit-audit-v4",
+    "appSurfaceContractVersion": "v594-same-realm-scene-exit-v3"
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "888c0828c533bd9ca7fb1c6ece618233b03c143e9252e3324760a63cf4b1a3f4"
+}

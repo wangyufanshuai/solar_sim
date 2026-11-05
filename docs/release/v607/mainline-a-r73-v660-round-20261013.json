@@ -1,0 +1,182 @@
+{
+  "schema": "mainline-a-r73-web-nebula-round-v660",
+  "round": 73,
+  "date": "2026-10-13",
+  "status": "local-web-candidate-passed-public-release-blocked",
+  "scope": "Unify 24 Beta nebula candidates in a guarded local web review gallery, preserve five unacquired policy holds, and bind source, build, HTTP, browser, visual and two current-source long-run observations into a replayable candidate package.",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "concurrentRelativityWindowExcludedFromEffectiveLines": true
+  },
+  "identity": {
+    "buildId": "RZEfRovqvgd-V6mNgWHYU",
+    "runtimeBuildId": "mainline-a-c4b08ba07929e7d8",
+    "appSourceSha256": "c4b08ba07929e7d8b2d1ce15e1910e3d8ef12434429201a4f573e446b2df2a4c",
+    "sourceStableAtBuildAndCandidateReplay": true,
+    "v616Snapshot": {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "bytes": 57424,
+      "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"
+    },
+    "v616Projection": {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "bytes": 6135,
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    }
+  },
+  "delivery": {
+    "catalog": "app/data/mainlineANebulaR73CatalogV660.generated.json",
+    "catalogAudit": "docs/release/v607/mainline-a-r73-v660-catalog-audit-20261013.json",
+    "candidatePackage": "docs/release/v607/mainline-a-r73-v660-web-candidate-20261013v660r73web02.json",
+    "candidatePackageBytes": 35569,
+    "candidatePackageSha256": "35aa76efc396d529b6dea3df3c54a18ced462b45560591d4fe961db64df4eabe",
+    "offlineReplay": "docs/release/v607/mainline-a-r73-v660-web-candidate-replay-20261013v660r73web02.json",
+    "offlineReplayStatus": "verified-candidate-hold",
+    "pinnedFiles": 115,
+    "pinnedEvidenceClasses": {
+      "static": 10,
+      "http": 1,
+      "visual": 30,
+      "browser": 1,
+      "performance": 3,
+      "externalSource": 70
+    },
+    "rollbackReference": "docs/release/v607/mainline-a-r70-web-freeze-candidate-20261012v657web02.json",
+    "deploymentChanged": false
+  },
+  "coverage": {
+    "betaNebulaCandidates": 24,
+    "reviewableOriginalImageChains": 19,
+    "webDerivedPreviews": 12,
+    "webOfficialRawImages": 7,
+    "unacquiredPolicyHolds": 5,
+    "heldIds": [
+      "ring-nebula",
+      "dumbbell-nebula",
+      "bubble-nebula",
+      "cats-eye-nebula",
+      "omega-nebula"
+    ],
+    "itemSpecificSourcePages": 21,
+    "genericPageShells": 3,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0,
+    "aLineCanonicalManifest": "12 stars / 12 constellations / 12 nebulae; current R73 source-wide 36-object browser rerun remains pending"
+  },
+  "codeChange": {
+    "receipt": "docs/release/v607/mainline-a-r73-v660-code-change-20261013.json",
+    "newProductionAndToolEffectiveLines": 2086,
+    "newSubstantiveTestEffectiveLines": 339,
+    "existingIntegrationRawAddedLines": 39,
+    "existingIntegrationRawRemovedLines": 4,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "evidence": {
+    "static": {
+      "status": "passed-current-source-local",
+      "catalogBuilderCheck": "24 rows and 85 source/media files recomputed",
+      "node": "8/8 catalog, pin, HTTP and browser replay/negative tests",
+      "vitest": "12/12 catalog and guarded image-loader tests",
+      "targetedEslint": "passed with zero warnings",
+      "typescript": "passed within preserved production build",
+      "snapshotAndProjectionDigestsChanged": false,
+      "note": "A direct untranspiled Node ad hoc import of a TypeScript dependency failed with ERR_MODULE_NOT_FOUND; the equivalent tsx preflight passed. It was not used as evidence."
+    },
+    "build": {
+      "status": "passed-preserved-production-build",
+      "receipt": "docs/release/v607/mainline-a-r73-build-20261013v660r73web02.json",
+      "buildId": "RZEfRovqvgd-V6mNgWHYU",
+      "appSourceSha256": "c4b08ba07929e7d8b2d1ce15e1910e3d8ef12434429201a4f573e446b2df2a4c",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "status": "passed-local-production-build",
+      "receipt": "docs/release/v607/mainline-a-r73-v660-http-20261013v660r73web02.json",
+      "homeAndHealth": "200 / 200",
+      "imageResponsesShaMatched": 19,
+      "unservedHeldImages": "5 HTTP 404",
+      "disabledForeignAndInvalidRoutes": "HTTP 404",
+      "publicDeployment": "not-run"
+    },
+    "visual": {
+      "status": "six-local-screenshots-pinned-sample-inspected-not-human-signoff",
+      "desktopDetail": "docs/release/v607/mainline-a-r73-v660-desktop-image-detail-20261013v660r73web02.png",
+      "mobileHeldDetail": "docs/release/v607/mainline-a-r73-v660-mobile-viewport-held-detail-20261013v660r73web02.png",
+      "sampleObservation": "The 390px review flow has no horizontal overflow but remains text-dense and long-scrolling; retain for human visual and readability review.",
+      "humanPerItemSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-simulated-mobile-viewport",
+      "receipt": "docs/release/v607/mainline-a-r73-v660-browser-20261013v660r73web02.json",
+      "viewports": ["1280x720 desktop", "390x844 simulated mobile"],
+      "candidateSelections": 48,
+      "loadedImages": 38,
+      "policyHeldDetails": 10,
+      "sourceLinksMatched": 48,
+      "objectUrlsAfterClose": 0,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "horizontalOverflow": false,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "passed-two-independent-current-source-local-browser-observations",
+      "audit": "docs/release/v607/mainline-a-r73-v660-longrun-audit-20261013v660r73long01.json",
+      "rawDesktop": "docs/release/v607/mainline-a-r73-v660-browser-desktop-raw-20261013v660r73long01.json",
+      "rawFinal": "docs/release/v607/mainline-a-r73-v660-browser-final-raw-20261013v660r73long01.json",
+      "durationsMs": [1802013.9849999994, 1802006.3650000002],
+      "frameIntervalP95Ms": [5.699999999953434, 5.685000000055879],
+      "jsHeapDeltasBytes": [24783041, -343775540],
+      "resourceTotals": [[27, 31, 27], [27, 31, 27]],
+      "visibilityInterruptions": 0,
+      "pageAndConsoleErrors": 0,
+      "physicalMobile": "not-run",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "prior-real-captures-replayed-five-image-requests-still-unexecuted",
+      "catalogAudit": "docs/release/v607/mainline-a-r73-v660-catalog-audit-20261013.json",
+      "r71Ledger": "docs/release/v607/mainline-a-r71-source-ledger-20261012v658r71a.json",
+      "r72Audit": "docs/release/v607/mainline-a-r72-source-audit-20261013v659r72b.json",
+      "newR73HttpsRawResponses": 0,
+      "originalImageChains": 19,
+      "unexecutedImageRequests": 5,
+      "rightsSigned": 0,
+      "scientificIdentityApproved": false,
+      "note": "Official source search links in the planning document are research leads, not captured pixels, item-level rights decisions or scientific evidence."
+    }
+  },
+  "remainingGates": {
+    "fiveNebulaImagesAndItemRights": "pending",
+    "aLineTwelveRightsSignoffs": "pending-0-of-12",
+    "betaTwentyFourRightsSignoffs": "pending-0-of-24",
+    "acruxSpicaRegulusPolarisComponentIdentities": "pending-0-of-4",
+    "perItemHumanVisualSignoff": "pending",
+    "currentFinalSourceWideCanonicalBrowserMatrix": "pending",
+    "rootAppParity": "deferred-web-only-scope",
+    "physicalMobile": "not-run-web-only-scope",
+    "publicWebRelease": "blocked"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

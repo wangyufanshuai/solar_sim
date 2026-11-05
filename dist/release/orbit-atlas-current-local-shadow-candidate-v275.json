@@ -1,0 +1,223 @@
+{
+  "version": "orbit-atlas-current-local-shadow-candidate-v275",
+  "generatedAt": "2026-07-25T07:31:46.160Z",
+  "status": "partial-local-shadow-blocked-resource-preflight-formal-product-v263-retained",
+  "formalProductPointer": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+  "formalProductPointerSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+  "formalProductPointerAdvanced": false,
+  "promotionApplied": false,
+  "localShadowVisualDefaultApplied": false,
+  "sources": {
+    "v271": {
+      "path": "dist/science/gaia-research-v271-shadow-evidence.json",
+      "sha256": "c20086f5d91ba34e7b4bf37dd4f44cbb08d32c0b2fba8bafc41ceaae06616741"
+    },
+    "v272": {
+      "path": "dist/science/gaia-presentation-v272-shadow-evidence.json",
+      "sha256": "31efd2f34e46bb70ecfa9e64de2356b5f4c73883bc9925c06e18895614261fca"
+    },
+    "v273": {
+      "path": "dist/science/scale-camera-v273-shadow-evidence.json",
+      "sha256": "8d272dd702822987ffa311a5f35fb5322483f06a609b4cc0edf8712b955fe1ca"
+    },
+    "v274": {
+      "path": "dist/science/science-cinematic-v274-shadow-evidence.json",
+      "sha256": "4e6155bacde94db7ea0c1206a925d09d3746d3fe5cd3b47a91dcd8eea9add3b9"
+    },
+    "v275": {
+      "path": "dist/science/performance-security-v275-shadow-evidence.json",
+      "sha256": "bcce63999364e76327abdd72c4096180339512cc651f37e5153e5f050d8c4b85"
+    }
+  },
+  "capabilities": {
+    "v271": {
+      "state": "implemented-awaiting-browser-qualification",
+      "reason": "implementation/light and current-memory diagnostic browser gates passed; formal heavy qualification blocked-resource-preflight"
+    },
+    "v272": {
+      "state": "implemented-awaiting-browser-qualification",
+      "reason": "implementation/light and current-memory diagnostic browser gates passed; formal heavy qualification blocked-resource-preflight"
+    },
+    "v273": {
+      "state": "implemented-awaiting-browser-qualification",
+      "reason": "implementation/light and current-memory diagnostic browser gates passed; formal heavy qualification blocked-resource-preflight"
+    },
+    "v274": {
+      "state": "implemented-awaiting-browser-qualification",
+      "reason": "desktop visual matrix passed 24/24; authorized mobile correction stopped at 4/24 because the visible More control accessible name did not resolve; structural visible-control correction prepared and unrun"
+    },
+    "v275": {
+      "state": "blocked",
+      "reason": "current-memory browser/RTX/corrected 30-cycle soak passed under user-authorized resource waiver; v274 visual correction remains unrun; formal heavy qualification blocked-resource-preflight"
+    }
+  },
+  "diagnosticBrowserMatrix": {
+    "diagnosticStatus": "passed-low-memory-diagnostic-browser-matrix-nonqualifying",
+    "formalStatus": "blocked-resource-preflight",
+    "formalQualificationApplied": false,
+    "path": "dist/science/v275-shadow-browser-diagnostic-evidence.json",
+    "sha256": "89db07856f43a7dcd6dfaf13af40d376321952993bfce3799a21044d4d2bf2db",
+    "aggregate": {
+      "expected": 3,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "missingResources": 0,
+      "rendererFaults": 0
+    }
+  },
+  "diagnosticSoak": {
+    "diagnosticStatus": "passed-current-memory-corrected-30-cycle-soak-nonqualifying",
+    "formalStatus": "blocked-resource-preflight",
+    "resourceStabilityGateDisposition": "user-authorized-current-memory-local-shadow-waiver",
+    "correctedRunApplied": true,
+    "path": "dist/science/lifecycle-soak-v275-corrected-current-memory-evidence.json",
+    "sha256": "7122a60d5cd8e1c022e61f0c55dcf5af02d1582a21b5aba8d3eb91de39b48a86",
+    "measurements": {
+      "measuredCycles": 30,
+      "baselineHeapBytes": 58531108,
+      "finalHeapBytes": 63034904,
+      "heapSlopeBytesPerCycle": 103129.50303030304,
+      "heapSlopeLimitBytesPerCycle": 262144,
+      "baselineLiveWebGlTextures": 31,
+      "finalLiveWebGlTextures": 31,
+      "createdWebGlTexturesSinceBaseline": 630,
+      "deletedWebGlTexturesSinceBaseline": 630,
+      "netLiveWebGlTexturesSinceBaseline": 0,
+      "replacedLiveTextureIdentities": 16,
+      "resourceDeltas": {
+        "workers": 0,
+        "renderTargets": 0,
+        "gpuBuffers": 0,
+        "subscriptions": 0,
+        "objectUrls": 0,
+        "typedArrayCaches": 0,
+        "cameraLocks": 0,
+        "textures": 0,
+        "models": 0,
+        "estimatedBytes": 0,
+        "estimatedGpuBytes": 0,
+        "programs": 0,
+        "rendererTextures": 0
+      },
+      "resourcesReturned": true,
+      "consoleErrors": 0,
+      "pageErrors": 0
+    },
+    "priorNegative": {
+      "path": "dist/science/lifecycle-soak-v275-diagnostic-negative-evidence.json",
+      "sha256": "0f0b98c73f0577193a9186639e0c79132f8a6d688f0a109e18c8f2aaa33175fb"
+    }
+  },
+  "diagnosticPerformance": {
+    "diagnosticStatus": "passed-current-memory-rtx4060-diagnostic-nonqualifying",
+    "formalStatus": "blocked-resource-preflight",
+    "formalQualificationApplied": false,
+    "path": "dist/science/performance-v275-diagnostic-evidence.json",
+    "sha256": "614bd19b0a658b035245dd13090ff162afbf07a5a0f5c6968ae50f21a3ae3f95",
+    "adapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    },
+    "samples": [
+      {
+        "id": "overview",
+        "medianFps": 236.7,
+        "frameP95Ms": 8.4,
+        "frameSamples": 720,
+        "estimatedGpuBytes": 320072
+      },
+      {
+        "id": "catalog-stellar",
+        "medianFps": 122,
+        "frameP95Ms": 8.4,
+        "frameSamples": 720,
+        "estimatedGpuBytes": 1216072
+      },
+      {
+        "id": "scale-galactic",
+        "medianFps": 121,
+        "frameP95Ms": 8.4,
+        "frameSamples": 720,
+        "estimatedGpuBytes": 1216072
+      },
+      {
+        "id": "research-workbench",
+        "medianFps": 239.8,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "estimatedGpuBytes": 320072
+      },
+      {
+        "id": "visual-v274",
+        "medianFps": 240,
+        "frameP95Ms": 4.3,
+        "frameSamples": 720,
+        "estimatedGpuBytes": 320072
+      }
+    ]
+  },
+  "diagnosticVisualMatrix": {
+    "diagnosticStatus": "failed-mobile-more-accessible-name-route-no-retry",
+    "formalStatus": "blocked-resource-preflight",
+    "correctedRunApplied": false,
+    "path": "dist/science/visual-matrix-v275-mobile-corrected-negative-evidence.json",
+    "sha256": "9bdf788fd2bf63aa71df03f386780e53f4b90509ff1cb54d202ed7984768d51e",
+    "frameCount": 28,
+    "expectedFrameCount": 48,
+    "correctedRoutePrepared": "visible-camera-tools-last-button-then-visible-launch-entry",
+    "priorNegative": {
+      "path": "dist/science/visual-matrix-v275-current-memory-negative-evidence.json",
+      "sha256": "c6c7bd68ef4b8df518300ad49f2728be063e78e5ea8a9f6a058ef801dc59c42d"
+    }
+  },
+  "priorNegativeEvidence": {
+    "v264r3": "dist/science/catalog-stream-v264r3-preflight-negative-evidence.json",
+    "v265": "dist/science/gaia-presentation-v265-negative-evidence.json",
+    "v266": "dist/science/observation-planner-v266-negative-evidence.json",
+    "v270": "dist/release/orbit-atlas-current-local-shadow-candidate-v270.json",
+    "v272LowMemorySeries": "dist/science/gaia-presentation-v272-low-memory-series-negative-evidence.json",
+    "v275SoakDiagnostic": "dist/science/lifecycle-soak-v275-diagnostic-negative-evidence.json",
+    "v275VisualDiagnostic": "dist/science/visual-matrix-v275-current-memory-negative-evidence.json",
+    "v275VisualMobileCorrected": "dist/science/visual-matrix-v275-mobile-corrected-negative-evidence.json"
+  },
+  "resourcePreflight": {
+    "checkedAt": "2026-07-25T07:31:46.158Z",
+    "freePhysicalMemoryBytes": 6086262784,
+    "freePhysicalMemoryGiB": 5.67,
+    "minimumPhysicalMemoryGiB": 7,
+    "stabilitySamplesRequired": 18,
+    "stabilityDurationSeconds": 180,
+    "stabilityEvidenceStatus": "not-passed-this-run",
+    "eDriveFreeBytes": 68956598272,
+    "eDriveFreeGiB": 64.22,
+    "minimumEDriveFreeGiB": 30,
+    "heavyGateAllowed": false
+  },
+  "publicDeploymentBlocked": true,
+  "science": {
+    "status": "science-failed-shadow-retained",
+    "defaultKernel": "legacy-eih-1pn",
+    "codeSha256": "0debb41b96f001f92f498ef6a36ceff77ede7f0dd2bdbe3c6e9db3dfbf6090a8",
+    "screenSha256": "08f42a50bc787df62dc018ee56b5f7b58065dcafe2e2a3703e3e67f3e6d94037",
+    "workerPhysicsMutation": "not-applied",
+    "eihOnePnMutation": "not-applied",
+    "kerrMutation": "not-applied",
+    "campaignRerunApplied": false,
+    "freezeCommit": "8315160a6f7afd4763e3840c7b6d5bb4da0ca663",
+    "freezeBranch": "codex/orbit-atlas-v241-science-freeze"
+  },
+  "contracts": {
+    "legacyRootAttributes": 603,
+    "legacyRootKeySha256": "ac6470fcc517e1b2ba2c6618f530f7af57d1a0caa52fffae0af7232f912f9867",
+    "evidenceLedgerClaims": 84,
+    "evidenceLedgerCanonicalSha256": "e7d7e2984983714d80cc726e621b7d4fdb171622917ff8e052c57836d0a18dec",
+    "singleCanvas": true,
+    "sceneRevisionSemanticsChanged": false,
+    "formalProductPointer": "v263",
+    "formalProductPointerSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b"
+  },
+  "pointerSha256": "807f46a59d1987940cbcccdba90fa26c0bc40c9841e35d2d2ebf5a996f8e1b3d"
+}

@@ -1,0 +1,291 @@
+{
+  "schema": "mainline-a-r78-web-candidate-v665",
+  "status": "candidate-only-public-release-blocked",
+  "runId": "20261013-v665long01",
+  "sourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+  "buildId": "7E47aPkOGA-FgCclu-0MW",
+  "runtimeBuildId": "mainline-a-d9bbd6b9d0d419e2",
+  "freezeFingerprint": "560e375e07e288133e0644ce250366cd3e4d31c05e23fd275c1472608189a78a",
+  "longRunFingerprint": "9fffde5557f22f8b0312abf5850c4a358307b47d2743e29420ebe94191f2fad4",
+  "buildRecheck": {
+    "receipt": "docs/release/v607/mainline-a-r78-build-20261013v665r78web01.json",
+    "buildId": "d-izrlEAUuIhrIZg11y7y",
+    "sourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+    "role": "same-source-independent-compile-proof",
+    "browserPerformanceClaim": false
+  },
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false
+  },
+  "matrix": {
+    "a-star": {
+      "total": 12,
+      "states": {
+        "source-hold": 12
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    },
+    "a-constellation": {
+      "total": 12,
+      "states": {
+        "signoff-hold": 12
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    },
+    "a-nebula": {
+      "total": 12,
+      "states": {
+        "signoff-hold": 12
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    },
+    "beta-star": {
+      "total": 24,
+      "states": {
+        "identity-hold": 4,
+        "reviewable": 20
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    },
+    "beta-constellation": {
+      "total": 12,
+      "states": {
+        "signoff-hold": 12
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    },
+    "beta-nebula": {
+      "total": 24,
+      "states": {
+        "reviewable": 19,
+        "source-hold": 5
+      },
+      "admission": [
+        "candidate-only"
+      ],
+      "rightsStates": [
+        "pending"
+      ],
+      "rightsSigned": 0
+    }
+  },
+  "v616Pins": [
+    {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "bytes": 57424,
+      "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "bytes": 6135,
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    }
+  ],
+  "gates": [
+    {
+      "id": "source-build",
+      "state": "verified-local",
+      "scope": "one preserved production build and app-source digest"
+    },
+    {
+      "id": "a-runtime-coverage",
+      "state": "verified-local",
+      "scope": "12 stars, 12 constellations, 12 nebulae"
+    },
+    {
+      "id": "beta-review-coverage",
+      "state": "candidate-hold",
+      "scope": "24 stars, 12 constellations, 24 nebula entry rows"
+    },
+    {
+      "id": "local-browser-longrun",
+      "state": "verified-local",
+      "scope": "two independent 30-minute browser observations"
+    },
+    {
+      "id": "stellar-components",
+      "state": "pending",
+      "scope": "four physical component identities, zero confirmed"
+    },
+    {
+      "id": "nebula-image-chains",
+      "state": "policy-held",
+      "scope": "five images without admissible acquisition"
+    },
+    {
+      "id": "nebula-rights",
+      "state": "pending",
+      "scope": "zero of twelve A and zero of twenty-four Beta signed"
+    },
+    {
+      "id": "human-visual",
+      "state": "pending",
+      "scope": "per-item human acceptance"
+    },
+    {
+      "id": "physical-mobile",
+      "state": "not-run-web-only-scope",
+      "scope": "browser mobile viewport is simulated"
+    },
+    {
+      "id": "root-app-parity",
+      "state": "deferred-web-only-scope",
+      "scope": "independent root application remains outside this web package"
+    },
+    {
+      "id": "public-web-release",
+      "state": "blocked",
+      "scope": "rights and source gates are not cleared"
+    }
+  ],
+  "evidencePins": [
+    {
+      "path": "docs/release/v607/mainline-a-r77-build-20261013v664r77web01.json",
+      "bytes": 480176,
+      "sha256": "653513ad14ec9ac2e69b3f13ed62c7d157d3f6ca0f9fc25de0482b4b387bb56a"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-build-20261013v665r78web01.json",
+      "bytes": 480175,
+      "sha256": "b0ec3f5838bc2c202959426fdf133a2fee8a0e8da6bf19417fc2cf16c1a4aa82"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-freeze-20261013v664r77freeze01.json",
+      "bytes": 78532,
+      "sha256": "d9f2e88797f35026cb1de8271db093c9c1ca11bba4ec9a20b9b83d355505ccf6"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-static-20261013.json",
+      "bytes": 1371,
+      "sha256": "c71ed2f869d517fbb36c9a58ecce72574e99948b7c243a6b0b7fd52901dc554b"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-evidence-audit-20261013v664r77web01.json",
+      "bytes": 2930,
+      "sha256": "648a1124a4d5fbc7b9e2bbb855798139e92eea4d8c4f5a944c7690cca95c5656"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-http-enabled-20261013v664r77web01.json",
+      "bytes": 67018,
+      "sha256": "addfd800f255de423cce71bd4b6fa91ac81d5f601ca002a90a8511ac710fda5e"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-http-default-off-20261013v664r77web01.json",
+      "bytes": 65801,
+      "sha256": "8ac4cb2ba7bc7506729a1a1ffc8fdec79cc343e16a1c6006bd9730158456ae61"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-matrix-browser-20261013v664r77web01.json",
+      "bytes": 43231,
+      "sha256": "4735883682071fc8da72806845f8e692c465ff5ae881bcf91254f1baddbb431a"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-visual-20261013v664r77web01.json",
+      "bytes": 31135,
+      "sha256": "d93cd856dca356d3c4999955ef557684d75a922468ced4507a0a9ba71765cad1"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-external-source-20261013v664r77web01.json",
+      "bytes": 834,
+      "sha256": "b74b12e21c3acf1ec0130e1c352ea222bcf6180236b2e3bcaa0697577ebe1f71"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-external-source-20261013v665r78web01.json",
+      "bytes": 1872,
+      "sha256": "8d4c9dda1642a1a41788c543abddc77d092dcbae938e3e60e4487fc58d87fcc6"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-http-20261013v665r78web01.json",
+      "bytes": 1333,
+      "sha256": "5be6966f4379cde8fd2c4c3c1be1b1218f64aa141189051db9ca00ac98dfea61"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-browser-20261013v665r78web01.json",
+      "bytes": 1359,
+      "sha256": "bce60b77876c01bfeb2e3235c30729547a9d0bdc54c52ec06a1ce97157a5984c"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-visual-20261013v665r78web01.json",
+      "bytes": 30072,
+      "sha256": "61124e270c7d6187279aebe772d56db2c68b13515743bb483fb0f05f1a4d8280"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-longrun-verification-20261013-v665long01.json",
+      "bytes": 10024,
+      "sha256": "6b36480c29aa6435c28196ecc355051e4817b745a25a6d5cb236c70e0d38ff07"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-longrun-replay-20261013-v665long01.json",
+      "bytes": 1174,
+      "sha256": "430f8368daf35ba3559080bfcbbee301fe7b1e0ebc674f975a95d797c2774d1c"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-performance-20261013-v665long01.json",
+      "bytes": 11681,
+      "sha256": "1236f6637bde4d1740b5df889a6fd0aa9a4bdec5bb0950e609c2c93958b26c73"
+    }
+  ],
+  "rollback": {
+    "type": "local-preserved-build-only",
+    "slot": ".next-mainline-a-r77-20261013v664r77web01/.next",
+    "buildReceipt": "docs/release/v607/mainline-a-r77-build-20261013v664r77web01.json",
+    "sourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+    "publicDeploymentRollback": "not-applicable-no-deployment"
+  },
+  "release": {
+    "publicWebReleaseAllowed": false,
+    "scientificPayloadWriteback": false,
+    "candidateImagePreviewDefaultOff": true,
+    "physicalMobile": "not-run",
+    "rootAppParity": "deferred-web-only-scope"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "publicWebReleaseApproved": false
+  },
+  "fingerprint": "d80041dc982a48112e065da62d28f27ac57ed20f0314a4719851f99eb834016a",
+  "generatedAt": "2026-10-13T08:32:19.071Z"
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "mainline-a-r66-final-candidate-supplement-v645",
+  "createdAt": "2026-10-07T06:39:10.685Z",
+  "status": "blocked",
+  "basePackage": {
+    "path": "docs/release/v607/mainline-a-r66-package-20261007-v645-final-candidate/manifest.json",
+    "sha256": "90ae026b0e6a29d54d24fa267c51fe8a5aff669dc824489954a807f01c064373",
+    "runtimePayloadIncluded": false
+  },
+  "canonicalBrowserClosure": {
+    "path": "docs/release/v607/mainline-a-r66-canonical-36-browser-closure-20261007.json",
+    "sha256": "233bc4f7e3ddf11daec1fb5805b10ef883b11fbec2cee979217a6d05f7e4d39b",
+    "verified": 36,
+    "expected": 36,
+    "evidenceClass": "local-browser-and-offline-replay"
+  },
+  "remainingGates": [
+    "root-manifest-parity",
+    "stellar-component-identity-0-of-4",
+    "nebula-rights-signoff-0-of-12",
+    "physical-mobile-not-run"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePayloadIncluded": false
+  },
+  "note": "Browser coverage addendum updates the local evidence view only; the prior immutable package and external release gates remain blocked."
+}

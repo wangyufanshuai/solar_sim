@@ -1,0 +1,330 @@
+{
+  "schema": "mainline-a-stellar-component-capture-v634",
+  "runId": "20261013-r81components01",
+  "startedAt": "2026-10-13T15:39:54.033Z",
+  "endedAt": "2026-10-13T15:40:03.515Z",
+  "sourceCandidatePack": {
+    "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+  },
+  "collector": {
+    "transport": "https",
+    "fixture": false,
+    "version": 634
+  },
+  "counts": {
+    "total": 4,
+    "responseCaptured": 4,
+    "failed": 0,
+    "readmeCaptured": 1
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "componentConfirmed": false,
+    "rightsApproved": false
+  },
+  "readme": {
+    "id": "wds-readme",
+    "plan": {
+      "id": "wds-readme",
+      "kind": "readme",
+      "method": "GET",
+      "requestUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe",
+      "accept": "text/plain",
+      "timeoutMs": 15000,
+      "maxAttempts": 1,
+      "maxResponseBytes": 1048576,
+      "wdsSystemId": null,
+      "requestFingerprint": "8d26433327d86cf41f412b514121267691e5e024a11d2549b17e82f60f0e4bf1"
+    },
+    "evidenceClass": "https-capture",
+    "attempts": [
+      {
+        "attempt": 1,
+        "startedAt": "2026-10-13T15:39:54.035Z",
+        "endedAt": "2026-10-13T15:39:57.272Z",
+        "timeoutMs": 15000,
+        "timeout": false,
+        "retryCount": 0,
+        "httpStatus": 200,
+        "contentType": "text/plain; charset=utf-8",
+        "requestUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe",
+        "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe",
+        "redirectChain": [],
+        "requestFingerprint": "8d26433327d86cf41f412b514121267691e5e024a11d2549b17e82f60f0e4bf1",
+        "errorCategory": null,
+        "errorClass": null,
+        "errorMessage": null,
+        "responseCaptured": 1,
+        "responseBytes": 41416,
+        "rawArtifact": {
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51.txt",
+          "sha256": "262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51",
+          "bytes": 41416,
+          "contentType": "text/plain; charset=utf-8",
+          "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe"
+        },
+        "transport": "https"
+      }
+    ],
+    "responseCaptured": 1,
+    "artifact": {
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51.txt",
+      "sha256": "262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51",
+      "bytes": 41416,
+      "contentType": "text/plain; charset=utf-8",
+      "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe"
+    }
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "sourceCandidateId": "acrux",
+      "sourceQueryIdentifier": "* alf01 Cru",
+      "sourceRawPageSha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+      "wdsSystemId": "12266-6306",
+      "sourceHintIdentifiers": [
+        "WDS J12266-6306A"
+      ],
+      "plan": {
+        "id": "acrux",
+        "kind": "wds",
+        "method": "GET",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+        "accept": "text/tab-separated-values",
+        "timeoutMs": 15000,
+        "maxAttempts": 1,
+        "maxResponseBytes": 1048576,
+        "wdsSystemId": "12266-6306",
+        "requestFingerprint": "d3d8bccf1c5fb91a67f7c53a01c2365d5cd3902f87fd510e2f1c70eb3f1af28b"
+      },
+      "evidenceClass": "https-capture",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-10-13T15:39:57.274Z",
+          "endedAt": "2026-10-13T15:40:00.375Z",
+          "timeoutMs": 15000,
+          "timeout": false,
+          "retryCount": 0,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+          "redirectChain": [],
+          "requestFingerprint": "d3d8bccf1c5fb91a67f7c53a01c2365d5cd3902f87fd510e2f1c70eb3f1af28b",
+          "errorCategory": null,
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 5410,
+          "rawArtifact": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/1acd65724fee72c2eb2a0f08ac85286acb9ab7c1144a355a13fe8641de28ba38.tsv",
+            "sha256": "1acd65724fee72c2eb2a0f08ac85286acb9ab7c1144a355a13fe8641de28ba38",
+            "bytes": 5410,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306"
+          },
+          "transport": "https"
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/1acd65724fee72c2eb2a0f08ac85286acb9ab7c1144a355a13fe8641de28ba38.tsv",
+        "sha256": "1acd65724fee72c2eb2a0f08ac85286acb9ab7c1144a355a13fe8641de28ba38",
+        "bytes": 5410,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306"
+      }
+    },
+    {
+      "id": "spica",
+      "sourceCandidateId": "spica",
+      "sourceQueryIdentifier": "* alf Vir",
+      "sourceRawPageSha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+      "wdsSystemId": "13252-1110",
+      "sourceHintIdentifiers": [
+        "WDS J13252-1110A"
+      ],
+      "plan": {
+        "id": "spica",
+        "kind": "wds",
+        "method": "GET",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+        "accept": "text/tab-separated-values",
+        "timeoutMs": 15000,
+        "maxAttempts": 1,
+        "maxResponseBytes": 1048576,
+        "wdsSystemId": "13252-1110",
+        "requestFingerprint": "229df0318e8e16c09f1c59d4da5a09a6d9086f34e709b29436b35ffae3fafd87"
+      },
+      "evidenceClass": "https-capture",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-10-13T15:40:00.377Z",
+          "endedAt": "2026-10-13T15:40:02.184Z",
+          "timeoutMs": 15000,
+          "timeout": false,
+          "retryCount": 0,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+          "redirectChain": [],
+          "requestFingerprint": "229df0318e8e16c09f1c59d4da5a09a6d9086f34e709b29436b35ffae3fafd87",
+          "errorCategory": null,
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 4325,
+          "rawArtifact": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/00368281590989eff096ea2b6a5d42d15f9d8bf21afcb77541f79c1fe48abadc.tsv",
+            "sha256": "00368281590989eff096ea2b6a5d42d15f9d8bf21afcb77541f79c1fe48abadc",
+            "bytes": 4325,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110"
+          },
+          "transport": "https"
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/00368281590989eff096ea2b6a5d42d15f9d8bf21afcb77541f79c1fe48abadc.tsv",
+        "sha256": "00368281590989eff096ea2b6a5d42d15f9d8bf21afcb77541f79c1fe48abadc",
+        "bytes": 4325,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110"
+      }
+    },
+    {
+      "id": "regulus",
+      "sourceCandidateId": "regulus",
+      "sourceQueryIdentifier": "* alf Leo",
+      "sourceRawPageSha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+      "wdsSystemId": "10084+1158",
+      "sourceHintIdentifiers": [
+        "WDS J10084+1158A"
+      ],
+      "plan": {
+        "id": "regulus",
+        "kind": "wds",
+        "method": "GET",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+        "accept": "text/tab-separated-values",
+        "timeoutMs": 15000,
+        "maxAttempts": 1,
+        "maxResponseBytes": 1048576,
+        "wdsSystemId": "10084+1158",
+        "requestFingerprint": "cba9f0fea3774c358960e66f35857cd45ee44ca55bb99060bb37e47c4dbf9768"
+      },
+      "evidenceClass": "https-capture",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-10-13T15:40:02.189Z",
+          "endedAt": "2026-10-13T15:40:02.843Z",
+          "timeoutMs": 15000,
+          "timeout": false,
+          "retryCount": 0,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+          "redirectChain": [],
+          "requestFingerprint": "cba9f0fea3774c358960e66f35857cd45ee44ca55bb99060bb37e47c4dbf9768",
+          "errorCategory": null,
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 4327,
+          "rawArtifact": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/b93b620f8068a80a626ff32583a4cad49fd1604d9af5489a74a6d7db59b73721.tsv",
+            "sha256": "b93b620f8068a80a626ff32583a4cad49fd1604d9af5489a74a6d7db59b73721",
+            "bytes": 4327,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158"
+          },
+          "transport": "https"
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/b93b620f8068a80a626ff32583a4cad49fd1604d9af5489a74a6d7db59b73721.tsv",
+        "sha256": "b93b620f8068a80a626ff32583a4cad49fd1604d9af5489a74a6d7db59b73721",
+        "bytes": 4327,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158"
+      }
+    },
+    {
+      "id": "polaris",
+      "sourceCandidateId": "polaris",
+      "sourceQueryIdentifier": "* alf UMi",
+      "sourceRawPageSha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+      "wdsSystemId": "02318+8916",
+      "sourceHintIdentifiers": [
+        "WDS J02318+8916A",
+        "WDS J02318+8916Aa,Ab"
+      ],
+      "plan": {
+        "id": "polaris",
+        "kind": "wds",
+        "method": "GET",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+        "accept": "text/tab-separated-values",
+        "timeoutMs": 15000,
+        "maxAttempts": 1,
+        "maxResponseBytes": 1048576,
+        "wdsSystemId": "02318+8916",
+        "requestFingerprint": "ff40be779826ff1009c64e260d1ed94b6832e24e91284a28c6eb964c85dcc2be"
+      },
+      "evidenceClass": "https-capture",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-10-13T15:40:02.845Z",
+          "endedAt": "2026-10-13T15:40:03.513Z",
+          "timeoutMs": 15000,
+          "timeout": false,
+          "retryCount": 0,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+          "redirectChain": [],
+          "requestFingerprint": "ff40be779826ff1009c64e260d1ed94b6832e24e91284a28c6eb964c85dcc2be",
+          "errorCategory": null,
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 4637,
+          "rawArtifact": {
+            "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/4d9caed574b048197188d0231c767a1026c41e455ebd7aeb15bd008f9d5ae545.tsv",
+            "sha256": "4d9caed574b048197188d0231c767a1026c41e455ebd7aeb15bd008f9d5ae545",
+            "bytes": 4637,
+            "contentType": "text/tab-separated-values",
+            "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916"
+          },
+          "transport": "https"
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20261013-r81components01/4d9caed574b048197188d0231c767a1026c41e455ebd7aeb15bd008f9d5ae545.tsv",
+        "sha256": "4d9caed574b048197188d0231c767a1026c41e455ebd7aeb15bd008f9d5ae545",
+        "bytes": 4637,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916"
+      }
+    }
+  ],
+  "semanticStatus": "unparsed-candidate-only",
+  "rightsStatus": "pending",
+  "componentIdentityStatus": "unresolved",
+  "ledgerDigest": "cce34496cfd8757554c5715eea8c0fbd96f4d27ac67d0042b11aa9bc401e87bc"
+}

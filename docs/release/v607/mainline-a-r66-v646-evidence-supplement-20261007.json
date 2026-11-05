@@ -1,0 +1,98 @@
+{
+  "schema": "mainline-a-r66-evidence-supplement-v646",
+  "createdAt": "2026-10-07T07:01:34.956Z",
+  "status": "blocked",
+  "evidenceClass": "pinned-supplemental-index",
+  "sourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+  "basePackage": {
+    "role": "basePackage",
+    "path": "docs/release/v607/mainline-a-r66-package-20261007-v645-final-candidate/manifest.json",
+    "bytes": 2350,
+    "sha256": "90ae026b0e6a29d54d24fa267c51fe8a5aff669dc824489954a807f01c064373",
+    "evidenceClass": "static"
+  },
+  "references": [
+    {
+      "role": "canonicalBrowserClosure",
+      "path": "docs/release/v607/mainline-a-r66-canonical-36-browser-closure-20261007.json",
+      "bytes": 19668,
+      "sha256": "233bc4f7e3ddf11daec1fb5805b10ef883b11fbec2cee979217a6d05f7e4d39b",
+      "evidenceClass": "browser"
+    },
+    {
+      "role": "baseCandidateSupplement",
+      "path": "docs/release/v607/mainline-a-r66-final-candidate-supplement-20261007.json",
+      "bytes": 1187,
+      "sha256": "125933c7b6d84755b774f5b41fc3538cd9dbe6c81f766847e0aeeb373a58077b",
+      "evidenceClass": "static"
+    },
+    {
+      "role": "wdsComponentReview",
+      "path": "docs/release/v607/mainline-a-r66-stellar-component-review-packet-20261007.json",
+      "bytes": 22734,
+      "sha256": "50db072008c8126a451214c001f68d1c2958fe8abd6f684a1d9083bffe24420b",
+      "evidenceClass": "external-source"
+    },
+    {
+      "role": "tapRawLedger",
+      "path": "docs/release/v607/stellar-component-tap-v646/ledger-r66-tap-20261007-001.json",
+      "bytes": 18532,
+      "sha256": "41d2281c6971e775ab8f5ee696d47d84d2cc2e67d72c7309afa4d87cf4ded8dc",
+      "evidenceClass": "external-source"
+    },
+    {
+      "role": "tapOfflineReplay",
+      "path": "docs/release/v607/stellar-component-tap-v646/replay-r66-tap-20261007-001.json",
+      "bytes": 1376,
+      "sha256": "a208f74d41c9a02b94f015a2de2f99843a66c40b0aee40afb386cf9dac7dd7ad",
+      "evidenceClass": "external-source"
+    },
+    {
+      "role": "tapCrossIdAnalysis",
+      "path": "docs/release/v607/stellar-component-tap-v646/analysis-r66-tap-20261007-001.json",
+      "bytes": 7310,
+      "sha256": "a245982f38ec347bf0c2a8a12571603b87e935a02eb5abfc202043812db8466d",
+      "evidenceClass": "external-source"
+    },
+    {
+      "role": "tapReviewAddendum",
+      "path": "docs/release/v607/mainline-a-r66-stellar-tap-cross-id-addendum-20261007.md",
+      "bytes": 2543,
+      "sha256": "865b04797c55611063f23406bcf507a4cc2fa47a95aef343027dae6f93b17053",
+      "evidenceClass": "static"
+    },
+    {
+      "role": "rootManifestProbe",
+      "path": "docs/release/v607/mainline-a-r66-root-manifest-probe-20261007-v645.json",
+      "bytes": 5914,
+      "sha256": "013c1220668d2364b66518cb4333c26071e179a32fb75de0e59a40795400eb91",
+      "evidenceClass": "static"
+    }
+  ],
+  "gates": {
+    "rootManifestParity": "pending",
+    "stellarComponentIdentity": "pending-0-of-4",
+    "nebulaRightsSignoff": "pending-0-of-12",
+    "physicalMobile": "not-run",
+    "finalRelease": "blocked"
+  },
+  "claims": {
+    "releaseApproved": false,
+    "runtimeAdmission": false,
+    "scientificValidity": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "copyrightApproval": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "runtimePayloadIncluded": false,
+  "note": "Append-only evidence reference; does not mutate or promote the V645 candidate package."
+}

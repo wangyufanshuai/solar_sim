@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrObservationAuthorityJoinV553, resetKerrObservationAuthorityJoinServerCacheForTestsV553 } from "./kerrObservationAuthorityJoinServerV553";
+describe("v553 observation authority join server", () => { it("keeps one bounded cached load", async () => { resetKerrObservationAuthorityJoinServerCacheForTestsV553(); const first = await loadKerrObservationAuthorityJoinV553(), second = await loadKerrObservationAuthorityJoinV553(); expect(first).toBe(second); expect(first.artifact.join).toMatchObject({ crossVersionIdentityStable: true, measuredAuthorityGranted: false }); }); });

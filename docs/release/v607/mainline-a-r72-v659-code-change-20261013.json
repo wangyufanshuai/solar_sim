@@ -1,0 +1,38 @@
+{
+  "schema": "mainline-a-r72-code-change-v659",
+  "round": 72,
+  "date": "2026-10-13",
+  "status": "meets-complete-batch-effective-code-threshold",
+  "method": "Count non-empty, non-comment physical lines in newly authored production, tool, and substantive test files. Do not count generated overlay, raw data, receipts, screenshots, documentation, lock files, or formatting. Compare the existing integration file with the preserved R71 source copy; report its raw delta but conservatively do not credit it toward the threshold.",
+  "effectiveCode": {
+    "newProductionAndToolLines": 2157,
+    "newSubstantiveTestLines": 322,
+    "existingIntegrationRawAddedLines": 35,
+    "existingIntegrationRawRemovedLines": 4,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "newProductionAndToolFiles": [
+    {"path": "scripts/mainline-a-r72-source-contract-v659.mjs", "effectiveLines": 293, "role": "source and rights policy contract"},
+    {"path": "scripts/collect-mainline-a-r72-source-v659.mjs", "effectiveLines": 374, "role": "HTTPS raw collector and attempt ledger"},
+    {"path": "scripts/verify-mainline-a-r72-source-v659.mjs", "effectiveLines": 464, "role": "independent offline raw and rights replay"},
+    {"path": "scripts/verify-mainline-a-r72-http-v659.mjs", "effectiveLines": 113, "role": "local production HTTP and negative checks"},
+    {"path": "scripts/capture-mainline-a-r72-browser-v659.mjs", "effectiveLines": 272, "role": "desktop and simulated-mobile browser evidence"},
+    {"path": "app/lib/mainlineAR72ExpansionSourceV659.ts", "effectiveLines": 223, "role": "browser overlay validation and filtering"},
+    {"path": "app/lib/useMainlineAR72SourceImageV659.ts", "effectiveLines": 131, "role": "pinned image load, failure state and object URL lifecycle"},
+    {"path": "app/components/MainlineANebulaR72ExpansionPanelV659.tsx", "effectiveLines": 234, "role": "six-item candidate source and rights review panel"},
+    {"path": "app/api/atlas/mainline-a-r72-source/[id]/route.ts", "effectiveLines": 53, "role": "opt-in localhost California candidate image route"}
+  ],
+  "newSubstantiveTestFiles": [
+    {"path": "scripts/mainline-a-r72-source-v659.test.mjs", "effectiveLines": 185, "role": "source, spoofing, redirect, timeout and replay negatives"},
+    {"path": "app/lib/mainlineAR72ExpansionSourceV659.test.tsx", "effectiveLines": 83, "role": "overlay and candidate state checks"},
+    {"path": "app/api/atlas/mainline-a-r72-source/[id]/route.test.ts", "effectiveLines": 54, "role": "guarded route positive and negative checks"}
+  ],
+  "modifiedExistingIntegrationFiles": [
+    {"path": "app/components/MainlineANebulaReviewPanelV610.tsx", "rawAddedLinesComparedWithPreservedR71": 35, "rawRemovedLinesComparedWithPreservedR71": 4, "creditedEffectiveLines": 0, "role": "mount R72 review and synchronize right-side selected expansion detail"}
+  ],
+  "behaviorChange": "Six official structured records and asset manifests are verified; one previously eligible California original JPEG is captured and SHA/pixel matched; five image requests remain policy-blocked with responseCaptured=0. The web review surface shows candidate-only status and permits only the SHA-pinned local California preview.",
+  "excluded": ["generated overlay and checkpoint JSON", "raw HTML, JSON and JPEG", "round, build, HTTP and browser receipts", "screenshots and documentation", "unrelated concurrent physics-window changes"],
+  "boundary": {"candidateOnly": true, "hold": true, "notAdmitted": true, "scientificPayloadWriteback": false, "physicsKernelEditsByRound": false}
+}

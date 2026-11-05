@@ -1,0 +1,853 @@
+{
+  "version": "v592-deep-space-item-license-review-v1",
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "status": "5-visual-source-acquisitions-eligible-13-license-identity-or-suitability-blocked",
+  "policy": {
+    "licenseBasis": "NASA media usage guidelines plus item-level NASA/JPL/GSFC credit and restricted-partner scan",
+    "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+    "explicitlyBlockedPartnerTokens": [
+      "ESA",
+      "European Space Agency",
+      "CSA",
+      "Canadian Space Agency"
+    ],
+    "legalOpinionClaimed": false,
+    "publicDomainAssetIdentityClaimedBeforeDownload": false,
+    "explicitSingleRequestAcquisitionRequired": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "mappedColorMustRemainLabeled": true,
+    "visualAssetAdmissionGranted": false,
+    "derivedRuntimeAssetAdmissionGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "sourceReceiptSha256": "debbb21fed041a63c4698e31ca1bd7d93a53da53cc72b3eec05ad4890d6a5626",
+  "summary": {
+    "reviewedCount": 18,
+    "eligibleForAcquisitionCount": 5,
+    "blockedCount": 13,
+    "restrictedPartnerBlockedCount": 7,
+    "sourceImageDownloadedCount": 0,
+    "visualAssetAdmittedCount": 0
+  },
+  "eligibleTargets": [
+    "andromeda-galaxy",
+    "triangulum-galaxy",
+    "cigar-galaxy",
+    "virgo-a-galaxy",
+    "omega-centauri"
+  ],
+  "blockedTargets": [
+    "whirlpool-galaxy",
+    "sombrero-galaxy",
+    "centaurus-a",
+    "bodes-galaxy",
+    "pinwheel-galaxy",
+    "southern-pinwheel-galaxy",
+    "black-eye-galaxy",
+    "sunflower-galaxy",
+    "pleiades",
+    "hyades",
+    "47-tucanae",
+    "messier-5",
+    "messier-22"
+  ],
+  "reviews": [
+    {
+      "target": "andromeda-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA15416",
+      "title": "Andromeda",
+      "description": "Hot stars burn brightly in this new image from NASA Galaxy Evolution Explorer, showing the ultraviolet side of a familiar face. Approximately 2.5 million light-years away, the Andromeda galaxy, or M31, is our Milky Way largest galactic neighbor.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/andromeda-galaxy-PIA15416.json",
+      "sourceMetadataSha256": "fcd984fcc869a330be6ede31ef819a4e3f4fc3659e8a63f24f838c1ef0de4be4",
+      "assetManifestReceiptSha256": "ec264c817d43299ce149e8885cf0b8b2160e6fdd111a6266e0a5461ab7f38028",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 9400,
+        "metadataHeight": 7000,
+        "metadataFileSize": "6.4 MB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "triangulum-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA11969",
+      "title": "M33: A Close Neighbor Reveals its True Size and Splendor 3-color composite",
+      "description": "One of our closest galactic neighbors shows its awesome beauty in this new image from NASA Spitzer Space Telescope. M33, also known as the Triangulum Galaxy, is a member of what known as our Local Group of galaxies.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/Univ. of Ariz.",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/triangulum-galaxy-PIA11969.json",
+      "sourceMetadataSha256": "49347f7b231a564233bb7f997e638bcedd0ae5fe458c14ac22bed15260a70e30",
+      "assetManifestReceiptSha256": "67cca9e0c01d321ee4fe3f8de9358d68c41dd6900d51a34cefd06984749d119a",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA11969/PIA11969~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 4300,
+        "metadataHeight": 2800,
+        "metadataFileSize": "1679 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "whirlpool-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA10200",
+      "title": "A Classic Beauty",
+      "description": "A composite image of M51, also known as the Whirlpool Galaxy, shows the majesty of its structure in a dramatic new way through several of NASA orbiting observatories",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "X-ray: NASA/CXC; UV: NASA/JPL-Caltech; Optical: NASA/ESA/STScI/AURA; IR: NASA/JPL-Caltech/ Univ. of Ariz.",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/whirlpool-galaxy-PIA10200.json",
+      "sourceMetadataSha256": "40a6de3e7bdc66c68255c140d2f7215dcd1fb0c03514ad9ee849c72876547cd6",
+      "assetManifestReceiptSha256": "6246d46fb909eaca9de4db005f66aabe92080af5b815806ab170c7df01fc966c",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1978,
+        "metadataHeight": 2850,
+        "metadataFileSize": "519 kB"
+      },
+      "observationEncoding": {
+        "bands": [],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "sombrero-galaxy",
+      "category": "galaxy",
+      "nasaId": "0700064",
+      "title": "History of Hubble Space Telescope (HST)",
+      "description": "The razor sharp eye of the Hubble Space Telescope (HST) easily resolves the Sombrero galaxy, Messier 104 (M104). 50,000 light-years across, the galaxy is located 28 million light-years from Earth at the southern edge of the rich Virgo cluster of galaxies. Equivalent to 800 billion suns, Sombrero is one of the most massive objects in that group. The hallmark of Sombrero is a brilliant white, bulbous core encircled by the thick dust lanes comprising the spiral structure of the galaxy. As seen from Earth, the galaxy is tilted nearly edge-on. We view it from just six degrees north of its equatorial plane. This rich system of globular clusters is estimated to be nearly 2,000 in number which is 10 times as many as in our Milky Way galaxy. Similar to the clusters in the Milky Way, the ages range from 10-13 billion years old. Embedded in the bright core of M104 is a smaller disk, which is tilted",
+      "center": "MSFC",
+      "creator": null,
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/sombrero-galaxy-0700064.json",
+      "sourceMetadataSha256": "d57bb5879d513c53bad43a04e12750a2214b29a15f472a8ac420e629cd2362ef",
+      "assetManifestReceiptSha256": "82cf296a31a785474977f04d9094026bb69d05b03388d66a9e3948240dc51a10",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/0700064/0700064~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": false,
+        "nasaCreditPresent": false,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "archive-identity",
+        "nasa-credit",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "centaurus-a",
+      "category": "galaxy",
+      "nasaId": "PIA07912",
+      "title": "NGC 5128 Centaurus-A",
+      "description": "This ultraviolet image from NASA Galaxy Evolution Explorer is of NGC 5128 Centaurus-A. This unusual galaxy is believed to be the result of a collision of two normal galaxies. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/SSC",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/centaurus-a-PIA07912.json",
+      "sourceMetadataSha256": "2a65ed9f7e1a9ea3b413ae58fdb389c321c21e180d6be8aeb03a51bde49214e2",
+      "assetManifestReceiptSha256": "b7ecfbc67e5a3ae436770c55eb48e76159337d6d51a1f99381affba1473c5eb3",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA07912/PIA07912~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1279,
+        "metadataHeight": 1279,
+        "metadataFileSize": "175 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "bodes-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA09579",
+      "title": "M81 Galaxy is Pretty in Pink",
+      "description": "The perfectly picturesque spiral galaxy known as Messier 81, or M81, looks sharp in this new composite from NASA Spitzer and Hubble space telescopes and NASA Galaxy Evolution Explorer. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/ESA/Harvard-Smithsonian CfA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/bodes-galaxy-PIA09579.json",
+      "sourceMetadataSha256": "d8c1924d69de358d5a4251a5267b1f4141daa68829992ed6d1f78896700d00e6",
+      "assetManifestReceiptSha256": "6e145fef592cab17777b1d9f9cfdf103ec6e66f90a1420d17b9f2392320a28ec",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA09579/PIA09579~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3180,
+        "metadataHeight": 2456,
+        "metadataFileSize": "1041 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA17847",
+      "title": "Seeing Through a Veil of Dust",
+      "description": "The closest supernova of its kind to be observed in the last few decades, M82 or the Cigar galaxy, has sparked a global observing campaign involving legions of instruments on the ground and in space, including NASA Spitzer Space Telescope.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/Carnegie Institution for Science",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/cigar-galaxy-PIA17847.json",
+      "sourceMetadataSha256": "56cad5d82f6bc82e394c0eecb1f6a85caa4793a84630dc5d2bfdf1799cb43ee2",
+      "assetManifestReceiptSha256": "8235c41743e7dfad346ed80b1ce52444c2bd402dc43b7a788e6395c31fa63fa7",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3900,
+        "metadataHeight": 2400,
+        "metadataFileSize": "438 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA15630",
+      "title": "Pinwheel Galaxy Rainbow",
+      "description": "This image of the Pinwheel Galaxy, or M101, in the constellation of Ursa Major, combines data from four of NASA space telescopes. The view shows that both young and old stars are evenly distributed along M101 tightly wound spiral arms.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/ESA/STScI/CXC",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/pinwheel-galaxy-PIA15630.json",
+      "sourceMetadataSha256": "2d8839e7f91579a187e260a7d3de743330a96647773acaa1469dbaf230dd8c09",
+      "assetManifestReceiptSha256": "f835b04a6f040c93fe9af091feff1781cfaf1fcac93dc823f920ea10e21ee6f5",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA15630/PIA15630~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 2299,
+        "metadataHeight": 2299,
+        "metadataFileSize": "418 kB"
+      },
+      "observationEncoding": {
+        "bands": [],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA07903",
+      "title": "Southern Pinwheel Galaxy M83",
+      "description": "Ultraviolet images such as this one from NASA's Galaxy Evolution Explorer suggest the M83 has unusual pockets of star formation separated by large distances from the spiral arms in the main disk of the galaxy. http://photojournal.jpl.nasa.gov/catalog/PIA07903",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/SSC",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/southern-pinwheel-galaxy-PIA07903.json",
+      "sourceMetadataSha256": "22ad793f0ad756c393858b909007245ded1897975562717b7d36d2aa4909e77b",
+      "assetManifestReceiptSha256": "b87d954238f1c85c4e63bddc812933a45f6ede5c0364aad559912ee1295cc530",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA07903/PIA07903~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 1245,
+        "metadataHeight": 1245,
+        "metadataFileSize": "277 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "virgo-a-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23122",
+      "title": "Spitzer Captures Messier 87",
+      "description": "This image from NASA's Spitzer Space Telescope shows the elliptical galaxy Messier 87 (M87), the home galaxy of the supermassive black hole recently imaged by the Event Horizon Telescope (EHT). Spitzer's infrared view shows a faint trace of a jet of material spewing to the right of the galaxy - a feature that was previously one key indicator that a supermassive black hole lived at the galaxy's center. More prominent in the image is the shockwave created by that jet. The inset in the image below shows a close-up view of the shockwave on the right side of the galaxy, as well as the shockwave from a second jet traveling to the left of the galaxy. Located about 55 million light-years from Earth, M87 has been a subject of astronomical study for more than 100 years and has been imaged by many NASA observatories, including the Hubble Space Telescope, the Chandra X-ray Observatory and NuSTAR. In",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/IPAC/Event Horizon Telescope Collaboration",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/virgo-a-galaxy-PIA23122.json",
+      "sourceMetadataSha256": "35ff977f190ec96dcbd7e60c95dc2a3820c36f0e6c2b2fa770aebbafd9934658",
+      "assetManifestReceiptSha256": "dc28b526f20c3c6009ecd6727eb01abc6e9b8e609aa669ab26eecd6043fb07f9",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3226,
+        "metadataHeight": 1814,
+        "metadataFileSize": "317 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "black-eye-galaxy",
+      "category": "galaxy",
+      "nasaId": "0400392",
+      "title": "History of Hubble Space Telescope (HST)",
+      "description": "Residing roughly 17 million light years from Earth, in the northern constellation Coma Berenices, is a merged star system known as Messier 64 (M64). First cataloged in the 18th century by the French astronomer Messier, M64 is a result of two colliding galaxies and has an unusual appearance as well as bizarre internal motions. It has a spectacular dark band of absorbing dust in front of its bright nucleus, lending to it the nickname of the \"Black Eye\" or \"Evil Eye\" galaxy. Fine details of the dark band can be seen in this image of the central portion of M64 obtained by the Wide Field Planetary Camera (WFPC2) of NASA's Hubble Space Telescope (HST). Appearing to be a fairly normal pinwheel-shaped galaxy, the M64 stars are rotating in the same direction, clockwise, as in the majority of galaxies. However, detailed studies in the 1990's led to the remarkable discovery that the interstellar ga",
+      "center": "MSFC",
+      "creator": null,
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/black-eye-galaxy-0400392.json",
+      "sourceMetadataSha256": "969ea7a67bee559462dd64f9fe868314b4dbed4a2094e6899ee043c7b00e58ff",
+      "assetManifestReceiptSha256": "f26b8e218c07b917ad6455b19b540a86ee8cc018f20b665f54963fb272bbc459",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/0400392/0400392~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": false,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "archive-identity",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "sunflower-galaxy",
+      "category": "galaxy",
+      "nasaId": "GSFC_20171208_Archive_e000615",
+      "title": "Hubble Sees a Galactic Sunflower",
+      "description": "The arrangement of the spiral arms in the galaxy Messier 63, seen here in an image from the NASA/ESA Hubble Space Telescope, recall the pattern at the center of a sunflower. So the nickname for this cosmic object — the Sunflower Galaxy — is no coincidence. Discovered by Pierre Mechain in 1779, the galaxy later made it as the 63rd entry into fellow French astronomer Charles Messier’s famous catalogue, published in 1781. The two astronomers spotted the Sunflower Galaxy’s glow in the small, northern constellation Canes Venatici (the Hunting Dogs). We now know this galaxy is about 27 million light-years away and belongs to the M51 Group — a group of galaxies, named after its brightest member, Messier 51, another spiral-shaped galaxy dubbed the Whirlpool Galaxy. Galactic arms, sunflowers and whirlpools are only a few examples of nature’s apparent preference for spirals. For galaxies like Mess",
+      "center": "GSFC",
+      "creator": "NASA Goddard",
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/sunflower-galaxy-GSFC_20171208_Archive_e000615.json",
+      "sourceMetadataSha256": "c3b14a95c49d654871b9ea433bcf78cdf04127de6ccab4414c1cfca8047cbb6d",
+      "assetManifestReceiptSha256": "5ef51c635e438b67495f658226733ff92950cc932c1295a9884b817e13a70342",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000615/GSFC_20171208_Archive_e000615~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "visible"
+        ],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA08260",
+      "title": "The Seven Sisters",
+      "description": "The stars of the Pleiades cluster, also known by the names M45 and the",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL/Space Science Institute",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/pleiades-PIA08260.json",
+      "sourceMetadataSha256": "d5e1d517f141bbdcc0502cfd114db45f1c63b755277773f03aff54ccac6c3df9",
+      "assetManifestReceiptSha256": "8cfec74a884cb22e0d50f78649e00cf8a6b2bdd401a3dc233d3b165de0874f96",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA08260/PIA08260~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 687,
+        "metadataHeight": 559,
+        "metadataFileSize": "66 kB"
+      },
+      "observationEncoding": {
+        "bands": [],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "hyades",
+      "category": "cluster",
+      "nasaId": "GSFC_20171208_Archive_e001500",
+      "title": "NASA's Hubble Space Telescope Finds Dead Stars 'Polluted with Planet Debris'",
+      "description": "This is an artist’s impression of a white dwarf (burned-out) star accreting rocky debris left behind by the star’s surviving planetary system. It was observed by Hubble in the Hyades star cluster. At lower right, an asteroid can be seen falling toward a Saturn-like disk of dust that is encircling the dead star. Infalling asteroids pollute the white dwarf’s atmosphere with silicon. Credit: NASA, ESA, and G. Bacon (STScI) --- NASA's Hubble Space Telescope has found the building blocks for Earth-sized planets in an unlikely place-- the atmospheres of a pair of burned-out stars called white dwarfs. These dead stars are located 150 light-years from Earth in a relatively young star cluster, Hyades, in the constellation Taurus. The star cluster is only 625 million years old. The white dwarfs are being polluted by asteroid-like debris falling onto them. <b><a href=\"http://www.nasa.gov/audience/f",
+      "center": "GSFC",
+      "creator": "NASA Goddard",
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/hyades-GSFC_20171208_Archive_e001500.json",
+      "sourceMetadataSha256": "1932ec0dd1f90dfa4250d58c1acdbb0b670d2834baa8a635bb4885f63ca6f7d1",
+      "assetManifestReceiptSha256": "331628039364fbff2b0626ea168605a5a7bffca6505c11038d97918c0c97f4f1",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001500/GSFC_20171208_Archive_e001500~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "visible"
+        ],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "omega-centauri",
+      "category": "cluster",
+      "nasaId": "PIA13125",
+      "title": "Omega Centauri",
+      "description": "NASA Wide-field Infrared Survey Explorer has captured a favorite observing target of amateur astronomers, Omega Centauri. This celestial cluster of stars can be found in the constellation Centaurus.",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA/JPL-Caltech/UCLA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/omega-centauri-PIA13125.json",
+      "sourceMetadataSha256": "515d41c1720bd522e17a61dd54473d18465404bccc0ffe562ba26faa511a193e",
+      "assetManifestReceiptSha256": "72dfae2a98aff0baaaa06d8124842836b2074a3812f6b5b19fe02bd792953ed8",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 3906,
+        "metadataHeight": 3084,
+        "metadataFileSize": "1303 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": true,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "eligible-for-explicit-single-request-visual-source-acquisition",
+      "blocker": null,
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "47-tucanae",
+      "category": "cluster",
+      "nasaId": "GSFC_20171208_Archive_e000161",
+      "title": "Hubble Takes Flight with the Toucan and the Cluster",
+      "description": "It may be famous for hosting spectacular sights such as the Tucana Dwarf Galaxy and 47 Tucanae (heic1510), the second brightest globular cluster in the night sky, but the southern constellation of Tucana (The Toucan) also possesses a variety of unsung cosmic beauties. One such beauty is NGC 299, an open star cluster located within the Small Magellanic Cloud just under 200,000 light-years away. Open clusters such as this are collections of stars weakly bound by the shackles of gravity, all of which formed from the same massive molecular cloud of gas and dust. Because of this, all the stars have the same age and composition, but vary in their mass because they formed at different positions within the cloud. This unique property not only ensures a spectacular sight when viewed through a sophisticated instrument attached to a telescope such as Hubble’s Advanced Camera for Surveys, but gives ",
+      "center": "GSFC",
+      "creator": "NASA Goddard",
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/47-tucanae-GSFC_20171208_Archive_e000161.json",
+      "sourceMetadataSha256": "84a4ccb16d7643f4b43e84c7274586e4305c3be3acc8a4fb071d245b3f06831d",
+      "assetManifestReceiptSha256": "71bc669f7124fbddc81340896660086697f615812e21e652a3cd36afd9d68f4c",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000161/GSFC_20171208_Archive_e000161~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "visible"
+        ],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "messier-5",
+      "category": "cluster",
+      "nasaId": "GSFC_20171208_Archive_e001116",
+      "title": "Cosmic Fairy Lights",
+      "description": "This sparkling jumble is Messier 5 — a globular cluster consisting of hundreds of thousands of stars bound together by their collective gravity. But Messier 5 is no normal globular cluster. At 13 billion years old it dates back to close to the beginning of the Universe, which is some 13.8 billion years of age. It is also one of the biggest clusters known, and at only 24 500 light-years away, it is no wonder that Messier 5 is a popular site for astronomers to train their telescopes on. Messier 5 also presents a puzzle. Stars in globular clusters grow old and wise together. So Messier 5 should, by now, consist of old, low-mass red giants and other ancient stars. But it is actually teeming with young blue stars known as blue stragglers. These stars spring to life when stars collide, or rip material from one another. Credit: ESA/NASA <b><a href=\"http://www.nasa.gov/audience/formedia/features",
+      "center": "GSFC",
+      "creator": "NASA Goddard",
+      "secondaryCreator": "",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/messier-5-GSFC_20171208_Archive_e001116.json",
+      "sourceMetadataSha256": "119422eba35afa6363d57dceaa0233bd5d694e6eb2f80d111f0385230f4a7b74",
+      "assetManifestReceiptSha256": "d7346b0a12eba58d7220826fa0600c58362245409ee4977f65808bea6750b506",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~orig.jpg",
+        "requested": false,
+        "expectedFormat": null,
+        "metadataWidth": null,
+        "metadataHeight": null,
+        "metadataFileSize": null
+      },
+      "observationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": true,
+        "resolutionPassed": false,
+        "formatPassed": false,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "visualAssetAdmitted": false
+    },
+    {
+      "target": "messier-22",
+      "category": "cluster",
+      "nasaId": "PIA04202",
+      "title": "Globular Cluster M22",
+      "description": "Scientists are mystified by what may be unexpected, wandering, planet-sized objects. This image taken by NASA Hubble Space Telescope implies the presence of these objects. ",
+      "center": "JPL",
+      "creator": null,
+      "secondaryCreator": "NASA",
+      "sourceMetadataPath": "source-cache/v592/deep-space/metadata/messier-22-PIA04202.json",
+      "sourceMetadataSha256": "fe9efecdb5fe31fe3f07c2024a64686866c76a752d780674c2cab057b65a4b42",
+      "assetManifestReceiptSha256": "10899643ab47e94fef814d891f590b24bfa9126189d74546d323fab63cfaab55",
+      "sourceImage": {
+        "url": "https://images-assets.nasa.gov/image/PIA04202/PIA04202~orig.jpg",
+        "requested": false,
+        "expectedFormat": "JPEG",
+        "metadataWidth": 514,
+        "metadataHeight": 600,
+        "metadataFileSize": "97 kB"
+      },
+      "observationEncoding": {
+        "bands": [
+          "visible"
+        ],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "checks": {
+        "identityPassed": true,
+        "archiveIdentityPassed": true,
+        "nasaCreditPresent": true,
+        "restrictedPartnerFlag": false,
+        "resolutionPassed": false,
+        "formatPassed": true,
+        "targetIdentityPassed": true
+      },
+      "status": "blocked-item-license-identity-or-texture-suitability-review",
+      "blocker": [
+        "source-resolution"
+      ],
+      "visualAssetAdmitted": false
+    }
+  ],
+  "receiptSha256": "e132032a4ddfd865d81b72edae4e36a81406638cadfa4af35fd1d0018557ea86"
+}

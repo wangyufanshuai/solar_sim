@@ -1,0 +1,36 @@
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { diffAtlasResourceSnapshotsV300, getAtlasResourceSnapshot } from "../app/lib/atlasResourceLifecycle";
+import { acquireKerrScienceImageProductV344, getKerrScienceImageProductClientSnapshotV344, resetKerrScienceImageProductClientV344ForTests, type KerrScienceImageProductExpectationV344 } from "../app/lib/kerrScienceImageProductClientV344";
+import { parseKerrScienceImageProductManifestV343 } from "../app/lib/kerrScienceImageProductsV343";
+import { getAtlasScienceImagePreviewTelemetryV345, publishAtlasScienceImagePreviewTelemetryV345, resetAtlasScienceImagePreviewTelemetryV345ForTests } from "../app/lib/atlasScienceImagePreviewTelemetryV345";
+import { parseKerrScienceImagePreviewReplayV345 } from "../app/lib/kerrScienceImagePreviewReplayV345";
+
+const root = process.cwd(); const manifestPath = "dist/science/kerr-observation-images-v343/manifest.json"; const outputPath = "dist/science/kerr-image-preview-replay-v345/replay.json";
+const manifestBytes = readFileSync(resolve(root, manifestPath)); const manifest = parseKerrScienceImageProductManifestV343(JSON.parse(manifestBytes.toString("utf8")));
+const entry = (id: "fits" | "png") => manifest.products.find((product) => product.id === id)!;
+const expected = (id: "fits" | "png"): KerrScienceImageProductExpectationV344 => ({ id, endpoint: `/api/atlas/relativity-evidence/v343/products/${id}`, sha256: entry(id).sha256, manifestSha256: manifest.manifestSha256, bytes: entry(id).bytes, mimeType: id === "fits" ? "application/fits" : "image/png" });
+const sourceBytes = { png: new Uint8Array(readFileSync(resolve(root, entry("png").path))), fits: new Uint8Array(readFileSync(resolve(root, entry("fits").path))) };
+const response = (id: "fits" | "png") => new Response(sourceBytes[id].slice(), { status: 200, headers: { "content-type": expected(id).mimeType, "content-length": String(sourceBytes[id].byteLength), etag: `"${expected(id).sha256}"`, "x-atlas-science-product": `v343-${id}` } });
+const originalFetch = globalThis.fetch;
+function canonicalize(value: unknown): unknown { if (Array.isArray(value)) return value.map(canonicalize); if (!value || typeof value !== "object") return value; return Object.fromEntries(Object.entries(value as Record<string, unknown>).filter(([key]) => !["generatedAt", "artifactSha256"].includes(key)).sort(([left], [right]) => left.localeCompare(right)).map(([key, item]) => [key, canonicalize(item)])); }
+const sha = (value: unknown) => createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
+async function main() {
+  resetKerrScienceImageProductClientV344ForTests(); resetAtlasScienceImagePreviewTelemetryV345ForTests();
+  const baseline = getAtlasResourceSnapshot(); const baselineDiff = diffAtlasResourceSnapshotsV300(baseline, baseline); const beforeIntent = getKerrScienceImageProductClientSnapshotV344(); const node = { dataset: {} as DOMStringMap };
+  globalThis.fetch = async (input) => response(String(input).endsWith("/fits") ? "fits" : "png");
+  publishAtlasScienceImagePreviewTelemetryV345({ node, route: "research", intent: "none", product: "none", orientation: "portrait" });
+  const png = await acquireKerrScienceImageProductV344(expected("png"));
+  publishAtlasScienceImagePreviewTelemetryV345({ node, route: "research", intent: "png-preview", product: "png", orientation: "portrait" }); const duringPng = diffAtlasResourceSnapshotsV300(baseline, getAtlasResourceSnapshot()); const portrait = getAtlasScienceImagePreviewTelemetryV345();
+  publishAtlasScienceImagePreviewTelemetryV345({ node, orientation: "landscape" }); const landscape = getAtlasScienceImagePreviewTelemetryV345(); const afterRotationResources = getAtlasResourceSnapshot();
+  publishAtlasScienceImagePreviewTelemetryV345({ node, route: "research" });
+  png.release(); publishAtlasScienceImagePreviewTelemetryV345({ node, intent: "none", product: "none" }); const afterPngClose = diffAtlasResourceSnapshotsV300(baseline, getAtlasResourceSnapshot()); const afterPngClient = getKerrScienceImageProductClientSnapshotV344();
+  const fits = await acquireKerrScienceImageProductV344(expected("fits")); publishAtlasScienceImagePreviewTelemetryV345({ node, route: "kerr-lab", intent: "fits-download", product: "fits", orientation: "portrait" }); fits.release(); publishAtlasScienceImagePreviewTelemetryV345({ node, intent: "none", product: "none" }); const afterFits = diffAtlasResourceSnapshotsV300(baseline, getAtlasResourceSnapshot());
+  publishAtlasScienceImagePreviewTelemetryV345({ node, route: "none", orientation: "unknown" }); const final = diffAtlasResourceSnapshotsV300(baseline, getAtlasResourceSnapshot()); const finalClient = getKerrScienceImageProductClientSnapshotV344();
+  const replay = parseKerrScienceImagePreviewReplayV345({ version: "v345-science-image-preview-route-rotation-replay-v1", status: "qualified-preview-route-rotation-baseline", telemetryVersion: "v345-science-image-preview-telemetry-v1", sequence: ["research-idle", "png-portrait-open", "png-landscape-rotated", "research-route-return", "png-closed", "fits-download", "kerr-route-leave"], sceneRevisionDelta: 0, canvasCount: 1, selectionStable: true, cameraLeaseBaseline: final.cameraLocks === 0, lifecycle: { baselineBefore: baselineDiff, duringPng, afterPngClose, afterFits, final }, client: { beforeIntent, afterPngClose: afterPngClient, final: finalClient }, orientation: { portraitAccepted: portrait.orientation === "portrait", landscapeAccepted: landscape.orientation === "landscape", noObjectUrlDuplicationOnRotation: duringPng.objectUrls === afterRotationResources.objectUrls && duringPng.typedArrayCaches === afterRotationResources.typedArrayCaches }, noScienceMutation: true, browserQualification: "not-run", denseCampaignStatus: "incomplete-0-of-49", boundary: "bounded-real-client-replay-no-playwright-no-payload-mutation-no-profile-mutation" });
+  const unsigned = { version: "v345-kerr-science-image-preview-replay-artifact-v1", generatedAt: new Date().toISOString(), status: replay.status, source: { manifestPath, manifestFileSha256: createHash("sha256").update(manifestBytes).digest("hex"), manifestSha256: manifest.manifestSha256 }, replay };
+  const artifact = { ...unsigned, artifactSha256: sha(unsigned) }; const target = resolve(root, outputPath); mkdirSync(dirname(target), { recursive: true }); const temporary = `${target}.${process.pid}.part`; writeFileSync(temporary, `${JSON.stringify(artifact, null, 2)}\n`); renameSync(temporary, target);
+  console.log(JSON.stringify({ status: replay.status, artifactSha256: artifact.artifactSha256, sequence: replay.sequence, duringPng: replay.lifecycle.duringPng, afterPngClose: replay.lifecycle.afterPngClose.status, afterFits: replay.lifecycle.afterFits.status, final: replay.lifecycle.final.status, orientation: replay.orientation }, null, 2));
+}
+void main().finally(() => { globalThis.fetch = originalFetch; resetKerrScienceImageProductClientV344ForTests(); resetAtlasScienceImagePreviewTelemetryV345ForTests(); }).catch((error: unknown) => { console.error(error); process.exitCode = 1; });

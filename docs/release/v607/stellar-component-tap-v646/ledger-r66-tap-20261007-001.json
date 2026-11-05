@@ -1,0 +1,390 @@
+{
+  "schema": "mainline-a-stellar-tap-cross-id-capture-v646",
+  "runId": "r66-tap-20261007-001",
+  "startedAt": "2026-10-07T06:50:38.066Z",
+  "endedAt": "2026-10-07T06:50:49.717Z",
+  "sourceCandidatePack": {
+    "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "bytes": 17973,
+    "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+  },
+  "priorReviewPacket": {
+    "path": "docs/release/v607/mainline-a-r66-stellar-component-review-packet-20261007.json",
+    "bytes": 22734,
+    "sha256": "50db072008c8126a451214c001f68d1c2958fe8abd6f684a1d9083bffe24420b"
+  },
+  "collector": {
+    "endpoint": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync",
+    "method": "GET",
+    "format": "csv",
+    "fixture": false,
+    "timeoutMs": 15000,
+    "maxAttempts": 2
+  },
+  "counts": {
+    "total": 4,
+    "responseCaptured": 4,
+    "failed": 0
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "plan": {
+        "id": "acrux",
+        "wdsSystemId": "12266-6306",
+        "identifiers": [
+          "* alf01 Cru",
+          "WDS J12266-6306A",
+          "WDS J12266-6306Aa",
+          "WDS J12266-6306Ab",
+          "WDS J12266-6306Aa,Ab",
+          "WDS J12266-6306B",
+          "WDS J12266-6306C",
+          "WDS J12266-6306D"
+        ],
+        "adql": "SELECT TOP 64 i.id, i.oidref, b.main_id, b.ra, b.dec, b.otype FROM ident AS i JOIN basic AS b ON i.oidref=b.oid WHERE i.id IN ('* alf01 Cru','WDS J12266-6306A','WDS J12266-6306Aa','WDS J12266-6306Ab','WDS J12266-6306Aa,Ab','WDS J12266-6306B','WDS J12266-6306C','WDS J12266-6306D')",
+        "method": "GET",
+        "accept": "text/csv",
+        "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf01+Cru%27%2C%27WDS+J12266-6306A%27%2C%27WDS+J12266-6306Aa%27%2C%27WDS+J12266-6306Ab%27%2C%27WDS+J12266-6306Aa%2CAb%27%2C%27WDS+J12266-6306B%27%2C%27WDS+J12266-6306C%27%2C%27WDS+J12266-6306D%27%29",
+        "timeoutMs": 15000,
+        "maxAttempts": 2,
+        "requestFingerprint": "be50cf843a1fc66e544a93a407a419cb24a0f041b974be8e08f0712b3670f872"
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "retryCount": 0,
+          "startedAt": "2026-10-07T06:50:38.068Z",
+          "endedAt": "2026-10-07T06:50:41.080Z",
+          "durationMs": 3012,
+          "timeoutMs": 15000,
+          "timeout": false,
+          "requestFingerprint": "be50cf843a1fc66e544a93a407a419cb24a0f041b974be8e08f0712b3670f872",
+          "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf01+Cru%27%2C%27WDS+J12266-6306A%27%2C%27WDS+J12266-6306Aa%27%2C%27WDS+J12266-6306Ab%27%2C%27WDS+J12266-6306Aa%2CAb%27%2C%27WDS+J12266-6306B%27%2C%27WDS+J12266-6306C%27%2C%27WDS+J12266-6306D%27%29",
+          "redirectChain": [],
+          "httpStatus": 200,
+          "contentType": "text/csv;charset=UTF-8",
+          "finalUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf01+Cru%27%2C%27WDS+J12266-6306A%27%2C%27WDS+J12266-6306Aa%27%2C%27WDS+J12266-6306Ab%27%2C%27WDS+J12266-6306Aa%2CAb%27%2C%27WDS+J12266-6306B%27%2C%27WDS+J12266-6306C%27%2C%27WDS+J12266-6306D%27%29",
+          "errorCategory": null,
+          "errorMessage": null
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/acrux-f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b.csv",
+        "bytes": 353,
+        "sha256": "f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b"
+      },
+      "parsedRows": [
+        {
+          "identifier": "* alf01 Cru",
+          "oidref": "11606360",
+          "mainId": "* alf01 Cru",
+          "raDeg": 186.6495666666667,
+          "decDeg": -63.09909166666667,
+          "objectType": "*"
+        },
+        {
+          "identifier": "WDS J12266-6306A",
+          "oidref": "11606360",
+          "mainId": "* alf01 Cru",
+          "raDeg": 186.6495666666667,
+          "decDeg": -63.09909166666667,
+          "objectType": "*"
+        },
+        {
+          "identifier": "WDS J12266-6306B",
+          "oidref": "11606361",
+          "mainId": "* alf02 Cru",
+          "raDeg": 186.65184166666666,
+          "decDeg": -63.09952222222222,
+          "objectType": "*"
+        },
+        {
+          "identifier": "WDS J12266-6306C",
+          "oidref": "3297896",
+          "mainId": "HD 108250",
+          "raDeg": 186.62867882836,
+          "decDeg": -63.12223531887,
+          "objectType": "Pu*"
+        }
+      ],
+      "status": "structured-cross-id-candidate",
+      "componentIdentityConfirmed": false
+    },
+    {
+      "id": "spica",
+      "plan": {
+        "id": "spica",
+        "wdsSystemId": "13252-1110",
+        "identifiers": [
+          "* alf Vir",
+          "WDS J13252-1110A",
+          "WDS J13252-1110Aa",
+          "WDS J13252-1110Ab",
+          "WDS J13252-1110Aa,Ab",
+          "WDS J13252-1110B",
+          "WDS J13252-1110C",
+          "WDS J13252-1110D"
+        ],
+        "adql": "SELECT TOP 64 i.id, i.oidref, b.main_id, b.ra, b.dec, b.otype FROM ident AS i JOIN basic AS b ON i.oidref=b.oid WHERE i.id IN ('* alf Vir','WDS J13252-1110A','WDS J13252-1110Aa','WDS J13252-1110Ab','WDS J13252-1110Aa,Ab','WDS J13252-1110B','WDS J13252-1110C','WDS J13252-1110D')",
+        "method": "GET",
+        "accept": "text/csv",
+        "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Vir%27%2C%27WDS+J13252-1110A%27%2C%27WDS+J13252-1110Aa%27%2C%27WDS+J13252-1110Ab%27%2C%27WDS+J13252-1110Aa%2CAb%27%2C%27WDS+J13252-1110B%27%2C%27WDS+J13252-1110C%27%2C%27WDS+J13252-1110D%27%29",
+        "timeoutMs": 15000,
+        "maxAttempts": 2,
+        "requestFingerprint": "793b257dd8583d9437bb8d092869585d91573b81cdcb08bae019c94b3a430158"
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "retryCount": 0,
+          "startedAt": "2026-10-07T06:50:41.081Z",
+          "endedAt": "2026-10-07T06:50:46.745Z",
+          "durationMs": 5664,
+          "timeoutMs": 15000,
+          "timeout": false,
+          "requestFingerprint": "793b257dd8583d9437bb8d092869585d91573b81cdcb08bae019c94b3a430158",
+          "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Vir%27%2C%27WDS+J13252-1110A%27%2C%27WDS+J13252-1110Aa%27%2C%27WDS+J13252-1110Ab%27%2C%27WDS+J13252-1110Aa%2CAb%27%2C%27WDS+J13252-1110B%27%2C%27WDS+J13252-1110C%27%2C%27WDS+J13252-1110D%27%29",
+          "redirectChain": [],
+          "httpStatus": 200,
+          "contentType": "text/csv;charset=UTF-8",
+          "finalUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Vir%27%2C%27WDS+J13252-1110A%27%2C%27WDS+J13252-1110Aa%27%2C%27WDS+J13252-1110Ab%27%2C%27WDS+J13252-1110Aa%2CAb%27%2C%27WDS+J13252-1110B%27%2C%27WDS+J13252-1110C%27%2C%27WDS+J13252-1110D%27%29",
+          "errorCategory": null,
+          "errorMessage": null
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/spica-c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5.csv",
+        "bytes": 190,
+        "sha256": "c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5"
+      },
+      "parsedRows": [
+        {
+          "identifier": "* alf Vir",
+          "oidref": "2140887",
+          "mainId": "* alf Vir",
+          "raDeg": 201.2982473615632,
+          "decDeg": -11.161319485111932,
+          "objectType": "bC*"
+        },
+        {
+          "identifier": "WDS J13252-1110A",
+          "oidref": "2140887",
+          "mainId": "* alf Vir",
+          "raDeg": 201.2982473615632,
+          "decDeg": -11.161319485111932,
+          "objectType": "bC*"
+        }
+      ],
+      "status": "structured-cross-id-candidate",
+      "componentIdentityConfirmed": false
+    },
+    {
+      "id": "regulus",
+      "plan": {
+        "id": "regulus",
+        "wdsSystemId": "10084+1158",
+        "identifiers": [
+          "* alf Leo",
+          "WDS J10084+1158A",
+          "WDS J10084+1158Aa",
+          "WDS J10084+1158Ab",
+          "WDS J10084+1158Aa,Ab",
+          "WDS J10084+1158B",
+          "WDS J10084+1158C",
+          "WDS J10084+1158D"
+        ],
+        "adql": "SELECT TOP 64 i.id, i.oidref, b.main_id, b.ra, b.dec, b.otype FROM ident AS i JOIN basic AS b ON i.oidref=b.oid WHERE i.id IN ('* alf Leo','WDS J10084+1158A','WDS J10084+1158Aa','WDS J10084+1158Ab','WDS J10084+1158Aa,Ab','WDS J10084+1158B','WDS J10084+1158C','WDS J10084+1158D')",
+        "method": "GET",
+        "accept": "text/csv",
+        "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Leo%27%2C%27WDS+J10084%2B1158A%27%2C%27WDS+J10084%2B1158Aa%27%2C%27WDS+J10084%2B1158Ab%27%2C%27WDS+J10084%2B1158Aa%2CAb%27%2C%27WDS+J10084%2B1158B%27%2C%27WDS+J10084%2B1158C%27%2C%27WDS+J10084%2B1158D%27%29",
+        "timeoutMs": 15000,
+        "maxAttempts": 2,
+        "requestFingerprint": "945a33a26b730392b99207d484531be29fda88e04bb4334ef7e8871abf797c84"
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "retryCount": 0,
+          "startedAt": "2026-10-07T06:50:46.747Z",
+          "endedAt": "2026-10-07T06:50:49.006Z",
+          "durationMs": 2259,
+          "timeoutMs": 15000,
+          "timeout": false,
+          "requestFingerprint": "945a33a26b730392b99207d484531be29fda88e04bb4334ef7e8871abf797c84",
+          "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Leo%27%2C%27WDS+J10084%2B1158A%27%2C%27WDS+J10084%2B1158Aa%27%2C%27WDS+J10084%2B1158Ab%27%2C%27WDS+J10084%2B1158Aa%2CAb%27%2C%27WDS+J10084%2B1158B%27%2C%27WDS+J10084%2B1158C%27%2C%27WDS+J10084%2B1158D%27%29",
+          "redirectChain": [],
+          "httpStatus": 200,
+          "contentType": "text/csv;charset=UTF-8",
+          "finalUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+Leo%27%2C%27WDS+J10084%2B1158A%27%2C%27WDS+J10084%2B1158Aa%27%2C%27WDS+J10084%2B1158Ab%27%2C%27WDS+J10084%2B1158Aa%2CAb%27%2C%27WDS+J10084%2B1158B%27%2C%27WDS+J10084%2B1158C%27%2C%27WDS+J10084%2B1158D%27%29",
+          "errorCategory": null,
+          "errorMessage": null
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/regulus-7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7.csv",
+        "bytes": 431,
+        "sha256": "7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7"
+      },
+      "parsedRows": [
+        {
+          "identifier": "* alf Leo",
+          "oidref": "1689590",
+          "mainId": "* alf Leo",
+          "raDeg": 152.09296243828146,
+          "decDeg": 11.967208776100023,
+          "objectType": "PM*"
+        },
+        {
+          "identifier": "WDS J10084+1158A",
+          "oidref": "1689590",
+          "mainId": "* alf Leo",
+          "raDeg": 152.09296243828146,
+          "decDeg": 11.967208776100023,
+          "objectType": "PM*"
+        },
+        {
+          "identifier": "WDS J10084+1158B",
+          "oidref": "1689552",
+          "mainId": "* alf Leo B",
+          "raDeg": 152.05328276719,
+          "decDeg": 11.99696101528,
+          "objectType": "PM*"
+        },
+        {
+          "identifier": "WDS J10084+1158C",
+          "oidref": "15596632",
+          "mainId": "* alf Leo C",
+          "raDeg": 152.05373785308,
+          "decDeg": 11.99691117507,
+          "objectType": "PM*"
+        },
+        {
+          "identifier": "WDS J10084+1158D",
+          "oidref": "1689553",
+          "mainId": "UCAC2  35936287",
+          "raDeg": 152.03645151089,
+          "decDeg": 11.971081292139997,
+          "objectType": "*"
+        }
+      ],
+      "status": "structured-cross-id-candidate",
+      "componentIdentityConfirmed": false
+    },
+    {
+      "id": "polaris",
+      "plan": {
+        "id": "polaris",
+        "wdsSystemId": "02318+8916",
+        "identifiers": [
+          "* alf UMi",
+          "WDS J02318+8916A",
+          "WDS J02318+8916Aa,Ab",
+          "WDS J02318+8916Aa",
+          "WDS J02318+8916Ab",
+          "WDS J02318+8916B",
+          "WDS J02318+8916C",
+          "WDS J02318+8916D"
+        ],
+        "adql": "SELECT TOP 64 i.id, i.oidref, b.main_id, b.ra, b.dec, b.otype FROM ident AS i JOIN basic AS b ON i.oidref=b.oid WHERE i.id IN ('* alf UMi','WDS J02318+8916A','WDS J02318+8916Aa,Ab','WDS J02318+8916Aa','WDS J02318+8916Ab','WDS J02318+8916B','WDS J02318+8916C','WDS J02318+8916D')",
+        "method": "GET",
+        "accept": "text/csv",
+        "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+UMi%27%2C%27WDS+J02318%2B8916A%27%2C%27WDS+J02318%2B8916Aa%2CAb%27%2C%27WDS+J02318%2B8916Aa%27%2C%27WDS+J02318%2B8916Ab%27%2C%27WDS+J02318%2B8916B%27%2C%27WDS+J02318%2B8916C%27%2C%27WDS+J02318%2B8916D%27%29",
+        "timeoutMs": 15000,
+        "maxAttempts": 2,
+        "requestFingerprint": "1c1145d9fcd81d9a5a1c1ee69abaa9d34a802af1892948c4147ee9b26391e961"
+      },
+      "attempts": [
+        {
+          "attempt": 1,
+          "retryCount": 0,
+          "startedAt": "2026-10-07T06:50:49.007Z",
+          "endedAt": "2026-10-07T06:50:49.715Z",
+          "durationMs": 707,
+          "timeoutMs": 15000,
+          "timeout": false,
+          "requestFingerprint": "1c1145d9fcd81d9a5a1c1ee69abaa9d34a802af1892948c4147ee9b26391e961",
+          "requestUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+UMi%27%2C%27WDS+J02318%2B8916A%27%2C%27WDS+J02318%2B8916Aa%2CAb%27%2C%27WDS+J02318%2B8916Aa%27%2C%27WDS+J02318%2B8916Ab%27%2C%27WDS+J02318%2B8916B%27%2C%27WDS+J02318%2B8916C%27%2C%27WDS+J02318%2B8916D%27%29",
+          "redirectChain": [],
+          "httpStatus": 200,
+          "contentType": "text/csv;charset=UTF-8",
+          "finalUrl": "https://simbad.cds.unistra.fr/simbad/sim-tap/sync?REQUEST=doQuery&LANG=ADQL&FORMAT=csv&QUERY=SELECT+TOP+64+i.id%2C+i.oidref%2C+b.main_id%2C+b.ra%2C+b.dec%2C+b.otype+FROM+ident+AS+i+JOIN+basic+AS+b+ON+i.oidref%3Db.oid+WHERE+i.id+IN+%28%27*+alf+UMi%27%2C%27WDS+J02318%2B8916A%27%2C%27WDS+J02318%2B8916Aa%2CAb%27%2C%27WDS+J02318%2B8916Aa%27%2C%27WDS+J02318%2B8916Ab%27%2C%27WDS+J02318%2B8916B%27%2C%27WDS+J02318%2B8916C%27%2C%27WDS+J02318%2B8916D%27%29",
+          "errorCategory": null,
+          "errorMessage": null
+        }
+      ],
+      "responseCaptured": 1,
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/polaris-62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4.csv",
+        "bytes": 502,
+        "sha256": "62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4"
+      },
+      "parsedRows": [
+        {
+          "identifier": "* alf UMi",
+          "oidref": "317713",
+          "mainId": "* alf UMi",
+          "raDeg": 37.954560670189856,
+          "decDeg": 89.26410896994187,
+          "objectType": "cC*"
+        },
+        {
+          "identifier": "WDS J02318+8916A",
+          "oidref": "317713",
+          "mainId": "* alf UMi",
+          "raDeg": 37.954560670189856,
+          "decDeg": 89.26410896994187,
+          "objectType": "cC*"
+        },
+        {
+          "identifier": "WDS J02318+8916Aa,Ab",
+          "oidref": "317713",
+          "mainId": "* alf UMi",
+          "raDeg": 37.954560670189856,
+          "decDeg": 89.26410896994187,
+          "objectType": "cC*"
+        },
+        {
+          "identifier": "WDS J02318+8916B",
+          "oidref": "317445",
+          "mainId": "* alf UMi B",
+          "raDeg": 37.65035851025,
+          "decDeg": 89.26088976275,
+          "objectType": "V*"
+        },
+        {
+          "identifier": "WDS J02318+8916C",
+          "oidref": "317447",
+          "mainId": "UCAC3 359-258",
+          "raDeg": 38.80025780523,
+          "decDeg": 89.26254084638,
+          "objectType": "*"
+        },
+        {
+          "identifier": "WDS J02318+8916D",
+          "oidref": "6067180",
+          "mainId": "UCAC3 359-247",
+          "raDeg": 37.68476049692999,
+          "decDeg": 89.24158312975,
+          "objectType": "*"
+        }
+      ],
+      "status": "structured-cross-id-candidate",
+      "componentIdentityConfirmed": false
+    }
+  ],
+  "semanticStatus": "candidate-only-unreviewed",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "componentConfirmed": false,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "rightsApproved": false
+  },
+  "ledgerDigest": "cb4a2323a96bb56beb7c47a41098b5427700128a4e5f91c26a504fd001be34f5"
+}

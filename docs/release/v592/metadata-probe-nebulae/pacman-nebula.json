@@ -1,0 +1,64 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:37.952Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "pacman-nebula",
+  "query": "Pacman Nebula",
+  "requiredTerms": [
+    "pacman",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Pacman%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Pacman%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3339,
+    "responseSha256": "a381966d686ca2f95686ceb14b223ed252aa54b86f0d87e7797094efb99b8cbc"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA14731",
+      "title": "The Pacman Nebula",
+      "description": "This composite image of the star cluster NGC 28 contains X-ray data from Chandra, in purple, with infrared observations from Spitzer, in red, green, blue. NGC 281 is known informally as the Pacman Nebula because of its appearance in optical images.",
+      "dateCreated": "2011-09-28T16:51:59Z",
+      "center": "JPL",
+      "keywords": [
+        "NGC 281",
+        "Chandra X-ray Observatory,Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA14731/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA14731/PIA14731~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA14873",
+      "title": "Does Pacman Have Teeth?",
+      "description": "NASA Wide-field Infrared Survey Explorer observed the star-forming cloud NGC 281 in the constellation of Cassiopeia as it appears to be chomping through the cosmos, earning it the nickname the Pacman nebula.",
+      "dateCreated": "2011-10-26T22:00:05Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA14873/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA14873/PIA14873~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "e3f7fcc4248945b7bc0b271648633755750b5e0c502d4838aa341dbe566998eb"
+}

@@ -1,0 +1,248 @@
+{
+  "schema": "mainline-a-b3-code-change-v642",
+  "batch": "B3",
+  "round": "R66-B3",
+  "createdAt": "2026-09-29T09:20:57.562Z",
+  "status": "effective-code-verified-local-build-bound-runtime",
+  "baseline": {
+    "priorB2CodeReceipt": "docs/release/v607/mainline-a-b2-code-change-20260929-b2v640c.json",
+    "priorB2CodeReceiptSha256": "afc9d919282e5311ff574cf91b6f162a6fe77267be4aa629a6f3ba84d7ab00b1",
+    "overlapWithPriorCreditedPaths": 0,
+    "method": "B3 paths are untracked and absent from prior credited file list; only new files receive B3 line credit"
+  },
+  "build": {
+    "path": "docs/release/v607/mainline-a-r66-build-b3v642-20260929-003.json",
+    "sha256": "db14dd71e78e11dc4d49c9b9261aa7631012ed721383a72ddf32c8fd82b9a3ae",
+    "buildId": "2Uq72ggidueaFc6UE-pBa",
+    "runtimeBuildId": "mainline-a-6d9f882c840bb089",
+    "sourceStable": true
+  },
+  "counts": {
+    "runtimeFiles": 6,
+    "toolFiles": 6,
+    "addedLines": 2741,
+    "modifiedLinePairs": 0,
+    "removedLines": 0,
+    "effectiveRuntimeLines": 1422,
+    "effectiveToolLines": 1120,
+    "effectiveCodeLines": 2542,
+    "minimum": 1000,
+    "testFiles": 10,
+    "testCodeLinesExcluded": 295
+  },
+  "method": "New B3 TypeScript/TSX/MJS files only. Count token-bearing nonblank lines from TypeScript AST leaf nodes; comments, blank lines, generated JSON, screenshots, receipts, documentation and all tests are excluded. Runtime source hashes equal preserved build input manifest; tools are current tested source and not runtime build inputs. Existing tracked integration edits are not credited.",
+  "files": [
+    {
+      "path": "app/lib/mainlineABetaStellarRosterV641.ts",
+      "addedLines": 345,
+      "effectiveLines": 317,
+      "sha256": "cc382afece8d741efe5a7c4f282575a90b7f353afebfdd3bf6f7e4e0bac71237",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "cc382afece8d741efe5a7c4f282575a90b7f353afebfdd3bf6f7e4e0bac71237",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterReplayV641.ts",
+      "addedLines": 172,
+      "effectiveLines": 157,
+      "sha256": "af3d6fcf230e90e601dfb88fcb639e581f71cf8a6109afc9e3fd52e94ce7348b",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "af3d6fcf230e90e601dfb88fcb639e581f71cf8a6109afc9e3fd52e94ce7348b",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "app/components/MainlineABetaStellarRosterPanelV641.tsx",
+      "addedLines": 131,
+      "effectiveLines": 124,
+      "sha256": "a031c72f27b077118f14bdb4d9075f682be6d679d09fd30cdf8ee3aa78e75110",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "a031c72f27b077118f14bdb4d9075f682be6d679d09fd30cdf8ee3aa78e75110",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterEvidenceV642.ts",
+      "addedLines": 511,
+      "effectiveLines": 477,
+      "sha256": "690cb8fff4365b05652eae110cd61a206cdb581658420c7741db8dd05958da56",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "690cb8fff4365b05652eae110cd61a206cdb581658420c7741db8dd05958da56",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterEvidenceReplayV642.ts",
+      "addedLines": 258,
+      "effectiveLines": 235,
+      "sha256": "d979bb50531ad59ce2254aeaceac9011f68c4947f33e4944c75af0e3d16fbc03",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "d979bb50531ad59ce2254aeaceac9011f68c4947f33e4944c75af0e3d16fbc03",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "app/components/MainlineABetaStellarRosterEvidencePanelV642.tsx",
+      "addedLines": 118,
+      "effectiveLines": 112,
+      "sha256": "4a059a75ee431008dd3664f0416d0e8580453c937d24af1048b0742fccc1bfbb",
+      "category": "runtime",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": "4a059a75ee431008dd3664f0416d0e8580453c937d24af1048b0742fccc1bfbb",
+      "buildBinding": "verified-build-input"
+    },
+    {
+      "path": "scripts/build-mainline-a-beta-stellar-roster-v641.ts",
+      "addedLines": 260,
+      "effectiveLines": 238,
+      "sha256": "d60514cd24759bf1fd34ca2ba6c2e1e279d21ceb40652528a6a2f83ea152b3eb",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    },
+    {
+      "path": "scripts/audit-mainline-a-beta-stellar-roster-v641.mjs",
+      "addedLines": 184,
+      "effectiveLines": 173,
+      "sha256": "002b5863375bdd11d50ea24e659f467462b080da0e607ae561d3d5a265f4e7f4",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    },
+    {
+      "path": "scripts/build-mainline-a-beta-stellar-roster-evidence-v642.ts",
+      "addedLines": 155,
+      "effectiveLines": 141,
+      "sha256": "d14c86e93209489a67190a698955de3b2dc952d1adea0a497d8069e5031ed56f",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    },
+    {
+      "path": "scripts/audit-mainline-a-beta-stellar-roster-evidence-v642.ts",
+      "addedLines": 129,
+      "effectiveLines": 119,
+      "sha256": "7cd4a1235d040c2db1d7d41408f65f8e5b4d84c268a7941959ad6421ff2b3143",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    },
+    {
+      "path": "scripts/collect-mainline-a-b3-evidence-v642.ts",
+      "addedLines": 339,
+      "effectiveLines": 320,
+      "sha256": "8cb50d516662d2d80437de2e7ade12da78459484b0be2d75071a927b1f281aea",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    },
+    {
+      "path": "scripts/verify-mainline-a-b3-evidence-v642.ts",
+      "addedLines": 139,
+      "effectiveLines": 129,
+      "sha256": "bd5086a8ae0fedd7613e92cc7b943ab78d39ac502102e84ef992a777d82eaabc",
+      "category": "tool",
+      "removedLines": 0,
+      "modifiedLinePairs": 0,
+      "buildInputSha256": null,
+      "buildBinding": "current-tool-tested-after-build"
+    }
+  ],
+  "tests": [
+    {
+      "path": "app/lib/mainlineABetaStellarRosterV641.test.ts",
+      "addedLines": 57,
+      "effectiveLines": 50,
+      "sha256": "4ddf9e37272ce7a35f4276402ae4eb12eec531ac7f50ff00d6a8d26cc7493a7f",
+      "credited": false
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterReplayV641.test.ts",
+      "addedLines": 37,
+      "effectiveLines": 32,
+      "sha256": "fcbee85fc96dc59c2f07da13b2f93e2dd9a344d43adf3319747f65c526a31d9d",
+      "credited": false
+    },
+    {
+      "path": "app/components/MainlineABetaStellarRosterPanelV641.test.tsx",
+      "addedLines": 24,
+      "effectiveLines": 22,
+      "sha256": "52703a410b2e8846b11e34b6a793f8b95e69fa0332452cfa74b53282174eab9d",
+      "credited": false
+    },
+    {
+      "path": "scripts/audit-mainline-a-beta-stellar-roster-v641.test.mjs",
+      "addedLines": 47,
+      "effectiveLines": 41,
+      "sha256": "5f51a5a33ea4d114afd52bde3699149f9117c33b5cfd624395088be7a0b5440b",
+      "credited": false
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterEvidenceV642.test.ts",
+      "addedLines": 56,
+      "effectiveLines": 50,
+      "sha256": "523bffa57e74f4fc4fb4682d7ce69bac953c39ce55c8c11435287af093730a50",
+      "credited": false
+    },
+    {
+      "path": "app/lib/mainlineABetaStellarRosterEvidenceReplayV642.test.ts",
+      "addedLines": 45,
+      "effectiveLines": 41,
+      "sha256": "041108b25c870f0057a6fd6060cf3fb265c144177d337a7f0e64b7b5ec54d3a9",
+      "credited": false
+    },
+    {
+      "path": "app/components/MainlineABetaStellarRosterEvidencePanelV642.test.tsx",
+      "addedLines": 20,
+      "effectiveLines": 16,
+      "sha256": "70a4bb7c3a6d3424696e3ea642de0bcfe7c48a113980eda7fbae83954b988db3",
+      "credited": false
+    },
+    {
+      "path": "scripts/audit-mainline-a-beta-stellar-roster-evidence-v642.test.ts",
+      "addedLines": 9,
+      "effectiveLines": 8,
+      "sha256": "d863f4030534039a3a7b5d46894e3d77b9420494b2d19ca4a7df27cf0b1ebc24",
+      "credited": false
+    },
+    {
+      "path": "scripts/collect-mainline-a-b3-evidence-v642.test.ts",
+      "addedLines": 27,
+      "effectiveLines": 23,
+      "sha256": "201b950e39704f9b6ce0aaa89546b7a6278667dab0f9e4ceb115285a44aa9b72",
+      "credited": false
+    },
+    {
+      "path": "scripts/verify-mainline-a-b3-evidence-v642.test.ts",
+      "addedLines": 15,
+      "effectiveLines": 12,
+      "sha256": "3a0339cc3cc47ed74f55bdb1d6c23f1f62ab7d5a01035ac405265b2a651bf312",
+      "credited": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelChangedByB3": false,
+    "parentGitMutated": false
+  }
+}

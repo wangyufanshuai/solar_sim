@@ -1,0 +1,75 @@
+{
+  "version": "v591-nasa-small-body-visual-sources-v1",
+  "metadataProbe": {
+    "nasaHub": "https://science.nasa.gov/3d-resources/",
+    "nasaHubStatement": "NASA 3D Resources assets are free to download and use and are mirrored on the official nasa/NASA-3D-Resources repository.",
+    "repository": "https://github.com/nasa/NASA-3D-Resources",
+    "treeMetadataUrl": "https://api.github.com/repos/nasa/NASA-3D-Resources/git/trees/master?recursive=1",
+    "treeTruncated": false,
+    "automaticReplacementAllowed": false
+  },
+  "policy": {
+    "allowedHosts": [
+      "raw.githubusercontent.com"
+    ],
+    "requiredRepositoryPrefix": "/nasa/NASA-3D-Resources/master/",
+    "maximumRedirectHops": 2,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicPartRenameRequired": true
+  },
+  "assets": [
+    {
+      "id": "vesta-nasa-shape-source",
+      "body": "vesta",
+      "role": "model-stl",
+      "repositoryPath": "3D Printing/Asteroid 4 Vesta (A)/Asteroid 4 Vesta (A).stl",
+      "gitBlobSha1": "380f1c7a9c0735a94cb1c8d3a9cab4bc95326adc",
+      "sourceUrl": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%204%20Vesta%20%28A%29/Asteroid%204%20Vesta%20%28A%29.stl",
+      "outputPath": "source-cache/celestial-convergence-v591/small-bodies/vesta/vesta-nasa-global-a.stl",
+      "expectedBytes": 40000084,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "NASA 3D Resources Asteroid 4 Vesta (A) global shape model",
+      "observationLimit": "shape/topography presentation source; no measured photometry claim",
+      "presentationOnly": true
+    },
+    {
+      "id": "eros-nasa-shape-source",
+      "body": "eros",
+      "role": "model-stl",
+      "repositoryPath": "3D Printing/Asteroid 433 Eros/Asteroid 433 Eros.stl",
+      "gitBlobSha1": "62a3387878bf475d634819d5960806457d22763d",
+      "sourceUrl": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20433%20Eros/Asteroid%20433%20Eros.stl",
+      "outputPath": "source-cache/celestial-convergence-v591/small-bodies/eros/eros-nasa.stl",
+      "expectedBytes": 10042884,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "NASA 3D Resources Asteroid 433 Eros shape model",
+      "observationLimit": "shape presentation source; no measured photometry claim",
+      "presentationOnly": true
+    },
+    {
+      "id": "kleopatra-nasa-shape-source",
+      "body": "kleopatra",
+      "role": "model-stl",
+      "repositoryPath": "3D Printing/Asteroid 216 Kleopatra/Asteroid 216 Kleopatra.stl",
+      "gitBlobSha1": "fb3429e7d0810650a877a1a8cbb644942ead9643",
+      "sourceUrl": "https://raw.githubusercontent.com/nasa/NASA-3D-Resources/master/3D%20Printing/Asteroid%20216%20Kleopatra/Asteroid%20216%20Kleopatra.stl",
+      "outputPath": "source-cache/celestial-convergence-v591/small-bodies/kleopatra/kleopatra-nasa.stl",
+      "expectedBytes": 204684,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "NASA 3D Resources Asteroid 216 Kleopatra shape model",
+      "observationLimit": "low-resolution radar-derived shape presentation source; source-detail ceiling disclosed; no measured photometry claim",
+      "presentationOnly": true
+    }
+  ]
+}

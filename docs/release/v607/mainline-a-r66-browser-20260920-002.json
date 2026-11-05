@@ -1,0 +1,66 @@
+{
+  "schema": "mainline-a-browser-evidence-v626",
+  "observedAt": "2026-09-20T14:35:38.415Z",
+  "url": "http://127.0.0.1:3040/",
+  "build": {
+    "buildId": "mainline-a-c39a4d34a8f47057",
+    "nextBuildId": "aNA42t_L0B6aea2pK0VFU",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "device": "desktop",
+    "scenario": "atlas",
+    "runId": "r65-desktop-001-8399a7b1",
+    "frameSamples": 721,
+    "p95Ms": 5.7,
+    "medianFps": 180,
+    "heapUsedBytes": 144703488,
+    "lifecycle": "baseline",
+    "status": "complete"
+  },
+  "mobile": {
+    "viewport": [
+      390,
+      844
+    ],
+    "device": "mobile",
+    "scenario": "atlas",
+    "runId": "r65-mobile-002-39e6db48",
+    "frameSamples": 721,
+    "p95Ms": 5.6,
+    "medianFps": 180,
+    "heapUsedBytes": 139460608,
+    "lifecycle": "baseline",
+    "status": "complete"
+  },
+  "screenshots": [
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260920-002.png",
+      "sha256": "620c851bba5e71bf948fd1c0262614b749c3329e38a6ba2cef8298e4ac1033d8"
+    },
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260920-002.png",
+      "sha256": "d7595195b759ab2ca8c1572bfa2251d3a1862860ecc299c7f84625e162571b86"
+    }
+  ],
+  "consoleErrors": 0,
+  "consoleWarnings": 0,
+  "physicalMobileDevice": "not-run",
+  "realUserValidation": false,
+  "productionPerformanceClaim": false,
+  "evidenceClass": "local-browser-interaction-and-viewport-plus-runtime-observation",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "notes": [
+    "Build marker and HTTP stage bind to R66 preserved build 002. Four-second viewport samples remain browser evidence only; long-run and physical-device gates remain open."
+  ]
+}

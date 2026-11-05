@@ -1,0 +1,68 @@
+{
+  "version": "v592-deep-space-metadata-supplement-v1",
+  "probedAt": "2026-08-19T04:58:28.905Z",
+  "status": "metadata-supplement-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "query": "M87",
+  "requiredTermGroups": [
+    [
+      "m87",
+      "messier 87",
+      "virgo a",
+      "ngc 4486"
+    ],
+    [
+      "galaxy"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space/virgo-a-galaxy.json",
+    "receiptSha256": "6dbd17db897b01be27140e8c186537d0aa01f3ab9a8e3b7cd3bde29ac513b487",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M87%20Virgo%20A%20Galaxy&media_type=image&page_size=30",
+    "priorMatchedCandidateCount": 0
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "requestUrlDistinctFromPriorProbe": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M87&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M87&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 4067,
+    "responseSha256": "45e1b8eb19b4dbaf7bd1cf7f1a6cd06f291981b66e6766d26800183f96a7c93d"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA23122",
+      "title": "Spitzer Captures Messier 87",
+      "description": "This image from NASA's Spitzer Space Telescope shows the elliptical galaxy Messier 87 (M87), the home galaxy of the supermassive black hole recently imaged by the Event Horizon Telescope (EHT). Spitzer's infrared view shows a faint trace of a jet of material spewing to the right of the galaxy - a feature that was previously one key indicator that a supermassive black hole lived at the galaxy's center. More prominent in the image is the shockwave created by that jet. The inset in the image below shows a close-up view of the shockwave on the right side of the galaxy, as well as the shockwave from a second jet traveling to the left of the galaxy. Located about 55 million light-years from Earth, M87 has been a subject of astronomical study for more than 100 years and has been imaged by many NASA observatories, including the Hubble Space Telescope, the Chandra X-ray Observatory and NuSTAR. In 1918, astronomer Heber Curtis first noticed \"a curious straight ray\" extending from the galaxy's center. This bright jet (which appears to extend to the right of the galaxy) is visible in multiple wavelengths of light, from radio waves through X-rays. The jet is produced by a disk of material spinn",
+      "dateCreated": "2019-04-25T00:00:00Z",
+      "center": "JPL",
+      "keywords": [
+        "Spitzer Space Telescope",
+        "Messier 87"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA23122/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "262fdfe4f8c8fc4695b428e888e15839ce6c1b6b9b4271a8470c89829156b124"
+}

@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createKerrInstrumentObservationSummaryV437 } from "./kerrInstrumentObservationV437";
+import { getKerrInstrumentObservationSnapshotV437, loadKerrInstrumentObservationSummaryV437, resetKerrInstrumentObservationClientForTestsV437 } from "./kerrInstrumentObservationClientV437";
+afterEach(() => { vi.unstubAllGlobals(); resetKerrInstrumentObservationClientForTestsV437(); });
+describe("v437 audit client", () => { it("single-flights a bounded no-store summary", async () => { const summary = createKerrInstrumentObservationSummaryV437(JSON.parse(readFileSync("dist/science/kerr-instrument-observation-v437/instrument-observation-oracle.json", "utf8"))), fetchMock = vi.fn(async () => new Response(JSON.stringify({ version: "v437-kerr-instrument-observation-api-v1", available: true, reason: "ready", summary }))); vi.stubGlobal("fetch", fetchMock); const first = loadKerrInstrumentObservationSummaryV437(); expect(loadKerrInstrumentObservationSummaryV437()).toBe(first); await first; expect(fetchMock).toHaveBeenCalledTimes(1); expect(getKerrInstrumentObservationSnapshotV437()).toMatchObject({ status: "ready", requestCount: 1, summary: { counts: { responseMatrixApplicationCount: 0 } } }); }); });

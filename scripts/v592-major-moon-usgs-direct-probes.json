@@ -1,0 +1,100 @@
+{
+  "version": "v592-major-moon-usgs-direct-probes-v1",
+  "policy": {
+    "archive": "USGS Astrogeology Astropedia",
+    "allowedHosts": ["astrogeology.usgs.gov", "planetarymaps.usgs.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "visualPayloadDownloadAllowed": false,
+    "redirectPolicy": "manual-whitelist-only",
+    "guessedUrlsDoNotGrantAdmission": true
+  },
+  "probes": [
+    {
+      "id": "io-voyager-galileo-global-mosaic-1km",
+      "target": "io",
+      "url": "https://astrogeology.usgs.gov/search/map/Io/Voyager-Galileo/Io_Voyager_GalileoSSI_global_mosaic_1km"
+    },
+    {
+      "id": "europa-voyager-galileo-global-mosaic-500m",
+      "target": "europa",
+      "url": "https://astrogeology.usgs.gov/search/map/Europa/Voyager-Galileo/Europa_Voyager_GalileoSSI_global_mosaic_500m"
+    },
+    {
+      "id": "ganymede-voyager-galileo-global-mosaic-1km",
+      "target": "ganymede",
+      "url": "https://astrogeology.usgs.gov/search/map/Ganymede/Voyager-Galileo/Ganymede_Voyager_GalileoSSI_global_mosaic_1km"
+    },
+    {
+      "id": "callisto-voyager-galileo-global-mosaic-1km",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search/map/Callisto/Voyager-Galileo/Callisto_Voyager_GalileoSSI_global_mosaic_1km"
+    },
+    {
+      "id": "io-global-mosaic-canonical",
+      "target": "io",
+      "url": "https://astrogeology.usgs.gov/search/map/io_voyager_galileo_ssi_global_mosaic_1km"
+    },
+    {
+      "id": "europa-global-image-mosaic-map",
+      "target": "europa",
+      "url": "https://astrogeology.usgs.gov/search/map/europa_voyager_galileo_global_image_mosaic_map"
+    },
+    {
+      "id": "ganymede-global-mosaic-canonical",
+      "target": "ganymede",
+      "url": "https://astrogeology.usgs.gov/search/map/ganymede_voyager_galileo_ssi_global_mosaic_1km"
+    },
+    {
+      "id": "callisto-global-mosaic-canonical",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search/map/callisto_voyager_galileo_ssi_global_mosaic_1km"
+    },
+    {
+      "id": "io-color-merged-global-mosaic-1km",
+      "target": "io",
+      "url": "https://astrogeology.usgs.gov/search/map/io_galileo_ssi_voyager_color_merged_global_mosaic_1km"
+    },
+    {
+      "id": "ganymede-color-global-mosaic-1-4km",
+      "target": "ganymede",
+      "url": "https://astrogeology.usgs.gov/search/map/ganymede_voyager_galileo_ssi_color_global_mosaic_1_4km"
+    },
+    {
+      "id": "callisto-usgs-search-root",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search"
+    },
+    {
+      "id": "callisto-usgs-search-client-metadata",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search/js/pmi.js"
+    },
+    {
+      "id": "callisto-galileo-voyager-global-mosaic-1km",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search/map/callisto_galileo_voyager_global_mosaic_1km"
+    },
+    {
+      "id": "planetarymaps-root-redirect-metadata",
+      "target": "major-moon-source-host",
+      "url": "https://planetarymaps.usgs.gov/"
+    },
+    {
+      "id": "io-color-merged-ckan-dataset",
+      "target": "io",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/f6924861-ce9c-490d-8a4b-7812a20f2de5"
+    },
+    {
+      "id": "ganymede-color-ckan-dataset",
+      "target": "ganymede",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/e1422336-3291-4b65-b903-c942d53de073"
+    },
+    {
+      "id": "callisto-global-ckan-dataset",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/a80abd68-7ed9-440e-829a-76376779164f"
+    }
+  ]
+}

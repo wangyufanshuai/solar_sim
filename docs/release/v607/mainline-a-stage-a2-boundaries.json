@@ -1,0 +1,49 @@
+{
+  "stage": "A2",
+  "status": "latest-rb2-desktop-visual-quality-mobile-scale-selection-and-screenshots-complete",
+  "verifiedAt": "2026-09-13T03:40:12Z",
+  "currentVisualReceipt": "docs/release/v607/mainline-a2-visual-screenshots-current-20260913.json",
+  "currentBrowserMatrixReceipt": "docs/release/v607/mainline-a2-browser-matrix-current-20260913.json",
+  "scope": "First-set formal IAU constellation boundaries and asterism presentation contract",
+  "objects": [
+    "Ori",
+    "UMa",
+    "Cas",
+    "Sco"
+  ],
+  "sourceFormat": "HH MM SS.SSSS| DD.DDDDDDD|XXX (J2000)",
+  "sourceFiles": [
+    "docs/release/v607/iau-boundaries/ori.txt",
+    "docs/release/v607/iau-boundaries/uma.txt",
+    "docs/release/v607/iau-boundaries/cas.txt",
+    "docs/release/v607/iau-boundaries/sco.txt"
+  ],
+  "sourceArchive": "https://iauarchive.eso.org/public/themes/constellations/",
+  "evidence": {
+    "boundaryParser": "app/data/mainlineAConstellationBoundaryV607.ts",
+    "boundaryData": "app/data/mainlineAConstellationBoundaryDataV607.ts",
+    "boundaryStatus": "available",
+    "boundaryVertices": {
+      "Ori": 28,
+      "UMa": 32,
+      "Cas": 31,
+      "Sco": 20
+    },
+    "automatedChecks": [
+      "npx vitest run app/data/mainlineAMetadataV607.test.ts app/data/mainlineAConstellationBoundaryV607.test.ts --exclude tmp/** --exclude **/.next*/**",
+      "npx eslint app/data/mainlineAConstellationBoundaryV607.ts app/data/mainlineAConstellationBoundaryV607.test.ts app/data/mainlineAConstellationBoundaryDataV607.ts app/data/mainlineAMetadataV607.ts app/data/mainlineAMetadataV607.test.ts app/components/CelestialObjectPassportPanel.tsx"
+    ],
+    "polygonRendering": "app/components/ConstellationLines.tsx renders first-set IAU boundary rings at presentation-only opacity and publishes visibility, 401 figure segments, 111 boundary segments, 118 async asterism segments when loaded, asterism-ready, and asterisms-v255.json source markers",
+    "knowledgeCardFacts": "CelestialObjectPassportPanel exposes bilingual constellation names, seasonal visibility guidance, representative star anchors, and data-mainline-a-constellation-facts",
+    "visibilityPolicy": "resolveMainlineAConstellationLayerV607 centralizes opacity and visibility; shouldShowMainlineAConstellationBoundariesV607 and shouldShowMainlineAAsterismsV607 are covered for mobile, solar LOD, selected-body cinematic, disabled layers, empty geometry, and normal presentation cases, including balanced and dense opacity snapshots",
+    "browserSmoke": "Local orbitAtlas page loaded; deep-space M42 selection opened the passport with one Gaia knowledge card, three relation controls, and one provenance link; clicking the constellation relation moved focus to constellation:Ori and updated the card. Direct selection then verified Ori, UMa, Cas, and Sco each expose one constellation facts block with bilingual name, seasonal guidance, representative-star anchors, and three provenance links.",
+    "chartComponent": "app/components/MainlineAConstellationChartV607.tsx",
+    "chartGeometry": "Named bright-star J2000 anchors shared with the scene; stereographic projection handles RA wrap, east-left/north-up. Rigel placement and closed Big Dipper bowl corrected.",
+    "chartSmoke": "Current bound build direct selection verified on desktop balanced and dense and mobile stellar plus mobile galactic after slider transition across Ori/UMa/Cas/Sco (facts=4/4, identity=4/4). Mobile gates keep boundary/asterism hidden at opacity 0. Geometry markers report 401 figure segments, 111 boundary segments, and 118 async asterism segments when loaded.",
+    "currentMatrixReceipt": "docs/release/v607/mainline-a2-browser-matrix-current-20260913.json",
+    "previousMatrixReceipt": "docs/release/v607/mainline-a2-browser-matrix-20260912.json"
+  },
+  "remaining": [
+    "Complete resource/lifecycle evidence."
+  ]
+}

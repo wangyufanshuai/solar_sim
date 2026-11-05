@@ -1,0 +1,132 @@
+{
+  "version": "v591-nasa-small-body-model-lod-receipt-v1",
+  "status": "three-lod-nasa-shape-model-ready-for-runtime-admission",
+  "body": "kleopatra",
+  "source": {
+    "acquisitionReceiptPath": "docs/release/v591/acquisition-assets-nasa-git-blobs/kleopatra-nasa-shape-source.json",
+    "acquisitionReceiptSha256": "bfd0f5ade3c3a555ea02878375fe2683255ded18307402cefe3e5b9a16ec0223",
+    "path": "source-cache/celestial-convergence-v591/small-bodies/kleopatra/kleopatra-nasa.stl",
+    "bytes": 204684,
+    "sha256": "add3cb00a0ee66898204aea39f95c7fb56fbf68a5ac817318a30fae3a07f78b3",
+    "repositoryPath": "3D Printing/Asteroid 216 Kleopatra/Asteroid 216 Kleopatra.stl",
+    "gitBlobSha1": "fb3429e7d0810650a877a1a8cbb644942ead9643",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "observationIdentity": "NASA 3D Resources Asteroid 216 Kleopatra/Asteroid 216 Kleopatra.stl",
+    "observationLimit": "low-resolution radar-derived shape presentation source; source-detail ceiling disclosed; no measured photometry claim",
+    "detailCeiling": "nasa-low-resolution-radar-shape-4092-triangles"
+  },
+  "normalized": {
+    "receiptSha256": "ccee9dd4c2c5770aa923b9ab40d0770104fcbaaab45bb9fc5893841a5867ea54",
+    "triangleCount": 4092,
+    "vertexCount": 2048,
+    "watertight": true,
+    "eulerNumber": 2,
+    "bounds": [
+      [
+        "-1",
+        "-0.431411423553",
+        "-0.375557956948"
+      ],
+      [
+        "1",
+        "0.431411423553",
+        "0.375557956948"
+      ]
+    ],
+    "units": "normalized-diameter-2",
+    "pivot": "bounds-midpoint",
+    "rotationAxis": "positive-y",
+    "printableSplitReconstruction": null
+  },
+  "pipeline": {
+    "trimeshVersion": "4.12.2",
+    "gltfTransformVersion": "4.4.2",
+    "stages": [
+      "inspect",
+      "weld",
+      "independent-simplify",
+      "prune",
+      "meshopt",
+      "inspect"
+    ],
+    "sourceInspection": {
+      "triangles": 4092,
+      "vertices": 2048,
+      "extensionsUsed": "none"
+    },
+    "weldedInspection": {
+      "triangles": 4092,
+      "vertices": 2048,
+      "extensionsUsed": "none"
+    },
+    "deterministicParameters": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "path": "public/models/candidate-v591/kleopatra/kleopatra-lod0.glb",
+      "bytes": 20612,
+      "sha256": "3c7f1f42eecd325c1e81d4cb40e52ab88ae74a9318abcc3557cbf229f33898ca",
+      "triangleCount": 4092,
+      "vertexCount": 2048,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 1,
+        "error": 0,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 1,
+      "path": "public/models/candidate-v591/kleopatra/kleopatra-lod1.glb",
+      "bytes": 11876,
+      "sha256": "e38ef2f46fbdd4ad06a2942dca3915d137be58d2687e1bc8a28a9801326cdb88",
+      "triangleCount": 2046,
+      "vertexCount": 1025,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.5,
+        "error": 0.035,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 2,
+      "path": "public/models/candidate-v591/kleopatra/kleopatra-lod2.glb",
+      "bytes": 7264,
+      "sha256": "ae8fbc0738de65d5b949893445b25c8069f00d85c0b92761fb4ffb53571c36d4",
+      "triangleCount": 1022,
+      "vertexCount": 513,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.25,
+        "error": 0.08,
+        "source": "independent-welded-source"
+      },
+      "normals": true,
+      "meshopt": true,
+      "pivot": "bounds-midpoint",
+      "units": "normalized-diameter-2",
+      "rotationAxis": "positive-y"
+    }
+  ],
+  "sourceDetailCeiling": "nasa-low-resolution-radar-shape-4092-triangles",
+  "presentationOnly": true,
+  "proceduralFallback": false,
+  "measuredPhotometryClaim": false,
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "5689f7c26a5326dfba9e527626bce13037fc3e574a9b84cb3802b789c39df3f6"
+}

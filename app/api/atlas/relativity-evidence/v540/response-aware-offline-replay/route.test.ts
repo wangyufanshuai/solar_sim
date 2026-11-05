@@ -1,0 +1,9 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+
+const previous = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (previous === undefined) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = previous; });
+describe("v540 offline-replay route", () => {
+  it("serves a bounded summary and receipt only in local-shadow", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "local-shadow"; const summary = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v540/response-aware-offline-replay", { headers: { "x-forwarded-for": "127.0.0.543" } })); expect(summary.status).toBe(200); expect(summary.headers.get("cache-control")).toBe("no-store"); expect((await summary.json()).summary.counts.qualifiedReplayCount).toBe(2); const receipt = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v540/response-aware-offline-replay?download=receipt", { headers: { "x-forwarded-for": "127.0.0.544" } })); expect(receipt.status).toBe(200); expect(receipt.headers.get("content-type")).toContain("application/json"); expect(receipt.headers.get("x-atlas-kerr-product")).toContain("not-production"); expect((await receipt.json()).sandbox.networkAttemptCount).toBe(0); });
+  it("fails closed for ordinary standalone and Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v540/response-aware-offline-replay"))).json()).reason).toBe("local-shadow-only"); process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v540/response-aware-offline-replay"))).json()).reason).toBe("lite-boundary"); });
+});

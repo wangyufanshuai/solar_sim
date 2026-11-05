@@ -1,0 +1,61 @@
+{
+  "schema": "mainline-a-r80-code-change-v667",
+  "round": 80,
+  "date": "2026-10-13",
+  "status": "effective-full-web-art-review-batch-counted-release-gates-pending",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+    "parallelRelativityWindowExcludedFromCounts": true,
+    "parentGitTouchedByRound": false
+  },
+  "newProductionAndOperationalCode": [
+    "app/lib/mainlineAR80VisualSessionV667.ts",
+    "app/components/MainlineAR80VisualCoverageV667.tsx",
+    "scripts/verify-mainline-a-r80-http-v667.mjs",
+    "scripts/capture-mainline-a-r80-browser-v667.mjs",
+    "scripts/replay-mainline-a-r80-evidence-v667.mjs"
+  ],
+  "newSubstantiveTests": [
+    "app/lib/mainlineAR80VisualSessionV667.test.ts",
+    "scripts/verify-mainline-a-r80-http-v667.test.mjs",
+    "scripts/capture-mainline-a-r80-browser-v667.test.mjs",
+    "scripts/verify-mainline-a-r80-scenes-v667.test.mjs",
+    "scripts/replay-mainline-a-r80-evidence-v667.test.mjs"
+  ],
+  "existingFilesModifiedWithoutLineCredit": [
+    "app/components/MainlineAWebAcceptancePanelV662.tsx",
+    "app/components/MainlineAR79VisualInspectionV666.tsx",
+    "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+    "scripts/verify-mainline-a-web-canonical-scene-v648.mjs"
+  ],
+  "lineMethod": "Count nonempty noncomment lines in five new production or operational files and five new substantive test files using rg. Existing files lack a preserved pre-R80 line baseline and receive zero credit. Generated receipts, screenshots, logs, documentation, lockfiles, and concurrent relativity work are excluded.",
+  "counts": {
+    "newProductionAndOperationalCodeFiles": 5,
+    "newSubstantiveTestFiles": 5,
+    "existingFilesModifiedWithoutLineCredit": 4,
+    "effectiveNewProductionAndToolLines": 1287,
+    "effectiveNewSubstantiveTestLines": 510,
+    "effectiveNewCodeLinesTotal": 1797,
+    "existingFileModifiedLinesCredited": 0,
+    "minimum500MetWithoutTestsOrExistingModifications": true,
+    "target1000MetWithoutTestsOrExistingModifications": true
+  },
+  "behavior": [
+    "Add a browser-local 31-image visual cycle queue. Completion requires a manual same-origin image load, digest and dimension match, visible image, and explicit resource release; held images and stellar identities remain request-free.",
+    "Verify all 31 image routes and five held routes in enabled and default-off local HTTP modes against one current production build.",
+    "Capture 62 actual image cycles across desktop and simulated mobile, 65 pinned browser image and context screenshots, a default-off 404 feedback sample, and negative tests for fabricated digests, releases, approvals, and exposure.",
+    "Extend canonical scene capture to R80 current-source profile and verify 36 A-line star, constellation, and nebula selections in each viewport with 72 rehashed screenshots.",
+    "Replay build, image, HTTP, browser, scene, prior raw source pins, and release boundaries into one current-source evidence bundle without new HTTPS or science writeback."
+  ],
+  "boundary": {
+    "physicsKernelEditedByRound": false,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

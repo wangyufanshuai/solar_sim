@@ -1,0 +1,85 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:50.749Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "messier-22",
+  "category": "cluster",
+  "selection": {
+    "metadataProbeFile": "messier-22-supplement.json",
+    "metadataReceiptSha256": "00ee4c5794855facd25b300ea6476c03776064a0351a1044edf501783d412253",
+    "nasaId": "PIA04202",
+    "title": "Globular Cluster M22",
+    "description": "Scientists are mystified by what may be unexpected, wandering, planet-sized objects. This image taken by NASA Hubble Space Telescope implies the presence of these objects. ",
+    "center": "JPL",
+    "identityTerms": [
+      "m22"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04202/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA04202/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA04202/collection.json",
+    "status": 200,
+    "responseBytes": 195,
+    "responseSha256": "d7e1711e420f07d1025a6ce6581e7fc8245f8ab41c79ef54c512167ff38963a4"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04202/PIA04202~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04202~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04202/PIA04202~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04202/PIA04202~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04202~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04202/PIA04202~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04202/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04202/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 3,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 3,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "10899643ab47e94fef814d891f590b24bfa9126189d74546d323fab63cfaab55"
+}

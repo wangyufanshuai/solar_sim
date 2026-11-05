@@ -1,0 +1,53 @@
+{
+  "schema": "mainline-a-r66-web-v649-code-change",
+  "round": "R66-web-only-continuation",
+  "date": "2026-10-11",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "f86295b3b959a6a5217e1f58d148b11a38ef800219c5a80f9f59fb87e4dea79f",
+  "buildId": "7jCmHHTeCrDTqbh6csQIR",
+  "scope": "Mobile object-browser hit-target repair and current-build 12/12/12 real-pointer capture, screenshot hashing, offline replay and negative verification",
+  "countMethod": "Conservative nonblank, noncomment production and tooling lines in two new scripts plus a lower bound for the changed application lines. Tests, screenshots, raw evidence, generated manifests and receipts are excluded. This is a continuation of the existing R66 batch, not a new micro-round.",
+  "effectiveCode": {
+    "newProductionToolLines": 530,
+    "modifiedApplicationLinesAtLeast": 5,
+    "effectiveChangedLinesAtLeast": 535,
+    "newTestLinesExcluded": true,
+    "minimumPerRound": 500,
+    "minimumMetByThisContinuationAlone": true
+  },
+  "files": [
+    {
+      "path": "app/components/UniverseSandboxHud.tsx",
+      "role": "production-mobile-pointer-route-and-overlay-lifecycle",
+      "sha256": "6638dc20758472b45e23b4c642e0120e8070dc5eb00dca6c2e3b8e68894207c6",
+      "modifiedEffectiveLinesAtLeast": 5
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-pointer-matrix-v649.mjs",
+      "role": "real-browser-36-object-matrix-capture",
+      "sha256": "31d675c2cffa6b3f1c299aefe4effff7d95c69996e1aee851c0f297b5238caaa",
+      "newEffectiveLines": 276
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-pointer-matrix-v649.mjs",
+      "role": "offline-fail-closed-verifier-and-replay",
+      "sha256": "12045f3d88a58f9b92638c241573d732b12df9ca912c173d1419c2d204b1a9ae",
+      "newEffectiveLines": 254
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-pointer-matrix-v649.test.mjs",
+      "role": "eleven-substantive-positive-and-negative-tests",
+      "sha256": "8803f310e8cc5daeb4c9b35716d1e93831d6b0c50b3678af903c67e66904feb7",
+      "excludedFromEffectiveCount": true
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

@@ -1,0 +1,649 @@
+{
+  "version": "v596-source-manifest-v1",
+  "generatedAt": "2026-08-31T00:00:00.000Z",
+  "identityStage": "ready-for-v596-delta-source-identity",
+  "status": "complete-explicit-v596-delta-retirement-and-closure-boundary",
+  "sealAlgorithm": "sha256-canonical-json-object-keys-v1",
+  "formalProductPointer": "v263",
+  "parentVersion": "v595",
+  "baseSourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+  "baseCandidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+  "baseReleaseDossierSha256": "ea6a5247cf9708162df26acead217e23159f0d8793466dd98071888831866765",
+  "baseResealReceiptSha256": "ccf9c5cbfc0418c25295a51fde4efdb1364d9a7206dfa056eb004fb53b5c9a13",
+  "parentV595": {
+    "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+    "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+    "releaseDossierSha256": "ea6a5247cf9708162df26acead217e23159f0d8793466dd98071888831866765",
+    "resealReceiptSha256": "ccf9c5cbfc0418c25295a51fde4efdb1364d9a7206dfa056eb004fb53b5c9a13",
+    "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+    "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "qualifiedStatus": "qualified-additive-v595-stellar-relativity-candidate",
+    "sourceFiles": 74,
+    "closureSourcePaths": 8,
+    "sourceManifestPath": "docs/release/v595/source-manifest-v595.json",
+    "candidateManifestPath": "public/data/stellar-relativity-v595/manifest.json",
+    "releaseDossierPath": "docs/release/v595/release-export-v595.json",
+    "resealReceiptPath": "docs/release/v595/reseal-receipt-v595.json"
+  },
+  "baseCounts": {
+    "files": 74,
+    "closureSourcePaths": 8,
+    "retiredOrReplacedPaths": 14
+  },
+  "parentRetiredOrReplacedPaths": [
+    {
+      "path": "tmp/audit-v595-browser-evidence.mjs",
+      "parentBytes": 44937,
+      "parentSha256": "d7e0aff8fd84e068b13aed40ed1cfe7bd831b14b1eca18f7a13e10d4c7273b14",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/audit-v596-browser-evidence.mjs"
+      ]
+    },
+    {
+      "path": "tmp/audit-v595-browser-evidence.test.mjs",
+      "parentBytes": 50403,
+      "parentSha256": "bb3ff45a159afcfc5c1444bc34b2eea07c504518f9f9a484728c9c6331e59a94",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/audit-v596-browser-evidence.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-24x2-stellar-browser-matrix.mjs",
+      "parentBytes": 31960,
+      "parentSha256": "bf3ad84b37687c79075799a99ccde52933362482d8d78efc2f8e89b3029b4133",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-24x2-stellar-browser-matrix.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-24x2-stellar-browser-matrix.test.mjs",
+      "parentBytes": 9072,
+      "parentSha256": "37d5320593f088ae1cac3ab146e5fcb7736ccea16fd4a3043b61f620fa72eba4",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-24x2-stellar-browser-matrix.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-browser-evidence-collector.mjs",
+      "parentBytes": 52284,
+      "parentSha256": "26900cd4badc02cf03a6de08420eb3d40ee6bc4994899740b91cdd6e6496531c",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-browser-evidence-collector.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-browser-evidence-contract.test.mjs",
+      "parentBytes": 4217,
+      "parentSha256": "49f2b3ccc11b4af9d82cc13aabd9a5852e5d228bbd82a0dfe55e2beff56a4ae0",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-browser-evidence-contract.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-cdp-renderer-soak-runner.mjs",
+      "parentBytes": 35768,
+      "parentSha256": "e86c37cf5b03db9642135e9b5cc246336af44d812991e85fc1f2caeb94b0c10d",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced-by-formal-closure-slot",
+      "replacements": [
+        "tmp/v596-cdp-renderer-soak-runner.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-cdp-renderer-soak-runner.test.mjs",
+      "parentBytes": 9789,
+      "parentSha256": "9b1cb7aab2af43db3a16ac0e642906eae52b267c9279f263e0b355b56242c1ee",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced-by-formal-closure-slot",
+      "replacements": [
+        "tmp/v596-cdp-renderer-soak-runner.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-product-scene-family-browser-journeys.mjs",
+      "parentBytes": 52589,
+      "parentSha256": "65bfa0c01829e18432d7f6673d36e04b7f5e5706f4bfb1e547f62e65c842f66d",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-product-scene-family-browser-journeys.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-product-scene-family-browser-journeys.test.mjs",
+      "parentBytes": 11164,
+      "parentSha256": "07d1a4ed87e59d3b1ff0d4db6cb9ec0acc08ad825f99632b227ec714ae7a5076",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-product-scene-family-browser-journeys.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-real-desktop-chrome-evidence.mjs",
+      "parentBytes": 30257,
+      "parentSha256": "9ea723c0e2ab429937ce0e7cbf5d3dd00ed2be478afa1e2c9b4cc45f1b67f007",
+      "currentState": "absent",
+      "disposition": "retired-parent-supplemental-runner-replaced",
+      "replacements": [
+        "tmp/v596-real-desktop-chrome-evidence.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-real-desktop-chrome-evidence.test.mjs",
+      "parentBytes": 11453,
+      "parentSha256": "2c2cd9d0682c2d408cb29132a45738bbbe5b5167189eba476da27e9fde125f18",
+      "currentState": "absent",
+      "disposition": "retired-parent-supplemental-runner-replaced",
+      "replacements": [
+        "tmp/v596-real-desktop-chrome-evidence.test.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-same-realm-lifecycle-runner.mjs",
+      "parentBytes": 20922,
+      "parentSha256": "0421162991bdff32f3e54383024a392c3e436239b0ffc576ba5670217da530cc",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-same-realm-lifecycle-runner.mjs"
+      ]
+    },
+    {
+      "path": "tmp/v595-same-realm-lifecycle-runner.test.mjs",
+      "parentBytes": 9431,
+      "parentSha256": "f7981e57f77cb3cb30ca26aa0189b945e0de6b91ec4761262f6b5cada09c8c48",
+      "currentState": "absent",
+      "disposition": "retired-parent-runner-replaced",
+      "replacements": [
+        "tmp/v596-same-realm-lifecycle-runner.test.mjs"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "app/components/AtlasCanvasSimulationContract.ts",
+      "bytes": 14869,
+      "sha256": "5b7ff10970027396ab1713f1e4771571859fb7fa897839f464eccf717c1d95d5"
+    },
+    {
+      "path": "app/components/AtlasDeepSpacePresentationSubtreeV275.tsx",
+      "bytes": 5682,
+      "sha256": "256e0a329d28e40b93dbc03d5ce53521fe4d610a3ef1c44605ad278f28a6a6e6"
+    },
+    {
+      "path": "app/components/AtlasRuntimeSceneLayer.tsx",
+      "bytes": 9040,
+      "sha256": "185f0af897bda05ea633574c4fb7ab3aec89203abe18660d8033a3a89011d9bd"
+    },
+    {
+      "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "bytes": 47834,
+      "sha256": "e3c51f2a6210520246bccdfecaaff18e2ae0f3a1c3c164b096a9f068689ce71d"
+    },
+    {
+      "path": "app/components/AtlasUniverseSceneRuntime.tsx",
+      "bytes": 33031,
+      "sha256": "2b591515ab5ba8479d5e7bbecbfe9c94e65e2d4bfad3c139d9d8132034489d79"
+    },
+    {
+      "path": "app/components/BrightGalaxyMarkers.tsx",
+      "bytes": 4972,
+      "sha256": "b29df58c5a402e93f28758b50d05ed0eb777bb890f543da0d57d1e7f88b00e7d"
+    },
+    {
+      "path": "app/components/BrightStarCatalog.tsx",
+      "bytes": 3911,
+      "sha256": "e7cd883951674867630995998a5f45a51395b311d97c27c691fbf84fdc045345"
+    },
+    {
+      "path": "app/components/ConstellationLines.tsx",
+      "bytes": 7818,
+      "sha256": "63ff2b0a691adb21698c79ab646e972af454d394fe3bb29e8e5d39eeecf7c41c"
+    },
+    {
+      "path": "app/components/NebulaMarkers.tsx",
+      "bytes": 6490,
+      "sha256": "7b0d58ce7f0ce7b2de4002533bf05aaf72fd66fabe84de8180541d97da2fb315"
+    },
+    {
+      "path": "app/components/ObservationFovOverlayV266.tsx",
+      "bytes": 2064,
+      "sha256": "616c78830c725b5af18aeea7f3546baddf817df3ce17cdd177c42bad20859766"
+    },
+    {
+      "path": "app/components/PulsarField.tsx",
+      "bytes": 5228,
+      "sha256": "f4350906e79872172c3f1638454dc357d7c5f28425992b25cb978cb476af6f9b"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "bytes": 27811,
+      "sha256": "a7749ce4a02f8c15f97bfa00f768ab8b1a17678dee8e067e825a003a86b0c691"
+    },
+    {
+      "path": "app/components/StarClusterMarkers.tsx",
+      "bytes": 6145,
+      "sha256": "ec962f9f4a0567a3daa5bdb135fe08d0ca1057563e00a570888be257b3239e70"
+    },
+    {
+      "path": "app/components/StellarPortraitMaterialV596.test.tsx",
+      "bytes": 6697,
+      "sha256": "a55943a93d9acb3dfee5f39409501bb7a90f00728ddf65ae9634e0ef03c0ec70"
+    },
+    {
+      "path": "app/components/StellarPortraitMaterialV596.tsx",
+      "bytes": 22076,
+      "sha256": "5ff75e65df354be156f3131e68b6053d45e9dfbeb8a36d857725ba14dd3bdc25"
+    },
+    {
+      "path": "app/components/stellarResourceTeardownV596.test.ts",
+      "bytes": 2467,
+      "sha256": "ec0f5ef558e226013c8864360c88f74dae9d0d56b60be660c533d253f90278a7"
+    },
+    {
+      "path": "app/components/UniverseSandboxHud.tsx",
+      "bytes": 20344,
+      "sha256": "ff2641ae4121e9e4c3124f7ff8f1185fd4902d19a774b3091a29180cc2f8c627"
+    },
+    {
+      "path": "app/components/V594CdpSoakSurface.tsx",
+      "bytes": 21496,
+      "sha256": "4bbdd19a25cc07697cc6456a54657c51f306511a6dd02d3dea031436020f9fb3"
+    },
+    {
+      "path": "app/components/V596FormalEvidenceDomSurface.tsx",
+      "bytes": 1995,
+      "sha256": "8b877cc5b0cfefbba8aad70f0791955f69ad7eb92463673b308cb88f1dd8c902"
+    },
+    {
+      "path": "app/components/V596VisualCheckpointDomSurface.tsx",
+      "bytes": 6489,
+      "sha256": "ff13aabebbc1e016d79198ee8eb86497d90dee71c770fc0cf2effcf274a0f699"
+    },
+    {
+      "path": "app/components/V596VisualCheckpointR3fConsumer.tsx",
+      "bytes": 16142,
+      "sha256": "1ae4f38487b774568707c013bf31092b8e0cdc2f049eab5791dcd4d5b7ff0b38"
+    },
+    {
+      "path": "app/effects/ThreeJsPostPipeline.tsx",
+      "bytes": 5939,
+      "sha256": "636c7946908af7418b7493d5aeba671dc8e246190768f82068871319225be3ab"
+    },
+    {
+      "path": "app/lib/atlasV596BuildIdentity.test.ts",
+      "bytes": 2228,
+      "sha256": "cdd0f82ab7067f36b01d5a5b1ff0fa5dca1c9d6811d40908aa0a4f26e3d53ef3"
+    },
+    {
+      "path": "app/lib/atlasV596BuildIdentity.ts",
+      "bytes": 4665,
+      "sha256": "f0214f032f437657e84b68ebe373f7657901526028ecd72ed96c993949037aa7"
+    },
+    {
+      "path": "app/lib/atlasV596VisualCheckpointIdentity.test.ts",
+      "bytes": 1189,
+      "sha256": "b0dbf96a525288d279037c7597d4e5cf3e8605cf6e8c346a2e0f03f7570d1d9f"
+    },
+    {
+      "path": "app/lib/atlasV596VisualCheckpointIdentity.ts",
+      "bytes": 5042,
+      "sha256": "9e3106178e5cc513750ede396c260f1ad23dd06e9afaa9f0072c05432124919d"
+    },
+    {
+      "path": "app/lib/kerrDetectorObservationInputsClientV446.test.ts",
+      "bytes": 1849,
+      "sha256": "eff322b1c774dca80588a7b4e9e7578cf1f2c2b716a49a814993188ded2b1894"
+    },
+    {
+      "path": "app/lib/kerrDetectorObservationInputsClientV446.ts",
+      "bytes": 4187,
+      "sha256": "477994f7104e59c0a5f956bb3885927fd6035015a88a272aaca8829f6fdae169"
+    },
+    {
+      "path": "app/lib/stellarPortraitRenderContractV596.test.ts",
+      "bytes": 7767,
+      "sha256": "092ac006f7675843200f772b980b47e7519843a64646a9b3745ea95ee3858eec"
+    },
+    {
+      "path": "app/lib/stellarPortraitRenderContractV596.ts",
+      "bytes": 17263,
+      "sha256": "4ea425c4062cb7447c397d9581b8229812ff235cf18669d8174491623f0a6382"
+    },
+    {
+      "path": "app/lib/v594CdpSoakSurface.test.ts",
+      "bytes": 8953,
+      "sha256": "0b735e8485f2d4ccac987649cea959d01e0872a094b2030ed1654e7c7f6d39e2"
+    },
+    {
+      "path": "app/lib/v596FormalEvidenceContract.test.ts",
+      "bytes": 521,
+      "sha256": "80e9332417cf0b73dbfbdb2706e36b747c9e1a524723526d29bfc502224a8cfb"
+    },
+    {
+      "path": "app/lib/v596FormalEvidenceContract.ts",
+      "bytes": 6706,
+      "sha256": "c3bfa24015a0cf8deab02b19281147c4e2e2d5fba2de18b9addfa473dc73fead"
+    },
+    {
+      "path": "app/lib/v596VisualCheckpointContract.test.ts",
+      "bytes": 11618,
+      "sha256": "fde1296b6d9578a29d604b7811c074d5f1cbd2640384ea9ea3bf97b691499ef2"
+    },
+    {
+      "path": "app/lib/v596VisualCheckpointContract.ts",
+      "bytes": 18112,
+      "sha256": "e97291131dad43f3b14ea7ac148ae394ce81523dcee62196366edf75ff44bcec"
+    },
+    {
+      "path": "app/lib/v596VisualCheckpointSelection.ts",
+      "bytes": 1009,
+      "sha256": "8717d00ab1ec5bb996593b65eb2812e23766e23b3655f8453cb337e079172f2e"
+    },
+    {
+      "path": "next.config.mjs",
+      "bytes": 8233,
+      "sha256": "6f828208f734dac6d06bf81c7b131af170f869b00f49d9e35e12f44e1f862394"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "bytes": 22952,
+      "sha256": "a44dfb465c4ff87532de3954ebe93be3ef8e732a19d4ee16e07f73718e78879b"
+    },
+    {
+      "path": "scripts/build-atlas-v596-profile.mjs",
+      "bytes": 14335,
+      "sha256": "2240380dc9be8843ff7001a0191b39266ca810a94c1b20242675e656d3dba12e"
+    },
+    {
+      "path": "scripts/build-atlas-v596-profile.test.mjs",
+      "bytes": 4179,
+      "sha256": "5b38cd7f9718e906baae748bbddb67fb60ba31502ca29bfde7227f1e71b66212"
+    },
+    {
+      "path": "scripts/build-v596-closure-dossier.test.mjs",
+      "bytes": 23441,
+      "sha256": "ad5c5e0c653ffb330cf74c017a4e1391eac42974337d357122d9d15fc3f2786b"
+    },
+    {
+      "path": "scripts/build-v596-current-lite-matrix.test.mjs",
+      "bytes": 12644,
+      "sha256": "93f80c8f14c1f78dc2541f910eb014ce8cd73c024bc26c19e01e51aa9344126d"
+    },
+    {
+      "path": "scripts/build-v596-current-source-lifecycle.test.mjs",
+      "bytes": 11276,
+      "sha256": "8e3ce591ae171602500ed154323ba4a4eaeef087f65efff7086420b8b0b0b6e5"
+    },
+    {
+      "path": "scripts/build-v596-current-source-soak.test.mjs",
+      "bytes": 19988,
+      "sha256": "0140daf97891c0983f21ce576858df3c8983ce972c0725419e0ae8d06c40219a"
+    },
+    {
+      "path": "scripts/build-v596-final-sealed-browser-gate.test.mjs",
+      "bytes": 14853,
+      "sha256": "bd2e0b3469a14ca3ef8ae967e0120cdbe6b3299a797a4ecc694899a353abce5a"
+    },
+    {
+      "path": "scripts/build-v596-human-visual-signoff.test.mjs",
+      "bytes": 15333,
+      "sha256": "1079112832ae7ce10fb0b81b26e0b91527f5c24f296f060f3210034d7cfb2fe3"
+    },
+    {
+      "path": "scripts/build-v596-source-manifest.mjs",
+      "bytes": 14571,
+      "sha256": "ba2e801e64a00a3e9f9f29512370a616d1027508053ff62ba4678e262498477a"
+    },
+    {
+      "path": "scripts/build-v596-source-manifest.test.mjs",
+      "bytes": 3572,
+      "sha256": "57527baab0825f047a331564d7532d063a301fbf6aae568568c2fed773479b22"
+    },
+    {
+      "path": "scripts/build-v596-stellar-visible-leap-candidate.mjs",
+      "bytes": 19975,
+      "sha256": "2891d4d20d57e0d389158de74f584be2d793ec4df275b3348daecfaf63dd014f"
+    },
+    {
+      "path": "scripts/build-v596-stellar-visible-leap-candidate.test.mjs",
+      "bytes": 4635,
+      "sha256": "da68e48c37b9752ae37d3c627f1d8b4156ef0501e3eebe8d2ffaf6cd775e85c5"
+    },
+    {
+      "path": "scripts/seal-v596-stellar-visible-leap-candidate.test.mjs",
+      "bytes": 5440,
+      "sha256": "e01023c614b7bcfb62e116ced34c2528c351288aaf98b64c6464212135db8595"
+    },
+    {
+      "path": "scripts/v596-formal-contract.mjs",
+      "bytes": 24250,
+      "sha256": "7d9cf60895629d9c48fb34bc3c61a04f1e21b1e8e8c1db7fde79fa4c56df826e"
+    },
+    {
+      "path": "scripts/v596-formal-contract.test.mjs",
+      "bytes": 11187,
+      "sha256": "1a8cf1b0d85eb6a9807005c8e3359250ee85abc0bf2c010a8bfda7ae2dc8f35e"
+    },
+    {
+      "path": "scripts/v596-source-paths.mjs",
+      "bytes": 10129,
+      "sha256": "8aab453acd947fa3587e9925e5bbda1dfccebf8d30b6aea41dac24ea846bc3d5"
+    },
+    {
+      "path": "scripts/v596-source-paths.test.mjs",
+      "bytes": 3268,
+      "sha256": "b8cdf66e799946d039a3af8cfa6eb227bd2aa522ebaa4c0b3124430005b4968b"
+    },
+    {
+      "path": "scripts/verify-v596-stellar-visible-leap-candidate.test.mjs",
+      "bytes": 11039,
+      "sha256": "76b02d2464301053a880b60c2b393c81b26a9d135354d0a7ae03bce09d98121d"
+    },
+    {
+      "path": "tmp/audit-v596-browser-evidence.mjs",
+      "bytes": 22879,
+      "sha256": "8d56684424a17fcd3596df61079a384c9e73e9f7d5d9c5250a8d6310ce39de24"
+    },
+    {
+      "path": "tmp/audit-v596-browser-evidence.test.mjs",
+      "bytes": 2571,
+      "sha256": "f911c75e276e816c2b2d6a7a6fba6b05e5fe0ac395e07fd5da7e417523e569ac"
+    },
+    {
+      "path": "tmp/v596-24x2-stellar-browser-matrix.mjs",
+      "bytes": 55528,
+      "sha256": "04b8576e3c0d6ec0e7ce10f009d05417d453a30c47f6753f4eb8201d99e85386"
+    },
+    {
+      "path": "tmp/v596-24x2-stellar-browser-matrix.test.mjs",
+      "bytes": 4155,
+      "sha256": "1067c84fa629327ff9819684c3cad28ece74021810b4850ea1bbfcab7b1ec504"
+    },
+    {
+      "path": "tmp/v596-browser-evidence-collector.mjs",
+      "bytes": 35731,
+      "sha256": "b9c032a72e1343fbbe44e2a647b875f98142e2b61003d5351a64fad3ebfe5e10"
+    },
+    {
+      "path": "tmp/v596-browser-evidence-collector.test.mjs",
+      "bytes": 5226,
+      "sha256": "44b1836673027da0ff259f464cb1d70f135d19a0fb7663d5c553a4a27fb1c522"
+    },
+    {
+      "path": "tmp/v596-browser-evidence-contract.mjs",
+      "bytes": 25900,
+      "sha256": "3ebc23174dbd21319eec13596867fd05f9e5d11a3ab97d584bcaf1b7f32ee86c"
+    },
+    {
+      "path": "tmp/v596-browser-evidence-contract.test.mjs",
+      "bytes": 3761,
+      "sha256": "58e1c78d31b732fd9dbdc9be5f225c86d1d28de0462d7f1a2c4cf28ec8513c2a"
+    },
+    {
+      "path": "tmp/v596-build-checkpoint-human-decision.mjs",
+      "bytes": 35189,
+      "sha256": "15da3c301c08c027a2325ce407b2d719ffa4eb57d1667b30d824e62b293a1fa0"
+    },
+    {
+      "path": "tmp/v596-build-checkpoint-human-decision.test.mjs",
+      "bytes": 3882,
+      "sha256": "8a58a587f941bb687c56f0a3e9385e164eb5e368b9cf840c16e30f3c15ab0036"
+    },
+    {
+      "path": "tmp/v596-build-staging-candidate.mjs",
+      "bytes": 10972,
+      "sha256": "858217adfb53fabae3c8be4fbcd6d186e73cf50ce9760fe626a3c6798e443362"
+    },
+    {
+      "path": "tmp/v596-build-staging-candidate.test.mjs",
+      "bytes": 2070,
+      "sha256": "2df66c320a2b027ed3f1215a5a6411692c41ca448be4fd8d9221fb68060428df"
+    },
+    {
+      "path": "tmp/v596-build-visual-checkpoint-identity.mjs",
+      "bytes": 14335,
+      "sha256": "e4e9d4a41dc2defc43b1dc9ce02833e7728f69f6cac6b79b5e5ff262fe1c58ed"
+    },
+    {
+      "path": "tmp/v596-build-visual-checkpoint-identity.test.mjs",
+      "bytes": 4157,
+      "sha256": "74b7aa8c6f7eba6059607347eca3946143794ccf324bac048bb399a377f8118c"
+    },
+    {
+      "path": "tmp/v596-cdp-renderer-soak-runner.mjs",
+      "bytes": 51470,
+      "sha256": "2e16bfc6770380df1addd1c97d9376234f8262b75128121c4f75eeb528a10643"
+    },
+    {
+      "path": "tmp/v596-cdp-renderer-soak-runner.test.mjs",
+      "bytes": 10952,
+      "sha256": "47f973e3073ca5b5c8fa45f5431eeb299f6e40234b4d63a7bc34059c58f5ad21"
+    },
+    {
+      "path": "tmp/v596-phase4-24x2-stellar-browser-matrix.mjs",
+      "bytes": 50012,
+      "sha256": "53bd762151d27ed2ebf6c8739710c91225fb4ab28167a5881343292413b4b209"
+    },
+    {
+      "path": "tmp/v596-phase4-24x2-stellar-browser-matrix.test.mjs",
+      "bytes": 3278,
+      "sha256": "5a3c769f501d6d1a4b0c4ce8be7609a81cce1b1db1b9aee2d91fc32572cb1578"
+    },
+    {
+      "path": "tmp/v596-phase4-lifecycle-browser-regression.mjs",
+      "bytes": 77405,
+      "sha256": "f97d50b9e6cb6a69f0e7a07f9794172345322ffa6a6e2eed9a1a9b4dce278e77"
+    },
+    {
+      "path": "tmp/v596-phase4-lifecycle-browser-regression.test.mjs",
+      "bytes": 10938,
+      "sha256": "d7fc53821acddbacd3fbd8b9af4e5ec33af116a850b5d1c13a80fcfa6275ec03"
+    },
+    {
+      "path": "tmp/v596-product-scene-family-browser-journeys.mjs",
+      "bytes": 25174,
+      "sha256": "55fa8e0c89c8dc202b0608a394aad4dfb828b943f0e5c14ca5abcb28b89db49f"
+    },
+    {
+      "path": "tmp/v596-product-scene-family-browser-journeys.test.mjs",
+      "bytes": 3541,
+      "sha256": "6f7564cb992212b8e8bcc1a99d60e95f738b20c3db252dd101a10a836d6c48b1"
+    },
+    {
+      "path": "tmp/v596-real-desktop-chrome-evidence.mjs",
+      "bytes": 22148,
+      "sha256": "460c3b00f1991d1c35306491c45dbb2d55219544495378d2d74ea15853c3ce97"
+    },
+    {
+      "path": "tmp/v596-real-desktop-chrome-evidence.test.mjs",
+      "bytes": 3277,
+      "sha256": "d9253ec6863d03d52a52ce94c65800f61b94bb8b7a63e30614a1b68bc4f38680"
+    },
+    {
+      "path": "tmp/v596-same-realm-lifecycle-runner.mjs",
+      "bytes": 82319,
+      "sha256": "a97e36bb3397b4a47f1289233e546ca63b7373b1359147f8f94c14712ce2b10b"
+    },
+    {
+      "path": "tmp/v596-same-realm-lifecycle-runner.test.mjs",
+      "bytes": 11904,
+      "sha256": "831a5dc8901cacad864b7136a1c995cbd3ff52224ad8310e7e0cc6d9d1a33676"
+    },
+    {
+      "path": "tmp/v596-visual-checkpoint-ab-collector.mjs",
+      "bytes": 55279,
+      "sha256": "2e867d846fd1a39128041a75120f7b042220f56116579ac1b4c4454e5badf44d"
+    },
+    {
+      "path": "tmp/v596-visual-checkpoint-ab-collector.test.mjs",
+      "bytes": 3911,
+      "sha256": "1685c9002ac9d1309ef75a8d9e52657df3fe1c689e3def8f666f96fa0091e541"
+    }
+  ],
+  "closureSourcePaths": [
+    {
+      "path": "scripts/build-v596-current-source-lifecycle.mjs",
+      "bytes": 21556,
+      "sha256": "40d65be2403dde0c87ece0b444b5f5ca4efb24b13aa7470235964abdff1a1a34",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v596-current-source-soak.mjs",
+      "bytes": 37498,
+      "sha256": "3d50e8c8c4ba798e1781284fc45e618b9783aafa949c2ec268c9be8fe34c51ff",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v596-current-lite-matrix.mjs",
+      "bytes": 21406,
+      "sha256": "6c405fd46a3155ee302739266dcd96d448033e88f50fdba4609178bf7bab454f",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v596-final-sealed-browser-gate.mjs",
+      "bytes": 33336,
+      "sha256": "16e21c8940aa1cfc216a92413f5778b4cf4d9668c60c067f6b7552935ea8deef",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v596-human-visual-signoff.mjs",
+      "bytes": 23494,
+      "sha256": "399c65cd6a6d95b532524e93b9a7d65af7fac353d8bdc8aa89b5f8f3ba49c376",
+      "state": "present"
+    },
+    {
+      "path": "scripts/build-v596-closure-dossier.mjs",
+      "bytes": 38386,
+      "sha256": "2f5d8547a6abef535c7ba70f8564d13cc58e986e3f316092db53ee4e33d46d2e",
+      "state": "present"
+    },
+    {
+      "path": "scripts/seal-v596-stellar-visible-leap-candidate.mjs",
+      "bytes": 17339,
+      "sha256": "617657f304029e4d0b6d799061a1526ec6825471fdc70a956973c930d75e05bf",
+      "state": "present"
+    },
+    {
+      "path": "scripts/verify-v596-stellar-visible-leap-candidate.mjs",
+      "bytes": 22337,
+      "sha256": "f931af81cdb191e8973f3a9ed863299809fd30acacc5e498f043260c2c003e80",
+      "state": "present"
+    }
+  ],
+  "pendingClosurePaths": [],
+  "receiptSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae"
+}

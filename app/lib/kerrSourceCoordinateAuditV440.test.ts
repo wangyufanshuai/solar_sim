@@ -1,0 +1,5 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { createKerrSourceCoordinateSummaryV440, parseKerrSourceCoordinateOracleV440 } from "./kerrSourceCoordinateAuditV440";
+const oracle = JSON.parse(readFileSync("dist/science/kerr-source-coordinate-audit-v440/source-coordinate-oracle.json", "utf8"));
+describe("v440 source-coordinate audit", () => { it("preserves coordinate semantics without detector pixels", () => { const parsed = parseKerrSourceCoordinateOracleV440(oracle), summary = createKerrSourceCoordinateSummaryV440(parsed); expect(summary.rows).toHaveLength(24); expect(summary.rows.every((row) => row.pixelSample === false && row.detectorPixel === false && row.rasterEligible === false)).toBe(true); expect(summary.boundary).toMatchObject({ sourceCoordinatesAvailable: true, detectorPixelsAvailable: false, rasterizationBlocked: true }); }); it("rejects a pixel-sample mutation", () => { expect(() => parseKerrSourceCoordinateOracleV440({ ...oracle, rows: oracle.rows.map((row: object, index: number) => index === 0 ? { ...row, detectorPixel: true } : row) })).toThrow("v440-oracle-identity"); }); });

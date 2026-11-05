@@ -1,0 +1,1969 @@
+{
+  "version": "post-v593-exa-stellar-source-search-ledger-v1",
+  "replayedAt": null,
+  "replayDate": "2026-08-25",
+  "replayedAtStatus": "connector-call-timestamp-not-exposed",
+  "provider": "Exa",
+  "historicalAggregate": {
+    "status": "unverifiable-historical-aggregate",
+    "reportedQueryCount": 26,
+    "reportedSourcesReviewed": 259,
+    "rawResultRowsPreserved": false,
+    "authority": "historical-note-only-not-used-by-builder",
+    "reason": "The earlier search pass retained only aggregate counts; neither the project files nor the Exa connector expose a recoverable per-result history."
+  },
+  "countingPolicy": {
+    "sourcesReviewedDefinition": "sum-requested-numResults-across-all-search-calls-including-retries",
+    "returnedResultSlotsDefinition": "sum-actual-returned-result-rows",
+    "missingSlotsAreNotFabricated": true
+  },
+  "dedupePolicy": {
+    "version": "exact-normalized-url-first-occurrence-v1",
+    "normalization": "parse absolute HTTP(S) URL; force https; lowercase hostname; remove fragment; trim non-root trailing slash; preserve path and query",
+    "exactDuplicateTarget": "first result slot with the same normalizedUrl",
+    "sourceAdmission": "one explicitly selected official or cited primary page per sourceKey; alternate pages remain dropped with mapping"
+  },
+  "queries": [
+    {
+      "id": "q01-simbad-official",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official SIMBAD Astronomical Database documentation service DOI basic data name resolver",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q01-simbad-official:r01",
+          "ordinal": 1,
+          "title": "SIMBAD documentation",
+          "url": "https://cds.unistra.fr/help/documentation/simbad/",
+          "normalizedUrl": "https://cds.unistra.fr/help/documentation/simbad",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:simbad;canonical-slot:q01-simbad-official:r03",
+          "dedupeTargetSlotId": "q01-simbad-official:r01"
+        },
+        {
+          "slotId": "q01-simbad-official:r02",
+          "ordinal": 2,
+          "title": "SIMBAD: How to query SIMBAD by URLs ?",
+          "url": "https://simbad.u-strasbg.fr/guide/sim-url.htx",
+          "normalizedUrl": "https://simbad.u-strasbg.fr/guide/sim-url.htx",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:simbad;canonical-slot:q01-simbad-official:r03",
+          "dedupeTargetSlotId": "q01-simbad-official:r02"
+        },
+        {
+          "slotId": "q01-simbad-official:r03",
+          "ordinal": 3,
+          "title": "SIMBAD Astronomical Database - CDS (Strasbourg)",
+          "url": "https://simbad.u-strasbg.fr/simbad/",
+          "normalizedUrl": "https://simbad.u-strasbg.fr/simbad",
+          "sourceClass": "official-meta-resolver-service",
+          "sourceKeyCandidate": "simbad",
+          "decision": "keep",
+          "keepDropReason": "Official SIMBAD service page for resolver/basic-data boundary",
+          "dedupeTargetSlotId": "q01-simbad-official:r03"
+        },
+        {
+          "slotId": "q01-simbad-official:r04",
+          "ordinal": 4,
+          "title": "SIMBAD: Query from identifiers",
+          "url": "https://simbad.cds.unistra.fr/guide/sim-fid.htx",
+          "normalizedUrl": "https://simbad.cds.unistra.fr/guide/sim-fid.htx",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:simbad;canonical-slot:q01-simbad-official:r03",
+          "dedupeTargetSlotId": "q01-simbad-official:r04"
+        },
+        {
+          "slotId": "q01-simbad-official:r05",
+          "ordinal": 5,
+          "title": "SIMBAD: Introduction",
+          "url": "https://simbad.cds.unistra.fr/guide/simbad.htx",
+          "normalizedUrl": "https://simbad.cds.unistra.fr/guide/simbad.htx",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:simbad;canonical-slot:q01-simbad-official:r03",
+          "dedupeTargetSlotId": "q01-simbad-official:r05"
+        }
+      ]
+    },
+    {
+      "id": "q02-gaia-dr3-official",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official Gaia Data Release 3 documentation ESA Gaia archive data usage citation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q02-gaia-dr3-official:r01",
+          "ordinal": 1,
+          "title": "Credit and citation instructions‣ Miscellaneous ‣ Gaia Data Release 3 Documentation release 1.3",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/",
+          "normalizedUrl": "https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r01"
+        },
+        {
+          "slotId": "q02-gaia-dr3-official:r02",
+          "ordinal": 2,
+          "title": "COSMOS Credits - Gaia Users - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia-users/credits",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia-users/credits",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r02"
+        },
+        {
+          "slotId": "q02-gaia-dr3-official:r03",
+          "ordinal": 3,
+          "title": "Gaia Data Release 3Documentation release 1.3",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/",
+          "normalizedUrl": "https://gea.esac.esa.int/archive/documentation/GDR3",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "keep",
+          "keepDropReason": "Official Gaia DR3 documentation root",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r03"
+        },
+        {
+          "slotId": "q02-gaia-dr3-official:r04",
+          "ordinal": 4,
+          "title": "COSMOS How to extract Gaia data - Gaia Users - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia-users/archive/extract-data",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia-users/archive/extract-data",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r04"
+        },
+        {
+          "slotId": "q02-gaia-dr3-official:r05",
+          "ordinal": 5,
+          "title": "Gaia Data Release 3 overview - ESA Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia/data-release-3",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia/data-release-3",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r05"
+        }
+      ]
+    },
+    {
+      "id": "q03-hipparcos-i311",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official VizieR I/311 new reduction Hipparcos van Leeuwen catalogue ReadMe",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q03-hipparcos-i311:r01",
+          "ordinal": 1,
+          "title": "I/311",
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+          "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "keep",
+          "keepDropReason": "Official CDS VizieR I/311 ReadMe",
+          "dedupeTargetSlotId": "q03-hipparcos-i311:r01"
+        },
+        {
+          "slotId": "q03-hipparcos-i311:r02",
+          "ordinal": 2,
+          "title": "VizieR I/311",
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/I/311",
+          "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/cat/I/311",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q03-hipparcos-i311:r02"
+        },
+        {
+          "slotId": "q03-hipparcos-i311:r03",
+          "ordinal": 3,
+          "title": "Index of /ftp/cats/i/311/",
+          "url": "http://cdsarc.u-strasbg.fr/ftp/cats/i/311/",
+          "normalizedUrl": "https://cdsarc.u-strasbg.fr/ftp/cats/i/311",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q03-hipparcos-i311:r03"
+        },
+        {
+          "slotId": "q03-hipparcos-i311:r04",
+          "ordinal": 4,
+          "title": "I/311",
+          "url": "http://cdsarc.u-strasbg.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+          "normalizedUrl": "https://cdsarc.u-strasbg.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q03-hipparcos-i311:r04"
+        },
+        {
+          "slotId": "q03-hipparcos-i311:r05",
+          "ordinal": 5,
+          "title": "Catalog",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/VizieR?-source=I%2F311",
+          "normalizedUrl": "https://vizier.cfa.harvard.edu/viz-bin/VizieR?-source=I%2F311",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q03-hipparcos-i311:r05"
+        }
+      ]
+    },
+    {
+      "id": "q04-pastel",
+      "workstream": "stellar-parameters",
+      "query": "official VizieR PASTEL catalogue stellar atmospheric parameters Soubiran",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q04-pastel:r01",
+          "ordinal": 1,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=B%2Fpastel",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=B%2Fpastel",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q04-pastel:r01"
+        },
+        {
+          "slotId": "q04-pastel:r02",
+          "ordinal": 2,
+          "title": "B/pastel",
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+          "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "keep",
+          "keepDropReason": "Official CDS VizieR PASTEL ReadMe",
+          "dedupeTargetSlotId": "q04-pastel:r02"
+        },
+        {
+          "slotId": "q04-pastel:r03",
+          "ordinal": 3,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=B%2Fpastel%2Fpastel",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=B%2Fpastel%2Fpastel",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q04-pastel:r03"
+        },
+        {
+          "slotId": "q04-pastel:r04",
+          "ordinal": 4,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=B%2Fpastel&recno=30192",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=B%2Fpastel&recno=30192",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q04-pastel:r04"
+        },
+        {
+          "slotId": "q04-pastel:r05",
+          "ordinal": 5,
+          "title": "The PASTEL catalogue: 2016 version",
+          "url": "https://www.aanda.org/articles/aa/full_html/2016/07/aa28497-16/aa28497-16.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2016/07/aa28497-16/aa28497-16.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q04-pastel:r05"
+        }
+      ]
+    },
+    {
+      "id": "q05-jmmc-jsdc-v2",
+      "workstream": "stellar-parameters",
+      "query": "official JMMC Stellar Diameters Catalogue JSDC version 2 VizieR II/346",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q05-jmmc-jsdc-v2:r01",
+          "ordinal": 1,
+          "title": "JSDC - We interfere constructively",
+          "url": "https://www.jmmc.fr/english/tools/data-bases/jsdc-72/",
+          "normalizedUrl": "https://www.jmmc.fr/english/tools/data-bases/jsdc-72",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "jmmc-jsdc-v2",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:jmmc-jsdc-v2;canonical-slot:q05-jmmc-jsdc-v2:r02",
+          "dedupeTargetSlotId": "q05-jmmc-jsdc-v2:r01"
+        },
+        {
+          "slotId": "q05-jmmc-jsdc-v2:r02",
+          "ordinal": 2,
+          "title": "JMMC Stellar Diameters Catalogue - JSDC. Version 2 : II/346",
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/II/346",
+          "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/cat/II/346",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "jmmc-jsdc-v2",
+          "decision": "keep",
+          "keepDropReason": "Official CDS VizieR II/346 catalogue page",
+          "dedupeTargetSlotId": "q05-jmmc-jsdc-v2:r02"
+        },
+        {
+          "slotId": "q05-jmmc-jsdc-v2:r03",
+          "ordinal": 3,
+          "title": "N/A",
+          "url": "http://apps.jmmc.fr/~sclcat/JSDC/",
+          "normalizedUrl": "https://apps.jmmc.fr/~sclcat/JSDC",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "jmmc-jsdc-v2",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:jmmc-jsdc-v2;canonical-slot:q05-jmmc-jsdc-v2:r02",
+          "dedupeTargetSlotId": "q05-jmmc-jsdc-v2:r03"
+        },
+        {
+          "slotId": "q05-jmmc-jsdc-v2:r04",
+          "ordinal": 4,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=II%2F346",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=II%2F346",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "jmmc-jsdc-v2",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:jmmc-jsdc-v2;canonical-slot:q05-jmmc-jsdc-v2:r02",
+          "dedupeTargetSlotId": "q05-jmmc-jsdc-v2:r04"
+        },
+        {
+          "slotId": "q05-jmmc-jsdc-v2:r05",
+          "ordinal": 5,
+          "title": "VizieR II/346",
+          "url": "http://cdsarc.u-strasbg.fr/viz-bin/cat/II/346",
+          "normalizedUrl": "https://cdsarc.u-strasbg.fr/viz-bin/cat/II/346",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "jmmc-jsdc-v2",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:jmmc-jsdc-v2;canonical-slot:q05-jmmc-jsdc-v2:r02",
+          "dedupeTargetSlotId": "q05-jmmc-jsdc-v2:r05"
+        }
+      ]
+    },
+    {
+      "id": "q06-rotation-iii244",
+      "workstream": "stellar-parameters",
+      "query": "official VizieR III/244 catalogue stellar rotational velocities Glebocki Gnacinski",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q06-rotation-iii244:r01",
+          "ordinal": 1,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=III%2F244",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=III%2F244",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "glebocki-rotation",
+          "decision": "keep",
+          "keepDropReason": "Official CDS VizieR III/244 catalogue query",
+          "dedupeTargetSlotId": "q06-rotation-iii244:r01"
+        },
+        {
+          "slotId": "q06-rotation-iii244:r02",
+          "ordinal": 2,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=III%2F244%2Fcatalog",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=III%2F244%2Fcatalog",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "glebocki-rotation",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:glebocki-rotation;canonical-slot:q06-rotation-iii244:r01",
+          "dedupeTargetSlotId": "q06-rotation-iii244:r02"
+        },
+        {
+          "slotId": "q06-rotation-iii244:r03",
+          "ordinal": 3,
+          "title": "VizieR",
+          "url": "https://vizier.cfa.harvard.edu/viz-bin/w/VizieR?-source=III%2F244",
+          "normalizedUrl": "https://vizier.cfa.harvard.edu/viz-bin/w/VizieR?-source=III%2F244",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "glebocki-rotation",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:glebocki-rotation;canonical-slot:q06-rotation-iii244:r01",
+          "dedupeTargetSlotId": "q06-rotation-iii244:r03"
+        },
+        {
+          "slotId": "q06-rotation-iii244:r04",
+          "ordinal": 4,
+          "title": "Catalog of Stellar Rotational Velocities (Glebocki+ 2005) - ADS",
+          "url": "https://ui.adsabs.harvard.edu/abs/2005yCat.3244....0G/abstract",
+          "normalizedUrl": "https://ui.adsabs.harvard.edu/abs/2005yCat.3244....0G/abstract",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "glebocki-rotation",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:glebocki-rotation;canonical-slot:q06-rotation-iii244:r01",
+          "dedupeTargetSlotId": "q06-rotation-iii244:r04"
+        },
+        {
+          "slotId": "q06-rotation-iii244:r05",
+          "ordinal": 5,
+          "title": "Catalog of Stellar Rotational Velocities",
+          "url": "https://dc.g-vo.org/rr/q/lp/custom/CDS.VizieR/III/244",
+          "normalizedUrl": "https://dc.g-vo.org/rr/q/lp/custom/CDS.VizieR/III/244",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "glebocki-rotation",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:glebocki-rotation;canonical-slot:q06-rotation-iii244:r01",
+          "dedupeTargetSlotId": "q06-rotation-iii244:r05"
+        }
+      ]
+    },
+    {
+      "id": "q07-gcvs-5-1",
+      "workstream": "variability-and-multiplicity",
+      "query": "official General Catalogue of Variable Stars GCVS 5.1 documentation Samus",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q07-gcvs-5-1:r01",
+          "ordinal": 1,
+          "title": "GCVS Introduction",
+          "url": "http://www.sai.msu.su/gcvs/gcvs/intr.htm",
+          "normalizedUrl": "https://www.sai.msu.su/gcvs/gcvs/intr.htm",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "keep",
+          "keepDropReason": "Official GCVS introduction",
+          "dedupeTargetSlotId": "q07-gcvs-5-1:r01"
+        },
+        {
+          "slotId": "q07-gcvs-5-1:r02",
+          "ordinal": 2,
+          "title": "General Catalogue of Variable Stars: Homepage.",
+          "url": "http://www.sai.msu.su/gcvs/gcvs/",
+          "normalizedUrl": "https://www.sai.msu.su/gcvs/gcvs",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gcvs-5-1;canonical-slot:q07-gcvs-5-1:r01",
+          "dedupeTargetSlotId": "q07-gcvs-5-1:r02"
+        },
+        {
+          "slotId": "q07-gcvs-5-1:r03",
+          "ordinal": 3,
+          "title": "General Catalogue of Variable Stars: Homepage.",
+          "url": "http://www.sai.msu.su/gcvs/gcvs/index.htm",
+          "normalizedUrl": "https://www.sai.msu.su/gcvs/gcvs/index.htm",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gcvs-5-1;canonical-slot:q07-gcvs-5-1:r01",
+          "dedupeTargetSlotId": "q07-gcvs-5-1:r03"
+        },
+        {
+          "slotId": "q07-gcvs-5-1:r04",
+          "ordinal": 4,
+          "title": "General catalogue of variable stars: Version GCVS 5.1",
+          "url": "https://doi.org/10.1134/s1063772917010085",
+          "normalizedUrl": "https://doi.org/10.1134/s1063772917010085",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gcvs-5-1;canonical-slot:q07-gcvs-5-1:r01",
+          "dedupeTargetSlotId": "q07-gcvs-5-1:r04"
+        },
+        {
+          "slotId": "q07-gcvs-5-1:r05",
+          "ordinal": 5,
+          "title": "GCVS Introduction",
+          "url": "http://www.sai.msu.su/gcvs/gcvs/gcvs5/htm/",
+          "normalizedUrl": "https://www.sai.msu.su/gcvs/gcvs/gcvs5/htm",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gcvs-5-1;canonical-slot:q07-gcvs-5-1:r01",
+          "dedupeTargetSlotId": "q07-gcvs-5-1:r05"
+        }
+      ]
+    },
+    {
+      "id": "q08-aavso-vsx",
+      "workstream": "variability-and-multiplicity",
+      "query": "official AAVSO VSX International Variable Star Index documentation data usage",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q08-aavso-vsx:r01",
+          "ordinal": 1,
+          "title": "REST API specification for VSX | aavso",
+          "url": "https://www.aavso.org/index.php/rest-api-specification-vsx",
+          "normalizedUrl": "https://www.aavso.org/index.php/rest-api-specification-vsx",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "keep",
+          "keepDropReason": "Official AAVSO VSX REST documentation",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r01"
+        },
+        {
+          "slotId": "q08-aavso-vsx:r02",
+          "ordinal": 2,
+          "title": "N/A",
+          "url": "https://docs.aavso.org/stars",
+          "normalizedUrl": "https://docs.aavso.org/stars",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r02"
+        },
+        {
+          "slotId": "q08-aavso-vsx:r03",
+          "ordinal": 3,
+          "title": "For researchers: support and data access | aavso",
+          "url": "https://www.aavso.org/support-and-data-access-researchers",
+          "normalizedUrl": "https://www.aavso.org/support-and-data-access-researchers",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r03"
+        },
+        {
+          "slotId": "q08-aavso-vsx:r04",
+          "ordinal": 4,
+          "title": "The International Variable Star Index (VSX)",
+          "url": "https://vsx.aavso.org/",
+          "normalizedUrl": "https://vsx.aavso.org/",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r04"
+        },
+        {
+          "slotId": "q08-aavso-vsx:r05",
+          "ordinal": 5,
+          "title": "Direct web query of VSX/VSP | aavso",
+          "url": "https://www.aavso.org/index.php/direct-web-query-vsxvsp",
+          "normalizedUrl": "https://www.aavso.org/index.php/direct-web-query-vsxvsp",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r05"
+        }
+      ]
+    },
+    {
+      "id": "q09-usno-wds",
+      "workstream": "variability-and-multiplicity",
+      "query": "official USNO Washington Double Star Catalog WDS documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q09-usno-wds:r01",
+          "ordinal": 1,
+          "title": "The Washington Double Star - Home | USNO",
+          "url": "https://crf.usno.navy.mil/wds",
+          "normalizedUrl": "https://crf.usno.navy.mil/wds",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:usno-wds;canonical-slot:q09-usno-wds:r02",
+          "dedupeTargetSlotId": "q09-usno-wds:r01"
+        },
+        {
+          "slotId": "q09-usno-wds:r02",
+          "ordinal": 2,
+          "title": "The Washington Double Star - Description | USNO",
+          "url": "https://crf.usno.navy.mil/wdstext",
+          "normalizedUrl": "https://crf.usno.navy.mil/wdstext",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "keep",
+          "keepDropReason": "Official USNO WDS text documentation",
+          "dedupeTargetSlotId": "q09-usno-wds:r02"
+        },
+        {
+          "slotId": "q09-usno-wds:r03",
+          "ordinal": 3,
+          "title": "Data Products | USNO",
+          "url": "https://crf.usno.navy.mil/data-products",
+          "normalizedUrl": "https://crf.usno.navy.mil/data-products",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q09-usno-wds:r03"
+        },
+        {
+          "slotId": "q09-usno-wds:r04",
+          "ordinal": 4,
+          "title": "usnodocspath | USNO",
+          "url": "https://crf.usno.navy.mil/usnodocspath?file_name=Format+Of+The+Current+WDS&source_file=%2Fdata_products%2FWDS%2FWebtextfiles%2Fwdsweb_format.txt",
+          "normalizedUrl": "https://crf.usno.navy.mil/usnodocspath?file_name=Format+Of+The+Current+WDS&source_file=%2Fdata_products%2FWDS%2FWebtextfiles%2Fwdsweb_format.txt",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:usno-wds;canonical-slot:q09-usno-wds:r02",
+          "dedupeTargetSlotId": "q09-usno-wds:r04"
+        },
+        {
+          "slotId": "q09-usno-wds:r05",
+          "ordinal": 5,
+          "title": "The Washington Double Star - FAQ | USNO",
+          "url": "https://crf.usno.navy.mil/wdscfaq",
+          "normalizedUrl": "https://crf.usno.navy.mil/wdscfaq",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:usno-wds;canonical-slot:q09-usno-wds:r02",
+          "dedupeTargetSlotId": "q09-usno-wds:r05"
+        }
+      ]
+    },
+    {
+      "id": "q10-sb9",
+      "workstream": "variability-and-multiplicity",
+      "query": "official Ninth Catalogue of Spectroscopic Binary Orbits SB9 introduction",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q10-sb9:r01",
+          "ordinal": 1,
+          "title": "The ninth catalogue of the orbital elements of spectroscopic binary stars",
+          "url": "https://sb9.astro.ulb.ac.be/intro.html",
+          "normalizedUrl": "https://sb9.astro.ulb.ac.be/intro.html",
+          "sourceClass": "official-catalog-documentation",
+          "sourceKeyCandidate": "sb9",
+          "decision": "keep",
+          "keepDropReason": "Official SB9 introduction",
+          "dedupeTargetSlotId": "q10-sb9:r01"
+        },
+        {
+          "slotId": "q10-sb9:r02",
+          "ordinal": 2,
+          "title": "9th Catalogue of Spectroscopic Binary Orbits",
+          "url": "https://sb9.astro.ulb.ac.be/",
+          "normalizedUrl": "https://sb9.astro.ulb.ac.be/",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:sb9;canonical-slot:q10-sb9:r01",
+          "dedupeTargetSlotId": "q10-sb9:r02"
+        },
+        {
+          "slotId": "q10-sb9:r03",
+          "ordinal": 3,
+          "title": "9th Catalogue of Spectroscopic Binary Orbits",
+          "url": "https://sb9.astro.ulb.ac.be/mainform.cgi",
+          "normalizedUrl": "https://sb9.astro.ulb.ac.be/mainform.cgi",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:sb9;canonical-slot:q10-sb9:r01",
+          "dedupeTargetSlotId": "q10-sb9:r03"
+        },
+        {
+          "slotId": "q10-sb9:r04",
+          "ordinal": 4,
+          "title": "S: The ninth catalogue of spectroscopic binary orbits | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/abs/2004/35/aa1213/aa1213.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/abs/2004/35/aa1213/aa1213.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:sb9;canonical-slot:q10-sb9:r01",
+          "dedupeTargetSlotId": "q10-sb9:r04"
+        },
+        {
+          "slotId": "q10-sb9:r05",
+          "ordinal": 5,
+          "title": "S$\\mathsf{_{B^9}}$: The ninth catalogue of spectroscopic binary orbits",
+          "url": "https://www.aanda.org/articles/aa/pdf/2004/35/aa1213.pdf",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/pdf/2004/35/aa1213.pdf",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:sb9;canonical-slot:q10-sb9:r01",
+          "dedupeTargetSlotId": "q10-sb9:r05"
+        }
+      ]
+    },
+    {
+      "id": "q11-vizier-usage",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official CDS VizieR data rules of usage license DOI",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q11-vizier-usage:r01",
+          "ordinal": 1,
+          "title": "Rules of usage of VizieR data - Strasbourg astronomical Data Center",
+          "url": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "normalizedUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "sourceClass": "official-license-policy",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "keep",
+          "keepDropReason": "Official CDS VizieR rules of usage",
+          "dedupeTargetSlotId": "q11-vizier-usage:r01"
+        },
+        {
+          "slotId": "q11-vizier-usage:r02",
+          "ordinal": 2,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://cds.u-strasbg.fr/vizier-org/licences_vizier.html",
+          "normalizedUrl": "https://cds.u-strasbg.fr/vizier-org/licences_vizier.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vizier-usage;canonical-slot:q11-vizier-usage:r01",
+          "dedupeTargetSlotId": "q11-vizier-usage:r02"
+        },
+        {
+          "slotId": "q11-vizier-usage:r03",
+          "ordinal": 3,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://vizier.unistra.fr/viz-bin/cite/I/352",
+          "normalizedUrl": "https://vizier.unistra.fr/viz-bin/cite/I/352",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vizier-usage;canonical-slot:q11-vizier-usage:r01",
+          "dedupeTargetSlotId": "q11-vizier-usage:r03"
+        },
+        {
+          "slotId": "q11-vizier-usage:r04",
+          "ordinal": 4,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://vizier.u-strasbg.fr/viz-bin/cite/III/125",
+          "normalizedUrl": "https://vizier.u-strasbg.fr/viz-bin/cite/III/125",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vizier-usage;canonical-slot:q11-vizier-usage:r01",
+          "dedupeTargetSlotId": "q11-vizier-usage:r04"
+        },
+        {
+          "slotId": "q11-vizier-usage:r05",
+          "ordinal": 5,
+          "title": "VizieR FAQ",
+          "url": "https://cds.unistra.fr/help/faq/vizier/",
+          "normalizedUrl": "https://cds.unistra.fr/help/faq/vizier",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q11-vizier-usage:r05"
+        }
+      ]
+    },
+    {
+      "id": "q12-vega-primary",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "category:research paper Monnier 2012 Resolving Vega Inclination CHARA MIRC DOI 10.1088/2041-8205/761/1/L3",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q12-vega-primary:r01",
+          "ordinal": 1,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "sourceClass": "publisher-primary-literature",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "keep",
+          "keepDropReason": "Publisher page for the cited Vega primary paper",
+          "dedupeTargetSlotId": "q12-vega-primary:r01"
+        },
+        {
+          "slotId": "q12-vega-primary:r02",
+          "ordinal": 2,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC",
+          "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vega-monnier-2012;canonical-slot:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q12-vega-primary:r02"
+        },
+        {
+          "slotId": "q12-vega-primary:r03",
+          "ordinal": 3,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+          "url": "https://google.iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "normalizedUrl": "https://google.iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vega-monnier-2012;canonical-slot:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q12-vega-primary:r03"
+        },
+        {
+          "slotId": "q12-vega-primary:r04",
+          "ordinal": 4,
+          "title": "[1211.6055] Resolving Vega and the inclination controversy with CHARA/MIRC",
+          "url": "https://ar5iv.labs.arxiv.org/html/1211.6055",
+          "normalizedUrl": "https://ar5iv.labs.arxiv.org/html/1211.6055",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vega-monnier-2012;canonical-slot:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q12-vega-primary:r04"
+        },
+        {
+          "slotId": "q12-vega-primary:r05",
+          "ordinal": 5,
+          "title": "Resolving Vega and the inclination controversy with CHARA/MIRC - INSPIRE",
+          "url": "https://inspirehep.net/literature/1203815",
+          "normalizedUrl": "https://inspirehep.net/literature/1203815",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vega-monnier-2012;canonical-slot:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q12-vega-primary:r05"
+        }
+      ]
+    },
+    {
+      "id": "q13-altair-primary",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "category:research paper Monnier 2007 Imaging the Surface of Altair DOI 10.1126/science.1143205",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q13-altair-primary:r01",
+          "ordinal": 1,
+          "title": "Imaging the Surface of Altair | Science",
+          "url": "https://www.science.org/doi/10.1126/science.1143205",
+          "normalizedUrl": "https://www.science.org/doi/10.1126/science.1143205",
+          "sourceClass": "publisher-primary-literature",
+          "sourceKeyCandidate": "altair-monnier-2007",
+          "decision": "keep",
+          "keepDropReason": "Publisher page for the cited Altair primary paper",
+          "dedupeTargetSlotId": "q13-altair-primary:r01"
+        },
+        {
+          "slotId": "q13-altair-primary:r02",
+          "ordinal": 2,
+          "title": "N/A",
+          "url": "https://arxiv.org/pdf/0706.0867",
+          "normalizedUrl": "https://arxiv.org/pdf/0706.0867",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "altair-monnier-2007",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:altair-monnier-2007;canonical-slot:q13-altair-primary:r01",
+          "dedupeTargetSlotId": "q13-altair-primary:r02"
+        },
+        {
+          "slotId": "q13-altair-primary:r03",
+          "ordinal": 3,
+          "title": "DOI: 10.1126/science.1143205 , 342 (2007 ... - CHARA Array",
+          "url": "https://chara.gsu.edu/files/papers/2007_Monnier_Science_317_342.pdf",
+          "normalizedUrl": "https://chara.gsu.edu/files/papers/2007_Monnier_Science_317_342.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "altair-monnier-2007",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:altair-monnier-2007;canonical-slot:q13-altair-primary:r01",
+          "dedupeTargetSlotId": "q13-altair-primary:r03"
+        },
+        {
+          "slotId": "q13-altair-primary:r04",
+          "ordinal": 4,
+          "title": "Monnier's Altair 2007 Resource Page",
+          "url": "https://public.websites.umich.edu/~monnier/Altair2007/altair2007.html",
+          "normalizedUrl": "https://public.websites.umich.edu/~monnier/Altair2007/altair2007.html",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vega-monnier-2012;canonical-slot:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q13-altair-primary:r04"
+        },
+        {
+          "slotId": "q13-altair-primary:r05",
+          "ordinal": 5,
+          "title": "Imaging the surface of Altair",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/17540860/",
+          "normalizedUrl": "https://pubmed.ncbi.nlm.nih.gov/17540860",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "altair-monnier-2007",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:altair-monnier-2007;canonical-slot:q13-altair-primary:r01",
+          "dedupeTargetSlotId": "q13-altair-primary:r05"
+        }
+      ]
+    },
+    {
+      "id": "q14-achernar-primary",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "category:research paper Domiciano de Souza 2014 Achernar environment fast rotating star CHARRON DOI 10.1051/0004-6361/201424144",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q14-achernar-primary:r01",
+          "ordinal": 1,
+          "title": "The environment of the fast rotating star Achernar - III. Photospheric parameters revealed by the VLTI | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+          "sourceClass": "publisher-primary-literature",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "keep",
+          "keepDropReason": "Publisher full text for the cited Achernar primary paper",
+          "dedupeTargetSlotId": "q14-achernar-primary:r01"
+        },
+        {
+          "slotId": "q14-achernar-primary:r02",
+          "ordinal": 2,
+          "title": "The environment of the fast rotating star Achernar⋆",
+          "url": "https://www.aanda.org/articles/aa/pdf/2014/09/aa24144-14.pdf",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/pdf/2014/09/aa24144-14.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:achernar-domiciano-2014;canonical-slot:q14-achernar-primary:r01",
+          "dedupeTargetSlotId": "q14-achernar-primary:r02"
+        },
+        {
+          "slotId": "q14-achernar-primary:r03",
+          "ordinal": 3,
+          "title": "The environment of the fast rotating star Achernar - III. Photospheric parameters revealed by the VLTI | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/abs/2014/09/aa24144-14/aa24144-14.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/abs/2014/09/aa24144-14/aa24144-14.html",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:achernar-domiciano-2014;canonical-slot:q14-achernar-primary:r01",
+          "dedupeTargetSlotId": "q14-achernar-primary:r03"
+        },
+        {
+          "slotId": "q14-achernar-primary:r04",
+          "ordinal": 4,
+          "title": "The environment of the fast rotating star Achernar - III. Photospheric parameters revealed by the VLTI | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/ref/2014/09/aa24144-14/aa24144-14.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/ref/2014/09/aa24144-14/aa24144-14.html",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:achernar-domiciano-2014;canonical-slot:q14-achernar-primary:r01",
+          "dedupeTargetSlotId": "q14-achernar-primary:r04"
+        },
+        {
+          "slotId": "q14-achernar-primary:r05",
+          "ordinal": 5,
+          "title": "N/A",
+          "url": "https://hal.science/hal-02548378/file/aa24144-14.pdf",
+          "normalizedUrl": "https://hal.science/hal-02548378/file/aa24144-14.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:achernar-domiciano-2014;canonical-slot:q14-achernar-primary:r01",
+          "dedupeTargetSlotId": "q14-achernar-primary:r05"
+        }
+      ]
+    },
+    {
+      "id": "q15-regulus-primary",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "category:research paper McAlister 2005 CHARA interferometric spectroscopic study Regulus DOI 10.1086/430730",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q15-regulus-primary:r01",
+          "ordinal": 1,
+          "title": "First Results from the CHARA Array. I. An Interferometric and Spectroscopic Study of the Fast Rotator α Leonis (Regulus) - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1086/430730",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1086/430730",
+          "sourceClass": "publisher-primary-literature",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "keep",
+          "keepDropReason": "Publisher page for the cited Regulus primary paper",
+          "dedupeTargetSlotId": "q15-regulus-primary:r01"
+        },
+        {
+          "slotId": "q15-regulus-primary:r02",
+          "ordinal": 2,
+          "title": "FIRST RESULTS FROM THE CHARA ARRAY. I. AN INTERFEROMETRIC AND SPECTROSCOPIC STUDY OF THE FAST ROTATOR LEONIS (REGULUS)",
+          "url": "https://chara.gsu.edu/files/papers/2005_McAlister_ApJ_628_439.pdf",
+          "normalizedUrl": "https://chara.gsu.edu/files/papers/2005_McAlister_ApJ_628_439.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:regulus-mcalister-2005;canonical-slot:q15-regulus-primary:r01",
+          "dedupeTargetSlotId": "q15-regulus-primary:r02"
+        },
+        {
+          "slotId": "q15-regulus-primary:r03",
+          "ordinal": 3,
+          "title": "FIRST RESULTS FROM THE CHARA ARRAY. I. AN INTERFEROMETRIC AND SPECTROSCOPIC STUDY OF THE FAST ROTATOR LEONIS (REGULUS)",
+          "url": "https://iopscience.iop.org/article/10.1086/430730/pdf",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1086/430730/pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:regulus-mcalister-2005;canonical-slot:q15-regulus-primary:r01",
+          "dedupeTargetSlotId": "q15-regulus-primary:r03"
+        },
+        {
+          "slotId": "q15-regulus-primary:r04",
+          "ordinal": 4,
+          "title": "arXiv:astro-ph/0501261v1  13 Jan 2005",
+          "url": "https://export.arxiv.org/pdf/astro-ph/0501261v1.pdf",
+          "normalizedUrl": "https://export.arxiv.org/pdf/astro-ph/0501261v1.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:regulus-mcalister-2005;canonical-slot:q15-regulus-primary:r01",
+          "dedupeTargetSlotId": "q15-regulus-primary:r04"
+        },
+        {
+          "slotId": "q15-regulus-primary:r05",
+          "ordinal": 5,
+          "title": "First Results from the CHARA Array. I. An Interferometric and Spectroscopic Study of the Fast Rotator α Leonis (Regulus)",
+          "url": "https://doi.org/10.1086/430730",
+          "normalizedUrl": "https://doi.org/10.1086/430730",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:regulus-mcalister-2005;canonical-slot:q15-regulus-primary:r01",
+          "dedupeTargetSlotId": "q15-regulus-primary:r05"
+        }
+      ]
+    },
+    {
+      "id": "q16-simbad-boundary-crosscheck",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official astronomical name resolver basic data cross identification SIMBAD not catalogue documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q16-simbad-boundary-crosscheck:r01",
+          "ordinal": 1,
+          "title": "SIMBAD: Introduction",
+          "url": "https://simbad.cds.unistra.fr/guide/simbad.htx",
+          "normalizedUrl": "https://simbad.cds.unistra.fr/guide/simbad.htx",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q01-simbad-official:r05",
+          "dedupeTargetSlotId": "q01-simbad-official:r05"
+        },
+        {
+          "slotId": "q16-simbad-boundary-crosscheck:r02",
+          "ordinal": 2,
+          "title": "SIMBAD: Query from identifiers",
+          "url": "https://simbad.cds.unistra.fr/guide/sim-fid.htx",
+          "normalizedUrl": "https://simbad.cds.unistra.fr/guide/sim-fid.htx",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q01-simbad-official:r04",
+          "dedupeTargetSlotId": "q01-simbad-official:r04"
+        },
+        {
+          "slotId": "q16-simbad-boundary-crosscheck:r03",
+          "ordinal": 3,
+          "title": "SIMBAD FAQ",
+          "url": "https://cds.unistra.fr/help/faq/simbad/",
+          "normalizedUrl": "https://cds.unistra.fr/help/faq/simbad",
+          "sourceClass": "alternate-official-meta-resolver-page",
+          "sourceKeyCandidate": "simbad",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:simbad;canonical-slot:q01-simbad-official:r03",
+          "dedupeTargetSlotId": "q16-simbad-boundary-crosscheck:r03"
+        },
+        {
+          "slotId": "q16-simbad-boundary-crosscheck:r04",
+          "ordinal": 4,
+          "title": "Sesame",
+          "url": "https://vizier.cfa.harvard.edu/vizier/doc/sesame.htx",
+          "normalizedUrl": "https://vizier.cfa.harvard.edu/vizier/doc/sesame.htx",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q16-simbad-boundary-crosscheck:r04"
+        },
+        {
+          "slotId": "q16-simbad-boundary-crosscheck:r05",
+          "ordinal": 5,
+          "title": "Sesame Name Resolver",
+          "url": "https://vizier.cfa.harvard.edu/cgi-bin/Sesame",
+          "normalizedUrl": "https://vizier.cfa.harvard.edu/cgi-bin/Sesame",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q16-simbad-boundary-crosscheck:r05"
+        }
+      ]
+    },
+    {
+      "id": "q17-gaia-license-crosscheck",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official Gaia archive data policy license attribution ESA DR3",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q17-gaia-license-crosscheck:r01",
+          "ordinal": 1,
+          "title": "Credit and citation instructions‣ Miscellaneous ‣ Gaia Data Release 3 Documentation release 1.3",
+          "url": "https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions/",
+          "normalizedUrl": "https://gea.esac.esa.int/archive/documentation/GDR3/Miscellaneous/sec_credit_and_citation_instructions",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q02-gaia-dr3-official:r01",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r01"
+        },
+        {
+          "slotId": "q17-gaia-license-crosscheck:r02",
+          "ordinal": 2,
+          "title": "License - Gaia Users - ESA Cosmos - European Space Agency",
+          "url": "https://www.cosmos.esa.int/web/gaia-users/license",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia-users/license",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q17-gaia-license-crosscheck:r02"
+        },
+        {
+          "slotId": "q17-gaia-license-crosscheck:r03",
+          "ordinal": 3,
+          "title": "COSMOS Credits - Gaia Users - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia-users/credits",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia-users/credits",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q02-gaia-dr3-official:r02",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r02"
+        },
+        {
+          "slotId": "q17-gaia-license-crosscheck:r04",
+          "ordinal": 4,
+          "title": "COSMOS Terms and Conditions - ESDC - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/esdc/terms-and-conditions",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/esdc/terms-and-conditions",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q17-gaia-license-crosscheck:r04"
+        },
+        {
+          "slotId": "q17-gaia-license-crosscheck:r05",
+          "ordinal": 5,
+          "title": "COSMOS Gaia Data Release 3 overview - Gaia - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia/data-release-3",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia/data-release-3",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q02-gaia-dr3-official:r05",
+          "dedupeTargetSlotId": "q02-gaia-dr3-official:r05"
+        }
+      ]
+    },
+    {
+      "id": "q18-vizier-license-crosscheck",
+      "workstream": "resolver-and-catalog-boundaries",
+      "query": "official CDS VizieR catalogue licence scientific reuse authors publisher",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q18-vizier-license-crosscheck:r01",
+          "ordinal": 1,
+          "title": "Rules of usage of VizieR data - Strasbourg astronomical Data Center",
+          "url": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "normalizedUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q11-vizier-usage:r01",
+          "dedupeTargetSlotId": "q11-vizier-usage:r01"
+        },
+        {
+          "slotId": "q18-vizier-license-crosscheck:r02",
+          "ordinal": 2,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://cds.u-strasbg.fr/vizier-org/licences_vizier.html",
+          "normalizedUrl": "https://cds.u-strasbg.fr/vizier-org/licences_vizier.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q11-vizier-usage:r02",
+          "dedupeTargetSlotId": "q11-vizier-usage:r02"
+        },
+        {
+          "slotId": "q18-vizier-license-crosscheck:r03",
+          "ordinal": 3,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://vizier.unistra.fr/viz-bin/cite/I/352",
+          "normalizedUrl": "https://vizier.unistra.fr/viz-bin/cite/I/352",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q11-vizier-usage:r03",
+          "dedupeTargetSlotId": "q11-vizier-usage:r03"
+        },
+        {
+          "slotId": "q18-vizier-license-crosscheck:r04",
+          "ordinal": 4,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://vizier.u-strasbg.fr/viz-bin/cite/III/125",
+          "normalizedUrl": "https://vizier.u-strasbg.fr/viz-bin/cite/III/125",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q11-vizier-usage:r04",
+          "dedupeTargetSlotId": "q11-vizier-usage:r04"
+        },
+        {
+          "slotId": "q18-vizier-license-crosscheck:r05",
+          "ordinal": 5,
+          "title": "Rules of usage of VizieR data",
+          "url": "https://vizier.astro.unistra.fr/viz-bin/cite/J/other/ApSS/347.365",
+          "normalizedUrl": "https://vizier.astro.unistra.fr/viz-bin/cite/J/other/ApSS/347.365",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "vizier-usage",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:vizier-usage;canonical-slot:q11-vizier-usage:r01",
+          "dedupeTargetSlotId": "q18-vizier-license-crosscheck:r05"
+        }
+      ]
+    },
+    {
+      "id": "q19-stellar-epoch-source",
+      "workstream": "stellar-parameters",
+      "query": "official stellar catalogue coordinate epoch astrometry metadata Gaia Hipparcos documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q19-stellar-epoch-source:r01",
+          "ordinal": 1,
+          "title": "Section 2.1 Contents of the Hipparcos Catalogue",
+          "url": "https://hipparcos-tools.cosmos.esa.int/pstex/sect2_01.pdf",
+          "normalizedUrl": "https://hipparcos-tools.cosmos.esa.int/pstex/sect2_01.pdf",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q19-stellar-epoch-source:r01"
+        },
+        {
+          "slotId": "q19-stellar-epoch-source:r02",
+          "ordinal": 2,
+          "title": "COSMOS Catalogue Summary - Hipparcos - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/hipparcos/catalogue-summary",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/hipparcos/catalogue-summary",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q19-stellar-epoch-source:r02"
+        },
+        {
+          "slotId": "q19-stellar-epoch-source:r03",
+          "ordinal": 3,
+          "title": "COSMOS Gaia DR4 content - Gaia - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia/dr4",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia/dr4",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q19-stellar-epoch-source:r03"
+        },
+        {
+          "slotId": "q19-stellar-epoch-source:r04",
+          "ordinal": 4,
+          "title": "COSMOS Gaia FAQ - Gaia - Cosmos",
+          "url": "https://www.cosmos.esa.int/web/gaia/faqs",
+          "normalizedUrl": "https://www.cosmos.esa.int/web/gaia/faqs",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gaia-dr3-docs",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gaia-dr3-docs;canonical-slot:q02-gaia-dr3-official:r03",
+          "dedupeTargetSlotId": "q19-stellar-epoch-source:r04"
+        },
+        {
+          "slotId": "q19-stellar-epoch-source:r05",
+          "ordinal": 5,
+          "title": "Hipparcos catalog column description",
+          "url": "http://archive.eso.org/ASTROM/hipcol_desc.html",
+          "normalizedUrl": "https://archive.eso.org/ASTROM/hipcol_desc.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "hipparcos-new-reduction",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:hipparcos-new-reduction;canonical-slot:q03-hipparcos-i311:r01",
+          "dedupeTargetSlotId": "q19-stellar-epoch-source:r05"
+        }
+      ]
+    },
+    {
+      "id": "q20-stellar-logg-source",
+      "workstream": "stellar-parameters",
+      "query": "official stellar atmospheric parameter catalogue logg temperature PASTEL documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q20-stellar-logg-source:r01",
+          "ordinal": 1,
+          "title": "B/pastel",
+          "url": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+          "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q04-pastel:r02",
+          "dedupeTargetSlotId": "q04-pastel:r02"
+        },
+        {
+          "slotId": "q20-stellar-logg-source:r02",
+          "ordinal": 2,
+          "title": "VizieR",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=B%2Fpastel%2Fpastel",
+          "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR-3?-source=B%2Fpastel%2Fpastel",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q04-pastel:r03",
+          "dedupeTargetSlotId": "q04-pastel:r03"
+        },
+        {
+          "slotId": "q20-stellar-logg-source:r03",
+          "ordinal": 3,
+          "title": "The PASTEL catalogue: 2016 version | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2016/07/aa28497-16/aa28497-16.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2016/07/aa28497-16/aa28497-16.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q04-pastel:r05",
+          "dedupeTargetSlotId": "q04-pastel:r05"
+        },
+        {
+          "slotId": "q20-stellar-logg-source:r04",
+          "ordinal": 4,
+          "title": "The PASTEL catalogue of stellar parameters | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2010/07/aa14247-10/aa14247-10.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2010/07/aa14247-10/aa14247-10.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q20-stellar-logg-source:r04"
+        },
+        {
+          "slotId": "q20-stellar-logg-source:r05",
+          "ordinal": 5,
+          "title": "The PASTEL catalogue of stellar parameters | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/abs/2010/07/aa14247-10/aa14247-10.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/abs/2010/07/aa14247-10/aa14247-10.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "pastel-2020",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:pastel-2020;canonical-slot:q04-pastel:r02",
+          "dedupeTargetSlotId": "q20-stellar-logg-source:r05"
+        }
+      ]
+    },
+    {
+      "id": "q21-stellar-orientation-source",
+      "workstream": "stellar-parameters",
+      "query": "primary interferometry stellar inclination position angle rapid rotator catalogue documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q21-stellar-orientation-source:r01",
+          "ordinal": 1,
+          "title": "Beyond the diffraction limit of optical/IR interferometers - I. Angular diameter and rotation parameters of Achernar from differential phases | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2012/09/aa18782-12/aa18782-12.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2012/09/aa18782-12/aa18782-12.html",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q21-stellar-orientation-source:r01"
+        },
+        {
+          "slotId": "q21-stellar-orientation-source:r02",
+          "ordinal": 2,
+          "title": "Spectrally resolved interferometric observations of α Cephei and physical modeling of fast rotating stars | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2013/07/aa20689-12/aa20689-12.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2013/07/aa20689-12/aa20689-12.html",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q21-stellar-orientation-source:r02"
+        },
+        {
+          "slotId": "q21-stellar-orientation-source:r03",
+          "ordinal": 3,
+          "title": "Beyond the diffraction limit of optical/IR interferometers - II. Stellar parameters of rotating stars from differential phases | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24185-14/aa24185-14.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24185-14/aa24185-14.html",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q21-stellar-orientation-source:r03"
+        },
+        {
+          "slotId": "q21-stellar-orientation-source:r04",
+          "ordinal": 4,
+          "title": "Interferometric observations of rapidly rotating stars",
+          "url": "https://link.springer.com/article/10.1007/s00159-012-0051-2",
+          "normalizedUrl": "https://link.springer.com/article/10.1007/s00159-012-0051-2",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q21-stellar-orientation-source:r04"
+        },
+        {
+          "slotId": "q21-stellar-orientation-source:r05",
+          "ordinal": 5,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC",
+          "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q12-vega-primary:r02",
+          "dedupeTargetSlotId": "q12-vega-primary:r02"
+        }
+      ]
+    },
+    {
+      "id": "q22-stellar-variability-source",
+      "workstream": "variability-and-multiplicity",
+      "query": "official variable star catalogue GCVS VSX classification period amplitude documentation",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q22-stellar-variability-source:r01",
+          "ordinal": 1,
+          "title": "General Catalogue of Variable Stars: Vols I-III (the new electronic version).",
+          "url": "https://www.sai.msu.ru/gcvs/gcvs/iii/",
+          "normalizedUrl": "https://www.sai.msu.ru/gcvs/gcvs/iii",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "gcvs-5-1",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:gcvs-5-1;canonical-slot:q07-gcvs-5-1:r01",
+          "dedupeTargetSlotId": "q22-stellar-variability-source:r01"
+        },
+        {
+          "slotId": "q22-stellar-variability-source:r02",
+          "ordinal": 2,
+          "title": "VARIABLE STAR TYPE DESIGNATIONS IN VSX",
+          "url": "https://www.aavso.org/sites/default/files/VSX_Variable_Types.pdf",
+          "normalizedUrl": "https://www.aavso.org/sites/default/files/VSX_Variable_Types.pdf",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q22-stellar-variability-source:r02"
+        },
+        {
+          "slotId": "q22-stellar-variability-source:r03",
+          "ordinal": 3,
+          "title": "VSX : About",
+          "url": "https://vsx.aavso.org/index.php?view=about.faq",
+          "normalizedUrl": "https://vsx.aavso.org/index.php?view=about.faq",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q22-stellar-variability-source:r03"
+        },
+        {
+          "slotId": "q22-stellar-variability-source:r04",
+          "ordinal": 4,
+          "title": "The International Variable Star Index (VSX)",
+          "url": "https://vsx.aavso.org/",
+          "normalizedUrl": "https://vsx.aavso.org/",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q08-aavso-vsx:r04",
+          "dedupeTargetSlotId": "q08-aavso-vsx:r04"
+        },
+        {
+          "slotId": "q22-stellar-variability-source:r05",
+          "ordinal": 5,
+          "title": "AAVSOVSX - AAVSO International Variable Star Index",
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/all/aavsovsx.html",
+          "normalizedUrl": "https://heasarc.gsfc.nasa.gov/W3Browse/all/aavsovsx.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "aavso-vsx",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:aavso-vsx;canonical-slot:q08-aavso-vsx:r01",
+          "dedupeTargetSlotId": "q22-stellar-variability-source:r05"
+        }
+      ]
+    },
+    {
+      "id": "q23-stellar-companion-source",
+      "workstream": "variability-and-multiplicity",
+      "query": "official double star spectroscopic binary catalogue WDS SB9 documentation stellar companions",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q23-stellar-companion-source:r01",
+          "ordinal": 1,
+          "title": "9th Catalogue of Spectroscopic Binary Orbits",
+          "url": "https://sb9.astro.ulb.ac.be/",
+          "normalizedUrl": "https://sb9.astro.ulb.ac.be/",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q10-sb9:r02",
+          "dedupeTargetSlotId": "q10-sb9:r02"
+        },
+        {
+          "slotId": "q23-stellar-companion-source:r02",
+          "ordinal": 2,
+          "title": "The ninth catalogue of the orbital elements of spectroscopic binary stars",
+          "url": "https://sb9.astro.ulb.ac.be/intro.html",
+          "normalizedUrl": "https://sb9.astro.ulb.ac.be/intro.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q10-sb9:r01",
+          "dedupeTargetSlotId": "q10-sb9:r01"
+        },
+        {
+          "slotId": "q23-stellar-companion-source:r03",
+          "ordinal": 3,
+          "title": "SBORBITCAT - Spectroscopic Binary Orbits Ninth Catalog (Dynamic Version)",
+          "url": "https://heasarc.gsfc.nasa.gov/W3Browse/star-catalog/sborbitcat.html",
+          "normalizedUrl": "https://heasarc.gsfc.nasa.gov/W3Browse/star-catalog/sborbitcat.html",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "sb9",
+          "decision": "drop",
+          "keepDropReason": "alternate-page-mirror-or-representation-of:sb9;canonical-slot:q10-sb9:r01",
+          "dedupeTargetSlotId": "q23-stellar-companion-source:r03"
+        },
+        {
+          "slotId": "q23-stellar-companion-source:r04",
+          "ordinal": 4,
+          "title": "The Washington Double Star - Home | USNO",
+          "url": "https://crf.usno.navy.mil/wds",
+          "normalizedUrl": "https://crf.usno.navy.mil/wds",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q09-usno-wds:r01",
+          "dedupeTargetSlotId": "q09-usno-wds:r01"
+        },
+        {
+          "slotId": "q23-stellar-companion-source:r05",
+          "ordinal": 5,
+          "title": "The Washington Double Star - Description | USNO",
+          "url": "https://crf.usno.navy.mil/wdstext",
+          "normalizedUrl": "https://crf.usno.navy.mil/wdstext",
+          "sourceClass": "alternate-official-or-related-source-page",
+          "sourceKeyCandidate": "usno-wds",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q09-usno-wds:r02",
+          "dedupeTargetSlotId": "q09-usno-wds:r02"
+        }
+      ]
+    },
+    {
+      "id": "q24-vega-table-crosscheck",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "Vega CHARA MIRC concordance model Table 2 inclination gravity darkening 2012 primary paper",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q24-vega-table-crosscheck:r01",
+          "ordinal": 1,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC",
+          "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3/pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q12-vega-primary:r02",
+          "dedupeTargetSlotId": "q12-vega-primary:r02"
+        },
+        {
+          "slotId": "q24-vega-table-crosscheck:r02",
+          "ordinal": 2,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q12-vega-primary:r01",
+          "dedupeTargetSlotId": "q12-vega-primary:r01"
+        },
+        {
+          "slotId": "q24-vega-table-crosscheck:r03",
+          "ordinal": 3,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+          "url": "http://iopscience.iop.org/2041-8205/761/1/L3",
+          "normalizedUrl": "https://iopscience.iop.org/2041-8205/761/1/L3",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q24-vega-table-crosscheck:r03"
+        },
+        {
+          "slotId": "q24-vega-table-crosscheck:r04",
+          "ordinal": 4,
+          "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+          "url": "https://google.iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "normalizedUrl": "https://google.iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q12-vega-primary:r03",
+          "dedupeTargetSlotId": "q12-vega-primary:r03"
+        },
+        {
+          "slotId": "q24-vega-table-crosscheck:r05",
+          "ordinal": 5,
+          "title": "[1211.6055] Resolving Vega and the inclination controversy with CHARA/MIRC",
+          "url": "https://ar5iv.labs.arxiv.org/html/1211.6055",
+          "normalizedUrl": "https://ar5iv.labs.arxiv.org/html/1211.6055",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "vega-monnier-2012",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q12-vega-primary:r04",
+          "dedupeTargetSlotId": "q12-vega-primary:r04"
+        }
+      ]
+    },
+    {
+      "id": "q25-altair-achernar-table-crosscheck",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "Altair Achernar interferometric model table radius inclination gravity darkening primary paper",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q25-altair-achernar-table-crosscheck:r01",
+          "ordinal": 1,
+          "title": "Gravitational-darkening of Altair from interferometry",
+          "url": "https://www.aanda.org/articles/aa/pdf/2005/41/aa2476-04.pdf",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/pdf/2005/41/aa2476-04.pdf",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q25-altair-achernar-table-crosscheck:r01"
+        },
+        {
+          "slotId": "q25-altair-achernar-table-crosscheck:r02",
+          "ordinal": 2,
+          "title": "The environment of the fast rotating star Achernar - III. Photospheric parameters revealed by the VLTI | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "achernar-domiciano-2014",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q14-achernar-primary:r01",
+          "dedupeTargetSlotId": "q14-achernar-primary:r01"
+        },
+        {
+          "slotId": "q25-altair-achernar-table-crosscheck:r03",
+          "ordinal": 3,
+          "title": "Beyond the diffraction limit of optical/IR interferometers - I. Angular diameter and rotation parameters of Achernar from differential phases | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2012/09/aa18782-12/aa18782-12.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2012/09/aa18782-12/aa18782-12.html",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q21-stellar-orientation-source:r01",
+          "dedupeTargetSlotId": "q21-stellar-orientation-source:r01"
+        },
+        {
+          "slotId": "q25-altair-achernar-table-crosscheck:r04",
+          "ordinal": 4,
+          "title": "A realistic two-dimensional model of Altair | Astronomy & Astrophysics (A&A)",
+          "url": "https://www.aanda.org/articles/aa/full_html/2020/01/aa36830-19/aa36830-19.html",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2020/01/aa36830-19/aa36830-19.html",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q25-altair-achernar-table-crosscheck:r04"
+        },
+        {
+          "slotId": "q25-altair-achernar-table-crosscheck:r05",
+          "ordinal": 5,
+          "title": "A realistic two-dimensional model of Altair",
+          "url": "https://www.aanda.org/articles/aa/pdf/2020/01/aa36830-19.pdf",
+          "normalizedUrl": "https://www.aanda.org/articles/aa/pdf/2020/01/aa36830-19.pdf",
+          "sourceClass": "non-admitted-search-candidate",
+          "sourceKeyCandidate": null,
+          "decision": "drop",
+          "keepDropReason": "not-one-of-the-sealed-official-or-cited-primary-source-authorities",
+          "dedupeTargetSlotId": "q25-altair-achernar-table-crosscheck:r05"
+        }
+      ]
+    },
+    {
+      "id": "q26-regulus-table-crosscheck",
+      "workstream": "rapid-rotator-primary-literature",
+      "query": "Regulus CHARA adopted model Tables 3 5 inclination gravity darkening primary paper",
+      "requestedNumResults": 5,
+      "returnedResultSlots": 5,
+      "results": [
+        {
+          "slotId": "q26-regulus-table-crosscheck:r01",
+          "ordinal": 1,
+          "title": "FIRST RESULTS FROM THE CHARA ARRAY. I. AN INTERFEROMETRIC AND SPECTROSCOPIC STUDY OF THE FAST ROTATOR LEONIS (REGULUS)",
+          "url": "https://chara.gsu.edu/files/papers/2005_McAlister_ApJ_628_439.pdf",
+          "normalizedUrl": "https://chara.gsu.edu/files/papers/2005_McAlister_ApJ_628_439.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q15-regulus-primary:r02",
+          "dedupeTargetSlotId": "q15-regulus-primary:r02"
+        },
+        {
+          "slotId": "q26-regulus-table-crosscheck:r02",
+          "ordinal": 2,
+          "title": "First Results from the CHARA Array. I. An Interferometric and Spectroscopic Study of the Fast Rotator α Leonis (Regulus) - IOPscience",
+          "url": "https://iopscience.iop.org/article/10.1086/430730",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1086/430730",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q15-regulus-primary:r01",
+          "dedupeTargetSlotId": "q15-regulus-primary:r01"
+        },
+        {
+          "slotId": "q26-regulus-table-crosscheck:r03",
+          "ordinal": 3,
+          "title": "arXiv:astro-ph/0501261v1  13 Jan 2005",
+          "url": "https://export.arxiv.org/pdf/astro-ph/0501261v1.pdf",
+          "normalizedUrl": "https://export.arxiv.org/pdf/astro-ph/0501261v1.pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q15-regulus-primary:r04",
+          "dedupeTargetSlotId": "q15-regulus-primary:r04"
+        },
+        {
+          "slotId": "q26-regulus-table-crosscheck:r04",
+          "ordinal": 4,
+          "title": "First Results from the CHARA Array. I. An Interferometric and Spectroscopic Study of the Fast Rotator α Leonis (Regulus)",
+          "url": "https://doi.org/10.1086/430730",
+          "normalizedUrl": "https://doi.org/10.1086/430730",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q15-regulus-primary:r05",
+          "dedupeTargetSlotId": "q15-regulus-primary:r05"
+        },
+        {
+          "slotId": "q26-regulus-table-crosscheck:r05",
+          "ordinal": 5,
+          "title": "first results from the chara array. i. an interferometric and ...",
+          "url": "https://iopscience.iop.org/article/10.1086/430730/pdf",
+          "normalizedUrl": "https://iopscience.iop.org/article/10.1086/430730/pdf",
+          "sourceClass": "alternate-primary-literature-representation",
+          "sourceKeyCandidate": "regulus-mcalister-2005",
+          "decision": "drop",
+          "keepDropReason": "exact-normalized-url-duplicate-of:q15-regulus-primary:r03",
+          "dedupeTargetSlotId": "q15-regulus-primary:r03"
+        }
+      ]
+    }
+  ],
+  "admittedSources": [
+    {
+      "sourceKey": "aavso-vsx",
+      "selectedSlotId": "q08-aavso-vsx:r01",
+      "title": "REST API specification for VSX | aavso",
+      "url": "https://www.aavso.org/index.php/rest-api-specification-vsx",
+      "normalizedUrl": "https://www.aavso.org/index.php/rest-api-specification-vsx",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official AAVSO VSX REST documentation"
+    },
+    {
+      "sourceKey": "achernar-domiciano-2014",
+      "selectedSlotId": "q14-achernar-primary:r01",
+      "title": "The environment of the fast rotating star Achernar - III. Photospheric parameters revealed by the VLTI | Astronomy & Astrophysics (A&A)",
+      "url": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+      "normalizedUrl": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+      "sourceClass": "publisher-primary-literature",
+      "admissionReason": "Publisher full text for the cited Achernar primary paper"
+    },
+    {
+      "sourceKey": "altair-monnier-2007",
+      "selectedSlotId": "q13-altair-primary:r01",
+      "title": "Imaging the Surface of Altair | Science",
+      "url": "https://www.science.org/doi/10.1126/science.1143205",
+      "normalizedUrl": "https://www.science.org/doi/10.1126/science.1143205",
+      "sourceClass": "publisher-primary-literature",
+      "admissionReason": "Publisher page for the cited Altair primary paper"
+    },
+    {
+      "sourceKey": "gaia-dr3-docs",
+      "selectedSlotId": "q02-gaia-dr3-official:r03",
+      "title": "Gaia Data Release 3Documentation release 1.3",
+      "url": "https://gea.esac.esa.int/archive/documentation/GDR3/",
+      "normalizedUrl": "https://gea.esac.esa.int/archive/documentation/GDR3",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official Gaia DR3 documentation root"
+    },
+    {
+      "sourceKey": "gcvs-5-1",
+      "selectedSlotId": "q07-gcvs-5-1:r01",
+      "title": "GCVS Introduction",
+      "url": "http://www.sai.msu.su/gcvs/gcvs/intr.htm",
+      "normalizedUrl": "https://www.sai.msu.su/gcvs/gcvs/intr.htm",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official GCVS introduction"
+    },
+    {
+      "sourceKey": "glebocki-rotation",
+      "selectedSlotId": "q06-rotation-iii244:r01",
+      "title": "VizieR",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=III%2F244",
+      "normalizedUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=III%2F244",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official CDS VizieR III/244 catalogue query"
+    },
+    {
+      "sourceKey": "hipparcos-new-reduction",
+      "selectedSlotId": "q03-hipparcos-i311:r01",
+      "title": "I/311",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+      "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official CDS VizieR I/311 ReadMe"
+    },
+    {
+      "sourceKey": "jmmc-jsdc-v2",
+      "selectedSlotId": "q05-jmmc-jsdc-v2:r02",
+      "title": "JMMC Stellar Diameters Catalogue - JSDC. Version 2 : II/346",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/cat/II/346",
+      "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/cat/II/346",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official CDS VizieR II/346 catalogue page"
+    },
+    {
+      "sourceKey": "pastel-2020",
+      "selectedSlotId": "q04-pastel:r02",
+      "title": "B/pastel",
+      "url": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+      "normalizedUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official CDS VizieR PASTEL ReadMe"
+    },
+    {
+      "sourceKey": "regulus-mcalister-2005",
+      "selectedSlotId": "q15-regulus-primary:r01",
+      "title": "First Results from the CHARA Array. I. An Interferometric and Spectroscopic Study of the Fast Rotator α Leonis (Regulus) - IOPscience",
+      "url": "https://iopscience.iop.org/article/10.1086/430730",
+      "normalizedUrl": "https://iopscience.iop.org/article/10.1086/430730",
+      "sourceClass": "publisher-primary-literature",
+      "admissionReason": "Publisher page for the cited Regulus primary paper"
+    },
+    {
+      "sourceKey": "sb9",
+      "selectedSlotId": "q10-sb9:r01",
+      "title": "The ninth catalogue of the orbital elements of spectroscopic binary stars",
+      "url": "https://sb9.astro.ulb.ac.be/intro.html",
+      "normalizedUrl": "https://sb9.astro.ulb.ac.be/intro.html",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official SB9 introduction"
+    },
+    {
+      "sourceKey": "simbad",
+      "selectedSlotId": "q01-simbad-official:r03",
+      "title": "SIMBAD Astronomical Database - CDS (Strasbourg)",
+      "url": "https://simbad.u-strasbg.fr/simbad/",
+      "normalizedUrl": "https://simbad.u-strasbg.fr/simbad",
+      "sourceClass": "official-meta-resolver-service",
+      "admissionReason": "Official SIMBAD service page for resolver/basic-data boundary"
+    },
+    {
+      "sourceKey": "usno-wds",
+      "selectedSlotId": "q09-usno-wds:r02",
+      "title": "The Washington Double Star - Description | USNO",
+      "url": "https://crf.usno.navy.mil/wdstext",
+      "normalizedUrl": "https://crf.usno.navy.mil/wdstext",
+      "sourceClass": "official-catalog-documentation",
+      "admissionReason": "Official USNO WDS text documentation"
+    },
+    {
+      "sourceKey": "vega-monnier-2012",
+      "selectedSlotId": "q12-vega-primary:r01",
+      "title": "RESOLVING VEGA AND THE INCLINATION CONTROVERSY WITH CHARA/MIRC - IOPscience",
+      "url": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+      "normalizedUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+      "sourceClass": "publisher-primary-literature",
+      "admissionReason": "Publisher page for the cited Vega primary paper"
+    },
+    {
+      "sourceKey": "vizier-usage",
+      "selectedSlotId": "q11-vizier-usage:r01",
+      "title": "Rules of usage of VizieR data - Strasbourg astronomical Data Center",
+      "url": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+      "normalizedUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+      "sourceClass": "official-license-policy",
+      "admissionReason": "Official CDS VizieR rules of usage"
+    }
+  ],
+  "summary": {
+    "queryCount": 26,
+    "workstreamCount": 4,
+    "sourcesReviewed": 130,
+    "returnedResultSlots": 130,
+    "uniqueNormalizedUrls": 101,
+    "duplicateResultSlots": 29,
+    "uniqueAdmittedSources": 15
+  },
+  "ledgerSha256": "211c0fb853901830c6ae3526effc89140713b9995cdbac8f8775f74ca25e845b"
+}

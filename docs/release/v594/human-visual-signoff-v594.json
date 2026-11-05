@@ -1,0 +1,139 @@
+{
+  "version": "v594-human-visual-signoff-dossier-v2",
+  "generatedAt": "2026-08-27T13:32:44.799Z",
+  "reviewedAt": "2026-08-27T13:32:44.799Z",
+  "status": "approved-v594-eight-pair-human-visual-signoff",
+  "reviewer": "workspace-owner",
+  "statement": "The workspace owner approved all eight current-v594 exact A/B pairs. This grants no scientific, measured, GPU, promotion, or production authority.",
+  "candidate": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "buildFingerprint": "74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "browserGate": {
+    "path": "docs/release/v594/final-sealed-browser-gate-v594.json",
+    "bytes": 4176,
+    "sha256": "37fc8ebb3c867fa5ca30fac55695dacbf3a19c54ab0602354d03d29944bae2c8"
+  },
+  "browserGateReceiptSha256": "49fd2e6d5fb24bff8b30824447ac567999f3ba0e90d8f6d39a987ca1c57cb2c9",
+  "userDecision": {
+    "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-human-review/user-decision-v594.json",
+    "bytes": 1769,
+    "sha256": "ef6c6c403e0b1901c093aa6f7f620c4a5688713dea091711e626d0269503ff17"
+  },
+  "decisionChallenge": {
+    "version": "v594-human-visual-signoff-decision-challenge-v2",
+    "candidate": {
+      "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+      "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+      "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+      "buildFingerprint": "74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+      "deploymentId": "v594-6599398a6fab-e92484940ba9",
+      "formalProductPointer": "v263",
+      "deliveryTier": "standalone-full"
+    },
+    "browserGateReceiptSha256": "49fd2e6d5fb24bff8b30824447ac567999f3ba0e90d8f6d39a987ca1c57cb2c9",
+    "exactStageReceiptSha256": "ec0a72d416318ed995fe936ca8acf286b36137c366e39fd28710f2c3356fc373",
+    "exactBatchSha256": "c56dc25c81c902c924bffe179294551e80c3e18a4ea8951909f150db15f3f65c",
+    "exactFrameCount": 16,
+    "exactRelativityObservationMarkerVerified": true,
+    "requiredPasses": [
+      "hot-radiative",
+      "blue-supergiant-wind",
+      "solar-like-convective",
+      "cool-convective",
+      "red-giant-supergiant",
+      "warm-radiative-convective",
+      "rapid-rotator-gravity-darkened",
+      "relativity-workbench"
+    ]
+  },
+  "decisionChallengeSha256": "76b669799ff02ca12c7126a94a36bce52be06ccba4a12ff55e46f6b5f730a5ae",
+  "decisionSha256": "2349c5f0a79696ebf617b3aa7e299db8981eb2755f63c5eec91c663517930762",
+  "decisionProvenance": {
+    "createdBy": "codex-agent",
+    "artifactOrigin": "delegated-user-authorized-decision-input",
+    "agentGenerated": true,
+    "authorization": {
+      "principal": "workspace-owner",
+      "grant": "explicit-conversation-authorization",
+      "scope": "v594-current-identity-human-decision-and-reseal-verifier",
+      "statement": "workspace-owner-explicitly-authorized-codex-to-generate-v594-human-decision-and-revise-reseal-verifier"
+    }
+  },
+  "decisionProvenanceMode": "delegated-codex-generation",
+  "passes": {
+    "hot-radiative": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "blue-supergiant-wind": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "solar-like-convective": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "cool-convective": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "red-giant-supergiant": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "warm-radiative-convective": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "rapid-rotator-gravity-darkened": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    },
+    "relativity-workbench": {
+      "humanVisualSignoff": "approved",
+      "reviewer": "workspace-owner",
+      "reviewedAt": "2026-08-27T13:32:44.799Z"
+    }
+  },
+  "signaturePassesApproved": 8,
+  "approved": true,
+  "policy": {
+    "currentIdentityOnly": true,
+    "sameBuildBeforeAfter": true,
+    "noHistoricalScreenshotSubstitution": true,
+    "explicitDecisionArtifactRequired": true,
+    "oldV593DecisionRejected": true,
+    "automaticHumanApproval": false,
+    "scientificPayloadWriteback": false,
+    "delegatedGenerationAuthorized": true
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "0fc6e2a7f8981916b96b8c1ae6c7ae4082b5633157422d6aa1599f4b072a55d9"
+}

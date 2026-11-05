@@ -1,0 +1,85 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:10.864Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "dumbbell-nebula",
+  "query": "Dumbbell Nebula",
+  "requiredTerms": [
+    "dumbbell",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Dumbbell%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Dumbbell%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 8777,
+    "responseSha256": "000fd700fabb0db4dfc5c05b4cf70b679b09d89e60ebc6c3e98dcd88a922f738"
+  },
+  "totalHits": 3,
+  "candidates": [
+    {
+      "nasaId": "PIA04249",
+      "title": "Close-up of M27, the Dumbbell Nebula",
+      "description": "An aging star last hurrah creates a flurry of glowing knots of gas that appear to be streaking through space. This closeup image of the Dumbbell Nebula was taken by the JPL-built and designed WFC3 camera, onboard NASA's Hubble Space Telescope. http://photojournal.jpl.nasa.gov/catalog/PIA04249",
+      "dateCreated": "2003-02-11T01:34:34Z",
+      "center": "JPL",
+      "keywords": [
+        "Dumbbell Nebula",
+        "Hubble Space Telescope",
+        "M27"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04249/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA14417",
+      "title": "Weighing in on the Dumbbell Nebula",
+      "description": "The Dumbbell nebula, also known as Messier 27, pumps out infrared light in this image from NASA Spitzer Space Telescope. Planetary nebulae are now known to be the remains of stars that once looked a lot like our sun.",
+      "dateCreated": "2011-08-10T21:00:09Z",
+      "center": "JPL",
+      "keywords": [
+        "Helix Nebula",
+        "Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA14417/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA14417/PIA14417~thumb.jpg"
+    },
+    {
+      "nasaId": "GSFC_20171208_Archive_e001783",
+      "title": "Preview of a Forthcoming Supernova",
+      "description": "Supernova Supernovae can occur one of two ways. The first occurs when a white dwarf—the vestigial ember of a dead star—passes so close to a living star that its matter leaks into the white dwarf. This causes a catastrophic explosion. However most people understand supernovae as the death of a massive star. When the star runs out of fuel toward the end of its life, the gravity at its heart sucks the surrounding mass into its center. At temperatures rocketing above 100 billion degrees Fahrenheit, all the layers of the star abruptly explode outward. The explosions produced by supernovae are so brilliant that astronomers use their luminosity to measure the distance between galaxies, the scale of the universe and the effects of dark energy. For a short period of time, one dying star can appear to shine as brightly as an entire galaxy. Supernovae are relatively common events, one occurring in ",
+      "dateCreated": "2017-12-08T00:00:00Z",
+      "center": "GSFC",
+      "keywords": [
+        "Preview of a Forthcoming Supernova",
+        "star",
+        "space",
+        "nasa",
+        "hubble",
+        "hst",
+        "etacarinae"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001783/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001783/GSFC_20171208_Archive_e001783~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 3,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "6317e0a448282de2266488de9a1607c6c8bfd05e9512e40300296df99539f1d3"
+}

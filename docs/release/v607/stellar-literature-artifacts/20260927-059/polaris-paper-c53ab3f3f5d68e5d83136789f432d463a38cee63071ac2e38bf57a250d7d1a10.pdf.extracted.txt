@@ -1,0 +1,1228 @@
+                                               Draft version July 16, 2024
+                                               Preprint typeset using LATEX style AASTeX6 v. 1.0
+
+
+
+
+                                                  THE ORBIT AND DYNAMICAL MASS OF POLARIS: OBSERVATIONS WITH THE CHARA ARRAY
+
+
+
+
+                                                                                                     Nancy Remage Evans
+                                                           Smithsonian Astrophysical Observatory, MS 4, 60 Garden St., Cambridge, MA 02138; nevans@cfa.harvard.edu
+
+
+
+
+arXiv:2407.09641v1 [astro-ph.SR] 12 Jul 2024
+                                                                                                       Gail H. Schaefer
+                                                                                CHARA Array of Georgia State University, Mount Wilson, CA 91023
+
+
+
+                                                                                                     Alexandre Gallenne
+                                               Instituto de Astrofı́sica, Departamento de Ciencias F/́sicas, Facultad de Ciencias Exactas, Universidad Andrés Bello, Fernández Concha
+                                                  700, Las Condes, Santiago, Chile and French-Chilean Laboratory for Astronomy, IRL 3386, CNRS, Casilla 36-D, Santiago, Chile
+
+
+
+                                                                                                       Guillermo Torres
+                                                                           Smithsonian Astrophysical Observatory, 60 Garden St., Cambridge, MA 02138
+
+
+
+                                                                                                       Elliott P. Horch
+                                                               Department of Physics, Southern Connecticut State Univ, 501 Crescent Street, New Haven, CT 06515
+
+
+
+                                                                                                      Richard I Anderson
+                                                    Institute of Physics, École Polytechnique Fédérale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
+
+
+
+                                                                                                       John D. Monnier
+                                                                    University of Michigan, Department of Astronomy, 1085 S. University, Ann Arbor, MI 48109
+
+
+
+                                                                                                   Rachael M. Roettenbacher
+                                                                    University of Michigan, Department of Astronomy, 1085 S. University, Ann Arbor, MI 48109
+
+
+
+                                                                                                         Fabien Baron
+                                                Center for High Angular Resolution Astronomy and Department of Physics and Astronomy, Georgia State University, P.O. Box 5060,
+                                                                                                  Atlanta, GA 30302-5060
+
+
+
+                                                                                                       Narsireddy Anugu
+                                                                                CHARA Array of Georgia State University, Mount Wilson, CA 91023
+
+
+
+                                                                                                    James W. Davidson, Jr.
+                                                                    Department of Astronomy, Univ. of Virginia, 530 McCormick Rd., Charlottesville, VA 22904
+2
+
+
+
+
+                                                          Pierre Kervella
+LESIA, Observatoire de Paris, Université PSL, CNRS, Sorbonne Université, Université Paris Cité, 5 place Jules Janssen, 92195 Meudon,
+                                                             France
+
+
+
+                                                            Garance Bras
+LESIA, Observatoire de Paris, Université PSL, CNRS, Sorbonne Université, Université Paris Cité, 5 place Jules Janssen, 92195 Meudon,
+                                                             France
+
+
+
+                                                         Charles Proffitt
+                             Space Telescope Science Institute, 3700 San Martin Drive, Baltimore, MD 21218
+
+
+
+                                                          Antoine Mérand
+                          European Southern Observatory, Karl-Schwarzschild-Str. 2, 85748 Garching, Germany
+
+
+
+                                                       Margarita Karovska
+                           Smithsonian Astrophysical Observatory, MS 4, 60 Garden St., Cambridge, MA 02138
+
+
+
+                                                            Jeremy Jones
+    Center for High Angular Resolution Astronomy and Department of Physics and Astronomy, Georgia State University, P.O. Box 5060,
+                                                      Atlanta, GA 30302-5060
+
+
+
+                                                       Cyprien Lanthermann
+                                  CHARA Array of Georgia State University, Mount Wilson, CA 91023
+
+
+
+                                                            Stefan Kraus
+             University of Exeter, School of Physics and Astronomy, Astrophysics Group, Stocker Road, Exeter, EX4 4QL, UK
+
+
+
+                                                          Isabelle Codron
+             University of Exeter, School of Physics and Astronomy, Astrophysics Group, Stocker Road, Exeter, EX4 4QL, UK
+
+
+
+                                                          Howard E. Bond
+      Department of Astronomy & Astrophysics, Pennsylvania State University, University Park, PA, 16802, USA and Space Telescope
+                                Science Institute, 3700 San Martin Dr., Baltimore, MD 21218, USA
+
+
+
+                                                          Giordano Viviani
+       Institute of Physics, École Polytechnique Fédérale de Lausanne (EPFL), Observatoire de Sauverny, 1290 Versoix, Switzerland
+
+
+
+
+                                                             ABSTRACT
+          The 30 year orbit of the Cepheid Polaris has been followed with observations by the CHARA Array
+          (Center for High Angular Resolution Astronomy) from 2016 through 2021. An additional measure-
+                                                                                                                     3
+
+        ment has been made with speckle interferometry at the Apache Point Observatory. Detection of
+        the companion is complicated by its comparative faintness–an extreme flux ratio. Angular diame-
+        ter measurements appear to show some variation with pulsation phase. Astrometric positions of the
+        companion were measured with a custom grid-based model-fitting procedure and confirmed with the
+        CANDID software. These positions were combined with the extensive radial velocities discussed by
+        Torres (2023) to fit an orbit. Because of the imbalance of the sizes of the astrometry and radial
+        velocity datasets, several methods of weighting are discussed. The resulting mass of the Cepheid is
+        5.13± 0.28 M⊙ . Because of the comparatively large eccentricity of the orbit (0.63), the mass derived is
+        sensitive to the value found for the eccentricity. The mass combined with the distance shows that the
+        Cepheid is more luminous than predicted for this mass from evolutionary tracks. The identification of
+        surface spots is discussed. This would give credence to the identification of photometric variation with
+        a period of approximately 120 days as a rotation period. Polaris has some unusual properties (rapid
+        period change, a phase jump, variable amplitude, unusual polarization). However, a pulsation scenario
+        involving pulsation mode, orbital periastron passage (Torres 2023), and low pulsation amplitude can
+        explain these characteristics within the framework of pulsation seen in Cepheids.
+        Keywords: stars: masses Cepheids: Polaris: binaries; stars:massive; stars: variable
+
+
+
+                                                1. INTRODUCTION
+   The importance of Cepheid variable stars as the first step in the cosmological distance scale has been emphasized
+recently in the discussion of the tension between the Hubble constant H0 from Cepheids and Type Ia supernovae and
+that from the early universe based on Planck CMB observations (Riess et al. 2021).
+   Another property of Cepheids, their masses, provides pivotal tests of stellar evolution and predictions of the pro-
+duction of end-stage objects such as neutron stars. In stellar evolution calculations, the luminosity at the Cepheid
+stage depends on main-sequence core convective overshooting and rotation in Cepheid progenitors (B stars; Ander-
+son et al. 2014) and also mass loss (see eg. Neilson et al. 2013). Asteroseismology from space-based observations
+is revolutionizing stellar evolution calculations by providing information about the internal structure of stars (Kurtz
+2022). Comparing the Mass-Luminosity (ML) relation from calculations with observed quantities is an important test.
+The persistent “Cepheid mass problem” (the disagreement between masses inferred from evolutionary tracks and from
+pulsation calculations) has been reduced to about 10% (Bono et al. 2001, Neilson et al. 2011) but still remains. While
+calibration of Cepheid luminosities will be significantly improved in the final Gaia release, their masses can only be
+measured directly in binary systems, and hence only a limited number are available, one of which is Polaris.
+   A further motivation for determining the masses of Milky Way (MW) Cepheids as accurately as possible is that
+six Cepheids have been found to be members of eclipsing binaries in the Large Magellanic Cloud (LMC; Pilecki et al.
+2018, 2021), so comparison between the ML relations for the metallicities of the MW and the LMC can now be made.
+   Cepheids have typical masses of about 4–5 M⊙ , but the longest-period Cepheids may be as massive as ∼11 M⊙
+(Anderson et al. 2014). Most Cepheids are fated to become white dwarfs; however, the most massive may become
+supernovae, and end their lives as neutron stars. As an example of the importance of the calibration of the Cepheid
+ML relation, V1334 Cyg is the Cepheid in the MW which has the most accurate dynamical mass (accurate to 3%;
+Gallenne et al. 2018). This mass is smaller than predicted by evolutionary tracks. This means that the fraction of
+Cepheids which are massive enough to become neutron stars could be smaller than expected, leading to implications
+for the frequency of neutron stars.
+   Mass determination starts with a radial velocity orbit and pulsation curve for a binary containing a Cepheid. At
+the present time several new capabilities are available which make it possible to directly measure model-independent,
+dynamical masses for Cepheids using this orbit. Interferometry has resolved a number of systems, providing the semi-
+major axis, a = a1 + a2 , and the inclination, i. CHARA(Center for High Angular Resolution Astronomy) Array and
+the Very Large Telescope Interferometer (VLTI) make it possible to reach stars in both hemispheres. In addition,
+high-resolution spectra in the ultraviolet (UV) from Hubble Space Telescope (HST) allow the orbital radial-velocity
+amplitude of hot companions of Cepheids to be measured. The Gaia spacecraft can provide both distances and
+proper motions. Astrometry is modeled by a sum of constant proper motion and an astrometric orbit, including the
+inclination. Final versions of proper motions and distances will not be available for Cepheids generally until the
+Gaia DR4 data release which includes orbital solutions in the astrometry routinely.
+   The accuracy of inputs from any of these measurements depends on many characteristics of the star: brightness,
+4
+
+orbital period, inclination, and separation, distance, and mass ratio of the components. This means that each Cepheid
+system is unique and has to be analyzed independently. The system under discussion here (Polaris), for instance, has
+a comparatively low mass companion. It is not possible to measure a velocity of the companion with HST UV spectra.
+It is also too bright to be accurately measured by Gaia, so the distance determination depends on a third star in the
+system, as discussed below. However, because it is the nearest Cepheid, and has a long period orbit, the system has
+been resolved by HST, CHARA and speckle interferometry at APO. The long orbital period, however, results in a low
+velocity amplitude and the need to make use of a combination of radial velocities from many instruments. Both the
+low orbital velocity amplitude and the use of data from many sources are challenges for the basic orbit determination,
+which have recently been addressed in the spectroscopic study of Torres (2023).
+  This study is part of a series to incorporate current capabilities into studies of Cepheid masses.
+
+                                                       1.1. Polaris:
+   Polaris (α UMi, HR 424, HD 8890, V = 2.02 mag) is the nearest and brightest classical Cepheid. It is a member of a
+triple system with a resolved 8th magnitude physical companion at a separation of 18′′ . The Cepheid has been known
+for many years to be a single-lined spectroscopic binary with a period of about 30 years (Roemer 1965; Kamper 1996),
+with components designated Aa (the Cepheid) and Ab. A thorough compilation of radial velocity data has recently
+been produced by Torres (2023), resulting in a definitive orbit.
+   While Polaris Aa is a Cepheid, albeit with a small amplitude, it has several characteristics which are unusual.
+   • It pulsates in the first overtone (Feast and Catchpole 1997)
+   • It has an unusually rapid period change (Neilson et al. 2012). For fundamental mode pulsators, the period change
+agrees with expectations of evolution through the instability strip. For overtone pulsators, some additional factor
+seems to be involved (Evans et al. 2018).
+   • The pulsation amplitude can vary. Specifically, it decreased from about 1960 to 1990 (Arellano Ferro 1983).
+However, it did not die out completely (cease pulsation), but in about 2000 began to increase (e.g. Bruntt et al. 2008;
+Anderson 2019). Anderson, indeed, found the amplitude to be very stable over the course of 7 years.
+   • In addition, there was a “glitch” (phase jump) in the O-C period residuals about 1960 (Arellano Ferro 1983; Turner
+et al. 2005).
+   • The instability strip crossing in which Polaris is located has been extensively discussed. Based on the most recent
+distance and the sign of the period change, Evans et al. (2018) concluded it is on the third crossing, although it has
+been argued that it is on the first crossing (Anderson 2018).
+   • The possibility that the Cepheid itself may be the product of a merger is discussed by Bond et al. (2018), Evans
+et al. (2018) and Anderson (2018), based on the fact that the distant component Polaris B is too cool to match the
+isochrone of 100 Myr which fits the Cepheid, Polaris Aa.
+   • The single observation of Polaris to detect polarization (Barron et al. 2022) found much more complicated Stokes
+V profile than for other Cepheids implying a complex magnetic field. However, the profile is similar to the non-variable
+supergiant α Per (Grunhut et al. 2010), which perhaps reflects the very low pulsation amplitude.
+   • Several studies have searched for additional periodicities in the radial velocities (Lee et al. (2008) Anderson (2019),
+and other studies discussed therein). A periodicity of approximately 120 days was found by Lee et al., for instance,
+which they identify as due to rotation in a star with spots. Two periodicities (40.2 and 60 d) found by Anderson; 120d
+is an integral multiple of these.
+   These topics are fully discussed and references to all the velocity data sources are provided by Torres (2023). In
+this discussion these apparently exceptional properties are placed in the context of Cepheids. The times of periastron
+passage of Polaris coincide with the amplitude changes and also the phase jump at about 1960. In the extensive
+study of period changes in Cepheids, Csornyei et al. (2022) find a number with phase jumps, as was found by
+Szabados previously (1991, 1989, and references therein). They are often found in short period overtone pulsators,
+and it was suggested by Szabados (1992) that they are likely to be found in binaries. This would link a number of
+the peculiarities related to Polaris to phenomena seen in other Cepheids, and provide a physical explanation. On
+one hand, this is surprising because the Polaris Aa and Ab system is comparatively wide. Torres estimates that the
+periastron separation between the two stars is 6.2 au, or approximately 29 times the Cepheid radius. On the other
+hand, the orbit is eccentric (e = 0.635), providing a variation of conditions around the orbit. The wide orbit would
+make it surprising for a characteristic such as a phase jump to be produced by simple tidal interaction. However,
+overtone pulsators are more erratic in their periods than fundamental mode pulsators, presumably for reasons we do
+not completely understand. Of course, these peculiarities may exist in other stars but have not been identified because
+they do not have such long and well covered datasets.
+                                                                                                                     5
+
+   An important parameter in determining properties of Polaris is its distance. Specifically, the determination of
+the total mass in the system depends on the distance to convert the angular separation to au. The distance has
+been controversial, partly because of difficulties because Polaris is very bright. Recent distance determinations are
+summarized by Engle et al. (2018). Polaris B is the wide companion at a distance of 18′′ from the Polaris A system. It
+can be used for distance determination. Bond et al. (2018) argued that Polaris A and B form a gravitationally bound
+system, which allows us to use Polaris B for distance determination. The distance to Polaris B using Gaia DR3 (Gaia
+Collaboration et al. 2023) including the Lindegren parallax offset is 136.90 ± 0.34 pc (Gaia Collaboration et al. 2023;
+Lindegren et al. 2021). The distance will be reviewed when the Gaia DR4 is available, including corrections such as
+discussed in Khan et al. (2023).
+   Several previous steps have led up to the measurement of the mass of the Cepheid. The binary sytem discussed here
+is Polaris A made up of the Cepheid Polaris Aa and the companion Polaris Ab. Kamper (1996) published an orbit,
+(with additional velocities by Kamper and Fernie [1998]) In addition, Wielen et al. (2000) determined the inclination
+and the position angle of the line of nodes by comparing the proper motion from the Hipparcos satellite with the
+average long term ground-based proper motion. The final parameter to determine the mass was the separation of Aa
+and Ab. This system was resolved with HST (Evans et al. 2008) using the ACS camera. This provided the mass of
+                    +2.2
+the Cepheid of 4.5−1.4   M⊙ . This was followed up with three observations between 2007 and 2014 using the WFPC2
+and WFC3 since the ACS HRC (high resolution channel) was no longer available (Evans et al. 2018). The astrometry
+from these observations was less accurate. However since they cover a quarter of the orbit, the inclination could be
+determined from them as well as the separation between the components. The present paper discusses observations
+around the orbit continued with CHARA and a speckle observation from Apache Point Observatory (APO).
+   The sections below contain the CHARA interferometric observations including data reduction and analysis, the
+diameter and surface imaging of Polaris, APO speckle observations, the orbit fitting, and discussion of the results.
+
+                      2. INTERFEROMETRIC OBSERVATIONS AND DATA REDUCTION
+  We collected long-baseline optical interferometric data at Georgia State University’s Center for High Angular Reso-
+lution Astronomy (CHARA) Array (ten Brummelaar et al. 2005) located at Mount Wilson Observatory. The CHARA
+Array consists of six 1 m aperture telescopes in an Y-shaped configuration with two telescopes along each arm, ori-
+ented to the east (E1, E2), west (W1,W2) and south (S1, S2), offering good coverage of the (u, v) plane. The baselines
+range from 34 m to 331 m, providing an angular resolution down to 0.5 mas at λ = 1.6 µm. The data on Polaris were
+collected with the Michigan InfraRed Combiner (MIRC; Monnier et al. 2004) before 2017.5 and the upgraded Michigan
+InfraRed Combiner-eXeter (MIRC-X, Anugu et al. 2020) after 2017.5. MIRC and MIRC-X combine the light from all
+six telescopes simultaneously in the H-band, providing up to 15 fringe visibilities and 20 closure phase measurements
+across multiple spectral channels.
+  At the location of Polaris in the sky, we can combine only four telescopes at a time because of limitations on the
+length of the CHARA delay lines. Initially we used the low spectral resolution mode (prism R = λ/∆λ = 50) with
+MIRC and MIRC-X. Bandwidth smearing limits the effective field of view to ∼ 50 mas (given by λ2 /∆λ) for the
+low spectral resolution mode. This resolution was sufficient to resolve the Ab companion during closest approach,
+however, detecting the companion became more challenging as the relative separation increased from orbital motion.
+In September 2019, we switched to higher spectral resolution modes (prism R = 102, grism R = 190) to extend the
+interferometric field of view to 100 mas and 190 mas, respectively. A log of our observations is available in Table 1.
+
+                       Table 1. Log of the MIRC and MIRC-X observations at the CHARA Array.
+
+
+                UT Date       Combiner   Configuration   Mode   Nsets   Nspec      Nvis   NCP    Calibrators
+                          ∗
+               2016Sep12       MIRC      W1E1E2W2        R=50     1       8       1472    976       1, 2
+               2016Nov18       MIRC      W1E1E2W2        R=50     1       8       1488    960       1, 2
+               2018Aug27      MIRC-X     W1E1E2W2        R=50     3      10       5560    3660      1, 3
+                                          W1S2E1E2       R=50     3      10       5740    3780      1, 3
+               2019Apr09      MIRC-X     E1W2W1E2        R=50     4       6       3216    2016      1, 3
+                                          E1W1S2E2       R=50     3       6       2310    1212      1, 3
+
+
+                                                                              Table 1 continued on next page
+6
+                                                        Table 1 (continued)
+
+
+                   UT Date       Combiner    Configuration    Mode     Nsets   Nspec    Nvis    NCP    Calibrators
+                             ∗
+                 2019Sep02       MIRC-X      E1W2W1E2         R=102      1       13     1287     816       1, 2
+                                             E1W2W1E2         R=190      2       31     6076    3870       1, 2
+                 2021Apr02∗      MIRC-X      E1W2W1E2         R=190      3       32     8256    5115      1, 3, 4
+                                              E1W1S2E2        R=190      2       32     9664    6169      1, 3, 4
+                 2021Apr03∗      MIRC-X      E1W2W1E2         R=190      5       33    11187    5920      1, 3, 4
+                 2021Apr04∗      MIRC-X      E1W2W1E2         R=190      4       33     9174    4576      1, 3, 4
+                                              E1W1S2E2        R=190      4       33    11649    7520      1, 3, 4
+
+
+
+
+            Note—The nights of 2018–2021 include two different telescope configurations and/or different spectral
+             modes. The table gives the number of observing sets (Nsets ) and the number of spectral channels (Nspec ).
+             It also lists the number of visibility (Nvis ) and closure phase (NCP ) measurements for the reduction using
+             the 30 second integration time. We adopted uniform disk diameters in the H-band for the calibrators
+             from the JMMC angular diameter catalog (Bourgés et al. 2014): 1: HD 6319, θUDH = 0.740±0.078 mas,
+             2: HD 12918, θUDH = 0.622 ± 0.058 mas, 3: HD 42855, θUDH = 0.758 ± 0.078 mas, and 4: HD 204149
+             θUDH = 0.671 ± 0.065 mas. An asterisk next to the UT date indicates nights where we detected the Ab
+             companion.
+
+
+
+
+  Each observation consisted of recording 10 minutes of fringe data on Polaris followed by a shutter sequence to
+measure backgrounds, foregrounds, and the ratio of light between the fringe data and the photometric channels for
+each telescope. We monitored the interferometric transfer function by observing unresolved calibrator stars before and
+after each observation of Polaris. The calibrators were selected using the SearchCal software1 (Bonneau et al. 2011)
+provided by the Jean-Marie Mariotti Center (JMMC). The calibrators and their adopted angular diameters (Bourgés
+et al. 2014) are listed in Table 1.
+  The data were reduced using the standard pipelines for MIRC (Monnier et al. 2007) and MIRC-X2 (version 1.3.5;
+Anugu et al. 2020). The pipelines produce squared visibilities and triple products for each baseline and spectral
+channel. We used an integration time of 30 sec for improved detection of the faint companion located at separations
+that ranged from 30–85 mas. We also produced OIFITS files (see Section 3.2) that were averaged over each 10 min
+observing block for measuring the angular diameter and imaging the surface of Polaris Aa. We used a calibration
+script written in IDL by J.D. Monnier with the “deep cleaning” option to remove outliers. The reduced and calibrated
+OIFITS files will be available through the JMMC Optical Interferometry Database3 (OIDB) An example of data
+collected on UT 2019Sep02 are displayed in Figure 1.
+
+
+    1 http://www.jmmc.fr/searchcal
+
+    2 https://gitlab.chara.gsu.edu/lebouquj/mircx_pipeline.git
+
+    3 https://www.jmmc.fr/english/tools/data-bases/oidb/
+                                                                                                                              7
+
+
+
+
+Figure 1. (u, v) coverage (left), squared visibilities (middle), and closure phase data (right) for the CHARA MIRC-X observa-
+tions of Polaris on UT 2019Sep02. The closure phase data is plotted against the spatial frequency of the longest baseline in the
+closed triangle.
+
+
+  There were occasional offsets and more scatter than expected in some of the uncalibrated visibilities, particularly
+on the baselines including the E2 telescope in April 2021. These discrepancies showed up between different calibrators
+and sometimes within a data set on the same target. Figure 2 shows an example where the visibilities on E1-E2
+baseline scatter upwards during the observation of calibrator HD 204149 and during the second set on Polaris. In both
+of these cases, the discrepant visibilities appeared after a brief pause in the data collection to realign the starlight
+into the MIRC-X fibers. We could not find a definitive cause for the discrepant observations; it could be related to
+vibrations in the E2 delay line cart while tracking at very slow speeds in the north or telescope oscillations while
+pointing at the pole. We inspected the visibility transfer functions from each night to reject measurements that were
+clearly discrepant.
+  The angular diameters and binary separations computed in Section 3 were multiplied by factors of 1.004 ± 0.0025
+for MIRC and divided by 1.0054 ± 0.0006 for MIRC-X (J.D. Monnier, private communication). This is equivalent to
+adjusting the respective wavelengths reported in the OIFITS files by the same factors.
+
+                                                    3. DATA ANALYSIS
+                                        3.1. Diameter Measurements of Polaris Aa
+  We began our analysis of the interferometric data by fitting the squared visibility amplitudes for the angular diameter
+of Polaris Aa. The limb-darkening was parameterized with the linear function Iλ (µ) = Iλ (1)[1 − uλ (1 − µ)] (Hanbury-
+Brown et al. 1974), with µ = cos ζ, where ζ is the angle between the line of sight and a surface element of the star.
+We solved for the limb-darkened diameter (θLD ), limb-darkening coefficient (uλ ), and visibility scaling factor (V0 ) to
+account for visibility miscalibrations or the presence of extended flux. The squared visibilities of the limb-darkened
+model are multiplied by V0 before comparing with the measured values. We first performed a grid search through
+the three parameters to find the best fit and then followed a Monte Carlo bootstrap approach with 1000 iterations to
+determine uncertainties. For each bootstrap iteration, we randomly selected measurements with repetition to construct
+a new set of visibilities with some measurements repeated and some left out. We then applied Gaussian uncertainties
+to the resampled measurements and fit a limb-darkened model using the IDL MPFIT package (Markwardt 2009) to
+optimize the fit for each iteration. We adopted the standard deviation of the bootstrap distributions as the uncertainties
+on each parameter. The angular diameters had been corrected using the wavelength calibration factors discussed in
+Section 2. To minimize scatter in the observations, the angular diameters were fit to the squared visibilities averaged
+over the 10-minute observing sets. The results from the diameter fits are presented in Table 2.
+  We measured a mean diameter of θLD = 3.143±0.027 mas and a mean limb-darkening coefficient of uλ = 0.120±0.043.
+At the Gaia distance of 136.90 ± 0.34 pc this corresponds to a mean radius of 46.27 ± 0.42 R⊙ . On most nights, the
+scaling factor V0 was greater than 1.0, indicating that the V 2 measurements are higher than the limb-darkened model.
+This implies a “negative” background flux, indicating that the scaling term likely arises because of a miscalibration
+of the visibilities, rather than a physical cause like extended flux outside the field of view. The calibration issues
+discussed in Section 2, as well as uncertainties in the partially resolved calibrator diameters, could have contributed
+to the miscalibration. The mean diameter is consistent within the uncertainties with the interferometric diameter
+measured with the FLUOR instrument at the CHARA Array (Mérand et al. 2006). However, the calibration of the
+MIRC/MIRC-X visibilities was not accurate enough to confirm the presence of the extended circumstellar envelop
+8
+
+
+
+
+Figure 2. Visibility transfer function for the E1-E2 baseline on UT 2021 Apr 02 for the E1E2W1W2 configuration. The
+calibrators are marked by the orange shaded regions. The visibilities of Polaris have been multiplied by a factor of four to
+make them more visible on the plot. Circled in blue are two regions showing discrepant visibilities on Polaris and calibrator HD
+204149.
+
+
+
+
+reported by Mérand et al. (2006).
+  To investigate whether we see changes in the diameter over the 4-day pulsation cycle, we fit the diameters separately
+for each configuration observed on each night as shown in Table 2. We adopted the ephemeris of Berdnikov &
+Pastukhova (1995) for the times of maximum light:
+
+                                          HJDmax = 2, 428, 260.727 + 3.969251E                                              (1)
+
+To account for the changing pulsation period, we used the O-C diagram in Figure 6 of Torres (2023) to calculate the
+times of maximum light nearest to each angular diameter measurement. The columns in Table 2 are the date of the
+observation, the HJD -2,400,000, the time of maximum light used to compute the phase, the angular diameter and
+the limb darkening coefficient, the scaling factor, the angular diameter from a fixed limb darkening coefficient uλ =
+0.120, and the number of visibility measurements. We plot the limb-darkened diameters with the fixed limb darkening
+coefficient against the pulsation phase in Figure 3. The dashed line represents the mean angular diameter and the dotted
+lines show 0.4% variation in diameter expected from pulsation (Moskalik & Gorynya 2005). The standard deviation
+of the mean diameter is 2.1 times larger than the variation expected from pulsation. Cepheids are expected to reach
+a minimum angular diameter around phase 0.8, which is roughly consistent with our measurements. However, the
+variations in the measured diameters could also be impacted by the visibility miscalibrations discussed in Section 2.
+                                                                                                                           9
+
+
+
+
+Figure 3. Limb-darkened diameters of Polaris Aa plotted against the pulsation phase. The dashed line represents the mean
+angular diameter and the dotted lines show 0.4% variation in diameter expected from pulsation (Moskalik & Gorynya 2005).
+
+                                   Table 2. Limb-darkened diameter fits for Polaris Aa.
+
+
+      UT Date        HJD         Tmax         θLD (mas)           uλ               V0            θf xu (mas)     Nvis
+      2016Sep12   57643.736   57641.7504   3.1257 ± 0.0169   0.083 ± 0.044   1.2089 ± 0.0298   3.1370 ± 0.0169   96
+     2016Nov18    57710.744   57709.2759   3.1042 ± 0.0277   0.156 ± 0.064   0.8628 ± 0.0501   3.0937 ± 0.0277   96
+     2018Aug27    58357.744   58356.7171   3.1769 ± 0.0133   0.127 ± 0.037   1.2848 ± 0.0350   3.1749 ± 0.0133   360
+     2018Aug27    58357.946   58356.7171   3.1811 ± 0.0083   0.125 ± 0.033   1.2695 ± 0.0296   3.1801 ± 0.0083   360
+     2019Apr09    58582.815   58579.1471   3.1278 ± 0.0087   0.119 ± 0.024   1.2352 ± 0.0145   3.1283 ± 0.0087   216
+     2019Apr09    58582.970   58579.1471   3.1386 ± 0.0076   0.136 ± 0.023   1.3896 ± 0.0184   3.1351 ± 0.0076   180
+      2019Sep02   58728.777   58726.1087   3.1095 ± 0.0129   0.074 ± 0.038   1.0904 ± 0.0182   3.1223 ± 0.0129   78
+      2019Sep02   58728.868   58726.1087   3.1392 ± 0.0065   0.186 ± 0.018   1.1135 ± 0.0079   3.1194 ± 0.0065   372
+     2021Apr02    59306.839   59306.0020   3.1377 ± 0.0061   0.089 ± 0.018   0.9053 ± 0.0066   3.1468 ± 0.0061   576
+     2021Apr02    59306.927   59306.0020   3.1484 ± 0.0078   0.065 ± 0.025   1.0072 ± 0.0108   3.1588 ± 0.0078   192
+     2021Apr02    59306.974   59306.0020   3.1848 ± 0.0066   0.167 ± 0.018   0.8198 ± 0.0064   3.1750 ± 0.0066   384
+     2021Apr03    59307.982   59306.0020   3.1747 ± 0.0054   0.189 ± 0.014   1.1104 ± 0.0090   3.1542 ± 0.0054   660
+     2021Apr04    59308.727   59306.0020   3.1179 ± 0.0055   0.089 ± 0.015   1.1564 ± 0.0111   3.1267 ± 0.0055   594
+     2021Apr04    59308.845   59306.0020   3.1289 ± 0.0048   0.069 ± 0.016   1.0364 ± 0.0088   3.1388 ± 0.0048   792
+
+
+
+
+                                           3.2. Surface Imaging of Polaris Aa
+  The limb-darkened diameter model does a reasonable job fitting the squared visibility amplitudes. However, the
+strong non-zero and non-180◦ closure phases (see Figure 1) suggest the presence of asymmetries on the surface of
+Polaris Aa. Initial modeling of the data indicated that these strong deviations in the closure phases are not produced
+by the faint binary companion Ab. Modeling with PMOIRED4 (Mérand 2022) and a custom-made routine in IDL,
+indicates that a few starspots on the surface of Polaris Aa can account for most of the closure phase signal. However,
+the size, location, and contrast of the spots are not well-constrained due to the limited (u, v) coverage during the
+
+
+  4 https://github.com/amerand/PMOIRED
+10
+
+observations.
+  We also reconstructed images of the stellar surface of Polaris Aa using SQUEEZE5 (Baron et al. 2010, 2012),
+SURFING (e.g., Roettenbacher et al. 2016), and ROTIR6 (Baron 2020). Both SURFING and ROTIR perform the
+image reconstructions on the surface of a spheroid, constraining the size and shape of the star which is important given
+the limited (u, v) coverage of the observations. ROTIR is written in Julia and uses the OITOOLS libraries7 , a package
+for visualizing, modeling, and imaging interferometric data. We used the total variation regularizer with a weight of
+0.01-0.05 for ROTIR. To prepare the OIFITS files for imaging, we corrected the visibilities for each individual data
+set using V0 scaling factors computed from limb-darkened diameter fits; we used the data averaged over the 10-minute
+observing sets. We merged together the datasets from all configurations on a given night to improve the (u, v) coverage
+for the image reconstructions. For the data from April 2021, we merged the data together from the three consecutive
+nights.
+  Figure 4 shows the image of Polaris Aa reconstructed with SURFING and ROTIR for the epoch with the most
+complete (u, v) coverage from UT 2021 Apr 2, 3, and 4. Both images show a large bright spot to the north of center.
+We show the SURFING and ROTIR images from four different nights and the corresponding (u, v) coverage in Figure 5.
+All of the images show spots on the surface, however, some of the surface features could be created by artifacts in the
+reconstruction process due to gaps in the (u, v) coverage or systematic errors in the visibility calibration. The bottom
+row in Figure 5 shows reconstructed images from simulated data of a simple limb-darkened model without spots and
+with the same (u, v) sampling of Polaris to show which features are likely to be artifacts and which are likely to be
+spots on the surface The contrast of the surface spots in the real data is larger than the contrast in the simulated
+limb-darkened disk data. In addition to having much lower contrast, the spots in the simulated data are distributed
+in point symmetric patterns around the center of the star. The spots in the real data that do not follow these point-
+symmetric patterns are more likely to be true features on the stellar surface. Changing the simulated noise in the
+limb-darkened models changes slightly the shape and orientation of the artifacts in the simulated images, however the
+large-scale structure of the patterns remain consistent between iterations with different simulated noise. The mirroring
+of bright and dark spots about the origin during some of the Polaris epochs is likely an artifact of the reconstruction
+process, however these features are indicative of an asymmetry in brightness distribution. The interferometric data
+and observables extracted from the reconstructed images are shown in Appendix A.
+
+
+
+
+Figure 4. Surface images of Polaris Aa reconstructed using SURFING (left) and ROTIR (right) on the merged data set from
+UT 2021Apr02, 2021Apr03, and 2021Apr04.
+
+
+                                       3.3. Binary Positions of Polaris Aa,Ab
+
+
+ 5 https://github.com/fabienbaron/squeeze
+
+ 6 https://github.com/fabienbaron/ROTIR.jl
+
+ 7 https://github.com/fabienbaron/OITOOLS.jl
+                                                                                                                            11
+
+
+
+
+Figure 5. Surface images of Polaris Aa reconstructed from the CHARA data on four different nights. The top row shows the
+(u, v) coverage, the second row shows the Polaris images reconstructed using SURFING, the third row shows images reconstructed
+using ROTIR, and the bottom row shows images reconstructed from simulated data of a limb-darkened disk model without
+spots and with the same (u, v) sampling as the Polaris data. The simulated data highlights artifacts in the reconstruction from
+gaps in the (u, v) coverage. For the ROTIR images, the standard deviation in the surface temperature is listed in the upper
+right of each panel.
+
+
+  We used the data sets with 30-second integration times to search for the faint companion (Polaris Ab). The shorter
+integration time reduces time-smearing of the companion signal given the separations of 40–85 mas expected from the
+previous orbit fit. To account for the asymmetries on the surface of Polaris Aa, we first reconstructed images with
+SQUEEZE using all of the data from a given night. We then used a modified version of the IDL Binary Grid Search
+Procedure8 (Schaefer et al. 2016) where we extract visibilities and closure phases directly from the reconstructed image
+of Polaris Aa and analytically add in the companion. We started the grid search at the expected location of the binary
+based on the orbit computed by Evans et al. (2018) and searched within ∆RA = ±20 mas and ∆DEC = ±20 mas
+from the initial values. We applied a correction for bandwidth smearing to the binary fit. The results from the binary
+grid search are shown in supplementary files.
+
+
+  8 http://www.chara.gsu.edu/analysis-software/binary-grid-search
+12
+
+  We detected the Ab companion on five nights; these nights are indicated by an asterisk next to the UT date in
+Table 1. On the nights with non-detections, the data quality was poor (e.g., 2016-11-18) or Polaris Ab was located
+outside of the interferometric field of view given by λ2 /∆λ. The field of view corresponds to 50 mas in the low spectral
+resolution mode of MIRC and MIRC-X, so with an expected separation of ∼70 mas, we suspect that bandwidth
+smearing compromised the binary signal on UT 2018Aug27 and 2019Apr09. We were able to recover the detection of
+the companion on subsequent dates when we used the higher spectral resolution Prism102 and Grism190 modes with
+a field of view of 100 and 190 mas, respectively.
+  The average contrast of the companion was ∆H = 7.8 ± 0.4 mag, beyond the typical detection limits of the MIRC
+and MIRC-X instruments (Gallenne et al. 2015). To improve our confidence in the solutions, we also performed the
+binary grid search separately for each configuration observed on a given night. For the nights with high confidence
+solutions, the separations measured from each configuration separately were consistent with the results based on the
+full night of data. Additionally, the three successive nights in April 2021 produced consistent binary solutions.
+  We used a bootstrap approach with 100 iterations to estimate the uncertainties based on the 67.5% confidence ellipses
+for two parameters from the bootstrap distributions. These errors are added in quadrature with the uncertainties
+from the wavelength calibration. The best fit binary positions (corrected for wavelength calibration) and flux ratios
+(fAb /fAa ) are listed in Table 3. The positions of Polaris Ab relative to Aa are given as the separation (ρ) and position
+angle measured east of north (PA). We also list the separations projected into right ascension (∆α) and declination
+(∆δ). The error ellipses are given by the semi-major axis (σmaj ), semi-minor axis (σmin ), and the position angle of
+the major axis (σPA ). The dates are given as heliocentric Julian day (HJD) and Julian year (JY). In Table 3, we
+also collected the HST astrometric measurements reported by Evans et al. (2008, 2018) in both polar and Cartesian
+coordinates. These papers reported the dates in Besselian years which we have converted to JY.
+                                   3.3.1. Confirmation of binary positions with CANDID
+  We confirmed the companion detections using the CANDID tool9 (Companion Analysis and Non-Detection in
+Interferometric Data, Gallenne et al. 2015). CANDID is a set of Python tools allowing us to search systematically for
+companions and estimate detection limits using all interferometric observables. We used the implemented bootstrap
+function to estimate the uncertainties on our previous parameters. In CANDID, limb-darkening is parameterized with
+a power law function Iλ (µ) = Iλ (1)µϵ , and we chose to fix this parameter to 0.15. Bootstrapping is performed on
+the MJDs with our previous fitted parameters and using 1000 bootstrap samples. From the distribution, we took the
+median value and the maximum value between the 16th and 84th percentiles as uncertainty for the flux ratio and
+angular diameter. For the fitted astrometric position, the error ellipse is derived from the bootstrap sample (using a
+principal components analysis). The positions and uncertainties measured with CANDID were consistent with those
+determined from the IDL grid search procedure.
+
+                           Table 3. Relative astrometric position of the Polaris Ab companion..
+
+
+           HJD −         JY         ρ        PA       ∆α          ∆δ        σmaj     σmin     σPA         fAb /fAa
+                                             ◦                                                 ◦
+          2,400,000               (mas)      ( )     (mas)      (mas)       (mas)    (mas)    ( )
+                                                           CHARA
+         57643.735    2016.6974   33.008    71.696   31.338     10.366       5.757   1.159    18.49   0.00089 ± 0.05838
+         58728.831    2019.6683   75.537   340.239   -25.538    71.088       0.833   0.547    40.73   0.00072 ± 0.00744
+         59306.890    2021.2509   84.507   315.900   -58.810    60.686       1.200   0.663    94.49   0.00110 ± 0.00789
+         59307.982    2021.2539   84.447   315.787   -58.888    60.527      10.736   3.954   123.45   0.00070 ± 0.02214
+         59308.785    2021.2561   84.232   315.669   -58.861    60.252       0.880   0.804   135.12   0.00045 ± 0.00363
+                                                             Speckle
+         60237.913     2023.800     98.8     286.7     -94.6         28.4      5.3     4.2      0.0
+                                                               HST
+
+
+                                                                                        Table 3 continued on next page
+
+
+
+  9 Available at https://github.com/amerand/CANDID or https://github.com/agallenne/GUIcandid
+                                                                                                                           13
+                                                     Table 3 (continued)
+
+
+           HJD −         JY         ρ        PA       ∆α         ∆δ        σmaj    σmin    σPA        fAb /fAa
+          2,400,000               (mas)      (◦ )    (mas)     (mas)     (mas)     (mas)   (◦ )
+          53585.488   2005.5866    172.4   231.407   -134.75   -107.54       2.1     2.1     0.0
+          53961.416   2006.6158    169.6   226.385   -122.79   -116.99       3.1     3.1     0.0
+          54298.514   2007.5387    180.0   223.000   -122.76   -131.64      20.0    20.0     0.0
+          55153.597   2009.8798    150.0   216.000    -88.17   -121.35      20.0    20.0     0.0
+          56835.302   2014.4841     85.0   175.000      7.41    -84.68      20.0    20.0     0.0
+
+
+
+    Note—Positions in Table 3 are for J2000.
+
+
+
+
+                                     4. SPECKLE OBSERVATIONS OF POLARIS
+   Polaris was observed using the technique of speckle interferometry at the Astrophysical Research Consortium (ARC)
+3.5-m telescope at Apache Point Observatory (APO) on 2023 Oct 19 and 20. The speckle camera used was the
+Differential Speckle Survey Instrument (DSSI, Horch et al. 2009), which is currently a visitor instrument at APO.
+DSSI takes speckle patterns in two filters simultaneously; for the Polaris observations, we used filters with center
+wavelengths of 692 nm and 880 nm, and with FWHMs of 40 and 50 nm respectively. On each night, a total of nine
+thousand short-exposure images were recorded in each filter and stored in nine FITS files, each of which consisted of
+a 1000-frame stack of 256x256-pixel frames. The exposure time of individual frames was 40 ms, and the seeing was
+approximately 0.9 arcseconds on both nights.
+   The reduction and calibration of DSSI speckle data at APO is described in Davidson et al. (2024); briefly, we bias-
+subtract and form the spatial frequency power spectrum of individual frames, co-adding these in the Fourier domain
+to arrive at a summed power spectrum for each data file. We then deconvolve by dividing by the power spectrum of
+a bright point source observed in the same way. The result for a binary star is a pure fringe pattern, which we then
+fit using a downhill simplex algorithm as described in Horch et al (1997). The fringe spacing, orientation, and depth
+of the fringe minima determine the separation, position angle, and magnitude difference of the pair. In this analysis,
+we do not determine the quadrant of the secondary star; there is a 180-degree ambiguity in the position angle due to
+the fact that the power spectrum has no phase information. For the 2023 October speckle run at APO, the pixel scale
+and orientation were obtained using a combination of several binaries with extremely well-determined orbits and slit
+mask observations, as described in Davidson et al. (2024). These methods resulted in a pixel scale with uncertainty of
+approximately 0.24% and offset angles between pixel axes and celestial coordinates that are uncertain at the 0.1-degree
+level.
+   Polaris presents a complication in the speckle analysis because it is a system with a large magnitude difference that
+is observed at airmass of near 2.0 from Apache Point. The airmass adds dispersion to the speckle patterns, stretching
+speckles out on the image plane in a direction leading toward the zenith. This then changes the shape of the power
+spectrum and could affect the fringe fitting results. To have a good estimate of the speckle transfer function for a
+particular DSSI observation, a bright unresolved star is typically observed near in time and close in sky position to
+the star of interest. In the case of Polaris, since it was not possible to have as close a match in sky position as we
+typically use, we instead observed a bright unresolved star at low airmass, and then applied a dispersion model to
+that observation so that it matched Polaris’ zenith angle and azimuth exactly. This removed most of the effect of the
+dispersion, but a further correction was applied by allowing for additional free parameters in the fringe fit to account for
+any residual dispersion in the Fourier domain. In this way, it was possible to determine relatively consistent relative
+astrometry and photometry of the system for the sub-sample of the files analyzed that had the lowest reduced-chi
+squared values from the fringe fitting procedure.
+   The measurements from the best sequences in the two nights of data resulted in the following average relative
+position: ∆α = −0.′′ 0902 ± 0.′′ 0053 and ∆δ = +0.′′ 0404 ± 0.′′ 0042, for the equinox of the date of observation (Julian year
+2023.7999). These correspond to polar coordinates θ = 294.◦ 1 ± 3.◦ 7 and ρ = 0.′′ 0988 ± 0.′′ 0052. Because of the dispersion
+complication noted above, we were not able to derive a reliable measure of the magnitude difference between Polaris
+and its companion.
+14
+
+  Given that the rest of the astrometric measurements in this work are effectively referred to the equinox J2000, we
+applied rigorous precession to our result above in order to reduce it to that same frame of reference. The position
+angle correction is −7.◦ 4. We obtained ∆α = −0.′′ 0946 ± 0.′′ 0053 and ∆δ = +0.′′ 0284 ± 0.′′ 0042 (J2000).
+                                                          5. ORBIT FITTING
+                                                          5.1. Radial Velocities
+  The orbital analysis depends on the combination of two datasets, the radial velocities and relative astrometry. The
+radial velocity dataset is very large and made up of measurements from many sources to cover multiple cycles of the
+30 year orbit of Polaris Aa-Ab. We used the complete set of 3,659 radial velocities with pulsation removed that are
+tabulated in Table 3 of Torres (2023)10 . To those we added an additional 16 Hermes velocities from the program
+VELOCE I (Anderson, et al 2024 in press). The data had been prepared using the template approach detailed in
+Anderson (2019). Initially we applied the radial velocity jitter and offset terms in Table 5 of Torres (2023) and the
+additional Hermes data. (Jitter is as defined in Torres [2023], the uncertainty for each dataset from the orbit fitting.)
+After experimentation and preliminary fits, the offsets and jitter were redetermined as listed in Table 4. The sources
+and references are as listed in Table 5 of Torres (2023). Sucessive pairs of columns to the right provide the radial
+velocity offset and jitter for the original orbit in Torres (2023), and the solution for radial velocities and CHARA and
+HST astrometry here.
+
+                                           Table 4. Corrections to Radial Velocity Sources
+
+
+                                             Source                           Torres 2023          RV + Astrom
+
+
+                                                                           Offset      Jitter     Offset      Jitter
+                                                                                  −1         −1          −1
+                                                                          km s         km s       km s        km s−1
+
+
+                           1 Roemer 1965                                      -        0.681         -        0.680
+                           2 Hartmann 1901                                 +1.39        0.51      +1.43        0.52
+                           3 Kustner 1908                                  +1.05        0.75      +0.94        0.83
+                           4 Arellano Ferro 1983a + Kamper 1996           +1.027       0.524      +1.001      0.580
+                           5 Dinshaw et al. 1989                          -11.829      0.469      -11.694     0.450
+                           6 Gorynya et al. 1992                          +1.488       0.500      +1.375      0.498
+                           7 Hatzes & Cochran 2000                        -14.117      0.027      -14.242     0.027
+                           8 Usenko et al. 2015                           +0.068       0.387      +0.100      0.409
+                           9 Kamper & Fernie 1998                          -0.222      0.1061     -0.323      0.1065
+                           10 Eaton 2020                                  +1.120       0.0444     +1.156      0.0398
+                           11 Lee et al. 2008                             -17.794      0.1103     -17.772     0.1124
+                           12 Bucke 2021                                  -18.387      0.0976     -18.387     0.150
+                           13 Anderson 2019                               +0.551       0.0977     +0.622      0.1125
+                           14 Anderson 2024                                   -          -        +0.440      0.103
+
+
+
+
+                                                                 5.2. Orbit
+  The astrometry dataset has only 11 two-dimensional data points that cover only 16 years, or half the orbit.
+  Table 5 lists the orbital parameters from the spectroscopic radial velocity orbit computed by Torres (2023) and
+Anderson et al. (2024) and a fit to only the visual orbit computed through a Newton Raphson technique using the
+IDL orbit fitting library11 described by Schaefer et al. (2016). The orbital parameters include the orbital period Porb ,
+
+
+  10 An error in the identification of some of the datasets in the online version of Table 3 of Torres (2023) was identified and corrected here
+
+  11 http://www.chara.gsu.edu/analysis-software/orbfit-lib
+                                                                                                                       15
+
+time of periastron passage Tp , eccentricity e, argument of periastron with reference to the primary ω, primary radial
+velocity amplitude K1 , systemic velocity γ, longitude of ascending node Ω for J2000, inclination i, and angular semi-
+major axis a. The eccentricity and ωAa differ by 1.4 σ and 2.3 σ, respectively, between the spectroscopic and visual
+orbits.
+  Our methods for fitting the radial velocities and astrometry simultaneously are described in the subsections below. It
+was realized early on that the analysis approach is particularly important since the orbit has a substantial eccentricity.
+In a preliminary solution weighted solely by the errors on the datapoints in the two datasets, the HST astrometry
+was systematically offset from the orbit. The eccentricity and ωAa are set essentially by the large number of radial
+velocities. We explored several approaches to combine the different datasets. The various weighting methods are
+described in more detail below with the orbital parameters from each solution listed in Table 5.
+
+                                        5.3. Weights based on Measurement Errors
+  To determine the orbital parameters, we simultaneously fitted the radial velocities (RVs) and astrometric position
+using a Markov chain Monte Carlo (MCMC) routine12 , whose log-likelihood function is given as (Gallenne et al. 2019a)
+                                                  1
+                                       log(L) = − χ2 , with χ2 = χ2RV + χ2ast .
+                                                  2
+  In our previous works on binary Cepheid systems with astrometric data (see e.g. Gallenne et al. 2019b; Gallenne
+et al 2018), both the pulsation and orbital motions of the Cepheids were fitted together with the astrometry. In this
+work, we decided to ignore the pulsation motion of the Cepheid by directly fitting the pulsation-corrected RVs from
+Torres (2023). In this case, our RV model is simply defined as
+                                                            X (V1 − V1m )2
+                                                   χ2RV =           2        ,
+                                                                   σV 1
+
+in which V1 and σ1 denote the measured radial velocity and uncertainties for Polaris, and V1m is the Keplerian velocity
+model characterized by Heintz (1978):
+                                               V1m = γ + K1 [cos(ω + ν) + e cos ω],
+                                                      r
+                                                  ν     1+e         E
+                                             tan =            tan ,
+                                                  2     1−e         2
+                                                      2π(t − Tp )
+                                        E − e sin E =             ,
+                                                         Porb
+where γ is the systemic velocity, e the eccentricity, ω the argument of periastron, ν the true anomaly, E the eccentric
+anomaly, t the observing date, Porb the orbital period, Tp the time of periastron passage, and K1 the primary radial
+velocity amplitude.
+  χ2ast measure for astrometry depends on the astrometric measurements as
+                                χ2ast = χ2a + χ2b ,
+                                        X [(∆α − ∆αm ) sin σPA + (∆δ − ∆δm ) cos σPA ]2
+                                 χ2a =                         2                        ,
+                                                              σmaj
+                                        X [−(∆α − ∆αm ) cos σPA + (∆δ − ∆δm ) sin σPA ]2
+                                χ2b =                            2                        ,
+                                                               σmin
+
+in which (∆α, ∆δ, σPA , σmaj , σmin ) denote the relative astrometric measurements with the corresponding error ellipses,
+and (∆αm , ∆δm ) represent the astrometric model defined as:
+                                    ∆αm = r [sin Ω cos(ω + ν) + cos i cos Ω sin(ω + ν)],
+                                     ∆δm = r [cos Ω cos(ω + ν) − cos i sin Ω sin(ω + ν)],
+                                            a(1 − e2 )
+                                       r=              ,
+                                           1 + e cos ν
+
+
+
+  12 With the Python package emcee developed by Foreman-Mackey et al. (2013).
+16
+
+where Ω is the longitude of ascending node, i the orbital inclination, and a the angular semi-major axis.
+  As a starting point for our 100 MCMC walkers, we performed a least squares fit using orbital values from Torres
+(2023) as first guesses. We then ran 100 initialization steps to well explore the parameter space and get settled into
+a stationary distribution. For all cases, the chain converged before 50 steps. Finally, we used the last position of the
+walkers to generate our full production run of 1000 steps, discarding the initial 50 steps. All the orbital elements are
+estimated from the distribution taking the median value and the maximum value between the 16th and 84th percentiles
+as uncertainty (although the distributions were roughly symmetrical).
+  Polaris is a single-lined spectroscopic binary which does not allow the individual masses to be determined indepen-
+dently without additional information. To this end we adopt the Gaia distance for Polaris B (above). In our MCMC
+procedure, we included the parallax measurement using a normal distribution centered on 7.3045 mas with a standard
+deviation of 0.0178 mas. Masses are then derived with the following equations:
+                                                       a3
+                                             MT =     2 ϖ3 ,
+                                                     Porb
+                                                                 √
+                                                   0.03357 a2 K1 1 − e2
+                                              M2 =
+                                                        ϖ2 Porb sin i
+                                              M1 = MT − M2
+
+
+with MT = M1 + M2 the total mass in M⊙ , a and ϖ in mas, Porb in years, and K1 in km s−1 .
+  Initially, when fitting the orbit simultaneously to the radial velocities and astrometry, we weighted each measurement
+by their respective uncertainties. We performed a similar fit weighted by measurement uncertainties using the IDL
+orbit fitting library, but with uncertainties computed through a bootstrap technique. The orbital parameters from
+this fit are listed in the “σ Weights” Column of Table 5.
+                                              5.4. Weights based on N σ
+  To more evenly weight the two datasets, we can compute an average χ2 statistic multiplying the χ2 from each dataset
+by 1/N, where N is the number of data points (Mérand et al. 2015, equation 5). The total χ2 for the simultaneous fit
+then becomes:
+                                                   1           1
+                                            χ2 =      χ2 +         χ2 .
+                                                  NRV RV Nast ast
+where NRV is the number of radial velocity measurements and Nast is the number of astrometry data points. The
+orbital parameters are listed in the “N σ Weight” Column of Table 5. Uncertainties in the orbital parameters were
+determined from MCMC distributions.
+                                    5.5. Replicating the Astrometric Measurements
+   Another weighting scheme is motivated by the Synthetic Minority Over-sampling Technique (SMOTE) used in the
+machine learning community (Chawla et al. 2002). In order to weight the two sets of measurements more evenly, we
+replicated each position measurement 167 times to give roughly even number of observables (N = 167×11×2 = 3674).
+We applied random Gaussian uncertainties to the replicated measurements, creating a swarm of simulated observables
+for each data point. We then fit a simultaneous orbit to the radial velocities and the replicated positions using the IDL
+orbit fitting library13 . We followed a Monte Carlo bootstrap approach to compute uncertainties. For each bootstrap
+iteration, we randomly selected from the 11 astrometric measurements, with repetition. We then applied Gaussian
+uncertainties to the resampled measurements and replicated each data point as described above. We repeated this
+process 1,000 times and computed uncertainties in the orbital parameters from the standard deviation of the bootstrap
+distributions. The orbital parameters from this fit are listed in the “Replicated” column of Table 5. The spectroscopic
+and astrometric orbits are shown in Figure 6. The orbital parameters and uncertainties are consistent with the 1/N
+weighting method. The averaged χ2 in Section 5.4 under-weights the radial velocities, while the replicated points
+over-weight the astrometry; but both methods provide similar results in the end.
+   In summary, all three weighting schemes produced similar masses within the errors. As stated in Section 5.2 the
+solution based on measurement errors (Section 5.3) the astrometric points from HST ACS/HRC are systematically
+displaced from the orbit solution. Thus, the astrometry is poorly represented. This is possibly due to systematic errors
+
+
+  13 http://www.chara.gsu.edu/analysis-software/orbfit-lib
+                                                                                                                        17
+
+
+
+
+Figure 6. Spectroscopic (left) and astrometric (right) orbital fit of Polaris. The symbols for the measurements by HST ACS,
+the HST WFPC2 and WFC3, CHARA, and APS speckle are shown in the figure. In addition to the best fit orbit, overplotted
+in gray is a sample of 1000 orbits selected at random while estimating the bootstrapped uncertainties.
+
+
+in the historical radial velocities, which are difficult to quantify, and which may on their own be distorting the shape of
+the orbit, and imposing that shape on the much less numerous astrometric measurements. For this reason, a solution
+giving higher weight to the astrometry (Section 5.5) is preferred with a mass of the Cepheid of 5.13 ± 0.28 (5%) M⊙ .
+
+                                              Table 5. Orbit Fitting Results..
+
+
+           Parameter      RV Only         Astrometry Only       σ Weights          N σ Weights         Replicated
+       Porb (yr)       29.4330 ± 0.0079     29.49 ± 0.35      29.448 ± 0.012      29.384 ± 0.017     29.416 ± 0.028
+       Tperi (JY)      2016.801 ± 0.011   2016.781 ± 0.049   2016.857 ± 0.012    2016.833 ± 0.017   2016.831 ± 0.044
+       e               0.6195 ± 0.0015    0.6309 ± 0.0079    0.6290 ± 0.0016     0.6336 ± 0.0235    0.6354 ± 0.0066
+                ◦
+       ωAa ( )          303.04 ± 0.34      305.22 ± 0.95      304.33 ± 0.26       304.46 ± 3.17      304.54 ± 0.84
+       K1 (km s−1 )    3.7409 ± 0.0075                        3.738 ± 0.010       3.796 ± 0.311      3.762 ± 0.025
+       γ (km s−1 )     -16.084 ± 0.025                       -16.0970 ± 0.0047   -16.110 ± 0.170    -16.1024 ± 0.0084
+       Ω (◦ )                              202.16 ± 0.94      200.16 ± 0.70       201.20 ± 2.59      201.28 ± 1.18
+            ◦
+       i( )                                127.82 ± 0.77      128.57 ± 1.00      127.707 ± 3.191     127.57 ± 1.21
+       a (mas)                             129.07 ± 1.18      127.72 ± 1.85      129.371 ± 5.432     129.55 ± 2.05
+       Reference        (Torres 2023)       Section 5.2         Section 5.3        Section 5.4         Section 5.5
+       Mtot (M⊙ )                           6.35 ± 0.23         6.16 ± 0.28      6.4153 ± 0.7576       6.45 ± 0.31
+       MAa (M⊙ )                                                4.87 ± 0.26      5.0864 ± 0.6245       5.13 ± 0.28
+       MAb (M⊙ )                                              1.295 ± 0.019      1.3289 ± 0.2702     1.316 ± 0.028
+
+
+  Note—Masses computed assuming the Gaia distance of 136.90 ± 0.34 pc
+
+
+
+
+                                                     6. DISCUSSION
+                                                  6.1. The Cepheid Mass
+18
+
+  Approximately three quarters of the 30 year orbit of Polaris has now been observed with HST, CHARA, and speckle
+measurements. The resulting mass of the Cepheid is 5.13 ± 0.28 (5%) M⊙ which is larger than before the CHARA
+and speckle observations were included, but with smaller errors. The previous mass was 3.45 ± 0.75 M⊙ (Evans et al.
+2018; based on a slightly different distance).
+
+                                         6.2. Cepheid Mass Luminosity Relation
+  Cepheids provide a quantitative test of evolutionary calculations. In the case of Polaris, the mass derived here
+is combined with a luminosity to compare with theoretical predictions. For MW Cepheids in general, definitive
+luminosities will be produced by Gaia in the release that includes orbital fits in the analysis. For Polaris, we use the
+distance to Polaris B as discussed in Section 1.1. Since Polaris B is not a close binary, an orbit is not required in the
+Gaia solution.
+
+
+
+
+Figure 7. Cepheid mass-luminosity relation. The Milky Way Cepheids, Polaris (this work) and V1334 Cyg (Gallenne et al
+2018), are plotted as squares. LMC Cepheids (Pilecki etal 2021) are plotted as asterisks. Overplotted are predictions from
+evolutionary tracks (Bono et al. 2016; Anderson et al. 2014; Anderson et al. 2016) for (1) long dash: MW metallicity, no main
+sequence convective overshoot; (2) solid: MW metallicity, moderate convective overshoot; (3) dotted line: MW metallicity, small
+convective overshoot and rotation; (4) short dash line: LMC metallicity, moderate convective overshoot. Mass and Luminosity
+are in solar units.
+
+
+   Figure 7 shows the Cepheid mass-luminosity relation with the location of Polaris in comparison with the predictions
+from evolutionary calculations of several groups, which predict the luminosity for a given mass.
+   Figure 7 includes V1334 Cyg, which has the most accurate Cepheid mass at present (Gallenne et al 2018). The
+solution also provides an accurate (3%) distance to the system. It is a good comparison for Polaris since it has similar
+characteristics. It pulsates in the first overtone, and has a period (luminosity) similar to Polaris. Also shown in
+Figure 7 are masses for LMC Cepheids in eclipsing binaries from Pilecki et al. (2021). Luminosities for the MW
+Cepheids are from the distance to Polaris (above) and V1334 Cyg. Luminosities for the LMC Cepheids are from
+Pilecki et al. (2021). The observed mass–luminosity combinations are compared with evolutionary predictions from
+Bono et al. (2016) and Anderson et al. (2014). The Bono tracks cover MW and LMC metallicities. For the MW the
+relations are shown for no main sequence convective core overshoot and moderate overshoot. The Anderson relation
+is for main sequence rotation and moderate convective overshoot. The lower metallicity of the LMC stars results in a
+higher luminosity than for solar abundance stars, as indicated by the models.
+                                                                                                                               19
+
+ The determination of the mass of Polaris in this study is part of a series of studies to measure of Cepheids. Additional
+MW Cepheids are to be added to Figure 7. However the first indication is that in the examples so far (Polaris, V1334
+Cyg, and the LMC Cepheids), the luminosity is larger than predicted by current evolutionary calculations.
+                                                   6.3. Evolutionary Tracks
+  To explore the details of the calculation results, we provide Figure 8 updated from Figure 7 in Evans et al. (2018).
+Temperatures are from (B-V)0 , as discussed in Evans et al. (2018). Figure 8 illustrates the location of Polaris and
+also V1334 Cyg with respect to evolutionary calculations for 4, 5, and 7 M⊙ from Georgy et al. (2013). The tracks
+contrast evolution for stars with zero rotational velocity on the main sequence and those with 0.95 breakup velocity.
+Both Polaris and V1334 Cyg are more luminous than the 5 M⊙ track in the blue loop, even for large main sequence
+rotation. For a comparison between codes, Figure 8 in Evans et al. (2018) shows the location of Polaris compared with
+three sets of tracks for a 5M⊙ model: Geneva (Georgy et al. 2013), MIST (Choi et al. 2016) and PARSEC 14 (based
+on the Bressan et al. (2012) group). All three sets of tracks are shown for zero initial main sequence rotation; for the
+Geneva and MIST calculations, a track is also shown for substantial rotation. In this figure, the MIST tracks (both
+with and without substantial main sequence rotation) approximately coincide with the Georgy tracks with rotation.
+  One further criterion for the comparison between observed masses and evolutionary tracks is that Cepheids are found
+in a region of the Luminosity–Temperature diagram (Figure 8) where the blue loops penetrate the instability strip.
+This was a motivation of the exploration of the effect of rotation in main sequence progenitors (Anderson et al. 2014),
+since increasing the main sequence core convective overshoot increases luminosity at the Cepheid phase, but truncates
+the blue loops. Evolutionary tracks for additional masses probe this further.
+
+
+
+
+Figure 8. Polaris and V1334 Cyg compared with evolutionary tracks. For Polaris (filled square) and V1334 Cyg (filled triangle)
+the mass in M⊙ is listed next to the star name. The evolutionary tracks from Georgy et al. (2013) are for 4, 5, and 7 M⊙ in
+colors of green, black, and red respectively. Solid lines are for zero rotational velocity on the main sequence; dashed lines have
+0.95 breakup velocity. Luminosity is in solar units; temperature is in Kelvin.
+
+
+                                                  6.4.   Properties of Polaris
+
+
+  14 http://philrosenfield.github.io/padova_tracks
+20
+
+  This study provides astrometry from CHARA interferometry and APO speckle observations for the Polaris Aa and
+Ab system. When combined with previous HST observations and radial velocities (Torres 2023), a mass of 5.13 ± 0.28
+M⊙ is derived. The observed luminosity for Polaris is brighter than predicted by current evolutionary tracks. The
+predicted luminosity depends on the rotation of the main sequence progenitor, but Fig 8 shows that Polaris is at least
+0.4 mag brighter than the predicted tracks including a small correction from the 5 M⊙ tracks to the mass of Polaris
+(based on 0.5 critical breakup velocity [Anderson et al. 2014]). This study is part of a series of studies of Cepheid
+masses using interferometry as well as Gaia astrometry to examine this questions.
+  In the case of Polaris several of its properties are unusual in the context of Cepheids. It pulsates in the first overtone,
+which may be linked with the rapid period change. Overtone pulsators have more instability in their pulsation periods,
+which can sometimes be interpreted as rapid period change. The variation in pulsation amplitude may also be related
+to its pulsation mode. The recent discussion of velocities (Torres 2023) postulates that the “glitch” in pulsation
+may occur at periastron passage. This would add a new factor to the interpretation of the observations. It has
+been suggested for other Cepheids with a “phase jump” that they are likely to be binary systems (Csorneyei et al.
+2022). In summary, while these properties are unusual for Cepheids, they exist in other stars. Thus Polaris fits in the
+framework of pulsating supergiants, particularly if orbital motion is included. While these characteristics complicate
+the interpretation of observations, all are found in stars without abnormal evolution.
+  The identification of star spots is consistent with several properties of Polaris. It has a very low pulsation amplitude,
+which sets it apart from full amplitude Cepheids. This may mean that the atmosphere is like that of a nonvariable
+supergiant, which have often indicators of activity. It is not clear how full amplitude pulsation affects the atmosphere
+and magnetic field in pulsators, so Polaris is an interesting test case.
+  Polaris has a couple of other characteristics which would be consistent with magnetically related spots. Polarization
+has been found (Barron et al. 2022). However, the polarization measurements look more like those of the nonvariable
+supergiant α Per than other Cepheids (Grunhut et al. 2010), but this may just reflect the very low pulsation amplitude.
+Polaris has also been detected in X-rays (Evans et al. 2022).
+  Our identification of star spots opens the prospect of determinating a rotation period. It also can explain why
+additional periodicities have been difficult to find, since the distribution of spots is variable. The long period (≃120
+day) variation found by Lee et al. (2008), for instance, might be a rotation period. 40 and 60 d periods found by
+Anderson (2019) may be related.
+  Another possible interpretation of surface features on Polaris is convective supergranules as discussed by Schwarzschild
+(1975).
+  A final characteristic of the orbit of Polaris is the high eccentricity. This is often found in systems which have
+undergone three body interaction, which would be consistent with the Cepheid being a merger product from a former
+triple system, as suggested by Evans, et al (2018). However, high eccentricity is frequently found in long period systems
+(Shetye et al. 2024) so it does not require special conditions.
+                                         7. SUMMARY AND FUTURE WORK
+  The CHARA and APO observations of the Polaris Aa and Ab system have added to previous astrometric observations
+to cover approximately three quarters of the orbit. The mass of the Cepheid which results from these data and
+the spectroscopic orbit is 5.13 ± 0.28 (5%) M⊙ . The Cepheid is overluminous for this mass according to current
+calculations. Starspots have been identified in the CHARA images, providing another tool to use to investigate the
+Cepheid.
+  Further observations with CHARA and APO will provide additional coverage of the orbit and add to the determi-
+nation of the mass.
+
+  This work is based upon observations obtained with the Georgia State University Center for High Angular Resolution
+Astronomy Array at Mount Wilson Observatory. The CHARA Array is supported by the National Science Foundation
+under Grant No. AST-1636624 and AST-2034336. Institutional support has been provided from the GSU College
+of Arts and Sciences and the GSU Office of the Vice President for Research and Economic Development. Time at
+the CHARA Array was granted through the NOIRLab community access program (NOIRLab PropID: 2018B-0039;
+PI: N. Evans). PK acknowledges funding from the European Research Council (ERC) under the European Union’s
+Horizon 2020 research and innovation program (project UniverScale, grant agreement 951549). SK acknowledges
+funding for MIRC-X from the European Research Council (ERC) under the European Union’s Horizon 2020 research
+and innovation programme (Starting Grant No. 639889 and Consolidated Grant No. 101003096). JDM acknowledges
+funding for the development of MIRC-X (NASA-XRP NNX16AD43G, NSF-AST 1909165). AG acknowledges the
+                                                                                                                                     21
+
+support of the Agencia Nacional de Investigación Cientı́fica y Desarrollo (ANID) through the FONDECYT Regular
+grant 1241073. RMR acknowledges funding from the Heising-Simons Foundation 51 Pegasi b Fellowship. Support was
+provided to NRE by the Chandra X-ray Center NASA Contract NAS8-03060.This research has received support from
+the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme
+(Grant Agreement No. 947660). RIA is funded by the Swiss National Science Foundation through an Eccellenza
+Professorial Fellowship (award PCEFP2 194638). This research is based on observations made with the Mercator
+Telescope, operated on the island of La Palma by the Flemish Community, at the Spanish Observatorio del Roque de
+los Muchachos of the Instituto de Astrofisica de Canarias (observations from Anderson et al.). Hermes is supported
+by the Fund for Scientific Research of Flanders (FWO), Belgium, the Research Council of K.U. Leuven, Belgium,
+the Fonds National de la Recherche Scientifique (F.R.S.- FNRS), Belgium, the Royal Observatory of Belgium, the
+Observatoire de Geneève, Switzerland, and the Thüringer Landessternwarte, Tautenburg, Germany.
+  This work has made use of data from the European Space Agency (ESA) mission Gaia (https://www.cosmos.esa.int/gaia),
+processed by the Gaia Data Processing and Analysis Consortium (DPAC, https://www.cosmos.esa.int/web/gaia/dpac/consortium)
+Funding for the DPAC has been provided by national institutions, in particular the institutions participating in the
+Gaia Multilateral Agreement. This research made use of services provided by the Jean-Marie Mariotti Center (Aspro,
+SearchCal, and OIDB). The SIMBAD database, and NASA’s Astrophysics Data System Bibliographic Services were
+used in the preparation of this paper.
+  The software used in this project is available from Squeeze [10.5281/zenodo.11643336] and ROTIR [10.5281/zen-
+odo.11643362]]https://doi.org/DOI.
+
+
+                                                           REFERENCES
+Anderson, R. I., et al. 2014, A&A, 564, 100                         Evans, N. R., Schaefer, G. H., Bond, H. E. et al. 2008, ApJ, 136,
+Anderson, R. I. 2016, A&A, 591, A8                                    1137
+Anderson, R. I. 2018, A&A, 611, L7                                  Evans, N. R., Karovska, M., Bond, H. E., et al. 2018, ApJ, 863,
+Anderson, R. I. 2019, A&A, 623, A146                                  187
+Anderson, R. I., Viviani, G., Shetye, S., et al. 2024, in press     Evans, N. R., Engle, S., Pillitteri, I., et al. 2022, ApJ, 938, 153
+Anugu, N., Le Bouquin, J.-B., Monnier, J. D., et al. 2020, AJ,      Feast, M. W. and Catchpole, R. M. 1997, MNRAS, 286, 11
+  160, 158                                                          Foreman-Mackey, D., Hogg, D. W., Lang, D., & Goodman, J.
+Arellano Ferro, A 1983, ApJ, 274, 755                                 2013, PASP, 125, 306
+Baron, F. 2020, Proc. SPIE, 11446, 114461N                          Gaia Collaboration, Vallenari, A., Brown, A. G. A., et al. 2023,
+Baron, F., Kloppenborg, B., & Monnier, J. 2012, Proc. SPIE,           A&Ap, 674, A1
+  8445, 84451D                                                      Gallenne, A., Mérand, A., Kervella, P., et al. 2015, A&Ap, 579,
+Baron, F., Monnier, J. D., & Kloppenborg, B. 2010, Proc. SPIE,        A68
+  7734, 77342I                                                      Gallenne, A., Kervella, P., Evans, N. R., et al. 2018, ApJ, 867,
+Barron, J. A., Wade, G. A., Evans, N. R., Folsom, C. P. and           121,
+  Neilson, H. R. 2022, MNRAS, 512, 4021                             Gallenne, A., Pietrzyński, G., Graczyk, D., et al. 2019a, A&Ap,
+                                                                      632, A31
+Berdnikov, L. N. and Pastukhova, E. N. 1995, Astronomy
+                                                                    Gallenne, A., Kervella, P., Borgniet, S., et al. 2019b, A&Ap, 622,
+  Letters, 21 369
+                                                                      A164
+Bond, H. E., Nelan, E. P., Evans, N. R., Schaefer, G. H. and
+                                                                    Georgy, C., Ekstrom, S., Granada, A., Meynet, G., Mowlavi, N.,
+  Harmer, D. 2018, ApJ, 853, 55
+                                                                      Eggenberger, P. and Maeder, A. 2013, A&A,553, 24
+Bonneau, D., Delfosse, X., Mourard, D., et al. 2011, A&Ap, 535,
+                                                                    Grunhut, J. H., Wade, G. A., Hanes, D. A., abd Alecian, E.
+  A53
+                                                                      2010, MNRAS, 408, 2290
+Bono, G., Braga, V. F., Pietrinferni, A., et al. 2016, MmSAI, 87,
+                                                                    Hanbury Brown, R., Davis, J., Lake, R. J. W., & Thompson,
+  358
+                                                                      R. J. 1974, MNRAS, 167, 475
+Bono, G., et al. 2001, MNRAS, 325, 1353                             Heintz, W. D. 1978, Double Stars (Reidel: Dordrecht)
+Bourgés, L., Lafrasse, S., Mella, G, et al. 2014, ASPC, 485, 223   Horch, E. P., Veillette, D. R., Gallé, R. et al 2009, AJ, 137, 5057
+Bressan, A., Marigo, P., Girardi, L., et al. 2012, MNRAS, 427,      Horch, E. P., Ninkov, Z., and Slawson, R. W. 1997, AJ, 114, 2117
+  127                                                               Kamper, K. W. 1996, JRASC, 90, 140
+Bruntt, H., Evans, N. R., Stello, D. et al. 2008, ApJ, 683, 433     Kamper, K. W. and Fernie, J. D. 1998, AJ, 116, 936
+Chawla, N. V., Bowyer, K. W., Hall, L. O., Kegelmeyer, W. P.        Khan, S., Anderson, R. I., Miglio, A., Mosser, B., and Elsworth,
+  2002, Journal of Artificial Intelligence Research, 16, 321          Y. P. 2023, A&A, 680, A105
+Choi, J., Dotter, A., Conroy, C., Cantillo, M., Paxton, B., and     Kurtz, D. 2022, ARAA, 60, 31
+  Johnson, B. D. 2016, ApJ, 823, 102                                Lee, B.-C., Mkrtichian, D. E., Han, I., et al. 2008, AJ, 135, 2240
+Claret, A., & Bloemen, S. 2011, A&Ap, 529, A75                      Lindegren, L., Bastian, U., Biermann, M., et al. 2021, A&A, 649,
+Csornyei, G., Szabados, L., Molnar, L. et al. 2022, MNRAS, 511,       A4
+  2125                                                              Markwardt, C. B. 2009, in ASP Conf. Ser., Vol. 411,
+Davidson, Jr., J. W., Horch, E. P., Majewski, S. R. et al. 2024,      Astronomical Data Analysis Software and Systems XVIII, ed.
+  AJ, accepted                                                        D. A. Bohlender, D. Durand, & P. Dowler (San Francisco, CA:
+Engle, S. G., Guinan, E. F., and Harmanec, P. 2018, RNAAS, 2,3        ASP), 251
+22
+
+Mérand, A. 2022, Proc. SPIE, 12183, 12183N                           Schaefer, G. H., Hummel, C. A., Gies, D. R. et al. 2016, AJ, 152,
+Mérand, A., Kervella, P., Breitfelder, J., et al. 2015, A&A, 584A,     213
+  80                                                                  Schwarzschild, M. 1975, ApJ, 195, 137
+Mérand, A., Kervella, P., Coudé du Foresto, V., et al. 2006,        Shetye, S. S., Anderson, R. I., Viviani, G., Mowlavi, N. Eyer, L.,
+  A&A, 453, 155                                                         Evans, N. R., and Szabados, L. 2024, A&A, submitted
+Monnier, J. D., Berger, J.-P., Millan-Gabet, R., & ten                Szabados, L. 1989, Commun. Konkoly Obs. Hungary, 94, 1
+  Brummelaar T. A. 2004, in SPIE Conference Series, ed.               Szabados, L. 1991, Commun. Konkoly Obs. Hungary, 96, 123
+  W. A. Traub, Vol. 5491, 1370                                        Szabados L., 1992, in McAlister H. A., Hartkopf W. I., eds, ASP
+Monnier, J. D., Zhao, M., Pedretti, E., et al. 2007, Science, 317,      Conf. Ser. Vol. 32, IAU Colloq. 135: Complementary
+  342                                                                   Approaches to Double and Multiple Star Research. Astron.
+Monnier, J. D., Che, X., Zhao, M., et al. 2012, ApJ, 761, L3,           Soc. Pac., San Francisco, p. 255
+Moskalik, P. & Gorynya, N. A. 2005 AcA, 55, 247                       ten Brummelaar, T. A., McAlister, H. A., Ridgway, S. T., et al.
+Neilson, H. R. et al. 2011, A&A, 529, L9                                2005, ApJ, 628, 453
+Neilson, H. R., Engle , S. G., Guinan, D., Langer, N., Wasatonic,     Torres, G. 2023, MNRAS, 526, 2510
+  R. P., and Williams, D. B. 2012, ApJ, 745, L32                      Turner, D. G., Savoy, J., Derrah, J., Abdel-Latif, M. A., and
+Pilecki, B., et al. 2018, ApJ, 862,43                                   Berdnikov, L. N. 2005, PASP, 117, 207
+Pilecki, B., Pietrzyński, G., Anderson, R. I., et al. 2021, ApJ,     van Leeuwen, F. 2007, A&Ap, 474, 653
+  910, 118                                                            van Leeuwen, F. 2013, A&Ap, 550, L3
+Riess, A. G., Casertano, S., Yuan, W., et al. 2021, ApJ, 908, L6      Wielen, R., Jahreiss, H., Dettbarn, C., Lenhardt, H., and
+Roemer, E. 1965, ApJ, 141, 1415                                         Schwan, H. 2000, A&A, 360, 399
+Roettenbacher, R. M., Monnier, J. D., Korhonen, H., et al. 2016,
+  Nature, 533, 217
+
+
+                                                               APPENDIX
+
+
+                              A. INTERFEROMETRIC DATA PLOTS - IMAGING RESULTS
+  Figure Set 12.1 shows the visibilities and closure phases measured with CHARA MIRC-X averaged over 10-minute
+observing sets. The data (black circles) and observables extracted from the reconstructed images (red circles) are
+plotted in the top panels of each figure. The bottom panels show the residuals between the data and the image.
+  Fig. Set 12. Imaging Results
+
+
+
+
+Figure 12.1. Visibilities and closure phases measured with CHARA MIRC-X and averaged over 10-minute observing sets for
+Polaris on UT 2018Aug27. The black symbols are the measured values while the red symbols are extracted from the ROTIR
+reconstructed image. The lower panels show the residuals between the data and the image.
+The complete set of figure set (4 images) is available in the online journal.
+                                                                                                                   23
+
+
+
+
+Figure 12.2. Visibilities and closure phases measured with CHARA MIRC-X and averaged over 10-minute observing sets for
+Polaris on UT 2019Apr09. The black symbols are the measured values while the red symbols are extracted from the ROTIR
+reconstructed image. The lower panels show the residuals between the data and the image.
+
+
+
+
+Figure 12.3. Visibilities and closure phases measured with CHARA MIRC-X and averaged over 10-minute observing sets for
+Polaris on UT 2019Sep02. The black symbols are the measured values while the red symbols are extracted from the ROTIR
+reconstructed image. The lower panels show the residuals between the data and the image.
+
+                            B. INTERFEROMETRIC DATA PLOTS - BINARY FITS
+  Figure Set 13.1 shows the results from the binary fits to the CHARA MIRC-X interferometry using the 30 second
+integration time. Each figure shows the (u, v) coverage, the χ2 map from the binary grid search, the visibilities, and
+the closure phases. The χ2 maps are centered at the predicted location based on the updated orbit fit. The nights
+with reliable detections show a clear minimum in the χ2 indicated by the colored circles. The nights with unreliable
+binary fits show more ambiguity in the χ2 maps.
+  Fig. Set 13. Binary Fits
+24
+
+
+
+
+Figure 12.4. Visibilities and closure phases measured with CHARA MIRC-X and averaged over 10-minute observing sets for
+Polaris on UT 2021Apr02, 2021Apr03, and 2021Apr04. The black symbols are the measured values while the red symbols are
+extracted from the ROTIR reconstructed image. The lower panels show the residuals between the data and the image.
+                                                                                                                               25
+
+
+
+
+Figure 13.1. Binary fit for Polaris on UT 2016Sep12. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+The complete set of figure set (8 images) is available in the online journal.
+26
+
+
+
+
+Figure 13.2. Binary fit for Polaris on UT 2016Nov18. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+                                                                                                                               27
+
+
+
+
+Figure 13.3. Binary fit for Polaris on UT 2018Aug27. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+28
+
+
+
+
+Figure 13.4. Binary fit for Polaris on UT 2019Apr09. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+                                                                                                                               29
+
+
+
+
+Figure 13.5. Binary fit for Polaris on UT 2019Sep02. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+30
+
+
+
+
+Figure 13.6. Binary fit for Polaris on UT 2021Apr02. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+                                                                                                                               31
+
+
+
+
+Figure 13.7. Binary fit for Polaris on UT 2021Apr03. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+32
+
+
+
+
+Figure 13.8. Binary fit for Polaris on UT 2021Apr04. Top Row: (u, v) coverage (left) and χ2 map from the binary grid search
+(right). In the χ2 map, the red, orange, yellow, green, blue, purple, large black, and small black symbols correspond to solutions
+within ∆χ2 = 1, 4, 9, 16, 25, 36, 49, and >50 from the minimum χ2 . Bottom row: The filled black circles show the squared
+visibilities (left) and closure phases (right) measured with MIRC-X using the 30 second integration time. The red crosses show
+the best-fit binary model.
+

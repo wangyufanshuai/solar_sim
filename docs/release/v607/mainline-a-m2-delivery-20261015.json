@@ -1,0 +1,292 @@
+{
+  "schema": "mainline-a-m2-delivery-v1",
+  "createdAt": "2026-10-15T07:24:11.296Z",
+  "status": "m2-engineering-and-agent-visual-checks-passed-candidate-only",
+  "buildId": "U3rlOMIYRwVtDCeQYy3k4",
+  "runtimeBuildId": "mainline-a-483f941c9aa1bfbd",
+  "sourceSha256": "483f941c9aa1bfbddd94dcae9eb10a4a72dd2d95f8a110c0d89583db10d9fb14",
+  "sourceStable": true,
+  "baseline": {
+    "buildId": "CrhZfK3iuN4QsWw94kTzP",
+    "sourceSha256": "329571ee7cb34a03701cac3eae882f9b402216611ebb24d5ae59c4aec130cbac"
+  },
+  "milestones": {
+    "M2": "implemented-and-verified",
+    "M3": "not-in-scope",
+    "M4": "not-in-scope",
+    "M5": "not-in-scope"
+  },
+  "validation": {
+    "vitest": {
+      "files": 14,
+      "tests": 186,
+      "exitCode": 0
+    },
+    "node": {
+      "tests": 7,
+      "exitCode": 0
+    },
+    "eslint": {
+      "files": 7,
+      "exitCode": 0
+    },
+    "build": {
+      "profile": "vercel-lite",
+      "exitCode": 0
+    },
+    "http": {
+      "modes": 2,
+      "requestsPerMode": 40,
+      "requests": 80,
+      "images": 31,
+      "held": 5,
+      "metadataPins": 6
+    },
+    "browser": {
+      "stellarViewGroups": 24,
+      "aliasViewGroups": 4,
+      "stellarRawScreenshots": 56,
+      "retainedViewGroups": 4,
+      "retainedRawScreenshots": 10,
+      "baselineRawScreenshots": 48,
+      "comparisonImages": 16,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "physicalDevice": false,
+      "viewport": {
+        "desktop": [
+          1280,
+          720
+        ],
+        "mobile": [
+          390,
+          844
+        ]
+      },
+      "dpr": 1
+    },
+    "evidenceIntegrity": {
+      "verifiedScreenshotHashes": 130,
+      "localDocumentLinks": "resolved"
+    }
+  },
+  "agentVisualReview": {
+    "reviewers": [
+      "root",
+      "m2_card",
+      "m2_capture"
+    ],
+    "focus": [
+      "sirius-a",
+      "betelgeuse",
+      "vega",
+      "achernar"
+    ],
+    "reviewedStates": [
+      "desktop-comparison",
+      "mobile-default",
+      "mobile-comparison"
+    ],
+    "additionalSample": [
+      "rigel"
+    ],
+    "result": "passed-candidate-visual-review",
+    "boundaries": [
+      "SVG and GPU share base colors and morphology parameters, not identical exposure, texture or pixels.",
+      "SVG rapid-rotator equatorial bands are more regular; red-giant cells are softer.",
+      "Not human signoff or real-device acceptance."
+    ]
+  },
+  "sourceBoundary": {
+    "changedProductionInputs": [
+      {
+        "path": "app/components/MainlineAStellarPortraitV607.tsx",
+        "kind": "modified",
+        "before": {
+          "path": "app/components/MainlineAStellarPortraitV607.tsx",
+          "bytes": 5462,
+          "sha256": "28c17e2c1f0be837a25a3b347780b967b1f28b9dbd7f8fbfbaabbe51e445eeda"
+        },
+        "after": {
+          "path": "app/components/MainlineAStellarPortraitV607.tsx",
+          "bytes": 11536,
+          "sha256": "f7f578e94fc908a2a93ae6642061f4b4d044333017ea4f48003120fbdd40d712"
+        }
+      },
+      {
+        "path": "app/components/SelectedSkyTargetProxy.tsx",
+        "kind": "modified",
+        "before": {
+          "path": "app/components/SelectedSkyTargetProxy.tsx",
+          "bytes": 30609,
+          "sha256": "608d912bf8ed0298a8d9be851ef01bb849143824d3b0ae6e527a17763dedb833"
+        },
+        "after": {
+          "path": "app/components/SelectedSkyTargetProxy.tsx",
+          "bytes": 31799,
+          "sha256": "0ccb2145019349920c5a03234cd436b82882bc8e13d89a3947c38996e52e916b"
+        }
+      },
+      {
+        "path": "app/lib/mainlineAStellarPresentationM2.ts",
+        "kind": "added",
+        "before": null,
+        "after": {
+          "path": "app/lib/mainlineAStellarPresentationM2.ts",
+          "bytes": 9129,
+          "sha256": "52cccf9277da2ce6d068cbbda3c8c61d61acb12b11214ca0d361cc5c3775c4d8"
+        }
+      }
+    ],
+    "unchangedBaselineInputs": 2451,
+    "protectedContractsAndShadersUnchanged": true,
+    "scientificPayloadWriteback": false
+  },
+  "resolvedFailures": [
+    {
+      "id": "svg-luminance-alpha",
+      "rejectedBuild": "HnmBriLrnAxOAVkgKm3el",
+      "attempt": "20261015-m2after01",
+      "resolution": "Opaque luminance mask and bounded brightness mapping; rebuilt and captured full matrix anew."
+    },
+    {
+      "id": "stale-passport-axis-ratio-test",
+      "resolution": "Assert shared model geometry and retained catalog values separately."
+    },
+    {
+      "id": "stale-constellation-cleanup-test",
+      "resolution": "Exercise actual 12-resource lifecycle and independent ownership; production constellation source unchanged."
+    }
+  ],
+  "holds": {
+    "stellar": [
+      "acrux",
+      "spica",
+      "regulus",
+      "polaris"
+    ],
+    "status": "not-admitted"
+  },
+  "claims": {
+    "candidateOnly": true,
+    "humanVisualSignoff": false,
+    "rightsSignoff": false,
+    "physicalDevice": false,
+    "longRunPerformance": false,
+    "scientificValidity": false,
+    "scientificPayloadWriteback": false,
+    "publicReleaseApproved": false
+  },
+  "cleanup": {
+    "ownedBrowsers": "closed",
+    "ownedReviewServerPorts": [
+      3143,
+      3144,
+      3145
+    ],
+    "servers": "stopped",
+    "gitCommitOrPush": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/release/v607/mainline-a-r82-build-20261015-m2web02.json",
+      "bytes": 482261,
+      "sha256": "44ff1a576c8aeb78ac9254bf1bf6e2cab32fbc243d37268450e2898114818fe9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/baseline-inputs.json",
+      "bytes": 467608,
+      "sha256": "e61f8bd9f216f4178f91b2c6c746b61266de328bdb1181a9111c621dec7de240"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/before/receipt.json",
+      "bytes": 402667,
+      "sha256": "06a2d1c4b8b6cff24c3c178edb8f71b48ee49d03907b1ef79e91243881cfe92c"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/after/receipt.json",
+      "bytes": 509708,
+      "sha256": "01d19e0ff15dba96dbae41927cf46cc14df8242ccd1abd4b14311554a79d3515"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/retained-scenes/receipt.json",
+      "bytes": 7974,
+      "sha256": "ef5120c0b6735f5fb868256b6e9853f84baa564acd34d961a01cc827a950c59a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/comparison-manifest.json",
+      "bytes": 14436,
+      "sha256": "80458e751e5b8f4de6cb6f58321f3af458d4ea3a92c0071ff10cb3d388a86a78"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/source-boundary-audit.json",
+      "bytes": 6335,
+      "sha256": "ba0484adedf6b853db71fa372300b052e959fe23ef9f22a513bcd12d3c72b206"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/vitest-final02.log",
+      "bytes": 425,
+      "sha256": "11b66819af8b2f4029d6eaa80711bab33fc3ab0e0d5750b6383af0b58f6d2faf"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/vitest-producer.log",
+      "bytes": 226,
+      "sha256": "9a1a426c9d55fbd61a419bb6d02b9265bb9bfd83480eba4d0228a87a4d72dd15"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/node-tests.log",
+      "bytes": 830,
+      "sha256": "83de27b34fc795f6f2a144eb5b74d7087be5e9a5c3c1a4fef9c8dc897f847e99"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/eslint-final02.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/build02.log",
+      "bytes": 2620,
+      "sha256": "5aa4511f6872c7a0cc6ec5206228ac99776ec9c75936afe17d24c218ba296736"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/http-enabled02.log",
+      "bytes": 214,
+      "sha256": "c65b768d623d1fa934787f61ab11e38ef9bf3594bd24684f9da9bdef65f363e2"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/http-default-off02.log",
+      "bytes": 222,
+      "sha256": "6e9d9b675d0b437a9cc75128ef53fa6cbbf41a8abb51a52b3e07cfe2c5060191"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-enabled-20261015-m2http03.json",
+      "bytes": 43408,
+      "sha256": "61997f5a8880591957b8b13456dc89a0ae6c8b34d8a1d58e98ad11448d99fdaa"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-default-off-20261015-m2http04.json",
+      "bytes": 41891,
+      "sha256": "2b5fff8065af4817efc2943621e21232b82ceaa4c3e065afd62c7dc276405db9"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/vitest.log",
+      "bytes": 52422,
+      "sha256": "1916df279f45021a78fb5868f6efc351d40aa71ba8e29650ef1b292eb7a91d6a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/after/attempts/20261015-m2after01/visual-rejection.json",
+      "bytes": 551,
+      "sha256": "b22731154781b4a0b773342b7761fb0d6c7e5e891b2fc3e560b4b3b98db3a477"
+    },
+    {
+      "path": "output/playwright/mainline-a-m2-20261015/comparison-gallery.html",
+      "bytes": 13583,
+      "sha256": "66439c51469ce3ff4c6aa7ffe494700e2b1cf0aaf6bb35761963e0131d4bc2e2"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m2-delivery-20261015.md",
+      "bytes": 7219,
+      "sha256": "3aacf828274cde66d2360154dd9e12b397da31897679cc3b6623c58f33f6f1ff"
+    }
+  ]
+}

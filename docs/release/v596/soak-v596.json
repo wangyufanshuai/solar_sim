@@ -1,0 +1,259 @@
+{
+  "version": "v596-current-source-soak-v3",
+  "generatedAt": "2026-09-01T13:27:24.401Z",
+  "status": "passed-current-v596-cdp-renderer-heap-cycles-and-final-scene-exit",
+  "candidate": {
+    "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+    "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+    "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+    "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+    "deploymentId": "v596-88236d680207-16b09ac7458e",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "evidence": {
+    "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/soak-r1/stage.json",
+    "bytes": 488445,
+    "sha256": "1485f3bea46270b90c28b325258b356625cdbf94ccb5c5a880a75db0560881fc"
+  },
+  "stageReceiptSha256": "35ef0fd7a80cb95bd78a829c8ee76c3a375c6977ac51a90fcabcc4c20526ce9a",
+  "shardCount": 1,
+  "warmup": {
+    "cycleCount": 1,
+    "sampleCount": 4,
+    "profileKey": "hot-radiative",
+    "realmToken": "5d787694-2f69-41c9-ace8-c926603f363a",
+    "timeOrigin": 1788269059933.805,
+    "rendererFingerprint": "187db99f225b108e2d83337e178fa15852bb5d2a2584d50a04fba6ed08e1cd0d",
+    "firstHeapUsedBytes": 29902684,
+    "finalHeapUsedBytes": 38512428,
+    "finalSampleSha256": "1540a2e4dffd9a6ea3bd4be9525b91d037b1aba1ac87a505a001c5e1b8934c30"
+  },
+  "warmupSampleCount": 4,
+  "cycleCount": 40,
+  "sampleCount": 160,
+  "rendererFingerprint": "187db99f225b108e2d83337e178fa15852bb5d2a2584d50a04fba6ed08e1cd0d",
+  "metrics": {
+    "cycleCount": 40,
+    "sampleCount": 160,
+    "rendererFingerprintCount": 1,
+    "rendererResourcePolicy": "warmup-high-water-no-growth-exact-mounted-to-profile-stable-and-exact-detach-zero-v1",
+    "rendererResourceWarmupEnvelope": {
+      "textures": 34,
+      "geometries": 229,
+      "programs": 26,
+      "renderTargets": 0
+    },
+    "rendererWarmupTransitionStable": true,
+    "rendererResourceWithinCycleStable": true,
+    "rendererResourceWarmupEnvelopeRespected": true,
+    "rendererResourceGlobalExactStable": false,
+    "rendererResourceGrowth": false,
+    "rendererProfiles": [
+      {
+        "profileKey": "hot-radiative",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "blue-supergiant-wind",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "solar-like-convective",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "cool-convective",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "red-giant-supergiant",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "warm-radiative-convective",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "rapid-rotator-gravity-darkened",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 34,
+          "geometries": 229,
+          "programs": 26,
+          "renderTargets": 0
+        }
+      },
+      {
+        "profileKey": "relativity-workbench",
+        "cycleCount": 5,
+        "sampleCount": 10,
+        "minimum": {
+          "textures": 33,
+          "geometries": 223,
+          "programs": 24,
+          "renderTargets": 0
+        },
+        "maximum": {
+          "textures": 33,
+          "geometries": 223,
+          "programs": 24,
+          "renderTargets": 0
+        }
+      }
+    ],
+    "rendererProfileStructuralCountersStable": true,
+    "registrySceneWithinCycleStable": true,
+    "canvasCountStable": true,
+    "rawHardGatesPassed": true,
+    "semanticFallbackApplied": false,
+    "syntheticHeapPassClaim": false,
+    "heap": {
+      "baselineUsedSizeBytes": 38545604,
+      "finalUsedSizeBytes": 40905564,
+      "allowanceBytes": 8388608,
+      "overallOlsBytesPerSample": 15334.88470057424,
+      "tailOlsBytesPerSample": -361.0975609756098,
+      "tailSampleCount": 40,
+      "tailOlsMaximumBytesPerSample": 262144,
+      "finalHeapWithinAllowance": true,
+      "tailOlsWithinLimit": true,
+      "sustainedGrowth": false,
+      "telemetry": "chromium-cdp-runtime-getHeapUsage",
+      "garbageCollection": "HeapProfiler.collectGarbage"
+    },
+    "measurementWindow": {
+      "version": "v596-cdp-soak-premeasurement-warmup-v1",
+      "warmupCycleCount": 1,
+      "warmupSampleCount": 4,
+      "measuredCycleCount": 40,
+      "measuredSampleCount": 160,
+      "baselineSource": "first-measured-baseline-after-warmup",
+      "warmupExcludedFromFormalMetrics": true
+    }
+  },
+  "aggregation": {
+    "allShardsComplete": true,
+    "unknownShardCount": 0,
+    "failedShardCount": 0
+  },
+  "heapQualification": {
+    "telemetry": "chromium-cdp-runtime-getHeapUsage",
+    "finalHeapWithinAllowance": true,
+    "tailOlsWithinLimit": true,
+    "sustainedGrowth": false,
+    "noSyntheticSubstitution": true
+  },
+  "sameRealm": true,
+  "finalClientRouteExit": "/downloads",
+  "releaseContractVersion": "v596-observed-scene-exit-release-contract-v1",
+  "rendererInfoAfterContextLoss": "explicitly-unavailable-not-zero",
+  "tooling": {
+    "runnerVersion": "v596-cdp-renderer-heap-soak-runner-v3",
+    "auditorVersion": "v596-cdp-renderer-heap-soak-audit-v3",
+    "collectorVersion": "v596-cdp-renderer-soak-collector-v4"
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "resolvedSurfaceAuthorityGranted": false,
+    "observationTextureAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "129d918167b39ff64747e0578cf3b04c5c71845bc0a0e66038935a4ec1d1553a"
+}

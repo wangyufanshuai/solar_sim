@@ -1,0 +1,79 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "venus-global-clouds-independent",
+  "probedAt": "2026-08-13T13:38:21.882Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "venus",
+  "role": "same-target-independent-nasa-global-cloud-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Venus%20global%20cloud%20view&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Venus%20global%20cloud%20view&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 8395,
+    "responseSha256": "65fdf4ea740216f587be5b7aa33f510ac15d2e0e976cbb4efc49b1e50ed69ece"
+  },
+  "totalHits": 3,
+  "candidates": [
+    {
+      "nasaId": "PIA23791",
+      "title": "Venus from Mariner 10",
+      "description": "As it sped away from Venus, NASA's Mariner 10 spacecraft captured this seemingly peaceful view of a planet the size of Earth, wrapped in a dense, global cloud layer. But, contrary to its serene appearance, the clouded globe of Venus is a world of intense heat, crushing atmospheric pressure and clouds of corrosive acid. This newly processed image revisits the original data with modern image processing software. A contrast-enhanced version of this view, also provided here, makes features in the planet's thick cloud cover visible in greater detail. The clouds seen here are located about 40 miles (60 kilometers) above the planet's surface, at altitudes where Earth-like atmospheric pressures and temperatures exist. They are comprised of sulfuric acid particles, as opposed to water droplets or i",
+      "dateCreated": "2020-06-08T00:00:00Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Mariner 10",
+        "Venus"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA23791/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA23791/PIA23791~thumb.jpg"
+    },
+    {
+      "nasaId": "ARC-1990-A91-2013",
+      "title": "ARC-1990-A91-2013",
+      "description": "Range : 1.4 to 2 million miles These are enhanced versions of four views of Venus taken by Galileo's Solid State Imaging System. The pictures in the top row were taken about 4 and 5 days after closest approach, and those in the bottom row 6 days after closest approach, 2 hours apart. These show the faint Venusian cloud features vary clearly. A high-pass filter way applied to bring out broader global variations in tone. The bright polar hoods are a well-known feature of Venus. Of particular interest to planetary atmospheric scientists are the complex cloud patterns near the equator, in the vicinity of the bright subsolar point, where convection is most prevalent.",
+      "dateCreated": "1990-02-14T00:00:00Z",
+      "center": "ARC",
+      "photographer": "JPL",
+      "keywords": [
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/ARC-1990-A91-2013/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/ARC-1990-A91-2013/ARC-1990-A91-2013~thumb.jpg"
+    },
+    {
+      "nasaId": "ARC-1995-A91-2003",
+      "title": "ARC-1995-A91-2003",
+      "description": "Range : 1.4 to 2 million miles This series of pictures shows four views of the planet Venus obtained by Galileo's Solid State Imaging System.The pictures in the top row were taken about 4 & 5 days after closest approach; those in the bottom row were taken about 6 days out, 2 hours apart. In these violet-light images, north is at the top and the evening terminator to the left. The cloud features high in the planet's atmosphere rotate from right to left, from the limb through the noon meridian toward the terminator, travelling all the way around the planet once every four days. The motion can be seen by comoparing the last two pictures, taken two hours apart. The other views show entirely different faces of Venus. These photos are part of the 'Venus global circulation' sequence planned by th",
+      "dateCreated": "1995-01-20T11:42:28Z",
+      "center": "ARC",
+      "photographer": "JPL",
+      "keywords": [
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/ARC-1995-A91-2003/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/ARC-1995-A91-2003/ARC-1995-A91-2003~thumb.jpg"
+    }
+  ],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "6c61745e3c0a54342be2d474b1f6412a496bcfefd83c0cf70871f3b916f4c09c"
+}

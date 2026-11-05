@@ -1,0 +1,114 @@
+{
+  "version": "v591-ceres-pds-radius-albedo-acquisition-aggregate-v1",
+  "acquiredAt": "2026-08-14T17:13:43.737Z",
+  "status": "four-assets-committed-single-request-each-no-retry",
+  "target": "ceres",
+  "requestCount": 4,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "metadataReceiptSha256": "474ad14d5bfd1c56c2d84362b35950cb9660bd395e750a4f4538b6a00b7d8044",
+  "shapeBlockedReceiptSha256": "2363d73f03e209220f5d6bac6e9d441f7d6348f05ba15cef548dc1e302f8934c",
+  "centralMirrorBlockedReceiptSha256": "16e3b55c60e3cedae95063596830bf4fc5cb683a22530442c3933ec7fcfb32f9",
+  "assets": [
+    {
+      "id": "ceres-albedo-label",
+      "target": "ceres",
+      "role": "albedo-pds4-label",
+      "productId": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_albedo_c_cub::1.0",
+      "sourceUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.xml",
+      "finalUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.xml",
+      "outputPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/albedo.xml",
+      "bytes": 7146,
+      "sha256": "db42cb093b795e09286f68db2dc9497ba30c158982401564fe39f5aaec4f50de",
+      "md5": "d4eccd9ee3a430257e4d3895422b52b2",
+      "expectedMd5": null,
+      "mediaType": "text/xml",
+      "format": "xml",
+      "license": {
+        "id": "NASA-PDS-public-data",
+        "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+      },
+      "observationIdentity": "NASA PDS4 dwarf_planet-ceres.dawn.shape-models-maps v2.0",
+      "presentationOnly": true,
+      "scientificAuthority": false,
+      "acquisitionReceiptSha256": "d364cc19165ba16fd897ba8f99f49a298701159e1c42c795dd3854dae377e5e9"
+    },
+    {
+      "id": "ceres-albedo-data",
+      "target": "ceres",
+      "role": "global-relative-albedo-isis-cube",
+      "productId": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_albedo_c_cub::1.0",
+      "sourceUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.cub",
+      "finalUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.cub",
+      "outputPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/ceres_albedo_c.cub",
+      "bytes": 9941484,
+      "sha256": "49323d6e757639d03c4bf87815c24374233795345d86d7e9db3ae31921635951",
+      "md5": "c6fbff0a16952010b60e5b14d3b1b706",
+      "expectedMd5": "c6fbff0a16952010b60e5b14d3b1b706",
+      "mediaType": "unreported",
+      "format": "isis-cube",
+      "license": {
+        "id": "NASA-PDS-public-data",
+        "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+      },
+      "observationIdentity": "NASA PDS4 dwarf_planet-ceres.dawn.shape-models-maps v2.0",
+      "presentationOnly": true,
+      "scientificAuthority": false,
+      "acquisitionReceiptSha256": "d39e21134a11f5eeb3cdd610a5703211fe69ef806baed07f11e4a553c1d37797"
+    },
+    {
+      "id": "ceres-radius-label",
+      "target": "ceres",
+      "role": "radius-pds4-label",
+      "productId": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0",
+      "sourceUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.xml",
+      "finalUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.xml",
+      "outputPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/radius.xml",
+      "bytes": 9028,
+      "sha256": "da583e44bf4037c93d274921983557f0358f7015b50e8092422fa4f2cc64eedf",
+      "md5": "eb3a2910c4ea82da07f9d484b6865158",
+      "expectedMd5": null,
+      "mediaType": "text/xml",
+      "format": "xml",
+      "license": {
+        "id": "NASA-PDS-public-data",
+        "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+      },
+      "observationIdentity": "NASA PDS4 dwarf_planet-ceres.dawn.shape-models-maps v2.0",
+      "presentationOnly": true,
+      "scientificAuthority": false,
+      "acquisitionReceiptSha256": "79dcffb9864cc894b0338f0eb252ee3490590497231dd47abb5f9b2684183192"
+    },
+    {
+      "id": "ceres-radius-data",
+      "target": "ceres",
+      "role": "global-radius-geotiff",
+      "productId": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0",
+      "sourceUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.tif",
+      "finalUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/ceres_radius_g.tif",
+      "bytes": 9881891,
+      "sha256": "8747ecc9e100be770ab1699604b0bc62441e5b302677c29b7570987334aacfd8",
+      "md5": "78127f5e23d64fe4bad6271a979c5895",
+      "expectedMd5": "78127f5e23d64fe4bad6271a979c5895",
+      "mediaType": "image/tiff",
+      "format": "geotiff",
+      "license": {
+        "id": "NASA-PDS-public-data",
+        "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+      },
+      "observationIdentity": "NASA PDS4 dwarf_planet-ceres.dawn.shape-models-maps v2.0",
+      "presentationOnly": true,
+      "scientificAuthority": false,
+      "acquisitionReceiptSha256": "e4d36cacbc2da7dbbc611b9a5826db2141139f7fab27fd70c1194a1dd80cdf01"
+    }
+  ],
+  "modelPolicy": "derive-runtime-mesh-from-global-radius-geotiff;do-not-retry-blocked-plt-url",
+  "authorityState": {
+    "presentationOnly": true,
+    "scientificAuthorityChanged": false,
+    "scientificPayloadWriteback": false,
+    "measuredAuthorityGranted": false
+  },
+  "receiptSha256": "99a9b0ec8dbb6bca88dc2b244dbd902ca277a14e74d4361b07c6c896f329790c"
+}

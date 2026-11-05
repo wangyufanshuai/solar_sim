@@ -1,0 +1,54 @@
+{
+  "version": "v585-public-head-runner-blocker-receipt-v1",
+  "generatedAt": "2026-08-04T15:20:22.9498494Z",
+  "classification": "blocked-runner-public-network-transport-split",
+  "audit": {
+    "executedAt": "2026-08-04T15:16:11.379Z",
+    "method": "HEAD",
+    "automaticRetry": false,
+    "automaticTargetReplacement": false,
+    "payloadDownloaded": false,
+    "rawObservationPath": "dist/release/orbit-atlas-visual-freeze-v585/public-asset-head-observation.json",
+    "rawObservationSha256": "1c3891a633bc834ffb52fe0506c709bf3a5bf0bb4753b329baaba0f0dbd47eff",
+    "rawObservationArtifactSha256": "c54d6e9f7c498a99c025340d1909b44c32821830cf5223f45279ebf1e7e60c19",
+    "targets": [
+      {
+        "label": "existing-public-preview",
+        "url": "https://next-web-eight-virid.vercel.app",
+        "passedCount": 0,
+        "requiredCount": 29,
+        "nullStatusCount": 29,
+        "fetchFailedCount": 29,
+        "http404Count": 0,
+        "qualified": false
+      },
+      {
+        "label": "v585-preview",
+        "url": "https://next-7nlewylfj-wyufan43-3383s-projects.vercel.app",
+        "passedCount": 0,
+        "requiredCount": 29,
+        "nullStatusCount": 29,
+        "fetchFailedCount": 29,
+        "http404Count": 0,
+        "qualified": false
+      }
+    ]
+  },
+  "independentObservation": {
+    "surface": "Codex In-app Browser",
+    "v585PreviewRootReached": true,
+    "pageTitle": "Orbit Atlas | 相对论宇宙图谱",
+    "defaultVisualProfile": "legacy-v9",
+    "desktopConsoleWarningOrErrorCount": 0
+  },
+  "interpretation": {
+    "asset404Observed": false,
+    "assetPresenceInferred": false,
+    "previewHeadGatePassed": false,
+    "runnerNetworkFailureSeparatedFromDeploymentReadiness": true,
+    "measuredAuthorityAffected": false,
+    "productionPromotionAllowed": false
+  },
+  "nextAllowedAction": "Run a fresh, explicitly authorized audit from an independent network-capable runner; do not auto-retry this audit or substitute browser GET observations for HEAD qualification.",
+  "receiptSha256": "3d8bd25236323e005c5446fbba7a82aa0c3cc73771d0bce7336c6c2d41621e66"
+}

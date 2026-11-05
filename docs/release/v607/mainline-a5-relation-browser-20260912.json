@@ -1,0 +1,47 @@
+{
+  "schema": "mainline-a5-relation-browser-v1",
+  "capturedAt": "2026-09-12T11:58:12.000Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "bbAriVcWhdryrSELzjfOk",
+    "inputDigest": "e33f34a30e9b2dbfdb2fe0d6439111e0321768dbf46828a6aa0c2ff3069ee3b4",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "scenario": {
+    "id": "m1-crab-pulsar-reversible-route",
+    "viewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "actions": [
+      "open object browser",
+      "search 蟹状",
+      "select M1",
+      "click 目录关联：Crab Pulsar",
+      "expand 大质量恒星：怎样改变周围环境",
+      "click M1｜爆发之后的遗迹"
+    ],
+    "observed": {
+      "m1Knowledge": "Mainline A nebula card with potw1644a and NASA distance provenance",
+      "forwardEdge": "M1 → pulsar:b0531+21",
+      "externalPassport": "Crab Pulsar passport exposes recommended route",
+      "routeContext": "external catalogId accepted as current route step",
+      "reverseEdge": "pulsar:b0531+21 → nebula:m1",
+      "returnPassport": "Crab Nebula passport restored",
+      "relationType": "物理关联"
+    },
+    "status": "observed-reversible-external-edge"
+  },
+  "boundaries": {
+    "relationScope": "one external edge browser-verified; five-route static coverage spans all 4 constellations, 6 hero stars, 12 nebulae and external pulsar",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "diagnostics": [
+    "This browser run proves the previously missing M1 ↔ Crab Pulsar route context and reverse navigation.",
+    "Static route coverage is complete for the current Mainline A roster, but browser clicks for every route step and direct relatedCatalogIds buttons remain pending.",
+    "No FPS, memory, GPU or repeated-focus lifecycle claim is made."
+  ]
+}

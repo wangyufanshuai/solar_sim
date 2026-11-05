@@ -1,0 +1,43 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:35.379Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "hercules-globular-cluster",
+  "category": "cluster",
+  "query": "Hercules Globular Cluster M13",
+  "requiredTermGroups": [
+    [
+      "hercules",
+      "m13"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Hercules%20Globular%20Cluster%20M13&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Hercules%20Globular%20Cluster%20M13&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 182,
+    "responseSha256": "016222733b0a6b024fa7ac44d63dae6812b9b538141ef9769ba6c1e5f355f593"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "ed138f9851f8fe2d7f4290f94d3bb784d7485ab95278b8224254b6374569df29"
+}

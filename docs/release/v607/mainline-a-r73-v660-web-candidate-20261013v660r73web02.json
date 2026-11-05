@@ -1,0 +1,747 @@
+{
+  "schema": "mainline-a-r73-web-candidate-v660",
+  "status": "candidate-hold-19-images-5-policy-holds",
+  "createdAt": "2026-10-13T03:41:51.375Z",
+  "build": {
+    "receipt": "docs/release/v607/mainline-a-r73-build-20261013v660r73web02.json",
+    "buildId": "RZEfRovqvgd-V6mNgWHYU",
+    "runtimeBuildId": "mainline-a-c4b08ba07929e7d8",
+    "sourceSha256": "c4b08ba07929e7d8b2d1ce15e1910e3d8ef12434429201a4f573e446b2df2a4c",
+    "preservedDistDir": ".next-mainline-a-r73-20261013v660r73web02/.next"
+  },
+  "catalog": {
+    "path": "app/data/mainlineANebulaR73CatalogV660.generated.json",
+    "bytes": 62598,
+    "sha256": "3ab8bf639f8241cdfe042a4ac143031f76d6fe1f9ca0bdf133158b24d8f3b8db",
+    "audit": "docs/release/v607/mainline-a-r73-v660-catalog-audit-20261013.json"
+  },
+  "counts": {
+    "candidates": 24,
+    "reviewImages": 19,
+    "policyHolds": 5,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0,
+    "visualScreenshots": 6,
+    "independentThirtyMinuteRuns": 2
+  },
+  "evidence": {
+    "http": "docs/release/v607/mainline-a-r73-v660-http-20261013v660r73web02.json",
+    "browser": "docs/release/v607/mainline-a-r73-v660-browser-20261013v660r73web02.json",
+    "performance": "docs/release/v607/mainline-a-r73-v660-longrun-audit-20261013v660r73long01.json",
+    "externalSource": "docs/release/v607/mainline-a-r73-v660-catalog-audit-20261013.json"
+  },
+  "rollback": {
+    "previousCandidate": "docs/release/v607/mainline-a-r70-web-freeze-candidate-20261012v657web02.json",
+    "preservedPreviousDistDir": ".next-mainline-a-r70-20261012v657web02/.next",
+    "deploymentChanged": false,
+    "note": "Local review candidate only; no public deployment to roll back"
+  },
+  "pins": [
+    {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "bytes": 6135,
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+      "bytes": 38349,
+      "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "app/data/mainlineANebulaB1SourceV654.generated.json",
+      "bytes": 7045,
+      "sha256": "f68c8fc796b544cfcb7ea9f70f9bbb74e9b2a489c6dd0c0270e8b1f27fcd1bc9",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV624.generated.json",
+      "bytes": 27597,
+      "sha256": "0c4993a191e2dbbc535bc34fe73fd829f92ddad853dd94bc2d03551117846a64",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "app/data/mainlineANebulaBatchV628.generated.json",
+      "bytes": 29575,
+      "sha256": "9634b677ffc2b8552dd78b9d73501efb007b0266615bdf8647b9558a27a4b32f",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "app/data/mainlineANebulaCandidateReviewV655.generated.json",
+      "bytes": 30701,
+      "sha256": "92c098ec64ff03ef2fbae49a1cce940c6cb715d49f8ff0fb50e1f8219c19375a",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "app/data/mainlineANebulaR71SourceV658.generated.json",
+      "bytes": 11368,
+      "sha256": "0b355f7d1631e9771a1c2adecaf53a319252181c1ba3572d3895955e287715df",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "app/data/mainlineANebulaR72SourceV659.generated.json",
+      "bytes": 15073,
+      "sha256": "1ca68f4cfea87899f3e67f6e783a44a783cb72ab05b4d0157e78668014e9e9f7",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "app/data/mainlineANebulaR73CatalogV660.generated.json",
+      "bytes": 62598,
+      "sha256": "3ab8bf639f8241cdfe042a4ac143031f76d6fe1f9ca0bdf133158b24d8f3b8db",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "bytes": 57424,
+      "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-nebula-page-image-link-ledger-20261011-v652link01.json",
+      "bytes": 18938,
+      "sha256": "95ed2263b7a66b84e72c080ddd0cf09a9fc8c12ff50fc526f7a3685d912f807d",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-nebula-pixel-link-audit-20261011-v653pixel01.json",
+      "bytes": 9478,
+      "sha256": "08c70ca01d32dfe4787d62263a829f6412754d2c2561eada1f10cce3d73d7cd9",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-nebula-source-page-ledger-20261011-v651page01.json",
+      "bytes": 18282,
+      "sha256": "7c6b501946ae2f4a2531669272e42f3f5cb47d5ba75452aa6d8e3e23e5b1c07e",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r67-b1-page-image-audit-20261012-v654b1image01.json",
+      "bytes": 11235,
+      "sha256": "36e345dcbf59d7f4d1673bbd94a86194c9bcb38811b8c3e695d9b270d3b53e7f",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r70-web-freeze-candidate-20261012v657web02.json",
+      "bytes": 49361,
+      "sha256": "97a5fc2ed9f008a2299b91cb6b91f75b9da9edee44b84e3207ea97e5abd06d34",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r71-source-ledger-20261012v658r71a.json",
+      "bytes": 41216,
+      "sha256": "0da382645192924525660dffb826d6da6f1e5631e455aed5b2eb14fe1f3f2945",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r72-source-audit-20261013v659r72b.json",
+      "bytes": 25319,
+      "sha256": "5e54f9075f0f8bfa49cead2fa44c7b5847040a1c274655339d786af1e48ea143",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-build-20261013v660r73web02.json",
+      "bytes": 478266,
+      "sha256": "abb97e1230e584b8d7d6a5d4677118f4a0ad2bb5f68a8626570d44772eee9dfb",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-browser-20261013v660r73web02.json",
+      "bytes": 17932,
+      "sha256": "9963d5acc61345543b5fb97f2f83498af2ca0c38cf173a5dfeef9df0b17f0f9b",
+      "evidenceClass": "browser"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-browser-desktop-raw-20261013v660r73long01.json",
+      "bytes": 39696069,
+      "sha256": "8d31f3dee05125169d4c6a246bd2597241e23c2d782635156eede74d0bf7a03b",
+      "evidenceClass": "performance"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-browser-final-raw-20261013v660r73long01.json",
+      "bytes": 79560689,
+      "sha256": "a22527056635a5ac2240fff3d701811711c5b156c1e9ded24a44833609b29ebf",
+      "evidenceClass": "performance"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-catalog-audit-20261013.json",
+      "bytes": 32828,
+      "sha256": "62991a0b0598be633eb2580b5e55cd975c0e808b4e55f78df0a57e7e184587a0",
+      "evidenceClass": "static"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-desktop-held-detail-20261013v660r73web02.png",
+      "bytes": 147273,
+      "sha256": "64c5db9144088468e2f9a2eddd952be720914e301d30be6df3dc3b897a885195",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-desktop-image-detail-20261013v660r73web02.png",
+      "bytes": 518270,
+      "sha256": "dfe71273d4c3f24ecb53629c6bfc44a70763c924388eee5ca0f4f1bae4539fb3",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-desktop-overview-20261013v660r73web02.png",
+      "bytes": 181762,
+      "sha256": "90e6bdfd501542cd26fc0aa3112eb4f5d25046f3a99a3594e869a9134b7ed9ce",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-http-20261013v660r73web02.json",
+      "bytes": 16486,
+      "sha256": "6457d21d9e6e94c9165b8999143c11dd44bdf9db278585451193ccd4f2903489",
+      "evidenceClass": "http"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-longrun-audit-20261013v660r73long01.json",
+      "bytes": 1688,
+      "sha256": "4c258b7e06bc7c879b8784b5b16e6baf71622fb8fcaff69fb9c9a9a1974097f5",
+      "evidenceClass": "performance"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-mobile-viewport-held-detail-20261013v660r73web02.png",
+      "bytes": 57839,
+      "sha256": "1da473635f661ea60bda3c2d5b83507f3a8f88dd9c919325a3ed4b1c215a60ef",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-mobile-viewport-image-detail-20261013v660r73web02.png",
+      "bytes": 95967,
+      "sha256": "04ceff0df5e6b37d440c8f2b1b4ba8b812be4304ab7acfd14ae86a73b6c480f9",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-mobile-viewport-overview-20261013v660r73web02.png",
+      "bytes": 65546,
+      "sha256": "5f6c15af1b5a059adaa3816dbf43f95f53a9d5c0b685c6f24e469b7c77d7107c",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635-194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212.jpg",
+      "bytes": 1772081,
+      "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112-d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d.jpg",
+      "bytes": 5117802,
+      "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731-92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce.jpg",
+      "bytes": 803172,
+      "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451-2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b.jpg",
+      "bytes": 1411185,
+      "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014-161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f.jpg",
+      "bytes": 2079063,
+      "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553-6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3.jpg",
+      "bytes": 7891119,
+      "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/cepheus-c-nebula-pia23127-23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4.jpg",
+      "bytes": 9239217,
+      "sha256": "23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/cocoon-nebula-pia13441-ac9db8adcec26e591ab28f3627a4449a918b443085769fa4ca452e2658df8d6c.jpg",
+      "bytes": 638924,
+      "sha256": "ac9db8adcec26e591ab28f3627a4449a918b443085769fa4ca452e2658df8d6c",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/dragon-lair-nebula-pia13240-a370891822e1a92951b785e2c9712a6d4435c57c2235750505d9c158844d0f78.jpg",
+      "bytes": 6571810,
+      "sha256": "a370891822e1a92951b785e2c9712a6d4435c57c2235750505d9c158844d0f78",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/jellyfish-nebula-pia13449-7febb68c311f1559567fb95b79424812be44210ccd7c217e022bc8837eaa7116.jpg",
+      "bytes": 1222062,
+      "sha256": "7febb68c311f1559567fb95b79424812be44210ccd7c217e022bc8837eaa7116",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/monkey-head-nebula-pia19836-3c14acaa461f0fb5ea6fe78adbeba054eb4df26ee3dec74d11358a899a197607.jpg",
+      "bytes": 449971,
+      "sha256": "3c14acaa461f0fb5ea6fe78adbeba054eb4df26ee3dec74d11358a899a197607",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/rho-ophiuchi-cloud-pia10182-4a6db3ea3e6c3d1db83aa5dd283f283b337edefdca48bb4654e0e567e33c0601.jpg",
+      "bytes": 1070248,
+      "sha256": "4a6db3ea3e6c3d1db83aa5dd283f283b337edefdca48bb4654e0e567e33c0601",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/cepheus-c-nebula-pia23127-23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4.jpg",
+      "bytes": 9239217,
+      "sha256": "23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/cocoon-nebula-pia13441-c8347b3c7eae30f9a8ba9ac736306fc8ee54297154143f9f1605ae253e6eb730.jpg",
+      "bytes": 633645,
+      "sha256": "c8347b3c7eae30f9a8ba9ac736306fc8ee54297154143f9f1605ae253e6eb730",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/dragon-lair-nebula-pia13240-560db6b551b7f43250120d02dd08cee77cc554df1b66c89ffb7c7a535f8663d0.jpg",
+      "bytes": 6566741,
+      "sha256": "560db6b551b7f43250120d02dd08cee77cc554df1b66c89ffb7c7a535f8663d0",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/jellyfish-nebula-pia13449-4db2a069b3f8f11a9a3ab23ebc436e64027ab068b91f83b6274fe16f8e7f52a2.jpg",
+      "bytes": 1216669,
+      "sha256": "4db2a069b3f8f11a9a3ab23ebc436e64027ab068b91f83b6274fe16f8e7f52a2",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/monkey-head-nebula-pia19836-0383b96160be5e82af539b4d137151e71d18a7423349b3ebc029c9dd6db67b8f.jpg",
+      "bytes": 444646,
+      "sha256": "0383b96160be5e82af539b4d137151e71d18a7423349b3ebc029c9dd6db67b8f",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/rho-ophiuchi-cloud-pia10182-704d67853f0dc74c4ecb01f6460384795f45e8ddf206a95d78995fd77cd28236.jpg",
+      "bytes": 1064932,
+      "sha256": "704d67853f0dc74c4ecb01f6460384795f45e8ddf206a95d78995fd77cd28236",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/flame-nebula-pia15635-5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40.jpg",
+      "bytes": 1766924,
+      "sha256": "5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/heart-nebula-pia13112-68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6.jpg",
+      "bytes": 5112886,
+      "sha256": "68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/pacman-nebula-pia14731-32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a.jpg",
+      "bytes": 797633,
+      "sha256": "32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/running-chicken-nebula-pia13451-f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285.jpg",
+      "bytes": 1406005,
+      "sha256": "f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/soul-nebula-pia13014-007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904.jpg",
+      "bytes": 2073793,
+      "sha256": "007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/witch-head-nebula-pia17553-c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8.jpg",
+      "bytes": 7886121,
+      "sha256": "c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-image-b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb.jpg",
+      "bytes": 1224232,
+      "sha256": "b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-page-80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8.html",
+      "bytes": 270725,
+      "sha256": "80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-image-e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c.jpg",
+      "bytes": 3002201,
+      "sha256": "e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-page-41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b.html",
+      "bytes": 270741,
+      "sha256": "41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-image-03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726.jpg",
+      "bytes": 1305120,
+      "sha256": "03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-page-19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6.html",
+      "bytes": 268229,
+      "sha256": "19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-image-9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07.jpg",
+      "bytes": 1162880,
+      "sha256": "9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-page-55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34.html",
+      "bytes": 269432,
+      "sha256": "55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-image-08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38.jpg",
+      "bytes": 5079804,
+      "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-page-9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56.html",
+      "bytes": 266371,
+      "sha256": "9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-image-e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2.jpg",
+      "bytes": 1243620,
+      "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-page-f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6.html",
+      "bytes": 267175,
+      "sha256": "f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-asset-811748b86c1cd89e9446ef5ec148047d1bbd351555497529de7f283df7cb0743.json",
+      "bytes": 555,
+      "sha256": "811748b86c1cd89e9446ef5ec148047d1bbd351555497529de7f283df7cb0743",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+      "bytes": 178991,
+      "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-search-908519fea60c7fdb96cac206f8497f3cf751e95294334db18b840eb6cc7f01d1.json",
+      "bytes": 5022,
+      "sha256": "908519fea60c7fdb96cac206f8497f3cf751e95294334db18b840eb6cc7f01d1",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-asset-13d0d811b887285e738388eca150c9daf4f5404f01fb71909e052cd49994ef86.json",
+      "bytes": 463,
+      "sha256": "13d0d811b887285e738388eca150c9daf4f5404f01fb71909e052cd49994ef86",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-image-b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396.jpg",
+      "bytes": 758960,
+      "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-page-a12071bfde460375417e61cb6861dff364d69fe44fed9185789c5e0df51dc1c2.html",
+      "bytes": 268337,
+      "sha256": "a12071bfde460375417e61cb6861dff364d69fe44fed9185789c5e0df51dc1c2",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-search-3b042cc111c95a4bca47bfda58c76d026d43ddf243f7f6b60844c9bee2688b89.json",
+      "bytes": 2554,
+      "sha256": "3b042cc111c95a4bca47bfda58c76d026d43ddf243f7f6b60844c9bee2688b89",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-asset-332b3edaa55d3880c17cbc2f4f9faf448096578066cbe6f434d5c88b173a8c7d.json",
+      "bytes": 673,
+      "sha256": "332b3edaa55d3880c17cbc2f4f9faf448096578066cbe6f434d5c88b173a8c7d",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+      "bytes": 178991,
+      "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-search-0dc9478e23b2018ce25cfb60c86f88c1d0ac09eb6a2eee48009643be394c445c.json",
+      "bytes": 4649,
+      "sha256": "0dc9478e23b2018ce25cfb60c86f88c1d0ac09eb6a2eee48009643be394c445c",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-asset-3c2a270065a52cee7f92343754a258652c5310e25585765f09e6c834a0de015c.json",
+      "bytes": 387,
+      "sha256": "3c2a270065a52cee7f92343754a258652c5310e25585765f09e6c834a0de015c",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-page-3444f17ad465fbb8227e69708adeb679da57ba3b165c11739a6946d92f602780.html",
+      "bytes": 266685,
+      "sha256": "3444f17ad465fbb8227e69708adeb679da57ba3b165c11739a6946d92f602780",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-search-307b1cbd5320f08c32ae6076dfd0cd624be5e8cea2876b3a62dbd2aea2195183.json",
+      "bytes": 1485,
+      "sha256": "307b1cbd5320f08c32ae6076dfd0cd624be5e8cea2876b3a62dbd2aea2195183",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-asset-e6bb475367ef8e48e786985ede7a4e9195f6866111802663d6130fcb21c98ab1.json",
+      "bytes": 538,
+      "sha256": "e6bb475367ef8e48e786985ede7a4e9195f6866111802663d6130fcb21c98ab1",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-page-9e5507d57b80e78c2a30097cd99da3609e4095a556b2380a49bd6220f024f8f5.html",
+      "bytes": 265992,
+      "sha256": "9e5507d57b80e78c2a30097cd99da3609e4095a556b2380a49bd6220f024f8f5",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-search-0f80e726ec7a126ab8525ab5dca3d2a6651b4143fd4f6be4efd14a9367526223.json",
+      "bytes": 2367,
+      "sha256": "0f80e726ec7a126ab8525ab5dca3d2a6651b4143fd4f6be4efd14a9367526223",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-asset-cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037.json",
+      "bytes": 555,
+      "sha256": "cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+      "bytes": 178991,
+      "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-search-b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9.json",
+      "bytes": 3799,
+      "sha256": "b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cepheus-c-nebula-detail-2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3.webp",
+      "bytes": 197838,
+      "sha256": "2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cepheus-c-nebula-thumb-03a8619129bfcececd621cea69ad0c7dde957fa03fe933d519ba80f597df6dd3.webp",
+      "bytes": 9488,
+      "sha256": "03a8619129bfcececd621cea69ad0c7dde957fa03fe933d519ba80f597df6dd3",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cocoon-nebula-detail-0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be.webp",
+      "bytes": 198784,
+      "sha256": "0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cocoon-nebula-thumb-f994f1a48ec29a79e7bcdb93a0bc32693d0ea4b7df94089eab378dd739315205.webp",
+      "bytes": 23066,
+      "sha256": "f994f1a48ec29a79e7bcdb93a0bc32693d0ea4b7df94089eab378dd739315205",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/dragon-lair-nebula-detail-0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe.webp",
+      "bytes": 376438,
+      "sha256": "0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/dragon-lair-nebula-thumb-7a337e3993eaeee3707960b2944e11c9f337934403ad7db7fab25ac2ab3c5c94.webp",
+      "bytes": 17192,
+      "sha256": "7a337e3993eaeee3707960b2944e11c9f337934403ad7db7fab25ac2ab3c5c94",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/flame-nebula-detail-38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc.webp",
+      "bytes": 140844,
+      "sha256": "38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/flame-nebula-thumb-a209ae4d3de5e7ae1e49622a02fed1825518bb3ca82fba962d6d6893aed9ddd3.webp",
+      "bytes": 7264,
+      "sha256": "a209ae4d3de5e7ae1e49622a02fed1825518bb3ca82fba962d6d6893aed9ddd3",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/heart-nebula-detail-3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c.webp",
+      "bytes": 334852,
+      "sha256": "3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/heart-nebula-thumb-62d7b3499fdb0ebdbbf3c4772ed963e2ae3bddad96e16fd14549cd00ec802914.webp",
+      "bytes": 17350,
+      "sha256": "62d7b3499fdb0ebdbbf3c4772ed963e2ae3bddad96e16fd14549cd00ec802914",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/jellyfish-nebula-detail-ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4.webp",
+      "bytes": 195446,
+      "sha256": "ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/jellyfish-nebula-thumb-6dcb74b57b733a667aafe7ed96ba49d518a886423d0fd63cc677d5bf5c87830c.webp",
+      "bytes": 16014,
+      "sha256": "6dcb74b57b733a667aafe7ed96ba49d518a886423d0fd63cc677d5bf5c87830c",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/monkey-head-nebula-detail-c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697.webp",
+      "bytes": 101614,
+      "sha256": "c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/monkey-head-nebula-thumb-a2a0ac2741bd48523e7ca47ef2f8b349886e21637bff7efe56fd1ac1197bf8f4.webp",
+      "bytes": 10370,
+      "sha256": "a2a0ac2741bd48523e7ca47ef2f8b349886e21637bff7efe56fd1ac1197bf8f4",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/pacman-nebula-detail-79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0.webp",
+      "bytes": 205082,
+      "sha256": "79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/pacman-nebula-thumb-88b6b615e15a909f85269bcc665dbc1e37d9c453d14411337a2a9184b54c565d.webp",
+      "bytes": 24836,
+      "sha256": "88b6b615e15a909f85269bcc665dbc1e37d9c453d14411337a2a9184b54c565d",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/rho-ophiuchi-cloud-detail-183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2.webp",
+      "bytes": 72106,
+      "sha256": "183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/rho-ophiuchi-cloud-thumb-608266461a04a317d34f7c6706fdb662abd587a793bc13e52bfca618505230b9.webp",
+      "bytes": 5066,
+      "sha256": "608266461a04a317d34f7c6706fdb662abd587a793bc13e52bfca618505230b9",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/running-chicken-nebula-detail-074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8.webp",
+      "bytes": 289312,
+      "sha256": "074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/running-chicken-nebula-thumb-fd5333742674b0bd19b8ab70314037182deefb426ef6b0975012af85c029983f.webp",
+      "bytes": 21668,
+      "sha256": "fd5333742674b0bd19b8ab70314037182deefb426ef6b0975012af85c029983f",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/soul-nebula-detail-26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f.webp",
+      "bytes": 251874,
+      "sha256": "26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/soul-nebula-thumb-71dda3e714bca0e63aef022643d4398717d02df84556092f73ee186c4ada5f42.webp",
+      "bytes": 18780,
+      "sha256": "71dda3e714bca0e63aef022643d4398717d02df84556092f73ee186c4ada5f42",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/witch-head-nebula-detail-4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd.webp",
+      "bytes": 247242,
+      "sha256": "4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/witch-head-nebula-thumb-7ae911cc8bd3b278e5eecb2b05e36d661bb80686e254766e44d6b04666e1ee79.webp",
+      "bytes": 8296,
+      "sha256": "7ae911cc8bd3b278e5eecb2b05e36d661bb80686e254766e44d6b04666e1ee79",
+      "evidenceClass": "visual"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/flaming-star-nebula-PIA13447-orig.jpg",
+      "bytes": 1229639,
+      "sha256": "245b7046a5bc4e585e5721dcc52c85c1ac355d0b7b45e7ea0d9610f3d0757563",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/sh2-235-nebula-PIA13995-orig.jpg",
+      "bytes": 3007526,
+      "sha256": "17349f31edba474f71dfcdef5803aa034e3aa8854ea3e55653b16f4e9c5028ae",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/spider-nebula-PIA20357-orig.jpg",
+      "bytes": 1310281,
+      "sha256": "d0e34641df917d32f99ee50eba14f44e6b5b60e6623d985496a71812dcdc2b50",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/tadpole-nebula-PIA13110-orig.jpg",
+      "bytes": 1167945,
+      "sha256": "43a8fe1d011cea9981a40de0a7f3a157d94c9c6b91178add8502ddf8d1b46471",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/tarantula-nebula-closure-PIA23646-orig.jpg",
+      "bytes": 5079804,
+      "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+      "evidenceClass": "external-source"
+    },
+    {
+      "path": "source-cache/v592/nebulae/visual-extended/w40-nebula-PIA23121-orig.jpg",
+      "bytes": 1243620,
+      "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+      "evidenceClass": "external-source"
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "localReviewOnly": true,
+    "publicWebRelease": "blocked"
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

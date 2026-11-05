@@ -1,0 +1,5 @@
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+const tests = ["app/lib/kerrIndependentFitsValidationV546.test.ts", "app/lib/kerrIndependentFitsValidationServerV546.test.ts", "app/components/KerrIndependentFitsValidationV546.test.tsx", "app/components/kerrPhotonMetrologyDetailCatalogV546.test.ts", "app/api/atlas/relativity-evidence/v546/independent-fits-validation/route.test.ts"], commands = [["python", ["scripts/build-kerr-independent-fits-validation-v546.py"], "independent-validator"], [process.execPath, [resolve("node_modules/vitest/vitest.mjs"), "run", ...tests], "independent-fits-tests"], [process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-independent-fits-runtime-v546.ts"], "runtime"]];
+for (const [command, args, label] of commands) { const result = spawnSync(command, args, { cwd: process.cwd(), encoding: "utf8", stdio: "inherit" }); if (result.status !== 0) throw new Error(`v546-${label}-exit-${result.status}`); }
+await import("./build-shadow-candidate-v546.mjs");

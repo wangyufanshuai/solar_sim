@@ -1,0 +1,42 @@
+{
+  "version": "v592-browser-url-policy-negative-evidence-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "blocked-browser-url-policy-manual-open-required",
+  "browser": "Codex built-in browser",
+  "route": "http://127.0.0.1:3016/local-shadow-v592",
+  "attemptCount": 1,
+  "attempts": [
+    {
+      "action": "reload-current-v592-tab-after-local-dev-restart",
+      "result": "rejected",
+      "reason": "The browser URL policy blocks this action. Browser use cannot visit the requested page because its URL is blocked by the Browser use URL policy."
+    }
+  ],
+  "policyCompliance": {
+    "automaticRetryPerformed": false,
+    "alternateBrowserUsed": false,
+    "rawCdpOrBrowserCommandUsed": false,
+    "policyCircumventionAttempted": false
+  },
+  "affectedGates": [
+    "gaia-60000-runtime-browser-verification",
+    "constellation-88-runtime-browser-verification",
+    "post-change-console-page-webgl-audit",
+    "post-change-resource-release-audit"
+  ],
+  "unaffectedEvidence": [
+    "stellar-24-two-mode-48-frame-browser-matrix-captured-before-policy-block",
+    "typescript-eslint-focused-vitest",
+    "gaia-supplement-double-build-byte-identity",
+    "read-only-candidate-verifier",
+    "frozen-boundary-sha-audit"
+  ],
+  "requiredUserAction": "Manually open the route in the Codex built-in browser and tell Codex when it is visible; do not switch browser surfaces.",
+  "authority": {
+    "browserGatePassed": false,
+    "candidatePromotionAllowed": false,
+    "productionReleaseAuthorized": false,
+    "scientificPayloadWriteback": false
+  },
+  "receiptSha256": "e4c80145a32834d3070dcedaae223d11e475dedf5a817b603a9847cebf0add9a"
+}

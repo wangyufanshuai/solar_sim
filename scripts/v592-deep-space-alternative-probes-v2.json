@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-probes-v2",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHost": "images-api.nasa.gov",
+    "metadataOnly": true,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "explicitOperatorInvokedQueryRefinement": true,
+    "selectionRequiresManualVisualAndLicenseReview": true
+  },
+  "probes": [
+    { "id": "whirlpool-galaxy", "category": "galaxy", "query": "M51", "requiredTermGroups": [["m51", "whirlpool"]] },
+    { "id": "sombrero-galaxy", "category": "galaxy", "query": "M104", "requiredTermGroups": [["m104", "sombrero"]] },
+    { "id": "centaurus-a", "category": "galaxy", "query": "NGC 5128", "requiredTermGroups": [["ngc 5128", "centaurus a", "centaurus-a"]] },
+    { "id": "bodes-galaxy", "category": "galaxy", "query": "M81", "requiredTermGroups": [["m81", "bode"]] },
+    { "id": "cigar-galaxy", "category": "galaxy", "query": "M82", "requiredTermGroups": [["m82", "cigar"]] },
+    { "id": "pinwheel-galaxy", "category": "galaxy", "query": "M101", "requiredTermGroups": [["m101", "pinwheel"]] },
+    { "id": "southern-pinwheel-galaxy", "category": "galaxy", "query": "M83", "requiredTermGroups": [["m83", "southern pinwheel"]] },
+    { "id": "virgo-a-galaxy", "category": "galaxy", "query": "M87", "requiredTermGroups": [["m87", "virgo a"]] },
+    { "id": "black-eye-galaxy", "category": "galaxy", "query": "M64", "requiredTermGroups": [["m64", "black eye"]] },
+    { "id": "sunflower-galaxy", "category": "galaxy", "query": "M63", "requiredTermGroups": [["m63", "sunflower"]] },
+    { "id": "pleiades", "category": "cluster", "query": "Pleiades", "requiredTermGroups": [["m45", "pleiades", "seven sisters"]] },
+    { "id": "hyades", "category": "cluster", "query": "Hyades", "requiredTermGroups": [["hyades"]] },
+    { "id": "47-tucanae", "category": "cluster", "query": "47 Tucanae", "requiredTermGroups": [["47 tuc", "tucanae"]] },
+    { "id": "hercules-globular-cluster", "category": "cluster", "query": "Messier 13", "requiredTermGroups": [["messier 13", "m13", "ngc 6205"]] },
+    { "id": "messier-3", "category": "cluster", "query": "NGC 5272", "requiredTermGroups": [["messier 3", "m3", "ngc 5272"]] },
+    { "id": "messier-5", "category": "cluster", "query": "NGC 5904", "requiredTermGroups": [["messier 5", "m5", "ngc 5904"]] },
+    { "id": "messier-15", "category": "cluster", "query": "NGC 7078", "requiredTermGroups": [["messier 15", "m15", "ngc 7078"]] },
+    { "id": "messier-22", "category": "cluster", "query": "NGC 6656", "requiredTermGroups": [["messier 22", "m22", "ngc 6656"]] },
+    { "id": "beehive-cluster", "category": "cluster", "query": "Messier 44", "requiredTermGroups": [["messier 44", "m44", "beehive"]] },
+    { "id": "double-cluster", "category": "cluster", "query": "NGC 869", "requiredTermGroups": [["ngc 869", "double cluster"]] },
+    { "id": "jewel-box-cluster", "category": "cluster", "query": "NGC 4755", "requiredTermGroups": [["ngc 4755", "jewel box"]] }
+  ]
+}

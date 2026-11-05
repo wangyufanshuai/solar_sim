@@ -1,0 +1,143 @@
+{
+  "version": "v594-current-source-soak-v5",
+  "generatedAt": "2026-08-27T12:55:55.040Z",
+  "status": "passed-current-v594-40-cycle-161-sample-cdp-renderer-heap-final-exit-and-conditional-semantic-proof",
+  "candidate": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "buildFingerprint": "74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "evidence": {
+    "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-cdp-formal-20260827/batch.json",
+    "bytes": 1134235,
+    "sha256": "45a623f9daa611712f533ad56806cb1d18e8dde1f4963fccc5474dd367d69bc6"
+  },
+  "stageReceiptSha256": "faca1a041153bb913909b3baaf683a120de1c17c603168f9d3f105f7f17e9938",
+  "cycleCount": 40,
+  "sampleCount": 161,
+  "thresholdSha256": "65b2f969f1fd27c30a90607f2374ae6b2cd1df932db96ba4d605a16e422a8ab1",
+  "metrics": {
+    "cycleCount": 40,
+    "sampleCount": 161,
+    "heap": {
+      "baselineUsedBytes": 40285572,
+      "finalUsedBytes": 40612284,
+      "finalDeltaBytes": 326712,
+      "allowedFinalDeltaBytes": 8388608,
+      "slopeBytesPerCycle": 163356,
+      "monotonicNonDecreasingGrowth": true,
+      "minimumUsedBytes": 40285572,
+      "maximumUsedBytes": 40612284,
+      "sustainedGrowth": true
+    },
+    "dom": {
+      "first": {
+        "documents": 1,
+        "nodes": 274,
+        "jsEventListeners": 339
+      },
+      "last": {
+        "documents": 1,
+        "nodes": 274,
+        "jsEventListeners": 339
+      },
+      "nodeAllowance": 256,
+      "listenerAllowance": 32
+    }
+  },
+  "rawMetricsSha256": "90be44201af1adb9e3de6ce689451b47d9bd36baafa62cc60c6d576324fd3a29",
+  "warnings": [
+    "heap:monotonic-growth"
+  ],
+  "heapQualification": {
+    "rawHardGatesPassed": true,
+    "rawMonotonicWarning": true,
+    "semanticProofRequired": true,
+    "semanticProofProvided": true,
+    "semanticFallbackApplied": true,
+    "semanticReceiptSha256": "a5f6c7accf4afeaf4f06c2caa87e1cfa57c8fc440a3d9bd3f6918ac027b5e019",
+    "status": "passed-released-baseline-semantic-fallback-with-raw-monotonic-warning"
+  },
+  "semanticEvidence": {
+    "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-released-heap-semantic-20260827/stage.json",
+    "bytes": 1675864,
+    "sha256": "a169c0cb259e0df5a57987459eece3dce89021f9894c24b9fc9a43573c8c2eeb"
+  },
+  "semanticStageReceiptSha256": "a5f6c7accf4afeaf4f06c2caa87e1cfa57c8fc440a3d9bd3f6918ac027b5e019",
+  "semanticVerification": {
+    "passed": true,
+    "receiptSha256": "a5f6c7accf4afeaf4f06c2caa87e1cfa57c8fc440a3d9bd3f6918ac027b5e019",
+    "warnings": [
+      "heap:raw-sparse-monotonic-growth-remains-warning-trigger"
+    ],
+    "rebuiltCheckpoints": [
+      {
+        "label": "b0-probe",
+        "compressedBytes": 19465078,
+        "rawBytes": 102575829,
+        "semanticSha256": "131b45965d52d74072456f36cdcf30856fd1065a603d4758b9b7031badcea09f"
+      },
+      {
+        "label": "b0",
+        "compressedBytes": 19463275,
+        "rawBytes": 102579923,
+        "semanticSha256": "27114593451bde56a59d69d91660925067a823e98fd42ef46d672f7e4310f3b8"
+      },
+      {
+        "label": "b8",
+        "compressedBytes": 19715144,
+        "rawBytes": 102895390,
+        "semanticSha256": "648587b106ae573adfd5e59187bef4e3ecb038c44ac027c122186a6b6c3927c1"
+      },
+      {
+        "label": "b16",
+        "compressedBytes": 19775683,
+        "rawBytes": 103194573,
+        "semanticSha256": "e55f76ab68d11d557baea78c614321291bc72fbbc9267dd50fda5a1c6aa9200e"
+      },
+      {
+        "label": "b24",
+        "compressedBytes": 19871883,
+        "rawBytes": 103502812,
+        "semanticSha256": "897f979685cbb7a742374d76046d8c27c986f6b1cf3c28c5a6910fc7c5b0ccc0"
+      }
+    ]
+  },
+  "sameRealm": true,
+  "finalClientRouteExit": "/downloads",
+  "releaseContractVersion": "v594-observed-scene-exit-release-contract-v4",
+  "detachedAndExitedObservedReleaseContract": true,
+  "detachedAndExitedRendererInfoCountsUnavailableAfterContextLoss": true,
+  "snapshotReuseWitness": true,
+  "detachedAndExitedSnapshotCanonicalEqual": true,
+  "releaseCompletionObserved": true,
+  "releaseCompletionTransition": "next-link-route-exit",
+  "releaseCompletionObservedAfterPhase": "exited",
+  "releaseCompletionTeardownCanonicalEqualsExit": true,
+  "detachedPreReleaseObserverReleased": null,
+  "tooling": {
+    "runnerVersion": "v594-cdp-renderer-soak-runner-v6",
+    "auditorVersion": "v594-cdp-renderer-heap-soak-audit-v6",
+    "appSurfaceContractVersion": "v594-cdp-soak-app-surface-v3"
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "1e1f5b0e86a055995bbeaa43f2cc7111086d23cd2dd7f9ea6f52db8b01631825"
+}

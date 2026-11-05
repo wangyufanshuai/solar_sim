@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrMeasuredPackManifestV550, resetKerrMeasuredPackManifestServerCacheForTestsV550 } from "./kerrMeasuredPackManifestServerV550";
+describe("v550 measured pack server", () => { it("loads atlas and replay receipt through one bounded cache", async () => { resetKerrMeasuredPackManifestServerCacheForTestsV550(); const first = await loadKerrMeasuredPackManifestV550(), second = await loadKerrMeasuredPackManifestV550(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "receipt"]); expect(first.artifact.replay.canonicalManifestIdentical).toBe(true); }); });

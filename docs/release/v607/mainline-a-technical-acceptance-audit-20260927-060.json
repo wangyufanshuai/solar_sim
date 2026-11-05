@@ -1,0 +1,327 @@
+{
+  "schema": "mainline-a-technical-acceptance-continuation-v1",
+  "generatedAt": "2026-09-27T07:16:26.217Z",
+  "runId": "20260927-060",
+  "stage": "R61-R66 evidence closure",
+  "status": "source-gaps-advanced-application-acceptance-pending",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-technical-acceptance-audit-20260927-059.json",
+    "sha256": "a933177b98547a022de129817c2bf3f1f2c00226746392d72fcaa38ca11916d2",
+    "bytes": 14404
+  },
+  "newDevelopmentRound": false,
+  "codeChange": {
+    "productionAddedLines": 0,
+    "productionModifiedLines": 0,
+    "effectiveCodeFiles": [],
+    "excluded": [
+      "Temporary acquisition and audit helpers",
+      "Derived table rows",
+      "Receipts and documents"
+    ],
+    "codeQuotaClaim": false
+  },
+  "evidence": {
+    "static": {
+      "status": "raw-and-current-input-integrity-verified",
+      "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+      "sourceInputFiles": 2359,
+      "priorCodeFilesRehashed": 15,
+      "protectedFiles": [
+        {
+          "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+          "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+          "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+        }
+      ],
+      "protectedFilesUnchanged": true,
+      "rawArtifactsRehashed": 3,
+      "requestFingerprintsVerified": 3,
+      "attemptFingerprintsVerified": 3,
+      "paperRowsReplayed": 76,
+      "priorDevelopmentValidation": {
+        "path": "docs/release/v607/mainline-a-art-round-66-v636-20260927-058.json",
+        "sha256": "bca17735071944b9a3e5b6b068c2c3031f157cb4149cd80f873d40f4f183fd5b",
+        "bytes": 19362
+      },
+      "newNodeTestRun": false,
+      "newVitestRun": false,
+      "newEslintRun": false,
+      "newBuildRun": false,
+      "reason": "No production or test source changed; same build retained. This is an audit, not a development round."
+    },
+    "http": {
+      "applicationStatusThisTurn": "not-run",
+      "mostRecentAppReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-http-audit-20260927-059.json",
+        "sha256": "715e00dfcebb8c0b43a13514775c6055fbd1bdb6d804d3fddc5b50fb4cde111f",
+        "bytes": 5757
+      },
+      "sourceCaptures": [
+        {
+          "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-060a.json",
+          "sha256": "6f1aa6738500dac3d8ce353ee49c2d182a7b80e4933df402ce511c8d89b452f3",
+          "bytes": 2679
+        },
+        {
+          "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-060b.json",
+          "sha256": "7e5338236bf71f0a1cdacffe7bdcf3553ba8e1cd2ed228ae4c0f1ee5b70b46e2",
+          "bytes": 4056
+        }
+      ],
+      "sourceResponses200": 3,
+      "sourceHttpIsAppHttp": false
+    },
+    "visual": {
+      "applicationStatus": "not-run",
+      "applicationScreenshots": [],
+      "sourcePdfPageIsAppVisualEvidence": false
+    },
+    "browser": {
+      "applicationStatus": "not-run",
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "publicSourceInspection": {
+        "plugin": "Browser Use",
+        "runId": "f41ad569-166a-4dc3-9335-bce3dbb351af",
+        "status": "completed",
+        "terminal": true,
+        "start": {
+          "path": "tmp/mainline-a-browser-use-source-20260927-060-start.json",
+          "sha256": "d6a3a4955fe2076384abea1ae8d8b8d47dc7e90e97140b50b58d19d35224f5fb",
+          "bytes": 776
+        },
+        "result": {
+          "path": "tmp/mainline-a-browser-use-source-20260927-060-result.json",
+          "sha256": "465e990235939b59717a39722af47fe439bd75a732c8ba2f5c38f2be3e5956a7",
+          "bytes": 4085
+        },
+        "rowVisibility": "TSV downloaded, not rendered as HTML table",
+        "localApplicationAccessed": false,
+        "bypassUsed": false
+      },
+      "historicalAppBlock": {
+        "path": "docs/release/v607/mainline-a-r66-browser-audit-20260927-059.json",
+        "sha256": "26984d9a5c5726de7cbac1056b3663970a6e718e014e245dc22c435f490ea9c6",
+        "bytes": 1767
+      },
+      "oldBlockRetriedThisTurn": false,
+      "existingTestUrlQuestion": "pending-user-response; no upload or deployment performed"
+    },
+    "performance": {
+      "status": "not-run",
+      "rendererFrameTime": null,
+      "memory": null,
+      "gpuRelease": "not-observed",
+      "longRun": "not-run",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "three-real-documents-captured",
+      "review": {
+        "path": "docs/release/v607/mainline-a-stellar-primary-review-20260927-060.json",
+        "sha256": "417b0515141a55aeb688696b6d577e9984efeef30a1ebaaf017d493889671f68",
+        "bytes": 80964
+      },
+      "rawArtifacts": 3,
+      "bytes": 1558869,
+      "componentConfirmed": 0,
+      "componentPending": 4,
+      "rightsSigned": 0,
+      "rightsPending": 12,
+      "rightsDirective": "Keep pending per explicit user decision",
+      "scientificApproval": false,
+      "fixturePromotion": false
+    }
+  },
+  "release": {
+    "gatesPassed": 6,
+    "gatesTotal": 17,
+    "gates": [
+      {
+        "id": "build-current-source",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "root-readonly-input",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "next-web-identity",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "manifest-parity",
+        "evidenceClass": "static",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "root-manifest-not-present-or-mismatched"
+        ]
+      },
+      {
+        "id": "canonical-coverage",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "canonical-runtime",
+        "evidenceClass": "browser",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "canonical-runtime-clearance-pending"
+        ]
+      },
+      {
+        "id": "http",
+        "evidenceClass": "http",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "desktop-browser",
+        "evidenceClass": "browser",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "desktop-browser-not-run"
+        ]
+      },
+      {
+        "id": "mobile-viewport",
+        "evidenceClass": "browser",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "mobile-viewport-not-run"
+        ]
+      },
+      {
+        "id": "visual",
+        "evidenceClass": "visual",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "visual-evidence-not-observed"
+        ]
+      },
+      {
+        "id": "performance",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "lifecycle",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "nebula-file-integrity",
+        "evidenceClass": "static",
+        "state": "passed",
+        "required": true,
+        "blockers": []
+      },
+      {
+        "id": "stellar-component-identity",
+        "evidenceClass": "external-source",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "stellar-component-identity-pending"
+        ]
+      },
+      {
+        "id": "rights-closure",
+        "evidenceClass": "external-source",
+        "state": "pending",
+        "required": true,
+        "blockers": [
+          "human-rights-signoff-pending"
+        ]
+      },
+      {
+        "id": "physical-mobile",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "physical-device-not-run"
+        ]
+      },
+      {
+        "id": "long-run",
+        "evidenceClass": "performance",
+        "state": "not-run",
+        "required": true,
+        "blockers": [
+          "long-run:browser-device-not-observed",
+          "long-run:two-independent-runs-required"
+        ]
+      }
+    ],
+    "releaseApproved": false,
+    "package": {
+      "path": "docs/release/v607/mainline-a-r66-package-20260927-058b/manifest.json",
+      "sha256": "a6d25e1a5b5bf59574f90800648181fb1a334a530b0527c495c85f729a058253"
+    },
+    "newSourceDossierIncludedInOldPackage": false
+  },
+  "continuation": {
+    "previousGoalTurnClassification": "progress-real-primary-source-capture",
+    "currentGoalTurnClassification": "progress-source-capture-and-public-browser-inspection",
+    "goalComplete": false,
+    "keepGoalActive": true,
+    "resumedBlockedAudit": {
+      "freshAuditAfter059BlockedStatus": true,
+      "completedResumedTurns": 1,
+      "appBlockNotNewlyObserved": true
+    },
+    "nextActions": [
+      "Use an existing user-provided browser-accessible test URL only after its build identity is verified.",
+      "Keep local application browser evidence pending until approved access works.",
+      "Review the exact catalogue component and paper measurement definitions before any admission.",
+      "Obtain independent root manifest, actual device and long-run evidence through authorized inputs."
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false,
+    "releaseApproved": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

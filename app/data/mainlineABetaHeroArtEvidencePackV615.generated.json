@@ -1,0 +1,889 @@
+{
+  "schema": "mainline-a-beta-hero-art-evidence-pack-v615",
+  "generatedAt": "2026-08-25T11:26:00Z",
+  "heroCatalog": {
+    "path": "app/data/stellarHeroesV592.generated.ts",
+    "packetSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+    "contentSha256": "21d9d19d779eccc172d607ca1d868d419799ed1f0714032ccf8b4f6abbb055af",
+    "count": 24
+  },
+  "projection": {
+    "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+    "contentSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+    "snapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+    "sourceLicense": "ODbL-1.0",
+    "citation": "Wenger et al. 2000, A&AS, 143, 9"
+  },
+  "counts": {
+    "total": 24,
+    "runtimeBaseline": 20,
+    "candidateOnly": 4,
+    "artReady": 20,
+    "evidencePending": 4
+  },
+  "presentationBoundary": {
+    "runtimeWrites": false,
+    "scienceWrites": false,
+    "sourceIsSynthetic": false,
+    "textureMode": "parameterized-photosphere"
+  },
+  "records": [
+    {
+      "id": "sirius-a",
+      "displayName": "Sirius A",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 9940,
+        "radiusSolar": 1.6994043843067914,
+        "luminositySolar": 25.4,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "canopus",
+      "displayName": "Canopus",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 7350,
+        "radiusSolar": 63.79253425767005,
+        "luminositySolar": 10700,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "alpha-centauri-a",
+      "displayName": "Alpha Centauri A",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 5790,
+        "radiusSolar": 1.224826021273571,
+        "luminositySolar": 1.519,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "alpha-centauri-b",
+      "displayName": "Alpha Centauri B",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "alpha-centauri-b",
+          "sourceRecordDigest": "4e393fb2650b702c23a566939a35ce1738d57f92884becc4ffb7e31bf94a176c",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 5230,
+        "radiusSolar": 0.861259983705659,
+        "luminositySolar": 0.5,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "arcturus",
+      "displayName": "Arcturus",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 4286,
+        "radiusSolar": 23.646821448043617,
+        "luminositySolar": 170,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "vega",
+      "displayName": "Vega",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 9602,
+        "radiusSolar": 2.2888097969978682,
+        "luminositySolar": 40.12,
+        "equatorialPolarRadiusRatio": 1.12,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "capella-a",
+      "displayName": "Capella A",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 4970,
+        "radiusSolar": 11.965400331158776,
+        "luminositySolar": 78.7,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "rigel",
+      "displayName": "Rigel",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 12100,
+        "radiusSolar": 78.82655145434302,
+        "luminositySolar": 120000,
+        "equatorialPolarRadiusRatio": 1.03,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "procyon-a",
+      "displayName": "Procyon A",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "warm-radiative-convective",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 6530,
+        "radiusSolar": 2.056803959092743,
+        "luminositySolar": 6.93,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "betelgeuse",
+      "displayName": "Betelgeuse",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "cool-convective-supergranulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 3500,
+        "radiusSolar": 965.3878501051605,
+        "luminositySolar": 126000,
+        "equatorialPolarRadiusRatio": 1.08,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "aldebaran",
+      "displayName": "Aldebaran",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 3900,
+        "radiusSolar": 45.89397670980366,
+        "luminositySolar": 439,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "antares",
+      "displayName": "Antares",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "cool-convective-supergranulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 3660,
+        "radiusSolar": 685.1905458391085,
+        "luminositySolar": 75900,
+        "equatorialPolarRadiusRatio": 1.07,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "achernar",
+      "displayName": "Achernar",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": null,
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 15000,
+        "radiusSolar": 8.310466508749498,
+        "luminositySolar": 3150,
+        "equatorialPolarRadiusRatio": 1.35,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "hadar",
+      "displayName": "Hadar",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "hadar",
+          "sourceRecordDigest": "4f133898e99c5b9598cffac93c8cb13c09c00ed058609de1291eaa12dd5e4292",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 25000,
+        "radiusSolar": 10.885306322292964,
+        "luminositySolar": 41700,
+        "equatorialPolarRadiusRatio": 1.06,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "altair",
+      "displayName": "Altair",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "altair",
+          "sourceRecordDigest": "6de7a3540604b4e26f5efe68678127b35ad9379a890f75649de204178839ef8e",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 7550,
+        "radiusSolar": 1.9028811947494522,
+        "luminositySolar": 10.6,
+        "equatorialPolarRadiusRatio": 1.14,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "acrux",
+      "displayName": "Acrux A",
+      "status": "candidate-only",
+      "artStatus": "evidence-pending",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "acrux",
+          "sourceRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 28000,
+        "radiusSolar": 6.719030097559131,
+        "luminositySolar": 25000,
+        "equatorialPolarRadiusRatio": 1.04,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": false
+      },
+      "blockers": [
+        "art-sourceReference-missing",
+        "runtime-allowlist-closed",
+        "positive-parallax-missing",
+        "upstream-reference-missing"
+      ]
+    },
+    {
+      "id": "spica",
+      "displayName": "Spica A",
+      "status": "candidate-only",
+      "artStatus": "evidence-pending",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "spica",
+          "sourceRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 25300,
+        "radiusSolar": 7.452269172444155,
+        "luminositySolar": 20500,
+        "equatorialPolarRadiusRatio": 1.08,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": false
+      },
+      "blockers": [
+        "art-sourceReference-missing",
+        "runtime-allowlist-closed",
+        "component-identity-ambiguous"
+      ]
+    },
+    {
+      "id": "pollux",
+      "displayName": "Pollux",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "pollux",
+          "sourceRecordDigest": "24c880beabf91ed63965d6698306580af4b518774ad6289451907508282a3b11",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "solar-convective-granulation",
+        "coronaModel": "magnetically-bounded-corona",
+        "temperatureK": 4666,
+        "radiusSolar": 10.034538503202482,
+        "luminositySolar": 43,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "fomalhaut",
+      "displayName": "Fomalhaut",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "fomalhaut",
+          "sourceRecordDigest": "f2be2606966655ab34e3468ae9dc354e5e35adde426b474e606d5834c5824c1a",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 8590,
+        "radiusSolar": 1.8412486515401323,
+        "luminositySolar": 16.63,
+        "equatorialPolarRadiusRatio": 1.04,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "deneb",
+      "displayName": "Deneb",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "deneb",
+          "sourceRecordDigest": "312872b9f677f6854d0928c07ecb4f086a488689984768987223f49d9cf927c6",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "hot-radiative-photosphere",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 8525,
+        "radiusSolar": 202.9513316213215,
+        "luminositySolar": 196000,
+        "equatorialPolarRadiusRatio": 1.03,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "regulus",
+      "displayName": "Regulus A",
+      "status": "candidate-only",
+      "artStatus": "evidence-pending",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "regulus",
+          "sourceRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 12460,
+        "radiusSolar": 3.9974339592555075,
+        "luminositySolar": 347,
+        "equatorialPolarRadiusRatio": 1.32,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": false
+      },
+      "blockers": [
+        "art-sourceReference-missing",
+        "runtime-allowlist-closed",
+        "component-identity-ambiguous"
+      ]
+    },
+    {
+      "id": "polaris",
+      "displayName": "Polaris Aa",
+      "status": "candidate-only",
+      "artStatus": "evidence-pending",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "polaris",
+          "sourceRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "warm-radiative-convective",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 6015,
+        "radiusSolar": 32.68636710741356,
+        "luminositySolar": 1260,
+        "equatorialPolarRadiusRatio": 1,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": false
+      },
+      "blockers": [
+        "art-sourceReference-missing",
+        "runtime-allowlist-closed",
+        "component-identity-ambiguous"
+      ]
+    },
+    {
+      "id": "bellatrix",
+      "displayName": "Bellatrix",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "bellatrix",
+          "sourceRecordDigest": "696e070a9fb3745933a0e0267e873f0c423c81ec69b54105bb2f81ce8231be9a",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 22000,
+        "radiusSolar": 5.5067742148760335,
+        "luminositySolar": 6400,
+        "equatorialPolarRadiusRatio": 1.05,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    },
+    {
+      "id": "alnilam",
+      "displayName": "Alnilam",
+      "status": "runtime-baseline",
+      "artStatus": "runtime-baseline",
+      "runtimeAdmission": "admitted",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false,
+      "source": {
+        "heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+        "projectionRow": {
+          "id": "alnilam",
+          "sourceRecordDigest": "b328b5ef8b486d125cdcecdc53263a9cbfd4d16a3a60608a9600497f9c2ee1ff",
+          "snapshotSha256": null
+        },
+        "presentationOnly": true
+      },
+      "visualProfile": {
+        "shaderProfile": "blue-hot-radiative-wind",
+        "coronaModel": "radiative-wind-corona",
+        "temperatureK": 27500,
+        "radiusSolar": 32.283038201701736,
+        "luminositySolar": 537000,
+        "equatorialPolarRadiusRatio": 1.04,
+        "textureMode": "parameterized-photosphere"
+      },
+      "checks": {
+        "identity": true,
+        "photometry": true,
+        "geometry": true,
+        "shader": true,
+        "corona": true,
+        "presentationBoundary": true,
+        "sourceReference": true
+      },
+      "blockers": []
+    }
+  ]
+}

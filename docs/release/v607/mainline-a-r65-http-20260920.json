@@ -1,0 +1,141 @@
+{
+  "schema": "mainline-a-http-evidence-v625",
+  "observedAt": "2026-09-20T13:41:50.425Z",
+  "url": "http://127.0.0.1:3038",
+  "stagePath": ".next-mainline-a-r65-20260920-004",
+  "buildId": "PX6fL91L1BMpwIJ26G6UY",
+  "pageStatus": 200,
+  "htmlBytes": 8696,
+  "healthStatus": 200,
+  "health": {
+    "schemaVersion": "v227-atlas-production-health-v1",
+    "status": "ok",
+    "productVersion": "1.0.0",
+    "deliveryProfile": "vercel-lite",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "deploymentId": null,
+    "commitSha": null,
+    "checkedAt": "2026-09-20T13:41:50.363Z"
+  },
+  "scriptAssets": [
+    {
+      "src": "/_next/static/chunks/c7879cf7-5841dac24ceb5ec9.js",
+      "status": 200,
+      "bytes": 201059,
+      "sha256": "ec1a3be808654073ef372c73a2e62818b3e35e9e0d03dab4c192d27a2bba38c5",
+      "matchesBuild": true
+    },
+    {
+      "src": "/_next/static/chunks/5158-51f498161949687a.js",
+      "status": 200,
+      "bytes": 239847,
+      "sha256": "6f7658c14901a37636ffe0769df8a9e9365e17f13b7d0e758b42e3caed99ecdf",
+      "matchesBuild": true
+    },
+    {
+      "src": "/_next/static/chunks/main-app-71260e4192c3a03b.js",
+      "status": 200,
+      "bytes": 527,
+      "sha256": "13959b8a9b5fbc11ef0eb537219355e2560af8c76f7f57c189451bac267290bd",
+      "matchesBuild": true
+    },
+    {
+      "src": "/_next/static/chunks/app/page-ba258034c1846ba0.js",
+      "status": 200,
+      "bytes": 5025,
+      "sha256": "a4d55a0ce163e2db7953bb595bc7e6f4ad3e02d985508706adea0a5ffe1f5014",
+      "matchesBuild": true
+    },
+    {
+      "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "matchesBuild": true
+    },
+    {
+      "src": "/_next/static/chunks/webpack-23468a8042cdb090.js",
+      "status": 200,
+      "bytes": 5666,
+      "sha256": "5979f9349986bea9d6bf045889379e2fbd4b01e1f0a9996d832ddd5185788982",
+      "matchesBuild": true
+    }
+  ],
+  "allScriptAssetsOk": true,
+  "timings": [
+    {
+      "route": "/api/health",
+      "run": 1,
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 3.496
+    },
+    {
+      "route": "/api/health",
+      "run": 2,
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 3.057
+    },
+    {
+      "route": "/api/health",
+      "run": 3,
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 2.749
+    },
+    {
+      "route": "/api/health",
+      "run": 4,
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 2.494
+    },
+    {
+      "route": "/api/health",
+      "run": 5,
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 2.342
+    },
+    {
+      "route": "/",
+      "run": 1,
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 2.839
+    },
+    {
+      "route": "/",
+      "run": 2,
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 2.738
+    },
+    {
+      "route": "/",
+      "run": 3,
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 2.981
+    },
+    {
+      "route": "/",
+      "run": 4,
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 3.354
+    },
+    {
+      "route": "/",
+      "run": 5,
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 3.262
+    }
+  ],
+  "evidenceClass": "local-production-http-build-binding-not-performance",
+  "performanceClaim": false,
+  "realUserValidation": false,
+  "scientificPayloadWriteback": false
+}

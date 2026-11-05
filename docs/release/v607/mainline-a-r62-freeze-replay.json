@@ -1,0 +1,99 @@
+{
+  "schema": "mainline-a-r62-freeze-replay-v622",
+  "generatedAt": "2026-09-14T05:49:55.574Z",
+  "source": {
+    "coverage": "app/data/mainlineACanonicalCoverageV622.generated.json",
+    "coverageSchema": "mainline-a-canonical-coverage-v622"
+  },
+  "coverage": {
+    "counts": {
+      "total": 36,
+      "stars": 12,
+      "nebulae": 12,
+      "constellations": 12,
+      "runtimeCleared": 0,
+      "signoffPending": 12,
+      "rightsPending": 12
+    },
+    "status": {
+      "runtime-cleared": 0,
+      "asset-delivered": 0,
+      "signoff-pending": 12,
+      "rights-pending": 12,
+      "payload-pending": 0,
+      "evidence-pending": 12
+    },
+    "lifecycle": {
+      "runtime-cleared": 0,
+      "asset-delivered": 12,
+      "catalog-mapped": 24
+    },
+    "routes": {
+      "mainline-a-constellation-lines": 12,
+      "mainline-a-stellar-parametric": 12,
+      "mainline-a3-nebula-visual": 12
+    },
+    "sources": {
+      "gaia-dr3-source": 12,
+      "heic0105a": 1,
+      "heic0707a": 1,
+      "heic1310a": 1,
+      "heic1501e": 1,
+      "heic1517b": 1,
+      "heic1520a": 1,
+      "iau-constellations": 12,
+      "opo0205d": 1,
+      "opo0417c": 1,
+      "opo0432d": 1,
+      "potm2602b": 1,
+      "potw1644a": 1,
+      "potw1847a": 1
+    },
+    "pending": 36,
+    "ready": 0,
+    "signoffPending": 12,
+    "rightsPending": 12,
+    "errors": []
+  },
+  "candidate": {
+    "eligible": false,
+    "reasons": [
+      "constellation visual signoff pending",
+      "nebula rights or payload pending",
+      "stellar evidence pending"
+    ],
+    "nextAction": "complete constellation visual signoff",
+    "boundary": true
+  },
+  "freeze": {
+    "schema": "mainline-a-freeze-preflight-v622",
+    "passed": true,
+    "coverage": {
+      "nebula": 100,
+      "constellation": 100,
+      "stellar": 100
+    },
+    "issues": [],
+    "fingerprint": "1ade6f0b5852f1ae9c4b2f94f3882978fe6c169e47174c92ccf710f2b57706f1",
+    "boundary": {
+      "candidateOnly": true,
+      "scientificPayloadWriteback": false
+    }
+  },
+  "validation": {
+    "errors": [],
+    "rebuiltDigest": "e2f70689df29e344609b0bc6731a3220429284f2d272c92fb79bd4a0263dce49",
+    "storedDigest": "e2f70689df29e344609b0bc6731a3220429284f2d272c92fb79bd4a0263dce49",
+    "manifestEqual": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  },
+  "jsonl": "{\"section\":\"summary\",\"counts\":{\"total\":36,\"stars\":12,\"nebulae\":12,\"constellations\":12,\"runtimeCleared\":0,\"signoffPending\":12,\"rightsPending\":12},\"status\":{\"runtime-cleared\":0,\"asset-delivered\":0,\"signoff-pending\":12,\"rights-pending\":12,\"payload-pending\":0,\"evidence-pending\":12},\"lifecycle\":{\"runtime-cleared\":0,\"asset-delivered\":12,\"catalog-mapped\":24},\"routes\":{\"mainline-a-constellation-lines\":12,\"mainline-a-stellar-parametric\":12,\"mainline-a3-nebula-visual\":12},\"sources\":{\"gaia-dr3-source\":12,\"heic0105a\":1,\"heic0707a\":1,\"heic1310a\":1,\"heic1501e\":1,\"heic1517b\":1,\"heic1520a\":1,\"iau-constellations\":12,\"opo0205d\":1,\"opo0417c\":1,\"opo0432d\":1,\"potm2602b\":1,\"potw1644a\":1,\"potw1847a\":1},\"pending\":36,\"ready\":0,\"signoffPending\":12,\"rightsPending\":12,\"errors\":[]}\n{\"section\":\"row\",\"id\":\"Aql\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Cas\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Cru\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Cyg\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Gem\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Leo\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Lyr\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Ori\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Sco\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Sgr\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"Tau\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"UMa\",\"kind\":\"constellation\",\"route\":\"mainline-a-constellation-lines\",\"lifecycle\":\"catalog-mapped\",\"status\":\"signoff-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"b33\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"carina\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m1\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m16\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m20\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m42\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m57\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"m8\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"ngc2237\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"ngc6543\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"ngc6960\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"ngc7293\",\"kind\":\"nebula\",\"route\":\"mainline-a3-nebula-visual\",\"lifecycle\":\"asset-delivered\",\"status\":\"rights-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"achernar\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"aldebaran\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"alpha-centauri-a\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"antares\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"arcturus\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"betelgeuse\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"canopus\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"capella-a\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"procyon-a\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"rigel\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"sirius-a\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n{\"section\":\"row\",\"id\":\"vega\",\"kind\":\"star\",\"route\":\"mainline-a-stellar-parametric\",\"lifecycle\":\"catalog-mapped\",\"status\":\"evidence-pending\",\"pending\":1,\"sourceValid\":true,\"routeValid\":true,\"boundaryValid\":true}\n",
+  "freezeJson": "{\n  \"schema\": \"mainline-a-freeze-preflight-v622\",\n  \"passed\": true,\n  \"coverage\": {\n    \"nebula\": 100,\n    \"constellation\": 100,\n    \"stellar\": 100\n  },\n  \"issues\": [],\n  \"fingerprint\": \"1ade6f0b5852f1ae9c4b2f94f3882978fe6c169e47174c92ccf710f2b57706f1\",\n  \"boundary\": {\n    \"candidateOnly\": true,\n    \"scientificPayloadWriteback\": false\n  }\n}\n"
+}

@@ -1,0 +1,23 @@
+{
+  "round": 17,
+  "date": "2026-09-13",
+  "title": "Constellation label discoverability probe",
+  "status": "partial-browser",
+  "scope": {
+    "component": "app/lib/celestialCatalog.ts",
+    "artChange": "Raised the featured label priority for all twelve current Mainline A constellations so their 3D labels participate in the object-browser discovery layer."
+  },
+  "browser": {
+    "url": "http://localhost:3018/?deliveryProfile=vercel-lite",
+    "canvasCount": 1,
+    "documentHorizontalOverflow": false,
+    "constellationLabelCountObserved": 6,
+    "cygnusLabelObserved": true,
+    "passportChartOpened": false,
+    "note": "Label discoverability is verified; label-to-passport interaction still needs a separate route fix."
+  },
+  "validation": {
+    "vitest": "celestialCatalog.test.ts + mainlineAMetadataV607.test.ts: 32/32",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  }
+}

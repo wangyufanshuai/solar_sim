@@ -1,0 +1,111 @@
+{
+  "schema": "mainline-a-browser-evidence-v626",
+  "observedAt": "2026-09-21T10:12:43.663Z",
+  "round": "R66",
+  "url": "http://127.0.0.1:3040/",
+  "stagePath": ".next-mainline-a-r66-20260921-021",
+  "buildId": "r0_nRe3Lp4mc2OvvoYHBD",
+  "runtimeBuildId": "mainline-a-d5681bbbfbf6014a",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "markers": {
+      "build": "mainline-a-d5681bbbfbf6014a",
+      "releaseIdentity": null,
+      "rootRuntime": null,
+      "nextRuntime": null,
+      "mainlineNebulaBatch": "v624",
+      "mainlineNebulaRightsClosure": "v627",
+      "nebulaBoundary": "closed",
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "nebulaClosure": true,
+        "rightsPending": true
+      }
+    },
+    "layout": {
+      "scrollWidth": 1280,
+      "clientWidth": 1280
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-v627-closure-desktop-021.png",
+      "sha256": "f73c403eaff48db724ac05581d520515971d181d5a005a26b461287b36ccf741"
+    }
+  },
+  "mobileViewport": {
+    "viewport": [
+      390,
+      844
+    ],
+    "markers": {
+      "build": "mainline-a-d5681bbbfbf6014a",
+      "mainlineNebulaRightsClosure": "v627",
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "nebulaClosure": true,
+        "rightsPending": true
+      }
+    },
+    "layout": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "searchWidth": 300.3958435058594
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-v627-closure-mobile-021.png",
+      "sha256": "f8d5f110f7bf7a60ee1937bb60703992b46beb69a4b8f8b4dbc094007b06942a"
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "interactions": {
+    "searchSoul": {
+      "visibleCount": 1,
+      "detailVisible": true
+    },
+    "searchNegative": {
+      "visibleCount": 0,
+      "emptyState": true
+    },
+    "searchRestored": {
+      "visibleCount": 12
+    }
+  },
+  "performance": {
+    "status": "not-claimed",
+    "source": "R65 four-second browser samples remain separate; this browser pass does not claim production or real-user performance"
+  },
+  "physicalMobile": "not-run",
+  "evidenceClass": "in-app-browser-local-visual-and-build-binding",
+  "claimsClosed": {
+    "visualReview": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "notes": [
+    "The V627 panel visibly reports 12 records, source pending, payload pending, rights pending, candidate-only, hold, not-admitted and scientificPayloadWriteback=false.",
+    "Browser interactions used the rendered panel: search soul-nebula -> 1/12, no-nebula-matches -> 0/12 with empty state, then keyboard clear restored 12/12.",
+    "Physical mobile device remains not-run; viewport layout only is recorded."
+  ]
+}

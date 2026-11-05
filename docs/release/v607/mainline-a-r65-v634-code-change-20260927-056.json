@@ -1,0 +1,153 @@
+{
+  "schema": "mainline-a-code-change-continuation-v634",
+  "round": "R61-R62-R65-R66-continuation",
+  "newDevelopmentRound": false,
+  "createdAt": "2026-09-27T04:04:56.290Z",
+  "status": "acceptance-pending",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-055.json",
+    "sha256": "953ffa7b867721432acfade5a8c19c7cde1d2603f879e6f06a801595759ddb72"
+  },
+  "incrementalEffectiveProductionLines": 988,
+  "cumulativeEffectiveProductionLines": 3188,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 3435,
+  "incrementalRemovedLines": 11,
+  "cumulativeAddedLines": 8027,
+  "cumulativeRemovedLines": 1710,
+  "method": "Exact before/after diff target lines intersected with TypeScript AST leaf-token nonblank lines; tests, generated candidate JSON, raw artifacts, receipts, documents and whitespace excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineAStellarComponentEvidenceV634.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "28afe0f8f39ad96368e94c8aa96a5c2e228de0fa61c186773e83fb6c0cf90555",
+      "category": "production",
+      "addedLines": 334,
+      "removedLines": 0,
+      "countedEffectiveLines": 317
+    },
+    {
+      "path": "app/lib/mainlineAStellarComponentEvidenceV634.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "06ad9591558eabdf70f2e1450aef90dca7b97c0820272d6e21ee98b79a8c0b61",
+      "category": "test",
+      "addedLines": 343,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/components/MainlineAStellarComponentPanelV634.tsx",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "33fdf59accd0ce9c3c2ff8d8a1e2f1845f600717fbc452370a52ed9e27e0ff5a",
+      "category": "production",
+      "addedLines": 136,
+      "removedLines": 0,
+      "countedEffectiveLines": 130
+    },
+    {
+      "path": "app/components/MainlineAStellarComponentPanelV634.test.tsx",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "7b0ed5d245ac8996c2e6e302701bd7dc920068d63accd4ca9c5c29c6c3ff37ad",
+      "category": "test",
+      "addedLines": 178,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/collect-mainline-a-stellar-components-v634.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "4db4a9afa3ecf151856dcece4203f47396dd021793429c36ecab63d91ba6be3d",
+      "category": "production-tool",
+      "addedLines": 364,
+      "removedLines": 0,
+      "countedEffectiveLines": 343
+    },
+    {
+      "path": "scripts/collect-mainline-a-stellar-components-v634.test.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "bccc8e77e57ff040d58897a8868960abdf13247f10efc203d38ae49aa9d4e72b",
+      "category": "test",
+      "addedLines": 297,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/build-mainline-a-stellar-component-evidence-v634.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "14d58869e5113d8fbfe9de598a28929563566d67144dcefdfd0d4f0f1476b3eb",
+      "category": "production-tool",
+      "addedLines": 148,
+      "removedLines": 0,
+      "countedEffectiveLines": 137
+    },
+    {
+      "path": "scripts/build-mainline-a-stellar-component-evidence-v634.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "fc0979d745fe2f646205c4fac35632684dfb12c45151881b16bed0aa603ef6cb",
+      "category": "test",
+      "addedLines": 107,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+      "before": "tmp/mainline-a-before-20260927-056/MainlineABetaHeroReviewPanelV611.tsx",
+      "beforeSha256": "b05a724064bb3bbc618e74640fe1cd8f0a6750a537e361b71394cbc5e8661fbd",
+      "sha256": "adad72f8e2dd2405cc9bc670eaf2afdc085913cee8a15cd8295e1fef92153fd9",
+      "category": "production",
+      "addedLines": 4,
+      "removedLines": 0,
+      "countedEffectiveLines": 4
+    },
+    {
+      "path": "app/components/ConstellationEngravingV592.tsx",
+      "before": "tmp/mainline-a-engraving-before-20260927-056/app/components/ConstellationEngravingV592.tsx",
+      "beforeSha256": "f8005280eae62a74733e547b107d0133a972867d14e2cba653246515a694d918",
+      "sha256": "5958173340198133d951912769736960bd70c0f56dd67f3a240990137c5d57fb",
+      "category": "production",
+      "addedLines": 9,
+      "removedLines": 11,
+      "countedEffectiveLines": 9
+    },
+    {
+      "path": "app/lib/constellationEngravingResourcesV592.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "cf060cb101ff71838f83ef78005da433859d8edd80b3985d898570958748d347",
+      "category": "production",
+      "addedLines": 53,
+      "removedLines": 0,
+      "countedEffectiveLines": 48
+    },
+    {
+      "path": "app/lib/constellationEngravingResourcesV592.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "8989826c7ac3c8bf6a109024d712398393d925d1230df7791cb822b5ee03eda2",
+      "category": "test",
+      "addedLines": 138,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb",
+      "category": "generated-candidate-telemetry",
+      "addedLines": 1324,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "physicsKernelMutation": false
+}

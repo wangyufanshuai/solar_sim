@@ -1,0 +1,836 @@
+{
+  "schema": "mainline-a-r71-official-source-v658",
+  "runId": "20261012v658r71a",
+  "startedAt": "2026-10-12T08:05:50.911Z",
+  "endedAt": "2026-10-12T08:06:03.645Z",
+  "status": "six-raw-page-image-captures-candidate",
+  "inputs": {
+    "review": {
+      "path": "app/data/mainlineANebulaReviewPackV612.generated.json",
+      "sha256": "547302ffb5ff250ff741f2de4a5dc1906b75302779e77b10af76b1545531d893"
+    },
+    "rights": {
+      "path": "app/data/mainlineANebulaRightsPackV613.generated.json",
+      "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7"
+    }
+  },
+  "counts": {
+    "targets": 6,
+    "pageResponses": 6,
+    "pageArtifacts": 6,
+    "pageInspections": 6,
+    "imageResponses": 6,
+    "imageArtifacts": 6,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "rows": [
+    {
+      "id": "w40-nebula",
+      "nasaId": "PIA23121",
+      "catalog": "W40",
+      "title": "Space Butterfly",
+      "expectedCredit": "NASA/JPL-Caltech",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/space-butterfly/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23121",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/w40-nebula-PIA23121-orig.jpg",
+        "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+        "bytes": 1243620,
+        "width": 4600,
+        "height": 3000
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23121",
+        "requestFingerprint": "41681cecff61698f5dcc85030133744576768a145a9d88435b6d7113e37f3673",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "b71e5028-c363-4083-9c7a-523cec193175",
+            "startedAt": "2026-10-12T08:05:50.917Z",
+            "endedAt": "2026-10-12T08:05:53.092Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23121",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "41681cecff61698f5dcc85030133744576768a145a9d88435b6d7113e37f3673",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/space-butterfly/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA23121",
+              "https://science.nasa.gov/photojournal/space-butterfly",
+              "https://science.nasa.gov/photojournal/space-butterfly/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA23121",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/space-butterfly",
+                "to": "https://science.nasa.gov/photojournal/space-butterfly"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/space-butterfly",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/space-butterfly/",
+                "to": "https://science.nasa.gov/photojournal/space-butterfly/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 267175,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-page-f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6.html",
+            "rawSha256": "f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-page-f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6.html",
+          "sha256": "f750bf3f20beab6ed7631991852a08a317df16920552d57c5e315647f2c503e6",
+          "bytes": 267175,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/space-butterfly/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "Space Butterfly - NASA Science",
+          "visibleNasaId": "PIA23121",
+          "officialCredit": "NASA/JPL-Caltech",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg",
+        "requestFingerprint": "baae67e3a8c3c73ac7eff931067bdb2b360ab185bd3fd09497fed9d13aabc789",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "0f539723-8e53-491c-9f97-9bb33effde27",
+            "startedAt": "2026-10-12T08:05:53.097Z",
+            "endedAt": "2026-10-12T08:05:54.575Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "baae67e3a8c3c73ac7eff931067bdb2b360ab185bd3fd09497fed9d13aabc789",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 1243620,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-image-e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2.jpg",
+            "rawSha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-image-e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2.jpg",
+          "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2",
+          "bytes": 1243620,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23121/PIA23121.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "sh2-235-nebula",
+      "nasaId": "PIA13995",
+      "catalog": "Sh2-235",
+      "title": "WISE Eyes Evolution of Massive Stars",
+      "expectedCredit": "NASA/JPL-Caltech/UCLA",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13995",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/sh2-235-nebula-PIA13995-orig.jpg",
+        "sha256": "17349f31edba474f71dfcdef5803aa034e3aa8854ea3e55653b16f4e9c5028ae",
+        "bytes": 3007526,
+        "width": 6400,
+        "height": 6400
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13995",
+        "requestFingerprint": "14bfa2ab9006e96121b4504f2d39073454a0b6f0ab313d12543bcd778940d5a9",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "561c1dc5-786f-4b2d-93ef-3e9c3dfe042a",
+            "startedAt": "2026-10-12T08:05:54.576Z",
+            "endedAt": "2026-10-12T08:05:55.661Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13995",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "14bfa2ab9006e96121b4504f2d39073454a0b6f0ab313d12543bcd778940d5a9",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA13995",
+              "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars",
+              "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA13995",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars",
+                "to": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/",
+                "to": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 270741,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-page-41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b.html",
+            "rawSha256": "41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-page-41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b.html",
+          "sha256": "41a47d9345bf6413b9e97c41b62e8450bf1b1e027591175ddc8e901f348ad19b",
+          "bytes": 270741,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/wise-eyes-evolution-of-massive-stars/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "WISE Eyes Evolution of Massive Stars - NASA Science",
+          "visibleNasaId": "PIA13995",
+          "officialCredit": "NASA/JPL-Caltech/UCLA",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg",
+        "requestFingerprint": "3c4750be20af2b48d750075a71816429d8b8388e7131ff5222bcd7e0ebad9b4e",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "13abe2db-8a08-40b8-93fa-ba4e0f61226a",
+            "startedAt": "2026-10-12T08:05:55.689Z",
+            "endedAt": "2026-10-12T08:05:57.149Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "3c4750be20af2b48d750075a71816429d8b8388e7131ff5222bcd7e0ebad9b4e",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 3002201,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-image-e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c.jpg",
+            "rawSha256": "e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-image-e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c.jpg",
+          "sha256": "e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c",
+          "bytes": 3002201,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13995/PIA13995.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "flaming-star-nebula",
+      "nasaId": "PIA13447",
+      "catalog": "IC 405",
+      "title": "WISE Catches a Runaway Star in Flames",
+      "expectedCredit": "NASA/JPL-Caltech/UCLA",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13447",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/flaming-star-nebula-PIA13447-orig.jpg",
+        "sha256": "245b7046a5bc4e585e5721dcc52c85c1ac355d0b7b45e7ea0d9610f3d0757563",
+        "bytes": 1229639,
+        "width": 4095,
+        "height": 4095
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13447",
+        "requestFingerprint": "ed401a00413a0b2ca1d5a0cbff33bb29ed3b190f516c7f919dafac516dd631c4",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "5a916919-8819-4e19-8581-b17215ab91fe",
+            "startedAt": "2026-10-12T08:05:57.152Z",
+            "endedAt": "2026-10-12T08:05:58.079Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13447",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "ed401a00413a0b2ca1d5a0cbff33bb29ed3b190f516c7f919dafac516dd631c4",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA13447",
+              "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames",
+              "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA13447",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames",
+                "to": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/",
+                "to": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 270725,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-page-80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8.html",
+            "rawSha256": "80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-page-80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8.html",
+          "sha256": "80206860abd65245fb19cf0585ccaf7ad6a4a9a29758ebd68f4ac279eaa36bb8",
+          "bytes": 270725,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/wise-catches-a-runaway-star-in-flames/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "WISE Catches a Runaway Star in Flames - NASA Science",
+          "visibleNasaId": "PIA13447",
+          "officialCredit": "NASA/JPL-Caltech/UCLA",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg",
+        "requestFingerprint": "55f836e6aaa376264919b22078c99ead5aad3e94dd9d3169c041bfae75e74610",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "c19def3a-7a08-4598-b32e-dffd4515d3c5",
+            "startedAt": "2026-10-12T08:05:58.082Z",
+            "endedAt": "2026-10-12T08:05:58.926Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "55f836e6aaa376264919b22078c99ead5aad3e94dd9d3169c041bfae75e74610",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 1224232,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-image-b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb.jpg",
+            "rawSha256": "b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-image-b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb.jpg",
+          "sha256": "b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb",
+          "bytes": 1224232,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13447/PIA13447.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spider-nebula",
+      "nasaId": "PIA20357",
+      "catalog": "IC 417",
+      "title": "The Spider Nebula",
+      "expectedCredit": "NASA/JPL-Caltech/2MASS",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/the-spider-nebula/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA20357",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/spider-nebula-PIA20357-orig.jpg",
+        "sha256": "d0e34641df917d32f99ee50eba14f44e6b5b60e6623d985496a71812dcdc2b50",
+        "bytes": 1310281,
+        "width": 4165,
+        "height": 2343
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA20357",
+        "requestFingerprint": "aea5e21c08fce8b8f3f6c57dd8063f5881d264168dba8ab1c73417934b4bac0f",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "f550098d-82e4-489c-ac61-c6c320ebdeac",
+            "startedAt": "2026-10-12T08:05:58.928Z",
+            "endedAt": "2026-10-12T08:05:59.793Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA20357",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "aea5e21c08fce8b8f3f6c57dd8063f5881d264168dba8ab1c73417934b4bac0f",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/the-spider-nebula/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA20357",
+              "https://science.nasa.gov/photojournal/the-spider-nebula",
+              "https://science.nasa.gov/photojournal/the-spider-nebula/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA20357",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/the-spider-nebula",
+                "to": "https://science.nasa.gov/photojournal/the-spider-nebula"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/the-spider-nebula",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/the-spider-nebula/",
+                "to": "https://science.nasa.gov/photojournal/the-spider-nebula/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 268229,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-page-19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6.html",
+            "rawSha256": "19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-page-19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6.html",
+          "sha256": "19a9de37d90be76583bcf9677fc925b575354e9d9470f2284680e7c1e2807bc6",
+          "bytes": 268229,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/the-spider-nebula/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "The Spider Nebula - NASA Science",
+          "visibleNasaId": "PIA20357",
+          "officialCredit": "NASA/JPL-Caltech/2MASS",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg",
+        "requestFingerprint": "640d6b8268eefe9bee28db384cfd63a8a8444b1ca5bc930914118424d69f6073",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "cf069ff0-5d19-4bfb-99c8-4e4335addef5",
+            "startedAt": "2026-10-12T08:05:59.796Z",
+            "endedAt": "2026-10-12T08:06:00.136Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "640d6b8268eefe9bee28db384cfd63a8a8444b1ca5bc930914118424d69f6073",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 1305120,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-image-03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726.jpg",
+            "rawSha256": "03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-image-03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726.jpg",
+          "sha256": "03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726",
+          "bytes": 1305120,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia20/pia20357/PIA20357.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "tarantula-nebula",
+      "nasaId": "PIA23646",
+      "catalog": "NGC 2070",
+      "title": "Tarantula Nebula Spitzer 2-Color Image",
+      "expectedCredit": "NASA/JPL-Caltech",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23646",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/tarantula-nebula-closure-PIA23646-orig.jpg",
+        "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+        "bytes": 5079804,
+        "width": 8832,
+        "height": 4968
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23646",
+        "requestFingerprint": "854c18333635dc1d31af2c8522d44e474b0b58c6f075f45fd5fa9e352a88917c",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "8f7239aa-ed40-43e9-ad3a-c7aa87fa8984",
+            "startedAt": "2026-10-12T08:06:00.137Z",
+            "endedAt": "2026-10-12T08:06:01.054Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA23646",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "854c18333635dc1d31af2c8522d44e474b0b58c6f075f45fd5fa9e352a88917c",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA23646",
+              "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image",
+              "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA23646",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image",
+                "to": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/",
+                "to": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 266371,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-page-9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56.html",
+            "rawSha256": "9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-page-9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56.html",
+          "sha256": "9f41a25b1f1f65646affd4a6b17c42103a303f6afec2b72c26341f16abf98b56",
+          "bytes": 266371,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/tarantula-nebula-spitzer-2-color-image/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "Tarantula Nebula Spitzer 2-Color Image - NASA Science",
+          "visibleNasaId": "PIA23646",
+          "officialCredit": "NASA/JPL-Caltech",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg",
+        "requestFingerprint": "d9d9f3abd91d3bdfe7f8828e71623ac91976163f6e9a4e838d24ae2557645ffc",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "d923ce6e-4809-4fa8-8045-f14d27e9a9b8",
+            "startedAt": "2026-10-12T08:06:01.058Z",
+            "endedAt": "2026-10-12T08:06:01.573Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "d9d9f3abd91d3bdfe7f8828e71623ac91976163f6e9a4e838d24ae2557645ffc",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 5079804,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-image-08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38.jpg",
+            "rawSha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-image-08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38.jpg",
+          "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38",
+          "bytes": 5079804,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia23/pia23646/PIA23646.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "tadpole-nebula",
+      "nasaId": "PIA13110",
+      "catalog": "IC 410",
+      "title": "Asteroid Caught Marching Across Tadpole Nebula",
+      "expectedCredit": "NASA/JPL-Caltech/UCLA",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/",
+      "legacyPageUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13110",
+      "expectedOfficialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg",
+      "historicalLocalCandidate": {
+        "path": "source-cache/v592/nebulae/visual-extended/tadpole-nebula-PIA13110-orig.jpg",
+        "sha256": "43a8fe1d011cea9981a40de0a7f3a157d94c9c6b91178add8502ddf8d1b46471",
+        "bytes": 1167945,
+        "width": 3270,
+        "height": 4053
+      },
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13110",
+        "requestFingerprint": "9f710c1a311b5d6b041aebbe287d5b96b267c2e4d571cc4015a979bbe4f55480",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "ae57db35-bbca-4e20-9811-1d387d505aa6",
+            "startedAt": "2026-10-12T08:06:01.578Z",
+            "endedAt": "2026-10-12T08:06:02.439Z",
+            "requestExecuted": true,
+            "requestUrl": "https://photojournal.jpl.nasa.gov/catalog/PIA13110",
+            "kind": "page",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "9f710c1a311b5d6b041aebbe287d5b96b267c2e4d571cc4015a979bbe4f55480",
+            "httpStatus": 200,
+            "contentType": "text/html; charset=UTF-8",
+            "finalUrl": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/",
+            "redirectChain": [
+              "https://photojournal.jpl.nasa.gov/catalog/PIA13110",
+              "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula",
+              "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/"
+            ],
+            "redirects": [
+              {
+                "from": "https://photojournal.jpl.nasa.gov/catalog/PIA13110",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula",
+                "to": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula"
+              },
+              {
+                "from": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula",
+                "status": 301,
+                "location": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/",
+                "to": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/"
+              }
+            ],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 269432,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-page-55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34.html",
+            "rawSha256": "55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-page-55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34.html",
+          "sha256": "55e850b8214a4e2469b3e331676e740f818469fc5cbaf0fdb4a476519c77bb34",
+          "bytes": 269432,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/asteroid-caught-marching-across-tadpole-nebula/"
+        },
+        "persistenceError": null,
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "Asteroid Caught Marching Across Tadpole Nebula - NASA Science",
+          "visibleNasaId": "PIA13110",
+          "officialCredit": "NASA/JPL-Caltech/UCLA",
+          "officialImageUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg",
+          "rightsStatus": "pending",
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg",
+        "requestFingerprint": "925b43fd9117bb817c77916f70f76987d00b420945ac8fb461da51514faa9fcf",
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "d50b4fb4-e4a3-4e1d-baed-bb79dc3a8e70",
+            "startedAt": "2026-10-12T08:06:02.442Z",
+            "endedAt": "2026-10-12T08:06:03.642Z",
+            "requestExecuted": true,
+            "requestUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg",
+            "kind": "image",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestFingerprint": "925b43fd9117bb817c77916f70f76987d00b420945ac8fb461da51514faa9fcf",
+            "httpStatus": 200,
+            "contentType": "image/jpeg",
+            "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg",
+            "redirectChain": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 1162880,
+            "rawArtifactPath": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-image-9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07.jpg",
+            "rawSha256": "9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-image-9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07.jpg",
+          "sha256": "9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07",
+          "bytes": 1162880,
+          "contentType": "image/jpeg",
+          "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13110/PIA13110.jpg"
+        },
+        "persistenceError": null
+      },
+      "status": "raw-page-and-jpeg-captured-candidate",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsSignoff": "pending",
+    "physicalMobile": "not-run",
+    "publicWebRelease": "blocked"
+  }
+}

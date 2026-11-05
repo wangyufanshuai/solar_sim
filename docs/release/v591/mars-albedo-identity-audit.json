@@ -1,0 +1,40 @@
+{
+  "version": "v591-mars-albedo-identity-audit-v1",
+  "status": "blocked-identity-mismatch",
+  "acquisitionReceiptSha256": "716141e3e6c98e582a7ffc0350c08649b47577a7480a6bd07fcb176cb06e24b0",
+  "reference": {
+    "path": "source-cache/celestial-convergence-v591/mars/mars_viking_clrmosaic_global_1024.jpg",
+    "sha256": "1368021e0416da0f626a337bd79d8b26e6e67b2b8b49cccb6103dad25b333a9b",
+    "width": 1024,
+    "height": 512,
+    "identity": "USGS Mars Viking Global Color Mosaic 925 m product preview in global equirectangular projection",
+    "role": "official-usgs-product-identity-and-color-reference"
+  },
+  "candidate": {
+    "path": "public/textures/candidate-v588/fallback/desktop/mars-albedo.webp",
+    "sha256": "d6c72b2a2fff9b1a22696ab786e0a7ccc9ad7d3f2054422165e2e4d4bf4ffdd3",
+    "fullKtx2Path": "public/textures/candidate-v588/ktx2/mars-albedo.ktx2",
+    "fullKtx2Sha256": "a6e64c0ce12e18ffe9f08bc48578db2ed302c36fb44283d264d5b1b3d3e5bfc1",
+    "role": "exact-byte-frozen-v588-runtime-albedo"
+  },
+  "comparison": {
+    "width": 256,
+    "height": 128,
+    "longitudeShiftPixels": 1,
+    "longitudeShiftDegrees": 1.40625,
+    "longitudeFlipRequired": false,
+    "luminanceCorrelation": 0.7851643458594146,
+    "gradientCorrelation": 0.6323962481877126,
+    "thresholds": {
+      "luminanceCorrelationMinimum": 0.8,
+      "gradientCorrelationMinimum": 0.5
+    }
+  },
+  "policy": {
+    "previewUpscaleAllowed": false,
+    "runtimeAssetMutationAllowed": false,
+    "scientificPayloadWriteback": false,
+    "admissionRequiresPass": true
+  },
+  "receiptSha256": "f7acac6bd69edb339b003a9b8facd1b4d1b81c496b56f15f69b63111684288d8"
+}

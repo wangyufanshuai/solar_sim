@@ -1,0 +1,502 @@
+{
+  "schema": "mainline-a-m3-historical-delivery-v1",
+  "createdAt": "2026-10-15T09:39:03.747Z",
+  "status": "historical-m3-candidate-stage-completed-final-build-validation-pending",
+  "scope": {
+    "stage": "M3",
+    "receiptRunId": "20261015-m3after03",
+    "evidenceClass": "historical-actual-browser-candidate-evidence",
+    "currentSourceValidated": false,
+    "currentSourceExplanation": "Later M4/M5 source changes exist. The current-source-before-and-after scope in the original receipt applies only at capture time.",
+    "finalSameBuildValidation": "M5 must run separately against its final frozen build; historical M3 results are not reused as final acceptance."
+  },
+  "build": {
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r84-build-20261015-m4web02.json",
+      "sha256": "c8b69c9ad24a17c0e1afbc6df669e1a1d8bc150b85855aefaae46495cd695ccb",
+      "bytes": 484146
+    },
+    "buildId": "xbqJG1YAxMbPT6UBSpQS2",
+    "runtimeBuildId": "mainline-a-034936bef2915f6a",
+    "sourceSha256": "034936bef2915f6a411f657ae2f4bab17d3c286b81828d0e5066f542b6ae7062",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "profile": "vercel-lite",
+    "historicalSourceStable": true,
+    "exitCode": 0,
+    "sourceBeforeSha256": "034936bef2915f6a411f657ae2f4bab17d3c286b81828d0e5066f542b6ae7062",
+    "sourceAfterSha256": "034936bef2915f6a411f657ae2f4bab17d3c286b81828d0e5066f542b6ae7062",
+    "receiptBinding": {
+      "buildReceiptSha256": "c8b69c9ad24a17c0e1afbc6df669e1a1d8bc150b85855aefaae46495cd695ccb",
+      "manifestSha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+      "baselineInputsSha256": null,
+      "sourceScope": "current-source-before-and-after",
+      "sourceAfterSha256": "034936bef2915f6a411f657ae2f4bab17d3c286b81828d0e5066f542b6ae7062"
+    }
+  },
+  "before": {
+    "receipt": {
+      "path": "output/playwright/mainline-a-m3-20261015/before/receipt.json",
+      "sha256": "4527a01f5accd7188a52a853b73a197ce22b5cc3fade881c220e68b1b3506295",
+      "bytes": 122033
+    },
+    "runId": "20261015-m3before03",
+    "build": {
+      "buildId": "U3rlOMIYRwVtDCeQYy3k4",
+      "runtimeBuildId": "mainline-a-483f941c9aa1bfbd",
+      "sourceSha256": "483f941c9aa1bfbddd94dcae9eb10a4a72dd2d95f8a110c0d89583db10d9fb14",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+    }
+  },
+  "after": {
+    "receipt": {
+      "path": "output/playwright/mainline-a-m3-20261015/after/receipt.json",
+      "sha256": "18e9f69bcda8fb4d8906f3e1e1b898477329a9db70bacc75f2c7697e34bdb3aa",
+      "bytes": 476562
+    },
+    "startedAt": "2026-10-15T09:06:13.112Z",
+    "endedAt": "2026-10-15T09:11:17.198Z",
+    "status": "passed-a12-nebula-viewer-and-faults-candidate-only"
+  },
+  "counts": {
+    "objects": 12,
+    "viewports": 2,
+    "objectViewportGroups": 24,
+    "beforeOriginalImages": 48,
+    "afterNormalOriginalImages": 120,
+    "faultCases": 8,
+    "afterFaultOriginalImages": 18,
+    "afterOriginalImages": 138,
+    "galleryOriginalImages": 186,
+    "gallerySections": 6
+  },
+  "objects": [
+    "m42",
+    "m1",
+    "m8",
+    "m16",
+    "m20",
+    "m57",
+    "ngc7293",
+    "ngc6543",
+    "ngc2237",
+    "ngc6960",
+    "carina",
+    "b33"
+  ],
+  "viewports": {
+    "desktop": [
+      1280,
+      720
+    ],
+    "mobile": [
+      390,
+      844
+    ],
+    "physicalDevice": false
+  },
+  "normalModes": [
+    "default",
+    "viewer-fit",
+    "viewer-2x",
+    "viewer-sources",
+    "sources"
+  ],
+  "viewer": {
+    "allRecordedChecksPassed": true,
+    "checksByDevice": {
+      "desktop": [
+        "doubleScale",
+        "keyboardPan",
+        "pointerPan",
+        "wheelPan",
+        "resetFullComposition",
+        "fullCredit",
+        "sourceFocused",
+        "licensePresent",
+        "escapeRestoresFocus",
+        "sameBorrowedNode",
+        "buttonRestoresFocus",
+        "attemptUnchanged",
+        "noAdditionalImageRequest",
+        "borrowedNodeReturned",
+        "scenePreserved"
+      ],
+      "mobile": [
+        "doubleScale",
+        "keyboardPan",
+        "pointerPan",
+        "resetFullComposition",
+        "fullCredit",
+        "sourceFocused",
+        "licensePresent",
+        "escapeRestoresFocus",
+        "sameBorrowedNode",
+        "buttonRestoresFocus",
+        "attemptUnchanged",
+        "noAdditionalImageRequest",
+        "borrowedNodeReturned",
+        "scenePreserved"
+      ]
+    },
+    "sameDecodedImageNode": true,
+    "additionalImageRequests": false,
+    "parentOwnsTextureLease": true,
+    "normalBrowserErrors": 0,
+    "mobilePointerMode": "browser-native-touch-scroll"
+  },
+  "faults": [
+    {
+      "device": "desktop",
+      "scenario": "slow-cancel-retry",
+      "checks": {
+        "loadingIsExplicit": true,
+        "viewerUnavailableWhileLoading": true,
+        "cancelledIsExplicit": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 3,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "desktop",
+      "scenario": "http-failure-retry",
+      "checks": {
+        "failureIsExplicit": true,
+        "viewerUnavailableWhileFailed": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 1,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "desktop",
+      "scenario": "timeout-retry",
+      "checks": {
+        "failureIsExplicit": true,
+        "viewerUnavailableWhileFailed": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "desktop",
+      "scenario": "late-response-switch",
+      "checks": {
+        "loadingIsExplicit": true,
+        "viewerUnavailableWhileLoading": true,
+        "oldImageRemoved": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "mobile",
+      "scenario": "slow-cancel-retry",
+      "checks": {
+        "loadingIsExplicit": true,
+        "viewerUnavailableWhileLoading": true,
+        "cancelledIsExplicit": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 3,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "mobile",
+      "scenario": "http-failure-retry",
+      "checks": {
+        "failureIsExplicit": true,
+        "viewerUnavailableWhileFailed": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 1,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "mobile",
+      "scenario": "timeout-retry",
+      "checks": {
+        "failureIsExplicit": true,
+        "viewerUnavailableWhileFailed": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    },
+    {
+      "device": "mobile",
+      "scenario": "late-response-switch",
+      "checks": {
+        "loadingIsExplicit": true,
+        "viewerUnavailableWhileLoading": true,
+        "oldImageRemoved": true,
+        "finalIdentity": true,
+        "binding": true,
+        "boundary": true,
+        "requestsExercised": true
+      },
+      "screenshots": 2,
+      "expectedConsoleErrors": 0,
+      "unexpectedErrors": 0
+    }
+  ],
+  "gallery": {
+    "gallery": {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-gallery.html",
+      "sha256": "b1ca5ddafcdfb09098d829cf997857c1a64388e4a8623791337669004d5fbf9c",
+      "bytes": 34727
+    },
+    "manifest": {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-manifest.json",
+      "sha256": "892d3a1ed01d0f8b911f51d412ab23d2adadb4071bab9383b963ddd704f581f3",
+      "bytes": 99383
+    },
+    "validation": {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-gallery-validation.json",
+      "sha256": "ad16ff4948aaf5a68559432e4f087d43fe7042eabd8df8ce2febb2581bc980b2",
+      "bytes": 1320
+    },
+    "imagesVerified": 186,
+    "uniqueReferences": 195,
+    "failures": [],
+    "browserRenderCheck": "not-run-resource-reserve",
+    "processing": "original-png-files-linked-directly-no-image-processing"
+  },
+  "proxyVisualReview": {
+    "record": {
+      "path": "output/playwright/mainline-a-m4-20261015/visual-review-m2-card.json",
+      "sha256": "76b8ad17819a814b84dfb9fab0cfa46bf6af7eae0cbee9ab885a22e115c1232e",
+      "bytes": 5015
+    },
+    "suite": "M3 after03 mobile M42 M16 Carina",
+    "status": "pass-for-inspected-layouts",
+    "inspectedImages": 12,
+    "objects": [
+      "m42",
+      "m16",
+      "carina"
+    ],
+    "device": "mobile",
+    "method": "Existing actual browser screenshot inspection by /root/m2_card; this delivery does not claim a new image review.",
+    "findings": [
+      "All three full-fit images preserve complete aspect ratio and visible frame; M42 original watermark is retained.",
+      "2x is explicitly labelled local viewing. M42 and M16 enlarge across the image viewport. Wide Carina leaves intentional vertical letterbox space and enlarges horizontally without distorting the source.",
+      "Close, zoom and restore controls are visible. Expanded provenance contains full credit, bands, licensing links and existing image limitations.",
+      "M16 expanded note correctly describes an environmental survey and identifies pillar structure as local; default collapsed passport is unobstructed."
+    ],
+    "issues": [],
+    "humanVisualSignoff": false
+  },
+  "m16Copy": {
+    "description": "Existing heic1501e image is an Eagle Nebula environmental survey; pillars are a local structure rather than the full image subject.",
+    "beforeRecord": {
+      "path": "output/playwright/mainline-a-m3-20261015/before/mobile-m16.json",
+      "sha256": "639668f3b68b9c40c53218cfc240c0686cf95529f0cbe242d84ca958fd41b91c",
+      "bytes": 4240
+    },
+    "afterRecord": {
+      "path": "output/playwright/mainline-a-m3-20261015/after/mobile-m16.json",
+      "sha256": "18c7216e1c679ceddd7c6958a50aa75ad063a50cc84b37dbc5544a4b1f444472",
+      "bytes": 16024
+    },
+    "afterText": "鹰状星云2D版权待审来源 ↗放大收起 −空间有限，可上下滚动查看完整说明、版权与来源。本地观测图已绘制。Optical B · Infrared I · 官方构图保留这是一幅鹰状星云及周围天区的巡天图，适合认识整体环境。著名的尘埃柱属于其中的局部结构。保留官方构图与配色。二维图像不表示三维深度、目录角径或肉眼色彩。本地候选预览；来源许可标记已记录，逐图版权签署仍待完成。ESO/Digitized Sky Survey 2. Acknowledgment: Davide De Martin.CC BY 4.0",
+    "historicalSourceInput": {
+      "path": "app/lib/mainlineANebulaImageNotesM3.ts",
+      "bytes": 1912,
+      "sha256": "d5de22e890ac24922d1a52c5e6247feb8e7a14ca176bc3c90a268e0ed22eae34"
+    },
+    "imageSha256": "9349f8d48d81a9998e46aab8cb0c87ef5a61c2fad093ce8c36fc9fa657e09e92",
+    "scienceDataChanged": false,
+    "imageReplaced": false
+  },
+  "tests": {
+    "historicalOnly": true,
+    "vitest": {
+      "files": 15,
+      "passed": 168,
+      "log": {
+        "path": "output/playwright/mainline-a-m3-20261015/vitest.log",
+        "sha256": "f6bc7a5c1b297cecd5910c9c8976aac5b25e5204a49a8e31db285c1a2770fa36",
+        "bytes": 425
+      }
+    },
+    "caption": {
+      "files": 2,
+      "passed": 10,
+      "log": {
+        "path": "output/playwright/mainline-a-m3-20261015/caption-tests.log",
+        "sha256": "7ea5dc302dcb952c47ce9484d4383f7582eb67950a5914befd9c37bbe8f3fed2",
+        "bytes": 420
+      },
+      "mayOverlapMainSuite": true
+    },
+    "eslint": {
+      "log": {
+        "path": "output/playwright/mainline-a-m3-20261015/eslint.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "countsSummed": false,
+    "currentSourcePassClaim": false
+  },
+  "failedAttempts": [
+    {
+      "runId": "20261015-m3after01",
+      "record": {
+        "path": "output/playwright/mainline-a-m3-20261015/after/attempts/20261015-m3after01/failure.json",
+        "sha256": "24e68aa783016d9ec945ff3fd8d6c367ec68261fe73d4c6995d97da95c3f7395",
+        "bytes": 186584
+      },
+      "status": "failed-attempt-preserved",
+      "reason": "B33 pointerPan probe continued toward an already reached scroll boundary.",
+      "resolution": "Probe chooses the larger scrollable axis and moves inward from the boundary; after03 reran the complete matrix. Not classified as an application pan failure.",
+      "passed": false
+    },
+    {
+      "runId": "20261015-m3after02",
+      "record": {
+        "path": "output/playwright/mainline-a-m3-20261015/after/attempts/20261015-m3after02/failure.json",
+        "sha256": "e4988058ae3ee39b7dedfd2cc46ca23dfb8c5459b88292d0f3f802562d37f938",
+        "bytes": 1064
+      },
+      "status": "failed-attempt-preserved",
+      "reason": "m1-browser:build-source-binding-mismatch",
+      "resolution": "Rejected before capture; after03 binds the preserved m4web02 build.",
+      "passed": false
+    }
+  ],
+  "outputDirectoryClarification": {
+    "record": {
+      "path": "output/playwright/mainline-a-m3-20261015/after/output-directory-clarification-20261015-m3after03.json",
+      "sha256": "de49c9f78002e6b5a5eb1b0811bb9780f08b36709ef28d17665f18a684fdb989",
+      "bytes": 2113
+    },
+    "originalStartedRecordPreserved": true,
+    "meaning": "Inherited unused M2 outputDir in started.json; effective image and receipt output uses M3_OUTPUT. Clarification verifies 138 screenshots without rewriting the original record."
+  },
+  "claims": {
+    "presentationOnly": true,
+    "scientificPayloadWriteback": false,
+    "releaseAdmission": "candidate-only",
+    "releaseBoundary": "candidate-only-hold-not-admitted",
+    "rights": "pending",
+    "humanVisualSignoff": false,
+    "physicalDevice": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicReleaseApproved": false,
+    "productionPerformance": false,
+    "currentSourceValidated": false,
+    "finalSameBuildValidated": false
+  },
+  "evidence": [
+    {
+      "path": "docs/release/v607/mainline-a-r84-build-20261015-m4web02.json",
+      "sha256": "c8b69c9ad24a17c0e1afbc6df669e1a1d8bc150b85855aefaae46495cd695ccb",
+      "bytes": 484146
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/before/receipt.json",
+      "sha256": "4527a01f5accd7188a52a853b73a197ce22b5cc3fade881c220e68b1b3506295",
+      "bytes": 122033
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/after/receipt.json",
+      "sha256": "18e9f69bcda8fb4d8906f3e1e1b898477329a9db70bacc75f2c7697e34bdb3aa",
+      "bytes": 476562
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-gallery.html",
+      "sha256": "b1ca5ddafcdfb09098d829cf997857c1a64388e4a8623791337669004d5fbf9c",
+      "bytes": 34727
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-manifest.json",
+      "sha256": "892d3a1ed01d0f8b911f51d412ab23d2adadb4071bab9383b963ddd704f581f3",
+      "bytes": 99383
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/comparison-gallery-validation.json",
+      "sha256": "ad16ff4948aaf5a68559432e4f087d43fe7042eabd8df8ce2febb2581bc980b2",
+      "bytes": 1320
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/after/output-directory-clarification-20261015-m3after03.json",
+      "sha256": "de49c9f78002e6b5a5eb1b0811bb9780f08b36709ef28d17665f18a684fdb989",
+      "bytes": 2113
+    },
+    {
+      "path": "output/playwright/mainline-a-m4-20261015/visual-review-m2-card.json",
+      "sha256": "76b8ad17819a814b84dfb9fab0cfa46bf6af7eae0cbee9ab885a22e115c1232e",
+      "bytes": 5015
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/before/mobile-m16.json",
+      "sha256": "639668f3b68b9c40c53218cfc240c0686cf95529f0cbe242d84ca958fd41b91c",
+      "bytes": 4240
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/after/mobile-m16.json",
+      "sha256": "18c7216e1c679ceddd7c6958a50aa75ad063a50cc84b37dbc5544a4b1f444472",
+      "bytes": 16024
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/after/attempts/20261015-m3after01/failure.json",
+      "sha256": "24e68aa783016d9ec945ff3fd8d6c367ec68261fe73d4c6995d97da95c3f7395",
+      "bytes": 186584
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/after/attempts/20261015-m3after02/failure.json",
+      "sha256": "e4988058ae3ee39b7dedfd2cc46ca23dfb8c5459b88292d0f3f802562d37f938",
+      "bytes": 1064
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/vitest.log",
+      "sha256": "f6bc7a5c1b297cecd5910c9c8976aac5b25e5204a49a8e31db285c1a2770fa36",
+      "bytes": 425
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/caption-tests.log",
+      "sha256": "7ea5dc302dcb952c47ce9484d4383f7582eb67950a5914befd9c37bbe8f3fed2",
+      "bytes": 420
+    },
+    {
+      "path": "output/playwright/mainline-a-m3-20261015/eslint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

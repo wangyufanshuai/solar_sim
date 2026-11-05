@@ -1,0 +1,91 @@
+{
+  "schema": "mainline-a-web-performance-v647",
+  "status": "measured-local",
+  "evidenceClass": "performance",
+  "sourceSha256": "8136bf33ce9a75d1f708b9a67c3f87cbfd8148c9819ce40d004fb668bf57d00d",
+  "build": {
+    "buildId": "B3cFqMTv1S0yIvqbkXPXQ",
+    "runtimeBuildId": "mainline-a-8136bf33ce9a75d1",
+    "report": {
+      "path": "docs/release/v607/mainline-a-r66-build-20261007-v647web02.json",
+      "bytes": 472304,
+      "sha256": "6315738b699d684db3313cda879402cdb9ca79770f77622e535d04c1845e0bc2"
+    }
+  },
+  "raw": {
+    "desktop": {
+      "path": "docs/release/v607/mainline-a-r66-web-performance-desktop-raw-20261007-v647web02.json",
+      "bytes": 1988,
+      "sha256": "2a335ce421b759bc69e4493692f2a0112579aa626b03945a2d68c2db05611b87"
+    },
+    "mobileViewport": {
+      "path": "docs/release/v607/mainline-a-r66-web-performance-mobile-raw-20261007-v647web02.json",
+      "bytes": 1985,
+      "sha256": "9a3779f6c7067041a1ccb5d3ceddcce0dcae268096d7f409edd3870c3f9d4b8d"
+    }
+  },
+  "measurements": {
+    "desktop": {
+      "device": "desktop",
+      "viewport": [
+        1280,
+        720
+      ],
+      "startedAt": "2026-10-07T11:14:48.682Z",
+      "endedAt": "2026-10-07T11:14:49.481Z",
+      "elapsedMs": 799,
+      "sampleCount": 120,
+      "frameIntervalMs": {
+        "mean": 6.636,
+        "p50": 6.555,
+        "p95": 7.06,
+        "max": 7.59,
+        "above16_7ms": 0,
+        "above33_4ms": 0
+      },
+      "jsHeap": {
+        "initialBytes": 149462018,
+        "finalBytes": 140400625,
+        "deltaBytes": -9061393
+      }
+    },
+    "mobileViewport": {
+      "device": "mobileViewport",
+      "viewport": [
+        390,
+        844
+      ],
+      "startedAt": "2026-10-07T11:14:15.971Z",
+      "endedAt": "2026-10-07T11:14:16.782Z",
+      "elapsedMs": 811,
+      "sampleCount": 120,
+      "frameIntervalMs": {
+        "mean": 6.72,
+        "p50": 6.68,
+        "p95": 7.115,
+        "max": 7.58,
+        "above16_7ms": 0,
+        "above33_4ms": 0
+      },
+      "jsHeap": {
+        "initialBytes": 145597587,
+        "finalBytes": 127195648,
+        "deltaBytes": -18401939
+      }
+    }
+  },
+  "longRunStatus": "historical-needs-rerun-for-current-source",
+  "physicalMobile": "not-run",
+  "claims": {
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "legalClearance": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  }
+}

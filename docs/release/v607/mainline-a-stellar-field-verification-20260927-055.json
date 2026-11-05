@@ -1,0 +1,3317 @@
+{
+  "schema": "mainline-a-stellar-field-independent-verification-v621",
+  "generatedAt": "2026-09-27T03:15:39.600Z",
+  "verifier": "Independent raw-byte and source-line inspection; production parser not imported or used.",
+  "evidenceClass": "static-offline-raw-replay",
+  "sourceLedger": {
+    "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+    "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+  },
+  "offsetConvention": "UTF-8 byte offsets are zero-based with exclusive end; line numbers are one-based. Each source rawText exactly equals the captured byte slice decoded as UTF-8.",
+  "scope": "Recompute existing raw artifacts and verify source fields; no new network capture, scientific approval, human review, copyright approval, component admission, or scientific/runtime writeback.",
+  "records": [
+    {
+      "id": "acrux",
+      "source": {
+        "rawArtifactPath": "docs/release/v607/raw-artifacts/r60/acrux-6283e0cf5cb9.raw",
+        "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+        "bytes": 41374,
+        "ledgerSha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+        "ledgerBytes": 41374,
+        "hashMatchesLedger": true,
+        "bytesMatchLedger": true,
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+        "capturedAt": "2026-09-14T04:27:34.327Z",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "requestFingerprint": "eef66c1d128b98ab38e1217207e9cd2600372b59d96c848b870ce761c278b2a6",
+        "transport": "https-html"
+      },
+      "coordinates": {
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "wavelength": "Optical",
+        "rawUnits": {
+          "rightAscension": "hour minute second",
+          "declination": "degree arcminute arcsecond"
+        },
+        "source": {
+          "rawText": "12 26 35.896 -63 05 56.73",
+          "lineStart": 256,
+          "lineEnd": 256,
+          "utf8ByteStart": 11199,
+          "utf8ByteEndExclusive": 11224,
+          "exactSliceVerified": true
+        },
+        "normalized": {
+          "raDeg": 186.6495666666667,
+          "decDeg": -63.099091666666666,
+          "unit": "degree",
+          "method": "sexagesimal conversion of this exact raw value only"
+        },
+        "quality": "B",
+        "qualitySource": {
+          "rawText": "B",
+          "lineStart": 267,
+          "lineEnd": 267,
+          "utf8ByteStart": 11437,
+          "utf8ByteEndExclusive": 11438,
+          "exactSliceVerified": true
+        },
+        "errorEllipseRaw": "18 17 0",
+        "errorEllipseSource": {
+          "rawText": "18 17 0",
+          "lineStart": 263,
+          "lineEnd": 263,
+          "utf8ByteStart": 11365,
+          "utf8ByteEndExclusive": 11372,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "bibcode": "2002A&A...384..180F",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2002A%26A...384..180F\">2002A&A...384..180F</A>         </SPAN>",
+          "lineStart": 271,
+          "lineEnd": 271,
+          "utf8ByteStart": 11490,
+          "utf8ByteEndExclusive": 11608,
+          "exactSliceVerified": true
+        }
+      },
+      "properMotion": {
+        "source": {
+          "rawText": "-35.4  -14.7  [0.6 0.7 90] B",
+          "lineStart": 389,
+          "lineEnd": 389,
+          "utf8ByteStart": 15267,
+          "utf8ByteEndExclusive": 15295,
+          "exactSliceVerified": true
+        },
+        "rightAscensionCosDeclination": -35.4,
+        "declination": -14.7,
+        "unit": "mas/yr",
+        "rightAscensionConvention": "mu-ra*cos(dec)",
+        "frame": "ICRS",
+        "quality": "B",
+        "errorEllipseRaw": [
+          0.6,
+          0.7,
+          90
+        ],
+        "errorEllipseSourceDeclaredUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "errorEllipseInterpretation": "Source tooltip says mas for ellipse axes; retained verbatim, not silently recast as independent mas/yr uncertainties.",
+        "unitsSource": {
+          "rawText": "<LI><EM>pm-ra</EM> : mu-ra*cos(dec) (expressed in the ICRS system in mas/yr)",
+          "lineStart": 375,
+          "lineEnd": 375,
+          "utf8ByteStart": 14728,
+          "utf8ByteEndExclusive": 14804,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnitsSource": {
+          "rawText": "<LI><EM>[error ellipse]</EM> : error major axis and minor axis (in mas), orientation angle (in deg)",
+          "lineStart": 377,
+          "lineEnd": 377,
+          "utf8ByteStart": 14875,
+          "utf8ByteEndExclusive": 14974,
+          "exactSliceVerified": true
+        },
+        "bibcode": "2002A&A...384..180F",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2002A%26A...384..180F\">2002A&A...384..180F</A>         </SPAN>",
+          "lineStart": 395,
+          "lineEnd": 395,
+          "utf8ByteStart": 15380,
+          "utf8ByteEndExclusive": 15498,
+          "exactSliceVerified": true
+        }
+      },
+      "spectralType": {
+        "source": {
+          "rawText": "B0.5IV E",
+          "lineStart": 458,
+          "lineEnd": 458,
+          "utf8ByteStart": 17557,
+          "utf8ByteEndExclusive": 17565,
+          "exactSliceVerified": true
+        },
+        "value": "B0.5IV",
+        "unit": null,
+        "quality": "E",
+        "qualityNotPartOfSpectralType": true,
+        "bibcode": "1975MSS...C01....0H",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=1975MSS...C01....0H\">1975MSS...C01....0H</A>         </SPAN>",
+          "lineStart": 464,
+          "lineEnd": 464,
+          "utf8ByteStart": 17650,
+          "utf8ByteEndExclusive": 17766,
+          "exactSliceVerified": true
+        }
+      },
+      "identifiers": {
+        "declaredCount": 22,
+        "independentlyCounted": 22,
+        "countMatches": true,
+        "headingSource": {
+          "rawText": "Identifiers (22) :",
+          "lineStart": 647,
+          "lineEnd": 647,
+          "utf8ByteStart": 26487,
+          "utf8ByteEndExclusive": 26505,
+          "exactSliceVerified": true
+        },
+        "tableUtf8ByteStart": 26668,
+        "tableUtf8ByteEndExclusive": 31541,
+        "scope": "Only TT entries in the first identifier table after the official full-data access introduction.",
+        "entries": [
+          {
+            "identifier": "HD 108248",
+            "catalog": "HD",
+            "designation": "108248",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HD\">HD</A> 108248",
+              "lineStart": 659,
+              "lineEnd": 659,
+              "utf8ByteStart": 26722,
+              "utf8ByteEndExclusive": 26790,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CSI -62 2745 41",
+            "catalog": "CSI",
+            "designation": "-62 2745 41",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CSI\">CSI</A>-62 2745 41",
+              "lineStart": 669,
+              "lineEnd": 669,
+              "utf8ByteStart": 27057,
+              "utf8ByteEndExclusive": 27131,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "N30 2873",
+            "catalog": "N30",
+            "designation": "2873",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?N30\">N30</A> 2873",
+              "lineStart": 676,
+              "lineEnd": 676,
+              "utf8ByteStart": 27187,
+              "utf8ByteEndExclusive": 27255,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TYC 8979-3464-1",
+            "catalog": "TYC",
+            "designation": "8979-3464-1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TYC\">TYC</A> 8979-3464-1",
+              "lineStart": 683,
+              "lineEnd": 683,
+              "utf8ByteStart": 27311,
+              "utf8ByteEndExclusive": 27386,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "* alf01 Cru",
+            "catalog": "*",
+            "designation": "alf01 Cru",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> alf01 Cru",
+              "lineStart": 695,
+              "lineEnd": 695,
+              "utf8ByteStart": 27675,
+              "utf8ByteEndExclusive": 27744,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "FK5 462",
+            "catalog": "FK5",
+            "designation": "462",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?FK5\">FK5</A> 462",
+              "lineStart": 702,
+              "lineEnd": 702,
+              "utf8ByteStart": 27800,
+              "utf8ByteEndExclusive": 27867,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMSC 12210-6233A",
+            "catalog": "PMSC",
+            "designation": "12210-6233A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMSC\">PMSC</A> 12210-6233A",
+              "lineStart": 712,
+              "lineEnd": 712,
+              "utf8ByteStart": 28136,
+              "utf8ByteEndExclusive": 28213,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J12266-6306A",
+            "catalog": "WDS",
+            "designation": "J12266-6306A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J12266-6306A",
+              "lineStart": 719,
+              "lineEnd": 719,
+              "utf8ByteStart": 28269,
+              "utf8ByteEndExclusive": 28345,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ALS 14968",
+            "catalog": "ALS",
+            "designation": "14968",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ALS\">ALS</A> 14968",
+              "lineStart": 731,
+              "lineEnd": 731,
+              "utf8ByteStart": 28635,
+              "utf8ByteEndExclusive": 28704,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GC 16952",
+            "catalog": "GC",
+            "designation": "16952",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GC\">GC</A> 16952",
+              "lineStart": 741,
+              "lineEnd": 741,
+              "utf8ByteStart": 28972,
+              "utf8ByteEndExclusive": 29039,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PPM 359410",
+            "catalog": "PPM",
+            "designation": "359410",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PPM\">PPM</A> 359410",
+              "lineStart": 748,
+              "lineEnd": 748,
+              "utf8ByteStart": 29095,
+              "utf8ByteEndExclusive": 29165,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WEB 10799",
+            "catalog": "WEB",
+            "designation": "10799",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WEB\">WEB</A> 10799",
+              "lineStart": 758,
+              "lineEnd": 758,
+              "utf8ByteStart": 29434,
+              "utf8ByteEndExclusive": 29503,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J12266-6306A",
+            "catalog": "CCDM",
+            "designation": "J12266-6306A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J12266-6306A",
+              "lineStart": 767,
+              "lineEnd": 767,
+              "utf8ByteStart": 29574,
+              "utf8ByteEndExclusive": 29652,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GCRV 7471",
+            "catalog": "GCRV",
+            "designation": "7471",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GCRV\">GCRV</A> 7471",
+              "lineStart": 777,
+              "lineEnd": 777,
+              "utf8ByteStart": 29929,
+              "utf8ByteEndExclusive": 29999,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ROT 1822",
+            "catalog": "ROT",
+            "designation": "1822",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ROT\">ROT</A> 1822",
+              "lineStart": 784,
+              "lineEnd": 784,
+              "utf8ByteStart": 30055,
+              "utf8ByteEndExclusive": 30123,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "[B10] 3237",
+            "catalog": "[B10]",
+            "designation": "3237",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?%5bB10%5d\">[B10]</A> 3237",
+              "lineStart": 791,
+              "lineEnd": 791,
+              "utf8ByteStart": 30179,
+              "utf8ByteEndExclusive": 30255,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CPC 20.1 3594",
+            "catalog": "CPC",
+            "designation": "20.1 3594",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CPC\">CPC</A> 20.1 3594",
+              "lineStart": 800,
+              "lineEnd": 800,
+              "utf8ByteStart": 30326,
+              "utf8ByteEndExclusive": 30399,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HR 4730",
+            "catalog": "HR",
+            "designation": "4730",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HR\">HR</A> 4730",
+              "lineStart": 807,
+              "lineEnd": 807,
+              "utf8ByteStart": 30455,
+              "utf8ByteEndExclusive": 30521,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SAO 251904",
+            "catalog": "SAO",
+            "designation": "251904",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SAO\">SAO</A> 251904",
+              "lineStart": 817,
+              "lineEnd": 817,
+              "utf8ByteStart": 30789,
+              "utf8ByteEndExclusive": 30859,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CPD -62 2745A",
+            "catalog": "CPD",
+            "designation": "-62 2745A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CPD\">CPD</A>-62 2745A",
+              "lineStart": 830,
+              "lineEnd": 830,
+              "utf8ByteStart": 31152,
+              "utf8ByteEndExclusive": 31224,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 12210-6233 A",
+            "catalog": "IDS",
+            "designation": "12210-6233 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 12210-6233 A",
+              "lineStart": 837,
+              "lineEnd": 837,
+              "utf8ByteStart": 31280,
+              "utf8ByteEndExclusive": 31356,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SKY# 23285",
+            "catalog": "SKY#",
+            "designation": "23285",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SKY%23\">SKY#</A> 23285",
+              "lineStart": 844,
+              "lineEnd": 844,
+              "utf8ByteStart": 31412,
+              "utf8ByteEndExclusive": 31485,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "navigationTokensExcluded": [
+          "Velocities",
+          "Rot",
+          "PM",
+          "SpT",
+          "IUE"
+        ]
+      },
+      "componentIdentity": {
+        "status": "unresolved",
+        "admission": "pending",
+        "componentAliases": [
+          {
+            "identifier": "PMSC 12210-6233A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMSC\">PMSC</A> 12210-6233A",
+              "lineStart": 712,
+              "lineEnd": 712,
+              "utf8ByteStart": 28136,
+              "utf8ByteEndExclusive": 28213,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J12266-6306A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J12266-6306A",
+              "lineStart": 719,
+              "lineEnd": 719,
+              "utf8ByteStart": 28269,
+              "utf8ByteEndExclusive": 28345,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J12266-6306A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J12266-6306A",
+              "lineStart": 767,
+              "lineEnd": 767,
+              "utf8ByteStart": 29574,
+              "utf8ByteEndExclusive": 29652,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 12210-6233 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 12210-6233 A",
+              "lineStart": 837,
+              "lineEnd": 837,
+              "utf8ByteStart": 31280,
+              "utf8ByteEndExclusive": 31356,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "note": "Component-like aliases are identifier hints only; no independent per-field system/component binding has been established."
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "runtimeAdmission": "candidate-only",
+        "measurementAdmission": "not-admitted",
+        "componentConfirmed": false,
+        "scientificValidityApproved": false,
+        "rightsApproved": false,
+        "scientificPayloadWriteback": false,
+        "runtimeWrites": false
+      }
+    },
+    {
+      "id": "spica",
+      "source": {
+        "rawArtifactPath": "docs/release/v607/raw-artifacts/r60/spica-81276ed6687b.raw",
+        "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+        "bytes": 58748,
+        "ledgerSha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+        "ledgerBytes": 58748,
+        "hashMatchesLedger": true,
+        "bytesMatchLedger": true,
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+        "capturedAt": "2026-09-14T04:27:35.015Z",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "requestFingerprint": "ddafab68cde2aae083ab87b49f87cbb8f1ad6f495fddc2c8619419901b135c8e",
+        "transport": "https-html"
+      },
+      "coordinates": {
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "wavelength": "Optical",
+        "rawUnits": {
+          "rightAscension": "hour minute second",
+          "declination": "degree arcminute arcsecond"
+        },
+        "source": {
+          "rawText": "13 25 11.57937 -11 09 40.7501",
+          "lineStart": 304,
+          "lineEnd": 304,
+          "utf8ByteStart": 12204,
+          "utf8ByteEndExclusive": 12233,
+          "exactSliceVerified": true
+        },
+        "normalized": {
+          "raDeg": 201.298247375,
+          "decDeg": -11.161319472222223,
+          "unit": "degree",
+          "method": "sexagesimal conversion of this exact raw value only"
+        },
+        "quality": "A",
+        "qualitySource": {
+          "rawText": "A",
+          "lineStart": 315,
+          "lineEnd": 315,
+          "utf8ByteStart": 12451,
+          "utf8ByteEndExclusive": 12452,
+          "exactSliceVerified": true
+        },
+        "errorEllipseRaw": "5.46 3.26 82",
+        "errorEllipseSource": {
+          "rawText": "5.46 3.26 82",
+          "lineStart": 311,
+          "lineEnd": 311,
+          "utf8ByteStart": 12374,
+          "utf8ByteEndExclusive": 12386,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 319,
+          "lineEnd": 319,
+          "utf8ByteStart": 12504,
+          "utf8ByteEndExclusive": 12622,
+          "exactSliceVerified": true
+        }
+      },
+      "properMotion": {
+        "source": {
+          "rawText": "-42.35  -30.67  [0.62 0.37 0] A",
+          "lineStart": 437,
+          "lineEnd": 437,
+          "utf8ByteStart": 16299,
+          "utf8ByteEndExclusive": 16330,
+          "exactSliceVerified": true
+        },
+        "rightAscensionCosDeclination": -42.35,
+        "declination": -30.67,
+        "unit": "mas/yr",
+        "rightAscensionConvention": "mu-ra*cos(dec)",
+        "frame": "ICRS",
+        "quality": "A",
+        "errorEllipseRaw": [
+          0.62,
+          0.37,
+          0
+        ],
+        "errorEllipseSourceDeclaredUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "errorEllipseInterpretation": "Source tooltip says mas for ellipse axes; retained verbatim, not silently recast as independent mas/yr uncertainties.",
+        "unitsSource": {
+          "rawText": "<LI><EM>pm-ra</EM> : mu-ra*cos(dec) (expressed in the ICRS system in mas/yr)",
+          "lineStart": 423,
+          "lineEnd": 423,
+          "utf8ByteStart": 15760,
+          "utf8ByteEndExclusive": 15836,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnitsSource": {
+          "rawText": "<LI><EM>[error ellipse]</EM> : error major axis and minor axis (in mas), orientation angle (in deg)",
+          "lineStart": 425,
+          "lineEnd": 425,
+          "utf8ByteStart": 15907,
+          "utf8ByteEndExclusive": 16006,
+          "exactSliceVerified": true
+        },
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 443,
+          "lineEnd": 443,
+          "utf8ByteStart": 16415,
+          "utf8ByteEndExclusive": 16533,
+          "exactSliceVerified": true
+        }
+      },
+      "spectralType": {
+        "source": {
+          "rawText": "B1V C",
+          "lineStart": 539,
+          "lineEnd": 539,
+          "utf8ByteStart": 19490,
+          "utf8ByteEndExclusive": 19495,
+          "exactSliceVerified": true
+        },
+        "value": "B1V",
+        "unit": null,
+        "quality": "C",
+        "qualityNotPartOfSpectralType": true,
+        "bibcode": "1953ApJ...117..313J",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=1953ApJ...117..313J\">1953ApJ...117..313J</A>         </SPAN>",
+          "lineStart": 545,
+          "lineEnd": 545,
+          "utf8ByteStart": 19580,
+          "utf8ByteEndExclusive": 19696,
+          "exactSliceVerified": true
+        }
+      },
+      "identifiers": {
+        "declaredCount": 55,
+        "independentlyCounted": 55,
+        "countMatches": true,
+        "headingSource": {
+          "rawText": "Identifiers (55) :",
+          "lineStart": 858,
+          "lineEnd": 858,
+          "utf8ByteStart": 31657,
+          "utf8ByteEndExclusive": 31675,
+          "exactSliceVerified": true
+        },
+        "tableUtf8ByteStart": 31838,
+        "tableUtf8ByteEndExclusive": 44974,
+        "scope": "Only TT entries in the first identifier table after the official full-data access introduction.",
+        "entries": [
+          {
+            "identifier": "* alf Vir",
+            "catalog": "*",
+            "designation": "alf Vir",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> alf Vir",
+              "lineStart": 870,
+              "lineEnd": 870,
+              "utf8ByteStart": 31892,
+              "utf8ByteEndExclusive": 31959,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GEN# +1.00116658",
+            "catalog": "GEN#",
+            "designation": "+1.00116658",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GEN%23\">GEN#</A> +1.00116658",
+              "lineStart": 877,
+              "lineEnd": 877,
+              "utf8ByteStart": 32015,
+              "utf8ByteEndExclusive": 32094,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NAME Spica",
+            "catalog": "NAME",
+            "designation": "Spica",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NAME\">NAME</A> Spica",
+              "lineStart": 884,
+              "lineEnd": 884,
+              "utf8ByteStart": 32150,
+              "utf8ByteEndExclusive": 32221,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SAO 157923",
+            "catalog": "SAO",
+            "designation": "157923",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SAO\">SAO</A> 157923",
+              "lineStart": 891,
+              "lineEnd": 891,
+              "utf8ByteStart": 32277,
+              "utf8ByteEndExclusive": 32347,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "* 67 Vir",
+            "catalog": "*",
+            "designation": "67 Vir",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> 67 Vir",
+              "lineStart": 903,
+              "lineEnd": 903,
+              "utf8ByteStart": 32631,
+              "utf8ByteEndExclusive": 32697,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GSC 05547-01518",
+            "catalog": "GSC",
+            "designation": "05547-01518",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GSC\">GSC</A> 05547-01518",
+              "lineStart": 910,
+              "lineEnd": 910,
+              "utf8ByteStart": 32753,
+              "utf8ByteEndExclusive": 32828,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PLX 3063",
+            "catalog": "PLX",
+            "designation": "3063",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PLX\">PLX</A> 3063",
+              "lineStart": 920,
+              "lineEnd": 920,
+              "utf8ByteStart": 33102,
+              "utf8ByteEndExclusive": 33170,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SBC7 487",
+            "catalog": "SBC7",
+            "designation": "487",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SBC7\">SBC7</A> 487",
+              "lineStart": 930,
+              "lineEnd": 930,
+              "utf8ByteStart": 33437,
+              "utf8ByteEndExclusive": 33506,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "AKARI -IRC-V1 J1325115-110940",
+            "catalog": "AKARI",
+            "designation": "-IRC-V1 J1325115-110940",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?AKARI\">AKARI</A>-IRC-V1 J1325115-110940",
+              "lineStart": 939,
+              "lineEnd": 939,
+              "utf8ByteStart": 33577,
+              "utf8ByteEndExclusive": 33667,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HD 116658",
+            "catalog": "HD",
+            "designation": "116658",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HD\">HD</A> 116658",
+              "lineStart": 949,
+              "lineEnd": 949,
+              "utf8ByteStart": 33956,
+              "utf8ByteEndExclusive": 34024,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMC 90-93 354",
+            "catalog": "PMC",
+            "designation": "90-93 354",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMC\">PMC</A> 90-93 354",
+              "lineStart": 959,
+              "lineEnd": 959,
+              "utf8ByteStart": 34291,
+              "utf8ByteEndExclusive": 34364,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SBC9 766",
+            "catalog": "SBC9",
+            "designation": "766",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SBC9\">SBC9</A> 766",
+              "lineStart": 966,
+              "lineEnd": 966,
+              "utf8ByteStart": 34420,
+              "utf8ByteEndExclusive": 34489,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ALS 14813",
+            "catalog": "ALS",
+            "designation": "14813",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ALS\">ALS</A> 14813",
+              "lineStart": 975,
+              "lineEnd": 975,
+              "utf8ByteStart": 34560,
+              "utf8ByteEndExclusive": 34629,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HGAM 623",
+            "catalog": "HGAM",
+            "designation": "623",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HGAM\">HGAM</A> 623",
+              "lineStart": 985,
+              "lineEnd": 985,
+              "utf8ByteStart": 34897,
+              "utf8ByteEndExclusive": 34966,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PPM 227262",
+            "catalog": "PPM",
+            "designation": "227262",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PPM\">PPM</A> 227262",
+              "lineStart": 992,
+              "lineEnd": 992,
+              "utf8ByteStart": 35022,
+              "utf8ByteEndExclusive": 35092,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SKY# 24751",
+            "catalog": "SKY#",
+            "designation": "24751",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SKY%23\">SKY#</A> 24751",
+              "lineStart": 1002,
+              "lineEnd": 1002,
+              "utf8ByteStart": 35361,
+              "utf8ByteEndExclusive": 35434,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "BD -10 3672",
+            "catalog": "BD",
+            "designation": "-10 3672",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?BD\">BD</A>-10 3672",
+              "lineStart": 1011,
+              "lineEnd": 1011,
+              "utf8ByteStart": 35505,
+              "utf8ByteEndExclusive": 35574,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIC 65474",
+            "catalog": "HIC",
+            "designation": "65474",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIC\">HIC</A> 65474",
+              "lineStart": 1021,
+              "lineEnd": 1021,
+              "utf8ByteStart": 35845,
+              "utf8ByteEndExclusive": 35914,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RAFGL 1622",
+            "catalog": "RAFGL",
+            "designation": "1622",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RAFGL\">RAFGL</A> 1622",
+              "lineStart": 1031,
+              "lineEnd": 1031,
+              "utf8ByteStart": 36185,
+              "utf8ByteEndExclusive": 36257,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TD1 16831",
+            "catalog": "TD1",
+            "designation": "16831",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TD1\">TD1</A> 16831",
+              "lineStart": 1041,
+              "lineEnd": 1041,
+              "utf8ByteStart": 36528,
+              "utf8ByteEndExclusive": 36597,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J13252-1109A",
+            "catalog": "CCDM",
+            "designation": "J13252-1109A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J13252-1109A",
+              "lineStart": 1053,
+              "lineEnd": 1053,
+              "utf8ByteStart": 36880,
+              "utf8ByteEndExclusive": 36958,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIP 65474",
+            "catalog": "HIP",
+            "designation": "65474",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIP\">HIP</A> 65474",
+              "lineStart": 1063,
+              "lineEnd": 1063,
+              "utf8ByteStart": 37235,
+              "utf8ByteEndExclusive": 37304,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RBS 1263",
+            "catalog": "RBS",
+            "designation": "1263",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RBS\">RBS</A> 1263",
+              "lineStart": 1073,
+              "lineEnd": 1073,
+              "utf8ByteStart": 37572,
+              "utf8ByteEndExclusive": 37640,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TIC 178999156",
+            "catalog": "TIC",
+            "designation": "178999156",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TIC\">TIC</A> 178999156",
+              "lineStart": 1080,
+              "lineEnd": 1080,
+              "utf8ByteStart": 37696,
+              "utf8ByteEndExclusive": 37769,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CSI -10 3672 1",
+            "catalog": "CSI",
+            "designation": "-10 3672 1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CSI\">CSI</A>-10 3672 1",
+              "lineStart": 1089,
+              "lineEnd": 1089,
+              "utf8ByteStart": 37840,
+              "utf8ByteEndExclusive": 37913,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HR 5056",
+            "catalog": "HR",
+            "designation": "5056",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HR\">HR</A> 5056",
+              "lineStart": 1096,
+              "lineEnd": 1096,
+              "utf8ByteStart": 37969,
+              "utf8ByteEndExclusive": 38035,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2RE J132508-111117",
+            "catalog": "2RE",
+            "designation": "J132508-111117",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2RE\">2RE</A> J132508-111117",
+              "lineStart": 1106,
+              "lineEnd": 1106,
+              "utf8ByteStart": 38303,
+              "utf8ByteEndExclusive": 38381,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TYC 5547-1518-1",
+            "catalog": "TYC",
+            "designation": "5547-1518-1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TYC\">TYC</A> 5547-1518-1",
+              "lineStart": 1116,
+              "lineEnd": 1116,
+              "utf8ByteStart": 38658,
+              "utf8ByteEndExclusive": 38733,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2E 3039",
+            "catalog": "2E",
+            "designation": "3039",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2E\">2E</A> 3039",
+              "lineStart": 1128,
+              "lineEnd": 1128,
+              "utf8ByteStart": 39022,
+              "utf8ByteEndExclusive": 39088,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 13200-1038 A",
+            "catalog": "IDS",
+            "designation": "13200-1038 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 13200-1038 A",
+              "lineStart": 1138,
+              "lineEnd": 1138,
+              "utf8ByteStart": 39356,
+              "utf8ByteEndExclusive": 39432,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2RE J1325-111",
+            "catalog": "2RE",
+            "designation": "J1325-111",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2RE\">2RE</A> J1325-111",
+              "lineStart": 1145,
+              "lineEnd": 1145,
+              "utf8ByteStart": 39488,
+              "utf8ByteEndExclusive": 39561,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV 12103",
+            "catalog": "UBV",
+            "designation": "12103",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> 12103",
+              "lineStart": 1155,
+              "lineEnd": 1155,
+              "utf8ByteStart": 39833,
+              "utf8ByteEndExclusive": 39902,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2E 1322.5-1053",
+            "catalog": "2E",
+            "designation": "1322.5-1053",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2E\">2E</A> 1322.5-1053",
+              "lineStart": 1164,
+              "lineEnd": 1164,
+              "utf8ByteStart": 39973,
+              "utf8ByteEndExclusive": 40046,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IRAS 13225-1054",
+            "catalog": "IRAS",
+            "designation": "13225-1054",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IRAS\">IRAS</A> 13225-1054",
+              "lineStart": 1171,
+              "lineEnd": 1171,
+              "utf8ByteStart": 40102,
+              "utf8ByteEndExclusive": 40178,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RE J132512-110856",
+            "catalog": "RE",
+            "designation": "J132512-110856",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RE\">RE</A> J132512-110856",
+              "lineStart": 1181,
+              "lineEnd": 1181,
+              "utf8ByteStart": 40453,
+              "utf8ByteEndExclusive": 40529,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV M 19362",
+            "catalog": "UBV",
+            "designation": "M 19362",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> M 19362",
+              "lineStart": 1188,
+              "lineEnd": 1188,
+              "utf8ByteStart": 40585,
+              "utf8ByteEndExclusive": 40656,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "1ES 1322-10.8",
+            "catalog": "1ES",
+            "designation": "1322-10.8",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?1ES\">1ES</A> 1322-10.8",
+              "lineStart": 1197,
+              "lineEnd": 1197,
+              "utf8ByteStart": 40727,
+              "utf8ByteEndExclusive": 40800,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IRC -10286",
+            "catalog": "IRC",
+            "designation": "-10286",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IRC\">IRC</A> -10286",
+              "lineStart": 1204,
+              "lineEnd": 1204,
+              "utf8ByteStart": 40856,
+              "utf8ByteEndExclusive": 40926,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RE J1325-110",
+            "catalog": "RE",
+            "designation": "J1325-110",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RE\">RE</A> J1325-110",
+              "lineStart": 1214,
+              "lineEnd": 1214,
+              "utf8ByteStart": 41195,
+              "utf8ByteEndExclusive": 41266,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "uvby98 100116658",
+            "catalog": "uvby98",
+            "designation": "100116658",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?uvby98\">uvby98</A> 100116658",
+              "lineStart": 1221,
+              "lineEnd": 1221,
+              "utf8ByteStart": 41322,
+              "utf8ByteEndExclusive": 41401,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "EUVE J1325-11.1",
+            "catalog": "EUVE",
+            "designation": "J1325-11.1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?EUVE\">EUVE</A> J1325-11.1",
+              "lineStart": 1233,
+              "lineEnd": 1233,
+              "utf8ByteStart": 41694,
+              "utf8ByteEndExclusive": 41770,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "JP11 2392",
+            "catalog": "JP11",
+            "designation": "2392",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?JP11\">JP11</A> 2392",
+              "lineStart": 1243,
+              "lineEnd": 1243,
+              "utf8ByteStart": 42045,
+              "utf8ByteEndExclusive": 42115,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ROT 1963",
+            "catalog": "ROT",
+            "designation": "1963",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ROT\">ROT</A> 1963",
+              "lineStart": 1250,
+              "lineEnd": 1250,
+              "utf8ByteStart": 42171,
+              "utf8ByteEndExclusive": 42239,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "V* alf Vir",
+            "catalog": "V*",
+            "designation": "alf Vir",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?V*\">V*</A> alf Vir",
+              "lineStart": 1257,
+              "lineEnd": 1257,
+              "utf8ByteStart": 42295,
+              "utf8ByteEndExclusive": 42364,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "FK5 498",
+            "catalog": "FK5",
+            "designation": "498",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?FK5\">FK5</A> 498",
+              "lineStart": 1269,
+              "lineEnd": 1269,
+              "utf8ByteStart": 42649,
+              "utf8ByteEndExclusive": 42716,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2MASS J13251158-1109404",
+            "catalog": "2MASS",
+            "designation": "J13251158-1109404",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2MASS\">2MASS</A> J13251158-1109404",
+              "lineStart": 1279,
+              "lineEnd": 1279,
+              "utf8ByteStart": 42985,
+              "utf8ByteEndExclusive": 43070,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RX J1325.2-1109",
+            "catalog": "RX",
+            "designation": "J1325.2-1109",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RX\">RX</A> J1325.2-1109",
+              "lineStart": 1289,
+              "lineEnd": 1289,
+              "utf8ByteStart": 43354,
+              "utf8ByteEndExclusive": 43428,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J13252-1110A",
+            "catalog": "WDS",
+            "designation": "J13252-1110A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J13252-1110A",
+              "lineStart": 1296,
+              "lineEnd": 1296,
+              "utf8ByteStart": 43484,
+              "utf8ByteEndExclusive": 43560,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GC 18144",
+            "catalog": "GC",
+            "designation": "18144",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GC\">GC</A> 18144",
+              "lineStart": 1308,
+              "lineEnd": 1308,
+              "utf8ByteStart": 43850,
+              "utf8ByteEndExclusive": 43917,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "MCW 553",
+            "catalog": "MCW",
+            "designation": "553",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?MCW\">MCW</A> 553",
+              "lineStart": 1315,
+              "lineEnd": 1315,
+              "utf8ByteStart": 43973,
+              "utf8ByteEndExclusive": 44040,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "1RXS J132511.6-110932",
+            "catalog": "1RXS",
+            "designation": "J132511.6-110932",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?1RXS\">1RXS</A> J132511.6-110932",
+              "lineStart": 1322,
+              "lineEnd": 1322,
+              "utf8ByteStart": 44096,
+              "utf8ByteEndExclusive": 44178,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WEB 11556",
+            "catalog": "WEB",
+            "designation": "11556",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WEB\">WEB</A> 11556",
+              "lineStart": 1332,
+              "lineEnd": 1332,
+              "utf8ByteStart": 44459,
+              "utf8ByteEndExclusive": 44528,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GCRV 7963",
+            "catalog": "GCRV",
+            "designation": "7963",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GCRV\">GCRV</A> 7963",
+              "lineStart": 1341,
+              "lineEnd": 1341,
+              "utf8ByteStart": 44599,
+              "utf8ByteEndExclusive": 44669,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "N30 3066",
+            "catalog": "N30",
+            "designation": "3066",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?N30\">N30</A> 3066",
+              "lineStart": 1348,
+              "lineEnd": 1348,
+              "utf8ByteStart": 44725,
+              "utf8ByteEndExclusive": 44793,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SACS 290",
+            "catalog": "SACS",
+            "designation": "290",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SACS\">SACS</A> 290",
+              "lineStart": 1355,
+              "lineEnd": 1355,
+              "utf8ByteStart": 44849,
+              "utf8ByteEndExclusive": 44918,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "navigationTokensExcluded": [
+          "Velocities",
+          "Rot",
+          "PM",
+          "SpT",
+          "IUE"
+        ]
+      },
+      "componentIdentity": {
+        "status": "unresolved",
+        "admission": "pending",
+        "componentAliases": [
+          {
+            "identifier": "CCDM J13252-1109A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J13252-1109A",
+              "lineStart": 1053,
+              "lineEnd": 1053,
+              "utf8ByteStart": 36880,
+              "utf8ByteEndExclusive": 36958,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 13200-1038 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 13200-1038 A",
+              "lineStart": 1138,
+              "lineEnd": 1138,
+              "utf8ByteStart": 39356,
+              "utf8ByteEndExclusive": 39432,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J13252-1110A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J13252-1110A",
+              "lineStart": 1296,
+              "lineEnd": 1296,
+              "utf8ByteStart": 43484,
+              "utf8ByteEndExclusive": 43560,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "note": "Component-like aliases are identifier hints only; no independent per-field system/component binding has been established."
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "runtimeAdmission": "candidate-only",
+        "measurementAdmission": "not-admitted",
+        "componentConfirmed": false,
+        "scientificValidityApproved": false,
+        "rightsApproved": false,
+        "scientificPayloadWriteback": false,
+        "runtimeWrites": false
+      }
+    },
+    {
+      "id": "regulus",
+      "source": {
+        "rawArtifactPath": "docs/release/v607/raw-artifacts/r60/regulus-a30e3e314621.raw",
+        "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+        "bytes": 58144,
+        "ledgerSha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+        "ledgerBytes": 58144,
+        "hashMatchesLedger": true,
+        "bytesMatchLedger": true,
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+        "capturedAt": "2026-09-14T04:27:35.704Z",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "requestFingerprint": "b419cedc37e715efeb10f1f80ffe101046d4c88c4151624680ea4c0f5b59ba65",
+        "transport": "https-html"
+      },
+      "coordinates": {
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "wavelength": "Optical",
+        "rawUnits": {
+          "rightAscension": "hour minute second",
+          "declination": "degree arcminute arcsecond"
+        },
+        "source": {
+          "rawText": "10 08 22.31099 +11 58 01.9516",
+          "lineStart": 292,
+          "lineEnd": 292,
+          "utf8ByteStart": 11836,
+          "utf8ByteEndExclusive": 11865,
+          "exactSliceVerified": true
+        },
+        "normalized": {
+          "raDeg": 152.09296245833335,
+          "decDeg": 11.967208777777778,
+          "unit": "degree",
+          "method": "sexagesimal conversion of this exact raw value only"
+        },
+        "quality": "A",
+        "qualitySource": {
+          "rawText": "A",
+          "lineStart": 303,
+          "lineEnd": 303,
+          "utf8ByteStart": 12083,
+          "utf8ByteEndExclusive": 12084,
+          "exactSliceVerified": true
+        },
+        "errorEllipseRaw": "3.08 1.85 90",
+        "errorEllipseSource": {
+          "rawText": "3.08 1.85 90",
+          "lineStart": 299,
+          "lineEnd": 299,
+          "utf8ByteStart": 12006,
+          "utf8ByteEndExclusive": 12018,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 307,
+          "lineEnd": 307,
+          "utf8ByteStart": 12136,
+          "utf8ByteEndExclusive": 12254,
+          "exactSliceVerified": true
+        }
+      },
+      "properMotion": {
+        "source": {
+          "rawText": "-248.73  5.59  [0.35 0.21 0] A",
+          "lineStart": 425,
+          "lineEnd": 425,
+          "utf8ByteStart": 15931,
+          "utf8ByteEndExclusive": 15961,
+          "exactSliceVerified": true
+        },
+        "rightAscensionCosDeclination": -248.73,
+        "declination": 5.59,
+        "unit": "mas/yr",
+        "rightAscensionConvention": "mu-ra*cos(dec)",
+        "frame": "ICRS",
+        "quality": "A",
+        "errorEllipseRaw": [
+          0.35,
+          0.21,
+          0
+        ],
+        "errorEllipseSourceDeclaredUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "errorEllipseInterpretation": "Source tooltip says mas for ellipse axes; retained verbatim, not silently recast as independent mas/yr uncertainties.",
+        "unitsSource": {
+          "rawText": "<LI><EM>pm-ra</EM> : mu-ra*cos(dec) (expressed in the ICRS system in mas/yr)",
+          "lineStart": 411,
+          "lineEnd": 411,
+          "utf8ByteStart": 15392,
+          "utf8ByteEndExclusive": 15468,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnitsSource": {
+          "rawText": "<LI><EM>[error ellipse]</EM> : error major axis and minor axis (in mas), orientation angle (in deg)",
+          "lineStart": 413,
+          "lineEnd": 413,
+          "utf8ByteStart": 15539,
+          "utf8ByteEndExclusive": 15638,
+          "exactSliceVerified": true
+        },
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 431,
+          "lineEnd": 431,
+          "utf8ByteStart": 16046,
+          "utf8ByteEndExclusive": 16164,
+          "exactSliceVerified": true
+        }
+      },
+      "spectralType": {
+        "source": {
+          "rawText": "B8IVn C",
+          "lineStart": 527,
+          "lineEnd": 527,
+          "utf8ByteStart": 19136,
+          "utf8ByteEndExclusive": 19143,
+          "exactSliceVerified": true
+        },
+        "value": "B8IVn",
+        "unit": null,
+        "quality": "C",
+        "qualityNotPartOfSpectralType": true,
+        "bibcode": "2024A&A...690A.176N",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2024A%26A...690A.176N\">2024A&A...690A.176N</A>         </SPAN>",
+          "lineStart": 533,
+          "lineEnd": 533,
+          "utf8ByteStart": 19228,
+          "utf8ByteEndExclusive": 19346,
+          "exactSliceVerified": true
+        }
+      },
+      "identifiers": {
+        "declaredCount": 56,
+        "independentlyCounted": 56,
+        "countMatches": true,
+        "headingSource": {
+          "rawText": "Identifiers (56) :",
+          "lineStart": 846,
+          "lineEnd": 846,
+          "utf8ByteStart": 31329,
+          "utf8ByteEndExclusive": 31347,
+          "exactSliceVerified": true
+        },
+        "tableUtf8ByteStart": 31510,
+        "tableUtf8ByteEndExclusive": 44535,
+        "scope": "Only TT entries in the first identifier table after the official full-data access introduction.",
+        "entries": [
+          {
+            "identifier": "LTT 12716",
+            "catalog": "LTT",
+            "designation": "12716",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?LTT\">LTT</A> 12716",
+              "lineStart": 858,
+              "lineEnd": 858,
+              "utf8ByteStart": 31564,
+              "utf8ByteEndExclusive": 31633,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2E 1005.5+1213",
+            "catalog": "2E",
+            "designation": "1005.5+1213",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2E\">2E</A> 1005.5+1213",
+              "lineStart": 865,
+              "lineEnd": 865,
+              "utf8ByteStart": 31689,
+              "utf8ByteEndExclusive": 31762,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "LSPM J1008+1158",
+            "catalog": "LSPM",
+            "designation": "J1008+1158",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?LSPM\">LSPM</A> J1008+1158",
+              "lineStart": 872,
+              "lineEnd": 872,
+              "utf8ByteStart": 31818,
+              "utf8ByteEndExclusive": 31894,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SRS 30380",
+            "catalog": "SRS",
+            "designation": "30380",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SRS\">SRS</A> 30380",
+              "lineStart": 882,
+              "lineEnd": 882,
+              "utf8ByteStart": 32171,
+              "utf8ByteEndExclusive": 32240,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "* alf Leo",
+            "catalog": "*",
+            "designation": "alf Leo",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> alf Leo",
+              "lineStart": 891,
+              "lineEnd": 891,
+              "utf8ByteStart": 32311,
+              "utf8ByteEndExclusive": 32378,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "FK5 380",
+            "catalog": "FK5",
+            "designation": "380",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?FK5\">FK5</A> 380",
+              "lineStart": 898,
+              "lineEnd": 898,
+              "utf8ByteStart": 32434,
+              "utf8ByteEndExclusive": 32501,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2MASS J10082229+1158018",
+            "catalog": "2MASS",
+            "designation": "J10082229+1158018",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2MASS\">2MASS</A> J10082229+1158018",
+              "lineStart": 908,
+              "lineEnd": 908,
+              "utf8ByteStart": 32770,
+              "utf8ByteEndExclusive": 32855,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SV* ZI 793",
+            "catalog": "SV*",
+            "designation": "ZI 793",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SV*\">SV*</A> ZI 793",
+              "lineStart": 918,
+              "lineEnd": 918,
+              "utf8ByteStart": 33141,
+              "utf8ByteEndExclusive": 33211,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "* 32 Leo",
+            "catalog": "*",
+            "designation": "32 Leo",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> 32 Leo",
+              "lineStart": 927,
+              "lineEnd": 927,
+              "utf8ByteStart": 33282,
+              "utf8ByteEndExclusive": 33348,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GC 13926",
+            "catalog": "GC",
+            "designation": "13926",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GC\">GC</A> 13926",
+              "lineStart": 934,
+              "lineEnd": 934,
+              "utf8ByteStart": 33404,
+              "utf8ByteEndExclusive": 33471,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "N30 2414",
+            "catalog": "N30",
+            "designation": "2414",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?N30\">N30</A> 2414",
+              "lineStart": 941,
+              "lineEnd": 941,
+              "utf8ByteStart": 33527,
+              "utf8ByteEndExclusive": 33595,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TD1 14585",
+            "catalog": "TD1",
+            "designation": "14585",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TD1\">TD1</A> 14585",
+              "lineStart": 948,
+              "lineEnd": 948,
+              "utf8ByteStart": 33651,
+              "utf8ByteEndExclusive": 33720,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "** STF 5006A",
+            "catalog": "**",
+            "designation": "STF 5006A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?**\">**</A> STF 5006A",
+              "lineStart": 960,
+              "lineEnd": 960,
+              "utf8ByteStart": 34003,
+              "utf8ByteEndExclusive": 34074,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GCRV 6417",
+            "catalog": "GCRV",
+            "designation": "6417",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GCRV\">GCRV</A> 6417",
+              "lineStart": 967,
+              "lineEnd": 967,
+              "utf8ByteStart": 34130,
+              "utf8ByteEndExclusive": 34200,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NAME Regulus",
+            "catalog": "NAME",
+            "designation": "Regulus",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NAME\">NAME</A> Regulus",
+              "lineStart": 974,
+              "lineEnd": 974,
+              "utf8ByteStart": 34256,
+              "utf8ByteEndExclusive": 34329,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TIC 357348164",
+            "catalog": "TIC",
+            "designation": "357348164",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TIC\">TIC</A> 357348164",
+              "lineStart": 981,
+              "lineEnd": 981,
+              "utf8ByteStart": 34385,
+              "utf8ByteEndExclusive": 34458,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ADS 7654 A",
+            "catalog": "ADS",
+            "designation": "7654 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 7654 A",
+              "lineStart": 990,
+              "lineEnd": 990,
+              "utf8ByteStart": 34529,
+              "utf8ByteEndExclusive": 34599,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GEN# +1.00087901A",
+            "catalog": "GEN#",
+            "designation": "+1.00087901A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GEN%23\">GEN#</A> +1.00087901A",
+              "lineStart": 997,
+              "lineEnd": 997,
+              "utf8ByteStart": 34655,
+              "utf8ByteEndExclusive": 34735,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NLTT 23490",
+            "catalog": "NLTT",
+            "designation": "23490",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NLTT\">NLTT</A> 23490",
+              "lineStart": 1004,
+              "lineEnd": 1004,
+              "utf8ByteStart": 34791,
+              "utf8ByteEndExclusive": 34862,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TIC 471011645",
+            "catalog": "TIC",
+            "designation": "471011645",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TIC\">TIC</A> 471011645",
+              "lineStart": 1014,
+              "lineEnd": 1014,
+              "utf8ByteStart": 35132,
+              "utf8ByteEndExclusive": 35205,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "AG +12 1199",
+            "catalog": "AG",
+            "designation": "+12 1199",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?AG\">AG</A>+12 1199",
+              "lineStart": 1023,
+              "lineEnd": 1023,
+              "utf8ByteStart": 35276,
+              "utf8ByteEndExclusive": 35345,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GJ 9316 A",
+            "catalog": "GJ",
+            "designation": "9316 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GJ\">GJ</A> 9316 A",
+              "lineStart": 1033,
+              "lineEnd": 1033,
+              "utf8ByteStart": 35615,
+              "utf8ByteEndExclusive": 35683,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NSV 4750",
+            "catalog": "NSV",
+            "designation": "4750",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NSV\">NSV</A> 4750",
+              "lineStart": 1043,
+              "lineEnd": 1043,
+              "utf8ByteStart": 35952,
+              "utf8ByteEndExclusive": 36020,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TYC 833-1381-1",
+            "catalog": "TYC",
+            "designation": "833-1381-1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TYC\">TYC</A> 833-1381-1",
+              "lineStart": 1053,
+              "lineEnd": 1053,
+              "utf8ByteStart": 36290,
+              "utf8ByteEndExclusive": 36364,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "AP J10082229+1158018",
+            "catalog": "AP",
+            "designation": "J10082229+1158018",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?AP\">AP</A> J10082229+1158018",
+              "lineStart": 1065,
+              "lineEnd": 1065,
+              "utf8ByteStart": 36655,
+              "utf8ByteEndExclusive": 36734,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HD 87901",
+            "catalog": "HD",
+            "designation": "87901",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HD\">HD</A> 87901",
+              "lineStart": 1075,
+              "lineEnd": 1075,
+              "utf8ByteStart": 37014,
+              "utf8ByteEndExclusive": 37081,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PLX 2384",
+            "catalog": "PLX",
+            "designation": "2384",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PLX\">PLX</A> 2384",
+              "lineStart": 1085,
+              "lineEnd": 1085,
+              "utf8ByteStart": 37350,
+              "utf8ByteEndExclusive": 37418,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV 9452",
+            "catalog": "UBV",
+            "designation": "9452",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> 9452",
+              "lineStart": 1095,
+              "lineEnd": 1095,
+              "utf8ByteStart": 37685,
+              "utf8ByteEndExclusive": 37753,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ASCC 949713",
+            "catalog": "ASCC",
+            "designation": "949713",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ASCC\">ASCC</A> 949713",
+              "lineStart": 1104,
+              "lineEnd": 1104,
+              "utf8ByteStart": 37824,
+              "utf8ByteEndExclusive": 37896,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HGAM 596",
+            "catalog": "HGAM",
+            "designation": "596",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HGAM\">HGAM</A> 596",
+              "lineStart": 1111,
+              "lineEnd": 1111,
+              "utf8ByteStart": 37952,
+              "utf8ByteEndExclusive": 38021,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMC 90-93 274",
+            "catalog": "PMC",
+            "designation": "90-93 274",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMC\">PMC</A> 90-93 274",
+              "lineStart": 1118,
+              "lineEnd": 1118,
+              "utf8ByteStart": 38077,
+              "utf8ByteEndExclusive": 38150,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV M 15960",
+            "catalog": "UBV",
+            "designation": "M 15960",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> M 15960",
+              "lineStart": 1125,
+              "lineEnd": 1125,
+              "utf8ByteStart": 38206,
+              "utf8ByteEndExclusive": 38277,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "BD +12 2149",
+            "catalog": "BD",
+            "designation": "+12 2149",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?BD\">BD</A>+12 2149",
+              "lineStart": 1134,
+              "lineEnd": 1134,
+              "utf8ByteStart": 38348,
+              "utf8ByteEndExclusive": 38417,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIC 49669",
+            "catalog": "HIC",
+            "designation": "49669",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIC\">HIC</A> 49669",
+              "lineStart": 1144,
+              "lineEnd": 1144,
+              "utf8ByteStart": 38690,
+              "utf8ByteEndExclusive": 38759,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMSC 10030+1227A",
+            "catalog": "PMSC",
+            "designation": "10030+1227A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMSC\">PMSC</A> 10030+1227A",
+              "lineStart": 1154,
+              "lineEnd": 1154,
+              "utf8ByteStart": 39030,
+              "utf8ByteEndExclusive": 39107,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "USNO -B1.0 1019-00203254",
+            "catalog": "USNO",
+            "designation": "-B1.0 1019-00203254",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?USNO\">USNO</A>-B1.0 1019-00203254",
+              "lineStart": 1161,
+              "lineEnd": 1161,
+              "utf8ByteStart": 39163,
+              "utf8ByteEndExclusive": 39247,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J10083+1159A",
+            "catalog": "CCDM",
+            "designation": "J10083+1159A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J10083+1159A",
+              "lineStart": 1173,
+              "lineEnd": 1173,
+              "utf8ByteStart": 39545,
+              "utf8ByteEndExclusive": 39623,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIP 49669",
+            "catalog": "HIP",
+            "designation": "49669",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIP\">HIP</A> 49669",
+              "lineStart": 1183,
+              "lineEnd": 1183,
+              "utf8ByteStart": 39902,
+              "utf8ByteEndExclusive": 39971,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PPM 127140",
+            "catalog": "PPM",
+            "designation": "127140",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PPM\">PPM</A> 127140",
+              "lineStart": 1193,
+              "lineEnd": 1193,
+              "utf8ByteStart": 40239,
+              "utf8ByteEndExclusive": 40309,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "uvby98 100087901 A",
+            "catalog": "uvby98",
+            "designation": "100087901 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?uvby98\">uvby98</A> 100087901 A",
+              "lineStart": 1203,
+              "lineEnd": 1203,
+              "utf8ByteStart": 40578,
+              "utf8ByteEndExclusive": 40659,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CNS5 2491",
+            "catalog": "CNS5",
+            "designation": "2491",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CNS5\">CNS5</A> 2491",
+              "lineStart": 1215,
+              "lineEnd": 1215,
+              "utf8ByteStart": 40956,
+              "utf8ByteEndExclusive": 41026,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HR 3982",
+            "catalog": "HR",
+            "designation": "3982",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HR\">HR</A> 3982",
+              "lineStart": 1222,
+              "lineEnd": 1222,
+              "utf8ByteStart": 41082,
+              "utf8ByteEndExclusive": 41148,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "RAFGL 4771S",
+            "catalog": "RAFGL",
+            "designation": "4771S",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?RAFGL\">RAFGL</A> 4771S",
+              "lineStart": 1232,
+              "lineEnd": 1232,
+              "utf8ByteStart": 41416,
+              "utf8ByteEndExclusive": 41489,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J10084+1158A",
+            "catalog": "WDS",
+            "designation": "J10084+1158A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J10084+1158A",
+              "lineStart": 1242,
+              "lineEnd": 1242,
+              "utf8ByteStart": 41761,
+              "utf8ByteEndExclusive": 41837,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CSI +12 2149 1",
+            "catalog": "CSI",
+            "designation": "+12 2149 1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CSI\">CSI</A>+12 2149 1",
+              "lineStart": 1254,
+              "lineEnd": 1254,
+              "utf8ByteStart": 42129,
+              "utf8ByteEndExclusive": 42202,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IRAS 10056+1212",
+            "catalog": "IRAS",
+            "designation": "10056+1212",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IRAS\">IRAS</A> 10056+1212",
+              "lineStart": 1261,
+              "lineEnd": 1261,
+              "utf8ByteStart": 42258,
+              "utf8ByteEndExclusive": 42334,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ROT 1536",
+            "catalog": "ROT",
+            "designation": "1536",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ROT\">ROT</A> 1536",
+              "lineStart": 1271,
+              "lineEnd": 1271,
+              "utf8ByteStart": 42611,
+              "utf8ByteEndExclusive": 42679,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WEB 9160",
+            "catalog": "WEB",
+            "designation": "9160",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WEB\">WEB</A> 9160",
+              "lineStart": 1278,
+              "lineEnd": 1278,
+              "utf8ByteStart": 42735,
+              "utf8ByteEndExclusive": 42803,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CSV 101099",
+            "catalog": "CSV",
+            "designation": "101099",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CSV\">CSV</A> 101099",
+              "lineStart": 1287,
+              "lineEnd": 1287,
+              "utf8ByteStart": 42874,
+              "utf8ByteEndExclusive": 42944,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IRC +10226",
+            "catalog": "IRC",
+            "designation": "+10226",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IRC\">IRC</A> +10226",
+              "lineStart": 1294,
+              "lineEnd": 1294,
+              "utf8ByteStart": 43000,
+              "utf8ByteEndExclusive": 43070,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SAO 98967",
+            "catalog": "SAO",
+            "designation": "98967",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SAO\">SAO</A> 98967",
+              "lineStart": 1304,
+              "lineEnd": 1304,
+              "utf8ByteStart": 43341,
+              "utf8ByteEndExclusive": 43410,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "YPAC 43",
+            "catalog": "YPAC",
+            "designation": "43",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?YPAC\">YPAC</A> 43",
+              "lineStart": 1314,
+              "lineEnd": 1314,
+              "utf8ByteStart": 43681,
+              "utf8ByteEndExclusive": 43749,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2E 2231",
+            "catalog": "2E",
+            "designation": "2231",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2E\">2E</A> 2231",
+              "lineStart": 1323,
+              "lineEnd": 1323,
+              "utf8ByteStart": 43820,
+              "utf8ByteEndExclusive": 43886,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "JP11 1896",
+            "catalog": "JP11",
+            "designation": "1896",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?JP11\">JP11</A> 1896",
+              "lineStart": 1333,
+              "lineEnd": 1333,
+              "utf8ByteStart": 44154,
+              "utf8ByteEndExclusive": 44224,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SKY# 19511",
+            "catalog": "SKY#",
+            "designation": "19511",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SKY%23\">SKY#</A> 19511",
+              "lineStart": 1340,
+              "lineEnd": 1340,
+              "utf8ByteStart": 44280,
+              "utf8ByteEndExclusive": 44353,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "[HFE83] 708",
+            "catalog": "[HFE83]",
+            "designation": "708",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?%5bHFE83%5d\">[HFE83]</A> 708",
+              "lineStart": 1347,
+              "lineEnd": 1347,
+              "utf8ByteStart": 44409,
+              "utf8ByteEndExclusive": 44488,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "navigationTokensExcluded": [
+          "Velocities",
+          "Rot",
+          "PM",
+          "SpT",
+          "IUE"
+        ]
+      },
+      "componentIdentity": {
+        "status": "unresolved",
+        "admission": "pending",
+        "componentAliases": [
+          {
+            "identifier": "ADS 7654 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 7654 A",
+              "lineStart": 990,
+              "lineEnd": 990,
+              "utf8ByteStart": 34529,
+              "utf8ByteEndExclusive": 34599,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMSC 10030+1227A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMSC\">PMSC</A> 10030+1227A",
+              "lineStart": 1154,
+              "lineEnd": 1154,
+              "utf8ByteStart": 39030,
+              "utf8ByteEndExclusive": 39107,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J10083+1159A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J10083+1159A",
+              "lineStart": 1173,
+              "lineEnd": 1173,
+              "utf8ByteStart": 39545,
+              "utf8ByteEndExclusive": 39623,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J10084+1158A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J10084+1158A",
+              "lineStart": 1242,
+              "lineEnd": 1242,
+              "utf8ByteStart": 41761,
+              "utf8ByteEndExclusive": 41837,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "note": "Component-like aliases are identifier hints only; no independent per-field system/component binding has been established."
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "runtimeAdmission": "candidate-only",
+        "measurementAdmission": "not-admitted",
+        "componentConfirmed": false,
+        "scientificValidityApproved": false,
+        "rightsApproved": false,
+        "scientificPayloadWriteback": false,
+        "runtimeWrites": false
+      }
+    },
+    {
+      "id": "polaris",
+      "source": {
+        "rawArtifactPath": "docs/release/v607/raw-artifacts/r60/polaris-5c70e01ec2c0.raw",
+        "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+        "bytes": 54527,
+        "ledgerSha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+        "ledgerBytes": 54527,
+        "hashMatchesLedger": true,
+        "bytesMatchLedger": true,
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+        "capturedAt": "2026-09-14T04:27:36.395Z",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "requestFingerprint": "d3bf3ae101052d0538fc958d9c5371e576087f1ac21769a46488681f18f91215",
+        "transport": "https-html"
+      },
+      "coordinates": {
+        "frame": "ICRS",
+        "epoch": "J2000",
+        "wavelength": "Optical",
+        "rawUnits": {
+          "rightAscension": "hour minute second",
+          "declination": "degree arcminute arcsecond"
+        },
+        "source": {
+          "rawText": "02 31 49.09456 +89 15 50.7923",
+          "lineStart": 292,
+          "lineEnd": 292,
+          "utf8ByteStart": 11983,
+          "utf8ByteEndExclusive": 12012,
+          "exactSliceVerified": true
+        },
+        "normalized": {
+          "raDeg": 37.954560666666666,
+          "decDeg": 89.26410897222222,
+          "unit": "degree",
+          "method": "sexagesimal conversion of this exact raw value only"
+        },
+        "quality": "A",
+        "qualitySource": {
+          "rawText": "A",
+          "lineStart": 303,
+          "lineEnd": 303,
+          "utf8ByteStart": 12230,
+          "utf8ByteEndExclusive": 12231,
+          "exactSliceVerified": true
+        },
+        "errorEllipseRaw": "1.14 0.97 90",
+        "errorEllipseSource": {
+          "rawText": "1.14 0.97 90",
+          "lineStart": 299,
+          "lineEnd": 299,
+          "utf8ByteStart": 12153,
+          "utf8ByteEndExclusive": 12165,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 307,
+          "lineEnd": 307,
+          "utf8ByteStart": 12283,
+          "utf8ByteEndExclusive": 12401,
+          "exactSliceVerified": true
+        }
+      },
+      "properMotion": {
+        "source": {
+          "rawText": "44.48  -11.85  [0.11 0.13 0] A",
+          "lineStart": 425,
+          "lineEnd": 425,
+          "utf8ByteStart": 16078,
+          "utf8ByteEndExclusive": 16108,
+          "exactSliceVerified": true
+        },
+        "rightAscensionCosDeclination": 44.48,
+        "declination": -11.85,
+        "unit": "mas/yr",
+        "rightAscensionConvention": "mu-ra*cos(dec)",
+        "frame": "ICRS",
+        "quality": "A",
+        "errorEllipseRaw": [
+          0.11,
+          0.13,
+          0
+        ],
+        "errorEllipseSourceDeclaredUnits": [
+          "mas",
+          "mas",
+          "degree"
+        ],
+        "errorEllipseInterpretation": "Source tooltip says mas for ellipse axes; retained verbatim, not silently recast as independent mas/yr uncertainties.",
+        "unitsSource": {
+          "rawText": "<LI><EM>pm-ra</EM> : mu-ra*cos(dec) (expressed in the ICRS system in mas/yr)",
+          "lineStart": 411,
+          "lineEnd": 411,
+          "utf8ByteStart": 15539,
+          "utf8ByteEndExclusive": 15615,
+          "exactSliceVerified": true
+        },
+        "errorEllipseUnitsSource": {
+          "rawText": "<LI><EM>[error ellipse]</EM> : error major axis and minor axis (in mas), orientation angle (in deg)",
+          "lineStart": 413,
+          "lineEnd": 413,
+          "utf8ByteStart": 15686,
+          "utf8ByteEndExclusive": 15785,
+          "exactSliceVerified": true
+        },
+        "bibcode": "2007A&A...474..653V",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=2007A%26A...474..653V\">2007A&A...474..653V</A>         </SPAN>",
+          "lineStart": 431,
+          "lineEnd": 431,
+          "utf8ByteStart": 16193,
+          "utf8ByteEndExclusive": 16311,
+          "exactSliceVerified": true
+        }
+      },
+      "spectralType": {
+        "source": {
+          "rawText": "F8Ib C",
+          "lineStart": 525,
+          "lineEnd": 525,
+          "utf8ByteStart": 19175,
+          "utf8ByteEndExclusive": 19181,
+          "exactSliceVerified": true
+        },
+        "value": "F8Ib",
+        "unit": null,
+        "quality": "C",
+        "qualityNotPartOfSpectralType": true,
+        "bibcode": "1993ASPC...45...59L",
+        "bibcodeSource": {
+          "rawText": "<A HREF=\"//simbad.cds.unistra.fr/simbad/sim-ref?bibcode=1993ASPC...45...59L\">1993ASPC...45...59L</A>         </SPAN>",
+          "lineStart": 531,
+          "lineEnd": 531,
+          "utf8ByteStart": 19266,
+          "utf8ByteEndExclusive": 19382,
+          "exactSliceVerified": true
+        }
+      },
+      "identifiers": {
+        "declaredCount": 46,
+        "independentlyCounted": 46,
+        "countMatches": true,
+        "headingSource": {
+          "rawText": "Identifiers (46) :",
+          "lineStart": 848,
+          "lineEnd": 848,
+          "utf8ByteStart": 31458,
+          "utf8ByteEndExclusive": 31476,
+          "exactSliceVerified": true
+        },
+        "tableUtf8ByteStart": 31639,
+        "tableUtf8ByteEndExclusive": 41847,
+        "scope": "Only TT entries in the first identifier table after the official full-data access introduction.",
+        "entries": [
+          {
+            "identifier": "* alf UMi",
+            "catalog": "*",
+            "designation": "alf UMi",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> alf UMi",
+              "lineStart": 860,
+              "lineEnd": 860,
+              "utf8ByteStart": 31693,
+              "utf8ByteEndExclusive": 31760,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GCRV 1037",
+            "catalog": "GCRV",
+            "designation": "1037",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GCRV\">GCRV</A> 1037",
+              "lineStart": 867,
+              "lineEnd": 867,
+              "utf8ByteStart": 31816,
+              "utf8ByteEndExclusive": 31886,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NAME Lodestar",
+            "catalog": "NAME",
+            "designation": "Lodestar",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NAME\">NAME</A> Lodestar",
+              "lineStart": 874,
+              "lineEnd": 874,
+              "utf8ByteStart": 31942,
+              "utf8ByteEndExclusive": 32016,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TD1 835",
+            "catalog": "TD1",
+            "designation": "835",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TD1\">TD1</A> 835",
+              "lineStart": 881,
+              "lineEnd": 881,
+              "utf8ByteStart": 32072,
+              "utf8ByteEndExclusive": 32139,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "* 1 UMi",
+            "catalog": "*",
+            "designation": "1 UMi",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?*\">*</A> 1 UMi",
+              "lineStart": 893,
+              "lineEnd": 893,
+              "utf8ByteStart": 32426,
+              "utf8ByteEndExclusive": 32491,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GEN# +1.00008890A",
+            "catalog": "GEN#",
+            "designation": "+1.00008890A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GEN%23\">GEN#</A> +1.00008890A",
+              "lineStart": 900,
+              "lineEnd": 900,
+              "utf8ByteStart": 32547,
+              "utf8ByteEndExclusive": 32627,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NAME Polaris",
+            "catalog": "NAME",
+            "designation": "Polaris",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NAME\">NAME</A> Polaris",
+              "lineStart": 907,
+              "lineEnd": 907,
+              "utf8ByteStart": 32683,
+              "utf8ByteEndExclusive": 32756,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TIC 303256075",
+            "catalog": "TIC",
+            "designation": "303256075",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TIC\">TIC</A> 303256075",
+              "lineStart": 914,
+              "lineEnd": 914,
+              "utf8ByteStart": 32812,
+              "utf8ByteEndExclusive": 32885,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "** WRH 39",
+            "catalog": "**",
+            "designation": "WRH 39",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?**\">**</A> WRH 39",
+              "lineStart": 923,
+              "lineEnd": 923,
+              "utf8ByteStart": 32956,
+              "utf8ByteEndExclusive": 33024,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GSC 04628-00237",
+            "catalog": "GSC",
+            "designation": "04628-00237",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GSC\">GSC</A> 04628-00237",
+              "lineStart": 930,
+              "lineEnd": 930,
+              "utf8ByteStart": 33080,
+              "utf8ByteEndExclusive": 33155,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "NAME North Star",
+            "catalog": "NAME",
+            "designation": "North Star",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?NAME\">NAME</A> North Star",
+              "lineStart": 940,
+              "lineEnd": 940,
+              "utf8ByteStart": 33429,
+              "utf8ByteEndExclusive": 33505,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "TYC 4628-237-1",
+            "catalog": "TYC",
+            "designation": "4628-237-1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?TYC\">TYC</A> 4628-237-1",
+              "lineStart": 947,
+              "lineEnd": 947,
+              "utf8ByteStart": 33561,
+              "utf8ByteEndExclusive": 33635,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "** STF 93A",
+            "catalog": "**",
+            "designation": "STF 93A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?**\">**</A> STF 93A",
+              "lineStart": 959,
+              "lineEnd": 959,
+              "utf8ByteStart": 33923,
+              "utf8ByteEndExclusive": 33992,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HD 8890",
+            "catalog": "HD",
+            "designation": "8890",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HD\">HD</A> 8890",
+              "lineStart": 966,
+              "lineEnd": 966,
+              "utf8ByteStart": 34048,
+              "utf8ByteEndExclusive": 34114,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PLX 299",
+            "catalog": "PLX",
+            "designation": "299",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PLX\">PLX</A> 299",
+              "lineStart": 976,
+              "lineEnd": 976,
+              "utf8ByteStart": 34385,
+              "utf8ByteEndExclusive": 34452,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV 21589",
+            "catalog": "UBV",
+            "designation": "21589",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> 21589",
+              "lineStart": 986,
+              "lineEnd": 986,
+              "utf8ByteStart": 34721,
+              "utf8ByteEndExclusive": 34790,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ADS 1477 A",
+            "catalog": "ADS",
+            "designation": "1477 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 1477 A",
+              "lineStart": 995,
+              "lineEnd": 995,
+              "utf8ByteStart": 34861,
+              "utf8ByteEndExclusive": 34931,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIC 11767",
+            "catalog": "HIC",
+            "designation": "11767",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIC\">HIC</A> 11767",
+              "lineStart": 1002,
+              "lineEnd": 1002,
+              "utf8ByteStart": 34987,
+              "utf8ByteEndExclusive": 35056,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PLX 299.00",
+            "catalog": "PLX",
+            "designation": "299.00",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PLX\">PLX</A> 299.00",
+              "lineStart": 1012,
+              "lineEnd": 1012,
+              "utf8ByteStart": 35327,
+              "utf8ByteEndExclusive": 35397,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "UBV M 8201",
+            "catalog": "UBV",
+            "designation": "M 8201",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?UBV\">UBV</A> M 8201",
+              "lineStart": 1019,
+              "lineEnd": 1019,
+              "utf8ByteStart": 35453,
+              "utf8ByteEndExclusive": 35523,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ADS 1477 AP",
+            "catalog": "ADS",
+            "designation": "1477 AP",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 1477 AP",
+              "lineStart": 1028,
+              "lineEnd": 1028,
+              "utf8ByteStart": 35594,
+              "utf8ByteEndExclusive": 35665,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HIP 11767",
+            "catalog": "HIP",
+            "designation": "11767",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HIP\">HIP</A> 11767",
+              "lineStart": 1035,
+              "lineEnd": 1035,
+              "utf8ByteStart": 35721,
+              "utf8ByteEndExclusive": 35790,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PMC 90-93 640",
+            "catalog": "PMC",
+            "designation": "90-93 640",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PMC\">PMC</A> 90-93 640",
+              "lineStart": 1045,
+              "lineEnd": 1045,
+              "utf8ByteStart": 36058,
+              "utf8ByteEndExclusive": 36131,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "V* alf UMi",
+            "catalog": "V*",
+            "designation": "alf UMi",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?V*\">V*</A> alf UMi",
+              "lineStart": 1052,
+              "lineEnd": 1052,
+              "utf8ByteStart": 36187,
+              "utf8ByteEndExclusive": 36256,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "AG +89 4",
+            "catalog": "AG",
+            "designation": "+89 4",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?AG\">AG</A>+89 4",
+              "lineStart": 1064,
+              "lineEnd": 1064,
+              "utf8ByteStart": 36541,
+              "utf8ByteEndExclusive": 36607,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "HR 424",
+            "catalog": "HR",
+            "designation": "424",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?HR\">HR</A> 424",
+              "lineStart": 1074,
+              "lineEnd": 1074,
+              "utf8ByteStart": 36883,
+              "utf8ByteEndExclusive": 36948,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "PPM 431",
+            "catalog": "PPM",
+            "designation": "431",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?PPM\">PPM</A> 431",
+              "lineStart": 1084,
+              "lineEnd": 1084,
+              "utf8ByteStart": 37218,
+              "utf8ByteEndExclusive": 37285,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J02318+8916Aa,Ab",
+            "catalog": "WDS",
+            "designation": "J02318+8916Aa,Ab",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J02318+8916Aa,Ab",
+              "lineStart": 1094,
+              "lineEnd": 1094,
+              "utf8ByteStart": 37560,
+              "utf8ByteEndExclusive": 37640,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "BD +88 8",
+            "catalog": "BD",
+            "designation": "+88 8",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?BD\">BD</A>+88 8",
+              "lineStart": 1106,
+              "lineEnd": 1106,
+              "utf8ByteStart": 37938,
+              "utf8ByteEndExclusive": 38004,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 01226+8846 A",
+            "catalog": "IDS",
+            "designation": "01226+8846 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 01226+8846 A",
+              "lineStart": 1116,
+              "lineEnd": 1116,
+              "utf8ByteStart": 38283,
+              "utf8ByteEndExclusive": 38359,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ROT 3491",
+            "catalog": "ROT",
+            "designation": "3491",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ROT\">ROT</A> 3491",
+              "lineStart": 1123,
+              "lineEnd": 1123,
+              "utf8ByteStart": 38415,
+              "utf8ByteEndExclusive": 38483,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J02318+8916A",
+            "catalog": "WDS",
+            "designation": "J02318+8916A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J02318+8916A",
+              "lineStart": 1130,
+              "lineEnd": 1130,
+              "utf8ByteStart": 38539,
+              "utf8ByteEndExclusive": 38615,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J02319+8915A",
+            "catalog": "CCDM",
+            "designation": "J02319+8915A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J02319+8915A",
+              "lineStart": 1142,
+              "lineEnd": 1142,
+              "utf8ByteStart": 38907,
+              "utf8ByteEndExclusive": 38985,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IRAS 01490+8901",
+            "catalog": "IRAS",
+            "designation": "01490+8901",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IRAS\">IRAS</A> 01490+8901",
+              "lineStart": 1152,
+              "lineEnd": 1152,
+              "utf8ByteStart": 39264,
+              "utf8ByteEndExclusive": 39340,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SAO 308",
+            "catalog": "SAO",
+            "designation": "308",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SAO\">SAO</A> 308",
+              "lineStart": 1162,
+              "lineEnd": 1162,
+              "utf8ByteStart": 39617,
+              "utf8ByteEndExclusive": 39684,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WEB 2438",
+            "catalog": "WEB",
+            "designation": "2438",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WEB\">WEB</A> 2438",
+              "lineStart": 1172,
+              "lineEnd": 1172,
+              "utf8ByteStart": 39959,
+              "utf8ByteEndExclusive": 40027,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CSI +88 8 1",
+            "catalog": "CSI",
+            "designation": "+88 8 1",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CSI\">CSI</A>+88 8 1",
+              "lineStart": 1181,
+              "lineEnd": 1181,
+              "utf8ByteStart": 40098,
+              "utf8ByteEndExclusive": 40168,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "JP11 498",
+            "catalog": "JP11",
+            "designation": "498",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?JP11\">JP11</A> 498",
+              "lineStart": 1188,
+              "lineEnd": 1188,
+              "utf8ByteStart": 40224,
+              "utf8ByteEndExclusive": 40293,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SBC7 51",
+            "catalog": "SBC7",
+            "designation": "51",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SBC7\">SBC7</A> 51",
+              "lineStart": 1195,
+              "lineEnd": 1195,
+              "utf8ByteStart": 40349,
+              "utf8ByteEndExclusive": 40417,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "AAVSO 0122+88",
+            "catalog": "AAVSO",
+            "designation": "0122+88",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?AAVSO\">AAVSO</A> 0122+88",
+              "lineStart": 1202,
+              "lineEnd": 1202,
+              "utf8ByteStart": 40473,
+              "utf8ByteEndExclusive": 40548,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "FK5 907",
+            "catalog": "FK5",
+            "designation": "907",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?FK5\">FK5</A> 907",
+              "lineStart": 1211,
+              "lineEnd": 1211,
+              "utf8ByteStart": 40619,
+              "utf8ByteEndExclusive": 40686,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "2MASS J02314822+8915503",
+            "catalog": "2MASS",
+            "designation": "J02314822+8915503",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?2MASS\">2MASS</A> J02314822+8915503",
+              "lineStart": 1221,
+              "lineEnd": 1221,
+              "utf8ByteStart": 40955,
+              "utf8ByteEndExclusive": 41040,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SBC9 76",
+            "catalog": "SBC9",
+            "designation": "76",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SBC9\">SBC9</A> 76",
+              "lineStart": 1231,
+              "lineEnd": 1231,
+              "utf8ByteStart": 41326,
+              "utf8ByteEndExclusive": 41394,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "GC 2243",
+            "catalog": "GC",
+            "designation": "2243",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?GC\">GC</A> 2243",
+              "lineStart": 1241,
+              "lineEnd": 1241,
+              "utf8ByteStart": 41474,
+              "utf8ByteEndExclusive": 41540,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "N30 381",
+            "catalog": "N30",
+            "designation": "381",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?N30\">N30</A> 381",
+              "lineStart": 1248,
+              "lineEnd": 1248,
+              "utf8ByteStart": 41596,
+              "utf8ByteEndExclusive": 41663,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "SKY# 3738",
+            "catalog": "SKY#",
+            "designation": "3738",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?SKY%23\">SKY#</A> 3738",
+              "lineStart": 1255,
+              "lineEnd": 1255,
+              "utf8ByteStart": 41719,
+              "utf8ByteEndExclusive": 41791,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "navigationTokensExcluded": [
+          "Velocities",
+          "Rot",
+          "PM",
+          "SpT",
+          "IUE"
+        ]
+      },
+      "componentIdentity": {
+        "status": "unresolved",
+        "admission": "pending",
+        "componentAliases": [
+          {
+            "identifier": "ADS 1477 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 1477 A",
+              "lineStart": 995,
+              "lineEnd": 995,
+              "utf8ByteStart": 34861,
+              "utf8ByteEndExclusive": 34931,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "ADS 1477 AP",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?ADS\">ADS</A> 1477 AP",
+              "lineStart": 1028,
+              "lineEnd": 1028,
+              "utf8ByteStart": 35594,
+              "utf8ByteEndExclusive": 35665,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J02318+8916Aa,Ab",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J02318+8916Aa,Ab",
+              "lineStart": 1094,
+              "lineEnd": 1094,
+              "utf8ByteStart": 37560,
+              "utf8ByteEndExclusive": 37640,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "IDS 01226+8846 A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?IDS\">IDS</A> 01226+8846 A",
+              "lineStart": 1116,
+              "lineEnd": 1116,
+              "utf8ByteStart": 38283,
+              "utf8ByteEndExclusive": 38359,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "WDS J02318+8916A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?WDS\">WDS</A> J02318+8916A",
+              "lineStart": 1130,
+              "lineEnd": 1130,
+              "utf8ByteStart": 38539,
+              "utf8ByteEndExclusive": 38615,
+              "exactSliceVerified": true
+            }
+          },
+          {
+            "identifier": "CCDM J02319+8915A",
+            "source": {
+              "rawText": "<A HREF=\"https://cds.unistra.fr/cgi-bin/Dic-Simbad?CCDM\">CCDM</A> J02319+8915A",
+              "lineStart": 1142,
+              "lineEnd": 1142,
+              "utf8ByteStart": 38907,
+              "utf8ByteEndExclusive": 38985,
+              "exactSliceVerified": true
+            }
+          }
+        ],
+        "note": "The same real identifier table includes both WDS J02318+8916Aa,Ab and WDS J02318+8916A. Aliases alone do not establish a single physical component or per-field system/component binding."
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "runtimeAdmission": "candidate-only",
+        "measurementAdmission": "not-admitted",
+        "componentConfirmed": false,
+        "scientificValidityApproved": false,
+        "rightsApproved": false,
+        "scientificPayloadWriteback": false,
+        "runtimeWrites": false
+      }
+    }
+  ],
+  "summary": {
+    "total": 4,
+    "hashAndByteMatches": 4,
+    "exactSourceSlicesVerified": 223,
+    "identifierCounts": {
+      "acrux": 22,
+      "spica": 55,
+      "regulus": 56,
+      "polaris": 46
+    },
+    "componentConfirmed": 0,
+    "componentPending": 4,
+    "scientificValidityApproved": false,
+    "rightsApproved": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "productionCodeEdited": false,
+    "rawArtifactsEdited": false
+  }
+}

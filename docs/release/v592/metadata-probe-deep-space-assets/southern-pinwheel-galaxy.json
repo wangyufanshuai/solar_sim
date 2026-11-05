@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:41.835Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "southern-pinwheel-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "southern-pinwheel-galaxy.json",
+    "metadataReceiptSha256": "a7b2682a48a539fc1be8ea7cc056d1c18d534dcb661f3809e377edf881f7067a",
+    "nasaId": "PIA07903",
+    "title": "Southern Pinwheel Galaxy M83",
+    "description": "Ultraviolet images such as this one from NASA's Galaxy Evolution Explorer suggest the M83 has unusual pockets of star formation separated by large distances from the spiral arms in the main disk of the galaxy. http://photojournal.jpl.nasa.gov/catalog/PIA07903",
+    "center": "JPL",
+    "identityTerms": [
+      "m83"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA07903/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA07903/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA07903/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "1825e4af08ff7ce9a85985813b56af961e1223c43196061b638c1d6ded9994f9"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07903/PIA07903~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07903~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07903/PIA07903~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07903/PIA07903~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07903~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07903/PIA07903~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07903/PIA07903~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07903~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07903/PIA07903~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07903/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07903/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "b87d954238f1c85c4e63bddc812933a45f6ede5c0364aad559912ee1295cc530"
+}

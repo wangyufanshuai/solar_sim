@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:48.172Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "soul-nebula",
+  "selection": {
+    "metadataProbe": "soul-nebula",
+    "metadataReceiptSha256": "da24199206c6e5169c86d45027f66767aa8be03bdea6db66a5a5ee9742eecfbb",
+    "nasaId": "PIA13014",
+    "title": "Soul Nebula",
+    "description": "This mosaic from NASA WISE Telescope is of the Soul Nebula. It is an open cluster of stars surrounded by a cloud of dust and gas located about 6,500 light-years from Earth in the constellation Cassiopeia, near the Heart Nebula.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13014/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA13014/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA13014/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "f419cb6e0ce02b9cbd59c3d58e5311ade4a76a6d9eccafdce8fba70c8272b7c2"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13014~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/PIA13014~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13014~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/PIA13014~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13014~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/PIA13014~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13014~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/PIA13014~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13014~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/PIA13014~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13014/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13014/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "243601cc1ce9a413f146858d1133877d0965991c3b2ab25bbcc4cba1fa3c8258"
+}

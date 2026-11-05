@@ -1,0 +1,123 @@
+{
+  "schema": "mainline-a-browser-evidence-v626",
+  "observedAt": "2026-09-22T01:25:09.828Z",
+  "round": "R66",
+  "url": "http://127.0.0.1:3043/",
+  "stagePath": ".next-mainline-a-r66-20260922-028",
+  "buildId": "qUeMjCoB-Wa_QP3in8JnM",
+  "runtimeBuildId": "mainline-a-0d99f50a6782e129",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "markers": {
+      "build": "mainline-a-0d99f50a6782e129",
+      "mainlineNebulaBatch": "v628",
+      "mainlineNebulaRightsClosure": "v627",
+      "nebulaBoundary": "closed",
+      "v628Boundary": "closed",
+      "v628Records": 6,
+      "v628Captured": 3,
+      "v628FailedOrPending": 4,
+      "v628SourcePagePending": 6,
+      "v628RightsPending": 6,
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "v628Collector": true,
+        "realHttpsCaptured": true,
+        "failedLedger": true,
+        "rightsPending": true
+      }
+    },
+    "layout": {
+      "scrollWidth": 1280,
+      "clientWidth": 1280
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-v628-collector-desktop-028.png",
+      "sha256": "03cb8415bc8355c1e2740b29f507931f8588aabd6419bfa7d372e7eee33903e2"
+    }
+  },
+  "mobileViewport": {
+    "viewport": [
+      390,
+      844
+    ],
+    "markers": {
+      "build": "mainline-a-0d99f50a6782e129",
+      "mainlineNebulaBatch": "v628",
+      "mainlineNebulaRightsClosure": "v627",
+      "v628Boundary": "closed",
+      "v628Records": 6,
+      "v628Captured": 3,
+      "v628SourcePagePending": 6,
+      "v628RightsPending": 6,
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "v628Collector": true,
+        "failedLedger": true,
+        "rightsPending": true
+      }
+    },
+    "layout": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "searchWidth": 300.3958435058594
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-v628-collector-mobile-028.png",
+      "sha256": "f1b39a221750dcc0d991478c1edc5254573aa787b04ea0b7bf5fda8bfe211ce4"
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "interactions": {
+    "searchCocoon": {
+      "visibleCount": 1,
+      "detailVisible": true
+    },
+    "searchNegative": {
+      "visibleCount": 0,
+      "emptyState": true
+    },
+    "searchRestored": {
+      "visibleCount": 6
+    }
+  },
+  "performance": {
+    "status": "not-claimed",
+    "source": "R65 performance receipts remain separate; this browser pass records layout and interaction only"
+  },
+  "physicalMobile": "not-run",
+  "evidenceClass": "in-app-browser-local-visual-and-build-binding",
+  "claimsClosed": {
+    "visualReview": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "notes": [
+    "V628 rendered six candidates: three captured raw HTTPS artifacts and three failed requests retained in attempt ledger; source-page and item-rights gates remain pending.",
+    "Rendered interaction: search cocoon -> 1/6 with detail; no-such-nebula -> 0/6 with empty state; keyboard clear restored 6/6.",
+    "Desktop and 390x844 viewport had no horizontal overflow; physical mobile, production performance, rights approval and scientific validity remain unclaimed."
+  ]
+}

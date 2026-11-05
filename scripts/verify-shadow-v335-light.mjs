@@ -1,0 +1,14 @@
+import { spawnSync } from "node:child_process";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
+const root = process.cwd(); const node = process.execPath;
+function run(label, command, args) { const result = spawnSync(command, args, { cwd: root, stdio: "inherit", shell: false }); if (result.error) throw result.error; if (result.status !== 0) throw new Error(`${label} failed with ${result.status}`); }
+run("v335-vitest", node, [resolve(root, "node_modules/vitest/vitest.mjs"), "run", "app/lib/atlasResourceLifecycleReplayV335.test.ts", "app/lib/atlasShadowCapabilityPointerV335.test.ts"]);
+run("v335-types", node, [resolve(root, "node_modules/typescript/bin/tsc"), "--noEmit"]);
+run("v335-eslint", node, [resolve(root, "node_modules/eslint/bin/eslint.js"), "--max-warnings=0", "scripts/build-atlas-lifecycle-replay-v335.ts", "scripts/build-shadow-candidate-v335.mjs", "scripts/verify-shadow-v335-light.mjs", "scripts/atlas.mjs", "app/lib/atlasResourceLifecycleReplayV335.ts", "app/lib/atlasResourceLifecycleReplayV335.test.ts", "app/lib/atlasShadowCapabilityPointerV335.ts", "app/lib/atlasShadowCapabilityPointerV335.test.ts"]);
+const read = (relative) => JSON.parse(readFileSync(resolve(root, relative), "utf8"));
+const evidence = read("dist/science/orbit-atlas-shadow-v335-evidence.json"); const pointer = read("dist/release/orbit-atlas-current-local-shadow-candidate-v335.json"); const state = read("dist/science/kerr-campaign-v314/campaign-state.json"); const formal = read("dist/release/orbit-atlas-current-product-evidence-v263.json");
+if (evidence.lifecycle?.resourceKindCount !== 11 || evidence.lifecycle?.acquiredCount !== 11 || evidence.lifecycle?.uniqueIdentityCount !== 11 || evidence.lifecycle?.allKindsCovered !== true || evidence.lifecycle?.reverseRelease !== true || evidence.lifecycle?.idempotentRelease !== true || evidence.lifecycle?.identityReturnedToBaseline !== true || evidence.lifecycle?.ownerReturnedToBaseline !== true || evidence.lifecycle?.numericDimensionsReturnedToZero !== true || evidence.lifecycle?.afterDuplicateRelease !== "baseline"
+  || pointer.capabilities?.v335LifecycleKinds !== "eleven-registry-kinds-covered" || pointer.capabilities?.v335BaselineReturn !== "identity-owner-bytes-all-zero-diff" || pointer.formalProductPointer !== "v263" || pointer.localShadowDefaultApplied !== false || formal.version !== "v263-current-product-evidence-pointer"
+  || state.status !== "incomplete-0-of-49" || state.completedShardCount !== 0 || state.attemptConsumed !== false || state.aggregateAvailable !== false) throw new Error("v335 fail-closed validation failed");
+console.log(JSON.stringify({ status: "passed-v335-low-memory", evidenceSha256: evidence.evidenceSha256, pointerSha256: pointer.pointerSha256, kinds: evidence.lifecycle.resourceKindCount, baseline: evidence.lifecycle.afterDuplicateRelease, dense: pointer.capabilities.v314CorrectedDense }, null, 2));

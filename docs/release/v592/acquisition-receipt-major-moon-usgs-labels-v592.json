@@ -1,0 +1,84 @@
+{
+  "version": "v592-major-moon-usgs-label-acquisition-v1",
+  "generatedAt": "2026-08-20T06:18:58.977Z",
+  "status": "partial-label-metadata-with-terminal-failures-no-retry",
+  "policy": {
+    "metadataOnly": true,
+    "requestCountPerUrl": 1,
+    "whitelistRedirectValidation": true,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "atomicWrite": ".part-to-final",
+    "visualPayloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "scientificAuthorityGranted": false
+  },
+  "sourceDefinitions": [
+    {
+      "target": "io",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl"
+    },
+    {
+      "target": "europa",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl"
+    },
+    {
+      "target": "ganymede",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+    },
+    {
+      "target": "callisto",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+    }
+  ],
+  "requestedUrls": [
+    "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+    "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+    "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+    "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+  ],
+  "assets": [],
+  "failures": [
+    {
+      "target": "io",
+      "sourceUrl": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+      "finalUrl": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+      "redirectUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-redirect-host:io:https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl"
+    },
+    {
+      "target": "europa",
+      "sourceUrl": "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+      "finalUrl": "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+      "redirectUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-redirect-host:europa:https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl"
+    },
+    {
+      "target": "ganymede",
+      "sourceUrl": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "finalUrl": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "redirectUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-redirect-host:ganymede:https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+    },
+    {
+      "target": "callisto",
+      "sourceUrl": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "finalUrl": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "redirectUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-redirect-host:callisto:https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+    }
+  ],
+  "receiptSha256": "01da899f6a691805e20635bf75a3215f9860ca20c98d2edff76e2de41b2d1a4e"
+}

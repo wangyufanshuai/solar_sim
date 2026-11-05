@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrBlindAuthorityReviewV547, resetKerrBlindAuthorityReviewServerCacheForTestsV547 } from "./kerrBlindAuthorityReviewServerV547";
+describe("v547 blind review server", () => { it("loads three bounded SHA-locked exports through one cache entry", async () => { resetKerrBlindAuthorityReviewServerCacheForTestsV547(); const first = await loadKerrBlindAuthorityReviewV547(), second = await loadKerrBlindAuthorityReviewV547(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "denial", "keys"]); expect(first.artifact.syntheticDenialFixture.signatureVerifiedCount).toBe(2); expect(first.artifact.qualification.measuredAuthorityGranted).toBe(false); }); });

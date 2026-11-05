@@ -1,0 +1,446 @@
+{
+  "schema": "mainline-a-technical-acceptance-seal-v1",
+  "generatedAt": "2026-09-27T06:25:07.399Z",
+  "status": "integrity-verified-acceptance-blocked",
+  "newDevelopmentRound": false,
+  "currentRepository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "referencesVerified": [
+    {
+      "path": "docs/release/v607/mainline-a-technical-acceptance-audit-20260927-059.json",
+      "sha256": "a933177b98547a022de129817c2bf3f1f2c00226746392d72fcaa38ca11916d2"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-art-round-66-v636-20260927-058.json",
+      "sha256": "bca17735071944b9a3e5b6b068c2c3031f157cb4149cd80f873d40f4f183fd5b"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-v636-code-change-20260927-058b-sealed.json",
+      "sha256": "08086569d89b7072613d32078fe3274833c9a971a63b54f2c6de506eb8afb84c"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "sha256": "5d86b9c1c9c46586d1c9af03ef07d75dbd37a2131b11461e340fdd4094dd2632"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.mjs",
+      "sha256": "801c347e6cb8c1dcb6744e5e034b115da07ec8e55c718a2102412eb919ed0de7"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-package.test.mjs",
+      "sha256": "7e1f92cc3fb623d220a730cd1fdb5a1b6d85d1afbfd562f26d60bad10ff64398"
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.tsx",
+      "sha256": "9bb7e2cff8e597a2c90487e9fbea8327786d901e2b5ac42fe7c4065b735ab60d"
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.test.tsx",
+      "sha256": "3522c77528537e740c45fb81d1c7c8d4799e5f5adf4b928155f18a94d55012c4"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "sha256": "129467a80ac5938d498f74c29723aa6ad3a80c529464d58ec37b551f0f07e472"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.test.tsx",
+      "sha256": "f332d012517a449260a9ef025c0127dd4fe5ca99575fa410f76c181f46d6fa02"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.ts",
+      "sha256": "6e10667b0b6a49c001fe86c84ff2e9089490ec665dc0c292db4af42828a2e370"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.test.ts",
+      "sha256": "f7097cca6115d5e8ff3fdc0521329f275e6dcaf58d38712fec15f74b25a288eb"
+    },
+    {
+      "path": "scripts/mainline-a-runtime-payload-v636.mjs",
+      "sha256": "f6810add467ce67fbec716827041f260cfca4dcd7dc0c1a3513ebc52a419fe2e"
+    },
+    {
+      "path": "scripts/mainline-a-runtime-payload-v636.test.mjs",
+      "sha256": "03a4cddd7dd66904e8b1ec539ce4a93ba23a95506da7df5cec8c1a9b0635dcf6"
+    },
+    {
+      "path": "scripts/restore-mainline-a-runtime-v636.mjs",
+      "sha256": "b981e1bf3648870e7f3b6ca10e55808addd69f67383c6082078c346a491f033f"
+    },
+    {
+      "path": "scripts/restore-mainline-a-runtime-v636.test.mjs",
+      "sha256": "9a98319d8b66ad6c7d908819e1de7e23f92dfeb0f2e8a276527187aa3456a0a9"
+    },
+    {
+      "path": "scripts/smoke-mainline-a-restored-runtime-v636.mjs",
+      "sha256": "395c84c219d6059517defc627dbc58cd2219e67a0735b3223f8104066cbe0532"
+    },
+    {
+      "path": "scripts/smoke-mainline-a-restored-runtime-v636.test.mjs",
+      "sha256": "65afb064cac7091ff6a99c54ca99c49a52b9a783a2260ab5ec134d946af09613"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+      "sha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-replay-20260927-059.json",
+      "sha256": "c4f3dc7dc96bb6901ab91b8a81841498d94225e272a4acf24c900efbbfbafcb1"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-http-audit-20260927-059.json",
+      "sha256": "715e00dfcebb8c0b43a13514775c6055fbd1bdb6d804d3fddc5b50fb4cde111f"
+    },
+    {
+      "path": "tmp/mainline-a-server-stopped-20260927-059.json",
+      "sha256": "56ca70dfd50035f745488d99f94266e15b03158d419e6bf71fadbca490e945a3"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-browser-audit-20260927-059.json",
+      "sha256": "26984d9a5c5726de7cbac1056b3663970a6e718e014e245dc22c435f490ea9c6"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-performance-v636-20260927-058.json",
+      "sha256": "49a26c5bf3655c9acb8f2d162b7e8dba25405c53175cd8d92721fc8be8db419d"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059.json",
+      "sha256": "34c29e33a027670281aa9e262cec33a33cde5336c6df1b491286ae6dc21121f4"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059b.json",
+      "sha256": "48f56316a8bb3515df0ae7d3b1e6e9e09cbb62e41d4e5eaa3115e8daed8b67cc"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059c.json",
+      "sha256": "5c71b619975d2ff4d96dfb551c5471080c947fcf2e479ff2bd08bedd23aea1d4"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-review-20260927-059.json",
+      "sha256": "fe51341a3d119b7cf5689a7bc3b88627e15a436c6eb8b577918da8e3446244bb"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-package-20260927-058b/manifest.json",
+      "sha256": "a6d25e1a5b5bf59574f90800648181fb1a334a530b0527c495c85f729a058253"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r65-browser-v635-20260927-057.json",
+      "sha256": "8f928ec266c6c9995a524fb5c33041804af7abc904d7a41951ab7297b31fd3f9"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r66-browser-v636-20260927-058.json",
+      "sha256": "7a1127bb947ab8825e87224c1472cf8c6f3435e80d1e3766b7594dd13e077106"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-review-20260927-059.md",
+      "sha256": "be3a015705a0589594e0f55dfeb2d9bee9c239bf114f178d5ff89ea5cef5a4d7"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/acrux-paper-8a3df8d5e164035796ca53ea4fd1996308bbe90707b2e82cee01c735972c8b6f.pdf",
+      "sha256": "8a3df8d5e164035796ca53ea4fd1996308bbe90707b2e82cee01c735972c8b6f"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/spica-paper-ca911503c128d16a1635e201999e586c24bb1975377eec71326de896ae1c043a.pdf",
+      "sha256": "ca911503c128d16a1635e201999e586c24bb1975377eec71326de896ae1c043a"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/regulus-paper-8d85da94ca281c379cf683d18e5c32310886654eb9f28d7459520ab08f213848.pdf",
+      "sha256": "8d85da94ca281c379cf683d18e5c32310886654eb9f28d7459520ab08f213848"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/polaris-paper-c53ab3f3f5d68e5d83136789f432d463a38cee63071ac2e38bf57a250d7d1a10.pdf",
+      "sha256": "c53ab3f3f5d68e5d83136789f432d463a38cee63071ac2e38bf57a250d7d1a10"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/acrux-hip2-tsv-ccb8435740020649ee6b48361b9aae86529ee178de807f786d2750f2f889049c.tsv",
+      "sha256": "ccb8435740020649ee6b48361b9aae86529ee178de807f786d2750f2f889049c"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/hip2-readme-6c017925d658447d40983da3b459ba16bf9789c8f7573e263952c75692622499.txt",
+      "sha256": "6c017925d658447d40983da3b459ba16bf9789c8f7573e263952c75692622499"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/acrux-hip-main-tsv-a0726b22307a1dbb7ca2397a6f597de531ee33d58f160f869e330f6ad751b7ca.tsv",
+      "sha256": "a0726b22307a1dbb7ca2397a6f597de531ee33d58f160f869e330f6ad751b7ca"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/hip-main-readme-7a7d54903d16460a76c240f07c41b019d57becfd27b5dfa2908e828f52f90c27.txt",
+      "sha256": "7a7d54903d16460a76c240f07c41b019d57becfd27b5dfa2908e828f52f90c27"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/regulus-companion-paper-e4b8f9d99dc4f6d07a570cd6fe5988221fcfd6959baa1b41de1e2a0533a69c2b.pdf",
+      "sha256": "e4b8f9d99dc4f6d07a570cd6fe5988221fcfd6959baa1b41de1e2a0533a69c2b"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/acrux-paper-8a3df8d5e164035796ca53ea4fd1996308bbe90707b2e82cee01c735972c8b6f.pdf.extracted.txt",
+      "sha256": "6ad07d7dcce78e1a2db839c4cf4899d2f00caeb13ad31bf7723ae9e7077425e1"
+    },
+    {
+      "path": "E:/xuexi/tools/poppler/Library/bin/pdftotext.exe",
+      "sha256": "c7392e92727abbb54c07662268eef7348e4edd1cd741c264e20f76e757c0b467"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/spica-paper-ca911503c128d16a1635e201999e586c24bb1975377eec71326de896ae1c043a.pdf.extracted.txt",
+      "sha256": "75f976878f0dd420fa65fb48056856c5be8db904f230d46a36ca3b11b1be3711"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/regulus-paper-8d85da94ca281c379cf683d18e5c32310886654eb9f28d7459520ab08f213848.pdf.extracted.txt",
+      "sha256": "8422c219d5c64d1e8e29b8dac93aadfcc87da8df189f4c434f5f679675a85ecc"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059/polaris-paper-c53ab3f3f5d68e5d83136789f432d463a38cee63071ac2e38bf57a250d7d1a10.pdf.extracted.txt",
+      "sha256": "2eec327cf9cf9ed70026b4df163e3ce0361aee4513e2b1e83e594e55a8afa46f"
+    },
+    {
+      "path": "docs/release/v607/stellar-literature-artifacts/20260927-059b/regulus-companion-paper-e4b8f9d99dc4f6d07a570cd6fe5988221fcfd6959baa1b41de1e2a0533a69c2b.pdf.extracted.txt",
+      "sha256": "85f672e55126a4acc26ac021387086faae5184ca738cb23bef687f53455358c9"
+    },
+    {
+      "path": "tmp/mainline-a-acrux-table2-page10-20260927-059.png",
+      "sha256": "7895750e73f78c3a429d58a02d75f430d65de399d903481207764bda7f33b161"
+    },
+    {
+      "path": "tmp/mainline-a-regulus-identifier-page2-20260927-059.png",
+      "sha256": "934099e47e97204530c7f69d729d118f5de0563b85c0c7c9fa1cd7f470f31a18"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+      "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+      "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    },
+    {
+      "path": "tmp/mainline-a-browser-retry-20260927-059-tool.json",
+      "sha256": "f1dfbbd8ae08fd41555cf70eda9bc0633c5247704f8f4c97471f040e7b532111"
+    }
+  ],
+  "rootReadOnlyRefresh": {
+    "root": "E:\\86137\\myai\\solar_sim\\web",
+    "sourceFiles": [
+      {
+        "path": "index.html",
+        "sha256": "ac97594f480700805b9c35a29897880d3abb6fcddd776108b6ccde5665bfa88c",
+        "bytes": 2735,
+        "matchesPrior": true
+      },
+      {
+        "path": "package-lock.json",
+        "sha256": "150a3d63346808860efea21e5a6fd952b48e7aa370697db859ed41d1ae723f01",
+        "bytes": 34557,
+        "matchesPrior": true
+      },
+      {
+        "path": "package.json",
+        "sha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+        "bytes": 279,
+        "matchesPrior": true
+      },
+      {
+        "path": "public/observation_placeholder.svg",
+        "sha256": "5aab8f88f0a3df79956b46f86d86f85eaf963b42717f1f7a94ebf5431e329ad9",
+        "bytes": 663,
+        "matchesPrior": true
+      },
+      {
+        "path": "public/reference_ui_inspiration.txt",
+        "sha256": "e4adb2fb3be717edf7c05b72f94612bbae546dd15071a6642e2dec8e33f7bbb3",
+        "bytes": 254,
+        "matchesPrior": true
+      },
+      {
+        "path": "public/textures/README.md",
+        "sha256": "980300dd6cb144d9ca404282d9a80fde2de2f46bc7097f4e67c0f7d86b084010",
+        "bytes": 547,
+        "matchesPrior": true
+      },
+      {
+        "path": "README.md",
+        "sha256": "e46b8e9349f9f3afd1ed4202ea3d5f42aaa6c78521f84842be437a7055986984",
+        "bytes": 2562,
+        "matchesPrior": true
+      },
+      {
+        "path": "src/main.js",
+        "sha256": "75638734275c1584aa7d80759c9d571d58da1e862415ae7810fe2bebb3ecad08",
+        "bytes": 14837,
+        "matchesPrior": true
+      },
+      {
+        "path": "src/style.css",
+        "sha256": "7a69b1ae1ccd436ec846ac409d1c0a489954c412cf1246cedebea8e5a3a23f1e",
+        "bytes": 3707,
+        "matchesPrior": true
+      },
+      {
+        "path": "vite.config.js",
+        "sha256": "a0d00d1ff08cc1f94f5a2b44e0f3479361d336042e05b77558415e5a5109c60f",
+        "bytes": 510,
+        "matchesPrior": true
+      }
+    ],
+    "manifestCandidates": [
+      {
+        "path": "mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/textures/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/textures/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/textures/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/data/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/data/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "src/data/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/data/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/data/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "public/data/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "app/data/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "app/data/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "docs/release/v607/mainlineACanonicalCoverageV622.generated.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-canonical-coverage-v622.json",
+        "present": false,
+        "error": "ENOENT"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-canonical-coverage.json",
+        "present": false,
+        "error": "ENOENT"
+      }
+    ],
+    "scope": "Only the 10 already listed files and 24 explicit candidate paths; no recursive search or parent Git operation."
+  },
+  "nextActionsRequireExternalState": [
+    "Browser permission security check recovery",
+    "Read-only authoritative root manifest",
+    "Scientific component review and missing primary evidence",
+    "Actual device and long-run observations"
+  ],
+  "unsignedRights": {
+    "signed": 0,
+    "pending": 12,
+    "userDirective": "Keep pending and continue technical acceptance"
+  },
+  "gatesPassed": 6,
+  "gatesTotal": 17,
+  "releaseApproved": false,
+  "goalComplete": false,
+  "recommendedGoalStatus": "blocked",
+  "repeatedBrowserFailureGoalTurns": [
+    "20260927-057",
+    "20260927-058",
+    "20260927-059"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

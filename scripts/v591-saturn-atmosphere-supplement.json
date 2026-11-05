@@ -1,0 +1,37 @@
+{
+  "version": "v591-saturn-atmosphere-supplement-acquisition-v1",
+  "reason": "PIA21617 is an admitted north-polar morphology source, not a global atmosphere map; PIA06193 is explicitly added as the Cassini global natural-color atmosphere source without retrying or replacing the earlier URL.",
+  "asset": {
+    "id": "saturn-cassini-global-atmosphere-source-v591",
+    "body": "saturn",
+    "role": "global-atmosphere-source",
+    "sourceUrl": "https://images-assets.nasa.gov/image/PIA06193/PIA06193~orig.jpg",
+    "outputPath": "source-cache/celestial-convergence-v591/saturn/PIA06193-saturn-natural-color-global.jpg",
+    "allowedHosts": [
+      "images-assets.nasa.gov"
+    ],
+    "expectedMediaTypes": [
+      "image/jpeg",
+      "image/jpg",
+      "application/octet-stream",
+      "binary/octet-stream"
+    ],
+    "minimumWidth": 1600,
+    "minimumHeight": 800,
+    "license": {
+      "id": "NASA-JPL-public-domain",
+      "url": "https://images.nasa.gov/details/PIA06193"
+    },
+    "observationIdentity": "Cassini natural-color global Saturn portrait PIA06193",
+    "observationLimit": "Presentation source for deterministic global atmosphere and latitudinal color extraction; rings and unseen longitudes are not treated as observed surface data.",
+    "presentationOnly": true
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "explicitSupplement": true,
+    "redirectPolicy": "manual-allowlist-block",
+    "atomicWrite": ".part-to-final"
+  }
+}

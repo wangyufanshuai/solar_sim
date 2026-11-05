@@ -1,0 +1,13 @@
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+
+const root = process.cwd();
+const node = process.execPath;
+const run = (label, command, args) => {
+  const result = spawnSync(command, args, { cwd: root, stdio: "inherit", shell: false });
+  if (result.error) throw result.error;
+  if (result.status !== 0) throw new Error(`${label} failed with ${result.status}`);
+};
+run("v425 independent spectral-applicability Python oracle", "python", ["scripts/run-kerr-instrument-spectral-admission-oracle-v425.py"]);
+run("v425 TypeScript spectral admission", node, [resolve(root, "node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-instrument-spectral-admission-v425.ts"]);
+run("v425 FITS table and wavelength-domain diagnostic", "python", ["scripts/export-kerr-instrument-spectral-admission-v425.py"]);

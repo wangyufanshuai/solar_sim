@@ -1,0 +1,46 @@
+{
+  "round": 60,
+  "date": "2026-09-14",
+  "title": "beta-stellar-real-https-raw-collector-v620",
+  "status": "raw-only-4-of-4-captured",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "stellarCandidates": 4,
+    "attempted": 4,
+    "rawResponsesCaptured": 4,
+    "rawArtifacts": 4,
+    "structured": 0,
+    "blocked": 0,
+    "runtimeAdmitted": 0,
+    "measurementAdmitted": 0
+  },
+  "implementation": [
+    "Added a real HTTPS SIMBAD collector for Acrux, Spica, Regulus and Polaris with cumulative timeout, body timeout, retry telemetry, status/content checks, redirect-chain capture, exact-host validation and request fingerprints.",
+    "Saved four raw HTML artifacts with byte counts and recomputable SHA-256; artifact audit seals a run receipt without promoting HTML to structured evidence.",
+    "Added offline replay/verifier and artifact audit negative cases for fixture promotion, forged status/content/hash, unsafe URLs, redirects, timestamps, fingerprint and opened admission boundaries.",
+    "Connected R60 attempt details to the Beta hero review panel while preserving candidate-only, hold, not-admitted and scientificPayloadWriteback=false boundaries."
+  ],
+  "attemptLedger": {
+    "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+    "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2",
+    "artifactAudit": "docs/release/v607/raw-artifacts/r60/runs/20260914043411.json",
+    "artifactAuditSha256": "4fa0e914beafffba01730279db69ed6193a0cbfe659040c8bd2b3711bf9842e9",
+    "records": [
+      {"id":"acrux","startedAt":"2026-09-14T04:27:32.098Z","endedAt":"2026-09-14T04:27:34.327Z","timeout":false,"retryCount":0,"httpStatus":200,"contentType":"text/html; charset=utf-8","finalUrl":"https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru","redirectChain":[],"errorCategory":null,"requestFingerprint":"GET https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru transport=https-html","artifactPath":"docs/release/v607/raw-artifacts/r60/acrux-6283e0cf5cb9.raw","artifactSha256":"4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30","responseBytes":41374},
+      {"id":"spica","startedAt":"2026-09-14T04:27:34.329Z","endedAt":"2026-09-14T04:27:35.015Z","timeout":false,"retryCount":0,"httpStatus":200,"contentType":"text/html; charset=utf-8","finalUrl":"https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir","redirectChain":[],"errorCategory":null,"requestFingerprint":"GET https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir transport=https-html","artifactPath":"docs/release/v607/raw-artifacts/r60/spica-81276ed6687b.raw","artifactSha256":"86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b","responseBytes":58748},
+      {"id":"regulus","startedAt":"2026-09-14T04:27:35.016Z","endedAt":"2026-09-14T04:27:35.704Z","timeout":false,"retryCount":0,"httpStatus":200,"contentType":"text/html; charset=utf-8","finalUrl":"https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo","redirectChain":[],"errorCategory":null,"requestFingerprint":"GET https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo transport=https-html","artifactPath":"docs/release/v607/raw-artifacts/r60/regulus-a30e3e314621.raw","artifactSha256":"1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801","responseBytes":58144},
+      {"id":"polaris","startedAt":"2026-09-14T04:27:35.706Z","endedAt":"2026-09-14T04:27:36.395Z","timeout":false,"retryCount":0,"httpStatus":200,"contentType":"text/html; charset=utf-8","finalUrl":"https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi","redirectChain":[],"errorCategory":null,"requestFingerprint":"GET https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi transport=https-html","artifactPath":"docs/release/v607/raw-artifacts/r60/polaris-5c70e01ec2c0.raw","artifactSha256":"74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5","responseBytes":54527}
+    ]
+  },
+  "validation": {
+    "node": {"passed":33,"failed":0,"scope":"V619 capture + V620 collector/replay/artifact audit"},
+    "vitest": {"passed":30,"failed":0,"files":4},
+    "eslint": {"passed":true,"scope":"R60 collector, verifier, audit, typed utilities and review panel"},
+    "productionBuild": {"passed":true,"command":"npm run build:atlas:lite:current","profile":"vercel-lite","distDir":".next-atlas-lite-current","buildId":"RfLp8P3JxRvZUOTUaBjes","buildIdSha256":"1c29a4fa2c91ea8311ebf965e3baf93185e1522f44b071a8b489a9873f25dece"}
+  },
+  "http": {"productionUrl":"http://127.0.0.1:3019/","checks":[{"path":"/","status":200,"bytes":8697,"contentType":"text/html; charset=utf-8"},{"path":"/api/health","status":200,"bytes":241,"defaultScientificKernel":"legacy-eih-1pn"}]},
+  "browser": {"productionUrl":"http://127.0.0.1:3019/","desktop":{"viewport":[1280,720],"panel":"mainline-a-beta-hero-review-v611","attemptSummary":"4/4 attempted · responseCaptured 4 · failed 0","ledgerDetailVisible":true,"scrollWidth":1280,"clientWidth":1280,"consoleErrors":0,"consoleWarnings":0},"mobile":{"status":"not-run","reason":"No mobile viewport pass executed"},"screenshots":[{"path":"docs/release/v607/screenshots/mainline-a-r60-stellar-raw-attempt-ledger-desktop.png","bytes":71592,"sha256":"54dddfff961f7cf665ba0d99301b579a8ce1f3041456799ba6cae2b0b678d5c3"},{"path":"docs/release/v607/screenshots/mainline-a-r60-stellar-raw-attempt-ledger-detail-desktop.png","bytes":79689,"sha256":"850cab477010143f7f94571694f835e92099babea2cd18056343191f3544bce9"}]},
+  "evidenceBoundary": {"static":"Code, data and receipts only","http":"Local production HTTP responses","visual":"Desktop browser screenshot and semantic panel state","browser":"In-app browser AX/DOM with console error/warning checks","performance":"Not measured; no physical-device or production SLA claim","externalSource":"Direct SIMBAD HTTPS raw transport only; no structured scientific admission","scientificPayloadWriteback":false,"runtimeWrites":false,"measurementWrites":false,"legalDecision":"not-granted"},
+  "openGates":["Raw HTML needs independent structured parsing, component identity/source citations and human review before V616 closure.","24 nebula candidates, 12 constellation visual signoffs, mobile/multi-device performance, root/next-web alignment, public deployment and final release packet remain open."]
+}

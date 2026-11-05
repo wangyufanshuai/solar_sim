@@ -1,0 +1,92 @@
+{
+  "version": "v588-browser-observation-v1",
+  "generatedAt": "2026-08-09T03:10:00Z",
+  "browser": "Codex In-app Browser",
+  "buildId": "YcQcEYvqChGepfmcjYdfe",
+  "routes": {
+    "candidate": "http://127.0.0.1:3001/local-shadow-v588",
+    "audit": "http://127.0.0.1:3001/local-shadow-v588?visualAudit=1"
+  },
+  "gpu": {
+    "vendor": "Google Inc. (NVIDIA)",
+    "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "software": false
+  },
+  "overview": {
+    "viewport": { "width": 1440, "height": 900 },
+    "medianFps": 175.4,
+    "frameP95Ms": 6.57,
+    "frameSamples": 270,
+    "canvasCount": 1,
+    "readyTextures": 17,
+    "requiredTextures": 17,
+    "screenshot": "visual-qa/desktop-cinematic-overview-1440x900.jpg"
+  },
+  "heroes": {
+    "earth": { "medianFps": 166.9, "frameP95Ms": 6.17, "readyTextures": 7, "requiredTextures": 7, "screenshot": "visual-qa/desktop-cinematic-earth-closeup-1440x900.jpg" },
+    "jupiter": { "medianFps": 173.3, "frameP95Ms": 6.19, "readyTextures": 4, "requiredTextures": 4, "screenshot": "visual-qa/desktop-cinematic-jupiter-closeup-1440x900.jpg" },
+    "saturn": { "medianFps": 175.3, "frameP95Ms": 6.15, "readyTextures": 6, "requiredTextures": 6, "screenshot": "visual-qa/desktop-cinematic-saturn-closeup-1440x900.jpg" },
+    "mars": { "medianFps": 174.8, "frameP95Ms": 6.54, "readyTextures": 3, "requiredTextures": 3, "screenshot": "visual-qa/desktop-cinematic-mars-closeup-1440x900.jpg" }
+  },
+  "science": {
+    "viewport": { "width": 1440, "height": 900 },
+    "medianFps": 167.5,
+    "frameP95Ms": 6.14,
+    "constellationSearch": "Cas",
+    "velocityScale": 1.5,
+    "forecast": "escape",
+    "payloadStable": true,
+    "screenshot": "visual-qa/desktop-science-cassiopeia-escape-1440x900.jpg"
+  },
+  "mobile": {
+    "viewport": { "width": 390, "height": 844 },
+    "medianFps": 166.8,
+    "frameP95Ms": 6.18,
+    "body": "earth",
+    "focus": "earth",
+    "canvasCount": 1,
+    "outlinePreserved": true,
+    "screenshot": "visual-qa/mobile-cinematic-earth-closeup-final-390x844.jpg"
+  },
+  "extremeExposure": {
+    "profile": "extreme-presentation-stress",
+    "presentationOnly": true,
+    "payloadWriteback": false,
+    "screenshot": "visual-qa/desktop-cinematic-overview-extreme-exposure-audit-1440x900.jpg"
+  },
+  "assetRuntime": {
+    "ktx2FirstRequestObserved": true,
+    "ktx2Request": "/textures/candidate-v588/ktx2/earth-albedo.ktx2",
+    "verifiedFallbackRequestObserved": true,
+    "fallbackReason": "runtime-transcode-unavailable-fail-closed-to-sha-verified-webp",
+    "heroProceduralFallback": false
+  },
+  "resourceLifecycle": {
+    "protocol": "live-canvas-scene-unmount-v1",
+    "exactBuildCycles": 1,
+    "developmentReplayCycles": 5,
+    "status": "released-zero",
+    "registry": "baseline",
+    "registryDelta": 0,
+    "candidateResources": 0,
+    "sceneNodes": 0,
+    "geometries": 0,
+    "textures": 0,
+    "programs": 0,
+    "renderTargets": 0,
+    "canvasCountWhileReleased": 1,
+    "thirtyMinuteSoakQualified": false
+  },
+  "errors": {
+    "consoleWarnings": 0,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "rendererErrors": 0,
+    "failedCandidateResponses": 0
+  },
+  "identity": {
+    "manifestSha256": "c2b5c64568d3a83dcafe32d12a71c9f4fbe5b58dcb8d0e2827164d2754a8611d",
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "formalProductPointer": "v263"
+  }
+}

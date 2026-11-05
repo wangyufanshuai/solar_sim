@@ -1,0 +1,54 @@
+{
+  "schema": "mainline-a-stellar-tap-cross-id-replay-v646",
+  "status": "verified-candidate-only",
+  "ledger": {
+    "path": "docs/release/v607/stellar-component-tap-v646/ledger-r66-tap-20261007-001.json",
+    "bytes": 18532,
+    "sha256": "41d2281c6971e775ab8f5ee696d47d84d2cc2e67d72c7309afa4d87cf4ded8dc"
+  },
+  "counts": {
+    "total": 4,
+    "responseCaptured": 4,
+    "failed": 0
+  },
+  "rows": [
+    {
+      "id": "acrux",
+      "responseCaptured": 1,
+      "matchedIdentifiers": 4,
+      "distinctSimbadObjects": 3,
+      "status": "structured-cross-id-candidate"
+    },
+    {
+      "id": "spica",
+      "responseCaptured": 1,
+      "matchedIdentifiers": 2,
+      "distinctSimbadObjects": 1,
+      "status": "structured-cross-id-candidate"
+    },
+    {
+      "id": "regulus",
+      "responseCaptured": 1,
+      "matchedIdentifiers": 5,
+      "distinctSimbadObjects": 4,
+      "status": "structured-cross-id-candidate"
+    },
+    {
+      "id": "polaris",
+      "responseCaptured": 1,
+      "matchedIdentifiers": 6,
+      "distinctSimbadObjects": 4,
+      "status": "structured-cross-id-candidate"
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "componentConfirmed": false,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "rightsApproved": false
+  },
+  "componentIdentityConfirmed": false
+}

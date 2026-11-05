@@ -1,0 +1,45 @@
+{
+  "schema": "mainline-a-r79-performance-v666",
+  "status": "short-local-browser-diagnostic-only",
+  "appSourceSha256": "4a6643905b4e8d080c4c2fe2ea9c0196b777e827272d92de4562416bc2d6b537",
+  "buildId": "Bl9FG66l3Q5knaZTT5QXc",
+  "samples": [
+    {
+      "device": "desktop",
+      "mode": "enabled",
+      "count": 120,
+      "p95IntervalMs": 6.8150000013411045,
+      "maxIntervalMs": 9.009999997913837,
+      "usedJSHeapBytes": 171250346,
+      "evidenceClass": "short-local-browser-diagnostic-only"
+    },
+    {
+      "device": "mobile-viewport",
+      "mode": "enabled",
+      "count": 120,
+      "p95IntervalMs": 6.530000001192093,
+      "maxIntervalMs": 7.8549999967217445,
+      "usedJSHeapBytes": 164048691,
+      "evidenceClass": "short-local-browser-diagnostic-only"
+    },
+    {
+      "device": "mobile-viewport",
+      "mode": "default-off",
+      "count": 120,
+      "p95IntervalMs": 6.370000001043081,
+      "maxIntervalMs": 8.005000002682209,
+      "usedJSHeapBytes": 137352451,
+      "evidenceClass": "short-local-browser-diagnostic-only"
+    }
+  ],
+  "currentSourceLongRun": "not-run",
+  "productionPerformanceEstablished": false,
+  "physicalMobile": "not-run",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

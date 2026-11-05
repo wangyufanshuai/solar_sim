@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrSupplementalCalibrationIntakeV545, resetKerrSupplementalCalibrationIntakeServerCacheForTestsV545 } from "./kerrSupplementalCalibrationIntakeServerV545";
+describe("v545 supplemental calibration server", () => { it("loads the bounded SHA-locked schema artifact through one cache entry", async () => { resetKerrSupplementalCalibrationIntakeServerCacheForTestsV545(); const first = await loadKerrSupplementalCalibrationIntakeV545(), second = await loadKerrSupplementalCalibrationIntakeV545(); expect(first).toBe(second); expect(first.artifact.schemaPack.files).toHaveLength(5); expect(first.export.bytes.byteLength).toBeGreaterThan(0); }); });

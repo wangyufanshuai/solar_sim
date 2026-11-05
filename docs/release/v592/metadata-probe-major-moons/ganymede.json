@@ -1,0 +1,52 @@
+{
+  "version": "v592-major-moon-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:39:58.433Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "ganymede",
+  "query": "Ganymede Jupiter moon global map",
+  "requiredTerms": [
+    "ganymede"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Ganymede%20Jupiter%20moon%20global%20map&media_type=image&page_size=25",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Ganymede%20Jupiter%20moon%20global%20map&media_type=image&page_size=25",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1514,
+    "responseSha256": "e8bc2da4d2bd1682207b0465d3f1d04316677419810e80ee8acf9c578c9b6885"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA17902",
+      "title": "Rotating Globe of Ganymede Geology",
+      "description": "This is a frame from an animation of a rotating globe of Jupiter moon Ganymede, with a geologic map superimposed over a global color mosaic, incorporating the best available imagery from NASA Voyager 1 and 2 spacecraft, and Galileo spacecraft.",
+      "dateCreated": "2014-02-12T17:53:02Z",
+      "center": "JPL",
+      "keywords": [
+        "Ganymede",
+        "Galileo,Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17902/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "ced15fbfaf6f186915adf2cbeaacb8b0eabea9751fb11f2d6e976d8f42a534a8"
+}

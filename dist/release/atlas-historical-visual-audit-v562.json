@@ -1,0 +1,25 @@
+{
+  "version": "v562-atlas-historical-visual-audit-v1",
+  "generatedAt": "2026-08-03T00:00:00Z",
+  "status": "passed-expected-historical-negative-evidence",
+  "activeVisualGate": "v562-visual-candidate-ktx2-first",
+  "historicalSuites": [
+    "app/lib/orbitAtlasPresentation.test.ts",
+    "app/data/planetTextureManifest.test.ts",
+    "app/data/planetaryArtDirectionManifest.test.ts"
+  ],
+  "expectedFailureCount": 3,
+  "observedFailureCount": 3,
+  "failures": [
+    "v55 planetary art-direction asset manifest keeps the old logical paths while current packs provide v49 and sky assets",
+    "planet texture manifest keeps v49 generated local material assets available with HD fallback intact",
+    "Orbit Atlas presentation transform ships the fallback sky layers, v61 default sky layers, and selected-body HD texture manifest"
+  ],
+  "cause": "frozen-v9-v49-jpeg-and-sky-fallback-files-not-present",
+  "historicalEvidenceRewritten": false,
+  "historicalAssetsRestored": false,
+  "formalProductPointer": "v263",
+  "rawReport": "dist/release/atlas-historical-visual-audit-v562.raw.json",
+  "rawReportSha256": "be7dc133e8c8ab270391fb915f148060c4b29b9009f05e07424c146ed142dd56",
+  "artifactSha256": "462337baf17b9a86ce15332c91d3bd22f50cee18756d887c15a2006dd15bd26e"
+}

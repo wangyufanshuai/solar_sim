@@ -1,0 +1,21 @@
+{
+  "round": 56,
+  "date": "2026-09-14",
+  "scope": "Beta stellar source closure contract v616",
+  "effectiveChangedLines": 503,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R56 source-closure files; panel integration and generated JSON are additional.",
+  "files": [
+    {"path": "scripts/build-mainline-a-beta-stellar-source-closure-v616.mjs", "lines": 140, "sha256": "4f1d792c8a9940fdf935d8826a1519f88ba3e7820eb6bfb601ba4c86d461fdda"},
+    {"path": "scripts/build-mainline-a-beta-stellar-source-closure-v616.test.mjs", "lines": 64, "sha256": "722aee1a1037f0bd135d95a062db6a3685e389d5184034de2f9f26ea1a359753"},
+    {"path": "app/lib/mainlineABetaStellarSourceClosureV616.ts", "lines": 187, "sha256": "0355cad59f5d7fbae9b24693519bb9857ad2778906d08d9e30cf5d21d3bc5ec3"},
+    {"path": "app/lib/mainlineABetaStellarSourceClosureV616.test.ts", "lines": 112, "sha256": "01dade49713fdb81eafb2dc6c5d0ff9d71a60688f32583e0b7f7f828f76d5377"}
+  ],
+  "integrationFiles": [
+    "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+    "app/components/MainlineABetaHeroReviewPanelV611.test.tsx",
+    "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+    "package.json"
+  ]
+}

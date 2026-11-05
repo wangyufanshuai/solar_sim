@@ -1,0 +1,37 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:37.044Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "cats-eye-nebula",
+  "query": "Cat's Eye Nebula",
+  "requiredTerms": [
+    "cat",
+    "eye",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Cat%27s%20Eye%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Cat%27s%20Eye%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 169,
+    "responseSha256": "96c37130c945bfca3098e1a707dffd2ffc4a0bc81bbcb0df30bc6b8e069aef04"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "303da468a2f89b7281990f670f02db9bfc6448ca491472c76cfb651dfaf71855"
+}

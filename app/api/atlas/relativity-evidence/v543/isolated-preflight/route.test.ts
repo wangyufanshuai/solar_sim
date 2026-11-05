@@ -1,0 +1,8 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+const previous = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (previous === undefined) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = previous; });
+describe("v543 isolated preflight route", () => {
+  it("serves bounded execution evidence only in local-shadow", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "local-shadow"; const summary = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v543/isolated-preflight", { headers: { "x-forwarded-for": "127.0.0.549" } })); expect(summary.status).toBe(200); const payload = await summary.json(); expect(payload.summary.counts.executedEnvironmentCount).toBe(2); expect(payload.summary.counts.scienceQualifiedEnvironmentCount).toBe(1); const runner = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v543/isolated-preflight?download=runner", { headers: { "x-forwarded-for": "127.0.0.550" } })); expect(runner.status).toBe(200); expect(runner.headers.get("content-type")).toContain("text/x-python"); expect(await runner.text()).toContain("sys.flags.isolated"); });
+  it("fails closed for ordinary standalone and Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v543/isolated-preflight"))).json()).reason).toBe("local-shadow-only"); process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v543/isolated-preflight"))).json()).reason).toBe("lite-boundary"); });
+});

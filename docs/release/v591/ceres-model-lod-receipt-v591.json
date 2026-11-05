@@ -1,0 +1,88 @@
+{
+  "version": "v591-ceres-model-lod-receipt-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "ceres-three-lod-radius-derived-model-ready-for-runtime-admission",
+  "metadataReceiptSha256": "474ad14d5bfd1c56c2d84362b35950cb9660bd395e750a4f4538b6a00b7d8044",
+  "acquisitionReceiptSha256": "99a9b0ec8dbb6bca88dc2b244dbd902ca277a14e74d4361b07c6c896f329790c",
+  "shapeBlockedReceiptSha256": "2363d73f03e209220f5d6bac6e9d441f7d6348f05ba15cef548dc1e302f8934c",
+  "centralMirrorBlockedReceiptSha256": "16e3b55c60e3cedae95063596830bf4fc5cb683a22530442c3933ec7fcfb32f9",
+  "sourceDetailCeiling": "pds-dawn-spc-radius-2222x1111-261120-triangles",
+  "source": {
+    "path": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/ceres_radius_g.tif",
+    "bytes": 9881891,
+    "sha256": "8747ecc9e100be770ab1699604b0bc62441e5b302677c29b7570987334aacfd8",
+    "md5": "78127f5e23d64fe4bad6271a979c5895",
+    "productId": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0",
+    "license": {
+      "id": "NASA-PDS-public-data",
+      "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+    }
+  },
+  "normalized": {
+    "receiptSha256": "28197f54ae6d5ac1b02bb78ec88135e6323f9f8e4d32cbff2a4da352cee884de",
+    "sourceProjection": "equirectangular-positive-east-planetocentric",
+    "sourceUnits": "meter-from-body-center",
+    "units": "mean-radius-1",
+    "pivot": "body-center-origin",
+    "rotationAxis": "positive-y",
+    "watertight": true,
+    "eulerNumber": 2,
+    "minimumRadiusMeters": "442618.25",
+    "maximumRadiusMeters": "486849.59375",
+    "syntheticDetailAdded": false
+  },
+  "toolchain": {
+    "parser": "python-tifffile-2025.3.30+trimesh-4.12.2",
+    "gltfTransform": "4.4.2",
+    "compression": "EXT_meshopt_compression",
+    "deterministic": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "path": "public/models/candidate-v591/ceres/ceres-lod0.glb",
+      "bytes": 430532,
+      "sha256": "e65d03653d3ec542fb74f144d4d98c5479fbda1e91e0859f24c7b25985052608",
+      "triangleCount": 104448,
+      "vertexCount": 52226,
+      "normals": true,
+      "meshopt": true,
+      "pivot": "body-center-origin",
+      "units": "mean-radius-1",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 1,
+      "path": "public/models/candidate-v591/ceres/ceres-lod1.glb",
+      "bytes": 109192,
+      "sha256": "3ee3a85ca45426a0a42d6837dd8725d08c79974179e8be070fa59ad0b70938a6",
+      "triangleCount": 24806,
+      "vertexCount": 12405,
+      "normals": true,
+      "meshopt": true,
+      "pivot": "body-center-origin",
+      "units": "mean-radius-1",
+      "rotationAxis": "positive-y"
+    },
+    {
+      "lod": 2,
+      "path": "public/models/candidate-v591/ceres/ceres-lod2.glb",
+      "bytes": 25440,
+      "sha256": "b5c4efb617b7428fdcfa4ba6074bb3246c9320782d93625b53afd30fd7eeebc7",
+      "triangleCount": 4960,
+      "vertexCount": 2482,
+      "normals": true,
+      "meshopt": true,
+      "pivot": "body-center-origin",
+      "units": "mean-radius-1",
+      "rotationAxis": "positive-y"
+    }
+  ],
+  "authorityState": {
+    "presentationOnly": true,
+    "scientificAuthorityChanged": false,
+    "scientificPayloadWriteback": false,
+    "measuredAuthorityGranted": false
+  },
+  "receiptSha256": "5fc7348c81f2129e00a8fe267836ea826e403a461c9256e39111207918692dd9"
+}

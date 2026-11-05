@@ -1,0 +1,10 @@
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { canonicalKerrReplayIsolatedPreflightV543, compareKerrReplayIsolatedPreflightHudEncodingsV543, createKerrReplayIsolatedPreflightHudEncodingV543, parseKerrReplayIsolatedPreflightArtifactV543, resolveKerrReplayIsolatedPreflightHudProfileV543 } from "./kerrReplayIsolatedPreflightV543";
+const artifact = parseKerrReplayIsolatedPreflightArtifactV543(JSON.parse(readFileSync("dist/science/kerr-replay-isolated-preflight-v543/atlas.json", "utf8")));
+const digest = (value: unknown) => createHash("sha256").update(canonicalKerrReplayIsolatedPreflightV543(value)).digest("hex");
+describe("v543 isolated preflight", () => {
+  it("parses canonical isolated execution without promoting package evidence", () => { expect(digest(artifact)).toBe(artifact.artifactSha256); expect(digest(artifact.receipt)).toBe(artifact.receipt.isolatedReceiptSha256); expect(digest(artifact.executionMatrix)).toBe(artifact.executionMatrix.executionMatrixSha256); expect(artifact.receipt.execution).toMatchObject({ pythonIsolatedFlag: 1, pythonNoSiteFlag: 1, sitePackagePathCount: 0 }); expect(artifact.executionMatrix.executedCellCount).toBe(2); expect(artifact.executionMatrix.scienceQualifiedCellCount).toBe(1); expect(artifact.qualification.crossEnvironmentScienceQualified).toBe(false); });
+  it("keeps science and cinematic styling outside execution identities", () => { const science = createKerrReplayIsolatedPreflightHudEncodingV543(artifact, "science"), cinematic = createKerrReplayIsolatedPreflightHudEncodingV543(artifact, "cinematic"); expect(compareKerrReplayIsolatedPreflightHudEncodingsV543(science, cinematic)).toMatchObject({ executionStable: true, scienceQualificationStable: true, scientificFieldMutation: false }); expect(resolveKerrReplayIsolatedPreflightHudProfileV543("science").scienceBoundary.bloomIntensity).toBe(0); expect(resolveKerrReplayIsolatedPreflightHudProfileV543("cinematic").cinematicSeed).toBeTruthy(); });
+});

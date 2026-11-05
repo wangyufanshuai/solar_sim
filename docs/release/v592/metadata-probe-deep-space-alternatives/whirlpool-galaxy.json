@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:06:48.467Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "whirlpool-galaxy",
+  "category": "galaxy",
+  "query": "M51 Whirlpool Galaxy Spitzer",
+  "requiredTermGroups": [
+    [
+      "m51",
+      "whirlpool"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M51+Whirlpool+Galaxy+Spitzer&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M51+Whirlpool+Galaxy+Spitzer&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 176,
+    "responseSha256": "5376e816f9e1dcf06b179b51241b38b8b781f8401f0bfd1be54556461043b191"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "4e7cdcb7b8862cc41a91f056487fe11abd6148f4e8fedadedc8110bcd55dc768"
+}

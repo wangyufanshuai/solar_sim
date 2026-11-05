@@ -1,0 +1,38 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:27.015Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "centaurus-a",
+  "category": "galaxy",
+  "query": "NGC 5128 Centaurus A Spitzer",
+  "requiredTermGroups": [
+    [
+      "ngc 5128",
+      "centaurus a",
+      "centaurus-a"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+5128+Centaurus+A+Spitzer&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+5128+Centaurus+A+Spitzer&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 176,
+    "responseSha256": "58b10c4701c046e49d903c51717aeff69e8f856f95a1985043c16dced3ac4865"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "f0ac4b1a81f1b95ef4e234e867d590e5f631ab4968086a8d64bc06f3c2a380c0"
+}

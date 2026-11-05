@@ -1,0 +1,1279 @@
+{
+  "version": "v591-ceres-pds-target-products-metadata-probe-v1",
+  "probedAt": "2026-08-14T16:59:12.853Z",
+  "status": "required-shape-map-products-present-no-payload",
+  "target": "ceres",
+  "requestCount": 1,
+  "request": {
+    "url": "https://pds.mcp.nasa.gov/api/search/1/products?limit=1001&q=pds%3ATarget_Identification.pds%3Aname+eq+%22%281%29+Ceres%22",
+    "finalUrl": "https://pds.mcp.nasa.gov/api/search/1/products?limit=1001&q=pds%3ATarget_Identification.pds%3Aname+eq+%22%281%29+Ceres%22",
+    "httpStatus": 200,
+    "mediaType": "application/json",
+    "bytes": 9842113,
+    "sha256": "7179a39633a025bb2804d5ccd53007756098d101ac57f897cf330aaff5add9f4",
+    "rawPath": "source-cache/celestial-convergence-v591/ceres/pds-registry-target-products.json"
+  },
+  "registryHitCount": 7667,
+  "returnedCount": 1001,
+  "relevantCount": 49,
+  "requiredIds": [
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_128_p_tab::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_512_i_tab::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_albedo_c_cub::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0"
+  ],
+  "foundRequiredIds": [
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_128_p_tab::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_512_i_tab::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_albedo_c_cub::1.0",
+    "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0"
+  ],
+  "candidates": [
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_128_p_tab::1.0",
+      "type": "Product_Observational",
+      "title": "ceres_128_p",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_128_p.xml",
+      "description": "PLT shape of Ceres at 5.3 km resolution, 100K vectors. Images and kernels used to build the topography can be found in ceresimglist.txt and cereskernellist.txt, respectively.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_128_p.tab"
+      ],
+      "dataFileNames": [
+        "ceres_128_p.tab"
+      ],
+      "dataFileSizes": [
+        "13948786"
+      ],
+      "dataFileMd5": [
+        "483bec4a22b8f2e34df631367ea6aced"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_512_i_tab::1.0",
+      "type": "Product_Observational",
+      "title": "ceres_512_i",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_512_i.xml",
+      "description": "ICQ shape of Ceres at 1.3 km resolution, 1.6M vectors. The 4th column is relative albedo. Images and kernels used to build the topography can be found in ceresimglist.txt and cereskernellist.txt, respectively.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_512_i.tab"
+      ],
+      "dataFileNames": [
+        "ceres_512_i.tab"
+      ],
+      "dataFileSizes": [
+        "121584160"
+      ],
+      "dataFileMd5": [
+        "f5b6be80aa73973a7d2ce99aa5f0ad0e"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_albedo_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "ceres_albedo_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.xml",
+      "description": "SPC generated relative albedo. Average value is 0.5, with a range from 0 to 2. The albedo is in an equirectangular projection. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_albedo_c.cub"
+      ],
+      "dataFileNames": [
+        "ceres_albedo_c.cub"
+      ],
+      "dataFileSizes": [
+        "9941484"
+      ],
+      "dataFileMd5": [
+        "c6fbff0a16952010b60e5b14d3b1b706"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:global_ceres_numimg_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "ceres_numimg_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_numimg_c.xml",
+      "description": "Number of images in each 1 degree bin. Number of images is in an equirectangular projection. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_numimg_c.cub"
+      ],
+      "dataFileNames": [
+        "ceres_numimg_c.cub"
+      ],
+      "dataFileSizes": [
+        "326357"
+      ],
+      "dataFileMd5": [
+        "334f9bae2713284226455b4ff63de902"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:ceres_radius_g::1.0",
+      "type": "Product_Observational",
+      "title": "ceres_radius_g.xml",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.xml",
+      "description": "TIFF/GeoTIFF header. The TIFF/GeoTIFF format is used throughout the geospatial and science communities to share geographic image data.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/global/ceres_radius_g.tif"
+      ],
+      "dataFileNames": [
+        "ceres_radius_g.tif"
+      ],
+      "dataFileSizes": [
+        "9881891"
+      ],
+      "dataFileMd5": [
+        "78127f5e23d64fe4bad6271a979c5895"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:np07n78354_alb_g::1.0",
+      "type": "Product_Observational",
+      "title": "np07n78354_alb_g.xml",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np07n78354_alb_g.xml",
+      "description": "TIFF/GeoTIFF header. The TIFF/GeoTIFF format is used throughout the geospatial and science communities to share geographic image data.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np07n78354_alb_g.tif"
+      ],
+      "dataFileNames": [
+        "np07n78354_alb_g.tif"
+      ],
+      "dataFileSizes": [
+        "86301"
+      ],
+      "dataFileMd5": [
+        "0f56ebbf5e27b250d86c6ccf4354e3dd"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:np19n82316_alb_g::1.0",
+      "type": "Product_Observational",
+      "title": "np19n82316_alb_g.xml",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np19n82316_alb_g.xml",
+      "description": "TIFF/GeoTIFF header. The TIFF/GeoTIFF format is used throughout the geospatial and science communities to share geographic image data.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np19n82316_alb_g.tif"
+      ],
+      "dataFileNames": [
+        "np19n82316_alb_g.tif"
+      ],
+      "dataFileSizes": [
+        "73377"
+      ],
+      "dataFileMd5": [
+        "ce618a80f63d320532db2a884f058999"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:np19n82316_topo_g::1.0",
+      "type": "Product_Observational",
+      "title": "np19n82316_topo_g.xml",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np19n82316_topo_g.xml",
+      "description": "TIFF/GeoTIFF header. The TIFF/GeoTIFF format is used throughout the geospatial and science communities to share geographic image data.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np19n82316_topo_g.tif"
+      ],
+      "dataFileNames": [
+        "np19n82316_topo_g.tif"
+      ],
+      "dataFileSizes": [
+        "73377"
+      ],
+      "dataFileMd5": [
+        "4ad2362a42c03f9dcb8fcdd78c4fda8f"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:regionalnp_np65n73057_lat_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "np65n73057_lat_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np65n73057_lat_c.xml",
+      "description": "Latitude values that correspond to the SPC generated topography. The data is not projected, but is close to North up, though deviations from North up may occur near the poles. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np65n73057_lat_c.cub"
+      ],
+      "dataFileNames": [
+        "np65n73057_lat_c.cub"
+      ],
+      "dataFileSizes": [
+        "105847"
+      ],
+      "dataFileMd5": [
+        "42665f228b9ead926e88ff92ccf32f45"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:regionalnp_np65n73057_topo_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "np65n73057_topo_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np65n73057_topo_c.xml",
+      "description": "SPC generated topography. Given as elevation in meters relative to a datum of 470 km. The topography is not projected, but is close to North up, though deviations from North up may occur near the poles. Images and kernels used to build the topography can be found in np65imglist.txt and cereskernellist.txt, respectively. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalnp/np65n73057_topo_c.cub"
+      ],
+      "dataFileNames": [
+        "np65n73057_topo_c.cub"
+      ],
+      "dataFileSizes": [
+        "105842"
+      ],
+      "dataFileMd5": [
+        "04ec23d172c6f3114bb181aca8aed4cc"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:regionalsp_sp01s71031_lon_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "sp01s71031_lon_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalsp/sp01s71031_lon_c.xml",
+      "description": "East Longitude values that correspond to the SPC generated topography. The data is not projected, but is close to North up, though deviations from North up may occur near the poles. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalsp/sp01s71031_lon_c.cub"
+      ],
+      "dataFileNames": [
+        "sp01s71031_lon_c.cub"
+      ],
+      "dataFileSizes": [
+        "105847"
+      ],
+      "dataFileMd5": [
+        "48ea16813afadf156233ea60484d4f46"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data:regionalsp_sp02s70168_topo_c_cub::1.0",
+      "type": "Product_Observational",
+      "title": "sp02s70168_topo_c",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalsp/sp02s70168_topo_c.xml",
+      "description": "SPC generated topography. Given as elevation in meters relative to a datum of 470 km. The topography is not projected, but is close to North up, though deviations from North up may occur near the poles. Images and kernels used to build the topography can be found in sp02imglist.txt and cereskernellist.txt, respectively. Data file is stored in a USGS-native ISIS format.",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/dawn/dwarf_planet-ceres.dawn.shape-models-maps_v2.0/data/regionalsp/sp02s70168_topo_c.cub"
+      ],
+      "dataFileNames": [
+        "sp02s70168_topo_c.cub"
+      ],
+      "dataFileSizes": [
+        "105842"
+      ],
+      "dataFileMd5": [
+        "308eb4ce4d661c85fccdfdb3a54c64c3"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::2.0",
+        "urn:nasa:pds:dwarf_planet-ceres.dawn.shape-models-maps:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0",
+      "type": "Product_Bundle",
+      "title": "HST images, albedo maps, and shape of (1) Ceres V1.0",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/bundle_hst.ast-ceres.images-albedo-shape.xml",
+      "description": "This dataset contains 267 HST ACS/HRC images of asteroid (1) Ceres obtained in 2003/2004 at three wavelengths, 535 nm, 335 nm, and 223 nm. They have been photometrically calibrated to standard reflectance unit I/F. The dataset also includes a shape for Ceres, as well as three surface albedo maps covering the area between +/-50 deg latitude, derived from these images.",
+      "dataFileRefs": [],
+      "dataFileNames": [],
+      "dataFileSizes": [],
+      "dataFileMd5": [],
+      "parentBundle": [],
+      "parentCollection": []
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501weq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501weq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501weq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501weq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501weq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "b264cc65a189351192a77d9c2a5fad1b"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501wfq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501wfq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wfq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wfq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501wfq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "2878890e66fb05ebf03de49952b4abd5"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501wmq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501wmq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wmq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wmq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501wmq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "35125f96b7fe62809c973f4edb626923"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501wwq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501wwq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wwq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501wwq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501wwq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "bc63ca49b156e33688822d87d0c114c6"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501x1q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501x1q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x1q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x1q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501x1q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "4f0ed4360aae0ba1cdac100c347934a7"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501x5q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501x5q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x5q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x5q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501x5q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "ebac7a47bb4e8cc7dd279c294709da5d"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501x6q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501x6q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x6q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x6q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501x6q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "3794d2162a38507202c6d5aeade55130"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501x9q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501x9q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x9q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501x9q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501x9q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "8f25b84a770049b6f7ce5b55d996ea1a"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501xcq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501xcq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xcq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xcq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501xcq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "8d8d44ec9aba7a596d951d1982364f72"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501xtq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501xtq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xtq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xtq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501xtq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "59fe6aac08e4c3bac5ffcc8b9365cf00"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501xvq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501xvq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xvq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xvq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501xvq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "44381778a875b14fa679f951c75c0485"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501xzq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501xzq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xzq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501xzq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501xzq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "b9360d52b62ae7544504dc6d1bb7668b"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501y8q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501y8q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501y8q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501y8q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501y8q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "c6392f234552fde2ddafafce3fd377c0"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501yeq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501yeq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yeq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yeq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501yeq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "9f8a7245d2b872decfaebc82048551a0"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501yuq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501yuq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yuq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yuq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501yuq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "e110976abdb9e2ced5f2bad3267fd3bf"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p501yzq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p501yzq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yzq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p501yzq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p501yzq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "02a191591df832d3fe8f69291f960364"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502aiq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502aiq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502aiq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502aiq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502aiq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "7b7c9b83156864d07e0a7a14149eef3d"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502awq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502awq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502awq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502awq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502awq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "c1fadf8524e8f901c0f9f42338f6ba98"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502b0q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502b0q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502b0q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502b0q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502b0q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "020c371046d9e46401192c750eb5ad81"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502b9q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502b9q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502b9q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502b9q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502b9q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "632a5ebb730c1bdcdc8912a467a23c29"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502bpq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502bpq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502bpq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502bpq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502bpq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "7fb0f2478319deb43f16a0a8c3be35c6"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502brq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502brq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502brq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502brq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502brq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "2bd2efb9252faafe91ed5ce900b6d1b3"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502bsq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502bsq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502bsq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502bsq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502bsq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "ff6301213d650b393bddd4b8d3a066c7"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502z9q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502z9q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502z9q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502z9q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502z9q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "78a8b0d421dc97714a7fe20aa78bc91f"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502ztq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502ztq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502ztq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502ztq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502ztq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "daf843c817f5ba570049e7e4a74251d2"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502zwq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502zwq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502zwq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502zwq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502zwq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "04f062232523eeb3a8b2077d60c57df9"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p502zzq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p502zzq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502zzq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p502zzq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p502zzq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "569fb61465448ee574bdaf8d026615c5"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p503vtq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p503vtq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503vtq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503vtq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p503vtq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "a7d4f2422b48758a2f42c7a0dfd3bab1"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p503vxq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p503vxq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503vxq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503vxq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p503vxq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "1f1e5ed8d78aa3647b79740be336b8b2"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p503w2q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p503w2q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503w2q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p503w2q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p503w2q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "fea22b7339cec7b20fc1ec43336b6e45"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p504nkq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p504nkq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nkq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nkq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p504nkq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "282bc257be557d662f4bfbffc82ff386"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p504nnq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p504nnq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nnq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nnq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p504nnq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "3b64082a737b095d4643eccd8bd62bdd"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p504nxq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p504nxq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nxq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p504nxq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p504nxq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "f2bec04b9474cfe333e89f20f0aad180"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p505u5q_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p505u5q_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p505u5q_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p505u5q_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p505u5q_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "df8cadfd7cd0b664e627a917ded314be"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:iof_j8p505uhq_iof_fit::1.0",
+      "type": "Product_Observational",
+      "title": "HST ACS/HRC Image of (1) Ceres, j8p505uhq_iof.fit",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p505uhq_iof.xml",
+      "description": "Photometrically calibrated HST ACS/HRC image of Ceres",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/iof/j8p505uhq_iof.fit"
+      ],
+      "dataFileNames": [
+        "j8p505uhq_iof.fit"
+      ],
+      "dataFileSizes": [
+        "4219200"
+      ],
+      "dataFileMd5": [
+        "da3707466d183e196066de1130075db9"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    },
+    {
+      "id": "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data:maps_ceres_map_330nm_err_fit::1.0",
+      "type": "Product_Observational",
+      "title": "Uncertainty in the330nm Albedo Map of Ceres",
+      "labelUrl": "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/maps/ceres_map_330nm_err.xml",
+      "description": "Albedo deviation uncertainty map of (1) Ceres at 335 nm",
+      "dataFileRefs": [
+        "https://sbnarchive.psi.edu/pds4/non_mission/hst.ast-ceres.images-albedo-shape_V1_0/data/maps/ceres_map_330nm_err.fit"
+      ],
+      "dataFileNames": [
+        "ceres_map_330nm_err.fit"
+      ],
+      "dataFileSizes": [
+        "1042560"
+      ],
+      "dataFileMd5": [
+        "768e4c478dc178f96fef87c561c78c9e"
+      ],
+      "parentBundle": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape::1.0"
+      ],
+      "parentCollection": [
+        "urn:nasa:pds:hst.ast-ceres.images-albedo-shape:data::1.0"
+      ]
+    }
+  ],
+  "payloadDownloaded": false,
+  "sciencePayloadDownloaded": false,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "license": {
+    "id": "NASA-PDS-public-data",
+    "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+  },
+  "receiptSha256": "474ad14d5bfd1c56c2d84362b35950cb9660bd395e750a4f4538b6a00b7d8044"
+}

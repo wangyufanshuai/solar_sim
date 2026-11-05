@@ -1,0 +1,115 @@
+{
+  "version": "v591-vesta-model-lod-receipt-v1",
+  "status": "three-lod-nasa-shape-model-ready-for-runtime-admission",
+  "body": "vesta",
+  "source": {
+    "acquisitionReceiptPath": "docs/release/v591/acquisition-assets-nasa-small-bodies/vesta-nasa-shape-source.json",
+    "acquisitionReceiptSha256": "bb421873ae120da26e666ee60a989f61e07d5cc799e0d26bab78488722ddecd0",
+    "path": "source-cache/celestial-convergence-v591/small-bodies/vesta/vesta-nasa-global-a.stl",
+    "bytes": 40000084,
+    "sha256": "a20fbfc9378398fd157ad0421ceead4dff277f5d545aa7c86d7e14eaa160fe46",
+    "repositoryPath": "3D Printing/Asteroid 4 Vesta (A)/Asteroid 4 Vesta (A).stl",
+    "gitBlobSha1": "380f1c7a9c0735a94cb1c8d3a9cab4bc95326adc",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "observationIdentity": "NASA 3D Resources Asteroid 4 Vesta (A) global shape model",
+    "observationLimit": "shape/topography presentation source; no measured photometry claim"
+  },
+  "normalized": {
+    "receiptSha256": "4c19148696cbc6357502a98b1b81729752041bdbf03642ffa4854d12c0216b3e",
+    "sha256": "f459206cf99082534c27a399c65b3e33160fe454de21630034c3ef3bfdb16934",
+    "triangleCount": 800000,
+    "vertexCount": 400002,
+    "watertight": true,
+    "eulerNumber": 2,
+    "bounds": [
+      [
+        "-0.996211949931",
+        "-0.905007570619",
+        "-1"
+      ],
+      [
+        "0.996211949931",
+        "0.905007570619",
+        "1"
+      ]
+    ],
+    "units": "normalized-diameter-2",
+    "pivot": "bounds-midpoint",
+    "rotationAxis": "positive-y"
+  },
+  "pipeline": {
+    "trimeshVersion": "4.12.2",
+    "gltfTransformVersion": "4.4.2",
+    "stages": [
+      "inspect",
+      "weld",
+      "independent-simplify",
+      "prune",
+      "meshopt",
+      "inspect"
+    ],
+    "sourceInspection": {
+      "triangles": 800000,
+      "vertices": 400002,
+      "extensionsUsed": "none"
+    },
+    "weldedInspection": {
+      "triangles": 800000,
+      "vertices": 400002,
+      "extensionsUsed": "none"
+    },
+    "deterministicParameters": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "path": "public/models/candidate-v591/vesta/vesta-lod0.glb",
+      "bytes": 425352,
+      "sha256": "1a723394ca60a238b3778f682cd1845fc0eca114583bcf6f3a8e1a040cf365c3",
+      "triangleCount": 99992,
+      "vertexCount": 49998,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.125,
+        "error": 0.01,
+        "source": "independent-welded-source"
+      }
+    },
+    {
+      "lod": 1,
+      "path": "public/models/candidate-v591/vesta/vesta-lod1.glb",
+      "bytes": 111864,
+      "sha256": "d9f063c7640b7ec686f2faa685b56d2ae12e884851c83157b80b2673e6dfefdc",
+      "triangleCount": 25000,
+      "vertexCount": 12502,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.03125,
+        "error": 0.025,
+        "source": "independent-welded-source"
+      }
+    },
+    {
+      "lod": 2,
+      "path": "public/models/candidate-v591/vesta/vesta-lod2.glb",
+      "bytes": 26008,
+      "sha256": "390b571bfe52fc34e15492a6dd0983b63467fbb74f0e69b73bd879b07a3a27ea",
+      "triangleCount": 5000,
+      "vertexCount": 2502,
+      "extensionsUsed": "\"EXT_meshopt_compression, KHR_mesh_quantization\"",
+      "simplification": {
+        "ratio": 0.00625,
+        "error": 0.06,
+        "source": "independent-welded-source"
+      }
+    }
+  ],
+  "presentationOnly": true,
+  "proceduralFallback": false,
+  "measuredPhotometryClaim": false,
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "10967d130c5a2ff0e08764d8edd7ac366b91ae5efbd13d0110952f7d8f953dbd"
+}

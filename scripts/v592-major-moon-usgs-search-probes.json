@@ -1,0 +1,34 @@
+{
+  "version": "v592-major-moon-usgs-search-probes-v1",
+  "policy": {
+    "archive": "USGS Astrogeology Astropedia",
+    "allowedHosts": ["astrogeology.usgs.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "visualPayloadDownloadAllowed": false,
+    "redirectPolicy": "manual-whitelist-only"
+  },
+  "probes": [
+    {
+      "id": "io-usgs-global-mosaic",
+      "target": "io",
+      "url": "https://astrogeology.usgs.gov/search/results?q=Io%20Voyager%20GalileoSSI%20global%20mosaic"
+    },
+    {
+      "id": "europa-usgs-global-mosaic",
+      "target": "europa",
+      "url": "https://astrogeology.usgs.gov/search/results?q=Europa%20Voyager%20GalileoSSI%20global%20mosaic"
+    },
+    {
+      "id": "ganymede-usgs-global-mosaic",
+      "target": "ganymede",
+      "url": "https://astrogeology.usgs.gov/search/results?q=Ganymede%20Voyager%20GalileoSSI%20global%20mosaic"
+    },
+    {
+      "id": "callisto-usgs-global-mosaic",
+      "target": "callisto",
+      "url": "https://astrogeology.usgs.gov/search/results?q=Callisto%20Voyager%20GalileoSSI%20global%20mosaic"
+    }
+  ]
+}

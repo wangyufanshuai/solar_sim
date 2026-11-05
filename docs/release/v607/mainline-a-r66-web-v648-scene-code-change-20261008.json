@@ -1,0 +1,46 @@
+{
+  "schema": "mainline-a-r66-web-v648-scene-code-change",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T16:07:42.000Z",
+  "status": "completed-local-browser-scene-evidence-tooling",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "effectiveChangeDefinition": "new nonempty noncomment production or tool code; tests, screenshot, generated data, receipt and documentation lines excluded",
+  "newEffectiveToolLines": 486,
+  "modifiedEffectiveToolLines": 0,
+  "newTestLinesExcluded": 116,
+  "cumulativeV648EffectiveLowerBound": 3043,
+  "cumulativeR66EffectiveLowerBound": 6128,
+  "minimumPerRound": 500,
+  "minimumMetByCumulativeV648Batch": true,
+  "files": [
+    {
+      "path": "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+      "role": "real Chrome selection of the current canonical 12 stars, 12 constellations and 12 nebulae in desktop and mobile viewports",
+      "newEffectiveLines": 261,
+      "sha256": "81c6cb3be21369459cef3b5a5cd92ff386dc7c4fc088f26d658263e3f2b87cb6"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-canonical-scene-v648.mjs",
+      "role": "offline source, build, manifest, 72 screenshot and candidate-boundary verifier with exact replay",
+      "newEffectiveLines": 225,
+      "sha256": "dd1e229a50e39a95663bd2d9edbd62c9631d1490b6dc418c42955b0ae517035d"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-canonical-scene-v648.test.mjs",
+      "role": "positive and missing-target, stale-runtime, forged-selection, forged-rights, build, screenshot, admission, physical-device and replay negative tests",
+      "testLinesExcluded": 116,
+      "sha256": "4d033c30407dd66753d46d6b5adf9f267b57928190bbae5b934a420aa6ca224d"
+    }
+  ],
+  "scope": {
+    "standaloneRoundClaim": false,
+    "applicationSourceChanged": false,
+    "productionBuildChanged": false,
+    "physicsKernelChangedByThisBatch": false,
+    "parentGitOperated": false,
+    "scientificPayloadWriteback": false
+  }
+}

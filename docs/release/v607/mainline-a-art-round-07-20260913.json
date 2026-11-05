@@ -1,0 +1,52 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 7,
+  "title": "mobile-composition-and-credit-safety",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:33:00 UTC",
+  "status": "round-07-mobile-dev-browser-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": [
+    "EIH/Newton N-body kernels unchanged",
+    "2PN Lense-Thirring and Kerr kernels unchanged",
+    "passport occluder remains presentation-only"
+  ],
+  "code": {
+    "file": "app/components/MainlineANebulaPortraitV607.tsx",
+    "changes": [
+      "added min-w-0 to the nebula figure and metadata row",
+      "added truncation guard for long image identifiers on narrow viewports",
+      "preserved source credit, official composition, image dimensions and gain semantics"
+    ]
+  },
+  "browser": {
+    "mode": "in-app browser",
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "viewport": { "width": 390, "height": 844 },
+    "route": "对象浏览器 -> M42 -> 天体档案",
+    "runtime": {
+      "canvas": { "width": 390, "height": 844, "count": 1 },
+      "passport": { "x": 8, "y": 14, "width": 374, "height": 734 },
+      "nebulaFigure": { "width": 299, "imageWidth": 297, "imageHeight": 319.7 },
+      "documentOverflow": false,
+      "descendantOverflow": 0,
+      "creditWrap": "natural",
+      "bottomScroll": "source, CC BY 4.0, observation route, related links and evidence button visible",
+      "consoleErrors": 0,
+      "knownLiteHttpBoundary": "legacy core textures may return HTTP 404 in vercel-lite; no page or console error"
+    },
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-07-mobile-composition-20260913.png",
+    "screenshotBytes": 43551,
+    "screenshotSha256": "F938857BAB9307555BDBA30BF4D327D63D8DE07B975FB1B7D1C230979D2EA3C4",
+    "evidenceBoundary": "development preview responsive visual/runtime evidence; no performance or production claim"
+  },
+  "tests": {
+    "eslint": { "command": "npx eslint app/components/MainlineANebulaPortraitV607.tsx", "passed": true },
+    "vitest": { "command": "npx vitest run app/lib/mainlineANebulaSceneTextureV607.test.ts app/lib/mainlineANebulaVisualAssetsV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "passed": true, "tests": 5 }
+  },
+  "releaseBinding": {
+    "buildId": "h08Dhkk9omMt2ifEk6SBu",
+    "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b",
+    "note": "packet must be regenerated after round 07 receipt"
+  }
+}

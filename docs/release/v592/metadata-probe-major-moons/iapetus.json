@@ -1,0 +1,52 @@
+{
+  "version": "v592-major-moon-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:40:06.833Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "iapetus",
+  "query": "Iapetus Saturn moon global map",
+  "requiredTerms": [
+    "iapetus"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Iapetus%20Saturn%20moon%20global%20map&media_type=image&page_size=25",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Iapetus%20Saturn%20moon%20global%20map&media_type=image&page_size=25",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1721,
+    "responseSha256": "6d264043e6f04146db77167d15d9381f0a526603fb46574bf37e01562ca9cea9"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA07778",
+      "title": "Map of Iapetus -- December 2005",
+      "description": "This global digital map of Saturn moon Iapetus was created using data taken during Cassini and Voyager spacecraft flybys. The map is an equidistant projection and has a scale of 641 meters 2,103 feet per pixel",
+      "dateCreated": "2005-12-22T18:30:08Z",
+      "center": "JPL",
+      "keywords": [
+        "Iapetus",
+        "Cassini-Huygens"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA07778/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA07778/PIA07778~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "320251948aee75fde6a6e0c1722189ef25ec5dcf496eed19a6ba0711386caa50"
+}

@@ -1,0 +1,41 @@
+{
+  "version": "v589-derived-model-receipt-v1",
+  "body": "bennu",
+  "source": {
+    "path": "E:\\86137\\myai\\solar_sim\\next-web\\public\\vendor\\celestial-art-v589\\sources\\bennu-v20.glb",
+    "bytes": 60591548,
+    "sha256": "bd580d0d01ee7e93b25e0262b5c986cacb21ff240a8600158fa570c7d085b95f"
+  },
+  "output": {
+    "path": "E:\\86137\\myai\\solar_sim\\next-web\\public\\models\\candidate-v589\\bennu\\bennu-lod-source.glb",
+    "bytes": 80788632,
+    "sha256": "5eb8fd398fbffb39d21fc2ce1a9ac05f5c71ab0554e7c070ab187e935bb21d3d"
+  },
+  "derivation": {
+    "tool": "trimesh",
+    "version": "4.12.2",
+    "parameters": "scene-concatenate; center-at-bounds-midpoint; max-extent-to-diameter-2; remove-unreferenced; vertex-normals"
+  },
+  "geometry": {
+    "units": "normalized-diameter-2",
+    "pivot": "bounds-midpoint",
+    "rotationAxis": "source-frame-y-up",
+    "vertexCount": 1683079,
+    "triangleCount": 3366134,
+    "bounds": [
+      [
+        -1.0,
+        -0.8811823765986343,
+        -0.9623881074336955
+      ],
+      [
+        1.0,
+        0.8811823765986343,
+        0.9623881074336955
+      ]
+    ],
+    "normals": true
+  },
+  "presentationOnly": true,
+  "receiptSha256": "027e9a109aa7bf5f059a14431494f991ca8636025848b452ac75e772b5b76327"
+}

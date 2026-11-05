@@ -1,0 +1,38 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:40.603Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "double-cluster",
+  "category": "cluster",
+  "query": "NGC 869 NGC 884 Double Cluster",
+  "requiredTermGroups": [
+    [
+      "ngc 869",
+      "ngc 884",
+      "double cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+869+NGC+884+Double+Cluster&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+869+NGC+884+Double+Cluster&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 178,
+    "responseSha256": "56f5224f0edd5c9f10a6a97d821d36fd27887e806204dc0ea37dfba89517d5d3"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "65b9456439d9974577faf606f2be62b15914988e2250088c090af26dfe0a3ada"
+}

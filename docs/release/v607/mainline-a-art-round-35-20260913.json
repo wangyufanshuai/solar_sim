@@ -1,0 +1,20 @@
+{
+  "round": 35,
+  "date": "2026-09-13",
+  "title": "Reproducible local-shadow art runtime entrypoint",
+  "status": "verified-http-local-shadow",
+  "scope": {
+    "script": "scripts/start-atlas-dev-local-shadow.mjs",
+    "artChange": "Added a Windows-compatible dev entrypoint that supplies the explicit content-pack root before launching Next webpack dev mode."
+  },
+  "validation": {
+    "syntax": "node --check passed",
+    "startup": "npm run dev:atlas:local-shadow reached Next ready on 127.0.0.1:3018",
+    "http": "2/2 representative core assets returned HTTP 200 with stable ETags",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The entrypoint proves local-shadow setup and does not establish public deployment or performance acceptance.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

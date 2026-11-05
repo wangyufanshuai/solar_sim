@@ -1,0 +1,21 @@
+import { createHash } from "node:crypto";
+import { spawnSync } from "node:child_process";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+
+const root = process.cwd();
+const rawPath = resolve(root, "dist/release/atlas-historical-visual-audit-v562.raw.json");
+const outputPath = resolve(root, "dist/release/atlas-historical-visual-audit-v562.json");
+mkdirSync(dirname(rawPath), { recursive: true });
+const tests = ["app/lib/orbitAtlasPresentation.test.ts", "app/data/planetTextureManifest.test.ts", "app/data/planetaryArtDirectionManifest.test.ts"];
+const run = spawnSync(process.execPath, ["node_modules/vitest/vitest.mjs", "run", ...tests, "--reporter=json", `--outputFile=${rawPath}`], { cwd: root, stdio: ["ignore", "pipe", "pipe"], encoding: "utf8" });
+const report = JSON.parse(readFileSync(rawPath, "utf8"));
+const failed = report.testResults.flatMap((suite) => suite.assertionResults.filter((assertion) => assertion.status === "failed").map((assertion) => assertion.fullName));
+const expectedFragments = ["selected-body HD texture manifest", "v49 generated local material assets", "old logical paths while current packs provide v49 and sky assets"];
+if (run.status !== 1 || report.numFailedTests !== 3 || failed.length !== 3 || !expectedFragments.every((fragment) => failed.some((name) => name.includes(fragment)))) throw new Error(`v562-historical-audit-unexpected:${JSON.stringify({ exitCode: run.status, failed })}`);
+const unsigned = { version: "v562-atlas-historical-visual-audit-v1", generatedAt: "2026-08-03T00:00:00Z", status: "passed-expected-historical-negative-evidence", activeVisualGate: "v562-visual-candidate-ktx2-first", historicalSuites: tests, expectedFailureCount: 3, observedFailureCount: failed.length, failures: failed, cause: "frozen-v9-v49-jpeg-and-sky-fallback-files-not-present", historicalEvidenceRewritten: false, historicalAssetsRestored: false, formalProductPointer: "v263", rawReport: "dist/release/atlas-historical-visual-audit-v562.raw.json", rawReportSha256: createHash("sha256").update(readFileSync(rawPath)).digest("hex") };
+const receipt = { ...unsigned, artifactSha256: createHash("sha256").update(JSON.stringify(unsigned)).digest("hex") };
+const partial = `${outputPath}.${process.pid}.part`;
+writeFileSync(partial, `${JSON.stringify(receipt, null, 2)}\n`, "utf8");
+renameSync(partial, outputPath);
+console.log(JSON.stringify({ status: receipt.status, artifactSha256: receipt.artifactSha256, expectedFailures: 3, activeVisualGate: receipt.activeVisualGate, historicalEvidenceRewritten: false, formalProductPointer: "v263" }, null, 2));

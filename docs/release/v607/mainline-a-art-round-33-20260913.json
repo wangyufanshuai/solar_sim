@@ -1,0 +1,36 @@
+{
+  "round": 33,
+  "date": "2026-09-13",
+  "title": "Beta hero mobile viewport browser proof",
+  "status": "verified-browser-mobile",
+  "scope": {
+    "route": "local dev / Named stellar roster",
+    "artChange": "Validated the 24-card Beta hero roster at a 390x844 viewport with status labels and legend visible."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "viewport": "390x844",
+    "heroCards": 24,
+    "runtimeCleared": 12,
+    "evidencePending": 12,
+    "legendCount": 1,
+    "scrollSurface": {
+      "scrollWidth": 340,
+      "clientWidth": 340,
+      "horizontalOverflow": false,
+      "scrollHeight": 1046,
+      "clientHeight": 589
+    },
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-33-beta-hero-mobile-20260913.png",
+    "screenshotBytes": 177161,
+    "screenshotSha256": "630DA51D1C781B3A9871E682FC481D1C9B3877F33852DC2EB595424E3F338589"
+  },
+  "validation": {
+    "playwright": "Chrome headed engine, 390x844, route and roster selectors resolved",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This proves roster presentation and overflow behavior at one mobile viewport; it does not prove device matrix coverage or performance acceptance.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

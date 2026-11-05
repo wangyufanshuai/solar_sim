@@ -1,0 +1,36 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:04:10.127Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "pelican-nebula-wise",
+  "query": "Pelican Nebula WISE",
+  "requiredTerms": [
+    "pelican",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Pelican%20Nebula%20WISE&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Pelican%20Nebula%20WISE&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 170,
+    "responseSha256": "20c8dc48c5a8bc14a510df1cfeae77e5cdc29e98c7c9ca6f137e38d150296dea"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "e45dd0d445ef44bbfb4122709ca1163a4f8659cb5c719a3ae2c6d3c38ba9b20a"
+}

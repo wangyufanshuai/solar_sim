@@ -1,0 +1,62 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:33.397Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "hyades",
+  "category": "cluster",
+  "query": "Hyades star cluster",
+  "requiredTermGroups": [
+    [
+      "hyades"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Hyades%20star%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Hyades%20star%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3356,
+    "responseSha256": "220703c1f1df5ec6db4a76810ed7808d1fec1ce3601b08866a1529221856856e"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "GSFC_20171208_Archive_e001500",
+      "title": "NASA's Hubble Space Telescope Finds Dead Stars 'Polluted with Planet Debris'",
+      "description": "This is an artist’s impression of a white dwarf (burned-out) star accreting rocky debris left behind by the star’s surviving planetary system. It was observed by Hubble in the Hyades star cluster. At lower right, an asteroid can be seen falling toward a Saturn-like disk of dust that is encircling the dead star. Infalling asteroids pollute the white dwarf’s atmosphere with silicon. Credit: NASA, ESA, and G. Bacon (STScI) --- NASA's Hubble Space Telescope has found the building blocks for Earth-sized planets in an unlikely place-- the atmospheres of a pair of burned-out stars called white dwarfs. These dead stars are located 150 light-years from Earth in a relatively young star cluster, Hyades, in the constellation Taurus. The star cluster is only 625 million years old. The white dwarfs are being polluted by asteroid-like debris falling onto them. <b><a href=\"http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html\" rel=\"nofollow\">NASA image use policy.</a></b> <b><a href=\"http://www.nasa.gov/centers/goddard/home/index.html\" rel=\"nofollow\">NASA Goddard Space Flight Center</a></b> enables NASA’s mission through four scientific endeavors: Earth Science, Heliophysics, Sol",
+      "dateCreated": "2017-12-08T00:00:00Z",
+      "center": "GSFC",
+      "keywords": [
+        "NASA's Hubble Space Telescope Finds Dead Stars 'Polluted with Planet Debris'",
+        "star",
+        "space",
+        "nasa",
+        "goddard",
+        "hubble",
+        "whitedwaft"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001500/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001500/GSFC_20171208_Archive_e001500~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "7a701c7e05c0e8781aec2fffd33e2c5bc05491f6683c34d02f49a1877da46e4d"
+}

@@ -1,0 +1,220 @@
+{
+  "codeChange": {
+    "schema": "mainline-a-code-change-receipt-v626",
+    "round": "R66",
+    "generatedAt": "2026-09-20T14:29:40.553Z",
+    "scope": "next-web only; root app inputs were read-only",
+    "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "boundaryBaseline": "af61a2f2",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "effectiveProductionLines": 1469,
+    "minimumRequired": 1000,
+    "minimumMet": true,
+    "testsExcluded": true,
+    "countMethod": "Nonblank, noncomment production lines in four new R66 typed/CLI HTTP/package files; tests, generated receipts, screenshots and documentation excluded.",
+    "files": [
+      {
+        "path": "app/lib/mainlineAReleaseAlignmentV626.ts",
+        "effectiveLines": 644,
+        "bytes": 33006,
+        "sha256": "af241ca5570b20910430fbefcd58b5a21fb68ff1ed0e97132d06213a88acb316",
+        "role": "typed alignment, source/rights/runtime closures, gates, rollback and package contract"
+      },
+      {
+        "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+        "effectiveLines": 469,
+        "bytes": 29480,
+        "sha256": "8ff2bd39768f9c468ffc5558df5939cc8734616d0e8a931887faa2869029ff24",
+        "role": "read-only root mirror and next-web digest audit"
+      },
+      {
+        "path": "scripts/build-mainline-a-release-package-v626.mjs",
+        "effectiveLines": 276,
+        "bytes": 14514,
+        "sha256": "1cc8acf048c685d0bb55a2c230d5a0dbdfcf7f9a64b13859547eeb58ab05e660",
+        "role": "candidate release package, rollback, gate checklist and manifest"
+      },
+      {
+        "path": "scripts/collect-mainline-a-r66-http-evidence-v626.mjs",
+        "effectiveLines": 80,
+        "bytes": 3536,
+        "sha256": "fd6ea913f5d0a652e5e7451b588c788d171babbe5340e65e432f1d0a173b729a",
+        "role": "R66 local production HTTP/build binding collector"
+      }
+    ],
+    "integrationFiles": [
+      "package.json",
+      "scripts/build-mainline-a-preserved.mjs",
+      "app/components/AtlasAppShell.tsx",
+      "app/components/PostV593StellarRosterPanel.tsx"
+    ],
+    "excluded": [
+      "tests",
+      "generated JSON",
+      "screenshots",
+      "receipts",
+      "docs",
+      "standard build logs",
+      "root app source files"
+    ],
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "parentGitMutation": false,
+      "physicsKernelsUnmodified": true
+    },
+    "validation": {
+      "alignment": "blocked",
+      "package": "blocked",
+      "preservedProductionBuild": "passed",
+      "http": true,
+      "browser": true,
+      "physicalMobile": "not-run",
+      "longRun": "not-run"
+    }
+  },
+  "round": {
+    "schema": "mainline-a-art-round-receipt-v626",
+    "round": "R66",
+    "generatedAt": "2026-09-20T14:29:40.553Z",
+    "objective": "root/next-web read-only alignment and final candidate release package",
+    "codeChangeReceipt": "docs/release/v607/mainline-a-r66-code-change.json",
+    "build": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-build-20260920-001.json",
+      "buildId": "bktVNvQNoPT6eXvlUAgia",
+      "runtimeBuildId": "mainline-a-c39a4d34a8f47057",
+      "sourceStable": true,
+      "profile": "vercel-lite"
+    },
+    "evidence": {
+      "static": {
+        "status": "passed",
+        "receipt": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+        "claim": "alignment and contract evidence only"
+      },
+      "http": {
+        "status": "passed",
+        "receipt": "docs/release/v607/mainline-a-r66-http-20260920.json",
+        "pageStatus": 200,
+        "healthStatus": 200,
+        "claim": "local production HTTP/build binding"
+      },
+      "visual": {
+        "status": "passed",
+        "screenshots": [
+          {
+            "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260920.png",
+            "sha256": "7a196600e69c4ce5888c2ce51a433c41373eca77f6e266e871297242190ee6b6"
+          },
+          {
+            "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260920.png",
+            "sha256": "bcc6918006e4723ff72615da53967b8e07573e03ae4493cb7d45736ee2488391"
+          }
+        ],
+        "claim": "visual evidence only"
+      },
+      "browser": {
+        "status": "passed",
+        "receipt": "docs/release/v607/mainline-a-r66-browser-20260920.json",
+        "desktopViewport": [
+          1280,
+          720
+        ],
+        "mobileViewport": [
+          390,
+          844
+        ],
+        "consoleErrors": 0,
+        "consoleWarnings": 0,
+        "claim": "Codex in-app browser local observation"
+      },
+      "performance": {
+        "status": "blocked",
+        "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+        "blockers": [
+          "long-run-observation-required",
+          "physical-device-not-run"
+        ],
+        "claim": "R65 four-second browser samples retained; no production or real-user claim"
+      },
+      "externalSource": {
+        "status": "blocked",
+        "receipts": [
+          "app/data/mainlineANebulaBatchV624.generated.json",
+          "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json"
+        ],
+        "claim": "historical/live source ledger remains candidate-only and rights pending"
+      },
+      "releasePackage": {
+        "status": "blocked",
+        "pointer": "docs/release/v607/mainline-a-r66-release-package-v626-20260920-001.json",
+        "directory": "docs/release/v607/mainline-a-r66-package-20260920-001",
+        "claim": "candidate release metadata and rollback contract"
+      }
+    },
+    "alignment": {
+      "receipt": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+      "status": "blocked",
+      "rootMirror": "E:\\86137\\myai\\solar_sim\\web",
+      "rootReadOnly": true,
+      "packageIdentityMatch": false,
+      "sourceIdentityMatch": false,
+      "manifestParity": false,
+      "blockers": [
+        "beta-nebula-source-closure-pending",
+        "canonical-rights-signoff-pending",
+        "canonical-runtime-clearance-pending",
+        "long-run-not-run",
+        "nebula-rights-review-pending",
+        "nebula-rights-signoff-pending",
+        "package-identity-diff",
+        "performance-receipt-blocked",
+        "physical-mobile-not-run",
+        "root-manifest-not-present",
+        "stellar-component-identity-pending"
+      ]
+    },
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "parentGitMutation": false,
+      "physicsKernelsUnmodified": true
+    },
+    "openGates": [
+      "beta-nebula-source-closure-pending",
+      "canonical-rights-signoff-pending",
+      "canonical-runtime-clearance-pending",
+      "long-run-not-run",
+      "nebula-rights-review-pending",
+      "nebula-rights-signoff-pending",
+      "package-identity-diff",
+      "performance-receipt-blocked",
+      "physical-mobile-not-run",
+      "root-manifest-not-present",
+      "stellar-component-identity-pending",
+      "physical mobile device",
+      "30-minute soak",
+      "12 canonical signoffs",
+      "Beta 24 nebula rights and source closure",
+      "root/next-web unified identity and manifest parity"
+    ],
+    "claimsClosed": {
+      "publicDeployment": false,
+      "legalClearance": false,
+      "scientificValidity": false,
+      "productionPerformance": false,
+      "realUserValidation": false
+    },
+    "notes": [
+      "Root app E:\\86137\\myai\\solar_sim\\web was read without parent Git operations.",
+      "The candidate package is intentionally blocked and reversible; no source asset or scientific payload was promoted."
+    ]
+  }
+}

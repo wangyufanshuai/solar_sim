@@ -1,0 +1,134 @@
+{
+  "schema": "mainline-a-art-round-receipt-v607",
+  "round": "R66",
+  "date": "2026-09-22",
+  "title": "V628 six-candidate real HTTPS nebula batch and R66 release rebinding on build 031",
+  "status": "blocked-open-gates",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "v628BatchRows": 6,
+    "v628Attempts": 10,
+    "v628ResponsesCaptured": 3,
+    "v628ResponsesPending": 3,
+    "v628ArtifactsVerified": 3,
+    "v628SourcePagePending": 6,
+    "v628RightsPending": 6,
+    "nebulaCapturedAcrossV624V628": 9,
+    "betaNebulaTarget": 24,
+    "canonicalStars": 12,
+    "canonicalConstellations": 12,
+    "canonicalNebulaCandidates": 12,
+    "v628TerminalPendingRows": 3,
+    "v628LedgerRowsWithFailureTelemetry": 4
+  },
+  "implementation": [
+    "Added a real HTTPS collector for six Beta nebula candidates with allowlisted NASA image transport, timeout/retry telemetry, redirect chain, request fingerprint, error class and immutable SHA-256 artifact paths.",
+    "Added V628 offline replay, verifier and static audit with fail-closed artifact integrity and candidate-boundary checks; failed network rows retain attempt ledgers without response artifacts.",
+    "Integrated the V628 panel into the review shell and rebound R66 alignment to build, HTTP, browser and visual receipt 028.",
+    "Preserved candidate-only, hold, not-admitted and scientificPayloadWriteback=false; no V616 snapshot/projection or runtime scientific payload writeback."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "items": [
+        "V628 Node collector/replay/verifier/audit tests passed",
+        "V628 Vitest contract/panel tests passed",
+        "targeted ESLint passed",
+        "V619 check passed",
+        "R66 alignment no-write report generated"
+      ]
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260922-031.json",
+      "buildId": "hYAMHv9_LAMCI7DYvX19R",
+      "runtimeBuildId": "mainline-a-0d99f50a6782e129"
+    },
+    "visual": {
+      "status": "captured",
+      "screenshots": [
+        "docs/release/v607/screenshots/mainline-a-v628-collector-desktop-031.png",
+        "docs/release/v607/screenshots/mainline-a-v628-collector-mobile-031.png"
+      ],
+      "claim": "local rendered visual evidence only"
+    },
+    "browser": {
+      "status": "captured",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260922-031.json",
+      "checks": [
+        "six V628 records visible",
+        "3 raw captures and failed ledger rows visible",
+        "cocoon search 1/6 with detail",
+        "negative search 0/6 with empty state",
+        "keyboard clear restored 6/6",
+        "desktop 1280x720 and 390x844 viewport no horizontal overflow",
+        "console errors=0 warnings=0",
+        "ledger pending indicator 4 includes one recovered candidate with a prior failed attempt; terminal pending candidate rows=3"
+      ]
+    },
+    "performance": {
+      "status": "not-claimed",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "note": "local samples remain separate; no production or real-user performance claim"
+    },
+    "externalSource": {
+      "status": "pending",
+      "items": [
+        "V628 audit captured 3/6 raw artifacts; 3 failed rows retain ledger telemetry",
+        "official source-page evidence 0/6",
+        "item-rights signoff 0/6",
+        "24-item Beta nebula target remains incomplete",
+        "four ledger pending indicators include one recovered candidate attempt; terminal response-pending rows remain 3",
+        "sourceIdentity.head remains unknown and is not treated as current-commit provenance"
+      ]
+    },
+    "mobilePhysical": {
+      "status": "not-run",
+      "reason": "only in-app 390x844 viewport available"
+    }
+  },
+  "artifacts": {
+    "batch": "app/data/mainlineANebulaBatchV628.generated.json",
+    "offlineBatch": "app/data/mainlineANebulaBatchV628.offline.generated.json",
+    "audit": "docs/release/v607/mainline-a-r66-nebula-batch-v628-audit-20260922.json",
+    "codeChange": "docs/release/v607/mainline-a-r66-v628-code-change-20260922-final-013.json",
+    "build": "docs/release/v607/mainline-a-r66-build-20260922-031.json",
+    "http": "docs/release/v607/mainline-a-r66-http-20260922-031.json",
+    "browser": "docs/release/v607/mainline-a-r66-browser-20260922-031.json",
+    "releaseAlignment": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "identityBridge": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-009.json",
+    "releasePackage": "docs/release/v607/mainline-a-r66-release-package-v626-20260922-033.json"
+  },
+  "openGates": [
+    "official source-page evidence and item-level rights signoff for Beta nebula candidates",
+    "four stellar component identities",
+    "canonical runtime clearance and 12/12/12 rights signoff",
+    "root manifest parity",
+    "30-minute long-run resource observation",
+    "physical mobile device evidence",
+    "24-item Beta nebula target remains incomplete"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "claims": {
+    "static": true,
+    "http": true,
+    "visual": true,
+    "browser": true,
+    "performance": false,
+    "externalSource": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  },
+  "runId": "20260922-031",
+  "generatedAt": "2026-09-22T01:49:09.379Z",
+  "effectiveCodeLines": 1064
+}

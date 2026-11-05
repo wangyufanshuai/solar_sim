@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:31.239Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "southern-pinwheel-galaxy",
+  "category": "galaxy",
+  "query": "M83 Southern Pinwheel Galaxy Spitzer",
+  "requiredTermGroups": [
+    [
+      "m83",
+      "southern pinwheel"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M83+Southern+Pinwheel+Galaxy+Spitzer&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M83+Southern+Pinwheel+Galaxy+Spitzer&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 184,
+    "responseSha256": "05e9d49381311c046f660f67fd987560b70d90ca88d01a21eb12207ab3e2568d"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "64b254bf9d1644088d4fc3e964af9df0bed7f844503a74101edce278c9f54751"
+}

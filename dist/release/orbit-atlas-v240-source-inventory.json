@@ -1,0 +1,4496 @@
+{
+  "version": "v240-source-inventory",
+  "generatedAt": "2026-07-18T02:17:16.384Z",
+  "files": {
+    "README.md": {
+      "bytes": 4294,
+      "lines": 107,
+      "sha256": "ffc4920c447b2feb0efe13cf6e320237bbe383273540a27f05426ecb3c945c61"
+    },
+    "app/AtlasRuntimeWorkbench.tsx": {
+      "bytes": 38213,
+      "lines": 856,
+      "sha256": "0a26ec5aebd5a2c0979d9ccc74a04756bddd48861a7f12e9579378096a7e3c2e"
+    },
+    "app/ClientAppShell.tsx": {
+      "bytes": 2088,
+      "lines": 69,
+      "sha256": "020df17b4ff0d3ab9b18302dd2b8dff36e26d7e218b9b0e3fcc1bba49994ff03"
+    },
+    "app/UniversePage.tsx": {
+      "bytes": 70,
+      "lines": 4,
+      "sha256": "d5414ac22e84097f6c91673bd28fe2b9c9e762512a2835fa90ced8305fe01117"
+    },
+    "app/UniverseRuntimeController.tsx": {
+      "bytes": 1728,
+      "lines": 49,
+      "sha256": "79a920da0cd35b6642ea1ea13c5e8e5cf5e543f594f5393a57bf046570993d07"
+    },
+    "app/api/atlas/catalog-pack/[...path]/route.ts": {
+      "bytes": 1976,
+      "lines": 57,
+      "sha256": "e862459fb3722880da8790ee440832c0368627deec20f860d34e5ac1fdd2fbc7"
+    },
+    "app/api/atlas/content-packs/[pack]/files/[...path]/route.ts": {
+      "bytes": 2585,
+      "lines": 76,
+      "sha256": "45ec0a604b761cba6f51bc58d1c1b50be82dabcc7e6acf95cc85ea8f317649e7"
+    },
+    "app/api/atlas/content-packs/[pack]/manifest/route.ts": {
+      "bytes": 1166,
+      "lines": 41,
+      "sha256": "1eb6c33b5c6c3fa8ae7c1e7747902895e129d17c80cfdd699ef48b62f3d687b2"
+    },
+    "app/api/atlas/content-packs/route.ts": {
+      "bytes": 914,
+      "lines": 25,
+      "sha256": "ddc0720c77b1196dcac9b339dafc3b98e66580570d049c350cce84bb029ac56d"
+    },
+    "app/api/debug-log/route.ts": {
+      "bytes": 1223,
+      "lines": 44,
+      "sha256": "aacca606cb1f040257f34e404e7508f3be08b4d3e3538c271d4ac6b97a7b3a5b"
+    },
+    "app/api/health/route.ts": {
+      "bytes": 856,
+      "lines": 27,
+      "sha256": "efb245c7df25f2154aff83c5c32559c9f2dcf24ea8a1d92b42f426b9cf6b1662"
+    },
+    "app/api/tle/route.ts": {
+      "bytes": 2013,
+      "lines": 59,
+      "sha256": "ce6ba882b99c1a252742810724d765c9eead941b2a7d619b4ea963469201f69d"
+    },
+    "app/components/AnimatedNumber.tsx": {
+      "bytes": 800,
+      "lines": 37,
+      "sha256": "45ff6601ae190f531142360de3c0824e9cee1193e8df204026431959ce847133"
+    },
+    "app/components/AtlasAppShell.tsx": {
+      "bytes": 4124,
+      "lines": 89,
+      "sha256": "7f62d35827d3ee447a2ab66e3d80d6dcb85067feab1471ee1946c46438bfd584"
+    },
+    "app/components/AtlasCameraRuntimeMarker.ts": {
+      "bytes": 1730,
+      "lines": 55,
+      "sha256": "eabd0f70cc2296242060855c0b74e5ed887208ef174ec1d6780ea72413da1e19"
+    },
+    "app/components/AtlasCanvasSimulationContract.ts": {
+      "bytes": 13431,
+      "lines": 285,
+      "sha256": "820a21c95dd486ded51af5df680f3cfeeb19f741507202b2477ecd1de3205185"
+    },
+    "app/components/AtlasInstrumentUi.tsx": {
+      "bytes": 11508,
+      "lines": 373,
+      "sha256": "41c02a7d7b136cf50d340a6712ac248ed8f9fca9877571cd56bddbfeb68dd9e0"
+    },
+    "app/components/AtlasLabelLayoutCoordinator.tsx": {
+      "bytes": 5027,
+      "lines": 144,
+      "sha256": "1faa833b891f2f0fdfbf286e571a82900314664febdf985b726be2c540060fea"
+    },
+    "app/components/AtlasLaunchTelemetrySurface.tsx": {
+      "bytes": 1279,
+      "lines": 36,
+      "sha256": "1f39ca2388d20be4864db109f9b2978014afcd0ee691a95bbeab5e51b9290961"
+    },
+    "app/components/AtlasMissionHubPanel.tsx": {
+      "bytes": 18155,
+      "lines": 491,
+      "sha256": "e178508881026a788815242b478e85afd12569b28caf3f9224ded67fbb6cde7b"
+    },
+    "app/components/AtlasNavigatorPanel.tsx": {
+      "bytes": 10279,
+      "lines": 170,
+      "sha256": "e0d07c0062c5d5eb4a8bd28fc10ff637192d6267d5a613ed36f8069d4b59efc4"
+    },
+    "app/components/AtlasNavigatorRuntimePanel.tsx": {
+      "bytes": 2191,
+      "lines": 70,
+      "sha256": "52ae764d325a547e5679037ab7e63d8428e49f6e8512732da7939c1f47feef4f"
+    },
+    "app/components/AtlasObservatoryDeckPanel.tsx": {
+      "bytes": 7454,
+      "lines": 222,
+      "sha256": "853e70830e0938012688cfc004fd8ba9f6809f062e3660e5701828d40c8a19ff"
+    },
+    "app/components/AtlasPanelBoundary.tsx": {
+      "bytes": 1834,
+      "lines": 61,
+      "sha256": "46b1e8c92d9a3cec6007861980eb32dab445d6d1ea594e2f0f126e9a6158f129"
+    },
+    "app/components/AtlasPanelCoordinator.tsx": {
+      "bytes": 10495,
+      "lines": 292,
+      "sha256": "225d798634b83a1534faa5d4a54ba8c0502de1d7fbc16461c534b4fde1cf5805"
+    },
+    "app/components/AtlasRuntimeDockLayer.tsx": {
+      "bytes": 9594,
+      "lines": 208,
+      "sha256": "baf5bd1556eecc0872f4a677e2258f5f7dcdd0685ebca1f63d8b9d0140d8eb53"
+    },
+    "app/components/AtlasRuntimePanelLayer.tsx": {
+      "bytes": 11415,
+      "lines": 214,
+      "sha256": "16f82b7b04c5e3a8767ad1b6b2765c6cb1de9108b40359524eb865b1855996af"
+    },
+    "app/components/AtlasRuntimePanelSurface.tsx": {
+      "bytes": 3240,
+      "lines": 104,
+      "sha256": "fb4dd69e8ab472fbe3343b73991aec78e668c744a798c1e9497d69c16d69061f"
+    },
+    "app/components/AtlasRuntimePerformanceProbe.tsx": {
+      "bytes": 3023,
+      "lines": 53,
+      "sha256": "839763151adbfa2316da6d5bd257abbaf47a1dba6be7eb2ea37123cbbd70c9c6"
+    },
+    "app/components/AtlasRuntimeSceneLayer.tsx": {
+      "bytes": 7532,
+      "lines": 139,
+      "sha256": "e70c56aaa0f0919404dc7a513d6ce8d70bf697282ac21b0c59b325f969dfbffe"
+    },
+    "app/components/AtlasRuntimeWorkbenchLazySurfaces.tsx": {
+      "bytes": 1922,
+      "lines": 32,
+      "sha256": "a0a8e9f6bbb2ef977c1c89751d7e2d34348ad328d8a780e045a0e161bd9c2366"
+    },
+    "app/components/AtlasRuntimeWorkbenchSurface.tsx": {
+      "bytes": 56996,
+      "lines": 545,
+      "sha256": "f9483e95f135a821192e092ad99be745029882221b3c7a3590d6e87157dc60a2"
+    },
+    "app/components/AtlasSceneCameraBridges.tsx": {
+      "bytes": 13057,
+      "lines": 291,
+      "sha256": "b22d9525b3948167273a717cf1103a290e3a70382bd91d932b804cd90eab5bff"
+    },
+    "app/components/AtlasSceneDiagnostics.tsx": {
+      "bytes": 13092,
+      "lines": 281,
+      "sha256": "cb7794e97512c2f49d07b1778fadeefb59d609380972e79271ea86e3fa8b61f0"
+    },
+    "app/components/AtlasSceneFocusCameraBridge.tsx": {
+      "bytes": 26236,
+      "lines": 497,
+      "sha256": "bea0e21c7d79b3f1c14e66b6b5ac0b35f89418d3f014e83b489f4ced5446fb96"
+    },
+    "app/components/AtlasSceneHost.tsx": {
+      "bytes": 1091,
+      "lines": 37,
+      "sha256": "47f15807d81aaf7f6507570256f0ea0d78c22f51fa625833a825f17c3ee59c92"
+    },
+    "app/components/AtlasSceneLazyModules.tsx": {
+      "bytes": 1153,
+      "lines": 33,
+      "sha256": "f9bc9c683e6e2f27fef4a34cd5c291cbfd745c9032ea42a83176f3fa15512c26"
+    },
+    "app/components/AtlasScientificReportPanel.tsx": {
+      "bytes": 12370,
+      "lines": 323,
+      "sha256": "c2480389daeb9a6377a010eb4c73e103777cf54b8fb39f01779f662d1354bf71"
+    },
+    "app/components/AtlasUniverseSceneRuntime.tsx": {
+      "bytes": 28627,
+      "lines": 534,
+      "sha256": "3b64ac11eab59eea4ec040c5e32bec38e6dbee2691bf0b6fcb536350fcfa8dca"
+    },
+    "app/components/AtlasValidationConsolePanel.tsx": {
+      "bytes": 13363,
+      "lines": 343,
+      "sha256": "07a0d157ac89127fcfb23bdcf708f191b61cd3911b92b0c75793ccd05d88253a"
+    },
+    "app/components/AtlasVisualDiagnosticsSurface.tsx": {
+      "bytes": 8862,
+      "lines": 174,
+      "sha256": "a18c8542bad6f96489a93bddb5f58e158790ed00b32f6ed4e5eff6c7ee2685c6"
+    },
+    "app/components/AtlasWorkflowPanel.tsx": {
+      "bytes": 13365,
+      "lines": 360,
+      "sha256": "58da6cd27e25af0cf265bacda29adc570b7b41cf37da3cf5147c59423e8fe5a8"
+    },
+    "app/components/BodyDetailSidebar.tsx": {
+      "bytes": 16195,
+      "lines": 341,
+      "sha256": "4b8d9d82673dcc7d1c905b52cc6d957e100261373413da9fbfe63384a1f43dfd"
+    },
+    "app/components/BodyLabel.tsx": {
+      "bytes": 9680,
+      "lines": 313,
+      "sha256": "66e1bcebe585af1853c2124c141c2ba85744e6c657ef1368a9017812324736c9"
+    },
+    "app/components/BottomControlBar.tsx": {
+      "bytes": 15918,
+      "lines": 461,
+      "sha256": "f6cce1261bb46f493117787370665d428ece8e291c2875fd1842e5a617b062f0"
+    },
+    "app/components/BrightGalaxyMarkers.tsx": {
+      "bytes": 4858,
+      "lines": 141,
+      "sha256": "ab5d8abd2a72332377f4f339391575b239da32790e61bd980228aa471075a1ee"
+    },
+    "app/components/BrightStarCatalog.tsx": {
+      "bytes": 3817,
+      "lines": 124,
+      "sha256": "9166c96f4e5b7958314fcffd2ea7b192ee8ed40f174cc99af0afa4b416f6d393"
+    },
+    "app/components/CatalogPackManager.tsx": {
+      "bytes": 8947,
+      "lines": 216,
+      "sha256": "04d5bec5d3be7a8e19b29e151589bedb7f9896c40da5a0d1daf3bc0d902e228e"
+    },
+    "app/components/CelestialBody.tsx": {
+      "bytes": 501,
+      "lines": 17,
+      "sha256": "e58c73699daeeb7704f9ca9f4d5fac776d1c044d00f5a064ac6191f205abf932"
+    },
+    "app/components/CelestialCatalogFocusMarker.tsx": {
+      "bytes": 2417,
+      "lines": 72,
+      "sha256": "33e3d10e7ba3a3e237be6dd00c4d69db5696a968610617eba66a9856ea70b7c9"
+    },
+    "app/components/CelestialCatalogLabels.tsx": {
+      "bytes": 3721,
+      "lines": 107,
+      "sha256": "29fd5ee28dca3e94ea0b11e1c51440edb9d8cdc3649b18d8cec199ca6f44fa22"
+    },
+    "app/components/CelestialObjectPassportPanel.tsx": {
+      "bytes": 8130,
+      "lines": 114,
+      "sha256": "497471998ae06894df128a4dff74af957fde67f8da739d06325d5346d1e19254"
+    },
+    "app/components/ConstellationLabels.tsx": {
+      "bytes": 3380,
+      "lines": 114,
+      "sha256": "6188a46c5c6d20b0b90e550a47ec9df07599c9916bfcd9b6de9f1d3f62f69e6c"
+    },
+    "app/components/ConstellationLines.tsx": {
+      "bytes": 6854,
+      "lines": 208,
+      "sha256": "e7416026cd4128ed94e7948003d85c1ec53f0d9781adf70490965dcbe785eb68"
+    },
+    "app/components/DeepSpaceGradientSky.tsx": {
+      "bytes": 4105,
+      "lines": 114,
+      "sha256": "d0b90c124378254fb33d91635e1c27916c6a688b1d207fde7868325781945b65"
+    },
+    "app/components/DesktopContentPackManager.tsx": {
+      "bytes": 3918,
+      "lines": 117,
+      "sha256": "d225114c792eedb911707493e8e5b58325362af9f326f8b08e06fbf47af9fd7c"
+    },
+    "app/components/EarthAtmosphereGlow.tsx": {
+      "bytes": 4137,
+      "lines": 140,
+      "sha256": "110de87c7cf57ea4e315441a14e56c31ac95cb26f8afa440d9a8467a22a54fff"
+    },
+    "app/components/EnginePlume.tsx": {
+      "bytes": 1993,
+      "lines": 67,
+      "sha256": "24ab0715d6c155c8d673c7e085674054a5525acb7f8294a9a6cbe41516a07c9c"
+    },
+    "app/components/EvidenceLedgerPanel.tsx": {
+      "bytes": 22607,
+      "lines": 541,
+      "sha256": "40144994ec6dffe98c3fa3905c7869a7a0a128cd01c85129d66c772ff7f12869"
+    },
+    "app/components/ExoplanetSystemScene.tsx": {
+      "bytes": 14027,
+      "lines": 383,
+      "sha256": "6548bfb2444200c65f7604eddedb5108dee0b2304df6fcaa7486fcb1aab9b062"
+    },
+    "app/components/GaiaStarField.tsx": {
+      "bytes": 9284,
+      "lines": 252,
+      "sha256": "d64f0b8e1a65bdb80c520193cc07ee5ed6a86c36646b60d20b34e70debf7d545"
+    },
+    "app/components/GaiaStarLabels.tsx": {
+      "bytes": 3024,
+      "lines": 93,
+      "sha256": "53ece023a7c3794ed2bfcfc6bd3e4a01cc65f9932e6574986d31d1ab9d410327"
+    },
+    "app/components/GaiaStarOverlay.tsx": {
+      "bytes": 1248,
+      "lines": 36,
+      "sha256": "2acd14553eced414bd410e58a4116dca8c741fa02033495befe739edba612784"
+    },
+    "app/components/GalacticLandmarks.tsx": {
+      "bytes": 5846,
+      "lines": 146,
+      "sha256": "506eabc98a28775c43b066137098822eb9b8d400bb6a8f039c2cd8b6e587547d"
+    },
+    "app/components/GalacticScaleField.tsx": {
+      "bytes": 14018,
+      "lines": 397,
+      "sha256": "f6860adf291634c49b10d8b4420dc792b26ef54a59dee9472ae063dec01972a2"
+    },
+    "app/components/GalaxyEnvironmentSphere.tsx": {
+      "bytes": 45861,
+      "lines": 833,
+      "sha256": "4cbe956dc295827273dbea144c4a80d0b4145c0d556839cede282663419d2b74"
+    },
+    "app/components/KerrBlackHole.tsx": {
+      "bytes": 17721,
+      "lines": 583,
+      "sha256": "ade8a3b02ae6b4ac7608adc5f37defc34ad82572f7035549dacf86ebab2b1c22"
+    },
+    "app/components/KerrBlackHolePanel.tsx": {
+      "bytes": 26118,
+      "lines": 638,
+      "sha256": "14993fc3af628e2225f446768aafbb2599beb0d9ab6403b3d6e8472866679a4e"
+    },
+    "app/components/KerrCameraFramingBridge.tsx": {
+      "bytes": 2629,
+      "lines": 73,
+      "sha256": "0ff329694c6a3302b7cd693aa179caf5ed3eb95b12b33270c94a17701d21d54e"
+    },
+    "app/components/KerrHalfResolutionRenderer.tsx": {
+      "bytes": 5313,
+      "lines": 177,
+      "sha256": "fc943bccb793c917910ed0736d9497260c39768aa1a067a5dccbcb05fcff6efb"
+    },
+    "app/components/KerrRayTraceRendererV3.tsx": {
+      "bytes": 6654,
+      "lines": 179,
+      "sha256": "b280f051605d7b9370d311582cfb2dc9b8bd02c9d6434e547cf417424a7c0f23"
+    },
+    "app/components/LagrangePointsViz.tsx": {
+      "bytes": 11390,
+      "lines": 409,
+      "sha256": "06a3099edfab688648d753808b9f474360c82f8ba3640bd16e548a75f693f231"
+    },
+    "app/components/LaunchControlPanel.tsx": {
+      "bytes": 18876,
+      "lines": 412,
+      "sha256": "70e1c62cac791a432b0c87e259faf22d9ec561ccdf3dd58ba1dc1aa2e836889d"
+    },
+    "app/components/LaunchDirectorOverlay.tsx": {
+      "bytes": 2435,
+      "lines": 29,
+      "sha256": "96886a945e1525ef8773ea39cac6e0537ebae187d3a27b5e3cb9507f153f4e72"
+    },
+    "app/components/LaunchPadEnvironmentV3.tsx": {
+      "bytes": 3143,
+      "lines": 65,
+      "sha256": "a41612b555890f15b1c2eeba4bcd8391acdeac7a7154d43ec41186031f3d967d"
+    },
+    "app/components/LaunchSceneBridge.tsx": {
+      "bytes": 3116,
+      "lines": 115,
+      "sha256": "5f1d3f499ca8d91103c3d78cff855dcab48194a43f9e6e2174ba192fcbb1fb24"
+    },
+    "app/components/LaunchSceneView.tsx": {
+      "bytes": 39473,
+      "lines": 991,
+      "sha256": "4817d2a1f3e612d41aa373afb1d52dc1bf03edbf18250bd82a699b6cbcacdb00"
+    },
+    "app/components/LaunchSpacecraftAsset.tsx": {
+      "bytes": 3407,
+      "lines": 93,
+      "sha256": "da75ea02d062e4b041f1f138f65c349ac0d103c41cc14f3a0aa9d791d6f09e19"
+    },
+    "app/components/LaunchTelemetryDock.tsx": {
+      "bytes": 1065,
+      "lines": 17,
+      "sha256": "d507e257713fb5c154a2f8cc00323acce6a78ae92f8681b4e5a40c6a9fc93088"
+    },
+    "app/components/LaunchTelemetryStrip.tsx": {
+      "bytes": 6955,
+      "lines": 183,
+      "sha256": "3e8e850cdd82203b8b99ee5c3d4fd9654f332c89dde9da204c1e1c39ecbe1947"
+    },
+    "app/components/LaunchTrajectoryLine.tsx": {
+      "bytes": 3960,
+      "lines": 139,
+      "sha256": "345d3cb8477deb876fd415e64a1c07a2ee5b3255ffe4ec69b68aab99661f486a"
+    },
+    "app/components/MajorStarBeacons.tsx": {
+      "bytes": 4083,
+      "lines": 143,
+      "sha256": "c06bdead8e01c6df80d930abdf63067d8a0356ac5c2624649bf854959d878290"
+    },
+    "app/components/NebulaMarkers.tsx": {
+      "bytes": 5472,
+      "lines": 160,
+      "sha256": "b5c6db03390b0933c9416564ff9fe033b1f22e4c81987352a93ea51f1b4993a9"
+    },
+    "app/components/NebulaMilkyWay.tsx": {
+      "bytes": 3729,
+      "lines": 123,
+      "sha256": "4f63b0bdf75b4d187bd6d3e778ce2f88c09991be3004aa9aad82930474faf8ae"
+    },
+    "app/components/ObservationalAstrophysicsLabPanel.tsx": {
+      "bytes": 11999,
+      "lines": 183,
+      "sha256": "ea8b15bcfa064cdf6799a0991353f48e7a4e9f99485b79ba2de1323ed831ce48"
+    },
+    "app/components/OrbitAnalysisSheet.tsx": {
+      "bytes": 14886,
+      "lines": 272,
+      "sha256": "8f8966896a20efd86e601f644c00bd8ad7cd93e19c41157051c7243fc2fbf3cd"
+    },
+    "app/components/OrbitAtlasHud.tsx": {
+      "bytes": 16574,
+      "lines": 388,
+      "sha256": "c968617f70bd1064859c9e32a6f1654378fb2a1062bc3faa1b3db0e2c06bf55e"
+    },
+    "app/components/OrbitAtlasLabels.tsx": {
+      "bytes": 3164,
+      "lines": 113,
+      "sha256": "eb1ad56ef1d54733f31d655aaea7db03c2f3da91db514b90c1b288273f9bd642"
+    },
+    "app/components/OrbitTrail.tsx": {
+      "bytes": 7350,
+      "lines": 248,
+      "sha256": "2f75549f92dfaa8e1e1380d8dd75bce4d45f5409a1a9c1624ab3cf60bc072bff"
+    },
+    "app/components/OsculatingOrbitEllipse.tsx": {
+      "bytes": 5796,
+      "lines": 207,
+      "sha256": "1eea65607199f6b1ee8c9f4567d3af84bda1c5495908ed00b95f8b9b69f54bdf"
+    },
+    "app/components/PhysicsHistoryBridge.tsx": {
+      "bytes": 2971,
+      "lines": 101,
+      "sha256": "19aca4a517b7a8358c6c99d0ea1562db53f816c02bcb5c7ef25e36c56babd6f0"
+    },
+    "app/components/PhysicsPerformanceHud.tsx": {
+      "bytes": 5195,
+      "lines": 131,
+      "sha256": "81584ac28d59d2a98e3b382358cebd4daba18c6366cd6aa69816efe68bab5421"
+    },
+    "app/components/Planet.tsx": {
+      "bytes": 53637,
+      "lines": 1124,
+      "sha256": "bb7012b83d0c927d9f76ed9b46b0b3d3b6e5cbd8aff87be05671d85fff692d4b"
+    },
+    "app/components/PlanetPreviewGlobe.tsx": {
+      "bytes": 2132,
+      "lines": 74,
+      "sha256": "36467d5b79437091de09d09c53067772fef3153ca1243ef6c6d2ec863c6ad253"
+    },
+    "app/components/PnDeflectionHint.tsx": {
+      "bytes": 3707,
+      "lines": 136,
+      "sha256": "a6c4f2ab3457791b313e20211917092faea46fe463d7c9135b0e59be99a09ae2"
+    },
+    "app/components/PostProcessingGate.tsx": {
+      "bytes": 2520,
+      "lines": 71,
+      "sha256": "a263fe44a292f3c3a43de2db30c3f0df101e94ab99646d42d3117647bbcc53fc"
+    },
+    "app/components/PostProcessingSafe.tsx": {
+      "bytes": 145,
+      "lines": 3,
+      "sha256": "d770c7d13abe593f5591018982c9c380156f246561dae3a7ea1907905f085c21"
+    },
+    "app/components/PredictedOrbitPath.tsx": {
+      "bytes": 3412,
+      "lines": 115,
+      "sha256": "b581160ab6c31d47fee5b8826beaff1039ad8d730fafcb1d624b0dd512b450cc"
+    },
+    "app/components/PulsarField.tsx": {
+      "bytes": 5114,
+      "lines": 161,
+      "sha256": "7e78ef95e5c377e19634878e1fc53a3d5577f133ab8dae30aea62a01117d403d"
+    },
+    "app/components/ReferenceOrbitDecor.tsx": {
+      "bytes": 25461,
+      "lines": 714,
+      "sha256": "fd2295b6b6b7786fd88de5e86ee1e18b5f2c8b36e8ad72a8569df42ea6154233"
+    },
+    "app/components/RelativisticOpticsBridge.tsx": {
+      "bytes": 3410,
+      "lines": 101,
+      "sha256": "97cb9af12faa76cc8dc9d2a6210de0118748acf0229b9a117fe35e52d41231b7"
+    },
+    "app/components/RelativityObservableAtlasPanel.tsx": {
+      "bytes": 112041,
+      "lines": 2170,
+      "sha256": "570c202c08463884370e2b26042ee0cfd60ea6efa38ff12d4322139e7ce176aa"
+    },
+    "app/components/RelativityResearchWorkspaceV9.tsx": {
+      "bytes": 13802,
+      "lines": 267,
+      "sha256": "caecba69de2b7a57b5c8ac9ba0e3005433f3268fc5d95632963d102a1133439f"
+    },
+    "app/components/SatelliteConstellationOverlay.tsx": {
+      "bytes": 12578,
+      "lines": 358,
+      "sha256": "fa67ad32adf711f69c3fbb7912b1a5bbfcdbc4ad9cffc3381ff0e7f0de60a4ad"
+    },
+    "app/components/SceneLabPanel.tsx": {
+      "bytes": 4329,
+      "lines": 55,
+      "sha256": "5119dda828e47bfdfaabbede0515e729feefaf7943e224bee58770b171b81a9e"
+    },
+    "app/components/ScienceBackdrop.tsx": {
+      "bytes": 7599,
+      "lines": 161,
+      "sha256": "ab2d79a99453dca66c2136d95481f147e526257ee40eee394ec7485b9cd63df2"
+    },
+    "app/components/ScienceTelemetryPanel.tsx": {
+      "bytes": 11352,
+      "lines": 267,
+      "sha256": "6cdb19ea4ef4bfcff2ef298cea200ba4b9549bf5f2e1918e3994efbd773cb0f7"
+    },
+    "app/components/ScientificEvidenceGateStrip.tsx": {
+      "bytes": 4324,
+      "lines": 94,
+      "sha256": "167494941001bff2e810a4a348818f41a470a1b404f6fe86a0d76fe8a1575bf5"
+    },
+    "app/components/SelectedSkyTargetProxy.tsx": {
+      "bytes": 4957,
+      "lines": 114,
+      "sha256": "dc4a24e517d41750169ca33769e5a6c3b5ebe4bbe4179b171978dfee0557c05c"
+    },
+    "app/components/SimClockReadout.tsx": {
+      "bytes": 877,
+      "lines": 32,
+      "sha256": "c70ca19597cb599dc218c6c62ec79295934269b82a99d595e338ad08fa0bd165"
+    },
+    "app/components/SimulationHistoryBar.tsx": {
+      "bytes": 4185,
+      "lines": 105,
+      "sha256": "3ee44fadd1d706097642e7bee0b89e05cd8820bd28f61333f4b9320200472bfa"
+    },
+    "app/components/SolarSystemBodies.tsx": {
+      "bytes": 37566,
+      "lines": 856,
+      "sha256": "296156a53266cfd371adea3ae79eb8578c429fbc806e6763ec00af65dc150740"
+    },
+    "app/components/SolarSystemIntegrator.tsx": {
+      "bytes": 3302,
+      "lines": 86,
+      "sha256": "122db77bf6e4ba04a7002737e7ddd2e9fa13735dd0e55f78623b4e3876ec4c1c"
+    },
+    "app/components/SpacecraftModel.tsx": {
+      "bytes": 2576,
+      "lines": 89,
+      "sha256": "16fca88311d26893a7177ee14811ea1b58a7ecc113c83cbb8d2f03a0725344b7"
+    },
+    "app/components/StarClusterMarkers.tsx": {
+      "bytes": 5057,
+      "lines": 150,
+      "sha256": "6d54d388d0ffa83947a4a8fad3080c1e702f02624845077cf57b24112283342b"
+    },
+    "app/components/StellarPickController.tsx": {
+      "bytes": 7254,
+      "lines": 208,
+      "sha256": "f1e676efd4fab250209b45defb79703b217484a941c9a224fa726c05d532af09"
+    },
+    "app/components/StellarPortraitMaterial.tsx": {
+      "bytes": 10089,
+      "lines": 187,
+      "sha256": "abf7c6a0d5d961e12b3d25474d97bbd49d1ef7ae99d5ead5dbb2c4084681b143"
+    },
+    "app/components/SunBody.tsx": {
+      "bytes": 26205,
+      "lines": 648,
+      "sha256": "fa435f02871cd770be31ea42ae2f8aaf6575b1c5f88d2cc9c5fe03da3ae64a00"
+    },
+    "app/components/UniverseCanvas.tsx": {
+      "bytes": 4657,
+      "lines": 135,
+      "sha256": "703a0248c46bd2949ee707d101e9fab19a5cd327456408c576acb5451d18acbf"
+    },
+    "app/components/UniversePmndrsPostProcessing.tsx": {
+      "bytes": 4992,
+      "lines": 145,
+      "sha256": "5da631ab97d8cc99d5aa4b8d5c5b4c29d7a0e994a5cc2aa3653438e8caabd0a7"
+    },
+    "app/components/UniversePostProcessing.tsx": {
+      "bytes": 2994,
+      "lines": 89,
+      "sha256": "c55ff878c471d21baa82d1528341f775be0e54fe585a9d63ce9591a2c23a404a"
+    },
+    "app/components/UniverseSandboxHud.tsx": {
+      "bytes": 20268,
+      "lines": 545,
+      "sha256": "2b3ec24fd5290f027f6a89be34273356b238495e90730d20e0a25a81d891c6a5"
+    },
+    "app/components/UniverseScene.tsx": {
+      "bytes": 12374,
+      "lines": 334,
+      "sha256": "ef4fcfda4cfe7343940f3077581f35de60553eeceaa788e4ff78a1b06e19e84f"
+    },
+    "app/components/VisualEnhanceToggle.tsx": {
+      "bytes": 1339,
+      "lines": 45,
+      "sha256": "669830b164df50633fa15547f9ab68b542f7c490ad545f1cca4a081620347846"
+    },
+    "app/context/BloomSceneContext.tsx": {
+      "bytes": 3282,
+      "lines": 108,
+      "sha256": "d02d1c5596930a9591ab61af4c4aa75eb4ed5bf7e8861eafe24c42d8f8baaa09"
+    },
+    "app/context/LabelOcclusionContext.tsx": {
+      "bytes": 1655,
+      "lines": 59,
+      "sha256": "d5183307b6c3de15f3455eb850ad62e1fa134763a8adf395f486762087de2045"
+    },
+    "app/context/PhysicsPreStepContext.tsx": {
+      "bytes": 2016,
+      "lines": 68,
+      "sha256": "f06a992beb0bb38ec338bff49d6271f3fc2ec4856df628d0792c613dec5f62bc"
+    },
+    "app/context/PhysicsRenderInterpolationContext.tsx": {
+      "bytes": 4882,
+      "lines": 161,
+      "sha256": "1e60ae6984a8db1191ddfad3a0641e7738b17dbee5c1992ba10dc48a809067a7"
+    },
+    "app/context/PlanetTextureAssetsContext.tsx": {
+      "bytes": 3594,
+      "lines": 145,
+      "sha256": "c907bf106caf698226fbe714793a5b924dd982f9682fa4a9fb6b4e4e6f4cb716"
+    },
+    "app/context/PlanetUserTextureContext.tsx": {
+      "bytes": 6087,
+      "lines": 210,
+      "sha256": "eeb324c93ec4463c0f78927d29cee0e9be9d652c1860c76f66d3a2080f566b54"
+    },
+    "app/context/RelativisticOpticsContext.tsx": {
+      "bytes": 1313,
+      "lines": 48,
+      "sha256": "a584e93a897e16745aad64d723369cc8148044a70f990f5e3f701f5357a601a5"
+    },
+    "app/data/bodyDisplayFacts.ts": {
+      "bytes": 4445,
+      "lines": 182,
+      "sha256": "bc3856aeef25c79397c2a6ac747b4b8ea851d1d9b43d4cc82f78c263266cc9ec"
+    },
+    "app/data/brightGalaxyCatalog.ts": {
+      "bytes": 6510,
+      "lines": 323,
+      "sha256": "49959de976e514ce071176d7d65b67524141ca510dd3200e915c7dba589cc368"
+    },
+    "app/data/brightStarCatalog.ts": {
+      "bytes": 23808,
+      "lines": 434,
+      "sha256": "bf33ea3e8534c622510a0d45a2ecea3cdc9021514f9248666d3f5d4ff29679c5"
+    },
+    "app/data/constellationCatalog.ts": {
+      "bytes": 28916,
+      "lines": 874,
+      "sha256": "a3ad2b5d9256844c992327f32487d3f6392200cb430e4232fb8508a2e46d5d65"
+    },
+    "app/data/ephemerisGenerated.ts": {
+      "bytes": 22330,
+      "lines": 421,
+      "sha256": "9050c7d45a9791e2de90e354dd261702c0c2276e4129fa7ef3cf8943f244628a"
+    },
+    "app/data/gaiaStarCatalog.test.ts": {
+      "bytes": 3418,
+      "lines": 97,
+      "sha256": "64a3807c6610f01137c806abefafd719b8eae47d3d5c170431dc0ff06f9bf9fa"
+    },
+    "app/data/gaiaStarCatalog.ts": {
+      "bytes": 12368,
+      "lines": 323,
+      "sha256": "34d69091fbf66d644d093fb45780de7bbfe32f94983f690c25dd9499e3e6b54f"
+    },
+    "app/data/galacticStructure.ts": {
+      "bytes": 4087,
+      "lines": 132,
+      "sha256": "9d98d99290333226a5c0212897eeafb167d0bea576c1b4081014aa1386bb3fe9"
+    },
+    "app/data/horizonsReference.ts": {
+      "bytes": 25464,
+      "lines": 831,
+      "sha256": "b9221374979e75aaba380b23e2884938cd28c29aec7ce0c31d65e0fa9ffc5542"
+    },
+    "app/data/nasaMasses.ts": {
+      "bytes": 2109,
+      "lines": 108,
+      "sha256": "075c2e9aa0013287218a14f110d1afbc54de51470b5c2719a9bb6e3bcdbf6d1e"
+    },
+    "app/data/nearbyStars.ts": {
+      "bytes": 11456,
+      "lines": 615,
+      "sha256": "53fb90131c9fb47785a50c5eb157f76949c5fd03468be85acb7b7888de6b6cfb"
+    },
+    "app/data/nebulaCatalog.ts": {
+      "bytes": 20003,
+      "lines": 119,
+      "sha256": "fea74bc8861de54707cb75518269da24c90d451ba87999305c98eccb2cb2c9a7"
+    },
+    "app/data/planetTextureManifest.test.ts": {
+      "bytes": 2487,
+      "lines": 68,
+      "sha256": "e964d21c703ea45f594f4e91a9f50c1db36f63b95bd10f77056dca168462807c"
+    },
+    "app/data/planetTextureManifest.ts": {
+      "bytes": 3044,
+      "lines": 117,
+      "sha256": "c79379a371f352f4ab24a50e97ef36a8b39fbfe161ba8e8c8f64422b0f0c8c7d"
+    },
+    "app/data/planetaryArtDirectionManifest.test.ts": {
+      "bytes": 1645,
+      "lines": 40,
+      "sha256": "62407bfd12f170047dc9aa6397f8ce89aeaf7a2b87738fcd2b861eef3f32166d"
+    },
+    "app/data/planetaryArtDirectionManifest.ts": {
+      "bytes": 2090,
+      "lines": 60,
+      "sha256": "6d2f074509997df610b8295d94f519fb9030389ebcc2ab23e69ec382d71f074e"
+    },
+    "app/data/planetsJ2000.ts": {
+      "bytes": 26805,
+      "lines": 1104,
+      "sha256": "bcd2d3c71011a35b7a4f824471ba3c11160e705d2b029980268ae615140ab49e"
+    },
+    "app/data/pulsarCatalog.ts": {
+      "bytes": 6353,
+      "lines": 63,
+      "sha256": "2ad7f27cac98e88ee7658844ab67407386991cb2133947ea818a23cb2b2fddf8"
+    },
+    "app/data/referenceKeplerOrbits.ts": {
+      "bytes": 14712,
+      "lines": 717,
+      "sha256": "8eed8d446e426cdf404280be524138e40b225414f81ac7cf08b2232ee72da9c3"
+    },
+    "app/data/starClusterCatalog.ts": {
+      "bytes": 11133,
+      "lines": 77,
+      "sha256": "06076b70acfb0fd509052c2e313d8bc863cdb9e7f4e9e4fb2dcd825d8ab81865"
+    },
+    "app/data/sunResources.ts": {
+      "bytes": 393,
+      "lines": 4,
+      "sha256": "7bad9ed98d72a056ad5de61dcf6f8afa2daa13163ede2ba600e316393ce57423"
+    },
+    "app/downloads/page.tsx": {
+      "bytes": 3550,
+      "lines": 68,
+      "sha256": "5b67e4d17a2d0ed59d4deb54f5189c03fbb52f6a47e7723e61fd5ddafd5cc7d5"
+    },
+    "app/effects/LightBender.tsx": {
+      "bytes": 322,
+      "lines": 12,
+      "sha256": "e35f68b10fd0db522bff9338657e859545b4fcd5564d3189d5b658cebbe1351e"
+    },
+    "app/effects/LightBenderEffect.ts": {
+      "bytes": 7592,
+      "lines": 230,
+      "sha256": "998553c3381da0b70c629c465cfc2c6189d45887af22497540e239d95755904a"
+    },
+    "app/effects/SunLensFlare.tsx": {
+      "bytes": 1599,
+      "lines": 60,
+      "sha256": "b476d4ef605bb755279b0c94511618ec22fba27b3fdc06d75670b9bc1328fcfd"
+    },
+    "app/effects/ThreeJsPostPipeline.tsx": {
+      "bytes": 5356,
+      "lines": 134,
+      "sha256": "cca6fd79b5297d75ce323a0c7d1ee2a695c75224c9c84a36e2028f53087bb85c"
+    },
+    "app/effects/lightBenderBridge.ts": {
+      "bytes": 7988,
+      "lines": 274,
+      "sha256": "abbb5b0ff7997df580f0798880bf3df156b688ca9ead713c2e1713ca08b486ba"
+    },
+    "app/effects/trajectoryGlowMaterial.ts": {
+      "bytes": 2035,
+      "lines": 68,
+      "sha256": "66ec10a68c381f9a7325c333783ac14376e42a129dcb4709b32a7e957fb446b0"
+    },
+    "app/effects/vignetteShaderPass.ts": {
+      "bytes": 1118,
+      "lines": 38,
+      "sha256": "711be8c85a326530b2bbd373ecc90673bfabd5dc323e07579e430838e63e9f76"
+    },
+    "app/layout.tsx": {
+      "bytes": 1765,
+      "lines": 65,
+      "sha256": "4f1c302f6c395c2448d0fd89e3e5b8ee1e748e021fe649bcf4ad0fcf64d7cb33"
+    },
+    "app/lib/accelSplit.ts": {
+      "bytes": 3285,
+      "lines": 163,
+      "sha256": "91c0ea5eaa03118000f8e348fe18f03b9d15fe0818248749364d21e6eb59ee9a"
+    },
+    "app/lib/applyPhysicsSnapshot.ts": {
+      "bytes": 925,
+      "lines": 33,
+      "sha256": "f306fe9f9802a5322d996d371978729c19d99a6b7ef85d86cc39c80c4fff5bad"
+    },
+    "app/lib/artemisMissionModel.ts": {
+      "bytes": 3191,
+      "lines": 122,
+      "sha256": "3141548e96759b804a2728fd0553d05042a064ffef3cdbf241e18a8a4717bcb4"
+    },
+    "app/lib/atlasArtPolish.horizons.test.ts": {
+      "bytes": 4543,
+      "lines": 85,
+      "sha256": "17c33a49d7fe43130a4d65f4428214feb97331006f0deb950d28b3a3ad4d61b7"
+    },
+    "app/lib/atlasArtPolish.test.ts": {
+      "bytes": 5430,
+      "lines": 128,
+      "sha256": "fb628a8f13d8db3a20c937052ec8265ba85979665ab58a0bf174e47a9f1655ab"
+    },
+    "app/lib/atlasArtPolish.ts": {
+      "bytes": 6740,
+      "lines": 164,
+      "sha256": "55a2cac0313eb0fe71f18357f37c390b168e19425b52542d65487648eb4c1b29"
+    },
+    "app/lib/atlasArtPolishRunner.ts": {
+      "bytes": 9903,
+      "lines": 245,
+      "sha256": "8be39ea0ed006f0209c8fa0b5c5db73d0b3c96c455b02ea3cead464f903f03d3"
+    },
+    "app/lib/atlasArtPolishRuntimeCompatibilityV177.test.ts": {
+      "bytes": 441,
+      "lines": 10,
+      "sha256": "7e8410d23c6f132cb2cd012cb2c29a106093d743f0e4f53fe2505e0bd9ec2f16"
+    },
+    "app/lib/atlasArtPolishRuntimeCompatibilityV177.ts": {
+      "bytes": 554,
+      "lines": 15,
+      "sha256": "a215bb800aaa6e102ffac3ac508e050c8720d6e913257e49432e99df34fde56a"
+    },
+    "app/lib/atlasAssetResolver.ts": {
+      "bytes": 4238,
+      "lines": 105,
+      "sha256": "01ae60641ffd351da491a407c54b079a8fa9e3aa8055decdce6d78052a3460d1"
+    },
+    "app/lib/atlasBackgroundGuard.ts": {
+      "bytes": 1793,
+      "lines": 34,
+      "sha256": "5ef23c84084f0c7cd14881281de57fd583b02ea9bc099033f0cbf2ee6588cc32"
+    },
+    "app/lib/atlasBrowserAcceptance.test.ts": {
+      "bytes": 2468,
+      "lines": 53,
+      "sha256": "d9e1e9961029b3f6480d913a8f8d66300f73fcbf9912f16393eb0c4489a3e62d"
+    },
+    "app/lib/atlasBrowserAcceptance.ts": {
+      "bytes": 2426,
+      "lines": 59,
+      "sha256": "9d3a8d6148884990b97b8c00d76860bbd260b6c9c13e4d990f0269fa5c6375aa"
+    },
+    "app/lib/atlasBrowserAcceptanceRuntimeCostLock.horizons.test.ts": {
+      "bytes": 10062,
+      "lines": 182,
+      "sha256": "0bbf96416b14de71a2b451beee6a9423a3bf3b1445664756f950f0477082ae8d"
+    },
+    "app/lib/atlasBrowserAcceptanceRuntimeCostLock.test.ts": {
+      "bytes": 6006,
+      "lines": 121,
+      "sha256": "69c10db5d7fad91cccd34d1c5e05f1eb35d0d7fc7164c97141f7f1223ff91365"
+    },
+    "app/lib/atlasBrowserAcceptanceRuntimeCostLock.ts": {
+      "bytes": 7199,
+      "lines": 152,
+      "sha256": "7d9af7500f4b3d184bd839c50029285a9ee53ade661325425361133233bfc3dc"
+    },
+    "app/lib/atlasBrowserAcceptanceRuntimeCostLockRunner.ts": {
+      "bytes": 14523,
+      "lines": 338,
+      "sha256": "0afe601d8b4e775bad2761806e54909677be33ecfc578cb2f6e85f7451201d30"
+    },
+    "app/lib/atlasBrowserCiStabilityLock.horizons.test.ts": {
+      "bytes": 6333,
+      "lines": 127,
+      "sha256": "4a8e8a3e247d6ffc45acbddb24d67ed0afd30a2b63ed5112ea147b667949ba51"
+    },
+    "app/lib/atlasBrowserCiStabilityLock.test.ts": {
+      "bytes": 5800,
+      "lines": 152,
+      "sha256": "84a9665fa6b2442cc1b95d6d89413863a7425833b29d1efd099d220068673192"
+    },
+    "app/lib/atlasBrowserCiStabilityLock.ts": {
+      "bytes": 6214,
+      "lines": 168,
+      "sha256": "0dd1cdf12fba20a6454c7e7ef8dfbde7b9e05087426cc0eb16b8aa7d1b403c1b"
+    },
+    "app/lib/atlasBrowserCiStabilityLockRunner.ts": {
+      "bytes": 12193,
+      "lines": 300,
+      "sha256": "65f3aa70b5aa83f616b78863f78bf505631f47a52ee96cbeaf2e2322ca5d6046"
+    },
+    "app/lib/atlasBrowserResourcePerformanceLock.horizons.test.ts": {
+      "bytes": 9124,
+      "lines": 170,
+      "sha256": "f3d20c6660f392221aca0c781efc9d81d4ba6b5fe5d687f1736eeef1ef0efc57"
+    },
+    "app/lib/atlasBrowserResourcePerformanceLock.test.ts": {
+      "bytes": 5718,
+      "lines": 117,
+      "sha256": "07010e0aa2ef459adf155e87046142a2bf6fcc9441ffedfee38a47c79a2bb115"
+    },
+    "app/lib/atlasBrowserResourcePerformanceLock.ts": {
+      "bytes": 6900,
+      "lines": 148,
+      "sha256": "7ca54781fe478d1b23c0d2b5df2139ebf85801dd8e36eb9a6fa67885a82fb8a3"
+    },
+    "app/lib/atlasBrowserResourcePerformanceLockRunner.ts": {
+      "bytes": 13741,
+      "lines": 323,
+      "sha256": "bbff74aa5cc33238709e96d673faabb23462f0106d93e053d0feb440f7e7682e"
+    },
+    "app/lib/atlasCameraFrameSolverV4.test.ts": {
+      "bytes": 1984,
+      "lines": 58,
+      "sha256": "b4a913726e937b2bd1b81be39720c340f772f96d12f98efbc783ba71f025c2cf"
+    },
+    "app/lib/atlasCameraFrameSolverV4.ts": {
+      "bytes": 4109,
+      "lines": 115,
+      "sha256": "f4a55daa818f0a0a3d60dd3b312c7a5a24f7e8765157ad9362328e5e48f39861"
+    },
+    "app/lib/atlasCameraFrameSolverV5.ts": {
+      "bytes": 1587,
+      "lines": 57,
+      "sha256": "e15733c3bac05ac52f57fa9d30422543374e69dd664b3e8b60727320888e97a3"
+    },
+    "app/lib/atlasCameraStellarCloseupLock.horizons.test.ts": {
+      "bytes": 2071,
+      "lines": 41,
+      "sha256": "62590cd02549bd39e3b111132d7143e3f594babdf491d8d9dc9c555e1d893904"
+    },
+    "app/lib/atlasCameraStellarCloseupLock.test.ts": {
+      "bytes": 1946,
+      "lines": 50,
+      "sha256": "7d424d21048c3e7c9e2899df8fbf5f08ca39129a51f7cf02e3dfe16be1aaa776"
+    },
+    "app/lib/atlasCameraStellarCloseupLock.ts": {
+      "bytes": 4213,
+      "lines": 89,
+      "sha256": "fe176794819030e5614bea1f5c1ef630321a9bef787fdf38cce70a5a7b550aaa"
+    },
+    "app/lib/atlasCameraStellarCloseupLockRunner.ts": {
+      "bytes": 5998,
+      "lines": 150,
+      "sha256": "fbb3f99d5233e652d94df1fa86e1f26ddb723a7a3bc81d5dd595960998325182"
+    },
+    "app/lib/atlasCanvasSimulationGroupsV177.test.ts": {
+      "bytes": 2523,
+      "lines": 53,
+      "sha256": "4ff66c39eeb860d52121cd7293909097360bf4708bf3cc647a7196f177b45842"
+    },
+    "app/lib/atlasChineseDeepSpaceFidelity.test.ts": {
+      "bytes": 2871,
+      "lines": 56,
+      "sha256": "5058e7f881beea5750986e589b78fe43e50f0aa0819720dff1b88a2cd81627c9"
+    },
+    "app/lib/atlasChineseDeepSpaceFidelity.ts": {
+      "bytes": 1929,
+      "lines": 35,
+      "sha256": "58598dde34b8b56d9b88bd52c55e3d42ce4efb54bf28dfb7ce3b0724c912ab97"
+    },
+    "app/lib/atlasCinematicCloseupDirector.test.ts": {
+      "bytes": 3182,
+      "lines": 66,
+      "sha256": "aa462143e877184554365e5b65251d77bed5a626d294a6dcac115a715a4202ce"
+    },
+    "app/lib/atlasCinematicCloseupDirector.ts": {
+      "bytes": 4153,
+      "lines": 76,
+      "sha256": "65542bbc6847278a2368bb11697b6be042b9caf259122f15d4c5d1df293fb583"
+    },
+    "app/lib/atlasCinematicDeepSpaceBackdrop.test.ts": {
+      "bytes": 2725,
+      "lines": 56,
+      "sha256": "33bd63fb1f0a05865490e6c42db7d3f94841a828b96b2da17ee8ce59a0b92a88"
+    },
+    "app/lib/atlasCinematicDeepSpaceBackdrop.ts": {
+      "bytes": 2611,
+      "lines": 46,
+      "sha256": "c6291b6e5df240a613dd6d95d542f87142835f0c93e026446b7399c5660428ce"
+    },
+    "app/lib/atlasCinematicDeepSpaceCamera.test.ts": {
+      "bytes": 2836,
+      "lines": 55,
+      "sha256": "b9fb03559666c191e3db79d6b60af1be6fa30d0087a15bf7dbc7742051fa426d"
+    },
+    "app/lib/atlasCinematicDeepSpaceCamera.ts": {
+      "bytes": 3267,
+      "lines": 68,
+      "sha256": "21ac73cf94ab7e5c02f1c2660649023de8b5e28aa3839a55c907bc1167b6ca4c"
+    },
+    "app/lib/atlasCinematicKeyLightDirector.test.ts": {
+      "bytes": 2584,
+      "lines": 55,
+      "sha256": "e647b2585c788bc76b9c39fe9847b95e6d2476fe62d749cb7b4aa6d877a703be"
+    },
+    "app/lib/atlasCinematicKeyLightDirector.ts": {
+      "bytes": 3350,
+      "lines": 57,
+      "sha256": "e489d7658032d0418cc983a85e7073ace1e7980dc252693a8057fef3cf198efb"
+    },
+    "app/lib/atlasCinematicLightingComposition.test.ts": {
+      "bytes": 2877,
+      "lines": 56,
+      "sha256": "eff2a593aed6505a676bf2c73d3da432bee48ab8f683f8ea17e9710565f04c14"
+    },
+    "app/lib/atlasCinematicLightingComposition.ts": {
+      "bytes": 2121,
+      "lines": 44,
+      "sha256": "0ef96db464aeaa3ac3c84812e50a9a9c5586ef87e7f234ca45e0cbea44564e88"
+    },
+    "app/lib/atlasCinematicPlanetaryArtDirection.test.ts": {
+      "bytes": 3524,
+      "lines": 64,
+      "sha256": "1c3afbfc8e76df5d2cc6772439a98132f18003b7ee82474d916ac4e69524c2f9"
+    },
+    "app/lib/atlasCinematicPlanetaryArtDirection.ts": {
+      "bytes": 4302,
+      "lines": 82,
+      "sha256": "b8c80b9e7bd972c8a041edd80011c0fb49d839356e6875334d3cf4c67b1647cb"
+    },
+    "app/lib/atlasCinematicWorkbench.test.ts": {
+      "bytes": 1835,
+      "lines": 38,
+      "sha256": "d75cb9397ec8a2acc63ae9769754fc42194e07d2af6e18b7a3468d17fa459e7a"
+    },
+    "app/lib/atlasCinematicWorkbench.ts": {
+      "bytes": 1099,
+      "lines": 26,
+      "sha256": "24053cde8adcd15de6c55de1c945474423ce9675fee86a87d2b8764a5dd73ae3"
+    },
+    "app/lib/atlasCloseupPresentationTruth.test.ts": {
+      "bytes": 13011,
+      "lines": 312,
+      "sha256": "3e0d4ef379079d8a1a7bf6903843bf8ce7209dc6e5545a0c9ca06a53e8db866b"
+    },
+    "app/lib/atlasCloseupPresentationTruth.ts": {
+      "bytes": 5270,
+      "lines": 122,
+      "sha256": "b420d0acbd08060b0fcb85e3b0bb9f66a6d52212f102b4e20e3b79bca769ebd8"
+    },
+    "app/lib/atlasCloseupVisualFidelity.test.ts": {
+      "bytes": 4736,
+      "lines": 99,
+      "sha256": "257d5ac7d7a1167574753d65a3ba0746f463bf9c7968691084b2878f198d8c40"
+    },
+    "app/lib/atlasCloseupVisualFidelity.ts": {
+      "bytes": 5007,
+      "lines": 123,
+      "sha256": "98d7c41c11e964c3137dc5b3154b9b086ad9b6353d2ceb379ed3721359fee907"
+    },
+    "app/lib/atlasContentPackContractV3.ts": {
+      "bytes": 105,
+      "lines": 3,
+      "sha256": "9d611d2f9b2c1a247faf244c0593bb67c0a83112309d2abe282b397b20d699b5"
+    },
+    "app/lib/atlasContentPackServerV3.test.ts": {
+      "bytes": 6079,
+      "lines": 130,
+      "sha256": "85d2454d5eb785812718864c7181fd49b46100b2cd53e210c26cc9da61cfcb24"
+    },
+    "app/lib/atlasContentPackServerV3.ts": {
+      "bytes": 8416,
+      "lines": 210,
+      "sha256": "3ffced0483890da4b9d3eb32df896a7c496edf0cb8f4f8844ef50050cd837693"
+    },
+    "app/lib/atlasContentPackTestPath.ts": {
+      "bytes": 619,
+      "lines": 13,
+      "sha256": "8e99e743087499b4d6737735d2f147b97c01fdeaea0800ab0720ba3960f950be"
+    },
+    "app/lib/atlasConvergenceProgramV146.test.ts": {
+      "bytes": 522,
+      "lines": 12,
+      "sha256": "1ca74c8fb10f13484210c9732f6eb796f39a4654c3ebc3fe6049569d4d6dc3ad"
+    },
+    "app/lib/atlasConvergenceProgramV146.ts": {
+      "bytes": 1963,
+      "lines": 36,
+      "sha256": "7b426823e5c7745767783f5ec548413f74e5661390c482789263659542eacf5d"
+    },
+    "app/lib/atlasCoreExperienceReleaseV159.test.ts": {
+      "bytes": 1239,
+      "lines": 23,
+      "sha256": "6cdf20175cb531bebe41fbedbdbbc60307980aad80b0a04686822abf52f978c0"
+    },
+    "app/lib/atlasCoreExperienceReleaseV159.ts": {
+      "bytes": 1412,
+      "lines": 25,
+      "sha256": "3d0a87f2a89c22c27815cd63ddbb0e12ae21cbdf182a06db349ffbfa20247827"
+    },
+    "app/lib/atlasCriticalUiRelativityVisibilityLock.horizons.test.ts": {
+      "bytes": 2141,
+      "lines": 41,
+      "sha256": "17774bf1f5dfd8d406e839d4cb37a6fb32feed4bec8451dffa13406e6e08a239"
+    },
+    "app/lib/atlasCriticalUiRelativityVisibilityLock.test.ts": {
+      "bytes": 2251,
+      "lines": 53,
+      "sha256": "896e93e0c2ac4c27bd07fb597658949962b98b29e5f00bbad45455fc932099ad"
+    },
+    "app/lib/atlasCriticalUiRelativityVisibilityLock.ts": {
+      "bytes": 4496,
+      "lines": 89,
+      "sha256": "1fb89aa964808e953325c18b6e603edb0fe5b913a2f686568f9fa893b9d47d48"
+    },
+    "app/lib/atlasCriticalUiRelativityVisibilityLockRunner.ts": {
+      "bytes": 6025,
+      "lines": 166,
+      "sha256": "e98efa76d43a90ca0c01dd3333fcb0a219fedac94879b3b950f3f1f49eba96ad"
+    },
+    "app/lib/atlasCurrentEvidenceManifestV233.generated.ts": {
+      "bytes": 3907,
+      "lines": 103,
+      "sha256": "67f9aee7702113eeafad761f7ec612d88e5221f0f5079d61e281ad8251e594f5"
+    },
+    "app/lib/atlasCurrentEvidenceManifestV233.test.ts": {
+      "bytes": 1320,
+      "lines": 23,
+      "sha256": "12ea349f9e6cfc0bac96e03414c1a1b999cf3cb1f164a36c7acab79168648d62"
+    },
+    "app/lib/atlasCurrentEvidenceManifestV233.ts": {
+      "bytes": 969,
+      "lines": 27,
+      "sha256": "5b26ff271fba7d277466f4c8abea9c0296467cc81a11f5e3128acea6e08a0d8b"
+    },
+    "app/lib/atlasDebugLogSecurity.test.ts": {
+      "bytes": 1054,
+      "lines": 19,
+      "sha256": "872b4305354e2cd8e3534888de6f4c67a28b40fa5480f8b5fe48e3447f6a28f6"
+    },
+    "app/lib/atlasDebugLogSecurity.ts": {
+      "bytes": 620,
+      "lines": 23,
+      "sha256": "fe43cef97aa94c0127bb7ced859aeba3d3b172aca349a2461b090fb391340457"
+    },
+    "app/lib/atlasDefaultStrictHorizonsMigration.horizons.test.ts": {
+      "bytes": 4948,
+      "lines": 103,
+      "sha256": "7700cdd6b684e62a4c888a922797500fa4b79620bf2f8be1966d397748056e84"
+    },
+    "app/lib/atlasDefaultStrictHorizonsMigration.test.ts": {
+      "bytes": 6643,
+      "lines": 154,
+      "sha256": "5fd4e499a99bf7e89138fb84bdf3b15062d7bb40b10c442778b1d29e359ed657"
+    },
+    "app/lib/atlasDefaultStrictHorizonsMigration.ts": {
+      "bytes": 6820,
+      "lines": 168,
+      "sha256": "fc5ed0f1a823916cfce0a97d6f8589858908b3efdb873f69cf94685fe3537ccc"
+    },
+    "app/lib/atlasDefaultStrictHorizonsMigrationRunner.ts": {
+      "bytes": 8787,
+      "lines": 209,
+      "sha256": "239b7d7a54c0df70b9241752a616b21a6bdca7d7d408526165a2d24b3c81d188"
+    },
+    "app/lib/atlasDeferredEvidenceContractV190.ts": {
+      "bytes": 2775,
+      "lines": 92,
+      "sha256": "145aa5464e3bdb2374149926aea25f233e53908c419376af1942541a5816fceb"
+    },
+    "app/lib/atlasDeliveryProfile.test.ts": {
+      "bytes": 1121,
+      "lines": 29,
+      "sha256": "6250d98391fbb6ee5a5dec3a19a9d9de3533eda17893ae6183cea4a3dc0b3876"
+    },
+    "app/lib/atlasDeliveryProfile.ts": {
+      "bytes": 1337,
+      "lines": 46,
+      "sha256": "2daac244cba6dcada9b7b54fc3bf485cdfc30da14cda0610c6be14a5a23684f4"
+    },
+    "app/lib/atlasDesktopSession.test.ts": {
+      "bytes": 1064,
+      "lines": 29,
+      "sha256": "ba82bc48b5c4c78c332a8a210bbe65ecebd067d55d23bb4c73bdbd036c9e93d2"
+    },
+    "app/lib/atlasDesktopSession.ts": {
+      "bytes": 1122,
+      "lines": 34,
+      "sha256": "13558c886df1ba79580dfb9571500fe18bbd43b813524e83e015bfa5bc49cf02"
+    },
+    "app/lib/atlasExtremeReleaseV166.test.ts": {
+      "bytes": 1428,
+      "lines": 28,
+      "sha256": "6cab8e3621e9dd30b15e377628777cc086ff588dcd80ca3eaec6a0f643302682"
+    },
+    "app/lib/atlasExtremeReleaseV166.ts": {
+      "bytes": 1936,
+      "lines": 36,
+      "sha256": "8d042ae3686f689452d89a852057de864f3979c5467593376a1e45f7f667a5c0"
+    },
+    "app/lib/atlasFinalGaiaArtEnhancementLock.horizons.test.ts": {
+      "bytes": 9660,
+      "lines": 169,
+      "sha256": "feb4a01cccb6b0aa56b424665fe6180dbd0d9e70dc4632697ab955743fc2755d"
+    },
+    "app/lib/atlasFinalGaiaArtEnhancementLock.test.ts": {
+      "bytes": 5947,
+      "lines": 122,
+      "sha256": "d94bc97a6d75ab24bd489acd87b6aabd47152c64c73aef3e355c595a9acc56eb"
+    },
+    "app/lib/atlasFinalGaiaArtEnhancementLock.ts": {
+      "bytes": 7261,
+      "lines": 162,
+      "sha256": "64978cea390ee3ee5952bc97b3220eeb1a2e8d1852a8722061d6331c223f5a83"
+    },
+    "app/lib/atlasFinalGaiaArtEnhancementLockRunner.ts": {
+      "bytes": 14187,
+      "lines": 341,
+      "sha256": "a2d2c698280e830b57aaa93ef623e130a91db43126bbac09dd374a78beacd4b8"
+    },
+    "app/lib/atlasFinalMaintenanceBaseline.horizons.test.ts": {
+      "bytes": 7349,
+      "lines": 138,
+      "sha256": "29ca2889d4ea5e8fc9c60b57cab72cfb007b0f5653ff6a2b7da25cb73c2f0363"
+    },
+    "app/lib/atlasFinalMaintenanceBaseline.test.ts": {
+      "bytes": 7135,
+      "lines": 164,
+      "sha256": "74f7bb6cbf7f84d7052cf8d2ae2f671d2f0404e06cbcab1adde1183551993d50"
+    },
+    "app/lib/atlasFinalMaintenanceBaseline.ts": {
+      "bytes": 8080,
+      "lines": 188,
+      "sha256": "9d1c7becf9e0ae42f46b2170c47974804d1245a72cce772fbfa8eda312cd740b"
+    },
+    "app/lib/atlasFinalMaintenanceBaselineRunner.ts": {
+      "bytes": 13438,
+      "lines": 311,
+      "sha256": "7a1c51a8bcce33e7f2a0cd62d69770a5109d7e23e9ce30e8213396d826a8bc9c"
+    },
+    "app/lib/atlasFinalProgram.test.ts": {
+      "bytes": 2998,
+      "lines": 41,
+      "sha256": "fd2d2372a370acdeb996351273399107dfdedbe9f4893025898b7330fc8fd6bd"
+    },
+    "app/lib/atlasFinalReleaseGate.ts": {
+      "bytes": 1669,
+      "lines": 34,
+      "sha256": "7d3d65f81b5af1dc76528cfd1b2033a83548543d9e000e271e69ca65345b16ae"
+    },
+    "app/lib/atlasFinalWebReleaseV174.test.ts": {
+      "bytes": 1724,
+      "lines": 33,
+      "sha256": "5a2399d63d74211fad7afd1affb9b9b836fe3b4bc0f6c836d0783991cc43f457"
+    },
+    "app/lib/atlasFinalWebReleaseV174.ts": {
+      "bytes": 1562,
+      "lines": 45,
+      "sha256": "d8b9faa5e19d1cd966f29a3aedaaf4292b71cdc9d6290630f40f5aec86d9bf2f"
+    },
+    "app/lib/atlasFocusV2.test.ts": {
+      "bytes": 1801,
+      "lines": 34,
+      "sha256": "f4a6e127f20ebd346f97d19e81294965eb8983bebd3dffe1d1d95462a9c28565"
+    },
+    "app/lib/atlasFocusV2.ts": {
+      "bytes": 3471,
+      "lines": 131,
+      "sha256": "15ccfdf6f88ef94118d24dce32a732d038d68d540865242411132bf6c5b15da2"
+    },
+    "app/lib/atlasGaiaStarfieldEnhancement.horizons.test.ts": {
+      "bytes": 5681,
+      "lines": 106,
+      "sha256": "4304bcfe2b0514685f8a011607bdea634ec47d2b4fa12b561af3857f22b89f70"
+    },
+    "app/lib/atlasGaiaStarfieldEnhancement.test.ts": {
+      "bytes": 6056,
+      "lines": 160,
+      "sha256": "3698beae212489d86d362b64a0973d29714d3b57c09e02351d4f088340c9d9aa"
+    },
+    "app/lib/atlasGaiaStarfieldEnhancement.ts": {
+      "bytes": 7348,
+      "lines": 171,
+      "sha256": "4cd290dd116d028bae0f210dc68285345d64569527861b6108c2641f6a9c4d83"
+    },
+    "app/lib/atlasGaiaStarfieldEnhancementRunner.ts": {
+      "bytes": 10149,
+      "lines": 253,
+      "sha256": "8e994490521cb912ce4c341d6acc6d0788b5e599a636dd62c1a7b6f51b07bc57"
+    },
+    "app/lib/atlasHorizonsCandidateLab.horizons.test.ts": {
+      "bytes": 3807,
+      "lines": 105,
+      "sha256": "644307ee6066ff89fb7129577e1c60d6c86331988cedde8b049e86ef1f8bd136"
+    },
+    "app/lib/atlasHorizonsCandidateLab.test.ts": {
+      "bytes": 4648,
+      "lines": 120,
+      "sha256": "fa187e56d8165653f1226379863006ddd82eade1a2c8a4b462c9756a8fc2666e"
+    },
+    "app/lib/atlasHorizonsCandidateLab.ts": {
+      "bytes": 6329,
+      "lines": 187,
+      "sha256": "5dc72ef7bcfc175066704d38b7f7a4e7a318a895e499ac2f49b7be7d6f21d55d"
+    },
+    "app/lib/atlasHorizonsCandidateLabRunner.ts": {
+      "bytes": 5911,
+      "lines": 192,
+      "sha256": "c7f5becb644de80147e6dbeb45c4e9b52bdbe3d14bf607a1bc4ac2f43607b571"
+    },
+    "app/lib/atlasHorizonsCandidateScientificGate.horizons.test.ts": {
+      "bytes": 4026,
+      "lines": 99,
+      "sha256": "878b511cb22382c719c09d7641d6627c751fed509812f447177182e1b618e68e"
+    },
+    "app/lib/atlasHorizonsCandidateScientificGate.test.ts": {
+      "bytes": 6186,
+      "lines": 146,
+      "sha256": "4191d3b807d9db805bc6e708c404f416287bd62a089a45b34e616eae0c41ffcd"
+    },
+    "app/lib/atlasHorizonsCandidateScientificGate.ts": {
+      "bytes": 5584,
+      "lines": 128,
+      "sha256": "423454a56edabc5b325fc86697f30c8ced0a7853946b814bacf78edad867429d"
+    },
+    "app/lib/atlasHorizonsCandidateScientificGateRunner.ts": {
+      "bytes": 5000,
+      "lines": 126,
+      "sha256": "40377db17d9a6419f989681b8c2637324ce7db58da0a6671b9df8bd82f51de1f"
+    },
+    "app/lib/atlasHorizonsGateAudit.test.ts": {
+      "bytes": 4428,
+      "lines": 99,
+      "sha256": "fd385e5d122fb32bca6299c1c8708948d5258bd409e5d776911faea72c9beb0d"
+    },
+    "app/lib/atlasHorizonsGateAudit.ts": {
+      "bytes": 7064,
+      "lines": 170,
+      "sha256": "23f17ec2d9c7e3b33bbc9aff10355eda9123685a7cee200b20234adf30175f73"
+    },
+    "app/lib/atlasHorizonsProvenanceFreeze.horizons.test.ts": {
+      "bytes": 5259,
+      "lines": 119,
+      "sha256": "837dc764b7b14c9bc659d3e2b0863e35cc1ec412d3b1112366dfcda82b950790"
+    },
+    "app/lib/atlasHorizonsProvenanceFreeze.test.ts": {
+      "bytes": 6576,
+      "lines": 162,
+      "sha256": "c2d063dbe5989868b370e31a7852513e703ebd28d35f81e7351666e1bf22e8f3"
+    },
+    "app/lib/atlasHorizonsProvenanceFreeze.ts": {
+      "bytes": 7074,
+      "lines": 186,
+      "sha256": "4983e2af861746ec9062a60135a7c0ef1b72cf8a1f926d0b0782093a8fc1d7b3"
+    },
+    "app/lib/atlasHorizonsProvenanceFreezeRunner.ts": {
+      "bytes": 11584,
+      "lines": 306,
+      "sha256": "c27a916e5ddefa150b1b87cff755465e0026aaad4329f5e196d27efe4b1e5112"
+    },
+    "app/lib/atlasHorizonsResidualDecomposition.test.ts": {
+      "bytes": 7542,
+      "lines": 197,
+      "sha256": "a86eebeb7409c4ce4330ca7dbe72c815958bcd17c323422b878f37cf1d3e22b6"
+    },
+    "app/lib/atlasHorizonsResidualDecomposition.ts": {
+      "bytes": 10087,
+      "lines": 275,
+      "sha256": "ccc63b839d46c9e3a08d10840dd2c59f70a1d33f6be504ccb763e81059a51764"
+    },
+    "app/lib/atlasInstrumentUi.test.ts": {
+      "bytes": 877,
+      "lines": 28,
+      "sha256": "331c4a3ae0dd6b8f16ffa86da1ff91ad717ede6f725126dfd49d3e08eeb2adce"
+    },
+    "app/lib/atlasInstrumentUi.ts": {
+      "bytes": 403,
+      "lines": 16,
+      "sha256": "254f0bba99a8797c014f8d3fc856594d3ecbbab527a9e73b945d60c4ee12dfc9"
+    },
+    "app/lib/atlasInteractionCatalogCompletionLock.horizons.test.ts": {
+      "bytes": 6164,
+      "lines": 126,
+      "sha256": "04a4dfd86f330bcba35a5557ba16d4beaea24e9f74ba264da56edafd23d8f60a"
+    },
+    "app/lib/atlasInteractionCatalogCompletionLock.test.ts": {
+      "bytes": 2484,
+      "lines": 64,
+      "sha256": "55a9270c492ae19be0fa57c8b1b44666c60f3e116248339d0e03c3aefdbc4c78"
+    },
+    "app/lib/atlasInteractionCatalogCompletionLock.ts": {
+      "bytes": 4698,
+      "lines": 98,
+      "sha256": "6d2181f1d60434a26ecc526760812c00f0f0f1e97b850ddb241746e4a33db0b1"
+    },
+    "app/lib/atlasInteractionCatalogCompletionLockRunner.ts": {
+      "bytes": 6520,
+      "lines": 168,
+      "sha256": "da0f46816d33ae893c5dc4cf0af850b49ed0d24a51f45a378ffb2017fbb03352"
+    },
+    "app/lib/atlasInteractionRepairLaunchUxLock.horizons.test.ts": {
+      "bytes": 6696,
+      "lines": 134,
+      "sha256": "41912d9af2d6b007a3f4cb780ce8e5f812f558227fe9cf0b97da0d8f0769327e"
+    },
+    "app/lib/atlasInteractionRepairLaunchUxLock.test.ts": {
+      "bytes": 2331,
+      "lines": 60,
+      "sha256": "03c0936373ed467ce6c9e2c5b57e7eda4c33d0715e11ffde810bdf8169589e6a"
+    },
+    "app/lib/atlasInteractionRepairLaunchUxLock.ts": {
+      "bytes": 4564,
+      "lines": 93,
+      "sha256": "3cd741788a757ad9a9fd6197b625259d11b6a1e480ac4f725cc1eddf9ef3883e"
+    },
+    "app/lib/atlasInteractionRepairLaunchUxLockRunner.ts": {
+      "bytes": 6547,
+      "lines": 165,
+      "sha256": "9f2e3242c69e2f966ca4b90773009012923a9cd46fa7ff500829e4f41e2236d0"
+    },
+    "app/lib/atlasInteractionVisualQualityLock.horizons.test.ts": {
+      "bytes": 7001,
+      "lines": 138,
+      "sha256": "a8ca804e398f7753df99baba99634b321ffa3020481e517505a7c8d3c0d82d48"
+    },
+    "app/lib/atlasInteractionVisualQualityLock.test.ts": {
+      "bytes": 2344,
+      "lines": 56,
+      "sha256": "e263a24a924a7bacf32192accc7e3b0ef5992e4abf1f6a2a587461d5fea3a243"
+    },
+    "app/lib/atlasInteractionVisualQualityLock.ts": {
+      "bytes": 4626,
+      "lines": 94,
+      "sha256": "2ad031f92e26a2f8364be2bfc222ef2c953d1503cc2f8c336845b0bbc33e7bd8"
+    },
+    "app/lib/atlasInteractionVisualQualityLockRunner.ts": {
+      "bytes": 6675,
+      "lines": 162,
+      "sha256": "84f95d7819f95815000851d078faec8f656ae7d66dcc011cc4040640f74f645d"
+    },
+    "app/lib/atlasLabelLayout.test.ts": {
+      "bytes": 2245,
+      "lines": 58,
+      "sha256": "e78f1d4400479fb000ae189b9ae74fea56c2e2c8e7176e7ba00b197349bd756e"
+    },
+    "app/lib/atlasLabelLayout.ts": {
+      "bytes": 4867,
+      "lines": 182,
+      "sha256": "5b606b210e26089b1afebeb1b81fd16ae0f013d1c85ecd58212fdc700c0a5675"
+    },
+    "app/lib/atlasLaunchGameplayOpenRocketBridgeLock.horizons.test.ts": {
+      "bytes": 2301,
+      "lines": 43,
+      "sha256": "931f500255efbd27a0f61e6932c9a45a52e31beb77154ffbf60a36d713688e68"
+    },
+    "app/lib/atlasLaunchGameplayOpenRocketBridgeLock.test.ts": {
+      "bytes": 2903,
+      "lines": 70,
+      "sha256": "ba492c90e2427526813534ae4221b9831f3603287a07877d3511ea046764b44e"
+    },
+    "app/lib/atlasLaunchGameplayOpenRocketBridgeLock.ts": {
+      "bytes": 4655,
+      "lines": 89,
+      "sha256": "9d73821ab44a620c1099424c093765689797c5a83039654526d039e5a8548e78"
+    },
+    "app/lib/atlasLaunchGameplayOpenRocketBridgeLockRunner.ts": {
+      "bytes": 6417,
+      "lines": 156,
+      "sha256": "b5788fce07314d1093f52af4a44463dce265c7beef84c51e9114d5a4c31bde4d"
+    },
+    "app/lib/atlasLaunchSceneOpenRocketReplay.horizons.test.ts": {
+      "bytes": 857,
+      "lines": 11,
+      "sha256": "b383f37769cef35758c26abb948a2603639fcc8733f0d4b74a3b73d0be2aa4d5"
+    },
+    "app/lib/atlasLaunchSceneOpenRocketReplay.test.ts": {
+      "bytes": 1336,
+      "lines": 22,
+      "sha256": "a24d50d73e82885b9144e7dbecb2288a12ecee9f094c1d494c54be41bcd50997"
+    },
+    "app/lib/atlasLaunchSceneOpenRocketReplay.ts": {
+      "bytes": 1338,
+      "lines": 23,
+      "sha256": "91ecad5c384b90bef03e722fd7a92b346de45d1c97ac879e7593a0baa5fd729b"
+    },
+    "app/lib/atlasLegacyEvidenceCompatibilityV177.ts": {
+      "bytes": 27101,
+      "lines": 274,
+      "sha256": "19720db5c4f32965211e38bb680f415e0efea69e7bedf081237746101f07dfff"
+    },
+    "app/lib/atlasLegacyEvidenceDetailsV190.ts": {
+      "bytes": 103607,
+      "lines": 1987,
+      "sha256": "0cbd22d8cc32bf81fa1ff7d567d5f5ed6cddf7505afbc571fdf2206fffaf42fc"
+    },
+    "app/lib/atlasLegacyRelativityPanelAdapterV190.ts": {
+      "bytes": 2868,
+      "lines": 40,
+      "sha256": "ffe30c545f1bb2750d4c2213d38750fa875f72973bafa81be5234d2fe8c374b0"
+    },
+    "app/lib/atlasMaintenanceEvidenceIndex.horizons.test.ts": {
+      "bytes": 9299,
+      "lines": 185,
+      "sha256": "b8a2de40f0fbdb3d35161415bfeb2faff2b0685f16f682b01f8e9593f7dd1c4e"
+    },
+    "app/lib/atlasMaintenanceEvidenceIndex.test.ts": {
+      "bytes": 5749,
+      "lines": 120,
+      "sha256": "822a7eab13ffb32ee0fbc12e05cf52fffc738310075704ec3eec7fc69f41c6d4"
+    },
+    "app/lib/atlasMaintenanceEvidenceIndex.ts": {
+      "bytes": 7067,
+      "lines": 154,
+      "sha256": "059a1742d3de6558516f6d2d6d88ab0eb1d99cba9c2a5c5e49026d3777e15afa"
+    },
+    "app/lib/atlasMaintenanceEvidenceIndexRunner.ts": {
+      "bytes": 14881,
+      "lines": 356,
+      "sha256": "138681679bef99e5c9cc6f148d8cfa95e40a0e9162c54cd824e67decebc28faf"
+    },
+    "app/lib/atlasMaterialProfileContract.ts": {
+      "bytes": 3340,
+      "lines": 87,
+      "sha256": "ecf2ce456fa23112398f8c546b8c0be3586192489931527b3aa4a58599197085"
+    },
+    "app/lib/atlasMissionCapsule.test.ts": {
+      "bytes": 6527,
+      "lines": 179,
+      "sha256": "e28c0a264da4f612e8d178ae3c33939d51714bca8e0afba037d671ac7b6959d6"
+    },
+    "app/lib/atlasMissionCapsule.ts": {
+      "bytes": 14284,
+      "lines": 432,
+      "sha256": "2c96cc7b4960bca40344a3a6381f17955aa967692f9e600739d49f50c5ab4261"
+    },
+    "app/lib/atlasMissionHub.test.ts": {
+      "bytes": 7965,
+      "lines": 228,
+      "sha256": "e37e9bd9ae2fb56e2dfc5f814a250ee0dfa252a20a2c2f839afec1156af8ae60"
+    },
+    "app/lib/atlasMissionHub.ts": {
+      "bytes": 16831,
+      "lines": 539,
+      "sha256": "7cee69b738d5d4f77ec29768afea9f9756c7d41564ca9c4253eade1cd872ae99"
+    },
+    "app/lib/atlasNavigator.test.ts": {
+      "bytes": 15191,
+      "lines": 351,
+      "sha256": "1ecd7a934b129f3c55aafe3590bf4b66687dcc6abd8f328582ac0c72736a6e6a"
+    },
+    "app/lib/atlasNavigator.ts": {
+      "bytes": 26635,
+      "lines": 849,
+      "sha256": "2c7e6364aad45e357ef1209511b7a59221631b509bb38bf7c2e8e227a121fbec"
+    },
+    "app/lib/atlasNumericalIntegrity.test.ts": {
+      "bytes": 4629,
+      "lines": 97,
+      "sha256": "2cf2e9068277fc7f1b7249c2d84ccd792d6f9cce59296da675d3bfd3041fa22f"
+    },
+    "app/lib/atlasNumericalIntegrity.ts": {
+      "bytes": 10318,
+      "lines": 288,
+      "sha256": "f9f86672c24591523af55485fffd8e281be5a4e62e91d4ec2792fdf7c00b3197"
+    },
+    "app/lib/atlasObservatoryDeck.test.ts": {
+      "bytes": 23416,
+      "lines": 542,
+      "sha256": "8fc70b4e60d47cebc1291bcb152518daed57a6d80f8f75d204fdd0fa6b712d06"
+    },
+    "app/lib/atlasObservatoryDeck.ts": {
+      "bytes": 30793,
+      "lines": 733,
+      "sha256": "b7aec6556f6848f9ef5190fc8afa03a049d02322d70ad0727ac5944cf362f875"
+    },
+    "app/lib/atlasOfflineRuntimeBoundaryAudit.horizons.test.ts": {
+      "bytes": 4821,
+      "lines": 104,
+      "sha256": "86f3d933220b22748084b5ba5f80930f68587c84ac4f5f76ecb57ea55695ad50"
+    },
+    "app/lib/atlasOfflineRuntimeBoundaryAudit.test.ts": {
+      "bytes": 5886,
+      "lines": 145,
+      "sha256": "b2beb4cafad4b1194900e1d6cb99af8677fd2ab6a1a8b36868e0cf4b4352a057"
+    },
+    "app/lib/atlasOfflineRuntimeBoundaryAudit.ts": {
+      "bytes": 6370,
+      "lines": 157,
+      "sha256": "009e517fdcf6784df01113df183423557f666fbb1a06e57b031d5a913588600a"
+    },
+    "app/lib/atlasOfflineRuntimeBoundaryAuditRunner.ts": {
+      "bytes": 9647,
+      "lines": 243,
+      "sha256": "83f5cc7f48a4ff2cae8fb03b3dbc8a124cebdc611f7882bc6248dc1adc586ee2"
+    },
+    "app/lib/atlasOfflineStellarSearchCatalogV2.horizons.test.ts": {
+      "bytes": 1651,
+      "lines": 32,
+      "sha256": "f9e3af528da5c2eacf3162abd485d2a8d63160389c4dab102d0468f8dd3374b8"
+    },
+    "app/lib/atlasOfflineStellarSearchCatalogV2.test.ts": {
+      "bytes": 644,
+      "lines": 14,
+      "sha256": "5cc1c8011c248476fec5ff324e4f84e4041abcd58391d56a0c64f88223246199"
+    },
+    "app/lib/atlasOfflineStellarSearchCatalogV2.ts": {
+      "bytes": 1897,
+      "lines": 39,
+      "sha256": "b576033adadc92767c1578b7762bd8a3a998c1cd0832c9ff965aed28c26a3009"
+    },
+    "app/lib/atlasOuterSystemForceModelPreflight.horizons.test.ts": {
+      "bytes": 4499,
+      "lines": 121,
+      "sha256": "25d3a7a7ff51997fa54147a2af0ffd41c02f75fb8ec767a01e1f5fc5cba2c7ca"
+    },
+    "app/lib/atlasOuterSystemForceModelPreflight.test.ts": {
+      "bytes": 5567,
+      "lines": 153,
+      "sha256": "51280de64e8e4fef939c1b584a516e44588c19920834bf20a2f1ab6c8be3ecb8"
+    },
+    "app/lib/atlasOuterSystemForceModelPreflight.ts": {
+      "bytes": 7967,
+      "lines": 211,
+      "sha256": "7f3831efb48da6abfe2e9a358c9d1488263111636bfdb3fcff54cb4aade1cb04"
+    },
+    "app/lib/atlasOuterSystemForceModelPreflightRunner.ts": {
+      "bytes": 11941,
+      "lines": 371,
+      "sha256": "c9fba99c5a3de9caf2d501351c6127d3dba0cf15ccd6fc3646d3354736e61869"
+    },
+    "app/lib/atlasOuterSystemReferenceAdoption.horizons.test.ts": {
+      "bytes": 3470,
+      "lines": 89,
+      "sha256": "2983b661a6c6e36f881d72d7554c5d17c26f29642ba04ae5828482447e3aaf21"
+    },
+    "app/lib/atlasOuterSystemReferenceAdoption.test.ts": {
+      "bytes": 5458,
+      "lines": 134,
+      "sha256": "79a9f075b420e1144175f78d4ce4a10b2982e9fa258160013f789d49b36250c8"
+    },
+    "app/lib/atlasOuterSystemReferenceAdoption.ts": {
+      "bytes": 5425,
+      "lines": 126,
+      "sha256": "352ad1a6dd0a5f43c342f24d6717b2010e2bb0a0790cf9883b3990d5fddb30b8"
+    },
+    "app/lib/atlasOuterSystemReferenceAdoptionRunner.ts": {
+      "bytes": 6732,
+      "lines": 157,
+      "sha256": "b45d2c9476a56e5217e2da759b0d00a1a7249076018576bfff93c50d4465cb4b"
+    },
+    "app/lib/atlasPanelCanvasArchitectureV181.test.ts": {
+      "bytes": 6011,
+      "lines": 126,
+      "sha256": "7ccbf865979a5cf59d1936ea4126ef5f718ff4b347d483cb643bf195227cb14c"
+    },
+    "app/lib/atlasPanelCoordination.ts": {
+      "bytes": 3923,
+      "lines": 122,
+      "sha256": "b23d44d0af43dc716a33ed06a828ef364b04a581f693f07d10ccdd3a35e319d4"
+    },
+    "app/lib/atlasPanelCoordinationV176.test.ts": {
+      "bytes": 5520,
+      "lines": 143,
+      "sha256": "b4cfac503520178f7b9280ffd96a9afab0be8c61ed6b63bc9edda94e64263f6b"
+    },
+    "app/lib/atlasPerformanceBudget.test.ts": {
+      "bytes": 3929,
+      "lines": 111,
+      "sha256": "75b80654ecbfb1506af329d1cf92a44c8951e982d9346fc5c61088c42ab79979"
+    },
+    "app/lib/atlasPerformanceBudget.ts": {
+      "bytes": 9543,
+      "lines": 305,
+      "sha256": "c3ff5a0a2c14488e2fec3202087dc3b3b83bef0ee0c93495f589d6c74e26ea17"
+    },
+    "app/lib/atlasPhysicsBenchmarkGate.horizons.test.ts": {
+      "bytes": 1999,
+      "lines": 54,
+      "sha256": "e79f354d5347d46fd2b28cda48f92954b03b73e8b81cd2def46eb6eb8e77769c"
+    },
+    "app/lib/atlasPhysicsBenchmarkGate.legacy-v75.horizons.test.ts": {
+      "bytes": 1475,
+      "lines": 35,
+      "sha256": "0b78892c1630dc513521750cccf6f8c91a1d031bde50fd4f41f25c64be58de44"
+    },
+    "app/lib/atlasPhysicsBenchmarkGate.test.ts": {
+      "bytes": 3321,
+      "lines": 91,
+      "sha256": "7eed5074b77ba2b7219cd7e7e612f07ffd89e02d4cc539e68f757bafc83ce26e"
+    },
+    "app/lib/atlasPhysicsBenchmarkGate.ts": {
+      "bytes": 14144,
+      "lines": 337,
+      "sha256": "f5adc038913bae60d2e356ae5ecb4cd6fa2663046361d3a8a230ec121432f604"
+    },
+    "app/lib/atlasPhysicsGateSplit.test.ts": {
+      "bytes": 4293,
+      "lines": 82,
+      "sha256": "ec814a3b4f6fd5c47efd90354ecc16cce1933864475d2a0b119b736435887e1e"
+    },
+    "app/lib/atlasPhysicsGateSplit.ts": {
+      "bytes": 2752,
+      "lines": 55,
+      "sha256": "359ccdfeb7409ab93fa3bf0cd03ffc9c3443b0b90b64ec80a073356b00a4429d"
+    },
+    "app/lib/atlasPlanetaryColorGrading.test.ts": {
+      "bytes": 2740,
+      "lines": 57,
+      "sha256": "22994f9c1150bb3096bc9bf5218c6246cfaa49cb9d95d485f7dc86f939e79c69"
+    },
+    "app/lib/atlasPlanetaryColorGrading.ts": {
+      "bytes": 3654,
+      "lines": 62,
+      "sha256": "abd1e7a25ead167d8788cdc5f15829f87bf0bbc6a6a077b2c0481412a956c676"
+    },
+    "app/lib/atlasPlanetaryDepthLighting.test.ts": {
+      "bytes": 2778,
+      "lines": 57,
+      "sha256": "7c31452f757607276703d719e17c94f67b86dd3bf2fea0eef347272eb966e40f"
+    },
+    "app/lib/atlasPlanetaryDepthLighting.ts": {
+      "bytes": 3601,
+      "lines": 62,
+      "sha256": "f7eef128f348600b8da13a6f779cd0584ed864f91e43bb2d542e8878988c83c9"
+    },
+    "app/lib/atlasPlanetaryMaterialComposition.test.ts": {
+      "bytes": 3124,
+      "lines": 60,
+      "sha256": "c5bc34f924b7325b99b4195b76af49acc5fbe15e46201b9def8e97b24d4ebc3a"
+    },
+    "app/lib/atlasPlanetaryMaterialComposition.ts": {
+      "bytes": 4796,
+      "lines": 95,
+      "sha256": "ec4fe7e4dbdbcb5dd6a5025b24ec871d0331f9a45b58fc8a1c6c38636bfa15a8"
+    },
+    "app/lib/atlasPlanetaryVisualFidelity.test.ts": {
+      "bytes": 2397,
+      "lines": 45,
+      "sha256": "28ccf421648b284c98c154c6a4d8f9343e332b354cd0bc25011b2faa8d7f2e29"
+    },
+    "app/lib/atlasPlanetaryVisualFidelity.ts": {
+      "bytes": 1588,
+      "lines": 31,
+      "sha256": "a7bd939bc334d8051288fbebaeb69dcf13c3feb55360adf3022ed1e420fa86a1"
+    },
+    "app/lib/atlasPlutoResidualIsolation.horizons.test.ts": {
+      "bytes": 3444,
+      "lines": 82,
+      "sha256": "b40dbfd362efe8cd8bcf6d07789ca6ab6a2746410fb0e869f87f03f546415cf9"
+    },
+    "app/lib/atlasPlutoResidualIsolation.test.ts": {
+      "bytes": 5435,
+      "lines": 149,
+      "sha256": "3d665b4d07cc65368b5feec4de2f07c57e61dfd5b2fbd0c4bc87d20b67667a09"
+    },
+    "app/lib/atlasPlutoResidualIsolation.ts": {
+      "bytes": 9447,
+      "lines": 283,
+      "sha256": "33c303655101d76e2de67ec319db510f5d813685ce4c832a03a933ae41c6e246"
+    },
+    "app/lib/atlasPlutoResidualIsolationRunner.ts": {
+      "bytes": 8329,
+      "lines": 275,
+      "sha256": "c851ddf721cb99f7e5d09d7a6e51f0dc24f0170469fb97cad142e253f6d50edb"
+    },
+    "app/lib/atlasPostEnhancementMaintenanceBaseline.horizons.test.ts": {
+      "bytes": 9137,
+      "lines": 168,
+      "sha256": "a0af93b44de20c80e51b717c9d22716d34c4626e1b230c0ed89639edce6163ab"
+    },
+    "app/lib/atlasPostEnhancementMaintenanceBaseline.test.ts": {
+      "bytes": 6246,
+      "lines": 123,
+      "sha256": "fd698447c716c23adb86523fe7c90170adfdf90e94b7223c9147261792468ccf"
+    },
+    "app/lib/atlasPostEnhancementMaintenanceBaseline.ts": {
+      "bytes": 8182,
+      "lines": 172,
+      "sha256": "eaeb64a88bb3b8303b3920b73dbadd554c2f40ca4052dcd757ba0df06d155344"
+    },
+    "app/lib/atlasPostEnhancementMaintenanceBaselineRunner.ts": {
+      "bytes": 14103,
+      "lines": 355,
+      "sha256": "5b7f93c3eb13e9bff7ae4078fc436066fffeb817b2f69fced240d60f455446db"
+    },
+    "app/lib/atlasPresentationRuntimePerformanceLock.horizons.test.ts": {
+      "bytes": 9817,
+      "lines": 188,
+      "sha256": "f45b0237823550768c679753833cb018695b3bf358fe69d5956509da327fa291"
+    },
+    "app/lib/atlasPresentationRuntimePerformanceLock.test.ts": {
+      "bytes": 5647,
+      "lines": 116,
+      "sha256": "df1f93aa2433b3eec60bd85bd6c39c0b964c2c9329610154ec44c38307bd565b"
+    },
+    "app/lib/atlasPresentationRuntimePerformanceLock.ts": {
+      "bytes": 6684,
+      "lines": 144,
+      "sha256": "4c173cc3935d87d1931b3c65e4cd7a20a9662531d875f0dabf9a5810dec44c75"
+    },
+    "app/lib/atlasPresentationRuntimePerformanceLockRunner.ts": {
+      "bytes": 13063,
+      "lines": 310,
+      "sha256": "6344fa6f844a02814fe79a7cf9a6adefacaef141fbabfd4135d215c57c2729c0"
+    },
+    "app/lib/atlasProductReleaseV167.test.ts": {
+      "bytes": 1501,
+      "lines": 29,
+      "sha256": "d15a20dcfef4d31e6283a939e18ae5738c0c80b2f959d3ac68fa2ecd8a20af36"
+    },
+    "app/lib/atlasProductReleaseV167.ts": {
+      "bytes": 2127,
+      "lines": 47,
+      "sha256": "a2fc0fef6c11b51bae8e71dd02cf7f02916f8e6aafa3e107fa92a1b1d85239f2"
+    },
+    "app/lib/atlasRcEvidenceClosureLock.horizons.test.ts": {
+      "bytes": 9676,
+      "lines": 167,
+      "sha256": "7648be9553d30e7720592fb42e31f1e8e093f23684da9f0fd335110f0c4be176"
+    },
+    "app/lib/atlasRcEvidenceClosureLock.test.ts": {
+      "bytes": 5661,
+      "lines": 123,
+      "sha256": "af8e95f1cfbd66a695305abd7773146026ee25674f22762d025f779cd5414565"
+    },
+    "app/lib/atlasRcEvidenceClosureLock.ts": {
+      "bytes": 7564,
+      "lines": 170,
+      "sha256": "fa9e9de526abea6d910e4e648d99eafedca8200a1819ced73576ebead0b33213"
+    },
+    "app/lib/atlasRcEvidenceClosureLockRunner.ts": {
+      "bytes": 13742,
+      "lines": 341,
+      "sha256": "914d37276b4a1c667d98352f7020e0de4698e1a14d7d5ad2aaf87c8936e1943b"
+    },
+    "app/lib/atlasReferenceGradeSpaceArt.test.ts": {
+      "bytes": 3123,
+      "lines": 55,
+      "sha256": "5d2578e95f5d0a1e31ad98014a5b7ea0bde7057f0d4e5f86777d62e1bbf03a51"
+    },
+    "app/lib/atlasReferenceGradeSpaceArt.ts": {
+      "bytes": 4987,
+      "lines": 94,
+      "sha256": "a3a551b46fcecbe74a33b1bc5364f6179b697b9d39010eefd045fffe28144239"
+    },
+    "app/lib/atlasRelativityCharts.test.ts": {
+      "bytes": 5083,
+      "lines": 127,
+      "sha256": "c66086df18dd9e07955112bca8e533623b46001a6119b0cc862a011c0cb36128"
+    },
+    "app/lib/atlasRelativityCharts.ts": {
+      "bytes": 4822,
+      "lines": 131,
+      "sha256": "1391690500b53b82061c5271019ce928351d65bbcdc8eb80bf8195d761b2ff10"
+    },
+    "app/lib/atlasRelativityExtremeV208.test.ts": {
+      "bytes": 2853,
+      "lines": 60,
+      "sha256": "8f502c6aa0a0997d7bb8d5d9d1ef24e7451478d7eb6b36fd7896f8461ee52b9a"
+    },
+    "app/lib/atlasRelativityRegressionExplanationV196.test.ts": {
+      "bytes": 1329,
+      "lines": 27,
+      "sha256": "34ca09881cc65ff3ee93d0fd9eb618faed2e849f6bfcec379fb319d147420edb"
+    },
+    "app/lib/atlasRelativityRegressionExplanationV196.ts": {
+      "bytes": 3691,
+      "lines": 95,
+      "sha256": "7c7f20301f44926ee054f53989e802ce5554368cfb55f9b8dd0a98b4b09d3c2e"
+    },
+    "app/lib/atlasRelativitySimulationOptimization.horizons.test.ts": {
+      "bytes": 4342,
+      "lines": 79,
+      "sha256": "a569df1dbda103025c70a02407c8ed75621635f863d026579835eaebe760f29f"
+    },
+    "app/lib/atlasRelativitySimulationOptimization.test.ts": {
+      "bytes": 5994,
+      "lines": 150,
+      "sha256": "fb06894617e45f93e0a344dfc7232f56cdd901435c3045e28ca96368af4bd45c"
+    },
+    "app/lib/atlasRelativitySimulationOptimization.ts": {
+      "bytes": 10138,
+      "lines": 233,
+      "sha256": "0fc935e39ac91d534acad4c37b45fa39756fa32e35e7b816fa9d1218a0a322f9"
+    },
+    "app/lib/atlasRelativitySimulationOptimizationRunner.ts": {
+      "bytes": 9468,
+      "lines": 222,
+      "sha256": "5d37026bfcf0de0ee75c3ea423b3ea9b0c8ae91be25c54e7e58f9b98a09ef22d"
+    },
+    "app/lib/atlasRelativityVerification.test.ts": {
+      "bytes": 3646,
+      "lines": 81,
+      "sha256": "dc4d9538c16e675f2f84e018816c04d6f124a0fa400725ea293651ea1be29a9e"
+    },
+    "app/lib/atlasRelativityVerification.ts": {
+      "bytes": 6239,
+      "lines": 171,
+      "sha256": "c74f26ef32d783866d81d3df9fa2c3cb277b338242315b545bfdcc9878d7dc85"
+    },
+    "app/lib/atlasReleaseArtifactManifestLock.horizons.test.ts": {
+      "bytes": 7224,
+      "lines": 135,
+      "sha256": "0c1df8fce8e78b214011b3ab892d6cd44d7b7e4b1027e58d48e8f488df0c2e5c"
+    },
+    "app/lib/atlasReleaseArtifactManifestLock.test.ts": {
+      "bytes": 6767,
+      "lines": 161,
+      "sha256": "6bb85d8f0a2fd63084e63bf18f8fc71407e0c7dc5c2cccb968d730e07a1fa11f"
+    },
+    "app/lib/atlasReleaseArtifactManifestLock.ts": {
+      "bytes": 8827,
+      "lines": 210,
+      "sha256": "609a14056f34ce94d11c837b330c328f58ca7d7630c226c8e90ccc6a85f5f902"
+    },
+    "app/lib/atlasReleaseArtifactManifestLockRunner.ts": {
+      "bytes": 15665,
+      "lines": 352,
+      "sha256": "127119ea04952f771fb6364d17f92a7ed6a87f99cfcc302b93337131dbcd3b57"
+    },
+    "app/lib/atlasReleaseGate.test.ts": {
+      "bytes": 2846,
+      "lines": 81,
+      "sha256": "fa090a46767ba4d3d0adb84a4ee3e2988c528481fe1c01348a159ac9a7b21134"
+    },
+    "app/lib/atlasReleaseGate.ts": {
+      "bytes": 3126,
+      "lines": 89,
+      "sha256": "d9b16fe54fe288f8c7c7cbc3759325e98c3a5cc41298f219d69152e4b42b25bc"
+    },
+    "app/lib/atlasReleaseManifestV1.test.ts": {
+      "bytes": 872,
+      "lines": 18,
+      "sha256": "344a225c290347df856ac415b263ad650d8b50c0904fa02aa686f42736ee95fd"
+    },
+    "app/lib/atlasReleaseManifestV1.ts": {
+      "bytes": 4608,
+      "lines": 125,
+      "sha256": "9747aea63822bc611620364657fdbd36a786815bfa713b8e830f144aad43bdfb"
+    },
+    "app/lib/atlasReleaseProgram.test.ts": {
+      "bytes": 976,
+      "lines": 26,
+      "sha256": "06a64c254fab954576b0a96ffe789ed6811ee6f70ce17a1a30d1b0ce9d80caba"
+    },
+    "app/lib/atlasReleaseProgram.ts": {
+      "bytes": 4671,
+      "lines": 130,
+      "sha256": "f069d702e95af671dc5fe59a5a0cf4ab770cf5a05653da39c095669b28b311fc"
+    },
+    "app/lib/atlasReleaseReadiness.test.ts": {
+      "bytes": 3932,
+      "lines": 74,
+      "sha256": "ed7e221457ff679cb7365b55159968037b476af4766651e85e97bc212eab4cca"
+    },
+    "app/lib/atlasReleaseReadiness.ts": {
+      "bytes": 2043,
+      "lines": 41,
+      "sha256": "3f32906b4c8ad86aa36d0dc78dc9effd9e7cd604fbfa8bb7f8961c9dde9eb878"
+    },
+    "app/lib/atlasReleaseReadinessV240.test.ts": {
+      "bytes": 2590,
+      "lines": 71,
+      "sha256": "9fde6dc233061907f7de8815d1dc5911583dc24ae54b48e823e52d081f623b9b"
+    },
+    "app/lib/atlasReleaseReadinessV240.ts": {
+      "bytes": 4512,
+      "lines": 125,
+      "sha256": "fb5d53a78e28f08af2c2660e93729ffe2858d8e86c55c4fdf2bc8bb83573ab0b"
+    },
+    "app/lib/atlasRenderDirectorV2.test.ts": {
+      "bytes": 880,
+      "lines": 21,
+      "sha256": "7f59ff0f50accfba2e54e640d62753c4c2e19116049a15b8578b60ad0ed1314b"
+    },
+    "app/lib/atlasRenderDirectorV2.ts": {
+      "bytes": 2250,
+      "lines": 41,
+      "sha256": "a4c5a2056c64cd763602ba239f50ec98ba93a640873f49031a9ffdee38d4b3ef"
+    },
+    "app/lib/atlasResourceLifecycle.ts": {
+      "bytes": 2493,
+      "lines": 108,
+      "sha256": "3fe20583ec09970861ed020e9e078264fd224ed1b0518694e94566374182fb14"
+    },
+    "app/lib/atlasResourceLifecycleV173.test.ts": {
+      "bytes": 1953,
+      "lines": 42,
+      "sha256": "5e8d4b323094a1a0f75913c4b28e0fd02df88b93fb2bf53e7484c0a1e21a49ee"
+    },
+    "app/lib/atlasRuntimeEvidenceCompatibilityManifestV198.ts": {
+      "bytes": 9281,
+      "lines": 99,
+      "sha256": "31c500c62e22e6105372cca1cb171f79b8e8641fce2c5590e987b79f32d9724a"
+    },
+    "app/lib/atlasRuntimeEvidenceCompositionV190.ts": {
+      "bytes": 81133,
+      "lines": 694,
+      "sha256": "aa964b3fd440a33def92b1d4088f348ca0e5d2f50e8788306dd832aa021959a9"
+    },
+    "app/lib/atlasRuntimeEvidenceFacadeV168.test.ts": {
+      "bytes": 4508,
+      "lines": 91,
+      "sha256": "68e64990656d068b1984c624d26a6a7b8ad8cca20c289e953c5b614f9658961b"
+    },
+    "app/lib/atlasRuntimeEvidenceFacadeV168.ts": {
+      "bytes": 32648,
+      "lines": 683,
+      "sha256": "33dbb9d4973394ef6ee984c2720a80b4c6995abb826a816c6b1b3a5bb5366d06"
+    },
+    "app/lib/atlasRuntimeEvidenceViewModelV177.test.ts": {
+      "bytes": 1904,
+      "lines": 46,
+      "sha256": "1d3edb3a4a31c499124f3bdc453dec241d90717eca8e1df2af8113c3e0e501a8"
+    },
+    "app/lib/atlasRuntimeEvidenceViewModelV177.ts": {
+      "bytes": 2437,
+      "lines": 68,
+      "sha256": "4b88deb4d71a7ac5125d669e0d5ad925cd5000ef5a0eaf001d70433fc0230641"
+    },
+    "app/lib/atlasRuntimeIntentPreloadV183.test.ts": {
+      "bytes": 753,
+      "lines": 16,
+      "sha256": "a2c09e23cb9e0c8b6e4a63f1a6495b67b9d7452a2f6bba128dc25172c6b189cd"
+    },
+    "app/lib/atlasRuntimeMaintainabilityV190.test.ts": {
+      "bytes": 3399,
+      "lines": 65,
+      "sha256": "f6db50ea60ec0b1488cc415860ffbaa2a12a9d52d18e7fe7dbb433ff83819ce2"
+    },
+    "app/lib/atlasRuntimeSceneFocusPerformance.horizons.test.ts": {
+      "bytes": 1713,
+      "lines": 36,
+      "sha256": "973c59c13537b452783949b772c97137c876ea8650dcd7c50ddd5eb318ecce96"
+    },
+    "app/lib/atlasRuntimeSceneFocusPerformance.test.ts": {
+      "bytes": 2014,
+      "lines": 42,
+      "sha256": "4dc478136875024a04d08096c0ba3d6be713bf80d3d45eb586a9fe42ac060a45"
+    },
+    "app/lib/atlasRuntimeSceneFocusPerformance.ts": {
+      "bytes": 3951,
+      "lines": 99,
+      "sha256": "0027e6294f6edd1c936cb78d0bc5c4859cf11e5b66fc031988d7409a8f36c772"
+    },
+    "app/lib/atlasRuntimeSceneFocusPerformanceRunner.ts": {
+      "bytes": 4675,
+      "lines": 107,
+      "sha256": "84b4d49a8f47a1a0a616cb2daaf8e074f34f18ef749c544757cdb1655ccc81e8"
+    },
+    "app/lib/atlasRuntimeScienceCompatibilityV198.ts": {
+      "bytes": 14518,
+      "lines": 6,
+      "sha256": "0305aab1b581a3b798327166fcb61cf9f6efd457860c9069d4f2825af7852c1c"
+    },
+    "app/lib/atlasRuntimeScienceModelDetailsV198.ts": {
+      "bytes": 4152,
+      "lines": 88,
+      "sha256": "ed35a639cd80d2fd271231ac0158883fa5ad565577466a2c89d2cdabbe21de24"
+    },
+    "app/lib/atlasRuntimeStore.test.ts": {
+      "bytes": 1982,
+      "lines": 43,
+      "sha256": "c1856a6a7d98921b13f8b3c91ec593022a9fb8fdc47d1ddf0760a38337cec953"
+    },
+    "app/lib/atlasRuntimeStore.ts": {
+      "bytes": 17391,
+      "lines": 532,
+      "sha256": "a8c746d0a3fa69e0b58594491b97cc4b21f2640afec6e037a42791fb6a703bb3"
+    },
+    "app/lib/atlasRuntimeStoreV169.test.ts": {
+      "bytes": 5390,
+      "lines": 129,
+      "sha256": "6738c28312fe55722dff8256a583c85c1254675a556bc2d4a8773f97ad880715"
+    },
+    "app/lib/atlasRuntimeVisualCompactV198.ts": {
+      "bytes": 40395,
+      "lines": 6,
+      "sha256": "b24a5287d020de0111f8dbbbede1f6ef871c5c30ca24a71d8dc9f5279cb48b64"
+    },
+    "app/lib/atlasRuntimeVisualCompatibilityV198.test.ts": {
+      "bytes": 4921,
+      "lines": 70,
+      "sha256": "65e16a44838b8fbf59d7be68f743d926814c8c6e848607a9e53d45e5304de61e"
+    },
+    "app/lib/atlasRuntimeVisualCompatibilityV198.ts": {
+      "bytes": 44755,
+      "lines": 4,
+      "sha256": "0354d5bbb1f91ade8b6fe99e91a7df506ae869f3988b0a6940d3b26cb6ba41d3"
+    },
+    "app/lib/atlasSceneFocusCameraRuntime.test.ts": {
+      "bytes": 2628,
+      "lines": 67,
+      "sha256": "c526de073ed21b5f3d49924b41e357d9952bc732f5ccdc1ef64ed08427f424fd"
+    },
+    "app/lib/atlasSceneFocusCameraRuntime.ts": {
+      "bytes": 7112,
+      "lines": 207,
+      "sha256": "426ab7627f0ccf376275b933c9175c05a332cd09db90e0c65ca249bea8246fac"
+    },
+    "app/lib/atlasScientificCinematicArt.horizons.test.ts": {
+      "bytes": 1134,
+      "lines": 22,
+      "sha256": "aafacf7ad8bdeff00ec1735b657a56ed3fa8c3622231063291fd0aa32f4c8d27"
+    },
+    "app/lib/atlasScientificCinematicArt.test.ts": {
+      "bytes": 1123,
+      "lines": 22,
+      "sha256": "dcd30933f67e6b417c5a7d5756b4974694ff6672418385788680f6f5f48e05e7"
+    },
+    "app/lib/atlasScientificCinematicArt.ts": {
+      "bytes": 1207,
+      "lines": 22,
+      "sha256": "c0ec12b2287fb0d90401e5cbb3864b988cf6131f5d689a37c768bde735a27a00"
+    },
+    "app/lib/atlasScientificDataProgramV153.test.ts": {
+      "bytes": 685,
+      "lines": 15,
+      "sha256": "32b3c3524bb8320058fb95578d29d268cdb6ceafdc000f9fb31d61398623a068"
+    },
+    "app/lib/atlasScientificDataProgramV153.ts": {
+      "bytes": 1878,
+      "lines": 29,
+      "sha256": "506cf4055fd2df381ddf7abef19c549329727afbf8c3302ea1e5ba40724c297c"
+    },
+    "app/lib/atlasScientificGateMaintenanceRunbook.horizons.test.ts": {
+      "bytes": 5849,
+      "lines": 115,
+      "sha256": "b970067caf12c58549f39efd21473ce609192c2c59fe316afcc4cfa3acae3d56"
+    },
+    "app/lib/atlasScientificGateMaintenanceRunbook.test.ts": {
+      "bytes": 6786,
+      "lines": 166,
+      "sha256": "7afc80f8e8d0b8ce3a15468b84afeac90a70bf9fdf9200497a51d24cbc9b7d7d"
+    },
+    "app/lib/atlasScientificGateMaintenanceRunbook.ts": {
+      "bytes": 7240,
+      "lines": 181,
+      "sha256": "8031d8a5e85ca5de23e3ff67a7f72c65050ab1a276b01b78f6c7e7c047edf178"
+    },
+    "app/lib/atlasScientificGateMaintenanceRunbookRunner.ts": {
+      "bytes": 11108,
+      "lines": 260,
+      "sha256": "964b12513e411efa5fa65c4ab3df5ad165b7d78ae48d21c8d91d9bb020e21d00"
+    },
+    "app/lib/atlasScientificGatePreflight.test.ts": {
+      "bytes": 4586,
+      "lines": 92,
+      "sha256": "fdd2421415c32484da3804723c74f11802bd3695fbefd4d29f30b2e2bff567d9"
+    },
+    "app/lib/atlasScientificGatePreflight.ts": {
+      "bytes": 3992,
+      "lines": 73,
+      "sha256": "3f2c35f9355ba75a7e1e0b035bf8c0d9445e9a28ccf95a80814fb9ccf4645c2e"
+    },
+    "app/lib/atlasScientificGateReleaseEvidence.horizons.test.ts": {
+      "bytes": 7017,
+      "lines": 134,
+      "sha256": "80e80f2e1c0a54e0fd9026ae2f7668e17a6a21fb904c4434bc60f76d9b5bb37e"
+    },
+    "app/lib/atlasScientificGateReleaseEvidence.test.ts": {
+      "bytes": 7257,
+      "lines": 173,
+      "sha256": "92761b5735de51695361727029f13153adfc5de0dd2b7b2749dadf3a0658cf41"
+    },
+    "app/lib/atlasScientificGateReleaseEvidence.ts": {
+      "bytes": 8279,
+      "lines": 200,
+      "sha256": "bbf45645b3a4a93d8e701cc8e5674da4c5d131467cc79b60f7a36f7390bf90da"
+    },
+    "app/lib/atlasScientificGateReleaseEvidenceRunner.ts": {
+      "bytes": 13661,
+      "lines": 318,
+      "sha256": "20f24865ac3f2dc9650a40086f09fe7cab9aa2654c5f5c7893ce450b7654f5fe"
+    },
+    "app/lib/atlasScientificModelUpgradeContract.test.ts": {
+      "bytes": 1741,
+      "lines": 31,
+      "sha256": "3ea88b7026c4a5d0a6188a6022a58b5dbd5e10772e046b90f2da75a902200b63"
+    },
+    "app/lib/atlasScientificModelUpgradeContract.ts": {
+      "bytes": 2189,
+      "lines": 43,
+      "sha256": "e4068967bcbffa4c201e0dda1f9aaaf21e3b0959436a97f5ab66a7249ff2bb4c"
+    },
+    "app/lib/atlasScientificPromotionV2.test.ts": {
+      "bytes": 1359,
+      "lines": 35,
+      "sha256": "579c5e17562e4a8d346a43187fbd60cc132cba2d45b47026ceed3080857c2d08"
+    },
+    "app/lib/atlasScientificPromotionV2.ts": {
+      "bytes": 3716,
+      "lines": 96,
+      "sha256": "520ee2cc02e720b48220b7bd008b2a84ef7fce6103a317910533f554c16bba0e"
+    },
+    "app/lib/atlasScientificReport.test.ts": {
+      "bytes": 31043,
+      "lines": 637,
+      "sha256": "853f6d6d26009f02fa0a9fad3ba8d21aacf09d2687f57950710eb5f6a7d623d4"
+    },
+    "app/lib/atlasScientificReport.ts": {
+      "bytes": 83547,
+      "lines": 1227,
+      "sha256": "2e5d0199ca6ae54e83c6fe56bc3469e7159fe9bb92b021d0d22ff8567c558598"
+    },
+    "app/lib/atlasScientificReportExport.ts": {
+      "bytes": 7896,
+      "lines": 144,
+      "sha256": "8509a15b13799f27c44e0a2a42aa1261dcfe5b00807764b5420b79968f3b0ac4"
+    },
+    "app/lib/atlasServerErrorPolicy.test.ts": {
+      "bytes": 754,
+      "lines": 18,
+      "sha256": "a680e5b188c3897c3b596aac838e51204e9f85de80ff1ee5d2d70b23da6649f3"
+    },
+    "app/lib/atlasSparseDeepSpaceDirector.test.ts": {
+      "bytes": 2491,
+      "lines": 53,
+      "sha256": "43ad8e4350b0fcd33b8e2a2d1b48744c60ad047d460d45905a9e67d102f09d1c"
+    },
+    "app/lib/atlasSparseDeepSpaceDirector.ts": {
+      "bytes": 2672,
+      "lines": 47,
+      "sha256": "f0b95a5001f81a68fbd1572ad7288b67bee54d27a8895c62879f7697d43b8fca"
+    },
+    "app/lib/atlasStellarSearchRuntime.ts": {
+      "bytes": 624,
+      "lines": 22,
+      "sha256": "82c171ec599c525863737a7cdbfd9c3dcf3e9505d26cb25fbcf968449e3b2df1"
+    },
+    "app/lib/atlasStrictHorizonsMigrationDryRun.horizons.test.ts": {
+      "bytes": 4620,
+      "lines": 105,
+      "sha256": "0bfce0ba6df5742ddd8ab1a707e0c70e257549d5ef2f2250cf0b21c76866324d"
+    },
+    "app/lib/atlasStrictHorizonsMigrationDryRun.test.ts": {
+      "bytes": 6356,
+      "lines": 150,
+      "sha256": "f814daa27865c007bb5fe355f0aa7acf6388656065346bf4268d01d2a24584d3"
+    },
+    "app/lib/atlasStrictHorizonsMigrationDryRun.ts": {
+      "bytes": 7118,
+      "lines": 167,
+      "sha256": "5c35279cb892ff59daf6f6f4b6f6a598edc8565513c495ce15df9d0a95930210"
+    },
+    "app/lib/atlasStrictHorizonsMigrationDryRunRunner.ts": {
+      "bytes": 7549,
+      "lines": 185,
+      "sha256": "c22276bd2f2e552b188d1a74dc86045e441d34d146b67cfb57cabf7528933dc5"
+    },
+    "app/lib/atlasStrictHorizonsShadowMigrationGate.horizons.test.ts": {
+      "bytes": 5156,
+      "lines": 105,
+      "sha256": "80548104e9b28cdb83213abdab744a762dbd5f9fd9b0c6ce48d97c66cfeeb198"
+    },
+    "app/lib/atlasStrictHorizonsShadowMigrationGate.test.ts": {
+      "bytes": 6592,
+      "lines": 153,
+      "sha256": "64f4be145ad222ca3eccb569ac1c5764d5d9117f211ff678cb9d83623d648dae"
+    },
+    "app/lib/atlasStrictHorizonsShadowMigrationGate.ts": {
+      "bytes": 6677,
+      "lines": 160,
+      "sha256": "6fb2c3dc4fa6abb4341dc9bbeb555a6d4eea6d08a89762a83131a7b2946148c4"
+    },
+    "app/lib/atlasStrictHorizonsShadowMigrationGateRunner.ts": {
+      "bytes": 7634,
+      "lines": 190,
+      "sha256": "9911c153950525217025270a30d505060f0ba8097bdb4a92331e577ca920f21d"
+    },
+    "app/lib/atlasTleFetchPolicy.test.ts": {
+      "bytes": 811,
+      "lines": 23,
+      "sha256": "c0cb6b5bd5248aaf456c66cb47ee917ccf50faf6c79562d6cb61ea9204797794"
+    },
+    "app/lib/atlasTleFetchPolicy.ts": {
+      "bytes": 1587,
+      "lines": 42,
+      "sha256": "05701cdff21787ed4f5c3f713f3286573bca1b5f7712a43dd2da810111f6c4b4"
+    },
+    "app/lib/atlasUniverseSandboxReferenceBackdrop.test.ts": {
+      "bytes": 3175,
+      "lines": 61,
+      "sha256": "2993c252a78057676bc8553170fb2a46c3749f23a70f766f37bdf0fa2ea42183"
+    },
+    "app/lib/atlasUniverseSandboxReferenceBackdrop.ts": {
+      "bytes": 3144,
+      "lines": 56,
+      "sha256": "93c5ffaec7dfda5f372656d6711358affedcda1d09501bc0add5d3b410bce083"
+    },
+    "app/lib/atlasValidationConsole.test.ts": {
+      "bytes": 39517,
+      "lines": 1003,
+      "sha256": "0ea49902bd1b760c86ebe239a7f11ef162ce06d00e7366d9a649d089f621a683"
+    },
+    "app/lib/atlasValidationConsole.ts": {
+      "bytes": 28665,
+      "lines": 588,
+      "sha256": "0a45f0aaeac5665fbf6bcc5d4ae5ebe9ef809f804a15cf69d3c49e86328d939b"
+    },
+    "app/lib/atlasVisualAcceptanceV240.test.ts": {
+      "bytes": 1085,
+      "lines": 26,
+      "sha256": "1a920fa7367d1a802176c30003745fdbb84d70d1d73f99792792081867075d2e"
+    },
+    "app/lib/atlasVisualAcceptanceV240.ts": {
+      "bytes": 2110,
+      "lines": 61,
+      "sha256": "67f78d57d12a612343ffdcc92f6866c4ccd9db4c45ff72e0dd2f60007b18fac7"
+    },
+    "app/lib/atlasVisualDirectorV3.ts": {
+      "bytes": 2128,
+      "lines": 41,
+      "sha256": "ea79ebf92059ab82e2b0e79a72a7d345c7c991a60569fd48aa4a012a3d0ac35c"
+    },
+    "app/lib/atlasVisualDirectorV4.ts": {
+      "bytes": 1314,
+      "lines": 30,
+      "sha256": "919cdcad8add60bfddbb5e0ca2bc5a15f859338c1f8a010b1e79a5488140a1a6"
+    },
+    "app/lib/atlasVisualIntegrationRelease.test.ts": {
+      "bytes": 1534,
+      "lines": 24,
+      "sha256": "ce16824707f779c435d866084572b8086630c15f8740216cec3e5b50ec3754a8"
+    },
+    "app/lib/atlasVisualIntegrationRelease.ts": {
+      "bytes": 2041,
+      "lines": 55,
+      "sha256": "3006dba0f8078cf672b09b67dd1ad39eae20ef569e291df1b71db34e2e1796c9"
+    },
+    "app/lib/atlasVisualIntegrationV2.test.ts": {
+      "bytes": 442,
+      "lines": 2,
+      "sha256": "6d9b9fce7d9c1193221e30c170f848017b30f451e7518ecf6d0a27604b4e8e52"
+    },
+    "app/lib/atlasVisualIntegrationV2.ts": {
+      "bytes": 1219,
+      "lines": 5,
+      "sha256": "118afb5da2952d6e8b327d4f0ee30cca3db88c7072b86062ecfa9fd8dc13aad4"
+    },
+    "app/lib/atlasVisualJourneyManifestV193.test.ts": {
+      "bytes": 2112,
+      "lines": 55,
+      "sha256": "5cc175c9d2b9b40aaef29d2a17bad00ceddbc8a2502909075d4dc27c94e26623"
+    },
+    "app/lib/atlasVisualJourneyManifestV193.ts": {
+      "bytes": 5948,
+      "lines": 157,
+      "sha256": "aa8bac201b32b2626767324bad73a5559a74420f105e8524985d990d3502a3d4"
+    },
+    "app/lib/atlasVisualLaunchPerformanceLock.horizons.test.ts": {
+      "bytes": 2221,
+      "lines": 43,
+      "sha256": "15ef05396c6251814a052f4c44b6953fbb82947b46c1edfa2b5c02308d111a30"
+    },
+    "app/lib/atlasVisualLaunchPerformanceLock.test.ts": {
+      "bytes": 5046,
+      "lines": 147,
+      "sha256": "17552142c853b581ef1d56af41eddb113699d98f27d06a204e294636aa608b04"
+    },
+    "app/lib/atlasVisualLaunchPerformanceLock.ts": {
+      "bytes": 4879,
+      "lines": 100,
+      "sha256": "786d9697df5e34ce1af12c0322d6385319e7ca61bd138042890d10a8a8e566e3"
+    },
+    "app/lib/atlasVisualLaunchPerformanceLockRunner.ts": {
+      "bytes": 8250,
+      "lines": 195,
+      "sha256": "37a9c3026c9642c5124c9550d4a0874032684057718e9bac35d09455f6e56787"
+    },
+    "app/lib/atlasVisualQualityV217.test.ts": {
+      "bytes": 994,
+      "lines": 27,
+      "sha256": "acbb804a284d3b39a4930f04e6a54868f103eeeb18b242991998a0dd57a6016a"
+    },
+    "app/lib/atlasVisualQualityV217.ts": {
+      "bytes": 2502,
+      "lines": 72,
+      "sha256": "7efecb943a25b0ff7d30b8fb2e7db22b245f51eb1d3791638ea3c0b22ca51eb6"
+    },
+    "app/lib/atlasVisualStability.ts": {
+      "bytes": 1768,
+      "lines": 35,
+      "sha256": "ea329facc78cb6a1ad8c1063c19e8d01607c9a03509ffa06c1579187640e3e45"
+    },
+    "app/lib/atlasWorkbenchAccessibility.test.ts": {
+      "bytes": 1968,
+      "lines": 48,
+      "sha256": "f52f7e6670006160a166dd30a8b72a59bf5dc1e1910ecf77d2add07a179b0098"
+    },
+    "app/lib/atlasWorkbenchAccessibility.ts": {
+      "bytes": 1469,
+      "lines": 40,
+      "sha256": "c39e3b5147805fed4eb99315188933f730f7512e454d888a418939bdc2df0248"
+    },
+    "app/lib/atlasWorkflows.test.ts": {
+      "bytes": 5734,
+      "lines": 154,
+      "sha256": "caacd9895611019ec096e0b4a4a064be356ebd096de6dba119a9e8bd634f14ec"
+    },
+    "app/lib/atlasWorkflows.ts": {
+      "bytes": 14823,
+      "lines": 330,
+      "sha256": "71be672819d274cbf45a455aa685a0debb9018d28d060bd912eecf4c7b36ef4e"
+    },
+    "app/lib/bodyLiveMetrics.ts": {
+      "bytes": 451,
+      "lines": 14,
+      "sha256": "f615a9462e5e73a39358306133a5f2a4eff929e53c76a5883dae97a387116d0c"
+    },
+    "app/lib/bodyTextureStatus.ts": {
+      "bytes": 987,
+      "lines": 39,
+      "sha256": "ed97de59271e293725ef774e9751f46bc2b42d13f0476f586d70754540d90a3e"
+    },
+    "app/lib/bodyVisualTier.ts": {
+      "bytes": 3654,
+      "lines": 152,
+      "sha256": "1420ce8193fe7d1b57c4a0bd47b147d852d08eb9f2568417cfc05ee99a9b2a0d"
+    },
+    "app/lib/camera-bridge.ts": {
+      "bytes": 1986,
+      "lines": 59,
+      "sha256": "949125b356329c2f85e723820b9e8772fc8c410073161f441ad2a79328ad5a11"
+    },
+    "app/lib/cameraFocusCommand.test.ts": {
+      "bytes": 1978,
+      "lines": 62,
+      "sha256": "59b6e0ce9cccbd3a73b8bb58aa7eddff2f8d2e0d28e7c7ea44c5c85ae9e5709c"
+    },
+    "app/lib/cameraFocusCommand.ts": {
+      "bytes": 2225,
+      "lines": 72,
+      "sha256": "025805d9a271c8d584a27704850caf942f4cfe891cc0974f1642459c198a070b"
+    },
+    "app/lib/catalogPackInstallerV6.ts": {
+      "bytes": 6145,
+      "lines": 147,
+      "sha256": "133759b272be902584aee67a0ee3140fd9b781d29929633428ac6cc89d1de61f"
+    },
+    "app/lib/catalogPackInstallerV7.ts": {
+      "bytes": 7638,
+      "lines": 222,
+      "sha256": "3c641e8d06775c51ce107b911e9b7dd22d6010b9bf465e82b41e723317b5c4f6"
+    },
+    "app/lib/catalogPackServerV7.test.ts": {
+      "bytes": 1216,
+      "lines": 27,
+      "sha256": "e99751b72a8f4c3921f8e97a8b587f0da9c482faf946a6fd9406478e4f2e4665"
+    },
+    "app/lib/catalogPackServerV7.ts": {
+      "bytes": 2738,
+      "lines": 75,
+      "sha256": "478edf81989c025acafcc02a057874cc498338a4b89cd7edaa37c68ff8e65a4e"
+    },
+    "app/lib/catalogV5.ts": {
+      "bytes": 1291,
+      "lines": 36,
+      "sha256": "a237a439dd4e4c9159587e064debb67ff0be9ce84509f35967c45cbff8d295ce"
+    },
+    "app/lib/catalogV6.test.ts": {
+      "bytes": 1189,
+      "lines": 28,
+      "sha256": "aa3742a90c28cf5ddc044ec8fc7c56a3acbeb62e485c957aad7354c80a8a759b"
+    },
+    "app/lib/catalogV6.ts": {
+      "bytes": 4429,
+      "lines": 111,
+      "sha256": "ed2891eff7d71a72f4f415ec5924eb05453ff90a68777e233cab0ccbb9d928fc"
+    },
+    "app/lib/catalogV7.test.ts": {
+      "bytes": 2208,
+      "lines": 45,
+      "sha256": "a30922ba704be2a96551fc19394bb6441ba2f68bc9875fa611568f49af56865d"
+    },
+    "app/lib/catalogV7.ts": {
+      "bytes": 5162,
+      "lines": 126,
+      "sha256": "f83f9bc2aa1464ae9361b6160537ca55698b395ce4068bba1f9af188419e0349"
+    },
+    "app/lib/celestialCatalog.test.ts": {
+      "bytes": 10445,
+      "lines": 267,
+      "sha256": "86f04b875f9878fb277595e09409476a8fd1f6f019287b472a61be48d37f8b0a"
+    },
+    "app/lib/celestialCatalog.ts": {
+      "bytes": 27232,
+      "lines": 795,
+      "sha256": "7b913b7c934342a86b6fd1b15ea74d3340e3c4f1cbe754c2dfd946a2f55ef5ba"
+    },
+    "app/lib/celestialTextures.ts": {
+      "bytes": 5878,
+      "lines": 140,
+      "sha256": "20bc9156242100f52bf9367250ad5dd714d7c278e5c60ec15999f0842d4f6e55"
+    },
+    "app/lib/contentPackManifest.test.ts": {
+      "bytes": 1209,
+      "lines": 31,
+      "sha256": "17e9e84d3dacf5e9785736f0fc5a58abf82ffd3e7526d46da97f062243d41613"
+    },
+    "app/lib/contentPackManifest.ts": {
+      "bytes": 1254,
+      "lines": 19,
+      "sha256": "a708074243407bebb81112e8fd4304b02f4d20991bdf90501288ea55ece1f28a"
+    },
+    "app/lib/createAtlasRuntimeVisualModel.ts": {
+      "bytes": 13635,
+      "lines": 127,
+      "sha256": "5c30da67e537439171530ef2a505f1ac3522f601b85745fe31e15dbba4e32cf1"
+    },
+    "app/lib/debugSessionLog.ts": {
+      "bytes": 456,
+      "lines": 14,
+      "sha256": "ec22a3c7d20b1dc200f0c8be4c3ba8435e1aed71fd444e1b48c39770cee43ffa"
+    },
+    "app/lib/desktopBridge.test.ts": {
+      "bytes": 725,
+      "lines": 19,
+      "sha256": "3f9d25efd106a5ecc18e47ed9d78aafbde6f6f6c5db1dc67d954e9040882487d"
+    },
+    "app/lib/desktopBridge.ts": {
+      "bytes": 4806,
+      "lines": 148,
+      "sha256": "43f1cf516833d54f93d392a94e61d30f06bdbbecf5aab17c31912d8ae6cc38c7"
+    },
+    "app/lib/desktopPackagingV186.test.ts": {
+      "bytes": 1234,
+      "lines": 24,
+      "sha256": "7e23256f78844bf62c248cc460ed1c1cca4f78c6e699611771c3663c49a70f6b"
+    },
+    "app/lib/evidenceLedger.test.ts": {
+      "bytes": 114289,
+      "lines": 1788,
+      "sha256": "5bd1f313d4d76ba8728f661384cc94e8613008f616b0b2c6bd057d14151b18bb"
+    },
+    "app/lib/evidenceLedger.ts": {
+      "bytes": 392206,
+      "lines": 6335,
+      "sha256": "00fbe6ff16f8bec2b18c2a1917cfa2787f06b359f12ad5603c926d110b7de58a"
+    },
+    "app/lib/exoplanetCatalog.test.ts": {
+      "bytes": 482,
+      "lines": 2,
+      "sha256": "c5b2bf417869043d4d738715c43e03b5151e594ecb0869112f83f0e5e3ec5f7c"
+    },
+    "app/lib/exoplanetCatalog.ts": {
+      "bytes": 1879,
+      "lines": 12,
+      "sha256": "eb14c743726f23d3af4183a790e838adf8fea902bfb3535b35c0b937b6f83f0a"
+    },
+    "app/lib/exoplanetCatalogV2.test.ts": {
+      "bytes": 1403,
+      "lines": 38,
+      "sha256": "5b4386bda1f50b3feb03eb3c74c8480847eb213840274067ed1188cd82d91d0f"
+    },
+    "app/lib/fftPowerSpectrum.ts": {
+      "bytes": 2679,
+      "lines": 101,
+      "sha256": "45d54594b0f915dd1a38dbd85aea8e1a061144187ae1b69d9fe110543d2c689f"
+    },
+    "app/lib/floatingOrigin.ts": {
+      "bytes": 3578,
+      "lines": 103,
+      "sha256": "b17e9285a5606ec9ed7418c8bc4ad42d6eb096bf9402aa6a6d9751261abe6f82"
+    },
+    "app/lib/frwCosmologyValidation.test.ts": {
+      "bytes": 3575,
+      "lines": 99,
+      "sha256": "901b84b80741ae0f1b33e1b8b8ca6535680ac0eff6986235cf92d0aa6fac9865"
+    },
+    "app/lib/frwCosmologyValidation.ts": {
+      "bytes": 7521,
+      "lines": 246,
+      "sha256": "e3f5aa9ab131c2da3105b79fc542d0aaf9dd7528010d0fb341c34295e91aba3d"
+    },
+    "app/lib/gaiaCatalogIndex.test.ts": {
+      "bytes": 1609,
+      "lines": 57,
+      "sha256": "1b56069daa0c6f220ceb6a30b75dbe2fc4ce00414923b00e9c1d41f59d072271"
+    },
+    "app/lib/gaiaCatalogIndex.ts": {
+      "bytes": 7871,
+      "lines": 246,
+      "sha256": "24af440d9c1d740dd59e6b5a383d99187ac4d05ea0c9b4e742d1084c83024ba0"
+    },
+    "app/lib/gaiaCatalogSourceState.ts": {
+      "bytes": 752,
+      "lines": 29,
+      "sha256": "dc2a32e21a75ecf4228b6ed35f19c6f0c0f0591292ad6cccc5a02673ff71aff4"
+    },
+    "app/lib/gaiaCatalogStore.ts": {
+      "bytes": 2123,
+      "lines": 70,
+      "sha256": "40ffb22f9759461806a78e59df0d7067af6c6de4fa89d755a5a544daa37c9313"
+    },
+    "app/lib/galacticDynamicsValidation.test.ts": {
+      "bytes": 4540,
+      "lines": 108,
+      "sha256": "47c0a2831c267d36391e7e843c3183c25d8adeea6ccdf1274ab428b623598b19"
+    },
+    "app/lib/galacticDynamicsValidation.ts": {
+      "bytes": 8141,
+      "lines": 234,
+      "sha256": "401485bea615a228d5e4a545f480adc1a0ef192e56410bed4d4eaf71bbb09a72"
+    },
+    "app/lib/galacticLod.ts": {
+      "bytes": 2756,
+      "lines": 91,
+      "sha256": "928325145d8696fe1a02aa3e2bdd37a472b643a9ad8ae48f559388cd11744036"
+    },
+    "app/lib/galacticPotential.ts": {
+      "bytes": 7543,
+      "lines": 202,
+      "sha256": "e016e5820de763146d51b7b7d56c36b3821bd4636b81cfcee0684ea321f0799d"
+    },
+    "app/lib/galacticToEquatorial.ts": {
+      "bytes": 1272,
+      "lines": 42,
+      "sha256": "e372ec1e2d8333891c78f169d1340d5a98773925025186285ae67e5b38373f72"
+    },
+    "app/lib/hairlineOrbitLine.ts": {
+      "bytes": 2772,
+      "lines": 107,
+      "sha256": "a210d7a78671164900c72a12a524554a5a6b95b2b42f71bec6e6d9a872922feb"
+    },
+    "app/lib/horizonsResidualFrame.ts": {
+      "bytes": 3943,
+      "lines": 131,
+      "sha256": "8f1c09a1e7eee9648abf8dc325e4e38f9ebad10ec95c60ca7cfec3f171667c94"
+    },
+    "app/lib/horizonsValidationRunner.ts": {
+      "bytes": 4279,
+      "lines": 137,
+      "sha256": "5fd19a7cddaf15cff99cd297eb5ebc5e70988212a044edb1feb0c0c44b315427"
+    },
+    "app/lib/julian.ts": {
+      "bytes": 1016,
+      "lines": 28,
+      "sha256": "8f8fad4cef5e659d399ffae0ce613e4718af0724daa3f30fe96c75419bbb185f"
+    },
+    "app/lib/keplerianOrbit.ts": {
+      "bytes": 2499,
+      "lines": 85,
+      "sha256": "cffeee3cb587e3d9610d7bca0dd3541133a2b0434a903d4a641cf3b79ac0acaa"
+    },
+    "app/lib/kerrEvidenceV4.test.ts": {
+      "bytes": 1699,
+      "lines": 31,
+      "sha256": "85a4c8549ada3a532610ea86c5ac40f56b194751e5d4fe62df582229440ec17f"
+    },
+    "app/lib/kerrFrameDraggingAccel.ts": {
+      "bytes": 1604,
+      "lines": 51,
+      "sha256": "2827c735d2a84bb46722ce0319d328f78ccdab687a1fe4ff0254adb60c6ad7c8"
+    },
+    "app/lib/kerrGeodesicKernel.test.ts": {
+      "bytes": 7044,
+      "lines": 187,
+      "sha256": "8fb98e0c5d74e1f3e4b9fd46c383750a28c9223eae69be8a9fe2a5cb1617ec52"
+    },
+    "app/lib/kerrGeodesicKernel.ts": {
+      "bytes": 21564,
+      "lines": 657,
+      "sha256": "29e78f98c2a33f5ac1946b1e4b5485205c33e3bbd879e2cb38e40dfa8d20691c"
+    },
+    "app/lib/kerrGeodesicVisualization.test.ts": {
+      "bytes": 4722,
+      "lines": 116,
+      "sha256": "2afe0cff5c12338ac5a50cc9336ba238aa4089086b9b9b244387092a07893ec4"
+    },
+    "app/lib/kerrGeodesicVisualization.ts": {
+      "bytes": 11462,
+      "lines": 399,
+      "sha256": "f4dd2913fc4152de6d7e9e5a9eb46b29a5fe1ab06b17ed7253c87d02f15a983e"
+    },
+    "app/lib/kerrGeometry.ts": {
+      "bytes": 2582,
+      "lines": 68,
+      "sha256": "28a9659d7c81712aa374251c163843e88aaf36efbc880db1259701067cf97253"
+    },
+    "app/lib/kerrIndependentFixturesV5.test.ts": {
+      "bytes": 1585,
+      "lines": 37,
+      "sha256": "3b43cfad30708a56372e0035b31187e94665c6e083bb307403a8e22db5dc85b0"
+    },
+    "app/lib/kerrPhaseSpaceV2.test.ts": {
+      "bytes": 3601,
+      "lines": 112,
+      "sha256": "6d9585039909bb0ea14bb49955f93d40552dc23c74a08d1f63fc86677a6504f4"
+    },
+    "app/lib/kerrPhaseSpaceV2.ts": {
+      "bytes": 11386,
+      "lines": 342,
+      "sha256": "8a720fe47930369343f39021be539d1d1577b8badc4480ce19b9de77ce5a9064"
+    },
+    "app/lib/kerrRayTraceV3.test.ts": {
+      "bytes": 3119,
+      "lines": 78,
+      "sha256": "c42e19433314d0aa6bed45132b2794235e39f15e44061644c01ba0cf33909d31"
+    },
+    "app/lib/kerrRayTraceV3.ts": {
+      "bytes": 16136,
+      "lines": 379,
+      "sha256": "9dd107d7d14a3bb47725bc466396f13d545ea31ccb58ea0d5896e1325dcf7887"
+    },
+    "app/lib/kerrReferenceV4.test.ts": {
+      "bytes": 1328,
+      "lines": 42,
+      "sha256": "c1bf97b74a661e62e0fc0a5cfb54823093082b29fd5db676dcc3d0fee1fe7fc0"
+    },
+    "app/lib/kerrReferenceV4.ts": {
+      "bytes": 1778,
+      "lines": 56,
+      "sha256": "76cf0f412b31179922a290e63294af5fecbc5c40093d28b65c0bf1e97227cafb"
+    },
+    "app/lib/kerrReferenceV5.test.ts": {
+      "bytes": 1611,
+      "lines": 43,
+      "sha256": "3415a2e294593ee4a868eb9a31eaff061a0767fe841c4f7e7d3588d4f0af0f2d"
+    },
+    "app/lib/kerrReferenceV5.ts": {
+      "bytes": 3012,
+      "lines": 85,
+      "sha256": "e7df6f056406a647baaa334e64205066734a0724375fb7d036b9d315fdc10c54"
+    },
+    "app/lib/kerrReferenceV6.test.ts": {
+      "bytes": 2599,
+      "lines": 75,
+      "sha256": "5afa24777aab191a0e63024a6f0aca94bcabc8387540f95e391817e309323788"
+    },
+    "app/lib/kerrReferenceV6.ts": {
+      "bytes": 5920,
+      "lines": 144,
+      "sha256": "a5656967da2174b4ba601c1fb14ed2e661a5c492b437c18ead4fc76a5214bb1f"
+    },
+    "app/lib/kerrRelativityStudio.test.ts": {
+      "bytes": 3379,
+      "lines": 95,
+      "sha256": "9c79dbd31b8e26b948d40c52ce4cdb27f755e33bd03156d1d54be460bc911071"
+    },
+    "app/lib/kerrRelativityStudio.ts": {
+      "bytes": 10307,
+      "lines": 299,
+      "sha256": "d289fd064ecabe751f6e5fdf303c4ce4f4bce802099697f46c7fc3dee3f70281"
+    },
+    "app/lib/labelPhysicsMetrics.ts": {
+      "bytes": 2657,
+      "lines": 82,
+      "sha256": "985704e94670d0ea8ec6627de78e31054331b0c45a93c33580503dc447d6077a"
+    },
+    "app/lib/lagrangeCR3BP.ts": {
+      "bytes": 2730,
+      "lines": 98,
+      "sha256": "317a182259822afc779cf8774d98f33133d94ef700222c27139f99de8d1c737b"
+    },
+    "app/lib/launchBinaryProtocol.ts": {
+      "bytes": 2151,
+      "lines": 80,
+      "sha256": "7bba650b24768c52b6e144ce33c255db77e0adb83f542de21cecd073b4bf2da6"
+    },
+    "app/lib/launchCameraControl.ts": {
+      "bytes": 72,
+      "lines": 2,
+      "sha256": "b25c5776320e88768189669070f13f26113ad3236d69f6fa43fe2e38befa1658"
+    },
+    "app/lib/launchCinematicV3.test.ts": {
+      "bytes": 866,
+      "lines": 16,
+      "sha256": "8b0f96b944ff147e1b00803d4cb7dcccd71497cef031fe8af0dc06dd972b5af8"
+    },
+    "app/lib/launchCinematicV3.ts": {
+      "bytes": 1410,
+      "lines": 40,
+      "sha256": "91a3cf8f05e0516bbca2410d6505873dad1119a8de71da6279c9502967e472af"
+    },
+    "app/lib/launchCompositionV2.test.ts": {
+      "bytes": 1529,
+      "lines": 31,
+      "sha256": "0d197e72a2977966a3b4097b1c3f61128352371791e98b3cc787df2059ddb301"
+    },
+    "app/lib/launchCompositionV2.ts": {
+      "bytes": 3892,
+      "lines": 133,
+      "sha256": "eafd4fdd0a0aa26fe37e67c2841b42a93690198ad712c0cb05fa585135f7f89a"
+    },
+    "app/lib/launchMissionProfiles.test.ts": {
+      "bytes": 834,
+      "lines": 27,
+      "sha256": "14714e8b74d9e71d8ca7b82bde179dcbc5b7ee23432084278c076cc83fed6524"
+    },
+    "app/lib/launchMissionProfiles.ts": {
+      "bytes": 7887,
+      "lines": 227,
+      "sha256": "598e309edcf182af65ee50ea10167ee6140abb675ee9e5cc9918f66e6bfde91d"
+    },
+    "app/lib/launchSequenceDirector.ts": {
+      "bytes": 5430,
+      "lines": 185,
+      "sha256": "3e89807aa6a7de09a7025658253071e398820145b33030a5ac5ed7690cc1f1d3"
+    },
+    "app/lib/launchTelemetryTypes.ts": {
+      "bytes": 2658,
+      "lines": 119,
+      "sha256": "dce9d7a7437a600c4b5e49a026f3bed8edddfe4db996d8c1ded954951a66b914"
+    },
+    "app/lib/launchVisualProfiles.ts": {
+      "bytes": 1994,
+      "lines": 68,
+      "sha256": "f4f10fb76bb8ac99dcdb6a8d0ba3e421c56a00f7b75e1a20eaf85af04914d392"
+    },
+    "app/lib/legacyV9SkyProfile.ts": {
+      "bytes": 2443,
+      "lines": 76,
+      "sha256": "1625adbe8ad605adeb25a036ba3c91fbcbaff436057abaaf45b87ddd0fd25fcc"
+    },
+    "app/lib/localLaunchPhysics.ts": {
+      "bytes": 27446,
+      "lines": 855,
+      "sha256": "e7183c986220af597313860b577779bb632ddd4d173561c32d76d383923d9804"
+    },
+    "app/lib/materialCameraV5.test.ts": {
+      "bytes": 2300,
+      "lines": 49,
+      "sha256": "9a0d4b7896a8e9aa3c38204b3c1719ffc5dcbcca4e09aca3ff7a783e7e9f1dd8"
+    },
+    "app/lib/materialFramingV6.test.ts": {
+      "bytes": 2110,
+      "lines": 50,
+      "sha256": "da635336fe2a7cbaddde7797ce9f5ad7cf2b0186f8900e0c537775088ab0a4a2"
+    },
+    "app/lib/materialVisualV7.test.ts": {
+      "bytes": 1861,
+      "lines": 28,
+      "sha256": "728b3fc686b5bcd87341dc99046b9783b42291fdba773e9c3320b119bfd4305d"
+    },
+    "app/lib/millionDiscoveryOrbits.test.ts": {
+      "bytes": 1211,
+      "lines": 19,
+      "sha256": "26d5afa95424761719a6395ed5a06957c604c7cb3136ec0d761e741a40f7701e"
+    },
+    "app/lib/observationalAstrophysics.test.ts": {
+      "bytes": 1609,
+      "lines": 18,
+      "sha256": "415dc4296c7ee45f7ba51dcbbfea4b03445aee7d64989e5845cf3eb751417c68"
+    },
+    "app/lib/observationalAstrophysics.ts": {
+      "bytes": 14388,
+      "lines": 320,
+      "sha256": "2164119d2a392d3a8d879ded67b163be1aeda6ec895c69c8e18fd668ec694aba"
+    },
+    "app/lib/observationalAstrophysicsV2.test.ts": {
+      "bytes": 3813,
+      "lines": 65,
+      "sha256": "87e6ec6672251f67288823a25dcc4ae201c757fd16b9cfee05eab6c404a63ccb"
+    },
+    "app/lib/openRocketImportBridge.ts": {
+      "bytes": 4004,
+      "lines": 130,
+      "sha256": "87335260459a65e44f71ab990ff647b47ab6b4b5690d4cc6820de7567867ef2b"
+    },
+    "app/lib/openRocketReplay.test.ts": {
+      "bytes": 663,
+      "lines": 12,
+      "sha256": "59b4494b282ce67b6dc5cb215f840fe39c384aa2392d66ba802f89ec3291ee1a"
+    },
+    "app/lib/openRocketReplay.ts": {
+      "bytes": 3591,
+      "lines": 102,
+      "sha256": "a78cdd40f6a8973eb3edbc1072d1fb49ecd338e089087abb9f0a9c50d1fd4820"
+    },
+    "app/lib/orbitAtlasPresentation.test.ts": {
+      "bytes": 20495,
+      "lines": 424,
+      "sha256": "2017223f35f0482a816c54a64451a5743a9af49d5f51dcc115c8ae40adb76430"
+    },
+    "app/lib/orbitAtlasPresentation.ts": {
+      "bytes": 21688,
+      "lines": 635,
+      "sha256": "c873ea3e5b39943a72682c639b4c4c7499653956fdfdc17d23d864708911e1d8"
+    },
+    "app/lib/orbitBloomTarget.ts": {
+      "bytes": 642,
+      "lines": 17,
+      "sha256": "7e9d0c1b661f32fdf94d505cee30abad9a919abef15f52d31618ad26b92c6d37"
+    },
+    "app/lib/orbitCinematicTokens.ts": {
+      "bytes": 4617,
+      "lines": 172,
+      "sha256": "e7d825b2ffe22177247581aab6b9192fbdee41c45796686e50e957bf2c387f47"
+    },
+    "app/lib/orbitDirectorV3.ts": {
+      "bytes": 2763,
+      "lines": 83,
+      "sha256": "812155cd18aa612e10bb278aa743ed1940b3a70051a065ae6e499cf050504ba7"
+    },
+    "app/lib/orbitLine2.ts": {
+      "bytes": 4185,
+      "lines": 143,
+      "sha256": "e608231274a29297ba908f0851332aa52e1ba4932f97391f4c7dacfb3ff37221"
+    },
+    "app/lib/orbitLineMaterialEffects.ts": {
+      "bytes": 3145,
+      "lines": 110,
+      "sha256": "ce2a821e5f842de800da02d50fa13180d92e2b1517a100b77b63c4919ba40a8f"
+    },
+    "app/lib/orbitRibbonTrail.ts": {
+      "bytes": 5967,
+      "lines": 233,
+      "sha256": "3351484c518a5209e7764e283f2ef7d27433cd6de7599d5685e58975cdcd6f80"
+    },
+    "app/lib/orbitSpectrum.ts": {
+      "bytes": 2069,
+      "lines": 67,
+      "sha256": "bf26952bd809b177223f87121d342935ba60db452913c7351af7505db201c407"
+    },
+    "app/lib/orbitSplineResample.ts": {
+      "bytes": 1611,
+      "lines": 64,
+      "sha256": "87f6f1ffe72518256ceb669d552cf0d7477fe0acc803843541b98d3f437a869c"
+    },
+    "app/lib/orbitTrailGradientMaterial.ts": {
+      "bytes": 5462,
+      "lines": 173,
+      "sha256": "fcc75d75c9b1bfb6fbc2a7a942a7f4e13b8f7d3b0681615ba20e147ab21a374c"
+    },
+    "app/lib/orbitTrailMaterialAlphaPatch.ts": {
+      "bytes": 2342,
+      "lines": 59,
+      "sha256": "6b065dd0c01e5c6bbe371954d99d30619768e44273e65226bb918074231e391a"
+    },
+    "app/lib/osculatingElements.test.ts": {
+      "bytes": 1737,
+      "lines": 44,
+      "sha256": "fdbe0a5ed5aef3a7a0d871fc35e138e25c9baca327697ad67a6d9939d5f98e87"
+    },
+    "app/lib/osculatingElements.ts": {
+      "bytes": 5585,
+      "lines": 186,
+      "sha256": "bd2b3a8e2fc53afc8979bb48b0a53ae4b4bc53bc70055932b3847244edb7ca04"
+    },
+    "app/lib/osculatingOrbit.ts": {
+      "bytes": 2579,
+      "lines": 94,
+      "sha256": "1b2ec73f04f23bd2f9f52fd2979d862fed7e3b5adbdf9932e61df6785af9003a"
+    },
+    "app/lib/physicalConstants.ts": {
+      "bytes": 485,
+      "lines": 14,
+      "sha256": "15fa41b22dad78aa4f9ba58dfac5f977ae7b0a5570ea0b52a695c22899725160"
+    },
+    "app/lib/physicsEngine.ts": {
+      "bytes": 20257,
+      "lines": 767,
+      "sha256": "d8d4b4b9dd1d92437d0c6feac2cab4c4593e25dc74d81f58a0670f0fd6262332"
+    },
+    "app/lib/physicsHistoryStack.ts": {
+      "bytes": 1626,
+      "lines": 60,
+      "sha256": "58613b230bbedade4ae55c2b7794cfd3183f7880c5a2463eabc14bfe356dd7ea"
+    },
+    "app/lib/physicsPrecision.ts": {
+      "bytes": 67,
+      "lines": 2,
+      "sha256": "003339d2536f3285f35cb550817f060da60bb0049ec840af70d4034b39af0d6b"
+    },
+    "app/lib/physicsRuntime.ts": {
+      "bytes": 3449,
+      "lines": 129,
+      "sha256": "fb9691b5d25c069b8b3d9d6d1ff14e8072e7f0857e48e97ecd85f35ad2b23b6b"
+    },
+    "app/lib/physicsSharedBuffer.ts": {
+      "bytes": 2053,
+      "lines": 67,
+      "sha256": "28547fe0c4cec95317ea0e435f78782b4a58f7a82f684f45648443db531286dd"
+    },
+    "app/lib/physicsSnapshot.ts": {
+      "bytes": 5874,
+      "lines": 193,
+      "sha256": "93797309d03d5c0d761fedc2abc9320ac517654b886dce368db4fe513c809b76"
+    },
+    "app/lib/planetAlbedoUrl.ts": {
+      "bytes": 2351,
+      "lines": 71,
+      "sha256": "2355e70f97629999ff7645844ff23e55c70a52821eca3af1c6ca660d8ebb34c5"
+    },
+    "app/lib/planetJ2Data.ts": {
+      "bytes": 1701,
+      "lines": 35,
+      "sha256": "b9b058c97058ce25707ab454d7a81a86c7674aa178a0821e16bd7d39fad97d55"
+    },
+    "app/lib/planetMaterialPresets.ts": {
+      "bytes": 2497,
+      "lines": 59,
+      "sha256": "fe5473e02e563bbc0b330c464fcd9b997f2ce416dc45a3ab637947b2aa0b5002"
+    },
+    "app/lib/planetMaterialProfileV2.ts": {
+      "bytes": 1743,
+      "lines": 44,
+      "sha256": "a34ea4b496d654ec605cee8e2f111e37c854c5ea02c4bab4c7ba8cff0c752f7a"
+    },
+    "app/lib/planetRenderGraphV3.ts": {
+      "bytes": 1680,
+      "lines": 46,
+      "sha256": "4aed2d71dca8ced677e68d898dc902623bf042bcada6daa076b1ebdb5e210e55"
+    },
+    "app/lib/planetSiderealSpin.ts": {
+      "bytes": 859,
+      "lines": 25,
+      "sha256": "b936b769b38c32e4667a0f5a1361ca6fcc3ad611d18c746a3fbeb4f8e477872e"
+    },
+    "app/lib/planetTextureKtx2.test.ts": {
+      "bytes": 1755,
+      "lines": 50,
+      "sha256": "7f6edeb1d257f090977b3ce55fbad4e0840e9626199014693251225b916ea19e"
+    },
+    "app/lib/planetTextureManager.ts": {
+      "bytes": 4973,
+      "lines": 152,
+      "sha256": "fa496239b6f091be2c8b455a6ad0f24cbffc93fbed8d82d80c0d58c022ca8923"
+    },
+    "app/lib/planetTextureUserStore.ts": {
+      "bytes": 2256,
+      "lines": 73,
+      "sha256": "36a0b5499d8997ae5792a63f448617d935f7207e115c1ca1e1be5424e2052869"
+    },
+    "app/lib/postStackMode.ts": {
+      "bytes": 542,
+      "lines": 15,
+      "sha256": "6b952ee797cd6923dd55b5f5252235f9468d1f1e14c05911faaf0344444ab680"
+    },
+    "app/lib/relativisticOptics.ts": {
+      "bytes": 3680,
+      "lines": 118,
+      "sha256": "f5a575db6512ec6d9206cfa26c3ab059e50d92748a10e61ca0f0fbda40a6536e"
+    },
+    "app/lib/relativityCrossValidationV8.test.ts": {
+      "bytes": 1863,
+      "lines": 49,
+      "sha256": "87f81a31356b3197f60be5d10f13506d591436b722362d2d1e2cf96c7e7b6f70"
+    },
+    "app/lib/relativityCrossValidationV8.ts": {
+      "bytes": 2850,
+      "lines": 92,
+      "sha256": "ef4887f0fed7907559264a3b19a2c9c24ae558005d5d223fdfe229862401e24e"
+    },
+    "app/lib/relativityForceModelV2.test.ts": {
+      "bytes": 3633,
+      "lines": 123,
+      "sha256": "acfaad96905574bf5248e02bb2b3b50cabdf516362cdc642db1e93b3bb75b6ba"
+    },
+    "app/lib/relativityForceModelV2.ts": {
+      "bytes": 8204,
+      "lines": 246,
+      "sha256": "1638f67552aa74f45db8fccb42b9e77de4621ed32344a5733d3836e3abf341a1"
+    },
+    "app/lib/relativityForceModelV2WorkerProtocol.test.ts": {
+      "bytes": 1223,
+      "lines": 32,
+      "sha256": "7e6bf4d9b5c490c4a877dfd7ee0760950d4649ddc59bef631457d8cbd837a6f2"
+    },
+    "app/lib/relativityForceModelV2WorkerProtocol.ts": {
+      "bytes": 1245,
+      "lines": 52,
+      "sha256": "c52fcaba87b5ab054fb28d0362c6581f349f26c00c6c3dc3a890846bb964b551"
+    },
+    "app/lib/relativityGuidedTour.test.ts": {
+      "bytes": 3443,
+      "lines": 71,
+      "sha256": "ff0c55776e12e6ebd68cc56c50d057635d5fff03570bee73997d088f702014fa"
+    },
+    "app/lib/relativityGuidedTour.ts": {
+      "bytes": 8930,
+      "lines": 215,
+      "sha256": "a69e2c7e12a4ea51f9eca8ac89ea3e8105a76797ca31f26694b4cd1fb2bb8927"
+    },
+    "app/lib/relativityJointValidationV9.test.ts": {
+      "bytes": 3713,
+      "lines": 71,
+      "sha256": "6d3d1e9ec5dcf4da7657b74b7aaae7025a3f82aaeee9fcb1641e5dd355179896"
+    },
+    "app/lib/relativityJointValidationV9.ts": {
+      "bytes": 4904,
+      "lines": 131,
+      "sha256": "136f70f4a10c699172a1e28db0df2324bcd64ccd9687ae8d9c8598e0fc162fc3"
+    },
+    "app/lib/relativityObservableAtlas.test.ts": {
+      "bytes": 9509,
+      "lines": 220,
+      "sha256": "4eb1ef8700df8875d8296131f8fac2371a98f7ca2ec208bb48f0f9052a468870"
+    },
+    "app/lib/relativityObservableAtlas.ts": {
+      "bytes": 25312,
+      "lines": 467,
+      "sha256": "e00e2041b85928acca0aae6b4210887d58342d50371cc207f225456b67002ad9"
+    },
+    "app/lib/relativityPromotionEvidenceV7.test.ts": {
+      "bytes": 2837,
+      "lines": 76,
+      "sha256": "6fc8349a81a188fa01e4271da1d53d9b4b66d65d81ed5f02322de6ceff742201"
+    },
+    "app/lib/relativityPromotionEvidenceV7.ts": {
+      "bytes": 4982,
+      "lines": 149,
+      "sha256": "6fb341c36a5f0f88d6785a40ce12b3b0d1387ca03439ab6bdd45fccf353f2e81"
+    },
+    "app/lib/relativityPromotionV3Runner.horizons.test.ts": {
+      "bytes": 1533,
+      "lines": 24,
+      "sha256": "91580977b75497ce41fc169e8cee9fc68cdd24bae50498d2f91a52875372bca1"
+    },
+    "app/lib/relativityPromotionV3Runner.test.ts": {
+      "bytes": 1342,
+      "lines": 21,
+      "sha256": "fea147a692fc13407f2e4b8d759a93d9295a7b21e5836e67af6bbfeb9a786415"
+    },
+    "app/lib/relativityPromotionV3Runner.ts": {
+      "bytes": 9705,
+      "lines": 176,
+      "sha256": "228256497dfca08cb70d84c7b5bb74fafb56a74ebee2e3af5f766548df4678a8"
+    },
+    "app/lib/relativityReferenceConstants.ts": {
+      "bytes": 147,
+      "lines": 4,
+      "sha256": "b1d82cdae95f8ea4daacb20cb4cda025336defa01680e8b8c7f909f0d88d8e3b"
+    },
+    "app/lib/relativityResearchEvidenceV208.ts": {
+      "bytes": 2261,
+      "lines": 64,
+      "sha256": "93ed1ffc0409bb3adfc27180fd24af6263c79876597d36fd4aab598792ce6af7"
+    },
+    "app/lib/relativityResearchEvidenceV216.test.ts": {
+      "bytes": 1144,
+      "lines": 23,
+      "sha256": "03814b948615f5811f0bfa3f287c02265427e5ff1ba1bc73811b09a5c3760d63"
+    },
+    "app/lib/relativityResearchEvidenceV216.ts": {
+      "bytes": 1980,
+      "lines": 53,
+      "sha256": "8504a8b2f46a77dac376ba204ce079b57b689609d5c0a3e93df143dfcf24e328"
+    },
+    "app/lib/relativityResearchEvidenceV230.test.ts": {
+      "bytes": 1398,
+      "lines": 28,
+      "sha256": "2b971e50683dd61ddcb9641fb98c1a3a597e60810ecd46cfcebadb2644df5a0c"
+    },
+    "app/lib/relativityResearchEvidenceV230.ts": {
+      "bytes": 3690,
+      "lines": 81,
+      "sha256": "8907fd67aa24fed6d99254769b00792d8331789135f7a8bd91fe6a279facfcab"
+    },
+    "app/lib/relativityResearchV10.test.ts": {
+      "bytes": 2121,
+      "lines": 51,
+      "sha256": "29ed0864853fafe5d20869d94ba030dcda5a3a728ae0479d66646346fa687d6f"
+    },
+    "app/lib/relativityResearchV10.ts": {
+      "bytes": 4166,
+      "lines": 103,
+      "sha256": "e096279c20134371f30e021d3fbc4b4ec400e0c1f926eca48e453139a0e709e5"
+    },
+    "app/lib/relativityResearchV11.test.ts": {
+      "bytes": 2529,
+      "lines": 72,
+      "sha256": "a7061e05deb334c3be269b14a03e7e091162816639efd5277162dcf6dca4651b"
+    },
+    "app/lib/relativityResearchV11.ts": {
+      "bytes": 3709,
+      "lines": 100,
+      "sha256": "99166cd3bcb71495af4c21fcc27332f6e7ea209f7f94a9e499e9579511c08679"
+    },
+    "app/lib/relativityResearchV12.test.ts": {
+      "bytes": 3980,
+      "lines": 112,
+      "sha256": "5ed3e3cf3bac04aaf5d46695273632027aaa2b75c615efdaf7fb16d602b5ef52"
+    },
+    "app/lib/relativityResearchV12.ts": {
+      "bytes": 5582,
+      "lines": 134,
+      "sha256": "274efd17518ac5ee34dfe7a346bc56e7d7a899405cd18e943bef2762ae8b06f4"
+    },
+    "app/lib/relativityResearchV9.test.ts": {
+      "bytes": 3952,
+      "lines": 107,
+      "sha256": "1f77b84ae2449dfab709ca2d075b37c54a796eb52953917df27e3d38d2850eb6"
+    },
+    "app/lib/relativityResearchV9.ts": {
+      "bytes": 12286,
+      "lines": 337,
+      "sha256": "8d7e11c5fc7f6a92f2e2904daa7634b2630ff14ae6f859e885fe1eab22eb25cf"
+    },
+    "app/lib/relativityValidation.test.ts": {
+      "bytes": 5368,
+      "lines": 137,
+      "sha256": "d2eb6cecfe01729ab4987206b65299e84cb74ff3f8454f36fcbb58c8a6611fac"
+    },
+    "app/lib/relativityValidation.ts": {
+      "bytes": 12744,
+      "lines": 351,
+      "sha256": "29b61e852885bc4ce92cd153d7a61354804e91cfcbf329fd33b518c38979ae2b"
+    },
+    "app/lib/renderingPipelineNotes.ts": {
+      "bytes": 852,
+      "lines": 17,
+      "sha256": "130f707208446ac5acf50d2fabec965952fa2230becae64254cdb2ec5dcbb729"
+    },
+    "app/lib/researchValidation.test.ts": {
+      "bytes": 2929,
+      "lines": 90,
+      "sha256": "1e549d5a76d6fe5d755bd0b3ca24f8b115b6a52d73db4dbc21086c5e4665d1cf"
+    },
+    "app/lib/researchValidation.ts": {
+      "bytes": 5932,
+      "lines": 163,
+      "sha256": "5f1634ce1788b809ab07db127e5a98776dc01a9b4cf870e337c71851da1bd9d4"
+    },
+    "app/lib/runtimeArchitectureV3.test.ts": {
+      "bytes": 1807,
+      "lines": 36,
+      "sha256": "320f06dd33a4f3014af962deed31ab9dd6e6f3fac81eb1aedda8be69396c247d"
+    },
+    "app/lib/runtimeIsolationV2.test.ts": {
+      "bytes": 2866,
+      "lines": 54,
+      "sha256": "da57bd0da4bbdb203cc80af1f133a5e91ff6c5d481cf701e9d7b2b27bcba4f97"
+    },
+    "app/lib/runtimeUrls.ts": {
+      "bytes": 1063,
+      "lines": 31,
+      "sha256": "4c2e47c1236335d37afc07881a9de3c32a21ba83b17b86ed38e6e5b4a97741db"
+    },
+    "app/lib/satelliteDynamics.ts": {
+      "bytes": 2448,
+      "lines": 94,
+      "sha256": "61e1eff5afcaf1d0a592612b627fb0a8d391b1f6244f98af10962f4ac355ee57"
+    },
+    "app/lib/satelliteTle.ts": {
+      "bytes": 1448,
+      "lines": 60,
+      "sha256": "fe46d7744319c9d34793222d909b9398f111a57330919fb869859b0b06939d4a"
+    },
+    "app/lib/satelliteUiState.ts": {
+      "bytes": 1579,
+      "lines": 67,
+      "sha256": "7d096d1ec2a5229bbc0cca151d58f978e9f8c492449f15885562081d0a44d9ac"
+    },
+    "app/lib/sceneLab.ts": {
+      "bytes": 1995,
+      "lines": 47,
+      "sha256": "acdf86b8f09ef62200895954a04ec1786e1921f334ed4fcd708c11d2349412ae"
+    },
+    "app/lib/scientificDataSnapshot.test.ts": {
+      "bytes": 1428,
+      "lines": 36,
+      "sha256": "ffa574c55cccd017287cbdaaf3755db9aa67a1f60a2a2088802c7f5872ca0596"
+    },
+    "app/lib/scientificDataSnapshot.ts": {
+      "bytes": 2181,
+      "lines": 61,
+      "sha256": "f61c02d3b8556ac2858e4f001277059fbf6d88d11b04ddb5fade20b51c29b326"
+    },
+    "app/lib/scientificEvidenceBundleV4.test.ts": {
+      "bytes": 1111,
+      "lines": 13,
+      "sha256": "82633da98991173c58cd6298893171f585f8fdff528a41841c131ed39adb5f1f"
+    },
+    "app/lib/scientificEvidenceBundleV4.ts": {
+      "bytes": 6092,
+      "lines": 132,
+      "sha256": "a548af9b6a176c8b60e896a8e0c70fbef48429834252d7ad0a0de25fb6b2adf6"
+    },
+    "app/lib/scientificEvidenceBundleV5.test.ts": {
+      "bytes": 3139,
+      "lines": 56,
+      "sha256": "cf52a03b2097ef9c7cd888430587f331e46c08e7cae146266f9c02e3baf270d7"
+    },
+    "app/lib/scientificEvidenceBundleV5.ts": {
+      "bytes": 9015,
+      "lines": 171,
+      "sha256": "49a5ed7815aea76983390e662fd449368a6cae04d4b76521cf05a6c64596ed3a"
+    },
+    "app/lib/scientificExperienceEvidenceV7.test.ts": {
+      "bytes": 1904,
+      "lines": 33,
+      "sha256": "9d548840a8709142ef4dd401ce95e4cd2ef9aabeec98bf47d12eb143f54572d2"
+    },
+    "app/lib/scientificExperienceEvidenceV7.ts": {
+      "bytes": 4099,
+      "lines": 102,
+      "sha256": "854fae119f7c99134c7048fad8ad82f402df4151677f91ff9f39a53d5dfa48b7"
+    },
+    "app/lib/scientificPromotionDecisionV6.test.ts": {
+      "bytes": 1207,
+      "lines": 26,
+      "sha256": "63049766988d0433cfdaed0f1e4cc6bed1ae1cbe4e98c381e8b3c2cd29759cd0"
+    },
+    "app/lib/scientificPromotionDecisionV6.ts": {
+      "bytes": 3461,
+      "lines": 81,
+      "sha256": "7cc364668b903d91d17a8e80e45067887c132b337c705fd5b3281ee3995e99d8"
+    },
+    "app/lib/scientificPromotionDecisionV7.test.ts": {
+      "bytes": 2229,
+      "lines": 55,
+      "sha256": "1282f2f2057d25cf55c79b9e864eb23333cdc0c34c4d52bd242e919ee8dfa0b2"
+    },
+    "app/lib/scientificPromotionDecisionV7.ts": {
+      "bytes": 4914,
+      "lines": 128,
+      "sha256": "9754a16ff03fdc47a1d8b0e098409245ebc90a7d0e7508795faedcc11c7aedc6"
+    },
+    "app/lib/scientificVisualFidelityV152.test.ts": {
+      "bytes": 889,
+      "lines": 18,
+      "sha256": "cd96c4f2f6db523710b7acac07bb3b1dcca2cd11fa0b536dbb8d43b27bb487d2"
+    },
+    "app/lib/scientificVisualFidelityV152.ts": {
+      "bytes": 1044,
+      "lines": 32,
+      "sha256": "ef43ff4a1b24cb83265edc9630fc155bd31f30d61addc3e4253108ab5c2c8ca6"
+    },
+    "app/lib/screenSpaceBodyLod.ts": {
+      "bytes": 1509,
+      "lines": 42,
+      "sha256": "a9dc2332893a7ab0cbe663b9d2efadb790dc91f7bd8cf498f8703c7f0539dcba"
+    },
+    "app/lib/selectedSkyTarget.test.ts": {
+      "bytes": 1301,
+      "lines": 42,
+      "sha256": "915bff6e460d459b69cf3e09f46818d33255ba356b5b201ed621926e036b6a02"
+    },
+    "app/lib/selectedSkyTarget.ts": {
+      "bytes": 2259,
+      "lines": 64,
+      "sha256": "461d0298b0c2c2b97affcb06f2085b15c7c06d8371e4ac0c1ea28d334df7a752"
+    },
+    "app/lib/simulationDiagnosticsTypes.ts": {
+      "bytes": 233293,
+      "lines": 5998,
+      "sha256": "bf79736ab7a18b16c865ade5258db5680c1c0f40c3946416f827fa40be714ba5"
+    },
+    "app/lib/simulationViewSettings.ts": {
+      "bytes": 1232,
+      "lines": 34,
+      "sha256": "f2e610c9e33daaed4457c345ce21bebe29792b813a474b2d7808b51be0c3b8e2"
+    },
+    "app/lib/skyEquirectUrl.ts": {
+      "bytes": 1560,
+      "lines": 42,
+      "sha256": "05b48bf8d29f4360846c161d1b2e8affbd0dc3e91b3d3113698e0f5b3227c3dc"
+    },
+    "app/lib/skyTargetFocus.test.ts": {
+      "bytes": 1227,
+      "lines": 35,
+      "sha256": "8418b03c9196a0faed657c865c6b808aa01f9f69a1ff9746e532bfe89dbebbed"
+    },
+    "app/lib/skyTargetFocus.ts": {
+      "bytes": 1804,
+      "lines": 58,
+      "sha256": "b78436e106fc02f38f8f153f46f3b39d7a590bf42a5f727b1b8a50c339053ec9"
+    },
+    "app/lib/solarIntegrationMetrics.ts": {
+      "bytes": 141,
+      "lines": 3,
+      "sha256": "0366e439d2f4e0555553bb19cc76b94b36ded36fcd5ce5dc711f51913fd81b92"
+    },
+    "app/lib/solarSystemDiagnostics.ts": {
+      "bytes": 6541,
+      "lines": 230,
+      "sha256": "2f87d076f3bf7bab76c50934ecf7c93b1f6093efb88e9c14bff23139ceab29d3"
+    },
+    "app/lib/solarSystemPhysics.ts": {
+      "bytes": 13648,
+      "lines": 446,
+      "sha256": "2e1e03ba233dadc22800d5c60fc7dad58db60ad8e062c219b241603c81942041"
+    },
+    "app/lib/solarSystemRef.ts": {
+      "bytes": 269,
+      "lines": 7,
+      "sha256": "d1b5e884e6f04a2010c1f52f43c915e8c4d71de3210e3ab852af8ebf06e72439"
+    },
+    "app/lib/spacecraftAutopilot.ts": {
+      "bytes": 19719,
+      "lines": 626,
+      "sha256": "8e1837ff2851204b053e0d6775ecb25b36b99da024d5186d8e3a572ab990fe69"
+    },
+    "app/lib/stellarMaterialProfile.test.ts": {
+      "bytes": 1292,
+      "lines": 38,
+      "sha256": "4373ebe61c57dff39c0d5389b6d8d5f9e552c3ca2345b85d20b9409e028cbd53"
+    },
+    "app/lib/stellarMaterialProfile.ts": {
+      "bytes": 4632,
+      "lines": 128,
+      "sha256": "edaad3aadf8fbd9559d497198e96ef265562832fc0b01ff7899fd18d5d3bda43"
+    },
+    "app/lib/stellarPortraitProfile.ts": {
+      "bytes": 1769,
+      "lines": 48,
+      "sha256": "f86f3f8b0480b1316552e3022078627a7b3b367eb7e40af191ffd269f2f92c26"
+    },
+    "app/lib/stellarPortraitProfileV2.test.ts": {
+      "bytes": 664,
+      "lines": 3,
+      "sha256": "8022f75171ce657c3e4a5d4a14024f3591e3f472bf081fcd850d4c9e9b4eba4b"
+    },
+    "app/lib/stellarPortraitProfileV2.ts": {
+      "bytes": 2592,
+      "lines": 8,
+      "sha256": "2b6c48e13e425aa300677fd8126ae3b6632a591793112aa2e20a0da1eca6981a"
+    },
+    "app/lib/stellarPortraitProfileV3.test.ts": {
+      "bytes": 727,
+      "lines": 2,
+      "sha256": "12c472ff8c097bf103be449f1018e92accfbdb65d349f67cd7b0452282452201"
+    },
+    "app/lib/stellarPortraitProfileV3.ts": {
+      "bytes": 1627,
+      "lines": 6,
+      "sha256": "3a42e4310fdee39873434ef43d4c09005bc47e52b24044aa87fa37708321d546"
+    },
+    "app/lib/stellarPortraitProfileV4.ts": {
+      "bytes": 2772,
+      "lines": 65,
+      "sha256": "48801d614da7681cf2ac37aed34b5b3225033507f58207b617ec8f14754ca048"
+    },
+    "app/lib/stellarPortraitProfileV5.ts": {
+      "bytes": 5034,
+      "lines": 107,
+      "sha256": "68fdf10df06c607ac7a9965122980c97b9231cb5a277c538e19c7c8533e79c31"
+    },
+    "app/lib/stellarPortraitProfileV6.ts": {
+      "bytes": 2724,
+      "lines": 74,
+      "sha256": "2fef84a7841679ab74c271105561a17a01d06771dbe8d9d6d2723cc21e17c639"
+    },
+    "app/lib/stellarPortraitProfileV7.ts": {
+      "bytes": 1993,
+      "lines": 49,
+      "sha256": "25d3e041053ba7a347e554db739a34859ddc33421b2ce0fd859b7e7a2ecb8864"
+    },
+    "app/lib/stellarSearchCatalog.test.ts": {
+      "bytes": 2413,
+      "lines": 67,
+      "sha256": "fd66e564ef3cd5e4147ecf66b8965fdcbc3806278a8a9ed066b1fff1079938fe"
+    },
+    "app/lib/stellarSearchCatalog.ts": {
+      "bytes": 6585,
+      "lines": 204,
+      "sha256": "9f06cc88fb60354d3563e0c01d53b3bbcdf00a1c7b61e78630c617ccbd72c003"
+    },
+    "app/lib/stellarSearchCatalogV3.test.ts": {
+      "bytes": 324,
+      "lines": 4,
+      "sha256": "e6e33e3a2e58069a3ba6fc18a36d3a313b5470eba6b9639d6c46655e4c93a694"
+    },
+    "app/lib/stellarSearchCatalogV3.ts": {
+      "bytes": 2071,
+      "lines": 46,
+      "sha256": "13f583c82ab3a7d5b56fc32ae12e04a11313ab719b20083ea102db4b02b8dc8f"
+    },
+    "app/lib/stellarSearchCatalogV4.test.ts": {
+      "bytes": 1371,
+      "lines": 39,
+      "sha256": "866e445ff691c28ba54d79508a6dedbac75087e359474ad04d5de82848bbbc9c"
+    },
+    "app/lib/stellarSearchCatalogV4.ts": {
+      "bytes": 2339,
+      "lines": 61,
+      "sha256": "fe6d94722a57d469b5b047f792bb3ffb1b05b360331a410b25665031cbd5eff9"
+    },
+    "app/lib/sunDiskShaderMaterial.ts": {
+      "bytes": 5563,
+      "lines": 162,
+      "sha256": "01a26b6debb23a9c35b5f435fa84a4342c7228b3520aab41014a5c6b337b1823"
+    },
+    "app/lib/sunDiskTexture.ts": {
+      "bytes": 257,
+      "lines": 8,
+      "sha256": "cc5a3b9d942cc925e66ada64ac85870e0c346e91347df0473c1dd0a6372b7173"
+    },
+    "app/lib/sunFresnelGlowMaterial.ts": {
+      "bytes": 1617,
+      "lines": 55,
+      "sha256": "cc7815c46084145870661faf2d12bb819c667b29000707290cac9c55ce4a2a5c"
+    },
+    "app/lib/sunProceduralLensTextures.ts": {
+      "bytes": 2554,
+      "lines": 72,
+      "sha256": "90a66e527896871dd97df6d9d8ff2765cebce547476f4cfe039f7c3c35661d71"
+    },
+    "app/lib/telemetryExport.ts": {
+      "bytes": 1758,
+      "lines": 64,
+      "sha256": "57e758c84549c87e0f615be14e780dd22e5d2674c31faebf6654dfbeca7fce87"
+    },
+    "app/lib/telemetryTypes.ts": {
+      "bytes": 2831,
+      "lines": 107,
+      "sha256": "0232520e944035f03aea34af72e84f780d192891518a717daad6365cf92d747f"
+    },
+    "app/lib/trueVoid.ts": {
+      "bytes": 1201,
+      "lines": 31,
+      "sha256": "3575a12725c317df6a8e35311e9e4eddde1e9e4e5d6d20b4ea65bf347aa653db"
+    },
+    "app/lib/universeSandboxOrbitPalette.ts": {
+      "bytes": 2728,
+      "lines": 88,
+      "sha256": "21cd4557dc09a7dc8f281dce0581efbd7ee9e0b08b53ecc7a0950a9b33c6ede6"
+    },
+    "app/lib/useAtlasDeferredEvidenceModules.ts": {
+      "bytes": 2399,
+      "lines": 73,
+      "sha256": "3daa6620bf9541a81b3b3692c688b20d332a4614f87758c77b294bf3a0402e73"
+    },
+    "app/lib/useAtlasFocusController.test.ts": {
+      "bytes": 1146,
+      "lines": 27,
+      "sha256": "9cf8f75ab85bc44c118669dc5a0844fd02c72a6ed198a0cfd1871ba7c67f614d"
+    },
+    "app/lib/useAtlasFocusController.ts": {
+      "bytes": 17715,
+      "lines": 483,
+      "sha256": "9461164668313b84e553fae8f3e611d825bb4696559a5e75becc268ead0940f1"
+    },
+    "app/lib/useAtlasLaunchController.test.ts": {
+      "bytes": 5162,
+      "lines": 137,
+      "sha256": "f167f6cffc370cbc51508063b5870ce3031e91ca95ce27e50660449d393b6142"
+    },
+    "app/lib/useAtlasLaunchController.ts": {
+      "bytes": 5400,
+      "lines": 168,
+      "sha256": "270ce33fd6b7239384ba21b748a1a60e83f3d7645023a1195683f0d85838897f"
+    },
+    "app/lib/useAtlasLaunchSelectionActions.ts": {
+      "bytes": 2189,
+      "lines": 56,
+      "sha256": "7e0f5e9cc4963e51bb49e6897ae2cbbc754358ceebe8d64f02f7a1ab1f9ad834"
+    },
+    "app/lib/useAtlasMissionSession.test.ts": {
+      "bytes": 1245,
+      "lines": 36,
+      "sha256": "10bf41b74bf449a9e2da0b904a78433c8ae5dce200e31e551d977a7c212394e4"
+    },
+    "app/lib/useAtlasMissionSession.ts": {
+      "bytes": 6780,
+      "lines": 210,
+      "sha256": "4394e9861a2a60cedb214d3db801471ac7d9ce8119798e0363cb3ba8898d1aa1"
+    },
+    "app/lib/useAtlasRuntimeJourneySummariesV198.ts": {
+      "bytes": 2449,
+      "lines": 90,
+      "sha256": "e6fff733ed9b5dd545b600fd1e157972476284c5504c01c6e14c1d49041fe861"
+    },
+    "app/lib/useAtlasRuntimeScienceModel.ts": {
+      "bytes": 3459,
+      "lines": 96,
+      "sha256": "fbe53aba407c084021b838a3f8018c8e8df26cf6b883fd6ff0b716ab461ce405"
+    },
+    "app/lib/useAtlasRuntimeVisualSummariesV198.ts": {
+      "bytes": 830,
+      "lines": 22,
+      "sha256": "c96b8c7685dce4381f8db2395b78f4ed7589c0a6a15720eee7341d177157da31"
+    },
+    "app/lib/useAtlasScientificPanelSummaries.ts": {
+      "bytes": 5189,
+      "lines": 138,
+      "sha256": "49b8ad197eaa71dfaf87fbcdad85a189744abe6425bff76e29a777fa316de910"
+    },
+    "app/lib/useAtlasScientificReportActions.ts": {
+      "bytes": 3586,
+      "lines": 94,
+      "sha256": "fb2baedb3b183d3e594d7133a32ad97ce832d46ab62bac510d2606a10dd4176b"
+    },
+    "app/lib/useAtlasSimulationSession.ts": {
+      "bytes": 3489,
+      "lines": 106,
+      "sha256": "75fed97166a98e5499e59f67a91c46ae3e8ec8edaf97d10c562896aa60416598"
+    },
+    "app/lib/useAtlasViewportProfile.ts": {
+      "bytes": 1282,
+      "lines": 47,
+      "sha256": "f69674f10108a4104f0aeb739269f967a88ba36bb915f96c0cd39065526a8ded"
+    },
+    "app/lib/useAtlasWorkbenchEvidenceMissionDomain.ts": {
+      "bytes": 13247,
+      "lines": 362,
+      "sha256": "99f4e58c9afe1fac90f485b9139d9586b0be835db23aaaf6701e06c8e820df67"
+    },
+    "app/lib/useAtlasWorkbenchFocusDomain.ts": {
+      "bytes": 3429,
+      "lines": 103,
+      "sha256": "3702cc790a0a8b917e4e525cd789a109d43589f4ed77bb53dc54ef77f64aab1a"
+    },
+    "app/lib/useAtlasWorkbenchNavigationActions.ts": {
+      "bytes": 6722,
+      "lines": 175,
+      "sha256": "39689f662fa284334bdd70e24091f57521e2144e1688b271b3b40d92c70cd86b"
+    },
+    "app/lib/useAtlasWorkbenchScientificPanels.ts": {
+      "bytes": 5815,
+      "lines": 131,
+      "sha256": "2e337b9e976eb7744fa0298698bee0563fe6543a835bde83c99c889a256d03f2"
+    },
+    "app/lib/useAtlasWorkbenchWorkflowActions.ts": {
+      "bytes": 6249,
+      "lines": 199,
+      "sha256": "57406e9786a7da3bc5f0ba7f143a415d629db978aa0142e32362a8f586dbbdec"
+    },
+    "app/lib/useLaunchWebSocket.ts": {
+      "bytes": 7981,
+      "lines": 267,
+      "sha256": "31ba40c73c56dfb2636fc383104a65567d2c2532c6cfc6a65cc1f1caea507595"
+    },
+    "app/lib/useOptionalTexture.ts": {
+      "bytes": 9509,
+      "lines": 280,
+      "sha256": "4e2675a832fa2adcab510858de8169002986ddf137534d2d3eab6d5a19a8a27a"
+    },
+    "app/lib/useSolarPresentation.ts": {
+      "bytes": 3473,
+      "lines": 113,
+      "sha256": "185ebda30e262f5e31edb1f7cbea8c818721151f2469791d858cd15589cd03d7"
+    },
+    "app/lib/useSolarSystem.ts": {
+      "bytes": 3168,
+      "lines": 103,
+      "sha256": "e51fd5ad0e48121737240f54e6764ca49f42a10d611295bceb871a34573eae1d"
+    },
+    "app/lib/useStellarSearch.ts": {
+      "bytes": 5045,
+      "lines": 143,
+      "sha256": "7c8f63c5ea1e106a61567da88d47190c59c6bf76a9056e02659a555db89f19c7"
+    },
+    "app/lib/visualHdPackV2.ts": {
+      "bytes": 1199,
+      "lines": 28,
+      "sha256": "362d494505f2baa100d6b6a60cb541330c317a99139e67f81ab5d844b73e472c"
+    },
+    "app/lib/visualStylePresets.ts": {
+      "bytes": 1607,
+      "lines": 73,
+      "sha256": "97adc102e4b71ebf599e5a7d723b808c46b7a59f1ce64e2d265abc960e8ea077"
+    },
+    "app/manifest.ts": {
+      "bytes": 502,
+      "lines": 16,
+      "sha256": "bc2b9c0132bb4488701e795a0755e9f417d36d9557bfc10cbaf2b521e58606e8"
+    },
+    "app/page.tsx": {
+      "bytes": 112,
+      "lines": 6,
+      "sha256": "72d50b61f9cf272b1a7355ba5a5d13ae0b2688f112d285429f7cd96c0c9da133"
+    },
+    "app/robots.ts": {
+      "bytes": 333,
+      "lines": 11,
+      "sha256": "4006383d840ebe801f06d59fc226d26640a3e6b809133331ef8e9627cb83a084"
+    },
+    "app/sitemap.ts": {
+      "bytes": 356,
+      "lines": 10,
+      "sha256": "e6090c5c75dc4c4b9f9ded6c38920a2fceda47c3dd96462fe6af86a504d9e83f"
+    },
+    "app/workers/observationModel.worker.ts": {
+      "bytes": 956,
+      "lines": 24,
+      "sha256": "48aa905666da3eec5848b4c9c4b7d7f54f64cacec90aca2855465ed81e00895f"
+    },
+    "app/workers/physics.worker.ts": {
+      "bytes": 3070,
+      "lines": 101,
+      "sha256": "72ec9f2ef8fe4f81b777efe269acedc3f1184eb2b8a2702f6e6edc4bafee0bcd"
+    },
+    "app/workers/relativityForceModelV2.worker.ts": {
+      "bytes": 521,
+      "lines": 17,
+      "sha256": "8fb158b256de39d65c00b8c9da54ec7fd1ed696f0336a039c8df7d1e58e161a8"
+    },
+    "app/workers/relativityValidation.worker.ts": {
+      "bytes": 2168,
+      "lines": 72,
+      "sha256": "b66bbee22ae9def2f81c3674e0e2e83d563bae7d6f38461f7edb9d3f2d1a8aa6"
+    },
+    "app/workers/satellite.worker.ts": {
+      "bytes": 1100,
+      "lines": 46,
+      "sha256": "9ec0feb5a6f4ce7778bde2b0212848d60a72278d97853ff62fbfbcafd8a609ae"
+    },
+    "app/workers/stellarSearch.worker.ts": {
+      "bytes": 16204,
+      "lines": 357,
+      "sha256": "bedde7a82d684780f2509694f4fd1eef2f9464dd9728897032d841ae01305776"
+    },
+    "docs/DESKTOP_ARTIFACT_SIGNING.md": {
+      "bytes": 937,
+      "lines": 22,
+      "sha256": "cc5de230cb949bc5f0dedc34f2ccf889f4eee1e7b9bb18cce638b46e60dc3c79"
+    },
+    "docs/FINAL_FORM_ROADMAP.md": {
+      "bytes": 11568,
+      "lines": 203,
+      "sha256": "19b51e9ab6adc342a7272ad151de4931d6c425a81fdc123de93203a0b9669083"
+    },
+    "docs/TECHNICAL_OVERVIEW.md": {
+      "bytes": 191735,
+      "lines": 1148,
+      "sha256": "f8ee5b477b2b84f17b22451e5f786b22dce33741021d736e1c940f9d9b13511b"
+    },
+    "docs/archive/RELEASE_TRACKS_V160_V232.md": {
+      "bytes": 1625,
+      "lines": 34,
+      "sha256": "1876f2e8a29a2c631df0357cd95dc07a1cdc42e2ccebf010e5959e4584555f88"
+    },
+    "docs/core-simulation-manual.zh-CN.md": {
+      "bytes": 29881,
+      "lines": 1098,
+      "sha256": "c200393864a6404da127e36aba6085ada3ae399bb5388f6e092f58d54a1bde38"
+    },
+    "next.config.mjs": {
+      "bytes": 5591,
+      "lines": 156,
+      "sha256": "d88e3382440966cb146a69e1d2968e63c26c3fb73b865454792677a12646906e"
+    },
+    "package-lock.json": {
+      "bytes": 354924,
+      "lines": 9883,
+      "sha256": "01e56626b771a75e64800f839e857689c6e63b289d63dbac75ea0056cd3d428e"
+    },
+    "package.json": {
+      "bytes": 42608,
+      "lines": 377,
+      "sha256": "d725a20aedd177875721dd2fac9e8035c1c614b274a559122dd0a083cb12d959"
+    },
+    "playwright.atlas.bundle-lite-v236.config.ts": {
+      "bytes": 764,
+      "lines": 27,
+      "sha256": "8b0baa1449d681c82843aa50df47a32b4d4c4fc94b56ded5cebf0936febb51e6"
+    },
+    "playwright.atlas.bundle-v236.config.ts": {
+      "bytes": 782,
+      "lines": 28,
+      "sha256": "8da3031f65a17615b265ad405e2be109cba2c8cdf595b7b3df1f804e2eaba65a"
+    },
+    "playwright.atlas.fresh-v240.config.ts": {
+      "bytes": 897,
+      "lines": 31,
+      "sha256": "e04098498e674a9feca96d1cfa034ae6371942ab4cd6ec4e3533bf6a3f00e28a"
+    },
+    "playwright.atlas.performance-v232.config.ts": {
+      "bytes": 1021,
+      "lines": 30,
+      "sha256": "3a8c92e435882673a3a95c552771cfb1c9fe940bec5d7e63138184db16e361b4"
+    },
+    "playwright.atlas.soak-v236.config.ts": {
+      "bytes": 1098,
+      "lines": 35,
+      "sha256": "b0df56e7c7ff9c7c458b4521ac532d70f19f82eebf9d0dfec83dacf1bd045147"
+    },
+    "playwright.atlas.visual-v240.config.ts": {
+      "bytes": 640,
+      "lines": 21,
+      "sha256": "66cc238a226327a2b00c97d15318ba0353c1f83ec78a8dff8b02b833e567f734"
+    },
+    "proxy.ts": {
+      "bytes": 2863,
+      "lines": 78,
+      "sha256": "b62cbcd7ef88991cbad2be7979842871e4be1514be889b42d936fef90980089a"
+    },
+    "scripts/archive-v224-release.mjs": {
+      "bytes": 4520,
+      "lines": 120,
+      "sha256": "93980c6622e90677aed924cf7b8559aa7baea1bf51dba06718b3e5f859bc990c"
+    },
+    "scripts/atlas-server-bootstrap.mjs": {
+      "bytes": 826,
+      "lines": 24,
+      "sha256": "96ed27701765fa45707d9d9085f3e58c7a6e7a32f8b872ca93bc0140d0903e23"
+    },
+    "scripts/audit-v232-legacy-backdrop-gate.py": {
+      "bytes": 4477,
+      "lines": 117,
+      "sha256": "ee374a0f43e00fc294283c1b17d7ea86a9b342d43cbba3e447bd5b9f52c92379"
+    },
+    "scripts/bootstrap-science-env.mjs": {
+      "bytes": 2796,
+      "lines": 68,
+      "sha256": "26e57f2f659260138d2340f814a43a50ace08c05f5e3e6118bc5f96529293b5f"
+    },
+    "scripts/build-atlas-profile.mjs": {
+      "bytes": 10816,
+      "lines": 313,
+      "sha256": "7eff5505bd1df0a831fc7df6f21b3b00ae89daa48f2d9cfdeeb9e7efc73478b9"
+    },
+    "scripts/build-catalog-lite-v6.mjs": {
+      "bytes": 2103,
+      "lines": 46,
+      "sha256": "fb3236c9ae8334c94f457b47f1818b48adbe72cac212595cd69861b4a7837afd"
+    },
+    "scripts/build-catalog-million-v6.mjs": {
+      "bytes": 2174,
+      "lines": 49,
+      "sha256": "64704327a15066948fb6e6df445057e79876f0381c9ff6e916aaeb1f7d23180d"
+    },
+    "scripts/build-catalog-million-v7.mjs": {
+      "bytes": 2624,
+      "lines": 54,
+      "sha256": "af12d1dd9059d5938e0eba0415d0ff9122fa908aa70d96c2aaffd5af7e2d2ed7"
+    },
+    "scripts/build-catalog-v7.py": {
+      "bytes": 12120,
+      "lines": 272,
+      "sha256": "6ea40d14e42ef8bf533f4198e57252830ba45544a6d6785c36d445a5d29814ea"
+    },
+    "scripts/build-content-packs.mjs": {
+      "bytes": 6213,
+      "lines": 124,
+      "sha256": "370f8ba7da1f5074cf68ce96bdc5fcb4781002a9cf4dabf20828e3607c0a3612"
+    },
+    "scripts/build-current-evidence-manifest-v233.mjs": {
+      "bytes": 11205,
+      "lines": 230,
+      "sha256": "3fe3766d8d0eb6a617247a0de9e44d4e1899ce0ac15c717958240c0c60aee980"
+    },
+    "scripts/build-desktop-evidence-v192.mjs": {
+      "bytes": 1762,
+      "lines": 48,
+      "sha256": "46d0f3bcaceef67d10c0e8961ae86ef573be61b20f58394f7e19ab95d5ffb766"
+    },
+    "scripts/build-desktop-evidence-v200.mjs": {
+      "bytes": 1744,
+      "lines": 36,
+      "sha256": "9842c7e671941aa052b66d9f1150a70126421af912f0c1cd0c9d63ad82adffdf"
+    },
+    "scripts/build-exoplanet-catalog-v2.mjs": {
+      "bytes": 1946,
+      "lines": 4,
+      "sha256": "4baeedc864022ef93cd258743787971ead1562413592ee1a3f88588ccbdc4181"
+    },
+    "scripts/build-exoplanet-catalog.mjs": {
+      "bytes": 2965,
+      "lines": 23,
+      "sha256": "4a2f6d466489046403c369cf49462c96e7e9c8af407120219dce9679ac00d3a8"
+    },
+    "scripts/build-final-release-v186.mjs": {
+      "bytes": 12688,
+      "lines": 255,
+      "sha256": "c0d2d10b49b2cb0c97f0c85c384f93bb9bd4e50872329634a41b9dedd6cf6412"
+    },
+    "scripts/build-final-web-release-v174.mjs": {
+      "bytes": 6901,
+      "lines": 155,
+      "sha256": "1fbb7950554ea8c78efcadf3e577e62888cf6dfaa671b714853cfa96bab76a37"
+    },
+    "scripts/build-final-web-release-v180.mjs": {
+      "bytes": 11573,
+      "lines": 236,
+      "sha256": "495505d065ee29d4f791a82a60891a7e43f8841b19ba0c93a6f8126cef828add"
+    },
+    "scripts/build-gaia-astrophysical-v1.py": {
+      "bytes": 3417,
+      "lines": 70,
+      "sha256": "774dfb00ceb5ebbec38a3db7877896135cc7eb6337721b207ab01618e1b2c482"
+    },
+    "scripts/build-kerr-carter-mino-v6-evidence.py": {
+      "bytes": 6954,
+      "lines": 180,
+      "sha256": "46a50b6415ab78588492f595b2e7313a0e3819144cc06145b19e1e9a3a064715"
+    },
+    "scripts/build-kerr-cross-validation-v4.py": {
+      "bytes": 5372,
+      "lines": 136,
+      "sha256": "a13052adc950f77ffc508f6c11f57141f5d56e56750000c790bb38a131a54339"
+    },
+    "scripts/build-kerr-cross-validation-v5.py": {
+      "bytes": 6915,
+      "lines": 141,
+      "sha256": "bb08105f08a757569511e027e3433843d94dca1a999e36c52f37efc5bb8659bc"
+    },
+    "scripts/build-kerr-dense-screen-v5.py": {
+      "bytes": 3255,
+      "lines": 85,
+      "sha256": "2bf06aa4dc975c87c8b2ad9afbf697aac1e90fa12fc5739c98178fb05de00d67"
+    },
+    "scripts/build-kerr-fixtures-v5.py": {
+      "bytes": 4818,
+      "lines": 115,
+      "sha256": "5bbe309f19b04f0d279bda6eae007315f34a13a5c871bc0eff75d27cf520ef7b"
+    },
+    "scripts/build-kerr-v6-canonical-cross-validation.py": {
+      "bytes": 9483,
+      "lines": 225,
+      "sha256": "e1e548330c870571e65f2e541de1a7fb1ced84316c444463ff97ee4bbe218342"
+    },
+    "scripts/build-npm-command-index-v233.mjs": {
+      "bytes": 1410,
+      "lines": 40,
+      "sha256": "3715961156e8d1bf84e79c1ceda9f0c6688f702920ee1c59bc267ac1f3b66340"
+    },
+    "scripts/build-observation-evidence-v2.ts": {
+      "bytes": 4916,
+      "lines": 85,
+      "sha256": "f23f6238ce09817bc3db84a3e21a75e13598b2123bd43015ee149de3eb227fba"
+    },
+    "scripts/build-observation-fixtures-v2.py": {
+      "bytes": 5731,
+      "lines": 151,
+      "sha256": "0fe4c47bf25c7d85242e7e8074df97957be0268a7e4f4a2a2d9e218f93db413a"
+    },
+    "scripts/build-planet-materials-v49.py": {
+      "bytes": 5883,
+      "lines": 154,
+      "sha256": "c747dec15fe6404d3e4c27ed3adcd13eace978725eb035aa21801af6813179d4"
+    },
+    "scripts/build-planetary-art-v55.py": {
+      "bytes": 3951,
+      "lines": 119,
+      "sha256": "4e6e55f169306d94d9ab9bb4870f4f0d983d221b0f50da4359305ebeb397e3a2"
+    },
+    "scripts/build-product-release-evidence-v167.mjs": {
+      "bytes": 2572,
+      "lines": 53,
+      "sha256": "cab221266dc9090a4e0842cec22ccbfc1475f8ae60678450ff94d30171c5b2ca"
+    },
+    "scripts/build-regression-evidence-v166.mjs": {
+      "bytes": 1764,
+      "lines": 53,
+      "sha256": "9535a830845f7a6e729991269580f6c50e20f5bc887c6a2ed41a9d15a8e35607"
+    },
+    "scripts/build-regression-evidence-v174.mjs": {
+      "bytes": 2123,
+      "lines": 56,
+      "sha256": "9df6a6c6b50688b297d3fa97f0732895fab34a5dca7d299bc40a8416a7a3eac4"
+    },
+    "scripts/build-regression-evidence-v180.mjs": {
+      "bytes": 3501,
+      "lines": 81,
+      "sha256": "7fb8b3dc0f3b140ea7a5f1f7dbee57f3a40b5a756d5b105300d971288cb0d5fe"
+    },
+    "scripts/build-regression-evidence-v4.mjs": {
+      "bytes": 1362,
+      "lines": 45,
+      "sha256": "fbe086a40d1c988e848efa6a320bbb80b0cb1cc41c5abd5636d63eac35b8440a"
+    },
+    "scripts/build-regression-evidence-v5.mjs": {
+      "bytes": 1136,
+      "lines": 30,
+      "sha256": "8057c9ae89f39a8267846a0fafefd8249c88d07fb88e92f4560605226d2fbdf9"
+    },
+    "scripts/build-relativity-joint-validation-v9.mjs": {
+      "bytes": 12373,
+      "lines": 258,
+      "sha256": "aab7bf2b65baf6263e7dddce90cce99187507c8c7c96003d70b68ca37115f7ba"
+    },
+    "scripts/build-relativity-reference-bundle-v10.py": {
+      "bytes": 11607,
+      "lines": 250,
+      "sha256": "d6bc3dc2ae428488b8198d15d41ea060bae4facfc29b38e008a13a0d9a948f27"
+    },
+    "scripts/build-relativity-reference-fixture-v9.py": {
+      "bytes": 5488,
+      "lines": 134,
+      "sha256": "8113715e1e9a97e09fcfe819048ed8cf33265974de6f464f893636e2dd24d244"
+    },
+    "scripts/build-relativity-regression-explanation-v196.mjs": {
+      "bytes": 758,
+      "lines": 12,
+      "sha256": "b8e615ecec4234cb1d696c1aa6fda1e98e4f129b0f2150423d4e32d073d33f3c"
+    },
+    "scripts/build-relativity-v11-evidence.py": {
+      "bytes": 6134,
+      "lines": 139,
+      "sha256": "06fc34b6781b08b82c3aaeb1fa92e0a435c7a502f9541c8f819f520c4d8edfcf"
+    },
+    "scripts/build-relativity-variational-stm-v12-evidence.py": {
+      "bytes": 7519,
+      "lines": 200,
+      "sha256": "3391bd87af3c192f58ab5768b86e43efd5058ec08ababe6a9429098b28d0b6d2"
+    },
+    "scripts/build-runtime-codec-pack.mjs": {
+      "bytes": 1964,
+      "lines": 56,
+      "sha256": "d13d3fd4890d27903f859fc1de6f9f30453fe79df0cbd44fddd8dc7801cecd62"
+    },
+    "scripts/build-scientific-evidence-v4.mjs": {
+      "bytes": 5738,
+      "lines": 52,
+      "sha256": "31adbf1f3fdf3cd10f07d7a3b836cbdce2fc3e0d5be0ab3e27a1575dd7dc4b16"
+    },
+    "scripts/build-scientific-evidence-v5.ts": {
+      "bytes": 8457,
+      "lines": 146,
+      "sha256": "0f35394bee8fa21aae28f24008c958c36e2426e71ae89fed91c102c881034594"
+    },
+    "scripts/build-scientific-evidence-v7.ts": {
+      "bytes": 4085,
+      "lines": 106,
+      "sha256": "e899fc8606d141cd02af1820326ab9170dafc75f25350434a1f0a7564bf6170c"
+    },
+    "scripts/build-stellar-catalog-v3.mjs": {
+      "bytes": 4248,
+      "lines": 35,
+      "sha256": "22f9e504a1abdf47c0c201c1e535d7e9806908226b0a1bacf9003c5d464100ac"
+    },
+    "scripts/build-stellar-catalog-v4.mjs": {
+      "bytes": 6744,
+      "lines": 20,
+      "sha256": "93e1b040da0a5b7189dc3e56425befef5ece7009f358259fb2f0cd1b26c25b7a"
+    },
+    "scripts/build-stellar-catalog-v5.py": {
+      "bytes": 9820,
+      "lines": 231,
+      "sha256": "f85cd97db803cc61e3e80505e4c5825b2478f4d9e40f1ecd9ef1c3dd3734d697"
+    },
+    "scripts/build-stellar-search-index.mjs": {
+      "bytes": 6479,
+      "lines": 194,
+      "sha256": "c93179efba722767cc4899b5e29826a5ac17c1e61a3cbd43b14b28e5047d3175"
+    },
+    "scripts/build-universe-sandbox-sky.py": {
+      "bytes": 47109,
+      "lines": 1004,
+      "sha256": "917c58d336def32767f8e5530e81a58f717f3b91e2d1bfb6716887ffafe20a66"
+    },
+    "scripts/build-v192-browser-qa-evidence.mjs": {
+      "bytes": 2164,
+      "lines": 70,
+      "sha256": "7726970c8046913c2bba8020e88cb138e549efbc6a385789734c206f8c65fb2f"
+    },
+    "scripts/build-v192-readiness-dossier.mjs": {
+      "bytes": 10765,
+      "lines": 199,
+      "sha256": "1e928c873a452718d83336311aeb524124d9c8be03eabf7aea339f690c9d5081"
+    },
+    "scripts/build-v200-readiness-dossier.mjs": {
+      "bytes": 8454,
+      "lines": 121,
+      "sha256": "b7181f2b763057d249dd6d1dde1c58a856535a49d7ac49e0170b781ff284334a"
+    },
+    "scripts/build-v208-relativity-dossier.mjs": {
+      "bytes": 15772,
+      "lines": 303,
+      "sha256": "bad24bfac9404b064025d8d86dcd88309ee143c24559b007a55e23b3bea8f36d"
+    },
+    "scripts/build-v216-relativity-dossier.mjs": {
+      "bytes": 17372,
+      "lines": 370,
+      "sha256": "20a2b7068d35d832ed40b285e5d034d92c38368e0e0b647b33a4b68c222fcacc"
+    },
+    "scripts/build-v220-visual-review.mjs": {
+      "bytes": 2358,
+      "lines": 63,
+      "sha256": "6accfa9460252d2ca3279a437ef6eeb068b2f6859d4764551bcd096a9ef1db60"
+    },
+    "scripts/build-v224-visual-relativity-dossier.mjs": {
+      "bytes": 13108,
+      "lines": 251,
+      "sha256": "546744bebc6733643ade40528874719695e71c2d5f26a0738f34f0a1880b30a5"
+    },
+    "scripts/build-v232-release-dossier.mjs": {
+      "bytes": 17607,
+      "lines": 331,
+      "sha256": "347b9adb7403094ee391d1cdff8abff96498cd4d287e430f64ba3fa02e90dc08"
+    },
+    "scripts/build-v233-governance-dossier.mjs": {
+      "bytes": 8040,
+      "lines": 177,
+      "sha256": "27077cf24282aa0497cf1ad580a504b48461f9eef227b58a0b8678db2b5a5167"
+    },
+    "scripts/build-v240-release-dossier.mjs": {
+      "bytes": 20433,
+      "lines": 385,
+      "sha256": "31d9c40ef8072ac69a4f2906d5680ea0bb007f330db7e971b4cfb79a96b3bdbe"
+    },
+    "scripts/build-vercel-preview.mjs": {
+      "bytes": 592,
+      "lines": 18,
+      "sha256": "813bf83261f7ce734eb0062f5035f355ad463049cb2c69c7fec0ac0d76eb1047"
+    },
+    "scripts/build-visual-hd-v2.mjs": {
+      "bytes": 2270,
+      "lines": 36,
+      "sha256": "86337c803d91e35c2d58514c742dd500df66d64cc0fa019262ba5ef75ba9f5af"
+    },
+    "scripts/build-visual-hd-v3.mjs": {
+      "bytes": 1803,
+      "lines": 45,
+      "sha256": "a1f5cef78c7a647d336e2f7d028a3304c9816dc87f3a6fc0628eae40c548a467"
+    },
+    "scripts/compare-kerr-radiative-v5.py": {
+      "bytes": 2132,
+      "lines": 48,
+      "sha256": "14570610b699a13182a070627dd649fdf07b577987ebfbe5bfd4018e2afc8468"
+    },
+    "scripts/export_gaia_kinematics_nextweb.py": {
+      "bytes": 3341,
+      "lines": 127,
+      "sha256": "34d833cabf44b55e8820b2ef61c9a16172afdec559d00f943be90ddd4c66ee0f"
+    },
+    "scripts/fetch-exoplanet-observations-v2.mjs": {
+      "bytes": 8778,
+      "lines": 191,
+      "sha256": "bcf4ea64c1551569870d2a83eddb6a98489ce5ea33831703a70e9a9add671d90"
+    },
+    "scripts/fetch-gaia-ap-v2.py": {
+      "bytes": 11044,
+      "lines": 270,
+      "sha256": "acc232e3f6fe259d06ce0d7808b20984c3bc091add407ad551eebeadef2e95da"
+    },
+    "scripts/fetch-gaia-catalog-v5.py": {
+      "bytes": 3762,
+      "lines": 101,
+      "sha256": "08d2e6f6d2b396129743c7bfbd3313f1a31fec043c2cc93d93ccc541f56eadb2"
+    },
+    "scripts/fetch-nasa-earth-hd.mjs": {
+      "bytes": 2783,
+      "lines": 76,
+      "sha256": "663413186ab25d7779fc9dddc2d848c03d562159b05365655fa1665085310659"
+    },
+    "scripts/fetch-nasa-hd-bundle.mjs": {
+      "bytes": 6250,
+      "lines": 140,
+      "sha256": "3991f36cb53bdc107262a5ef715690de054c1149052c133efbf60ff6b93e2a01"
+    },
+    "scripts/fetch-planet-textures-8k.mjs": {
+      "bytes": 2840,
+      "lines": 82,
+      "sha256": "ab4645f94a8cc2f756e2cb23d511cb079ea508bbc89713caf9b10718183f2f76"
+    },
+    "scripts/fetch-planet-textures.mjs": {
+      "bytes": 2204,
+      "lines": 61,
+      "sha256": "79d01cab53559bd37bb62b26c5418f2826bdfdb95f4b42e2d313ea57dd7ce22f"
+    },
+    "scripts/fetch-sky-eso.mjs": {
+      "bytes": 1626,
+      "lines": 44,
+      "sha256": "d422dafd2d2c2229ae5a0478d4e4cf2302e2d7edeadade3f847d77b46f72eca2"
+    },
+    "scripts/generate-atlas-legacy-evidence-compat-v177.ts": {
+      "bytes": 3552,
+      "lines": 77,
+      "sha256": "e42941822d0e8172c0a29710c0a289f512a35b963fd3f4e7839498f48665dca5"
+    },
+    "scripts/generate-kerr-v2-fixtures.py": {
+      "bytes": 2214,
+      "lines": 63,
+      "sha256": "b597246fdae8215d4d2b893c4f23f1fd8f678ef844de09970c63ea06698bea9a"
+    },
+    "scripts/import-openrocket.mjs": {
+      "bytes": 4487,
+      "lines": 85,
+      "sha256": "6ad99b74d39b5f249b69c61f85bc7e7bd5506d79eafd6de4893c95ba781e9ab2"
+    },
+    "scripts/kerr_observer_frame_v5.py": {
+      "bytes": 5282,
+      "lines": 140,
+      "sha256": "84d5571281aed0c7d0eb244d332f283b5669a08cd4589adc05be9094dcabb36c"
+    },
+    "scripts/optimize-planet-textures.mjs": {
+      "bytes": 1347,
+      "lines": 4,
+      "sha256": "4baae4d14da86ce7083007fcf9e419c3e92542ba05c5415bd6e8f1ad34f17a2b"
+    },
+    "scripts/optimize-spacecraft-assets.py": {
+      "bytes": 3146,
+      "lines": 81,
+      "sha256": "9570981fa9b83eeb84c1e673ccf634c36e7daa257e3ca55e98a730118097e5bc"
+    },
+    "scripts/promote-runtime-catalog-pack.mjs": {
+      "bytes": 3146,
+      "lines": 75,
+      "sha256": "ada39b93aa2b723e1711ab4a03785880222329f1539f639a3aa91cd474f5f76d"
+    },
+    "scripts/promote-v9-core-assets.mjs": {
+      "bytes": 2474,
+      "lines": 59,
+      "sha256": "5b7cac8838068f5105e66c3984f85193fe32a67de5a7bb04234ba0372c312dbe"
+    },
+    "scripts/rebuild-technical-overview-intro.mjs": {
+      "bytes": 11666,
+      "lines": 168,
+      "sha256": "070c52faca6a888852a735a1c5a4128a999fdb8e1aa4a5432ad24ca0c452711d"
+    },
+    "scripts/run-kerr-carter-mino-reference-v6.py": {
+      "bytes": 12531,
+      "lines": 282,
+      "sha256": "5edbfdf7a8897068af13dd366fd2614df6d9beba9ff4d65f99f50962a44e7b6a"
+    },
+    "scripts/run-kerr-dense-shards-v6.py": {
+      "bytes": 24401,
+      "lines": 536,
+      "sha256": "b56f2e1f6854ad392820a6a0a6c2757dbae93119858bae0e10fe04c1113776fe"
+    },
+    "scripts/run-kerr-radiative-transfer-v5.py": {
+      "bytes": 16255,
+      "lines": 344,
+      "sha256": "47dd60981270c47e85b6326614f6af44403a6984a6586b943de766bc22375278"
+    },
+    "scripts/run-kerr-ray-reference-v3.py": {
+      "bytes": 8912,
+      "lines": 217,
+      "sha256": "cf2de99b76935de893344d02234d0ae57a2c7e03a9b87abc66a8a0be33885d4e"
+    },
+    "scripts/run-kerr-schild-reference-v4.py": {
+      "bytes": 8450,
+      "lines": 207,
+      "sha256": "2dcf0860f2196921ea5de1a37290b58ae9acf2736d389faf182b19bb5a7879ae"
+    },
+    "scripts/run-kerr-schild-reference-v5.py": {
+      "bytes": 11001,
+      "lines": 239,
+      "sha256": "ba2b83c7649c09c9610794f07682203d796ce48d8316b951339811d78dbe4146"
+    },
+    "scripts/run-production-audit-v232.mjs": {
+      "bytes": 1740,
+      "lines": 47,
+      "sha256": "8dc71979ffcf95b19c7798fe0b9c15416bd7627e0a7b25f1993a428baaef0e46"
+    },
+    "scripts/run-relativity-100y-diagnostic-v10.py": {
+      "bytes": 5902,
+      "lines": 123,
+      "sha256": "ad107fc1aca83e01731f391d0e0e547377f321443fcdf0d4085c7c6cc57d82ac"
+    },
+    "scripts/run-relativity-dop853-v4.py": {
+      "bytes": 7411,
+      "lines": 168,
+      "sha256": "0706c8625ba9e66e929954b0000e155f8b8b10e8e7136dd23796f7fef91cf6f8"
+    },
+    "scripts/run-relativity-dop853-v5.py": {
+      "bytes": 7235,
+      "lines": 154,
+      "sha256": "09a8319d6f3710bf5b1e255d2918a772f67cac9198652bad2f91e15b9c19992e"
+    },
+    "scripts/run-relativity-dop853-v7.py": {
+      "bytes": 17406,
+      "lines": 266,
+      "sha256": "e972648d38bfb90fefb9bdea87bfedef3e4ec7bdc4b20de54d55b9cfc37ae0da"
+    },
+    "scripts/run-relativity-fitted-blind-v9.py": {
+      "bytes": 16121,
+      "lines": 338,
+      "sha256": "3311afd6c14a8816d17da2ee4fdb2635b4eece74c39623e7558d1bd7ee6b2c4a"
+    },
+    "scripts/run-relativity-ias15-v9.py": {
+      "bytes": 20530,
+      "lines": 457,
+      "sha256": "1bf49c32241ae422fa0a389d2a8c999aedc572721e8cc0ecc4fb27d6688e2707"
+    },
+    "scripts/run-relativity-rebound-v8.py": {
+      "bytes": 22399,
+      "lines": 538,
+      "sha256": "3c6f2d3496a0b12e1d9f2f370458ae384c53f2d315d410a92a27bbcbc462e70a"
+    },
+    "scripts/run-relativity-reference-v9.py": {
+      "bytes": 21964,
+      "lines": 464,
+      "sha256": "e8d194e73fb64748523570bdba7527178ebffad150b3568f2663bd9ec1277a07"
+    },
+    "scripts/run-relativity-stm-fit-v10.py": {
+      "bytes": 15166,
+      "lines": 291,
+      "sha256": "44fb57e60b1a576cb24c4035df89ff05b2d430dc6ad605bf3a434fb77082cbb2"
+    },
+    "scripts/run-relativity-variational-stm-v12.py": {
+      "bytes": 30578,
+      "lines": 634,
+      "sha256": "73bd52d916b293b94cbb5de44a89881612ee9ee04dbb67bcc4aca03a5e8a1ac5"
+    },
+    "scripts/scan-release-secrets-v232.mjs": {
+      "bytes": 2818,
+      "lines": 80,
+      "sha256": "39ad18b3a5e851fd3f2f574d741575d8c3070b0527a255919691bb0d9e7f094a"
+    },
+    "scripts/split-atlas-legacy-evidence-v190.ts": {
+      "bytes": 2730,
+      "lines": 58,
+      "sha256": "772a066e979311679d0d315176621a782f52ec2f66d92127f56d6c09fbdae492"
+    },
+    "scripts/stage-desktop-runtime.mjs": {
+      "bytes": 5651,
+      "lines": 129,
+      "sha256": "1b9e7b7106da39a1ab40081cceeced8fe7923e7b7eb840e900645fec549e1867"
+    },
+    "scripts/stage-vercel-lite.mjs": {
+      "bytes": 4600,
+      "lines": 139,
+      "sha256": "5b48bffa5dd83ae58ae622fc1ef0273ddce961d219260a15c29c2fa89d4fa407"
+    },
+    "scripts/start-atlas-standalone.mjs": {
+      "bytes": 1527,
+      "lines": 39,
+      "sha256": "e45266b94a3aa735a212fcf6edec43afe14aac40a252ad81ae7acebe333fb05e"
+    },
+    "scripts/test-kerr-carter-mino-reference-v6.py": {
+      "bytes": 2567,
+      "lines": 70,
+      "sha256": "440c2be22fea34a7f5992f8d1d1f0cfa135577eaa8df2a03c241a89292e2f3de"
+    },
+    "scripts/test-kerr-dense-shards-v6.py": {
+      "bytes": 2118,
+      "lines": 68,
+      "sha256": "c979419db0c722cc89c65bc5a56b5fc8b134d2b90786f01d432bf643b841bacb"
+    },
+    "scripts/verify-asset-delivery-v3.mjs": {
+      "bytes": 1979,
+      "lines": 38,
+      "sha256": "431e55d721fbabaef0b4d102fa150955ab6c1ef7ebadc10ccbd05db4196fb371"
+    },
+    "scripts/verify-browser-network-preflight.mjs": {
+      "bytes": 847,
+      "lines": 18,
+      "sha256": "d1612bb3fe321df9058dfd10ed7a9f92dbb36978923cc61f86b1468c70c423ef"
+    },
+    "scripts/verify-content-pack-integrity-v192.mjs": {
+      "bytes": 3456,
+      "lines": 105,
+      "sha256": "1e2f5fa09a95a2c1d692b62062b411084d64800bd1959b09a6985d7f0aa5421a"
+    },
+    "scripts/verify-v232-production-security.mjs": {
+      "bytes": 3795,
+      "lines": 80,
+      "sha256": "851962aa1d0a969d6ab66fbd84f610d2a8c6736856e1bda9dce82d3224ba3fa5"
+    },
+    "scripts/verify-vercel-thin-preview.mjs": {
+      "bytes": 3429,
+      "lines": 62,
+      "sha256": "e53fad2f62c8af8b9e080d27807ae1011bf655f851d3bb215c7c256342040f84"
+    },
+    "src-tauri/Cargo.lock": {
+      "bytes": 131399,
+      "lines": null,
+      "sha256": "53674761691f435fd2b03e0fb8cd0f7ae8070388f2c8d1849e045300c1b28d71"
+    },
+    "src-tauri/Cargo.toml": {
+      "bytes": 774,
+      "lines": 29,
+      "sha256": "dbf9f84c0620a3c8541ada5918929183dccc154f734fde5614cdaf9b5358e1bf"
+    },
+    "src-tauri/src/catalog.rs": {
+      "bytes": 4343,
+      "lines": 117,
+      "sha256": "5891950a5f68f4f4662b1086c3061c1c809937ea0f1dff6d82b982a9c9c4f9ab"
+    },
+    "src-tauri/src/commands.rs": {
+      "bytes": 1989,
+      "lines": 52,
+      "sha256": "4da653a157d03ba3e145d9d93a8ae37a3794e02bda0f007de0614b9fa8364b7e"
+    },
+    "src-tauri/src/content_packs.rs": {
+      "bytes": 11136,
+      "lines": 334,
+      "sha256": "2cbc51fed348e06d44aac455e13cce8d8074fcfaae4690555fe7db25ca76767f"
+    },
+    "src-tauri/src/content_packs/installer.rs": {
+      "bytes": 10931,
+      "lines": 269,
+      "sha256": "1a9a15f077119e62f8d3da6b4f700c77118c0f71e9f77e3804f761992caf4749"
+    },
+    "src-tauri/src/lib.rs": {
+      "bytes": 153,
+      "lines": 13,
+      "sha256": "15e6b2b7f07b5d6cbab2f31c2323d11b9c3549927ca878d7ea6b41882ac0e3ff"
+    },
+    "src-tauri/src/lifecycle.rs": {
+      "bytes": 5797,
+      "lines": 166,
+      "sha256": "6d9467a1e083582bbda6049e5871898cdc3ad7c415ae51a5e596f454a377311f"
+    },
+    "src-tauri/src/main.rs": {
+      "bytes": 50,
+      "lines": 4,
+      "sha256": "dc16dcde89c9af95f0e3c212ea3c74663184575974752cd0428a9d0ca017e2a9"
+    },
+    "src-tauri/src/openrocket.rs": {
+      "bytes": 2260,
+      "lines": 57,
+      "sha256": "2d535ab9bc9ebf1a4e4a977b82a2aabe954406d5dbff70ae79d1d4c2dfc31b2c"
+    },
+    "src-tauri/src/resources.rs": {
+      "bytes": 1860,
+      "lines": 56,
+      "sha256": "25e0c4980245e489aa77f7a9a69ba893718f9f556d06fba5d28d93dd7fbe070b"
+    },
+    "src-tauri/src/shell.rs": {
+      "bytes": 1670,
+      "lines": 54,
+      "sha256": "a627a89f7a48442650809145e4d7383c6ffc702d550b9e4a144135d1b4dadffb"
+    },
+    "src-tauri/src/state.rs": {
+      "bytes": 366,
+      "lines": 15,
+      "sha256": "b27b5f8b0b0b273dd8344ca05d29d083da4285f9199f3b8e58f1791d8e50a26d"
+    },
+    "src-tauri/tauri.conf.json": {
+      "bytes": 1833,
+      "lines": 64,
+      "sha256": "4bdb01525a0c14454f2e38bfb9e241968775f246af0fdb09cee504175d06668c"
+    },
+    "tests/atlas-browser/atlas-browser-acceptance.spec.ts": {
+      "bytes": 192648,
+      "lines": 3866,
+      "sha256": "2b0e45b117342cc7fbef33755374b40276474f15b94fa30a35ff5affe1fe9a55"
+    },
+    "tests/atlas-browser/atlas-browser-fresh-teardown.ts": {
+      "bytes": 901,
+      "lines": 30,
+      "sha256": "bd4d7561fd18b490baeca11c2dd3d0a7676d4aa500ee73b6be133e01391a95ca"
+    },
+    "tests/atlas-browser/atlas-bundle-budget-v177.spec.ts": {
+      "bytes": 1986,
+      "lines": 43,
+      "sha256": "b84c30d7636d0e789dd667cc256ec2c3bcc6336d45c83abbac6399f3553cbde2"
+    },
+    "tests/atlas-browser/atlas-bundle-budget-v192.spec.ts": {
+      "bytes": 2204,
+      "lines": 46,
+      "sha256": "87dee8a454db14a71b1e6f41d1a38280333a2979d91ddfbce0d8176f4b522b8c"
+    },
+    "tests/atlas-browser/atlas-bundle-budget-v198.spec.ts": {
+      "bytes": 2296,
+      "lines": 47,
+      "sha256": "14e00d816e5351169730a5cabf4cf6bfc59e12aa69d3a39036cdd9db0d2db919"
+    },
+    "tests/atlas-browser/atlas-kerr-raytrace-v208.spec.ts": {
+      "bytes": 2396,
+      "lines": 52,
+      "sha256": "844c4f86e46091bceb89847aeb46314dd7d5a93403ed8dcbbff0e9d1a7b251d3"
+    },
+    "tests/atlas-browser/atlas-lifecycle-soak-v178.spec.ts": {
+      "bytes": 15301,
+      "lines": 353,
+      "sha256": "fea5d82e81224e7a731c2a7124df4433ad56e1c969c5a361f25d3ae96e888937"
+    },
+    "tests/atlas-browser/atlas-react19-r3f9-v174.spec.ts": {
+      "bytes": 830,
+      "lines": 18,
+      "sha256": "336aad99221ee0e69ad079df3d331cf87241d6a3741a5eb014c3054ca76b85e7"
+    },
+    "tests/atlas-browser/atlas-v180-reload-closeup.spec.ts": {
+      "bytes": 2386,
+      "lines": 50,
+      "sha256": "b031377fc0d238b6b0d642e486f37c4cdb4d7770d23c5d1a92ebbf047116557e"
+    },
+    "tests/atlas-browser/atlas-validation-readiness-v200.spec.ts": {
+      "bytes": 1297,
+      "lines": 26,
+      "sha256": "f2b4e83a865f1a7aaee55ce36c8f9a94bcc3a461fadb460cac5cbe2171a1de9c"
+    },
+    "tests/atlas-browser/atlas-vercel-lite-v174.spec.ts": {
+      "bytes": 2168,
+      "lines": 50,
+      "sha256": "807df24e21325dad67be193a4811d83ba326f03af245ff3ffc690fc5a97779e6"
+    },
+    "tests/atlas-browser/atlas-visual-journeys-v197.spec.ts": {
+      "bytes": 17045,
+      "lines": 342,
+      "sha256": "7dd188ee06f3d3065e3f4729edaaeaefd59954a0f64e5a1ac3c89d1967d521d9"
+    },
+    "tests/atlas-browser/atlas-visual-risks-v240.spec.ts": {
+      "bytes": 5795,
+      "lines": 139,
+      "sha256": "bea1e6635cef7cd62f35cec895afa3852728ec2f16b51471b0b96c23bd229741"
+    },
+    "tests/atlas-browser/mobile-gas-closeup-visual.spec.ts": {
+      "bytes": 2598,
+      "lines": 49,
+      "sha256": "6b04043637f7bcfb5a9166f8ffc91b7686950019a2bdf0583f9c20fd6b6bc053"
+    },
+    "tests/atlas-browser/run-fresh-review.mjs": {
+      "bytes": 473,
+      "lines": 27,
+      "sha256": "163139012ceb323b9f819d0b25175586588667e904580469d45a40b44db4ee85"
+    },
+    "tests/atlas-browser/scientific-performance-v5.spec.ts": {
+      "bytes": 8056,
+      "lines": 171,
+      "sha256": "37b3a15db034c800488eb82c84164233fe4eb80ae27e0cde232445d6d9bd5df6"
+    }
+  }
+}

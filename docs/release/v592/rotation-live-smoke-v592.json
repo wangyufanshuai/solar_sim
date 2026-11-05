@@ -1,0 +1,55 @@
+{
+  "version": "v592-rotation-live-smoke-v1",
+  "status": "passed-current-standalone-earth-stellar-major-moon-rotation-smoke",
+  "route": "/local-shadow-v592",
+  "browser": "Codex in-app browser",
+  "candidateManifestSha256": "caf46a519310f47cf6fb3280cd6d09ecc39896162a3427f3bd6969944b6bc766",
+  "sourceManifestSha256": "e73072d509828727633e7f354fe2558695ef275ce6928e8b00795d80ea8b865f",
+  "formalProductPointer": "v263",
+  "observations": {
+    "earth": {
+      "rotationTargets": "1",
+      "rotationApplied": "1",
+      "appliedBodies": "earth",
+      "primeMeridianStartDeg": 38.381497,
+      "primeMeridianEndDeg": 224.628194,
+      "motion": "advancing",
+      "authority": "rotation-admitted-iau-linear-reference",
+      "scientificPayloadWriteback": false
+    },
+    "siriusA": {
+      "id": "sirius-a",
+      "rotationPeriodDays": 5.5,
+      "phaseStartRad": 1.97420545,
+      "phaseEndRad": 2.03430221,
+      "shader": "hot-radiative-photosphere",
+      "scientificPayloadWriteback": false
+    },
+    "titan": {
+      "body": "titan",
+      "runtimeAdmission": "admitted",
+      "rotationApplied": true,
+      "primeMeridianStartDeg": 317.422803,
+      "primeMeridianEndDeg": 318.586721,
+      "scientificPayloadWriteback": false
+    }
+  },
+  "lifecycle": {
+    "releaseStatus": "released-zero",
+    "releasedCandidateResources": 0,
+    "releasedCandidateBytes": 0,
+    "releasedSceneNodes": 0,
+    "restoredCandidateResources": 6,
+    "restoredCandidateBytes": 109051942,
+    "restoredSceneNodes": 40
+  },
+  "policy": {
+    "singleCanvas": true,
+    "scientificPayloadMutation": false,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "noScientificPayloadDownload": true,
+    "productionDeployment": false,
+    "historicalReceiptRewritten": false
+  },
+  "receiptSha256": "74fdfed4105750eca030867914cf68f2b016d4b0d2b853f13f30734ba7f8a43b"
+}

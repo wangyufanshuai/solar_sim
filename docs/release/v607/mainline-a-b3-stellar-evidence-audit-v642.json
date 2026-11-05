@@ -1,0 +1,149 @@
+{
+  "schema": "mainline-a-b3-stellar-evidence-audit-v642",
+  "generatedAt": "2026-09-29T00:00:00.000Z",
+  "status": "verified-plan-only",
+  "input": {
+    "path": "app/data/mainlineABetaStellarRosterEvidenceV642.generated.json",
+    "sha256": "112214fd3057e2d06a2809e1bd6325fc7c17f2c6bf991ff68b5c656832b6b872",
+    "fingerprint": "b5abe73f1b1f9744e9b0de090df606aa65b45049c00e27b542caa34842b48ab3",
+    "recomputedFingerprint": "b5abe73f1b1f9744e9b0de090df606aa65b45049c00e27b542caa34842b48ab3",
+    "rosterSha256": "b2ee2bcb455177c4f50e354d726500b3d9dc8b7dc806329452cd07d0314eb7ee"
+  },
+  "counts": {
+    "records": 11,
+    "required": 10,
+    "observed": 0,
+    "blocked": 2,
+    "pending": 9,
+    "openGates": 6
+  },
+  "validation": {
+    "issueCount": 0,
+    "negativeCases": [
+      {
+        "name": "wrong-build",
+        "rejected": true,
+        "firstError": "static-v641-roster:buildId"
+      },
+      {
+        "name": "visual-claim",
+        "rejected": true,
+        "firstError": "visual-desktop:unverified-claim"
+      },
+      {
+        "name": "external-pass",
+        "rejected": true,
+        "firstError": "external-stellar-identity:external-pass-forbidden"
+      },
+      {
+        "name": "missing-record",
+        "rejected": true,
+        "firstError": "record-count-invalid"
+      }
+    ],
+    "negativePassed": 4
+  },
+  "gates": [
+    {
+      "evidenceClass": "static",
+      "label": "静态",
+      "required": 2,
+      "observed": 0,
+      "blocked": 0,
+      "notRun": 0,
+      "status": "open",
+      "blockers": [
+        "planned-observation-present",
+        "build-binding-missing"
+      ]
+    },
+    {
+      "evidenceClass": "http",
+      "label": "HTTP",
+      "required": 3,
+      "observed": 0,
+      "blocked": 0,
+      "notRun": 0,
+      "status": "open",
+      "blockers": [
+        "planned-observation-present",
+        "build-binding-missing"
+      ]
+    },
+    {
+      "evidenceClass": "visual",
+      "label": "视觉",
+      "required": 1,
+      "observed": 0,
+      "blocked": 0,
+      "notRun": 0,
+      "status": "open",
+      "blockers": [
+        "planned-observation-present",
+        "build-binding-missing"
+      ]
+    },
+    {
+      "evidenceClass": "browser",
+      "label": "浏览器",
+      "required": 1,
+      "observed": 0,
+      "blocked": 0,
+      "notRun": 0,
+      "status": "open",
+      "blockers": [
+        "planned-observation-present",
+        "build-binding-missing"
+      ]
+    },
+    {
+      "evidenceClass": "performance",
+      "label": "性能",
+      "required": 1,
+      "observed": 0,
+      "blocked": 0,
+      "notRun": 0,
+      "status": "open",
+      "blockers": [
+        "planned-observation-present",
+        "build-binding-missing"
+      ]
+    },
+    {
+      "evidenceClass": "external-source",
+      "label": "外部来源",
+      "required": 2,
+      "observed": 0,
+      "blocked": 2,
+      "notRun": 0,
+      "status": "held",
+      "blockers": [
+        "external-source-review-required",
+        "blocked-observation-present"
+      ]
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "snapshotMutation": false
+  },
+  "claims": {
+    "browserAcceptance": false,
+    "visualAcceptance": false,
+    "rendererDrawObserved": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "realUserValidation": false
+  },
+  "limits": [
+    "The audit verifies schema, binding rules and fail-closed negatives only.",
+    "No static plan row is treated as a browser, visual, performance, scientific or rights result.",
+    "The four candidate component identities remain unresolved and the evidence pack remains non-reportable."
+  ]
+}

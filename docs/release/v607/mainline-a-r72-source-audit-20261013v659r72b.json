@@ -1,0 +1,679 @@
+{
+  "schema": "mainline-a-r72-source-audit-v659",
+  "status": "verified-six-structured-one-image-five-policy-holds-candidate",
+  "issues": [],
+  "inputPins": {
+    "ledger": {
+      "path": "docs/release/v607/mainline-a-r72-source-ledger-20261013v659r72b.json",
+      "bytes": 63179,
+      "sha256": "df87a57d56d5d94c0361db7dd129fbfde2c0c387646a0890ee4e221b20137cd2"
+    },
+    "expansion": {
+      "path": "app/data/mainlineABetaNebulaExpansionV617.generated.json",
+      "bytes": 17184,
+      "sha256": "3806141883c14d43ad46fb4959945ffcac8f88b5d5cbd0a76d251a8ec4a78859"
+    },
+    "license": {
+      "path": "docs/release/v592/nebula-item-license-review-v592.json",
+      "bytes": 20468,
+      "sha256": "b5b36b3a6d20ed167112041f1efc067fb73a664b78fc8f25a7f906c93386a2e5"
+    },
+    "sourceMetadata": [
+      {
+        "path": "source-cache/v592/nebulae/metadata/ring-nebula-GSFC_20171208_Archive_e001464.json",
+        "bytes": 3647,
+        "sha256": "a891d8b6e3fa81970dd24c2668b5dc3702a0af393184a0953ee2e13fbc69c2e8"
+      },
+      {
+        "path": "source-cache/v592/nebulae/metadata/dumbbell-nebula-PIA04249.json",
+        "bytes": 3429,
+        "sha256": "e6844bf79c770149e389dc10c1608dc385d2e11d2abf9e4a1d290197e106f3bc"
+      },
+      {
+        "path": "source-cache/v592/nebulae/metadata/california-nebula-PIA23650.json",
+        "bytes": 2753,
+        "sha256": "558e9f7b16403e2f4aed536b3491916efe6de721a18b674acf48f2430dbf2200"
+      },
+      {
+        "path": "source-cache/v592/nebulae/metadata/bubble-nebula-GSFC_20171208_Archive_e000382.json",
+        "bytes": 4871,
+        "sha256": "163af0c466af9507ac98d62fe1a9f6a7ea2e7eb2c7074404be7a9854572d6629"
+      },
+      {
+        "path": "source-cache/v592/nebulae/metadata/cats-eye-nebula-GSFC_20171208_Archive_e002155.json",
+        "bytes": 4315,
+        "sha256": "8f56ed6017c92a0427b2136c77c58e60940c725b810655229414528a23a999fd"
+      },
+      {
+        "path": "source-cache/v592/nebulae/metadata/omega-nebula-PIA23409.json",
+        "bytes": 2411,
+        "sha256": "3ad170042d3a99d166c46cef6b3c897ad2c57b1858e1c6124207c5e916c234ca"
+      }
+    ]
+  },
+  "decoder": {
+    "library": "sharp",
+    "sharpVersion": "0.35.3",
+    "vipsVersion": "8.18.3",
+    "nodeVersion": "v24.14.0",
+    "platform": "win32",
+    "architecture": "x64"
+  },
+  "counts": {
+    "targets": 6,
+    "structuredSearchVerified": 6,
+    "assetManifestsVerified": 6,
+    "photojournalPageIdentities": 3,
+    "genericLibraryPageShells": 3,
+    "imagesCaptured": 1,
+    "blockedImageRequestsUnexecuted": 5,
+    "decodedPixelMatches": 1,
+    "rawByteMatches": 1,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "rows": [
+    {
+      "id": "ring-nebula",
+      "nasaId": "GSFC_20171208_Archive_e001464",
+      "title": "Hubble reveals the Ring Nebula’s true shape",
+      "rank": 1,
+      "expectedCredit": "NASA Goddard",
+      "pageKind": "library-shell",
+      "pageUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
+      "imageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+      "imageAcquisitionAllowed": false,
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "structured-source-captured-image-hold",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+          "bytes": 178991,
+          "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "",
+          "identityVerified": false,
+          "sourcePageKind": "library-shell",
+          "limitation": "generic-library-shell-not-item-identity-evidence",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-search-b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9.json",
+          "bytes": 3799,
+          "sha256": "b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "GSFC_20171208_Archive_e001464",
+          "title": "Hubble reveals the Ring Nebula’s true shape",
+          "credit": null,
+          "creditVerified": false,
+          "creditLimitation": "current-structured-record-omits-item-credit",
+          "center": "GSFC",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-asset-cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037.json",
+          "bytes": 555,
+          "sha256": "cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": null,
+        "inspection": null,
+        "requestExecuted": false,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "attemptCount": 0,
+        "comparison": null
+      },
+      "historicalLocal": null,
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    },
+    {
+      "id": "dumbbell-nebula",
+      "nasaId": "PIA04249",
+      "title": "Close-up of M27, the Dumbbell Nebula",
+      "rank": 2,
+      "expectedCredit": "NASA/JPL/STScI",
+      "pageKind": "photojournal",
+      "pageUrl": "https://science.nasa.gov/photojournal/pj-close-up-of-m27-the-dumbbell-nebula/",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+      "imageAcquisitionAllowed": false,
+      "blockers": [
+        "license-review-blocked",
+        "license:source-resolution",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "structured-source-captured-image-hold",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-page-3444f17ad465fbb8227e69708adeb679da57ba3b165c11739a6946d92f602780.html",
+          "bytes": 266685,
+          "sha256": "3444f17ad465fbb8227e69708adeb679da57ba3b165c11739a6946d92f602780"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "Close-up of M27, the Dumbbell Nebula - NASA Science",
+          "identityVerified": true,
+          "sourcePageKind": "photojournal",
+          "limitation": null,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-search-307b1cbd5320f08c32ae6076dfd0cd624be5e8cea2876b3a62dbd2aea2195183.json",
+          "bytes": 1485,
+          "sha256": "307b1cbd5320f08c32ae6076dfd0cd624be5e8cea2876b3a62dbd2aea2195183"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "PIA04249",
+          "title": "Close-up of M27, the Dumbbell Nebula",
+          "credit": "NASA/JPL/STScI",
+          "creditVerified": true,
+          "creditLimitation": null,
+          "center": "JPL",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/dumbbell-nebula-asset-3c2a270065a52cee7f92343754a258652c5310e25585765f09e6c834a0de015c.json",
+          "bytes": 387,
+          "sha256": "3c2a270065a52cee7f92343754a258652c5310e25585765f09e6c834a0de015c"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": null,
+        "inspection": null,
+        "requestExecuted": false,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "attemptCount": 0,
+        "comparison": null
+      },
+      "historicalLocal": null,
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    },
+    {
+      "id": "california-nebula",
+      "nasaId": "PIA23650",
+      "title": "Spitzer California Nebula Mosaic",
+      "rank": 3,
+      "expectedCredit": "NASA/JPL-Caltech/Palomar Digitized Sky Survey",
+      "pageKind": "photojournal",
+      "pageUrl": "https://science.nasa.gov/photojournal/spitzer-california-nebula-mosaic/",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+      "imageAcquisitionAllowed": true,
+      "blockers": [
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "source-and-image-captured-candidate",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-page-a12071bfde460375417e61cb6861dff364d69fe44fed9185789c5e0df51dc1c2.html",
+          "bytes": 268337,
+          "sha256": "a12071bfde460375417e61cb6861dff364d69fe44fed9185789c5e0df51dc1c2"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "Spitzer California Nebula Mosaic - NASA Science",
+          "identityVerified": true,
+          "sourcePageKind": "photojournal",
+          "limitation": null,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-search-3b042cc111c95a4bca47bfda58c76d026d43ddf243f7f6b60844c9bee2688b89.json",
+          "bytes": 2554,
+          "sha256": "3b042cc111c95a4bca47bfda58c76d026d43ddf243f7f6b60844c9bee2688b89"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "PIA23650",
+          "title": "Spitzer California Nebula Mosaic",
+          "credit": "NASA/JPL-Caltech/Palomar Digitized Sky Survey",
+          "creditVerified": true,
+          "creditLimitation": null,
+          "center": "JPL",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-asset-13d0d811b887285e738388eca150c9daf4f5404f01fb71909e052cd49994ef86.json",
+          "bytes": 463,
+          "sha256": "13d0d811b887285e738388eca150c9daf4f5404f01fb71909e052cd49994ef86"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/PIA23650/PIA23650~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-image-b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396.jpg",
+          "bytes": 758960,
+          "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "bytes": 758960,
+          "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396"
+        },
+        "requestExecuted": true,
+        "skipReason": null,
+        "attemptCount": 1,
+        "comparison": {
+          "ok": true,
+          "issues": [],
+          "officialPixels": {
+            "width": 3317,
+            "height": 1902,
+            "channels": 3,
+            "decodedBytes": 18926802,
+            "pixelSha256": "c5e934a6f80f32b4e60ef614bab039f3113c718eac7b93beabd49ce296cbcae7",
+            "format": "jpeg"
+          },
+          "historicalPixels": {
+            "width": 3317,
+            "height": 1902,
+            "channels": 3,
+            "decodedBytes": 18926802,
+            "pixelSha256": "c5e934a6f80f32b4e60ef614bab039f3113c718eac7b93beabd49ce296cbcae7",
+            "format": "jpeg"
+          },
+          "rawByteIdentical": true,
+          "decodedPixelIdentical": true
+        }
+      },
+      "historicalLocal": {
+        "path": "source-cache/v592/nebulae/visual/california-nebula-PIA23650-orig.jpg",
+        "bytes": 758960,
+        "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396",
+        "width": 3317,
+        "height": 1902
+      },
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    },
+    {
+      "id": "bubble-nebula",
+      "nasaId": "GSFC_20171208_Archive_e000382",
+      "title": "Hubble Sees a Star ‘Inflating’ a Giant Bubble",
+      "rank": 4,
+      "expectedCredit": "NASA Goddard",
+      "pageKind": "library-shell",
+      "pageUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e000382",
+      "imageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+      "imageAcquisitionAllowed": false,
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "structured-source-captured-image-hold",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+          "bytes": 178991,
+          "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "",
+          "identityVerified": false,
+          "sourcePageKind": "library-shell",
+          "limitation": "generic-library-shell-not-item-identity-evidence",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-search-908519fea60c7fdb96cac206f8497f3cf751e95294334db18b840eb6cc7f01d1.json",
+          "bytes": 5022,
+          "sha256": "908519fea60c7fdb96cac206f8497f3cf751e95294334db18b840eb6cc7f01d1"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "GSFC_20171208_Archive_e000382",
+          "title": "Hubble Sees a Star ‘Inflating’ a Giant Bubble",
+          "credit": null,
+          "creditVerified": false,
+          "creditLimitation": "current-structured-record-omits-item-credit",
+          "center": "GSFC",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/bubble-nebula-asset-811748b86c1cd89e9446ef5ec148047d1bbd351555497529de7f283df7cb0743.json",
+          "bytes": 555,
+          "sha256": "811748b86c1cd89e9446ef5ec148047d1bbd351555497529de7f283df7cb0743"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000382/GSFC_20171208_Archive_e000382~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": null,
+        "inspection": null,
+        "requestExecuted": false,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "attemptCount": 0,
+        "comparison": null
+      },
+      "historicalLocal": null,
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    },
+    {
+      "id": "cats-eye-nebula",
+      "nasaId": "GSFC_20171208_Archive_e002155",
+      "title": "Cat's Eye Nebula",
+      "rank": 5,
+      "expectedCredit": "NASA Goddard",
+      "pageKind": "library-shell",
+      "pageUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e002155",
+      "imageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+      "imageAcquisitionAllowed": false,
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "license:target-identity",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "structured-source-captured-image-hold",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+          "bytes": 178991,
+          "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "",
+          "identityVerified": false,
+          "sourcePageKind": "library-shell",
+          "limitation": "generic-library-shell-not-item-identity-evidence",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-search-0dc9478e23b2018ce25cfb60c86f88c1d0ac09eb6a2eee48009643be394c445c.json",
+          "bytes": 4649,
+          "sha256": "0dc9478e23b2018ce25cfb60c86f88c1d0ac09eb6a2eee48009643be394c445c"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "GSFC_20171208_Archive_e002155",
+          "title": "Cat's Eye Nebula",
+          "credit": null,
+          "creditVerified": false,
+          "creditLimitation": "current-structured-record-omits-item-credit",
+          "center": "GSFC",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/cats-eye-nebula-asset-332b3edaa55d3880c17cbc2f4f9faf448096578066cbe6f434d5c88b173a8c7d.json",
+          "bytes": 673,
+          "sha256": "332b3edaa55d3880c17cbc2f4f9faf448096578066cbe6f434d5c88b173a8c7d"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": null,
+        "inspection": null,
+        "requestExecuted": false,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "attemptCount": 0,
+        "comparison": null
+      },
+      "historicalLocal": null,
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    },
+    {
+      "id": "omega-nebula",
+      "nasaId": "PIA23409",
+      "title": "SOFIA Reveals How the Swan Nebula Hatched",
+      "rank": 6,
+      "expectedCredit": "NASA/SOFIA/Lim, De Buizer, & Radomski et al.; ESA/Herschel; NASA/JPL-Caltech",
+      "pageKind": "photojournal",
+      "pageUrl": "https://science.nasa.gov/photojournal/sofia-reveals-how-the-swan-nebula-hatched/",
+      "imageUrl": "https://images-assets.nasa.gov/image/PIA23409/PIA23409~orig.jpg",
+      "imageAcquisitionAllowed": false,
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "status": "structured-source-captured-image-hold",
+      "page": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-page-9e5507d57b80e78c2a30097cd99da3609e4095a556b2380a49bd6220f024f8f5.html",
+          "bytes": 265992,
+          "sha256": "9e5507d57b80e78c2a30097cd99da3609e4095a556b2380a49bd6220f024f8f5"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "title": "SOFIA Reveals How the Swan Nebula Hatched - NASA Science",
+          "identityVerified": true,
+          "sourcePageKind": "photojournal",
+          "limitation": null,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "search": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-search-0f80e726ec7a126ab8525ab5dca3d2a6651b4143fd4f6be4efd14a9367526223.json",
+          "bytes": 2367,
+          "sha256": "0f80e726ec7a126ab8525ab5dca3d2a6651b4143fd4f6be4efd14a9367526223"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "nasaId": "PIA23409",
+          "title": "SOFIA Reveals How the Swan Nebula Hatched",
+          "credit": "NASA/SOFIA/Lim, De Buizer, & Radomski et al.; ESA/Herschel; NASA/JPL-Caltech",
+          "creditVerified": true,
+          "creditLimitation": null,
+          "center": "JPL",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "asset": {
+        "pin": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/omega-nebula-asset-e6bb475367ef8e48e786985ede7a4e9195f6866111802663d6130fcb21c98ab1.json",
+          "bytes": 538,
+          "sha256": "e6bb475367ef8e48e786985ede7a4e9195f6866111802663d6130fcb21c98ab1"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/PIA23409/PIA23409~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "attemptCount": 1
+      },
+      "image": {
+        "pin": null,
+        "inspection": null,
+        "requestExecuted": false,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "attemptCount": 0,
+        "comparison": null
+      },
+      "historicalLocal": null,
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "issues": []
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsSignoff": "pending",
+    "publicWebRelease": "blocked"
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

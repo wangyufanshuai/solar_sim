@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:44:48.651Z",
+  "endedAt": "2026-09-27T02:44:50.738Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "b27b6f57a0d510e7710467a724a0d5c347961e3aa66367d17a288d1c2882195c",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 271508,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/running-chicken-nebula-attempt-1.html",
+  "sha256": "daa7212afa9076300b40c188dec67ab1f586856d97b45142aeb2fd5893cc933f",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Chasing Chickens in the Lambda Centauri Nebula",
+    "expectedPia": "PIA13451",
+    "observedPiaIds": [
+      "PIA13451"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/UCLA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13451/PIA13451.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

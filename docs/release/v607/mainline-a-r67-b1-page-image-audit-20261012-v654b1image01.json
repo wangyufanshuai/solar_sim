@@ -1,0 +1,269 @@
+{
+  "schema": "mainline-a-r67-b1-page-image-audit-v654",
+  "status": "verified-six-b1-official-jpegs-pixel-equivalent-candidate",
+  "issues": [],
+  "decoder": {
+    "library": "sharp",
+    "sharpVersion": "0.35.3",
+    "vipsVersion": "8.18.3",
+    "nodeVersion": "v24.14.0",
+    "platform": "win32",
+    "architecture": "x64",
+    "colorTransform": "default-sharp-raw"
+  },
+  "inputs": {
+    "ledger": {
+      "path": "docs/release/v607/mainline-a-r67-b1-page-image-ledger-20261012-v654b1image01.json",
+      "bytes": 18834,
+      "sha256": "1fb78aeea4d7d0a7e9baed7ff6da2f299ac97311f982f5fd84787fb20ed507ba"
+    },
+    "pageLedger": {
+      "path": "docs/release/v607/mainline-a-r67-b1-source-page-ledger-20261012-v654b1page01.json",
+      "bytes": 20010,
+      "sha256": "dbbc243e6fe5e5e0f442b46f6f8140a5a2103c25e53798336289409bd14e9b0b"
+    },
+    "pageAudit": {
+      "path": "docs/release/v607/mainline-a-r67-b1-source-page-audit-20261012-v654b1page01.json",
+      "bytes": 4530,
+      "sha256": "9a08dbeb605a4b65ec70b555bcf425a1458ceb32b526b81610d058f4374a4676"
+    },
+    "imageBatch": {
+      "path": "app/data/mainlineANebulaBatchV624.generated.json",
+      "bytes": 27597,
+      "sha256": "0c4993a191e2dbbc535bc34fe73fd829f92ddad853dd94bc2d03551117846a64"
+    }
+  },
+  "rows": [
+    {
+      "id": "heart-nebula",
+      "nasaId": "PIA13112",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13112/PIA13112.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/heart-nebula-pia13112-68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6.jpg",
+        "bytes": 5112886,
+        "sha256": "68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112-d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d.jpg",
+        "bytes": 5117802,
+        "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d"
+      },
+      "officialPixels": {
+        "width": 7252,
+        "height": 5142,
+        "channels": 3,
+        "decodedBytes": 111869352,
+        "pixelSha256": "76d36327d12827107e54367b24a5b313293820c237b446e9bfa6a083379c0086"
+      },
+      "candidatePixels": {
+        "width": 7252,
+        "height": 5142,
+        "channels": 3,
+        "decodedBytes": 111869352,
+        "pixelSha256": "76d36327d12827107e54367b24a5b313293820c237b446e9bfa6a083379c0086"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "soul-nebula",
+      "nasaId": "PIA13014",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/soul-nebula/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13014/PIA13014.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/soul-nebula-pia13014-007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904.jpg",
+        "bytes": 2073793,
+        "sha256": "007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014-161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f.jpg",
+        "bytes": 2079063,
+        "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f"
+      },
+      "officialPixels": {
+        "width": 6660,
+        "height": 3482,
+        "channels": 3,
+        "decodedBytes": 69570360,
+        "pixelSha256": "42841fb91b53a4c2d1d364c3e46924321e78e07b749523a6b325662fa51eeacc"
+      },
+      "candidatePixels": {
+        "width": 6660,
+        "height": 3482,
+        "channels": 3,
+        "decodedBytes": 69570360,
+        "pixelSha256": "42841fb91b53a4c2d1d364c3e46924321e78e07b749523a6b325662fa51eeacc"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "witch-head-nebula",
+      "nasaId": "PIA17553",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia17/pia17553/PIA17553.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/witch-head-nebula-pia17553-c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8.jpg",
+        "bytes": 7886121,
+        "sha256": "c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553-6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3.jpg",
+        "bytes": 7891119,
+        "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3"
+      },
+      "officialPixels": {
+        "width": 9163,
+        "height": 9163,
+        "channels": 3,
+        "decodedBytes": 251881707,
+        "pixelSha256": "0ba85145cfc578058ac045276e07ba330068acb3fdc849817bfdd18d71ba89aa"
+      },
+      "candidatePixels": {
+        "width": 9163,
+        "height": 9163,
+        "channels": 3,
+        "decodedBytes": 251881707,
+        "pixelSha256": "0ba85145cfc578058ac045276e07ba330068acb3fdc849817bfdd18d71ba89aa"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "flame-nebula",
+      "nasaId": "PIA15635",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15635/PIA15635.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/flame-nebula-pia15635-5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40.jpg",
+        "bytes": 1766924,
+        "sha256": "5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635-194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212.jpg",
+        "bytes": 1772081,
+        "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212"
+      },
+      "officialPixels": {
+        "width": 5525,
+        "height": 5535,
+        "channels": 3,
+        "decodedBytes": 91742625,
+        "pixelSha256": "ddf7633fca208a46d8bb7588369b77e8055684857265f3b794afe9f2c90fcd82"
+      },
+      "candidatePixels": {
+        "width": 5525,
+        "height": 5535,
+        "channels": 3,
+        "decodedBytes": 91742625,
+        "pixelSha256": "ddf7633fca208a46d8bb7588369b77e8055684857265f3b794afe9f2c90fcd82"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "pacman-nebula",
+      "nasaId": "PIA14731",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14731/PIA14731.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/pacman-nebula-pia14731-32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a.jpg",
+        "bytes": 797633,
+        "sha256": "32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731-92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce.jpg",
+        "bytes": 803172,
+        "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce"
+      },
+      "officialPixels": {
+        "width": 3600,
+        "height": 2719,
+        "channels": 3,
+        "decodedBytes": 29365200,
+        "pixelSha256": "0bb89a05a07263225c4b966143b9474df90544cce35af6a07259431d4f61ed6e"
+      },
+      "candidatePixels": {
+        "width": 3600,
+        "height": 2719,
+        "channels": 3,
+        "decodedBytes": 29365200,
+        "pixelSha256": "0bb89a05a07263225c4b966143b9474df90544cce35af6a07259431d4f61ed6e"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "running-chicken-nebula",
+      "nasaId": "PIA13451",
+      "sourcePageUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+      "officialDownloadUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13451/PIA13451.jpg",
+      "officialRaw": {
+        "path": "docs/release/v607/nebula-page-image-artifacts/v654/running-chicken-nebula-pia13451-f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285.jpg",
+        "bytes": 1406005,
+        "sha256": "f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285"
+      },
+      "candidateRaw": {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451-2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b.jpg",
+        "bytes": 1411185,
+        "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b"
+      },
+      "officialPixels": {
+        "width": 3700,
+        "height": 3700,
+        "channels": 3,
+        "decodedBytes": 41070000,
+        "pixelSha256": "acfb8ff0e95ec90635d24068217961e5e922cf8224c7e634a3a5c2ab724992c3"
+      },
+      "candidatePixels": {
+        "width": 3700,
+        "height": 3700,
+        "channels": 3,
+        "decodedBytes": 41070000,
+        "pixelSha256": "acfb8ff0e95ec90635d24068217961e5e922cf8224c7e634a3a5c2ab724992c3"
+      },
+      "rawByteIdentical": false,
+      "decodedPixelIdentical": true,
+      "sourceLinkStatus": "decoded-pixel-equivalent-candidate",
+      "rightsSignoff": "pending",
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "counts": {
+    "total": 6,
+    "responseCaptured": 6,
+    "rawByteIdentical": 0,
+    "decodedPixelIdentical": 6,
+    "rawVariantsWithIdenticalPixels": 6,
+    "rightsSigned": 0
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed"
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "publicWebReleaseApproved": false,
+    "realUserValidation": false
+  }
+}

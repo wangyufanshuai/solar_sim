@@ -1,0 +1,54 @@
+{
+  "schema": "mainline-a-r66-web-v648-final-tooling-code-change",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T14:37:00.000Z",
+  "comparisonBaseline": "docs/release/v607/mainline-a-r66-web-v648-longrun-tooling-code-change-20261007.json",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "countMethod": "Conservative lower bound: nonempty, noncomment lines in the new production verifier plus one changed capture-tool line. The capture-tool additions, tests, screenshots and receipts are excluded from the count.",
+  "effectiveCode": {
+    "newProductionToolLinesAtLeast": 175,
+    "modifiedProductionToolLinesAtLeast": 1,
+    "totalThisSupplementLowerBound": 176,
+    "newTestLinesExcluded": 116,
+    "cumulativeV648LowerBound": 2086,
+    "cumulativeR66LowerBound": 5171,
+    "minimumRequiredPerDevelopmentRound": 500,
+    "v648MinimumMet": true,
+    "independentDevelopmentRound": false
+  },
+  "newToolFiles": [
+    {
+      "path": "scripts/verify-mainline-a-web-nebula-paint-v648.mjs",
+      "effectiveLines": 175,
+      "purpose": "Recompute current-build visual capture state, screenshot hashes, pixel-region comparison and saved receipt replay."
+    }
+  ],
+  "modifiedToolFiles": [
+    {
+      "path": "scripts/capture-mainline-a-web-nebula-browser-v648.mjs",
+      "countedModifiedLinesLowerBound": 1,
+      "purpose": "Wait for decoded image, loaded state and full opacity before saving a separately named browser screenshot."
+    }
+  ],
+  "substantiveTestFiles": [
+    "scripts/verify-mainline-a-web-nebula-paint-v648.test.mjs"
+  ],
+  "validation": {
+    "node": "6/6 current paint replay and forged-opacity/rights/source/build/metric negative tests passed; invalid run ID rejected",
+    "targetedEslint": "passed for capture, verifier and tests",
+    "vitest": "14/14 focused V648 application tests passed before this tool-only supplement",
+    "productionBuild": "preserved V648 build passed; no application, package or config source changed after build",
+    "http": "page and health returned 200 after long-run completion",
+    "browser": "desktop and mobile viewport 30-minute runs completed with offline replay and current-build binding",
+    "visual": "M42 mobile detail recaptured at loaded state and opacity 1; old-to-new screenshot region mean ratio 4.0619"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

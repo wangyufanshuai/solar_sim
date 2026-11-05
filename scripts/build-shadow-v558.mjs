@@ -1,0 +1,6 @@
+import { existsSync } from "node:fs";
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+const root = process.cwd(), sciencePython = resolve(root, ".venv-science/Scripts/python.exe"), python = existsSync(sciencePython) ? sciencePython : "python"; const tests = ["app/lib/kerrResponseProvenancePackV558.test.ts", "app/lib/kerrResponseProvenancePackServerV558.test.ts", "app/lib/kerrPhotonMetrologyObservatoryIntentV558.test.ts", "app/components/kerrPhotonMetrologyDetailCatalogV558.test.ts", "app/components/KerrResponseProvenancePackV558.test.tsx", "app/api/atlas/relativity-evidence/v558/response-provenance-pack/route.test.ts"];
+for (const [command, args, label] of [[python, ["scripts/build-kerr-response-provenance-pack-v558.py"], "pack"], [process.execPath, [resolve(root, "node_modules/vitest/vitest.mjs"), "run", ...tests], "tests"], [process.execPath, [resolve(root, "node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-response-provenance-runtime-v558.ts"], "runtime"]]) { const result = spawnSync(command, args, { cwd: root, stdio: "inherit" }); if (result.status !== 0) throw new Error(`v558-${label}-exit-${result.status}`); }
+await import("./build-shadow-candidate-v558.mjs");

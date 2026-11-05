@@ -1,0 +1,22 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 12,
+  "title": "nebula-12-to-18-rights-intake",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 12:40:00 UTC",
+  "status": "round-12-beta-candidate-rights-preflight-passed",
+  "scope": "Beta nebula art intake; no un-cleared asset admitted to runtime",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged", "candidate imagery remains presentation-only"],
+  "currentRuntime": {"licensedNebulae": 12, "targetAfterRightsClosure": 18},
+  "candidateQueue": [
+    {"objectId": "ic1805", "catalogName": "IC 1805", "sourceManifest": "nebulaVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"},
+    {"objectId": "ic1848", "catalogName": "IC 1848", "sourceManifest": "nebulaVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"},
+    {"objectId": "ngc2024", "catalogName": "NGC 2024", "sourceManifest": "nebulaVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"},
+    {"objectId": "ngc281", "catalogName": "NGC 281", "sourceManifest": "nebulaVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag"},
+    {"objectId": "ic443", "catalogName": "IC 443", "sourceManifest": "nebulaExtendedVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-item-credit"},
+    {"objectId": "ngc2070", "catalogName": "NGC 2070", "sourceManifest": "nebulaClosureVisualAssetsV592", "rightsStatus": "NASA-media-guidelines-public-use-candidate-item-credit"}
+  ],
+  "admissionRule": "Do not add candidate-only rows to MAINLINE_A3_NEBULA_VISUAL_ASSETS_ALL until per-image license, credit, local bytes, dimensions and sha256 are verified.",
+  "tests": {"staticInventory": {"passed": true, "note": "all six candidate rows and rights labels located in generated manifests"}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "runtime remains at 12 cleared nebulae; rights closure is required before 18 target"}
+}

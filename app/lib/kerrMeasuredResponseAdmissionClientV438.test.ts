@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createKerrMeasuredResponseAdmissionSummaryV438 } from "./kerrMeasuredResponseAdmissionV438";
+import { getKerrMeasuredResponseAdmissionSnapshotV438, loadKerrMeasuredResponseAdmissionSummaryV438, resetKerrMeasuredResponseAdmissionClientForTestsV438 } from "./kerrMeasuredResponseAdmissionClientV438";
+afterEach(() => { vi.unstubAllGlobals(); resetKerrMeasuredResponseAdmissionClientForTestsV438(); });
+describe("v438 admission client", () => { it("single-flights a bounded blocked summary", async () => { const summary = createKerrMeasuredResponseAdmissionSummaryV438(JSON.parse(readFileSync("dist/science/kerr-measured-response-admission-v438/measured-response-admission-oracle.json", "utf8"))), fetchMock = vi.fn(async () => new Response(JSON.stringify({ version: "v438-kerr-measured-response-admission-api-v1", available: true, reason: "ready", summary }))); vi.stubGlobal("fetch", fetchMock); const first = loadKerrMeasuredResponseAdmissionSummaryV438(); expect(loadKerrMeasuredResponseAdmissionSummaryV438()).toBe(first); await first; expect(fetchMock).toHaveBeenCalledTimes(1); expect(getKerrMeasuredResponseAdmissionSnapshotV438()).toMatchObject({ status: "ready", requestCount: 1, summary: { boundary: { scienceAdmissionGranted: false } } }); }); });

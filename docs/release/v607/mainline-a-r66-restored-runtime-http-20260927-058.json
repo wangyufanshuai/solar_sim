@@ -1,0 +1,341 @@
+{
+  "schema": "mainline-a-restored-runtime-http-smoke-v636",
+  "status": "blocked",
+  "evidenceClass": "http",
+  "startedAt": "2026-09-27T05:52:36.318Z",
+  "endedAt": "2026-09-27T05:52:58.802Z",
+  "origin": "http://127.0.0.1:7363",
+  "executionContext": "restored-candidate-runtime",
+  "usableAsRealRuntimeEvidence": true,
+  "restoredDirectory": ".mainline-a-restored-r66-20260927-058",
+  "payloadManifest": {
+    "path": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime/runtime-payload-manifest.json",
+    "sha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221"
+  },
+  "buildReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+    "sha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+  },
+  "build": {
+    "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+    "runtimeBuildId": "mainline-a-607a1a089e56459a",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "profile": "vercel-lite",
+    "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+    "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+    "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+  },
+  "page": {
+    "requestedUrl": "http://127.0.0.1:7363/",
+    "startedAt": "2026-09-27T05:52:49.495Z",
+    "endedAt": "2026-09-27T05:52:49.517Z",
+    "timeoutMs": 10000,
+    "timeout": false,
+    "elapsedMs": 22.113,
+    "httpStatus": 200,
+    "contentType": "text/html; charset=utf-8",
+    "finalUrl": "http://127.0.0.1:7363/",
+    "redirected": false,
+    "location": null,
+    "bytes": 8696,
+    "sha256": "31aa85e964c4ad0f08accdf68f40c8fdf190754ed1b1a02f2ccabaf6c67c8e20",
+    "error": null
+  },
+  "health": {
+    "requestedUrl": "http://127.0.0.1:7363/api/health",
+    "startedAt": "2026-09-27T05:52:49.052Z",
+    "endedAt": "2026-09-27T05:52:49.495Z",
+    "timeoutMs": 10000,
+    "timeout": false,
+    "elapsedMs": 443.131,
+    "httpStatus": 200,
+    "contentType": "application/json",
+    "finalUrl": "http://127.0.0.1:7363/api/health",
+    "redirected": false,
+    "location": null,
+    "bytes": 241,
+    "sha256": "13f7ad0710bfec0ba4139063eec8f509c141596a39fde3dbf561c3089ebf0711",
+    "error": null
+  },
+  "pageIdentity": null,
+  "healthIdentity": {
+    "schemaVersion": "v227-atlas-production-health-v1",
+    "status": "ok",
+    "deliveryProfile": "vercel-lite",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "checkedAt": "2026-09-27T05:52:49.481Z",
+    "commitSha": null,
+    "buildIdentitySuppliedByHealth": false
+  },
+  "startupProbes": [
+    {
+      "requestedUrl": "http://127.0.0.1:7363/api/health",
+      "startedAt": "2026-09-27T05:52:48.594Z",
+      "endedAt": "2026-09-27T05:52:48.621Z",
+      "timeoutMs": 10000,
+      "timeout": false,
+      "elapsedMs": 27.654,
+      "httpStatus": null,
+      "contentType": null,
+      "finalUrl": null,
+      "redirected": false,
+      "location": null,
+      "bytes": 0,
+      "sha256": null,
+      "error": "fetch failed"
+    },
+    {
+      "requestedUrl": "http://127.0.0.1:7363/api/health",
+      "startedAt": "2026-09-27T05:52:48.729Z",
+      "endedAt": "2026-09-27T05:52:48.730Z",
+      "timeoutMs": 10000,
+      "timeout": false,
+      "elapsedMs": 1.578,
+      "httpStatus": null,
+      "contentType": null,
+      "finalUrl": null,
+      "redirected": false,
+      "location": null,
+      "bytes": 0,
+      "sha256": null,
+      "error": "fetch failed"
+    },
+    {
+      "requestedUrl": "http://127.0.0.1:7363/api/health",
+      "startedAt": "2026-09-27T05:52:48.836Z",
+      "endedAt": "2026-09-27T05:52:48.838Z",
+      "timeoutMs": 10000,
+      "timeout": false,
+      "elapsedMs": 1.763,
+      "httpStatus": null,
+      "contentType": null,
+      "finalUrl": null,
+      "redirected": false,
+      "location": null,
+      "bytes": 0,
+      "sha256": null,
+      "error": "fetch failed"
+    },
+    {
+      "requestedUrl": "http://127.0.0.1:7363/api/health",
+      "startedAt": "2026-09-27T05:52:48.945Z",
+      "endedAt": "2026-09-27T05:52:48.948Z",
+      "timeoutMs": 10000,
+      "timeout": false,
+      "elapsedMs": 2.903,
+      "httpStatus": null,
+      "contentType": null,
+      "finalUrl": null,
+      "redirected": false,
+      "location": null,
+      "bytes": 0,
+      "sha256": null,
+      "error": "fetch failed"
+    },
+    {
+      "requestedUrl": "http://127.0.0.1:7363/api/health",
+      "startedAt": "2026-09-27T05:52:49.052Z",
+      "endedAt": "2026-09-27T05:52:49.495Z",
+      "timeoutMs": 10000,
+      "timeout": false,
+      "elapsedMs": 443.131,
+      "httpStatus": 200,
+      "contentType": "application/json",
+      "finalUrl": "http://127.0.0.1:7363/api/health",
+      "redirected": false,
+      "location": null,
+      "bytes": 241,
+      "sha256": "13f7ad0710bfec0ba4139063eec8f509c141596a39fde3dbf561c3089ebf0711",
+      "error": null
+    }
+  ],
+  "requestedPublicAssets": [
+    {
+      "pathname": "/textures/mainline-a/opo0205d.jpg",
+      "payloadPath": "public/textures/mainline-a/opo0205d.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/potw1644a.jpg",
+      "payloadPath": "public/textures/mainline-a/potw1644a.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic1517b.jpg",
+      "payloadPath": "public/textures/mainline-a/heic1517b.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic1501e.jpg",
+      "payloadPath": "public/textures/mainline-a/heic1501e.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/opo0417c.jpg",
+      "payloadPath": "public/textures/mainline-a/opo0417c.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic1310a.jpg",
+      "payloadPath": "public/textures/mainline-a/heic1310a.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/opo0432d.jpg",
+      "payloadPath": "public/textures/mainline-a/opo0432d.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/potm2602b.jpg",
+      "payloadPath": "public/textures/mainline-a/potm2602b.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/potw1847a.jpg",
+      "payloadPath": "public/textures/mainline-a/potw1847a.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic1520a.jpg",
+      "payloadPath": "public/textures/mainline-a/heic1520a.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic0707a.jpg",
+      "payloadPath": "public/textures/mainline-a/heic0707a.jpg"
+    },
+    {
+      "pathname": "/textures/mainline-a/heic0105a.jpg",
+      "payloadPath": "public/textures/mainline-a/heic0105a.jpg"
+    }
+  ],
+  "routes": [],
+  "issues": [
+    "page-app-shell-missing-or-duplicate"
+  ],
+  "process": {
+    "executable": "D:\\nvm\\v24.14.0\\node.exe",
+    "arguments": [
+      "--permission",
+      "--allow-fs-read=E:\\86137\\myai\\solar_sim\\next-web\\.mainline-a-restored-r66-20260927-058",
+      "E:\\86137\\myai\\solar_sim\\next-web\\.mainline-a-restored-r66-20260927-058\\server.js"
+    ],
+    "entrypoint": "server.js",
+    "ownedPid": 34056,
+    "environmentKeys": [
+      "HOSTNAME",
+      "NEXT_TELEMETRY_DISABLED",
+      "NODE_ENV",
+      "PATH",
+      "PORT",
+      "SystemRoot"
+    ],
+    "inheritedSecrets": false,
+    "stdoutBytes": 148,
+    "stderrBytes": 0,
+    "failureStderrTail": "",
+    "stdoutSha256": "5750b9c9b24615e7b571f3c7d0d1b74cc63ef3fbac79f295767152ddaf711484",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "permissions": {
+    "mechanism": "node-native-permission",
+    "readRoot": ".mainline-a-restored-r66-20260927-058",
+    "filesystemWrites": false,
+    "ancestorModuleReads": false,
+    "childProcess": false,
+    "workers": false,
+    "nativeAddons": false,
+    "networkSandbox": false
+  },
+  "inventoryBefore": {
+    "status": "verified",
+    "directory": ".mainline-a-restored-r66-20260927-058",
+    "manifestPath": ".mainline-a-restored-r66-20260927-058/runtime-payload-manifest.json",
+    "manifestSha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+    "build": {
+      "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+      "runtimeBuildId": "mainline-a-607a1a089e56459a",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+      "profile": "vercel-lite",
+      "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+      "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+      "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+    },
+    "inventorySha256": "a6cab337fca1cb04b0b2d88d6cb491f5d0b55da8a004cd135992fb7395fc38fa",
+    "totals": {
+      "files": 12757,
+      "bytes": 2486317478
+    },
+    "hostCompatible": true,
+    "scope": "exact-candidate-runtime-files; no-launch-browser-or-rights-approval",
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "releaseApproved": false,
+      "physicsKernelMutation": false,
+      "parentGitMutation": false,
+      "runtimePromotion": "closed"
+    }
+  },
+  "inventoryAfter": {
+    "status": "verified",
+    "directory": ".mainline-a-restored-r66-20260927-058",
+    "manifestPath": ".mainline-a-restored-r66-20260927-058/runtime-payload-manifest.json",
+    "manifestSha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+    "build": {
+      "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+      "runtimeBuildId": "mainline-a-607a1a089e56459a",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+      "profile": "vercel-lite",
+      "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+      "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+      "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+    },
+    "inventorySha256": "a6cab337fca1cb04b0b2d88d6cb491f5d0b55da8a004cd135992fb7395fc38fa",
+    "totals": {
+      "files": 12757,
+      "bytes": 2486317478
+    },
+    "hostCompatible": true,
+    "scope": "exact-candidate-runtime-files; no-launch-browser-or-rights-approval",
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "releaseApproved": false,
+      "physicsKernelMutation": false,
+      "parentGitMutation": false,
+      "runtimePromotion": "closed"
+    }
+  },
+  "cleanup": {
+    "startedAt": "2026-09-27T05:52:49.518Z",
+    "endedAt": "2026-09-27T05:52:49.554Z",
+    "ownedPid": 34056,
+    "signals": [
+      {
+        "signal": "SIGTERM",
+        "sent": true
+      }
+    ],
+    "exited": true,
+    "exitCode": null,
+    "exitSignal": "SIGTERM",
+    "error": null
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "releaseApproved": false,
+    "browserExecuted": false,
+    "visualApproval": false,
+    "performanceClaim": false,
+    "physicalDeviceClaim": false,
+    "realUserValidation": false
+  },
+  "limitations": [
+    "HTTP bytes only; no browser or visual execution",
+    "Request timings are not production performance",
+    "Native Node permissions restrict filesystem and subprocess access, not all network activity",
+    "Health identity is schema/profile/kernel; build identity is page/BUILD_ID/script hash binding",
+    "Candidate payload restore is not release, rights, or scientific approval"
+  ]
+}

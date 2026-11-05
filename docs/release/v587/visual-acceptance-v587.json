@@ -1,0 +1,120 @@
+{
+  "version": "v587-browser-visual-acceptance-v1",
+  "generatedAt": "2026-08-08T00:00:00Z",
+  "status": "passed-visual-gate-post-build-browser-replay-blocked",
+  "sourceVisualTruth": "docs/release/v587/visual-qa/reference-concept-v587.png",
+  "browserSurface": "codex-in-app-browser",
+  "capturePhase": "final-cinematic-source-and-near-final-science-source-before-standalone-build",
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "scienceMedianFps": 176.5,
+      "cinematicMedianFps": 175.4,
+      "canvasCount": 1,
+      "consolePageRendererErrorCount": 0,
+      "horizontalOverflow": false
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "scienceMedianFps": 179.7,
+      "cinematicMedianFps": 186.9,
+      "canvasCount": 1,
+      "consolePageRendererErrorCount": 0,
+      "horizontalOverflow": false,
+      "inspectorSheetQualified": true
+    }
+  },
+  "scienceCinematicBoundary": {
+    "scientificPayloadSha256": "ec98444ba432033dccef0d3b01711eea1bd7ecca20f2d1e64804bb10202e8b7e",
+    "payloadStableAcrossModeSwitch": true,
+    "scienceLinear": true,
+    "cinematicPresentationOnly": true,
+    "ktx2ManifestSha256": "0a521797d81252364792d6728be4fe4445583531a2e2cfc8331d74d5caf7fa30",
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false
+  },
+  "buildGates": {
+    "lite": {
+      "status": "passed",
+      "heapMb": 8192,
+      "rollbackSlotAvailable": true
+    },
+    "standalone": {
+      "status": "passed",
+      "heapMb": 8192,
+      "rollbackSlotAvailable": true
+    },
+    "swcRuntime": "official-wasm-fallback"
+  },
+  "postBuildBrowserReplay": {
+    "status": "blocked-browser-url-policy-after-local-preview-restart",
+    "sourceChangedAfterCapture": true,
+    "boundedChangesAfterScienceCapture": [
+      "candidate-authority-labels-and-inspector-compaction-visible-in-final-desktop-cinematic-capture",
+      "final-capture-edge-attenuation-visible-in-final-mobile-science-capture"
+    ],
+    "alternateBrowserAttempted": false
+  },
+  "screenshots": [
+    {
+      "path": "docs/release/v587/visual-qa/reference-concept-v587.png",
+      "bytes": 1622629,
+      "sha256": "28fa32af6b30c24248b2ddb0de5fd584504814e7e1eab8b9422920e251851f54"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/desktop-cinematic-1440x900.png",
+      "bytes": 85662,
+      "sha256": "f7694244123f73359caff4842a8889e7213184036a9d505cef925ef545480cbb"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/desktop-science-1440x900.png",
+      "bytes": 70893,
+      "sha256": "eda12172f9854967b11c32951fe3f02b36fd254324a8d252e95c00dfc3e15f26"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/mobile-cinematic-390x844.png",
+      "bytes": 25397,
+      "sha256": "42e6bd3d012689503c8e461cb236bc300f8681675c7e2ecac80ef54ebbbc09f3"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/mobile-science-390x844.png",
+      "bytes": 17192,
+      "sha256": "a0fd47f8437b5790a692f89f57f1f3b9aa1c4c99161389b58dc53c04c3ad10ce"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/mobile-inspector-390x844.png",
+      "bytes": 23408,
+      "sha256": "8212e8b0c4660e24c40a9c7f91049c123a98c5b0adf7e6a98c91ffcde87c2375"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/comparison-reference-vs-cinematic.png",
+      "bytes": 2308543,
+      "sha256": "516688e653b26ba629a86a8c3b141b7958c7c20cd256072418a48666f2ff7968"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/comparison-reference-vs-science.png",
+      "bytes": 2146014,
+      "sha256": "a3c25d2128f929646af2664ff417444390867e0e5270e427dfb331a6c9db74c9"
+    },
+    {
+      "path": "docs/release/v587/visual-qa/comparison-hero-reference-vs-cinematic.png",
+      "bytes": 1489258,
+      "sha256": "e4a1828b2b09b3cd817cb695c159ad16e56166c6e22ee3d49219f57a15aeafb1"
+    }
+  ],
+  "boundary": {
+    "formalProductPointer": "v263",
+    "researchCandidateOnly": true,
+    "promotionAllowed": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "denseExecutionStarted": false,
+    "gpuRaytraceStarted": false,
+    "ixpePayloadDownloaded": false,
+    "productionDeploymentAttempted": false,
+    "publicReleaseAttempted": false
+  },
+  "receiptSha256": "e8bb9fef853183da03871d68454e056dfff00b130ef272bde3ce8986937f0275"
+}

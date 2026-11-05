@@ -1,0 +1,342 @@
+{
+  "version": "v562-orbit-atlas-active-release-gate-v3",
+  "generatedAt": "2026-08-03T00:00:00Z",
+  "status": "active-candidate-science-art-transport-build-browser-qualified-visual-regression-pending",
+  "activeCandidate": {
+    "visual": "v562-visual-candidate-ktx2-first",
+    "visualManifestSha256": "a9ca1196e05c408004902cfa79af3d3fa3389e3ff17b386cd1d23bb74b3c69fd",
+    "heroSceneCount": 4,
+    "heroSceneIds": [
+      "kerr-volume-disk",
+      "photon-ring-lensing",
+      "polarization-field",
+      "science-cinematic-ab"
+    ],
+    "sharedScientificGeometry": true,
+    "singleCanvas": true,
+    "scienceLinearDisplay": true,
+    "cinematicScienceWriteback": false
+  },
+  "science": {
+    "revalidationSha256": "f0028d83dfda2e617513679388af9c85eac10a83b91075cc488eebfa62af21f7",
+    "engineImportSha256": "95a3724a3461fe73712dfa521072e3af2fe9601e1a9bb26cbaaa0d91811fca47",
+    "transportReceiptSha256": "b7ad42e321caec6f165b03425776a8605049b2eca31cc9b7b15b5dbafac88f3d",
+    "transportQualified": true,
+    "radiativeTransferQualified": false,
+    "measuredAuthorityGranted": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "gpuShadowRun": false
+  },
+  "measuredLane": {
+    "target": "Cyg X-1",
+    "intakeStatus": "blocked-public-data-package-missing",
+    "metadataStatus": "blocked-metadata-identity-conflict",
+    "metadataOnly": true,
+    "payloadRead": false,
+    "automaticRetry": false,
+    "automaticTargetReplacement": false,
+    "measuredAuthorityGranted": false
+  },
+  "releaseGates": {
+    "currentWorktreeRevalidation": true,
+    "visualCandidate": true,
+    "proxyContract": true,
+    "sparseKerrTransport": true,
+    "metadataProbeContract": true,
+    "standaloneBuild": true,
+    "liteBuild": false,
+    "desktopBrowser": true,
+    "mobileBrowser": true,
+    "heroSceneBrowser": true,
+    "visualRegression": false,
+    "scientificScenePerformance": false,
+    "soak": false,
+    "publicPreview": false
+  },
+  "buildGate": {
+    "status": "qualified",
+    "profile": "standalone-full",
+    "heapMb": 8192,
+    "lowMemoryMode": true,
+    "routeOverlayDirectoryCount": 257,
+    "versionedEvidenceDirectoryCount": 202,
+    "standaloneTopologyQualified": true,
+    "rollbackSlotAvailable": true,
+    "browserStarted": false,
+    "denseStarted": false,
+    "gpuStarted": false
+  },
+  "browserGate": {
+    "status": "qualified-overview-only",
+    "receiptSha256": "af65ea1cc44351b1050969b5371f12334e49ec5d9e6a14c9db8948f750593217",
+    "buildId": "9iNDsQyQI-c8ClPgqRE93",
+    "desktop": {
+      "width": 1440,
+      "height": 900,
+      "medianFps": 166.8,
+      "frameP95Ms": 6.3,
+      "captureSha256": "ed5b75d37252ce2650cae9ba748779c214f576de2f5b40d4d7888598ab3d4deb"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "medianFps": 166.9,
+      "frameP95Ms": 6.1,
+      "captureSha256": "f4476b0d882eae45d93876f06c1aa861a811e7c48e1febb764541a367f8bc230"
+    },
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "rendererErrors": 0,
+    "canvasCount": 1,
+    "hardwareRenderer": true,
+    "resourcesReturned": true,
+    "visualRegressionQualified": false,
+    "scientificScenePerformanceQualified": false,
+    "soakQualified": false
+  },
+  "heroSceneBrowserGate": {
+    "status": "interaction-screenshots-qualified",
+    "receiptSha256": "32a0c64b3ef274f29ca5dd31158d58707c8a03e574a69a11a74fee9bd6c887af",
+    "heroSceneCount": 4,
+    "captureCount": 6,
+    "desktopQualified": true,
+    "mobileQualified": true,
+    "scienceCinematicBoundaryQualified": true,
+    "additionalCanvasCount": 0,
+    "browserErrors": 0,
+    "visualRegressionQualified": false,
+    "scientificScenePerformanceQualified": false
+  },
+  "blocker": null,
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalDefaultKernel": "legacy-eih-1pn",
+    "legacyV9Mutated": false,
+    "legacyEih1pnMutated": false,
+    "v559EvidenceRewritten": false,
+    "historicalVisualAudit": "expected-negative-evidence-3-of-3",
+    "productionPromotionAllowed": false,
+    "publicDeploymentAllowed": false,
+    "denseRunAllowed": false,
+    "gpuRunAllowed": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/api/atlas/content-packs/[pack]/files/[...path]/route.ts",
+      "bytes": 3212,
+      "sha256": "8d2775b904db936fe89ac2a396d7e4c093f7b511e746f25d8afcbbba0aac96a9"
+    },
+    {
+      "path": "app/components/GalaxyEnvironmentSphere.tsx",
+      "bytes": 38296,
+      "sha256": "92ce973f1948c8f303a1715d896dfb1e70e42b2420f740578722d39bfb901590"
+    },
+    {
+      "path": "app/components/OrbitAtlasHeroScenesV562.test.tsx",
+      "bytes": 1163,
+      "sha256": "a316b3a00a57bf752b960c095016c5d82fedff90062e93f596edecd6e1244ec4"
+    },
+    {
+      "path": "app/components/OrbitAtlasHeroScenesV562.tsx",
+      "bytes": 10802,
+      "sha256": "30de1ef8d53b3dec35b333524a60ff4f74be25c2095f50aee1e5e41aeab5d0c0"
+    },
+    {
+      "path": "app/components/RelativityResearchWorkbenchReleaseBoundaryV564.tsx",
+      "bytes": 939,
+      "sha256": "71a55a35598f9ea893cc976bc632e7247ed094f8d73903d066f7cb1797313a26"
+    },
+    {
+      "path": "app/data/planetTextureManifest.ts",
+      "bytes": 3024,
+      "sha256": "762a6ff03b296231f8ad75ae0a8b1e176bc7af791522dda4d56ea53b62be47f8"
+    },
+    {
+      "path": "app/lib/atlasBrowserQualificationV562.test.ts",
+      "bytes": 1867,
+      "sha256": "eeeeff2316c1c001a06cce0036cb98bddc2ecaa9cc230f72ff8afce72ed3181c"
+    },
+    {
+      "path": "app/lib/atlasBuildRouteOverlayV564.test.ts",
+      "bytes": 2318,
+      "sha256": "0aa96ccfbd2d5b6891bd51d4a9b5e30abe7ac0d996eba99e78c1e8141d5e6ce2"
+    },
+    {
+      "path": "app/lib/atlasContentPackServerV3.ts",
+      "bytes": 12494,
+      "sha256": "981ce4e00046d55c986055e8ef6e134147b79852ea4e005f130241b5b25c61ea"
+    },
+    {
+      "path": "app/lib/atlasHeroBrowserQualificationV562.test.ts",
+      "bytes": 1865,
+      "sha256": "c84e70dd39e8192865dee3dad0c1e506b3277d9873f417798a52302b16c70aed"
+    },
+    {
+      "path": "app/lib/atlasNextDevWatchOptionsV566.test.ts",
+      "bytes": 1228,
+      "sha256": "789918244e4e7276a999d346fe3ad05cd9ecd8d175adf545c76e3dbf0c0766fc"
+    },
+    {
+      "path": "app/lib/atlasProxyContractV562.test.ts",
+      "bytes": 858,
+      "sha256": "4fb59d58564116166d356bfeab91b9dfafdf33e62c9848669b72668d8f29fa90"
+    },
+    {
+      "path": "app/lib/atlasProxyContractV562.ts",
+      "bytes": 2360,
+      "sha256": "47bcff962dd7e433137ecdcf3b392e413e336a063e1a7bb6c42fbd8d9d9374c1"
+    },
+    {
+      "path": "app/lib/atlasVisualRuntimeCandidateV562.ts",
+      "bytes": 940,
+      "sha256": "dee33f72c7344ca083d7e927ece4da3e667d29597c6af3bcb68ad691ca9cf981"
+    },
+    {
+      "path": "app/lib/kerrSpectralEnvelopeV356.ts",
+      "bytes": 17781,
+      "sha256": "7675d55dc6e247b5e39c7312ad727457ed13d927531b1f05348b48e6cb05ad3c"
+    },
+    {
+      "path": "app/lib/planetAlbedoUrl.ts",
+      "bytes": 2340,
+      "sha256": "7d301800f059173d5f85390ce3e3e2b6210cff68cd96584f5cb1af2dd80d67bb"
+    },
+    {
+      "path": "app/lib/sha256BrowserV566.test.ts",
+      "bytes": 681,
+      "sha256": "9320ac32a5feb3793b48c6b9fdb6c010b9c0f75b8a9b822551bddd9b6b4878ea"
+    },
+    {
+      "path": "app/lib/sha256BrowserV566.ts",
+      "bytes": 3423,
+      "sha256": "6f2150f7385de4f92107aa0dc9c0782dcff1622f55867f5ca31255111783d7da"
+    },
+    {
+      "path": "dist/release/atlas-browser-qualification-v562.json",
+      "bytes": 8919,
+      "sha256": "388ef5607b14246b540a13085a7f423f7137a8c26800bd08586e43d932cb6e08"
+    },
+    {
+      "path": "dist/release/atlas-build-resource-v562.json",
+      "bytes": 474,
+      "sha256": "427976db0e4b2ee32bf9ea36ef1866c8399cb5564880201a4fcd033b295a8125"
+    },
+    {
+      "path": "dist/release/atlas-hero-browser-qualification-v562.json",
+      "bytes": 6890,
+      "sha256": "d1d5e5b4637f9e62b5dddd6d1c80572c042af3dd4b30605f91258d027e3e01b5"
+    },
+    {
+      "path": "dist/release/atlas-historical-visual-audit-v562.json",
+      "bytes": 1266,
+      "sha256": "4c9e866e98c4e13f73a7c964c7938c831ab11e90850a5e8846a60792aef5cd6d"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+      "bytes": 581,
+      "sha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b"
+    },
+    {
+      "path": "dist/science/atlas-visual-candidate-v562/manifest.json",
+      "bytes": 7384,
+      "sha256": "4207e5c1cce58185e16b98903d2bfed8f6f8822e8f19534c41167e978c025e55"
+    },
+    {
+      "path": "dist/science/ixpe-measured-intake-v562/intake.json",
+      "bytes": 12237,
+      "sha256": "b32bbb9a863272f3bce5461f8e1c6c937b78c48f6d8cafb30020738a757794a0"
+    },
+    {
+      "path": "dist/science/ixpe-metadata-probe-v563/metadata-probe.json",
+      "bytes": 4698,
+      "sha256": "fc91e9525ed17b52f3b0d938d5a50a42ba2371fb81534bddf8f801c9c8457223"
+    },
+    {
+      "path": "dist/science/kerr-campaign-v314/campaign-state.json",
+      "bytes": 1734,
+      "sha256": "e4e124fa2a0802bdea728875f4e09366104c9340047d7535d605da2d16e1fd9d"
+    },
+    {
+      "path": "dist/science/orbit-atlas-current-worktree-revalidation-v561.json",
+      "bytes": 4138,
+      "sha256": "024508a5ebfe834d9d1005dc498f15ad5b9f5000e878e38c33cf74ea4c9c07bc"
+    },
+    {
+      "path": "dist/science/orbit-relativity-engine-v561/import-manifest.json",
+      "bytes": 6742,
+      "sha256": "d3621818b66c5078d5d9f5e44393e4f24124f09b2a77887d9103fbac234ff59e"
+    },
+    {
+      "path": "dist/science/orbit-relativity-engine-v561/transport-verification-receipt.json",
+      "bytes": 1272,
+      "sha256": "fe7ae5022e1d0c7f11af202877771a45981f2483194166462091c09fc174a8b6"
+    },
+    {
+      "path": "next.config.mjs",
+      "bytes": 6179,
+      "sha256": "3fc6401053d409663a66f26e9b810e18ec281041d0c333ec4f22e45fea78bf9a"
+    },
+    {
+      "path": "proxy.ts",
+      "bytes": 2769,
+      "sha256": "49f48f90792f9901deedcec29bd4473867749260ea64841aa83505fdef7df91d"
+    },
+    {
+      "path": "scripts/build-active-release-gate-v562.mjs",
+      "bytes": 11549,
+      "sha256": "86e32d09780911bd16d67cca56e773ae27fa0bf2e4eb7e94fba19bed78ff34b8"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "bytes": 15738,
+      "sha256": "c34fb0d9d4838bc4ef5a5ed7accf46552c43175a0ca005703b374e30a11aaf0c"
+    },
+    {
+      "path": "scripts/build-browser-qualification-v562.mjs",
+      "bytes": 9008,
+      "sha256": "19e9bf64c934c05a47e96146ab030063991bada2964896c0b3009bdb399f7897"
+    },
+    {
+      "path": "scripts/build-hero-browser-qualification-v562.mjs",
+      "bytes": 6052,
+      "sha256": "0063900234737481a4c48007bcb0c5d18a2eee6123fa2edd6753dda8ce7758e7"
+    },
+    {
+      "path": "scripts/build-visual-candidate-v562.mjs",
+      "bytes": 4481,
+      "sha256": "56dc3bfabfb09a085c8f2bad0d1b3045e85e91d0b97958afed58ae8ff4660dbc"
+    },
+    {
+      "path": "scripts/run-atlas-current-focused-v562.mjs",
+      "bytes": 1324,
+      "sha256": "62da429164e3c1729a6181b151e1f131e7f8dabb2b2c6a38f5b2c0f566486ab1"
+    },
+    {
+      "path": "scripts/run-atlas-historical-visual-audit-v562.mjs",
+      "bytes": 2657,
+      "sha256": "4bffdaae691ab9c499159b8a22c0491384b1a118c1638e80992e314ebaa4eaad"
+    },
+    {
+      "path": "scripts/verify-active-release-gate-v562.mjs",
+      "bytes": 5624,
+      "sha256": "93547e2bf7f42806df71d80d05c27a2f05790b1fefb01c42447030a2959f6662"
+    },
+    {
+      "path": "scripts/verify-browser-qualification-v562.mjs",
+      "bytes": 3473,
+      "sha256": "b197bdd210877b9e91fc83a3ce0a4a112eb3c0269f7990c5d575b610632b69a4"
+    },
+    {
+      "path": "scripts/verify-hero-browser-qualification-v562.mjs",
+      "bytes": 3326,
+      "sha256": "561e941ea1d00ff60a7e46cf8f47f32b493e4d62bf4be8cac12eb76f4d4f8626"
+    },
+    {
+      "path": "scripts/verify-visual-candidate-v562.mjs",
+      "bytes": 2204,
+      "sha256": "73e2e64d57cb65653f10cfc35f40cb3cf145cc33c226ee2e9196eefa1887c726"
+    }
+  ],
+  "sourceSha256": "d8270867667a6f7ac441bcce8f5d250ea9875467412705ce153128ee2577c468",
+  "artifactSha256": "fd8dcf7fcbce44c43e267b010fcd0e3c6a220e6736568f294cc4cac3e33a92ad"
+}

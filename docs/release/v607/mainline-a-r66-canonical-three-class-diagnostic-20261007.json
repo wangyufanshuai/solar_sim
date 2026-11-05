@@ -1,0 +1,84 @@
+{
+  "schema": "mainline-a-r66-canonical-browser-diagnostic-v1",
+  "generatedAt": "2026-10-07T06:09:02Z",
+  "evidenceClass": "local-browser-and-offline-replay",
+  "round": "R66-continuation",
+  "build": {
+    "runtimeBuildId": "mainline-a-93b297e97cc3a2ce",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "receipt": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json"
+  },
+  "canonicalRoster": {
+    "expected": 36,
+    "verifiedNow": 3,
+    "remaining": 33,
+    "manifestSha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+  },
+  "browserObservations": [
+    {
+      "target": "nebula:m42",
+      "rawPath": "docs/release/v607/mainline-a-r66-m42-passed-browser-observation-20261007.json",
+      "rawSha256": "0845666f1da50dff533471eb5d6cf0c0f6da85743aff1a3ba6198c78cc4da4c8",
+      "offlineReplay": "measured-local",
+      "sceneCheckpoints": ["inspect", "inspect", "inspect"],
+      "resourceCounts": [28, 32, 28],
+      "acquired": 4,
+      "released": 4,
+      "entry": "object-browser M42 result"
+    },
+    {
+      "target": "star:alpha-centauri-a",
+      "rawPath": "docs/release/v607/mainline-a-r66-alpha-centauri-a-browser-observation-20261007.json",
+      "rawSha256": "4aaed41543f8e1d494a61f12cca5c33806637a4c101837c2b641a081b63df012",
+      "offlineReplay": "measured-local",
+      "sceneCheckpoints": ["inspect", "inspect", "inspect"],
+      "resourceCounts": [28, 35, 28],
+      "acquired": 7,
+      "released": 7,
+      "entry": "stellar roster hero button; catalog system search alone did not report the A component"
+    },
+    {
+      "target": "constellation:Ori",
+      "rawPath": "docs/release/v607/mainline-a-r66-orion-browser-observation-20261007.json",
+      "rawSha256": "632fa7a8dfb01a5ff88c5a9f1f263aaf8d3d77c0ad8dc280e8b1bc5a01cfff00",
+      "offlineReplay": "measured-local",
+      "sceneCheckpoints": ["inspect", "inspect", "inspect"],
+      "resourceCounts": [28, 29, 28],
+      "acquired": 3,
+      "released": 3,
+      "entry": "object-browser Chinese constellation result"
+    }
+  ],
+  "negativeObservation": {
+    "target": "nebula:m42",
+    "rawPath": "docs/release/v607/mainline-a-r66-m42-failed-browser-observation-20261007.json",
+    "rawSha256": "71a26e39403f6a09ef5086f564c3de66793cd40c393a1db54c8733e05456af61",
+    "offlineReplay": "blocked",
+    "exitCode": 1,
+    "issues": ["session:incomplete-or-interrupted", "checkpoints:three-required"],
+    "reason": "baseline was atlas; target focus changed scene to inspect, so no active checkpoint was accepted"
+  },
+  "sessionLedger": {
+    "rawPath": "docs/release/v607/mainline-a-r66-three-class-browser-session-ledger-20261007.json",
+    "rawSha256": "133cf71a2c09fc95f3d7a137aaafd0930d87d970b53ed894eb1c19f4bc9c45e2",
+    "latestPassingTargets": 3,
+    "retainedBlockedAttempts": 1,
+    "recoveryPanel": "blocked-with-one-conflict",
+    "recoveryCauseInference": "V640 merged partial-session status checks only latest target records while V639 session validation retains any historical blocked attempt; the panel recovery report currently conflicts after a failed retry",
+    "batchAdmission": false
+  },
+  "limits": {
+    "canonicalRuntimeGatePassed": false,
+    "sourceAuthenticityIndependentlyProven": false,
+    "productionPerformance": false,
+    "physicalMobile": "not-run",
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "releaseApproved": false,
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  }
+}

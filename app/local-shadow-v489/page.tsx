@@ -1,0 +1,3 @@
+import KerrRedshiftContrastLatticeV489 from "../components/KerrRedshiftContrastLatticeV489";
+export const dynamic = "force-dynamic";
+export default function LocalShadowV489Page(){const localShadow=process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE==="local-shadow";return <main className="min-h-screen bg-[#010405] px-4 py-8 text-white sm:px-8" data-atlas-local-shadow-v489-page data-atlas-local-shadow-v489-enabled={localShadow}><div className="mx-auto max-w-[1540px]">{localShadow?<KerrRedshiftContrastLatticeV489/>:<div className="rounded border border-amber-100/15 bg-amber-100/[.03] p-4 font-mono text-xs text-amber-50/55" data-atlas-local-shadow-v489-boundary="local-shadow-only">V489 redshift contrast lattice is available only in local-shadow.</div>}</div></main>}

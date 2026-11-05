@@ -1,0 +1,150 @@
+{
+  "schema": "mainline-a-r77-web-round-v664",
+  "round": 77,
+  "date": "2026-10-13",
+  "status": "local-current-source-web-candidate-verified-public-release-blocked",
+  "scope": "Full web-only visual navigation, 96-entry A/Beta matrix, 36-scene A-line traversal, HTTP preview isolation, and frozen-source audit batch.",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "parallelRelativityWindowExcludedFromEffectiveLines": true
+  },
+  "identity": {
+    "buildId": "7E47aPkOGA-FgCclu-0MW",
+    "runtimeBuildId": "mainline-a-d9bbd6b9d0d419e2",
+    "appSourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+    "freezeFingerprint": "560e375e07e288133e0644ce250366cd3e4d31c05e23fd275c1472608189a78a",
+    "sourceStableAtBuildHttpBrowserAndAudit": true,
+    "v616SnapshotSha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+    "v616ProjectionSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+    "v616DigestsChanged": false
+  },
+  "delivery": {
+    "codeChange": "docs/release/v607/mainline-a-r77-v664-code-change-20261013.json",
+    "static": "docs/release/v607/mainline-a-r77-v664-static-20261013.json",
+    "build": "docs/release/v607/mainline-a-r77-build-20261013v664r77web01.json",
+    "freeze": "docs/release/v607/mainline-a-r77-v664-freeze-20261013v664r77freeze01.json",
+    "freezeReplay": "docs/release/v607/mainline-a-r77-v664-freeze-replay-20261013v664r77freeze01.json",
+    "httpEnabled": "docs/release/v607/mainline-a-r77-v664-http-enabled-20261013v664r77web01.json",
+    "httpDefaultOff": "docs/release/v607/mainline-a-r77-v664-http-default-off-20261013v664r77web01.json",
+    "browserMatrix": "docs/release/v607/mainline-a-r77-v664-matrix-browser-20261013v664r77web01.json",
+    "browserCanonicalDesktop": "docs/release/v607/mainline-a-r77-web-canonical-scene-desktop-raw-20261013-v664scene01.json",
+    "browserCanonicalMobileViewport": "docs/release/v607/mainline-a-r77-web-canonical-scene-mobile-raw-20261013-v664scene02.json",
+    "visual": "docs/release/v607/mainline-a-r77-v664-visual-20261013v664r77web01.json",
+    "performance": "docs/release/v607/mainline-a-r77-v664-performance-20261013v664r77web01.json",
+    "externalSource": "docs/release/v607/mainline-a-r77-v664-external-source-20261013v664r77web01.json",
+    "evidenceAudit": "docs/release/v607/mainline-a-r77-v664-evidence-audit-20261013v664r77web01.json",
+    "publicDeployment": "not-run"
+  },
+  "codeChange": {
+    "effectiveNewProductionAndToolLines": 1476,
+    "effectiveNewSubstantiveTestLines": 361,
+    "effectiveNewCodeLinesExcludingExistingModifications": 1837,
+    "existingUiAddedLines": 128,
+    "existingUiRemovedOrReplacedLines": 19,
+    "existingCanonicalSceneToolDeltaCredited": 0,
+    "effectiveCodeFiles": 13,
+    "minimum500MetWithoutTestsOrExistingModifications": true,
+    "target1000MetWithoutTestsOrExistingModifications": true,
+    "generatedDataReceiptsScreenshotsAndDocsCredited": false
+  },
+  "coverage": {
+    "aLineRuntime": { "stars": 12, "constellations": 12, "nebulae": 12 },
+    "betaReviewEntries": { "stars": 24, "constellations": 12, "nebulae": 24 },
+    "betaStellarPhysicalComponentsConfirmed": 0,
+    "betaStellarPhysicalComponentsPending": 4,
+    "betaNebulaCandidateImageReviewChains": 19,
+    "betaNebulaImageAcquisitionPolicyHolds": 5,
+    "aNebulaRightsSigned": 0,
+    "betaNebulaRightsSigned": 0,
+    "runtimeAdmittedFromCandidateEvidence": 0
+  },
+  "evidence": {
+    "static": {
+      "status": "passed-current-source-local",
+      "node": "24/24",
+      "vitest": "23/23",
+      "targetedEslint": "passed-zero-warnings",
+      "frozenRows": 96,
+      "canonicalScenes": 36,
+      "recomputedFilePins": 57
+    },
+    "build": {
+      "status": "passed-preserved-local-production-build",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "status": "passed-two-local-preview-modes",
+      "homeAndHealth": "200 / 200 in each mode",
+      "aAssets200AndShaMatched": 12,
+      "candidateImages200AndShaMatchedWhenEnabled": 19,
+      "candidateImageRoutes404ByDefault": 19,
+      "policyHeldImageRoutes404InBothModes": 5
+    },
+    "visual": {
+      "status": "77-screenshots-rehashed-four-agent-samples-inspected-no-human-signoff",
+      "screenshotCount": 77,
+      "agentInspectedSamples": 4,
+      "perItemHumanVisualSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-simulated-mobile-viewport",
+      "matrixSelections": 192,
+      "readinessSelections": 18,
+      "canonicalSceneSelections": 72,
+      "pageAndConsoleErrors": 0,
+      "horizontalOverflow": false,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-browser-diagnostic-only",
+      "framesPerViewport": 120,
+      "desktopFrameIntervalP95Ms": 6.054999999701977,
+      "simulatedMobileFrameIntervalP95Ms": 6.025000002235174,
+      "currentBuildLongRun": "not-run",
+      "productionPerformanceEstablished": false
+    },
+    "externalSource": {
+      "status": "prior-raw-pins-replayed-no-new-https-requests",
+      "priorRawSourcePins": 20,
+      "newHttpsRequests": 0,
+      "stellarPhysicalComponentsConfirmed": 0,
+      "rightsSigned": 0,
+      "scientificOrCopyrightApprovalClaim": false
+    }
+  },
+  "remainingGates": {
+    "currentFinalBuildTwoIndependentLongRuns": "pending",
+    "fourStellarPhysicalComponentReviews": "pending-0-of-4",
+    "fiveBetaNebulaImageChains": "policy-held-no-requests",
+    "aNebulaRightsSignoffs": "pending-0-of-12",
+    "betaNebulaRightsSignoffs": "pending-0-of-24",
+    "perItemHumanVisualSignoff": "pending",
+    "rootAppParity": "deferred-web-only-scope",
+    "physicalMobile": "not-run-web-only-scope",
+    "productionPerformance": "not-established",
+    "publicWebRelease": "blocked"
+  },
+  "nextRound": {
+    "round": 78,
+    "scope": "Run two independent current-source local long observations, verify resource lifecycle and error recovery, then build a web-only candidate package with clear blocked release gates. Keep external source and rights work conditional on real admissible evidence."
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWritesFromCandidateEvidence": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

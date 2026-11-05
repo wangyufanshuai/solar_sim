@@ -1,0 +1,17 @@
+{
+  "version": "v592-major-moon-usgs-ckan-probes-v1",
+  "policy": {
+    "archive": "USGS Astrogeology CKAN API",
+    "allowedHosts": ["astrogeology.usgs.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "visualPayloadDownloadAllowed": false
+  },
+  "probes": [
+    { "id": "io-ckan-global-mosaic", "target": "io", "query": "Io global mosaic" },
+    { "id": "europa-ckan-global-mosaic", "target": "europa", "query": "Europa global mosaic" },
+    { "id": "ganymede-ckan-global-mosaic", "target": "ganymede", "query": "Ganymede global mosaic" },
+    { "id": "callisto-ckan-global-mosaic", "target": "callisto", "query": "Callisto global mosaic" }
+  ]
+}

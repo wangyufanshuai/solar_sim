@@ -1,0 +1,134 @@
+{
+  "schema": "mainline-a-r78-web-round-v665",
+  "round": 78,
+  "date": "2026-10-13",
+  "status": "local-web-candidate-verified-public-release-blocked",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "appSourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+    "parentGitTouchedByRound": false,
+    "parallelRelativityWindowExcludedFromCounts": true,
+    "physicsKernelEditedByRound": false
+  },
+  "codeChange": {
+    "receipt": "docs/release/v607/mainline-a-r78-v665-code-change-20261013.json",
+    "newEffectiveProductionAndToolLines": 1736,
+    "newEffectiveSubstantiveTestLines": 594,
+    "newEffectiveCodeLinesTotal": 2330,
+    "newProductionAndToolFiles": 6,
+    "newSubstantiveTestFiles": 5,
+    "existingOperationalDriverFilesModified": 1,
+    "existingOperationalDriverModifiedLinesCredited": 0,
+    "countingNote": "The existing driver has no preserved pre-R78 baseline, so none of its edits count toward the effective-line threshold. Generated receipts, screenshots, logs, fixtures and concurrent physics work are excluded."
+  },
+  "evidence": {
+    "static": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-static-20261013.json",
+      "status": "passed-current-source-local",
+      "node": "33/33",
+      "vitest": "26/26",
+      "targetedEslint": "passed-zero-warnings",
+      "frozenMatrixRows": 96,
+      "canonicalScenes": 36,
+      "recomputedFilePins": 57,
+      "v616SnapshotAndProjectionChanged": false
+    },
+    "build": {
+      "receipt": "docs/release/v607/mainline-a-r78-build-20261013v665r78web01.json",
+      "status": "passed-independent-local-production-compile",
+      "independentBuildId": "d-izrlEAUuIhrIZg11y7y",
+      "browserAndLongRunPreservedBuildId": "7E47aPkOGA-FgCclu-0MW",
+      "bothBuildsShareSourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-http-20261013v665r78web01.json",
+      "status": "passed-two-local-preview-modes",
+      "enabledMode": "passed",
+      "defaultOffMode": "passed",
+      "buildId": "7E47aPkOGA-FgCclu-0MW"
+    },
+    "visual": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-visual-20261013v665r78web01.json",
+      "status": "77-current-build-screenshots-rehashed-agent-samples-inspected",
+      "screenshotCount": 77,
+      "r78AgentInspectedMobileMatrixSamples": 2,
+      "perItemHumanVisualSignoff": false
+    },
+    "browser": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-browser-20261013v665r78web01.json",
+      "status": "passed-local-desktop-and-simulated-mobile",
+      "desktopMatrixSelections": 96,
+      "simulatedMobileMatrixSelections": 96,
+      "browserReportedErrors": 0,
+      "physicalMobile": "not-run-web-only-scope"
+    },
+    "performance": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-performance-20261013-v665long01.json",
+      "rawReceipt": "docs/release/v607/mainline-a-r78-v665-browser-final-raw-20261013-v665long01.json",
+      "replayReceipt": "docs/release/v607/mainline-a-r78-v665-longrun-replay-20261013-v665long01.json",
+      "status": "two-independent-current-source-local-browser-observations-verified",
+      "desktopDurationMs": 1802003.0249999985,
+      "simulatedMobileDurationMs": 1802005.3450000025,
+      "desktopFrameP95Ms": 5.690000000060536,
+      "simulatedMobileFrameP95Ms": 5.635000000242144,
+      "resourceTotalsBeforeActiveAfter": [27, 31, 27],
+      "desktopLateFrameTailAdvisory": "review-local-tail-ratio-1.948",
+      "interpretation": "Local browser diagnostics; not production performance, physical mobile or real-user validation."
+    },
+    "externalSource": {
+      "receipt": "docs/release/v607/mainline-a-r78-v665-external-source-20261013v665r78web01.json",
+      "status": "prior-real-raw-pins-verified-no-new-acquisition",
+      "priorRawSourcePins": 20,
+      "newHttpsRequests": 0,
+      "stellarPhysicalComponentsConfirmed": 0,
+      "stellarComponentHolds": 4,
+      "betaNebulaImageReviewable": 19,
+      "betaNebulaImageHolds": 5,
+      "aNebulaRightsSigned": 0,
+      "betaNebulaRightsSigned": 0
+    }
+  },
+  "candidate": {
+    "packageReceipt": "docs/release/v607/mainline-a-r78-v665-web-candidate-20261013-v665long01.json",
+    "replayReceipt": "docs/release/v607/mainline-a-r78-v665-web-candidate-replay-20261013-v665long01.json",
+    "fingerprint": "d80041dc982a48112e065da62d28f27ac57ed20f0314a4719851f99eb834016a",
+    "status": "candidate-only-public-release-blocked",
+    "aRuntimeCoverage": {
+      "stars": 12,
+      "constellations": 12,
+      "nebulae": 12
+    },
+    "betaReviewRows": {
+      "stars": 24,
+      "constellations": 12,
+      "nebulae": 24
+    },
+    "releaseAllowed": false
+  },
+  "openGates": [
+    "Four Beta stellar physical component identities remain unconfirmed.",
+    "Five Beta nebula image chains have no admissible acquisition.",
+    "A and Beta nebula rights signatures remain zero; the user has chosen to keep missing signatures pending.",
+    "Per-item human visual acceptance is pending.",
+    "Physical mobile was not run within web-only scope; simulated viewport results do not replace it.",
+    "Root application parity is deferred outside this web-only batch.",
+    "Public web release is blocked; no deployment was performed."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "publicDeployment": false
+  }
+}

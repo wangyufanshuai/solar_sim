@@ -1,0 +1,34 @@
+{
+  "version": "v591-venus-alternative-acquisition-blocked-v1",
+  "status": "blocked-no-automatic-retry",
+  "failedAt": "2026-08-14T01:30:14.610Z",
+  "id": "venus-topography-4641m-source-v591",
+  "target": "venus",
+  "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.tif",
+  "requestCount": 1,
+  "client": {
+    "name": "curl",
+    "retries": 0,
+    "redirectsFollowed": 0,
+    "maximumSeconds": 2700
+  },
+  "response": {
+    "id": "venus-topography-4641m-source-v591",
+    "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.tif",
+    "requestedAt": "2026-08-13T16:28:55.624Z",
+    "httpStatus": 200,
+    "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.tif",
+    "location": null,
+    "contentLength": 67166865,
+    "mediaType": "image/tiff",
+    "etag": "9a57a63891733485bfe0208a0205dcbd-9",
+    "curlExitCode": null,
+    "curlError": "curl: (28) Operation timed out after 32477591 milliseconds with 4264538 out",
+    "outcome": "curl-failed-no-retry"
+  },
+  "partialBytesRemoved": 4263936,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "error": "v591-venus-topography-curl-exit:null:curl: (28) Operation timed out after 32477591 milliseconds with 4264538 out",
+  "receiptSha256": "75b9a9de534536ea8127327b3d33733381582745cbfa4a2f39a57158f4b7050c"
+}

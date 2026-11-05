@@ -1,0 +1,79 @@
+{
+  "schema": "mainline-a-release-identity-bridge-pinned-v1",
+  "version": "explicit-evidence-v1",
+  "generatedAt": "2026-10-07T05:27:25.453Z",
+  "productIdentity": "solar-sim-mainline-a",
+  "status": "blocked",
+  "candidateOnly": true,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "build": {
+    "buildId": "Iqw1CWm3s4HLCWkMskxXP",
+    "runtimeBuildId": "mainline-a-93b297e97cc3a2ce",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "profile": "vercel-lite",
+    "sourceStable": true,
+    "receiptPath": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json",
+    "receiptSha256": "966e4675acb61bc6125ef2112d2bc8780c4d2bad053c5d3558f06f1c1ff807a5",
+    "sourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+    "currentSourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98"
+  },
+  "evidenceInput": {
+    "path": "docs/release/v607/mainline-a-release-evidence-input-20261007-v645-final-candidate.json",
+    "bytes": 77231,
+    "sha256": "e2ce80fa6646e2af07a17851921ed058c079336a6c4b407e06b0d859c9bfd8c3"
+  },
+  "rootPackage": {
+    "packageName": "solar-sim-viz",
+    "runtimeName": "solar-sim-viz",
+    "releaseIdentity": "solar-sim-mainline-a"
+  },
+  "nextWebPackage": {
+    "packageName": "solar-next-web",
+    "runtimeName": "solar-next-web",
+    "releaseIdentity": "solar-sim-mainline-a",
+    "packageSha256": "5fc87565eddf6dd812faaffaee316f73db26afafa381afe3682ae4b0f5563ab1"
+  },
+  "mapping": {
+    "releaseIdentityMatch": true,
+    "runtimeNameDifferenceIntentional": true,
+    "sourceDigestRelation": "different-code-lines",
+    "rootBuildIdentityPresent": false,
+    "nextWebBuildIdentityPresent": true
+  },
+  "sourceBinding": {
+    "valid": true,
+    "currentSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+    "problems": []
+  },
+  "rootSource": {
+    "inputSha256": "b9cbb44556622b28aff92baa58c3a28b13dd8c9c2803593e575adce91d68fc56",
+    "readOnly": true,
+    "parentGitOperations": false
+  },
+  "nextWebSource": {
+    "inputSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+    "sourceStable": true
+  },
+  "manifestParity": {
+    "manifestParity": false,
+    "rootManifestProbeCurrent": true,
+    "rootManifestProbeParity": false,
+    "parentGitOperations": false
+  },
+  "blockers": [
+    "canonical-runtime-clearance-pending",
+    "human-rights-signoff-pending",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending"
+  ]
+}

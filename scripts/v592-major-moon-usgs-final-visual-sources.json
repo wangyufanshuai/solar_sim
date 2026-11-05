@@ -1,0 +1,65 @@
+{
+  "version": "v592-major-moon-usgs-final-visual-sources-v1",
+  "policy": {
+    "exactHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicWrite": ".part-to-final",
+    "maximumBytesPerAsset": 314572800,
+    "sourceCacheMaximumBytes": 2147483648,
+    "visualAssetAdmissionGrantedByAcquisition": false,
+    "scientificAuthorityGranted": false,
+    "presentationOnly": true
+  },
+  "sources": [
+    {
+      "target": "io",
+      "id": "io-usgs-color-merged-global-mosaic-1km-final",
+      "metadataProbeId": "io-color-merged-global-mosaic-1km",
+      "originalUrl": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+      "expectedProjection": "simple-cylindrical-global-mosaic",
+      "expectedBands": "color-merged-Galileo-SSI-and-Voyager",
+      "expectedResolutionMetersPerPixel": 1000,
+      "coverageDisclosure": "global mosaic assembled from mission imaging; observational resolution and illumination remain nonuniform",
+      "licenseBasis": "USGS Astrogeology/NASA-PDS public-domain mission data"
+    },
+    {
+      "target": "europa",
+      "id": "europa-usgs-global-mosaic-500m-final",
+      "metadataProbeId": "europa-voyager-galileo-global-mosaic-500m",
+      "originalUrl": "https://planetarymaps.usgs.gov/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.tif",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.tif",
+      "expectedProjection": "simple-cylindrical-global-mosaic",
+      "expectedBands": "Voyager-and-Galileo-SSI-mosaic",
+      "expectedResolutionMetersPerPixel": 500,
+      "coverageDisclosure": "global mosaic assembled from mission imaging; observational resolution and illumination remain nonuniform",
+      "licenseBasis": "USGS Astrogeology/NASA-PDS public-domain mission data"
+    },
+    {
+      "target": "ganymede",
+      "id": "ganymede-usgs-color-global-mosaic-1435m-final",
+      "metadataProbeId": "ganymede-color-global-mosaic-1-4km",
+      "originalUrl": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+      "expectedProjection": "simple-cylindrical-global-mosaic",
+      "expectedBands": "color-Voyager-and-Galileo-SSI-mosaic",
+      "expectedResolutionMetersPerPixel": 1435,
+      "coverageDisclosure": "global color mosaic assembled from mission imaging; observational resolution and illumination remain nonuniform",
+      "licenseBasis": "USGS Astrogeology/NASA-PDS public-domain mission data"
+    },
+    {
+      "target": "callisto",
+      "id": "callisto-usgs-global-mosaic-1km-final",
+      "metadataProbeId": "callisto-galileo-voyager-global-mosaic-1km",
+      "originalUrl": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+      "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+      "expectedProjection": "simple-cylindrical-global-mosaic",
+      "expectedBands": "Voyager-and-Galileo-SSI-mosaic",
+      "expectedResolutionMetersPerPixel": 1000,
+      "coverageDisclosure": "global mosaic assembled from mission imaging; observational resolution and illumination remain nonuniform",
+      "licenseBasis": "USGS Astrogeology/NASA-PDS public-domain mission data"
+    }
+  ]
+}

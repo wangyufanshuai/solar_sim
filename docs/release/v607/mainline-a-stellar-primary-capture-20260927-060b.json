@@ -1,0 +1,113 @@
+{
+  "schema": "mainline-a-stellar-primary-source-capture-audit-v1",
+  "generatedAt": "2026-09-27T07:11:17.179Z",
+  "runId": "20260927-060b",
+  "evidenceClass": "external-source",
+  "scope": "Raw primary documents for component review; no automatic measurement or runtime admission",
+  "newDevelopmentRound": false,
+  "productionCodeChanged": false,
+  "collector": {
+    "path": "tmp/capture-mainline-a-stellar-primary-20260927-060b.mjs",
+    "sha256": "7ffebaffe95b0b98dd93cebe79fedbff25e82819ff199876e414c65d494c4cf0"
+  },
+  "fingerprintAlgorithm": "SHA-256 of UTF-8 JSON.stringify(request) with stored method,url,accept field order",
+  "counts": {
+    "requested": 2,
+    "responseCaptured": 2,
+    "componentConfirmed": 0
+  },
+  "records": [
+    {
+      "id": "polaris-temperature-2020",
+      "star": "polaris",
+      "kind": "pdf",
+      "url": "https://oap.onu.edu.ua/article/download/216289/218290",
+      "request": {
+        "method": "GET",
+        "url": "https://oap.onu.edu.ua/article/download/216289/218290",
+        "accept": "application/pdf"
+      },
+      "requestFingerprint": "33c61facd35c1393a64fda2c81cc3d6abcdcea1413158cfe5545788ed76d37c0",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-060b/polaris-temperature-2020-7e876a23c4c357a3b0170c636d4095098fad9f54a98b73bad6a825c8feed6d4a.pdf",
+        "sha256": "7e876a23c4c357a3b0170c636d4095098fad9f54a98b73bad6a825c8feed6d4a",
+        "bytes": 1349754
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T07:11:09.855Z",
+          "endedAt": "2026-09-27T07:11:15.020Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "application/pdf",
+          "finalUrl": "https://oap.onu.edu.ua/article/download/216289/218290",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "33c61facd35c1393a64fda2c81cc3d6abcdcea1413158cfe5545788ed76d37c0",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    },
+    {
+      "id": "polaris-temperature-2013",
+      "star": "polaris",
+      "kind": "pdf",
+      "url": "https://arxiv.org/pdf/1211.6103",
+      "request": {
+        "method": "GET",
+        "url": "https://arxiv.org/pdf/1211.6103",
+        "accept": "application/pdf"
+      },
+      "requestFingerprint": "222248c3f97e565058e99456e9659cc783ec3d75f1d768af892ed71d254fae3b",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-060b/polaris-temperature-2013-104d4af0fb50ea726e8294089035bd3055b330db64a69fa0bb6ba6bcdfeba0d8.pdf",
+        "sha256": "104d4af0fb50ea726e8294089035bd3055b330db64a69fa0bb6ba6bcdfeba0d8",
+        "bytes": 203388
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T07:11:15.020Z",
+          "endedAt": "2026-09-27T07:11:17.179Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "application/pdf",
+          "finalUrl": "https://arxiv.org/pdf/1211.6103",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "222248c3f97e565058e99456e9659cc783ec3d75f1d768af892ed71d254fae3b",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false
+  }
+}

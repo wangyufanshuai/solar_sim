@@ -1,0 +1,79 @@
+{
+  "schema": "mainline-a-access-retry-v1",
+  "runId": "20260927-063",
+  "recordedAt": "2026-09-27T07:46:17Z",
+  "purpose": "User-requested retry of Vercel, Exa and the in-app Browser",
+  "newDevelopmentRound": false,
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "dirtyStatusEntriesBeforeRetry": 1596,
+  "vercel": {
+    "scope": "Existing project and deployments; read-only",
+    "projectName": "next-web",
+    "listDeploymentsStatus": "403-forbidden",
+    "error": "Not authorized: Trying to access resource under scope \"wyufan43-3383s-projects\". You must re-authenticate to this scope or use a token with access to this scope.",
+    "getProjectStatus": "connector-input-validation-error",
+    "getProjectError": "Input validation error: Invalid arguments for tool get_project: idOrName: Invalid input: expected string, received undefined",
+    "compatibilityRetry": "Same-project idOrName argument did not resolve adapter validation",
+    "previewUrlObtained": false,
+    "deploymentCreated": false,
+    "filesUploaded": false,
+    "credentialsRead": false
+  },
+  "exa": {
+    "operation": "web_search_exa",
+    "queryScope": "Official Three.js resource disposal documentation",
+    "timestampFromService": "2026-09-27T07:44:22.500Z",
+    "status": "402-credits-exhausted",
+    "error": "web_search_exa error (402): You have exceeded your credits limit. Please top up to keep using Exa at dashboard.exa.ai",
+    "sourcesRetrieved": 0,
+    "scientificCaptureAdded": false
+  },
+  "browser": {
+    "surface": "Codex In-app Browser",
+    "connectionEstablished": true,
+    "temporaryTabCreated": true,
+    "targetUrl": "http://127.0.0.1:3057/",
+    "navigationStatus": "blocked-before-application-observation",
+    "error": "Browser Use could not complete this action because a browser security check was unavailable. Reason: Browser Use could not request permission. Browser use cannot access http://127.0.0.1:3057 because saved browser permissions could not be verified. Please try again later. This failure may be temporary. The agent may retry after the issue is resolved, but must not bypass browser security controls or use an indirect workaround.",
+    "applicationDomObserved": false,
+    "applicationScreenshotCaptured": false,
+    "productionServerStartedThisRetry": false,
+    "localHttpProbeExecuted": false,
+    "securityBypassAttempted": false,
+    "alternateBrowserAttempted": false
+  },
+  "evidenceThisRetry": {
+    "static": "Repository root, branch and HEAD checked; tests and production build not rerun",
+    "http": "Application HTTP not-run; connector service errors only",
+    "visual": "not-run",
+    "browser": "Connection established; application navigation blocked by saved-permission verification",
+    "performance": "not-run",
+    "mobileViewport": "not-run",
+    "externalSource": "Exa returned no sources; Vercel returned no deployment"
+  },
+  "codeChange": {
+    "productionAddedLines": 0,
+    "productionModifiedLines": 0,
+    "effectiveCodeFiles": [],
+    "receiptExcludedFromEffectiveCode": true
+  },
+  "boundaries": {
+    "candidateOnly": true,
+    "admission": "not-admitted",
+    "reviewState": "hold",
+    "scientificPayloadWriteback": false,
+    "rightsRemainPending": true,
+    "physicsKernelsModified": false,
+    "parentGitAccessed": false,
+    "historicalFilesOverwritten": false
+  },
+  "release": {
+    "gateAdvancementThisRetry": false,
+    "previousGateReceipt": "docs/release/v607/mainline-a-goal-blocked-audit-20260927-062.json",
+    "previousPassed": 6,
+    "previousTotal": 17,
+    "finalReleaseComplete": false
+  }
+}

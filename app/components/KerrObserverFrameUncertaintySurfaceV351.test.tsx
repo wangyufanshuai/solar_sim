@@ -1,0 +1,3 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+describe("v351 observer-frame uncertainty surface", () => { it("shows included and excluded dimensions without a second renderer", () => { const source = readFileSync("app/components/KerrObserverFrameUncertaintySurfaceV351.tsx", "utf8"); expect(source).toContain("Included / excluded component ledger"); expect(source).toContain("no RSS"); expect(source).toContain("no double counting"); expect(source).toContain("GM/c²"); expect(source).not.toContain("Math.random"); expect(source).not.toContain("<canvas"); }); });

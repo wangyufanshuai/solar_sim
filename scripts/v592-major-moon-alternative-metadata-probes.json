@@ -1,0 +1,34 @@
+{
+  "version": "v592-major-moon-alternative-metadata-probes-v1",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHosts": [
+      "images-api.nasa.gov",
+      "images-assets.nasa.gov"
+    ],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false
+  },
+  "probes": [
+    {
+      "id": "triton-voyager-cylindrical",
+      "target": "triton",
+      "query": "Triton Voyager cylindrical mosaic",
+      "requiredTerms": ["triton"]
+    },
+    {
+      "id": "miranda-voyager-mosaic",
+      "target": "miranda",
+      "query": "Miranda Uranus Voyager mosaic",
+      "requiredTerms": ["miranda"]
+    },
+    {
+      "id": "titania-voyager-mosaic",
+      "target": "titania",
+      "query": "Titania Uranus Voyager mosaic",
+      "requiredTerms": ["titania"]
+    }
+  ]
+}

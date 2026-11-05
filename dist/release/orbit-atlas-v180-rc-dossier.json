@@ -1,0 +1,375 @@
+{
+  "version": "v180-final-web-rc-dossier",
+  "generatedAt": "2026-07-14T06:26:26.505Z",
+  "confirmedSerialValidation": true,
+  "releaseStatus": "web-dual-delivery-rc-ready-science-shadow-retained",
+  "framework": {
+    "next": "15.5.18",
+    "react": "19.2.7",
+    "reactDom": "19.2.7",
+    "reactThreeFiber": "9.6.1",
+    "drei": "10.7.7",
+    "three": "^0.170.0"
+  },
+  "machine": {
+    "platform": "win32 10.0.26200 x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900HX",
+    "logicalCpus": 32,
+    "totalMemoryMiB": 16192,
+    "node": "v24.14.0",
+    "graphicsAdapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    }
+  },
+  "architecture": {
+    "universeRuntimeControllerPhysicalLines": 38,
+    "rootEvidenceAttributes": 603,
+    "canvasCount": 1,
+    "controllerRole": "root-facade-scene-host-compatibility-audit",
+    "workbenchNote": "The facade is below 1200 lines; AtlasRuntimeWorkbench remains the principal follow-up decomposition surface."
+  },
+  "validation": {
+    "focusedFiles": 9,
+    "focusedTests": 25,
+    "fullRegression": "673/673",
+    "productionBuilds": [
+      "standalone-full",
+      "vercel-lite"
+    ],
+    "browserQa": {
+      "standalonePassed": 7,
+      "standaloneViewportSkipped": 1,
+      "vercelLitePassed": 2,
+      "viewports": [
+        "1440x900",
+        "390x844"
+      ],
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "resource404": 0,
+      "axe": "wcag2a-and-wcag2aa-pass"
+    },
+    "lifecycleSoak": {
+      "warmupCycles": 2,
+      "measuredCycles": 10,
+      "baselineHeapBytes": 41515036,
+      "finalHeapBytes": 44483536,
+      "heapLimitBytes": 75069468,
+      "baselineResources": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 2,
+        "cameraLocks": 1,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "releasedResources": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 2,
+        "cameraLocks": 1,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "maxSearchMs": 21.66000000014901,
+      "maxFocusCommandMs": 0.06000000238418579,
+      "passed": true
+    },
+    "clientBundle": {
+      "standaloneTransferBytes": 698991,
+      "vercelLiteTransferBytes": 698991,
+      "maxTransferBytes": 768000
+    },
+    "hardwarePerformance": [
+      {
+        "id": "overview",
+        "sceneMode": "atlas",
+        "medianFps": 118.7,
+        "frameP50Ms": 8.4,
+        "frameP95Ms": 12.7,
+        "longestTaskMs": 0,
+        "frameSamples": 1018,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 25,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "earth-inspect",
+        "sceneMode": "inspect",
+        "medianFps": 80.3,
+        "frameP50Ms": 12.5,
+        "frameP95Ms": 16.8,
+        "longestTaskMs": 286,
+        "frameSamples": 754,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 30,
+        "textures": 24,
+        "renderTargets": 0
+      },
+      {
+        "id": "gaia-stellar",
+        "sceneMode": "inspect",
+        "medianFps": 239.8,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2347,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 28,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "launch",
+        "sceneMode": "launch",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 58,
+        "frameSamples": 2386,
+        "drawCalls": 40,
+        "triangles": 89696,
+        "programs": 15,
+        "textures": 6,
+        "renderTargets": 0
+      },
+      {
+        "id": "kerr",
+        "sceneMode": "kerr",
+        "medianFps": 119.9,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 12.6,
+        "longestTaskMs": 0,
+        "frameSamples": 1164,
+        "drawCalls": 1,
+        "triangles": 2,
+        "programs": 28,
+        "textures": 20,
+        "renderTargets": 1
+      }
+    ],
+    "performanceComparison": [
+      {
+        "id": "overview",
+        "v174MedianFps": 80.5,
+        "v180MedianFps": 118.7,
+        "medianFpsRatio": 1.4745341614906833,
+        "regressionWithinFivePercent": true
+      },
+      {
+        "id": "earth-inspect",
+        "v174MedianFps": 79.4,
+        "v180MedianFps": 80.3,
+        "medianFpsRatio": 1.0113350125944582,
+        "regressionWithinFivePercent": true
+      },
+      {
+        "id": "gaia-stellar",
+        "v174MedianFps": 240,
+        "v180MedianFps": 239.8,
+        "medianFpsRatio": 0.9991666666666668,
+        "regressionWithinFivePercent": true
+      },
+      {
+        "id": "launch",
+        "v174MedianFps": 240,
+        "v180MedianFps": 240,
+        "medianFpsRatio": 1,
+        "regressionWithinFivePercent": true
+      },
+      {
+        "id": "kerr",
+        "v174MedianFps": 80,
+        "v180MedianFps": 119.9,
+        "medianFpsRatio": 1.49875,
+        "regressionWithinFivePercent": true
+      }
+    ],
+    "gpuCounterQualification": "gl.info counters are observational only; drawCalls=1 is not optimization proof"
+  },
+  "contentPacks": [
+    {
+      "id": "core",
+      "version": "1.0.0",
+      "fileCount": 633,
+      "installedBytes": 85612140,
+      "licenses": [
+        "NASA-ESA-source-manifests",
+        "mixed-provenance-see-catalog-manifest",
+        "mixed-provenance-see-project-manifests"
+      ],
+      "manifest": "dist/content-packs/core.manifest.json",
+      "sha256": "1e8208a7ed2c1d19dcd0fa1ec0eb81b2bc6cc1eafb47f6360d6ddbdc85ac2323"
+    },
+    {
+      "id": "planet-hd",
+      "version": "1.0.0",
+      "fileCount": 69,
+      "installedBytes": 337359590,
+      "licenses": [
+        "NASA-public-domain-and-source-manifests"
+      ],
+      "manifest": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452"
+    },
+    {
+      "id": "deep-sky",
+      "version": "1.0.0",
+      "fileCount": 89,
+      "installedBytes": 69302270,
+      "licenses": [
+        "NASA-ESA-source-manifests"
+      ],
+      "manifest": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "1126da825554313d855b4af2fb8259cb80c1c9041a6a0ea6e18af752e3f6df2f"
+    },
+    {
+      "id": "spacecraft",
+      "version": "1.0.0",
+      "fileCount": 5,
+      "installedBytes": 72241294,
+      "licenses": [
+        "source-manifest-specific"
+      ],
+      "manifest": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545"
+    },
+    {
+      "id": "science-fixtures",
+      "version": "1.0.0",
+      "fileCount": 7,
+      "installedBytes": 135314,
+      "licenses": [
+        "project-generated-research-fixtures"
+      ],
+      "manifest": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c"
+    },
+    {
+      "id": "runtime-codecs",
+      "version": "v160-three-r170-basis",
+      "fileCount": 2,
+      "installedBytes": 584862,
+      "licenses": [
+        "MIT-Three.js-and-Apache-2.0-Basis-Universal"
+      ],
+      "manifest": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab"
+    }
+  ],
+  "contentPackTotals": {
+    "fileCount": 805,
+    "installedBytes": 565235470
+  },
+  "delivery": {
+    "standalone-full": {
+      "interactive": true,
+      "localContentPacks": true,
+      "millionStarCatalog": true,
+      "fullObservationFixtures": true,
+      "cloudDeployment": false
+    },
+    "vercel-lite": {
+      "interactive": true,
+      "localContentPacks": false,
+      "millionStarCatalog": false,
+      "fullObservationFixtures": false,
+      "loopbackFallback": false,
+      "manifestVersion": "v171-vercel-lite-1.0.0",
+      "fileCount": 595,
+      "installedBytes": 69050419,
+      "maxBytes": 85983232,
+      "cloudDeployment": false
+    }
+  },
+  "science": {
+    "defaultKernel": "legacy-eih-1pn",
+    "shadowKernel": "eih-1pn-2pn-lt",
+    "promotionApplied": false,
+    "scientificBlockers": [
+      "candidate-does-not-improve-legacy-aggregate-rms",
+      "independent-per-body-dop853-comparison-pending"
+    ]
+  },
+  "knownLimitations": [
+    "Vercel Lite omits the million-star catalog and full observation fixtures.",
+    "V2 relativity remains shadow-only because the independent promotion gates are not satisfied.",
+    "Cloud deployment and desktop installers are separate, unreleased tracks.",
+    "GPU gl.info counters remain observational and are not optimization proof.",
+    "AtlasRuntimeWorkbench is still a large integration surface even though UniverseRuntimeController is a 38-line facade."
+  ],
+  "rollback": [
+    "Select standalone-full and the retained v174/v167 verified artifact set.",
+    "Keep legacy-eih-1pn as the default kernel and leave V2 shadow-only.",
+    "Restore the six checksummed content-pack manifests from retained release artifacts.",
+    "Re-run tsc, the 673-test atlas suite, both production builds and fresh Browser QA before promotion."
+  ],
+  "artifacts": [
+    {
+      "path": "dist/science/performance-v180-report.json",
+      "sha256": "62b16d03d303de31ca1109aad8c17deccdc205ce54ae6e10fed3b051465be41e"
+    },
+    {
+      "path": "dist/science/performance-v174-report.json",
+      "sha256": "467403060dbdbabcc6841c3903b1ebb317b6f86b9f2aad37dd8f0b8806071644"
+    },
+    {
+      "path": "dist/science/lifecycle-soak-v178-report.json",
+      "sha256": "25ecbd80bf6a9f98810b807b0c23de16f89cc119b68ba69678fc4466641d2dcb"
+    },
+    {
+      "path": "dist/science/client-bundle-v177-standalone-full.json",
+      "sha256": "c02ddeb858268bb715efcb036e739f68015d1bf972f1716620fdf8131c16d05e"
+    },
+    {
+      "path": "dist/science/client-bundle-v177-vercel-lite.json",
+      "sha256": "9434aca20ac92bd353125939c2364fed8d30b531addf6a869da784cc6b3e913a"
+    },
+    {
+      "path": "dist/science/regression-v180-report.json",
+      "sha256": "d27ee64ac2226ea1962382d8a6424737237bf7dfd0b90b150d037dde890b4388"
+    },
+    {
+      "path": "dist/science/product-release-v167-report.json",
+      "sha256": "0a27546e3655ac771945f8a0f3210c48d8eea2fb0cd61c5c22049c8ed1b09727"
+    },
+    {
+      "path": "dist/content-packs/core.manifest.json",
+      "sha256": "1e8208a7ed2c1d19dcd0fa1ec0eb81b2bc6cc1eafb47f6360d6ddbdc85ac2323"
+    },
+    {
+      "path": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452"
+    },
+    {
+      "path": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "1126da825554313d855b4af2fb8259cb80c1c9041a6a0ea6e18af752e3f6df2f"
+    },
+    {
+      "path": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545"
+    },
+    {
+      "path": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c"
+    },
+    {
+      "path": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab"
+    },
+    {
+      "path": "public/atlas-lite/manifest.json",
+      "sha256": "e1130ed4b81603d83e87ff7196f5be0b343adee93e7bd1443d642a8ba4d6a7aa"
+    }
+  ],
+  "boundary": "no-cloud-deploy-no-desktop-release-no-scientific-promotion-no-live-or-worker-physics-mutation"
+}

@@ -1,0 +1,580 @@
+{
+  "version": "v593-p1-browser-code-gate-v1",
+  "generatedAt": "2026-08-22T00:00:00.000Z",
+  "status": "passed-current-dev-code-gates-sealed-build-and-human-signoff-pending",
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "formalProductPointer": "v263",
+    "additiveOnly": true
+  },
+  "scope": {
+    "signaturePassesCodeImplemented": 3,
+    "signaturePassesComplete": 0,
+    "implemented": [
+      "jupiter",
+      "saturn",
+      "stellar-archetypes"
+    ],
+    "pending": [
+      "sun",
+      "earth",
+      "deep-sky"
+    ],
+    "finalGoldenFrameMatrixComplete": false,
+    "sealedBuildEvidence": false,
+    "humanVisualSignoff": false
+  },
+  "sourceMaterialCorrectness": {
+    "sourcePath": "app/components/SignatureArtDirectionBridgeV593.tsx",
+    "sourceSha256": "03adb1af7fdf04f84d545ceafaab0a1729cf60bacb48fefcb9d473ab5347338b",
+    "jupiter": "NASA-source-bound-v591-albedo-band-storm;clean-inset-seam-reconstruction;no-science-writeback",
+    "saturn": "Cassini-source-bound-v591-atmosphere-ring-optical-depth;Henyey-Greenstein-forward-backward-scattering;bidirectional-analytic-shadow",
+    "stellar": "Gaia-parameterized-v592-archetypes;deterministic-radiative-or-convective-presentation-model;no-observation-texture-claim"
+  },
+  "captures": [
+    {
+      "id": "jupiter-grs",
+      "signaturePass": "jupiter",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 1,
+        "signatureMaterialCount": 1,
+        "stellarProfile": "not-applicable",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-grs-v592-baseline-1440x900.jpg",
+        "bytes": 88971,
+        "sha256": "9d8cdda27ebc6a08587fa34b44a9165d9c1e71a29071f1915da06ab009810946",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-grs-v593-signature-1440x900.jpg",
+        "bytes": 90768,
+        "sha256": "2d565270056f3fb312eae4db6b3914b511bbc46be106b82e8e7881282689a74e",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-grs-v592-baseline-1440x900-native-crop.png",
+        "bytes": 319873,
+        "sha256": "e473311a03fbfffe9816fa2694311d03a93819a96089b415b22685ef8da3b228",
+        "width": 470,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-grs-v593-signature-1440x900-native-crop.png",
+        "bytes": 337772,
+        "sha256": "66776efba481c8f007450abf222558321792e27175b28ee140ba703c6b4f4a9e",
+        "width": 470,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.139243,
+        "changedChannelFractionGt2": 0.07773971,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "jupiter-seam",
+      "signaturePass": "jupiter",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 1,
+        "signatureMaterialCount": 1,
+        "stellarProfile": "not-applicable",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-seam-v592-baseline-1440x900.jpg",
+        "bytes": 88299,
+        "sha256": "7a12116fe4a971b4e9929839c1728f4df6aaf7a5559b3ce07c8f139e5f6d07fe",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-seam-v593-signature-1440x900.jpg",
+        "bytes": 89326,
+        "sha256": "22a510f74e23e1a6eeb81f0e070f99cd362100c80befa861ae226fdee45a1d57",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-seam-v592-baseline-1440x900-native-crop.png",
+        "bytes": 310506,
+        "sha256": "b0f07df7ef84482be19e4209134c2bc0c9963bbe4f3d61f0d74fc2d804f05c30",
+        "width": 470,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/jupiter-seam-v593-signature-1440x900-native-crop.png",
+        "bytes": 320565,
+        "sha256": "b40ae21bbe26e8f48f507461614e0f577ebe3208c9c601f9437e4d158b437441",
+        "width": 470,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.175129,
+        "changedChannelFractionGt2": 0.07840149,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "saturn-front",
+      "signaturePass": "saturn",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "signatureMaterialCount": 2,
+        "stellarProfile": "not-applicable",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/saturn-front-v592-baseline-1440x900.jpg",
+        "bytes": 110273,
+        "sha256": "2d5c30b108784a317b69fbe6e8d2c1759c745a53788fdb70c65dddb30346c985",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/saturn-front-v593-signature-1440x900.jpg",
+        "bytes": 111269,
+        "sha256": "35c8b1d6970c2a9f864aa898b4587485238cc2d9aff4507c54cda3eccce7631f",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/saturn-front-v592-baseline-1440x900-native-crop.png",
+        "bytes": 497094,
+        "sha256": "af16fff44d8afeb8b2af177a0767ef9847d7823bcecebe7fbbb4e490ac69b45b",
+        "width": 830,
+        "height": 640,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/saturn-front-v593-signature-1440x900-native-crop.png",
+        "bytes": 514130,
+        "sha256": "24d59120053c5aa4c4d0e83aacd31f149691a5cc29eb754e4ff83fd555f89f1d",
+        "width": 830,
+        "height": 640,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 2.241883,
+        "changedChannelFractionGt2": 0.16812629,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "sirius",
+      "signaturePass": "stellar-archetypes",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "signatureMaterialCount": 2,
+        "stellarProfile": "hot-radiative-main-sequence",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sirius-v592-baseline-1440x900.jpg",
+        "bytes": 97191,
+        "sha256": "87205ff1ae1dfb5a8ba87722f5563717f70a557d8d964317ce6a42461b628ee9",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sirius-v593-signature-1440x900.jpg",
+        "bytes": 97121,
+        "sha256": "92bd183768f0434739d7fb1205cffa9d46c9f21e3c3beb754d73d421604e93d5",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sirius-v592-baseline-1440x900-native-crop.png",
+        "bytes": 226133,
+        "sha256": "016c64e3a1f15e03828d1f6a3f68605543412b2f914f2d2d603e027b12719e0c",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/sirius-v593-signature-1440x900-native-crop.png",
+        "bytes": 212478,
+        "sha256": "a5579f5af7df00df9608aeee19eec33851d57846bc0a10277647b73fe1dfe47f",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.515929,
+        "changedChannelFractionGt2": 0.08800566,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "rigel",
+      "signaturePass": "stellar-archetypes",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "signatureMaterialCount": 2,
+        "stellarProfile": "hot-radiative-supergiant",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/rigel-v592-baseline-1440x900.jpg",
+        "bytes": 96879,
+        "sha256": "1be9a61845424156db0b0106546ada622b0c10c29033c6f695cb5b4079022c53",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/rigel-v593-signature-1440x900.jpg",
+        "bytes": 96249,
+        "sha256": "c935101f95b0a21ac08d9ab110eeba0572bb5e660c2f04d3928b85bf3e04fca9",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/rigel-v592-baseline-1440x900-native-crop.png",
+        "bytes": 207712,
+        "sha256": "8f75c984ce5dd9bc02340d0340216d35ea6e63963511ff72259826754dbad257",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/rigel-v593-signature-1440x900-native-crop.png",
+        "bytes": 226403,
+        "sha256": "419cada83d3428b0d8a8da858787a0b42d767f622c057889c15720b33349f164",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.576681,
+        "changedChannelFractionGt2": 0.0882428,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "betelgeuse",
+      "signaturePass": "stellar-archetypes",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "signatureMaterialCount": 2,
+        "stellarProfile": "cool-convective-supergiant",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/betelgeuse-v592-baseline-1440x900.jpg",
+        "bytes": 97807,
+        "sha256": "9f2f2943bcb2b849838f539b7423d4d3c2f00fec486d02bc8bcfbbff155b7906",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/betelgeuse-v593-signature-1440x900.jpg",
+        "bytes": 96522,
+        "sha256": "0a5ae182500b0a96bb5b97a8498bd14be1b750922b9c12e0565e30315fe6c48f",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/betelgeuse-v592-baseline-1440x900-native-crop.png",
+        "bytes": 273877,
+        "sha256": "d138323a8e369c7dfac0fa4a4b17a80224bd8d8203bf461360371f6978fba972",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/betelgeuse-v593-signature-1440x900-native-crop.png",
+        "bytes": 252678,
+        "sha256": "64e20e3ceddea7932f68ce9f48afebefd328e8eaf5fedb51f539f44a6afd86fd",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 2.591608,
+        "changedChannelFractionGt2": 0.09121862,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "antares",
+      "signaturePass": "stellar-archetypes",
+      "framePolicy": "same-current-dev-build-fixed-camera-and-clock",
+      "baselineTelemetry": {
+        "materialPatchCount": 0,
+        "signatureMaterialCount": 0,
+        "webglOutputChanged": false
+      },
+      "signatureTelemetry": {
+        "materialPatchCount": 2,
+        "signatureMaterialCount": 2,
+        "stellarProfile": "cool-convective-supergiant",
+        "webglOutputChanged": true
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/antares-v592-baseline-1440x900.jpg",
+        "bytes": 96922,
+        "sha256": "8c140dced1d1133b88de80235b965189fd927ea8a6f6c818803083ff3c5edd3a",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/antares-v593-signature-1440x900.jpg",
+        "bytes": 95637,
+        "sha256": "e213f856eb56c938800f2223c36dd05e4766a21ee3cebe7fafdec3ff182ad059",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/antares-v592-baseline-1440x900-native-crop.png",
+        "bytes": 266642,
+        "sha256": "9aeacc07ae585448a96dd6e76a4d4106382640320084e0874c2c0112208b741b",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p1-code-gates/antares-v593-signature-1440x900-native-crop.png",
+        "bytes": 249505,
+        "sha256": "a76c92e55f4d39664249459ff5815046fe9515f42d139724376e225988d5c9f2",
+        "width": 500,
+        "height": 540,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 2.70788,
+        "changedChannelFractionGt2": 0.0912055,
+        "maximumChannelDiff255": 255
+      }
+    }
+  ],
+  "saturnAuditFrames": [
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/saturn-backlight-v593-signature-1440x900.jpg",
+      "bytes": 98303,
+      "sha256": "0682055d41ae8a48a7e593375914d5b323237d8c1141deefdf47c8c922f08476",
+      "width": 1440,
+      "height": 900,
+      "format": "jpeg"
+    },
+    {
+      "path": "docs/release/v593/screenshots/p1-code-gates/saturn-ring-shadow-v593-signature-1440x900.jpg",
+      "bytes": 120382,
+      "sha256": "2909163f39d81f80a461c0836771b5feacb6ce49dbfd93a6a904961943a72358",
+      "width": 1440,
+      "height": 900,
+      "format": "jpeg"
+    }
+  ],
+  "jupiterSeamAudit": {
+    "cropColumn": 269,
+    "baselinePositiveContrast255": 8.463348,
+    "signaturePositiveContrast255": 1.15441,
+    "reductionFraction": 0.8635989,
+    "status": "passed-code-gate-not-human-signoff"
+  },
+  "browser": {
+    "runner": "Codex-in-app-browser",
+    "viewport": "1440x900",
+    "singleCanvas": true,
+    "consolePageWebglErrorCount": 0,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadUniqueCount": 1,
+    "scientificPayloadWriteback": false,
+    "performance": [
+      {
+        "id": "jupiter",
+        "medianFps": 166.11,
+        "minimumSampledFps": 163.53,
+        "drawCalls": 6,
+        "triangles": 42312,
+        "programs": 6,
+        "textures": 9,
+        "gpuBytes": 117440662
+      },
+      {
+        "id": "saturn",
+        "medianFps": 166.39,
+        "minimumSampledFps": 154.2,
+        "drawCalls": 12,
+        "triangles": 112968,
+        "programs": 9,
+        "textures": 8,
+        "gpuBytes": 158686038
+      },
+      {
+        "id": "sirius",
+        "medianFps": 188.86,
+        "drawCalls": 7,
+        "triangles": 43992,
+        "programs": 8,
+        "textures": 3,
+        "gpuBytes": 157636038
+      },
+      {
+        "id": "rigel",
+        "medianFps": 161.55,
+        "drawCalls": 7,
+        "triangles": 43992,
+        "programs": 8,
+        "textures": 3,
+        "gpuBytes": 157636038
+      },
+      {
+        "id": "betelgeuse",
+        "medianFps": 105.88,
+        "drawCalls": 7,
+        "triangles": 43992,
+        "programs": 8,
+        "textures": 3,
+        "gpuBytes": 157636038
+      },
+      {
+        "id": "antares",
+        "medianFps": 168.92,
+        "drawCalls": 7,
+        "triangles": 43992,
+        "programs": 8,
+        "textures": 3,
+        "gpuBytes": 157636038
+      }
+    ],
+    "resourceCycles": {
+      "baselineSignatureCycleCount": 10,
+      "sampledStateCount": 30,
+      "programRange": [
+        5,
+        8
+      ],
+      "textureRange": [
+        3,
+        9
+      ],
+      "baselineTextureCounts": [
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6,
+        6
+      ],
+      "finalBaseline": {
+        "patchCount": 0,
+        "signatureMaterialCount": 0,
+        "programs": 5,
+        "textures": 6
+      },
+      "sustainedGrowth": false
+    },
+    "rotation": {
+      "body": "jupiter",
+      "absoluteOrientationAuthority": "rotation-admitted-iau-linear-reference",
+      "poleRaDeg": 268.05486083,
+      "poleDecDeg": 64.49594688,
+      "rotationPeriodDays": 0.41353833,
+      "timeLapse": {
+        "rateSecondsPerSecond": 3600,
+        "elapsedWallSeconds": 0.9,
+        "primeMeridianDeltaDeg": 36.555801
+      },
+      "realRate": {
+        "rateSecondsPerSecond": 1,
+        "elapsedWallSeconds": 2.2,
+        "primeMeridianDeltaDeg": 0.022933
+      },
+      "paused": {
+        "rateSecondsPerSecond": 0,
+        "elapsedWallSeconds": 0.9,
+        "primeMeridianDeltaDeg": 0
+      },
+      "w0BlockedDisclosed": [
+        "bennu",
+        "kleopatra"
+      ],
+      "presentationAccelerationWriteback": false
+    }
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "productionReleaseAuthorized": false
+  },
+  "receiptSha256": "d86e5305c2ed826677d977fdeaa5f3356dc80fe78f6fbb49f5c9ef42c38a72ac"
+}

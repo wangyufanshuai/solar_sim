@@ -1,0 +1,72 @@
+{
+  "round": 55,
+  "date": "2026-09-14",
+  "title": "beta-hero-stellar-art-evidence-v615",
+  "status": "hero-art-baseline-20-candidate-boundary-verified",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "betaHeroTotal": 24,
+    "runtimeBaseline": 20,
+    "candidateOnly": 4,
+    "artReady": 20,
+    "artEvidencePending": 4,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added V615 deterministic Beta hero art evidence pack for all 24 stellar heroes, sourced from the sealed V592 hero catalog and V607 SIMBAD projection without changing measurement payloads.",
+    "Separated the 20 current runtime baseline stars from Acrux, Spica, Regulus and Polaris candidate-only records; candidate records retain parameterized photosphere/corona presentation metadata but cannot enter the runtime allowlist.",
+    "Added per-record checks for identity, photometry, geometry, shader profile, corona model, presentation boundary and source reference, plus blocker-derived next gates and deterministic review fingerprints.",
+    "Added fail-closed CLI generation and tests for hero packet seal changes, visual field tampering, reordered output, opened measurement writeback and opened runtime admission.",
+    "Extended the Beta hero review panel with the 20/24 art baseline summary and selected-candidate V615 checklist, explicitly showing parameterized photosphere status and remaining source/runtime gates."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in four new R55 pack/utility files. Existing review-panel integration and generated JSON are additional and are not needed to reach the threshold.",
+    "files": [
+      {"path": "scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.mjs", "baseline": "new-in-r55", "effectiveChangedLines": 177, "sha256": "d94a98749e34dcca28b280e450a8339699e46ec697cb973f1fe60e4f0a6a34bd"},
+      {"path": "scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs", "baseline": "new-in-r55", "effectiveChangedLines": 82, "sha256": "5b16b26a919867bbbf5ead39988470c5120937340106954d9af8130f1c0bf83a"},
+      {"path": "app/lib/mainlineABetaHeroArtEvidenceV615.ts", "baseline": "new-in-r55", "effectiveChangedLines": 144, "sha256": "570a95f41c95e0b3b3617633a47a8ba276c7960a9389e71b980d14f87749f93b"},
+      {"path": "app/lib/mainlineABetaHeroArtEvidenceV615.test.ts", "baseline": "new-in-r55", "effectiveChangedLines": 99, "sha256": "663d5182dd87b45e3bdd5760b21e298d4c5417cf166488c0cb6b771fa3987f16"}
+    ],
+    "effectiveChangedLines": 502,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "heroArtPackNode": {"passed": 7, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs"},
+    "heroArtVitest": {"passed": 32, "failed": 0, "files": 3, "command": "npx vitest run app/lib/mainlineABetaHeroArtEvidenceV615.test.ts app/lib/mainlineABetaStellarReviewV611.test.ts app/components/MainlineABetaHeroReviewPanelV611.test.tsx"},
+    "fullArtRegressionNode": {"passed": 50, "failed": 0, "command": "node --test --test-concurrency=1 scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "note": "The expected stale-pack child-process failure is asserted by the review-pack test; aggregate exit code is 0."},
+    "combinedVitest": {"passed": 57, "failed": 0, "files": 6},
+    "eslint": {"passed": true, "scope": "V615 pack, utility, panel and tests"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "gNFyYk9CZEyCjnfBms0bf", "buildIdSha256": "eda5d486d124cfdfda01d8377fb60b26128a82da82b7194c5485d8f6c013098a"}
+  },
+  "http": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "checks": [
+      {"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697},
+      {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241, "defaultScientificKernel": "legacy-eih-1pn"}
+    ]
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "panel": "mainline-a-beta-hero-review-v611", "heroRecords": 4, "artSummary": "美术基线 20/24 · candidate-only 4 · evidence pending 4", "selectedCandidate": "acrux", "artStatusText": "来源证据待补", "visualChecksText": "6/7 项通过 · parameterized-photosphere", "admissionText": "candidate-only · measurement not-admitted", "spicaSwitchVerified": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "In-app viewport override remains unavailable in this run; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, legal rights, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r55-hero-art-evidence-desktop.png", "bytes": 65846, "sha256": "44d6939205bec88838d73673416849fac369ffd1e9b76a40c7ac0da444540e48"}
+  ],
+  "artifacts": {
+    "heroArtPack": {"schema": "mainline-a-beta-hero-art-evidence-pack-v615", "path": "app/data/mainlineABetaHeroArtEvidencePackV615.generated.json", "sha256": "2374d40d043c3d7b4ffb3c82679d3583489951a624dea4c1b057f9252e17e72a", "total": 24, "runtimeBaseline": 20, "candidateOnly": 4, "artReady": 20, "evidencePending": 4},
+    "sourceBoundary": {"heroPacketSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47", "projectionSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061", "sourceLicense": "ODbL-1.0", "textureMode": "parameterized-photosphere"}
+  },
+  "openGates": [
+    "Acrux、Spica、Regulus、Polaris 仍为 candidate-only；需补齐来源身份/视差/上游引用并重新封存，才能进入视觉 signoff",
+    "4 颗恒星的参数化美术证据不等同于观测表面纹理或测量准入，runtime allowlist 和 measurement admission 仍关闭",
+    "星云 18→24、12 个重点星座最终视觉 signoff、多设备 GPU/FPS/资源生命周期、移动端视口证据、root/next-web 对齐、公共部署和最终发布包仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

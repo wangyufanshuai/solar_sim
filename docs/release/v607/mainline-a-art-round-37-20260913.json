@@ -1,0 +1,30 @@
+{
+  "round": 37,
+  "date": "2026-09-13",
+  "title": "Corrected local-shadow browser asset baseline",
+  "status": "verified-browser-performance-baseline",
+  "scope": {
+    "runtime": "npm run dev:atlas:local-shadow with NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE=local-shadow",
+    "artChange": "Re-ran the resource baseline with the process-level delivery profile captured, correcting Round 36's profile identity ambiguity."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3018/",
+    "deliveryProfile": "local-shadow",
+    "resourceCount": 31,
+    "contentPackAssetCount": 14,
+    "assetTransferBytes": 25566471,
+    "assetDecodedBytes": 25562271,
+    "maxAssetDurationMs": 5468.8,
+    "requestFailures": 0,
+    "viewport": "1280x720",
+    "measurement": "PerformanceResourceTiming transferSize/decodedBodySize; local dev cold-load baseline"
+  },
+  "validation": {
+    "playwright": "Chrome headless networkidle; 0 failed requests",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This is a corrected local-shadow resource baseline, not sustained FPS, GPU, memory-lifecycle, or public CDN qualification.",
+    "The 25.57 MB transfer and 5.47 s maximum asset duration remain optimization targets; Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

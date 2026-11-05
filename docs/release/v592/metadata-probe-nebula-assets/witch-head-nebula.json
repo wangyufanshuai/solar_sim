@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:53.885Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "witch-head-nebula",
+  "selection": {
+    "metadataProbe": "witch-head-nebula",
+    "metadataReceiptSha256": "2a2e22cc2d88d43a470cb8308edbf507f66c1fa46276d37653cdda9ba6067548",
+    "nasaId": "PIA17553",
+    "title": "Witch Head Brews Baby Stars",
+    "description": "An infrared portrait of the Witch Head nebula from NASA Wide-field Infrared Survey Explorer, or WISE, shows billowy clouds where new stars are brewing.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17553/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA17553/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA17553/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "d0a0d2c27a6e01fcc4c21d6fec2ad89cf29600c045113a9561935cba7eeb9e64"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17553~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/PIA17553~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17553~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/PIA17553~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17553~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/PIA17553~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17553~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/PIA17553~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17553~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/PIA17553~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17553/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17553/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "175089e957cbec3c1c77234a9a3230fd5c1602212bdce619589b7eff69939df7"
+}

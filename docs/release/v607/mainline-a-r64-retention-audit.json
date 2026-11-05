@@ -1,0 +1,354 @@
+{
+  "schema": "mainline-a-nebula-retention-audit-v624",
+  "source": "app/data/mainlineANebulaBatchV624.generated.json",
+  "sourceSha256": "0c4993a191e2dbbc535bc34fe73fd829f92ddad853dd94bc2d03551117846a64",
+  "ledger": {
+    "schema": "mainline-a-nebula-batch-audit-v624",
+    "batchId": "r64-base-six",
+    "createdAt": "2026-09-14T13:36:37.224Z",
+    "findings": [
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "heart-nebula",
+        "attempt": null
+      },
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "soul-nebula",
+        "attempt": null
+      },
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "witch-head-nebula",
+        "attempt": null
+      },
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "flame-nebula",
+        "attempt": null
+      },
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "pacman-nebula",
+        "attempt": null
+      },
+      {
+        "code": "rights-uncleared",
+        "detail": "Actual item rights approval is still absent.",
+        "severity": "pending",
+        "candidateId": "running-chicken-nebula",
+        "attempt": null
+      }
+    ],
+    "gates": [
+      {
+        "id": "ledger-integrity",
+        "observed": 0,
+        "required": 0,
+        "status": "pass"
+      },
+      {
+        "id": "raw-capture-linkage",
+        "observed": 6,
+        "required": 6,
+        "status": "pass"
+      },
+      {
+        "id": "historical-comparison",
+        "observed": 6,
+        "required": 6,
+        "status": "pass"
+      },
+      {
+        "id": "rights-clearance",
+        "observed": 0,
+        "required": 6,
+        "status": "hold"
+      }
+    ],
+    "counts": {
+      "rows": 6,
+      "captured": 6,
+      "historicalVerified": 6,
+      "rightsUncleared": 6,
+      "networkAttempts": 13,
+      "ledgerAttempts": 13,
+      "blockingFindings": 0
+    },
+    "retention": [
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635-194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212.jpg",
+        "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+        "bytes": 1772081,
+        "references": [
+          "flame-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635.jpg",
+        "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+        "bytes": 1772081,
+        "references": [
+          "flame-nebula:attempt-1"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112-d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d.jpg",
+        "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+        "bytes": 5117802,
+        "references": [
+          "heart-nebula:attempt-3"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112.jpg",
+        "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+        "bytes": 5117802,
+        "references": [
+          "heart-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731-92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce.jpg",
+        "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+        "bytes": 803172,
+        "references": [
+          "pacman-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731.jpg",
+        "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+        "bytes": 803172,
+        "references": [
+          "pacman-nebula:attempt-1"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451-2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b.jpg",
+        "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+        "bytes": 1411185,
+        "references": [
+          "running-chicken-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451.jpg",
+        "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+        "bytes": 1411185,
+        "references": [
+          "running-chicken-nebula:attempt-1"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014-161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f.jpg",
+        "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+        "bytes": 2079063,
+        "references": [
+          "soul-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014.jpg",
+        "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+        "bytes": 2079063,
+        "references": [
+          "soul-nebula:attempt-1"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553-6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3.jpg",
+        "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+        "bytes": 7891119,
+        "references": [
+          "witch-head-nebula:attempt-2"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      },
+      {
+        "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553.jpg",
+        "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+        "bytes": 7891119,
+        "references": [
+          "witch-head-nebula:attempt-1"
+        ],
+        "action": "retain",
+        "reason": "Evidence retention only; disk replay and rights gates remain separate."
+      }
+    ],
+    "retainedBytes": 38148844,
+    "scope": "ledger-consistency-no-disk-or-network-verification",
+    "cleanupMode": "report-only-no-deletion",
+    "runtimeAdmission": "candidate-only",
+    "scientificPayloadWriteback": false
+  },
+  "artifacts": [
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635-194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212.jpg",
+      "status": "verified",
+      "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+      "bytes": 1772081,
+      "references": [
+        "flame-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/flame-nebula-pia15635.jpg",
+      "status": "verified",
+      "sha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+      "bytes": 1772081,
+      "references": [
+        "flame-nebula:attempt-1"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112-d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d.jpg",
+      "status": "verified",
+      "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+      "bytes": 5117802,
+      "references": [
+        "heart-nebula:attempt-3"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/heart-nebula-pia13112.jpg",
+      "status": "verified",
+      "sha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+      "bytes": 5117802,
+      "references": [
+        "heart-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731-92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce.jpg",
+      "status": "verified",
+      "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+      "bytes": 803172,
+      "references": [
+        "pacman-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/pacman-nebula-pia14731.jpg",
+      "status": "verified",
+      "sha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+      "bytes": 803172,
+      "references": [
+        "pacman-nebula:attempt-1"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451-2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b.jpg",
+      "status": "verified",
+      "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+      "bytes": 1411185,
+      "references": [
+        "running-chicken-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/running-chicken-nebula-pia13451.jpg",
+      "status": "verified",
+      "sha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+      "bytes": 1411185,
+      "references": [
+        "running-chicken-nebula:attempt-1"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014-161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f.jpg",
+      "status": "verified",
+      "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+      "bytes": 2079063,
+      "references": [
+        "soul-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/soul-nebula-pia13014.jpg",
+      "status": "verified",
+      "sha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+      "bytes": 2079063,
+      "references": [
+        "soul-nebula:attempt-1"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553-6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3.jpg",
+      "status": "verified",
+      "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+      "bytes": 7891119,
+      "references": [
+        "witch-head-nebula:attempt-2"
+      ],
+      "issues": []
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r64/witch-head-nebula-pia17553.jpg",
+      "status": "verified",
+      "sha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+      "bytes": 7891119,
+      "references": [
+        "witch-head-nebula:attempt-1"
+      ],
+      "issues": []
+    }
+  ],
+  "unreferencedEntries": [],
+  "status": "verified-retention-only",
+  "counts": {
+    "referenced": 12,
+    "verified": 12,
+    "unreferenced": 0,
+    "rightsUncleared": 6
+  },
+  "boundary": {
+    "cleanup": "report-only",
+    "filesDeleted": 0,
+    "runtimeAdmission": "candidate-only",
+    "scientificPayloadWriteback": false,
+    "copyrightApproval": false,
+    "externalSourceAuthenticity": "not-established-by-local-hashes"
+  }
+}

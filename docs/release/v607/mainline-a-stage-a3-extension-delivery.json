@@ -1,0 +1,560 @@
+{
+  "schema": "mainline-a3-extension-delivery-v1",
+  "deliveredAt": "2026-09-10T07:22:08.451Z",
+  "status": "six-licensed-local-assets-delivered-runtime-integration-separate",
+  "method": "Exa discovery and official-page reading, item-level original-HTML review, published-license review, and exact official JPEG download",
+  "searchAudit": {
+    "provider": "Exa",
+    "workstreams": 6,
+    "webSearchCalls": 7,
+    "requestedResultCount": 35,
+    "directSourcePagesReviewed": 6,
+    "note": "Search-result count is discovery coverage, not a claim that every result met selection criteria."
+  },
+  "script": "scripts/acquire-mainline-a3-extension.mjs",
+  "historicalReceiptsModified": false,
+  "requirements": [
+    "Show each full unaltered credit clearly and visibly beside its image.",
+    "Keep source and license links active online.",
+    "Mention later modifications; these delivered JPEGs retain the official bytes.",
+    "Do not imply ESA/Hubble or ESO endorsement; controlled logos are not included."
+  ],
+  "totalByteSize": 1353370,
+  "sourceEvidenceDirectory": "docs/release/v607/mainline-a3-extension-sources",
+  "policies": [
+    {
+      "rightsPage": "https://esahubble.org/copyright/",
+      "resolvedUrl": "https://esahubble.org/copyright/",
+      "httpStatus": 200,
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "linkedLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "reviewedAt": "2026-09-10T07:22:00.321Z",
+      "localPath": "docs/release/v607/mainline-a3-extension-sources/esahubble-copyright-d8501689359f.html",
+      "sha256": "d8501689359f2184eec0f441f68d9641e3b6347d2ecccd18e8adba55fecebd43",
+      "licenseGrantExcerpt": "ESA/Hubble images, videos and web texts are released under the Creative Commons Attribution 4.0 International license and may on a non-exclusive basis be reproduced without fee provided they are clearly and visibly credited. Detailed conditions are below.",
+      "creditRequirementExcerpt": "The full image or footage credit must be presented in a clear and readable manner to all users, with the wording unaltered",
+      "thirdPartyExcerpt": "Images and videos published on esahubble.org are, unless explicitly stated otherwise, cleared for reuse without needing to contact the individuals or organisations listed. Their names must not be removed from the credit, however."
+    },
+    {
+      "rightsPage": "https://www.eso.org/public/outreach/copyright/",
+      "resolvedUrl": "https://www.eso.org/public/outreach/copyright/",
+      "httpStatus": 200,
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "linkedLicenseUrl": "http://creativecommons.org/licenses/by/4.0/",
+      "reviewedAt": "2026-09-10T07:22:04.637Z",
+      "localPath": "docs/release/v607/mainline-a3-extension-sources/eso-copyright-37bddf61aeee.html",
+      "sha256": "37bddf61aeee32456f96b1958da4c9d841ad58785fd681e024b53d790ecc3508",
+      "licenseGrantExcerpt": "Unless specifically noted, the images, videos, and music distributed on the public ESO website, along with the texts of press releases, announcements, pictures of the week, blog posts and captions, are licensed under a Creative Commons Attribution 4.0 International License, and may on a non-exclusive basis be reproduced without fee provided the credit is clear and visible. The license allows adaptation of the material, but any adaptations do not affect or impair the use of the original ESO material by others under Creative Commons license. Details on how to interpret this are given below for those who need further explanation.",
+      "creditRequirementExcerpt": "The full image or footage credit must be presented in a clear and readable manner to all users, with the wording unaltered",
+      "thirdPartyExcerpt": "Images and videos published on eso.org are, unless explicitly stated otherwise, cleared for reuse without needing to contact the individuals or organisations listed. Their names must not be removed from the credit, however."
+    }
+  ],
+  "objects": [
+    {
+      "objectId": "ngc7293",
+      "imageId": "opo0432d",
+      "nameZh": "螺旋星云",
+      "src": "/textures/mainline-a/opo0432d.jpg",
+      "localPath": "public/textures/mainline-a/opo0432d.jpg",
+      "sourcePage": "https://esahubble.org/images/opo0432d/",
+      "imageUrl": "https://cdn.esahubble.org/archives/images/screen/opo0432d.jpg",
+      "credit": "NASA, ESA, C.R. O'Dell (Vanderbilt University), and M. Meixner, P. McCullough, and G. Bacon ( Space Telescope Science Institute)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://esahubble.org/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:02.430Z",
+      "rightsReviewedAt": "2026-09-10T07:22:02.430Z",
+      "retrievedAt": "2026-09-10T07:22:02.430Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESA/Hubble Images and Videos Are you a journalist? Subscribe to the ESA/Hubble Media Newsletter.",
+      "sourceIdentityText": "Helix Nebula, NGC 7293",
+      "displayScope": "nebula-wide-composite",
+      "bands": [
+        "Optical Oiii (502 nm)",
+        "Optical H-alpha (658 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical Oiii",
+          "wavelength": "502 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "unknown"
+        },
+        {
+          "band": "Optical H-alpha",
+          "wavelength": "658 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "unknown"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [
+        "CTIO Mosaic II supplemental filter list",
+        "Hubble filter colour assignments are not specified by the source table"
+      ],
+      "notes": [
+        "螺旋星云的环状发光气体，由 Hubble ACS 与智利 CTIO 4 米望远镜 Mosaic II 影像合成；环形外观不等于其真实三维结构。",
+        "源页滤镜表列出 Hubble 的 O III 502 nm 和 H-alpha 658 nm；CTIO 补充数据的逐滤镜信息未在此页完整列出。",
+        "科学滤镜合成影像，不代表肉眼颜色；保留官方发布图的方向与完整画幅。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 1380
+      },
+      "byteSize": 149625,
+      "sha256": "172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.esahubble.org/archives/images/screen/opo0432d.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/opo0432d-656792d6896e.html",
+        "resolvedUrl": "https://esahubble.org/images/opo0432d/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:00.013Z",
+        "sha256": "656792d6896ebc79e8b9df7c31a77ca71008eaa2d99f2d024326827e17b0f4e7",
+        "creditElementHtmlSha256": "48685e700632a686f4f296a7b3273caf52ecb7cf595c88557d6ee5fe11cec886",
+        "bandsTableHtmlSha256": "339fcc380c8263cbdc51bbd044b1b8498845f890a8053ee15237d361ecf03ade",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    },
+    {
+      "objectId": "ngc6543",
+      "imageId": "potm2602b",
+      "nameZh": "猫眼星云",
+      "src": "/textures/mainline-a/potm2602b.jpg",
+      "localPath": "public/textures/mainline-a/potm2602b.jpg",
+      "sourcePage": "https://esahubble.org/images/potm2602b/",
+      "imageUrl": "https://cdn.esahubble.org/archives/images/screen/potm2602b.jpg",
+      "credit": "ESA/Hubble & NASA, Z. Tsvetanov",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://esahubble.org/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:03.266Z",
+      "rightsReviewedAt": "2026-09-10T07:22:03.266Z",
+      "retrievedAt": "2026-09-10T07:22:03.266Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESA/Hubble Images and Videos Are you a journalist? Subscribe to the ESA/Hubble Media Newsletter.",
+      "sourceIdentityText": "NGC 6543",
+      "displayScope": "nebula-core-detail",
+      "bands": [
+        "Optical N III (388 nm)",
+        "Optical O III (502 nm)",
+        "Optical O III (505 nm)",
+        "Optical N II (658 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical N III",
+          "wavelength": "388 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "Blue"
+        },
+        {
+          "band": "Optical O III",
+          "wavelength": "502 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "Cyan"
+        },
+        {
+          "band": "Optical O III",
+          "wavelength": "505 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "Green"
+        },
+        {
+          "band": "Optical N II",
+          "wavelength": "658 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "Red"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [],
+      "notes": [
+        "2026 年发布的 Hubble ACS 高分辨率通道影像，展示猫眼星云中心恒星、重叠气泡、喷流与同心气壳。",
+        "画面聚焦核心区域，不覆盖整个暗弱外晕。源页记录 N III 388 nm、O III 502/505 nm 与 N II 658 nm，并分别映射为蓝、青、绿、红。",
+        "保留源页对滤镜的原始标注；这里不据影像推断距离、物理尺度或三维几何。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 1331
+      },
+      "byteSize": 144618,
+      "sha256": "69ab60734b2d03f3f07c3d114b35744d0f0973fbdcc1dd42141f14f3c6130721",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.esahubble.org/archives/images/screen/potm2602b.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/potm2602b-a928efcc2c3d.html",
+        "resolvedUrl": "https://esahubble.org/images/potm2602b/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:02.732Z",
+        "sha256": "a928efcc2c3d3b71c0eb859cb5a95204e6c32bb334651e7350db57cfad5d5241",
+        "creditElementHtmlSha256": "147f828b10189e9bf123b3c7cb73d4848fcb7feb5bd7834ae9fe5542f92f7dec",
+        "bandsTableHtmlSha256": "b427535ae336671d8e45819351797e1a37cc1926c1a9646de19b0574bd5f851c",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    },
+    {
+      "objectId": "ngc2237",
+      "imageId": "potw1847a",
+      "nameZh": "玫瑰星云",
+      "src": "/textures/mainline-a/potw1847a.jpg",
+      "localPath": "public/textures/mainline-a/potw1847a.jpg",
+      "sourcePage": "https://www.eso.org/public/images/potw1847a/",
+      "imageUrl": "https://cdn.eso.org/images/screen/potw1847a.jpg",
+      "credit": "ESO",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://www.eso.org/public/outreach/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:06.117Z",
+      "rightsReviewedAt": "2026-09-10T07:22:06.117Z",
+      "retrievedAt": "2026-09-10T07:22:06.117Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESO Images, Videos, Web texts and Music Are you a journalist? Subscribe to the ESO Media Newsletter in your language.",
+      "sourceIdentityText": "Rosette Nebula",
+      "displayScope": "rosette-nebula-local-field",
+      "bands": [
+        "Optical b (440 nm)",
+        "Optical v (557 nm)",
+        "Optical R (655 nm)",
+        "Optical H-alpha (660 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical b",
+          "wavelength": "440 nm",
+          "telescope": "Very Large Telescope FORS2",
+          "colourAssignment": "Blue"
+        },
+        {
+          "band": "Optical v",
+          "wavelength": "557 nm",
+          "telescope": "Very Large Telescope FORS2",
+          "colourAssignment": "Green"
+        },
+        {
+          "band": "Optical R",
+          "wavelength": "655 nm",
+          "telescope": "Very Large Telescope FORS2",
+          "colourAssignment": "Orange"
+        },
+        {
+          "band": "Optical H-alpha",
+          "wavelength": "660 nm",
+          "telescope": "Very Large Telescope FORS2",
+          "colourAssignment": "Red"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [],
+      "notes": [
+        "ESO VLT/FORS2 拍摄的玫瑰星云局部，呈现发光气体、暗尘埃与年轻恒星；视场约 7.44×7.19 角分。",
+        "官方页将目标命名为 Rosette Nebula；项目 ngc2237 条目代表玫瑰星云复合体，本图不声称覆盖完整玫瑰环，也不额外认定这一局部等同于单独的 NGC 2237 目录边界。",
+        "源页滤镜为 b 440 nm、v 557 nm、R 655 nm、H-alpha 660 nm，颜色为发布时的多滤镜映射，不代表肉眼视觉。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 1237
+      },
+      "byteSize": 287379,
+      "sha256": "271752f5e51d29bc827e2cf171b2bb8ee3b81dc6798e511ebff6baaa17bd9598",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.eso.org/images/screen/potw1847a.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/potw1847a-e86fc3007a2c.html",
+        "resolvedUrl": "https://www.eso.org/public/images/potw1847a/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:04.403Z",
+        "sha256": "e86fc3007a2c82e94e6a56d70986aa4a86fc2340ea517dfad7e473171f64999c",
+        "creditElementHtmlSha256": "eb6ab770f34f11703f3054491aeee57289f48b97447a990a00fec121cd7ebf69",
+        "bandsTableHtmlSha256": "ba2f2e0f500df109cc479f5fd006e257dd5f56de2089697ba49dfd669cf39d1e",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    },
+    {
+      "objectId": "ngc6960",
+      "imageId": "heic1520a",
+      "nameZh": "面纱星云",
+      "src": "/textures/mainline-a/heic1520a.jpg",
+      "localPath": "public/textures/mainline-a/heic1520a.jpg",
+      "sourcePage": "https://esahubble.org/images/heic1520a/",
+      "imageUrl": "https://cdn.esahubble.org/archives/images/screen/heic1520a.jpg",
+      "credit": "NASA, ESA, Hubble Heritage Team",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://esahubble.org/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:07.136Z",
+      "rightsReviewedAt": "2026-09-10T07:22:07.136Z",
+      "retrievedAt": "2026-09-10T07:22:07.136Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESA/Hubble Images and Videos Are you a journalist? Subscribe to the ESA/Hubble Media Newsletter.",
+      "sourceIdentityText": "NGC 6960",
+      "displayScope": "western-veil-shell-detail",
+      "bands": [
+        "Optical OIII (502 nm)",
+        "Optical V (555 nm)",
+        "Optical SII (673 nm)",
+        "Optical I (814 nm)",
+        "Optical H-alpha (657 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical OIII",
+          "wavelength": "502 nm",
+          "telescope": "Hubble Space Telescope WFC3",
+          "colourAssignment": "Blue"
+        },
+        {
+          "band": "Optical V",
+          "wavelength": "555 nm",
+          "telescope": "Hubble Space Telescope WFC3",
+          "colourAssignment": "Cyan"
+        },
+        {
+          "band": "Optical SII",
+          "wavelength": "673 nm",
+          "telescope": "Hubble Space Telescope WFC3",
+          "colourAssignment": "Green"
+        },
+        {
+          "band": "Optical I",
+          "wavelength": "814 nm",
+          "telescope": "Hubble Space Telescope WFC3",
+          "colourAssignment": "Orange"
+        },
+        {
+          "band": "Optical H-alpha",
+          "wavelength": "657 nm",
+          "telescope": "Hubble Space Telescope WFC3",
+          "colourAssignment": "Red"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [],
+      "notes": [
+        "Hubble WFC3 展示面纱星云西部 NGC 6960（女巫扫帚）外壳的一小段纤维结构，不是整个天鹅座环的全景。",
+        "源页记录 O III 502 nm、V 555 nm、S II 673 nm、I 814 nm、H-alpha 657 nm 五组数据，并映射为蓝、青、绿、橙、红。",
+        "源页将 I 814 nm 列作 Optical；本记录保留来源的命名，不把彩色合成视作肉眼颜色或真实三维壳层。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 853
+      },
+      "byteSize": 313032,
+      "sha256": "f66c90025e6a284bf1834f35ebacfa9ce5fce2684bf2b3ac60a6e1fc740fb176",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.esahubble.org/archives/images/screen/heic1520a.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/heic1520a-c2d3c040e35e.html",
+        "resolvedUrl": "https://esahubble.org/images/heic1520a/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:06.687Z",
+        "sha256": "c2d3c040e35e59102de606d5b2dbbcf62119dbf0cc14c0a2b05a4a1bdcf97ceb",
+        "creditElementHtmlSha256": "5f3590269434396f1ff79a59a6a52856c65e9d7dd741a11b7aa228e0c4c6e0e0",
+        "bandsTableHtmlSha256": "8765ac67f8a1a852d4a243b6d1bb302b3f4868f4db632fdf2c60e4b53d38e17e",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    },
+    {
+      "objectId": "carina",
+      "imageId": "heic0707a",
+      "nameZh": "船底座星云",
+      "src": "/textures/mainline-a/heic0707a.jpg",
+      "localPath": "public/textures/mainline-a/heic0707a.jpg",
+      "sourcePage": "https://esahubble.org/images/heic0707a/",
+      "imageUrl": "https://cdn.esahubble.org/archives/images/screen/heic0707a.jpg",
+      "credit": "NASA, ESA, N. Smith (University of California, Berkeley), and The Hubble Heritage Team (STScI/AURA)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://esahubble.org/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:07.687Z",
+      "rightsReviewedAt": "2026-09-10T07:22:07.687Z",
+      "retrievedAt": "2026-09-10T07:22:07.687Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESA/Hubble Images and Videos Are you a journalist? Subscribe to the ESA/Hubble Media Newsletter.",
+      "sourceIdentityText": "Carina Nebula, NGC 3372",
+      "displayScope": "central-region-panorama",
+      "bands": [
+        "Optical Oiii (501 nm)",
+        "Optical H-alpha + Nii (658 nm)",
+        "Optical Sii (672 nm)",
+        "Optical H-alpha + Nii (658 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical Oiii",
+          "wavelength": "501 nm",
+          "telescope": "Other",
+          "colourAssignment": "Blue"
+        },
+        {
+          "band": "Optical H-alpha + Nii",
+          "wavelength": "658 nm",
+          "telescope": "Other",
+          "colourAssignment": "Green"
+        },
+        {
+          "band": "Optical Sii",
+          "wavelength": "672 nm",
+          "telescope": "Other",
+          "colourAssignment": "Red"
+        },
+        {
+          "band": "Optical H-alpha + Nii",
+          "wavelength": "658 nm",
+          "telescope": "Hubble Space Telescope ACS",
+          "colourAssignment": "Luminosity"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [
+        "Ground-based instrument is only labelled Other in the source filter table; CTIO is identified by the caption"
+      ],
+      "notes": [
+        "船底座星云中心区域的宽幅拼接影像，含 Hubble ACS 的 48 帧观测，气体和尘埃云受恒星风与紫外辐射雕刻。",
+        "Hubble 的 H-alpha + N II 658 nm 提供细节；CTIO 地面观测补充颜色，红对应硫、绿对应氢、蓝对应氧。",
+        "保留官方约 2.06:1 宽幅构图；这是中心区域的科学合成全景，不代表整个星云的范围或肉眼颜色。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 620
+      },
+      "byteSize": 178050,
+      "sha256": "8071632a2d895f0bfdb8b5ff80456eafc3ff71ee2b8fa8e28b84b5994fcec4d3",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.esahubble.org/archives/images/screen/heic0707a.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/heic0707a-b6e828d15358.html",
+        "resolvedUrl": "https://esahubble.org/images/heic0707a/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:07.431Z",
+        "sha256": "b6e828d15358affd26a88ef51e564c1edcd30aa07c97a1cd22d9f67fa27668e5",
+        "creditElementHtmlSha256": "81b6fc266b3e53328079f373613588978ba1eb962d3704371754625174d504ad",
+        "bandsTableHtmlSha256": "061652e829402cca7770941d507b42b417aa434ee9d1b93b7a03384f44965cf8",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    },
+    {
+      "objectId": "b33",
+      "imageId": "heic0105a",
+      "nameZh": "马头星云",
+      "src": "/textures/mainline-a/heic0105a.jpg",
+      "localPath": "public/textures/mainline-a/heic0105a.jpg",
+      "sourcePage": "https://esahubble.org/images/heic0105a/",
+      "imageUrl": "https://cdn.esahubble.org/archives/images/screen/heic0105a.jpg",
+      "credit": "NASA, NOAO, ESA and The Hubble Heritage Team (STScI/AURA)",
+      "license": "CC BY 4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "rightsPage": "https://esahubble.org/copyright/",
+      "rightsStatus": "cleared",
+      "reviewedAt": "2026-09-10T07:22:08.450Z",
+      "rightsReviewedAt": "2026-09-10T07:22:08.450Z",
+      "retrievedAt": "2026-09-10T07:22:08.450Z",
+      "rightsBasis": "The individually reviewed image page links the published CC BY 4.0 usage policy. Its caption, credit, download section and item usage notice contain no explicit exception. The policy explicitly covers listed third-party contributors.",
+      "explicitException": null,
+      "policyLinkedFromImagePage": true,
+      "pageUsageText": "Usage of ESA/Hubble Images and Videos Are you a journalist? Subscribe to the ESA/Hubble Media Newsletter.",
+      "sourceIdentityText": "Barnard 33, Horsehead Nebula",
+      "displayScope": "horsehead-detail",
+      "bands": [
+        "Optical B (439 nm)",
+        "Optical V (555 nm)",
+        "Optical H-alpha (656 nm)",
+        "Infrared I (814 nm)"
+      ],
+      "bandDetails": [
+        {
+          "band": "Optical B",
+          "wavelength": "439 nm",
+          "telescope": "Hubble Space Telescope WFPC2",
+          "colourAssignment": "Blue"
+        },
+        {
+          "band": "Optical V",
+          "wavelength": "555 nm",
+          "telescope": "Hubble Space Telescope WFPC2",
+          "colourAssignment": "Green"
+        },
+        {
+          "band": "Optical H-alpha",
+          "wavelength": "656 nm",
+          "telescope": "Hubble Space Telescope WFPC2",
+          "colourAssignment": "Orange"
+        },
+        {
+          "band": "Infrared I",
+          "wavelength": "814 nm",
+          "telescope": "Hubble Space Telescope WFPC2",
+          "colourAssignment": "Red"
+        }
+      ],
+      "bandEvidenceStatus": "published-filter-table",
+      "bandUnknowns": [
+        "Kitt Peak supplemental filter list is not specified on the source page"
+      ],
+      "notes": [
+        "马头星云 Barnard 33 的局部，暗冷气体和尘埃在发光背景 IC 434 前形成轮廓；亮边及年轻恒星附近的结构由辐射侵蚀塑造。",
+        "使用 Hubble WFPC2 的 B 439 nm、V 555 nm、H-alpha 656 nm、I 814 nm 数据，并包含 Nigel A. Sharp 提供的 Kitt Peak 0.9 米地面数据。",
+        "发布图包含可见光与近红外 I 波段合成；这不是纯肉眼视图，也不是 2013 年 WFC3 红外马头版本。"
+      ],
+      "dimensions": {
+        "width": 1280,
+        "height": 931
+      },
+      "byteSize": 280666,
+      "sha256": "81f1f34fc28d754b1521d86ea5e3cc5dd284ed62243b1911a6ba6c419191e7f8",
+      "httpStatus": 200,
+      "contentType": "image/jpeg",
+      "resolvedImageUrl": "https://cdn.esahubble.org/archives/images/screen/heic0105a.jpg",
+      "rendition": "official-screen-jpeg",
+      "modifications": "none; official screen JPEG bytes retained",
+      "nakedEyeRepresentationClaimed": false,
+      "sourceEvidence": {
+        "localPath": "docs/release/v607/mainline-a3-extension-sources/heic0105a-e65479d2a1d0.html",
+        "resolvedUrl": "https://esahubble.org/images/heic0105a/",
+        "httpStatus": 200,
+        "retrievedAt": "2026-09-10T07:22:07.981Z",
+        "sha256": "e65479d2a1d0de3e989275ee38beef67642a6180ab31a6097717e7bbab37bdca",
+        "creditElementHtmlSha256": "ae8e34c9d2a39f33e7db714b28770c5a287d5798dbfa474a551970fb292ee7b9",
+        "bandsTableHtmlSha256": "5bebb3f8d3b1f0b1137c19dd3764dc131a9e02d6f58cfce10afd67d34b111ae1",
+        "imageUrlParseMethod": "source-page-screensize-jpeg-anchor-href"
+      }
+    }
+  ]
+}

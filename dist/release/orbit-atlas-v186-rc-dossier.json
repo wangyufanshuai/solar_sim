@@ -1,0 +1,400 @@
+{
+  "version": "v186-final-delivery-rc-dossier",
+  "generatedAt": "2026-07-14T11:07:59.505Z",
+  "confirmedSerialValidation": true,
+  "releaseStatus": "web-dual-delivery-and-unsigned-desktop-compact-rc-ready-science-shadow-retained",
+  "framework": {
+    "next": "15.5.18",
+    "react": "19.2.7",
+    "reactDom": "19.2.7",
+    "reactThreeFiber": "9.6.1",
+    "drei": "10.7.7",
+    "three": "^0.170.0"
+  },
+  "machine": {
+    "platform": "win32 10.0.26200 x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900HX",
+    "logicalCpus": 32,
+    "totalMemoryMiB": 16192,
+    "node": "v24.14.0",
+    "graphicsAdapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    }
+  },
+  "architecture": {
+    "rootEvidenceAttributes": 603,
+    "rootEvidenceKeyHash": "ac6470fcc517e1b2ba2c6618f530f7af57d1a0caa52fffae0af7232f912f9867",
+    "canvasCount": 1,
+    "universeRuntimeControllerPhysicalLines": 39,
+    "atlasRuntimeWorkbenchPhysicalLines": 2595,
+    "controllerRole": "38-line-compatible-facade",
+    "panelCoordinator": "first-open lazy activation then mounted session preservation"
+  },
+  "validation": {
+    "regression": {
+      "typescript": "passed",
+      "atlasTestFiles": 107,
+      "atlasTests": 673,
+      "focusedArchitectureTests": "passed",
+      "standaloneProductionBuild": "passed",
+      "vercelLiteProductionBuild": "passed",
+      "standaloneBrowserPassed": 7,
+      "standaloneBrowserViewportSkipped": 1,
+      "vercelLiteBrowserPassed": 2,
+      "viewports": [
+        "1440x900",
+        "390x844"
+      ],
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "productionAsset404": 0,
+      "rootEvidenceAttributes": 603,
+      "rootEvidenceKeyHash": "ac6470fcc517e1b2ba2c6618f530f7af57d1a0caa52fffae0af7232f912f9867",
+      "universeRuntimeControllerPhysicalLines": 39,
+      "atlasRuntimeWorkbenchPhysicalLines": 2595,
+      "contentPacks": 6,
+      "contentPackFiles": 805,
+      "contentPackBytes": 565235470,
+      "standaloneInitialJsTransferBytes": 654309,
+      "vercelLiteInitialJsTransferBytes": 654315,
+      "soakWarmupCycles": 2,
+      "soakMeasuredCycles": 10,
+      "soakHeapBaselineBytes": 41931348,
+      "soakHeapFinalBytes": 44891464,
+      "searchMaxMs": 10.375,
+      "focusCommandMaxMs": 0.12000000011175871,
+      "hardwarePerformancePassed": true,
+      "desktopRustTests": "3/3",
+      "desktopInstallers": 2
+    },
+    "clientBundle": {
+      "maximumBytes": 655360,
+      "standaloneTransferBytes": 654309,
+      "vercelLiteTransferBytes": 654315
+    },
+    "lifecycleSoak": {
+      "baselineResources": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "releasedResources": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "baselineHeapBytes": 41931348,
+      "finalHeapBytes": 44891464,
+      "heapLimitBytes": 75485780,
+      "passed": true
+    },
+    "hardwarePerformance": [
+      {
+        "id": "overview",
+        "sceneMode": "atlas",
+        "medianFps": 120.2,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 12.5,
+        "longestTaskMs": 0,
+        "frameSamples": 1283,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 25,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "earth-inspect",
+        "sceneMode": "inspect",
+        "medianFps": 119.7,
+        "frameP50Ms": 8.4,
+        "frameP95Ms": 12.5,
+        "longestTaskMs": 0,
+        "frameSamples": 1084,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 30,
+        "textures": 24,
+        "renderTargets": 0
+      },
+      {
+        "id": "gaia-stellar",
+        "sceneMode": "inspect",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2394,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 29,
+        "textures": 19,
+        "renderTargets": 0
+      },
+      {
+        "id": "launch",
+        "sceneMode": "launch",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 56,
+        "frameSamples": 2381,
+        "drawCalls": 40,
+        "triangles": 89696,
+        "programs": 15,
+        "textures": 6,
+        "renderTargets": 0
+      },
+      {
+        "id": "kerr",
+        "sceneMode": "kerr",
+        "medianFps": 60.3,
+        "frameP50Ms": 16.6,
+        "frameP95Ms": 20.8,
+        "longestTaskMs": 0,
+        "frameSamples": 681,
+        "drawCalls": 1,
+        "triangles": 2,
+        "programs": 28,
+        "textures": 20,
+        "renderTargets": 1
+      }
+    ],
+    "gpuCounterQualification": "gl.info is observational; drawCalls=1 is not optimization proof"
+  },
+  "contentPacks": [
+    {
+      "id": "core",
+      "version": "1.0.0",
+      "fileCount": 633,
+      "installedBytes": 85612140,
+      "manifest": "dist/content-packs/core.manifest.json",
+      "sha256": "0499e4771dc48d0290703fbaad1ca0f1118992a37e9ed74cdff68fb2b65b14fd",
+      "licenses": [
+        "mixed-provenance-see-project-manifests"
+      ]
+    },
+    {
+      "id": "planet-hd",
+      "version": "1.0.0",
+      "fileCount": 69,
+      "installedBytes": 337359590,
+      "manifest": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452",
+      "licenses": [
+        "NASA-public-domain-and-source-manifests"
+      ]
+    },
+    {
+      "id": "deep-sky",
+      "version": "1.0.0",
+      "fileCount": 89,
+      "installedBytes": 69302270,
+      "manifest": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "f22008c70dfcc420c45222989c8fe5ed214a6598b4983d4bce77f753e481d243",
+      "licenses": [
+        "NASA-ESA-source-manifests"
+      ]
+    },
+    {
+      "id": "spacecraft",
+      "version": "1.0.0",
+      "fileCount": 5,
+      "installedBytes": 72241294,
+      "manifest": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545",
+      "licenses": [
+        "source-manifest-specific"
+      ]
+    },
+    {
+      "id": "science-fixtures",
+      "version": "1.0.0",
+      "fileCount": 7,
+      "installedBytes": 135314,
+      "manifest": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c",
+      "licenses": [
+        "project-generated-research-fixtures"
+      ]
+    },
+    {
+      "id": "runtime-codecs",
+      "version": "v160-three-r170-basis",
+      "fileCount": 2,
+      "installedBytes": 584862,
+      "manifest": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab",
+      "licenses": [
+        "MIT-Three.js-and-Apache-2.0-Basis-Universal"
+      ]
+    }
+  ],
+  "contentPackTotals": {
+    "fileCount": 805,
+    "installedBytes": 565235470
+  },
+  "delivery": {
+    "standalone-full": {
+      "interactive": true,
+      "localContentPacks": true,
+      "millionStarCatalog": true,
+      "fullObservationFixtures": true,
+      "cloudDeployed": false
+    },
+    "vercel-lite": {
+      "interactive": true,
+      "localContentPacks": false,
+      "millionStarCatalog": false,
+      "fullObservationFixtures": false,
+      "loopbackFallback": false,
+      "fileCount": 595,
+      "installedBytes": 69050419,
+      "cloudDeployed": false
+    },
+    "desktop-compact": {
+      "interactive": true,
+      "bundledCoreSurface": true,
+      "installablePacks": [
+        "core",
+        "planet-hd",
+        "deep-sky",
+        "spacecraft",
+        "science-fixtures",
+        "runtime-codecs"
+      ],
+      "initialCatalogBackend": "web-worker-shards",
+      "stageBytes": 244044974,
+      "installers": [
+        {
+          "path": "E:\\xuexi\\tools\\cargo-target\\orbit-atlas-v186\\release\\bundle\\msi\\Solar Atlas_1.0.0_x64_en-US.msi",
+          "bytes": 113665180,
+          "sha256": "3979b640c90341dd37c9ea38568687c57681b414f18207e0aaf04ec374c10c36",
+          "signature": "not-signed"
+        },
+        {
+          "path": "E:\\xuexi\\tools\\cargo-target\\orbit-atlas-v186\\release\\bundle\\nsis\\Solar Atlas_1.0.0_x64-setup.exe",
+          "bytes": 93379187,
+          "sha256": "dae3646b5335135f7e9ebb4e578697d6ff62ab2e8ad97e5a947b64dc2a536232",
+          "signature": "not-signed"
+        }
+      ]
+    }
+  },
+  "science": {
+    "defaultKernel": "legacy-eih-1pn",
+    "shadowKernel": "eih-1pn-2pn-lt",
+    "promotionApplied": false
+  },
+  "knownLimitations": [
+    "Vercel Lite omits the million-star catalog and full observation fixtures.",
+    "V2 relativity remains shadow-only because independent promotion gates are not satisfied.",
+    "The MSI and NSIS installers are local unsigned RC artifacts; no signing or public distribution was performed.",
+    "No Vercel or other cloud deployment was performed.",
+    "AtlasRuntimeWorkbench remains the next decomposition surface even though UniverseRuntimeController is below the hard line gate."
+  ],
+  "rollback": [
+    "Retain legacy-eih-1pn as default and leave V2 shadow-only.",
+    "Select standalone-full with the six checksummed content-pack manifests.",
+    "For desktop, uninstall the unsigned v186 RC and restore the retained standalone Web artifact.",
+    "Re-run tsc, 673 tests, both builds, fresh Browser QA, soak and content-pack verification before another promotion."
+  ],
+  "artifacts": [
+    {
+      "path": "dist/science/performance-v186-report.json",
+      "sha256": "fb274eacefe34d8a920262551cb1377a6e3f5fffe388f995bf49d920d050856b"
+    },
+    {
+      "path": "dist/science/lifecycle-soak-v178-report.json",
+      "sha256": "554726275da1aa14ca2983bb9494a1971c3c43018615eb24a0e37e3fe3c75c1b"
+    },
+    {
+      "path": "dist/science/client-bundle-v177-standalone-full.json",
+      "sha256": "03799e0190dc01b27a975ecb45732a59a319c0c97a17d6caba2d5ec3273a01c4"
+    },
+    {
+      "path": "dist/science/client-bundle-v177-vercel-lite.json",
+      "sha256": "27b56d9e690eea733634503dc1e3d97174142268d316f2f6a43509abde37cbce"
+    },
+    {
+      "path": "dist/content-packs/index.json",
+      "sha256": "e7ca6754b35ae0f55d0eee587597f77309725639e1b8597ee47eb3c02d1cc09c"
+    },
+    {
+      "path": "dist/content-packs/core.manifest.json",
+      "sha256": "0499e4771dc48d0290703fbaad1ca0f1118992a37e9ed74cdff68fb2b65b14fd"
+    },
+    {
+      "path": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452"
+    },
+    {
+      "path": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "f22008c70dfcc420c45222989c8fe5ed214a6598b4983d4bce77f753e481d243"
+    },
+    {
+      "path": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545"
+    },
+    {
+      "path": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c"
+    },
+    {
+      "path": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab"
+    },
+    {
+      "path": "public/atlas-lite/manifest.json",
+      "sha256": "e1130ed4b81603d83e87ff7196f5be0b343adee93e7bd1443d642a8ba4d6a7aa"
+    },
+    {
+      "path": "dist/desktop-stage/v186/desktop-stage.json",
+      "sha256": "b507606fae862978ca9342fde77609882ce7c87755b77c076b301b280d388a70"
+    },
+    {
+      "path": ".next-v186/BUILD_ID",
+      "sha256": "a6e9ca9ae9606ffc43183201ea78c0d03252477b6dcfe0f06dab4b006584f727"
+    },
+    {
+      "path": ".next-v186-lite/BUILD_ID",
+      "sha256": "063ac9a8b173d9a4dd6eb013780ec19506fb66afc753b9f013c0bb8b296a242c"
+    },
+    {
+      "path": "src-tauri/Cargo.lock",
+      "sha256": "19d8aff838cb7873b8791d92f2054c445895bcb13e46e2081e7a1da8b017ecdd"
+    },
+    {
+      "path": "src-tauri/tauri.conf.json",
+      "sha256": "a7fd301f139445f643070accebfc30a3d4a7c90ad86c339c8f897f72c0a6da7b"
+    },
+    {
+      "path": "E:\\xuexi\\tools\\cargo-target\\orbit-atlas-v186\\release\\bundle\\msi\\Solar Atlas_1.0.0_x64_en-US.msi",
+      "bytes": 113665180,
+      "sha256": "3979b640c90341dd37c9ea38568687c57681b414f18207e0aaf04ec374c10c36",
+      "signature": "not-signed"
+    },
+    {
+      "path": "E:\\xuexi\\tools\\cargo-target\\orbit-atlas-v186\\release\\bundle\\nsis\\Solar Atlas_1.0.0_x64-setup.exe",
+      "bytes": 93379187,
+      "sha256": "dae3646b5335135f7e9ebb4e578697d6ff62ab2e8ad97e5a947b64dc2a536232",
+      "signature": "not-signed"
+    },
+    {
+      "path": "dist/release/orbit-atlas-v186-regression.json",
+      "sha256": "2b7315110abc5a426ad3fe0ffb8319af1d5dd288aa29c21ddd818ca3e1feb330"
+    }
+  ],
+  "boundary": "no-cloud-deploy-no-signing-no-scientific-promotion-no-frozen-physics-or-v9-mutation"
+}

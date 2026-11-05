@@ -1,0 +1,77 @@
+{
+  "schema": "mainline-a-nebula-rights-closure-code-change-v627",
+  "round": "R64",
+  "generatedAt": "2026-09-21T01:33:31.727Z",
+  "status": "pending",
+  "effectiveProductionLines": 915,
+  "minimumEffectiveProductionLines": 500,
+  "files": {
+    "scripts/build-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 562,
+      "sha256": "d42e7ff482234046d81402cc5378344ba05dfffbeb9b903bbd0ec323ea0e95e7"
+    },
+    "scripts/verify-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 175,
+      "sha256": "b69501be1489c938c6f45b6e5ed5b1b50b518e7e31c6f01517ab69a93fa5b7bd"
+    },
+    "scripts/replay-mainline-a-nebula-rights-closure-v627.mjs": {
+      "effectiveLines": 178,
+      "sha256": "fde6ffc3311983d6c7d77128dbd72881c1a6c0d3e724b78c5caf0272ecdd3b8b"
+    }
+  },
+  "tests": [
+    {
+      "path": "scripts/build-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "fc847325e5569529588d0add58f3828d40594841915f754342b7f6323c154390",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "bc3649e3d2f3a8839d634509b046e100c2f60c906e2cf6280f29673c72e06914",
+      "excludedFromEffectiveLines": true
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-rights-closure-v627.test.mjs",
+      "sha256": "5f75dd10f8ca5dd157f34759977dc0c8fd444797f0d267eefdda6184eb31fb20",
+      "excludedFromEffectiveLines": true
+    }
+  ],
+  "validation": {
+    "node": "22/22 pass",
+    "eslint": "pass",
+    "build": "not-run in subtask; CLI --no-write and verifier/replay checks pass"
+  },
+  "evidence": {
+    "static": [
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.jsonl",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.csv",
+      "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json"
+    ],
+    "externalSource": "source and rights ledger projection; item-level rights pending",
+    "http": "not-run in subtask",
+    "visual": "not-run in subtask",
+    "browser": "not-run in subtask",
+    "performance": "not-run in subtask"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "copyrightApproval": false,
+    "physicsKernelMutation": false
+  },
+  "blockers": [
+    "rights-signoff-pending"
+  ],
+  "claimsClosed": {
+    "rights": false,
+    "runtime": false,
+    "scientificPayloadWriteback": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

@@ -1,0 +1,263 @@
+{
+  "schema": "mainline-a-code-change-continuation-v635",
+  "round": "R62-R65-R66-continuation",
+  "newDevelopmentRound": false,
+  "createdAt": "2026-09-27T05:24:00.919Z",
+  "status": "acceptance-pending",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-r65-v634-code-change-20260927-056-sealed.json",
+    "sha256": "5984c318bf4db922abbd10fe7b0686a12c2c460e247eaaec1394aef2d46d38ca"
+  },
+  "incrementalEffectiveProductionLines": 1110,
+  "cumulativeEffectiveProductionLines": 4314,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 2540,
+  "incrementalRemovedLines": 61,
+  "cumulativeAddedLines": 10593,
+  "cumulativeRemovedLines": 1771,
+  "method": "Exact before/after diff target lines intersected with TypeScript AST leaf-token nonblank lines; tests, artifacts, receipts, documents, whitespace and comments excluded. Deletions reported separately, never counted as added effective code.",
+  "files": [
+    {
+      "path": "app/components/MainlineAResourceObservationPanelV633.tsx",
+      "before": "tmp/mainline-a-ui-before-20260927-057/app/components/MainlineAResourceObservationPanelV633.tsx",
+      "beforeSha256": "ca6ad0f75a6dd9025f1ff79b2ff6bbc100019a11860f54fe182201da27530033",
+      "sha256": "ec9e5ef1e0a72b31d31e6b55418f30c778bb58d640f6933ee293fbc5d3f17b9b",
+      "category": "production",
+      "addedLines": 81,
+      "removedLines": 11,
+      "countedEffectiveLines": 79
+    },
+    {
+      "path": "app/components/MainlineAResourceObservationPanelV633.test.tsx",
+      "before": "tmp/mainline-a-ui-before-20260927-057/app/components/MainlineAResourceObservationPanelV633.test.tsx",
+      "beforeSha256": "2ca86ffb4c77c18349703fcd001e6a679de5dd81eb52f9f6ecc339aac98b5285",
+      "sha256": "6d786a7c18a3e5356073672fc26d9439af8a13539bf42635dd97157846f3d31c",
+      "category": "test",
+      "addedLines": 14,
+      "removedLines": 1,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-057/app/components/SelectedSkyTargetProxy.tsx",
+      "beforeSha256": "a7749ce4a02f8c15f97bfa00f768ab8b1a17678dee8e067e825a003a86b0c691",
+      "sha256": "1f99b892c4e3c2a0bba2a5cc41bbecdeeb9bb90ce4338b6585f8bcd88055e906",
+      "category": "production",
+      "addedLines": 14,
+      "removedLines": 1,
+      "countedEffectiveLines": 14
+    },
+    {
+      "path": "app/components/MainlineANebulaScenePortraitV607.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-057/app/components/MainlineANebulaScenePortraitV607.tsx",
+      "beforeSha256": "723377815a3be47c0d04172a0ab58e1188521d5ebb16e3ee64dd81724e1c63cd",
+      "sha256": "57629937c0271c31e48c03676fa6e1692d9c3fe9946f7cf7049bcefb78f601a4",
+      "category": "production",
+      "addedLines": 24,
+      "removedLines": 9,
+      "countedEffectiveLines": 24
+    },
+    {
+      "path": "app/components/ConstellationLines.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-057/app/components/ConstellationLines.tsx",
+      "beforeSha256": "ff8a5117a70501fb89ec9f303b2f2d12fd2d1c46b587917584a535329f1e9fc2",
+      "sha256": "3b224e84d29338fd248adb7d0317d28177abf403da81c3585c3fd4a844db5401",
+      "category": "production",
+      "addedLines": 22,
+      "removedLines": 12,
+      "countedEffectiveLines": 22
+    },
+    {
+      "path": "app/components/AtlasDeepSpacePresentationSubtreeV275.tsx",
+      "before": "tmp/mainline-a-runtime-before-20260927-057/app/components/AtlasDeepSpacePresentationSubtreeV275.tsx",
+      "beforeSha256": "acbeff74f925a7bd5d0f092c2729e00c6b9cc5e60e6f5391060c84971bc9c6aa",
+      "sha256": "4f418f6d54334933948cea0e92ea655c6dad0b813c7d7f6158bb69cadc778cc5",
+      "category": "production",
+      "addedLines": 1,
+      "removedLines": 0,
+      "countedEffectiveLines": 1
+    },
+    {
+      "path": "app/lib/mainlineAResourceObservationV633.ts",
+      "before": "tmp/mainline-a-canonical-before-20260927-057/app/lib/mainlineAResourceObservationV633.ts",
+      "beforeSha256": "4af6bd7c13fda82465e4e1cdd9a9d67f50b57544f058d72df127d8777f418910",
+      "sha256": "1a1145e33f5206ccf179a35d605fc94db7031d1028617e35aceb95eb301811ea",
+      "category": "production",
+      "addedLines": 39,
+      "removedLines": 14,
+      "countedEffectiveLines": 38
+    },
+    {
+      "path": "app/lib/mainlineALifecycleSessionV633.ts",
+      "before": "tmp/mainline-a-canonical-before-20260927-057/app/lib/mainlineALifecycleSessionV633.ts",
+      "beforeSha256": "c4fe9e0789e3ce3b4a37f3b5fdc4675985504dc6a8fb1f9d9a88be9fb86fe390",
+      "sha256": "ed351641d5afa56652db4444813c0fa30991599fda64d60b599925e91780de77",
+      "category": "production",
+      "addedLines": 37,
+      "removedLines": 2,
+      "countedEffectiveLines": 37
+    },
+    {
+      "path": "app/lib/mainlineAResourceObservationV633.test.ts",
+      "before": "tmp/mainline-a-canonical-before-20260927-057/app/lib/mainlineAResourceObservationV633.test.ts",
+      "beforeSha256": "81f3a6d035c3fa967739f7daca90a643dfede0c026e40c3bfc59378934d588e2",
+      "sha256": "85dcebb5cdc57052b0dd1cae8db975b7521b708db1ff502a149f842d1c59b613",
+      "category": "test",
+      "addedLines": 21,
+      "removedLines": 1,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/lib/mainlineALifecycleSessionV633.test.ts",
+      "before": "tmp/mainline-a-canonical-before-20260927-057/app/lib/mainlineALifecycleSessionV633.test.ts",
+      "beforeSha256": "00f55167ac690709bb8c2fe01d106c8a67301b6ed6ac3284296542e4e40d34d9",
+      "sha256": "75a1d635f4aa2139dc65b17b4561237027bfee360458918d27ab4d5bd7f9b957",
+      "category": "test",
+      "addedLines": 120,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/replay-mainline-a-resource-observation-v633.ts",
+      "before": "tmp/mainline-a-longrun-before-20260927-057/scripts/replay-mainline-a-resource-observation-v633.ts",
+      "beforeSha256": "96a383f581a14e45e5bb50956d3bebfda67cf7ca1095cfb446fad13ebc0a91b3",
+      "sha256": "b3682eef1e7c3b4cdb5f0360ca768ad412054c2a908ea060d8d3c43f25534661",
+      "category": "production-tool",
+      "addedLines": 29,
+      "removedLines": 0,
+      "countedEffectiveLines": 29
+    },
+    {
+      "path": "scripts/replay-mainline-a-resource-observation-v633.test.ts",
+      "before": "tmp/mainline-a-longrun-before-20260927-057/scripts/replay-mainline-a-resource-observation-v633.test.ts",
+      "beforeSha256": "9cd7514c6304ddd2bf80ab0563d70c2ac73ed6f204648cea84708d37c94436b0",
+      "sha256": "f930005775932d66d501aeed0320e51d0a7453688acadbf8a54981e67add0121",
+      "category": "test",
+      "addedLines": 85,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.mjs",
+      "before": "tmp/mainline-a-longrun-before-20260927-057/scripts/mainline-a-release-evidence.mjs",
+      "beforeSha256": "bcf52bb0ec530b07e030b0ef7c493d5e53dd6106333d25637995f652b5c64790",
+      "sha256": "e3f8cc65aee9a5e316f8961c877acdc2dcdcdc20523fc6faf9b3c3e0f39fa605",
+      "category": "production-tool",
+      "addedLines": 58,
+      "removedLines": 10,
+      "countedEffectiveLines": 57
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.test.mjs",
+      "before": "tmp/mainline-a-longrun-before-20260927-057/scripts/mainline-a-release-evidence.test.mjs",
+      "beforeSha256": "f07be8f81e42dc8ae8d1d17496dc949c32d99a16da0dc13505208739ea8d8295",
+      "sha256": "24a02a3bcfdcdd44b0783124ce81b0fd511cfb575b174b0307235e8336a79c74",
+      "category": "test",
+      "addedLines": 151,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/lib/mainlineACanonicalRuntimeV635.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "325f274c743405b09dc89c1cfce7aef0c359a184cfe7939ae5ecfbf7ea9541f8",
+      "category": "production",
+      "addedLines": 223,
+      "removedLines": 0,
+      "countedEffectiveLines": 211
+    },
+    {
+      "path": "app/lib/mainlineACanonicalRuntimeV635.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "b5f3860653ec8cecea28c961f3d9be5326bf8eea4ddd50834424dd0f992c0c87",
+      "category": "test",
+      "addedLines": 283,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "cc2856c47c687d3bfd9e7c581501f772a6a850649e7c740e9f7c2b3a2f7714cf",
+      "category": "production",
+      "addedLines": 229,
+      "removedLines": 0,
+      "countedEffectiveLines": 213
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "b068b1329a482d8d896bac85f0d3206ffa7c08aa0d48dccca6e8e7e75c8e9024",
+      "category": "test",
+      "addedLines": 374,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-runtime-v635.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "b432dc47ca5d24d7d3c51ef9f504b5ccccbc9071567bde1eda5db591b5c976c6",
+      "category": "production-tool",
+      "addedLines": 139,
+      "removedLines": 0,
+      "countedEffectiveLines": 133
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-runtime-v635.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "92df66d07739582f747ed3a4a8530509c72b5557610b672076c7cf686d51efa2",
+      "category": "test",
+      "addedLines": 105,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "22811d4d6e814a44d47ae823f4dac4c3a91b71cc65c2ffe52427f8e43adb5c32",
+      "category": "production-tool",
+      "addedLines": 152,
+      "removedLines": 0,
+      "countedEffectiveLines": 148
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.test.mjs",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "d0d690127795d5afd82db46604a1003157885262e719de54ea149e4a3c4f770d",
+      "category": "test",
+      "addedLines": 156,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    },
+    {
+      "path": "scripts/index-mainline-a-canonical-observations-v635.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "a4eced85872585529ce87d6326982b546214cc152ba17f1369516cca47476c43",
+      "category": "production-tool",
+      "addedLines": 109,
+      "removedLines": 0,
+      "countedEffectiveLines": 104
+    },
+    {
+      "path": "scripts/index-mainline-a-canonical-observations-v635.test.ts",
+      "before": null,
+      "beforeSha256": null,
+      "sha256": "e16ab3050dc92a22e29c170958e5c589a41cd323ba503838326a77199a12a848",
+      "category": "test",
+      "addedLines": 74,
+      "removedLines": 0,
+      "countedEffectiveLines": 0
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "physicsKernelMutation": false
+}

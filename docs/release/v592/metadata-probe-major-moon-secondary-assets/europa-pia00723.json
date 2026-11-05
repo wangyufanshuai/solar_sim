@@ -1,0 +1,94 @@
+{
+  "version": "v592-major-moon-secondary-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T13:28:38.631Z",
+  "status": "secondary-asset-manifest-probe-complete-no-payload",
+  "probeId": "europa-pia00723",
+  "target": "europa",
+  "selection": {
+    "nasaId": "PIA00723",
+    "title": "Context of Europa images from Galileo",
+    "description": "This global view of Europa shows the location of a four-frame mosaic of images taken by NASA Galileo spacecraft in 1996, set into low-resolution data obtained by NASA Voyager spacecraft in 1979.",
+    "center": "JPL",
+    "metadataReceiptSha256": "98a354842925343629782c0105697b28e8199e94a37824a68a37a376c5b50c92",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00723/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA00723/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA00723/collection.json",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 262,
+    "responseSha256": "f18fadb7d7f983c13234b6d3fc432972d17c21ad73635c23a787ec3adfb48f81"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00723/PIA00723~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00723~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00723/PIA00723~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00723/PIA00723~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00723~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00723/PIA00723~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00723/PIA00723~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00723~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00723/PIA00723~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00723/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00723/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "c62414e0fe384fc12eb16e6518dda135e6be9bcb5843bae3f614e78da69deb60"
+}

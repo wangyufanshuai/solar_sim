@@ -1,0 +1,59 @@
+{
+  "version": "v592-major-moon-usgs-final-label-acquisition-v1",
+  "generatedAt": "2026-08-20T06:22:15.863Z",
+  "status": "partial-final-label-metadata-with-terminal-failures-no-retry",
+  "redirectAdmissionReceiptSha256": "feac7782ddebde747bc16b1edea85fd69d05d2bdd7b3519582ca60b623234701",
+  "policy": {
+    "exactRedirectHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "requestCountPerUrl": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "atomicWrite": ".part-to-final",
+    "labelMetadataOnly": true,
+    "visualPayloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "scientificAuthorityGranted": false
+  },
+  "requestedUrls": [
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl"
+  ],
+  "assets": [],
+  "failures": [
+    {
+      "target": "io",
+      "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-final-identity:io"
+    },
+    {
+      "target": "europa",
+      "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Europa_Voyager_GalileoSSI_global_mosaic_500m.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-final-identity:europa"
+    },
+    {
+      "target": "ganymede",
+      "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ganymede_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-final-identity:ganymede"
+    },
+    {
+      "target": "callisto",
+      "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.lbl",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-usgs-label-final-identity:callisto"
+    }
+  ],
+  "receiptSha256": "c8a3da973463b45915801c147ac29780a04da5da9bf7d969474f9ec673ca99ec"
+}

@@ -1,0 +1,206 @@
+{
+  "schema": "mainline-a-root-manifest-probe-v626",
+  "version": "v626-read-only-root-manifest-probe",
+  "generatedAt": "2026-09-22T02:02:10.299Z",
+  "status": "blocked",
+  "evidenceClass": "static",
+  "evidenceClasses": [
+    "static"
+  ],
+  "workspaceBoundary": {
+    "workspace": "E:\\86137\\myai\\solar_sim\\next-web",
+    "parentRoot": "E:\\86137\\myai\\solar_sim",
+    "canonicalRoot": "E:\\86137\\myai\\solar_sim\\web",
+    "rootPath": "E:\\86137\\myai\\solar_sim\\web",
+    "rootRealPath": "E:\\86137\\myai\\solar_sim\\web",
+    "readOnlyInput": true,
+    "rootWrites": false,
+    "parentGitOps": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "root": {
+    "path": "E:\\86137\\myai\\solar_sim\\web",
+    "present": true,
+    "packageName": "solar-sim-viz",
+    "packageType": "module",
+    "releaseIdentity": "solar-sim-mainline-a",
+    "sha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+    "errors": [],
+    "realPath": "E:\\86137\\myai\\solar_sim\\web",
+    "scan": {
+      "candidates": [],
+      "errors": [],
+      "visited": 0
+    },
+    "manifest": null
+  },
+  "nextWeb": {
+    "path": "E:\\86137\\myai\\solar_sim\\next-web",
+    "present": true,
+    "packageName": "solar-next-web",
+    "packageType": "unknown-type",
+    "releaseIdentity": "solar-sim-mainline-a",
+    "sha256": "737250e47901506b85c01fd414c5f735da4beea9ff1e5b9b226f991044921389",
+    "errors": [],
+    "manifest": {
+      "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+      "present": true,
+      "valid": true,
+      "errors": [],
+      "bytes": 38349,
+      "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+      "structuralSha256": "768b53c808b19f8d39022f5c5744f0a3c57b29b227add2f893fc3f5cd0ba8195",
+      "schema": "mainline-a-canonical-coverage-v622",
+      "counts": {
+        "total": 36,
+        "stars": 12,
+        "nebulae": 12,
+        "constellations": 12
+      },
+      "recordCounts": {
+        "star": 12,
+        "nebula": 12,
+        "constellation": 12
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "notAdmitted": true,
+        "scientificPayloadWriteback": true,
+        "runtimeWrites": true,
+        "measurementWrites": true
+      }
+    }
+  },
+  "parity": {
+    "structuralMatch": false,
+    "digestMatch": false,
+    "relation": "not-comparable",
+    "rootManifestPresent": false,
+    "nextWebManifestPresent": true
+  },
+  "comparison": {
+    "status": "blocked",
+    "rootManifest": null,
+    "nextWebManifest": {
+      "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+      "present": true,
+      "valid": true,
+      "errors": [],
+      "bytes": 38349,
+      "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+      "structuralSha256": "768b53c808b19f8d39022f5c5744f0a3c57b29b227add2f893fc3f5cd0ba8195",
+      "schema": "mainline-a-canonical-coverage-v622",
+      "counts": {
+        "total": 36,
+        "stars": 12,
+        "nebulae": 12,
+        "constellations": 12
+      },
+      "recordCounts": {
+        "star": 12,
+        "nebula": 12,
+        "constellation": 12
+      },
+      "boundary": {
+        "candidateOnly": true,
+        "hold": true,
+        "notAdmitted": true,
+        "scientificPayloadWriteback": true,
+        "runtimeWrites": true,
+        "measurementWrites": true
+      }
+    },
+    "structuralMatch": false,
+    "digestMatch": false,
+    "sourceRelation": "not-comparable",
+    "issues": [
+      {
+        "code": "root-manifest-not-present",
+        "severity": "error",
+        "detail": "root app has no canonical coverage manifest; next-web coverage cannot stand in for it",
+        "evidenceClass": "static"
+      }
+    ],
+    "blockers": [
+      "root-manifest-not-present"
+    ]
+  },
+  "gates": [
+    {
+      "id": "root-readonly",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    {
+      "id": "root-manifest",
+      "state": "blocked",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": [
+        "root-manifest-not-present"
+      ]
+    },
+    {
+      "id": "next-web-manifest",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    {
+      "id": "manifest-structure",
+      "state": "pending",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": [
+        "manifest-structure-diff"
+      ]
+    },
+    {
+      "id": "candidate-boundary",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "rollback",
+      "blockers": []
+    }
+  ],
+  "blockers": [
+    "root-manifest-not-present"
+  ],
+  "claimsClosed": {
+    "rootCoverage": false,
+    "manifestParity": false,
+    "legalClearance": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  },
+  "writes": {
+    "root": false,
+    "parentGit": false,
+    "scientificPayload": false,
+    "output": true
+  },
+  "notes": [
+    "The root mirror is read only; a missing root manifest remains a blocking finding.",
+    "Generated next-web coverage is not used as root evidence.",
+    "This probe does not perform network access, Git operations, candidate promotion or scientific payload writeback."
+  ],
+  "inputDigests": {
+    "rootPackageSha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+    "rootManifestSha256": null,
+    "nextWebManifestSha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+    "reportInputsSha256": "81c1531edd5c13ed03297ff109729d850fdab09c8014855c4f4c1fc97e9bdfb6"
+  }
+}

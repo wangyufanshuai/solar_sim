@@ -1,0 +1,69 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:40:38.575Z",
+  "endedAt": "2026-09-27T02:40:40.852Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/dragons-lair/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/dragons-lair/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "90badad52d5c533206e2ee3e84853ca13af2f304f757803007d14e2eb4035973",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/dragons-lair/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/dragons-lair/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 268509,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/dragon-lair-nebula-attempt-1.html",
+  "sha256": "8e12665c6cba99b4c65a18496da416be2a97d6bd69d67f677de921da0408c9ee",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Dragon’s Lair",
+    "expectedPia": "PIA13240",
+    "observedPiaIds": [
+      "PIA13240"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/Penn State/DSS",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13240/PIA13240.jpg",
+      "https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/pia13/pia13240/figures/PIA13240_fig1.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

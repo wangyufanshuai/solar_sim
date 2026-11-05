@@ -1,0 +1,168 @@
+{
+  "schema": "mainline-a-r76-web-round-v663",
+  "round": 76,
+  "date": "2026-10-13",
+  "status": "local-current-source-web-candidate-verified-public-release-blocked",
+  "scope": "Web-only source/readiness batch: replay held star and nebula evidence, expose fail-closed release gates, improve mobile scene/detail presentation, and recheck the current production build by HTTP and two browser viewports.",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "parallelRelativityWindowExcludedFromEffectiveLines": true
+  },
+  "identity": {
+    "buildId": "BdJAn-4aFRC4fe7fB_Cdh",
+    "runtimeBuildId": "mainline-a-742cfb27bc3e2673",
+    "appSourceSha256": "742cfb27bc3e267343c7ada561cc05a7056d7ad8534b678e920fb6745e5f95e2",
+    "sourceStableAtBuildHttpBrowserAndAudit": true,
+    "v616SnapshotSha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+    "v616ProjectionSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+    "v616DigestsChanged": false
+  },
+  "delivery": {
+    "codeChange": "docs/release/v607/mainline-a-r76-v663-code-change-20261013.json",
+    "static": "docs/release/v607/mainline-a-r76-v663-static-20261013.json",
+    "build": "docs/release/v607/mainline-a-r76-build-20261013v663r76web02.json",
+    "httpDefaultOff": "docs/release/v607/mainline-a-r76-v663-http-20261013v663r76web03.json",
+    "browserLocalPreview": "docs/release/v607/mainline-a-r76-v663-browser-20261013v663r76web05.json",
+    "visual": "docs/release/v607/mainline-a-r76-v663-visual-20261013v663r76web05.json",
+    "performance": "docs/release/v607/mainline-a-r76-v663-performance-20261013v663r76web05.json",
+    "externalSource": "docs/release/v607/mainline-a-r76-v663-external-source-20261013v663r76web05.json",
+    "evidenceAudit": "docs/release/v607/mainline-a-r76-v663-evidence-audit-20261013v663r76web05.json",
+    "readinessManifest": "app/data/mainlineAWebReadinessV663.generated.json",
+    "readinessReplay": "docs/release/v607/mainline-a-r76-v663-readiness-replay-20261013v663r76source02.json",
+    "browserAttemptsPreserved": [
+      "docs/release/v607/mainline-a-r76-v663-browser-attempt-20261013v663r76web01.json",
+      "docs/release/v607/mainline-a-r76-v663-browser-attempt-20261013v663r76web02.json",
+      "docs/release/v607/mainline-a-r76-v663-browser-attempt-20261013v663r76web03.json"
+    ],
+    "publicDeployment": "not-run"
+  },
+  "codeChange": {
+    "effectiveProductionAndToolAddedLines": 1789,
+    "effectiveSubstantiveTestAddedLines": 362,
+    "effectiveAddedCodeLinesTotal": 2151,
+    "existingProductionLinesReplacedOrRemoved": 2,
+    "effectiveCodeFiles": 14,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true,
+    "generatedDataReceiptsScreenshotsAndDocsCredited": false
+  },
+  "coverage": {
+    "historicalR75ALineRuntime": {
+      "stars": 12,
+      "constellations": 12,
+      "nebulae": 12,
+      "sameSourceAsR76": false
+    },
+    "historicalR75BetaReview": {
+      "stars": 24,
+      "constellations": 12,
+      "nebulae": 24,
+      "sameSourceAsR76": false
+    },
+    "r76CurrentSourceHeldRows": 9,
+    "stellarPhysicalComponentsConfirmed": 0,
+    "stellarPhysicalComponentsPending": 4,
+    "betaNebulaCandidateImageReviewChains": 19,
+    "betaNebulaImageAcquisitionPolicyHolds": 5,
+    "aNebulaRightsSigned": 0,
+    "betaNebulaRightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "evidence": {
+    "static": {
+      "status": "passed-current-source-local",
+      "node": "20/20",
+      "vitest": "17/17",
+      "targetedEslint": "passed-zero-warnings",
+      "rawPinsRecomputed": 20,
+      "v616DigestsUnchanged": true
+    },
+    "build": {
+      "status": "passed-preserved-local-production-build",
+      "receipt": "docs/release/v607/mainline-a-r76-build-20261013v663r76web02.json",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "status": "passed-default-off-local-production-build",
+      "homeAndHealth": "200 / 200",
+      "readinessItems": 9,
+      "releaseGates": 6,
+      "candidateReviewImageRoutesDenied": 19,
+      "heldImageRoutesDenied": 5
+    },
+    "visual": {
+      "status": "seven-screenshots-rehashed-four-samples-inspected-no-human-signoff",
+      "screenshotCount": 7,
+      "mobileScenePeekAndDetailsVisible": true,
+      "humanPerItemSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-simulated-mobile-viewport",
+      "viewports": [
+        "1280x720 desktop",
+        "390x844 simulated mobile"
+      ],
+      "nineHeldItemsCheckedPerViewport": true,
+      "mobileScenePeekCanExpand": true,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "externalImageRequests": 0,
+      "horizontalOverflow": false,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-headless-browser-diagnostic-only",
+      "framesPerViewport": 120,
+      "desktopFrameIntervalP95Ms": 6.095000002533197,
+      "mobileViewportFrameIntervalP95Ms": 6.074999999254942,
+      "currentBuildLongRun": "not-run",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "twenty-prior-raw-pins-replayed-no-new-https-requests",
+      "priorOfficialPages": 6,
+      "priorStructuredStellarResponses": 4,
+      "newNebulaImageResponses": 0,
+      "stellarPhysicalComponentsConfirmed": 0,
+      "rightsSigned": 0,
+      "scientificOrCopyrightApprovalClaim": false
+    }
+  },
+  "remainingGates": {
+    "fourStellarPhysicalComponentReviews": "pending-0-of-4",
+    "fiveBetaNebulaImageChains": "policy-held-no-requests",
+    "aNebulaRightsSignoffs": "pending-0-of-12",
+    "betaNebulaRightsSignoffs": "pending-0-of-24",
+    "perItemHumanVisualSignoff": "pending",
+    "currentFinalBuildLongRuns": "pending",
+    "rootAppParity": "deferred-web-only-scope",
+    "physicalMobile": "not-run-web-only-scope",
+    "productionPerformance": "not-established",
+    "publicWebRelease": "blocked"
+  },
+  "nextRound": {
+    "round": 77,
+    "scope": "Complete a full web-only visual/usability and resource-lifecycle batch, then run the 36-object A-line and 24/12/24 Beta entry matrix against one frozen final source and repeat two independent local long runs before candidate packaging.",
+    "conditionalExternalWork": "Four component-specific scientific reviews, five blocked image chains and rights signatures require real admissible external evidence; no code-only completion date."
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

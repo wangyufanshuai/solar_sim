@@ -1,0 +1,153 @@
+{
+  "schema": "mainline-a-execution-baseline-v1",
+  "generatedAt": "2026-09-13T03:52:57Z",
+  "goalThreadId": "01a093c5-4c87-75f1-b443-36a2c4b81d71",
+  "sourceLineMap": "docs/release/v607/mainline-a-source-line-map-20260912.md",
+  "source": {
+    "gitRoot": "E:/86137/myai",
+    "implementationCwd": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/kerr-polarization-transport-v586",
+    "head": "6ab0609bb76fb2787223f889e60714281907728a"
+  },
+  "checks": [
+    {
+      "command": "node scripts/verify-mainline-a1.mjs",
+      "status": "pass",
+      "artifactCount": 63,
+      "firstSet": {
+        "constellations": 4,
+        "nebulae": 12,
+        "stars": 6,
+        "registryObjects": 22
+      },
+      "candidateCount": 6,
+      "licensedLocalAssetCount": 6,
+      "verifiedLocalByteSize": 1971256
+    },
+    {
+      "command": "node scripts/acquire-mainline-a3-extension.mjs --verify-local",
+      "status": "verified-local-no-network",
+      "extensionAssetCount": 6,
+      "extensionByteSize": 1353370,
+      "rightsReceipt": "docs/release/v607/mainline-a-stage-a3-extension-delivery.json"
+    },
+    {
+      "command": "npx vitest run app/data/mainlineAFirstSetNebulaCandidatesV607.test.ts app/data/mainlineAMetadataV607.test.ts --exclude tmp/** --exclude **/.next*/**",
+      "status": "pass",
+      "testFiles": 2,
+      "tests": 23
+    },
+    {
+      "command": "node scripts/materialize-mainline-a3-all-assets.mjs",
+      "status": "pass",
+      "assetCount": 12,
+      "totalByteSize": 3324626,
+      "generatedRegistry": "app/data/mainlineANebulaVisualAssetsV607.all.generated.ts"
+    },
+    {
+      "command": "npx vitest run app/data/mainlineANebulaVisualAssetsV607.all.test.ts app/lib/mainlineANebulaSceneV607.test.ts app/lib/mainlineANebulaSceneTextureV607.test.ts --exclude tmp/** --exclude **/.next*/**",
+      "status": "pass",
+      "testFiles": 3,
+      "tests": 10
+    },
+    {
+      "command": "npx eslint app/components/ConstellationLines.tsx",
+      "status": "pass"
+    },
+    {
+      "command": "npx vitest run app/components/ConstellationLines.test.tsx app/data/mainlineAConstellationBoundaryV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**",
+      "status": "pass",
+      "testFiles": 1,
+      "tests": 8
+    },
+    {
+      "command": "node scripts/build-mainline-a6-bound-profile.mjs",
+      "status": "profile-build-passed-listed-inputs-unchanged",
+      "receipt": "docs/release/v607/mainline-a-stage-a6-bound-build.json",
+      "buildId": "h08Dhkk9omMt2ifEk6SBu",
+      "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b"
+    },
+    {
+      "command": "pwsh -NoProfile -File scripts/mainline-a6-http-check.ps1",
+      "status": "pass",
+      "receipt": "docs/release/v607/mainline-a6-http-assets-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "Entry page and all 12 rights-cleared JPEGs returned 200 image/jpeg; served bytes and SHA-256 matched worktree."
+    },
+    {
+      "command": "Codex In-app Browser A2 current-build visual capture",
+      "status": "pass-partial",
+      "receipt": "docs/release/v607/mainline-a2-visual-screenshots-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "Desktop stellar Ori/UMa/Cas/Sco plus mobile solar/stellar/galactic screenshots and runtime geometry markers captured."
+    },
+    {
+      "command": "Codex In-app Browser A2 current-build mobile scale and desktop quality matrix",
+      "status": "pass-partial",
+      "receipt": "docs/release/v607/mainline-a2-browser-matrix-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "Mobile solar/stellar/galactic markers and screenshots, four-constellation direct selection, and desktop balanced/dense stellar/galactic markers and screenshots passed."
+    },
+    {
+      "command": "Codex In-app Browser A4 current-build six-star passport matrix",
+      "status": "pass-partial",
+      "receipt": "docs/release/v607/mainline-a4-stellar-browser-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "Six hero roster entries produced passport fact layers, uncertainty boundary text and parameterized portraits on desktop and 390x844 mobile; mobile rect 8..382 x 14..748, scroll width 390, overlays hidden."
+    },
+    {
+      "command": "Codex In-app Browser A5 current-build five-route, direct-relation and focus-lifecycle smoke",
+      "status": "pass-partial",
+      "receipt": "docs/release/v607/mainline-a5-route-matrix-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "All 5 routes and 23 steps, Ori internal relation and UMa empty relation case passed; 30-cycle focus resource identity remained stable; independent camera direction vector remains pending.",
+      "lifecycleReceipt": "docs/release/v607/mainline-a5-focus-lifecycle-current-20260913.json"
+    },
+    {
+      "command": "Codex In-app Browser A6 current-build desktop/mobile frame and resource sample",
+      "status": "pass-partial",
+      "receipt": "docs/release/v607/mainline-a6-browser-performance-current-20260913.json",
+      "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+      "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+      "notes": "Desktop 720 samples at 180.2 median FPS and 5.7 ms frame p95; mobile 671 samples at 180.0 median FPS and 5.7 ms frame p95; resources stable and console/page errors zero. Browser emulation only; long-task review and physical-device evidence pending."
+    },
+    {
+      "command": "Codex In-app Browser A5 h08 actual camera telemetry",
+      "status": "pass",
+      "receipt": "docs/release/v607/mainline-a5-camera-telemetry-current-20260913.json",
+      "buildId": "h08Dhkk9omMt2ifEk6SBu",
+      "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b",
+      "notes": "Position/target/forward markers readable after load and Sirius A focus; forward norm and target alignment passed; canvas count 1; console/page errors zero."
+    },
+    {
+      "command": "node scripts/build-mainline-a6-release-packet.mjs --verify-existing",
+      "status": "verified-worktree-matched",
+      "receipt": "docs/release/v607/mainline-a-stage-a6-release-packet.json",
+      "sourceFileCount": 147,
+      "notes": "Packet regenerated after h08 camera telemetry and current source/docs changes; prior Rb2 browser receipts remain historical until h08 rebind. Receipt is worktree-matched and review-only."
+    },
+    {
+      "command": "python scripts/build-kerr-observation-envelope-v560.py --verify",
+      "status": "blocked-upstream-chain-absent",
+      "receipt": "docs/release/v607/mainline-a6-science-manifest-blocker-20260913.json",
+      "notes": "Authoritative v556/v557/v558/v559 and v314 science inputs are absent; no placeholder or exclusion was used."
+    }
+  ],
+  "currentDisposition": {
+    "a1": "pass-on-current-candidate-line",
+    "a3": "12-asset-registry-resolver-portrait-current-metadata-and-credit-coverage-verified",
+    "a2": "Rb2 desktop/mobile visual and scale/selection pass; lifecycle/performance remains separate",
+    "a4": "Rb2 desktop/mobile six-star passport pass; Gaia identity binding remains separate",
+    "a5": "h08 camera position/target/forward telemetry pass; prior Rb2 five-route/direct relation and 30-cycle receipts require h08 rebind",
+    "browser": "partial-current-build-nebula-constellation-stellar-and-relation evidence",
+    "fullTypecheck": "blocked-authoritative-v556-v559-and-v314-science-input-chain-absent",
+    "release": "not-qualified",
+    "a6": "Prior Rb2 HTTP 12/12 and browser-emulated desktop/mobile frame budget pass remain historical; h08 source build is bound, while HTTP/performance rebind, long-task/physical-device/final-release binding remain pending"
+  },
+  "nextEntryPoint": "Rebind A2/A4/A5/HTTP/performance browser evidence to h08, then A6 long-task review and final packet binding."
+}

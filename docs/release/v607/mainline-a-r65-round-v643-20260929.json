@@ -1,0 +1,121 @@
+{
+  "schema": "mainline-a-round-receipt-v643",
+  "round": "R65",
+  "version": "v643-r65-long-run-lifecycle-fix",
+  "generatedAt": "2026-09-29T11:15:15.9771383Z",
+  "scope": "next-web only",
+  "baseline": "156ec77",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "changeSummary": [
+    "Moved V643 inside the scrollable V625 performance surface so desktop and mobile users can reach the long-run controls.",
+    "Required a real registry change between baseline and active checkpoints, then baseline restoration at final.",
+    "Bound started/ended viewport and build identity, wall-clock duration, frame/memory coverage, checkpoint timestamps, and listener cleanup."
+  ],
+  "effectiveCode": {
+    "testsExcluded": true,
+    "countMethod": "Nonblank, noncomment lines in R65 V643 production/tool integration files; tests, generated receipts and screenshots excluded.",
+    "productionAndToolLines": 1726,
+    "files": [
+      {
+        "path": "app/lib/mainlineAR65LongRunV643.ts",
+        "effectiveLines": 815,
+        "bytes": 43413
+      },
+      {
+        "path": "app/components/MainlineAR65LongRunPanelV643.tsx",
+        "effectiveLines": 353,
+        "bytes": 23131
+      },
+      {
+        "path": "app/components/MainlineAPerformancePanelV625.tsx",
+        "effectiveLines": 268,
+        "bytes": 20741
+      },
+      {
+        "path": "app/components/MainlineAPerformanceSurfaceV637.tsx",
+        "effectiveLines": 66,
+        "bytes": 3635
+      },
+      {
+        "path": "scripts/build-mainline-a-r65-longrun-v643.ts",
+        "effectiveLines": 224,
+        "bytes": 9742
+      }
+    ]
+  },
+  "evidence": {
+    "static": {
+      "node": "passed",
+      "vitest": "11 passed (9 V643 + 2 builder)",
+      "eslint": "passed",
+      "typescript": "passed",
+      "replay": "pending receipt verified fail-closed"
+    },
+    "http": {
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "pageContentType": "text/html; charset=utf-8",
+      "healthContentType": "application/json",
+      "url": "http://127.0.0.1:3085/",
+      "buildReceipt": "docs/release/v607/mainline-a-r65-build-20260929-v643r65f.json"
+    },
+    "visual": {
+      "desktopScreenshot": "E:\\86137\\myai\\solar_sim\\next-web\\docs\\release\\v607\\mainline-a-r65-v643-browser-desktop-20260929.png",
+      "desktopSha256": "3a0e9ce50a32552789f53af078cd87b9d6cbbb4aad5a18d7bd19a5680c4ca698",
+      "mobileScreenshot": "E:\\86137\\myai\\solar_sim\\next-web\\docs\\release\\v607\\mainline-a-r65-v643-browser-mobile-20260929.png",
+      "mobileSha256": "7a972a5c9d580a2b15924b895b1da0c80a871d315e5130267be1123288800fca",
+      "notes": "Screenshots show panel reachability and layout only; not user validation or performance."
+    },
+    "browser": {
+      "desktop": {
+        "viewport": "1280x720",
+        "overflow": false,
+        "panelVisible": true,
+        "longRunStatus": "pending",
+        "buildId": "mainline-a-5c0e191632c4b102",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+      },
+      "mobileViewport": {
+        "viewport": "390x844",
+        "overflow": false,
+        "panelVisible": true,
+        "longRunStatus": "pending",
+        "buildId": "mainline-a-5c0e191632c4b102",
+        "physicalDevice": "not-run"
+      }
+    },
+    "performance": {
+      "status": "pending",
+      "observations": "0/2",
+      "minimumDurationMs": 1800000,
+      "desktopLongRun": "not-run",
+      "mobileViewportLongRun": "not-run",
+      "physicalMobile": "not-run",
+      "productionPerformance": false,
+      "resourceLifecycle": "contract-hardened, runtime observation not completed"
+    },
+    "externalSource": {
+      "stellarComponentIdentity": "pending",
+      "nebulaRights": "pending",
+      "rightsSigned": 0,
+      "copyrightApproval": false
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "physicalDevicePromotion": "closed",
+    "physicsKernelsUnmodified": true,
+    "parentGitMutation": false
+  },
+  "gates": {
+    "r65LongRun": "blocked until two independent >=30m browser runs",
+    "r66RootNextWebAlignment": "blocked by root manifest, canonical runtime, visual, rights and identity gates",
+    "mobilePhysical": "not-run"
+  }
+}

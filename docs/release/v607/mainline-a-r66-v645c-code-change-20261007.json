@@ -1,0 +1,65 @@
+{
+  "schema": "mainline-a-code-change-receipt-v645c",
+  "round": "R66-continuation",
+  "generatedAt": "2026-10-07T05:33:34.409Z",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "priorReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-v645b-code-change-20261007.json",
+    "sha256": "6ecc688e845d73702aa70e7400427ef381672251a59c7fcd6b1f6b1397ddc8cf"
+  },
+  "effectiveNewToolLinesSincePrior": 320,
+  "modifiedExistingToolLinesCounted": 0,
+  "modifiedLinesNotIndependentlyReconstructed": true,
+  "cumulativeEffectiveProductionAndToolLinesLowerBound": 1788,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "New browser and canonical HTTP collectors count nonblank noncomment production/tool lines. The edited R66 alignment verifier is listed but excluded because its prior source preimage is unavailable. Tests, receipts, screenshots, generated files and documents are excluded.",
+  "newToolFiles": [
+    {
+      "path": "scripts/collect-mainline-a-r66-browser-evidence-v645.mjs",
+      "bytes": 10395,
+      "sha256": "e07fe18cc4b04fe0b7c691b3cc20a44bea885bbbe50db512ce08f48154ecbba1",
+      "effectiveNonblankNoncommentLines": 183
+    },
+    {
+      "path": "scripts/collect-mainline-a-canonical-assets-http-v645.mjs",
+      "bytes": 8560,
+      "sha256": "ab41098a666b7994868e4b58ca566ccd83b92cfda75b78023956451f1c96c464",
+      "effectiveNonblankNoncommentLines": 137
+    }
+  ],
+  "editedTool": {
+    "path": "scripts/mainline-a-release-evidence.mjs",
+    "bytes": 43639,
+    "sha256": "32d8a8a2183b038c0f90ba1ae9ee827515f43cf9b9f52f08a3f1f3b0ddea15d4",
+    "incrementalEffectiveLinesCounted": 0
+  },
+  "validation": {
+    "node": "94/94 focused R66 Node tests passed",
+    "vitest": "68/68 combined R65/R66 focused tests passed",
+    "eslint": "passed targeted",
+    "typescript": "R65 targeted entrypoints passed; repository-wide TypeScript exceeded Node 4 GiB heap",
+    "productionBuild": "passed V645 preserved current-source build",
+    "http": "page, health and canonical JPEG 12/12 HTTP passed",
+    "browser": "desktop and mobile simulated viewport DOM/PNG passed",
+    "visual": "desktop/mobile screenshots inspected",
+    "performance": "2/2 independent 30-minute local observations offline qualified",
+    "physicalMobile": "not-run-adb-unavailable"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  },
+  "claims": {
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "releaseApproved": false
+  }
+}

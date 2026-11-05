@@ -1,0 +1,240 @@
+{
+  "version": "v592-deep-space-reference-receipt-v1",
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "status": "admitted-12-galaxy-and-12-cluster-reference-packets",
+  "packetPath": "public/data/living-universe-v592/deep-space-reference.json",
+  "packetBytes": 36396,
+  "packetSha256": "21701a1fa1428b949091262735394e95404e9159de3522cf067a3b7feef0f416",
+  "admission": {
+    "requiredGalaxyCount": 12,
+    "admittedGalaxyReferenceCount": 12,
+    "requiredClusterCount": 12,
+    "admittedClusterReferenceCount": 12,
+    "visualMetadataCandidateCount": 18,
+    "visualMetadataBlockedCount": 6,
+    "blockedVisualMetadataIds": [
+      "hercules-globular-cluster",
+      "messier-3",
+      "messier-15",
+      "beehive-cluster",
+      "double-cluster",
+      "jewel-box-cluster"
+    ],
+    "visualAssetAdmittedCount": 0
+  },
+  "coordinateFrame": "ICRS/J2000",
+  "sourceFiles": [
+    {
+      "path": "scripts/v592-deep-space-reference-definitions.json",
+      "bytes": 9170,
+      "sha256": "b657eb8b4c2e928567f123f6996fb8479b6def0778aea4e102ad520727869a7c"
+    },
+    {
+      "path": "scripts/v592-deep-space-metadata-probes.json",
+      "bytes": 4306,
+      "sha256": "48911b3fc1b1c282bd5475068475ed81a1886767f6c78e9d9c83f65db016f47f"
+    },
+    {
+      "path": "scripts/probe-v592-deep-space-metadata.mjs",
+      "bytes": 9594,
+      "sha256": "d5279cec844140c3a770e8b1af089412a554e3158ffb1ae8055c323e1769e4a7"
+    },
+    {
+      "path": "scripts/build-v592-deep-space-reference.mjs",
+      "bytes": 14402,
+      "sha256": "cdaa23a094eea82cf3339ddcf65504093b1584cbb8ddae7e9df5c5ae15bd4c79"
+    },
+    {
+      "path": "public/data/openngc-v260/manifest.json",
+      "bytes": 1231,
+      "sha256": "a337f72e0d85d399e05454fc4fd8b395b2dd675141e845d678e0074fae2ff6c4"
+    },
+    {
+      "path": "public/data/openngc-v260/openngc-v260.json.gz",
+      "bytes": 379233,
+      "sha256": "cd208d02ab7ad585d79d005a50c322d38d61d2db4f4b56c63f4a83d5e2e40a10"
+    },
+    {
+      "path": "public/data/openngc-v260/CC-BY-SA-4.0.txt",
+      "bytes": 18375,
+      "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966"
+    },
+    {
+      "path": "app/data/brightGalaxyCatalog.ts",
+      "bytes": 6510,
+      "sha256": "49959de976e514ce071176d7d65b67524141ca510dd3200e915c7dba589cc368"
+    },
+    {
+      "path": "app/data/starClusterCatalog.ts",
+      "bytes": 11133,
+      "sha256": "06076b70acfb0fd509052c2e313d8bc863cdb9e7f4e9e4fb2dcd825d8ab81865"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/47-tucanae.json",
+      "bytes": 7145,
+      "sha256": "5e87cd43a1df89360a44f41aa73fd46e8ba148fcbd8c0a7263ec6acb89ca62c4"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/andromeda-galaxy.json",
+      "bytes": 16193,
+      "sha256": "76a09936881d7f968813ac13dc668daafc68d6fc379659ac5f1ceaef1f24f9b8"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/beehive-cluster-supplement.json",
+      "bytes": 1909,
+      "sha256": "da2d0b14b0b7abdbb94a48c254727360ed1e072b148dca7c2a580e7deaa08719"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/beehive-cluster.json",
+      "bytes": 1452,
+      "sha256": "e65f1f12795fd4e0ece7cf9f4c092f6b95ec5a463ab4fc0b2ebdc0676e68c343"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/black-eye-galaxy.json",
+      "bytes": 3187,
+      "sha256": "c8c0a3b8e0953751dc36255b33b29d4939939343ec57a8afaf3ddb3979494b48"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/bodes-galaxy-supplement.json",
+      "bytes": 10632,
+      "sha256": "d4eb1fccea9fe477bc4d84d4e84c3f9fd01f8f2b93099a8087a8d8efe3d937c2"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/bodes-galaxy.json",
+      "bytes": 1414,
+      "sha256": "aeb326de2f94f2dca45909ab90d2fc00a5d78add39ba1cc4c96f115d18b00294"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/centaurus-a.json",
+      "bytes": 23470,
+      "sha256": "e610711df19c6061a6ccaa9e69d669c8d1a435c4c8e501c687c4c483a390de29"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/cigar-galaxy.json",
+      "bytes": 3939,
+      "sha256": "23b4ff14098dcf426ef11a2ec761fd76eda2312e3d4ba31306421e45f5e949c9"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/double-cluster-supplement.json",
+      "bytes": 1883,
+      "sha256": "0454457a3d01eda0b2e3691028be07a842d70b49d4a23cf608cb2845a788c130"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/double-cluster.json",
+      "bytes": 1506,
+      "sha256": "921c863d4f068d6db97f8b2f7b1f43fc7216189c9f1c1b803b6f11f452a3b961"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/hercules-globular-cluster-supplement.json",
+      "bytes": 1877,
+      "sha256": "08266854ba21f6d7f1bd464877941496ce9f211adc6697cd1c3e0071b92a947b"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/hercules-globular-cluster.json",
+      "bytes": 1479,
+      "sha256": "79505001971d877b798e9a763e1a36d8360e1b95a83b3675f11c9b4dd0aa6bb8"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/hyades.json",
+      "bytes": 3382,
+      "sha256": "6d3a7b9d688fdea50309faa974c79ea764bc346e6c47f513c6528d929dfa5575"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/jewel-box-cluster-supplement.json",
+      "bytes": 1865,
+      "sha256": "48b55e76460e57756037e5de8cfb04dade493b3d714228df87bdf8746ea8e177"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/jewel-box-cluster.json",
+      "bytes": 1472,
+      "sha256": "5a50ded9244d6528bb74f3ea906758a3d319eb3698fae720a9fa19f8be6ecc78"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-15-supplement.json",
+      "bytes": 1845,
+      "sha256": "861a2f2322c5e1f5dd8934afff72a3fe7ff224f4979dde3d6cb1e7844e274aff"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-15.json",
+      "bytes": 1478,
+      "sha256": "89497184f3ad28175fe9025bcdfdc0589bfd5f80787960e3f56e063c9a58c76f"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-22-supplement.json",
+      "bytes": 2501,
+      "sha256": "0b191b9f83857060fe315cec7d16572e8ba6ee45ab6239e4956b4f5e9236e499"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-22.json",
+      "bytes": 1478,
+      "sha256": "7c39372f163e32506227fea537494ac507876bbc0929ac10876629670e4f31d2"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-3-supplement.json",
+      "bytes": 1868,
+      "sha256": "2f8fcb11de8522e44983fb27a232b08623367c4eafcbe65d6c8d4803edf93c21"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-3.json",
+      "bytes": 1472,
+      "sha256": "abea9dc23cdebabb8cc9f6c49491a6d8bdfb56b0abca7790b87c810e31046ae5"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/messier-5.json",
+      "bytes": 3237,
+      "sha256": "04e91396908330796eba920498ab02c05c195d7f513d64d74f478d810e7a3c3e"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/omega-centauri.json",
+      "bytes": 4754,
+      "sha256": "ad7164c7d6906f78b8c601faf03b338bb9d5d2b44fda6983b39b11d2707f5c25"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/pinwheel-galaxy.json",
+      "bytes": 5957,
+      "sha256": "1fb69e3ad6df98098f8da407eebd61b92d08d4b4061d4318812094dcee3d0f12"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/pleiades.json",
+      "bytes": 1981,
+      "sha256": "0fff9fac1ce80c2b08b7e8f93b4fec0924429bb5a63731cf6592404bb95834c2"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/sombrero-galaxy.json",
+      "bytes": 4939,
+      "sha256": "dd90fd70e66012f1735c852ed2483213e600225fc234bdfb8ef91adc62073e74"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/southern-pinwheel-galaxy.json",
+      "bytes": 6054,
+      "sha256": "8f108e6c7bed5394bf62cf2c0cae39e0635cf1a3bac383a0743db143987506b6"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/sunflower-galaxy.json",
+      "bytes": 1438,
+      "sha256": "7deb28cc7ea7c963578763f9cb166420a3312d6f55e55f2ae2b606622e49a0a4"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/triangulum-galaxy.json",
+      "bytes": 7768,
+      "sha256": "00b4033186675ded94559543fe8049c5d9a7975b7d0071142fa0581c888ef6fe"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/virgo-a-galaxy-supplement.json",
+      "bytes": 3543,
+      "sha256": "41433370ac1aed1a60d98698288ff367d5650b374a91110369239f4f0061a137"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/virgo-a-galaxy.json",
+      "bytes": 1450,
+      "sha256": "c45fe987902d18b87797ca9c35b8fabb34a464c01feb55a32b6ce8de025a1553"
+    },
+    {
+      "path": "docs/release/v592/metadata-probe-deep-space/whirlpool-galaxy.json",
+      "bytes": 9231,
+      "sha256": "495bbdfec66d043d059e4dde5b4443821cd980059bcc74871fe6d154600063cc"
+    }
+  ],
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "ca3fb2d876a9c288a861ef1f3ad84c7ec6bd46599bc96b4505f51a13869f86f9"
+}

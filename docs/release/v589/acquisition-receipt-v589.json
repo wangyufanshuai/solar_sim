@@ -1,0 +1,154 @@
+{
+  "version": "v589-visual-acquisition-receipt-v1",
+  "generatedAt": "2026-08-09T08:00:00Z",
+  "status": "complete",
+  "registry": {
+    "path": "scripts/v589-visual-sources.json",
+    "bytes": 4514,
+    "sha256": "7ee145aeb879233137100f4aa3247e58fa5ef7c14c0ee8c9d0e12efe4e4626a7"
+  },
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetry": false,
+    "automaticSubstitution": false,
+    "allowedHosts": [
+      "assets.science.nasa.gov",
+      "eoimages.gsfc.nasa.gov",
+      "neo.gsfc.nasa.gov",
+      "svs.gsfc.nasa.gov",
+      "planetarymaps.usgs.gov",
+      "astrogeology.usgs.gov",
+      "pds.nasa.gov",
+      "nasa3d.arc.nasa.gov",
+      "polyhaven.com",
+      "dl.polyhaven.org"
+    ]
+  },
+  "results": [
+    {
+      "id": "sun-albedo-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia03/pia03149/PIA03149.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/sun-albedo.jpg",
+      "bytes": 409054,
+      "sha256": "f38007188b2e62b8ffd29ed2665cbd3582c91494c0d1b32f8eb2fca3cc5806d8",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "id": "mercury-albedo-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15063/PIA15063.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/mercury-albedo.jpg",
+      "bytes": 3091704,
+      "sha256": "f633fe2fc51656a9c5198cd34eaaf1fa5e5ae77c05461e012e19f4e14faa9f1f",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "id": "moon-albedo-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_poles_4k.tif",
+      "destination": "public/vendor/celestial-art-v589/sources/moon-albedo.tif",
+      "bytes": 13095388,
+      "sha256": "918649a7f8ed2f1329b2cd95bb0d25483befdcb60ae1a66db681a637cc21344f",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/4720/"
+    },
+    {
+      "id": "moon-height-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_4.tif",
+      "destination": "public/vendor/celestial-art-v589/sources/moon-height.tif",
+      "bytes": 4153352,
+      "sha256": "330afa2556a86fd05ac6ba2f912f246600fdade35de2a0d90593d50d07b01b65",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/4720/"
+    },
+    {
+      "id": "earth-height-source",
+      "status": "acquired",
+      "finalUrl": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73934/gebco_08_rev_elev_21600x10800.png",
+      "destination": "public/vendor/celestial-art-v589/sources/earth-height-21600x10800.png",
+      "bytes": 18414843,
+      "sha256": "4a70590d40dd7b9c69b9ab359d1dc4475ce97c1d2d13625223b248364112c699",
+      "httpStatus": 200,
+      "contentType": "image/png",
+      "requestCount": 1,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://visibleearth.nasa.gov/images/73934/topography"
+    },
+    {
+      "id": "ceres-albedo-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia21/pia21090/PIA21090.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/ceres-albedo.jpg",
+      "bytes": 19044,
+      "sha256": "bce667c678fa80419f4b87111eb87577d6c2f5a56c07f55efe7a3f3e45dd19b5",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    {
+      "id": "bennu-model-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005069/g_00880mm_alt_ptm_0000n00000_v020.glb",
+      "destination": "public/vendor/celestial-art-v589/sources/bennu-v20.glb",
+      "bytes": 60591548,
+      "sha256": "bd580d0d01ee7e93b25e0262b5c986cacb21ff240a8600158fa570c7d085b95f",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/5069/"
+    },
+    {
+      "id": "regolith-diffuse-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_diff_1k.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-diffuse-1k.jpg",
+      "bytes": 599629,
+      "sha256": "c14761998b32630dd193b0fbfd31c8c6f5a144a701b84f87f9d7c33596cc554f",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock"
+    },
+    {
+      "id": "regolith-normal-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_nor_gl_1k.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-normal-1k.jpg",
+      "bytes": 613846,
+      "sha256": "f2eb54b43510bb96391c690e40a7fb78f5c5d9dbbb0f00fd26e4cd9aff2aa4d9",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock"
+    },
+    {
+      "id": "regolith-roughness-source",
+      "status": "existing-verified-no-network",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_rough_1k.jpg",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-roughness-1k.jpg",
+      "bytes": 376876,
+      "sha256": "411d1fda581c4d824c8510c6a31eaad7c35dd3b6ea94f0227fe2c03dc0cc39cb",
+      "httpStatus": null,
+      "requestCount": 0,
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock"
+    }
+  ],
+  "networkRequestCount": 1,
+  "automaticRetryApplied": false,
+  "automaticSubstitutionApplied": false,
+  "receiptSha256": "c1f3126fca8e977853600a9d572997d0a19afe84389873fe1d1963d2bd18b0a6"
+}

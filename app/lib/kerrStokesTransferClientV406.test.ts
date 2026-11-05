@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createKerrStokesTransferSummaryV406 } from "./kerrStokesTransferV406";
+import { getKerrStokesTransferSnapshotV406, loadKerrStokesTransferSummaryV406, resetKerrStokesTransferClientForTestsV406 } from "./kerrStokesTransferClientV406";
+afterEach(() => { vi.unstubAllGlobals(); resetKerrStokesTransferClientForTestsV406(); });
+describe("v406 Stokes client", () => { it("single-flights summary only and never stores the 24-sample artifact", async () => { const artifact = JSON.parse(readFileSync("dist/science/kerr-stokes-transfer-v406/short-gate.json", "utf8")); const summary = createKerrStokesTransferSummaryV406(artifact); const body = JSON.stringify({ version: "v406-kerr-stokes-transfer-response-v1", available: true, reason: "ready", summary }); const fetchMock = vi.fn(async () => new Response(body, { status: 200 })); vi.stubGlobal("fetch", fetchMock); const first = loadKerrStokesTransferSummaryV406(); const second = loadKerrStokesTransferSummaryV406(); expect(second).toBe(first); await first; expect(fetchMock).toHaveBeenCalledTimes(1); expect(getKerrStokesTransferSnapshotV406()).toMatchObject({ status: "ready", requestCount: 1 }); expect(getKerrStokesTransferSnapshotV406().summary).not.toHaveProperty("samples"); }); });

@@ -1,0 +1,96 @@
+{
+  "version": "v594-final-sealed-browser-gate-v2",
+  "generatedAt": "2026-08-27T12:59:45.513Z",
+  "status": "passed-current-v594-full-lite-exact-and-relativity-marker-browser-gates-human-signoff-pending",
+  "candidate": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "buildFingerprint": "74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "matrices": {
+    "full": {
+      "frameCount": 13,
+      "stageReceiptSha256": "3af9cd55bde384b6611213eec254a30d4ddc82fba17c936db3253770ad84db49",
+      "batchSha256": "1c0f2efd2b0c8c3333a5bb471656f33661507403adb419191c5352f96e0f200d",
+      "stage": {
+        "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-full-browser-20260827/stage-receipt.json",
+        "bytes": 2351,
+        "sha256": "1f89b8e0727af9a0cd110129117a056833d6bf4d27a116341f4e011a35c0ed19"
+      },
+      "batch": {
+        "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-full-browser-20260827/batch.json",
+        "bytes": 811713,
+        "sha256": "87d120cd5b8269fe51cff8bc4c58be504397b6fcd33f0888333b360d43d677d6"
+      }
+    },
+    "lite": {
+      "frameCount": 8,
+      "receiptSha256": "a3dee30ffb5765d7f319b4d3f36c042b25e50d9e16bc44f873970105bf060692",
+      "receipt": {
+        "path": "docs/release/v594/lite-browser-matrix-v594.json",
+        "bytes": 2023,
+        "sha256": "de079053cf3337421dea46e67377624ae1acdc69a051d4616fb53f06c83f33f7"
+      },
+      "candidate": {
+        "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+        "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+        "buildId": "v594b-fb312d0da4556cca2f83a115eb6ef68eefc98df48e789d5b07250f5c13e80fe0",
+        "buildFingerprint": "fb312d0da4556cca2f83a115eb6ef68eefc98df48e789d5b07250f5c13e80fe0",
+        "deploymentId": "v594-6599398a6fab-e92484940ba9",
+        "formalProductPointer": "v263",
+        "deliveryTier": "vercel-lite"
+      }
+    },
+    "exactAb": {
+      "pairCount": 8,
+      "frameCount": 16,
+      "passes": [
+        "hot-radiative",
+        "blue-supergiant-wind",
+        "solar-like-convective",
+        "cool-convective",
+        "red-giant-supergiant",
+        "warm-radiative-convective",
+        "rapid-rotator-gravity-darkened",
+        "relativity-workbench"
+      ],
+      "relativityObservationMarkerVerified": true,
+      "stageReceiptSha256": "ec0a72d416318ed995fe936ca8acf286b36137c366e39fd28710f2c3356fc373",
+      "batchSha256": "c56dc25c81c902c924bffe179294551e80c3e18a4ea8951909f150db15f3f65c",
+      "stage": {
+        "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-exact-ab-20260827/stage-receipt.json",
+        "bytes": 2609,
+        "sha256": "2bc823bab4bd846413b75f889d92222345ee19b1cf5e00f309b2784f618ab8a1"
+      },
+      "batch": {
+        "path": "tmp/v594-staging/6599398a6fab-e92484940ba9-exact-ab-20260827/batch.json",
+        "bytes": 1180456,
+        "sha256": "01c32df80762f38dea10653a77f72642a4f8f93b90d4f0b7e3d0616bc8056344"
+      }
+    }
+  },
+  "fullLiteIndependentBuilds": true,
+  "exactAbSameStandaloneBuild": true,
+  "exactRelativityObservationMarkerVerified": true,
+  "humanDecision": "separate-pending-not-generated",
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "49fd2e6d5fb24bff8b30824447ac567999f3ba0e90d8f6d39a987ca1c57cb2c9"
+}

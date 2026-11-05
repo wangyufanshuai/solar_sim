@@ -1,0 +1,49 @@
+{
+  "version": "v593-current-state-receipt-v1",
+  "generatedAt": "2026-08-22T00:00:00.000Z",
+  "status": "qualified-additive-v593-visual-candidate",
+  "phase": "qualified-additive-v593-visual-candidate",
+  "formalProduct": {
+    "pointer": "v263",
+    "changed": false
+  },
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "manifestSha256": "31c708473846a62951f6aaa4d6cba8c6c6d895ee70035b038baef203a4c67a8d",
+    "promotion": "additive-only"
+  },
+  "progress": {
+    "namespace": "implemented",
+    "freezeAudit": "1445/0-drift",
+    "contentPacks": "materialized-two-focus-demand-packs-budget-projection-passed",
+    "vitestDiscovery": "root-config-excludes-tmp-playwright-and-build-output",
+    "uiPrimaryContext": "implemented",
+    "signatureArtPasses": "implemented-code-6/6;complete-6/6-human-signed",
+    "sameBuildArtComparison": "implemented-v592-baseline-v593-signature",
+    "deterministicJupiterGrsFrame": "implemented-fixed-j2000-query-preset",
+    "p1BrowserCodeGate": "passed-current-dev-only-sealed-build-and-human-signoff-pending",
+    "p2SunBrowserCodeGate": "passed-current-dev-only-sealed-build-and-human-signoff-pending",
+    "p3EarthBrowserCodeGate": "passed-current-dev-code-and-visual-only-console-replay-sealed-build-and-human-signoff-pending",
+    "p4DeepSkyBrowserCodeGate": "passed-current-dev-code-and-visual-zero-console-errors-sealed-build-and-human-signoff-pending",
+    "p5SaturnCorrectiveBrowserCodeGate": "historical-receipt-preserved-current-source-revalidated-by-sealed-matrix-human-signoff-approved",
+    "standaloneBuild": "passed-current-source",
+    "liteBuild": "passed-current-source",
+    "goldenVisualMatrix": "passed-current-source-42/42-human-signoff-approved",
+    "liteBrowserMatrix": "passed-current-source-8/8",
+    "resourceLifecycle": "passed-current-source-16/16-same-realm-scene-exit",
+    "soak30Minutes": "renderer-passed;js-heap-passed",
+    "releaseDossier": "current-source;passed-current-identity-export-matrices-mount-lifecycle-same-realm-and-cdp-heap-human-signoff-approved",
+    "humanVisualSignoff": "approved-6/6"
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "radiativeTransferGranted": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "productionReleaseAuthorized": false,
+    "gitMutationAllowed": false
+  },
+  "receiptSha256": "372b0a62f3f88a98b6087ce43398aecd944c430abbfb5cc33df38626a76601c4"
+}

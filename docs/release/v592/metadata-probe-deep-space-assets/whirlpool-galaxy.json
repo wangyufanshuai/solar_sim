@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:35.663Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "whirlpool-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "whirlpool-galaxy.json",
+    "metadataReceiptSha256": "4dc9a3d46999e6c215888246869035371e7b70671bcf5c440df5c577f75d19f6",
+    "nasaId": "PIA10200",
+    "title": "A Classic Beauty",
+    "description": "A composite image of M51, also known as the Whirlpool Galaxy, shows the majesty of its structure in a dramatic new way through several of NASA orbiting observatories",
+    "center": "JPL",
+    "identityTerms": [
+      "whirlpool"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA10200/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA10200/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA10200/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "b907f494f9a65a61414bbd52f4daa940d6509dec5137a177342a4469fdea5b21"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/PIA10200~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA10200~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/PIA10200~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA10200~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/PIA10200~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA10200~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/PIA10200~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA10200~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/PIA10200~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA10200~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/PIA10200~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA10200/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA10200/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "6246d46fb909eaca9de4db005f66aabe92080af5b815806ab170c7df01fc966c"
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "mainline-a-stellar-primary-source-capture-audit-v1",
+  "generatedAt": "2026-09-27T07:09:34.184Z",
+  "runId": "20260927-060a",
+  "evidenceClass": "external-source",
+  "scope": "Raw primary documents for component review; no automatic measurement or runtime admission",
+  "newDevelopmentRound": false,
+  "productionCodeChanged": false,
+  "collector": {
+    "path": "tmp/capture-mainline-a-stellar-primary-20260927-060a.mjs",
+    "sha256": "9ecad65b4b9f7ab5aa4ef2615ece169152060e84522f5b5b2fd81568efef2a05"
+  },
+  "fingerprintAlgorithm": "SHA-256 of UTF-8 JSON.stringify(request) with stored method,url,accept field order",
+  "counts": {
+    "requested": 1,
+    "responseCaptured": 1,
+    "componentConfirmed": 0
+  },
+  "records": [
+    {
+      "id": "acrux-hip-components-tsv",
+      "star": "acrux",
+      "kind": "tsv",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1",
+      "request": {
+        "method": "GET",
+        "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1",
+        "accept": "text/plain,text/tab-separated-values"
+      },
+      "requestFingerprint": "dbfeb21db9a2d45f696ec1637e6fa730787799eb656d2df6b779bd7b929ca58c",
+      "responseCaptured": 1,
+      "rawArtifact": {
+        "path": "docs/release/v607/stellar-literature-artifacts/20260927-060a/acrux-hip-components-tsv-7644919f09e57b814d40d6689e04628c6b5cd480587433ca2ffde3eae9be4c0a.tsv",
+        "sha256": "7644919f09e57b814d40d6689e04628c6b5cd480587433ca2ffde3eae9be4c0a",
+        "bytes": 5727
+      },
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T07:09:31.069Z",
+          "endedAt": "2026-09-27T07:09:34.184Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": 200,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1",
+          "redirectChain": [],
+          "errorClass": null,
+          "errorMessage": null,
+          "requestFingerprint": "dbfeb21db9a2d45f696ec1637e6fa730787799eb656d2df6b779bd7b929ca58c",
+          "responseCaptured": 1
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false
+  }
+}

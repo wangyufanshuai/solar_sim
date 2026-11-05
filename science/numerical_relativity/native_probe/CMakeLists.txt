@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.21)
+project(nr_native_toolchain_probe LANGUAGES CXX)
+
+find_package(OpenMP REQUIRED COMPONENTS CXX)
+add_executable(nr-native-toolchain-probe openmp_probe.cpp)
+target_compile_features(nr-native-toolchain-probe PRIVATE cxx_std_17)
+set_target_properties(nr-native-toolchain-probe PROPERTIES CXX_EXTENSIONS OFF)
+target_link_libraries(nr-native-toolchain-probe PRIVATE OpenMP::OpenMP_CXX)
+if(MSVC)
+  target_compile_options(nr-native-toolchain-probe PRIVATE /W4 /permissive- /Zc:__cplusplus /fp:strict)
+else()
+  target_compile_options(nr-native-toolchain-probe PRIVATE -Wall -Wextra -Wpedantic)
+endif()

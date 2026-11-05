@@ -1,0 +1,80 @@
+{
+  "schema": "mainline-a-runtime-restore-v636",
+  "status": "restored-verified",
+  "startedAt": "2026-09-27T05:50:01.500Z",
+  "endedAt": "2026-09-27T05:51:17.297Z",
+  "source": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime",
+  "destination": ".mainline-a-restored-r66-20260927-058",
+  "payloadManifest": {
+    "path": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime/runtime-payload-manifest.json",
+    "sha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+    "bytes": 4022519
+  },
+  "restoredManifest": {
+    "path": ".mainline-a-restored-r66-20260927-058/runtime-payload-manifest.json",
+    "sha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221"
+  },
+  "build": {
+    "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+    "runtimeBuildId": "mainline-a-607a1a089e56459a",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "profile": "vercel-lite",
+    "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+    "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+    "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+  },
+  "files": 12757,
+  "bytes": 2486317478,
+  "verification": {
+    "status": "verified",
+    "directory": ".mainline-a-restored-r66-20260927-058",
+    "manifestPath": ".mainline-a-restored-r66-20260927-058/runtime-payload-manifest.json",
+    "manifestSha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+    "build": {
+      "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+      "runtimeBuildId": "mainline-a-607a1a089e56459a",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+      "profile": "vercel-lite",
+      "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+      "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+      "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+    },
+    "inventorySha256": "a6cab337fca1cb04b0b2d88d6cb491f5d0b55da8a004cd135992fb7395fc38fa",
+    "totals": {
+      "files": 12757,
+      "bytes": 2486317478
+    },
+    "hostCompatible": true,
+    "scope": "exact-candidate-runtime-files; no-launch-browser-or-rights-approval",
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "releaseApproved": false,
+      "physicsKernelMutation": false,
+      "parentGitMutation": false,
+      "runtimePromotion": "closed"
+    }
+  },
+  "restorePolicy": "new-exclusive-directory-only",
+  "existingEnvironmentMutation": false,
+  "evidenceClass": "static",
+  "httpSmoke": "not-run",
+  "browser": "not-run",
+  "performance": "not-run",
+  "releaseApproved": false,
+  "rightsApproval": false,
+  "scientificValidity": false,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  }
+}

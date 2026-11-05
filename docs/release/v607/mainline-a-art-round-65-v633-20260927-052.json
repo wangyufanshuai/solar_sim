@@ -1,0 +1,127 @@
+{
+  "schema": "mainline-a-art-round-receipt-v633",
+  "round": "R65-continuation",
+  "date": "2026-09-27",
+  "title": "V633 full resource observation, bounded browser collector and offline replay",
+  "status": "in-progress-browser-blocked",
+  "accepted": false,
+  "goalStatus": "active",
+  "runtimeBuildId": "mainline-a-6fb6fb60e3457b99",
+  "buildId": "JlrYTtsNGfdG5Rjhyu4fl",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1077,
+  "minimumEffectiveProductionLines": 1000,
+  "addedLines": 1897,
+  "removedLines": 9,
+  "replacementPairs": 9,
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-052.json",
+    "sha256": "18ec31410168cbb3467f7c2b14f679cf8017ad10e4c20f52fe4f7607924df343"
+  },
+  "implementation": [
+    "Full registry snapshots before, during and after a real scene roundtrip, with owner and identity accounting.",
+    "Bounded 30 second or 30 minute browser observation, RAF histogram, visibility/build/viewport binding, observer cleanup and abort preservation.",
+    "Mounted resource panel survives hidden stellar roster, keeps six records, exports exact JSON, and shows residual ownership.",
+    "Offline replay validates raw SHA-256 and build binding, recomputes registry digests and rejects unchanged or fabricated release claims.",
+    "Corrected legacy lifecycle receipt field semantics; false scientificPayloadWriteback remains false."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "vitest": {
+        "passed": 81,
+        "files": 7,
+        "scope": "56 contract/session tests plus 25 panel and integration tests"
+      },
+      "node": {
+        "passed": 38,
+        "scope": "25 legacy lifecycle audit tests plus 13 offline replay tests"
+      },
+      "eslint": "passed-targeted-changed-source-and-tests",
+      "diffCheck": "passed",
+      "testsExcludedFromEffectiveProductionCount": true,
+      "uiTestLog": "tmp/mainline-a-v633-ui-test-final.log",
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-052.json",
+        "sha256": "69005abf25fb9213e614bc7a62b9f835036eb2b728c2734a7e1ac3db01b41723"
+      },
+      "priorFailedBuild": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-051.json",
+        "sha256": "f1d8648f131989f5ca6bb3fbcbabe55de69e3c8a4d6680ead049f499280e7977"
+      },
+      "priorFailure": "DOM querySelector Element/null lacked HTMLElement.dataset; fixed before build052"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-052.json",
+        "sha256": "acabf0ea58fa8ec7fd8d2f42184a5e0abec70222cd40b273669029d0980336a8"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "scriptAssetsMatched": 6,
+      "scriptAssetCount": 6,
+      "productionPerformanceClaim": false
+    },
+    "visual": {
+      "status": "not-run",
+      "reason": "browser-navigation-security-check-unavailable",
+      "screenshots": []
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v633-20260927-052.json",
+        "sha256": "b6f546a93577fc7eb15c76c3879ef0f1780412029f74c9a5f5c3bb262c675ae3"
+      },
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "realUserValidation": false
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v633-20260927-052.json",
+        "sha256": "524aaaa6cd2c96532957372d0e1e67afd3853f93a93e0eb0066f4d3d1658d854"
+      },
+      "resourceReleaseObserved": false,
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "unchanged-pending",
+      "newNetworkCaptures": 0,
+      "newRightsSignoffs": 0,
+      "scientificAdmissions": 0,
+      "sourceValidityClaim": false,
+      "licensingApprovalClaim": false
+    }
+  },
+  "historicalCorrection": {
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r65-lifecycle-v626-20260927-corrected-050.json",
+      "sha256": "6da3ac6cd34afe13fc8c5262381764951bf217b47637dcff9f15fe9b65006391"
+    },
+    "oldReceiptsOverwritten": false,
+    "meaning": "Correct reporting semantics only; old digest-only observations remain blocked and do not prove resource release."
+  },
+  "openGates": [
+    "V633 browser/visual acceptance on exact build052",
+    "Actual three-checkpoint scene resource observations and offline replay",
+    "Repeated desktop and mobile viewport sessions",
+    "Physical mobile device and long-run measurements",
+    "Stellar component identities and source/rights admission",
+    "Beta nebula source and item-level rights closure",
+    "Root/next-web manifest parity and final release package rebinding"
+  ],
+  "nextStep": "Restore normal in-app-browser permission verification, then validate preserved build052 with real scene roundtrips; keep this batch open until its browser and measurement gates are met.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  }
+}

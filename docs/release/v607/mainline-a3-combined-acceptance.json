@@ -1,0 +1,84 @@
+{
+  "schema": "mainline-a3-combined-acceptance-v1",
+  "verifiedAt": "2026-09-12T11:43:45.046Z",
+  "status": "12-assets-cleared-local-bytes-verified-registry-generated",
+  "sourceInputs": [
+    "docs/release/v607/mainline-a-stage-a3-local-delivery.json",
+    "docs/release/v607/mainline-a-stage-a3-extension-delivery.json",
+    "app/data/mainlineANebulaVisualAssetsV607.all.generated.ts",
+    "app/data/mainlineAMetadataV607.ts",
+    "app/data/mainlineARegistryV607.ts",
+    "app/data/mainlineAAssetCoverageV607.ts",
+    "app/data/mainlineA3MetadataV607.test.ts",
+    "scripts/materialize-mainline-a3-all-assets.mjs",
+    "scripts/verify-mainline-a3-combined.mjs",
+    "public/textures/mainline-a/CREDITS.md"
+  ],
+  "sourceHashes": [
+    {
+      "path": "docs/release/v607/mainline-a-stage-a3-local-delivery.json",
+      "sha256": "2a87c9987b60915cb4ccb2736607980218ec7c83218f34c19485e531d9e89424"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stage-a3-extension-delivery.json",
+      "sha256": "87ccf16bec61ad3a2214e307e8ffe39691e39e10962c8c1d794474e94a0c8118"
+    },
+    {
+      "path": "app/data/mainlineANebulaVisualAssetsV607.all.generated.ts",
+      "sha256": "25e34b290ba49333b2dd47eb98b6e4288731f75da42658da6a74226a90d32cd9"
+    },
+    {
+      "path": "app/data/mainlineAMetadataV607.ts",
+      "sha256": "59b1a94d0e5f67ec6f2249c6ab7a072852b74a2a7bba2d5b560505f40cb807e7"
+    },
+    {
+      "path": "app/data/mainlineARegistryV607.ts",
+      "sha256": "4f67bee7fd7ec831eb82c7d2faed77228728fa0c4ff4ce7d68bd4ae8960e3647"
+    },
+    {
+      "path": "app/data/mainlineAAssetCoverageV607.ts",
+      "sha256": "2dd44ce6166bc6d5970cbcd35607f05fe69c06f3d1f7a9271ff7ef1ffe8ae4b7"
+    },
+    {
+      "path": "app/data/mainlineA3MetadataV607.test.ts",
+      "sha256": "20d9e8846223a595779bfcf9ee13955e821918480bfdaf72546d3c6436bd8e41"
+    },
+    {
+      "path": "scripts/materialize-mainline-a3-all-assets.mjs",
+      "sha256": "ffeb0e13bf8a26112a69865a28c5b6212821d09cbac92207f4fe178596c29e33"
+    },
+    {
+      "path": "scripts/verify-mainline-a3-combined.mjs",
+      "sha256": "0f6e9037858fcba0fbdf5cbae348ec3ef471b8290b2b7c94f72e18702def7f8b"
+    },
+    {
+      "path": "public/textures/mainline-a/CREDITS.md",
+      "sha256": "d0e218116a5d42281745846451a511562482b549c11d8978f4d9a71e1c8b9c65"
+    }
+  ],
+  "assetCount": 12,
+  "totalByteSize": 3324626,
+  "originalAssetCount": 6,
+  "extensionAssetCount": 6,
+  "licensedObjectIds": [
+    "m42",
+    "m1",
+    "m8",
+    "m16",
+    "m20",
+    "m57",
+    "ngc7293",
+    "ngc6543",
+    "ngc2237",
+    "ngc6960",
+    "carina",
+    "b33"
+  ],
+  "failures": [],
+  "boundaries": {
+    "runtimeResolver": "integrated-for-12-object-lookup",
+    "metadataCoverage": "12-of-12-runtime-metadata-registry-and-static-credits-verified",
+    "browserVisual": "separate-browser-matrix-one-nebula-only; full-twelve-visual-acceptance-pending",
+    "performance": "pending"
+  }
+}

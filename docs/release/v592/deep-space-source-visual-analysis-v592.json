@@ -1,0 +1,344 @@
+{
+  "version": "v592-deep-space-source-visual-analysis-v1",
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "status": "three-runtime-derivation-candidates-two-infographic-sources-blocked",
+  "policy": {
+    "noInpainting": true,
+    "noSyntheticCoverageFill": true,
+    "noAnnotationRemoval": true,
+    "noObservationClaimForMissingPixels": true,
+    "noNakedEyeColorClaim": true,
+    "mappedColorMustRemainLabeled": true,
+    "scienceNeverLoadsImagePayload": true,
+    "onlyCurrentFocusMayLoadCinematicImage": true,
+    "runtimeAssetAdmissionGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "sourceAcquisitionReceiptSha256": "4d77cf137e28dcde0b5c4cc69316c462ed21b5e0cfd069d1075d7a4cf312bbec",
+  "licenseReviewReceiptSha256": "e132032a4ddfd865d81b72edae4e36a81406638cadfa4af35fd1d0018557ea86",
+  "summary": {
+    "analyzedCount": 5,
+    "runtimeDerivationCandidateCount": 3,
+    "infographicBlockedCount": 2,
+    "runtimeAssetAdmittedCount": 0
+  },
+  "derivableTargets": [
+    "andromeda-galaxy",
+    "triangulum-galaxy",
+    "omega-centauri"
+  ],
+  "blockedTargets": [
+    "cigar-galaxy",
+    "virgo-a-galaxy"
+  ],
+  "analyses": [
+    {
+      "target": "andromeda-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA15416",
+      "sourcePath": "source-cache/v592/deep-space/visual/andromeda-galaxy-PIA15416-orig.jpg",
+      "sourceSha256": "88ed2cf29704895a32427c02be2daea6204f113e30f11aac4ff789c0de29a87d",
+      "sourceDimensions": [
+        9400,
+        7000
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceObservationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "cropPolicy": "manual-clean-observation-crop",
+      "crop": {
+        "left": 1800,
+        "top": 1900,
+        "width": 6500,
+        "height": 3900
+      },
+      "retainedSourcePixelFraction": 0.385258359,
+      "metrics": {
+        "analysisDimensions": [
+          1024,
+          614
+        ],
+        "meanLuma": 36.193058,
+        "blackPixelFraction": 0.242204995,
+        "nearBlackPixelFraction": 0.42145511,
+        "largestNearBlackConnectedFraction": 0.298607047,
+        "brightNeutralPixelFraction": 0.000695045,
+        "edgeNearBlackFraction": 0.545034197,
+        "edgeBrightNeutralFraction": 0.000313072
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "sourceCondition": "ultraviolet survey mosaic with circular footprint boundaries and uncovered black regions outside the target field",
+        "cropRationale": "rectangular crop retains the M31 core and principal disk while excluding uncovered survey holes; no pixel repair or fill",
+        "prohibitedOperations": [
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "annotation-removal"
+        ]
+      },
+      "previewPath": "tmp/v592-deep-space-analysis-previews/andromeda-galaxy.webp",
+      "runtimeDerivationCandidate": true,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "triangulum-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA11969",
+      "sourcePath": "source-cache/v592/deep-space/visual/triangulum-galaxy-PIA11969-orig.jpg",
+      "sourceSha256": "bd1ea03c4867b91790045d4f953f072117341c0e3d96d1c232519e110df3c971",
+      "sourceDimensions": [
+        4300,
+        2800
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "cropPolicy": "manual-inside-published-footprint",
+      "crop": {
+        "left": 700,
+        "top": 620,
+        "width": 2800,
+        "height": 1480
+      },
+      "retainedSourcePixelFraction": 0.344186047,
+      "metrics": {
+        "analysisDimensions": [
+          1024,
+          541
+        ],
+        "meanLuma": 71.736454,
+        "blackPixelFraction": 0.002232916,
+        "nearBlackPixelFraction": 0.01910705,
+        "largestNearBlackConnectedFraction": 0.000832154,
+        "brightNeutralPixelFraction": 0.001832183,
+        "edgeNearBlackFraction": 0.073476057,
+        "edgeBrightNeutralFraction": 0.000013848
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "sourceCondition": "infrared mosaic surrounded by a published white elliptical footprint boundary",
+        "cropRationale": "crop remains wholly inside the ellipse and excludes the white boundary and black exterior; no pixel repair or fill",
+        "prohibitedOperations": [
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "boundary-removal"
+        ]
+      },
+      "previewPath": "tmp/v592-deep-space-analysis-previews/triangulum-galaxy.webp",
+      "runtimeDerivationCandidate": true,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA17847",
+      "sourcePath": "source-cache/v592/deep-space/visual/cigar-galaxy-PIA17847-orig.jpg",
+      "sourceSha256": "6103989d94b8cb193a450e90aaa34b433119cce2fbc599fa1427c9b36e8e89ab",
+      "sourceDimensions": [
+        3900,
+        2400
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3900,
+        "height": 2400
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          1024,
+          630
+        ],
+        "meanLuma": 23.379005,
+        "blackPixelFraction": 0.444190228,
+        "nearBlackPixelFraction": 0.482590836,
+        "largestNearBlackConnectedFraction": 0.441314794,
+        "brightNeutralPixelFraction": 0.00813027,
+        "edgeNearBlackFraction": 0.999883824,
+        "edgeBrightNeutralFraction": 0
+      },
+      "visualInspectionDecision": "blocked-infographic-overlay",
+      "visualInspection": {
+        "sourceCondition": "dated comparison infographic with title, credit block, callout rectangles and three inset panels",
+        "cropRationale": "no crop preserves a clean, sufficiently resolved M82 observation without silently discarding source context",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "reconstruction-from-inset",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "previewPath": "tmp/v592-deep-space-analysis-previews/cigar-galaxy.webp",
+      "runtimeDerivationCandidate": false,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "target": "virgo-a-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23122",
+      "sourcePath": "source-cache/v592/deep-space/visual/virgo-a-galaxy-PIA23122-orig.jpg",
+      "sourceSha256": "e50893809e50b57196c88ae7da7ae1fbce1e13306806cd62efe029b5061d93f0",
+      "sourceDimensions": [
+        3226,
+        1814
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared",
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3226,
+        "height": 1814
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          1024,
+          576
+        ],
+        "meanLuma": 26.143769,
+        "blackPixelFraction": 0.197697957,
+        "nearBlackPixelFraction": 0.292492337,
+        "largestNearBlackConnectedFraction": 0.241422865,
+        "brightNeutralPixelFraction": 0.001603868,
+        "edgeNearBlackFraction": 0.556422018,
+        "edgeBrightNeutralFraction": 0
+      },
+      "visualInspectionDecision": "blocked-infographic-overlay",
+      "visualInspection": {
+        "sourceCondition": "M87 infographic containing source rectangle, connector lines and enlarged inset",
+        "cropRationale": "the clean source region is too small for the declared runtime tiers and the inset is not a coordinate-preserving full-field image",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "reconstruction-from-inset",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "previewPath": "tmp/v592-deep-space-analysis-previews/virgo-a-galaxy.webp",
+      "runtimeDerivationCandidate": false,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "target": "omega-centauri",
+      "category": "cluster",
+      "nasaId": "PIA13125",
+      "sourcePath": "source-cache/v592/deep-space/visual/omega-centauri-PIA13125-orig.jpg",
+      "sourceSha256": "86c2d79691902c0a98e77e1196aaa6f6287f3dc4c78d9fbb45384d9d2e742be6",
+      "sourceDimensions": [
+        3906,
+        3084
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3906,
+        "height": 3084
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          1024,
+          809
+        ],
+        "meanLuma": 37.489338,
+        "blackPixelFraction": 0.000972941,
+        "nearBlackPixelFraction": 0.007169103,
+        "largestNearBlackConnectedFraction": 0.000226939,
+        "brightNeutralPixelFraction": 0.000050699,
+        "edgeNearBlackFraction": 0.009140967,
+        "edgeBrightNeutralFraction": 0
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "sourceCondition": "single mapped-infrared cluster field without captions, callouts, frames or uncovered survey holes",
+        "cropRationale": "retain the full observed frame; mapped color remains explicitly labeled in Cinematic",
+        "prohibitedOperations": [
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-star-generation"
+        ]
+      },
+      "previewPath": "tmp/v592-deep-space-analysis-previews/omega-centauri.webp",
+      "runtimeDerivationCandidate": true,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    }
+  ],
+  "receiptSha256": "9ca56174a256a13cebf498dd1ad1b9bc0f2fc550d260be610aa62730c6b50c5b"
+}

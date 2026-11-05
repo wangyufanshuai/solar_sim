@@ -1,0 +1,58 @@
+{
+  "version": "v592-deep-space-alternative-probes-v3",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHost": "images-api.nasa.gov",
+    "metadataOnly": true,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "explicitOperatorInvokedQueryRefinement": true,
+    "selectionRequiresManualVisualAndLicenseReview": true
+  },
+  "probes": [
+    {
+      "id": "sombrero-galaxy",
+      "category": "galaxy",
+      "query": "Sombrero Galaxy NASA Spitzer",
+      "requiredTermGroups": [["m104", "sombrero"]]
+    },
+    {
+      "id": "centaurus-a",
+      "category": "galaxy",
+      "query": "Centaurus A Chandra galaxy",
+      "requiredTermGroups": [["ngc 5128", "centaurus a", "centaurus-a"]]
+    },
+    {
+      "id": "cigar-galaxy",
+      "category": "galaxy",
+      "query": "M82 Spitzer galaxy",
+      "requiredTermGroups": [["m82", "cigar"]]
+    },
+    {
+      "id": "pinwheel-galaxy",
+      "category": "galaxy",
+      "query": "M101 GALEX galaxy",
+      "requiredTermGroups": [["m101", "pinwheel"]]
+    },
+    {
+      "id": "virgo-a-galaxy",
+      "category": "galaxy",
+      "query": "M87 Chandra galaxy",
+      "requiredTermGroups": [["m87", "virgo a"]]
+    },
+    {
+      "id": "black-eye-galaxy",
+      "category": "galaxy",
+      "query": "M64 Black Eye galaxy NASA",
+      "requiredTermGroups": [["m64", "black eye"]]
+    },
+    {
+      "id": "sunflower-galaxy",
+      "category": "galaxy",
+      "query": "M63 Sunflower galaxy NASA",
+      "requiredTermGroups": [["m63", "sunflower"]]
+    }
+  ]
+}

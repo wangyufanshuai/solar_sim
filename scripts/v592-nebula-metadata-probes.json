@@ -1,0 +1,40 @@
+{
+  "version": "v592-nebula-metadata-probes-v1",
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "allowedHosts": ["images-api.nasa.gov", "images-assets.nasa.gov"]
+  },
+  "probes": [
+    { "id": "carina-nebula", "query": "Carina Nebula", "requiredTerms": ["carina", "nebula"] },
+    { "id": "crab-nebula", "query": "Crab Nebula", "requiredTerms": ["crab", "nebula"] },
+    { "id": "rosette-nebula", "query": "Rosette Nebula", "requiredTerms": ["rosette", "nebula"] },
+    { "id": "horsehead-nebula", "query": "Horsehead Nebula", "requiredTerms": ["horsehead", "nebula"] },
+    { "id": "tarantula-nebula", "query": "Tarantula Nebula", "requiredTerms": ["tarantula", "nebula"] },
+    { "id": "trifid-nebula", "query": "Trifid Nebula", "requiredTerms": ["trifid", "nebula"] },
+    { "id": "ring-nebula", "query": "Ring Nebula", "requiredTerms": ["ring", "nebula"] },
+    { "id": "dumbbell-nebula", "query": "Dumbbell Nebula", "requiredTerms": ["dumbbell", "nebula"] },
+    { "id": "california-nebula", "query": "California Nebula", "requiredTerms": ["california", "nebula"] },
+    { "id": "heart-nebula", "query": "Heart Nebula", "requiredTerms": ["heart", "nebula"] },
+    { "id": "soul-nebula", "query": "Soul Nebula", "requiredTerms": ["soul", "nebula"] },
+    { "id": "bubble-nebula", "query": "Bubble Nebula", "requiredTerms": ["bubble", "nebula"] },
+    { "id": "cats-eye-nebula", "query": "Cat's Eye Nebula", "requiredTerms": ["cat", "eye", "nebula"] },
+    { "id": "witch-head-nebula", "query": "Witch Head Nebula", "requiredTerms": ["witch", "head", "nebula"] },
+    { "id": "flame-nebula", "query": "Flame Nebula", "requiredTerms": ["flame", "nebula"] },
+    { "id": "omega-nebula", "query": "Omega Nebula", "requiredTerms": ["omega", "nebula"] },
+    { "id": "pacman-nebula", "query": "Pacman Nebula", "requiredTerms": ["pacman", "nebula"] },
+    { "id": "running-chicken-nebula", "query": "Running Chicken Nebula", "requiredTerms": ["running", "chicken", "nebula"] },
+    { "id": "monkey-head-nebula", "query": "NGC 2174 Monkey Head Nebula", "requiredTerms": ["2174", "nebula"] },
+    { "id": "thors-helmet-nebula", "query": "NGC 2359 Thor Helmet Nebula", "requiredTerms": ["2359", "nebula"] },
+    { "id": "ngc-2467-nebula", "query": "NGC 2467 Nebula", "requiredTerms": ["2467", "nebula"] },
+    { "id": "ngc-3603-nebula", "query": "NGC 3603 Nebula", "requiredTerms": ["3603", "nebula"] },
+    { "id": "crescent-nebula", "query": "NGC 6888 Crescent Nebula", "requiredTerms": ["6888", "nebula"] },
+    { "id": "ngc-7129-nebula", "query": "NGC 7129 Nebula", "requiredTerms": ["7129", "nebula"] },
+    { "id": "pelican-nebula", "query": "IC 5070 Pelican Nebula", "requiredTerms": ["5070", "nebula"] },
+    { "id": "thors-helmet-nebula-common", "query": "Thor's Helmet Nebula", "requiredTerms": ["thor", "helmet", "nebula"] },
+    { "id": "crescent-nebula-wise", "query": "Crescent Nebula WISE", "requiredTerms": ["crescent", "nebula"] },
+    { "id": "pelican-nebula-wise", "query": "Pelican Nebula WISE", "requiredTerms": ["pelican", "nebula"] }
+  ]
+}

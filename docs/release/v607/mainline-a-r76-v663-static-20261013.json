@@ -1,0 +1,57 @@
+{
+  "schema": "mainline-a-r76-static-v663",
+  "round": 76,
+  "date": "2026-10-13",
+  "status": "passed-local-current-source-static-checks",
+  "appSourceSha256": "742cfb27bc3e267343c7ada561cc05a7056d7ad8534b678e920fb6745e5f95e2",
+  "checks": {
+    "generatedReadiness": {
+      "command": "node scripts/build-mainline-a-r76-readiness-v663.mjs --check",
+      "status": "passed",
+      "stars": 4,
+      "nebulae": 5,
+      "sourcePins": 20,
+      "fingerprint": "69047c3427f1b3f7490af829c8c653120b8cde428785cbb3fdf2111735ad527a"
+    },
+    "rawReplay": {
+      "receipt": "docs/release/v607/mainline-a-r76-v663-readiness-replay-20261013v663r76source02.json",
+      "status": "verified-candidate-hold",
+      "pinsChecked": 20,
+      "newNetworkRequests": 0
+    },
+    "node": {
+      "command": "npx tsx --test scripts/mainline-a-r76-readiness-v663.test.mjs scripts/verify-mainline-a-r76-http-v663.test.mjs scripts/audit-mainline-a-r76-evidence-v663.test.mjs",
+      "status": "passed",
+      "testsPassed": 20,
+      "testsFailed": 0
+    },
+    "vitest": {
+      "command": "npx vitest run app/lib/mainlineAWebReadinessV663.test.tsx app/components/MainlineANebulaReviewPanelV610.test.tsx",
+      "status": "passed",
+      "testsPassed": 17,
+      "testsFailed": 0
+    },
+    "targetedEslint": {
+      "status": "passed",
+      "warnings": 0,
+      "files": 14
+    },
+    "typescript": "passed-as-part-of-preserved-production-build",
+    "productionBuild": {
+      "receipt": "docs/release/v607/mainline-a-r76-build-20261013v663r76web02.json",
+      "status": "passed",
+      "sourceStable": true,
+      "buildId": "BdJAn-4aFRC4fe7fB_Cdh"
+    },
+    "v616SnapshotAndProjectionDigests": "unchanged-recomputed-by-evidence-audit"
+  },
+  "evidenceClass": "static-tests-and-build-only",
+  "claims": {
+    "browserAcceptance": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicReleaseApproved": false
+  }
+}

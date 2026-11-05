@@ -1,0 +1,843 @@
+{
+  "version": "v593-p4-deep-sky-browser-code-gate-v1",
+  "generatedAt": "2026-08-22T20:00:00.000Z",
+  "status": "passed-current-dev-deep-sky-code-and-visual-gates-sealed-build-and-human-signoff-pending",
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "formalProductPointer": "v263",
+    "additiveOnly": true
+  },
+  "scope": {
+    "signaturePassesCodeImplemented": 6,
+    "signaturePassesComplete": 0,
+    "implemented": [
+      "sun",
+      "earth",
+      "jupiter",
+      "saturn",
+      "stellar-archetypes",
+      "deep-sky"
+    ],
+    "pending": [],
+    "finalGoldenFrameMatrixComplete": false,
+    "sealedBuildEvidence": false,
+    "humanVisualSignoff": false
+  },
+  "sourceMaterialCorrectness": {
+    "bridge": {
+      "path": "app/components/SignatureArtDirectionBridgeV593.tsx",
+      "bytes": 91061,
+      "sha256": "2aff7ebeb8537a53878a31f99b823ddc49c66613fc73348d8af14eaab37617e5"
+    },
+    "shell": {
+      "path": "app/components/FinalArtObservatoryShellV593.tsx",
+      "bytes": 33663,
+      "sha256": "245172818c339e797bc96c9821fb0d67b51fbede1c80282cb4485be4a96256b0"
+    },
+    "canvasHost": {
+      "path": "app/components/FinalArtCanvasHostV593.tsx",
+      "bytes": 4233,
+      "sha256": "8c9e00104dce0d3dddf6bf2a46953b4d93a454b347b7a936e4351006430dc8d3"
+    },
+    "focusedTest": {
+      "path": "app/lib/finalArtDirectionV593.test.ts",
+      "bytes": 9498,
+      "sha256": "19063dd91516f3885d5b34a458c2c975efec0c6fcf98ef5df7c64602ad716ba3"
+    },
+    "builder": {
+      "path": "scripts/build-v593-p4-deep-sky-browser-code-gate.mjs",
+      "bytes": 17234,
+      "sha256": "4b223f9a9bba26a756a9c037fa7b3e46f1f5fc911db9869353bda687ca4e0b95"
+    },
+    "p3HistoricalPreDeepSkyEvidence": {
+      "path": "docs/release/v593/p3-earth-browser-code-gate-v593.json",
+      "bytes": 33385,
+      "sha256": "9097a20eadc534c789c1657226bb4993deec09db343b3fc819a30f0829ea1ab5"
+    },
+    "shaderCompileRepair": "three-logdepth-common-chunk-declared-before-logdepthbuf-vertex",
+    "sphere": "v9-j2000-fixed-inward-sphere-seam-safe-nine-tap-source-reconstruction",
+    "stars": "gaia-flux-and-color-preserved-moffat-airy-deterministic-psf-no-random-twinkle",
+    "nebulae": "source-bound-depth-slices-alpha-aware-reconstruction-soft-aperture-no-rectangular-plane-edge",
+    "observations": "source-bound-j2000-observation-slices-black-integrated-soft-aperture-no-triangular-plane-edge",
+    "scientificObservationMapClaim": false
+  },
+  "captures": [
+    {
+      "id": "galactic-core-science",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 9,
+        "focus": "milky-way-center",
+        "fpsMedian": 239.808,
+        "fpsMinimum": 140.252,
+        "fpsP10": 229.885,
+        "fpsSamples": 120,
+        "geometries": 10,
+        "gpuBytes": 100663334,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 4,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 3,
+        "triangles": 5832,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 9,
+        "focus": "milky-way-center",
+        "fpsMedian": 240,
+        "fpsMinimum": 164.474,
+        "fpsP10": 226.244,
+        "fpsSamples": 120,
+        "geometries": 10,
+        "gpuBytes": 100663334,
+        "lane": "v593-signature",
+        "materialCount": 3,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 3,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 7,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 3,
+        "triangles": 5832,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-science-v592-baseline-current-dev-1440x900.png",
+        "bytes": 146572,
+        "sha256": "2c41f3e3850890dcac3fd69f1919ff133eece4e5c166864d7bc9501f1ad47ac5",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-science-v593-signature-current-dev-1440x900.png",
+        "bytes": 130109,
+        "sha256": "0b7c02177d04199343de8e97f3db7df056b1bcec66899fb9527443ff0b5be376",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 4.774167,
+        "changedChannelFractionGt2": 0.71021039,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "galactic-core-cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 9,
+        "focus": "milky-way-center",
+        "fpsMedian": 240,
+        "fpsMinimum": 125.549,
+        "fpsP10": 233.372,
+        "fpsSamples": 120,
+        "geometries": 10,
+        "gpuBytes": 100663334,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 4,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 3,
+        "triangles": 5832,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 9,
+        "focus": "milky-way-center",
+        "fpsMedian": 240,
+        "fpsMinimum": 148.92,
+        "fpsP10": 227.531,
+        "fpsSamples": 120,
+        "geometries": 10,
+        "gpuBytes": 100663334,
+        "lane": "v593-signature",
+        "materialCount": 3,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 3,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 7,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 3,
+        "triangles": 5832,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-cinematic-v592-baseline-current-dev-1440x900.png",
+        "bytes": 177460,
+        "sha256": "be0886007059ce1dae6f78c58e0702f7880e97c980eb86e56ed34584911648be",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-cinematic-v593-signature-current-dev-1440x900.png",
+        "bytes": 154261,
+        "sha256": "0d246862e58065d936a4e8c9dc7cd1bb91e4030cd4cea34837ac28ced3b14d95",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 5.877025,
+        "changedChannelFractionGt2": 0.7047302,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "orion-cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 17,
+        "focus": "orion",
+        "fpsMedian": 239.234,
+        "fpsMinimum": 168.634,
+        "fpsP10": 230.681,
+        "fpsSamples": 120,
+        "geometries": 20,
+        "gpuBytes": 100663334,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 7,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 3,
+        "triangles": 5856,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 17,
+        "focus": "orion",
+        "fpsMedian": 240,
+        "fpsMinimum": 65.253,
+        "fpsP10": 230.415,
+        "fpsSamples": 120,
+        "geometries": 20,
+        "gpuBytes": 100663334,
+        "lane": "v593-signature",
+        "materialCount": 3,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 3,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 10,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 3,
+        "triangles": 5856,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/orion-cinematic-v592-baseline-current-dev-1440x900.png",
+        "bytes": 171698,
+        "sha256": "be2ef8f471243ed3222884cc91e09a729f2219ee102b6198218c46b3ec8aa4ef",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/orion-cinematic-v593-signature-current-dev-1440x900.png",
+        "bytes": 144267,
+        "sha256": "9f061717c0fabdab55f3932d40d25d58cb897d3495a8c1bb376c062e541d4073",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 5.359854,
+        "changedChannelFractionGt2": 0.67187886,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "heart-nebula-cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 17,
+        "focus": "heart-nebula",
+        "fpsMedian": 240,
+        "fpsMinimum": 122.249,
+        "fpsP10": 230.15,
+        "fpsSamples": 120,
+        "geometries": 17,
+        "gpuBytes": 116537574,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 8,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 7,
+        "triangles": 5852,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 13,
+        "focus": "heart-nebula",
+        "fpsMedian": 239.808,
+        "fpsMinimum": 162.602,
+        "fpsP10": 229.621,
+        "fpsSamples": 120,
+        "geometries": 17,
+        "gpuBytes": 116537574,
+        "lane": "v593-signature",
+        "materialCount": 7,
+        "nebula": 4,
+        "observation": 0,
+        "patchCount": 7,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 12,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 7,
+        "triangles": 5844,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/heart-nebula-cinematic-v592-baseline-current-dev-1440x900.png",
+        "bytes": 72124,
+        "sha256": "71d02817fec3ebe8108507d8041b08a0bdac5de1ae3dd458a47004657ca47061",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/heart-nebula-cinematic-v593-signature-current-dev-1440x900.png",
+        "bytes": 67872,
+        "sha256": "afbc066b6f526c0cd83372fc4f226cbd840afa182ce5b835fd0b3e51f7ddfd4f",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.816611,
+        "changedChannelFractionGt2": 0.06422145,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "andromeda-cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 13,
+        "focus": "andromeda-galaxy",
+        "fpsMedian": 240,
+        "fpsMinimum": 134.048,
+        "fpsP10": 230.947,
+        "fpsSamples": 120,
+        "geometries": 14,
+        "gpuBytes": 105704150,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 7,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 6,
+        "triangles": 6564,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 10,
+        "focus": "andromeda-galaxy",
+        "fpsMedian": 237.248,
+        "fpsMinimum": 111.049,
+        "fpsP10": 189.215,
+        "fpsSamples": 120,
+        "geometries": 14,
+        "gpuBytes": 105704150,
+        "lane": "v593-signature",
+        "materialCount": 6,
+        "nebula": 0,
+        "observation": 3,
+        "patchCount": 6,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 11,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 6,
+        "triangles": 6558,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/andromeda-cinematic-v592-baseline-current-dev-1440x900.png",
+        "bytes": 90388,
+        "sha256": "3b6ed7d83ca9cf6b6590bcb01ca98c2bd6c661b1ae54b9720a39c6870a83d6e7",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/andromeda-cinematic-v593-signature-current-dev-1440x900.png",
+        "bytes": 74416,
+        "sha256": "1fdb4664911f1c289de2c7c9cddb198b5b32ecf7e5d7aa2b6303ef4a463fe2ca",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.580914,
+        "changedChannelFractionGt2": 0.06756662,
+        "maximumChannelDiff255": 255
+      }
+    },
+    {
+      "id": "pleiades-cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-j2000-direction",
+      "baselineTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "inactive",
+        "drawCalls": 13,
+        "focus": "pleiades",
+        "fpsMedian": 240,
+        "fpsMinimum": 121.507,
+        "fpsP10": 227.531,
+        "fpsSamples": 120,
+        "geometries": 13,
+        "gpuBytes": 109052022,
+        "lane": "v592-same-build-baseline",
+        "materialCount": 0,
+        "nebula": 0,
+        "observation": 0,
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 7,
+        "reconstruction": "inactive",
+        "sphere": 0,
+        "starfield": 0,
+        "textures": 6,
+        "triangles": 6564,
+        "webglChanged": "false",
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "canvasCount": 1,
+        "deepSky": "implemented-code-gates-pending",
+        "drawCalls": 10,
+        "focus": "pleiades",
+        "fpsMedian": 240,
+        "fpsMinimum": 118.624,
+        "fpsP10": 220.994,
+        "fpsSamples": 120,
+        "geometries": 13,
+        "gpuBytes": 109052022,
+        "lane": "v593-signature",
+        "materialCount": 6,
+        "nebula": 0,
+        "observation": 3,
+        "patchCount": 6,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "programs": 11,
+        "reconstruction": "source-bound-seam-safe-alpha-aware-no-coordinate-mutation",
+        "sphere": 1,
+        "starfield": 2,
+        "textures": 6,
+        "triangles": 6558,
+        "webglChanged": "true",
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/pleiades-cinematic-v592-baseline-current-dev-1440x900.png",
+        "bytes": 84076,
+        "sha256": "1d8081d1a8290f3fbd3172837b77883923d436f229a4a66b33960a9de38bd2d9",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/pleiades-cinematic-v593-signature-current-dev-1440x900.png",
+        "bytes": 72560,
+        "sha256": "0f7092f45509ee585185fb24ac51bc3d02eb77d8f5e9840fe1a9b2f6ed7eba03",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 6.013594,
+        "changedChannelFractionGt2": 0.13368081,
+        "maximumChannelDiff255": 255
+      }
+    }
+  ],
+  "detailCrops": [
+    {
+      "id": "galactic-dust-and-psf",
+      "frameId": "galactic-core-cinematic",
+      "crop": {
+        "left": 170,
+        "top": 80,
+        "width": 720,
+        "height": 700
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-cinematic-v592-baseline-current-dev-galactic-dust-and-psf-100pct.png",
+          "bytes": 581229,
+          "sha256": "9661fbee194e6417d419244a2f188e90e5ee3b23619142378cd9aef236de6f9a",
+          "left": 170,
+          "top": 80,
+          "width": 720,
+          "height": 700,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0.9318,
+          "p50": 22.7232,
+          "p99": 90.4578,
+          "clippedBlackFraction": 0.0119246,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/galactic-core-cinematic-v593-signature-current-dev-galactic-dust-and-psf-100pct.png",
+          "bytes": 521398,
+          "sha256": "7a4c89bc2451dd655e359e5f3bbbf77c632c8d5c069d1604c33ddddb49f5cc46",
+          "left": 170,
+          "top": 80,
+          "width": 720,
+          "height": 700,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 13.8676,
+          "p99": 79.6458,
+          "clippedBlackFraction": 0.08967262,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "orion-anchor-psf",
+      "frameId": "orion-cinematic",
+      "crop": {
+        "left": 580,
+        "top": 170,
+        "width": 420,
+        "height": 590
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/orion-cinematic-v592-baseline-current-dev-orion-anchor-psf-100pct.png",
+          "bytes": 239085,
+          "sha256": "f6cd511e61687fa40a18a8e036e8170b063a668ee5565dea4a4ccbde3a54bd72",
+          "left": 580,
+          "top": 170,
+          "width": 420,
+          "height": 590,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 8.0762,
+          "p99": 43,
+          "clippedBlackFraction": 0.07330105,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/orion-cinematic-v593-signature-current-dev-orion-anchor-psf-100pct.png",
+          "bytes": 180269,
+          "sha256": "559832f48b14f7f62fae3f0060650a490445627a079d64974a272fd0136faa46",
+          "left": 580,
+          "top": 170,
+          "width": 420,
+          "height": 590,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 2.5026,
+          "p99": 32.2258,
+          "clippedBlackFraction": 0.32565375,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "heart-nebula-edge",
+      "frameId": "heart-nebula-cinematic",
+      "crop": {
+        "left": 290,
+        "top": 170,
+        "width": 640,
+        "height": 540
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/heart-nebula-cinematic-v592-baseline-current-dev-heart-nebula-edge-100pct.png",
+          "bytes": 134014,
+          "sha256": "a691200f5a229e817d84cd37fcd2735e9c9bb995f1d229ad576c395c86005d05",
+          "left": 290,
+          "top": 170,
+          "width": 640,
+          "height": 540,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 2.8676,
+          "p50": 5.0762,
+          "p99": 120.909,
+          "clippedBlackFraction": 0.0014294,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/heart-nebula-cinematic-v593-signature-current-dev-heart-nebula-edge-100pct.png",
+          "bytes": 114023,
+          "sha256": "b12f15efdb357708eaa8123c2cc01baf52baa54dff917bc9849d2e09c90a105e",
+          "left": 290,
+          "top": 170,
+          "width": 640,
+          "height": 540,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 2.0762,
+          "p50": 4.0762,
+          "p99": 89.0048,
+          "clippedBlackFraction": 0.00125289,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "andromeda-plane-edge",
+      "frameId": "andromeda-cinematic",
+      "crop": {
+        "left": 270,
+        "top": 140,
+        "width": 660,
+        "height": 610
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/andromeda-cinematic-v592-baseline-current-dev-andromeda-plane-edge-100pct.png",
+          "bytes": 293693,
+          "sha256": "53ddbd036d28861904880222a9e0eaa7f8f63f19f74cf1b2d324ed92ff0fb2ac",
+          "left": 270,
+          "top": 140,
+          "width": 660,
+          "height": 610,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0.2888,
+          "p50": 2.1484,
+          "p99": 141.8676,
+          "clippedBlackFraction": 0.03574516,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/andromeda-cinematic-v593-signature-current-dev-andromeda-plane-edge-100pct.png",
+          "bytes": 180255,
+          "sha256": "de6417e992b3e896fe181d25032d36e543d93e55558bb1b3630931f653b8fa76",
+          "left": 270,
+          "top": 140,
+          "width": 660,
+          "height": 610,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0.361,
+          "p50": 2.1484,
+          "p99": 135.4452,
+          "clippedBlackFraction": 0.01740686,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "pleiades-plane-edge",
+      "frameId": "pleiades-cinematic",
+      "crop": {
+        "left": 240,
+        "top": 120,
+        "width": 700,
+        "height": 640
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/pleiades-cinematic-v592-baseline-current-dev-pleiades-plane-edge-100pct.png",
+          "bytes": 321901,
+          "sha256": "e756411dcc36d8312f52908809c3fdaadb24773dce0ddc6c32ffddd6e1fccfc4",
+          "left": 240,
+          "top": 120,
+          "width": 700,
+          "height": 640,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 3.1484,
+          "p50": 35.5494,
+          "p99": 175.5492,
+          "clippedBlackFraction": 0.00000223,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/pleiades-cinematic-v593-signature-current-dev-pleiades-plane-edge-100pct.png",
+          "bytes": 217775,
+          "sha256": "891bb00c951fbb448303961debf63ed9d94dd90486486ab806e7f2dde7aeb3da",
+          "left": 240,
+          "top": 120,
+          "width": 700,
+          "height": 640,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 3.0762,
+          "p50": 4.1484,
+          "p99": 162.909,
+          "clippedBlackFraction": 0,
+          "clippedWhiteFraction": 0
+        }
+      }
+    }
+  ],
+  "planeEdgeInspection": {
+    "pleiadesSegments": [
+      {
+        "axis": "x",
+        "coordinate": 304,
+        "from": 205,
+        "to": 680
+      },
+      {
+        "axis": "x",
+        "coordinate": 830,
+        "from": 205,
+        "to": 680
+      },
+      {
+        "axis": "y",
+        "coordinate": 184,
+        "from": 325,
+        "to": 810
+      },
+      {
+        "axis": "y",
+        "coordinate": 701,
+        "from": 325,
+        "to": 810
+      }
+    ],
+    "baselineMeanGradient255": 2.195114,
+    "signatureMeanGradient255": 0.047024,
+    "reductionFraction": 0.97857788,
+    "hardRectangleObservedAfterSignature": false,
+    "andromedaTriangularSliceObservedAfterSignature": false,
+    "finalHumanArtSignoff": false
+  },
+  "browser": {
+    "runner": "Codex-in-app-browser",
+    "viewport": "1440x900",
+    "telemetry": {
+      "path": "docs/release/v593/screenshots/p4-deep-sky-code-gates/browser-telemetry-current-dev-v593.json",
+      "bytes": 12514,
+      "sha256": "6d21dbee6442c85a3e927fce02d96d51a356887f2c1c8decb09c7112843ea0f0"
+    },
+    "consoleWarningErrorCount": 0,
+    "singleCanvas": true,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadUniqueCount": 1,
+    "scientificPayloadWriteback": false,
+    "minimumMedianFps": 237.248,
+    "maximumGpuBytes": 116537574,
+    "maximumDrawCalls": 17
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "productionReleaseAuthorized": false
+  },
+  "receiptSha256": "1dcf120e15fcf747fe5b1e443ec71380bbaf6b107e6dcfec22c050a616854e95"
+}

@@ -1,0 +1,114 @@
+{
+  "schema": "mainline-a-code-change-receipt-v626",
+  "round": "R66",
+  "generatedAt": "2026-09-20T15:46:44.659Z",
+  "scope": "next-web only; root app read-only identity bridge continuation",
+  "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "boundaryBaseline": "af61a2f",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1170,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "testsExcluded": true,
+  "countMethod": "Nonblank, noncomment production lines in new identity bridge, verifier, replay, panel and integration files; tests, generated receipts and screenshots excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineAReleaseIdentityBridgeV626.ts",
+      "effectiveLines": 413,
+      "bytes": 24705,
+      "sha256": "cd5409afd4eedca3ee5fc516906fe3a30ff4a88ee1e65f164fc67b53b5d79b32",
+      "role": "typed release identity mapping, boundary contract, gate model, deterministic digest helpers"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 233,
+      "bytes": 18217,
+      "sha256": "1d6aac63b8925f2a24db60bf5584b5058dde7bbd98119c975711d89786c18eca",
+      "role": "read-only root/next-web bridge receipt builder and output containment"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 193,
+      "bytes": 16004,
+      "sha256": "1385b36b9ed2c72e6091c75095d4ad2dc026f59e9f591f430221bf6e2a70eea2",
+      "role": "read-only raw SHA, package pointer, manifest, evidence-class and rollback verifier"
+    },
+    {
+      "path": "app/components/MainlineAReleaseIdentityBridgePanelV626.tsx",
+      "effectiveLines": 135,
+      "bytes": 9002,
+      "sha256": "0ff7d3ea253090f05cbaaf2f351b746cc1ddb79ce949f37778c0d06331fef966",
+      "role": "runtime identity and candidate gate panel with mapped package names"
+    },
+    {
+      "path": "app/lib/mainlineAReleaseIdentityReplayV626.ts",
+      "effectiveLines": 101,
+      "bytes": 5665,
+      "sha256": "ddfafa9b2980af9cc063d20ee553e153bf19935dea28c9ff33ac55ad43b8cd91",
+      "role": "deterministic gate replay, transition ledger, CSV and summary projection"
+    },
+    {
+      "path": "scripts/replay-mainline-a-release-identity-v626.ts",
+      "effectiveLines": 39,
+      "bytes": 2371,
+      "sha256": "ff019ca1d63734069710cd4f0189038c31880e7f9bcb6188d223f8a2bd998222",
+      "role": "offline replay/verifier CLI with check and CSV output"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "effectiveLines": 20,
+      "bytes": 31264,
+      "sha256": "407085a827a0c257d8c21145c78d1c648038b9d57b45f18393cc3f3173023d19",
+      "role": "R66 output isolation, release identity mapping, latest HTTP/browser receipt selection"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "effectiveLines": 25,
+      "bytes": 16285,
+      "sha256": "369941558a917bfc343945113acb166918bc2d12024487a3165ffa367fcfa66e",
+      "role": "package identity bridge linkage and SHA validation"
+    },
+    {
+      "path": "app/components/AtlasAppShell.tsx",
+      "effectiveLines": 11,
+      "bytes": 8962,
+      "sha256": "52afb04e28fb2b87b0251d4727aeb3d130d85a387175d5bc0a2f42a55692eace",
+      "role": "runtime data attributes exposing release identity mapping and boundary"
+    }
+  ],
+  "integrationFiles": [
+    "package.json",
+    "app/components/AtlasAppShell.tsx",
+    "scripts/audit-mainline-a-release-alignment-v626.mjs",
+    "scripts/build-mainline-a-release-package-v626.mjs"
+  ],
+  "excluded": [
+    "tests",
+    "generated JSON",
+    "screenshots",
+    "docs",
+    "standard build logs",
+    "root app source files",
+    "parent Git state"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "validation": {
+    "identityBridge": "blocked with mapped package identities",
+    "identityVerifier": "blocked only by bridge receipt pending gates",
+    "identityReplay": "blocked requiredOpen=2",
+    "package": "blocked",
+    "preservedProductionBuild": "passed",
+    "http": true,
+    "browser": true,
+    "physicalMobile": "not-run",
+    "longRun": "not-run"
+  }
+}\n

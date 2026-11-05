@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { KERR_PHOTON_METROLOGY_DETAILS_V549, KERR_PHOTON_METROLOGY_DETAIL_IDS_V549, KERR_PHOTON_METROLOGY_LABELS_V549 } from "./kerrPhotonMetrologyDetailCatalogV549";
+describe("v549 detail catalog", () => { it("has 51 unique, label-complete, lazy details", () => { expect(KERR_PHOTON_METROLOGY_DETAIL_IDS_V549).toHaveLength(51); expect(new Set(KERR_PHOTON_METROLOGY_DETAIL_IDS_V549).size).toBe(51); expect(Object.keys(KERR_PHOTON_METROLOGY_DETAILS_V549)).toEqual(Object.keys(KERR_PHOTON_METROLOGY_LABELS_V549)); expect(KERR_PHOTON_METROLOGY_DETAIL_IDS_V549.at(-1)).toBe("measured-sidecar-admission"); }); });

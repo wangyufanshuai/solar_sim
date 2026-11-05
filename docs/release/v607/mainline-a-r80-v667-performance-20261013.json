@@ -1,0 +1,19 @@
+{
+  "schema": "mainline-a-r80-performance-v667",
+  "round": 80,
+  "date": "2026-10-13",
+  "status": "short-local-browser-diagnostic-only",
+  "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+  "buildId": "OzXlBUCmLBXsMtceBdR7h",
+  "browserReceipt": "docs/release/v607/mainline-a-r80-v667-browser-20261013v667r80browser02.json",
+  "samples": [
+    { "device": "desktop", "mode": "enabled", "frames": 120, "p95IntervalMs": 6.600000001490116, "maxIntervalMs": 21.20499999821186, "usedJSHeapBytes": 153270041 },
+    { "device": "mobile-viewport", "mode": "enabled", "frames": 120, "p95IntervalMs": 7.344999998807907, "maxIntervalMs": 7.899999998509884, "usedJSHeapBytes": 136522434 },
+    { "device": "mobile-viewport", "mode": "default-off", "frames": 120, "p95IntervalMs": 7.370000001043081, "maxIntervalMs": 13.734999999403954, "usedJSHeapBytes": 163343382 }
+  ],
+  "currentSourceLongRun": "not-run",
+  "physicalMobile": "not-run",
+  "productionPerformanceEstablished": false,
+  "realUserPerformanceEstablished": false,
+  "interpretation": "Three short samples after local art review. They do not establish long-run behavior, production performance, or physical-device performance."
+}

@@ -1,0 +1,185 @@
+{
+  "schema": "mainline-a-round-receipt-v645",
+  "round": "R65",
+  "generatedAt": "2026-10-07T05:34:19.506Z",
+  "status": "local-technical-observation-qualified",
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "build": {
+    "runtimeBuildId": "mainline-a-93b297e97cc3a2ce",
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json",
+      "bytes": 471927,
+      "sha256": "966e4675acb61bc6125ef2112d2bc8780c4d2bad053c5d3558f06f1c1ff807a5"
+    }
+  },
+  "effectiveCode": {
+    "productionAndToolLinesLowerBound": 2084,
+    "minimumRequired": 1000,
+    "minimumMet": true,
+    "testsExcluded": true,
+    "modifiedLinesNotIndependentlyCounted": true,
+    "codeChangeReceipt": {
+      "path": "docs/release/v607/mainline-a-r65-v645b-code-change-20261007.json",
+      "bytes": 3926,
+      "sha256": "72c3c666c4d5bed6bfd99b19ddda44881769594906e3a0ebcd90a6f93983a96f"
+    }
+  },
+  "evidence": {
+    "static": {
+      "nodeBuilder": "5/5 passed",
+      "vitestCombined": "68/68 passed",
+      "eslint": "targeted passed",
+      "typescript": "targeted entrypoints passed; repository-wide check exceeded Node 4 GiB heap",
+      "productionBuild": "passed current V645 build",
+      "raw": {
+        "path": "docs/release/v607/mainline-a-r65-v645-two-run-raw-20261007.json",
+        "bytes": 74637224,
+        "sha256": "302cc47d2895a5044fd57125dc2ea4887c0b41630dd07aa9ab3747f81ad644ae"
+      },
+      "replay": {
+        "path": "docs/release/v607/mainline-a-r65-v645-longrun-replay-20261007.json",
+        "bytes": 841,
+        "sha256": "efc7cd4c17e1e7a5e56068256e27219be384eb27ce0478992a8cd2a84d4c6f89"
+      }
+    },
+    "http": {
+      "status": "passed",
+      "page": 200,
+      "health": 200,
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-http-20261007-v645.json",
+        "bytes": 5797,
+        "sha256": "d59c20462891f99b007db57ff230bb5d9c53de4da4d426e1e45c3a1f7692d4f0"
+      }
+    },
+    "visual": {
+      "status": "inspected-local",
+      "desktop": {
+        "path": "docs/release/v607/mainline-a-r66-browser-desktop-20261007-v645.png",
+        "bytes": 686683,
+        "sha256": "400e3e7bdb5de78d0110e3e2a093d71c9b4a1bd20bb6799377d0ca722cf17f3b"
+      },
+      "mobileViewport": {
+        "path": "docs/release/v607/mainline-a-r66-browser-mobile-20261007-v645.png",
+        "bytes": 118736,
+        "sha256": "9f83ac5a799cf7f7055e555c618bd6242fcaa2a2e6b9cb64dab02688b7c8a229"
+      }
+    },
+    "browser": {
+      "status": "observed-local",
+      "desktop": "1280x720",
+      "mobileViewport": "390x844 simulated",
+      "physicalMobile": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-browser-20261007-v645.json",
+        "bytes": 3893,
+        "sha256": "0c6e972948462d2f0c68a7a48e6c9d4c76b656a69d41cdc282f095a4d0190c04"
+      }
+    },
+    "performance": {
+      "status": "qualified-local-evidence",
+      "observations": [
+        {
+          "device": "desktop",
+          "viewport": [
+            1280,
+            720
+          ],
+          "startedAt": "2026-10-07T04:21:22.785Z",
+          "endedAt": "2026-10-07T04:51:24.791Z",
+          "observedDurationMs": 1802005.6899999995,
+          "frameSamples": 291801,
+          "rafP95Ms": 7.100000000093132,
+          "rafMaxMs": 395.0200000000186,
+          "longTaskCount": 1,
+          "longTaskMaxMs": 1379,
+          "memorySamples": 1803,
+          "usedHeapDeltaBytes": 13661597,
+          "resourceTotals": [
+            27,
+            31,
+            27
+          ],
+          "visibilityInterruptions": 0,
+          "consoleErrors": 0,
+          "pageErrors": 0
+        },
+        {
+          "device": "mobile",
+          "viewport": [
+            390,
+            844
+          ],
+          "startedAt": "2026-10-07T04:53:04.212Z",
+          "endedAt": "2026-10-07T05:23:06.216Z",
+          "observedDurationMs": 1802004.4900000002,
+          "frameSamples": 309233,
+          "rafP95Ms": 6.995000000111759,
+          "rafMaxMs": 601.5400000000373,
+          "longTaskCount": 2,
+          "longTaskMaxMs": 3740,
+          "memorySamples": 1803,
+          "usedHeapDeltaBytes": 35658183,
+          "resourceTotals": [
+            27,
+            31,
+            27
+          ],
+          "visibilityInterruptions": 0,
+          "consoleErrors": 0,
+          "pageErrors": 0
+        }
+      ],
+      "raw": {
+        "path": "docs/release/v607/mainline-a-r65-v645-two-run-raw-20261007.json",
+        "bytes": 74637224,
+        "sha256": "302cc47d2895a5044fd57125dc2ea4887c0b41630dd07aa9ab3747f81ad644ae"
+      },
+      "normalizedReceipt": {
+        "path": "docs/release/v607/mainline-a-r65-v645-longrun-20261007.json",
+        "bytes": 74637225,
+        "sha256": "6f537fd829bcd1c39cdb02128f0fcdc243fdab2b2107662c6a42fb26a433de22"
+      },
+      "replay": {
+        "path": "docs/release/v607/mainline-a-r65-v645-longrun-replay-20261007.json",
+        "bytes": 841,
+        "sha256": "efc7cd4c17e1e7a5e56068256e27219be384eb27ce0478992a8cd2a84d4c6f89"
+      },
+      "scope": "RAF callback intervals, JS heap samples and registry snapshots; not GPU frame time or production performance"
+    },
+    "externalSource": {
+      "stellarRawResponses": 4,
+      "stellarStructuredCandidates": 4,
+      "stellarComponentConfirmed": 0,
+      "nebulaRightsSigned": 0,
+      "nebulaRightsPending": 12,
+      "status": "pending-separate-gates"
+    }
+  },
+  "gates": {
+    "twoIndependentLongRuns": "passed",
+    "desktopAndMobileViewport": "passed",
+    "resourceRegistryRestoration": "passed",
+    "physicalMobile": "not-run",
+    "productionPerformance": "not-established",
+    "stellarComponentIdentity": "pending",
+    "nebulaRightsSignoff": "pending"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  },
+  "claims": {
+    "releaseApproved": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  }
+}

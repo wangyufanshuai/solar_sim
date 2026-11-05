@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-alternative-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T10:12:07.703Z",
+  "status": "alternative-asset-manifest-probe-complete-no-payload",
+  "selectionId": "pinwheel-galaxy--PIA04632",
+  "target": "pinwheel-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbePath": "docs/release/v592/metadata-probe-deep-space-alternatives-v2/pinwheel-galaxy.json",
+    "metadataReceiptSha256": "6d9ea9dc6ccc83941bcf0c00a1c0bac5a2b8a9ecd32ce82ea278001fb8cffd3f",
+    "nasaId": "PIA04632",
+    "title": "Messier 101 Single Orbit Exposure",
+    "description": "This single orbit exposure, ultraviolet color image of Messier 101 was taken by NASA's Galaxy Evolution Explorer on June 20, 2003. Messier 101 is a large spiral galaxy located 20 million light-years from Earth. This image is a short and medium \"exposure\" picture of the evolution of star formation in a spiral galaxy. The far ultraviolet emission detects the younger stars as concentrated in tight spiral arms, while the near ultraviolet emission, which traces stars living for more than 100 million years, displays the movement of the spiral pattern over a 100 million year period. The red stars in the foreground of the image are Milky Way stars. http://photojournal.jpl.nasa.gov/catalog/PIA04632",
+    "center": "JPL",
+    "identityTerms": [
+      "messier 101"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04632/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA04632/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA04632/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "899ef94eb96a87724a40c551b4e592b043c41c123f00eda65ce44ef1a2b07b17"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04632/PIA04632~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04632~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04632/PIA04632~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04632/PIA04632~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04632~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04632/PIA04632~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04632/PIA04632~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04632~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04632/PIA04632~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04632/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04632/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "20336f268ee75ba82c562066cd44aafd551329ea70df1367e06f1abbf33bf0cb"
+}

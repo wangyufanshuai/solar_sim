@@ -1,0 +1,613 @@
+{
+  "schema": "mainline-a-art-round-receipt-v635",
+  "round": "R62-R65-R66-continuation",
+  "recordedAt": "2026-09-27T05:25:47.492Z",
+  "newDevelopmentRound": false,
+  "status": "technical-batch-implemented-acceptance-pending",
+  "accepted": false,
+  "goalStatus": "active",
+  "title": "Canonical object observation, actual resource disposal accounting, raw intake/replay and repeated long-run release gates",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-art-round-65-v634-20260927-056.json",
+    "sha256": "e17bb827864032203d4cb8bc891c62b2abdbd6966c0a65907cb5110791b0e674"
+  },
+  "buildId": "XBEE85YUitjIJBCCYDXy_",
+  "runtimeBuildId": "mainline-a-5664b930289b9c1b",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "noProgressAudit": {
+    "previousGoalTurn": "progress",
+    "currentGoalTurn": "progress",
+    "browserBlockerRepeated": true,
+    "atImpasse": false,
+    "reason": "Connected actual renderer callbacks, repaired disposal accounting, implemented canonical raw replay and long-run release integration, and fixed a Windows replay subprocess failure."
+  },
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v635-code-change-20260927-057-sealed.json",
+    "sha256": "ec20125084dc857706a41f272036753baa3b8095751586f7474a4ea9e6d2e2ff"
+  },
+  "incrementalEffectiveProductionLines": 1110,
+  "cumulativeEffectiveProductionLines": 4314,
+  "minimumEffectiveProductionLines": 1000,
+  "incrementalAddedLines": 2540,
+  "incrementalRemovedLines": 61,
+  "cumulativeAddedLines": 10593,
+  "cumulativeRemovedLines": 1771,
+  "changedFiles": [
+    {
+      "path": "app/components/MainlineAResourceObservationPanelV633.tsx",
+      "category": "production",
+      "sha256": "ec9e5ef1e0a72b31d31e6b55418f30c778bb58d640f6933ee293fbc5d3f17b9b"
+    },
+    {
+      "path": "app/components/MainlineAResourceObservationPanelV633.test.tsx",
+      "category": "test",
+      "sha256": "6d786a7c18a3e5356073672fc26d9439af8a13539bf42635dd97157846f3d31c"
+    },
+    {
+      "path": "app/components/SelectedSkyTargetProxy.tsx",
+      "category": "production",
+      "sha256": "1f99b892c4e3c2a0bba2a5cc41bbecdeeb9bb90ce4338b6585f8bcd88055e906"
+    },
+    {
+      "path": "app/components/MainlineANebulaScenePortraitV607.tsx",
+      "category": "production",
+      "sha256": "57629937c0271c31e48c03676fa6e1692d9c3fe9946f7cf7049bcefb78f601a4"
+    },
+    {
+      "path": "app/components/ConstellationLines.tsx",
+      "category": "production",
+      "sha256": "3b224e84d29338fd248adb7d0317d28177abf403da81c3585c3fd4a844db5401"
+    },
+    {
+      "path": "app/components/AtlasDeepSpacePresentationSubtreeV275.tsx",
+      "category": "production",
+      "sha256": "4f418f6d54334933948cea0e92ea655c6dad0b813c7d7f6158bb69cadc778cc5"
+    },
+    {
+      "path": "app/lib/mainlineAResourceObservationV633.ts",
+      "category": "production",
+      "sha256": "1a1145e33f5206ccf179a35d605fc94db7031d1028617e35aceb95eb301811ea"
+    },
+    {
+      "path": "app/lib/mainlineALifecycleSessionV633.ts",
+      "category": "production",
+      "sha256": "ed351641d5afa56652db4444813c0fa30991599fda64d60b599925e91780de77"
+    },
+    {
+      "path": "app/lib/mainlineAResourceObservationV633.test.ts",
+      "category": "test",
+      "sha256": "85dcebb5cdc57052b0dd1cae8db975b7521b708db1ff502a149f842d1c59b613"
+    },
+    {
+      "path": "app/lib/mainlineALifecycleSessionV633.test.ts",
+      "category": "test",
+      "sha256": "75a1d635f4aa2139dc65b17b4561237027bfee360458918d27ab4d5bd7f9b957"
+    },
+    {
+      "path": "scripts/replay-mainline-a-resource-observation-v633.ts",
+      "category": "production-tool",
+      "sha256": "b3682eef1e7c3b4cdb5f0360ca768ad412054c2a908ea060d8d3c43f25534661"
+    },
+    {
+      "path": "scripts/replay-mainline-a-resource-observation-v633.test.ts",
+      "category": "test",
+      "sha256": "f930005775932d66d501aeed0320e51d0a7453688acadbf8a54981e67add0121"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.mjs",
+      "category": "production-tool",
+      "sha256": "e3f8cc65aee9a5e316f8961c877acdc2dcdcdc20523fc6faf9b3c3e0f39fa605"
+    },
+    {
+      "path": "scripts/mainline-a-release-evidence.test.mjs",
+      "category": "test",
+      "sha256": "24a02a3bcfdcdd44b0783124ce81b0fd511cfb575b174b0307235e8336a79c74"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalRuntimeV635.ts",
+      "category": "production",
+      "sha256": "325f274c743405b09dc89c1cfce7aef0c359a184cfe7939ae5ecfbf7ea9541f8"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalRuntimeV635.test.ts",
+      "category": "test",
+      "sha256": "b5f3860653ec8cecea28c961f3d9be5326bf8eea4ddd50834424dd0f992c0c87"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.ts",
+      "category": "production",
+      "sha256": "cc2856c47c687d3bfd9e7c581501f772a6a850649e7c740e9f7c2b3a2f7714cf"
+    },
+    {
+      "path": "app/lib/mainlineACanonicalProducerV635.test.ts",
+      "category": "test",
+      "sha256": "b068b1329a482d8d896bac85f0d3206ffa7c08aa0d48dccca6e8e7e75c8e9024"
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-runtime-v635.ts",
+      "category": "production-tool",
+      "sha256": "b432dc47ca5d24d7d3c51ef9f504b5ccccbc9071567bde1eda5db591b5c976c6"
+    },
+    {
+      "path": "scripts/replay-mainline-a-canonical-runtime-v635.test.ts",
+      "category": "test",
+      "sha256": "92df66d07739582f747ed3a4a8530509c72b5557610b672076c7cf686d51efa2"
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.mjs",
+      "category": "production-tool",
+      "sha256": "22811d4d6e814a44d47ae823f4dac4c3a91b71cc65c2ffe52427f8e43adb5c32"
+    },
+    {
+      "path": "scripts/validate-mainline-a-longrun-v635.test.mjs",
+      "category": "test",
+      "sha256": "d0d690127795d5afd82db46604a1003157885262e719de54ea149e4a3c4f770d"
+    },
+    {
+      "path": "scripts/index-mainline-a-canonical-observations-v635.ts",
+      "category": "production-tool",
+      "sha256": "a4eced85872585529ce87d6326982b546214cc152ba17f1369516cca47476c43"
+    },
+    {
+      "path": "scripts/index-mainline-a-canonical-observations-v635.test.ts",
+      "category": "test",
+      "sha256": "e16ab3050dc92a22e29c170958e5c589a41cd323ba503838326a77199a12a848"
+    }
+  ],
+  "implementation": [
+    "Observe canonical object selection from actual production stellar surface, verified nebula texture/plane and constellation-line render callbacks; preserve route and raw asset hash binding.",
+    "Capture same-scene baseline/active/returned object identities, loading failures, publication revisions and timestamps; reject stale callbacks, mismatched targets, failed cleanup, unknown JSON shapes and cross-build observations.",
+    "Distinguish exact registered resource reuse from actual acquire/release. Only actual observed disposal may satisfy the separate release lifecycle gate.",
+    "Register nebula plane and constellation allocations; track existing stellar geometry/material owners through real THREE disposal events without taking over disposal or treating unmount as release. Stable semantic slots permit valid baseline restoration.",
+    "Export up to 48 local observations; intake explicit raw files with exact byte hashes into an exclusive-write candidate index, replay all 36 manifest objects and require separate current-build browser evidence.",
+    "Evaluate two independent same-build, same-viewport, non-overlapping runs of at least 30 minutes; validate continuous visibility, RAF coverage, phase timeline/checkpoint correspondence and released resources.",
+    "Use Windows-compatible ESM loader file URLs so release subprocess tests exercise actual raw replay, not startup failure."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "nodePassed": 104,
+      "vitestPassed": 224,
+      "node": {
+        "exitCode": 0,
+        "passed": 104,
+        "files": [
+          "scripts/replay-mainline-a-resource-observation-v633.test.ts",
+          "scripts/mainline-a-release-evidence.test.mjs",
+          "scripts/validate-mainline-a-longrun-v635.test.mjs",
+          "scripts/replay-mainline-a-canonical-runtime-v635.test.ts",
+          "scripts/index-mainline-a-canonical-observations-v635.test.ts"
+        ],
+        "log": {
+          "path": "tmp/mainline-a-v635-combined-node-20260927-057-sealed.log",
+          "sha256": "4e8865bcfa00e53429fd4f3effa5dab4d383282a22de1467b5c1aff586ab9508"
+        }
+      },
+      "vitest": {
+        "exitCode": 0,
+        "passed": 224,
+        "files": [
+          "app/lib/mainlineACanonicalRuntimeV635.test.ts",
+          "app/lib/mainlineAResourceObservationV633.test.ts",
+          "app/lib/mainlineALifecycleSessionV633.test.ts",
+          "app/lib/mainlineACanonicalProducerV635.test.ts",
+          "app/components/MainlineAResourceObservationPanelV633.test.tsx",
+          "app/components/SelectedSkyTargetProxy.test.tsx",
+          "app/lib/mainlineANebulaSceneTextureV607.test.ts",
+          "app/lib/mainlineANebulaSceneV607.test.ts",
+          "app/data/mainlineAConstellationFiguresV607.test.ts",
+          "app/data/mainlineAConstellationBoundaryV607.test.ts"
+        ],
+        "log": {
+          "path": "tmp/mainline-a-v635-combined-vitest-20260927-057-sealed.log",
+          "sha256": "ea1cf69d6d65767a1400a6da6d743947c6f0ceb42a2499bac6687057895e4e67"
+        }
+      },
+      "additionalReleaseRegression": {
+        "passed": 30,
+        "log": {
+          "path": "tmp/mainline-a-longrun-release-regression-20260927-057-finish.log",
+          "sha256": "c77a32021e4b628b8c6329b1d362fdd0c2ad45270efd6ae152d506c0f12c7ec3"
+        }
+      },
+      "targetedEslint": {
+        "status": "passed",
+        "filesChecked": 24,
+        "errors": 0,
+        "warnings": 1,
+        "warningScope": "existing SelectedSkyTargetProxy checkpointMetadata hook dependency",
+        "log": {
+          "path": "tmp/mainline-a-v635-combined-eslint-20260927-057-sealed.json",
+          "sha256": "71f03c55e757025388f047dc9ce0d536b01a6c8a815a4ce32924481ef321082d"
+        },
+        "details": {
+          "path": "tmp/mainline-a-v635-combined-eslint-details-20260927-057-sealed.json",
+          "sha256": "3474b561d9092f3efc3b06d3fae1c1a63f0865baacb4894e7a0499ca6dbe8a21"
+        }
+      },
+      "diffCheck": {
+        "status": "passed",
+        "log": {
+          "path": "tmp/mainline-a-v635-diffcheck-20260927-057.log",
+          "sha256": "cb91e54c33a757e0690003b000f3021fe5269de261a5a191577c7657f7d0a7bb"
+        }
+      },
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-057b.json",
+        "sha256": "5783d78f489112392c85533d1e9f2bbbb13d67731b98b5e8e5a86dee47be7a8d"
+      },
+      "buildScope": "preserved vercel-lite production build",
+      "failedBuildPreserved": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-057.json",
+        "sha256": "5475df43de381379513b1db44340bfb194b7b6f31a9696c71d082e31a8bbeb15"
+      },
+      "failedBuildRepair": "Reordered selection field checks before the target type predicate to preserve TypeScript narrowing.",
+      "sourceInputFiles": 2359,
+      "changedSourceFiles": [
+        "app/components/AtlasDeepSpacePresentationSubtreeV275.tsx",
+        "app/components/ConstellationLines.tsx",
+        "app/components/MainlineANebulaScenePortraitV607.tsx",
+        "app/components/MainlineAResourceObservationPanelV633.tsx",
+        "app/components/SelectedSkyTargetProxy.tsx",
+        "app/lib/mainlineACanonicalProducerV635.ts",
+        "app/lib/mainlineACanonicalRuntimeV635.ts",
+        "app/lib/mainlineALifecycleSessionV633.ts",
+        "app/lib/mainlineAResourceObservationV633.ts"
+      ],
+      "sourceDrift": [],
+      "codeDrift": [],
+      "protectedFiles": [
+        {
+          "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+          "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+          "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+        }
+      ],
+      "protectedFilesUnchanged": true,
+      "canonicalManifest": {
+        "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+        "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+      },
+      "v619Check": {
+        "status": "verified",
+        "total": 4,
+        "pending": 4
+      }
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-057.json",
+        "sha256": "b18705f096e0968ac5b6a5ab50c6b71654e50f19f676fb5a83e55f0c889f6286"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "matchedScriptFiles": 6,
+      "canonicalFilesMatched": 12,
+      "canonicalAssets": {
+        "path": "docs/release/v607/mainline-a-canonical-assets-http-20260927-057.json",
+        "sha256": "254a414e97e081952ec7fee0216bc11bafad6c9086b47677cfd4771b196304b8"
+      },
+      "scope": "Exact current-build HTTP bytes and local software image decoding; not browser rendering or GPU performance.",
+      "performanceClaim": false
+    },
+    "visual": {
+      "status": "not-run",
+      "screenshots": [],
+      "reason": "browser security check unavailable before navigation"
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "canonicalRawObservationsCaptured": 0,
+      "canonicalRuntimeVerified": 0,
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v635-20260927-057.json",
+        "sha256": "8f928ec266c6c9995a524fb5c33041804af7abc904d7a41951ab7297b31fd3f9"
+      },
+      "realUserValidation": false,
+      "bypassUsed": false
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v635-20260927-057.json",
+        "sha256": "df18f4b30239932022f548811e2da5ef75f87bcc3528bed4a903560742cf7f0a"
+      },
+      "frameTime": null,
+      "memory": null,
+      "resourceReleaseObserved": false,
+      "longRun": "not-run",
+      "productionPerformanceClaim": false,
+      "implementedPolicy": {
+        "minimumIndependentRuns": 2,
+        "minimumDurationPerRunMs": 1800000,
+        "minimumRafCoverageRatio": 0.95,
+        "physicalDeviceAttested": false
+      }
+    },
+    "externalSource": {
+      "status": "preserved-source-evidence-no-new-network-capture",
+      "newNetworkCaptures": 0,
+      "priorWdsCapture": {
+        "path": "docs/release/v607/mainline-a-stellar-components-v634-20260927-056.json",
+        "sha256": "92e17d5ebd727af611aa7b12c781bef2d91568075b573e5f2f2bf52e88cbc06e"
+      },
+      "componentCandidatePack": {
+        "path": "app/data/mainlineAStellarComponentEvidenceV634.generated.json",
+        "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+      },
+      "identityPending": 4,
+      "componentConfirmed": 0,
+      "rightsSigned": 0,
+      "extensionRightsPending": 12,
+      "scientificValidityClaim": false,
+      "rightsApproval": false,
+      "fixturePromotion": false
+    },
+    "release": {
+      "status": "blocked",
+      "scope": "candidate metadata and local evidence package",
+      "alignment": {
+        "path": "docs/release/v607/mainline-a-r66-alignment-20260927-057.json",
+        "sha256": "309c6e335e107668c6689325649d14cbf69d362bde368f2f0d870010cd24beff"
+      },
+      "bridge": {
+        "path": "docs/release/v607/mainline-a-r66-identity-bridge-20260927-057.json",
+        "sha256": "9429eb0d7b458ecb0fb45e422cda58530602273af0bf60d5c3252879ab483680"
+      },
+      "manifest": {
+        "path": "docs/release/v607/mainline-a-r66-package-20260927-057/manifest.json",
+        "sha256": "30fea8e84e12421a883e2697e1c577b272cc1c42c0c9c9b6660aea862ea27381"
+      },
+      "evidenceInput": {
+        "path": "docs/release/v607/mainline-a-release-evidence-input-20260927-057.json",
+        "sha256": "fb9213681af6d561886102a509e5e3125079f78c2834a71f2fe6fd76ac804ebe"
+      },
+      "offlineVerification": {
+        "path": "tmp/mainline-a-package-verify-current-20260927-057.log",
+        "sha256": "dfa52b0bccd42471e3baaf2316fceb0d92b75ea32b8fdd2a12e3bc5557f44fa0"
+      },
+      "integrity": {
+        "files": 295,
+        "status": "verified",
+        "evidenceClass": "static",
+        "scientificValidity": false,
+        "rightsApproval": false,
+        "packageFiles": 7,
+        "offlineReplay": true
+      },
+      "currentSourceVerified": true,
+      "releaseApproved": false,
+      "gates": [
+        {
+          "id": "build-current-source",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "root-readonly-input",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "next-web-identity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "manifest-parity",
+          "evidenceClass": "static",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "root-manifest-not-present-or-mismatched"
+          ]
+        },
+        {
+          "id": "canonical-coverage",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "canonical-runtime",
+          "evidenceClass": "browser",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "canonical-runtime-clearance-pending"
+          ]
+        },
+        {
+          "id": "http",
+          "evidenceClass": "http",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "desktop-browser",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "desktop-browser-not-run"
+          ]
+        },
+        {
+          "id": "mobile-viewport",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "mobile-viewport-not-run"
+          ]
+        },
+        {
+          "id": "visual",
+          "evidenceClass": "visual",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "visual-evidence-not-observed"
+          ]
+        },
+        {
+          "id": "performance",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "lifecycle",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "nebula-file-integrity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "stellar-component-identity",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "stellar-component-identity-pending"
+          ]
+        },
+        {
+          "id": "rights-closure",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "human-rights-signoff-pending"
+          ]
+        },
+        {
+          "id": "physical-mobile",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "physical-device-not-run"
+          ]
+        },
+        {
+          "id": "long-run",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "long-run:browser-device-not-observed",
+            "long-run:two-independent-runs-required"
+          ]
+        }
+      ],
+      "blockers": [
+        "canonical-runtime-clearance-pending",
+        "desktop-browser-not-run",
+        "human-rights-signoff-pending",
+        "lifecycle-not-passed",
+        "long-run:browser-device-not-observed",
+        "long-run:two-independent-runs-required",
+        "mobile-viewport-not-run",
+        "performance-not-passed",
+        "physical-device-not-run",
+        "root-manifest-not-present-or-mismatched",
+        "stellar-component-identity-pending",
+        "visual-evidence-not-observed"
+      ]
+    }
+  },
+  "humanReview": {
+    "userReply": "暂时保持 pending，继续技术验收",
+    "rightsSigned": 0,
+    "extensionRightsPending": 12,
+    "stellarIdentityPending": 4,
+    "humanSignatureGranted": false,
+    "directive": {
+      "path": "docs/release/v607/mainline-a-rights-pending-directive-20260927-053.json",
+      "sha256": "92b4d97376e36df886dc753f0e834e60e954d477d98dcf632c292130a273bcf2"
+    }
+  },
+  "preservation": {
+    "originalStellarPacksUnchanged": true,
+    "historicalReceiptsOverwritten": false,
+    "fixtureDirectoriesRetained": true,
+    "provisionalCodeReceipt": {
+      "path": "docs/release/v607/mainline-a-r65-v635-code-change-20260927-057.json",
+      "sha256": "03326262843e29ec84b598bd61211fb349f583faf1e7373a21dbe27588cf044a"
+    },
+    "ownedServer": {
+      "path": "tmp/mainline-a-server-20260927-057.json",
+      "sha256": "0bf69068300c0420925d3c265c2f043949cbad9289839d7f81c99f4e35cfb095"
+    },
+    "ownedServerStopped": {
+      "path": "tmp/mainline-a-server-stopped-20260927-057.json",
+      "sha256": "bb45f04e8b6b91dd4db40da61af3f42c7d7777f3c3d4c9ff1895292087fdc68c"
+    }
+  },
+  "openGates": [
+    "canonical-runtime-clearance-pending",
+    "desktop-browser-not-run",
+    "human-rights-signoff-pending",
+    "lifecycle-not-passed",
+    "long-run:browser-device-not-observed",
+    "long-run:two-independent-runs-required",
+    "mobile-viewport-not-run",
+    "performance-not-passed",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending",
+    "visual-evidence-not-observed"
+  ],
+  "nextWork": [
+    "Run the implemented canonical object cycles in the requested Browser once its security permission check is available; capture current-build desktop/mobile viewport evidence and all required raw observations.",
+    "Perform two independent visible 30-minute resource observations and replay exact raw JSON; keep physical mobile, rendering metrics and production performance separately unverified.",
+    "Continue component identity review and read-only root manifest parity; retain user-directed pending copyright signatures without inventing approvals."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "releaseApproved": false
+  },
+  "referenceVerification": {
+    "status": "verified",
+    "references": 54,
+    "distinctPaths": 54
+  }
+}

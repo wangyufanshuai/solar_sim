@@ -1,0 +1,261 @@
+{
+  "version": "v174-final-web-rc-dossier",
+  "generatedAt": "2026-07-14T00:51:16.894Z",
+  "confirmedSerialValidation": true,
+  "releaseStatus": "web-rc-ready-science-shadow-retained",
+  "framework": {
+    "next": "15.5.18",
+    "react": "19.2.7",
+    "reactThreeFiber": "9.6.1",
+    "three": "^0.170.0"
+  },
+  "machine": {
+    "platform": "win32 10.0.26200 x64",
+    "cpu": "13th Gen Intel(R) Core(TM) i9-13900HX",
+    "logicalCpus": 32,
+    "totalMemoryMiB": 16192,
+    "node": "v24.14.0",
+    "graphicsAdapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    }
+  },
+  "validation": {
+    "focusedFiles": 8,
+    "focusedTests": 23,
+    "fullRegression": "673/673",
+    "productionBuild": true,
+    "browserQa": {
+      "standalonePassed": 5,
+      "standaloneViewportSkipped": 1,
+      "vercelLitePassed": 2,
+      "viewports": [
+        "1440x900",
+        "390x844"
+      ],
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "resource404": 0,
+      "axe": "wcag2a-and-wcag2aa-pass"
+    },
+    "hardwarePerformance": [
+      {
+        "id": "overview",
+        "sceneMode": "atlas",
+        "medianFps": 80.5,
+        "frameP50Ms": 12.4,
+        "frameP95Ms": 12.7,
+        "longestTaskMs": 0,
+        "frameSamples": 894,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 25,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "earth-inspect",
+        "sceneMode": "inspect",
+        "medianFps": 79.4,
+        "frameP50Ms": 12.6,
+        "frameP95Ms": 16.8,
+        "longestTaskMs": 378,
+        "frameSamples": 655,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 30,
+        "textures": 25,
+        "renderTargets": 0
+      },
+      {
+        "id": "gaia-stellar",
+        "sceneMode": "inspect",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2359,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 28,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "launch",
+        "sceneMode": "launch",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 77,
+        "frameSamples": 2376,
+        "drawCalls": 40,
+        "triangles": 89696,
+        "programs": 15,
+        "textures": 6,
+        "renderTargets": 0
+      },
+      {
+        "id": "kerr",
+        "sceneMode": "kerr",
+        "medianFps": 80,
+        "frameP50Ms": 12.5,
+        "frameP95Ms": 16.6,
+        "longestTaskMs": 0,
+        "frameSamples": 809,
+        "drawCalls": 1,
+        "triangles": 2,
+        "programs": 28,
+        "textures": 20,
+        "renderTargets": 1
+      }
+    ],
+    "gpuCounterQualification": "gl.info counters are observational only; drawCalls=1 is not optimization proof"
+  },
+  "contentPacks": [
+    {
+      "id": "core",
+      "version": "1.0.0",
+      "fileCount": 633,
+      "installedBytes": 85612140,
+      "licenseCount": 3,
+      "manifest": "dist/content-packs/core.manifest.json",
+      "sha256": "1e8208a7ed2c1d19dcd0fa1ec0eb81b2bc6cc1eafb47f6360d6ddbdc85ac2323"
+    },
+    {
+      "id": "planet-hd",
+      "version": "1.0.0",
+      "fileCount": 69,
+      "installedBytes": 337359590,
+      "licenseCount": 1,
+      "manifest": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452"
+    },
+    {
+      "id": "deep-sky",
+      "version": "1.0.0",
+      "fileCount": 89,
+      "installedBytes": 69302270,
+      "licenseCount": 1,
+      "manifest": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "1126da825554313d855b4af2fb8259cb80c1c9041a6a0ea6e18af752e3f6df2f"
+    },
+    {
+      "id": "spacecraft",
+      "version": "1.0.0",
+      "fileCount": 5,
+      "installedBytes": 72241294,
+      "licenseCount": 1,
+      "manifest": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545"
+    },
+    {
+      "id": "science-fixtures",
+      "version": "1.0.0",
+      "fileCount": 7,
+      "installedBytes": 135314,
+      "licenseCount": 1,
+      "manifest": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c"
+    },
+    {
+      "id": "runtime-codecs",
+      "version": "v160-three-r170-basis",
+      "fileCount": 2,
+      "installedBytes": 584862,
+      "licenseCount": 1,
+      "manifest": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab"
+    }
+  ],
+  "delivery": {
+    "standalone-full": {
+      "interactive": true,
+      "localContentPacks": true,
+      "millionStarCatalog": true,
+      "fullObservationFixtures": true
+    },
+    "vercel-lite": {
+      "interactive": true,
+      "localContentPacks": false,
+      "millionStarCatalog": false,
+      "fullObservationFixtures": false,
+      "manifestVersion": "v171-vercel-lite-1.0.0",
+      "fileCount": 595,
+      "installedBytes": 69050419,
+      "maxBytes": 85983232
+    }
+  },
+  "science": {
+    "defaultKernel": "legacy-eih-1pn",
+    "shadowKernel": "eih-1pn-2pn-lt",
+    "promotionApplied": false,
+    "scientificBlockers": [
+      "candidate-does-not-improve-legacy-aggregate-rms",
+      "independent-per-body-dop853-comparison-pending"
+    ]
+  },
+  "knownLimitations": [
+    "Vercel Lite omits the million-star catalog and full observation fixtures.",
+    "V2 relativity remains shadow-only because the independent promotion gates are not satisfied.",
+    "Desktop installers and cloud deployment are separate, unreleased tracks.",
+    "GPU draw-call counters are retained for observation but are not accepted as optimization proof.",
+    "The planned React 18/R3F 8 hold was superseded because Next 15 App Router requires its React 19 runtime; the verified renderer baseline is React 19/R3F 9."
+  ],
+  "rollback": [
+    "Select the standalone-full delivery profile and the previous verified v167 artifact set.",
+    "Keep legacy-eih-1pn as the default kernel and leave V2 shadow-only.",
+    "Restore the six checksummed content-pack manifests from the retained release artifacts."
+  ],
+  "artifacts": [
+    {
+      "path": "dist/science/performance-v174-report.json",
+      "sha256": "467403060dbdbabcc6841c3903b1ebb317b6f86b9f2aad37dd8f0b8806071644"
+    },
+    {
+      "path": "dist/science/performance-v166-report.json",
+      "sha256": "b7f20f75d5a75cb24d5aae4bfa15ba0ec77302c77817b5b9c2207755aff4be67"
+    },
+    {
+      "path": "dist/science/regression-v174-report.json",
+      "sha256": "e3f495028aefbbce26ba5fbcf0462c639c15cd4ef57a629096116bc73fd161b7"
+    },
+    {
+      "path": "dist/science/regression-v166-report.json",
+      "sha256": "474ddf735fd24f2c14499cb1394f91e6426c692233bc3cf1214c246976dba191"
+    },
+    {
+      "path": "dist/science/product-release-v167-report.json",
+      "sha256": "0a27546e3655ac771945f8a0f3210c48d8eea2fb0cd61c5c22049c8ed1b09727"
+    },
+    {
+      "path": "dist/content-packs/core.manifest.json",
+      "sha256": "1e8208a7ed2c1d19dcd0fa1ec0eb81b2bc6cc1eafb47f6360d6ddbdc85ac2323"
+    },
+    {
+      "path": "dist/content-packs/planet-hd.manifest.json",
+      "sha256": "7b502dca4da68350b423da21fea42fa5b00bc86e46fef60def2decb1b052a452"
+    },
+    {
+      "path": "dist/content-packs/deep-sky.manifest.json",
+      "sha256": "1126da825554313d855b4af2fb8259cb80c1c9041a6a0ea6e18af752e3f6df2f"
+    },
+    {
+      "path": "dist/content-packs/spacecraft.manifest.json",
+      "sha256": "668e07b475dd2c105684e70517a8aa6b931d675b0834a3ce8809b69c84679545"
+    },
+    {
+      "path": "dist/content-packs/science-fixtures.manifest.json",
+      "sha256": "e3cfcfaa58d01f40665ea13df60b66ce36b958a24fe4c3aad6d0b3cbc8377a7c"
+    },
+    {
+      "path": "dist/content-packs/runtime-codecs.manifest.json",
+      "sha256": "76112dc0802f4a314330352e37cb8a49290963e2893d20e5a784addb1e26fbab"
+    },
+    {
+      "path": "public/atlas-lite/manifest.json",
+      "sha256": "e1130ed4b81603d83e87ff7196f5be0b343adee93e7bd1443d642a8ba4d6a7aa"
+    }
+  ],
+  "boundary": "no-cloud-deploy-no-desktop-release-no-scientific-promotion-no-live-or-worker-physics-mutation"
+}

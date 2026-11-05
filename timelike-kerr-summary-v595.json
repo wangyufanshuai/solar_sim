@@ -1,0 +1,855 @@
+{
+  "analyticAnchors": {
+    "analyticRadii": {
+      "anchorOrbitRadius": 10.0,
+      "kerrOuterHorizonRadius": 1.7141428428542849,
+      "kerrProgradeIscoRadius": 3.3931284701816304,
+      "kerrRetrogradeIscoRadius": 8.142965464834315,
+      "kerrSpin": 0.7,
+      "schwarzschildIscoRadius": 6.0,
+      "schwarzschildOuterHorizonRadius": 2.0
+    },
+    "anchorCount": 3,
+    "anchorNames": [
+      "schwarzschild-circular-r10",
+      "kerr-prograde-circular-a0.7-r10",
+      "kerr-retrograde-circular-a0.7-r10"
+    ],
+    "anchors": [
+      {
+        "absoluteResidual": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 5.356284938078063e-32,
+          "energy": 0.0,
+          "hamiltonian": 0.0,
+          "massShellResidual": 0.0
+        },
+        "expected": {
+          "axialAngularMomentum": 3.779644730092272,
+          "carterQ": 0.0,
+          "energy": 0.9561828874675149,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "family": "Schwarzschild-equatorial-circular-timelike",
+        "formula": "E=(r-2)/sqrt(r*(r-3));Lz=r/sqrt(r-3);Q=0;H=-1/2",
+        "maxInvariantResidual": 5.356284938078063e-32,
+        "maxRhsEquilibriumResidual": 8.74747713676681e-18,
+        "name": "schwarzschild-circular-r10",
+        "observed": {
+          "axialAngularMomentum": 3.779644730092272,
+          "carterQ": 5.356284938078063e-32,
+          "energy": 0.9561828874675149,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "qualified": true,
+        "radius": 10.0,
+        "rhsEquilibrium": {
+          "polarMomentumDerivative": 8.74747713676681e-18,
+          "polarVelocity": 0.0,
+          "radialMomentumDerivative": -0.0,
+          "radialVelocity": 0.0
+        },
+        "shortOrbit": {
+          "absoluteTolerance": 2e-14,
+          "affineEnd": 64.0,
+          "maxAbsolutePolarMomentum": 5.598385367530785e-16,
+          "maxAbsoluteRadialMomentum": 0.0,
+          "maxStabilityResidual": 5.598385367530785e-16,
+          "maxStep": 0.1,
+          "method": "DOP853",
+          "radiusSpan": 0.0,
+          "relativeTolerance": 2e-12,
+          "sampleCount": 642,
+          "thetaSpan": 0.0
+        },
+        "spin": 0.0
+      },
+      {
+        "absoluteResidual": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 4.665673537113682e-32,
+          "energy": 0.0,
+          "hamiltonian": 2.7755575615628914e-16,
+          "massShellResidual": 5.551115123125783e-16
+        },
+        "expected": {
+          "axialAngularMomentum": 3.5211902007822826,
+          "carterQ": 0.0,
+          "energy": 0.9529669265128454,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "family": "Kerr-prograde-equatorial-circular-timelike-Bardeen",
+        "formula": "Bardeen-direct:E=(r^3/2-2r^1/2+a)/(r^3/4*sqrt(r^3/2-3r^1/2+2a));Q=0;H=-1/2",
+        "maxInvariantResidual": 5.551115123125783e-16,
+        "maxRhsEquilibriumResidual": 5.0306980803327406e-17,
+        "name": "kerr-prograde-circular-a0.7-r10",
+        "observed": {
+          "axialAngularMomentum": 3.5211902007822826,
+          "carterQ": 4.665673537113682e-32,
+          "energy": 0.9529669265128454,
+          "hamiltonian": -0.4999999999999997,
+          "massShellResidual": 5.551115123125783e-16
+        },
+        "qualified": true,
+        "radius": 10.0,
+        "rhsEquilibrium": {
+          "polarMomentumDerivative": 7.619623127847322e-18,
+          "polarVelocity": 0.0,
+          "radialMomentumDerivative": -5.0306980803327406e-17,
+          "radialVelocity": 0.0
+        },
+        "shortOrbit": {
+          "absoluteTolerance": 2e-14,
+          "affineEnd": 64.0,
+          "maxAbsolutePolarMomentum": 4.87655880182231e-16,
+          "maxAbsoluteRadialMomentum": 3.2196467714129914e-15,
+          "maxStabilityResidual": 3.2196467714129914e-15,
+          "maxStep": 0.1,
+          "method": "DOP853",
+          "radiusSpan": 0.0,
+          "relativeTolerance": 2e-12,
+          "sampleCount": 643,
+          "thetaSpan": 0.0
+        },
+        "spin": 0.7
+      },
+      {
+        "absoluteResidual": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 6.308257230599257e-32,
+          "energy": 0.0,
+          "hamiltonian": 1.1102230246251565e-16,
+          "massShellResidual": 2.220446049250313e-16
+        },
+        "expected": {
+          "axialAngularMomentum": -4.097177163107213,
+          "carterQ": 0.0,
+          "energy": 0.9605982748154988,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "family": "Kerr-retrograde-equatorial-circular-timelike-Bardeen",
+        "formula": "Bardeen-retrograde:E=(r^3/2-2r^1/2-a)/(r^3/4*sqrt(r^3/2-3r^1/2-2a));Q=0;H=-1/2",
+        "maxInvariantResidual": 2.220446049250313e-16,
+        "maxRhsEquilibriumResidual": 5.204170427930421e-17,
+        "name": "kerr-retrograde-circular-a0.7-r10",
+        "observed": {
+          "axialAngularMomentum": -4.097177163107213,
+          "carterQ": 6.308257230599257e-32,
+          "energy": 0.9605982748154988,
+          "hamiltonian": -0.4999999999999999,
+          "massShellResidual": 2.220446049250313e-16
+        },
+        "qualified": true,
+        "radius": 10.0,
+        "rhsEquilibrium": {
+          "polarMomentumDerivative": 1.0302165873444185e-17,
+          "polarVelocity": 0.0,
+          "radialMomentumDerivative": -5.204170427930421e-17,
+          "radialVelocity": 0.0
+        },
+        "shortOrbit": {
+          "absoluteTolerance": 2e-14,
+          "affineEnd": 64.0,
+          "maxAbsolutePolarMomentum": 6.593386159004278e-16,
+          "maxAbsoluteRadialMomentum": 3.3306690738754373e-15,
+          "maxStabilityResidual": 3.3306690738754373e-15,
+          "maxStep": 0.1,
+          "method": "DOP853",
+          "radiusSpan": 0.0,
+          "relativeTolerance": 2e-12,
+          "sampleCount": 643,
+          "thetaSpan": 0.0
+        },
+        "spin": 0.7
+      }
+    ],
+    "qualified": true,
+    "thresholds": {
+      "analyticAnchorEquilibriumResidual": 5e-11,
+      "analyticAnchorInvariantResidual": 5e-12,
+      "analyticAnchorOrbitStability": 2e-08
+    },
+    "version": "v595-timelike-kerr-analytic-anchors-v1"
+  },
+  "authority": {
+    "gpuAuthorityGranted": false,
+    "grmhdAuthorityGranted": false,
+    "measuredAuthorityGranted": false,
+    "productionAuthorityGranted": false,
+    "radiativeTransferAuthorityGranted": false,
+    "referenceCandidateEvidence": true,
+    "scientificPromotionGranted": false,
+    "webTeachingKernelModified": false
+  },
+  "boundary": "offline-vacuum-test-particle-reference-candidate-not-production-scientific-authority-not-measured-not-gpu-not-radiative-transfer",
+  "coordinates": "Boyer-Lindquist-canonical-phase-space",
+  "fixtureCount": 4,
+  "fixtures": [
+    {
+      "classification": "bound",
+      "constantsRequested": {
+        "axialAngularMomentum": 3.0,
+        "carterQ": 2.0,
+        "energy": 0.95
+      },
+      "description": "inclined bound orbit between radial periapsis and apoapsis",
+      "expectedClassification": "bound",
+      "highPrecisionAlgebraicComparison": {
+        "boundary": "high-precision-invariant-evaluation-not-high-precision-trajectory-integration",
+        "maxAbsoluteDifference": 4.440892098500626e-16,
+        "oracle": "mpmath-80-decimal-digit-algebraic-invariant-evaluation",
+        "qualified": true,
+        "sampleCount": 3
+      },
+      "independentReferenceComparison": {
+        "classifications": [
+          "bound",
+          "bound"
+        ],
+        "comparisonAffineEnd": 259.99999974,
+        "independent": "independent-covariant-inverse-complex-step-rk45",
+        "independentAbsoluteTolerance": 2e-13,
+        "independentMethod": "RK45",
+        "independentRelativeTolerance": 2e-11,
+        "maxScaledTrajectoryDifference": 4.974354261833014e-13,
+        "primary": "analytic-inverse-metric-derivative-dop853",
+        "qualified": true,
+        "terminalAffineDifference": 0.0
+      },
+      "initialState": {
+        "p_phi": 3.0,
+        "p_r": -0.0382439601371152,
+        "p_t": -0.95,
+        "p_theta": 0.7958523797519546,
+        "phi": 0.0,
+        "r": 12.0,
+        "t": 0.0,
+        "theta": 1.2
+      },
+      "integration": {
+        "absoluteTolerance": 2e-12,
+        "dynamicPThetaSpan": 2.828411736705182,
+        "dynamicThetaSpan": 0.8793445157828885,
+        "functionEvaluations": 15632,
+        "implementation": "analytic-inverse-metric-derivative-dop853",
+        "maxStep": 0.25,
+        "method": "DOP853",
+        "pThetaRange": [
+          -1.414198665266711,
+          1.4142130714384715
+        ],
+        "polarTurningPointCount": 3,
+        "radialTurningPointCount": 2,
+        "radiusRange": [
+          6.242024046108466,
+          12.313503068610489
+        ],
+        "relativeTolerance": 2e-10,
+        "sampleCount": 1043,
+        "status": "affine-limit",
+        "terminalAffine": 260.0,
+        "thetaRange": [
+          1.1311257733606173,
+          2.010470289143506
+        ]
+      },
+      "invariants": {
+        "computedFromTrajectory": true,
+        "initial": {
+          "axialAngularMomentum": 3.0,
+          "carterQ": 2.0,
+          "energy": 0.95,
+          "hamiltonian": -0.4999999999999999,
+          "massShellResidual": 2.220446049250313e-16
+        },
+        "maxAbsoluteDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.9095836023552692e-14,
+          "energy": 0.0,
+          "hamiltonian": 4.440892098500626e-16
+        },
+        "maxMassShellResidual": 7.771561172376096e-16,
+        "maxRelativeDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 9.547918011776346e-15,
+          "energy": 0.0,
+          "hamiltonian": 4.440892098500626e-16
+        },
+        "qualified": true,
+        "sampleCount": 1025,
+        "terminal": {
+          "axialAngularMomentum": 3.0,
+          "carterQ": 1.99999999999999,
+          "energy": 0.95,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        }
+      },
+      "metricImplementationCrosscheck": {
+        "inverseMetricDerivativeMaxAbsoluteResidual": 2.7755575615628914e-17,
+        "inverseMetricMaxAbsoluteResidual": 1.734723475976807e-18,
+        "qualified": true
+      },
+      "name": "bound",
+      "qualified": true,
+      "reverseTimeRoundtrip": {
+        "forwardAffine": 8.0,
+        "forwardMethod": "DOP853",
+        "maxInvariantRecoveryError": 9.769962616701378e-15,
+        "qualified": true,
+        "reverseMethod": "DOP853-negative-time-span",
+        "scaledStateError": 1.124100812432971e-15
+      },
+      "spin": 0.7,
+      "stepConvergence": {
+        "absoluteTolerance": 1e-11,
+        "classifications": [
+          "bound",
+          "bound",
+          "bound"
+        ],
+        "coarseToMediumScaledError": 8.37108160567368e-14,
+        "comparisonAffineEnd": 259.99999974,
+        "maxSteps": [
+          1.0,
+          0.5,
+          0.25
+        ],
+        "mediumToFineScaledError": 6.608602554081244e-14,
+        "method": "DOP853",
+        "qualified": true,
+        "relativeTolerance": 1e-09,
+        "terminalAffineSpread": 0.0
+      },
+      "turningPointContinuity": {
+        "conjugateMomentumAcrossWindow": 1.513919814146586e-06,
+        "conjugateMomentumAfter": 7.569599103547393e-07,
+        "conjugateMomentumAt": 8.673617379884035e-19,
+        "conjugateMomentumBefore": -7.569599037918467e-07,
+        "coordinate": "r",
+        "eventAffine": 85.64174547576802,
+        "eventCount": 2,
+        "midpointScaledResidual": 3.0929866750093826e-11,
+        "qualified": true,
+        "sampleHalfWidth": 0.0001,
+        "signChangeObserved": true,
+        "velocityAfter": 5.238800262200651e-07,
+        "velocityAt": 6.002873862729675e-19,
+        "velocityBefore": -5.238800125961206e-07
+      }
+    },
+    {
+      "classification": "capture",
+      "constantsRequested": {
+        "axialAngularMomentum": 1.5,
+        "carterQ": 1.0,
+        "energy": 1.02
+      },
+      "description": "inclined low-angular-momentum incoming plunge",
+      "expectedClassification": "capture",
+      "highPrecisionAlgebraicComparison": {
+        "boundary": "high-precision-invariant-evaluation-not-high-precision-trajectory-integration",
+        "maxAbsoluteDifference": 1.718382471690624e-14,
+        "oracle": "mpmath-80-decimal-digit-algebraic-invariant-evaluation",
+        "qualified": true,
+        "sampleCount": 3
+      },
+      "independentReferenceComparison": {
+        "classifications": [
+          "capture",
+          "capture"
+        ],
+        "comparisonAffineEnd": 26.518850631022257,
+        "independent": "independent-covariant-inverse-complex-step-rk45",
+        "independentAbsoluteTolerance": 2e-13,
+        "independentMethod": "RK45",
+        "independentRelativeTolerance": 2e-11,
+        "maxScaledTrajectoryDifference": 8.173775227670978e-10,
+        "primary": "analytic-inverse-metric-derivative-dop853",
+        "qualified": true,
+        "terminalAffineDifference": 6.082956360842218e-11
+      },
+      "initialState": {
+        "p_phi": 1.5,
+        "p_r": -0.46085021648802355,
+        "p_t": -1.02,
+        "p_theta": 0.29085193897278444,
+        "phi": 0.0,
+        "r": 15.0,
+        "t": 0.0,
+        "theta": 2.14
+      },
+      "integration": {
+        "absoluteTolerance": 2e-12,
+        "dynamicPThetaSpan": 1.236691220230661,
+        "dynamicThetaSpan": 0.37539923432659217,
+        "functionEvaluations": 2099,
+        "implementation": "analytic-inverse-metric-derivative-dop853",
+        "maxStep": 0.25,
+        "method": "DOP853",
+        "pThetaRange": [
+          -0.9458392812578766,
+          0.29085193897278444
+        ],
+        "polarTurningPointCount": 1,
+        "radialTurningPointCount": 0,
+        "radiusRange": [
+          1.764142842854285,
+          15.0
+        ],
+        "relativeTolerance": 2e-10,
+        "sampleCount": 124,
+        "status": "captured",
+        "terminalAffine": 26.518850657601938,
+        "thetaRange": [
+          1.7848064976918958,
+          2.160205732018488
+        ]
+      },
+      "invariants": {
+        "computedFromTrajectory": true,
+        "initial": {
+          "axialAngularMomentum": 1.5,
+          "carterQ": 1.0,
+          "energy": 1.02,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "maxAbsoluteDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.4457990360483564e-11,
+          "energy": 0.0,
+          "hamiltonian": 3.4037705987088884e-09
+        },
+        "maxMassShellResidual": 6.807541197417777e-09,
+        "maxRelativeDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.4457990360483564e-11,
+          "energy": 0.0,
+          "hamiltonian": 3.4037705987088884e-09
+        },
+        "qualified": true,
+        "sampleCount": 1025,
+        "terminal": {
+          "axialAngularMomentum": 1.5,
+          "carterQ": 0.9999999999967908,
+          "energy": 1.02,
+          "hamiltonian": -0.4999999965962294,
+          "massShellResidual": 6.807541197417777e-09
+        }
+      },
+      "metricImplementationCrosscheck": {
+        "inverseMetricDerivativeMaxAbsoluteResidual": 4.336808689942018e-17,
+        "inverseMetricMaxAbsoluteResidual": 4.440892098500626e-16,
+        "qualified": true
+      },
+      "name": "capture",
+      "qualified": true,
+      "reverseTimeRoundtrip": {
+        "forwardAffine": 4.0,
+        "forwardMethod": "DOP853",
+        "maxInvariantRecoveryError": 1.0880185641326534e-14,
+        "qualified": true,
+        "reverseMethod": "DOP853-negative-time-span",
+        "scaledStateError": 1.2451099341590524e-15
+      },
+      "spin": 0.7,
+      "stepConvergence": {
+        "absoluteTolerance": 1e-11,
+        "classifications": [
+          "capture",
+          "capture",
+          "capture"
+        ],
+        "coarseToMediumScaledError": 3.585945270689846e-09,
+        "comparisonAffineEnd": 26.51885063123356,
+        "maxSteps": [
+          1.0,
+          0.5,
+          0.25
+        ],
+        "mediumToFineScaledError": 1.32887379207491e-09,
+        "method": "DOP853",
+        "qualified": true,
+        "relativeTolerance": 1e-09,
+        "terminalAffineSpread": 2.9466562523339235e-10
+      },
+      "turningPointContinuity": {
+        "conjugateMomentumAcrossWindow": 7.1762555536670006e-06,
+        "conjugateMomentumAfter": -3.588150824137583e-06,
+        "conjugateMomentumAt": 6.071532165918825e-17,
+        "conjugateMomentumBefore": 3.5881047295294177e-06,
+        "coordinate": "theta",
+        "eventAffine": 16.410398939741224,
+        "eventCount": 1,
+        "midpointScaledResidual": 2.7031099580909768e-11,
+        "qualified": true,
+        "sampleHalfWidth": 0.0001,
+        "signChangeObserved": true,
+        "velocityAfter": -5.937991753758734e-08,
+        "velocityAt": 1.0047583435684375e-18,
+        "velocityBefore": 5.9377629119035156e-08
+      }
+    },
+    {
+      "classification": "scatter",
+      "constantsRequested": {
+        "axialAngularMomentum": 5.0,
+        "carterQ": 2.0,
+        "energy": 1.02
+      },
+      "description": "inclined unbound encounter with an explicit radial turning point",
+      "expectedClassification": "scatter",
+      "highPrecisionAlgebraicComparison": {
+        "boundary": "high-precision-invariant-evaluation-not-high-precision-trajectory-integration",
+        "maxAbsoluteDifference": 1.7763568394002505e-15,
+        "oracle": "mpmath-80-decimal-digit-algebraic-invariant-evaluation",
+        "qualified": true,
+        "sampleCount": 3
+      },
+      "independentReferenceComparison": {
+        "classifications": [
+          "scatter",
+          "scatter"
+        ],
+        "comparisonAffineEnd": 211.66532839882922,
+        "independent": "independent-covariant-inverse-complex-step-rk45",
+        "independentAbsoluteTolerance": 2e-13,
+        "independentMethod": "RK45",
+        "independentRelativeTolerance": 2e-11,
+        "maxScaledTrajectoryDifference": 2.968458812091512e-14,
+        "primary": "analytic-inverse-metric-derivative-dop853",
+        "qualified": true,
+        "terminalAffineDifference": 9.094947017729282e-13
+      },
+      "initialState": {
+        "p_phi": 5.0,
+        "p_r": -0.30020027227357665,
+        "p_t": -1.02,
+        "p_theta": 0.2732312848265756,
+        "phi": 0.0,
+        "r": 30.0,
+        "t": 0.0,
+        "theta": 1.3
+      },
+      "integration": {
+        "absoluteTolerance": 2e-12,
+        "dynamicPThetaSpan": 2.7629453764216323,
+        "dynamicThetaSpan": 0.5465340376733265,
+        "functionEvaluations": 12722,
+        "implementation": "analytic-inverse-metric-derivative-dop853",
+        "maxStep": 0.25,
+        "method": "DOP853",
+        "pThetaRange": [
+          -1.3487486502177002,
+          1.414196726203932
+        ],
+        "polarTurningPointCount": 1,
+        "radialTurningPointCount": 1,
+        "radiusRange": [
+          9.52438358499207,
+          40.0
+        ],
+        "relativeTolerance": 2e-10,
+        "sampleCount": 849,
+        "status": "escaped",
+        "terminalAffine": 211.66532861049453,
+        "thetaRange": [
+          1.3,
+          1.8465340376733266
+        ]
+      },
+      "invariants": {
+        "computedFromTrajectory": true,
+        "initial": {
+          "axialAngularMomentum": 5.0,
+          "carterQ": 2.0,
+          "energy": 1.02,
+          "hamiltonian": -0.4999999999999999,
+          "massShellResidual": 2.220446049250313e-16
+        },
+        "maxAbsoluteDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.865174681370263e-14,
+          "energy": 0.0,
+          "hamiltonian": 4.440892098500626e-16
+        },
+        "maxMassShellResidual": 1.1102230246251565e-15,
+        "maxRelativeDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 9.325873406851315e-15,
+          "energy": 0.0,
+          "hamiltonian": 4.440892098500626e-16
+        },
+        "qualified": true,
+        "sampleCount": 1025,
+        "terminal": {
+          "axialAngularMomentum": 5.0,
+          "carterQ": 2.0000000000000133,
+          "energy": 1.02,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        }
+      },
+      "metricImplementationCrosscheck": {
+        "inverseMetricDerivativeMaxAbsoluteResidual": 9.540979117872439e-18,
+        "inverseMetricMaxAbsoluteResidual": 0.0,
+        "qualified": true
+      },
+      "name": "scatter",
+      "qualified": true,
+      "reverseTimeRoundtrip": {
+        "forwardAffine": 8.0,
+        "forwardMethod": "DOP853",
+        "maxInvariantRecoveryError": 1.2212453270876722e-14,
+        "qualified": true,
+        "reverseMethod": "DOP853-negative-time-span",
+        "scaledStateError": 5.412337245047638e-15
+      },
+      "spin": 0.7,
+      "stepConvergence": {
+        "absoluteTolerance": 1e-11,
+        "classifications": [
+          "scatter",
+          "scatter",
+          "scatter"
+        ],
+        "coarseToMediumScaledError": 2.098321516541546e-14,
+        "comparisonAffineEnd": 211.66532839882925,
+        "maxSteps": [
+          1.0,
+          0.5,
+          0.25
+        ],
+        "mediumToFineScaledError": 8.854028621385623e-15,
+        "method": "DOP853",
+        "qualified": true,
+        "relativeTolerance": 1e-09,
+        "terminalAffineSpread": 4.547473508864641e-13
+      },
+      "turningPointContinuity": {
+        "conjugateMomentumAcrossWindow": 3.2186284081482127e-06,
+        "conjugateMomentumAfter": 1.6093142025761387e-06,
+        "conjugateMomentumAt": 2.715248815718385e-16,
+        "conjugateMomentumBefore": -1.609314205572074e-06,
+        "coordinate": "r",
+        "eventAffine": 87.74358924779405,
+        "eventCount": 1,
+        "midpointScaledResidual": 1.6864823646935808e-11,
+        "qualified": true,
+        "sampleHalfWidth": 0.0001,
+        "signChangeObserved": true,
+        "velocityAfter": 1.2798874679635559e-06,
+        "velocityAt": 2.1594371899000246e-16,
+        "velocityBefore": -1.2798874759753273e-06
+      }
+    },
+    {
+      "classification": "escape",
+      "constantsRequested": {
+        "axialAngularMomentum": 3.0,
+        "carterQ": 1.0,
+        "energy": 1.02
+      },
+      "description": "inclined outward unbound trajectory without a prior radial encounter",
+      "expectedClassification": "escape",
+      "highPrecisionAlgebraicComparison": {
+        "boundary": "high-precision-invariant-evaluation-not-high-precision-trajectory-integration",
+        "maxAbsoluteDifference": 7.771561172376096e-16,
+        "oracle": "mpmath-80-decimal-digit-algebraic-invariant-evaluation",
+        "qualified": true,
+        "sampleCount": 3
+      },
+      "independentReferenceComparison": {
+        "classifications": [
+          "escape",
+          "escape"
+        ],
+        "comparisonAffineEnd": 91.57122721877339,
+        "independent": "independent-covariant-inverse-complex-step-rk45",
+        "independentAbsoluteTolerance": 2e-13,
+        "independentMethod": "RK45",
+        "independentRelativeTolerance": 2e-11,
+        "maxScaledTrajectoryDifference": 1.63202784619898e-14,
+        "primary": "analytic-inverse-metric-derivative-dop853",
+        "qualified": true,
+        "terminalAffineDifference": 1.9895196601282805e-13
+      },
+      "initialState": {
+        "p_phi": 3.0,
+        "p_r": 0.4859645296550032,
+        "p_t": -1.02,
+        "p_theta": 0.38127408609010255,
+        "phi": 0.0,
+        "r": 10.0,
+        "t": 0.0,
+        "theta": 1.87
+      },
+      "integration": {
+        "absoluteTolerance": 2e-12,
+        "dynamicPThetaSpan": 0.6933392196855128,
+        "dynamicThetaSpan": 0.02284401641199696,
+        "functionEvaluations": 5522,
+        "implementation": "analytic-inverse-metric-derivative-dop853",
+        "maxStep": 0.25,
+        "method": "DOP853",
+        "pThetaRange": [
+          -0.3120651335954102,
+          0.38127408609010255
+        ],
+        "polarTurningPointCount": 1,
+        "radialTurningPointCount": 0,
+        "radiusRange": [
+          10.0,
+          40.0
+        ],
+        "relativeTolerance": 2e-10,
+        "sampleCount": 369,
+        "status": "escaped",
+        "terminalAffine": 91.57122731034481,
+        "thetaRange": [
+          1.87,
+          1.892844016411997
+        ]
+      },
+      "invariants": {
+        "computedFromTrajectory": true,
+        "initial": {
+          "axialAngularMomentum": 3.0,
+          "carterQ": 1.0,
+          "energy": 1.02,
+          "hamiltonian": -0.5,
+          "massShellResidual": 0.0
+        },
+        "maxAbsoluteDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.9317880628477724e-14,
+          "energy": 0.0,
+          "hamiltonian": 6.661338147750939e-16
+        },
+        "maxMassShellResidual": 1.3322676295501878e-15,
+        "maxRelativeDrift": {
+          "axialAngularMomentum": 0.0,
+          "carterQ": 1.9317880628477724e-14,
+          "energy": 0.0,
+          "hamiltonian": 6.661338147750939e-16
+        },
+        "qualified": true,
+        "sampleCount": 1025,
+        "terminal": {
+          "axialAngularMomentum": 3.0,
+          "carterQ": 1.0000000000000173,
+          "energy": 1.02,
+          "hamiltonian": -0.5000000000000004,
+          "massShellResidual": -8.881784197001252e-16
+        }
+      },
+      "metricImplementationCrosscheck": {
+        "inverseMetricDerivativeMaxAbsoluteResidual": 2.7755575615628914e-17,
+        "inverseMetricMaxAbsoluteResidual": 1.1102230246251565e-16,
+        "qualified": true
+      },
+      "name": "escape",
+      "qualified": true,
+      "reverseTimeRoundtrip": {
+        "forwardAffine": 8.0,
+        "forwardMethod": "DOP853",
+        "maxInvariantRecoveryError": 6.661338147750939e-15,
+        "qualified": true,
+        "reverseMethod": "DOP853-negative-time-span",
+        "scaledStateError": 3.622102617839573e-15
+      },
+      "spin": 0.7,
+      "stepConvergence": {
+        "absoluteTolerance": 1e-11,
+        "classifications": [
+          "escape",
+          "escape",
+          "escape"
+        ],
+        "coarseToMediumScaledError": 6.661338147750939e-15,
+        "comparisonAffineEnd": 91.57122721877327,
+        "maxSteps": [
+          1.0,
+          0.5,
+          0.25
+        ],
+        "mediumToFineScaledError": 4.218847493575595e-15,
+        "method": "DOP853",
+        "qualified": true,
+        "relativeTolerance": 1e-09,
+        "terminalAffineSpread": 3.126388037344441e-13
+      },
+      "turningPointContinuity": {
+        "conjugateMomentumAcrossWindow": 2.0779680572561698e-06,
+        "conjugateMomentumAfter": -1.03898199300804e-06,
+        "conjugateMomentumAt": 1.7997756063259374e-17,
+        "conjugateMomentumBefore": 1.0389860642481298e-06,
+        "coordinate": "theta",
+        "eventAffine": 21.360999456083114,
+        "eventCount": 1,
+        "midpointScaledResidual": 2.116251618389242e-12,
+        "qualified": true,
+        "sampleHalfWidth": 0.0001,
+        "signChangeObserved": true,
+        "velocityAfter": -3.24036745238472e-09,
+        "velocityAt": 5.613145547975021e-20,
+        "velocityBefore": 3.2404055443482204e-09
+      }
+    }
+  ],
+  "formalEvidence": false,
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "hamiltonian": "H=0.5*g^(mu,nu)*p_mu*p_nu",
+  "invariantOrder": [
+    "energy",
+    "axialAngularMomentum",
+    "carterQ",
+    "hamiltonian",
+    "massShellResidual"
+  ],
+  "metric": "Kerr",
+  "promotion": "none",
+  "schemaVersion": "orbit-timelike-kerr-reference/v595",
+  "stateOrder": [
+    "t",
+    "r",
+    "theta",
+    "phi",
+    "p_t",
+    "p_r",
+    "p_theta",
+    "p_phi"
+  ],
+  "status": "qualified-v595-timelike-kerr-reference-candidate",
+  "summarySha256": "59b46d0f0a3d18b34c5bb96003215976e75596177855f73ed4dd2f1dd02f6d69",
+  "thresholds": {
+    "analyticAnchorEquilibriumResidual": 5e-11,
+    "analyticAnchorInvariantResidual": 5e-12,
+    "analyticAnchorOrbitStability": 2e-08,
+    "axialAngularMomentumDrift": 5e-13,
+    "carterQDrift": 2e-07,
+    "energyDrift": 5e-13,
+    "hamiltonianDrift": 2e-08,
+    "highPrecisionInvariantDifference": 2e-12,
+    "independentTrajectoryScaledError": 2e-05,
+    "massShellResidual": 4e-08,
+    "metricDerivativeResidual": 2e-11,
+    "metricInverseResidual": 2e-13,
+    "reverseTimeScaledError": 2e-07,
+    "stepConvergenceScaledError": 2e-06,
+    "turningPointMidpointResidual": 2e-07
+  },
+  "timelikeMassShell": -0.5,
+  "units": {
+    "G": 1,
+    "M": 1,
+    "c": 1,
+    "particleRestMass": 1
+  },
+  "version": "v595-timelike-kerr-reference-candidate-v1"
+}

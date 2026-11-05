@@ -1,0 +1,24 @@
+{
+  "round": 22,
+  "date": "2026-09-13",
+  "title": "Beta hero roster evidence boundary",
+  "status": "verified-static",
+  "scope": {
+    "artifact": "app/data/mainlineABetaHeroRosterV607.ts",
+    "artChange": "Added an explicit 24-hero Beta roster ledger. Twelve current heroes are marked runtime-cleared; twelve source heroes are tracked as evidence-pending and remain outside runtime admission."
+  },
+  "coverage": {
+    "sourceCount": 24,
+    "runtimeCleared": 12,
+    "evidencePending": 12
+  },
+  "validation": {
+    "vitest": "mainlineABetaHeroRosterV607.test.ts: 1/1",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The 12 pending heroes do not yet have current A4 evidence rows or browser portraits.",
+    "Beta remains open at 24 runtime-admitted hero stars and 24 rights-cleared nebulae."
+  ]
+}

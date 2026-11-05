@@ -1,0 +1,103 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:37.133Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "flame-nebula",
+  "query": "Flame Nebula",
+  "requiredTerms": [
+    "flame",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Flame%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Flame%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 7900,
+    "responseSha256": "413697d475826e5dfd0f2eef62a7203adc22bee09a2487dd9a404cc5f2cc2a22"
+  },
+  "totalHits": 5,
+  "candidates": [
+    {
+      "nasaId": "PIA15635",
+      "title": "A Different View of the Flame Nebula",
+      "description": "The Flame Nebula sits on the eastern hip of Orion the Hunter, a constellation most easily visible in the northern hemisphere during winter evenings in this view from NASA WISE Telescope.",
+      "dateCreated": "2012-07-02T22:03:25Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15635/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA18249",
+      "title": "Inside the Flame Nebula",
+      "description": "This composite image shows one of the clusters, NGC 2024, which is found in the center of the so-called Flame Nebula about 1,400 light years from Earth. Astronomers have studied two star clusters using NASA Chandra and infrared telescopes.",
+      "dateCreated": "2014-05-07T16:45:54Z",
+      "center": "JPL",
+      "keywords": [
+        "Chandra X-ray Observatory,Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA18249/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA18249/PIA18249~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA13448",
+      "title": "A Flame in Orion Belt",
+      "description": "This mosaic image taken by NASA Wide-field Infrared Survey Explorer, features three nebulae that are part of the giant Orion Molecular Cloud. Included in this view are the Flame nebula, the Horsehead nebula and NGC 2023.",
+      "dateCreated": "2010-12-02T22:46:18Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13448/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13448/PIA13448~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA04222",
+      "title": "Hubble-V",
+      "description": "Resembling curling flames from a campfire, a magnificent nebula in a nearby galaxy observed by NASA Hubble Space Telescope provides new insight into the fierce birth of stars as it may have occurred in the early universe.",
+      "dateCreated": "1999-12-10T00:00:02Z",
+      "center": "JPL",
+      "keywords": [
+        "Hubble -V",
+        "Hubble Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04222/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA04222/PIA04222~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA13447",
+      "title": "WISE Catches a Runaway Star in Flames",
+      "description": "NASA Wide-field Infrared Survey captured this view of a runaway star racing away from its original home. Surrounded by a glowing cloud of gas and dust, the star AE Aurigae appears on fire. Appropriately, the cloud is called the Flaming Star nebula.",
+      "dateCreated": "2010-11-24T00:17:46Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13447/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13447/PIA13447~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 5,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "5611cbb7377c73d5b6a9a6a15fd2960293116e3ef5e544dd96f83c4e9f1279fe"
+}

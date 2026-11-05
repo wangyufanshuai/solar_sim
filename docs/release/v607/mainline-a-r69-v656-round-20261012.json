@@ -1,0 +1,122 @@
+{
+  "schema": "mainline-a-r69-web-round-v656",
+  "round": 69,
+  "date": "2026-10-12",
+  "status": "local-web-technical-batch-passed-candidate-only",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "workingTree": "dirty-shared-preserved",
+    "concurrentPhysicsWindow": "present; final R69 evidence is bound to saved app-source SHA; later shared app-source changes require a new build and browser check",
+    "parentGitOperated": false,
+    "physicsKernelEditsByRound": false
+  },
+  "functionBatch": {
+    "name": "24-star and 12-constellation candidate web guide",
+    "heroStarRows": 24,
+    "runtimeExistingStarRows": 20,
+    "candidateHoldStarRows": 4,
+    "componentIdentitySigned": 0,
+    "constellationRows": 12,
+    "constellationSignoff": 0,
+    "canonicalCoverage": "12 stars, 12 nebulae, 12 constellations; static manifest replay matched",
+    "capabilities": "responsive browse, search, phase filter, keyboard selection, read-only source links, focus for existing routes, fail-closed load and retry, hold review in legacy roster",
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r69-v656-code-change-20261012.json",
+  "evidence": {
+    "static": {
+      "status": "passed-for-round-scope",
+      "node": "8/8 V656 manifest and negative tests; 2/2 canonical candidate lifecycle tests",
+      "vitest": "62/62 focused tests across seven files",
+      "eslint": "targeted app, route, tool, test and changed existing source passed with zero warnings",
+      "typeCheck": "saved V656 production build TypeScript phase passed",
+      "generatedManifestReplay": "24/20/4 stars and 12 canonical constellations re-rendered byte-exact from four pinned inputs",
+      "generatedManifestSha256": "8da5899d664e606357fd75babe4e2fdb131c25a652c2ee882ad1dccda7dd5c41",
+      "canonicalManifestCheck": "36 records; 12/12/12 coverage; original digest not rewritten",
+      "canonicalReplay": "docs/release/v607/mainline-a-r69-v656-canonical-replay-20261012.json",
+      "canonicalReplayValidation": "rebuilt and stored record digest e2f70689df29e344609b0bc6731a3220429284f2d272c92fb79bd4a0263dce49; equality true; candidate freeze false; static-only with 73 open issues",
+      "historicalReplayCaveat": "default R62 replay receipt check rejects its legacy evidence classification; R69 wrote and verified a distinct immutable static-only receipt without rewriting history",
+      "codeChangeReceipt": "docs/release/v607/mainline-a-r69-v656-code-change-20261012.json"
+    },
+    "build": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r69-build-20261012v656web03.json",
+      "buildId": "W2vufVrwt524JR3jvfKhn",
+      "runtimeBuildId": "mainline-a-34e0337fca7b3f64",
+      "appSourceSha256": "34e0337fca7b3f64b0dfe785e68a203c365a178265aa269548a2421c2da058b3",
+      "sourceStableDuringBuildAndBrowser": true,
+      "distDir": ".next-mainline-a-r69-20261012v656web03/.next",
+      "priorAttempts": "v656web01 retained with TypeScript nullability failure; v656web02 passed before final source-pin and mobile layout edits. Final evidence uses v656web03."
+    },
+    "http": {
+      "status": "passed-local",
+      "receipt": "docs/release/v607/mainline-a-r69-v656-http-20261012v656web03.json",
+      "origin": "http://127.0.0.1:3100",
+      "homeStatus": 200,
+      "healthStatus": 200,
+      "manifestStatus": 200,
+      "manifestResponseBytes": 22778,
+      "manifestResponseSha256": "d8dd5ffbf23904d1e6f6488eacf19ec6c66dcad6cf06ac1ec8c19c27417aec83",
+      "inputPinsRecomputed": 4,
+      "postStatus": 405,
+      "unknownStatus": 404,
+      "publicDeployment": "not-run"
+    },
+    "visual": {
+      "status": "local-screenshots-inspected-no-horizontal-overflow",
+      "desktopStar": "docs/release/v607/mainline-a-r69-v656-browser-desktop-stars-20261012v656web03.png",
+      "desktopConstellation": "docs/release/v607/mainline-a-r69-v656-browser-desktop-constellations-20261012v656web03.png",
+      "mobileStar": "docs/release/v607/mainline-a-r69-v656-browser-mobile-viewport-stars-20261012v656web03.png",
+      "mobileConstellation": "docs/release/v607/mainline-a-r69-v656-browser-mobile-viewport-constellations-20261012v656web03.png",
+      "mobileStarDetail": "docs/release/v607/mainline-a-r69-v656-browser-mobile-viewport-star-detail-20261012v656web03.png",
+      "mobileConstellationDetail": "docs/release/v607/mainline-a-r69-v656-browser-mobile-viewport-constellation-detail-20261012v656web03.png",
+      "mobileDetailsVisuallyReachable": true,
+      "perItemHumanVisualSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-simulated-mobile-viewport",
+      "receipt": "docs/release/v607/mainline-a-r69-v656-browser-20261012v656web03.json",
+      "filterReceipt": "docs/release/v607/mainline-a-r69-v656-browser-filter-20261012v656web03.json",
+      "desktopViewport": [1280, 720],
+      "mobileViewport": [390, 844],
+      "starCardSelections": 48,
+      "constellationChartSelections": 24,
+      "holdFocusAttemptsAllowed": 0,
+      "pageErrors": 0,
+      "eachDevice": "existing Sirius and Orion route focus, 4 hold states, keyboard navigation, 503 then retry, chart removal and 2/2 completed guide requests with none active at close",
+      "searchFilterEachDevice": "Acrux search remains hold; four hold and twenty existing filters; Ori code search; empty state and clear restore 12",
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-browser-diagnostic-only",
+      "receipt": "docs/release/v607/mainline-a-r69-v656-browser-20261012v656web03.json",
+      "desktop": { "frames": 120, "p95FrameMs": 9.26, "jsHeapUsedBytes": 251114424 },
+      "mobileViewport": { "frames": 120, "p95FrameMs": 6.33, "jsHeapUsedBytes": 272277581 },
+      "productionPerformanceClaim": false,
+      "currentSourceTwoIndependentThirtyMinuteObservations": "pending-R70"
+    },
+    "externalSource": {
+      "status": "no-new-external-capture-in-R69",
+      "scope": "four existing local source inputs pinned and replayed; source links displayed; no new scientific or rights evidence inferred",
+      "heroComponentIdentitySigned": "0/4",
+      "mainlineNebulaRightsSigned": "0/12 pending",
+      "betaNebulaRightsSigned": "0/12 pending",
+      "rightsApprovalClaim": false,
+      "scientificValidityClaim": false
+    }
+  },
+  "openGates": [
+    "four candidate hero-star physical component identities remain 0/4 signed",
+    "twelve Mainline A nebula rights and twelve current Beta candidate rights remain pending",
+    "R70 current-source two independent 30-minute browser observations and candidate freeze are not complete",
+    "remaining twelve Beta nebula candidates lack the same current raw-source and web review closure",
+    "root/next-web alignment and physical-mobile testing remain outside current web-only scope",
+    "public release, real-user, production-performance and scientific approval are not established"
+  ],
+  "nextRound": "R70 current twelve-image web-stage technical freeze and rollback candidate; later R71-R73 complete the remaining Beta 24-image technical scope"
+}

@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:55.577Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "flame-nebula",
+  "selection": {
+    "metadataProbe": "flame-nebula",
+    "metadataReceiptSha256": "5611cbb7377c73d5b6a9a6a15fd2960293116e3ef5e544dd96f83c4e9f1279fe",
+    "nasaId": "PIA15635",
+    "title": "A Different View of the Flame Nebula",
+    "description": "The Flame Nebula sits on the eastern hip of Orion the Hunter, a constellation most easily visible in the northern hemisphere during winter evenings in this view from NASA WISE Telescope.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15635/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA15635/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA15635/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "86230898a9be3283eb29d816bdf18bae1159033b44c925faecbd8acf0e4cce9d"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15635~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/PIA15635~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15635~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/PIA15635~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15635~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/PIA15635~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15635~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/PIA15635~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15635~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/PIA15635~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15635/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15635/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "25a46e4df52db22144d73b36bd36ed7b1938febcd04a2f4c46e103a6241d514f"
+}

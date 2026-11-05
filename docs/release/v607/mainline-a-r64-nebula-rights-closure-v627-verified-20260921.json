@@ -1,0 +1,452 @@
+{
+  "schema": "mainline-a-nebula-rights-closure-v627",
+  "version": 627,
+  "runId": "r64-v627-verified-20260921",
+  "generatedAt": "2026-09-21T09:54:51.797Z",
+  "status": "pending",
+  "source": {
+    "batch": {
+      "path": "app/data/mainlineANebulaBatchV624.generated.json",
+      "schema": "mainline-a-nebula-batch-v624",
+      "sha256": "0c4993a191e2dbbc535bc34fe73fd829f92ddad853dd94bc2d03551117846a64",
+      "rows": 6
+    },
+    "ledger": {
+      "path": "app/data/mainlineANebulaImageAttemptLedgerV623.generated.json",
+      "schema": "mainline-a-nebula-image-attempt-ledger-v623",
+      "sha256": "f271d28d2b063090b756ce2230cc7eb6783650f54ccb4f224de63b82309f973b",
+      "records": 6
+    }
+  },
+  "counts": {
+    "roster": 12,
+    "rows": 12,
+    "batchRows": 6,
+    "ledgerRecords": 6,
+    "responseCaptured": 6,
+    "responsePending": 6,
+    "rightsCleared": 0,
+    "rightsPending": 12,
+    "artifactsVerified": 6,
+    "artifactsMissingOrInvalid": 6,
+    "issueCount": 36,
+    "hardIssueCount": 0
+  },
+  "gates": {
+    "sourceClosure": {
+      "id": "source-closure",
+      "status": "pending",
+      "required": 12,
+      "observed": 0,
+      "blockers": [
+        "source-page-evidence-pending",
+        "license-url-missing",
+        "credit-missing"
+      ],
+      "evidenceClass": "external-source"
+    },
+    "artifactClosure": {
+      "id": "artifact-closure",
+      "status": "pending",
+      "required": 12,
+      "observed": 6,
+      "blockers": [
+        "network-payload-pending"
+      ],
+      "evidenceClass": "artifact"
+    },
+    "rightsClosure": {
+      "id": "rights-closure",
+      "status": "hold",
+      "required": 12,
+      "observed": 0,
+      "blockers": [
+        "rights-signoff-pending"
+      ],
+      "evidenceClass": "external-source"
+    },
+    "runtimeAdmission": {
+      "id": "runtime-admission",
+      "status": "closed",
+      "required": 0,
+      "observed": 0,
+      "blockers": [
+        "candidate-only",
+        "not-admitted"
+      ],
+      "evidenceClass": "static"
+    },
+    "scientificWriteback": {
+      "id": "scientific-payload-writeback",
+      "status": "closed",
+      "required": 0,
+      "observed": 0,
+      "blockers": [
+        "scientificPayloadWriteback=false"
+      ],
+      "evidenceClass": "static"
+    }
+  },
+  "issueCounts": {
+    "credit-missing": 6,
+    "license-url-missing": 6,
+    "rights-signoff-pending": 12,
+    "source-page-evidence-pending": 12
+  },
+  "rows": [
+    {
+      "id": "heart-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[0](heart-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[0](heart-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "03e7f9a93ca0ee5768cfda5f4eb3c106dee8dd1265b46a3a676cbae0142b78ef"
+    },
+    {
+      "id": "soul-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[1](soul-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[1](soul-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "084300164ee32e5c4609df475bcfffaef432d5ff3451c20480a5d831ac09e882"
+    },
+    {
+      "id": "witch-head-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[2](witch-head-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[2](witch-head-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "30db75699332a8b6815d8f6bbe82a77cf1de00291c74febd1bd54a44c0a49232"
+    },
+    {
+      "id": "flame-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[3](flame-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[3](flame-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "875874967a9aca130362029794a167c6010bf99975027aeebffc9d741763b16a"
+    },
+    {
+      "id": "pacman-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[4](pacman-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[4](pacman-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "5d5bab50c908e5f34174361c384f55ab40551eaf16b89202670a46a6258f09f0"
+    },
+    {
+      "id": "running-chicken-nebula",
+      "source": "batch",
+      "status": "pending",
+      "responseCaptured": true,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": true,
+      "issues": [
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "batch.rows[5](running-chicken-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "batch.rows[5](running-chicken-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "56f0e094fe004aca002d68e4ea9d8ed260d9b734c1f2024e2b638323fa812e47"
+    },
+    {
+      "id": "ring-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[0](ring-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[0](ring-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[0](ring-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[0](ring-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "2e456cb4b68d0a29211a95388b574b20eda784d6422d1a8a13169ce013af5e9f"
+    },
+    {
+      "id": "dumbbell-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[1](dumbbell-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[1](dumbbell-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[1](dumbbell-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[1](dumbbell-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "0ef2b7d6adf420bdcc4ded77edcd5b174ad1bd1d9b4c788f382b8863b257e772"
+    },
+    {
+      "id": "california-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[2](california-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[2](california-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[2](california-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[2](california-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "58a96b2bde69ff0be7635ad8f10e9cdd04fdfc29c79e1faa0e7f4c7039c405e3"
+    },
+    {
+      "id": "bubble-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[3](bubble-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[3](bubble-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[3](bubble-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[3](bubble-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "785437fd0c801fa49523876bf44cc543b19b1ffdf50ce19136c3e82455bb4fc3"
+    },
+    {
+      "id": "cats-eye-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[4](cats-eye-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[4](cats-eye-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[4](cats-eye-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[4](cats-eye-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "3c3722a2a1bf92e9c692d56300254d5d60311e8f764ad7cd916de52440547f76"
+    },
+    {
+      "id": "omega-nebula",
+      "source": "ledger",
+      "status": "pending",
+      "responseCaptured": false,
+      "rightsStatus": "pending",
+      "declaredRightsStatus": "review-pending",
+      "claimedSignoff": false,
+      "rightsCleared": false,
+      "sourceClosed": false,
+      "artifactVerified": false,
+      "issues": [
+        {
+          "code": "license-url-missing",
+          "detail": "ledger.records[5](omega-nebula) license URL evidence is absent"
+        },
+        {
+          "code": "credit-missing",
+          "detail": "ledger.records[5](omega-nebula) source credit is absent"
+        },
+        {
+          "code": "source-page-evidence-pending",
+          "detail": "ledger.records[5](omega-nebula) source-page capture and item linkage have not been independently verified by this pipeline"
+        },
+        {
+          "code": "rights-signoff-pending",
+          "detail": "ledger.records[5](omega-nebula) trusted item-level rights signoff has not been supplied to this pipeline"
+        }
+      ],
+      "fingerprint": "299a2f85694bb6a9d00af8509fa9a1e375b85f359f8312d96d00c26a61f0dc8a"
+    }
+  ],
+  "blockers": [
+    "source-page-evidence-pending",
+    "rights-signoff-pending",
+    "license-url-missing",
+    "credit-missing"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  },
+  "evidenceClass": "static-external-source-ledger-artifact-rights-projection",
+  "claims": {
+    "sourceAuthenticity": "not-established-by-local-ledger-alone",
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "runtimePayloadWriteback": false
+  },
+  "replay": {
+    "deterministicInputDigest": "6a568396ae5b35140058e2bbae6c285fb7c9b873c242b28c64a5d3f32da39f67",
+    "outputDigest": "0e4c1e83139098b2abfafb5ab5cb50a603a3d5fb9bb5f710cad8c664100c2296",
+    "jsonl": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627-verified-20260921.jsonl",
+    "csv": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627-verified-20260921.csv",
+    "markdown": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627-verified-20260921.md"
+  }
+}

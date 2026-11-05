@@ -1,0 +1,51 @@
+{
+  "schema": "mainline-a-performance-evidence-v633",
+  "round": "R65-continuation",
+  "recordedAt": "2026-09-27T02:34:40.376Z",
+  "status": "not-run",
+  "reason": "in-app-browser-saved-permissions-could-not-be-verified",
+  "runtimeBuildId": "mainline-a-6fb6fb60e3457b99",
+  "buildId": "JlrYTtsNGfdG5Rjhyu4fl",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "desktopRuns": 0,
+  "mobileViewportRuns": 0,
+  "physicalMobile": "not-run",
+  "longRun": "not-run",
+  "repeatRuns": 0,
+  "rawObservations": [],
+  "replayReports": [],
+  "frameIntervalSummary": null,
+  "memorySummary": null,
+  "resourceReleaseConclusion": "not-observed",
+  "implementedCollector": {
+    "durationsMs": [
+      30000,
+      1800000
+    ],
+    "resourceCheckpoints": [
+      "baseline",
+      "active",
+      "returned"
+    ],
+    "resourceSource": "actual application registry full snapshots",
+    "frameSummarySource": "requestAnimationFrame",
+    "frameMeaning": "browser RAF callback interval, not renderer frame time",
+    "registryBytes": "estimated allocation accounting, not physical GPU memory"
+  },
+  "productionPerformanceClaim": false,
+  "realUserValidation": false,
+  "scientificValidityClaim": false,
+  "browserAttempt": {
+    "path": "docs/release/v607/mainline-a-r65-browser-v633-20260927-052.json",
+    "sha256": "b6f546a93577fc7eb15c76c3879ef0f1780412029f74c9a5f5c3bb262c675ae3"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  }
+}

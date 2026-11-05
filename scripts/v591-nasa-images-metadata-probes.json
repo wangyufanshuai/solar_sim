@@ -1,0 +1,317 @@
+{
+  "version": "v591-nasa-images-metadata-probes-v1",
+  "policy": {
+    "allowedHosts": [
+      "images-api.nasa.gov",
+      "images-assets.nasa.gov"
+    ],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloaded": false
+  },
+  "probes": [
+    {
+      "id": "venus-clouds-broad",
+      "target": "venus",
+      "role": "cloud-layer-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20clouds&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-nasa-cloud-broad.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-nasa-cloud-broad-blocked.json",
+      "requiredTerms": [
+        "venus",
+        "cloud"
+      ],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-orion",
+      "target": "orion-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Orion%20Nebula%20M42&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-orion.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-orion-blocked.json",
+      "requiredTerms": ["orion", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-lagoon",
+      "target": "lagoon-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Lagoon%20Nebula%20M8&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-lagoon.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-lagoon-blocked.json",
+      "requiredTerms": ["lagoon", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-eagle",
+      "target": "eagle-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Eagle%20Nebula%20M16&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-eagle.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-eagle-blocked.json",
+      "requiredTerms": ["eagle", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-helix",
+      "target": "helix-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Helix%20Nebula%20NGC%207293&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-helix.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-helix-blocked.json",
+      "requiredTerms": ["helix", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-veil",
+      "target": "veil-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Veil%20Nebula%20NGC%206960&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-veil.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-veil-blocked.json",
+      "requiredTerms": ["veil", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-north-america",
+      "target": "north-america-nebula",
+      "role": "real-coordinate-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=North%20America%20Nebula%20NGC%207000&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-north-america.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-north-america-blocked.json",
+      "requiredTerms": ["north", "america", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-orion-targeted",
+      "target": "orion-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Orion%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-orion-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-orion-targeted-blocked.json",
+      "requiredTerms": ["orion", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-lagoon-targeted",
+      "target": "lagoon-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Lagoon%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-lagoon-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-lagoon-targeted-blocked.json",
+      "requiredTerms": ["lagoon", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-eagle-targeted",
+      "target": "eagle-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Eagle%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-eagle-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-eagle-targeted-blocked.json",
+      "requiredTerms": ["eagle", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-helix-targeted",
+      "target": "helix-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Helix%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-helix-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-helix-targeted-blocked.json",
+      "requiredTerms": ["helix", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-veil-targeted",
+      "target": "veil-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Veil%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-veil-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-veil-targeted-blocked.json",
+      "requiredTerms": ["veil", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-north-america-targeted",
+      "target": "north-america-nebula",
+      "role": "real-coordinate-nebula-targeted-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=North%20America%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-north-america-targeted.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-north-america-targeted-blocked.json",
+      "requiredTerms": ["north", "america", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-veil-cygnus-loop",
+      "target": "veil-nebula",
+      "role": "same-target-independent-cygnus-loop-nebula-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Cygnus%20Loop%20Veil%20Nebula&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-veil-cygnus-loop.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-veil-cygnus-loop-blocked.json",
+      "requiredTerms": ["cygnus", "nebula"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "ceres-dawn-global-map",
+      "target": "ceres",
+      "role": "nasa-dawn-global-map-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Ceres%20Dawn%20global%20map&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-ceres-dawn-global-map.json",
+      "blockedPath": "docs/release/v591/metadata-probe-ceres-dawn-global-map-blocked.json",
+      "requiredTerms": ["ceres", "dawn"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "ceres-dawn-global-mosaic-equirectangular",
+      "target": "ceres",
+      "role": "nasa-dawn-complete-global-equirectangular-mosaic-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Ceres%20Dawn%20global%20mosaic%20equirectangular&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-ceres-dawn-global-mosaic-equirectangular.json",
+      "blockedPath": "docs/release/v591/metadata-probe-ceres-dawn-global-mosaic-equirectangular-blocked.json",
+      "requiredTerms": ["ceres", "dawn"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "tempel-1-deep-impact-shape",
+      "target": "tempel-1",
+      "role": "nasa-pds-deep-impact-shape-model-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Tempel%201%20Deep%20Impact%20shape%20model&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-tempel-1-deep-impact-shape.json",
+      "blockedPath": "docs/release/v591/metadata-probe-tempel-1-deep-impact-shape-blocked.json",
+      "requiredTerms": ["tempel", "deep impact"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "venus-global-clouds-independent",
+      "target": "venus",
+      "role": "same-target-independent-nasa-global-cloud-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20global%20cloud%20view&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-global-clouds-independent.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-global-clouds-independent-blocked.json",
+      "requiredTerms": ["venus", "cloud"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "nebula-veil-cygnus-loop-simple",
+      "target": "veil-nebula",
+      "role": "same-target-independent-cygnus-loop-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Cygnus%20Loop&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-nebula-veil-cygnus-loop-simple.json",
+      "blockedPath": "docs/release/v591/metadata-probe-nebula-veil-cygnus-loop-simple-blocked.json",
+      "requiredTerms": ["cygnus", "loop"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "venus-magellan-global-map-independent",
+      "target": "venus",
+      "role": "same-target-independent-nasa-magellan-global-surface-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20Magellan%20global%20map&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-magellan-global-map-independent.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-magellan-global-map-independent-blocked.json",
+      "requiredTerms": ["venus", "magellan"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "venus-magellan-90e-independent",
+      "target": "venus",
+      "role": "same-target-independent-nasa-magellan-90-east-surface-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20computer%20simulated%20global%20view%2090%20degrees%20east&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-magellan-90e-independent.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-magellan-90e-independent-blocked.json",
+      "requiredTerms": ["venus", "magellan"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "venus-magellan-south-independent",
+      "target": "venus",
+      "role": "same-target-independent-nasa-magellan-southern-hemisphere-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20Magellan%20southern%20hemisphere%20global%20view&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-magellan-south-independent.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-magellan-south-independent-blocked.json",
+      "requiredTerms": ["venus", "magellan"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    },
+    {
+      "id": "venus-south-broad-independent",
+      "target": "venus",
+      "role": "same-target-independent-nasa-venus-southern-hemisphere-metadata-candidates",
+      "queryUrl": "https://images-api.nasa.gov/search?q=Venus%20southern%20hemisphere&media_type=image&page_size=100",
+      "outputPath": "docs/release/v591/metadata-probe-venus-south-broad-independent.json",
+      "blockedPath": "docs/release/v591/metadata-probe-venus-south-broad-independent-blocked.json",
+      "requiredTerms": ["venus"],
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      }
+    }
+  ]
+}

@@ -1,0 +1,173 @@
+{
+  "schema": "mainline-a-r74-web-nebula-round-v661",
+  "round": 74,
+  "date": "2026-10-13",
+  "status": "local-web-source-arbitration-candidate-passed-public-release-blocked",
+  "scope": "Resolve official page identity, source credit and listed image-format metadata for five held Beta nebulae without acquiring their images or promoting rights, scientific payloads or runtime admission.",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "concurrentRelativityWindowExcludedFromEffectiveLines": true
+  },
+  "identity": {
+    "buildId": "e_ORAUffXf09ZS9hgjY6j",
+    "runtimeBuildId": "mainline-a-b2de8addac0f5745",
+    "appSourceSha256": "b2de8addac0f5745c5c74d1d629908b82b2716408460364884e56c26bf7d9eb1",
+    "sourceStableAtBuildBrowserAndLayeredAudit": true,
+    "v616SnapshotSha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+    "v616ProjectionSha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce",
+    "v616DigestsChanged": false
+  },
+  "delivery": {
+    "sourceLedger": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+    "sourceAudit": "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json",
+    "candidateOverlay": "app/data/mainlineANebulaR74AlternativesV661.generated.json",
+    "layeredEvidenceAudit": "docs/release/v607/mainline-a-r74-v661-evidence-audit-20261013v661r74web03.json",
+    "codeChangeReceipt": "docs/release/v607/mainline-a-r74-v661-code-change-20261013.json",
+    "firstCollectorLedgerPreserved": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page01.json",
+    "firstBrowserAttemptPreserved": "docs/release/v607/mainline-a-r74-v661-browser-attempt-20261013v661r74web01.json",
+    "publicDeployment": "not-run"
+  },
+  "coverage": {
+    "betaNebulaCandidates": 24,
+    "priorReviewableOriginalImageChains": 19,
+    "heldNebulaTargets": [
+      "ring-nebula",
+      "dumbbell-nebula",
+      "bubble-nebula",
+      "cats-eye-nebula",
+      "omega-nebula"
+    ],
+    "officialPagesAttempted": 6,
+    "officialPagesCaptured": 6,
+    "officialPageBytesShaReplayed": 6,
+    "identityConflicts": [
+      {
+        "source": "https://science.nasa.gov/photojournal/weighing-in-on-the-dumbbell-nebula/",
+        "nasaId": "PIA14417",
+        "titleObject": "Dumbbell Nebula",
+        "pageTargetField": "Helix Nebula",
+        "status": "identity-conflict-hold",
+        "alternativePage": "https://science.nasa.gov/asset/hubble/the-dumbbell-nebula-m27/"
+      }
+    ],
+    "heldImageRequestsExecuted": 0,
+    "heldImageResponsesCaptured": 0,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0,
+    "aLineCanonicalManifest": "12 stars / 12 constellations / 12 nebulae; final R74 source-wide 36-object browser rerun remains pending"
+  },
+  "codeChange": {
+    "newProductionAndToolEffectiveLines": 1892,
+    "newSubstantiveTestEffectiveLines": 323,
+    "existingIntegrationRawAddedLines": 47,
+    "existingIntegrationRawRemovedLines": 3,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "evidence": {
+    "static": {
+      "status": "passed-current-source-local",
+      "node": "11/11 source transport, replay, promotion, HTTP and layered-audit tests",
+      "vitest": "16/16 web overlay and existing review-panel tests",
+      "targetedEslint": "passed with zero warnings",
+      "typescript": "passed within preserved production build",
+      "offlineSourceReplay": "6/6 real raw pages recomputed; one identity conflict preserved",
+      "v616SnapshotAndProjection": "digests unchanged"
+    },
+    "build": {
+      "status": "passed-preserved-production-build",
+      "receipt": "docs/release/v607/mainline-a-r74-build-20261013v661r74web02.json",
+      "buildId": "e_ORAUffXf09ZS9hgjY6j",
+      "appSourceSha256": "b2de8addac0f5745c5c74d1d629908b82b2716408460364884e56c26bf7d9eb1",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "status": "passed-local-production-build",
+      "receipt": "docs/release/v607/mainline-a-r74-v661-http-20261013v661r74web03.json",
+      "homeAndHealth": "200 / 200",
+      "allowedReviewThumbnail": "200 with candidate-hold, rights pending, scientific payload false headers",
+      "fiveHeldImageRoutes": "5 HTTP 404",
+      "rawPageArtifactRoute": "HTTP 404",
+      "publicDeployment": "not-run"
+    },
+    "visual": {
+      "status": "four-local-screenshots-pinned-sample-inspected-no-human-signoff",
+      "receipt": "docs/release/v607/mainline-a-r74-v661-visual-20261013v661r74web03.json",
+      "desktopDetail": "docs/release/v607/mainline-a-r74-v661-desktop-detail-20261013v661r74web03.png",
+      "mobileConflict": "docs/release/v607/mainline-a-r74-v661-mobile-viewport-conflict-20261013v661r74web03.png",
+      "rightDetailMatchesSelectedR74Target": true,
+      "humanPerItemSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-simulated-mobile-viewport",
+      "receipt": "docs/release/v607/mainline-a-r74-v661-browser-20261013v661r74web03.json",
+      "viewports": ["1280x720 desktop", "390x844 simulated mobile"],
+      "heldTargetSelections": 10,
+      "alternativePagesInspected": 12,
+      "identityConflictsPreserved": 2,
+      "remoteImageRequests": 0,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "horizontalOverflow": false,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-headless-Chrome-diagnostic-only",
+      "receipt": "docs/release/v607/mainline-a-r74-v661-performance-20261013v661r74web03.json",
+      "frameSamplesPerViewport": 120,
+      "desktopFrameIntervalP95Ms": 5.665000000000873,
+      "simulatedMobileFrameIntervalP95Ms": 5.655000000000655,
+      "currentSourceThirtyMinuteLongRuns": "not-run-in-r74",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "six-real-https-raw-pages-captured-and-replayed",
+      "sourceLedger": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+      "sourceAudit": "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json",
+      "pageResponsesCaptured": 6,
+      "pageIdentityConflicts": 1,
+      "unexecutedImageRequests": 5,
+      "imageResponsesCaptured": 0,
+      "rightsSigned": 0,
+      "independentNasaAuthenticationClaim": false
+    }
+  },
+  "remainingGates": {
+    "fiveNebulaImageAcquisitionsAndItemRights": "pending",
+    "aLineTwelveRightsSignoffs": "pending-0-of-12",
+    "betaTwentyFourRightsSignoffs": "pending-0-of-24",
+    "acruxSpicaRegulusPolarisComponentIdentities": "pending-0-of-4",
+    "perItemHumanVisualSignoff": "pending",
+    "finalCurrentSourceCanonical36ObjectBrowserMatrix": "pending-R75",
+    "finalCurrentSourceTwoThirtyMinuteLongRuns": "pending-R75",
+    "rootAppParity": "deferred-web-only-scope",
+    "physicalMobile": "not-run-web-only-scope",
+    "publicWebRelease": "blocked"
+  },
+  "nextRound": {
+    "round": 75,
+    "scope": "Final-source web matrix for A-line 36 objects, Beta stars/constellations/nebulae, HTTP failure states, two independent local long runs and a candidate package refresh after the parallel app source stabilizes.",
+    "externalDependency": "Five image/rights decisions, four star component identities and human visual signoff have no code-only completion date."
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

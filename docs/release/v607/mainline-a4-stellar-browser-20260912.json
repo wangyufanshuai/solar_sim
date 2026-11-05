@@ -1,0 +1,49 @@
+{
+  "schema": "mainline-a4-stellar-browser-v2",
+  "capturedAt": "2026-09-12T14:52:24Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Nh__1ClphucPEBm--C2_f",
+    "inputDigest": "92ca267d9440b3155d1d5d2e24abe77af8175d9844f336e07a55e5e398954418",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "scenario": {
+    "id": "six-hero-roster-to-passport-desktop-and-mobile",
+    "viewports": [
+      { "width": 1280, "height": 720, "status": "verified-six-of-six" },
+      { "width": 390, "height": 844, "status": "verified-six-of-six" }
+    ],
+    "actions": ["open Named stellar roster · 24", "click each current Mainline A hero entry", "inspect fact layers, uncertainty and portrait surface"],
+    "observed": {
+      "stars": [
+        {"rosterIdentity":"stellar-hero:sirius-a","passportHeading":"Sirius","passport":true,"factLayers":true,"uncertainty":true,"portrait":true},
+        {"rosterIdentity":"stellar-hero:alpha-centauri-a","passportHeading":"Alpha Centauri","passport":true,"factLayers":true,"uncertainty":true,"portrait":true},
+        {"rosterIdentity":"stellar-hero:achernar","passportHeading":"Achernar","passport":true,"factLayers":true,"uncertainty":true,"portrait":true},
+        {"rosterIdentity":"stellar-hero:betelgeuse","passportHeading":"Betelgeuse","passport":true,"factLayers":true,"uncertainty":true,"portrait":true},
+        {"rosterIdentity":"stellar-hero:rigel","passportHeading":"Rigel","passport":true,"factLayers":true,"uncertainty":true,"portrait":true},
+        {"rosterIdentity":"stellar-hero:antares","passportHeading":"Antares","passport":true,"factLayers":true,"uncertainty":true,"portrait":true}
+      ],
+      "mobileGeometry": {
+        "viewport": { "width": 390, "height": 844 },
+        "passportRect": { "top": 14, "bottom": 748, "left": 8, "right": 382 },
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "rosterAndWorkbenchHiddenWhilePassportOpen": true
+      },
+      "focusPresentation": "Each hero entry retained the stellar-hero focus and displayed a parameterized photosphere close-up; mobile selection isolates the passport surface."
+    },
+    "visualEvidence": "Codex In-app Browser screenshot emitted at 390x844 with the Antares passport open."
+  },
+  "boundaries": {
+    "coverage": "six of six Mainline A hero stars browser-verified at desktop and mobile widths on the same source-bound build",
+    "physics": "focus and passport are presentation/read-only surfaces; physical kernels unchanged",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "diagnostics": [
+    "The roster hero identity is preserved for 3D focus while passport resolution uses the canonical nearby-star catalog identity.",
+    "Mobile viewport verification covers geometry, fact layers, uncertainty and portrait presence; it is not a performance or human sign-off receipt."
+  ]
+}

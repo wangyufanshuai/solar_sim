@@ -1,0 +1,5 @@
+import type { AtlasDeliveryProfile } from "./atlasDeliveryProfile";
+import type { KerrPhotonMetrologyDetailSurfaceV540 } from "./kerrPhotonMetrologyObservatoryIntentV540";
+
+export type KerrPhotonMetrologyDetailSurfaceV541 = KerrPhotonMetrologyDetailSurfaceV540 | "response-aware-replay-kit";
+export function resolveKerrPhotonMetrologyObservatoryIntentV541(deliveryProfile: AtlasDeliveryProfile, active: boolean) { const authorized = deliveryProfile === "local-shadow" && active; return Object.freeze({ version: "v541-kerr-photon-metrology-observatory-intent-v1" as const, observatoryImportAuthorized: authorized, detailComponentCatalogSize: 43 as const, concurrentDetailSurfaceBudget: (authorized ? 1 : 0) as 0 | 1, kitMemberCount: 7 as const, subprocessCount: 2 as const, networkAttemptCount: 0 as const, fitsImageHduCount: 0 as const, canvasCreated: false as const, sceneRevisionDelta: 0 as const, physicsMutationAllowed: false as const, reason: authorized ? "enabled" : !active ? "inactive" : deliveryProfile === "vercel-lite" ? "lite-boundary" : "standalone-boundary" }); }

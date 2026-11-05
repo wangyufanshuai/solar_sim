@@ -1,0 +1,42 @@
+{
+  "version": "v591-mars-nasa3d-jpeg-source-acquisition-v1",
+  "sourcePage": "https://science.nasa.gov/3d-resources/mars/",
+  "discovery": {
+    "pageTitle": "Mars Image Texture - NASA Science",
+    "pageHttpStatus": 200,
+    "pageResponseBytes": 243692,
+    "resourceLinkDiscovered": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/image/mars/Mars.jpg",
+    "note": "The source page was probed once without persisting its HTML; the resource itself has not previously been requested."
+  },
+  "asset": {
+    "id": "mars-nasa3d-jpeg-albedo-source-v591",
+    "body": "mars",
+    "role": "full-albedo-source",
+    "sourceUrl": "https://assets.science.nasa.gov/content/dam/science/cds/3d/resources/image/mars/Mars.jpg",
+    "outputPath": "source-cache/celestial-convergence-v591/mars/NASA-3D-Resources-Mars.jpg",
+    "allowedHosts": [
+      "assets.science.nasa.gov"
+    ],
+    "expectedMediaTypes": [
+      "image/jpeg",
+      "image/jpg",
+      "application/octet-stream",
+      "binary/octet-stream"
+    ],
+    "minimumWidth": 4096,
+    "minimumHeight": 2048,
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "observationIdentity": "NASA 3D Resources Mars equirectangular image texture",
+    "observationLimit": "Presentation albedo resource; source dimensions are the observational-detail ceiling and delivery derivatives may not claim additional observation detail.",
+    "presentationOnly": true
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final"
+  }
+}

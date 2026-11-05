@@ -1,0 +1,82 @@
+{
+  "version": "v592-major-moon-alternative-source-negative-evidence-v1",
+  "generatedAt": "2026-08-20T00:00:00Z",
+  "status": "three-target-alternative-metadata-lane-blocked-no-qualified-global-texture",
+  "targets": [
+    "triton",
+    "miranda",
+    "titania"
+  ],
+  "sourceReceipts": [
+    {
+      "probeId": "triton-voyager-cylindrical",
+      "target": "triton",
+      "receiptSha256": "c9ed2cd1850bbc540d5fd6d9de1c38d48872e72ebca1bd4a6a215e12b333feae",
+      "requestCount": 1,
+      "totalHits": 0,
+      "matchedCandidateCount": 0,
+      "payloadDownloaded": false
+    },
+    {
+      "probeId": "miranda-voyager-mosaic",
+      "target": "miranda",
+      "receiptSha256": "c525127044929b61f09816a6008324a7117ee42c00fcbc677b1ba2c5919ef19c",
+      "requestCount": 1,
+      "totalHits": 2,
+      "matchedCandidateCount": 2,
+      "payloadDownloaded": false
+    },
+    {
+      "probeId": "titania-voyager-mosaic",
+      "target": "titania",
+      "receiptSha256": "cf7b506cebf472c5fe1f1ad1ad0f1b19892d470bcdea7788029cc17d73b44f7e",
+      "requestCount": 1,
+      "totalHits": 0,
+      "matchedCandidateCount": 0,
+      "payloadDownloaded": false
+    }
+  ],
+  "findings": [
+    {
+      "target": "triton",
+      "status": "asset-blocked",
+      "reason": "alternative-query-zero-results-and-admitted-14k-source-has-non-equirectangular-unobserved-coverage",
+      "qualifiedGlobalTextureCount": 0
+    },
+    {
+      "target": "miranda",
+      "status": "asset-blocked",
+      "reason": "two-official-results-are-south-polar-and-close-range-mosaics-not-global-equirectangular-textures",
+      "rejectedCandidateIds": [
+        "PIA01354",
+        "PIA01490"
+      ],
+      "qualifiedGlobalTextureCount": 0
+    },
+    {
+      "target": "titania",
+      "status": "asset-blocked",
+      "reason": "alternative-query-zero-results",
+      "qualifiedGlobalTextureCount": 0
+    }
+  ],
+  "summary": {
+    "metadataRequestCount": 3,
+    "metadataProbeCount": 3,
+    "officialCandidateCount": 2,
+    "qualifiedGlobalTextureCount": 0,
+    "visualPayloadDownloadedCount": 0,
+    "runtimeAssetAdmittedCount": 0,
+    "blockedTargetCount": 3
+  },
+  "policy": {
+    "metadataOnly": true,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "noSyntheticCoverageFill": true,
+    "noProceduralFallback": true,
+    "noThresholdRelaxation": true,
+    "scientificPayloadWriteback": false
+  },
+  "receiptSha256": "e0120a9c9cf528fb63058583f4ca210b4849a49d8a130399d1597670ee422737"
+}

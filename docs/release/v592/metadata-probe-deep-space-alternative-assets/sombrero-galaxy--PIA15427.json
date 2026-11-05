@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-alternative-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T12:43:42.860Z",
+  "status": "alternative-asset-manifest-probe-complete-no-payload",
+  "selectionId": "sombrero-galaxy--PIA15427",
+  "target": "sombrero-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbePath": "docs/release/v592/metadata-probe-deep-space-alternatives-v3/sombrero-galaxy.json",
+    "metadataReceiptSha256": "7fc13e96cb6f2e6feb3fdc5fb76d61f906f15a5d4126f79d4def0cd6cab3e508",
+    "nasaId": "PIA15427",
+    "title": "Sombrero Galaxy Not So Flat After All",
+    "description": "New observations from NASA Spitzer Space Telescope reveal the Sombrero galaxy is not simply a regular flat disk galaxy of stars as previously believed, but a more round elliptical galaxy with a flat disk tucked inside.",
+    "center": "JPL",
+    "identityTerms": [
+      "sombrero"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15427/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA15427/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA15427/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "87a15421cff2ce3262f2add4efbceb4fbe57de1a0b104f1d2ecb2fcd1ba36647"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/PIA15427~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15427~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/PIA15427~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15427~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/PIA15427~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15427~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/PIA15427~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15427~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/PIA15427~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15427~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/PIA15427~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15427/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15427/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "38f9c9e41fdf21150b028ed2e3138ea12ea11dc10c6659652c5435f0135b8dad"
+}

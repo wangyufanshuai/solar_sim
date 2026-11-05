@@ -1,0 +1,38 @@
+{
+  "version": "v592-major-moon-usgs-final-source-visual-analysis-v1",
+  "generatedAt": "2026-08-20T00:00:00Z",
+  "status": "no-acquired-usgs-tiffs-terminal-acquisition-blocked",
+  "sourceAcquisitionReceiptSha256": "d42d2757846dd53abe224c938c7ea9dd5895a5c2156ef462765e60686327a68c",
+  "policy": {
+    "sourceIdentity": "USGS-Astrogeology/NASA-PDS-official-S3",
+    "analysisOnly": true,
+    "noInpainting": true,
+    "noSyntheticCoverageFill": true,
+    "noAutomaticColorization": true,
+    "exactBlackCoverageBlockThreshold": 0.02,
+    "relativeAspectErrorBlockThreshold": 0.005,
+    "visualInspectionRequired": true,
+    "runtimeAssetAdmissionGranted": false,
+    "heroAdmissionGranted": false,
+    "scientificAuthorityGranted": false,
+    "presentationOnly": true
+  },
+  "summary": {
+    "requestedTargetCount": 4,
+    "acquiredTargetCount": 0,
+    "terminalFailureCount": 4,
+    "analyzedTargetCount": 0,
+    "automatedBlockedTargetCount": 0,
+    "pendingVisualInspectionTargetCount": 0
+  },
+  "acquiredTargets": [],
+  "failedTargets": [
+    "io",
+    "europa",
+    "ganymede",
+    "callisto"
+  ],
+  "automatedBlockedTargets": [],
+  "analyses": [],
+  "receiptSha256": "5efd293c46561dea6c7cdfc1c1f1b7c670b4afc2835159b3c6da4a020566b0b3"
+}

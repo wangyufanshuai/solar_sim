@@ -1,0 +1,84 @@
+{
+  "version": "v591-mercury-visual-sources-v1",
+  "metadataProbe": {
+    "catalog": "USGS Astrogeology Astropedia",
+    "query": "target=Mercury&searchBar=DEM",
+    "productTitle": "Mercury MESSENGER Global DEM 665m",
+    "productPage": "https://astrogeology.usgs.gov/search/map/mercury_messenger_global_dem_665m",
+    "publicationDate": "2016-10-21",
+    "geoforms": [
+      "Digital Elevation Model",
+      "Raster Data",
+      "Topographic Map"
+    ],
+    "observationIdentity": "MESSENGER MDIS NAC/WAC global digital elevation model, USGS 665 m v2 product",
+    "automaticReplacementAllowed": false,
+    "redirectResolution": {
+      "status": "metadata-identity-confirmed-no-payload",
+      "receiptPath": "docs/release/v591/metadata-probe-mercury-usgs-dem.json",
+      "receiptSha256": "1db99d85d855fc6ee4d4f8483842d105af64cd464191400743203ea6020a413f",
+      "bucket": "asc-pds-services",
+      "key": "mosaic/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+      "bytes": 530934581,
+      "etag": "310bf08bf1388369d2e31b1379739bf4-64",
+      "lastModified": "2022-11-10T06:02:51.000Z"
+    }
+  },
+  "policy": {
+    "allowedHosts": [
+      "planetarymaps.usgs.gov",
+      "astrogeology.usgs.gov",
+      "asc-pds-services.s3.us-west-2.amazonaws.com"
+    ],
+    "maximumRedirectHops": 3,
+    "maximumSourceBytes": 1610612736,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicPartRenameRequired": true
+  },
+  "albedoReference": {
+    "id": "mercury-albedo-source",
+    "path": "public/vendor/celestial-art-v589/sources/mercury-albedo.jpg",
+    "sourceUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15063/PIA15063.jpg",
+    "sourceSha256": "f633fe2fc51656a9c5198cd34eaaf1fa5e5ae77c05461e012e19f4e14faa9f1f",
+    "sourceBytes": 3091704,
+    "width": 6132,
+    "height": 3066,
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    },
+    "reusePolicy": "v589-readonly-exact-byte-reference-no-copy"
+  },
+  "assets": [
+    {
+      "id": "mercury-height-source",
+      "body": "mercury",
+      "role": "height-source",
+      "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+      "originUrl": "https://planetarymaps.usgs.gov/mosaic/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/mercury/Mercury_Messenger_USGS_DEM_Global_665m_v2.tif",
+      "expectedMediaTypes": [
+        "image/tiff",
+        "image/geotiff",
+        "application/geotiff",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 20000,
+      "minimumHeight": 10000,
+      "maximumBytes": 1610612736,
+      "expectedBytes": 530934581,
+      "expectedEtag": "310bf08bf1388369d2e31b1379739bf4-64",
+      "metadataReceiptSha256": "1db99d85d855fc6ee4d4f8483842d105af64cd464191400743203ea6020a413f",
+      "license": {
+        "id": "USGS-public-domain",
+        "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+      },
+      "observationIdentity": "Mercury MESSENGER USGS DEM Global 665m v2",
+      "observationLimit": "global topography product used for presentation normal, height and roughness derivation; not measured photometry",
+      "presentationOnly": true
+    }
+  ]
+}

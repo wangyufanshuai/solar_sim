@@ -1,0 +1,114 @@
+{
+  "schema": "mainline-a-code-change-receipt-v626",
+  "round": "R66",
+  "generatedAt": "2026-09-21T01:08:56.133Z",
+  "scope": "next-web only; root read-only identity bridge continuation",
+  "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "boundaryBaseline": "af61a2f",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1174,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "testsExcluded": true,
+  "countMethod": "Nonblank noncomment production lines in identity bridge, verifier, replay, panel and integration files; tests, receipts and screenshots excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineAReleaseIdentityBridgeV626.ts",
+      "effectiveLines": 413,
+      "bytes": 24705,
+      "sha256": "cd5409afd4eedca3ee5fc516906fe3a30ff4a88ee1e65f164fc67b53b5d79b32",
+      "role": "typed identity bridge and boundary contract"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 233,
+      "bytes": 18217,
+      "sha256": "1d6aac63b8925f2a24db60bf5584b5058dde7bbd98119c975711d89786c18eca",
+      "role": "read-only bridge receipt builder"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 193,
+      "bytes": 16004,
+      "sha256": "2ee02421ffdbd5ed0531df3bc6990b5ed66f4ade8a2937176160b99576a00702",
+      "role": "raw SHA/package pointer/manifest verifier"
+    },
+    {
+      "path": "app/components/MainlineAReleaseIdentityBridgePanelV626.tsx",
+      "effectiveLines": 135,
+      "bytes": 9002,
+      "sha256": "0ff7d3ea253090f05cbaaf2f351b746cc1ddb79ce949f37778c0d06331fef966",
+      "role": "runtime release identity gate panel"
+    },
+    {
+      "path": "app/lib/mainlineAReleaseIdentityReplayV626.ts",
+      "effectiveLines": 101,
+      "bytes": 5665,
+      "sha256": "ddfafa9b2980af9cc063d20ee553e153bf19935dea28c9ff33ac55ad43b8cd91",
+      "role": "deterministic gate replay ledger"
+    },
+    {
+      "path": "scripts/replay-mainline-a-release-identity-v626.ts",
+      "effectiveLines": 39,
+      "bytes": 2371,
+      "sha256": "1068cd6f14948e2bc0004d7e20033b92890c85ddd9d07e1dd59cbb95ab846a81",
+      "role": "offline replay/check/CSV CLI"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "effectiveLines": 24,
+      "bytes": 31629,
+      "sha256": "7d5110e5e2105d9d857d9f47dd806cda73a73d3d9708b09e7f0807212d06cd0f",
+      "role": "receipt output isolation and latest evidence selection"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "effectiveLines": 25,
+      "bytes": 16285,
+      "sha256": "fac97ff1e6b200f36091428db35948b731e2129c6228b7d90352c8d7ba2acd36",
+      "role": "identity bridge package linkage"
+    },
+    {
+      "path": "app/components/AtlasAppShell.tsx",
+      "effectiveLines": 11,
+      "bytes": 8962,
+      "sha256": "52afb04e28fb2b87b0251d4727aeb3d130d85a387175d5bc0a2f42a55692eace",
+      "role": "runtime identity data markers"
+    }
+  ],
+  "integrationFiles": [
+    "package.json",
+    "app/components/AtlasAppShell.tsx",
+    "scripts/audit-mainline-a-release-alignment-v626.mjs",
+    "scripts/build-mainline-a-release-package-v626.mjs"
+  ],
+  "excluded": [
+    "tests",
+    "generated JSON",
+    "screenshots",
+    "docs",
+    "build logs",
+    "root app source"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "validation": {
+    "identityBridge": "blocked with release identity mapped",
+    "identityVerifier": "blocked by receipt open gates only; default package pointer 20260920-015",
+    "identityReplay": "blocked requiredOpen=2",
+    "package": "blocked",
+    "preservedProductionBuild": "passed",
+    "http": true,
+    "browser": true,
+    "physicalMobile": "not-run",
+    "longRun": "not-run",
+    "alignmentParser": "read-only audit accepts legacy literal \\n suffix without changing source evidence"
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "schema": "mainline-a-r61-component-ledger-progress-v621",
+  "round": 61,
+  "generatedAt": "2026-09-22T02:05:58.970Z",
+  "scope": "Real SIMBAD HTML component hint extraction, source ledger linkage, fail-closed forged response checks and panel status",
+  "status": "verified-progress-blocked-review",
+  "effectiveChangedLines": 134,
+  "minimumRequired": 0,
+  "countMethod": "Measured nonblank, noncomment production additions for component hint parser/validator, replay source ledger mapping, audit checks and panel state; tests, generated data and receipts excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineABetaStellarStructuredCandidateV621.ts",
+      "effectiveLines": 89,
+      "changes": [
+        "SIMBAD source signature gate",
+        "WDS/CCDM component hint parser",
+        "candidate-only hint validation",
+        "entity normalization"
+      ]
+    },
+    {
+      "path": "scripts/replay-mainline-a-beta-stellar-structured-v621.ts",
+      "effectiveLines": 12,
+      "changes": [
+        "componentRefs from captured catalogue links with sha256=null until independently captured"
+      ]
+    },
+    {
+      "path": "scripts/audit-mainline-a-beta-stellar-structured-v621.mjs",
+      "effectiveLines": 27,
+      "changes": [
+        "component hint URL/evidence validation",
+        "hint counts in deterministic candidate ledger"
+      ]
+    },
+    {
+      "path": "scripts/build-mainline-a-beta-stellar-structured-candidate-v621.ts",
+      "effectiveLines": 1,
+      "changes": [
+        "expected query identifier binding"
+      ]
+    },
+    {
+      "path": "app/components/MainlineABetaHeroReviewPanelV611.tsx",
+      "effectiveLines": 5,
+      "changes": [
+        "visible component hint count and source ledger links",
+        "explicit unresolved identity status"
+      ]
+    }
+  ],
+  "testsExcluded": [
+    "app/lib/mainlineABetaStellarStructuredCandidateV621.test.ts",
+    "scripts/audit-mainline-a-beta-stellar-structured-v621.test.mjs",
+    "app/components/MainlineABetaHeroReviewPanelV611.test.tsx"
+  ],
+  "results": {
+    "parserVitest": "14/14 passed",
+    "panelVitest": "25/25 passed",
+    "auditNode": "5/5 passed",
+    "replayCheck": "verified",
+    "candidatePackCheck": "verified",
+    "structuredAudit": "verified",
+    "eslint": "passed",
+    "fullTypecheck": "not-passed-existing-repo-errors; targeted changed files ESLint and tsx checks passed"
+  },
+  "evidence": {
+    "rawArtifactsRecomputed": "4/4",
+    "simbadCandidatesParsed": "4/4",
+    "componentHints": "9 identifier-only WDS/CCDM links across 4 candidates",
+    "componentConfirmed": 0,
+    "componentSourcesHashed": 0,
+    "candidateBoundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    "sourceClosure": "pending",
+    "rights": "pending",
+    "externalSource": "captured SIMBAD HTML only; no synthetic or fixture promotion"
+  },
+  "outputs": {
+    "candidatePack": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "evidenceReport": "docs/release/v607/mainline-a-r61-structured-evidence-report.json",
+    "audit": "docs/release/v607/mainline-a-r61-structured-audit.json"
+  },
+  "notes": [
+    "WDS/CCDM links are identity hints extracted from the captured SIMBAD pages; they do not confirm a physical component.",
+    "componentRefs deliberately carry sha256=null until each catalogue source is independently captured and rights-reviewed.",
+    "V616 snapshot/projection digests and scientific payload remain untouched."
+  ]
+}
+

@@ -1,0 +1,75 @@
+{
+  "schema": "mainline-a-r66-web-code-change-completion-v647",
+  "round": "R66-web-only-continuation",
+  "generatedAt": "2026-10-07T12:30:17.838Z",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "8136bf33ce9a75d1f708b9a67c3f87cbfd8148c9819ce40d004fb668bf57d00d",
+  "buildId": "B3cFqMTv1S0yIvqbkXPXQ",
+  "effectiveCode": {
+    "previousR66LowerBound": 2488,
+    "newProductionToolLines": 597,
+    "newProductionToolFiles": 2,
+    "modifiedProductionLinesThisSupplement": 0,
+    "testLinesExcluded": 266,
+    "cumulativeR66LowerBound": 3085,
+    "minimumRequiredForFormalRound": 1000,
+    "minimumMetByCumulativeR66": true,
+    "method": "nonblank, noncomment source lines in new handwritten production/tool files; tests, receipts, screenshots and generated data excluded"
+  },
+  "files": [
+    {
+      "path": "scripts/verify-mainline-a-web-asset-http-v647.mjs",
+      "role": "production-tool",
+      "effectiveLines": 314,
+      "bytes": 18078,
+      "sha256": "e39959cdc8cc494a3e4e84e3779ae3def8b12c14446db052abf3824c8f6569de"
+    },
+    {
+      "path": "scripts/build-mainline-a-web-candidate-v647.mjs",
+      "role": "production-tool",
+      "effectiveLines": 283,
+      "bytes": 17313,
+      "sha256": "89750d66f69f18a44919473aed8836b9bdd16325e1c4e5ab3122dce66b74f230"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-asset-http-v647.test.mjs",
+      "role": "substantive-negative-and-http-tests-excluded",
+      "effectiveLinesExcluded": 142,
+      "bytes": 8744,
+      "sha256": "65be07ec954a455a022d69eb7ea4a3ff874d75d7a8b7b78d400374e0a91f82bc"
+    },
+    {
+      "path": "scripts/build-mainline-a-web-candidate-v647.test.mjs",
+      "role": "substantive-negative-and-package-tests-excluded",
+      "effectiveLinesExcluded": 124,
+      "bytes": 8166,
+      "sha256": "900ba48704755212fce61c209f12deb430618f9b4bf6e14eab5ded7e27f92765"
+    }
+  ],
+  "changes": [
+    "Bind twelve local nebula image responses and CREDITS.md to canonical records, local SHA-256, content type, final URL and current build identity.",
+    "Reject HTML, redirects, wrong bytes, forged rights status, duplicate image paths and stale source/build evidence.",
+    "Require two independently captured current-source thirty-minute browser observations before creating a web candidate evidence package.",
+    "Pin twelve evidence artifacts plus seven preserved build files; keep public release and science/copyright claims false."
+  ],
+  "validation": {
+    "node": "13/13 passed",
+    "vitest": "35/35 focused passed",
+    "targetedEslint": "passed",
+    "syntax": "passed",
+    "productionBuild": "preserved v647web02 passed; app/config/package source hash unchanged by this tool-only continuation",
+    "http": "12/12 local images and twelve CREDITS entries rehashed; replay verified",
+    "browser": "desktop and mobile viewport independent 30-minute observations captured",
+    "performance": "two current-source observations qualified by offline verifier; not production performance",
+    "externalSource": "V646 source supplement remains historical and blocked"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

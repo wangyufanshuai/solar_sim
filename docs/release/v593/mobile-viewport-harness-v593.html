@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Orbit Atlas v593 mobile viewport harness</title>
+    <style>
+      html,
+      body {
+        width: var(--atlas-viewport-width, 390px);
+        min-width: var(--atlas-viewport-width, 390px);
+        height: var(--atlas-viewport-height, 844px);
+        min-height: var(--atlas-viewport-height, 844px);
+        margin: 0;
+        overflow: hidden;
+        background: #000;
+      }
+
+      iframe {
+        display: block;
+        width: var(--atlas-viewport-width, 390px);
+        height: var(--atlas-viewport-height, 844px);
+        border: 0;
+        background: #000;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe
+      id="atlas-mobile-harness-v593"
+      title="Orbit Atlas v593 mobile viewport"
+      src="http://127.0.0.1:3013/local-shadow-v593?frame=saturn-cinematic-front"
+      width="390"
+      height="844"
+    ></iframe>
+    <script>
+      const parameters = new URLSearchParams(window.location.search);
+      const width = Math.min(1440, Math.max(390, Number(parameters.get("width")) || 390));
+      const height = Math.min(900, Math.max(720, Number(parameters.get("height")) || 844));
+      const allowedFrames = new Set([
+        "saturn-cinematic-front",
+        "saturn-cinematic-backlight",
+        "saturn-cinematic-ring-shadow",
+      ]);
+      const requestedFrame = parameters.get("frame");
+      const frame = allowedFrames.has(requestedFrame) ? requestedFrame : "saturn-cinematic-front";
+      const lane = parameters.get("art") === "baseline" ? "baseline" : "signature";
+      const root = document.documentElement;
+      root.style.setProperty("--atlas-viewport-width", `${width}px`);
+      root.style.setProperty("--atlas-viewport-height", `${height}px`);
+      const iframe = document.getElementById("atlas-mobile-harness-v593");
+      iframe.width = String(width);
+      iframe.height = String(height);
+      const route = new URL("http://127.0.0.1:3013/local-shadow-v593");
+      route.searchParams.set("frame", frame);
+      if (lane === "baseline") route.searchParams.set("art", "baseline");
+      iframe.src = route.toString();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "round": 43,
+  "date": "2026-09-13",
+  "title": "Beta metadata literal-type build repair",
+  "status": "verified-static-production-build",
+  "scope": {
+    "files": [
+      "app/data/mainlineABetaHeroRosterV607.ts",
+      "app/data/mainlineABetaHeroEvidenceIntakeV607.ts",
+      "app/data/mainlineAMetadataV607.ts"
+    ],
+    "artChange": "Added explicit map return types so status, evidence gate, and constellation kind literals remain assignable in the filtered production build."
+  },
+  "validation": {
+    "build": "build:atlas:lite:current completed successfully after the type repair",
+    "typeErrorsBeforeRepair": 3,
+    "typeErrorsAfterRepair": 0,
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The successful build validates compilation and packaging only; it does not complete browser performance or Beta evidence admission.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

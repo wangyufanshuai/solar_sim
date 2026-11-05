@@ -1,0 +1,78 @@
+{
+  "schema": "mainline-a-performance-evidence-v637",
+  "recordedAt": "2026-09-27T11:26:31.983Z",
+  "identity": {
+    "runtimeBuildId": "mainline-a-1a7efa4d339d80a7",
+    "buildId": "GYRGfmHS7ipvhzqC7nOUU",
+    "sourceSha256": "1a7efa4d339d80a7727f079b306fa46432fbf365eb6e1d43d33327814a9c5ac3",
+    "sourceInputs": 2365,
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "evidenceClass": "performance",
+  "status": "two-local-short-rAF-observations",
+  "raw": {
+    "path": "tmp/mainline-a-b1-performance-runs-066.json",
+    "bytes": 3510,
+    "sha256": "9fc74caae34160c7ea71dfd58c6f99d0367a52d76540f4d9efe25b07363531ca"
+  },
+  "runs": [
+    {
+      "runId": "r65-desktop-001-0edc2f1f",
+      "device": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "dpr": 1
+      },
+      "durationMs": 4003.9749999996275,
+      "samples": 717,
+      "rafP50Ms": 5.554999999993015,
+      "rafP95Ms": 5.669999999983702,
+      "heapUsedBytes": 149442894,
+      "resourceStatus": "baseline",
+      "registryBefore": "8a5f8b97",
+      "registryAfter": "8a5f8b97",
+      "documentVisibility": "visible"
+    },
+    {
+      "runId": "r65-mobile-001-482f6afc",
+      "device": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "dpr": 1
+      },
+      "durationMs": 4000.7550000008196,
+      "samples": 592,
+      "rafP50Ms": 6.545000000012806,
+      "rafP95Ms": 7.242249999992782,
+      "heapUsedBytes": 149776805,
+      "resourceStatus": "baseline",
+      "registryBefore": "97211d9c",
+      "registryAfter": "97211d9c",
+      "documentVisibility": "visible"
+    }
+  ],
+  "limitations": [
+    "requestAnimationFrame callback intervals are not renderer or GPU frame times",
+    "Desktop sample included docking and a roster overlay",
+    "Mobile is a viewport override on the same desktop browser",
+    "Registry equality is not proof of physical GPU release",
+    "4-second observations do not satisfy 30-minute or long-run requirements"
+  ],
+  "productionPerformanceClaim": false,
+  "realUserPerformance": false,
+  "physicalMobile": "not-run",
+  "gpuRelease": "not-observed",
+  "longRun": "not-run",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "releaseApproved": false
+  }
+}

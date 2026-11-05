@@ -1,0 +1,49 @@
+{
+  "version": "v592-major-moon-usgs-visual-sources-v1",
+  "policy": {
+    "allowedHosts": ["planetarymaps.usgs.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicWrite": ".part-to-final",
+    "maximumBytesPerAsset": 268435456,
+    "presentationOnly": true,
+    "scientificAuthorityGranted": false,
+    "visualAssetAdmissionGrantedByAcquisition": false
+  },
+  "sources": [
+    {
+      "target": "io",
+      "id": "io-usgs-color-merged-global-mosaic-1km",
+      "metadataProbeId": "io-color-merged-global-mosaic-1km",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+      "expectedProjection": "Simple Cylindrical",
+      "expectedBands": ["Red 650nm", "Green 510nm", "Blue 475nm"],
+      "expectedResolutionMetersPerPixel": 1000,
+      "coverageDisclosure": "official USGS product; color data have no coverage within approximately five degrees of both poles and the merged mosaic fills poles by documented interpolation",
+      "licenseBasis": "USGS Astrogeology / NASA-PDS derived public-domain planetary mosaic; item provenance retained"
+    },
+    {
+      "target": "ganymede",
+      "id": "ganymede-usgs-color-global-mosaic-1435m",
+      "metadataProbeId": "ganymede-color-global-mosaic-1-4km",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+      "expectedProjection": "Simple Cylindrical",
+      "expectedBands": ["Red 650nm", "Green 510nm", "Blue 475nm"],
+      "expectedResolutionMetersPerPixel": 1435.72146209,
+      "coverageDisclosure": "official USGS product; missing digital color at the poles is completed with observed monochrome map coverage and disclosed in source metadata",
+      "licenseBasis": "USGS Astrogeology / NASA-PDS derived public-domain planetary mosaic; item provenance retained"
+    },
+    {
+      "target": "callisto",
+      "id": "callisto-usgs-global-mosaic-1km",
+      "metadataProbeId": "callisto-galileo-voyager-global-mosaic-1km",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+      "expectedProjection": "Simple Cylindrical",
+      "expectedBands": ["Grayscale"],
+      "expectedResolutionMetersPerPixel": 1000.0051966711,
+      "coverageDisclosure": "official USGS global mosaic using Galileo SSI and Voyager 1/2 observations with documented low-resolution gap fill",
+      "licenseBasis": "USGS Astrogeology / NASA-PDS derived public-domain planetary mosaic; item provenance retained"
+    }
+  ]
+}

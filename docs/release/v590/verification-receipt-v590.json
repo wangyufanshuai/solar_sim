@@ -1,0 +1,2717 @@
+{
+  "version": "v590-verification-receipt-v1",
+  "generatedAt": "2026-08-10T00:00:00Z",
+  "status": "sealed-with-preexisting-freeze-blocker",
+  "manifestSha256": "c090d15cfb853de04865f5fe98faf8534a0400dddba2c9f866f710fac6038355",
+  "dependencyChecks": [
+    {
+      "candidate": "v589",
+      "path": "public/data/celestial-art-v589/manifest.json",
+      "sha256": "a1e642fba6fa02bf9c0256d66d1471c85581e59468e4338fb3a73ff63c5e4492",
+      "mode": "read-only",
+      "actualSha256": "a1e642fba6fa02bf9c0256d66d1471c85581e59468e4338fb3a73ff63c5e4492",
+      "status": "matched"
+    },
+    {
+      "candidate": "v589",
+      "path": "docs/release/v589/freeze-after-v589.json",
+      "sha256": "e1d6c4474b7a55fe3147fd41ab200d69b192d148960365d92c193279d008c77a",
+      "mode": "read-only",
+      "actualSha256": "e1d6c4474b7a55fe3147fd41ab200d69b192d148960365d92c193279d008c77a",
+      "status": "matched"
+    },
+    {
+      "candidate": "v589",
+      "path": "docs/release/v589/source-manifest-v589.json",
+      "sha256": "dedcda155a17a1f7eaf22674f75737a3ba6728b68207591107288960dc2f2200",
+      "mode": "read-only",
+      "actualSha256": "dedcda155a17a1f7eaf22674f75737a3ba6728b68207591107288960dc2f2200",
+      "status": "matched"
+    },
+    {
+      "candidate": "v588",
+      "path": "docs/release/v588/freeze-after-v588.json",
+      "sha256": "04bb6e5941cd1da9be34e8fa7cae292f05b42b4af1da59ca0ec8ea163cec2a4c",
+      "mode": "read-only",
+      "actualSha256": "04bb6e5941cd1da9be34e8fa7cae292f05b42b4af1da59ca0ec8ea163cec2a4c",
+      "status": "matched"
+    },
+    {
+      "candidate": "v588",
+      "path": "public/data/visual-restoration-v588/manifest.json",
+      "sha256": "ab60cee06d7b7b6eebb1de88e32a21bd17c2334eb4b39d0301134e64310808a5",
+      "mode": "read-only",
+      "actualSha256": "ab60cee06d7b7b6eebb1de88e32a21bd17c2334eb4b39d0301134e64310808a5",
+      "status": "matched"
+    },
+    {
+      "candidate": "v588",
+      "path": "public/textures/candidate-v588/sky/milky-way-desktop.jpg",
+      "sha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "mode": "read-only",
+      "actualSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "status": "matched"
+    },
+    {
+      "candidate": "v590",
+      "path": "public/data/celestial-rendering-v590/full-asset-overlay.json",
+      "sha256": "d67b8d82c0f13704a13d221947fbd4a80f3ccf2d6bcfbc409a119e834e31a86c",
+      "mode": "derived-additive",
+      "actualSha256": "d67b8d82c0f13704a13d221947fbd4a80f3ccf2d6bcfbc409a119e834e31a86c",
+      "status": "matched"
+    },
+    {
+      "candidate": "v590",
+      "path": "public/data/celestial-rendering-v590/basis-runtime-receipt.json",
+      "sha256": "e8bde30b52530908db4a1e6fd19c2d387ccba6eb8e78aaad8081c0dc0c439d09",
+      "mode": "derived-additive",
+      "actualSha256": "e8bde30b52530908db4a1e6fd19c2d387ccba6eb8e78aaad8081c0dc0c439d09",
+      "status": "matched"
+    },
+    {
+      "candidate": "v590",
+      "path": "public/basis-v590/basis_transcoder.js",
+      "sha256": "ffe9afd5f33623d11cc04ffe1cc2fa6a96769c95948256c2bc9a55d25f5d2fdf",
+      "mode": "derived-additive",
+      "actualSha256": "ffe9afd5f33623d11cc04ffe1cc2fa6a96769c95948256c2bc9a55d25f5d2fdf",
+      "status": "matched"
+    },
+    {
+      "candidate": "v590",
+      "path": "public/basis-v590/basis_transcoder.wasm",
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+      "mode": "derived-additive",
+      "actualSha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+      "status": "matched"
+    },
+    {
+      "candidate": "runtime-codecs",
+      "path": "public/basis/basis_transcoder.js",
+      "sha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1",
+      "mode": "read-only",
+      "actualSha256": "8478b5b6d6b74e7d3082b89f6417321d8d1dc0307f2b30d4484bb11b441696a1",
+      "status": "matched"
+    },
+    {
+      "candidate": "runtime-codecs",
+      "path": "public/basis/basis_transcoder.wasm",
+      "sha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+      "mode": "read-only",
+      "actualSha256": "6cf17dc889352c42e9acf8897107978d127005fe3386c36a0e3845e27967630a",
+      "status": "matched"
+    },
+    {
+      "candidate": "v9",
+      "path": "public/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "sha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "mode": "read-only",
+      "actualSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "status": "matched"
+    },
+    {
+      "candidate": "v9",
+      "path": "public/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "sha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "mode": "read-only",
+      "actualSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "status": "matched"
+    },
+    {
+      "candidate": "v9",
+      "path": "public/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "sha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "mode": "read-only",
+      "actualSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "status": "matched"
+    }
+  ],
+  "assetChecks": [
+    {
+      "assetId": "milky-way-v588-readonly",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/sky/milky-way-desktop.ktx2",
+      "status": "matched",
+      "bytes": 4747337,
+      "sha256": "f647d4b67c3d6a235a05a258f58b7acb47d3952d50f6a6048b352806b14eb258",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v588-readonly",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v588/sky/milky-way-desktop.jpg",
+      "status": "matched",
+      "bytes": 14122321,
+      "sha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v588-readonly",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v588/sky/milky-way-mobile.jpg",
+      "status": "matched",
+      "bytes": 2594446,
+      "sha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "declaredDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "gaia-lite-46000",
+      "variant": "liteDesktop",
+      "url": "/data/celestial-art-v589/gaia-lite-46000-v589.bin",
+      "status": "matched",
+      "bytes": 1104000,
+      "sha256": "a312297456bac7190c7a347d281cea12681ad2bbc6c2458434fb882cf61aa802",
+      "declaredDimensions": {
+        "width": 46000,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "gaia-lite-46000",
+      "variant": "liteMobile",
+      "url": "/data/celestial-art-v589/gaia-lite-46000-v589.bin",
+      "status": "matched",
+      "bytes": 1104000,
+      "sha256": "a312297456bac7190c7a347d281cea12681ad2bbc6c2458434fb882cf61aa802",
+      "declaredDimensions": {
+        "width": 46000,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "gaia-full-10m-range-manifest",
+      "variant": "fullDesktop",
+      "url": "/data/gaia-dr3-presentation-10000000-v9/manifest.json",
+      "status": "matched",
+      "bytes": 3459,
+      "sha256": "c5b8ed92ae72e404ab8c1a9a6be71a214869d8a2de6ee948dfcc276d7199b371",
+      "declaredDimensions": {
+        "width": 1,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "constellation-gaia-bindings",
+      "variant": "liteDesktop",
+      "url": "/data/celestial-art-v589/constellation-gaia-bindings-v589.json",
+      "status": "matched",
+      "bytes": 145613,
+      "sha256": "6c5aefed75d78f566fa598a2fe15bad5482af41f7a600d055c1554544012f5f5",
+      "declaredDimensions": {
+        "width": 484,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "bennu-model",
+      "variant": "fullDesktop",
+      "url": "/models/candidate-v589/bennu/bennu-lod0.glb",
+      "status": "matched",
+      "bytes": 875748,
+      "sha256": "b18127153437a6ea8ed9c29fe0af7341bb464efe08870f12b63778a0763f2083",
+      "declaredDimensions": {
+        "width": 1,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "bennu-model",
+      "variant": "fullMobile",
+      "url": "/models/candidate-v589/bennu/bennu-lod1.glb",
+      "status": "matched",
+      "bytes": 230012,
+      "sha256": "b9991bd5bac057a79d8f860b70d9120444261a4f454f859635b2b98c101c1ebb",
+      "declaredDimensions": {
+        "width": 1,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "bennu-model",
+      "variant": "liteDesktop",
+      "url": "/models/candidate-v589/bennu/bennu-lod1.glb",
+      "status": "matched",
+      "bytes": 230012,
+      "sha256": "b9991bd5bac057a79d8f860b70d9120444261a4f454f859635b2b98c101c1ebb",
+      "declaredDimensions": {
+        "width": 1,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "bennu-model",
+      "variant": "liteMobile",
+      "url": "/models/candidate-v589/bennu/bennu-lod2.glb",
+      "status": "matched",
+      "bytes": 48904,
+      "sha256": "5b494905c23d3fd905025679035b22597b7f4442c6bcc7bc7ad4f19cdae2714c",
+      "declaredDimensions": {
+        "width": 1,
+        "height": 1
+      },
+      "actualDimensions": null,
+      "dimensionStatus": "not-applicable"
+    },
+    {
+      "assetId": "earth-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-albedo.webp",
+      "status": "matched",
+      "bytes": 73120,
+      "sha256": "dd51f5f813714055fc4d18b96f6c69815634c14a85348e1e56d7a9ef5cafb981",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-albedo.webp",
+      "status": "matched",
+      "bytes": 22362,
+      "sha256": "c62ecd1d3397d30ba7b12134280162d6744f50c485b53b8db00797ace61e3e65",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-albedo.ktx2",
+      "status": "matched",
+      "bytes": 2594380,
+      "sha256": "7eca85286ddb871a5f3be9ad2ac6a74dbdab1f2b5b8ff851255c2842f9978777",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-albedo",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-albedo.webp",
+      "status": "matched",
+      "bytes": 350408,
+      "sha256": "028a521b35db14e7cab4930f239c6af997cbb087733084c2faf9f6e521a5b5a6",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-roughness",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-roughness.webp",
+      "status": "matched",
+      "bytes": 129054,
+      "sha256": "88a486b88c6bf73831ad6fccca874543f83d9fb89e43b35d0a229cf49c1a32b8",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-roughness",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-roughness.webp",
+      "status": "matched",
+      "bytes": 37078,
+      "sha256": "69068dd8b5ddf1ec23e02e5f1509211324396ec25b63d9bf51edadc3ea003708",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-roughness",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-roughness.ktx2",
+      "status": "matched",
+      "bytes": 10297415,
+      "sha256": "08bc2afa115fe6727321d1c649b1ce9b335cbec2a354fd40f473fb0072e7e2b5",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-roughness",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-roughness.webp",
+      "status": "matched",
+      "bytes": 464478,
+      "sha256": "aee87ce17259fb2dbc7c2124007a6bf6c3cea0765610b2d0cca7bdb0780a34ae",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-clouds",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-clouds.webp",
+      "status": "matched",
+      "bytes": 171606,
+      "sha256": "7ac35cecc74d5f1b12d8402b3440314a967c1c8291c35eb61e6a1db0dc9c6598",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-clouds",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-clouds.webp",
+      "status": "matched",
+      "bytes": 47238,
+      "sha256": "37ea6d6714050f5f67929bc83d577d3c764a52a1ce248d6c669b190993cc344c",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-clouds",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-clouds.ktx2",
+      "status": "matched",
+      "bytes": 5445903,
+      "sha256": "ddc91c0c17fa911b4568156a09000390f02176e30994c47c506e518274977ec0",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-clouds",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-clouds.webp",
+      "status": "matched",
+      "bytes": 828380,
+      "sha256": "adc68e4563863cad90dd49e16d26117926125ea9684af9866e6cafed0d05b8b0",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-cloud-alpha",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-cloud-alpha.webp",
+      "status": "matched",
+      "bytes": 350080,
+      "sha256": "d37a94be16b5d85586a18184f0ff2767b7522942b499ac8a1cf2ae0e4a6c909e",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-cloud-alpha",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-cloud-alpha.webp",
+      "status": "matched",
+      "bytes": 103024,
+      "sha256": "fde0b2ac99bd7bda113a0486ebd732623c93725e2f1a7482aeb5da025889c041",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-cloud-alpha",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-cloud-alpha.ktx2",
+      "status": "matched",
+      "bytes": 24236844,
+      "sha256": "08b0980926edb08f60fba48654c6a5f2c5dc614084918e8b8045ee53410f676a",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-cloud-alpha",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-cloud-alpha.webp",
+      "status": "matched",
+      "bytes": 1316200,
+      "sha256": "66e4c5a583c2c41a9d9e4f42f4c3fd32b9ad5e21480b33a29f08e9fa5db22029",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-night.webp",
+      "status": "matched",
+      "bytes": 40430,
+      "sha256": "c9b31057c19df6399fd38c7023a4e5c17068db22196796ad736a9d0fc08c5457",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-night.webp",
+      "status": "matched",
+      "bytes": 8658,
+      "sha256": "400580552b8e733438555d20373016c420f7039c28434527c99b4e29927c025d",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-night.ktx2",
+      "status": "matched",
+      "bytes": 1348019,
+      "sha256": "d8e93c08fa6437acd79a58d5bc55ec10a1b49eb5f4f89d929739a50a1366c3e9",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-night.webp",
+      "status": "matched",
+      "bytes": 221210,
+      "sha256": "dededa17c18fc8a543009bd80fc4ac5873f38d5854960bcee9cc951de5ff1ee4",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night-mask",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-night-mask.webp",
+      "status": "matched",
+      "bytes": 97170,
+      "sha256": "28d93c8477ab53d43031d57b791db4bea720475f68133836c9ee7dfd0b4c2883",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night-mask",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-night-mask.webp",
+      "status": "matched",
+      "bytes": 29166,
+      "sha256": "95638abfcc7b3759ed5e7cb8675eedfd8f014855af4dc3578954672892ba2c95",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night-mask",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/earth-night-mask.ktx2",
+      "status": "matched",
+      "bytes": 5978777,
+      "sha256": "390868ff5a2d5e6db9884086c1b4fa8e0664044627c13b3b120cb58e84d01dec",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-night-mask",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/earth-night-mask.webp",
+      "status": "matched",
+      "bytes": 343398,
+      "sha256": "66eeb51fd9c99b826c8c5dcc5c8693991466b97bdbf7c96b92e1ed08789059ca",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/mars-albedo.webp",
+      "status": "matched",
+      "bytes": 129324,
+      "sha256": "48d4e45989f793ebfce142377f37e516ba6912f4b5689556a711b9e3f1641a30",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/mars-albedo.webp",
+      "status": "matched",
+      "bytes": 33848,
+      "sha256": "ff6142765359cddcf524da7ca9624ae0fe8b84852fba0a64f5070742d1f1c8d8",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/mars-albedo.ktx2",
+      "status": "matched",
+      "bytes": 5719476,
+      "sha256": "a6e64c0ce12e18ffe9f08bc48578db2ed302c36fb44283d264d5b1b3d3e5bfc1",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-albedo",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/mars-albedo.webp",
+      "status": "matched",
+      "bytes": 691916,
+      "sha256": "d6c72b2a2fff9b1a22696ab786e0a7ccc9ad7d3f2054422165e2e4d4bf4ffdd3",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-roughness",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/mars-roughness.webp",
+      "status": "matched",
+      "bytes": 272076,
+      "sha256": "e72d016f1dfa4c39e6da7c4a2f7d714cc8ddbe5e14a3cbe9cc9affd00ff5e621",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-roughness",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/mars-roughness.webp",
+      "status": "matched",
+      "bytes": 71682,
+      "sha256": "65bed4eab77d68fbb80ecd688637a3125192ea0fbbe124d94b61cca1214fff98",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-roughness",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/mars-roughness.ktx2",
+      "status": "matched",
+      "bytes": 28214077,
+      "sha256": "ee008ca125af8f68bde323135c6b9e9d8e6589f9554448e460ce57fc32d13568",
+      "declaredDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "actualDimensions": {
+        "width": 8192,
+        "height": 4096
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mars-roughness",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/mars-roughness.webp",
+      "status": "matched",
+      "bytes": 1026334,
+      "sha256": "db12655a8850f5364edc8da32699c1364bc2190f3e06c5f7c138c1ead77add11",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/jupiter-albedo.webp",
+      "status": "matched",
+      "bytes": 92706,
+      "sha256": "5cdf09312ff1b3ec3c257bc6be0d9b5113f38ca0f81dfbadc9f81918100f6508",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/jupiter-albedo.webp",
+      "status": "matched",
+      "bytes": 24286,
+      "sha256": "93a20254451ec534bc43ebb0ae16076180e6998c27ca50f34a7aedf3e8fcd93c",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/jupiter-albedo.ktx2",
+      "status": "matched",
+      "bytes": 1434084,
+      "sha256": "e83daffd7831f31254f2a87dfed8df0a9dcb60dabe574cdc7c3f9b86b260935d",
+      "declaredDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-albedo",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/jupiter-albedo.webp",
+      "status": "matched",
+      "bytes": 501064,
+      "sha256": "5caa627aa6865c4d82bce9b0939ccf06d397c5778ba4b870a442ab3dbeeba9fd",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-band-mask",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/jupiter-band-mask.webp",
+      "status": "matched",
+      "bytes": 341396,
+      "sha256": "629adfcca9b1e409a1771ce2293f9fdaca6e419dcda44663e7e523fa92a08361",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-band-mask",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/jupiter-band-mask.webp",
+      "status": "matched",
+      "bytes": 89678,
+      "sha256": "a1dee21249618d3f08c3c4d15f84bf286878eb6f841caf02599020b7b9e61a3d",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-band-mask",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/jupiter-band-mask.ktx2",
+      "status": "matched",
+      "bytes": 2213625,
+      "sha256": "64aed92b7792c1904aa6307128f1dd85e0acd4eedf449af5d6ec6a9bf1198d65",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-band-mask",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/jupiter-band-mask.webp",
+      "status": "matched",
+      "bytes": 1240028,
+      "sha256": "1ef32dd3842c28fd20f18ccca8eafa99a4212c4e479a9f9653d5de4dd82af6f3",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-roughness",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/jupiter-roughness.webp",
+      "status": "matched",
+      "bytes": 287670,
+      "sha256": "fd92ee0ddfeac5ebd62bfd3f1748f7d3728d4e4af1726951e8dcbc67ade3a145",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-roughness",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/jupiter-roughness.webp",
+      "status": "matched",
+      "bytes": 76076,
+      "sha256": "190ce81e78bdfe550d4919ed3b87ff95afb9b6723300d1030ec382e6f2608680",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "jupiter-roughness",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/jupiter-roughness.ktx2",
+      "status": "matched",
+      "bytes": 555617,
+      "sha256": "041d9c3f06ed06a9088f373ca7cfae289764c721dddf214638d1e41797421a2a",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/saturn-albedo.webp",
+      "status": "matched",
+      "bytes": 27734,
+      "sha256": "e60bffcf5b53ea2c527cc8110b624a193788f0bcc326b58e5c215c669804051c",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/saturn-albedo.webp",
+      "status": "matched",
+      "bytes": 7104,
+      "sha256": "d7aa2f48aa08078202dcfe987b6f44b56c41cb9cb156d8410643473091f4b49b",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/saturn-albedo.ktx2",
+      "status": "matched",
+      "bytes": 605613,
+      "sha256": "866cc878ec35500cfea382b56cc6d507582a686951b68ceb32c0a3e6131a13ea",
+      "declaredDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-albedo",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/saturn-albedo.webp",
+      "status": "matched",
+      "bytes": 189400,
+      "sha256": "368ee391db9438453f8bcbbc7495cc15dbe9163c414de38ab13bee2310c12881",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-band-mask",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/saturn-band-mask.webp",
+      "status": "matched",
+      "bytes": 312022,
+      "sha256": "f55707ad5a18b0816d1ca63a001220bb5316e29a355f552722f905b769153f6c",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-band-mask",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/saturn-band-mask.webp",
+      "status": "matched",
+      "bytes": 78428,
+      "sha256": "4eae198af0a48a10f5cc837f2ff06a99738362cf8e28b7edc3ae607182150c75",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-band-mask",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/saturn-band-mask.ktx2",
+      "status": "matched",
+      "bytes": 2107077,
+      "sha256": "2d4dcf5be977b1f10a73e9f97fba564a1e4588c4b24af8cbad9bcfd7f5b94c8c",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-band-mask",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/saturn-band-mask.webp",
+      "status": "matched",
+      "bytes": 1245568,
+      "sha256": "39d65947f5f7cec2e2c9684b8b78a1467a946d15886eb257ee08a566e9b16411",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-color",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/saturn-ring-color.webp",
+      "status": "matched",
+      "bytes": 42078,
+      "sha256": "7c3b0860ab315d0a14445675ee4e1cadeb77e9c8a0a90cb3352694f3d0447f68",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-color",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/saturn-ring-color.webp",
+      "status": "matched",
+      "bytes": 12216,
+      "sha256": "7658ba0a4a126a9c0d600add402d5f3de60bc284ec2f0f270ace8b21a6fccbe3",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-color",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/saturn-ring-color.ktx2",
+      "status": "matched",
+      "bytes": 223764,
+      "sha256": "dcd035ee51c8bfbb7067e6f263ef9f4649901ce23145e084e6567db297cbc8d4",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-color",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/saturn-ring-color.webp",
+      "status": "matched",
+      "bytes": 170486,
+      "sha256": "84e1bd502764d9d2c645b74602ef07a25843a271721a3cd16872fbeda52834bd",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-alpha",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/saturn-ring-alpha.webp",
+      "status": "matched",
+      "bytes": 181104,
+      "sha256": "82b6c5c7951a2862621dd89574324ed5bd5cc335b3b3c697f85d7d39a081d33e",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-alpha",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/saturn-ring-alpha.webp",
+      "status": "matched",
+      "bytes": 60832,
+      "sha256": "4571e60aaef1074f5851f824f968dab8ce75f96e93c8c2326e95e7553c2fff8e",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-alpha",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v588/ktx2/saturn-ring-alpha.ktx2",
+      "status": "matched",
+      "bytes": 1539581,
+      "sha256": "6d561f87ce69390e0cd0696cc7ec7e5771b379169dcbffabadac930d57d2b95e",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-ring-alpha",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v588/fallback/desktop/saturn-ring-alpha.webp",
+      "status": "matched",
+      "bytes": 654028,
+      "sha256": "7d5986aa916f66923179873320e04201284ec6a0e9e41dd7a676b58a656268de",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-roughness",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/saturn-roughness.webp",
+      "status": "matched",
+      "bytes": 157086,
+      "sha256": "5d0e55dc9181d091a80bac081fb551967206d57a7053c2726ed02c0de487fdb2",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-roughness",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/saturn-roughness.webp",
+      "status": "matched",
+      "bytes": 41132,
+      "sha256": "16677ea24c4c3f3b7b8f484a71e687e72a6d77a736c7aa2075f0d505cfdff4cd",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "saturn-roughness",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/saturn-roughness.ktx2",
+      "status": "matched",
+      "bytes": 413371,
+      "sha256": "a956900a55e26a54b5f4ea1ff788e5692903f4bfdb4806685af98cc34e699b3f",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "sun-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/sun-albedo.webp",
+      "status": "matched",
+      "bytes": 152162,
+      "sha256": "f0c760d5ff92915f5a52c6c9fd72eb051b53271cc07721e1596354420a950f3a",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 992
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 992
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "sun-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/sun-albedo.webp",
+      "status": "matched",
+      "bytes": 50986,
+      "sha256": "4ebe7c11f497663df31c1072e86efcdf0744b136846e0b516c279eb5dd9d4b48",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 496
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 496
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "sun-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/sun-albedo.ktx2",
+      "status": "matched",
+      "bytes": 169020,
+      "sha256": "d053303cc339ca3fb77b4c43322344adb292d69e121a782d0003635459fe5c21",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 992
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 992
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mercury-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/mercury-albedo.webp",
+      "status": "matched",
+      "bytes": 110974,
+      "sha256": "347820f016600efefeb962c5dfc9f6aa0eae394c69620747dfbb54eef2899ca9",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mercury-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/mercury-albedo.webp",
+      "status": "matched",
+      "bytes": 24932,
+      "sha256": "fec04a7d9972fd76c7511d694248dcf72064a4595539e4cc43cd98810822e698",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "mercury-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/mercury-albedo.ktx2",
+      "status": "matched",
+      "bytes": 95853,
+      "sha256": "fbe35ec7904c8678483a91634d2232beef34281b3be2ad724b27a5448ae546cd",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/moon-albedo.webp",
+      "status": "matched",
+      "bytes": 109172,
+      "sha256": "132e90444273fc7d8555e9b8f0c5571779d69adaef09ebaf10952877514297f3",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/moon-albedo.webp",
+      "status": "matched",
+      "bytes": 27950,
+      "sha256": "75561c4830c78a3d69bccae8a7d01f51a00f77cb70d9110f3e13dbcc49dbe687",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/moon-albedo.ktx2",
+      "status": "matched",
+      "bytes": 100185,
+      "sha256": "c3faab98e3c2b3802357e05fef692ddb8b59e635ab3d1c3f6b98cf624215e213",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "ceres-albedo",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/ceres-albedo.webp",
+      "status": "matched",
+      "bytes": 18664,
+      "sha256": "ed727364d8b531c90d1ea5176874fac0bbc4b06375465efbe216a18cd616d70c",
+      "declaredDimensions": {
+        "width": 559,
+        "height": 558
+      },
+      "actualDimensions": {
+        "width": 559,
+        "height": 558
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "ceres-albedo",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/ceres-albedo.webp",
+      "status": "matched",
+      "bytes": 17494,
+      "sha256": "e668f6be99463b4e471a80a89df5fa288fba562c4339e57bec55d1790c464795",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 511
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 511
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "ceres-albedo",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/ceres-albedo.ktx2",
+      "status": "matched",
+      "bytes": 44150,
+      "sha256": "537a47352062f30225188d2b5cf5f8d2dcc5fa6044387578bf2847f743088979",
+      "declaredDimensions": {
+        "width": 559,
+        "height": 558
+      },
+      "actualDimensions": {
+        "width": 559,
+        "height": 558
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-cc0",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/regolith-cc0.webp",
+      "status": "matched",
+      "bytes": 426302,
+      "sha256": "d991386da503c9b99179d51d3df8a0834b9526bad848cd3e800bb3a5b34b795e",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-cc0",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/regolith-cc0.webp",
+      "status": "matched",
+      "bytes": 111460,
+      "sha256": "24cca840d8b37dca9839899c0a910d8fc77e87dd4f2162d3e2aed98499ff3f8a",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-cc0",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/regolith-cc0.ktx2",
+      "status": "matched",
+      "bytes": 209749,
+      "sha256": "ece92b6d2ed956926a9eb2c34fcdcad59c6e0b41162dc5c3ddc041769311c252",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-normal-cc0",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/regolith-normal-cc0.webp",
+      "status": "matched",
+      "bytes": 1510222,
+      "sha256": "7e90c6a956bb9e72688685ab4ae1c66afbb65204fb476368aa9f0e3751f0f564",
+      "declaredDimensions": {
+        "width": 992,
+        "height": 992
+      },
+      "actualDimensions": {
+        "width": 992,
+        "height": 992
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-normal-cc0",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/regolith-normal-cc0.webp",
+      "status": "matched",
+      "bytes": 413766,
+      "sha256": "399436f4923239c05e0a18ac89066b9d892cfd84a8ad7155c4eebc1df2b5e220",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-normal-cc0",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/regolith-normal-cc0.ktx2",
+      "status": "matched",
+      "bytes": 1264073,
+      "sha256": "2ebcce9532e67be43d3bc136352267268566cf47721605ea3b5605dc22bfaca4",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-roughness-cc0",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/regolith-roughness-cc0.webp",
+      "status": "matched",
+      "bytes": 577232,
+      "sha256": "d90ad2f36d2673197ef4fa48cd7971f20cd76bb9337860212bb953117e6f4232",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-roughness-cc0",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/regolith-roughness-cc0.webp",
+      "status": "matched",
+      "bytes": 147464,
+      "sha256": "ddfd6acf7f47827535c22eb0707f6833b5bc62c3409ee717ab35963ab758718c",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "regolith-roughness-cc0",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/regolith-roughness-cc0.ktx2",
+      "status": "matched",
+      "bytes": 984015,
+      "sha256": "3cc1ac2f3a798186411aeaec16e793b3b989aab31aad463ae7bdcabb278ba8f9",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-normal",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/moon-normal.webp",
+      "status": "matched",
+      "bytes": 122752,
+      "sha256": "ef0a272d67111c41e73f6ae4b5270cbefe3caf0d117cf5565fbd3066e7957c61",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-normal",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/moon-normal.webp",
+      "status": "matched",
+      "bytes": 115900,
+      "sha256": "cf3df0123ee52a7f793e23f82d00ca2b824b9720931ccdf397c812b197722b2e",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-normal",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/moon-normal.ktx2",
+      "status": "matched",
+      "bytes": 247213,
+      "sha256": "7300f33818fdfd0578822ea6370431bc692a4e432f749a967358188c5bb3b496",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-roughness",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/moon-roughness.webp",
+      "status": "matched",
+      "bytes": 70844,
+      "sha256": "d21d3c680f889fd723e8f25761451a54efa1f5ea5d506ef2e9846b9777587c57",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-roughness",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/moon-roughness.webp",
+      "status": "matched",
+      "bytes": 33494,
+      "sha256": "2f553a0482954f9175111de6874818dc6d0a358a0c33e95ed2d83551b7eaa7cc",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "moon-roughness",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v589/lite/ktx2/moon-roughness.ktx2",
+      "status": "matched",
+      "bytes": 175125,
+      "sha256": "08f4a2570d1d4d0bfa1295251c86ae4c4d1b39ea4e8ea9b3ced9a62a3de66c11",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-normal",
+      "variant": "liteDesktop",
+      "url": "/textures/candidate-v589/lite/desktop/earth-normal.webp",
+      "status": "matched",
+      "bytes": 243330,
+      "sha256": "770ba987d0c2ff992316399ca9f2e19ae471640fa590e9ade8a2f57a5f69aaa3",
+      "declaredDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "actualDimensions": {
+        "width": 1024,
+        "height": 512
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-normal",
+      "variant": "liteMobile",
+      "url": "/textures/candidate-v589/lite/mobile/earth-normal.webp",
+      "status": "matched",
+      "bytes": 70710,
+      "sha256": "fc64390e4da30639ce83d5f592b6b0902cf70bde96b5b6e02801f36e7ea2912c",
+      "declaredDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "actualDimensions": {
+        "width": 512,
+        "height": 256
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-normal",
+      "variant": "fullDesktop",
+      "url": "/textures/candidate-v590/full/ktx2/earth-normal.ktx2",
+      "status": "matched",
+      "bytes": 2231483,
+      "sha256": "fecc5409b303844730032b9e6000d718b14aae6afc692b9ae0451b2949f5e144",
+      "declaredDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "earth-normal",
+      "variant": "fullMobile",
+      "url": "/textures/candidate-v590/full/mobile/earth-normal.webp",
+      "status": "matched",
+      "bytes": 471908,
+      "sha256": "50ddd54a0978240c2e6bb27c24edd0c93d4c41ff87d3021425e03c675a259a02",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v9-stars-readonly",
+      "variant": "liteDesktop",
+      "url": "/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "status": "matched",
+      "bytes": 381732,
+      "sha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "declaredDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "actualDimensions": {
+        "width": 4096,
+        "height": 2048
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v9-stars-readonly",
+      "variant": "liteMobile",
+      "url": "/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "status": "matched",
+      "bytes": 122612,
+      "sha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v9-dust-readonly",
+      "variant": "liteDesktop",
+      "url": "/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "status": "matched",
+      "bytes": 700773,
+      "sha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    },
+    {
+      "assetId": "milky-way-v9-dust-readonly",
+      "variant": "liteMobile",
+      "url": "/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "status": "matched",
+      "bytes": 700773,
+      "sha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "declaredDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "actualDimensions": {
+        "width": 2048,
+        "height": 1024
+      },
+      "dimensionStatus": "matched"
+    }
+  ],
+  "budgetChecks": {
+    "sourceCache": {
+      "actualBytes": 207313639,
+      "maximumBytes": 2147483648,
+      "status": "passed"
+    },
+    "fullCompressed": {
+      "actualBytes": 114019851,
+      "maximumBytes": 786432000,
+      "status": "passed"
+    },
+    "liteIncrement": {
+      "actualBytes": 0,
+      "maximumBytes": 9437184,
+      "status": "passed"
+    },
+    "liteTotal": {
+      "actualBytes": 75427134,
+      "baselineBytes": 75427134,
+      "assetProjectionBytes": 27253687,
+      "maximumBytes": 85983232,
+      "status": "passed"
+    }
+  },
+  "v589SourceFreezeCoverage": [
+    {
+      "path": "app/data/celestialArtManifestV589.generated.ts",
+      "expectedSha256": "5d2e5641a7fdd78bff2fe56351c66f23c560b1cf035e810cf8315152559bd714",
+      "frozenSha256": "5d2e5641a7fdd78bff2fe56351c66f23c560b1cf035e810cf8315152559bd714",
+      "status": "covered"
+    },
+    {
+      "path": "app/lib/celestialArtV589.ts",
+      "expectedSha256": "08fc8ae6fb6301d50ee387b132377672af7e2339d61e062aa1368296212dfadb",
+      "frozenSha256": "08fc8ae6fb6301d50ee387b132377672af7e2339d61e062aa1368296212dfadb",
+      "status": "covered"
+    },
+    {
+      "path": "app/lib/useV589Texture.ts",
+      "expectedSha256": "02f39ac1b9ce75ea6406623b1234c908f1e238ca426e5fc7bc1eb9e6dbf335a8",
+      "frozenSha256": "02f39ac1b9ce75ea6406623b1234c908f1e238ca426e5fc7bc1eb9e6dbf335a8",
+      "status": "covered"
+    },
+    {
+      "path": "app/lib/useV589Model.ts",
+      "expectedSha256": "589dbdcd3ec0f692311927119e34e137b29169e9e1587a28d2a8e7b5bd261a61",
+      "frozenSha256": "589dbdcd3ec0f692311927119e34e137b29169e9e1587a28d2a8e7b5bd261a61",
+      "status": "covered"
+    },
+    {
+      "path": "app/workers/celestialStarfieldV589.worker.ts",
+      "expectedSha256": "b92de6b276dd8cb9c6a833e7c012ecfddc7e3a09705769b8fc486510b3fabcec",
+      "frozenSha256": "b92de6b276dd8cb9c6a833e7c012ecfddc7e3a09705769b8fc486510b3fabcec",
+      "status": "covered"
+    },
+    {
+      "path": "app/components/CelestialArtStageV589.tsx",
+      "expectedSha256": "ae8e03b1fa2cde25489c939cb12aa2b3189d9589dc320d7cbcf06e104947e68a",
+      "frozenSha256": "ae8e03b1fa2cde25489c939cb12aa2b3189d9589dc320d7cbcf06e104947e68a",
+      "status": "covered"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589.tsx",
+      "expectedSha256": "81c06d1757564c2e087ba41dc137723161d080e871cebff171ed04ca4f5535ff",
+      "frozenSha256": "81c06d1757564c2e087ba41dc137723161d080e871cebff171ed04ca4f5535ff",
+      "status": "covered"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589Lazy.tsx",
+      "expectedSha256": "735a54e545e9ceae7231544229406d9f4819bb45c4a9f2cc4c42ac85cff451f0",
+      "frozenSha256": "735a54e545e9ceae7231544229406d9f4819bb45c4a9f2cc4c42ac85cff451f0",
+      "status": "covered"
+    },
+    {
+      "path": "app/components/UniverseCanvasOverrideHostV589.tsx",
+      "expectedSha256": "31cf7acca81cb96eec441042890e8c9d8e935e0ea9002e92d88af651c6a70131",
+      "frozenSha256": "31cf7acca81cb96eec441042890e8c9d8e935e0ea9002e92d88af651c6a70131",
+      "status": "covered"
+    },
+    {
+      "path": "app/local-shadow-v589/page.tsx",
+      "expectedSha256": "c4b32b101d46c9e5eb290f461a2890744ac7def7f76bc22893a9ecf36b875cdd",
+      "frozenSha256": "c4b32b101d46c9e5eb290f461a2890744ac7def7f76bc22893a9ecf36b875cdd",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/v589-visual-sources.json",
+      "expectedSha256": "7ee145aeb879233137100f4aa3247e58fa5ef7c14c0ee8c9d0e12efe4e4626a7",
+      "frozenSha256": "7ee145aeb879233137100f4aa3247e58fa5ef7c14c0ee8c9d0e12efe4e4626a7",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/acquire-v589-visual-assets.mjs",
+      "expectedSha256": "0961114ff9d464dc84e3c657e6247c84d4c94cc611895c157bafa4b3114be7e0",
+      "frozenSha256": "0961114ff9d464dc84e3c657e6247c84d4c94cc611895c157bafa4b3114be7e0",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/build-v589-celestial-art-candidate.mjs",
+      "expectedSha256": "c7fb5763162b1ea6c607029dab8b65a982bed693a10e31ae077d9436d5906711",
+      "frozenSha256": "c7fb5763162b1ea6c607029dab8b65a982bed693a10e31ae077d9436d5906711",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/build-atlas-v589-profile.mjs",
+      "expectedSha256": "b0e1b29ce19333f330f32295a1b7980cc3bd71c3a6475ec06ad96d396bc4bfe6",
+      "frozenSha256": "b0e1b29ce19333f330f32295a1b7980cc3bd71c3a6475ec06ad96d396bc4bfe6",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/build-v589-browser-qualification.mjs",
+      "expectedSha256": "4b0cc06943317c5cd06365a4df198ddab71478a8cb6868986e98fdcab60123ad",
+      "frozenSha256": "4b0cc06943317c5cd06365a4df198ddab71478a8cb6868986e98fdcab60123ad",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/start-atlas-standalone.mjs",
+      "expectedSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "frozenSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "status": "covered"
+    },
+    {
+      "path": "scripts/seal-v589-celestial-art-candidate.mjs",
+      "expectedSha256": "84494be9f657608da06f1a4eceba315ba9233947b78c1c2e901e7926f097c7d3",
+      "frozenSha256": "84494be9f657608da06f1a4eceba315ba9233947b78c1c2e901e7926f097c7d3",
+      "status": "covered"
+    },
+    {
+      "path": "app/lib/celestialArtV589.test.ts",
+      "expectedSha256": "668bdca44e968d3d99ac0d4da324d4508e5f5aad56bcad29f94d475753508236",
+      "frozenSha256": "668bdca44e968d3d99ac0d4da324d4508e5f5aad56bcad29f94d475753508236",
+      "status": "covered"
+    },
+    {
+      "path": "app/lib/celestialArtAssetsV589.test.ts",
+      "expectedSha256": "1b84d46cea0155e6761d5fd1c8427c8dbe4426f049986ef64dd1454be47fb214",
+      "frozenSha256": "1b84d46cea0155e6761d5fd1c8427c8dbe4426f049986ef64dd1454be47fb214",
+      "status": "covered"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589.test.tsx",
+      "expectedSha256": "d215113b2c76a838ba42bcb8842290f7f6f31604902baca4c336e10457b9b0d3",
+      "frozenSha256": "d215113b2c76a838ba42bcb8842290f7f6f31604902baca4c336e10457b9b0d3",
+      "status": "covered"
+    },
+    {
+      "path": "docs/release/v589/acquisition-receipt-v589.json",
+      "expectedSha256": "6f2f38362e5943cc5abe2893190e751dcbde0fb3596aa14f1690302decb7b7cc",
+      "frozenSha256": "6f2f38362e5943cc5abe2893190e751dcbde0fb3596aa14f1690302decb7b7cc",
+      "status": "covered"
+    },
+    {
+      "path": "docs/release/v589/bennu-lod-receipt-v589.json",
+      "expectedSha256": "8f9219f7bc1efcdfc7720655ff27ec6a9c1530b50f6d961fed856080259303d5",
+      "frozenSha256": "8f9219f7bc1efcdfc7720655ff27ec6a9c1530b50f6d961fed856080259303d5",
+      "status": "covered"
+    }
+  ],
+  "freezeChecks": [
+    {
+      "path": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+      "beforeSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+      "currentSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+      "status": "matched"
+    },
+    {
+      "path": "dist/release/orbit-atlas-v263-local-validation-evidence.json",
+      "beforeSha256": "00d2c6b1f55abb4e7be110d9f0f81ab35f86c1e6beb0fe7291a5e984da742757",
+      "currentSha256": "00d2c6b1f55abb4e7be110d9f0f81ab35f86c1e6beb0fe7291a5e984da742757",
+      "status": "matched"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-local-shadow-candidate-v559.json",
+      "beforeSha256": "1954096e327ca6f548df6c7cf2857481c9538c3828f4d23dc1c5e1d657e191e4",
+      "currentSha256": "1954096e327ca6f548df6c7cf2857481c9538c3828f4d23dc1c5e1d657e191e4",
+      "status": "matched"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-local-shadow-candidate-v560.json",
+      "beforeSha256": "184bbd3403f2883e9972c5a5cb79192df7dadfa38618bcb79ef6d90614c9bb44",
+      "currentSha256": "184bbd3403f2883e9972c5a5cb79192df7dadfa38618bcb79ef6d90614c9bb44",
+      "status": "matched"
+    },
+    {
+      "path": "dist/science/orbit-atlas-shadow-v559-evidence.json",
+      "beforeSha256": "09fa001f203da75c2b3c6f9c3f31b9ebbd2602a1dd55771650acea48a39f9636",
+      "currentSha256": "09fa001f203da75c2b3c6f9c3f31b9ebbd2602a1dd55771650acea48a39f9636",
+      "status": "matched"
+    },
+    {
+      "path": "dist/science/orbit-atlas-shadow-v560-evidence.json",
+      "beforeSha256": "d7a16b1800f94b0d348f4b0d4d0469677f00953d05d82c76e51dbd32b3a42baa",
+      "currentSha256": "d7a16b1800f94b0d348f4b0d4d0469677f00953d05d82c76e51dbd32b3a42baa",
+      "status": "matched"
+    },
+    {
+      "path": "dist/content-packs/visual-candidate-v562.manifest.json",
+      "beforeSha256": "8bbe3013826c17a8317e3a455ba0f2bebf41aaa486717def60a75ec0cb6ab27a",
+      "currentSha256": "8bbe3013826c17a8317e3a455ba0f2bebf41aaa486717def60a75ec0cb6ab27a",
+      "status": "matched"
+    },
+    {
+      "path": "dist/science/atlas-visual-candidate-v562/manifest.json",
+      "beforeSha256": "b2a3cfa3d6c1184741ab1fbcabc7b8e6baf72b8ca1a20d1810c2674a828820d7",
+      "currentSha256": "b2a3cfa3d6c1184741ab1fbcabc7b8e6baf72b8ca1a20d1810c2674a828820d7",
+      "status": "matched"
+    },
+    {
+      "path": "app/data/atlasVisualCandidateAssetsV562.json",
+      "beforeSha256": "fb3269f4c81c5b406784a9ea22133c6bce61a98ec7f0ded227562512db530f77",
+      "currentSha256": "fb3269f4c81c5b406784a9ea22133c6bce61a98ec7f0ded227562512db530f77",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/orbitAtlasPresentation.ts",
+      "beforeSha256": "c873ea3e5b39943a72682c639b4c4c7499653956fdfdc17d23d864708911e1d8",
+      "currentSha256": "c873ea3e5b39943a72682c639b4c4c7499653956fdfdc17d23d864708911e1d8",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/GalaxyEnvironmentSphere.tsx",
+      "beforeSha256": "ef384c0bf27f6d877cb329107af3b0f4ef3d54215863fd8038e6b3582ff8d4e3",
+      "currentSha256": "ef384c0bf27f6d877cb329107af3b0f4ef3d54215863fd8038e6b3582ff8d4e3",
+      "status": "matched"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "beforeSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "currentSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "status": "matched"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "beforeSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "currentSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "status": "matched"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "beforeSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "currentSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "status": "matched"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "beforeSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "currentSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "status": "matched"
+    },
+    {
+      "path": "public/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "beforeSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "currentSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "status": "matched"
+    },
+    {
+      "path": "public/atlas-lite/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "beforeSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "currentSha256": "9d52abb4774cdca473606f514158b72a5af5950fa283e53d703b983a83ff1df2",
+      "status": "matched"
+    },
+    {
+      "path": "public/atlas-lite/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "beforeSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "currentSha256": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc",
+      "status": "matched"
+    },
+    {
+      "path": "public/atlas-lite/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "beforeSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "currentSha256": "4c22311b7b87d2b003312a548aca2c904bbade5d9edfaf8cca8b085928cd873c",
+      "status": "matched"
+    },
+    {
+      "path": "public/atlas-lite/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "beforeSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "currentSha256": "613625b6d2b71dd943cf62c90b33a9d12522e38f99df50ebc7e9ec60c5f17d65",
+      "status": "matched"
+    },
+    {
+      "path": "public/atlas-lite/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "beforeSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "currentSha256": "8011f424415f9e8b3841f6a36ce2a63dcdbc5b5161395dc484104e352d9169ce",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v588/freeze-after-v588.json",
+      "beforeSha256": "04bb6e5941cd1da9be34e8fa7cae292f05b42b4af1da59ca0ec8ea163cec2a4c",
+      "currentSha256": "04bb6e5941cd1da9be34e8fa7cae292f05b42b4af1da59ca0ec8ea163cec2a4c",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v588/capability-report-v588.json",
+      "beforeSha256": "a7b15ef877e69fd2683a6519d37f992ae9ce8496b631e3e38ff6e6bcff7eb377",
+      "currentSha256": "a7b15ef877e69fd2683a6519d37f992ae9ce8496b631e3e38ff6e6bcff7eb377",
+      "status": "matched"
+    },
+    {
+      "path": "public/data/visual-restoration-v588/manifest.json",
+      "beforeSha256": "ab60cee06d7b7b6eebb1de88e32a21bd17c2334eb4b39d0301134e64310808a5",
+      "currentSha256": "ab60cee06d7b7b6eebb1de88e32a21bd17c2334eb4b39d0301134e64310808a5",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/visualRestorationV588.ts",
+      "beforeSha256": "50274eba8a9e33dafa1467f5673bebcd10f3b8b437805a04bb8429a64b87acec",
+      "currentSha256": "50274eba8a9e33dafa1467f5673bebcd10f3b8b437805a04bb8429a64b87acec",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/useV588Texture.ts",
+      "beforeSha256": "815ff80eacb842774849c001c18b682dbaf49224939708fa3a0d6c6923b36605",
+      "currentSha256": "815ff80eacb842774849c001c18b682dbaf49224939708fa3a0d6c6923b36605",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/VisualRestorationStageV588.tsx",
+      "beforeSha256": "ebaea3b90f2ce561d13beba34c464410b3bc014f6eb4bd533bf803121ccbd1b3",
+      "currentSha256": "ebaea3b90f2ce561d13beba34c464410b3bc014f6eb4bd533bf803121ccbd1b3",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasVisualRestorationV588.tsx",
+      "beforeSha256": "e4b4e8076afbff5e23dfc635f854cb455849d90f7dbe79c01df0940ab53b919f",
+      "currentSha256": "e4b4e8076afbff5e23dfc635f854cb455849d90f7dbe79c01df0940ab53b919f",
+      "status": "matched"
+    },
+    {
+      "path": "app/local-shadow-v588/page.tsx",
+      "beforeSha256": "03602382a6f63bb2837ef5bf4f4c7ba565b2e51797528ec3e5867327597e784d",
+      "currentSha256": "03602382a6f63bb2837ef5bf4f4c7ba565b2e51797528ec3e5867327597e784d",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v587/current-state-receipt-v587.json",
+      "beforeSha256": "f89b7f6379ea908d8885ef96519986e517bc628b0374d473cfae3423c2be1405",
+      "currentSha256": "f89b7f6379ea908d8885ef96519986e517bc628b0374d473cfae3423c2be1405",
+      "status": "matched"
+    },
+    {
+      "path": "public/data/kerr-observation-v587/manifest.json",
+      "beforeSha256": null,
+      "currentSha256": null,
+      "status": "matched"
+    },
+    {
+      "path": "app/data/celestialArtManifestV589.generated.ts",
+      "beforeSha256": "5d2e5641a7fdd78bff2fe56351c66f23c560b1cf035e810cf8315152559bd714",
+      "currentSha256": "5d2e5641a7fdd78bff2fe56351c66f23c560b1cf035e810cf8315152559bd714",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialArtV589.ts",
+      "beforeSha256": "08fc8ae6fb6301d50ee387b132377672af7e2339d61e062aa1368296212dfadb",
+      "currentSha256": "08fc8ae6fb6301d50ee387b132377672af7e2339d61e062aa1368296212dfadb",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/useV589Texture.ts",
+      "beforeSha256": "02f39ac1b9ce75ea6406623b1234c908f1e238ca426e5fc7bc1eb9e6dbf335a8",
+      "currentSha256": "02f39ac1b9ce75ea6406623b1234c908f1e238ca426e5fc7bc1eb9e6dbf335a8",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/useV589Model.ts",
+      "beforeSha256": "589dbdcd3ec0f692311927119e34e137b29169e9e1587a28d2a8e7b5bd261a61",
+      "currentSha256": "589dbdcd3ec0f692311927119e34e137b29169e9e1587a28d2a8e7b5bd261a61",
+      "status": "matched"
+    },
+    {
+      "path": "app/workers/celestialStarfieldV589.worker.ts",
+      "beforeSha256": "b92de6b276dd8cb9c6a833e7c012ecfddc7e3a09705769b8fc486510b3fabcec",
+      "currentSha256": "b92de6b276dd8cb9c6a833e7c012ecfddc7e3a09705769b8fc486510b3fabcec",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialArtStageV589.tsx",
+      "beforeSha256": "ae8e03b1fa2cde25489c939cb12aa2b3189d9589dc320d7cbcf06e104947e68a",
+      "currentSha256": "ae8e03b1fa2cde25489c939cb12aa2b3189d9589dc320d7cbcf06e104947e68a",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589.tsx",
+      "beforeSha256": "81c06d1757564c2e087ba41dc137723161d080e871cebff171ed04ca4f5535ff",
+      "currentSha256": "81c06d1757564c2e087ba41dc137723161d080e871cebff171ed04ca4f5535ff",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589Lazy.tsx",
+      "beforeSha256": "735a54e545e9ceae7231544229406d9f4819bb45c4a9f2cc4c42ac85cff451f0",
+      "currentSha256": "735a54e545e9ceae7231544229406d9f4819bb45c4a9f2cc4c42ac85cff451f0",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/UniverseCanvasOverrideHostV589.tsx",
+      "beforeSha256": "31cf7acca81cb96eec441042890e8c9d8e935e0ea9002e92d88af651c6a70131",
+      "currentSha256": "31cf7acca81cb96eec441042890e8c9d8e935e0ea9002e92d88af651c6a70131",
+      "status": "matched"
+    },
+    {
+      "path": "app/local-shadow-v589/page.tsx",
+      "beforeSha256": "c4b32b101d46c9e5eb290f461a2890744ac7def7f76bc22893a9ecf36b875cdd",
+      "currentSha256": "c4b32b101d46c9e5eb290f461a2890744ac7def7f76bc22893a9ecf36b875cdd",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/v589-visual-sources.json",
+      "beforeSha256": "7ee145aeb879233137100f4aa3247e58fa5ef7c14c0ee8c9d0e12efe4e4626a7",
+      "currentSha256": "7ee145aeb879233137100f4aa3247e58fa5ef7c14c0ee8c9d0e12efe4e4626a7",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/acquire-v589-visual-assets.mjs",
+      "beforeSha256": "0961114ff9d464dc84e3c657e6247c84d4c94cc611895c157bafa4b3114be7e0",
+      "currentSha256": "0961114ff9d464dc84e3c657e6247c84d4c94cc611895c157bafa4b3114be7e0",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-v589-celestial-art-candidate.mjs",
+      "beforeSha256": "c7fb5763162b1ea6c607029dab8b65a982bed693a10e31ae077d9436d5906711",
+      "currentSha256": "c7fb5763162b1ea6c607029dab8b65a982bed693a10e31ae077d9436d5906711",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-atlas-v589-profile.mjs",
+      "beforeSha256": "b0e1b29ce19333f330f32295a1b7980cc3bd71c3a6475ec06ad96d396bc4bfe6",
+      "currentSha256": "b0e1b29ce19333f330f32295a1b7980cc3bd71c3a6475ec06ad96d396bc4bfe6",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-v589-browser-qualification.mjs",
+      "beforeSha256": "4b0cc06943317c5cd06365a4df198ddab71478a8cb6868986e98fdcab60123ad",
+      "currentSha256": "4b0cc06943317c5cd06365a4df198ddab71478a8cb6868986e98fdcab60123ad",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/start-atlas-standalone.mjs",
+      "beforeSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "currentSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/seal-v589-celestial-art-candidate.mjs",
+      "beforeSha256": "84494be9f657608da06f1a4eceba315ba9233947b78c1c2e901e7926f097c7d3",
+      "currentSha256": "84494be9f657608da06f1a4eceba315ba9233947b78c1c2e901e7926f097c7d3",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialArtV589.test.ts",
+      "beforeSha256": "668bdca44e968d3d99ac0d4da324d4508e5f5aad56bcad29f94d475753508236",
+      "currentSha256": "668bdca44e968d3d99ac0d4da324d4508e5f5aad56bcad29f94d475753508236",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialArtAssetsV589.test.ts",
+      "beforeSha256": "1b84d46cea0155e6761d5fd1c8427c8dbe4426f049986ef64dd1454be47fb214",
+      "currentSha256": "1b84d46cea0155e6761d5fd1c8427c8dbe4426f049986ef64dd1454be47fb214",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialArtV589.test.tsx",
+      "beforeSha256": "d215113b2c76a838ba42bcb8842290f7f6f31604902baca4c336e10457b9b0d3",
+      "currentSha256": "d215113b2c76a838ba42bcb8842290f7f6f31604902baca4c336e10457b9b0d3",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v589/acquisition-receipt-v589.json",
+      "beforeSha256": "6f2f38362e5943cc5abe2893190e751dcbde0fb3596aa14f1690302decb7b7cc",
+      "currentSha256": "6f2f38362e5943cc5abe2893190e751dcbde0fb3596aa14f1690302decb7b7cc",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v589/bennu-lod-receipt-v589.json",
+      "beforeSha256": "8f9219f7bc1efcdfc7720655ff27ec6a9c1530b50f6d961fed856080259303d5",
+      "currentSha256": "8f9219f7bc1efcdfc7720655ff27ec6a9c1530b50f6d961fed856080259303d5",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v589/freeze-after-v589.json",
+      "beforeSha256": "e1d6c4474b7a55fe3147fd41ab200d69b192d148960365d92c193279d008c77a",
+      "currentSha256": "e1d6c4474b7a55fe3147fd41ab200d69b192d148960365d92c193279d008c77a",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v589/capability-report-v589.json",
+      "beforeSha256": "3add63424acecaeb5de40ce7847524a158e8aa419679b668016eaf1e465f7489",
+      "currentSha256": "3add63424acecaeb5de40ce7847524a158e8aa419679b668016eaf1e465f7489",
+      "status": "matched"
+    },
+    {
+      "path": "public/data/celestial-art-v589/manifest.json",
+      "beforeSha256": "a1e642fba6fa02bf9c0256d66d1471c85581e59468e4338fb3a73ff63c5e4492",
+      "currentSha256": "a1e642fba6fa02bf9c0256d66d1471c85581e59468e4338fb3a73ff63c5e4492",
+      "status": "matched"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-celestial-art-candidate-v589.json",
+      "beforeSha256": "e15c46346070e6d1efe9a4736ddfbdbe7b24d9543613209c8eb05591d6e5bac7",
+      "currentSha256": "e15c46346070e6d1efe9a4736ddfbdbe7b24d9543613209c8eb05591d6e5bac7",
+      "status": "matched"
+    },
+    {
+      "path": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+      "beforeSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+      "currentSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+      "status": "matched"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "path": "app/local-shadow-v590/page.tsx",
+      "expectedSha256": "e91bc1ec378c16159fc04fdb41aa7873b0bafc227f2f6fe53f61e6c084d4b564",
+      "currentSha256": "e91bc1ec378c16159fc04fdb41aa7873b0bafc227f2f6fe53f61e6c084d4b564",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialRenderingV590Lazy.tsx",
+      "expectedSha256": "8da12bfcc9b4a90fa4f320d5c25d32d0a613dd9473d760ca3cada6227b5d8171",
+      "currentSha256": "8da12bfcc9b4a90fa4f320d5c25d32d0a613dd9473d760ca3cada6227b5d8171",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialRenderingV590.tsx",
+      "expectedSha256": "d907f6fce2914e0aa86aa94724247406911f78c4b47def5cb47f66bafcae61a4",
+      "currentSha256": "d907f6fce2914e0aa86aa94724247406911f78c4b47def5cb47f66bafcae61a4",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/UniverseCanvasOverrideHostV590.tsx",
+      "expectedSha256": "4874cca102cfcc004300427e65ec8b1b43461aeb5f63d8eddca405b7b3688a86",
+      "currentSha256": "4874cca102cfcc004300427e65ec8b1b43461aeb5f63d8eddca405b7b3688a86",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/UniverseCanvas.tsx",
+      "expectedSha256": "7c92ba24999d6b104a1162571341e8b95d38776d532b63c38da16da45042a76a",
+      "currentSha256": "7c92ba24999d6b104a1162571341e8b95d38776d532b63c38da16da45042a76a",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialRenderingStageV590.tsx",
+      "expectedSha256": "2aa5566b8d4443c73341c9b02040b93588ea9b76a3af906c392da44fc5a1593b",
+      "currentSha256": "2aa5566b8d4443c73341c9b02040b93588ea9b76a3af906c392da44fc5a1593b",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialDeepSpaceV590.tsx",
+      "expectedSha256": "b654adb96365252c020ce88c5e29749cb3d2d75479f6ef492abbf5c2c2f5c69b",
+      "currentSha256": "b654adb96365252c020ce88c5e29749cb3d2d75479f6ef492abbf5c2c2f5c69b",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialBodiesV590.tsx",
+      "expectedSha256": "e52e5195814eb1debfce63e0d841e1f65beb22d290d281c84de1f82f2056fb52",
+      "currentSha256": "e52e5195814eb1debfce63e0d841e1f65beb22d290d281c84de1f82f2056fb52",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialRenderingV590.ts",
+      "expectedSha256": "d7ad6ad42170d5adf14e2b7bd2af6a3c9a8c130e5b7aae21d2233fb8630b42c0",
+      "currentSha256": "d7ad6ad42170d5adf14e2b7bd2af6a3c9a8c130e5b7aae21d2233fb8630b42c0",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialDeepSpaceV590.ts",
+      "expectedSha256": "372872e70fff1eb8f6a710007058c7c7e8abb36fb1354e012352d2d88c723247",
+      "currentSha256": "372872e70fff1eb8f6a710007058c7c7e8abb36fb1354e012352d2d88c723247",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialMaterialsV590.ts",
+      "expectedSha256": "b93af3b841d448f5a7ad422525dad731a8cb05e6311c625bd92f460ba1e566fa",
+      "currentSha256": "b93af3b841d448f5a7ad422525dad731a8cb05e6311c625bd92f460ba1e566fa",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/useV590Texture.ts",
+      "expectedSha256": "6fe97df9b63fe9db2bbd0a017ee29b2bad710c7c5e7941df781dabd7c5fcd3e4",
+      "currentSha256": "6fe97df9b63fe9db2bbd0a017ee29b2bad710c7c5e7941df781dabd7c5fcd3e4",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/kerrObservationV587.ts",
+      "expectedSha256": "0a55659792f3a5140211cb85df496acc7c447d4e81608f53f3cedf1f697d87b8",
+      "currentSha256": "0a55659792f3a5140211cb85df496acc7c447d4e81608f53f3cedf1f697d87b8",
+      "status": "matched"
+    },
+    {
+      "path": "app/workers/celestialStarfieldV590.worker.ts",
+      "expectedSha256": "10d463459b0cc5e45928eb546976eda546c7caa99d62f294d960d4092192b3c7",
+      "currentSha256": "10d463459b0cc5e45928eb546976eda546c7caa99d62f294d960d4092192b3c7",
+      "status": "matched"
+    },
+    {
+      "path": "proxy.ts",
+      "expectedSha256": "49f48f90792f9901deedcec29bd4473867749260ea64841aa83505fdef7df91d",
+      "currentSha256": "49f48f90792f9901deedcec29bd4473867749260ea64841aa83505fdef7df91d",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/atlasProxyContractV562.ts",
+      "expectedSha256": "cbcfc7167bea7d6223b1fe6b77c505c111ba3876324d7126c5f0001499fec524",
+      "currentSha256": "cbcfc7167bea7d6223b1fe6b77c505c111ba3876324d7126c5f0001499fec524",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-v590-celestial-rendering-candidate.mjs",
+      "expectedSha256": "6ffeb7a6ddd1e5a14869e642c8ea73e31552b9b2503072fdd978c3daf4bfc3a7",
+      "currentSha256": "6ffeb7a6ddd1e5a14869e642c8ea73e31552b9b2503072fdd978c3daf4bfc3a7",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-v590-full-assets.mjs",
+      "expectedSha256": "7c53f679b00c76fbbe12281ef5f4ab0de0ad8894f412866afd2c9db4179abf49",
+      "currentSha256": "7c53f679b00c76fbbe12281ef5f4ab0de0ad8894f412866afd2c9db4179abf49",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-v590-csp-basis.mjs",
+      "expectedSha256": "d7c73472517b39f04833c4d6c51f3319e19dc501d33a7dabe76e9de2790234b8",
+      "currentSha256": "d7c73472517b39f04833c4d6c51f3319e19dc501d33a7dabe76e9de2790234b8",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/seal-v590-celestial-rendering-candidate.mjs",
+      "expectedSha256": "2db72defe91a4c0e506b6efb8f68b4c028e34ed5168b3962411e672f9eb62ba0",
+      "currentSha256": "2db72defe91a4c0e506b6efb8f68b4c028e34ed5168b3962411e672f9eb62ba0",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/verify-v590-celestial-rendering-candidate.mjs",
+      "expectedSha256": "90b49c4962f9c64839340c4b133c2edde810607c03fe683ed70df3e35400358a",
+      "currentSha256": "90b49c4962f9c64839340c4b133c2edde810607c03fe683ed70df3e35400358a",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/visual-asset-dimensions-v590.mjs",
+      "expectedSha256": "0a480efa9bdb170ce15620f5cd2180a187ec57ee38e8216ee7f92b1358ff0d1a",
+      "currentSha256": "0a480efa9bdb170ce15620f5cd2180a187ec57ee38e8216ee7f92b1358ff0d1a",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-atlas-v590-profile.mjs",
+      "expectedSha256": "5f0291f1ecffc25382b16be930efbc851c33846c98850f2f3973536d93838495",
+      "currentSha256": "5f0291f1ecffc25382b16be930efbc851c33846c98850f2f3973536d93838495",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "expectedSha256": "1c27e7de35fedd77eaaccd4c21503b88661af8e8f5ea6d8d0d5c5c840f8930cd",
+      "currentSha256": "1c27e7de35fedd77eaaccd4c21503b88661af8e8f5ea6d8d0d5c5c840f8930cd",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/start-atlas-v590-standalone.mjs",
+      "expectedSha256": "5d772a796538968f61a29471e825919bbee5e011d04eab273d177ce59f70b290",
+      "currentSha256": "5d772a796538968f61a29471e825919bbee5e011d04eab273d177ce59f70b290",
+      "status": "matched"
+    },
+    {
+      "path": "scripts/start-atlas-standalone.mjs",
+      "expectedSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "currentSha256": "09ce3d96b55d521490e8d6045bede6069558b7031e85ce7a24211acac9f19279",
+      "status": "matched"
+    },
+    {
+      "path": "package.json",
+      "expectedSha256": "d0cf7f1b03ec50e4bf632c227311124a94a1d04037bc1c553cc5187423baa5ef",
+      "currentSha256": "d0cf7f1b03ec50e4bf632c227311124a94a1d04037bc1c553cc5187423baa5ef",
+      "status": "matched"
+    },
+    {
+      "path": "docs/release/v590/README.md",
+      "expectedSha256": "a278e47564f8ae0de0bee0811dd6998756d4289f9150c8e007e180a6c6e2786c",
+      "currentSha256": "a278e47564f8ae0de0bee0811dd6998756d4289f9150c8e007e180a6c6e2786c",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialRenderingV590.test.ts",
+      "expectedSha256": "c5e7a990586757fb75a4fe1247c45886aeb5180016b7fb8f0c90d5f74d55c1cc",
+      "currentSha256": "c5e7a990586757fb75a4fe1247c45886aeb5180016b7fb8f0c90d5f74d55c1cc",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/useV590Texture.test.ts",
+      "expectedSha256": "f3aa69cd906bcf96c84af7426f10651e0d0325ee135d02980040bf2cad3190c9",
+      "currentSha256": "f3aa69cd906bcf96c84af7426f10651e0d0325ee135d02980040bf2cad3190c9",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialMaterialsV590.test.ts",
+      "expectedSha256": "63427f24fbb866a893b78dffd494369d3676524b65e9b84fbe0a1a769f27a866",
+      "currentSha256": "63427f24fbb866a893b78dffd494369d3676524b65e9b84fbe0a1a769f27a866",
+      "status": "matched"
+    },
+    {
+      "path": "app/lib/celestialDeepSpaceV590.test.ts",
+      "expectedSha256": "c9d2b4d71a2287d316b8084681b2168a5219b4eaa2f58ca15e5b70d78230daff",
+      "currentSha256": "c9d2b4d71a2287d316b8084681b2168a5219b4eaa2f58ca15e5b70d78230daff",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/OrbitAtlasCelestialRenderingV590.test.tsx",
+      "expectedSha256": "f0a13f24e0f600e876e129d6955824949e51687ebd4235b6da5688846b606119",
+      "currentSha256": "f0a13f24e0f600e876e129d6955824949e51687ebd4235b6da5688846b606119",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialBodiesV590.test.tsx",
+      "expectedSha256": "07af8ebedf335da93012af89144a0b80b8730f086622d8bb19f7fe5f7ed34f80",
+      "currentSha256": "07af8ebedf335da93012af89144a0b80b8730f086622d8bb19f7fe5f7ed34f80",
+      "status": "matched"
+    },
+    {
+      "path": "app/components/CelestialDeepSpaceV590.test.tsx",
+      "expectedSha256": "3e7ac4f4f1d32a96a4f9a125d97c992a6c7cf3ff9e564d203514b739b827e4c0",
+      "currentSha256": "3e7ac4f4f1d32a96a4f9a125d97c992a6c7cf3ff9e564d203514b739b827e4c0",
+      "status": "matched"
+    },
+    {
+      "path": "app/workers/celestialStarfieldV590.worker.test.ts",
+      "expectedSha256": "73d85d6426ba57e35ef97a67548ba7cd531aeff9d96fb8045183bc302e8d0a5f",
+      "currentSha256": "73d85d6426ba57e35ef97a67548ba7cd531aeff9d96fb8045183bc302e8d0a5f",
+      "status": "matched"
+    }
+  ],
+  "blockers": {
+    "dependencyDrift": [],
+    "assetDrift": [],
+    "postBuildFreezeDrift": [],
+    "sourceDrift": [],
+    "sourceCoverageDrift": [],
+    "v589SourceFreezeDrift": [],
+    "budgetDrift": [],
+    "preexistingFrozenDrift": [
+      {
+        "path": "public/data/kerr-observation-v587/manifest.json",
+        "status": "missing",
+        "expectedSha256": null,
+        "observedSha256": null
+      }
+    ],
+    "standaloneBuild": {
+      "kind": "standalone",
+      "status": "passed",
+      "receiptPath": "dist/release/atlas-v590-standalone-build-resource.json",
+      "receiptSha256": "1ea8bbb862365d2cce429053469390b4415638d6ea892d17bf622ab163c7203f",
+      "distDir": ".next-atlas-v590-standalone-current",
+      "deliveryTier": "standalone-full",
+      "buildId": "WtLAhARJ0fnmUuIGJF2hJ",
+      "sourceManifestSha256": "0629d7c08b570c8d26ee90f1117863eda31301ebbf5aa7d2afd8f7d4eb69710d",
+      "heapMb": 8192,
+      "swcRuntime": "official-wasm-fallback",
+      "rollbackSlotAvailable": true,
+      "reasons": []
+    },
+    "liteBuild": {
+      "kind": "lite",
+      "status": "passed",
+      "receiptPath": "dist/release/atlas-v590-lite-build-resource.json",
+      "receiptSha256": "c118d6bc9b4903555484b1dd6d24d0d43dd045308e059024646cdfed8f14f173",
+      "distDir": ".next-atlas-v590-lite-current",
+      "deliveryTier": "vercel-lite",
+      "buildId": "3qjqY7EdGVdC_EWg2XhGw",
+      "sourceManifestSha256": "0629d7c08b570c8d26ee90f1117863eda31301ebbf5aa7d2afd8f7d4eb69710d",
+      "heapMb": 8192,
+      "swcRuntime": "official-wasm-fallback",
+      "rollbackSlotAvailable": true,
+      "reasons": []
+    },
+    "browserMatrix": "not-run",
+    "thirtyMinuteSoak": "not-run",
+    "productionRelease": "not-authorized"
+  },
+  "receiptSha256": "dc0758e451dcd46f2d548849b3a7419969261f216591015ac4cb4ef4d130128b"
+}

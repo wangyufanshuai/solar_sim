@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrLicenseConfirmationV551, resetKerrLicenseConfirmationServerCacheForTestsV551 } from "./kerrLicenseConfirmationServerV551";
+describe("v551 license confirmation server", () => { it("loads seven unconfirmed records through one bounded cache", async () => { resetKerrLicenseConfirmationServerCacheForTestsV551(); const first = await loadKerrLicenseConfirmationV551(), second = await loadKerrLicenseConfirmationV551(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "receipt"]); expect(first.artifact.review).toMatchObject({ confirmedCount: 0, unconfirmedCount: 7, networkAttemptCount: 0 }); }); });

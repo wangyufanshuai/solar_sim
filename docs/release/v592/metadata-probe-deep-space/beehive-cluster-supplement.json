@@ -1,0 +1,53 @@
+{
+  "version": "v592-deep-space-metadata-supplement-v1",
+  "probedAt": "2026-08-19T04:58:31.918Z",
+  "status": "metadata-supplement-complete-no-payload",
+  "target": "beehive-cluster",
+  "category": "cluster",
+  "query": "M44 star cluster",
+  "requiredTermGroups": [
+    [
+      "beehive",
+      "m44",
+      "messier 44",
+      "praesepe"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space/beehive-cluster.json",
+    "receiptSha256": "99eafa7bce1ccdac73cf5f7eb009d98ccbd30513cfb57ecd2613724512fbde45",
+    "priorUrl": "https://images-api.nasa.gov/search?q=Beehive%20Cluster%20M44&media_type=image&page_size=30",
+    "priorMatchedCandidateCount": 0
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "requestUrlDistinctFromPriorProbe": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M44%20star%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M44%20star%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 167,
+    "responseSha256": "73b000460294ea8e6e96af902448daeeb66999f32a136ddeb763f6feda853ce1"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "a44ee31f8cd97fc1eb8033b8520058677e12470f9bc397e440005f1b7b37d6c0"
+}

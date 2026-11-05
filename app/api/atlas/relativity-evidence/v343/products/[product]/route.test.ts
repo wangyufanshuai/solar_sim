@@ -1,0 +1,8 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+const originalProfile = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (originalProfile == null) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = originalProfile; });
+describe("v343 science image product route", () => {
+  it("serves only the FITS/PNG allowlist with exact ETags", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; const fits = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v343/products/fits", { headers: { "x-forwarded-for": "127.0.0.343" } }), { params: Promise.resolve({ product: "fits" }) }); expect(fits.status).toBe(200); expect(fits.headers.get("content-type")).toBe("application/fits"); expect(fits.headers.get("cache-control")).toBe("private, no-store"); expect(fits.headers.get("etag")).toMatch(/^"[a-f0-9]{64}"$/); const rejected = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v343/products/..%2Fsecret", { headers: { "x-forwarded-for": "127.0.0.344" } }), { params: Promise.resolve({ product: "../secret" }) }); expect(rejected.status).toBe(404); });
+  it("keeps products unavailable in Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; const response = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v343/products/png", { headers: { "x-forwarded-for": "127.0.0.345" } }), { params: Promise.resolve({ product: "png" }) }); expect(response.status).toBe(404); expect(await response.json()).toMatchObject({ available: false, reason: "lite-boundary" }); });
+});

@@ -1,0 +1,36 @@
+{
+  "round": 39,
+  "date": "2026-09-13",
+  "title": "Lite delivery sky quality split",
+  "status": "verified-browser-performance-baseline",
+  "scope": {
+    "component": "app/components/GalaxyEnvironmentSphere.tsx",
+    "artChange": "Kept canonical desktop sky URLs unchanged while making vercel-lite select the mobile 4K/2K sky layers and suppress the desktop quality upgrade."
+  },
+  "browser": {
+    "deliveryProfile": "vercel-lite",
+    "url": "http://127.0.0.1:3018/",
+    "viewport": "1280x720",
+    "resourceCount": 18,
+    "assetCount": 5,
+    "assetTransferBytes": 5093751,
+    "maxAssetDurationMs": 493.355,
+    "requestFailures": 0,
+    "skyBaseRequested": "orbit-atlas-v9-base-4k.jpg"
+  },
+  "validation": {
+    "vitest": "MainlineALiteSkySelectionV607.test.ts: 1/1",
+    "eslint": "passed",
+    "playwright": "Chrome headless networkidle; 0 failed requests",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "comparison": {
+    "previousLocalShadowTransferBytes": 25566471,
+    "liteTransferReductionBytes": 20472720,
+    "liteTransferReductionRatio": 0.8009
+  },
+  "limitations": [
+    "This is a Lite cold-load baseline at one desktop viewport; sustained FPS, GPU/memory lifecycle, and public CDN qualification remain open.",
+    "Canonical standalone/local-shadow desktop art identity remains 8K; Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

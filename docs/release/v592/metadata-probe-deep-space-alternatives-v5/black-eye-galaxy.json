@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v5",
+  "probedAt": "2026-08-19T13:17:46.464Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "black-eye-galaxy",
+  "category": "galaxy",
+  "query": "NGC 4826",
+  "requiredTermGroups": [
+    [
+      "ngc 4826",
+      "m64",
+      "black eye"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v4/black-eye-galaxy.json",
+    "receiptSha256": "6bc605c3dfa032de95a1276acd4e756f732018600186684e748029762cea28fc",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M64+galaxy+NASA+Goddard&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+4826&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+4826&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "7b2ab9988e47df5d35f4b835363056773107a9e2592c7ab3a36e582ce24a44f6"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "2cf912dd522d2eb67c3dc043b3aa1f793f7d14d68ba5f0b1a8ef9e95618711ee"
+}

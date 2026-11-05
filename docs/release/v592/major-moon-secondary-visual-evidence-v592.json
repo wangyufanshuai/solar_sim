@@ -1,0 +1,58 @@
+{
+  "version": "v592-major-moon-secondary-visual-evidence-v1",
+  "generatedAt": "2026-08-20T04:03:58.456Z",
+  "status": "callisto-official-secondary-lane-blocked-no-qualified-global-texture",
+  "target": "callisto",
+  "policy": {
+    "sourceHosts": [
+      "assets.science.nasa.gov",
+      "science.nasa.gov",
+      "planetarymaps.usgs.gov"
+    ],
+    "singleRequestPerUrl": true,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "redirectFollowed": false,
+    "noInpainting": true,
+    "noAnnotationRemoval": true,
+    "noSyntheticCoverageFill": true,
+    "visualAssetAdmissionGranted": false,
+    "heroAdmissionGranted": false,
+    "scientificAuthorityGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "lanes": {
+    "nasaPhotojournalPia03456": {
+      "acquisitionStatus": "blocked-single-request-no-retry",
+      "receiptSha256": "f50468c01f28177adc4d6c4e42cb8783145ed3df4ed17eae8f24a716baf3fadb",
+      "reason": "single request returned content-length zero; terminal blocked; no retry"
+    },
+    "nasaPhotojournalPia03876": {
+      "acquisitionStatus": "acquired-single-request-pending-projection-review",
+      "receiptSha256": "12f62dc08f449c62afaaa92da33ca27d56881bd1a0d8a9126cc9b454514fb96f",
+      "projectionReviewStatus": "blocked-non-equirectangular-hemispherical-globe-composite",
+      "projectionReceiptSha256": "81c7c54d3e197ddb0a411510546c96547c3372f9541b3aca47b9ba9ea09ad9b6",
+      "reason": "official raster is a labeled white-page hemispherical globe composite, not a 2:1 equirectangular map"
+    },
+    "usgsGlobalMosaic": {
+      "acquisitionStatus": "partial-committed-with-terminal-failures-no-retry",
+      "receiptSha256": "2892b51bff44a8c712bd633e85aab90c200f2253b6470d59c22d3b5c70034697",
+      "reason": "direct USGS TIFF URLs returned redirects under single-request policy; no payload committed"
+    },
+    "nasaSecondaryMetadata": {
+      "acquisitionStatus": "committed-six-secondary-metadata-files-single-request-each-no-retry",
+      "receiptSha256": "b2ed35f997b97f918ef92aa093e419c1a1a155257c5c718a3520f12a0da37c0d",
+      "reason": "metadata-only secondary candidates; no visual payload downloaded"
+    }
+  },
+  "admission": {
+    "metadataCandidateCount": 6,
+    "payloadAcquiredCount": 1,
+    "qualifiedGlobalTextureCount": 0,
+    "blockedSourceCount": 4,
+    "runtimeHeroCandidateCount": 0,
+    "blockedBody": "callisto"
+  },
+  "nextAction": "Remain asset-blocked; require a directly published global mosaic or registered 3D model with complete coverage and item-level license review.",
+  "receiptSha256": "95ca0630c5f79ee2d15fa27d578f1c9c316b3a14a007b2334a05f1270afbc008"
+}

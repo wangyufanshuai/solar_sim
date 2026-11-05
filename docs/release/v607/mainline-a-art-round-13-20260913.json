@@ -1,0 +1,26 @@
+{
+  "round": 13,
+  "date": "2026-09-13",
+  "title": "Current constellation chart bridge",
+  "status": "verified",
+  "scope": {
+    "figures": ["Ori", "UMa", "Cas", "Sco", "Cyg", "Gem", "Leo", "Cru"],
+    "boundarySource": "MAINLINE_A_CURRENT_IAU_BOUNDARIES with historical A1 fallback",
+    "artChange": "Extended the interactive constellation chart to render the additive Cyg/Gem/Leo/Cru figure set and their current IAU boundary rings; kept chart lines explicitly illustrative."
+  },
+  "validation": {
+    "vitest": "mainlineAConstellationFiguresV607.test.ts + mainlineAMetadataV607.test.ts: 26/26",
+    "eslint": "passed",
+    "releasePacket": {
+      "sourceFileCount": 175,
+      "archiveBytes": 8883516,
+      "archiveSha256": "07b42a940e215b439ab50c2a9d129aebd83fb1728d024a4779988afbdaebfd69",
+      "worktreeMatched": true,
+      "path": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+    }
+  },
+  "limitations": [
+    "The four new figures use catalog anchor stars as an explanatory route, not an astronomical boundary reconstruction.",
+    "Beta target remains open: 24 hero stars, 12 constellations, 24 rights-cleared nebulae, browser/performance/lifecycle gates."
+  ]
+}

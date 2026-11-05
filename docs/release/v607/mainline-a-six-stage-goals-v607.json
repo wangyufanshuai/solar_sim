@@ -1,0 +1,116 @@
+{
+  "parentGoal": "mainline-a-gaia-deep-space-art-knowledge",
+  "physicsBoundary": "presentation-only; preserve EIH, Newton N-body, 2PN/Lense-Thirring and Kerr kernels",
+  "verifiedAt": "2026-09-10",
+  "stages": [
+    {
+      "id": "A1",
+      "title": "contract-and-inventory",
+      "status": "implemented",
+      "exitEvidence": [
+        "contract",
+        "registry",
+        "coverage",
+        "provenance-checks"
+      ]
+    },
+    {
+      "id": "A2",
+      "title": "common-constellations",
+      "status": "implemented-partial-browser-smoke-complete-matrix-pending",
+      "scope": [
+        "Ori",
+        "UMa",
+        "Cas",
+        "Sco"
+      ],
+      "exitEvidence": [
+        "iau-boundaries",
+        "asterism-lines",
+        "labels",
+        "source-cards",
+        "desktop-mobile-smoke"
+      ]
+    },
+    {
+      "id": "A3",
+      "title": "nebula-art",
+      "status": "six-cleared-local-assets-delivered",
+      "scope": [
+        "M42",
+        "M1",
+        "M8",
+        "M16",
+        "M20",
+        "M57",
+        "NGC7293",
+        "NGC6543",
+        "NGC2237",
+        "Veil",
+        "Carina",
+        "Horsehead"
+      ],
+      "exitEvidence": [
+        "per-image-manifests",
+        "band-encoding",
+        "rights-review",
+        "calibration-notes"
+      ]
+    },
+    {
+      "id": "A4",
+      "title": "stellar-art-and-introductions",
+      "status": "portrait-and-uncertainty-implemented-static-visual-reviewed-browser-pending",
+      "scope": [
+        "alpha-centauri-a",
+        "achernar",
+        "betelgeuse",
+        "sirius-a",
+        "rigel",
+        "antares"
+      ],
+      "exitEvidence": [
+        "gaia-fields",
+        "parametric-photosphere",
+        "uncertainty-notes",
+        "fact-model-art-separation"
+      ]
+    },
+    {
+      "id": "A5",
+      "title": "cross-object-observation",
+      "status": "relation-integrity-qualified-partial-ui-smoke-complete-matrix-pending",
+      "exitEvidence": [
+        "focus-sync",
+        "narrative-transitions",
+        "zero-broken-relations"
+      ]
+    },
+    {
+      "id": "A6",
+      "title": "performance-rights-release",
+      "status": "listed-input-build-and-asset-http-verified-browser-performance-pending",
+      "exitEvidence": [
+        "device-budget",
+        "license-audit",
+        "build",
+        "reproducible-release-packet"
+      ]
+    }
+  ],
+  "tenRoundProtocol": {
+    "purpose": "ten short feedback loops; each round leaves code/data evidence and closes one acceptance gap",
+    "rounds": [
+      "freeze constellation boundary and asterism coordinates",
+      "gate boundary and line density by quality/lod",
+      "complete bilingual labels and narratives",
+      "complete constellation knowledge/source cards",
+      "run browser smoke and visual evidence",
+      "audit six nebula candidate images per image",
+      "encode nebula bands and color/exposure notes",
+      "complete six Gaia stellar profiles and art parameters",
+      "verify cross-object focus and relation integrity",
+      "run final performance, rights, build and release acceptance"
+    ]
+  }
+}

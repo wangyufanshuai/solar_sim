@@ -1,0 +1,111 @@
+{
+  "version": "v591-mars-albedo-usgs-resample-audit-v1",
+  "generatedAt": "2026-08-10T00:00:00Z",
+  "status": "passed-public-domain-source-bounded-resample",
+  "source": {
+    "path": "source-cache/celestial-convergence-v591/mars/mars_viking_clrmosaic_global_1024.jpg",
+    "url": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+    "finalUrl": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+    "host": "astrogeology.usgs.gov",
+    "bytes": 60229,
+    "sha256": "1368021e0416da0f626a337bd79d8b26e6e67b2b8b49cccb6103dad25b333a9b",
+    "width": 1024,
+    "height": 512,
+    "license": {
+      "id": "NASA-USGS-public-domain",
+      "url": "https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m"
+    },
+    "observationIdentity": "USGS Mars Viking Global Color Mosaic 925 m product preview in global equirectangular projection"
+  },
+  "derivation": {
+    "tool": "sharp+KTX-Software",
+    "version": "node-24.14.0;sharp-0.35.3;ktx-4.4.2",
+    "parameters": {
+      "resizeKernel": "lanczos3",
+      "longitudeSeam": "last-column-exact-copy-of-first-column",
+      "sourceDetailCeiling": "1024x512",
+      "desktopDeliveryContainer": "8192x4096",
+      "mobileDeliveryContainer": "2048x1024",
+      "highFrequencySourceAdded": false,
+      "generativeOrAiDetail": false
+    }
+  },
+  "roundTrip": {
+    "width": 1024,
+    "height": 512,
+    "luminanceCorrelation": 0.9977321690121265,
+    "minimum": 0.995
+  },
+  "claims": {
+    "nativeEightKObservation": false,
+    "sourceDetailCeilingDisclosed": true,
+    "observationalColorAnchor": true,
+    "runtimeTopographicDetailFromMolaOnly": true,
+    "presentationOnly": true,
+    "scientificPayloadWriteback": false
+  },
+  "output": {
+    "desktopKtx2": {
+      "url": "/textures/candidate-v591/mars/full/desktop/mars-albedo.ktx2",
+      "bytes": 16171806,
+      "sha256": "14192fc1c8a73a47aab8f4400382be270153e786d7013f155e15be9eb0e3d811",
+      "width": 8192,
+      "height": 4096,
+      "format": "ktx2",
+      "colorSpace": "srgb",
+      "compression": "uastc-q2-rdo-0.75-single-thread-zstd10-mipmapped"
+    },
+    "desktopFallback": {
+      "url": "/textures/candidate-v591/mars/full/desktop/mars-albedo.webp",
+      "bytes": 473130,
+      "sha256": "2294f8bfd4548c2db12029aa079da2f8f1923f6fb09ea0999f437e439b22f21f",
+      "width": 4096,
+      "height": 2048,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-94"
+    },
+    "mobileKtx2": {
+      "url": "/textures/candidate-v591/mars/full/mobile/mars-albedo.ktx2",
+      "bytes": 1495514,
+      "sha256": "699bcddd49c2d67fdff6a8ccf30f2992192e1bf819827ff2eb20053b87e63ba4",
+      "width": 2048,
+      "height": 1024,
+      "format": "ktx2",
+      "colorSpace": "srgb",
+      "compression": "uastc-q2-rdo-0.75-single-thread-zstd10-mipmapped"
+    },
+    "mobileFallback": {
+      "url": "/textures/candidate-v591/mars/full/mobile/mars-albedo.webp",
+      "bytes": 201500,
+      "sha256": "d743662f09a7433766b0f0a58f4c37a9e446ece9fbbb792adeafcb5fbd9c2ddd",
+      "width": 2048,
+      "height": 1024,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-94"
+    },
+    "liteDesktop": {
+      "url": "/textures/candidate-v591/mars/lite/desktop/mars-albedo.webp",
+      "bytes": 62730,
+      "sha256": "7a5c148af50a7488965aa09c7d692571e843b258ec66d1691be4dc695b1dd6b9",
+      "width": 1024,
+      "height": 512,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-90"
+    },
+    "liteMobile": {
+      "url": "/textures/candidate-v591/mars/lite/mobile/mars-albedo.webp",
+      "bytes": 23094,
+      "sha256": "93e2934495e9a691e94b7639a4aa2dfb68f58dc89e84461dc9eac164e32ba8b5",
+      "width": 512,
+      "height": 256,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-90"
+    }
+  },
+  "rejectedCompositeReceiptSha256": "7e4ecd303c0cd229da38cbbffc81b78d3f966fb77df50b2fd15161fca4db3dff",
+  "receiptSha256": "b97619365064d0102b4abe176d2c3458625a02423792ff5ec1c5db4a5bb8b856"
+}

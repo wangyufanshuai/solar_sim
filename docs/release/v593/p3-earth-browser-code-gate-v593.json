@@ -1,0 +1,919 @@
+{
+  "version": "v593-p3-earth-browser-code-gate-v1",
+  "generatedAt": "2026-08-22T16:00:00.000Z",
+  "status": "passed-current-dev-earth-code-and-visual-gates-console-replay-blocked-sealed-build-and-human-signoff-pending",
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "formalProductPointer": "v263",
+    "additiveOnly": true
+  },
+  "scope": {
+    "signaturePassesCodeImplemented": 5,
+    "signaturePassesComplete": 0,
+    "implemented": [
+      "sun",
+      "earth",
+      "jupiter",
+      "saturn",
+      "stellar-archetypes"
+    ],
+    "pending": [
+      "deep-sky"
+    ],
+    "finalGoldenFrameMatrixComplete": false,
+    "sealedBuildEvidence": false,
+    "humanVisualSignoff": false
+  },
+  "sourceMaterialCorrectness": {
+    "bridge": {
+      "path": "app/components/SignatureArtDirectionBridgeV593.tsx",
+      "bytes": 73901,
+      "sha256": "878a772fdeb249308dbcb2aed11b043087ece94198a9aa1e4baeb7f9a705e0ce"
+    },
+    "shell": {
+      "path": "app/components/FinalArtObservatoryShellV593.tsx",
+      "bytes": 28295,
+      "sha256": "118d320fa3b281a44c81d9a304434310b4699763983df4dfa72cb21e3d96198d"
+    },
+    "overlay": {
+      "path": "public/data/celestial-convergence-v591/earth-asset-overlay.json",
+      "bytes": 18866,
+      "sha256": "d1ef8e743d27b953f291f08c4164e693967cdb48b222de021407be05bf79136f",
+      "receiptSha256": "598ead89be4b853cd3e1018086ea902fc9d70e281ce83013baade569f0012238"
+    },
+    "verifiedSourceVariants": [
+      {
+        "assetId": "earth-albedo",
+        "path": "public/textures/candidate-v588/ktx2/earth-albedo.ktx2",
+        "bytes": 2594380,
+        "sha256": "7eca85286ddb871a5f3be9ad2ac6a74dbdab1f2b5b8ff851255c2842f9978777",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "srgb",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      },
+      {
+        "assetId": "earth-normal",
+        "path": "public/textures/candidate-v590/full/ktx2/earth-normal.ktx2",
+        "bytes": 2231483,
+        "sha256": "fecc5409b303844730032b9e6000d718b14aae6afc692b9ae0451b2949f5e144",
+        "width": 4096,
+        "height": 2048,
+        "format": "ktx2",
+        "colorSpace": "linear",
+        "compression": "uastc-q2-zstd10-mipmapped"
+      },
+      {
+        "assetId": "earth-roughness",
+        "path": "public/textures/candidate-v588/ktx2/earth-roughness.ktx2",
+        "bytes": 10297415,
+        "sha256": "08bc2afa115fe6727321d1c649b1ce9b335cbec2a354fd40f473fb0072e7e2b5",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "linear",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      },
+      {
+        "assetId": "earth-clouds",
+        "path": "public/textures/candidate-v588/ktx2/earth-clouds.ktx2",
+        "bytes": 5445903,
+        "sha256": "ddc91c0c17fa911b4568156a09000390f02176e30994c47c506e518274977ec0",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "srgb",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      },
+      {
+        "assetId": "earth-cloud-alpha",
+        "path": "public/textures/candidate-v588/ktx2/earth-cloud-alpha.ktx2",
+        "bytes": 24236844,
+        "sha256": "08b0980926edb08f60fba48654c6a5f2c5dc614084918e8b8045ee53410f676a",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "linear",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      },
+      {
+        "assetId": "earth-night",
+        "path": "public/textures/candidate-v588/ktx2/earth-night.ktx2",
+        "bytes": 1348019,
+        "sha256": "d8e93c08fa6437acd79a58d5bc55ec10a1b49eb5f4f89d929739a50a1366c3e9",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "srgb",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      },
+      {
+        "assetId": "earth-night-mask",
+        "path": "public/textures/candidate-v588/ktx2/earth-night-mask.ktx2",
+        "bytes": 5978777,
+        "sha256": "390868ff5a2d5e6db9884086c1b4fa8e0664044627c13b3b120cb58e84d01dec",
+        "width": 8192,
+        "height": 4096,
+        "format": "ktx2",
+        "colorSpace": "linear",
+        "compression": "byte-copy-from-admitted-v49-ktx2"
+      }
+    ],
+    "surface": "NASA-source-bound-Blue-Marble-GEBCO-normal-land-ocean-roughness-and-Black-Marble-night",
+    "clouds": "NASA-source-bound-dual-cloud-color-alpha-layers-with-sun-tangent-shadow",
+    "atmosphere": "analytic-bounded-Rayleigh-Mie-presentation-shell",
+    "seamPolicy": "local-three-tap-cross-edge-filter-with-narrow-normal-fade",
+    "scientificObservationMapClaim": false
+  },
+  "captures": [
+    {
+      "id": "earth-science-day",
+      "mode": "science",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-earth-orientation",
+      "baselineTelemetry": {
+        "preset": "earth-science-day",
+        "lane": "baseline",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 128251,
+        "mode": "science",
+        "patches": 0,
+        "surfacePatches": 0,
+        "cloudPatches": 0,
+        "atmospherePatches": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 239.808,
+        "fpsP10": 233.645,
+        "fpsMinimum": 179.856,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 7,
+        "textures": 10,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "false",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.81759140",
+        "seamDistanceDeg": "65.667096",
+        "seamFacing": "false"
+      },
+      "signatureTelemetry": {
+        "preset": "earth-science-day",
+        "lane": "signature",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 129497,
+        "mode": "science",
+        "patches": 4,
+        "surfacePatches": 1,
+        "cloudPatches": 2,
+        "atmospherePatches": 1,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 233.372,
+        "fpsMinimum": 158.353,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 8,
+        "textures": 17,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "true",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.81759140",
+        "seamDistanceDeg": "65.667096",
+        "seamFacing": "false"
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 128251,
+        "sha256": "e03508d5c1aea1ac697b1c76485595a7e899a66ec26c8dad31607e5fc5bd18ef",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 129497,
+        "sha256": "a1fc67a2f1e59b8e41c92e1dcc2ebd48599ef074810b598ebfaaa990b0138b58",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v592-baseline-current-dev-1440x900-native-crop.png",
+        "bytes": 315512,
+        "sha256": "82692df23ab2290eceb16e0a55a7c13a35de35a0d971212a50b90ff854e2f7f4",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-day-v593-signature-current-dev-1440x900-native-crop.png",
+        "bytes": 331966,
+        "sha256": "c142aa75e6dffa51b5a7cb6338a052d8afe9c5f1bf22f841b3109f762357637a",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 0.947717,
+        "changedChannelFractionGt2": 0.119384,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "earth-cinematic-day",
+      "mode": "cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-earth-orientation",
+      "baselineTelemetry": {
+        "preset": "earth-cinematic-day",
+        "lane": "baseline",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 141627,
+        "mode": "cinematic",
+        "patches": 0,
+        "surfacePatches": 0,
+        "cloudPatches": 0,
+        "atmospherePatches": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 239.808,
+        "fpsP10": 232.558,
+        "fpsMinimum": 138.217,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 7,
+        "textures": 10,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "false",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.81759140",
+        "seamDistanceDeg": "65.667096",
+        "seamFacing": "false"
+      },
+      "signatureTelemetry": {
+        "preset": "earth-cinematic-day",
+        "lane": "signature",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 144604,
+        "mode": "cinematic",
+        "patches": 4,
+        "surfacePatches": 1,
+        "cloudPatches": 2,
+        "atmospherePatches": 1,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 231.214,
+        "fpsMinimum": 127.959,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 10,
+        "textures": 17,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "true",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.81759140",
+        "seamDistanceDeg": "65.667096",
+        "seamFacing": "false"
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 141627,
+        "sha256": "5fdca6eecd8bfcb3444d7655b87a4c6086a52c7ab594c05a973a9ce505566837",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 144604,
+        "sha256": "78f09215708bc75bef7fbb9b9bc14d034895672baee17f6aeae9a93a5ae0c16c",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v592-baseline-current-dev-1440x900-native-crop.png",
+        "bytes": 354671,
+        "sha256": "dba7e26fba6f1c1dd07a1e71e5a34baaa0c5682ecc86930e22075421bd8b45a1",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v593-signature-current-dev-1440x900-native-crop.png",
+        "bytes": 385402,
+        "sha256": "c2d2566381cbac44b166cc1a6a5b850286cb80f35136a4bdebce5465045ba98a",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 1.290114,
+        "changedChannelFractionGt2": 0.12552906,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "earth-cinematic-night",
+      "mode": "cinematic",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-earth-orientation",
+      "baselineTelemetry": {
+        "preset": "earth-cinematic-night",
+        "lane": "baseline",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 75480,
+        "mode": "cinematic",
+        "patches": 0,
+        "surfacePatches": 0,
+        "cloudPatches": 0,
+        "atmospherePatches": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 239.808,
+        "fpsP10": 230.947,
+        "fpsMinimum": 191.205,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 9,
+        "programs": 7,
+        "textures": 10,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "false",
+        "cameraPolicy": "anti-solar-night-lights-fixed-camera",
+        "cameraCenterU": "0.18797048",
+        "seamDistanceDeg": "67.669373",
+        "seamFacing": "false"
+      },
+      "signatureTelemetry": {
+        "preset": "earth-cinematic-night",
+        "lane": "signature",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 77116,
+        "mode": "cinematic",
+        "patches": 4,
+        "surfacePatches": 1,
+        "cloudPatches": 2,
+        "atmospherePatches": 1,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 232.288,
+        "fpsMinimum": 157.978,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 9,
+        "programs": 10,
+        "textures": 17,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "true",
+        "cameraPolicy": "anti-solar-night-lights-fixed-camera",
+        "cameraCenterU": "0.18797048",
+        "seamDistanceDeg": "67.669373",
+        "seamFacing": "false"
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 75480,
+        "sha256": "65daa2ae104a45b0fb559325286d400fb45666b45f2232a87f5586d5c8f8562d",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 77116,
+        "sha256": "f352ca89b5d0774fe2c8600b48a663081717ca24ea41eab56d39bb078313fbdf",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v592-baseline-current-dev-1440x900-native-crop.png",
+        "bytes": 74488,
+        "sha256": "8863cb1a97560c7bd6d6af9fb6ca4029151f881b126a7771a349c8a29af7d917",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v593-signature-current-dev-1440x900-native-crop.png",
+        "bytes": 88498,
+        "sha256": "7b00eb869b918086445c0b9fa77e77ad5bc66794ef1c727a858411fe4b595e5a",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 0.291572,
+        "changedChannelFractionGt2": 0.01759877,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "earth-science-limb",
+      "mode": "science",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-earth-orientation",
+      "baselineTelemetry": {
+        "preset": "earth-science-limb",
+        "lane": "baseline",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 108092,
+        "mode": "science",
+        "patches": 0,
+        "surfacePatches": 0,
+        "cloudPatches": 0,
+        "atmospherePatches": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 232.288,
+        "fpsMinimum": 173.01,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 9,
+        "programs": 7,
+        "textures": 10,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "false",
+        "cameraPolicy": "terminator-atmospheric-limb-fixed-camera",
+        "cameraCenterU": "0.99616771",
+        "seamDistanceDeg": "1.379626",
+        "seamFacing": "false"
+      },
+      "signatureTelemetry": {
+        "preset": "earth-science-limb",
+        "lane": "signature",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 108219,
+        "mode": "science",
+        "patches": 4,
+        "surfacePatches": 1,
+        "cloudPatches": 2,
+        "atmospherePatches": 1,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 239.521,
+        "fpsP10": 230.947,
+        "fpsMinimum": 106.667,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 9,
+        "programs": 10,
+        "textures": 17,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "true",
+        "cameraPolicy": "terminator-atmospheric-limb-fixed-camera",
+        "cameraCenterU": "0.99616771",
+        "seamDistanceDeg": "1.379626",
+        "seamFacing": "false"
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 108092,
+        "sha256": "6d0ab04155617e65612c69a82463f2a7e14c1383c2e0b32503b658c0865f5d77",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 108219,
+        "sha256": "fddd651f86c9d788ea523da369df66b53dce967a1dcdd4cc3532fbc9950a86e7",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v592-baseline-current-dev-1440x900-native-crop.png",
+        "bytes": 176515,
+        "sha256": "b43170d8b1ad6a5e2731df2369ad856147820613a2c78dd3a634a95c3cde31df",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v593-signature-current-dev-1440x900-native-crop.png",
+        "bytes": 180569,
+        "sha256": "24aacee8ff44f925ea536e5e754e820cc5d39cd9722f98aabbf4d7e362492ac1",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 0.457953,
+        "changedChannelFractionGt2": 0.05765818,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "earth-seam-audit",
+      "mode": "science",
+      "framePolicy": "same-current-dev-build-fixed-camera-clock-and-earth-orientation",
+      "baselineTelemetry": {
+        "preset": "earth-seam-audit",
+        "lane": "baseline",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 125982,
+        "mode": "science",
+        "patches": 0,
+        "surfacePatches": 0,
+        "cloudPatches": 0,
+        "atmospherePatches": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 229.885,
+        "fpsMinimum": 119.76,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 7,
+        "textures": 10,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "false",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.00000001",
+        "seamDistanceDeg": "0.000004",
+        "seamFacing": "true"
+      },
+      "signatureTelemetry": {
+        "preset": "earth-seam-audit",
+        "lane": "signature",
+        "file": "E:/86137/myai/solar_sim/next-web/docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 127210,
+        "mode": "science",
+        "patches": 4,
+        "surfacePatches": 1,
+        "cloudPatches": 2,
+        "atmospherePatches": 1,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "payloadStable": "true",
+        "writeback": "false",
+        "fpsMedian": 240,
+        "fpsP10": 105.932,
+        "fpsMinimum": 22.346,
+        "fpsSamples": 120,
+        "gpuBytes": 380283862,
+        "drawCalls": 13,
+        "programs": 10,
+        "textures": 17,
+        "geometries": 14,
+        "triangles": 151752,
+        "canvasCount": 1,
+        "webglChanged": "true",
+        "cameraPolicy": "sunward-blue-marble-three-quarter-fixed-camera",
+        "cameraCenterU": "0.00000001",
+        "seamDistanceDeg": "0.000004",
+        "seamFacing": "true"
+      },
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificPayloadWriteback": false,
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v592-baseline-current-dev-1440x900.jpg",
+        "bytes": 125982,
+        "sha256": "db9001f8e60532bdfc93b6024bf4578d85fd7810d13354fd2da34c9ef6026eaa",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v593-signature-current-dev-1440x900.jpg",
+        "bytes": 127210,
+        "sha256": "5afe8b41e128536b263350163b5432a96de8666624837a2c6624243b52e457bc",
+        "width": 1440,
+        "height": 900,
+        "format": "jpeg"
+      },
+      "baselineNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v592-baseline-current-dev-1440x900-native-crop.png",
+        "bytes": 295846,
+        "sha256": "63a523db79127a99703819e7d45442e7653c7b4e2dd834ad129567ab82740572",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "signatureNativeCrop": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v593-signature-current-dev-1440x900-native-crop.png",
+        "bytes": 314054,
+        "sha256": "02197cea71c966069c28b42e5862e69943a01cc3534da0747a85bacd5595c938",
+        "width": 550,
+        "height": 590,
+        "format": "png"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 0.940349,
+        "changedChannelFractionGt2": 0.11764686,
+        "maximumChannelDiff255": 133
+      }
+    }
+  ],
+  "detailCrops": [
+    {
+      "id": "day-highlight",
+      "frameId": "earth-cinematic-day",
+      "crop": {
+        "left": 300,
+        "top": 220,
+        "width": 260,
+        "height": 260
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v592-baseline-current-dev-day-highlight-100pct.png",
+          "bytes": 80097,
+          "sha256": "258fbe76d9b2a3b9610acb23d476f6b97eea6aebdcf8ece2ecea2af33b492d7e",
+          "width": 260,
+          "height": 260,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 6.2768,
+          "p50": 24.1054,
+          "p99": 141.8676,
+          "clippedBlackFraction": 0.00164201,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-day-v593-signature-current-dev-day-highlight-100pct.png",
+          "bytes": 85507,
+          "sha256": "879275bfd72d0a0828a159ef19937ff9eb60bdbc2985b97d303824f60e096708",
+          "width": 260,
+          "height": 260,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 5.46,
+          "p50": 25.9546,
+          "p99": 146.3662,
+          "clippedBlackFraction": 0.00164201,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "night-dark-city",
+      "frameId": "earth-cinematic-night",
+      "crop": {
+        "left": 435,
+        "top": 255,
+        "width": 400,
+        "height": 430
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v592-baseline-current-dev-night-dark-city-100pct.png",
+          "bytes": 34592,
+          "sha256": "c4f5450590f00b581f10435fba4a1b8de6be011909a13ee9dd0debe2b1ffe3bd",
+          "width": 400,
+          "height": 430,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 0,
+          "p99": 20.8556,
+          "clippedBlackFraction": 0.9237907,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-cinematic-night-v593-signature-current-dev-night-dark-city-100pct.png",
+          "bytes": 40667,
+          "sha256": "1efe46fed315f5c1fb1db0e64583507a443f0fccd8bc0c527279c3c525a74283",
+          "width": 400,
+          "height": 430,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 0,
+          "p99": 23.6338,
+          "clippedBlackFraction": 0.91548837,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "atmospheric-limb",
+      "frameId": "earth-science-limb",
+      "crop": {
+        "left": 275,
+        "top": 145,
+        "width": 230,
+        "height": 600
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v592-baseline-current-dev-atmospheric-limb-100pct.png",
+          "bytes": 128472,
+          "sha256": "574be0f75bb8d0611440072e7b6982ed62140e57dc0b6b73d87c70b2ebdbad6c",
+          "width": 230,
+          "height": 600,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 15.2378,
+          "p99": 108.9208,
+          "clippedBlackFraction": 0.07871739,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-science-limb-v593-signature-current-dev-atmospheric-limb-100pct.png",
+          "bytes": 130832,
+          "sha256": "8277f3c98aa6e82f9d164c6f586734168ce2e96374808893b9a3cd77034a5181",
+          "width": 230,
+          "height": 600,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 0,
+          "p50": 13.389,
+          "p99": 101.7908,
+          "clippedBlackFraction": 0.07789855,
+          "clippedWhiteFraction": 0
+        }
+      }
+    },
+    {
+      "id": "true-seam",
+      "frameId": "earth-seam-audit",
+      "crop": {
+        "left": 518,
+        "top": 170,
+        "width": 100,
+        "height": 550
+      },
+      "baseline": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v592-baseline-current-dev-true-seam-100pct.png",
+          "bytes": 51520,
+          "sha256": "0c4f815b83b1199778e3138d5142e1a471da8887876255eb476f4a0c90f353b5",
+          "width": 100,
+          "height": 550,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 15.0774,
+          "p50": 27.4034,
+          "p99": 108.3702,
+          "clippedBlackFraction": 0.00043636,
+          "clippedWhiteFraction": 0
+        }
+      },
+      "signature": {
+        "image": {
+          "path": "docs/release/v593/screenshots/p3-earth-code-gates/earth-seam-audit-v593-signature-current-dev-true-seam-100pct.png",
+          "bytes": 53195,
+          "sha256": "05a161827a6a387612140f55960571fea81cb08069e1867def88b2d000b4a1ef",
+          "width": 100,
+          "height": 550,
+          "format": "png"
+        },
+        "tone": {
+          "p01": 16.0492,
+          "p50": 25.3272,
+          "p99": 109.3702,
+          "clippedBlackFraction": 0,
+          "clippedWhiteFraction": 0
+        }
+      }
+    }
+  ],
+  "seamInspection": {
+    "cameraCenterU": 1e-8,
+    "seamDistanceDeg": 0.000004,
+    "seamFacingCamera": true,
+    "baseline": {
+      "centerColumn": 568,
+      "sampleY": [
+        170,
+        720
+      ],
+      "meanCenteredGradient255": 2.481073,
+      "meanFlankGradient255": 2.32452,
+      "seamToFlankRatio": 1.06734881
+    },
+    "signature": {
+      "centerColumn": 568,
+      "sampleY": [
+        170,
+        720
+      ],
+      "meanCenteredGradient255": 1.951671,
+      "meanFlankGradient255": 2.23049,
+      "seamToFlankRatio": 0.87499651
+    },
+    "gradientReductionFraction": 0.21337623,
+    "wideBlurBandObserved": false,
+    "horizontalStripeObserved": false,
+    "independentLightDarkFaceObserved": false,
+    "finalHumanArtSignoff": false
+  },
+  "visualInspection": {
+    "currentDevNativeScale": "passed-code-gate",
+    "oceanHighlight": "bounded-no-camera-facing-grey-specular-spot",
+    "nightSide": "source-bound-emission-visible-with-dark-ground-preserved",
+    "atmosphericLimb": "bounded-no-full-screen-bloom",
+    "trueTextureSeam": "correctly-camera-aligned-and-local-gradient-reduced",
+    "finalHumanArtSignoff": false
+  },
+  "browser": {
+    "runner": "Codex-in-app-browser",
+    "viewport": "1440x900",
+    "telemetry": {
+      "path": "docs/release/v593/screenshots/p3-earth-code-gates/browser-telemetry-current-dev-v593.json",
+      "bytes": 9473,
+      "sha256": "8e22dfb3088bd3e2a97d47877da8c9a50b260a035f14bfe89c270a77605b0264"
+    },
+    "consoleReplay": {
+      "status": "blocked-browser-url-policy",
+      "errorWarningCount": null,
+      "evidence": {
+        "path": "docs/release/v593/blocked-browser-url-policy-p3-earth-v593.json",
+        "bytes": 975,
+        "sha256": "a55b853270dbdebc18e52903202e14b14f5a58b20992102d6fc68a23b769b739"
+      },
+      "finalSealedBuildConsoleGatePassed": false
+    },
+    "singleCanvas": true,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadUniqueCount": 1,
+    "scientificPayloadWriteback": false,
+    "minimumMedianFps": 239.521,
+    "maximumGpuBytes": 380283862,
+    "maximumDrawCalls": 13,
+    "resourceCycles": {
+      "record": {
+        "path": "docs/release/v593/screenshots/p3-earth-code-gates/resource-cycles-current-dev-v593.json",
+        "bytes": 2945,
+        "sha256": "c15d773ef541c7f7ad7ea1fded823a7cf3feab4e19c54cb0078a59c4290269a9"
+      },
+      "baselineSignatureCycleCount": 4,
+      "sampledStateCount": 9,
+      "finalBaseline": {
+        "patchCount": 0,
+        "signatureMaterialCount": 0,
+        "programs": 7,
+        "textures": 10
+      },
+      "sustainedGrowth": false
+    }
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "productionReleaseAuthorized": false
+  },
+  "receiptSha256": "30bd706ef3ecd2ad4119798a9b320c12f9b95549fbe93763e4d0ad7ffe3949f6"
+}

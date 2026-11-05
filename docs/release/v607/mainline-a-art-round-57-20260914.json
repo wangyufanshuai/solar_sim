@@ -1,0 +1,66 @@
+{
+  "round": 57,
+  "date": "2026-09-14",
+  "title": "beta-nebula-expansion-v617",
+  "status": "candidate-expansion-24-registered-payload-and-rights-pending",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentRuntimeNebulae": 12,
+    "baseCandidates": 18,
+    "expansionCandidates": 6,
+    "candidateTotal": 24,
+    "expansionLocalPayloadPresent": 1,
+    "expansionPayloadAcquisitionPending": 5,
+    "expansionRightsCleared": 0,
+    "runtimeAdmitted": 0,
+    "currentStars": 20,
+    "betaHeroStars": 24,
+    "currentConstellations": 12,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added V617 expansion generator joining the sealed V613 18-candidate pack with six preserved v592 metadata/license identities: Ring, Dumbbell, California, Bubble, Cat's Eye and Omega.",
+    "Validated license-review, metadata-admission, metadata-acquisition and visual-acquisition receipt seals before creating expansion records; no historical receipt was rewritten.",
+    "Recorded acquisitionDecision, NASA ID, HTTPS source/preview URL, metadata digest, creator/credit, metadata state, payload state, local payload bytes/SHA/dimensions when present, and explicit blockers.",
+    "Kept California as one local payload with SHA/bytes/dimensions evidence; the other five remain metadata-only or license-blocked and carry payload-acquisition-pending rather than fabricated image fields.",
+    "Added TypeScript expansion utility with filtering, status labels, blocker labels, source/receipt summaries, payload counts, completion and fail-closed admission helpers.",
+    "Extended the nebula review panel with a V617 six-record expansion section showing 24-candidate total, 1 local payload, 5 pending acquisitions, next actions and candidate-only/science-payload-off boundaries."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in four new R57 generator/test/utility files; panel, generated pack, package scripts and panel test are additional integration changes.",
+    "files": [
+      {"path": "scripts/build-mainline-a-beta-nebula-expansion-v617.mjs", "baseline": "new-in-r57", "effectiveChangedLines": 174, "sha256": "843d10ccccbb0e8f147e5a93225f51d3f9ff5241b5a514ae14d5134d0c23798d"},
+      {"path": "scripts/build-mainline-a-beta-nebula-expansion-v617.test.mjs", "baseline": "new-in-r57", "effectiveChangedLines": 86, "sha256": "86c800447b1e5a4c41a592d5b7dc441e73e17c6e34e172b3e89d8959067b30be"},
+      {"path": "app/lib/mainlineABetaNebulaExpansionV617.ts", "baseline": "new-in-r57", "effectiveChangedLines": 161, "sha256": "046db097b8bd38f722ca7489d7e7a5ac5061ddfea8f30e38971c6bbe990b242b"},
+      {"path": "app/lib/mainlineABetaNebulaExpansionV617.test.ts", "baseline": "new-in-r57", "effectiveChangedLines": 88, "sha256": "4250c3b54d80ee34810ad5b3b27bf98c7260712b8a08a7ae6fd177c9e9c66827"}
+    ],
+    "effectiveChangedLines": 509,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "expansionNode": {"passed": 6, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-nebula-expansion-v617.test.mjs"},
+    "expansionVitest": {"passed": 14, "failed": 0, "files": 2},
+    "combinedRegressionNode": {"passed": 62, "failed": 0, "command": "node --test --test-concurrency=1 scripts/build-mainline-a-beta-nebula-expansion-v617.test.mjs scripts/build-mainline-a-beta-stellar-source-closure-v616.test.mjs scripts/build-mainline-a-beta-hero-art-evidence-pack-v615.test.mjs scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "note": "The stale-pack child-process error is an asserted negative case; aggregate exit code is 0."},
+    "combinedVitest": {"passed": 74, "failed": 0, "files": 8},
+    "eslint": {"passed": true, "scope": "V617 expansion generator, utility, tests, nebula review panel and tests"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "IGsmSY56I4OOYmUVJ71VO", "buildIdSha256": "7e748b2c1fdeb7dd6143ad0c3fb42de13e18f94e4bd46796256d1818eaf4dc71"}
+  },
+  "http": {"productionUrl": "http://127.0.0.1:3019/", "checks": [{"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697}, {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241, "defaultScientificKernel": "legacy-eih-1pn"}]},
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "panel": "mainline-a-nebula-review-v610", "expansionRecordCount": 6, "candidateTotalDisplayed": 24, "localPayloadDisplayed": 1, "payloadPendingDisplayed": 5, "californiaPayloadState": "local-payload-present", "ringPayloadState": "payload-acquisition-pending", "runtimeAdmitted": 0, "sciencePayloadWriteback": false, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "In-app viewport override remains unavailable in this run; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not physical-device performance, public deployment, legal clearance, real-user validation or scientific validation"
+  },
+  "screenshots": [{"path": "docs/release/v607/screenshots/mainline-a-r57-nebula-expansion-desktop.png", "bytes": 98124, "sha256": "9421cb1beac54ba42e8aa8ff00e4b4cec5dae72945e996dbe7ac4d3da8682c1b"}],
+  "artifacts": {
+    "expansionPack": {"schema": "mainline-a-beta-nebula-expansion-v617", "path": "app/data/mainlineABetaNebulaExpansionV617.generated.json", "sha256": "3806141883c14d43ad46fb4959945ffcac8f88b5d5cbd0a76d251a8ec4a78859", "baseCandidates": 18, "expansionCandidates": 6, "candidateTotal": 24, "localPayloadPresent": 1, "payloadAcquisitionPending": 5, "runtimeAdmitted": 0},
+    "receipts": {"licenseReviewSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd", "metadataAdmissionSha256": "2dfee42c0246c847225239a498845f8bca5f5e07eff4c0e9aeb60c3ba56c5641", "metadataAcquisitionSha256": "a66c5dec394f1804cd70fb601d594ddfbb4e169ae4dda0ef43d23fb3b1c4a38c", "visualAcquisitionSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8"},
+    "californiaPayload": {"path": "source-cache/v592/nebulae/visual/california-nebula-PIA23650-orig.jpg", "bytes": 758960, "width": 3317, "height": 1902, "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396"},
+    "boundary": {"rightsCleared": 0, "visualAssetAdmission": false, "scienceImagePayloadWriteback": false, "runtimeAdmission": 0}
+  },
+  "openGates": ["24 条候选已登记，但 6 条扩展均未完成逐图权利审核与视觉 signoff；California 虽有本地 payload 也不能视为清权或运行时准入", "Ring、Dumbbell、Bubble、Cat's Eye、Omega 五条仍需在许可状态允许后进行单次 HTTPS payload 采集；不能用 metadata 代替图像", "Acrux、Spica、Regulus、Polaris 仍需真实新来源快照和组件身份审核", "12 个星座最终视觉 signoff、多设备 GPU/FPS/资源生命周期、移动端、root/next-web 对齐、公共部署和最终发布包仍未完成"],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

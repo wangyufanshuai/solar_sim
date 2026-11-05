@@ -1,0 +1,52 @@
+{
+  "schema": "mainline-a-stellar-parser-integration",
+  "generatedAt": "2026-09-27T03:24:09.770Z",
+  "target": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+  "before": {
+    "path": "docs/release/v607/stellar-candidate-ledger/r61/2d1c88bc9db2f3d859d505728af1b15ba5d1b1cccf7678fcedd013e5e8dd4194.json",
+    "sha256": "2d1c88bc9db2f3d859d505728af1b15ba5d1b1cccf7678fcedd013e5e8dd4194"
+  },
+  "after": {
+    "path": "docs/release/v607/stellar-candidate-ledger/r61/b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c.json",
+    "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+  },
+  "sourceLedger": {
+    "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+    "schema": "mainline-a-beta-stellar-raw-attempt-ledger-v620"
+  },
+  "counts": {
+    "total": 4,
+    "parsedCandidate": 4,
+    "blocked": 0,
+    "componentConfirmed": 0
+  },
+  "independentVerification": {
+    "path": "docs/release/v607/mainline-a-stellar-field-verification-20260927-055.json",
+    "sha256": "65f903dee2abfcf1e8c2e35c68c39504f1bf6bb82dea1a8649f71c3e533b6697"
+  },
+  "protectedFiles": [
+    {
+      "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+      "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2",
+      "bytes": 17429
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+      "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd",
+      "bytes": 7536
+    },
+    {
+      "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310",
+      "bytes": 6448
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false
+  }
+}

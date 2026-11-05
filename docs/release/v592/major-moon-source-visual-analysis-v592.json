@@ -1,0 +1,202 @@
+{
+  "version": "v592-major-moon-source-visual-analysis-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "three-runtime-derivation-candidates-three-source-coverage-blocked",
+  "policy": {
+    "automatedPanelDetection": "longest high-coverage row/column run followed by exact 2:1 center crop",
+    "panelLumaThreshold": 20,
+    "panelCoverageThreshold": 0.78,
+    "noInpainting": true,
+    "noSyntheticCoverageFill": true,
+    "noObservationDataClaimForMissingPixels": true,
+    "runtimeAssetAdmissionGranted": false
+  },
+  "sourceAcquisitionReceiptSha256": "c7547ccccec38cb3a7da5898b763ebd6ac9f4f1c92585e916f5d8a370efd0dcc",
+  "summary": {
+    "analyzedCount": 6,
+    "runtimeDerivationCandidateCount": 3,
+    "sourceCoverageBlockedCount": 3,
+    "runtimeAssetAdmittedCount": 0
+  },
+  "derivableTargets": [
+    "titan",
+    "enceladus",
+    "rhea"
+  ],
+  "blockedTargets": [
+    "iapetus",
+    "triton",
+    "charon"
+  ],
+  "analyses": [
+    {
+      "target": "titan",
+      "nasaId": "PIA19658",
+      "sourcePath": "source-cache/v592/major-moons/visual/titan-PIA19658-orig.jpg",
+      "sourceSha256": "bea13db3df7de68517784fe63ecc743d2974545f1732f9cf1559b2961049ae2d",
+      "sourceDimensions": [
+        4374,
+        2430
+      ],
+      "cropPolicy": "detected-map-panel",
+      "crop": {
+        "left": 196,
+        "top": 218,
+        "width": 4044,
+        "height": 2022
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 130.825439453125,
+        "darkPixelFraction": 0.005157470703125,
+        "nearBlackPixelFraction": 0.0004634857177734375,
+        "meanSeamAbsoluteLuma": 4.900390625
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "remove title, axes and scale bar; Cassini 938nm albedo map",
+      "runtimeAssetAdmitted": false
+    },
+    {
+      "target": "enceladus",
+      "nasaId": "PIA14937",
+      "sourcePath": "source-cache/v592/major-moons/visual/enceladus-PIA14937-orig.jpg",
+      "sourceSha256": "ec4cf30d2fe922cf6ce1b681c50f14b276df0e83dbe5abc010865a1343aad138",
+      "sourceDimensions": [
+        7480,
+        3930
+      ],
+      "cropPolicy": "detected-map-panel",
+      "crop": {
+        "left": 164,
+        "top": 140,
+        "width": 7200,
+        "height": 3600
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 141.41222381591797,
+        "darkPixelFraction": 0.0004119873046875,
+        "nearBlackPixelFraction": 0.00008392333984375,
+        "meanSeamAbsoluteLuma": 17.650390625
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "remove title, axes and scale bar; global Cassini mosaic",
+      "runtimeAssetAdmitted": false
+    },
+    {
+      "target": "rhea",
+      "nasaId": "PIA12803",
+      "sourcePath": "source-cache/v592/major-moons/visual/rhea-PIA12803-orig.jpg",
+      "sourceSha256": "52742de5d4356544eb58fc4134dab54e3abb511b96dd7f282c33ffffcd8f34c1",
+      "sourceDimensions": [
+        11520,
+        5760
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 11520,
+        "height": 5760
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 109.13136100769043,
+        "darkPixelFraction": 0.000579833984375,
+        "nearBlackPixelFraction": 0.000049591064453125,
+        "meanSeamAbsoluteLuma": 17.2890625
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "source is already a clean 2:1 global map",
+      "runtimeAssetAdmitted": false
+    },
+    {
+      "target": "iapetus",
+      "nasaId": "PIA07778",
+      "sourcePath": "source-cache/v592/major-moons/visual/iapetus-PIA07778-orig.jpg",
+      "sourceSha256": "380ab0ae696cc6be02a1de300e74ce7842c4b9012dcabe09f1a7961fe7576971",
+      "sourceDimensions": [
+        7748,
+        4250
+      ],
+      "cropPolicy": "detected-map-panel",
+      "crop": {
+        "left": 1188,
+        "top": 259,
+        "width": 5422,
+        "height": 2711
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 112.1096076965332,
+        "darkPixelFraction": 0.025770187377929688,
+        "nearBlackPixelFraction": 0.02428436279296875,
+        "meanSeamAbsoluteLuma": 44.849609375
+      },
+      "visualInspectionDecision": "blocked-source-coverage-gap",
+      "visualInspectionNote": "large black unobserved regions are unsuitable for a 3A spherical hero",
+      "runtimeAssetAdmitted": false
+    },
+    {
+      "target": "triton",
+      "nasaId": "PIA18668",
+      "sourcePath": "source-cache/v592/major-moons/visual/triton-PIA18668-orig.jpg",
+      "sourceSha256": "b38960c7eb2a6c97c062eea891838e970de604b2cff8f8c1fa771009e5001cf1",
+      "sourceDimensions": [
+        14138,
+        7069
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 14138,
+        "height": 7069
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 95.437744140625,
+        "darkPixelFraction": 0.385467529296875,
+        "nearBlackPixelFraction": 0.38492393493652344,
+        "meanSeamAbsoluteLuma": 7.525390625
+      },
+      "visualInspectionDecision": "blocked-non-equirectangular-coverage",
+      "visualInspectionNote": "source contains a partial projected mosaic on a black field, not a complete 2:1 surface map",
+      "runtimeAssetAdmitted": false
+    },
+    {
+      "target": "charon",
+      "nasaId": "PIA19866",
+      "sourcePath": "source-cache/v592/major-moons/visual/charon-PIA19866-orig.jpg",
+      "sourceSha256": "c8d0d094b6784ea4829cd7d229ee1fc977e46538b560d9131276202d13f351d3",
+      "sourceDimensions": [
+        9520,
+        4760
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 9520,
+        "height": 4760
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 512,
+        "meanLuma": 78.27468299865723,
+        "darkPixelFraction": 0.3836097717285156,
+        "nearBlackPixelFraction": 0.35241127014160156,
+        "meanSeamAbsoluteLuma": 0.74609375
+      },
+      "visualInspectionDecision": "blocked-source-coverage-gap",
+      "visualInspectionNote": "large black unobserved regions cover much of the southern hemisphere; no inpainting or synthetic fill is permitted",
+      "runtimeAssetAdmitted": false
+    }
+  ],
+  "receiptSha256": "8bc466759218c4099cfab182c40c5aa6eae5e90aa5236d994bd57fdb8f47e6df"
+}

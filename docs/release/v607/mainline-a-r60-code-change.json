@@ -1,0 +1,23 @@
+{
+  "round": 60,
+  "date": "2026-09-14",
+  "scope": "Real HTTPS stellar raw collector, attempt ledger, offline replay and artifact audit",
+  "effectiveChangedLines": 1082,
+  "minimumRequired": 500,
+  "countMethod": "Nonblank, noncomment production lines in collector, replay, artifact-audit, typed utilities and review-panel integration; tests excluded.",
+  "files": [
+    {"path":"scripts/collect-mainline-a-stellar-raw-v620.mjs","lines":223,"sha256":"928998a55f45fab19254ed841a8ac81a41df83223566a12908ea1ca9fee86b12"},
+    {"path":"scripts/build-mainline-a-beta-stellar-raw-replay-v620.mjs","lines":106,"sha256":"50c389306479a6e711dc557cd65d04a16e28f4ebf2b841d21f5a0a937df044c7"},
+    {"path":"scripts/audit-mainline-a-stellar-raw-artifacts-v620.mjs","lines":114,"sha256":"ee891ec9d0df357497081f398da3d1b35e20483b2e76a6a9ae38cb76a0d8b68c"},
+    {"path":"app/lib/mainlineABetaStellarRawAttemptLedgerV620.ts","lines":89,"sha256":"85d87a29f1167de8ee4bfb0f050b543c7cda8add311260bd28c509dc9bdaacec"},
+    {"path":"app/lib/mainlineABetaStellarRawReplayV620.ts","lines":156,"sha256":"449ecda1a1f4ebdd7199e2382a1fe7696357e8b9b0071962ffea8155c8b8a5f0"},
+    {"path":"app/components/MainlineABetaHeroReviewPanelV611.tsx","lines":394,"sha256":"f88e9eff154f98a1e96896dfd5e74a34a9315307c8569798fda9004408cf8fc0"}
+  ],
+  "integrationFiles": [
+    {"path":"app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json","sha256":"9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"},
+    {"path":"scripts/collect-mainline-a-stellar-raw-v620.test.mjs","sha256":"773fd6ba1b80c491bc30fe70a2db609e233ef9a8dbfeaa1f1076715fca60c8a7"},
+    {"path":"scripts/build-mainline-a-beta-stellar-raw-replay-v620.test.mjs","sha256":"052220895b0e26a5add698960d53071925d8858cab5f6ba2b08198ff5fd4a96d"},
+    {"path":"scripts/audit-mainline-a-stellar-raw-artifacts-v620.test.mjs","sha256":"b107a930065ed6434930d160289b9968af1b11573a30fc5685192ba5d8d694ee"},
+    {"path":"package.json","sha256":"2c18929ca0e4f765972081a30257f45bae9887dda23c08a8b74454cc58c3e120"}
+  ]
+}

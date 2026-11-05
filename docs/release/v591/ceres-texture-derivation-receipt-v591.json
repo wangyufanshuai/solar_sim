@@ -1,0 +1,88 @@
+{
+  "version": "v591-ceres-pds-texture-derivation-receipt-v1",
+  "body": "ceres",
+  "sources": {
+    "albedo": {
+      "path": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/ceres_albedo_c.cub",
+      "bytes": 9941484,
+      "sha256": "49323d6e757639d03c4bf87815c24374233795345d86d7e9db3ae31921635951",
+      "labelPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/albedo.xml",
+      "labelSha256": "db42cb093b795e09286f68db2dc9497ba30c158982401564fe39f5aaec4f50de",
+      "width": 2222,
+      "height": 1111,
+      "dataType": "IEEE754LSBSingle",
+      "units": "relative-albedo",
+      "minimum": "0.20211648941",
+      "maximum": "1.6633118391",
+      "percentile005": "0.434209276438",
+      "percentile995": "0.578241087198"
+    },
+    "radius": {
+      "path": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/ceres_radius_g.tif",
+      "bytes": 9881891,
+      "sha256": "8747ecc9e100be770ab1699604b0bc62441e5b302677c29b7570987334aacfd8",
+      "labelPath": "source-cache/celestial-convergence-v591/ceres/pds-shape-models-maps-v2/radius.xml",
+      "labelSha256": "da583e44bf4037c93d274921983557f0358f7015b50e8092422fa4f2cc64eedf",
+      "width": 2222,
+      "height": 1111,
+      "dataType": "IEEE754LSBSingle",
+      "units": "meter-from-body-center",
+      "minimum": "442618.25",
+      "maximum": "486849.59375",
+      "pixelResolutionMeters": "1325.89504823"
+    }
+  },
+  "outputs": [
+    {
+      "id": "ceres-albedo",
+      "path": "tmp/v591-ceres-assets/ceres-albedo.png",
+      "bytes": 3517753,
+      "sha256": "328c2823b359767fa33e0d23b351598236bbe1f8c96ebfb5ba270169a75618ec",
+      "width": 2222,
+      "height": 1111,
+      "mode": "RGB"
+    },
+    {
+      "id": "ceres-normal",
+      "path": "tmp/v591-ceres-assets/ceres-normal.png",
+      "bytes": 2778524,
+      "sha256": "d7216f0ca7ace2455d88732ad651301227f57f03c58ba52a65cf28606b090389",
+      "width": 2222,
+      "height": 1111,
+      "mode": "RGB"
+    },
+    {
+      "id": "ceres-roughness",
+      "path": "tmp/v591-ceres-assets/ceres-roughness.png",
+      "bytes": 901440,
+      "sha256": "e2efb0f01365e002f13007617d8186dcd72d03b4b319b3af56dbab8a1c55f4d6",
+      "width": 2222,
+      "height": 1111,
+      "mode": "L"
+    },
+    {
+      "id": "ceres-height",
+      "path": "tmp/v591-ceres-assets/ceres-height.png",
+      "bytes": 431763,
+      "sha256": "11396082a39a2493673a7a4095859e3a8093b92f74c53c8c17ca7c9087906c11",
+      "width": 2222,
+      "height": 1111,
+      "mode": "L"
+    }
+  ],
+  "derivation": {
+    "tool": "python-numpy-2.2.6+pillow-11.3.0+tifffile-2025.3.30",
+    "parameters": "pds-relative-albedo-percentile-transfer-to-bounded-neutral-ceres-presentation-color;radius-central-difference-planetocentric-tangent-normal;radius-slope-bounded-roughness;radius-minmax-8bit-presentation-height;no-randomness;no-ai;no-synthetic-craters",
+    "albedoColorClaim": "bounded-neutral-presentation-transfer-not-measured-optical-color",
+    "normalSource": "pds-global-radius-geotiff-only",
+    "syntheticDetailAdded": false
+  },
+  "authorityState": {
+    "presentationOnly": true,
+    "scientificAuthorityChanged": false,
+    "scientificPayloadWriteback": false,
+    "measuredPhotometryClaim": false,
+    "measuredAuthorityGranted": false
+  },
+  "receiptSha256": "1b6fc4485e8ba48e428b2fa084be3d1de88bd8a21ae96b60570735d05e4cb151"
+}

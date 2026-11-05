@@ -1,0 +1,168 @@
+{
+  "schema": "mainline-a-code-change-receipt-v628",
+  "round": "R66",
+  "runId": "20260922-028",
+  "date": "2026-09-22",
+  "scope": "V628 six-candidate real HTTPS nebula collector, immutable artifact ledger, replay/verifier/audit and review-panel integration with R66 readonly release-alignment rebinding",
+  "status": "blocked-open-gates",
+  "physicsKernelMutation": false,
+  "scientificPayloadWriteback": false,
+  "effectiveChangedLines": 1064,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "Nonblank noncomment production lines in the six new V628 collector/replay/verifier/audit/contract/panel files; supporting integration edits in the review shell, package scripts, R66 alignment and identity-pointer defaults are listed separately and are not used to inflate the threshold. Tests, receipts, screenshots, generated manifests and documentation excluded.",
+  "files": [
+    {
+      "path": "scripts/collect-mainline-a-nebula-batch-v628.mjs",
+      "effectiveLines": 357,
+      "sha256": "372be6190144fb75d37fa111e7ef31461d38ca513f02f8fe089a18396ac7e67b"
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-batch-v628.mjs",
+      "effectiveLines": 44,
+      "sha256": "d4dd63189636f26a4bc7bb3d1565a09ef7e06f616288acf068fcff8270347a58"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-batch-v628.mjs",
+      "effectiveLines": 17,
+      "sha256": "a1bf469cf69dce3e134032a5013862d4478af9c4da9e5740a972046efbd36039"
+    },
+    {
+      "path": "scripts/audit-mainline-a-nebula-batch-v628.mjs",
+      "effectiveLines": 141,
+      "sha256": "8bb855497e80a938b1c95705c27cf171d7427044b08489fe144b66bd30b6b960"
+    },
+    {
+      "path": "app/lib/mainlineANebulaBatchV628.ts",
+      "effectiveLines": 414,
+      "sha256": "b89f8714467905e441ba3c2c4edee6ff211c8c8759dc7a12e1064adeb36d3cf6"
+    },
+    {
+      "path": "app/components/MainlineANebulaBatchPanelV628.tsx",
+      "effectiveLines": 91,
+      "sha256": "b168627d24fe6d914f36a1c2f2cc1b35da278c2e3b651319c6fabf3ea1833156"
+    }
+  ],
+  "tests": {
+    "node": {
+      "status": "passed",
+      "command": "npm run test:atlas:mainline-a-nebula-batch:v628 plus V624 collector regression",
+      "passed": 29,
+      "failed": 0
+    },
+    "vitest": {
+      "status": "passed",
+      "command": "npm run test:atlas:mainline-a-nebula-batch:v628",
+      "passed": 19,
+      "failed": 0
+    },
+    "eslint": {
+      "status": "passed",
+      "scope": "V628 collector/replay/verifier/audit, V624 compatibility, V628 contract/panel and R66 alignment CLI"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "runId": "20260922-031",
+      "buildId": "hYAMHv9_LAMCI7DYvX19R",
+      "runtimeBuildId": "mainline-a-0d99f50a6782e129",
+      "sourceSha256": "0d99f50a6782e12910a2619916d0e74d45d0ad27e730c94bd613f96ed5631bfd"
+    },
+    "alignment": {
+      "status": "blocked",
+      "noWriteCheck": "passed-as-blocked-report",
+      "requiredGateCheck": "blocked-by-open-gates"
+    }
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "receipts": [
+        "V628 collector check",
+        "V628 replay",
+        "V628 verifier",
+        "V628 audit findings=0",
+        "R66 alignment no-write"
+      ]
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260922-031.json"
+    },
+    "visual": {
+      "status": "captured",
+      "screenshots": [
+        "docs/release/v607/screenshots/mainline-a-v628-collector-desktop-031.png",
+        "docs/release/v607/screenshots/mainline-a-v628-collector-mobile-031.png"
+      ],
+      "claim": "local rendered visual evidence only"
+    },
+    "browser": {
+      "status": "captured",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260922-031.json",
+      "claim": "in-app browser viewport and interaction evidence only"
+    },
+    "performance": {
+      "status": "not-claimed",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "physicalMobile": "not-run",
+      "longRun": "not-run"
+    },
+    "externalSource": {
+      "status": "pending",
+      "receipt": "docs/release/v607/mainline-a-r66-nebula-batch-v628-audit-20260922.json",
+      "captured": "3/6",
+      "sourcePagePending": "6/6",
+      "rightsPending": "6/6"
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "artifacts": {
+    "batch": "app/data/mainlineANebulaBatchV628.generated.json",
+    "offlineBatch": "app/data/mainlineANebulaBatchV628.offline.generated.json",
+    "audit": "docs/release/v607/mainline-a-r66-nebula-batch-v628-audit-20260922.json",
+    "releaseAlignment": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "identityBridge": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-009.json",
+    "releasePackage": "docs/release/v607/mainline-a-r66-release-package-v626-20260922-033.json",
+    "roundReceipt": "docs/release/v607/mainline-a-art-round-66-20260922-031.json"
+  },
+  "notes": [
+    "Real NASA images-assets HTTPS responses are retained only as raw candidate artifacts with recomputable SHA-256.",
+    "Timeout/error attempts retain telemetry and no artifact/hash/bytes; responseCaptured remains false for failed rows.",
+    "No fixture, synthetic response or timeout was promoted to scientific evidence; V616 snapshot/projection digests remain untouched.",
+    "Open release gates remain explicitly blocked and candidate-only.",
+    "The six V628 core production/tooling files alone contribute 1064 effective lines; supporting integration edits are intentionally excluded from that threshold count.",
+    "The batch sourceIdentity.head is unknown; no current-commit provenance claim is made."
+  ],
+  "generatedAt": "2026-09-22T01:49:09.375Z",
+  "supportingIntegrationChanges": [
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "reason": "renders V628 panel"
+    },
+    {
+      "path": "package.json",
+      "reason": "V628 collect/verify/replay/audit commands"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "reason": "028 HTTP/browser/visual preference and V628 audit blocker"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "reason": "current identity bridge final-007"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-identity-bridge-v626.mjs",
+      "reason": "default final-007 and package 030 pointer"
+    }
+  ]
+}

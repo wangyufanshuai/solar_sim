@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createKerrPhotonResponseEnvelopeSummaryV444 } from "./kerrPhotonResponseEnvelopeV444";
+import { getKerrPhotonResponseEnvelopeSnapshotV444, loadKerrPhotonResponseEnvelopeSummaryV444, resetKerrPhotonResponseEnvelopeClientForTestsV444 } from "./kerrPhotonResponseEnvelopeClientV444";
+afterEach(() => { vi.unstubAllGlobals(); resetKerrPhotonResponseEnvelopeClientForTestsV444(); });
+describe("v444 response client", () => { it("single-flights four-row response metadata", async () => { const summary = createKerrPhotonResponseEnvelopeSummaryV444(JSON.parse(readFileSync("dist/science/kerr-photon-response-envelope-v444/photon-response-envelope.json", "utf8"))); const fetchMock = vi.fn(async () => new Response(JSON.stringify({ version: "v444-kerr-photon-response-envelope-api-v1", available: true, reason: "ready", summary }))); vi.stubGlobal("fetch", fetchMock); const first = loadKerrPhotonResponseEnvelopeSummaryV444(); expect(loadKerrPhotonResponseEnvelopeSummaryV444()).toBe(first); await first; expect(fetchMock).toHaveBeenCalledTimes(1); expect(getKerrPhotonResponseEnvelopeSnapshotV444()).toMatchObject({ status: "ready", requestCount: 1, summary: { counts: { detectorElectronRowCount: 0 } } }); }); });

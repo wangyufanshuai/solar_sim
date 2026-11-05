@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:44:48.650Z",
+  "endedAt": "2026-09-27T02:44:50.450Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "3b09fc2bd872b55d6cf26847ece97ec91db507e008e39fccd00df9715c3b90cb",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 269928,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/pacman-nebula-attempt-1.html",
+  "sha256": "17db9e17eb9bdc6dc22ffe7cf2f120dbc9674c3ba3ae441629a2df86fde9e83a",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "The ‘Pacman Nebula’",
+    "expectedPia": "PIA14731",
+    "observedPiaIds": [
+      "PIA14731"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "X-ray: NASA/CXC/CfA/S.Wolk; IR: NASA/JPL/CfA/S.Wolk",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14731/PIA14731.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

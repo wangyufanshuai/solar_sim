@@ -1,0 +1,1999 @@
+{
+  "version": "v137-independent-de440-shadow-runner",
+  "fixtureVariant": "v84-outer-system-barycenter-reference",
+  "coordinateFrame": "DE440-barycentric-J2000-ecliptic",
+  "dtDays": 0.125,
+  "eps2Meters": 0,
+  "modes": [
+    {
+      "mode": "newton",
+      "checkpoints": [
+        {
+          "label": "+30d",
+          "offsetDays": 30,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 2.729032455303745,
+          "deltaVMs": 0.0032728657824995285,
+          "rmsPositionKm": 2.729032455303745,
+          "rmsVelocityMs": 0.0032728657824995285,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 9.195846283876191,
+              "deltaVMs": 0.010442615579144159,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -5.228931015090789,
+                "transversePositionKm": 7.564513813594343,
+                "normalPositionKm": -0.0002829161345574427,
+                "radialVelocityMs": -0.009401779585208502,
+                "transverseVelocityMs": 0.004544750902269976,
+                "normalVelocityMs": -3.5456777369193004e-8,
+                "positionNormKm": 9.195846283876191,
+                "velocityNormMs": 0.010442615579144159
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 1.707564548315258,
+              "deltaVMs": 0.0014306523419305964,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -1.48662435449618,
+                "transversePositionKm": 0.840074228875217,
+                "normalPositionKm": -0.00007253700217267622,
+                "radialVelocityMs": -0.001350725523477054,
+                "transverseVelocityMs": 0.0004714940917895765,
+                "normalVelocityMs": -7.14609048842318e-8,
+                "positionNormKm": 1.707564548315258,
+                "velocityNormMs": 0.0014306523419305964
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.6494997752044075,
+              "deltaVMs": 0.0004808166743339604,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.6164715406607644,
+                "transversePositionKm": 0.20446841847490846,
+                "normalPositionKm": -0.002337390059274741,
+                "radialVelocityMs": -0.0004735370904763624,
+                "transverseVelocityMs": 0.00008292793659090835,
+                "normalVelocityMs": 0.000008381860982225312,
+                "positionNormKm": 0.6494997752044075,
+                "velocityNormMs": 0.0004808166743339604
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 1.1928463588613538,
+              "deltaVMs": 0.004145479855182298,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.5457721250222655,
+                "transversePositionKm": 1.0321826846348354,
+                "normalPositionKm": 0.24416004779139253,
+                "radialVelocityMs": -0.002449510397946533,
+                "transverseVelocityMs": 0.0032835467812408546,
+                "normalVelocityMs": -0.0006349980909238098,
+                "positionNormKm": 1.1928463588613538,
+                "velocityNormMs": 0.004145479855182298
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 0.21438702040191512,
+              "deltaVMs": 0.00016679169015543436,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.21191456970572223,
+                "transversePositionKm": 0.032465448085623114,
+                "normalPositionKm": -0.00006590788622110131,
+                "radialVelocityMs": -0.00016609046119230004,
+                "transverseVelocityMs": 0.000015278236682228634,
+                "normalVelocityMs": -4.5713425908549284e-8,
+                "positionNormKm": 0.21438702040191512,
+                "velocityNormMs": 0.00016679169015543436
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.00495539643478504,
+              "deltaVMs": 0.000003832046846862591,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0049464206644016795,
+                "transversePositionKm": 0.00022896676027081106,
+                "normalPositionKm": -0.0001909205576972306,
+                "radialVelocityMs": -0.000003826814900038124,
+                "transverseVelocityMs": 1.3765204080018838e-7,
+                "normalVelocityMs": -1.4533641339758217e-7,
+                "positionNormKm": 0.00495539643478504,
+                "velocityNormMs": 0.000003832046846862591
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.0014045305455607415,
+              "deltaVMs": 0.0000010904059267937883,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0013375490222643869,
+                "transversePositionKm": 0.0003660023597436694,
+                "normalPositionKm": -0.00022295950106421204,
+                "radialVelocityMs": -0.0000010426051873200908,
+                "transverseVelocityMs": 2.705024697500359e-7,
+                "normalVelocityMs": -1.69670039840242e-7,
+                "positionNormKm": 0.0014045305455607415,
+                "velocityNormMs": 0.0000010904059267937883
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.0008953312179547521,
+              "deltaVMs": 6.909800694482699e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0005502616947162843,
+                "transversePositionKm": -0.0006756014715113496,
+                "normalPositionKm": -0.0002058948976152682,
+                "radialVelocityMs": -4.137939787521207e-7,
+                "transverseVelocityMs": -5.309132062089771e-7,
+                "normalVelocityMs": -1.5607423552953676e-7,
+                "positionNormKm": 0.0008953312179547521,
+                "velocityNormMs": 6.909800694482699e-7
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.0009781336240982192,
+              "deltaVMs": 7.493683799443827e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0006194846202415026,
+                "transversePositionKm": -0.0007285103111109368,
+                "normalPositionKm": -0.0002055648765738052,
+                "radialVelocityMs": -4.645215926428846e-7,
+                "transverseVelocityMs": -5.669498645213785e-7,
+                "normalVelocityMs": -1.5601445429247e-7,
+                "positionNormKm": 0.0009781336240982192,
+                "velocityNormMs": 7.493683799443827e-7
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.0005585264646812464,
+              "deltaVMs": 4.284411505083217e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.0000911278595136276,
+                "transversePositionKm": -0.0005504934974777936,
+                "normalPositionKm": -0.000024585243632365607,
+                "radialVelocityMs": 8.386121546241813e-8,
+                "transverseVelocityMs": -4.197577890615785e-7,
+                "normalVelocityMs": -1.8234980455038405e-8,
+                "positionNormKm": 0.0005585264646812464,
+                "velocityNormMs": 4.284411505083217e-7
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 0.036460314594870584,
+              "deltaVMs": 0.000028185771909977898,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.036308097326848046,
+                "transversePositionKm": 0.002889047993096777,
+                "normalPositionKm": 0.0016522743581640891,
+                "radialVelocityMs": -0.00002811208242832603,
+                "transverseVelocityMs": 0.0000016002921812482654,
+                "normalVelocityMs": 0.0000012600097773182828,
+                "positionNormKm": 0.036460314594870584,
+                "velocityNormMs": 0.000028185771909977898
+              }
+            }
+          ]
+        },
+        {
+          "label": "+365d",
+          "offsetDays": 365,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 44.11581401382472,
+          "deltaVMs": 0.023860783481394317,
+          "rmsPositionKm": 44.11581401382472,
+          "rmsVelocityMs": 0.023860783481394317,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 57.46985041361722,
+              "deltaVMs": 0.05722335000629651,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -26.427001316257584,
+                "transversePositionKm": 51.03329592407034,
+                "normalPositionKm": -0.00388848613073893,
+                "radialVelocityMs": -0.055970458691979086,
+                "transverseVelocityMs": 0.011908800780290746,
+                "normalVelocityMs": -0.000001930783388892632,
+                "positionNormKm": 57.46985041361722,
+                "velocityNormMs": 0.05722335000629651
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 98.71943169546482,
+              "deltaVMs": 0.030951724110919055,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -8.683768315579199,
+                "transversePositionKm": 98.33675997339097,
+                "normalPositionKm": 0.0002293114955094211,
+                "radialVelocityMs": -0.030843062825413572,
+                "transverseVelocityMs": 0.0025912739834632937,
+                "normalVelocityMs": 3.587001663339813e-7,
+                "positionNormKm": 98.71943169546482,
+                "velocityNormMs": 0.030951724110919055
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 60.888391216814455,
+              "deltaVMs": 0.012026431122891293,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.10695956369284829,
+                "transversePositionKm": 60.88827859703702,
+                "normalPositionKm": 0.04768766282904266,
+                "radialVelocityMs": -0.012016878470001657,
+                "transverseVelocityMs": 0.0004705855582348302,
+                "normalVelocityMs": 0.00009070073450514951,
+                "positionNormKm": 60.888391216814455,
+                "velocityNormMs": 0.012026431122891293
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 70.55692413566568,
+              "deltaVMs": 0.049392617373015736,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -15.396470520501612,
+                "transversePositionKm": 68.73829030921189,
+                "normalPositionKm": -4.034313369572761,
+                "radialVelocityMs": -0.031052394156364828,
+                "transverseVelocityMs": -0.03769677639196411,
+                "normalVelocityMs": -0.0073710594739937,
+                "positionNormKm": 70.55692413566568,
+                "velocityNormMs": 0.049392617373015736
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 39.77579850982018,
+              "deltaVMs": 0.00388001474795185,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -15.299997665142268,
+                "transversePositionKm": 36.71544924906628,
+                "normalPositionKm": -0.002231522300137234,
+                "radialVelocityMs": -0.0037117231613948607,
+                "transverseVelocityMs": 0.0011303207071172517,
+                "normalVelocityMs": -8.464932084331449e-7,
+                "positionNormKm": 39.77579850982018,
+                "velocityNormMs": 0.00388001474795185
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.7529240672333677,
+              "deltaVMs": 0.00004875199483623795,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.7127597168995793,
+                "transversePositionKm": 0.24229553303296222,
+                "normalPositionKm": -0.012692976669831945,
+                "radialVelocityMs": -0.00004782813921091986,
+                "transverseVelocityMs": 0.00000944140875809277,
+                "normalVelocityMs": -2.9308837583730697e-7,
+                "positionNormKm": 0.7529240672333677,
+                "velocityNormMs": 0.00004875199483623795
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.20382988176442857,
+              "deltaVMs": 0.0000122614401435271,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.20063800055643088,
+                "transversePositionKm": 0.032099697661504854,
+                "normalPositionKm": -0.016143817480959794,
+                "radialVelocityMs": -0.000012252548133301784,
+                "transverseVelocityMs": -8.322588528425646e-8,
+                "normalVelocityMs": -4.594040557499654e-7,
+                "positionNormKm": 0.20382988176442857,
+                "velocityNormMs": 0.0000122614401435271
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.10566855673444549,
+              "deltaVMs": 0.000005507133143509707,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.028987156755373788,
+                "transversePositionKm": -0.10069344622971882,
+                "normalPositionKm": -0.013653516468764969,
+                "radialVelocityMs": -4.6253712855973757e-8,
+                "transverseVelocityMs": -0.000005496318360259784,
+                "normalVelocityMs": -3.4184870492858847e-7,
+                "positionNormKm": 0.10566855673444549,
+                "velocityNormMs": 0.000005507133143509707
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.10383113090774983,
+              "deltaVMs": 0.000004884215865834853,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.03682381674462525,
+                "transversePositionKm": -0.0960301224847621,
+                "normalPositionKm": -0.014252222335556125,
+                "radialVelocityMs": -8.187749032152175e-7,
+                "transverseVelocityMs": -0.000004800454738788725,
+                "normalVelocityMs": -3.7524203226542776e-7,
+                "positionNormKm": 0.10383113090774983,
+                "velocityNormMs": 0.000004884215865834853
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.05571825088266739,
+              "deltaVMs": 0.0000032665328153034886,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.039784902504091786,
+                "transversePositionKm": -0.03424574392263819,
+                "normalPositionKm": 0.018679240812968453,
+                "radialVelocityMs": 0.0000024346276284221115,
+                "transverseVelocityMs": -3.5488764177264047e-7,
+                "normalVelocityMs": 0.000002148692557369555,
+                "positionNormKm": 0.05571825088266739,
+                "velocityNormMs": 0.0000032665328153034886
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 6.1422540076764065,
+              "deltaVMs": 0.00044726486655756817,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -4.213983625624196,
+                "transversePositionKm": 4.467219018132851,
+                "normalPositionKm": 0.1165355817774163,
+                "radialVelocityMs": -0.00040556835340705615,
+                "transverseVelocityMs": 0.00018855364602387854,
+                "normalVelocityMs": 0.0000027738317451563054,
+                "positionNormKm": 6.1422540076764065,
+                "velocityNormMs": 0.00044726486655756817
+              }
+            }
+          ]
+        },
+        {
+          "label": "+10y",
+          "offsetDays": 3652.5,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 650.1012699270905,
+          "deltaVMs": 0.5137679125638749,
+          "rmsPositionKm": 650.1012699270905,
+          "rmsVelocityMs": 0.5137679125638749,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 1841.2815316247106,
+              "deltaVMs": 1.7492290089115674,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 23.66806007662631,
+                "transversePositionKm": 1841.1294092328767,
+                "normalPositionKm": 0.00960457796367109,
+                "radialVelocityMs": -1.7492201560696716,
+                "transverseVelocityMs": -0.005564951980341381,
+                "normalVelocityMs": 0.00005026722964615593,
+                "positionNormKm": 1841.2815316247106,
+                "velocityNormMs": 1.7492290089115674
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 900.3613285773708,
+              "deltaVMs": 0.2920710338479974,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.9145385584123894,
+                "transversePositionKm": 900.3608640627971,
+                "normalPositionKm": -0.008995938034914275,
+                "radialVelocityMs": -0.2920697083737962,
+                "transverseVelocityMs": 0.0008799191296963438,
+                "normalVelocityMs": -0.000002410162575692057,
+                "positionNormKm": 900.3613285773708,
+                "velocityNormMs": 0.2920710338479974
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 609.4932068364001,
+              "deltaVMs": 0.12310203084748345,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.6537637865967395,
+                "transversePositionKm": 609.4926858042161,
+                "normalPositionKm": -0.4557672577304291,
+                "radialVelocityMs": -0.12310148823738641,
+                "transverseVelocityMs": -0.00007089384538005383,
+                "normalVelocityMs": 0.00035856181903454605,
+                "positionNormKm": 609.4932068364001,
+                "velocityNormMs": 0.12310203084748345
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 600.060876719722,
+              "deltaVMs": 0.07695289525920256,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -3.7249884290301263,
+                "transversePositionKm": 598.8282354884873,
+                "normalPositionKm": 38.26126778597009,
+                "radialVelocityMs": -0.07096584653392839,
+                "transverseVelocityMs": 0.009537129507596985,
+                "normalVelocityMs": -0.02818935748207193,
+                "positionNormKm": 600.060876719722,
+                "velocityNormMs": 0.07695289525920256
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 341.185069141793,
+              "deltaVMs": 0.03560211652566113,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 22.8610719810979,
+                "transversePositionKm": 340.4182947991821,
+                "normalPositionKm": 0.08578567631951461,
+                "radialVelocityMs": -0.03560162345833161,
+                "transverseVelocityMs": -0.00018729201626355754,
+                "normalVelocityMs": 0.000005471614924949884,
+                "positionNormKm": 341.185069141793,
+                "velocityNormMs": 0.03560211652566113
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 64.00807652084974,
+              "deltaVMs": 0.0010391651554458995,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -5.02355950399768,
+                "transversePositionKm": 63.810563207779964,
+                "normalPositionKm": -0.09865553542450078,
+                "radialVelocityMs": -0.001037676164224275,
+                "transverseVelocityMs": 0.00005558731853089471,
+                "normalVelocityMs": -0.0000015647722648727989,
+                "positionNormKm": 64.00807652084974,
+                "velocityNormMs": 0.0010391651554458995
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 15.532284800970103,
+              "deltaVMs": 0.00012552024576853807,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -7.460201390978946,
+                "transversePositionKm": 13.62318886741787,
+                "normalPositionKm": 0.07740430959940396,
+                "radialVelocityMs": -0.00011672142400448779,
+                "transverseVelocityMs": 0.000046151011934244106,
+                "normalVelocityMs": -0.0000012350601621141287,
+                "positionNormKm": 15.532284800970103,
+                "velocityNormMs": 0.00012552024576853807
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 2.8142541586855443,
+              "deltaVMs": 0.000023181138209114225,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -2.802192915736348,
+                "transversePositionKm": 0.2522100828631238,
+                "normalPositionKm": 0.06427602024146584,
+                "radialVelocityMs": -0.000022121614972846193,
+                "transverseVelocityMs": 0.000006804825424948786,
+                "normalVelocityMs": -0.0000013014110031703514,
+                "positionNormKm": 2.8142541586855443,
+                "velocityNormMs": 0.000023181138209114225
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 5.635496954543396,
+              "deltaVMs": 0.00004294961830116106,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -5.581020262036451,
+                "transversePositionKm": 0.7742783820278716,
+                "normalPositionKm": 0.1073859698973008,
+                "radialVelocityMs": -0.00004220232199387337,
+                "transverseVelocityMs": 0.000007865909497781271,
+                "normalVelocityMs": -0.0000013271014707152962,
+                "positionNormKm": 5.635496954543396,
+                "velocityNormMs": 0.00004294961830116106
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 7.137738960880146,
+              "deltaVMs": 0.00005114629360924994,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -4.750538826142999,
+                "transversePositionKm": 1.0916523087513528,
+                "normalPositionKm": 5.21421073334902,
+                "radialVelocityMs": -0.000041382739343020486,
+                "transverseVelocityMs": 0.000004887679971873568,
+                "normalVelocityMs": 0.000029656749972371744,
+                "positionNormKm": 7.137738960880146,
+                "velocityNormMs": 0.00005114629360924994
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 134.98349889665732,
+              "deltaVMs": 0.006126330543465396,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 13.012274689165439,
+                "transversePositionKm": 134.35318508421443,
+                "normalPositionKm": 0.6688344521774354,
+                "radialVelocityMs": -0.006125657900766826,
+                "transverseVelocityMs": -0.00009072439869139384,
+                "normalVelocityMs": 0.0000032084345201452208,
+                "positionNormKm": 134.98349889665732,
+                "velocityNormMs": 0.006126330543465396
+              }
+            }
+          ]
+        }
+      ],
+      "rmsPositionKm": 376.2026554155177,
+      "rmsVelocityMS": 0.2969497806133879
+    },
+    {
+      "mode": "legacy-eih-1pn",
+      "checkpoints": [
+        {
+          "label": "+30d",
+          "offsetDays": 30,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 0.49141333396405834,
+          "deltaVMs": 0.0012955985100059925,
+          "rmsPositionKm": 0.49141333396405834,
+          "rmsVelocityMs": 0.0012955985100059925,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 0.0032210677468213363,
+              "deltaVMs": 9.853823189166878e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.00020051977236060293,
+                "transversePositionKm": -0.003202204317541959,
+                "normalPositionKm": -0.00028452901296838814,
+                "radialVelocityMs": 9.63310509783045e-7,
+                "transverseVelocityMs": -2.0418502514091778e-7,
+                "normalVelocityMs": -3.632701038293617e-8,
+                "positionNormKm": 0.0032210677468213363,
+                "velocityNormMs": 9.853823189166878e-7
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.0005155470703985623,
+              "deltaVMs": 4.524828933677657e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00042125579833833743,
+                "transversePositionKm": -0.00028832195431296943,
+                "normalPositionKm": -0.00007213033220511379,
+                "radialVelocityMs": -4.16391988408564e-7,
+                "transverseVelocityMs": -1.621108368209753e-7,
+                "normalVelocityMs": -7.126399767645797e-8,
+                "positionNormKm": 0.0005155470703985623,
+                "velocityNormMs": 4.524828933677657e-7
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.020702514825635412,
+              "deltaVMs": 0.0000549465595308405,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.016878653937915256,
+                "transversePositionKm": -0.011714277807026212,
+                "normalPositionKm": -0.00254575270000152,
+                "radialVelocityMs": 0.000028750672317777077,
+                "transverseVelocityMs": -0.00004618044250845279,
+                "normalVelocityMs": 0.000007738861368153124,
+                "positionNormKm": 0.020702514825635412,
+                "velocityNormMs": 0.0000549465595308405
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 1.7021741635759202,
+              "deltaVMs": 0.00448774782234453,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 1.3710676529685057,
+                "transversePositionKm": 0.9743142144992267,
+                "normalPositionKm": 0.261308602142318,
+                "radialVelocityMs": -0.0023508285067273677,
+                "transverseVelocityMs": 0.003778280237143364,
+                "normalVelocityMs": -0.0005814501685681474,
+                "positionNormKm": 1.7021741635759202,
+                "velocityNormMs": 0.00448774782234453
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 0.000395963663862871,
+              "deltaVMs": 3.1249924889616255e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00038481860072446945,
+                "transversePositionKm": 0.00006624220916642354,
+                "normalPositionKm": -0.00006567980938554759,
+                "radialVelocityMs": -3.0761513944114036e-7,
+                "transverseVelocityMs": 3.088066925533904e-8,
+                "normalVelocityMs": -4.555316469374975e-8,
+                "positionNormKm": 0.000395963663862871,
+                "velocityNormMs": 3.1249924889616255e-7
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.0003333995422839385,
+              "deltaVMs": 2.576087717416061e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00019322748673845133,
+                "transversePositionKm": 0.00019341820211122473,
+                "normalPositionKm": -0.00019080826044996785,
+                "radialVelocityMs": -1.5957288832878816e-7,
+                "transverseVelocityMs": 1.4062558789720074e-7,
+                "normalVelocityMs": -1.453382833846392e-7,
+                "positionNormKm": 0.0003333995422839385,
+                "velocityNormMs": 2.576087717416061e-7
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.000696751753352788,
+              "deltaVMs": 5.40559977692516e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0005767381771468175,
+                "transversePositionKm": 0.000320948485441205,
+                "normalPositionKm": -0.00022322219986942879,
+                "radialVelocityMs": -4.5539848067798037e-7,
+                "transverseVelocityMs": 2.3650242454753013e-7,
+                "normalVelocityMs": -1.6995268889388106e-7,
+                "positionNormKm": 0.000696751753352788,
+                "velocityNormMs": 5.40559977692516e-7
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.0008489906494403837,
+              "deltaVMs": 6.552236623985046e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00047534326752200003,
+                "transversePositionKm": -0.0006726193483333432,
+                "normalPositionKm": -0.00020595415292326953,
+                "radialVelocityMs": -3.5506619614732993e-7,
+                "transverseVelocityMs": -5.280567988733963e-7,
+                "normalVelocityMs": -1.5621159138795265e-7,
+                "positionNormKm": 0.0008489906494403837,
+                "velocityNormMs": 6.552236623985046e-7
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.0009641023428765244,
+              "deltaVMs": 7.386431603021875e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0005986902915325988,
+                "transversePositionKm": -0.0007271866943768218,
+                "normalPositionKm": -0.00020557911831196673,
+                "radialVelocityMs": -4.4800164988564504e-7,
+                "transverseVelocityMs": -5.661388675547084e-7,
+                "normalVelocityMs": -1.5612502235328985e-7,
+                "positionNormKm": 0.0009641023428765244,
+                "velocityNormMs": 7.386431603021875e-7
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.0005607947342935449,
+              "deltaVMs": 4.2888463185895745e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.00010905424642103294,
+                "transversePositionKm": -0.0005495181284002565,
+                "normalPositionKm": -0.00002505457859129885,
+                "radialVelocityMs": 9.818480677137048e-8,
+                "transverseVelocityMs": -4.171028864078731e-7,
+                "normalVelocityMs": -1.8081850410924457e-8,
+                "positionNormKm": 0.0005607947342935449,
+                "velocityNormMs": 4.2888463185895745e-7
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 0.0024374301395676443,
+              "deltaVMs": 0.0000018861067323515791,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0017234256659355003,
+                "transversePositionKm": 0.0004884446228622517,
+                "normalPositionKm": 0.0016529644611014706,
+                "radialVelocityMs": -0.0000013463921247717249,
+                "transverseVelocityMs": 3.941110086363809e-7,
+                "normalVelocityMs": 0.0000012606757573009191,
+                "positionNormKm": 0.0024374301395676443,
+                "velocityNormMs": 0.0000018861067323515791
+              }
+            }
+          ]
+        },
+        {
+          "label": "+365d",
+          "offsetDays": 365,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 6.083338871568692,
+          "deltaVMs": 0.015049119712266076,
+          "rmsPositionKm": 6.083338871568692,
+          "rmsVelocityMs": 0.015049119712266076,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 0.6160448831052628,
+              "deltaVMs": 0.00033590592750106575,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.03597726843115341,
+                "transversePositionKm": 0.6149806073586611,
+                "normalPositionKm": -0.003973251713891339,
+                "radialVelocityMs": -0.00032743704292429864,
+                "transverseVelocityMs": -0.00007492589511536126,
+                "normalVelocityMs": -0.000001971114533496489,
+                "positionNormKm": 0.6160448831052628,
+                "velocityNormMs": 0.00033590592750106575
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.03938640927936617,
+              "deltaVMs": 0.000011684341487305952,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.004863404951782113,
+                "transversePositionKm": 0.03908435414693958,
+                "normalPositionKm": 0.00022313474254513112,
+                "radialVelocityMs": -0.000011636802118946684,
+                "transverseVelocityMs": 9.904671523672372e-7,
+                "normalVelocityMs": 3.5727756232172067e-7,
+                "positionNormKm": 0.03938640927936617,
+                "velocityNormMs": 0.000011684341487305952
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.23532161002641752,
+              "deltaVMs": 0.0006431697538217102,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.2137587994562167,
+                "transversePositionKm": -0.0866129427539294,
+                "normalPositionKm": 0.04670796450249993,
+                "radialVelocityMs": 0.0002832888026416155,
+                "transverseVelocityMs": 0.0005687411594234288,
+                "normalVelocityMs": 0.0000997410652973644,
+                "positionNormKm": 0.23532161002641752,
+                "velocityNormMs": 0.0006431697538217102
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 21.059852911598362,
+              "deltaVMs": 0.052126624328549614,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -18.475823731473135,
+                "transversePositionKm": 9.302125884103335,
+                "normalPositionKm": -3.9537066327671275,
+                "radialVelocityMs": -0.023094032226147594,
+                "transverseVelocityMs": -0.04602087892076922,
+                "normalVelocityMs": -0.00811968858930541,
+                "positionNormKm": 21.059852911598362,
+                "velocityNormMs": 0.052126624328549614
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 0.1033656411692321,
+              "deltaVMs": 0.000012973831199869825,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.06016748102685434,
+                "transversePositionKm": 0.08401945103661475,
+                "normalPositionKm": -0.0022498552654499652,
+                "radialVelocityMs": -0.000012433488424729529,
+                "transverseVelocityMs": 0.0000036056184117696343,
+                "normalVelocityMs": -8.533331492097956e-7,
+                "positionNormKm": 0.1033656411692321,
+                "velocityNormMs": 0.000012973831199869825
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.03106725111615792,
+              "deltaVMs": 0.000001792227275236845,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.028251594803846054,
+                "transversePositionKm": 0.002514786316114918,
+                "normalPositionKm": -0.012676645168892083,
+                "radialVelocityMs": -0.000001269196729225144,
+                "transverseVelocityMs": -0.0000012308059688660024,
+                "normalVelocityMs": -2.9382807155018927e-7,
+                "positionNormKm": 0.03106725111615792,
+                "velocityNormMs": 0.000001792227275236845
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.09000791340900417,
+              "deltaVMs": 0.00000507463845629049,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.08809425439611739,
+                "transversePositionKm": 0.008920887433236347,
+                "normalPositionKm": -0.01616306239666448,
+                "radialVelocityMs": -0.000004897593393390233,
+                "transverseVelocityMs": -0.0000012463826223180243,
+                "normalVelocityMs": -4.6050491188077207e-7,
+                "positionNormKm": 0.09000791340900417,
+                "velocityNormMs": 0.00000507463845629049
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.10239725335261936,
+              "deltaVMs": 0.0000054095337848596895,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.017344079382837455,
+                "transversePositionKm": -0.09998746400976483,
+                "normalPositionKm": -0.013670678308640445,
+                "radialVelocityMs": 6.542502468415134e-7,
+                "transverseVelocityMs": -0.000005358694089600112,
+                "normalVelocityMs": -3.455575757106836e-7,
+                "positionNormKm": 0.10239725335261936,
+                "velocityNormMs": 0.0000054095337848596895
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.10191989388564847,
+              "deltaVMs": 0.000004736927729286641,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.033456551350697486,
+                "transversePositionKm": -0.09521167112676476,
+                "normalPositionKm": -0.01424996921501155,
+                "radialVelocityMs": -6.622489587385483e-7,
+                "transverseVelocityMs": -0.000004675364730551302,
+                "normalVelocityMs": -3.75333538937476e-7,
+                "positionNormKm": 0.10191989388564847,
+                "velocityNormMs": 0.000004736927729286641
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.05686338494692353,
+              "deltaVMs": 0.0000033205400593442007,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.0420745899655218,
+                "transversePositionKm": -0.033237874519825815,
+                "normalPositionKm": 0.018931907570541723,
+                "radialVelocityMs": 0.000002488839185344306,
+                "transverseVelocityMs": -2.9521465689288746e-7,
+                "normalVelocityMs": 0.000002178190556760334,
+                "positionNormKm": 0.05686338494692353,
+                "velocityNormMs": 0.0000033205400593442007
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 0.2940085872391153,
+              "deltaVMs": 0.000013741164067406165,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0025269252065305376,
+                "transversePositionKm": 0.269846901926462,
+                "normalPositionKm": 0.11669324547732604,
+                "radialVelocityMs": -0.000002574882158595361,
+                "transverseVelocityMs": 0.000013208091495595769,
+                "normalVelocityMs": 0.0000027813469471988326,
+                "positionNormKm": 0.2940085872391153,
+                "velocityNormMs": 0.000013741164067406165
+              }
+            }
+          ]
+        },
+        {
+          "label": "+10y",
+          "offsetDays": 3652.5,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 20.6470192611414,
+          "deltaVMs": 0.05001728464865349,
+          "rmsPositionKm": 20.6470192611414,
+          "rmsVelocityMs": 0.05001728464865349,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 17.956445766489466,
+              "deltaVMs": 0.020588748012235713,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.08450632384735467,
+                "transversePositionKm": 17.956242654419476,
+                "normalPositionKm": 0.01236857768304711,
+                "radialVelocityMs": -0.020588536644029192,
+                "transverseVelocityMs": 0.00008099672332048582,
+                "normalVelocityMs": 0.00004629362395175353,
+                "positionNormKm": 17.956445766489466,
+                "velocityNormMs": 0.020588748012235713
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.25656409050743234,
+              "deltaVMs": 0.00008401900867157055,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0015303155585319364,
+                "transversePositionKm": 0.2563963702277677,
+                "normalPositionKm": -0.009148333521618684,
+                "radialVelocityMs": -0.00008397216802419485,
+                "transverseVelocityMs": 6.138404776631508e-7,
+                "normalVelocityMs": -0.000002737154606122972,
+                "positionNormKm": 0.25656409050743234,
+                "velocityNormMs": 0.00008401900867157055
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.7114467692368384,
+              "deltaVMs": 0.0020893617364829064,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0016404179484426089,
+                "transversePositionKm": 0.525943977282549,
+                "normalPositionKm": -0.47909993450918253,
+                "radialVelocityMs": -0.002053461147122165,
+                "transverseVelocityMs": -0.00018292095356702782,
+                "normalVelocityMs": 0.00033951392885228984,
+                "positionNormKm": 0.7114467692368384,
+                "velocityNormMs": 0.0020893617364829064
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 65.8347569104042,
+              "deltaVMs": 0.17202253686184527,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.39135413135247077,
+                "transversePositionKm": -52.242544046459095,
+                "normalPositionKm": 40.05968860275461,
+                "radialVelocityMs": 0.16927704324606022,
+                "transverseVelocityMs": 0.015084464565019027,
+                "normalVelocityMs": -0.026636342598845085,
+                "positionNormKm": 65.8347569104042,
+                "velocityNormMs": 0.17202253686184527
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 2.1407502446084976,
+              "deltaVMs": 0.00012547582386066266,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.13331963379979975,
+                "transversePositionKm": -2.1348559659117257,
+                "normalPositionKm": 0.08618288603860216,
+                "radialVelocityMs": 0.00012410555107992418,
+                "transverseVelocityMs": -0.000017662420428204862,
+                "normalVelocityMs": 0.000005480280036431278,
+                "positionNormKm": 2.1407502446084976,
+                "velocityNormMs": 0.00012547582386066266
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 4.478819063568763,
+              "deltaVMs": 0.00007030618133912059,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.10701126508857088,
+                "transversePositionKm": -4.47645309238098,
+                "normalPositionKm": -0.09867373026228315,
+                "radialVelocityMs": 0.00007028209338395872,
+                "transverseVelocityMs": 9.826159951999038e-7,
+                "normalVelocityMs": -0.0000015559401864451807,
+                "positionNormKm": 4.478819063568763,
+                "velocityNormMs": 0.00007030618133912059
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.975137697114697,
+              "deltaVMs": 0.00000650270434025204,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.6596111866399451,
+                "transversePositionKm": 0.7141283074784548,
+                "normalPositionKm": 0.07633722061717632,
+                "radialVelocityMs": -0.00000559200370363714,
+                "transverseVelocityMs": -0.000003088047092233596,
+                "normalVelocityMs": -0.0000012159866246751527,
+                "positionNormKm": 0.975137697114697,
+                "velocityNormMs": 0.00000650270434025204
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 1.7622974397670534,
+              "deltaVMs": 0.000014156290260808027,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -1.7384704838268183,
+                "transversePositionKm": -0.28140200922875497,
+                "normalPositionKm": 0.06500424812639159,
+                "radialVelocityMs": -0.000013481228110050378,
+                "transverseVelocityMs": 0.000004119490711087403,
+                "normalVelocityMs": -0.0000012987836133476034,
+                "positionNormKm": 1.7622974397670534,
+                "velocityNormMs": 0.000014156290260808027
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 5.2905196694095995,
+              "deltaVMs": 0.00003978044510558629,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -5.252036332757856,
+                "transversePositionKm": 0.627986442880542,
+                "normalPositionKm": 0.10651647459195862,
+                "radialVelocityMs": -0.000039038869607403246,
+                "transverseVelocityMs": 0.0000075290385720439364,
+                "normalVelocityMs": -0.0000013281757245958922,
+                "positionNormKm": 5.2905196694095995,
+                "velocityNormMs": 0.00003978044510558629
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 6.8922514344229695,
+              "deltaVMs": 0.00004937628819203497,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -4.399342149967167,
+                "transversePositionKm": 1.041705755689351,
+                "normalPositionKm": 5.202284844315182,
+                "radialVelocityMs": -0.00003891118761167379,
+                "transverseVelocityMs": 0.000005761924831380135,
+                "normalVelocityMs": 0.000029845226360500968,
+                "positionNormKm": 6.8922514344229695,
+                "velocityNormMs": 0.00004937628819203497
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 18.81966426289811,
+              "deltaVMs": 0.000835457005658632,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.11067612686049372,
+                "transversePositionKm": -18.80713189371126,
+                "normalPositionKm": 0.677719481567614,
+                "radialVelocityMs": 0.0008352174448815662,
+                "transverseVelocityMs": -0.000019701982054318766,
+                "normalVelocityMs": 0.0000034727471441332744,
+                "positionNormKm": 18.81966426289811,
+                "velocityNormMs": 0.000835457005658632
+              }
+            }
+          ]
+        }
+      ],
+      "rmsPositionKm": 12.430445195313537,
+      "rmsVelocityMS": 0.030165561728775374
+    },
+    {
+      "mode": "eih-1pn-2pn-lt",
+      "checkpoints": [
+        {
+          "label": "+30d",
+          "offsetDays": 30,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 0.4914133882681999,
+          "deltaVMs": 0.001295595006429464,
+          "rmsPositionKm": 0.4914133882681999,
+          "rmsVelocityMs": 0.001295595006429464,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 0.0033406991911146535,
+              "deltaVMs": 0.000001187842718164366,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.0003122245604535073,
+                "transversePositionKm": -0.0033187115928651396,
+                "normalPositionKm": -0.00022122448496095113,
+                "radialVelocityMs": 0.0000011578796668326237,
+                "transverseVelocityMs": -2.650729492684863e-7,
+                "normalVelocityMs": -4.618635922916216e-9,
+                "positionNormKm": 0.0033406991911146535,
+                "velocityNormMs": 0.000001187842718164366
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.0005043677111076427,
+              "deltaVMs": 4.355732187730549e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0003983380859037337,
+                "transversePositionKm": -0.0003016415105128438,
+                "normalPositionKm": -0.00006874559230992303,
+                "radialVelocityMs": -3.9562745570978056e-7,
+                "transverseVelocityMs": -1.6963342303157354e-7,
+                "normalVelocityMs": -6.653906365073343e-8,
+                "positionNormKm": 0.0005043677111076427,
+                "velocityNormMs": 4.355732187730549e-7
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.02069863539040915,
+              "deltaVMs": 0.00005495048167028031,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.01687077711426938,
+                "transversePositionKm": -0.011717083334262817,
+                "normalPositionKm": -0.0025534965681753246,
+                "radialVelocityMs": 0.00002875717484987535,
+                "transverseVelocityMs": -0.00004618202064904794,
+                "normalVelocityMs": 0.000007733129975657916,
+                "positionNormKm": 0.02069863539040915,
+                "velocityNormMs": 0.00005495048167028031
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 1.7021741726442083,
+              "deltaVMs": 0.004487735589537753,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 1.3710728072372989,
+                "transversePositionKm": 0.9743091240768562,
+                "normalPositionKm": 0.26130059703723807,
+                "radialVelocityMs": -0.0023508175439076284,
+                "transverseVelocityMs": 0.0037782715587050516,
+                "normalVelocityMs": -0.0005814564691706287,
+                "positionNormKm": 1.7021741726442083,
+                "velocityNormMs": 0.004487735589537753
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 0.0003932453280494607,
+              "deltaVMs": 3.105449768488931e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00038219060568253947,
+                "transversePositionKm": 0.00006553587130013652,
+                "normalPositionKm": -0.0000654009062144676,
+                "radialVelocityMs": -3.0568592968111617e-7,
+                "transverseVelocityMs": 3.049133352855367e-8,
+                "normalVelocityMs": -4.5437579388890813e-8,
+                "positionNormKm": 0.0003932453280494607,
+                "velocityNormMs": 3.105449768488931e-7
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.0003334029944092918,
+              "deltaVMs": 2.5759905217339133e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0001932273621514862,
+                "transversePositionKm": 0.00019341813438916497,
+                "normalPositionKm": -0.00019081448709800725,
+                "radialVelocityMs": -1.5955303185492052e-7,
+                "transverseVelocityMs": 1.4062114331408454e-7,
+                "normalVelocityMs": -1.4534715600785588e-7,
+                "positionNormKm": 0.0003334029944092918,
+                "velocityNormMs": 2.5759905217339133e-7
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.000696751753352788,
+              "deltaVMs": 5.405599078799608e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0005767381771468175,
+                "transversePositionKm": 0.000320948485441205,
+                "normalPositionKm": -0.00022322219986942879,
+                "radialVelocityMs": -4.553973267719889e-7,
+                "transverseVelocityMs": 2.365034274568326e-7,
+                "normalVelocityMs": -1.6995416316551031e-7,
+                "positionNormKm": 0.000696751753352788,
+                "velocityNormMs": 5.405599078799608e-7
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.0008489906494403837,
+              "deltaVMs": 6.552239689999111e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.00047534326752200003,
+                "transversePositionKm": -0.0006726193483333432,
+                "normalPositionKm": -0.00020595415292326953,
+                "radialVelocityMs": -3.5506516796055543e-7,
+                "transverseVelocityMs": -5.280578931387441e-7,
+                "normalVelocityMs": -1.5621151541102767e-7,
+                "positionNormKm": 0.0008489906494403837,
+                "velocityNormMs": 6.552239689999111e-7
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.0009641023428765244,
+              "deltaVMs": 7.386431513695096e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0005986902915325988,
+                "transversePositionKm": -0.0007271866943768218,
+                "normalPositionKm": -0.00020557911831196673,
+                "radialVelocityMs": -4.480016496918947e-7,
+                "transverseVelocityMs": -5.66138868989673e-7,
+                "normalVelocityMs": -1.5612497544440117e-7,
+                "positionNormKm": 0.0009641023428765244,
+                "velocityNormMs": 7.386431513695096e-7
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.0005607947342935449,
+              "deltaVMs": 4.28884622168993e-7,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.00010905424642103294,
+                "transversePositionKm": -0.0005495181284002565,
+                "normalPositionKm": -0.00002505457859129885,
+                "radialVelocityMs": 9.818519075536382e-8,
+                "transverseVelocityMs": -4.171027921673504e-7,
+                "normalVelocityMs": -1.808170942065282e-8,
+                "positionNormKm": 0.0005607947342935449,
+                "velocityNormMs": 4.28884622168993e-7
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 0.0024371740320680737,
+              "deltaVMs": 0.000001885903229718497,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0017231414759972714,
+                "transversePositionKm": 0.0004883475511286846,
+                "normalPositionKm": 0.0016529117900213291,
+                "radialVelocityMs": -0.0000013461478692798066,
+                "transverseVelocityMs": 3.940661498911561e-7,
+                "normalVelocityMs": 0.0000012606461737561638,
+                "positionNormKm": 0.0024371740320680737,
+                "velocityNormMs": 0.000001885903229718497
+              }
+            }
+          ]
+        },
+        {
+          "label": "+365d",
+          "offsetDays": 365,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 6.083160556649724,
+          "deltaVMs": 0.015049003412915865,
+          "rmsPositionKm": 6.083160556649724,
+          "rmsVelocityMs": 0.015049003412915865,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 0.6100853944684304,
+              "deltaVMs": 0.0003322346704485287,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.03599791004507541,
+                "transversePositionKm": 0.6090113587315841,
+                "normalPositionKm": -0.0036747723734563975,
+                "radialVelocityMs": -0.00032378529648591437,
+                "transverseVelocityMs": -0.00007443942036592281,
+                "normalVelocityMs": -0.0000013155695178985156,
+                "positionNormKm": 0.6100853944684304,
+                "velocityNormMs": 0.0003322346704485287
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.037903129687431564,
+              "deltaVMs": 0.000011216441613829514,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.0047450026156650935,
+                "transversePositionKm": 0.03760215215216397,
+                "normalPositionKm": 0.0004586325382025052,
+                "radialVelocityMs": -0.000011171757126764092,
+                "transverseVelocityMs": 9.552479840488748e-7,
+                "normalVelocityMs": 2.9649024606671827e-7,
+                "positionNormKm": 0.037903129687431564,
+                "velocityNormMs": 0.000011216441613829514
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.23559060267374618,
+              "deltaVMs": 0.0006432251312921093,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.21375986050311244,
+                "transversePositionKm": -0.08732873401742533,
+                "normalPositionKm": 0.046726291536806665,
+                "radialVelocityMs": 0.0002834345609662612,
+                "transverseVelocityMs": 0.0005687374662268892,
+                "normalVelocityMs": 0.00009970513369647728,
+                "positionNormKm": 0.23559060267374618,
+                "velocityNormMs": 0.0006432251312921093
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 21.05941000334753,
+              "deltaVMs": 0.052126244372816766,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -18.475707986563073,
+                "transversePositionKm": 9.301357840387363,
+                "normalPositionKm": -3.953695285351136,
+                "radialVelocityMs": -0.02309374046296817,
+                "transverseVelocityMs": -0.04602059319558867,
+                "normalVelocityMs": -0.008119698625553588,
+                "positionNormKm": 21.05941000334753,
+                "velocityNormMs": 0.052126244372816766
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 0.10304630370376323,
+              "deltaVMs": 0.00001294361741193907,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.060074082353377405,
+                "transversePositionKm": 0.0836914553298969,
+                "normalPositionKm": -0.0023206984232571415,
+                "radialVelocityMs": -0.000012404194760938271,
+                "transverseVelocityMs": 0.0000035977316838949663,
+                "normalVelocityMs": -8.541140263817651e-7,
+                "positionNormKm": 0.10304630370376323,
+                "velocityNormMs": 0.00001294361741193907
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 0.031064765857716423,
+              "deltaVMs": 0.0000017921297954028846,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.028248059751495167,
+                "transversePositionKm": 0.002512633704252016,
+                "normalPositionKm": -0.012678859173401988,
+                "radialVelocityMs": -0.0000012689410581400676,
+                "transverseVelocityMs": -0.0000012308905141944862,
+                "normalVelocityMs": -2.939835651923148e-7,
+                "positionNormKm": 0.031064765857716423,
+                "velocityNormMs": 0.0000017921297954028846
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.09000796186076053,
+              "deltaVMs": 0.000005074620084395669,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.08809424235474414,
+                "transversePositionKm": 0.00892087888756862,
+                "normalPositionKm": -0.016163402554693035,
+                "radialVelocityMs": -0.000004897571540810474,
+                "transverseVelocityMs": -0.0000012463862158343795,
+                "normalVelocityMs": -4.6052514000136145e-7,
+                "positionNormKm": 0.09000796186076053,
+                "velocityNormMs": 0.000005074620084395669
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 0.10239724811485296,
+              "deltaVMs": 0.000005409534394160546,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.017344079895814494,
+                "transversePositionKm": -0.09998746423327373,
+                "normalPositionKm": -0.013670636790660828,
+                "radialVelocityMs": 6.54253404375318e-7,
+                "transverseVelocityMs": -0.000005358694394600909,
+                "normalVelocityMs": -3.4555640602081257e-7,
+                "positionNormKm": 0.10239724811485296,
+                "velocityNormMs": 0.000005409534394160546
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 0.10191989342035702,
+              "deltaVMs": 0.000004736927067488582,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.03345655133798927,
+                "transversePositionKm": -0.0952116712543004,
+                "normalPositionKm": -0.01424996506481511,
+                "radialVelocityMs": -6.6224851628311e-7,
+                "transverseVelocityMs": -0.00000467536412409858,
+                "normalVelocityMs": -3.753335216560008e-7,
+                "positionNormKm": 0.10191989342035702,
+                "velocityNormMs": 0.000004736927067488582
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 0.05686338494692353,
+              "deltaVMs": 0.0000033205399719538803,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.0420745899655218,
+                "transversePositionKm": -0.033237874519825815,
+                "normalPositionKm": 0.018931907570541723,
+                "radialVelocityMs": 0.0000024888389684230833,
+                "transverseVelocityMs": -2.9521396872767637e-7,
+                "normalVelocityMs": 0.0000021781907646646224,
+                "positionNormKm": 0.05686338494692353,
+                "velocityNormMs": 0.0000033205399719538803
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 0.2939788080367595,
+              "deltaVMs": 0.000013739222522603588,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.002496531188747109,
+                "transversePositionKm": 0.26981042495032803,
+                "normalPositionKm": 0.11670321972791027,
+                "radialVelocityMs": -0.000002571850679718798,
+                "transverseVelocityMs": 0.000013206473844498266,
+                "normalVelocityMs": 0.0000027822415785533023,
+                "positionNormKm": 0.2939788080367595,
+                "velocityNormMs": 0.000013739222522603588
+              }
+            }
+          ]
+        },
+        {
+          "label": "+10y",
+          "offsetDays": 3652.5,
+          "referenceSource": "JPL Horizons",
+          "available": true,
+          "deltaRKm": 20.64520763976463,
+          "deltaVMs": 0.05001448075551245,
+          "rmsPositionKm": 20.64520763976463,
+          "rmsVelocityMs": 0.05001448075551245,
+          "bodyComparisons": [
+            {
+              "bodyId": "sun",
+              "deltaRKm": 0,
+              "deltaVMs": 0,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "degenerate",
+                "radialPositionKm": null,
+                "transversePositionKm": null,
+                "normalPositionKm": null,
+                "radialVelocityMs": null,
+                "transverseVelocityMs": null,
+                "normalVelocityMs": null,
+                "positionNormKm": 0,
+                "velocityNormMs": 0
+              }
+            },
+            {
+              "bodyId": "mercury",
+              "deltaRKm": 17.913751970071942,
+              "deltaVMs": 0.020534055815991523,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.08470127990957944,
+                "transversePositionKm": 17.913545839368325,
+                "normalPositionKm": 0.0145189286038363,
+                "radialVelocityMs": -0.020533866502905927,
+                "transverseVelocityMs": 0.00008027342116423476,
+                "normalVelocityMs": 0.00003648113139486059,
+                "positionNormKm": 17.913751970071942,
+                "velocityNormMs": 0.020534055815991523
+              }
+            },
+            {
+              "bodyId": "venus",
+              "deltaRKm": 0.24265872366221752,
+              "deltaVMs": 0.00007951184732146134,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.001454772056566552,
+                "transversePositionKm": 0.2424713169973744,
+                "normalPositionKm": -0.009423387989394702,
+                "radialVelocityMs": -0.00007949134810494294,
+                "transverseVelocityMs": 5.715264490171487e-7,
+                "normalVelocityMs": -0.000001712541517229982,
+                "positionNormKm": 0.24265872366221752,
+                "velocityNormMs": 0.00007951184732146134
+              }
+            },
+            {
+              "bodyId": "earth",
+              "deltaRKm": 0.7058183142420053,
+              "deltaVMs": 0.002087737603083227,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.001629439333856151,
+                "transversePositionKm": 0.518470309873574,
+                "normalPositionKm": -0.47892105343833397,
+                "radialVelocityMs": -0.0020518677022227207,
+                "transverseVelocityMs": -0.00018291823710470147,
+                "normalVelocityMs": 0.00033915800217223054,
+                "positionNormKm": 0.7058183142420053,
+                "velocityNormMs": 0.002087737603083227
+              }
+            },
+            {
+              "bodyId": "moon",
+              "deltaRKm": 65.83930904600177,
+              "deltaVMs": 0.17201931262609085,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.39145959439175804,
+                "transversePositionKm": -52.2482777748416,
+                "normalPositionKm": 40.05969101982545,
+                "radialVelocityMs": 0.16927371887196963,
+                "transverseVelocityMs": 0.01508423575608558,
+                "normalVelocityMs": -0.026636776217496688,
+                "positionNormKm": 65.83930904600177,
+                "velocityNormMs": 0.17201931262609085
+              }
+            },
+            {
+              "bodyId": "mars",
+              "deltaRKm": 2.1441482904350546,
+              "deltaVMs": 0.00012579312522678502,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.133383545837598,
+                "transversePositionKm": -2.1382672105359974,
+                "normalPositionKm": 0.08598870519993244,
+                "radialVelocityMs": 0.00012442561976103346,
+                "transverseVelocityMs": -0.00001768941727993181,
+                "normalVelocityMs": 0.000005409252970677481,
+                "positionNormKm": 2.1441482904350546,
+                "velocityNormMs": 0.00012579312522678502
+              }
+            },
+            {
+              "bodyId": "jupiter",
+              "deltaRKm": 4.479091947983694,
+              "deltaVMs": 0.00007031072245642704,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.1070170677161232,
+                "transversePositionKm": -4.476727252293255,
+                "normalPositionKm": -0.09861609546459568,
+                "radialVelocityMs": 0.00007028665274262147,
+                "transverseVelocityMs": 9.826068359526207e-7,
+                "normalVelocityMs": -0.0000015551920745674327,
+                "positionNormKm": 4.479091947983694,
+                "velocityNormMs": 0.00007031072245642704
+              }
+            },
+            {
+              "bodyId": "saturn",
+              "deltaRKm": 0.9750858017751294,
+              "deltaVMs": 0.000006502487351970147,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -0.6595871136803925,
+                "transversePositionKm": 0.7140826002298737,
+                "normalPositionKm": 0.07630989673140737,
+                "radialVelocityMs": -0.000005591627286546848,
+                "transverseVelocityMs": -0.0000030882453365758406,
+                "normalVelocityMs": -0.000001216053778413624,
+                "positionNormKm": 0.9750858017751294,
+                "velocityNormMs": 0.000006502487351970147
+              }
+            },
+            {
+              "bodyId": "uranus",
+              "deltaRKm": 1.7622946000737167,
+              "deltaVMs": 0.00001415625861821213,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -1.738467111639622,
+                "transversePositionKm": -0.28140460912784776,
+                "normalPositionKm": 0.06500619322782973,
+                "radialVelocityMs": -0.000013481197548284827,
+                "transverseVelocityMs": 0.000004119485559837674,
+                "normalVelocityMs": -0.000001298772286474111,
+                "positionNormKm": 1.7622946000737167,
+                "velocityNormMs": 0.00001415625861821213
+              }
+            },
+            {
+              "bodyId": "neptune",
+              "deltaRKm": 5.29051733484112,
+              "deltaVMs": 0.000039780436218760836,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -5.252033842312784,
+                "transversePositionKm": 0.6279874773787245,
+                "normalPositionKm": 0.10651721790907295,
+                "radialVelocityMs": -0.000039038859795963363,
+                "transverseVelocityMs": 0.000007529043319980316,
+                "normalVelocityMs": -0.000001328171025084312,
+                "positionNormKm": 5.29051733484112,
+                "velocityNormMs": 0.000039780436218760836
+              }
+            },
+            {
+              "bodyId": "pluto",
+              "deltaRKm": 6.892252237706505,
+              "deltaVMs": 0.000049376289716175654,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": -4.399342031642923,
+                "transversePositionKm": 1.041705320232093,
+                "normalPositionKm": 5.2022860958034975,
+                "radialVelocityMs": -0.000038911183040180087,
+                "transverseVelocityMs": 0.000005761929445463256,
+                "normalVelocityMs": 0.00002984523395141708,
+                "positionNormKm": 6.892252237706505,
+                "velocityNormMs": 0.000049376289716175654
+              }
+            },
+            {
+              "bodyId": "ceres",
+              "deltaRKm": 18.82052518109711,
+              "deltaVMs": 0.0008354981693197953,
+              "orbitalResidual": {
+                "frame": "sun-centered-reference-rtn",
+                "basisStatus": "ready",
+                "radialPositionKm": 0.11071174951480656,
+                "transversePositionKm": -18.807996619962893,
+                "normalPositionKm": 0.6776238958996865,
+                "radialVelocityMs": 0.00083525848216728,
+                "transverseVelocityMs": -0.000019706512047232297,
+                "normalVelocityMs": 0.0000034802711493831797,
+                "positionNormKm": 18.82052518109711,
+                "velocityNormMs": 0.0008354981693197953
+              }
+            }
+          ]
+        }
+      ],
+      "rmsPositionKm": 12.42941307229407,
+      "rmsVelocityMS": 0.03016399263684083
+    }
+  ],
+  "convergence": {
+    "durationDays": 365,
+    "positionRmsKm": 0.2961819722586993,
+    "velocityRmsMS": 0.0006833280086078838
+  },
+  "timeReversal": {
+    "durationDays": 30,
+    "positionRmsM": 3.1613280873121954,
+    "velocityRmsMS": 0.000007703104375229158
+  },
+  "promotion": {
+    "positionRmsKm": 20.64520763976463,
+    "velocityRmsMS": 0.05001448075551245,
+    "kerrInvariantPassed": false,
+    "performancePassed": false,
+    "regressionPassed": false,
+    "decision": "blocked-shadow-retained",
+    "defaultKernel": "legacy-eih-1pn",
+    "blockers": [
+      "kerr-invariants",
+      "hardware-performance",
+      "full-regression"
+    ]
+  },
+  "liveStateMutated": false
+}

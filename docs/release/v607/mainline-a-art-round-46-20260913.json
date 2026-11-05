@@ -1,0 +1,33 @@
+{
+  "round": 46,
+  "date": "2026-09-13",
+  "title": "Production Lite eight-load lifecycle soak",
+  "status": "verified-browser-lifecycle-baseline",
+  "scope": {
+    "build": ".next-atlas-lite-current",
+    "runtime": "standalone production server, vercel-lite",
+    "artChange": "Extended the reload lifecycle probe to eight loads and repeated it with exposed GC to separate reclaim timing from retained heap."
+  },
+  "browser": {
+    "viewport": "390x844",
+    "runsWithoutForcedGc": {
+      "heapBytes": [157974288, 151448652, 186504010, 207871977, 219071551, 239538847, 251477097, 287540042],
+      "resources": [30, 16, 16, 16, 17, 16, 17, 16],
+      "requestFailures": 0
+    },
+    "runsWithForcedGc": {
+      "heapBytes": [120773154, 133389017, 36210450, 36219955, 35518727, 35517315, 36245480, 35521800],
+      "resources": [30, 17, 17, 17, 17, 17, 17, 17],
+      "stablePostGcRangeBytes": [35517315, 36245480],
+      "requestFailures": 0
+    }
+  },
+  "validation": {
+    "playwright": "Chrome production soak: 8 loads without forced GC and 8 loads with exposed GC",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The non-GC heap rise indicates collection timing; forced-GC samples stabilize near 35.5–36.2 MB but do not prove GPU allocation stability.",
+    "This is a single-browser Lite soak, not full device matrix or final performance acceptance; Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

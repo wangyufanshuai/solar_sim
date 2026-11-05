@@ -1,0 +1,66 @@
+{
+  "version": "v591-moon-visual-source-acquisition-v1",
+  "metadataProbe": {
+    "url": "https://svs.gsfc.nasa.gov/api/4720",
+    "httpStatus": 200,
+    "etag": "04b450aef5b33350360e3df3f231ab21",
+    "observedAt": "2026-08-11T01:20:51+08:00",
+    "title": "CGI Moon Kit",
+    "mission": "Lunar Reconnaissance Orbiter",
+    "sensors": [
+      "LROC WAC",
+      "LOLA"
+    ]
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "allowedHosts": [
+      "svs.gsfc.nasa.gov"
+    ]
+  },
+  "assets": [
+    {
+      "id": "moon-albedo-source-v591",
+      "body": "moon",
+      "role": "albedo-source",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/moon/lroc-color-2025-16bit-srgb-8k.tif",
+      "expectedMediaTypes": [
+        "image/tiff",
+        "application/octet-stream"
+      ],
+      "expectedWidth": 8192,
+      "expectedHeight": 4096,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://svs.gsfc.nasa.gov/4720/"
+      },
+      "observationIdentity": "2025 LROC WAC color mosaic, 16-bit sRGB 8K derivative",
+      "observationLimit": "NASA SVS states that the color map is optimized for aesthetics rather than scientific analysis; v591 uses it only as a presentation albedo source.",
+      "presentationOnly": true
+    },
+    {
+      "id": "moon-height-source-v591",
+      "body": "moon",
+      "role": "height-source",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_16_uint.tif",
+      "outputPath": "source-cache/celestial-convergence-v591/moon/ldem-16-uint.tif",
+      "expectedMediaTypes": [
+        "image/tiff",
+        "application/octet-stream"
+      ],
+      "expectedWidth": 5760,
+      "expectedHeight": 2880,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://svs.gsfc.nasa.gov/4720/"
+      },
+      "observationIdentity": "LRO LOLA LDEM at 16 pixels per degree, unsigned 16-bit half-meter units",
+      "observationLimit": "Presentation geometry derives from the public LOLA cylindrical elevation product and does not alter Orbit Atlas scientific state.",
+      "presentationOnly": true
+    }
+  ]
+}

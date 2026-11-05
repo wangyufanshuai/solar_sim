@@ -1,0 +1,109 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:42.828Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "virgo-a-galaxy-supplement.json",
+    "metadataReceiptSha256": "262fdfe4f8c8fc4695b428e888e15839ce6c1b6b9b4271a8470c89829156b124",
+    "nasaId": "PIA23122",
+    "title": "Spitzer Captures Messier 87",
+    "description": "This image from NASA's Spitzer Space Telescope shows the elliptical galaxy Messier 87 (M87), the home galaxy of the supermassive black hole recently imaged by the Event Horizon Telescope (EHT). Spitzer's infrared view shows a faint trace of a jet of material spewing to the right of the galaxy - a feature that was previously one key indicator that a supermassive black hole lived at the galaxy's center. More prominent in the image is the shockwave created by that jet. The inset in the image below shows a close-up view of the shockwave on the right side of the galaxy, as well as the shockwave from a second jet traveling to the left of the galaxy. Located about 55 million light-years from Earth, M87 has been a subject of astronomical study for more than 100 years and has been imaged by many NASA observatories, including the Hubble Space Telescope, the Chandra X-ray Observatory and NuSTAR. In 1918, astronomer Heber Curtis first noticed \"a curious straight ray\" extending from the galaxy's center. This bright jet (which appears to extend to the right of the galaxy) is visible in multiple wavelengths of light, from radio waves through X-rays. The jet is produced by a disk of material spinn",
+    "center": "JPL",
+    "identityTerms": [
+      "m87"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA23122/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA23122/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA23122/collection.json",
+    "status": 200,
+    "responseBytes": 330,
+    "responseSha256": "cb5fd0573ad5b4171b8d3afea82679c471cdf05fd87455562772b4a10805a017"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23122~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23122/PIA23122~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23122~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23122/PIA23122~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23122~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23122/PIA23122~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA23122~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23122/PIA23122~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA23122/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA23122/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 5,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 5,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "dc28b526f20c3c6009ecd6727eb01abc6e9b8e609aa669ab26eecd6043fb07f9"
+}

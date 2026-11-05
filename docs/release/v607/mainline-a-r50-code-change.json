@@ -1,0 +1,76 @@
+{
+  "method": "Count nonblank, noncomment source lines in new R50 production/test/tool files; count only explicit R50 integration and source-path fix lines in prior files. Generated review JSON, screenshots, receipts, docs, package lockfiles, and unrelated dirty-tree edits excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineANebulaReviewV610.ts",
+      "baseline": "new-in-r50",
+      "added": 279,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "cd250cadbfab035bd9a662e0b63f3fc4c6578f9ec3f1dd990e2ad268c08b0ffd"
+    },
+    {
+      "path": "app/lib/mainlineANebulaReviewV610.test.ts",
+      "baseline": "new-in-r50",
+      "added": 151,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "85dd42739efd8cef7eb646451b6963957ca5aa03b4ee805ff644cb25ee72062d"
+    },
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "baseline": "new-in-r50",
+      "added": 115,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "1ecfb632ee14281faf723510614cec23c64b8adfa6daf334d6e1a77d04c2c4b1"
+    },
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.test.tsx",
+      "baseline": "new-in-r50",
+      "added": 47,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "07eda1771566fbd4805052dbd268d57b1db8bcc30b077feed8d6b55dd5f0d1d8"
+    },
+    {
+      "path": "scripts/build-mainline-a-nebula-review-pack.mjs",
+      "baseline": "new-in-r50",
+      "added": 80,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "96bea24414ba9d59a6e4ce9bc4c6f00255098c3328cff5acceb4bb013be97e2b"
+    },
+    {
+      "path": "scripts/build-mainline-a-nebula-review-pack.test.mjs",
+      "baseline": "new-in-r50",
+      "added": 42,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "f881fb5ad8e01058a0dc432845d72531a936dda4961e8a8a9e4dfded1b68d8be"
+    },
+    {
+      "path": "app/lib/mainlineANebulaAtlasV609.ts",
+      "baseline": "r49-baseline-plus-r50-source-path-fix",
+      "added": 1,
+      "modified": 1,
+      "removed": 1,
+      "sha256": "09d6a6e31e6ad82d54d0cf1892d806b7ede46be2955455705a34f9336b7bcf4f"
+    },
+    {
+      "path": "app/components/PostV593StellarRosterPanel.tsx",
+      "baseline": "r49-baseline-plus-r50-review-entry",
+      "added": 5,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "887b589bb050681501ccbbf16eca1cef49f08b1b86ccac04bb5428555dae8e71"
+    }
+  ],
+  "totals": {
+    "added": 720,
+    "modified": 1,
+    "removed": 1
+  },
+  "effectiveChangedLines": 722,
+  "minimumMet": true
+}

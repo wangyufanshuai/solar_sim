@@ -1,0 +1,72 @@
+{
+  "schema": "mainline-a-r74-page-replay-v661",
+  "runId": "20261013v661r74page02",
+  "status": "verified-page-candidates-all-five-images-held",
+  "ledger": {
+    "path": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+    "bytes": 24048,
+    "sha256": "767003b07374a8dad488644bc9ccd77336c0934b5b04ad54c1893a7c6aee5221"
+  },
+  "checks": [
+    {
+      "key": "ring-photojournal",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    },
+    {
+      "key": "dumbbell-spitzer",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    },
+    {
+      "key": "dumbbell-hubble",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    },
+    {
+      "key": "bubble-hubble",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    },
+    {
+      "key": "cats-eye-photojournal",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    },
+    {
+      "key": "omega-photojournal",
+      "ok": true,
+      "issues": [],
+      "responseCaptured": 1
+    }
+  ],
+  "counts": {
+    "heldTargets": 5,
+    "officialPagesAttempted": 6,
+    "officialPagesCaptured": 6,
+    "pageIdentityCandidates": 5,
+    "conflictingPages": 1,
+    "imageRequestsExecuted": 0,
+    "imageResponsesCaptured": 0,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "limitations": [
+    "Local raw-byte replay does not independently authenticate NASA or grant rights.",
+    "No held image request was executed; page download links are metadata only."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "rightsSigned": false,
+    "runtimeAdmitted": false,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

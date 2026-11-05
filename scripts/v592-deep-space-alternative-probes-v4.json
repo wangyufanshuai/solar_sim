@@ -1,0 +1,52 @@
+{
+  "version": "v592-deep-space-alternative-probes-v4",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHost": "images-api.nasa.gov",
+    "metadataOnly": true,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "explicitOperatorInvokedQueryRefinement": true,
+    "selectionRequiresManualVisualAndLicenseReview": true
+  },
+  "probes": [
+    {
+      "id": "centaurus-a",
+      "category": "galaxy",
+      "query": "Centaurus A galaxy NASA Goddard",
+      "requiredTermGroups": [["ngc 5128", "centaurus a", "centaurus-a"]]
+    },
+    {
+      "id": "cigar-galaxy",
+      "category": "galaxy",
+      "query": "M82 galaxy NASA Goddard",
+      "requiredTermGroups": [["m82", "cigar"]]
+    },
+    {
+      "id": "pinwheel-galaxy",
+      "category": "galaxy",
+      "query": "M101 galaxy NASA Goddard",
+      "requiredTermGroups": [["m101", "pinwheel"]]
+    },
+    {
+      "id": "virgo-a-galaxy",
+      "category": "galaxy",
+      "query": "M87 galaxy NASA Goddard",
+      "requiredTermGroups": [["m87", "virgo a"]]
+    },
+    {
+      "id": "black-eye-galaxy",
+      "category": "galaxy",
+      "query": "M64 galaxy NASA Goddard",
+      "requiredTermGroups": [["m64", "black eye"]]
+    },
+    {
+      "id": "sunflower-galaxy",
+      "category": "galaxy",
+      "query": "M63 galaxy NASA Goddard",
+      "requiredTermGroups": [["m63", "sunflower"]]
+    }
+  ]
+}

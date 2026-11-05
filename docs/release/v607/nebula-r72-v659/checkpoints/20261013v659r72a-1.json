@@ -1,0 +1,239 @@
+{
+  "schema": "mainline-a-r72-expansion-source-v659-checkpoint",
+  "runId": "20261013v659r72a",
+  "startedAt": "2026-10-13T01:55:36.161Z",
+  "checkpointAt": "2026-10-13T01:55:39.433Z",
+  "rows": [
+    {
+      "id": "ring-nebula",
+      "nasaId": "GSFC_20171208_Archive_e001464",
+      "title": "Hubble reveals the Ring Nebula’s true shape",
+      "rank": 1,
+      "expectedCredit": "NASA Goddard",
+      "pageKind": "library-shell",
+      "pageUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
+      "sourceImageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+      "historicalLocal": null,
+      "sourceMetadata": {
+        "path": "source-cache/v592/nebulae/metadata/ring-nebula-GSFC_20171208_Archive_e001464.json",
+        "sha256": "a891d8b6e3fa81970dd24c2668b5dc3702a0af393184a0953ee2e13fbc69c2e8"
+      },
+      "blockers": [
+        "license-review-blocked",
+        "license:restricted-partner-or-copyright-flag",
+        "license:source-resolution",
+        "license:source-format",
+        "payload-acquisition-pending",
+        "rights-review-pending",
+        "visual-signoff-pending",
+        "runtime-candidate-only"
+      ],
+      "imageAcquisitionAllowed": false,
+      "acquisitionDecision": "blocked-item-license-identity-or-texture-suitability-review",
+      "page": {
+        "kind": "page",
+        "requestUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
+        "requestFingerprint": "d8a96cf77cb2b7695eec6bc25d3a1abfdf5a3b57464c88cd30bd0d357660a4fc",
+        "requestExecuted": true,
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "fda0ce04-ab21-4e75-9bc3-07110c594799",
+            "startedAt": "2026-10-13T01:55:36.162Z",
+            "endedAt": "2026-10-13T01:55:38.063Z",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestExecuted": true,
+            "kind": "page",
+            "requestUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
+            "requestFingerprint": "d8a96cf77cb2b7695eec6bc25d3a1abfdf5a3b57464c88cd30bd0d357660a4fc",
+            "httpStatus": 200,
+            "contentType": "text/html",
+            "finalUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464",
+            "redirectChain": [
+              "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 178991,
+            "rawArtifactPath": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+            "rawSha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-page-cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19.html",
+          "sha256": "cd52f6de648b6af7ed4b5d3cf5e3567dbc42bfe232bb6458751ff1ec6a1d4f19",
+          "bytes": 178991,
+          "contentType": "text/html",
+          "finalUrl": "https://images.nasa.gov/details/GSFC_20171208_Archive_e001464"
+        },
+        "inspection": {
+          "ok": false,
+          "issues": [
+            "library-shell-origin-marker-missing"
+          ],
+          "title": "",
+          "identityVerified": false,
+          "sourcePageKind": "library-shell",
+          "limitation": "generic-library-shell-not-item-identity-evidence",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "skipReason": null,
+        "persistenceError": null
+      },
+      "search": {
+        "kind": "search",
+        "requestUrl": "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e001464",
+        "requestFingerprint": "bfdb1ffbec615ca63cdf62df4892206d795d732e54226a4bacd2539c478df198",
+        "requestExecuted": true,
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "6493c02d-dead-4d32-8893-1dcd1791a1ff",
+            "startedAt": "2026-10-13T01:55:38.067Z",
+            "endedAt": "2026-10-13T01:55:38.962Z",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestExecuted": true,
+            "kind": "search",
+            "requestUrl": "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e001464",
+            "requestFingerprint": "bfdb1ffbec615ca63cdf62df4892206d795d732e54226a4bacd2539c478df198",
+            "httpStatus": 200,
+            "contentType": "application/json",
+            "finalUrl": "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e001464",
+            "redirectChain": [
+              "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e001464"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 3799,
+            "rawArtifactPath": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-search-b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9.json",
+            "rawSha256": "b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-search-b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9.json",
+          "sha256": "b5ed8fc3871df36e6859cb88f4892729b051a6616e598b66498303fb509c84a9",
+          "bytes": 3799,
+          "contentType": "application/json",
+          "finalUrl": "https://images-api.nasa.gov/search?nasa_id=GSFC_20171208_Archive_e001464"
+        },
+        "inspection": {
+          "ok": false,
+          "issues": [
+            "credit-mismatch"
+          ],
+          "nasaId": "GSFC_20171208_Archive_e001464",
+          "title": "Hubble reveals the Ring Nebula’s true shape",
+          "credit": "",
+          "center": "GSFC",
+          "itemCount": 1,
+          "originalLinkListed": true,
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "skipReason": null,
+        "persistenceError": null
+      },
+      "asset": {
+        "kind": "asset",
+        "requestUrl": "https://images-api.nasa.gov/asset/GSFC_20171208_Archive_e001464",
+        "requestFingerprint": "f22e646216d4dc339bc35323155692a7d46ca2fde9709ea8bce8e0963a9ac2f7",
+        "requestExecuted": true,
+        "responseCaptured": 1,
+        "attempts": [
+          {
+            "number": 1,
+            "retryCount": 0,
+            "collectionId": "b657c232-9dcf-4243-93ea-1fc112b1f87e",
+            "startedAt": "2026-10-13T01:55:38.964Z",
+            "endedAt": "2026-10-13T01:55:39.432Z",
+            "timeout": false,
+            "timeoutMs": 30000,
+            "requestExecuted": true,
+            "kind": "asset",
+            "requestUrl": "https://images-api.nasa.gov/asset/GSFC_20171208_Archive_e001464",
+            "requestFingerprint": "f22e646216d4dc339bc35323155692a7d46ca2fde9709ea8bce8e0963a9ac2f7",
+            "httpStatus": 200,
+            "contentType": "application/json",
+            "finalUrl": "https://images-api.nasa.gov/asset/GSFC_20171208_Archive_e001464",
+            "redirectChain": [
+              "https://images-api.nasa.gov/asset/GSFC_20171208_Archive_e001464"
+            ],
+            "redirects": [],
+            "errorClass": null,
+            "errorMessage": null,
+            "responseCaptured": 1,
+            "responseBytes": 555,
+            "rawArtifactPath": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-asset-cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037.json",
+            "rawSha256": "cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037"
+          }
+        ],
+        "artifact": {
+          "path": "docs/release/v607/nebula-r72-v659/raw/ring-nebula-asset-cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037.json",
+          "sha256": "cef3407cc2efdddec0057f65fc2238be21c0acfb919c2dcd08982831e2586037",
+          "bytes": 555,
+          "contentType": "application/json",
+          "finalUrl": "https://images-api.nasa.gov/asset/GSFC_20171208_Archive_e001464"
+        },
+        "inspection": {
+          "ok": true,
+          "issues": [],
+          "originalImageUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+          "originalLinkProtocol": "http-listed-normalized-to-https",
+          "rightsStatus": "pending",
+          "scientificPayloadWriteback": false
+        },
+        "skipReason": null,
+        "persistenceError": null
+      },
+      "image": {
+        "kind": "image",
+        "requestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001464/GSFC_20171208_Archive_e001464~orig.jpg",
+        "requestFingerprint": "a3ef1bea1ce75838249d65c999796ccfcabc64cfb186191c1fbf4f46b9f39a66",
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "attempts": [],
+        "artifact": null,
+        "inspection": null,
+        "skipReason": "item-license-or-suitability-review-blocked",
+        "persistenceError": null
+      },
+      "status": "partial-source-attempt-ledger",
+      "rightsStatus": "pending",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "counts": {
+    "targets": 1,
+    "pagesCaptured": 1,
+    "pageIdentityVerified": 0,
+    "structuredSearchCaptured": 1,
+    "structuredSearchVerified": 0,
+    "assetManifestsCaptured": 1,
+    "assetManifestsVerified": 1,
+    "imageRequestsExecuted": 0,
+    "imagesCaptured": 0,
+    "policyBlockedImageRequests": 1,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  }
+}

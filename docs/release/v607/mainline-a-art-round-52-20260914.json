@@ -1,0 +1,73 @@
+{
+  "round": 52,
+  "date": "2026-09-14",
+  "title": "beta-nebula-local-evidence-and-v612-review-pack",
+  "status": "beta-nebula-evidence-verified-rights-and-runtime-still-closed",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaNebulaSourceRecords": 18,
+    "betaNebulaLocalEvidenceVerified": 18,
+    "betaNebulaRightsReview": 18,
+    "betaNebulaRuntimeAdmitted": 0,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added fail-closed per-image local evidence inspection with path traversal protection, real byte counts, SHA-256 comparison, and JPEG/PNG dimension decoding.",
+    "Required item-level rightsStatus, exact CC BY 4.0 license text, and the canonical Creative Commons URL before a nebula can leave rights review; a generic CC BY label is insufficient.",
+    "Added the V612 review-pack generator and deterministic nested-pack verifier; projection rows, manifest metadata, source identity, local evidence, and blocker state must all match sealed inputs.",
+    "Extended the provenance review panel to expose V612 local evidence status, bytes, dimensions, digest, source path, and the explicit boundary between candidate evidence and runtime/science admission.",
+    "Kept all 18 nebula candidates out of runtime and preserved the existing EIH/Newton/2PN Lense–Thirring/Kerr kernel boundary."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in the seven R52 production, test, tool, and panel files. Generated JSON, screenshots, receipts, docs, package metadata, and unrelated dirty-tree edits are excluded.",
+    "files": [
+      {"path": "scripts/project-mainline-a-beta-nebula.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 165, "sha256": "0fcb65e50dc44c2898844c1abb6a8b6fb787c9f2c8ba9c0ebbef544aca479b71"},
+      {"path": "scripts/project-mainline-a-beta-nebula.test.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 134, "sha256": "46cc5c2b7fd250aaff5c391edb2aa7e067c5c22c0a28655423c2b5103e054498"},
+      {"path": "scripts/build-mainline-a-nebula-review-pack.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 99, "sha256": "b6d18429a72533c95330a7cecf72a575fbb3d96a38eacff2c6d217a6a6b13361"},
+      {"path": "scripts/build-mainline-a-nebula-review-pack.test.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 50, "sha256": "8fd02a85f597e86b257d5c3a3176765a01f361238f7fca0bb54686f43e87f1ce"},
+      {"path": "scripts/build-mainline-a-nebula-review-pack-v612.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 221, "sha256": "cde7e7f27a6273e6538591b4633be8cbd06b71379b8d8c45e5297da46d5499f8"},
+      {"path": "scripts/build-mainline-a-nebula-review-pack-v612.test.mjs", "baseline": "new-in-r52", "effectiveChangedLines": 145, "sha256": "f68eb29dcddb71d623d783a6bdebc2e29da96fcfb9956bc22b66ec26c2c7a1ec"},
+      {"path": "app/components/MainlineANebulaReviewPanelV610.tsx", "baseline": "new-in-r52", "effectiveChangedLines": 115, "sha256": "5aa56533d748de1f57c192f3c144977face7e29f2c55b5501a01cc2e4eb28af0"}
+    ],
+    "effectiveChangedLines": 929,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "nebulaNodeSerial": {"passed": 24, "failed": 0, "command": "node --test --test-concurrency=1 scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs"},
+    "vitest": {"passed": 17, "failed": 0, "files": 2, "command": "npx vitest run app/lib/mainlineANebulaReviewV610.test.ts app/components/MainlineANebulaReviewPanelV610.test.tsx"},
+    "eslint": {"passed": true, "files": 5},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "Vsx4CmaQ72epHGXizXTH0", "buildIdSha256": "c61fd1da7946b1169ffdd3cc6d014c4e9a9b51d4ebcd511dafd949cd92d0171f"}
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "reviewRecords": 18, "selected": "IC 1805", "schema": "mainline-a-nebula-review-pack-v612", "localEvidenceText": true, "rightsReviewCount": 18, "runtimeAdmissionCount": 0, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "blocked-by-browser-viewport-control", "requestedViewport": [390, 844], "observedViewport": [1280, 720], "reason": "in-app browser viewport.set returned no size change; no mobile acceptance claim made"},
+    "scope": "browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r52-nebula-review-desktop.png", "bytes": 40439, "sha256": "531d00ad21bed55e754c8880b36c629e9b6b500070a80ce2922d31b50b9059d9"}
+  ],
+  "reviewPack": {
+    "schema": "mainline-a-nebula-review-pack-v612",
+    "path": "app/data/mainlineANebulaReviewPackV612.generated.json",
+    "candidateCount": 18,
+    "localEvidenceVerifiedCount": 18,
+    "rightsReviewCount": 18,
+    "runtimeAdmissionCount": 0,
+    "packSha256": "004f87da96fdad12864fe09305be0915c9b7c9c0ed232bb9b8942c2e5823a808"
+  },
+  "openGates": [
+    "18 条候选仍需逐图 NASA 使用权/署名决定和人工视觉裁切 signoff；本地字节证据不等于版权批准",
+    "Beta 目标 24 张星云仍缺 6 条候选记录以及全部 runtime admission；当前 18/24 均保持候选状态",
+    "4 颗 Beta hero stars 仍未进入运行时，当前恒星为 20/24",
+    "12 个重点星座仍需最终视觉 signoff",
+    "移动端本轮视口控制未生效，多设备 GPU/FPS/资源生命周期仍需独立验收",
+    "root app/next-web 对齐、公共部署和最终发布包仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

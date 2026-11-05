@@ -1,0 +1,83 @@
+{
+  "schema": "mainline-a-stellar-primary-source-capture-audit-v1",
+  "generatedAt": "2026-09-27T06:17:25.126Z",
+  "runId": "20260927-059c",
+  "evidenceClass": "external-source",
+  "scope": "Raw primary documents for component review; no automatic measurement or runtime admission",
+  "newDevelopmentRound": false,
+  "productionCodeChanged": false,
+  "collector": {
+    "path": "tmp/capture-mainline-a-stellar-primary-20260927-059c.mjs",
+    "sha256": "90c994087e94d00743e11ad12080eb91f909219087ac2345557fa1fea0cc0305"
+  },
+  "fingerprintAlgorithm": "SHA-256 of UTF-8 JSON.stringify(request) with stored method,url,accept field order",
+  "counts": {
+    "requested": 1,
+    "responseCaptured": 0,
+    "componentConfirmed": 0
+  },
+  "records": [
+    {
+      "id": "acrux-hip-components-tsv",
+      "star": "acrux",
+      "kind": "tsv",
+      "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1",
+      "request": {
+        "method": "GET",
+        "url": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1",
+        "accept": "text/plain,text/tab-separated-values"
+      },
+      "requestFingerprint": "dbfeb21db9a2d45f696ec1637e6fa730787799eb656d2df6b779bd7b929ca58c",
+      "responseCaptured": 0,
+      "rawArtifact": null,
+      "attempts": [
+        {
+          "number": 1,
+          "retryCount": 0,
+          "startedAt": "2026-09-27T06:17:03.679Z",
+          "endedAt": "2026-09-27T06:17:14.438Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": null,
+          "contentType": null,
+          "finalUrl": null,
+          "redirectChain": [],
+          "errorClass": "network",
+          "errorMessage": "fetch failed",
+          "requestFingerprint": "dbfeb21db9a2d45f696ec1637e6fa730787799eb656d2df6b779bd7b929ca58c",
+          "responseCaptured": 0
+        },
+        {
+          "number": 2,
+          "retryCount": 1,
+          "startedAt": "2026-09-27T06:17:14.438Z",
+          "endedAt": "2026-09-27T06:17:25.126Z",
+          "timeoutMs": 30000,
+          "timeout": false,
+          "httpStatus": null,
+          "contentType": null,
+          "finalUrl": null,
+          "redirectChain": [],
+          "errorClass": "network",
+          "errorMessage": "fetch failed",
+          "requestFingerprint": "dbfeb21db9a2d45f696ec1637e6fa730787799eb656d2df6b779bd7b929ca58c",
+          "responseCaptured": 0
+        }
+      ],
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false,
+      "componentConfirmed": false,
+      "rightsApproval": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false
+  }
+}

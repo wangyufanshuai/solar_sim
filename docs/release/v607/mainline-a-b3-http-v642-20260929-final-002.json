@@ -1,0 +1,61 @@
+{
+  "schema": "mainline-a-b3-http-v642",
+  "recordedAt": "2026-09-29T09:19:00.424Z",
+  "status": "passed",
+  "baseUrl": "http://127.0.0.1:3079",
+  "build": {
+    "buildId": "2Uq72ggidueaFc6UE-pBa",
+    "runtimeBuildId": "mainline-a-6d9f882c840bb089",
+    "distDir": ".next-mainline-a-r66-b3v642-20260929-003/.next",
+    "sourceStable": true
+  },
+  "checks": [
+    {
+      "path": "/",
+      "startedAt": "2026-09-29T09:19:00.344Z",
+      "endedAt": "2026-09-29T09:19:00.385Z",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "finalUrl": "http://127.0.0.1:3079/",
+      "redirectChain": [],
+      "bytes": 8696,
+      "sha256": "a41de3337560034504b2d47bc3b2744e93f5772c0aa1ea4d10f9cb718216cacb",
+      "error": null
+    },
+    {
+      "path": "/api/health",
+      "startedAt": "2026-09-29T09:19:00.363Z",
+      "endedAt": "2026-09-29T09:19:00.380Z",
+      "status": 200,
+      "contentType": "application/json",
+      "finalUrl": "http://127.0.0.1:3079/api/health",
+      "redirectChain": [],
+      "bytes": 241,
+      "sha256": "2cdc6e241159f420dff08228488716b0d8ed07e96c0b073b666fce8da15b4614",
+      "error": null
+    },
+    {
+      "path": "/_next/static/chunks/4868.c8772c880c262bff.js",
+      "startedAt": "2026-09-29T09:19:00.363Z",
+      "endedAt": "2026-09-29T09:19:00.421Z",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "finalUrl": "http://127.0.0.1:3079/_next/static/chunks/4868.c8772c880c262bff.js",
+      "redirectChain": [],
+      "bytes": 2236104,
+      "sha256": "5804c5a6f1e040c2061a2e11094a1f77213850b54ac1885fb7c1abb01423a8cd",
+      "error": null
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "defaultScientificKernel": "legacy-eih-1pn"
+  },
+  "issues": [],
+  "claims": {
+    "browserAcceptance": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  }
+}

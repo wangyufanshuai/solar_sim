@@ -1,0 +1,112 @@
+{
+  "status": "blocked",
+  "issues": [
+    "coverage:objects-not-observed",
+    "coverage:thirty-six-verified-roundtrips-required"
+  ],
+  "counts": {
+    "expected": 36,
+    "observed": 3,
+    "verified": 3,
+    "stars": 1,
+    "nebulae": 1,
+    "constellations": 1
+  },
+  "rows": [
+    {
+      "key": "star:achernar",
+      "runId": "r65-registry-0ff4c6a8-cea9-417e-86f1-b8c755df1a0e",
+      "rawSha256": "cead03e1bcb02948ae4e1e721108dd5700593cda0c5bbc1ecedeb7582956256a",
+      "status": "measured-local",
+      "issues": []
+    },
+    {
+      "key": "nebula:m42",
+      "runId": "r65-registry-a5c81a08-debd-4a3f-a4be-162bb9ece393",
+      "rawSha256": "c3c3f6e6209d5e8bf725dc0960496fdd0190e640a3f4fcdabfad51278fc854cd",
+      "status": "measured-local",
+      "issues": []
+    },
+    {
+      "key": "constellation:Ori",
+      "runId": "r65-registry-a5d21fdb-21d6-4563-8c84-7ecb3606ce21",
+      "rawSha256": "7b0c89f39050c4e9769e5e8c0602a3f84f0889076e1f746b429c79727f7bb5f4",
+      "status": "measured-local",
+      "issues": []
+    }
+  ],
+  "missing": [
+    "star:alpha-centauri-a",
+    "star:betelgeuse",
+    "star:sirius-a",
+    "star:rigel",
+    "star:antares",
+    "star:canopus",
+    "star:arcturus",
+    "star:vega",
+    "star:capella-a",
+    "star:procyon-a",
+    "star:aldebaran",
+    "nebula:m1",
+    "nebula:m8",
+    "nebula:m16",
+    "nebula:m20",
+    "nebula:m57",
+    "nebula:ngc7293",
+    "nebula:ngc6543",
+    "nebula:ngc2237",
+    "nebula:ngc6960",
+    "nebula:carina",
+    "nebula:b33",
+    "constellation:UMa",
+    "constellation:Cas",
+    "constellation:Sco",
+    "constellation:Cyg",
+    "constellation:Gem",
+    "constellation:Leo",
+    "constellation:Cru",
+    "constellation:Lyr",
+    "constellation:Aql",
+    "constellation:Tau",
+    "constellation:Sgr"
+  ],
+  "duplicates": [],
+  "scientificPayloadWriteback": false,
+  "rightsApproval": false,
+  "schema": "mainline-a-canonical-runtime-replay-v635",
+  "evidenceClass": "offline-replay-of-local-browser-observation",
+  "rawSha256": "0d89e44207383dde6ca559c63c79ed68a1fff5fb72b87050b970120123831ba4",
+  "input": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/index.json",
+  "coverageSha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377",
+  "coveragePath": "app/data/mainlineACanonicalCoverageV622.generated.json",
+  "buildReceiptSha256": "e3d801ade38b419a9c0ff1fad07865f62df1ca029df6aa6b0f77428f13416e42",
+  "buildReceiptPath": "docs/release/v607/mainline-a-r66-build-20260927-068b.json",
+  "build": {
+    "buildId": "mainline-a-adab7be926b0c871",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "rawObservations": [
+    {
+      "path": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/run-01-cead03e1bcb0.json",
+      "sha256": "cead03e1bcb02948ae4e1e721108dd5700593cda0c5bbc1ecedeb7582956256a",
+      "bytes": 49818
+    },
+    {
+      "path": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/run-02-c3c3f6e6209d.json",
+      "sha256": "c3c3f6e6209d5e8bf725dc0960496fdd0190e640a3f4fcdabfad51278fc854cd",
+      "bytes": 48726
+    },
+    {
+      "path": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/run-03-7b0c89f39050.json",
+      "sha256": "7b0c89f39050c4e9769e5e8c0602a3f84f0889076e1f746b429c79727f7bb5f4",
+      "bytes": 47030
+    }
+  ],
+  "limits": {
+    "authenticity": "Exact bytes and structural replay do not independently authenticate browser origin; a separately bound actual browser observation is required.",
+    "visual": "Resource callbacks do not prove visual quality or real-user acceptance.",
+    "performance": "RAF intervals and resource estimates are local observations, not renderer frame time or production performance.",
+    "rights": "Technical coverage does not grant rights, component identity or scientific validity."
+  }
+}

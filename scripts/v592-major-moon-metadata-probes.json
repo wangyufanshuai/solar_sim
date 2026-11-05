@@ -1,0 +1,26 @@
+{
+  "version": "v592-major-moon-metadata-probes-v1",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHosts": ["images-api.nasa.gov", "images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "itemLevelLicenseReviewRequired": true
+  },
+  "probes": [
+    { "id": "io", "query": "Io Jupiter moon global map", "requiredTerms": ["io"] },
+    { "id": "europa", "query": "Europa Jupiter moon global map", "requiredTerms": ["europa"] },
+    { "id": "ganymede", "query": "Ganymede Jupiter moon global map", "requiredTerms": ["ganymede"] },
+    { "id": "callisto", "query": "Callisto Jupiter moon global map", "requiredTerms": ["callisto"] },
+    { "id": "titan", "query": "Titan Saturn moon global map", "requiredTerms": ["titan"] },
+    { "id": "enceladus", "query": "Enceladus Saturn moon global map", "requiredTerms": ["enceladus"] },
+    { "id": "rhea", "query": "Rhea Saturn moon global map", "requiredTerms": ["rhea"] },
+    { "id": "iapetus", "query": "Iapetus Saturn moon global map", "requiredTerms": ["iapetus"] },
+    { "id": "triton", "query": "Triton Neptune moon global map", "requiredTerms": ["triton"] },
+    { "id": "miranda", "query": "Miranda Uranus moon global map", "requiredTerms": ["miranda"] },
+    { "id": "titania", "query": "Titania Uranus moon global map", "requiredTerms": ["titania"] },
+    { "id": "charon", "query": "Charon Pluto moon global map", "requiredTerms": ["charon"] }
+  ]
+}

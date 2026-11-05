@@ -1,0 +1,51 @@
+{
+  "version": "v592-deep-space-metadata-supplement-v1",
+  "probedAt": "2026-08-19T04:58:33.154Z",
+  "status": "metadata-supplement-complete-no-payload",
+  "target": "jewel-box-cluster",
+  "category": "cluster",
+  "query": "NGC 4755",
+  "requiredTermGroups": [
+    [
+      "jewel box",
+      "ngc 4755"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space/jewel-box-cluster.json",
+    "receiptSha256": "93a2252910ef09f706b6ff7835615be4e1909489eafbf92cb16ad90c2c2df01c",
+    "priorUrl": "https://images-api.nasa.gov/search?q=Jewel%20Box%20Cluster%20NGC%204755&media_type=image&page_size=30",
+    "priorMatchedCandidateCount": 0
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "requestUrlDistinctFromPriorProbe": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC%204755&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC%204755&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 157,
+    "responseSha256": "388bd88f0715358c1425df5e2544d7a99f39d9924638a1fe85ed36fc6d908697"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "68735b334f8d29209b474ba7c2e4498289f6b3aee979cc8ad3ebc6cdc01a259c"
+}

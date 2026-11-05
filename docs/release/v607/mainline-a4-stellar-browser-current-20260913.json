@@ -1,0 +1,43 @@
+{
+  "schema": "mainline-a4-stellar-browser-v4",
+  "capturedAt": "2026-09-13T03:12:03Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "viewports": [{ "width": 1280, "height": 720 }, { "width": 390, "height": 844 }],
+  "scenario": {
+    "id": "six-hero-roster-to-passport-rb2-desktop",
+    "actions": ["open Named stellar roster · 24", "reload between selections", "click each current Mainline A hero entry", "inspect fact layers, uncertainty and portrait surface"],
+    "observed": {
+      "stars": [
+        {"rosterIdentity":"stellar-hero:sirius-a","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:sirius-a","source":"object-browser"},
+        {"rosterIdentity":"stellar-hero:alpha-centauri-a","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:alpha-centauri-a","source":"object-browser"},
+        {"rosterIdentity":"stellar-hero:achernar","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:achernar","source":"object-browser"},
+        {"rosterIdentity":"stellar-hero:betelgeuse","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:betelgeuse","source":"object-browser"},
+        {"rosterIdentity":"stellar-hero:rigel","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:rigel","source":"object-browser"},
+        {"rosterIdentity":"stellar-hero:antares","passport":true,"factLayers":true,"uncertainty":true,"portrait":true,"focus":"stellar-hero:antares","source":"object-browser"}
+      ],
+      "coverage": "six of six Mainline A hero stars rendered fact layers, uncertainty boundary text and parameterized portrait on Rb2 desktop and mobile",
+      "mobileGeometry": {
+        "viewport": { "width": 390, "height": 844 },
+        "passportRect": { "top": 14, "bottom": 748, "left": 8, "right": 382 },
+        "bodyScrollWidth": 390,
+        "horizontalOverflow": false,
+        "rosterAndWorkbenchHiddenWhilePassportOpen": true,
+        "starsVerified": 6
+      }
+    }
+  },
+  "boundaries": {
+    "coverage": "Rb2 desktop and 390x844 mobile; all six stars rendered the same fact/portrait/uncertainty contract",
+    "physics": "roster focus and passport are presentation/read-only surfaces; physical kernels unchanged",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "status": "current-rb2-desktop-mobile-six-star-passport-fact-portrait-uncertainty-passed"
+}

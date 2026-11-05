@@ -1,0 +1,100 @@
+{
+  "version": "v592-major-moon-secondary-metadata-probe-v1",
+  "probedAt": "2026-08-19T13:27:23.997Z",
+  "status": "secondary-metadata-probe-complete-no-payload",
+  "probeId": "europa-global-mosaic",
+  "target": "europa",
+  "query": "Europa global mosaic",
+  "requiredTerms": [
+    "europa"
+  ],
+  "preferredTerms": [
+    "global",
+    "map",
+    "mosaic"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Europa%20global%20mosaic&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Europa%20global%20mosaic&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 6125,
+    "responseSha256": "a48e96b00d7bfd7470babc10341c366068e5533912959982752544f9370f7233"
+  },
+  "totalHits": 3,
+  "candidates": [
+    {
+      "nasaId": "PIA16827",
+      "title": "Repeated Flybys Yield a Pole-to-Pole View of Europa",
+      "description": "This view of Jupiter moon Europa features several regional-resolution mosaics overlaid on a lower resolution global view for context. The regional views were obtained during several different flybys of the moon by NASA Galileo mission.",
+      "dateCreated": "2013-03-05T16:53:28Z",
+      "center": "JPL",
+      "keywords": [
+        "Europa",
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA16827/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA16827/PIA16827~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA00723",
+      "title": "Context of Europa images from Galileo",
+      "description": "This global view of Europa shows the location of a four-frame mosaic of images taken by NASA Galileo spacecraft in 1996, set into low-resolution data obtained by NASA Voyager spacecraft in 1979.",
+      "dateCreated": "1997-09-07T14:25:36Z",
+      "center": "JPL",
+      "keywords": [
+        "Europa",
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00723/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA00723/PIA00723~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA19048",
+      "title": "Europa Stunning Surface",
+      "description": "The puzzling, fascinating surface of Jupiter icy moon Europa looms large in this newly-reprocessed [sic] color view, made from images taken by NASA Galileo spacecraft in the late 1990s. This is the color view of Europa from Galileo that shows the largest portion of the moon's surface at the highest resolution. The view was previously released as a mosaic with lower resolution and strongly enhanced color (see PIA02590). To create this new version, the images were assembled into a realistic color view of the surface that approximates how Europa would appear to the human eye. The scene shows the stunning diversity of Europa's surface geology. Long, linear cracks and ridges crisscross the surface, interrupted by regions of disrupted terrain where the surface ice crust has been broken up and re-frozen into new patterns. Color variations across the surface are associated with differences in geologic feature type and location. For example, areas that appear blue or white contain relatively pure water ice, while reddish and brownish areas include non-ice components in higher concentrations. The polar regions, visible at the left and right of this view, are noticeably bluer than the more eq",
+      "dateCreated": "2014-11-21T18:20:00Z",
+      "center": "JPL",
+      "keywords": [
+        "Europa",
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA19048/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA19048/PIA19048~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 3,
+  "preferredCandidateCount": 3,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "98a354842925343629782c0105697b28e8199e94a37824a68a37a376c5b50c92"
+}

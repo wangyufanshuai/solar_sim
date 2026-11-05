@@ -1,0 +1,202 @@
+{
+  "schema": "mainline-a-b2-round-receipt-v1",
+  "batch": "B2",
+  "round": "R66-B2",
+  "recordedAt": "2026-09-29T04:49:51.872Z",
+  "status": "complete-local-browser-coverage-open-release-gates",
+  "overallGoalComplete": false,
+  "identity": {
+    "workspace": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "runtimeBuildId": "mainline-a-7b39ef613eb99d02",
+    "buildReceipt": {
+      "path": "docs/release/v607/mainline-a-r66-build-20260929-b2v640c.json",
+      "bytes": 469402,
+      "sha256": "331257bc5870b2c1509a9d2d09c9896b471060a5d66c3c5ffddee52fe39e9c06"
+    },
+    "sourceStableAtBuild": true
+  },
+  "codeChangeReceipt": {
+    "path": "docs/release/v607/mainline-a-b2-code-change-20260929-b2v640c.json",
+    "bytes": 5496,
+    "sha256": "afc9d919282e5311ff574cf91b6f162a6fe77267be4aa629a6f3ba84d7ab00b1"
+  },
+  "static": {
+    "status": "mixed-pass-with-known-blockers",
+    "v619RawCaptureCheck": {
+      "command": "node scripts/build-mainline-a-beta-stellar-raw-capture-v619.mjs --check",
+      "status": "verified",
+      "pending": 4
+    },
+    "canonicalCoverageCheck": {
+      "command": "npx tsx scripts/build-mainline-a-canonical-coverage-v622.ts --check",
+      "status": "verified",
+      "counts": {
+        "total": 36,
+        "stars": 12,
+        "nebulae": 12,
+        "constellations": 12
+      },
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    "canonicalReplayCheck": {
+      "command": "npx tsx scripts/replay-mainline-a-canonical-coverage-v622.ts --check",
+      "status": "blocked",
+      "reason": "historical receipt is static-only and lacks runtime observation classification"
+    },
+    "rootManifestProbe": {
+      "command": "node scripts/probe-mainline-a-root-manifest-v626.mjs --check --json",
+      "status": "blocked",
+      "blocker": "root-manifest-not-present",
+      "readOnly": true
+    }
+  },
+  "http": {
+    "status": "passed",
+    "receipts": [
+      {
+        "path": "docs/release/v607/mainline-a-b2-http-20260929-b2v640c-full.json",
+        "bytes": 13364,
+        "sha256": "533e82045e5763e5689b7d31cf4d389171c59f0ddd2bdc74f6823e81c3aa2c6c"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-b2-nebula-http-20260929-b2v640c.json",
+        "bytes": 44571,
+        "sha256": "af3227b3f82606ae04275ccf5bbea47b5a12969ec0361eec1ef13f93e4b8d08c"
+      }
+    ],
+    "scope": "local production HTTP, preserved entry bytes, runtime script identity and 12 A-line image byte/decode checks",
+    "limitation": "not production SLA, real-user performance, scientific validity or copyright approval"
+  },
+  "visual": {
+    "status": "desktop-local-observation",
+    "screenshot": {
+      "path": "tmp/mainline-a-b2-complete-36-20260929-b2v640c.png",
+      "bytes": 82964,
+      "sha256": "38e060713faa8aa7d2c2d673311af983f2871ffa6d2be6342f5959f8342f0d7f",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "device": "desktop"
+      },
+      "note": "shows batch panel with latest 36/36 and measured-local; local visual evidence only"
+    },
+    "priorReview": {
+      "path": "docs/release/v607/mainline-a-b2-visual-review-20260928-081.json",
+      "bytes": 27087,
+      "sha256": "9611f75dece9d46c023303dbc9cf4bccc33c22dba7a884bcf6ff03ae7bccc2fa"
+    },
+    "humanSignoff": false
+  },
+  "browser": {
+    "status": "measured-local",
+    "session": {
+      "path": "tmp/mainline-a-b2-session-36-20260929-b2v640c.json",
+      "bytes": 2137662,
+      "sha256": "6bd2a3094c75354a03a11071b4782b094e28464608f3c732531c3a3e2020f8ec"
+    },
+    "batch": {
+      "path": "tmp/mainline-a-b2-batch-36-20260929-b2v640c.json",
+      "bytes": 2095547,
+      "sha256": "09f5f921c59d965aae7c4b124f8453cb5dac909a02a1d63fdb33145cff90de56"
+    },
+    "intake": {
+      "path": "tmp/v638-intake-36-20260929-b2v640c/intake.json",
+      "bytes": 56097,
+      "sha256": "a4097de2ec7a36493415ff64ea7ebde845dc20260c6f0701078160336da09038"
+    },
+    "audit": {
+      "path": "tmp/v639-session-audit-36-20260929-b2v640c.json",
+      "bytes": 28823,
+      "sha256": "361605776b9c6f0cdae7ea1ac1f152d6cab05a2da49780e5364678153132610c"
+    },
+    "recovery": {
+      "path": "tmp/v640-recovery-36-20260929-b2v640c.json",
+      "bytes": 2146076,
+      "sha256": "187dd850e7be5e9a22beb29a442f1b061259ad90e25cb675064518fbe8b10f22"
+    },
+    "latestVerified": 36,
+    "rawRecords": 37,
+    "blockedHistoricalRecords": 1,
+    "events": 153,
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "device": "desktop"
+    },
+    "buildBinding": "mainline-a-7b39ef613eb99d02",
+    "negativeChecks": [
+      {
+        "name": "raw-json-byte-tamper",
+        "status": "passed",
+        "detail": "session:decode-invalid:record:bytes,record:sha256"
+      },
+      {
+        "name": "raw-sha-tamper",
+        "status": "passed",
+        "detail": "session:decode-invalid:record:sha256"
+      },
+      {
+        "name": "boundary-tamper",
+        "status": "passed",
+        "detail": "session:decode-invalid:session:boundary"
+      },
+      {
+        "name": "build-mismatch",
+        "status": "passed",
+        "detail": "session:decode-build-mismatch"
+      },
+      {
+        "name": "manifest-tamper",
+        "status": "passed",
+        "detail": "session:decode-invalid:session:manifest"
+      }
+    ],
+    "authenticityProven": false
+  },
+  "performance": {
+    "status": "short-local-only",
+    "priorReceipt": {
+      "path": "docs/release/v607/mainline-a-b2-short-performance-20260928-081.json",
+      "bytes": 133042,
+      "sha256": "87831c88089399809fbcaff6327cddac5b8112eaeaafbbda6ed7ac4fcdecfc39"
+    },
+    "longRun": "not-complete; two independent >=30 minute observations absent",
+    "physicalMobile": "not-run",
+    "frameSource": "requestAnimationFrame diagnostic, not renderer frame time",
+    "memory": "registry estimates, not physical GPU memory"
+  },
+  "externalSource": {
+    "stellarStructuredIdentity": "pending-four-stars",
+    "simbadNetwork": "previously timeout; no synthetic or HTML substitution",
+    "nebulaRightsSignatures": "pending-0-of-12",
+    "rightsApproval": false,
+    "scientificValidity": false
+  },
+  "frozenData": {
+    "v616SnapshotProjectionDigestChanged": false,
+    "scientificPayloadWriteback": false,
+    "physicsKernelChanged": false
+  },
+  "remainingGates": [
+    "four Beta stellar component identities and reviewed candidate integration",
+    "twelve nebula rights/source signatures and Beta admission",
+    "two independent >=30 minute observations",
+    "physical mobile device evidence when available",
+    "root/next-web manifest parity and authoritative root input",
+    "final candidate package, restore and rollback revalidation"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  }
+}

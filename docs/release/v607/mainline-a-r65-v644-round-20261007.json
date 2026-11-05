@@ -1,0 +1,27 @@
+{
+  "schema": "mainline-a-round-receipt-v644",
+  "round": "R65-continuation",
+  "generatedAt": "2026-10-07T04:07:25Z",
+  "workspace": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "status": "acceptance-pending",
+  "changeSummary": [
+    "Completed long-run observations now persist as raw, build-bound IndexedDB records with recomputable SHA-256 and explicit JSON export; corrupt rows and conflicting session IDs fail closed.",
+    "A failed observation remains visible in the attempt ledger but cannot poison two later independent valid observations or count as valid itself.",
+    "The builder now reports a real 64-character SHA-256 fingerprint of the raw receipt input rather than an eight-character FNV hash."
+  ],
+  "effectiveCode": { "priorR65": 1726, "incrementalProductionAndToolLines": 282, "cumulativeR65ProductionAndToolLines": 2008, "minimumRequired": 1000, "testsExcluded": true, "codeChangeReceipt": "docs/release/v607/mainline-a-r65-v644-code-change-20261007.json" },
+  "evidence": {
+    "static": { "nodeBuilderTests": "2/2 passed", "vitest": "14/14 passed", "eslint": "passed targeted files", "typescript": "passed", "pendingReceiptReplay": "correctly pending; 0/2" },
+    "build": { "status": "passed", "buildReceipt": "docs/release/v607/mainline-a-r65-build-20261007-v644r65b.json", "sourceStable": true, "runtimeBuildId": "mainline-a-7b9c65af568fd76f" },
+    "http": { "status": "passed", "page": 200, "health": 200, "receipt": "docs/release/v607/mainline-a-r65-v644-http-20261007.json" },
+    "visual": { "status": "not-run-current-build", "priorV643ScreenshotsAreNotCurrentBuildEvidence": true },
+    "browser": { "status": "not-run-current-build", "inAppBrowser": "unavailable-in-current-runtime", "browserUseAttempt": "http://127.0.0.1:3085/ returned net::ERR_CONNECTION_REFUSED from remote Browser Use; local PowerShell HTTP separately returned 200", "interactiveArchiveValidation": "not-run" },
+    "performance": { "status": "pending", "qualifiedLongRuns": 0, "requiredLongRuns": 2, "minimumDurationMsPerRun": 1800000, "priorDisplayedThirtyMinuteAttempt": "blocked: baseline and active registry identical; raw receipt was not exported and is not accepted as a retained run", "desktop": "not-run-current-build", "mobileViewport": "not-run-current-build", "physicalMobile": "not-run", "productionPerformance": false },
+    "externalSource": { "stellarComponentIdentity": "pending", "nebulaRightsSigned": 0, "nebulaRightsPending": 12, "scientificValidity": false, "copyrightApproval": false }
+  },
+  "gates": ["two-independent-browser-long-runs", "real-resource-acquire-release-active-checkpoint", "desktop-and-mobile-viewport-visual-browser-review", "physical-mobile-not-run", "stellar-component-identity-pending", "nebula-rights-signoff-pending", "root-canonical-manifest-parity-pending"],
+  "boundary": { "candidateOnly": true, "hold": true, "notAdmitted": true, "scientificPayloadWriteback": false, "runtimePromotion": "closed", "physicsKernelMutation": false, "parentGitMutation": false },
+  "claims": { "releaseReady": false, "realUserValidation": false, "productionPerformance": false, "scientificValidity": false, "copyrightApproval": false }
+}

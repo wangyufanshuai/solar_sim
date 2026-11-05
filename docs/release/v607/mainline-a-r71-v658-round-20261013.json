@@ -1,0 +1,158 @@
+{
+  "schema": "mainline-a-r71-web-source-round-v658",
+  "round": 71,
+  "date": "2026-10-13",
+  "status": "local-web-source-batch-passed-candidate-release-blocked",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "workingTree": "dirty-shared-preserved",
+    "concurrentPhysicsWindow": "present; R71 did not edit relativity or other physics kernels",
+    "parentGitOperated": false,
+    "physicsKernelEditsByRound": false
+  },
+  "functionBatch": {
+    "name": "R71 six-nebula official source closure and guarded web review",
+    "targets": ["W40", "Sh2-235", "IC 405", "IC 417", "NGC 2070", "IC 410"],
+    "rawOfficialPages": 6,
+    "rawPageDirectJpegs": 6,
+    "decodedHistoricalPixelMatches": 6,
+    "historicalRawByteMatches": 2,
+    "betaNebulaCandidatesWithCurrentComparableRawPageImageChain": 18,
+    "betaNebulaTarget": 24,
+    "canonicalCoverage": {"stars": 12, "constellations": 12, "nebulae": 12},
+    "betaHeroStars": {"rows": 24, "runtimeExisting": 20, "identityHold": 4, "identitySigned": 0},
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r71-v658-code-change-20261013.json",
+  "effectiveCode": {
+    "newProductionAndToolLines": 1827,
+    "newSubstantiveTestLines": 291,
+    "attributableExistingIntegrationLinesCredited": 2,
+    "totalCreditedEffectiveChangedLines": 2120,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "buildIdentity": {
+    "buildReceipt": "docs/release/v607/mainline-a-r71-build-20261013v658r71web02.json",
+    "buildId": "NKdtL5CcARhtL4FIvXLQS",
+    "runtimeBuildId": "mainline-a-0d47e1766d15e839",
+    "appSourceSha256": "0d47e1766d15e839ddf222457febe64ad150c2ccba3b5c54e8c18261e016b780",
+    "inputCount": 2424,
+    "sourceStableDuringBuild": true,
+    "sourceMatchesSavedBuildAtRoundReceipt": true,
+    "preservedDistDir": ".next-mainline-a-r71-20261013v658r71web02/.next",
+    "priorRollbackCandidate": "docs/release/v607/mainline-a-r70-web-freeze-candidate-20261012v657web02.json",
+    "deploymentChanged": false
+  },
+  "evidence": {
+    "static": {
+      "status": "passed-current-source-local",
+      "node": "7/7 collector, source, timeout, redirect, forged response and replay tests",
+      "vitest": "9/9 overlay, panel and guarded-route tests in two files",
+      "eslint": "targeted R71 production, tool, tests and integration files passed with zero warnings",
+      "typescript": "passed within the preserved production build's scoped configuration",
+      "sourceAudit": "docs/release/v607/mainline-a-r71-source-audit-20261012v658r71b.json",
+      "offlineReplay": "current six-page/six-image SHA, decoded pixels and boundary replay passed",
+      "v616ImmutableScienceInputs": [
+        {"path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json", "bytes": 57424, "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"},
+        {"path": "app/data/mainlineABetaStellarProjectionV607.generated.ts", "bytes": 6135, "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"}
+      ],
+      "v616SnapshotAndProjectionDigestsChanged": false
+    },
+    "build": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r71-build-20261013v658r71web02.json",
+      "buildId": "NKdtL5CcARhtL4FIvXLQS",
+      "appSourceSha256": "0d47e1766d15e839ddf222457febe64ad150c2ccba3b5c54e8c18261e016b780",
+      "typescriptScopedBuildPassed": true,
+      "sourceStable": true,
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "status": "passed-local-production-build",
+      "receipt": "docs/release/v607/mainline-a-r71-v658-http-20261013v658r71web02.json",
+      "homeStatus": 200,
+      "healthStatus": 200,
+      "imageResponses": 6,
+      "imageShaMatches": 6,
+      "defaultDisabledStatus": 404,
+      "invalidIdStatus": 404,
+      "foreignOriginStatus": 404,
+      "publicDeployment": "not-run"
+    },
+    "visual": {
+      "status": "local-screenshots-inspected-not-human-signoff",
+      "desktopOverview": "docs/release/v607/mainline-a-r71-v658-desktop-overview-20261013v658r71web02.png",
+      "desktopDetail": "docs/release/v607/mainline-a-r71-v658-desktop-detail-20261013v658r71web02.png",
+      "mobileViewportOverview": "docs/release/v607/mainline-a-r71-v658-mobile-viewport-overview-20261013v658r71web02.png",
+      "mobileViewportDetail": "docs/release/v607/mainline-a-r71-v658-mobile-viewport-detail-20261013v658r71web02.png",
+      "desktopSingleCardHeightPolish": "fixed on final build",
+      "candidateAndParentDetailSelection": "synchronized on final build",
+      "perItemHumanVisualSignoff": false
+    },
+    "browser": {
+      "status": "passed-local-desktop-and-mobile-viewport",
+      "receipt": "docs/release/v607/mainline-a-r71-v658-browser-20261013v658r71web02.json",
+      "desktopViewport": [1280, 720],
+      "mobileViewport": [390, 844],
+      "imagesLoaded": 12,
+      "sourceLinksMatched": 12,
+      "objectUrlsAfterClose": 0,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "horizontalOverflow": false,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-headless-browser-diagnostic-only",
+      "receipt": "docs/release/v607/mainline-a-r71-v658-browser-20261013v658r71web02.json",
+      "desktopFrameSamples": 120,
+      "desktopFrameP95Ms": 5.68,
+      "desktopFrameMaxMs": 5.74,
+      "mobileViewportFrameSamples": 120,
+      "mobileViewportFrameP95Ms": 5.69,
+      "mobileViewportFrameMaxMs": 38.95,
+      "r71IndependentLongRun": "not-run",
+      "productionPerformanceClaim": false,
+      "realUserValidationClaim": false
+    },
+    "externalSource": {
+      "status": "six-real-https-page-and-direct-image-captures-replayed-candidate",
+      "ledger": "docs/release/v607/mainline-a-r71-source-ledger-20261012v658r71a.json",
+      "audit": "docs/release/v607/mainline-a-r71-source-audit-20261012v658r71b.json",
+      "rawDirectory": "docs/release/v607/nebula-r71-v658/raw",
+      "capturedOfficialPages": 6,
+      "capturedDirectJpegs": 6,
+      "decodedPixelMatches": 6,
+      "rawByteMatches": 2,
+      "r71RightsSigned": 0,
+      "mainlineRightsSigned": 0,
+      "copyrightApprovalClaim": false,
+      "scientificValidityClaim": false
+    }
+  },
+  "failedOrSupersededAttempts": [
+    {"path": "docs/release/v607/mainline-a-r71-source-audit-20261012v658r71a.json", "reason": "The first verifier expected an unsupported ledger input-bytes field; the verifier was corrected and the raw evidence was independently replayed in r71b"},
+    {"path": "docs/release/v607/mainline-a-r71-v658-browser-20261013v658r71web01.json", "reason": "Visual review found mismatched parent detail and narrow single-card layout; fixed and rebuilt as web02"},
+    {"path": "docs/release/v607/mainline-a-r71-build-20261013v658r71web01.json", "reason": "Superseded by final app source and web02 build"}
+  ],
+  "openGates": {
+    "betaNebulaNewComparableRawChains": "18/24; six extended-list items remain for R72",
+    "betaNebulaImageRights": "pending item by item; no automatic promotion",
+    "mainlineNebulaRights": "0/12 signed, pending by user choice",
+    "heroStarPhysicalComponentIdentity": "0/4 signed; four stars remain hold",
+    "publicWebRelease": "blocked",
+    "rootAppAlignment": "out-of-scope-web-only",
+    "physicalMobile": "not-run",
+    "realUserValidation": "not-run"
+  },
+  "nextTechnicalBatches": [
+    "R72: six extended-list images, source and rights ledger, raw capture/failure replay and candidate presentation",
+    "R73: 24-item website integration, full browser regression, resource lifecycle and source-bound rollback candidate"
+  ]
+}

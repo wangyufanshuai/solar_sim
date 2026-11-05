@@ -1,0 +1,82 @@
+{
+  "version": "v592-major-moon-secondary-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T13:28:41.579Z",
+  "status": "secondary-asset-manifest-probe-complete-no-payload",
+  "probeId": "callisto-pia00844",
+  "target": "callisto",
+  "selection": {
+    "nasaId": "PIA00844",
+    "title": "NIMS Callisto Global Mosaic",
+    "description": "NASA Galileo spacecraft acquired this global mosaic right during Galileo third orbit on Nov. 4, 1996. The lighter bluish area in the upper latitudes is the Asgard multi-ring structure with crater Burr to the north and Tornasuk to the east. ",
+    "center": "JPL",
+    "metadataReceiptSha256": "72f7378ab3c52d8e22cdd13ad076c1b2509ca14c1c7f027d2cb52bf1592a7f63",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00844/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA00844/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA00844/collection.json",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 195,
+    "responseSha256": "1dce89f6190976334782182d3981252067f551a93302cb7d6fbf39d434fa2afa"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00844/PIA00844~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00844~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00844/PIA00844~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00844/PIA00844~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA00844~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00844/PIA00844~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA00844/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA00844/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 3,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 3,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "7d1b1ecb4adeb8ad3117ff279ea2bedbc9f7e2ec20024ea4af5ee758a49b84e2"
+}

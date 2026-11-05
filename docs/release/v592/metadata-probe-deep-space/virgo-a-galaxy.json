@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:29.510Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "query": "M87 Virgo A Galaxy",
+  "requiredTermGroups": [
+    [
+      "m87",
+      "virgo a",
+      "ngc 4486"
+    ],
+    [
+      "galaxy"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M87%20Virgo%20A%20Galaxy&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M87%20Virgo%20A%20Galaxy&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "18f212f726d670691e76ad0a428fc4a66f5c35238eab25e82731b198566ebf09"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "6dbd17db897b01be27140e8c186537d0aa01f3ab9a8e3b7cd3bde29ac513b487"
+}

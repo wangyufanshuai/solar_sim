@@ -1,0 +1,222 @@
+{
+  "schema": "mainline-a-b3-round-receipt-v642",
+  "batch": "B3",
+  "round": "R66-B3",
+  "recordedAt": "2026-09-29T09:21:58.947Z",
+  "status": "complete-local-evidence-external-release-gates-held",
+  "overallGoalComplete": false,
+  "identity": {
+    "workspace": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "buildId": "2Uq72ggidueaFc6UE-pBa",
+    "runtimeBuildId": "mainline-a-6d9f882c840bb089",
+    "sourceStableAtBuild": true
+  },
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-b3-code-change-v642-20260929-final-002.json",
+    "bytes": 9289,
+    "sha256": "18724456fcb2442ee93abdfeedf8316544204f564e2f678460ba580509706df5",
+    "effectiveRuntimeLines": 1422,
+    "effectiveToolLines": 1120,
+    "effectiveCodeLines": 2542,
+    "addedLines": 2741,
+    "modifiedLinePairs": 0,
+    "removedLines": 0,
+    "testCodeLinesExcluded": 295,
+    "note": "B3 files only; prior B1/B2 line credit is not repeated"
+  },
+  "static": {
+    "status": "passed-local",
+    "v641BuilderCheck": "verified: 24 total, 20 existing references, four candidate hold, component confirmed zero",
+    "v642BuilderCheck": "verified: plan-only; runtime observations remain in this session receipt",
+    "node": {
+      "passed": 11,
+      "failed": 0
+    },
+    "vitest": {
+      "passed": 25,
+      "failed": 0,
+      "files": 6
+    },
+    "targetedEslint": "passed with zero warnings",
+    "negativeCases": {
+      "session": 4,
+      "rosterAndPlan": "passed"
+    },
+    "preservedBuild": {
+      "path": "docs/release/v607/mainline-a-r66-build-b3v642-20260929-003.json",
+      "bytes": 470998,
+      "sha256": "db14dd71e78e11dc4d49c9b9261aa7631012ed721383a72ddf32c8fd82b9a3ae"
+    },
+    "verification": {
+      "path": "docs/release/v607/mainline-a-b3-evidence-session-verification-v642-20260929-final-002.json",
+      "bytes": 1537,
+      "sha256": "e22594729af2a3a42af8476c89063d421624fd93b12decf24f44aee9ba3491aa"
+    },
+    "frozenData": {
+      "v616": {
+        "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+        "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310",
+        "mutatedByB3": false
+      },
+      "v619": {
+        "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+        "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd",
+        "mutatedByB3": false
+      }
+    }
+  },
+  "http": {
+    "status": "passed-local",
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-b3-http-v642-20260929-final-002.json",
+      "bytes": 1904,
+      "sha256": "6c4ba86fb22f55a773e5852538b99b0b4fe42f1e0ecbdd3ac4db798c1a6a08f7"
+    },
+    "checks": [
+      {
+        "path": "/",
+        "status": 200,
+        "contentType": "text/html; charset=utf-8",
+        "bytes": 8696,
+        "sha256": "a41de3337560034504b2d47bc3b2744e93f5772c0aa1ea4d10f9cb718216cacb"
+      },
+      {
+        "path": "/api/health",
+        "status": 200,
+        "contentType": "application/json",
+        "bytes": 241,
+        "sha256": "2cdc6e241159f420dff08228488716b0d8ed07e96c0b073b666fce8da15b4614"
+      },
+      {
+        "path": "/_next/static/chunks/4868.c8772c880c262bff.js",
+        "status": 200,
+        "contentType": "application/javascript; charset=UTF-8",
+        "bytes": 2236104,
+        "sha256": "5804c5a6f1e040c2061a2e11094a1f77213850b54ac1885fb7c1abb01423a8cd"
+      }
+    ],
+    "limitation": "Local HTTP is not production SLA or real-user performance"
+  },
+  "visual": {
+    "status": "observed-local",
+    "screenshots": [
+      {
+        "path": "docs/release/v607/screenshots/mainline-a-b3-v642-evidence-panel-final-20260929.png",
+        "bytes": 74173,
+        "sha256": "8aee26d7dac3335fa306f85a1d30999c8d2da21e64ea2a02768b7b9e3307c568",
+        "viewport": [
+          1280,
+          720
+        ]
+      },
+      {
+        "path": "docs/release/v607/screenshots/mainline-a-b3-v642-evidence-panel-mobile-final-20260929.png",
+        "bytes": 36855,
+        "sha256": "13214dfc7c61d5f56a559069bf76c847b6a74638c21c392bba0e17136a658b0d",
+        "viewport": [
+          390,
+          844
+        ]
+      }
+    ],
+    "humanVisualSignoff": false,
+    "limitation": "Screenshots show local panel state only"
+  },
+  "browser": {
+    "status": "observed-local",
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-b3-browser-v642-20260929-final.json",
+      "bytes": 2120,
+      "sha256": "c2e5ac4f78bd4d1c0e10e66eb6d8a7d1db3e09da24e54a7f7557ac2d6d116d6c"
+    },
+    "desktop": {
+      "viewport": {
+        "height": 720,
+        "width": 1280
+      },
+      "rosterRows": 24,
+      "candidateRows": [
+        "acrux",
+        "spica",
+        "regulus",
+        "polaris"
+      ],
+      "evidenceClasses": 6,
+      "overflow": false
+    },
+    "mobileViewport": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "rosterRows": 24,
+      "overflow": false
+    },
+    "console": {
+      "errors": 0,
+      "warnings": 0
+    },
+    "physicalDevice": false,
+    "realUserValidation": false
+  },
+  "performance": {
+    "status": "not-run-long-run",
+    "twoIndependentThirtyMinuteRuns": false,
+    "physicalGpuMemory": false,
+    "physicalMobile": "not-run",
+    "productionPerformanceClaim": false
+  },
+  "externalSource": {
+    "status": "held",
+    "sourceAudit": {
+      "path": "docs/release/v607/mainline-a-b3-stellar-roster-audit-v641.json",
+      "bytes": 4838,
+      "sha256": "10e9a01f8fe37df967b6d11ec8e93121890a29066b55172884129925a4cb8200"
+    },
+    "rawArtifactBacked": 4,
+    "componentConfirmed": 0,
+    "rightsApproved": false,
+    "scientificValidityClaim": false,
+    "explanation": "Four captured raw artifacts support candidate records; component identity and terms review remain unresolved"
+  },
+  "evidenceSession": {
+    "path": "docs/release/v607/mainline-a-b3-evidence-session-v642-20260929-final-002.json",
+    "bytes": 15050,
+    "sha256": "3b24e30aca272802171d5abe651accad901026e3531cf103b9f08a7a9be4b59b",
+    "observed": 8,
+    "required": 10,
+    "openGateIds": [
+      "performance",
+      "external-source"
+    ],
+    "reportable": false
+  },
+  "openGates": [
+    "four stellar component identity and terms reviews",
+    "twelve nebula item-level rights/signoff and Beta admission",
+    "canonical A-line human visual signoff",
+    "two independent >=30-minute performance observations",
+    "physical mobile device evidence when available",
+    "authoritative root manifest parity",
+    "final candidate package and restore/rollback revalidation"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "physicsKernelChangedByB3": false,
+    "parentGitMutated": false
+  },
+  "claims": {
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "finalReleaseReady": false
+  }
+}

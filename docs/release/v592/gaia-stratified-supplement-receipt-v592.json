@@ -1,0 +1,50 @@
+{
+  "version": "v592-gaia-stratified-supplement-receipt-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "generated-14000-stratified-no-lite-overlap",
+  "source": {
+    "manifestPath": "public/data/gaia-dr3-presentation-10000000-v9/manifest.json",
+    "manifestBytes": 3459,
+    "manifestFileSha256": "c5b8ed92ae72e404ab8c1a9a6be71a214869d8a2de6ee948dfcc276d7199b371",
+    "manifestCanonicalSha256": "ea52184da3e2af8df81613a6d019993dc0d80ab1e4137595b23cf414f34b3450",
+    "catalogPath": "public/data/gaia-dr3-presentation-10000000-v9/catalog-v9.bin",
+    "catalogBytes": 240000000,
+    "catalogSha256": "da28541ac9f8d815af6ba9e64ecaad3a9c66934100eff0b5dfd3aa3eb3c5e997",
+    "gaiaIdentity": "Gaia DR3 gaiadr3.gaia_source"
+  },
+  "exclusion": {
+    "liteCatalogPath": "public/data/celestial-art-v589/gaia-lite-46000-v589.bin",
+    "liteCatalogBytes": 1104000,
+    "liteCatalogSha256": "a312297456bac7190c7a347d281cea12681ad2bbc6c2458434fb882cf61aa802",
+    "liteRecordCount": 46000,
+    "overlapCount": 0
+  },
+  "selection": {
+    "algorithm": "48-ra-by-16-equal-sin-dec-bins-brightness-plus-source-id-jitter-v1",
+    "raBins": 48,
+    "sinDecBins": 16,
+    "binCount": 768,
+    "basePerBin": 18,
+    "remainderBins": 176,
+    "selectedCount": 14000,
+    "uniqueSourceIdCount": 14000,
+    "randomSampling": false,
+    "sourceIdOnlyTieBreak": true
+  },
+  "output": {
+    "path": "public/data/living-universe-v592/gaia-stratified-supplement-14000.bin",
+    "bytes": 336000,
+    "sha256": "c55d6b1c1b0fca42a17936f13e0f61799179ef9e815d6cad9d6a48d86ee84713",
+    "recordBytes": 24,
+    "recordCount": 14000,
+    "format": "gaia-packed-24-byte-record-v9-compatible"
+  },
+  "authority": {
+    "presentationOnly": true,
+    "measuredAuthorityGranted": false,
+    "scientificPayloadWriteback": false,
+    "sourceDownloadPerformed": false,
+    "denseOrGpuScientificComputePerformed": false
+  },
+  "receiptSha256": "03e3d7b59680e270da4bd29dff6c60dfa56e71e535c28663b3d8b19a87b049c8"
+}

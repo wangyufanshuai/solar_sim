@@ -1,0 +1,67 @@
+{
+  "version": "v592-deep-space-metadata-supplement-v1",
+  "probedAt": "2026-08-19T04:58:31.285Z",
+  "status": "metadata-supplement-complete-no-payload",
+  "target": "messier-22",
+  "category": "cluster",
+  "query": "M22",
+  "requiredTermGroups": [
+    [
+      "messier 22",
+      "m22",
+      "ngc 6656"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space/messier-22.json",
+    "receiptSha256": "2a4fc8e6ebd35cc580c8f559591cf535d7d68ec5ffef1febb18dd84080e84af0",
+    "priorUrl": "https://images-api.nasa.gov/search?q=Messier%2022%20globular%20cluster&media_type=image&page_size=30",
+    "priorMatchedCandidateCount": 0
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "requestUrlDistinctFromPriorProbe": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M22&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M22&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1133,
+    "responseSha256": "79b09fdb837688bf98f9f6a749573e00bc94bf839e5bc6452c24fd2967ff47d0"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA04202",
+      "title": "Globular Cluster M22",
+      "description": "Scientists are mystified by what may be unexpected, wandering, planet-sized objects. This image taken by NASA Hubble Space Telescope implies the presence of these objects. ",
+      "dateCreated": "1999-12-01T00:00:02Z",
+      "center": "JPL",
+      "keywords": [
+        "Globular cluster M22",
+        "Hubble Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04202/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA04202/PIA04202~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "00ee4c5794855facd25b300ea6476c03776064a0351a1044edf501783d412253"
+}

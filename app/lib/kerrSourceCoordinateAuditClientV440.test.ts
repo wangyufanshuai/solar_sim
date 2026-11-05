@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { afterEach, describe, expect, it, vi } from "vitest";
+import { createKerrSourceCoordinateSummaryV440 } from "./kerrSourceCoordinateAuditV440";
+import { getKerrSourceCoordinateSnapshotV440, loadKerrSourceCoordinateSummaryV440, resetKerrSourceCoordinateClientForTestsV440 } from "./kerrSourceCoordinateAuditClientV440";
+afterEach(() => { vi.unstubAllGlobals(); resetKerrSourceCoordinateClientForTestsV440(); });
+describe("v440 coordinate client", () => { it("single-flights bounded coordinate metadata", async () => { const summary = createKerrSourceCoordinateSummaryV440(JSON.parse(readFileSync("dist/science/kerr-source-coordinate-audit-v440/source-coordinate-oracle.json", "utf8"))), fetchMock = vi.fn(async () => new Response(JSON.stringify({ version: "v440-kerr-source-coordinate-audit-api-v1", available: true, reason: "ready", summary }))); vi.stubGlobal("fetch", fetchMock); const first = loadKerrSourceCoordinateSummaryV440(); expect(loadKerrSourceCoordinateSummaryV440()).toBe(first); await first; expect(fetchMock).toHaveBeenCalledTimes(1); expect(getKerrSourceCoordinateSnapshotV440()).toMatchObject({ status: "ready", requestCount: 1, summary: { boundary: { detectorPixelsAvailable: false } } }); }); });

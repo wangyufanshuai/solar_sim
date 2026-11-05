@@ -1,0 +1,192 @@
+{
+  "round": 50,
+  "date": "2026-09-13",
+  "recordedAtUtc": "2026-09-13T15:43:46.205177+00:00",
+  "title": "nebula-provenance-review-state-machine-and-audit-console",
+  "status": "review-console-delivered-runtime-remains-twelve",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "candidateNebulaRecords": 18,
+    "betaTarget": [
+      24,
+      12,
+      24
+    ]
+  },
+  "implementation": [
+    "Added immutable v610 review state machine with risk derivation, sequential transition checks, summary metrics, and fail-closed runtime admission gate.",
+    "Added deterministic review-pack generator and stale-output checker for all 18 NASA candidate records.",
+    "Added responsive provenance review console with state filters, source evidence, dimensions, hash, credit, blockers, and explicit non-admission copy.",
+    "Fixed the v609 candidate source path projection to consume localPath evidence and mounted the review console beside the existing stellar and nebula atlases."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment source lines in new R50 production/test/tool files; count only explicit R50 integration and source-path fix lines in prior files. Generated review JSON, screenshots, receipts, docs, package lockfiles, and unrelated dirty-tree edits excluded.",
+    "files": [
+      {
+        "path": "app/lib/mainlineANebulaReviewV610.ts",
+        "baseline": "new-in-r50",
+        "added": 279,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "cd250cadbfab035bd9a662e0b63f3fc4c6578f9ec3f1dd990e2ad268c08b0ffd"
+      },
+      {
+        "path": "app/lib/mainlineANebulaReviewV610.test.ts",
+        "baseline": "new-in-r50",
+        "added": 151,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "85dd42739efd8cef7eb646451b6963957ca5aa03b4ee805ff644cb25ee72062d"
+      },
+      {
+        "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+        "baseline": "new-in-r50",
+        "added": 115,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "1ecfb632ee14281faf723510614cec23c64b8adfa6daf334d6e1a77d04c2c4b1"
+      },
+      {
+        "path": "app/components/MainlineANebulaReviewPanelV610.test.tsx",
+        "baseline": "new-in-r50",
+        "added": 47,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "07eda1771566fbd4805052dbd268d57b1db8bcc30b077feed8d6b55dd5f0d1d8"
+      },
+      {
+        "path": "scripts/build-mainline-a-nebula-review-pack.mjs",
+        "baseline": "new-in-r50",
+        "added": 80,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "96bea24414ba9d59a6e4ce9bc4c6f00255098c3328cff5acceb4bb013be97e2b"
+      },
+      {
+        "path": "scripts/build-mainline-a-nebula-review-pack.test.mjs",
+        "baseline": "new-in-r50",
+        "added": 42,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "f881fb5ad8e01058a0dc432845d72531a936dda4961e8a8a9e4dfded1b68d8be"
+      },
+      {
+        "path": "app/lib/mainlineANebulaAtlasV609.ts",
+        "baseline": "r49-baseline-plus-r50-source-path-fix",
+        "added": 1,
+        "modified": 1,
+        "removed": 1,
+        "sha256": "09d6a6e31e6ad82d54d0cf1892d806b7ede46be2955455705a34f9336b7bcf4f"
+      },
+      {
+        "path": "app/components/PostV593StellarRosterPanel.tsx",
+        "baseline": "r49-baseline-plus-r50-review-entry",
+        "added": 5,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "887b589bb050681501ccbbf16eca1cef49f08b1b86ccac04bb5428555dae8e71"
+      }
+    ],
+    "totals": {
+      "added": 720,
+      "modified": 1,
+      "removed": 1
+    },
+    "effectiveChangedLines": 722,
+    "minimumMet": true
+  },
+  "tests": {
+    "vitest": {
+      "passed": 26,
+      "failed": 0,
+      "files": 3
+    },
+    "reviewPackNode": {
+      "passed": 4,
+      "failed": 0
+    },
+    "eslint": "passed",
+    "focusedTypeScript": "passed",
+    "productionBuild": {
+      "passed": true,
+      "command": "npm run build:atlas:lite:current",
+      "profile": {
+        "version": "v225-atlas-build-slot-v1",
+        "profile": "vercel-lite",
+        "slot": "current",
+        "distDir": ".next-atlas-lite-current",
+        "buildId": "wbmUKpzMbeYQ-zlqtBbeU",
+        "deliveryTier": null,
+        "candidateSourceManifestSha256": null,
+        "deploymentId": null,
+        "directoryCount": 404,
+        "routeOverlay": {
+          "enabled": true,
+          "directoryCount": 264,
+          "versionedEvidenceDirectoryCount": 202,
+          "rootPageHeldForLocalShadow": false,
+          "boundary": "profile-scoped-routes-restored-after-build"
+        }
+      }
+    }
+  },
+  "browser": {
+    "production": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "reviewRecords": 18,
+      "rightsReview": 18,
+      "runtimeAdmission": 0,
+      "selected": "heart-nebula",
+      "blockerLabelsVisible": true,
+      "url": "http://127.0.0.1:3019/"
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "reviewRecords": 18,
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "noHorizontalOverflow": true,
+      "rightsReviewLabelVisible": true,
+      "runtimeAllowlistBlockVisible": true
+    },
+    "scope": "visual and interaction evidence; not GPU/FPS/performance or public deployment acceptance"
+  },
+  "screenshots": [
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r50-nebula-review-desktop.png",
+      "bytes": 66424,
+      "sha256": "3f7358c6402dea628bc5d0cf36ec4836c01925c3994716c91098243b517b994d"
+    },
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r50-nebula-review-mobile.png",
+      "bytes": 31821,
+      "sha256": "e58321270ec88fe9981a3977423cb2df6f194999506fa0f5ed75b23c8aa42e07"
+    }
+  ],
+  "reviewPack": {
+    "schema": "mainline-a-nebula-review-pack-v610",
+    "path": "app/data/mainlineANebulaReviewPackV610.generated.json",
+    "candidateCount": 18,
+    "rightsReview": 18,
+    "runtimeAdmission": 0
+  },
+  "openGates": [
+    "逐图 NASA 权利与署名复核仍未签核",
+    "视觉裁切/焦点 signoff 仍未完成",
+    "12→18/24 runtime admission 仍需独立发布门禁",
+    "剩余 4 颗 hero stars",
+    "多设备 GPU/FPS/资源生命周期",
+    "root app/next-web 对齐与公共部署"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

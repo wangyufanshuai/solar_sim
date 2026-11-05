@@ -1,0 +1,105 @@
+{
+  "schema": "mainline-a-r79-web-round-v666",
+  "round": 79,
+  "date": "2026-10-13",
+  "status": "local-web-candidate-verified-public-release-blocked",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "appSourceSha256": "5acf2252241c7e133b208d9e53b89bafbe2ad21794051a210bf4c544e751e63d",
+    "parallelRelativityWindowExcludedFromCounts": true,
+    "physicsKernelEditedByRound": false
+  },
+  "codeChange": {
+    "receipt": "docs/release/v607/mainline-a-r79-v666-code-change-20261013.json",
+    "newEffectiveProductionAndToolLines": 1960,
+    "newEffectiveSubstantiveTestLines": 815,
+    "newEffectiveCodeLinesTotal": 2775,
+    "existingAppModifiedLinesCredited": 0
+  },
+  "evidence": {
+    "static": {
+      "receipt": "docs/release/v607/mainline-a-r79-v666-static-20261013.json",
+      "status": "passed-current-source-local",
+      "node": "26/26",
+      "vitest": "43/43",
+      "targetedEslint": "passed-zero-warnings",
+      "localImageFilesRehashed": 31,
+      "v616SnapshotAndProjectionChanged": false
+    },
+    "build": {
+      "receipt": "docs/release/v607/mainline-a-r79-build-20261013v666r79web03.json",
+      "status": "passed-preserved-local-production-build",
+      "buildId": "Nv6o4iK5Zapfzo02DdLa0",
+      "publicDeployment": "not-run"
+    },
+    "http": {
+      "enabledReceipt": "docs/release/v607/mainline-a-r79-v666-http-enabled-20261013v666r79http05.json",
+      "defaultOffReceipt": "docs/release/v607/mainline-a-r79-v666-http-default-off-20261013v666r79http06.json",
+      "status": "passed-local-two-mode-31-image-and-five-held-route-verification"
+    },
+    "visual": {
+      "screenshotPinReceipt": "docs/release/v607/mainline-a-r79-v666-visual-20261013v666r79browser04.json",
+      "agentInspectionReceipt": "docs/release/v607/mainline-a-r79-v666-visual-inspection-20261013.json",
+      "status": "three-current-build-screenshots-agent-inspected-human-signoff-pending",
+      "perItemHumanVisualSignoff": false
+    },
+    "browser": {
+      "receipt": "docs/release/v607/mainline-a-r79-v666-browser-20261013v666r79browser04.json",
+      "status": "passed-local-desktop-and-simulated-mobile",
+      "manualImageCycles": 4,
+      "enabledViewports": 2,
+      "defaultOffMobileViewport": 1,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "receipt": "docs/release/v607/mainline-a-r79-v666-performance-20261013v666r79browser04.json",
+      "status": "120-frame-short-local-diagnostic-only",
+      "currentSourceLongRun": "not-run-r78-longruns-belong-to-older-source",
+      "productionPerformanceEstablished": false
+    },
+    "externalSource": {
+      "receipt": "docs/release/v607/mainline-a-r79-v666-external-source-20261013v666r79external01.json",
+      "status": "20-prior-source-pins-recomputed-no-new-https",
+      "stellarPhysicalComponentsConfirmed": 0,
+      "stellarComponentHolds": 4,
+      "betaNebulaImageReviewable": 19,
+      "betaNebulaImageHolds": 5,
+      "aNebulaRightsSigned": 0,
+      "betaNebulaRightsSigned": 0
+    }
+  },
+  "coverage": {
+    "aRuntime": { "stars": 12, "constellations": 12, "nebulae": 12 },
+    "betaReviewRows": { "stars": 24, "constellations": 12, "nebulae": 24 },
+    "currentLocalImageFilesAudited": 31,
+    "betaDerivedOrRawImageReviewable": 19,
+    "betaImageHolds": 5,
+    "matrixRows": 96
+  },
+  "openGates": [
+    "Four Beta stellar physical component identities remain unconfirmed.",
+    "Five Beta nebula image chains have no admissible acquisition.",
+    "A and Beta nebula rights signatures remain zero; missing signatures stay pending by user decision.",
+    "Per-item human visual acceptance is pending.",
+    "Physical mobile is not run within web-only scope; simulated viewport is separate evidence.",
+    "Current-source long-run performance observations are not run in R79.",
+    "Root application parity is deferred outside this web-only batch.",
+    "Public web release is blocked; no deployment was performed."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "publicDeployment": false
+  }
+}

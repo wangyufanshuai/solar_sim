@@ -1,0 +1,29 @@
+{
+  "schema": "mainline-a-r79-agent-visual-inspection-v666",
+  "round": 79,
+  "date": "2026-10-13",
+  "status": "three-current-build-screenshots-agent-inspected-human-signoff-pending",
+  "appSourceSha256": "5acf2252241c7e133b208d9e53b89bafbe2ad21794051a210bf4c544e751e63d",
+  "screenshotPinReceipt": "docs/release/v607/mainline-a-r79-v666-visual-20261013v666r79browser04.json",
+  "inspected": [
+    {
+      "path": "docs/release/v607/mainline-a-r79-v666-browser-desktop-beta-derived-ready-20261013v666r79browser04.png",
+      "observation": "Heart candidate local image appears in the focused full-width review matrix; no stale W40 detail pane is visible."
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r79-v666-browser-mobile-viewport-beta-derived-ready-20261013v666r79browser04.png",
+      "observation": "Heart candidate title, source status, manual resource control, and image are visible at the 390-pixel simulated viewport."
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r79-v666-browser-mobile-viewport-default-off-feedback-20261013v666r79browser04.png",
+      "observation": "Default-off mode displays explicit HTTP 404 feedback and preserves the candidate hold language."
+    }
+  ],
+  "limits": {
+    "perItemHumanVisualSignoff": false,
+    "physicalMobile": "not-run",
+    "assetRightsApproved": false,
+    "scientificValidityApproved": false,
+    "realUserValidation": false
+  }
+}

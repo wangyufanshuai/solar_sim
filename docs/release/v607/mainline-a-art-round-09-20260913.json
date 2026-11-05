@@ -1,0 +1,14 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 9,
+  "title": "hero-star-portrait-metrics",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:55:00 UTC",
+  "status": "round-09-code-and-dev-browser-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged"],
+  "code": {"file": "app/components/MainlineAStellarPortraitV607.tsx", "changes": ["added hero tier marker", "added independent color-temperature, luminosity and radius metric strip", "added narrow-layout min-w-0 guards", "kept parametric-photosphere semantics and source/evidence boundaries unchanged"]},
+  "browser": {"mode": "in-app browser", "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite", "route": "对象浏览器 -> 天狼星 A -> 天体档案", "viewport": {"width": 1280, "height": 720}, "runtime": {"metricsText": "色温 9,940 K / 光度 25.4 L☉ / 半径 1.699 R☉", "metricsRect": {"x": 911, "y": 540.1875, "width": 307, "height": 26.5}, "canvasCount": 1, "documentOverflow": false, "consoleErrors": 0}, "screenshot": "docs/release/v607/screenshots/mainline-a-round-09-hero-star-metrics-20260913.png", "screenshotBytes": 104854, "screenshotSha256": "DAADBE29E7F0AB12B256ECA8900DB7D1A1339ABEB6897AF884131427DD70B65D", "evidenceBoundary": "development preview visual/runtime evidence; no performance or production claim"},
+  "tests": {"eslint": {"command": "npx eslint app/components/MainlineAStellarPortraitV607.tsx", "passed": true}, "vitest": {"command": "npx vitest run app/data/mainlineAStellarEvidenceV607.test.ts app/data/mainlineAMetadataV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "passed": true, "tests": 27}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "packet must be regenerated after round 09 receipt"}
+}

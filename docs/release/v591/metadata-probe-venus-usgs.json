@@ -1,0 +1,676 @@
+{
+  "version": "v591-venus-usgs-metadata-probe-v1",
+  "probedAt": "2026-08-12T04:09:02.403Z",
+  "status": "metadata-candidates-confirmed-no-payload",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "USGS Astrogeology / NASA PDS object storage",
+    "host": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "license": {
+      "id": "USGS-public-domain",
+      "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/?list-type=2&prefix=mosaic%2FVenus&max-keys=1000",
+    "finalUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/?list-type=2&prefix=mosaic%2FVenus&max-keys=1000",
+    "status": 200,
+    "contentType": "application/xml",
+    "responseBytes": 24109,
+    "responseSha256": "a08a4ab857a49c6111bfd6d4f3d009d385789e32dc28ffd2e2a697249314336e",
+    "isTruncated": false
+  },
+  "candidates": [
+    {
+      "key": "mosaic/Venus/Geology/Venus_GIS_Geological_Map_of_the_V-32_Quadrangle_Bethell_readme.txt",
+      "bytes": 5447,
+      "etag": "4601be8182ed4ba89a5b309d39af5783",
+      "lastModified": "2022-11-10T06:14:15.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus/Geology/Venus_GIS_Geological_Map_of_the_V-32_Quadrangle_Bethell_readme.txt"
+    },
+    {
+      "key": "mosaic/Venus/Geology/Venus_GIS_Geological_Map_of_the_V-32_Quadrangle_Bethell_v1.zip",
+      "bytes": 2209551288,
+      "etag": "d1cfc66f01122bce1de5605a9f6b01f1-264",
+      "lastModified": "2022-11-10T06:14:16.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus/Geology/Venus_GIS_Geological_Map_of_the_V-32_Quadrangle_Bethell_v1.zip"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub",
+      "bytes": 49841063,
+      "etag": "31030252e464d93233aab6265efba449-6",
+      "lastModified": "2022-11-10T06:14:17.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub.md5",
+      "bytes": 89,
+      "etag": "08d57aac66b62504ebff7c8bc4b20f18",
+      "lastModified": "2022-11-10T06:14:30.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.lbl",
+      "bytes": 1603,
+      "etag": "55ffaf30f1567925bcbffd6324ffec44",
+      "lastModified": "2022-11-10T06:14:33.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.tif",
+      "bytes": 49844821,
+      "etag": "485ad626017b8c05a272490edcc3745a-6",
+      "lastModified": "2022-11-10T06:14:36.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.tif.md5",
+      "bytes": 89,
+      "etag": "6821dc4e0484b869fcbfa6886bc708f9",
+      "lastModified": "2022-11-10T06:14:40.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m_pds3.lbl",
+      "bytes": 2549,
+      "etag": "c5730b02216ed47c5374f74b43cf1ecf",
+      "lastModified": "2022-11-10T06:14:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.cub",
+      "bytes": 100729321,
+      "etag": "95d988c1af5e66a68bc4652978672045-13",
+      "lastModified": "2022-11-10T06:14:47.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.cub.md5",
+      "bytes": 91,
+      "etag": "14136a44de865400bc3bd19bf1f3f2b6",
+      "lastModified": "2022-11-10T06:15:00.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.lbl",
+      "bytes": 1582,
+      "etag": "4029ad22a67f5f2c6c8b742049ea21fd",
+      "lastModified": "2022-11-10T06:15:03.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif",
+      "bytes": 100762261,
+      "etag": "1a243fe2d734abafa743ad671cef2a5d-13",
+      "lastModified": "2022-11-10T06:15:06.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif.md5",
+      "bytes": 91,
+      "etag": "464ed0e600fc7c149f078547c8f5576e",
+      "lastModified": "2022-11-10T06:15:33.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m_pds3.lbl",
+      "bytes": 2528,
+      "etag": "8aa84e7d6de92d052e76c28b3dc0f754",
+      "lastModified": "2022-11-10T06:15:35.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Colorized_Global_Mosaic_4641m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.cub",
+      "bytes": 177902815,
+      "etag": "bfc1493c6c1740bea31210051928f994-22",
+      "lastModified": "2022-11-10T06:15:38.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.cub.md5",
+      "bytes": 81,
+      "etag": "3af06f61fde1610e03a15c871b59c109",
+      "lastModified": "2022-11-10T06:15:51.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.lbl",
+      "bytes": 1512,
+      "etag": "41dc928cfb261d65faaa767c47d66630",
+      "lastModified": "2022-11-10T06:15:55.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.tif",
+      "bytes": 176335453,
+      "etag": "6c5c001af6270d6be425447e7669eef5-22",
+      "lastModified": "2022-11-10T06:15:56.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.tif.md5",
+      "bytes": 81,
+      "etag": "fb92cbfa77894f50b5dd018e64113193",
+      "lastModified": "2022-11-10T06:16:22.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m_pds3.lbl",
+      "bytes": 2454,
+      "etag": "331590d545307eb3674c04f3bc432f8d",
+      "lastModified": "2022-11-10T06:16:23.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_C3-MDIR_Global_Mosaic_2025m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_23ppd.tif",
+      "bytes": 33600188,
+      "etag": "d2f95651e86e2b6476d9032a767a2a9e-5",
+      "lastModified": "2022-11-10T06:16:27.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_23ppd.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_23ppd.tif.md5",
+      "bytes": 86,
+      "etag": "072c57759a58daa0394f0a3810d75515",
+      "lastModified": "2022-11-10T06:16:48.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_23ppd.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.cub",
+      "bytes": 34156634,
+      "etag": "dc4147ab249387db6b5caa9e0d7da345-5",
+      "lastModified": "2022-11-10T06:16:50.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.cub.md5",
+      "bytes": 86,
+      "etag": "58ab73a54c9636cc2914849f22204f8e",
+      "lastModified": "2022-11-10T06:16:50.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.lbl",
+      "bytes": 1493,
+      "etag": "5ac39c2aaa1a6cd126dd63d163ced19e",
+      "lastModified": "2022-11-10T06:16:54.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.tif",
+      "bytes": 33600332,
+      "etag": "e387f5b2bad3d1739f968bfee6bbfe19-5",
+      "lastModified": "2022-11-10T06:16:56.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.tif.md5",
+      "bytes": 86,
+      "etag": "54a0d57adef38428eb75b17fd051fccb",
+      "lastModified": "2022-11-10T06:17:08.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m_pds3.lbl",
+      "bytes": 2392,
+      "etag": "48b30f388f915e90ede49da905184716",
+      "lastModified": "2022-11-10T06:17:08.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_FresnelReflectivity_Global_4641m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.cub",
+      "bytes": 13008345423,
+      "etag": "0b07fda17453a9d225e0c1371ed018ba-1551",
+      "lastModified": "2022-11-10T06:17:09.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.cub.md5",
+      "bytes": 81,
+      "etag": "eb8e25d8d6fe678a29ee1b03a1df4b83",
+      "lastModified": "2022-11-10T06:17:09.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.lbl",
+      "bytes": 1683,
+      "etag": "809ad0baf84d68b0b41870890fb3b39a",
+      "lastModified": "2022-11-10T06:17:09.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.tif",
+      "bytes": 13009511939,
+      "etag": "094348bc5aed17c7b3b5d86c6716a2b7-1551",
+      "lastModified": "2022-11-10T06:17:10.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.tif.md5",
+      "bytes": 81,
+      "etag": "d96a73f68fb3c37e74a0e776b43ba08f",
+      "lastModified": "2022-11-10T06:17:10.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_225m_pds3.lbl",
+      "bytes": 2544,
+      "etag": "540605e8ac924abfe2425df2a8fb61db",
+      "lastModified": "2022-11-10T06:17:14.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_225m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.cub",
+      "bytes": 117120711134,
+      "etag": "692ace6f726b428c668ac4f5d96e8ff1-6981",
+      "lastModified": "2022-12-16T01:01:07.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.cub.md5",
+      "bytes": 80,
+      "etag": "a7ede20214c247abd5f16b68cce61666",
+      "lastModified": "2022-11-10T06:19:42.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.lbl",
+      "bytes": 1682,
+      "etag": "eac256a979fa76f8d285ecf71a42a190",
+      "lastModified": "2022-11-10T06:19:44.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.tif",
+      "bytes": 117077703715,
+      "etag": "f242b14ace35ace3f9c81422c9c1a2ee-6979",
+      "lastModified": "2022-12-16T01:02:22.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.tif.md5",
+      "bytes": 80,
+      "etag": "2c1ecd48426bc4a411ef98ec451d36a1",
+      "lastModified": "2022-11-10T06:32:40.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_jpeg.tif",
+      "bytes": 16765978865,
+      "etag": "bd056d86c5e280916e8ec3c9d06d5c73-1999",
+      "lastModified": "2022-11-10T06:32:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_jpeg.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_jpeg.tif.md5",
+      "bytes": 85,
+      "etag": "3983c22ae7fb15d7fea7f85102be4faa",
+      "lastModified": "2022-11-10T08:09:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_jpeg.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_pds3.lbl",
+      "bytes": 2545,
+      "etag": "81e11f995c9f9702352e7e62b4413e51",
+      "lastModified": "2022-11-10T08:09:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_LeftLook_mosaic_global_75m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_23ppd.tif",
+      "bytes": 33600186,
+      "etag": "1a410a7ab57f8ca0909d17366f0eed9b-5",
+      "lastModified": "2022-11-10T08:09:46.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_23ppd.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_23ppd.tif.md5",
+      "bytes": 82,
+      "etag": "a7314bbcd4e9edb742122a4e2f164100",
+      "lastModified": "2022-11-10T08:09:46.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_23ppd.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.cub",
+      "bytes": 34156632,
+      "etag": "ddefb2b822d32e2ab44c554b7ead0d81-5",
+      "lastModified": "2022-11-10T08:09:52.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.cub.md5",
+      "bytes": 82,
+      "etag": "df7934dd6a91770086fdf1c97d78c1f5",
+      "lastModified": "2022-11-10T08:10:13.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.lbl",
+      "bytes": 1488,
+      "etag": "a7ec00b9dacb1fcced39f3affa97f950",
+      "lastModified": "2022-11-10T08:10:18.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.tif",
+      "bytes": 33600330,
+      "etag": "3866d1ee904b4cbb0a86dc26b3039db6-5",
+      "lastModified": "2022-11-10T08:10:18.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.tif.md5",
+      "bytes": 82,
+      "etag": "cd03d2216cffee27ab9d395edf3eee19",
+      "lastModified": "2022-11-10T08:10:20.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m_pds3.lbl",
+      "bytes": 2388,
+      "etag": "860b705454ce01b6ac3400d1fe0ccf53",
+      "lastModified": "2022-11-10T08:10:24.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MeterScaleSlope_Global_4641m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_23ppd.tif",
+      "bytes": 67166921,
+      "etag": "a25b1329a95e9f34ad6663ce3a52b827-9",
+      "lastModified": "2022-11-10T08:10:27.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_23ppd.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_23ppd.tif.md5",
+      "bytes": 86,
+      "etag": "3eba006ae96d7cf71afc89b46569386b",
+      "lastModified": "2022-11-10T08:10:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_23ppd.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.cub",
+      "bytes": 68243680,
+      "etag": "d64e644d9c9ee1e55a2953e31d1882f6-9",
+      "lastModified": "2022-11-10T08:10:47.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.cub.md5",
+      "bytes": 86,
+      "etag": "4a977cbecbbe6061c6b7fdc4a7e67c59",
+      "lastModified": "2022-11-10T08:11:11.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.lbl",
+      "bytes": 1495,
+      "etag": "2373a6e58160ce5c31b959b881d9f009",
+      "lastModified": "2022-11-10T08:11:14.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.tif",
+      "bytes": 67167065,
+      "etag": "5b1bec3f7dc6f982c815652e947522c5-9",
+      "lastModified": "2022-11-10T08:11:18.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.tif.md5",
+      "bytes": 86,
+      "etag": "fec6a9370baf9587e46f063f8306507f",
+      "lastModified": "2022-11-10T08:11:30.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m_pds3.lbl",
+      "bytes": 2385,
+      "etag": "2dd5c44541c37acfef14c76417fee470",
+      "lastModified": "2022-11-10T08:11:32.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_MicrowaveEmissivity_Global_4641m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m.cub",
+      "bytes": 13008345424,
+      "etag": "1983b38e2bd5af4619482c7c41f44adc-1551",
+      "lastModified": "2022-11-10T08:11:37.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m.cub.md5",
+      "bytes": 82,
+      "etag": "b3db74523b799097fa92f3a513583467",
+      "lastModified": "2022-11-10T08:12:00.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m.lbl",
+      "bytes": 1685,
+      "etag": "45caa5b17f4a0636b8984ff33fb4fc82",
+      "lastModified": "2022-11-10T08:12:03.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m.tif",
+      "bytes": 13009511939,
+      "etag": "731bae9eb778bdbd5bc16c49aa5d67c6-1551",
+      "lastModified": "2022-11-10T08:12:08.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m.tif.md5",
+      "bytes": 82,
+      "etag": "a3f91e8daccaadf71a499ceaf18b80fe",
+      "lastModified": "2022-11-10T08:56:16.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_225m_pds3.lbl",
+      "bytes": 2546,
+      "etag": "bd8e15ea3eabe8a7b75f99fbab22f1c6",
+      "lastModified": "2022-11-10T08:56:20.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_225m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m.cub",
+      "bytes": 117120711133,
+      "etag": "1fce2c07548f5ffe998e9efbc1e7649d-6981",
+      "lastModified": "2022-12-16T01:02:43.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m.cub.md5",
+      "bytes": 81,
+      "etag": "50432e05dbc4926960802a140d32ecb4",
+      "lastModified": "2022-11-10T10:11:38.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m.lbl",
+      "bytes": 1719,
+      "etag": "11c3e84c00dad302e10d690e259a93ba",
+      "lastModified": "2022-11-10T10:11:44.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m.tif",
+      "bytes": 117077703715,
+      "etag": "d2976c39160f255d1ac9f19b64d5a492-6979",
+      "lastModified": "2022-12-16T01:04:57.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m.tif.md5",
+      "bytes": 81,
+      "etag": "079f50753855e7fbe04d0b634b6eb642",
+      "lastModified": "2022-11-10T10:12:36.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m_jpeg.tif",
+      "bytes": 7153939939,
+      "etag": "fe29c9b9f7aae64fc69ea8633c51b95d-853",
+      "lastModified": "2022-11-10T10:12:41.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m_jpeg.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m_jpeg.tif.md5",
+      "bytes": 86,
+      "etag": "0e48c3e87d72920f6aa1eaad886c6edd",
+      "lastModified": "2022-11-10T11:30:39.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m_jpeg.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_RightLook_mosaic_global_75m_pds3.lbl",
+      "bytes": 2558,
+      "etag": "ab6b3515633500dc69cb33c41fdea5b1",
+      "lastModified": "2022-11-10T11:30:45.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_RightLook_mosaic_global_75m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.cub",
+      "bytes": 87854236912,
+      "etag": "e2751fe629a5dc2fedd4993497d7576d-5237",
+      "lastModified": "2022-12-16T01:08:07.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.cub.md5",
+      "bytes": 82,
+      "etag": "f57f07398dd9aeac3edc6de14b15dc05",
+      "lastModified": "2022-11-10T13:19:59.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.lbl",
+      "bytes": 1732,
+      "etag": "29e158aad70abb3b3b055fff714636e3",
+      "lastModified": "2022-11-10T13:19:59.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.tif",
+      "bytes": 87856944601,
+      "etag": "3d85cbd3b9e191fa7cd112dacff65ec9-5237",
+      "lastModified": "2022-12-16T03:09:55.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.tif.md5",
+      "bytes": 82,
+      "etag": "b5c89a9c832981421f70825a64f1abb4",
+      "lastModified": "2022-11-10T13:20:58.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_StereoLook_mosaic_global_75m_pds3.lbl",
+      "bytes": 2582,
+      "etag": "19351474a11041ef4d4e925000ecd497",
+      "lastModified": "2022-11-10T13:20:58.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_StereoLook_mosaic_global_75m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_23ppd.tif",
+      "bytes": 67167129,
+      "etag": "8d3c412f97f402f36e267d409c824e64-9",
+      "lastModified": "2022-11-10T13:20:57.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_23ppd.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_23ppd.tif.md5",
+      "bytes": 77,
+      "etag": "3d705e09324455766210036aeb5465d8",
+      "lastModified": "2022-11-10T13:20:59.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_23ppd.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m.cub",
+      "bytes": 68244641,
+      "etag": "1944623b3329b04ed7cdd8d62731cd1d-9",
+      "lastModified": "2022-11-10T13:20:59.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m.cub.md5",
+      "bytes": 77,
+      "etag": "d5896b51d27b630d60d2a0d3ced18717",
+      "lastModified": "2022-11-10T13:21:06.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m.lbl",
+      "bytes": 1379,
+      "etag": "c56391c3350093bec50a12daca6f000d",
+      "lastModified": "2022-11-10T13:21:06.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m.tif",
+      "bytes": 67166865,
+      "etag": "9a57a63891733485bfe0208a0205dcbd-9",
+      "lastModified": "2022-11-10T13:21:07.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m.tif.md5",
+      "bytes": 77,
+      "etag": "7127dd52256830e96ae37c1dbfcc8ba6",
+      "lastModified": "2022-11-10T13:21:13.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_pds3.lbl",
+      "bytes": 2206,
+      "etag": "a38184fb167251741949c81d38173e74",
+      "lastModified": "2022-11-10T13:21:13.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_pds3.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.cub",
+      "bytes": 67174879,
+      "etag": "3b6876d67ae5b2953e4de5a20d185fd3-9",
+      "lastModified": "2022-11-10T13:21:13.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.cub"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.cub.md5",
+      "bytes": 81,
+      "etag": "ec7fa72505757bf37a2f12a3f0295f61",
+      "lastModified": "2022-11-10T13:21:18.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.cub.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.lbl",
+      "bytes": 1671,
+      "etag": "bb367684ff0a2bf35d5db6df9a64848a",
+      "lastModified": "2022-11-10T13:21:19.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.lbl"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif",
+      "bytes": 67142279,
+      "etag": "b040ee6d8fd4aa8473bb372d500dc503-9",
+      "lastModified": "2022-11-10T13:21:19.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif.md5",
+      "bytes": 81,
+      "etag": "b4a93bd10752fedf2784a59410e2e7ec",
+      "lastModified": "2022-11-10T13:21:24.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02.tif.md5"
+    },
+    {
+      "key": "mosaic/Venus_Magellan_Topography_Global_4641m_v02_pds3.lbl",
+      "bytes": 2515,
+      "etag": "debce49e590b5d89d820eb7539bb777f",
+      "lastModified": "2022-11-10T13:21:24.000Z",
+      "directUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Venus_Magellan_Topography_Global_4641m_v02_pds3.lbl"
+    }
+  ],
+  "receiptSha256": "68650ff4bd07c49f6380fcc891d026eb5e61962393c84bf72cecad4420749f58"
+}

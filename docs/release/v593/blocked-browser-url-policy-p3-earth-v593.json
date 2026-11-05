@@ -1,0 +1,23 @@
+{
+  "version": "v593-p3-earth-browser-url-policy-negative-evidence-v1",
+  "generatedAt": "2026-08-22T10:10:00+08:00",
+  "status": "blocked-browser-url-policy",
+  "browser": "Codex-in-app-browser",
+  "target": "http://127.0.0.1:3001/local-shadow-v593?frame=earth-seam-audit",
+  "localServerHttpProbe": {
+    "statusCode": 200,
+    "contentLength": 24558
+  },
+  "browserPolicyResult": "Browser use cannot visit the requested page because its URL is blocked by the Browser use URL policy.",
+  "existingCurrentDevEvidence": {
+    "screenshotFrameCount": 10,
+    "telemetryFrameCount": 10,
+    "resourceCycleCount": 4,
+    "persistedConsoleLogAvailable": false
+  },
+  "effect": "current-dev screenshot, FPS, GPU and resource evidence remains auditable; console replay and every final sealed-build browser gate remain pending",
+  "alternateBrowserAttempted": false,
+  "policyCircumventionAttempted": false,
+  "formalProductPointer": "v263",
+  "scientificPayloadWriteback": false
+}

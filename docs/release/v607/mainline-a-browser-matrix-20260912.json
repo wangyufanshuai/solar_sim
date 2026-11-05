@@ -1,0 +1,109 @@
+{
+  "schema": "mainline-a-browser-matrix-v3",
+  "capturedAt": "2026-09-12T10:30:07.084Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "U9qrpLb4LIqKoexFk0VBB",
+    "candidateSourceManifestSha256": "f3b89cb6b180cc6e8199f229b109da5be9b1895674ab539150b1fed9418651bb",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "scenarios": [
+    {
+      "id": "nebula-search",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "actions": [
+        "open object browser",
+        "enter search 螺旋"
+      ],
+      "observed": {
+        "searchValue": "螺旋",
+        "resultCount": 1,
+        "matchedObject": "ngc7293",
+        "matchedLabel": "螺旋星云 NGC 7293",
+        "portrait": "rendered official image with CC BY 4.0 credit",
+        "passport": "visible summary, distance and angular-size metadata"
+      },
+      "status": "observed-previous-build-nebula-route",
+      "observedBuildId": "tWu_IRraPqGWyf8b4lcai"
+    }
+  ],
+  "classification": {
+    "a2": "pending-mainline-a-object-browser-route-and-lod-completion",
+    "a4": "observed-nebula-passport-pending-stellar-passport",
+    "a5": "pending-relation-camera-dispatch",
+    "browserPerformance": "not-run",
+    "release": "not-qualified"
+  },
+  "diagnostics": [
+    "Source-bound build U9qrpLb4LIqKoexFk0VBB includes the A3 metadata, credits and reversible external-pulsar route changes.",
+    "The NGC 7293 route was directly observed on immediately preceding tWu_IRraPqGWyf8b4lcai; the U9 build external M1 ↔ Crab Pulsar reverse route is recorded separately in mainline-a5-relation-browser-20260912.json.",
+    "Desktop galaxy-scale and mobile layout observations are retained as historical scenarios and are not promoted to this build.",
+    "No FPS, memory, GPU or repeated-focus lifecycle claim is made."
+  ],
+  "historicalScenarios": [
+    {
+      "id": "desktop-solar-system",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "actions": [
+        "reload latest bound build"
+      ],
+      "observed": {
+        "scaleLabel": "Horizons / live physics",
+        "distanceLabel": "100 AU · measured",
+        "responsiveControls": "visible",
+        "visualCanvas": "rendered solar-system scene with orbit lines and starfield"
+      },
+      "status": "historical-partial-not-current-build-acceptance",
+      "observedBuildId": "Vf4mAc-Ki9DgtvEVATvjc"
+    },
+    {
+      "id": "desktop-galactic-scale",
+      "viewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "actions": [
+        "open object browser",
+        "select 银河系"
+      ],
+      "observed": {
+        "scaleLabel": "本地恒星 → 银河系 · 900 ms log handoff",
+        "distanceLabel": "60 kpc · measured-plus-model",
+        "categoryCounts": {
+          "nearbyStars": 387,
+          "constellations": 88,
+          "deepSky": 171
+        },
+        "visualCanvas": "rendered"
+      },
+      "status": "historical-partial-not-current-build-acceptance",
+      "observedBuildId": "KPEQxmoz4FJ5OA-_XrXDC"
+    },
+    {
+      "id": "mobile-solar-system",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "actions": [
+        "set viewport",
+        "reload"
+      ],
+      "observed": {
+        "responsiveControls": "visible",
+        "visualCanvas": "rendered behind responsive sidebar; scene remains visible at right edge",
+        "layout": "sidebar and view controls stack without crash"
+      },
+      "status": "historical-partial-not-current-build-acceptance",
+      "observedBuildId": "Vf4mAc-Ki9DgtvEVATvjc"
+    }
+  ]
+}

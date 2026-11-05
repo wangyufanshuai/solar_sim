@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:49.783Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "messier-5",
+  "category": "cluster",
+  "selection": {
+    "metadataProbeFile": "messier-5.json",
+    "metadataReceiptSha256": "f4a33bed1509a13be04aebeb5b3759c64dd132d08252b8b16eb178e898862b7c",
+    "nasaId": "GSFC_20171208_Archive_e001116",
+    "title": "Cosmic Fairy Lights",
+    "description": "This sparkling jumble is Messier 5 — a globular cluster consisting of hundreds of thousands of stars bound together by their collective gravity. But Messier 5 is no normal globular cluster. At 13 billion years old it dates back to close to the beginning of the Universe, which is some 13.8 billion years of age. It is also one of the biggest clusters known, and at only 24 500 light-years away, it is no wonder that Messier 5 is a popular site for astronomers to train their telescopes on. Messier 5 also presents a puzzle. Stars in globular clusters grow old and wise together. So Messier 5 should, by now, consist of old, low-mass red giants and other ancient stars. But it is actually teeming with young blue stars known as blue stragglers. These stars spring to life when stars collide, or rip material from one another. Credit: ESA/NASA <b><a href=\"http://www.nasa.gov/audience/formedia/features/MP_Photo_Guidelines.html\" rel=\"nofollow\">NASA image use policy.</a></b> <b><a href=\"http://www.nasa.gov/centers/goddard/home/index.html\" rel=\"nofollow\">NASA Goddard Space Flight Center</a></b> enables NASA’s mission through four scientific endeavors: Earth Science, Heliophysics, Solar System Explor",
+    "center": "GSFC",
+    "identityTerms": [
+      "messier 5"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/collection.json",
+    "status": 200,
+    "responseBytes": 409,
+    "responseSha256": "980cffbcadf9e8e6203ef399fe681db2dfbe196b368be31aa5365bc836224ba4"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001116~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001116~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e001116~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/GSFC_20171208_Archive_e001116~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e001116/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "d7346b0a12eba58d7220826fa0600c58362245409ee4977f65808bea6750b506"
+}

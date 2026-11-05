@@ -1,0 +1,92 @@
+{
+  "version": "v591-tempel-1-model-lod-receipt-v1",
+  "generatedAt": "2026-08-14T00:00:00Z",
+  "status": "tempel-1-three-lod-model-ready-for-runtime-admission",
+  "acquisitionReceiptSha256": "4f2c35ca750e975295f7b7560df87bd8913bbad3b07378c97addf287a3cda012",
+  "sourceDetailCeiling": "pds-deep-impact-stardust-next-32040-triangles",
+  "source": {
+    "path": "source-cache/celestial-convergence-v591/tempel-1/pds-shape-v2/dif-c-hriv_its_mri-5-tempel1-shape-v2.0/data/tempel1_2012_cart.wrl",
+    "bytes": 3871120,
+    "sha256": "0a2baed9f6c3f6c243968310b949b07c57b5a249925903b6926a84be2b168d35",
+    "md5": "c8b6620816d091b56d34ac68807dcca7",
+    "datasetId": "DIF-C-HRIV/ITS/MRI-5-TEMPEL1-SHAPE-V2.0",
+    "packageSha256": "84869fab1db7ce72d1d03982b9de44fdac15c30651ac2039326a2020760b76ab",
+    "license": {
+      "id": "NASA-PDS-SBN-public-data",
+      "url": "https://pds.nasa.gov/datastandards/documents/policy/"
+    }
+  },
+  "mosaic": {
+    "path": "source-cache/celestial-convergence-v591/tempel-1/pds-shape-v2/dif-c-hriv_its_mri-5-tempel1-shape-v2.0/document/tempel1_8ppd_imagemosaic.png",
+    "bytes": 1444564,
+    "sha256": "e41d08c437f804fb2cb6da292d38ef10e603abc9eb819171ebe3644b3ba37d4a",
+    "md5": "55fe2d3c93efd0a3cd69977f9726bbbc"
+  },
+  "normalized": {
+    "receiptSha256": "b130d1c5bc1f12d0a298a8535b07143e20c09642fadc03e8aa5c8024bc212abe",
+    "sourceFrame": "body-centered-source-positive-z-spin-axis",
+    "runtimeFrame": "right-handed-positive-y-spin-axis",
+    "sourceUnits": "kilometer",
+    "units": "normalized-diameter-2",
+    "pivot": "bounds-midpoint",
+    "rotationAxis": "positive-y",
+    "watertight": true,
+    "eulerNumber": 2,
+    "constraintFlagCounts": {
+      "1": 11104,
+      "2": 1450,
+      "3": 3468
+    },
+    "sourceFrameCenterOffsetKilometers": [
+      "-0.21305",
+      "0.1528",
+      "-0.126"
+    ],
+    "sourceMaximumExtentKilometers": "6.8231"
+  },
+  "toolchain": {
+    "parser": "python-trimesh-4.12.2",
+    "gltfTransform": "4.4.2",
+    "compression": "EXT_meshopt_compression",
+    "deterministic": true
+  },
+  "lods": [
+    {
+      "lod": 0,
+      "path": "public/models/candidate-v591/tempel-1/tempel-1-lod0.glb",
+      "bytes": 124676,
+      "sha256": "2c3b9103ec2aecd1a5721f383115f4b3b346353bcda5a56dd2bbc9163371c8a2",
+      "triangleCount": 32040,
+      "vertexCount": 16022,
+      "normals": true,
+      "meshopt": true
+    },
+    {
+      "lod": 1,
+      "path": "public/models/candidate-v591/tempel-1/tempel-1-lod1.glb",
+      "bytes": 36732,
+      "sha256": "20a1b46e28c4b5a81490f7d50f4fccd51aa9622fe04ee99600de00aa1447aad5",
+      "triangleCount": 8010,
+      "vertexCount": 4007,
+      "normals": true,
+      "meshopt": true
+    },
+    {
+      "lod": 2,
+      "path": "public/models/candidate-v591/tempel-1/tempel-1-lod2.glb",
+      "bytes": 11612,
+      "sha256": "55ccfb91a2d74204cdd92ab30765ca47d2d74c2b65a02cc0bc6d15c59d89f9c5",
+      "triangleCount": 2002,
+      "vertexCount": 1003,
+      "normals": true,
+      "meshopt": true
+    }
+  ],
+  "authorityState": {
+    "presentationOnly": true,
+    "scientificAuthorityChanged": false,
+    "scientificPayloadWriteback": false,
+    "measuredAuthorityGranted": false
+  },
+  "receiptSha256": "f4ff2207798b2bd848c670f4d13903a9bfd3548cea4099d39c8705c1a3833708"
+}

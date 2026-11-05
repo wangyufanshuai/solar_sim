@@ -1,0 +1,1208 @@
+{
+  "schema": "mainline-a-stellar-component-evidence-v634",
+  "generatedAt": "2026-09-27T03:52:59.829Z",
+  "captureLedger": {
+    "path": "docs/release/v607/mainline-a-stellar-components-v634-20260927-056.json",
+    "sha256": "92e17d5ebd727af611aa7b12c781bef2d91568075b573e5f2f2bf52e88cbc06e"
+  },
+  "sourceCandidatePack": {
+    "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+  },
+  "readme": {
+    "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51.txt",
+    "sha256": "262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51",
+    "bytes": 41416,
+    "contentType": "text/plain; charset=utf-8",
+    "finalUrl": "https://cdsarc.cds.unistra.fr/ftp/B/wds/ReadMe"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "wdsSystemId": "12266-6306",
+      "sourceQueryIdentifier": "* alf01 Cru",
+      "sourceRawPageSha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+      "sourceHintIdentifiers": [
+        "WDS J12266-6306A"
+      ],
+      "status": "catalogue-candidate",
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+        "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+        "bytes": 5406,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306"
+      },
+      "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+      "requestFingerprint": "d3d8bccf1c5fb91a67f7c53a01c2365d5cd3902f87fd510e2f1c70eb3f1af28b",
+      "attemptCount": 1,
+      "lastAttempt": {
+        "attempt": 1,
+        "startedAt": "2026-09-27T03:52:54.026Z",
+        "endedAt": "2026-09-27T03:52:56.306Z",
+        "timeoutMs": 15000,
+        "timeout": false,
+        "retryCount": 0,
+        "httpStatus": 200,
+        "contentType": "text/tab-separated-values",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+        "redirectChain": [],
+        "requestFingerprint": "d3d8bccf1c5fb91a67f7c53a01c2365d5cd3902f87fd510e2f1c70eb3f1af28b",
+        "errorCategory": null,
+        "errorClass": null,
+        "errorMessage": null,
+        "responseCaptured": 1,
+        "responseBytes": 5406,
+        "rawArtifact": {
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+          "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99",
+          "bytes": 5406,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306"
+        },
+        "transport": "https"
+      },
+      "table": {
+        "status": "parsed",
+        "errors": [],
+        "warnings": [],
+        "metadata": {
+          "table": "B/wds/wds",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=12266-6306",
+          "publicationDate": "2026-09-21",
+          "rightsUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "bibcodes": [
+            "2001AJ....122.3466M"
+          ]
+        },
+        "columns": [
+          "recno",
+          "WDS",
+          "Disc",
+          "Comp",
+          "Obs1",
+          "Obs2",
+          "Nobs",
+          "pa1",
+          "pa2",
+          "sep1",
+          "sep2",
+          "mag1",
+          "mag2",
+          "SpType",
+          "pmRA1",
+          "pmDE1",
+          "pmRA2",
+          "pmDE2",
+          "DM",
+          "Notes",
+          "n_RAh",
+          "RAJ2000",
+          "DEJ2000"
+        ],
+        "units": [
+          "",
+          "",
+          "",
+          "",
+          "yr",
+          "yr",
+          "",
+          "deg",
+          "deg",
+          "arcsec",
+          "arcsec",
+          "mag",
+          "mag",
+          "",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "",
+          "",
+          "",
+          "\"h:m:s\"",
+          "\"d:m:s\""
+        ],
+        "rows": [
+          {
+            "key": "12266-6306|DUN 252|AB",
+            "wds": "12266-6306",
+            "discoverer": "DUN 252",
+            "components": "AB",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "B"
+            ],
+            "firstObservationYear": 1826,
+            "lastObservationYear": 2024,
+            "observationCount": 104,
+            "separationArcsec": 3.5,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "NL",
+            "source": {
+              "line": 57,
+              "byteStart": 3700,
+              "byteEnd": 3854,
+              "rawText": "   78378\t12266-6306\tDUN 252\tAB   \t1826\t2024\t 104\t114\t111\t  5.4\t  3.50\t 1.250\t 1.55\tB0.5V+B1V \t -35\t -15\t -43\t  -8\t-62 2745 \tNL  \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|DUN 252|AC",
+            "wds": "12266-6306",
+            "discoverer": "DUN 252",
+            "components": "AC",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "C"
+            ],
+            "firstObservationYear": 1750,
+            "lastObservationYear": 2020,
+            "observationCount": 36,
+            "separationArcsec": 89,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 58,
+              "byteStart": 3855,
+              "byteEnd": 4009,
+              "rawText": "   78379\t12266-6306\tDUN 252\tAC   \t1750\t2020\t  36\t216\t203\t 92.5\t 89.00\t 1.250\t 4.80\tB0.5V+B4V \t -35\t -15\t -40\t -14\t-62 2742 \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|ANT   1|AG",
+            "wds": "12266-6306",
+            "discoverer": "ANT   1",
+            "components": "AG",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "G"
+            ],
+            "firstObservationYear": 2000,
+            "lastObservationYear": 2014,
+            "observationCount": 5,
+            "separationArcsec": 58.7,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 59,
+              "byteStart": 4010,
+              "byteEnd": 4164,
+              "rawText": "   78380\t12266-6306\tANT   1\tAG   \t2000\t2014\t   5\t147\t145\t 55.5\t 58.70\t 1.250\t12.00\tB0.5IV    \t -35\t -15\t    \t    \t         \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|ANT   1|AH",
+            "wds": "12266-6306",
+            "discoverer": "ANT   1",
+            "components": "AH",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "H"
+            ],
+            "firstObservationYear": 2007,
+            "lastObservationYear": 2013,
+            "observationCount": 3,
+            "separationArcsec": 47.3,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 60,
+              "byteStart": 4165,
+              "byteEnd": 4319,
+              "rawText": "   78381\t12266-6306\tANT   1\tAH   \t2007\t2013\t   3\t167\t167\t 47.4\t 47.30\t 1.250\t13.00\tB0.5IV    \t -35\t -15\t    \t    \t         \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|ANT   1|AI",
+            "wds": "12266-6306",
+            "discoverer": "ANT   1",
+            "components": "AI",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "I"
+            ],
+            "firstObservationYear": 2000,
+            "lastObservationYear": 2013,
+            "observationCount": 4,
+            "separationArcsec": 63.3,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 61,
+              "byteStart": 4320,
+              "byteEnd": 4474,
+              "rawText": "   78382\t12266-6306\tANT   1\tAI   \t2000\t2013\t   4\t228\t227\t 65.2\t 63.30\t 1.250\t12.00\tB0.5IV    \t -35\t -15\t    \t    \t         \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|ANT   7|AJ",
+            "wds": "12266-6306",
+            "discoverer": "ANT   7",
+            "components": "AJ",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "J"
+            ],
+            "firstObservationYear": 2000,
+            "lastObservationYear": 2010,
+            "observationCount": 2,
+            "separationArcsec": 29.6,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 62,
+              "byteStart": 4475,
+              "byteEnd": 4629,
+              "rawText": "   78383\t12266-6306\tANT   7\tAJ   \t2000\t2010\t   2\t340\t344\t 30.5\t 29.60\t 1.250\t12.00\tB1V       \t -35\t -15\t    \t    \t         \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|ANT   7|AK",
+            "wds": "12266-6306",
+            "discoverer": "ANT   7",
+            "components": "AK",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "K"
+            ],
+            "firstObservationYear": 2000,
+            "lastObservationYear": 2010,
+            "observationCount": 2,
+            "separationArcsec": 125.2,
+            "position": {
+              "raDeg": 186.64974999999998,
+              "decDeg": -63.09905555555556,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 63,
+              "byteStart": 4630,
+              "byteEnd": 4784,
+              "rawText": "   78384\t12266-6306\tANT   7\tAK   \t2000\t2010\t   2\t219\t218\t126.3\t125.20\t 1.250\t13.00\tB1V       \t -35\t -15\t    \t    \t         \tN   \t \t12 26 35.94\t-63 05 56.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|DUN 252|BC",
+            "wds": "12266-6306",
+            "discoverer": "DUN 252",
+            "components": "BC",
+            "relation": "explicit-pair",
+            "members": [
+              "B",
+              "C"
+            ],
+            "firstObservationYear": 1826,
+            "lastObservationYear": 2020,
+            "observationCount": 18,
+            "separationArcsec": 89,
+            "position": {
+              "raDeg": 186.65183333333334,
+              "decDeg": -63.0995,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 64,
+              "byteStart": 4785,
+              "byteEnd": 4939,
+              "rawText": "   78385\t12266-6306\tDUN 252\tBC   \t1826\t2020\t  18\t204\t203\t 87.0\t 89.00\t 1.550\t 4.80\tB1V+B4V   \t -43\t  -8\t -40\t -14\t         \tN   \t \t12 26 36.44\t-63 05 58.2"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|TOK   7|CD",
+            "wds": "12266-6306",
+            "discoverer": "TOK   7",
+            "components": "CD",
+            "relation": "explicit-pair",
+            "members": [
+              "C",
+              "D"
+            ],
+            "firstObservationYear": 1997,
+            "lastObservationYear": 2000,
+            "observationCount": 2,
+            "separationArcsec": 2.4,
+            "position": {
+              "raDeg": 186.62866666666667,
+              "decDeg": -63.12222222222222,
+              "derivedFromName": false
+            },
+            "notes": "N  K",
+            "source": {
+              "line": 65,
+              "byteStart": 4940,
+              "byteEnd": 5094,
+              "rawText": "   78386\t12266-6306\tTOK   7\tCD   \t1997\t2000\t   2\t 52\t 53\t  2.2\t  2.40\t 5.400\t10.50\tB4IV      \t -38\t -15\t    \t    \t         \tN  K\t \t12 26 30.88\t-63 07 20.0"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|TOK   7|CE",
+            "wds": "12266-6306",
+            "discoverer": "TOK   7",
+            "components": "CE",
+            "relation": "explicit-pair",
+            "members": [
+              "C",
+              "E"
+            ],
+            "firstObservationYear": 1997,
+            "lastObservationYear": 1997,
+            "observationCount": 1,
+            "separationArcsec": 4.9,
+            "position": {
+              "raDeg": 186.62866666666667,
+              "decDeg": -63.12222222222222,
+              "derivedFromName": false
+            },
+            "notes": "N  K",
+            "source": {
+              "line": 66,
+              "byteStart": 5095,
+              "byteEnd": 5249,
+              "rawText": "   78387\t12266-6306\tTOK   7\tCE   \t1997\t1997\t   1\t214\t214\t  4.9\t  4.90\t 5.400\t17.00\tB4IV      \t -38\t -15\t    \t    \t         \tN  K\t \t12 26 30.88\t-63 07 20.0"
+            },
+            "warnings": []
+          },
+          {
+            "key": "12266-6306|TOK   7|CF",
+            "wds": "12266-6306",
+            "discoverer": "TOK   7",
+            "components": "CF",
+            "relation": "explicit-pair",
+            "members": [
+              "C",
+              "F"
+            ],
+            "firstObservationYear": 1997,
+            "lastObservationYear": 2015,
+            "observationCount": 2,
+            "separationArcsec": 7.4,
+            "position": {
+              "raDeg": 186.62866666666667,
+              "decDeg": -63.12222222222222,
+              "derivedFromName": false
+            },
+            "notes": "NU K",
+            "source": {
+              "line": 67,
+              "byteStart": 5250,
+              "byteEnd": 5404,
+              "rawText": "   78388\t12266-6306\tTOK   7\tCF   \t1997\t2015\t   2\t119\t114\t  6.7\t  7.40\t 5.400\t15.97\tB4IV      \t -38\t -15\t  -7\t   0\t         \tNU K\t \t12 26 30.88\t-63 07 20.0"
+            },
+            "warnings": []
+          }
+        ]
+      },
+      "blockers": [
+        "component-identity-review-required",
+        "rights-review-pending"
+      ],
+      "componentIdentityStatus": "unresolved",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spica",
+      "wdsSystemId": "13252-1110",
+      "sourceQueryIdentifier": "* alf Vir",
+      "sourceRawPageSha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+      "sourceHintIdentifiers": [
+        "WDS J13252-1110A"
+      ],
+      "status": "catalogue-candidate",
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+        "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+        "bytes": 4321,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110"
+      },
+      "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+      "requestFingerprint": "229df0318e8e16c09f1c59d4da5a09a6d9086f34e709b29436b35ffae3fafd87",
+      "attemptCount": 1,
+      "lastAttempt": {
+        "attempt": 1,
+        "startedAt": "2026-09-27T03:52:56.307Z",
+        "endedAt": "2026-09-27T03:52:58.292Z",
+        "timeoutMs": 15000,
+        "timeout": false,
+        "retryCount": 0,
+        "httpStatus": 200,
+        "contentType": "text/tab-separated-values",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+        "redirectChain": [],
+        "requestFingerprint": "229df0318e8e16c09f1c59d4da5a09a6d9086f34e709b29436b35ffae3fafd87",
+        "errorCategory": null,
+        "errorClass": null,
+        "errorMessage": null,
+        "responseCaptured": 1,
+        "responseBytes": 4321,
+        "rawArtifact": {
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+          "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3",
+          "bytes": 4321,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110"
+        },
+        "transport": "https"
+      },
+      "table": {
+        "status": "parsed",
+        "errors": [],
+        "warnings": [
+          "some-catalogue-fields-unresolved"
+        ],
+        "metadata": {
+          "table": "B/wds/wds",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=13252-1110",
+          "publicationDate": "2026-09-21",
+          "rightsUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "bibcodes": [
+            "2001AJ....122.3466M"
+          ]
+        },
+        "columns": [
+          "recno",
+          "WDS",
+          "Disc",
+          "Comp",
+          "Obs1",
+          "Obs2",
+          "Nobs",
+          "pa1",
+          "pa2",
+          "sep1",
+          "sep2",
+          "mag1",
+          "mag2",
+          "SpType",
+          "pmRA1",
+          "pmDE1",
+          "pmRA2",
+          "pmDE2",
+          "DM",
+          "Notes",
+          "n_RAh",
+          "RAJ2000",
+          "DEJ2000"
+        ],
+        "units": [
+          "",
+          "",
+          "",
+          "",
+          "yr",
+          "yr",
+          "",
+          "deg",
+          "deg",
+          "arcsec",
+          "arcsec",
+          "mag",
+          "mag",
+          "",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "",
+          "",
+          "",
+          "\"h:m:s\"",
+          "\"d:m:s\""
+        ],
+        "rows": [
+          {
+            "key": "13252-1110|OCC 418|Aa,Ab",
+            "wds": "13252-1110",
+            "discoverer": "OCC 418",
+            "components": "Aa,Ab",
+            "relation": "explicit-pair",
+            "members": [
+              "Aa",
+              "Ab"
+            ],
+            "firstObservationYear": 1975,
+            "lastObservationYear": 1995,
+            "observationCount": 0,
+            "separationArcsec": null,
+            "position": {
+              "raDeg": 201.29825,
+              "decDeg": -11.161222222222223,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 57,
+              "byteStart": 3700,
+              "byteEnd": 3854,
+              "rawText": "   83239\t13252-1110\tOCC 418\tAa,Ab\t1975\t1995\t   0\t -1\t -1\t  0.1\t -1.00\t 1.300\t 4.50\tB1III-    \t -42\t -31\t    \t    \t-10 3672 \tN   \t \t13 25 11.58\t-11 09 40.4"
+            },
+            "warnings": [
+              "separation-missing-or-invalid"
+            ]
+          },
+          {
+            "key": "13252-1110|OCC 418|Aa,Ac",
+            "wds": "13252-1110",
+            "discoverer": "OCC 418",
+            "components": "Aa,Ac",
+            "relation": "explicit-pair",
+            "members": [
+              "Aa",
+              "Ac"
+            ],
+            "firstObservationYear": 1975,
+            "lastObservationYear": 1975,
+            "observationCount": 0,
+            "separationArcsec": 0.5,
+            "position": {
+              "raDeg": 201.29825,
+              "decDeg": -11.161222222222223,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 58,
+              "byteStart": 3855,
+              "byteEnd": 4009,
+              "rawText": "   83240\t13252-1110\tOCC 418\tAa,Ac\t1975\t1975\t   0\t -1\t -1\t  0.5\t  0.50\t 1.300\t 7.50\tB1III-    \t -42\t -31\t    \t    \t-10 3672 \tN   \t \t13 25 11.58\t-11 09 40.4"
+            },
+            "warnings": []
+          },
+          {
+            "key": "13252-1110|BUP 150|AB",
+            "wds": "13252-1110",
+            "discoverer": "BUP 150",
+            "components": "AB",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "B"
+            ],
+            "firstObservationYear": 1879,
+            "lastObservationYear": 2010,
+            "observationCount": 5,
+            "separationArcsec": 151.9,
+            "position": {
+              "raDeg": 201.29825,
+              "decDeg": -11.161222222222223,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 59,
+              "byteStart": 4010,
+              "byteEnd": 4164,
+              "rawText": "   83241\t13252-1110\tBUP 150\tAB   \t1879\t2010\t   5\t 33\t 33\t144.4\t151.90\t 0.980\t12.00\tB1III-+B2 \t -42\t -31\t    \t    \t-10 3672 \tN   \t \t13 25 11.58\t-11 09 40.4"
+            },
+            "warnings": []
+          },
+          {
+            "key": "13252-1110|BUP 150|AC",
+            "wds": "13252-1110",
+            "discoverer": "BUP 150",
+            "components": "AC",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "C"
+            ],
+            "firstObservationYear": 1879,
+            "lastObservationYear": 2010,
+            "observationCount": 3,
+            "separationArcsec": 367.3,
+            "position": {
+              "raDeg": 201.29825,
+              "decDeg": -11.161222222222223,
+              "derivedFromName": false
+            },
+            "notes": "N",
+            "source": {
+              "line": 60,
+              "byteStart": 4165,
+              "byteEnd": 4319,
+              "rawText": "   83242\t13252-1110\tBUP 150\tAC   \t1879\t2010\t   3\t 62\t 61\t359.8\t367.30\t 0.980\t10.50\tB1III-+B2 \t -42\t -31\t    \t    \t         \tN   \t \t13 25 11.58\t-11 09 40.4"
+            },
+            "warnings": []
+          }
+        ]
+      },
+      "blockers": [
+        "component-identity-review-required",
+        "rights-review-pending"
+      ],
+      "componentIdentityStatus": "unresolved",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "regulus",
+      "wdsSystemId": "10084+1158",
+      "sourceQueryIdentifier": "* alf Leo",
+      "sourceRawPageSha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+      "sourceHintIdentifiers": [
+        "WDS J10084+1158A"
+      ],
+      "status": "catalogue-candidate",
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+        "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+        "bytes": 4323,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158"
+      },
+      "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+      "requestFingerprint": "cba9f0fea3774c358960e66f35857cd45ee44ca55bb99060bb37e47c4dbf9768",
+      "attemptCount": 1,
+      "lastAttempt": {
+        "attempt": 1,
+        "startedAt": "2026-09-27T03:52:58.304Z",
+        "endedAt": "2026-09-27T03:52:59.073Z",
+        "timeoutMs": 15000,
+        "timeout": false,
+        "retryCount": 0,
+        "httpStatus": 200,
+        "contentType": "text/tab-separated-values",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+        "redirectChain": [],
+        "requestFingerprint": "cba9f0fea3774c358960e66f35857cd45ee44ca55bb99060bb37e47c4dbf9768",
+        "errorCategory": null,
+        "errorClass": null,
+        "errorMessage": null,
+        "responseCaptured": 1,
+        "responseBytes": 4323,
+        "rawArtifact": {
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+          "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346",
+          "bytes": 4323,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158"
+        },
+        "transport": "https"
+      },
+      "table": {
+        "status": "parsed",
+        "errors": [],
+        "warnings": [],
+        "metadata": {
+          "table": "B/wds/wds",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=10084%2B1158",
+          "publicationDate": "2026-09-21",
+          "rightsUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "bibcodes": [
+            "2001AJ....122.3466M"
+          ]
+        },
+        "columns": [
+          "recno",
+          "WDS",
+          "Disc",
+          "Comp",
+          "Obs1",
+          "Obs2",
+          "Nobs",
+          "pa1",
+          "pa2",
+          "sep1",
+          "sep2",
+          "mag1",
+          "mag2",
+          "SpType",
+          "pmRA1",
+          "pmDE1",
+          "pmRA2",
+          "pmDE2",
+          "DM",
+          "Notes",
+          "n_RAh",
+          "RAJ2000",
+          "DEJ2000"
+        ],
+        "units": [
+          "",
+          "",
+          "",
+          "",
+          "yr",
+          "yr",
+          "",
+          "deg",
+          "deg",
+          "arcsec",
+          "arcsec",
+          "mag",
+          "mag",
+          "",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "",
+          "",
+          "",
+          "\"h:m:s\"",
+          "\"d:m:s\""
+        ],
+        "rows": [
+          {
+            "key": "10084+1158|STFB  6|AB",
+            "wds": "10084+1158",
+            "discoverer": "STFB  6",
+            "components": "AB",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "B"
+            ],
+            "firstObservationYear": 1779,
+            "lastObservationYear": 2023,
+            "observationCount": 69,
+            "separationArcsec": 175.9,
+            "position": {
+              "raDeg": 152.09295833333334,
+              "decDeg": 11.967194444444445,
+              "derivedFromName": false
+            },
+            "notes": "NT",
+            "source": {
+              "line": 57,
+              "byteStart": 3702,
+              "byteEnd": 3856,
+              "rawText": "   65933\t10084+1158\tSTFB  6\tAB   \t1779\t2023\t  69\t307\t308\t168.3\t175.90\t 1.400\t 8.24\tB7V       \t-249\t   6\t-254\t   8\t+12 2149 \tNT  \t \t10 08 22.31\t+11 58 01.9"
+            },
+            "warnings": []
+          },
+          {
+            "key": "10084+1158|HDO 127|AD",
+            "wds": "10084+1158",
+            "discoverer": "HDO 127",
+            "components": "AD",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "D"
+            ],
+            "firstObservationYear": 1924,
+            "lastObservationYear": 2015,
+            "observationCount": 7,
+            "separationArcsec": 195.3,
+            "position": {
+              "raDeg": 152.09295833333334,
+              "decDeg": 11.967194444444445,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 58,
+              "byteStart": 3857,
+              "byteEnd": 4011,
+              "rawText": "   65934\t10084+1158\tHDO 127\tAD   \t1924\t2015\t   7\t274\t274\t217.0\t195.30\t 1.400\t12.10\tB7V       \t-249\t   6\t -23\t -16\t         \tNU  \t \t10 08 22.31\t+11 58 01.9"
+            },
+            "warnings": []
+          },
+          {
+            "key": "10084+1158|HDO 127|BC",
+            "wds": "10084+1158",
+            "discoverer": "HDO 127",
+            "components": "BC",
+            "relation": "explicit-pair",
+            "members": [
+              "B",
+              "C"
+            ],
+            "firstObservationYear": 1867,
+            "lastObservationYear": 2021,
+            "observationCount": 22,
+            "separationArcsec": 2.1,
+            "position": {
+              "raDeg": 152.05329166666667,
+              "decDeg": 11.996944444444443,
+              "derivedFromName": false
+            },
+            "notes": "NT",
+            "source": {
+              "line": 59,
+              "byteStart": 4012,
+              "byteEnd": 4166,
+              "rawText": "   65935\t10084+1158\tHDO 127\tBC   \t1867\t2021\t  22\t 89\t 94\t  4.0\t  2.10\t 8.240\t13.20\tK2V       \t-254\t   8\t-225\t   9\t+12 2147 \tNT  \t \t10 08 12.79\t+11 59 49.0"
+            },
+            "warnings": []
+          },
+          {
+            "key": "10084+1158|HDO 127|BD",
+            "wds": "10084+1158",
+            "discoverer": "HDO 127",
+            "components": "BD",
+            "relation": "explicit-pair",
+            "members": [
+              "B",
+              "D"
+            ],
+            "firstObservationYear": 1907,
+            "lastObservationYear": 2015,
+            "observationCount": 10,
+            "separationArcsec": 109.1,
+            "position": {
+              "raDeg": 152.05329166666667,
+              "decDeg": 11.996944444444443,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 60,
+              "byteStart": 4167,
+              "byteEnd": 4321,
+              "rawText": "   65936\t10084+1158\tHDO 127\tBD   \t1907\t2015\t  10\t221\t211\t120.7\t109.10\t 8.240\t12.10\tK2V       \t-254\t   8\t -23\t -16\t         \tNU  \t \t10 08 12.79\t+11 59 49.0"
+            },
+            "warnings": []
+          }
+        ]
+      },
+      "blockers": [
+        "component-identity-review-required",
+        "rights-review-pending"
+      ],
+      "componentIdentityStatus": "unresolved",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "polaris",
+      "wdsSystemId": "02318+8916",
+      "sourceQueryIdentifier": "* alf UMi",
+      "sourceRawPageSha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+      "sourceHintIdentifiers": [
+        "WDS J02318+8916A",
+        "WDS J02318+8916Aa,Ab"
+      ],
+      "status": "catalogue-candidate",
+      "artifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+        "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+        "bytes": 4633,
+        "contentType": "text/tab-separated-values",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916"
+      },
+      "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+      "requestFingerprint": "ff40be779826ff1009c64e260d1ed94b6832e24e91284a28c6eb964c85dcc2be",
+      "attemptCount": 1,
+      "lastAttempt": {
+        "attempt": 1,
+        "startedAt": "2026-09-27T03:52:59.073Z",
+        "endedAt": "2026-09-27T03:52:59.811Z",
+        "timeoutMs": 15000,
+        "timeout": false,
+        "retryCount": 0,
+        "httpStatus": 200,
+        "contentType": "text/tab-separated-values",
+        "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+        "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+        "redirectChain": [],
+        "requestFingerprint": "ff40be779826ff1009c64e260d1ed94b6832e24e91284a28c6eb964c85dcc2be",
+        "errorCategory": null,
+        "errorClass": null,
+        "errorMessage": null,
+        "responseCaptured": 1,
+        "responseBytes": 4633,
+        "rawArtifact": {
+          "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+          "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8",
+          "bytes": 4633,
+          "contentType": "text/tab-separated-values",
+          "finalUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916"
+        },
+        "transport": "https"
+      },
+      "table": {
+        "status": "parsed",
+        "errors": [],
+        "warnings": [],
+        "metadata": {
+          "table": "B/wds/wds",
+          "requestUrl": "https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=B%2Fwds%2Fwds&-out.all=1&-out.max=100&WDS=02318%2B8916",
+          "publicationDate": "2026-09-21",
+          "rightsUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+          "bibcodes": [
+            "2001AJ....122.3466M"
+          ]
+        },
+        "columns": [
+          "recno",
+          "WDS",
+          "Disc",
+          "Comp",
+          "Obs1",
+          "Obs2",
+          "Nobs",
+          "pa1",
+          "pa2",
+          "sep1",
+          "sep2",
+          "mag1",
+          "mag2",
+          "SpType",
+          "pmRA1",
+          "pmDE1",
+          "pmRA2",
+          "pmDE2",
+          "DM",
+          "Notes",
+          "n_RAh",
+          "RAJ2000",
+          "DEJ2000"
+        ],
+        "units": [
+          "",
+          "",
+          "",
+          "",
+          "yr",
+          "yr",
+          "",
+          "deg",
+          "deg",
+          "arcsec",
+          "arcsec",
+          "mag",
+          "mag",
+          "",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "mas/yr",
+          "",
+          "",
+          "",
+          "\"h:m:s\"",
+          "\"d:m:s\""
+        ],
+        "rows": [
+          {
+            "key": "02318+8916|WRH  39|Aa,Ab",
+            "wds": "02318+8916",
+            "discoverer": "WRH  39",
+            "components": "Aa,Ab",
+            "relation": "explicit-pair",
+            "members": [
+              "Aa",
+              "Ab"
+            ],
+            "firstObservationYear": 1937,
+            "lastObservationYear": 2023,
+            "observationCount": 14,
+            "separationArcsec": 0.1,
+            "position": {
+              "raDeg": 37.954541666666664,
+              "decDeg": 89.26408333333333,
+              "derivedFromName": false
+            },
+            "notes": "NO",
+            "source": {
+              "line": 57,
+              "byteStart": 3702,
+              "byteEnd": 3856,
+              "rawText": "   13332\t02318+8916\tWRH  39\tAa,Ab\t1937\t2023\t  14\t250\t293\t  0.2\t  0.10\t 2.300\t 4.30\tF7:Ib-IIv \t  38\t -15\t    \t    \t+88    8 \tNO  \t \t02 31 49.09\t+89 15 50.7"
+            },
+            "warnings": []
+          },
+          {
+            "key": "02318+8916|STF  93|AB",
+            "wds": "02318+8916",
+            "discoverer": "STF  93",
+            "components": "AB",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "B"
+            ],
+            "firstObservationYear": 1779,
+            "lastObservationYear": 2016,
+            "observationCount": 65,
+            "separationArcsec": 18.4,
+            "position": {
+              "raDeg": 37.954541666666664,
+              "decDeg": 89.26408333333333,
+              "derivedFromName": false
+            },
+            "notes": "NV",
+            "source": {
+              "line": 58,
+              "byteStart": 3857,
+              "byteEnd": 4011,
+              "rawText": "   13333\t02318+8916\tSTF  93\tAB   \t1779\t2016\t  65\t203\t236\t 17.3\t 18.40\t 2.040\t 9.10\tF7Ib+F3V  \t  38\t -15\t  42\t -14\t+88    8 \tNV  \t \t02 31 49.09\t+89 15 50.7"
+            },
+            "warnings": []
+          },
+          {
+            "key": "02318+8916|STF  93|AC",
+            "wds": "02318+8916",
+            "discoverer": "STF  93",
+            "components": "AC",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "C"
+            ],
+            "firstObservationYear": 1884,
+            "lastObservationYear": 2016,
+            "observationCount": 7,
+            "separationArcsec": 39,
+            "position": {
+              "raDeg": 37.954541666666664,
+              "decDeg": 89.26408333333333,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 59,
+              "byteStart": 4012,
+              "byteEnd": 4166,
+              "rawText": "   13334\t02318+8916\tSTF  93\tAC   \t1884\t2016\t   7\t 88\t103\t 43.3\t 39.00\t 2.040\t13.80\tF7:Ib-II  \t  38\t -15\t    \t    \t         \tNU  \t \t02 31 49.09\t+89 15 50.7"
+            },
+            "warnings": []
+          },
+          {
+            "key": "02318+8916|STF  93|AD",
+            "wds": "02318+8916",
+            "discoverer": "STF  93",
+            "components": "AD",
+            "relation": "explicit-pair",
+            "members": [
+              "A",
+              "D"
+            ],
+            "firstObservationYear": 1884,
+            "lastObservationYear": 2016,
+            "observationCount": 8,
+            "separationArcsec": 83.2,
+            "position": {
+              "raDeg": 37.954541666666664,
+              "decDeg": 89.26408333333333,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 60,
+              "byteStart": 4167,
+              "byteEnd": 4321,
+              "rawText": "   13335\t02318+8916\tSTF  93\tAD   \t1884\t2016\t   8\t172\t194\t 82.7\t 83.20\t 2.040\t14.30\tF7:Ib-II  \t  38\t -15\t    \t    \t         \tNU  \t \t02 31 49.09\t+89 15 50.7"
+            },
+            "warnings": []
+          },
+          {
+            "key": "02318+8916|STF  93|BC",
+            "wds": "02318+8916",
+            "discoverer": "STF  93",
+            "components": "BC",
+            "relation": "explicit-pair",
+            "members": [
+              "B",
+              "C"
+            ],
+            "firstObservationYear": 2005,
+            "lastObservationYear": 2015,
+            "observationCount": 4,
+            "separationArcsec": 53.1,
+            "position": {
+              "raDeg": 37.681041666666665,
+              "decDeg": 89.26072222222223,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 61,
+              "byteStart": 4322,
+              "byteEnd": 4476,
+              "rawText": "   13336\t02318+8916\tSTF  93\tBC   \t2005\t2015\t   4\t 81\t 83\t 53.0\t 53.10\t 8.600\t13.80\tF3V       \t  42\t -14\t    \t    \t         \tNU  \t \t02 30 43.45\t+89 15 38.6"
+            },
+            "warnings": []
+          },
+          {
+            "key": "02318+8916|STF  93|BD",
+            "wds": "02318+8916",
+            "discoverer": "STF  93",
+            "components": "BD",
+            "relation": "explicit-pair",
+            "members": [
+              "B",
+              "D"
+            ],
+            "firstObservationYear": 2005,
+            "lastObservationYear": 2016,
+            "observationCount": 4,
+            "separationArcsec": 69.3,
+            "position": {
+              "raDeg": 37.681041666666665,
+              "decDeg": 89.26072222222223,
+              "derivedFromName": false
+            },
+            "notes": "NU",
+            "source": {
+              "line": 62,
+              "byteStart": 4477,
+              "byteEnd": 4631,
+              "rawText": "   13337\t02318+8916\tSTF  93\tBD   \t2005\t2016\t   4\t178\t179\t 69.4\t 69.30\t 8.600\t13.90\tF3V       \t  42\t -14\t   4\t   1\t         \tNU  \t \t02 30 43.45\t+89 15 38.6"
+            },
+            "warnings": []
+          }
+        ]
+      },
+      "blockers": [
+        "component-identity-review-required",
+        "rights-review-pending"
+      ],
+      "componentIdentityStatus": "unresolved",
+      "scientificPayloadWriteback": false
+    }
+  ]
+}

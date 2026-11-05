@@ -1,0 +1,56 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 5,
+  "title": "constellation-state-motion",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:13:17 UTC",
+  "status": "round-05-code-and-dev-browser-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": [
+    "EIH/Newton N-body kernels unchanged",
+    "2PN Lense-Thirring and Kerr kernels unchanged",
+    "constellation coordinates, boundary vertices and catalog counts unchanged"
+  ],
+  "code": {
+    "file": "app/components/ConstellationLines.tsx",
+    "changes": [
+      "added low-amplitude phase-shifted opacity pulses for guide layers",
+      "added runtime focus pulse marker",
+      "kept geometry, visibility gates, profile resolver and disposal logic intact"
+    ]
+  },
+  "browser": {
+    "mode": "in-app browser",
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "route": "银河系 scale band",
+    "runtime": {
+      "canvas": 1,
+      "viewportWidth": 1280,
+      "boundaryVisible": true,
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "consoleErrors": 0,
+      "focusPulseBefore": 0.99247,
+      "focusPulseAfter700ms": 0.99628
+    },
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-05-constellation-state-motion-20260913.png",
+    "screenshotBytes": 146315,
+    "evidenceBoundary": "development preview visual/runtime evidence; no performance claim"
+  },
+  "tests": {
+    "eslint": {
+      "command": "npx eslint app/components/ConstellationLines.tsx",
+      "passed": true
+    },
+    "vitest": {
+      "command": "npx vitest run app/lib/mainlineAConstellationBoundaryV607.test.ts app/components/stellarResourceTeardownV596.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**",
+      "passed": true,
+      "tests": 2
+    }
+  },
+  "releaseBinding": {
+    "buildId": "h08Dhkk9omMt2ifEk6SBu",
+    "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b",
+    "note": "packet regenerated after round 05 receipt"
+  }
+}

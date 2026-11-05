@@ -1,0 +1,2 @@
+import { readFileSync } from "node:fs"; import { describe, expect, it } from "vitest";
+describe("v358 observable surface", () => { it("labels expected photons and measured-count boundary", () => { const source = readFileSync("app/components/KerrObservablePhotonUncertaintySurfaceV358.tsx", "utf8"); expect(source).toContain("Expected detector response / covariance"); expect(source).toContain("no measured detector counts"); expect(source).toContain("never cinematic input"); expect(source).not.toContain("Math.random"); }); });

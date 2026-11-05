@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:37.660Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "centaurus-a",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "centaurus-a.json",
+    "metadataReceiptSha256": "e1d61b65ccbbcfd125c654e7570c6b51d45be46b4eb90e48165f3f9f63fd02e7",
+    "nasaId": "PIA07912",
+    "title": "NGC 5128 Centaurus-A",
+    "description": "This ultraviolet image from NASA Galaxy Evolution Explorer is of NGC 5128 Centaurus-A. This unusual galaxy is believed to be the result of a collision of two normal galaxies. ",
+    "center": "JPL",
+    "identityTerms": [
+      "centaurus"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA07912/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA07912/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA07912/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "badd9aa88580fe053b0a555b1c656c011bc36de8f49995335ef8967d903f8b54"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07912/PIA07912~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07912~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07912/PIA07912~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07912/PIA07912~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07912~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07912/PIA07912~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07912/PIA07912~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA07912~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07912/PIA07912~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA07912/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA07912/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "b7ecfbc67e5a3ae436770c55eb48e76159337d6d51a1f99381affba1473c5eb3"
+}

@@ -1,0 +1,57 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:03:23.581Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "ngc-3603-nebula",
+  "query": "NGC 3603 Nebula",
+  "requiredTerms": [
+    "3603",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC%203603%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC%203603%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 4269,
+    "responseSha256": "d882e48d7441b3703198d6071315ae1689a371e98ec3e65e7e0710b5a3e4f85f"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "GSFC_20171208_Archive_e002049",
+      "title": "Starburst Cluster Shows Celestial Fireworks",
+      "description": "NASA image release June 6, 2010 Like a July 4 fireworks display a young, glittering collection of stars looks like an aerial burst. The cluster is surrounded by clouds of interstellar gas and dust - the raw material for new star formation. The nebula, located 20,000 light-years away in the constellation Carina, contains a central cluster of huge, hot stars, called NGC 3603. This environment is not as peaceful as it looks. Ultraviolet radiation and violent stellar winds have blown out an enormous cavity in the gas and dust enveloping the cluster, providing an unobstructed view of the cluster. Most of the stars in the cluster were born around the same time but differ in size, mass, temperature, and color. The course of a star's life is determined by its mass, so a cluster of a given age will contain stars in various stages of their lives, giving an opportunity for detailed analyses of stel",
+      "dateCreated": "2017-12-08T00:00:00Z",
+      "center": "GSFC",
+      "keywords": [
+        "Starburst Cluster Shows Celestial Fireworks",
+        "star",
+        "space",
+        "nasa",
+        "nebula",
+        "hst",
+        "hubblespacetelescope",
+        "goddardspaceflightcenter"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002049/GSFC_20171208_Archive_e002049~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "20130895e2f767bda500598c224249bcf803b1623619145b7a86c214885704ba"
+}

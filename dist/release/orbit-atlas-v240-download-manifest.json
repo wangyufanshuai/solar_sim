@@ -1,0 +1,47 @@
+{
+  "version": "v240-local-download-manifest",
+  "publishState": "not-uploaded",
+  "immutableRoot": "/orbit-atlas/1.0.0/",
+  "installers": [
+    {
+      "id": "desktop-nsis",
+      "file": "src-tauri/target/release/bundle/nsis/Orbit Atlas_1.0.0-beta.1_x64-setup.exe",
+      "externalQa": "pending",
+      "bytes": 93351702,
+      "sha256": "a55ee023ba7d01fb5d316db67f07b1cf4ade6c48be0f133a97a79f92a3e30906",
+      "signatureStatus": "NotSigned",
+      "builtBeforeV240FinalWebPass": true,
+      "uploaded": false
+    },
+    {
+      "id": "desktop-msi",
+      "file": "src-tauri/target/release/bundle/msi/Orbit Atlas_1.0.0-beta.1_x64_en-US.msi",
+      "externalQa": "pending",
+      "bytes": 113271481,
+      "sha256": "2016d3e0207b6b66402ca315f7e34852237cba6cdcf7f2061fb87dc379eaf441",
+      "signatureStatus": "NotSigned",
+      "builtBeforeV240FinalWebPass": true,
+      "uploaded": false
+    }
+  ],
+  "capabilityMatrix": {
+    "vercel-lite": {
+      "interactiveAtlas": true,
+      "localContentPacks": false,
+      "fullResearchArtifacts": false,
+      "deploymentPerformed": false
+    },
+    "standalone-full": {
+      "interactiveAtlas": true,
+      "localContentPacks": true,
+      "fullResearchArtifacts": true,
+      "packagedForUpload": false
+    },
+    "desktop": {
+      "artifactsBuilt": true,
+      "signed": false,
+      "externalInstallQa": "pending",
+      "updater": "disabled"
+    }
+  }
+}

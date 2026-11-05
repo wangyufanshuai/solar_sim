@@ -1,0 +1,51 @@
+{
+  "schema": "mainline-a-release-package-verification-v1",
+  "status": "blocked",
+  "readOnly": true,
+  "packageId": "mainline-a-r66-v645candidate20261007",
+  "manifest": {
+    "path": "docs/release/v607/mainline-a-r66-package-20261007-v645-final-candidate/manifest.json",
+    "sha256": "90ae026b0e6a29d54d24fa267c51fe8a5aff669dc824489954a807f01c064373"
+  },
+  "integrity": {
+    "files": 300,
+    "status": "verified",
+    "evidenceClass": "static",
+    "scientificValidity": false,
+    "rightsApproval": false,
+    "packageFiles": 7,
+    "offlineReplay": true,
+    "runtimePayload": null
+  },
+  "currentSourceVerified": true,
+  "historicalReplayOnly": false,
+  "releaseApproved": false,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "build": {
+    "buildId": "Iqw1CWm3s4HLCWkMskxXP",
+    "runtimeBuildId": "mainline-a-93b297e97cc3a2ce",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "profile": "vercel-lite",
+    "sourceStable": true,
+    "receiptPath": "docs/release/v607/mainline-a-r65-build-20261007-v645r65a.json",
+    "receiptSha256": "966e4675acb61bc6125ef2112d2bc8780c4d2bad053c5d3558f06f1c1ff807a5",
+    "sourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98",
+    "currentSourceSha256": "93b297e97cc3a2cee8d72e8c91a43ff64b55d3c75b975b6476e027dfa6844f98"
+  },
+  "blockers": [
+    "canonical-runtime-clearance-pending",
+    "human-rights-signoff-pending",
+    "physical-device-not-run",
+    "root-manifest-not-present-or-mismatched",
+    "stellar-component-identity-pending"
+  ]
+}

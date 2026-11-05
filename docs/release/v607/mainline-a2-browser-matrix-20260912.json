@@ -1,0 +1,216 @@
+{
+  "schema": "mainline-a2-browser-matrix-v1",
+  "capturedAt": "2026-09-12T15:39:25Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "6Mt4GwN94qFOWlN4xXTBN",
+    "inputDigest": "dbacb874089801a2f47fbf349e44c98587564736a0e798123ff576f5f9f8d349",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "matrix": [
+    {
+      "viewport": "desktop-1280x720",
+      "scaleBand": "stellar",
+      "qualityTier": "balanced",
+      "presentationLod": "mid",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": "0.02142",
+      "asterismOpacity": "0.02448",
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118,
+      "asterismReady": "true"
+    },
+    {
+      "viewport": "desktop-1280x720",
+      "scaleBand": "galactic",
+      "qualityTier": "balanced",
+      "presentationLod": "far",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": "0.04498",
+      "asterismOpacity": "0.05141",
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118,
+      "asterismReady": "true"
+    },
+    {
+      "viewport": "mobile-390x844",
+      "scaleBand": "solar",
+      "qualityTier": "mobile",
+      "presentationLod": "solar",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "boundaryOpacity": "0.00000",
+      "asterismOpacity": "0.00000",
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": "false"
+    },
+    {
+      "viewport": "mobile-390x844",
+      "scaleBand": "stellar",
+      "qualityTier": "mobile",
+      "presentationLod": "mid",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": "false"
+    },
+    {
+      "viewport": "mobile-390x844",
+      "scaleBand": "galactic",
+      "qualityTier": "mobile",
+      "presentationLod": "far",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "figureSegmentCount": 401,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": "false"
+    }
+  ],
+  "staticObjectCoverage": [
+    "Ori",
+    "UMa",
+    "Cas",
+    "Sco"
+  ],
+  "runtimeMarkers": [
+    "data-mainline-a-constellation-enabled",
+    "data-mainline-a-constellation-quality-tier",
+    "data-mainline-a-constellation-lod-tier",
+    "data-mainline-a-constellation-presentation-lod-tier",
+    "data-mainline-a-constellation-boundary-visible",
+    "data-mainline-a-constellation-asterism-visible",
+    "data-mainline-a-constellation-figure-segment-count",
+    "data-mainline-a-constellation-boundary-segment-count",
+    "data-mainline-a-constellation-asterism-segment-count",
+    "data-mainline-a-constellation-asterism-ready",
+    "data-mainline-a-constellation-asterism-source"
+  ],
+  "status": "current-bound-a2-desktop-balanced-dense-and-mobile-stellar-galactic-selection-passed",
+  "boundaries": {
+    "physics": "presentation-only markers and opacity; no EIH, Newton N-body, 2PN/Lense–Thirring or Kerr kernel mutation",
+    "remaining": "Visual screenshot review for Ori/UMa/Cas/Sco remains pending; this receipt is not a full visual sign-off or performance receipt."
+  },
+  "directSelection": {
+    "desktop": {
+      "balanced": {
+        "stellar": {
+          "targets": 4,
+          "facts": 4,
+          "selectedCodes": [
+            "Ori",
+            "UMa",
+            "Cas",
+            "Sco"
+          ],
+          "rawLod": "solar",
+          "presentationLod": "mid",
+          "boundaryVisible": true,
+          "asterismVisible": true,
+          "boundaryOpacity": "0.02142",
+          "asterismOpacity": "0.02448"
+        },
+        "galactic": {
+          "targets": 4,
+          "facts": 4,
+          "selectedCodes": [
+            "Ori",
+            "UMa",
+            "Cas",
+            "Sco"
+          ],
+          "rawLod": "solar",
+          "presentationLod": "far",
+          "boundaryVisible": true,
+          "asterismVisible": true,
+          "boundaryOpacity": "0.04498",
+          "asterismOpacity": "0.05141"
+        }
+      },
+      "dense": {
+        "stellar": {
+          "targets": 4,
+          "facts": 4,
+          "selectedCodes": [
+            "Ori",
+            "UMa",
+            "Cas",
+            "Sco"
+          ],
+          "rawLod": "solar",
+          "presentationLod": "mid",
+          "boundaryVisible": true,
+          "asterismVisible": true,
+          "boundaryOpacity": "0.01317",
+          "asterismOpacity": "0.02258"
+        },
+        "galactic": {
+          "targets": 4,
+          "facts": 4,
+          "selectedCodes": [
+            "Ori",
+            "UMa",
+            "Cas",
+            "Sco"
+          ],
+          "rawLod": "solar",
+          "presentationLod": "far",
+          "boundaryVisible": true,
+          "asterismVisible": true,
+          "boundaryOpacity": "0.01317",
+          "asterismOpacity": "0.02258"
+        }
+      }
+    },
+    "mobile": {
+      "stellar": {
+        "targets": 4,
+        "facts": 4,
+        "selectedCodes": [
+          "Ori",
+          "UMa",
+          "Cas",
+          "Sco"
+        ],
+        "rawLod": "solar|mid",
+        "presentationLod": "mid",
+        "boundaryVisible": false,
+        "asterismVisible": false,
+        "boundaryOpacity": "0.00000",
+        "asterismOpacity": "0.00000"
+      },
+      "galactic": {
+        "targets": 4,
+        "facts": 4,
+        "identity": 4,
+        "selectedCodes": [
+          "Ori",
+          "UMa",
+          "Cas",
+          "Sco"
+        ],
+        "qualityTier": "mobile",
+        "rawLod": "solar",
+        "presentationLod": "far",
+        "boundaryVisible": false,
+        "asterismVisible": false,
+        "boundaryOpacity": "0.00000",
+        "asterismOpacity": "0.00000",
+        "figureSegmentCount": 401,
+        "boundarySegmentCount": 111,
+        "asterismSegmentCount": 0,
+        "asterismReady": "false"
+      }
+    }
+  }
+}

@@ -1,0 +1,656 @@
+{
+  "version": "v593-p5-saturn-corrective-browser-code-gate-v1",
+  "generatedAt": "2026-08-22T23:00:00.000Z",
+  "status": "passed-current-dev-saturn-corrective-code-and-visual-gates-sealed-build-and-human-signoff-pending",
+  "candidate": {
+    "route": "/local-shadow-v593",
+    "formalProductPointer": "v263",
+    "additiveOnly": true
+  },
+  "scope": {
+    "currentSourceOwner": true,
+    "signaturePassesCodeImplemented": 6,
+    "signaturePassesComplete": 0,
+    "p4HistoricalPreCorrectiveEvidence": {
+      "path": "docs/release/v593/p4-deep-sky-browser-code-gate-v593.json",
+      "bytes": 27546,
+      "sha256": "2521ab7c4e8434f1d26f5fd96bb22e6497ce9d757c9d0f516052ea86688abd1d"
+    },
+    "finalGoldenFrameMatrixComplete": false,
+    "sealedBuildEvidence": false,
+    "humanVisualSignoff": false
+  },
+  "sourceMaterialCorrectness": {
+    "bridge": {
+      "path": "app/components/SignatureArtDirectionBridgeV593.tsx",
+      "bytes": 99681,
+      "sha256": "65dd82c8404fe1c563f832f5809d2aa0744ee88cbe43678080b2d3301f08b401"
+    },
+    "shell": {
+      "path": "app/components/FinalArtObservatoryShellV593.tsx",
+      "bytes": 34703,
+      "sha256": "a9727684c12e44075136470971346039fc91f3e81b3ec9cce50eb8dbee80c132"
+    },
+    "focusedTest": {
+      "path": "app/lib/finalArtDirectionV593.test.ts",
+      "bytes": 9700,
+      "sha256": "c4177fe5599f50eb7ab93d30e83651ed3d5eb0772412018d2d5ae1b653eb9d89"
+    },
+    "viewportHarness": {
+      "path": "docs/release/v593/mobile-viewport-harness-v593.html",
+      "bytes": 2256,
+      "sha256": "08c7bd5c6d5ff522bb6e8696b6781f023076a6780da4478bd702168a1798f8ab"
+    },
+    "builder": {
+      "path": "scripts/build-v593-p5-saturn-corrective-browser-code-gate.mjs",
+      "bytes": 24321,
+      "sha256": "263538763aa1280ccd063eb92b05cc5038b58f5b07087b91e3a50694d5b1125a"
+    },
+    "ringToPlanetShadow": "optical-depth-source-bound-travel-and-radial-soft-gates",
+    "planetTerminator": "wide-smooth-atmospheric-terminator-with-bounded-nightside-bounce",
+    "planetToRingShadow": "analytic-ray-sphere-soft-direction-gate-and-penumbra",
+    "ringScattering": "forward-and-backward-henyey-greenstein-source-optical-depth"
+  },
+  "captures": [
+    {
+      "id": "saturn-cinematic-front",
+      "cameraPolicy": "three-quarter-optical-depth-fixed-camera",
+      "baselineTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-front-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 91829,
+        "drawCalls": 12,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v592-same-build-baseline",
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 9,
+        "textures": 8,
+        "cameraPolicy": "three-quarter-optical-depth-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 167.224,
+        "fpsMinimum": 44.534,
+        "fpsP10": 162.338,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-front",
+        "ringPatchCount": 0,
+        "signatureSaturn": "inactive",
+        "surfacePatchCount": 0,
+        "webglChanged": "false",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-front-signature-v593-signature-1280x720-r3.png",
+        "bytes": 92688,
+        "drawCalls": 12,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v593-signature",
+        "patchCount": 2,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 11,
+        "textures": 8,
+        "cameraPolicy": "three-quarter-optical-depth-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 175.285,
+        "fpsMinimum": 8.411,
+        "fpsP10": 164.339,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-front",
+        "ringPatchCount": 1,
+        "signatureSaturn": "implemented-code-gates-pending",
+        "surfacePatchCount": 1,
+        "webglChanged": "true",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-front-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 91829,
+        "sha256": "ef834373a45e1138379e1999b4c2c7f3480318ecb9d0e8de0ca516087b1fef9e",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-front-signature-v593-signature-1280x720-r3.png",
+        "bytes": 92688,
+        "sha256": "08a25ef476e7a60b47e00dbe834b222c9d74a3cdeceb88e21293a864cff5cf27",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 2.535943,
+        "changedChannelFractionGt2": 0.18357169,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "saturn-cinematic-backlight",
+      "cameraPolicy": "anti-solar-backscatter-fixed-camera",
+      "baselineTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-backlight-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 83194,
+        "drawCalls": 8,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v592-same-build-baseline",
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 9,
+        "textures": 8,
+        "cameraPolicy": "anti-solar-backscatter-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 171.233,
+        "fpsMinimum": 39.944,
+        "fpsP10": 163.666,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-backlight",
+        "ringPatchCount": 0,
+        "signatureSaturn": "inactive",
+        "surfacePatchCount": 0,
+        "webglChanged": "false",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-backlight-signature-v593-signature-1280x720-r3.png",
+        "bytes": 83384,
+        "drawCalls": 8,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v593-signature",
+        "patchCount": 2,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 11,
+        "textures": 8,
+        "cameraPolicy": "anti-solar-backscatter-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 174.52,
+        "fpsMinimum": 32.685,
+        "fpsP10": 164.339,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-backlight",
+        "ringPatchCount": 1,
+        "signatureSaturn": "implemented-code-gates-pending",
+        "surfacePatchCount": 1,
+        "webglChanged": "true",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-backlight-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 83194,
+        "sha256": "aa30b88317860c8854b02c4e1ea3a6fb14b10b2cc4f359db086a38b1406f9e9d",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-backlight-signature-v593-signature-1280x720-r3.png",
+        "bytes": 83384,
+        "sha256": "341018cb74f4f7d9e8e0ae6d3bef4060a62dea3dbd776602fcfec5821c092a88",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 2.193365,
+        "changedChannelFractionGt2": 0.14239258,
+        "maximumChannelDiff255": 133
+      }
+    },
+    {
+      "id": "saturn-cinematic-ring-shadow",
+      "cameraPolicy": "ring-plane-bidirectional-shadow-fixed-camera",
+      "baselineTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-ring-shadow-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 98738,
+        "drawCalls": 8,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v592-same-build-baseline",
+        "patchCount": 0,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 9,
+        "textures": 8,
+        "cameraPolicy": "ring-plane-bidirectional-shadow-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 168.634,
+        "fpsMinimum": 41.649,
+        "fpsP10": 162.999,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-ring-shadow",
+        "ringPatchCount": 0,
+        "signatureSaturn": "inactive",
+        "surfacePatchCount": 0,
+        "webglChanged": "false",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "signatureTelemetry": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-ring-shadow-signature-v593-signature-1280x720-r3.png",
+        "bytes": 87260,
+        "drawCalls": 8,
+        "geometries": 12,
+        "gpuBytes": 167074646,
+        "lane": "v593-signature",
+        "patchCount": 2,
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "programs": 11,
+        "textures": 8,
+        "cameraPolicy": "ring-plane-bidirectional-shadow-fixed-camera",
+        "canvasCount": 1,
+        "dpr": 1,
+        "fpsMedian": 170.068,
+        "fpsMinimum": 9.937,
+        "fpsP10": 161.551,
+        "height": 720,
+        "payloadStable": "true",
+        "preset": "saturn-cinematic-ring-shadow",
+        "ringPatchCount": 1,
+        "signatureSaturn": "implemented-code-gates-pending",
+        "surfacePatchCount": 1,
+        "webglChanged": "true",
+        "width": 1280,
+        "writeback": "false"
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-ring-shadow-baseline-v592-baseline-1280x720-r3.png",
+        "bytes": 98738,
+        "sha256": "4d90db77f215b2fc6b32c7a844268c9fa5ed4723b0a5318459875688d5645662",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective-r2/saturn-cinematic-ring-shadow-signature-v593-signature-1280x720-r3.png",
+        "bytes": 87260,
+        "sha256": "3f6a001156acac6e476e79c541447ad0b17e59203b29532f8cbb7ee008023530",
+        "width": 1280,
+        "height": 720,
+        "format": "jpeg"
+      },
+      "comparison": {
+        "meanAbsoluteChannelDiff255": 7.947057,
+        "changedChannelFractionGt2": 0.27575991,
+        "maximumChannelDiff255": 133
+      }
+    }
+  ],
+  "mobileEvidence": {
+    "harness": {
+      "path": "docs/release/v593/mobile-viewport-harness-v593.html",
+      "bytes": 2256,
+      "sha256": "08c7bd5c6d5ff522bb6e8696b6781f023076a6780da4478bd702168a1798f8ab"
+    },
+    "baselineRawCapture": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v592-baseline-harness-fullpage.png",
+      "bytes": 257985,
+      "sha256": "467771a2c305c600217ebe4be086abd709ff1cbccbc1c19b5c9bf1ef7bf81701",
+      "width": 390,
+      "height": 844,
+      "format": "png"
+    },
+    "signatureRawCapture": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v593-corrective-harness-fullpage.png",
+      "bytes": 298645,
+      "sha256": "d9e75dba94a20f40024cbbfc126739ca78f680aec6392a3b0bb68431d277151e",
+      "width": 390,
+      "height": 844,
+      "format": "png"
+    },
+    "baselineNormalizedPreview": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v592-baseline-390x844-normalized.png",
+      "bytes": 257985,
+      "sha256": "467771a2c305c600217ebe4be086abd709ff1cbccbc1c19b5c9bf1ef7bf81701",
+      "width": 390,
+      "height": 844,
+      "format": "png"
+    },
+    "signatureNormalizedPreview": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v593-corrective-390x844-normalized.png",
+      "bytes": 298645,
+      "sha256": "d9e75dba94a20f40024cbbfc126739ca78f680aec6392a3b0bb68431d277151e",
+      "width": 390,
+      "height": 844,
+      "format": "png"
+    },
+    "viewportHarnessDisclosure": {
+      "path": "docs/release/v593/mobile-viewport-harness-v593.html",
+      "innerViewport": {
+        "width": 390,
+        "height": 844
+      },
+      "outerCapture": {
+        "width": 390,
+        "height": 844
+      },
+      "sameChromium": true,
+      "sameOriginApplicationFrame": true,
+      "physicalDevice": false,
+      "execution": "direct-native-viewport-cross-port-harness-frame-unavailable",
+      "normalizedPreviewPolicy": "direct-390x844-same-build-no-resampling",
+      "finalGoldenMatrixAuthority": false
+    },
+    "finalGoldenMatrixAuthority": false
+  },
+  "detailCrops": [
+    {
+      "id": "front-terminator-and-ring-shadow",
+      "frameId": "saturn-cinematic-front",
+      "crop": {
+        "left": 300,
+        "top": 145,
+        "width": 430,
+        "height": 430
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-front-v592-baseline-front-terminator-and-ring-shadow-100pct.png",
+        "bytes": 131593,
+        "sha256": "944cfd58958c76a8b94752be2a85040034836fe9aa707311546ffb755caada17",
+        "left": 300,
+        "top": 145,
+        "width": 430,
+        "height": 430,
+        "format": "png"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-front-v593-corrective-front-terminator-and-ring-shadow-100pct.png",
+        "bytes": 133487,
+        "sha256": "757001a665dbe1ddaf0900c04e182487563eeb6c48882e6182def3c487a0d3f3",
+        "left": 300,
+        "top": 145,
+        "width": 430,
+        "height": 430,
+        "format": "png"
+      }
+    },
+    {
+      "id": "backlight-limb-and-backscatter",
+      "frameId": "saturn-cinematic-backlight",
+      "crop": {
+        "left": 245,
+        "top": 105,
+        "width": 610,
+        "height": 500
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-backlight-v592-baseline-backlight-limb-and-backscatter-100pct.png",
+        "bytes": 172024,
+        "sha256": "7998ec7b24d514d8e4937449127b586c50aad1fca0874f32836710159e57b372",
+        "left": 245,
+        "top": 105,
+        "width": 610,
+        "height": 500,
+        "format": "png"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-backlight-v593-corrective-backlight-limb-and-backscatter-100pct.png",
+        "bytes": 176479,
+        "sha256": "ba9d6b47b773ce6e31d3caf49b3e9ac27dcc0c8d929a578a4330c1f02b594564",
+        "left": 245,
+        "top": 105,
+        "width": 610,
+        "height": 500,
+        "format": "png"
+      }
+    },
+    {
+      "id": "backlight-planet-to-ring-shadow-onset",
+      "frameId": "saturn-cinematic-backlight",
+      "crop": {
+        "left": 235,
+        "top": 285,
+        "width": 550,
+        "height": 315
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-backlight-v592-baseline-backlight-planet-to-ring-shadow-onset-100pct.png",
+        "bytes": 103246,
+        "sha256": "ad78c9f10b59888f03afbeb9df70b638e93ca3d9717a7d42d1b001c5e2fede3c",
+        "left": 235,
+        "top": 285,
+        "width": 550,
+        "height": 315,
+        "format": "png"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-backlight-v593-corrective-backlight-planet-to-ring-shadow-onset-100pct.png",
+        "bytes": 109004,
+        "sha256": "b126a96a2cb5edd1a988f414098b69f9ab2e94f9f2ce0e323554ee2b1277f31d",
+        "left": 235,
+        "top": 285,
+        "width": 550,
+        "height": 315,
+        "format": "png"
+      }
+    },
+    {
+      "id": "ring-plane-bidirectional-shadow",
+      "frameId": "saturn-cinematic-ring-shadow",
+      "crop": {
+        "left": 225,
+        "top": 90,
+        "width": 620,
+        "height": 570
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-ring-shadow-v592-baseline-ring-plane-bidirectional-shadow-100pct.png",
+        "bytes": 261360,
+        "sha256": "cc00b73e54dd965b0e33891ef07a72877fe71ee9a5b5e397754165c62b13a269",
+        "left": 225,
+        "top": 90,
+        "width": 620,
+        "height": 570,
+        "format": "png"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-cinematic-ring-shadow-v593-corrective-ring-plane-bidirectional-shadow-100pct.png",
+        "bytes": 184345,
+        "sha256": "9b9734cb4308ce96fe64e845a4be1eb75e97c6e7109fee3c664a17994d92cc1c",
+        "left": 225,
+        "top": 90,
+        "width": 620,
+        "height": 570,
+        "format": "png"
+      }
+    },
+    {
+      "id": "mobile-front-native-viewport-terminator",
+      "frameId": "saturn-cinematic-front-mobile-harness",
+      "crop": {
+        "left": 170,
+        "top": 280,
+        "width": 180,
+        "height": 270
+      },
+      "baseline": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v592-baseline-raw-compositor-100pct.png",
+        "bytes": 26954,
+        "sha256": "2fe4312b1a7492b7059b9074864805dbcaaa25919fb38635a0bdfe0f1ab80350",
+        "left": 170,
+        "top": 280,
+        "width": 180,
+        "height": 270,
+        "format": "png"
+      },
+      "signature": {
+        "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-mobile-front-v593-corrective-raw-compositor-100pct.png",
+        "bytes": 31282,
+        "sha256": "421353a9f4a09f32e08d6796de9a673a2991644b026d4bb309ea0f746f8b5b50",
+        "left": 170,
+        "top": 280,
+        "width": 180,
+        "height": 270,
+        "format": "png"
+      },
+      "normalizationApplied": false
+    }
+  ],
+  "hardCutInspection": {
+    "desktop": {
+      "baselinePeakX": 359,
+      "baselinePeakMeanGradient255": 5.671967,
+      "signatureAtBaselinePeakMeanGradient255": 3.0196,
+      "reductionFraction": 0.46762737
+    },
+    "mobileNativeViewport": {
+      "regionPolicy": "planet-disk-terminator-only-excludes-ring-sky-and-ui",
+      "baselineMaximumMeanGradient255": 2.647958,
+      "signatureMaximumMeanGradient255": 1.614137,
+      "reductionFraction": 0.39042198
+    },
+    "physicalPlanetToRingShadowRetained": true,
+    "abruptHalfPlanetOrHalfRingCutObservedAfterCorrective": false,
+    "finalHumanArtSignoff": false
+  },
+  "resourceLifecycle": {
+    "cycleCount": 4,
+    "baselinePatchCount": 0,
+    "signaturePatchCount": 2,
+    "texturesStable": true,
+    "geometriesStable": true,
+    "gpuBytesStable": true,
+    "baselineProgramCount": 9,
+    "signatureProgramCount": 11,
+    "programDelta": 2,
+    "programsRestoreToBaseline": true,
+    "finalBaseline": {
+      "drawCalls": 12,
+      "geometries": 12,
+      "gpuBytes": 167074646,
+      "lane": "v592-same-build-baseline",
+      "patchCount": 0,
+      "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "programs": 9,
+      "textures": 8
+    }
+  },
+  "rotation": {
+    "samples": [
+      {
+        "phase": "paused-initial",
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "periodDays": 0.44400926,
+        "poleDecDeg": 83.53593264,
+        "poleRaDeg": 40.57939377,
+        "policy": "paused",
+        "primeMeridianDeg": 293.8376892,
+        "rate": 0,
+        "rotationDeltaRad": 0,
+        "signedDegPerDay": 810.7939024,
+        "utc": "2026-09-07T19:37:26.687Z",
+        "visiblyAdvancing": "false",
+        "w0Blocked": "bennu,kleopatra"
+      },
+      {
+        "phase": "real-rate-2.6s",
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "periodDays": 0.44400926,
+        "poleDecDeg": 83.53593264,
+        "poleRaDeg": 40.57939377,
+        "policy": "real-rate",
+        "primeMeridianDeg": 293.86033233,
+        "rate": 1,
+        "rotationDeltaRad": -0.00039543,
+        "signedDegPerDay": 810.7939024,
+        "utc": "2026-09-07T19:37:29.112Z",
+        "visiblyAdvancing": "true",
+        "w0Blocked": "bennu,kleopatra"
+      },
+      {
+        "phase": "time-lapse-0.9s",
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "periodDays": 0.44400926,
+        "poleDecDeg": 83.53593256,
+        "poleRaDeg": 40.579393,
+        "policy": "explicit-time-lapse",
+        "primeMeridianDeg": 213.35979643,
+        "rate": 86400,
+        "rotationDeltaRad": 1.05663711,
+        "signedDegPerDay": 810.7939024,
+        "utc": "2026-09-08T15:07:05.984Z",
+        "visiblyAdvancing": "true",
+        "w0Blocked": "bennu,kleopatra"
+      },
+      {
+        "phase": "paused-final",
+        "payload": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+        "periodDays": 0.44400926,
+        "poleDecDeg": 83.53593252,
+        "poleRaDeg": 40.57939266,
+        "policy": "paused",
+        "primeMeridianDeg": 128.72162136,
+        "rate": 0,
+        "rotationDeltaRad": -0.3296826,
+        "signedDegPerDay": 810.7939024,
+        "utc": "2026-09-08T22:42:18.752Z",
+        "visiblyAdvancing": "true",
+        "w0Blocked": "bennu,kleopatra"
+      }
+    ],
+    "before": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-rotation-fixed-camera-before.png",
+      "bytes": 814187,
+      "sha256": "f2f2b3f3de042cfabe138dc96c54b1c458235da0af355877fbe142f53d93bd07",
+      "width": 1280,
+      "height": 720,
+      "format": "png"
+    },
+    "after": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/saturn-rotation-fixed-camera-after-timelapse.png",
+      "bytes": 816556,
+      "sha256": "a08237a496da06713c82ac7d9fdd0aa7d330777e04baa94451a4b49052fb465b",
+      "width": 1280,
+      "height": 720,
+      "format": "png"
+    },
+    "fixedCamera": true,
+    "realRateSeparatedFromTimeLapse": true,
+    "presentationAccelerationWriteback": false
+  },
+  "browser": {
+    "runner": "Codex-in-app-browser-screenshots+Playwright-CLI-renderer-telemetry",
+    "screenshotRunner": "Codex-in-app-browser",
+    "rendererTelemetryRunner": "Playwright CLI",
+    "currentDevNativeViewport": "1280x720",
+    "mobileInnerViewport": "390x844",
+    "mobilePhysicalDevice": false,
+    "telemetry": {
+      "path": "docs/release/v593/screenshots/p5-saturn-corrective/browser-telemetry-current-dev-v593.json",
+      "bytes": 15865,
+      "sha256": "29461c9b6485efe886795121debf00175bdce3c63707dc3820ac058b9043a3c1"
+    },
+    "consoleWarningErrorCount": 0,
+    "singleCanvas": true,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadUniqueCount": 1,
+    "scientificPayloadWriteback": false,
+    "minimumMedianFps": 167.504,
+    "maximumGpuBytes": 167074646,
+    "maximumDrawCalls": 12
+  },
+  "authority": {
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "productionReleaseAuthorized": false
+  },
+  "receiptSha256": "b8893b74c0ae99cc75187d2e047e9709210adcba419b1753478e675b05f36815"
+}

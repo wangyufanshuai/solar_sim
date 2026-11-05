@@ -1,0 +1,48 @@
+{
+  "version": "v591-mars-usgs-full-source-acquisition-v1",
+  "sourcePage": "https://astrogeology.usgs.gov/search/map/mars_viking_global_color_mosaic_925m",
+  "redirectProvenance": {
+    "originUrl": "https://planetarymaps.usgs.gov/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "redirectHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "bucket": "asc-pds-services",
+    "key": "mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "metadataProbeUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/?list-type=2&prefix=mosaic%2FMars_Viking_ClrMosaic_global_925m.tif&max-keys=20",
+    "observedSize": 797888177,
+    "observedEtag": "0da6f2e347b88927925a196a03c0bfbe-96",
+    "lastModified": "2022-11-10T04:35:38.000Z",
+    "identity": "USGS Planetary Maps redirect target for the Mars Viking 925 m global color mosaic"
+  },
+  "asset": {
+    "id": "mars-usgs-full-albedo-source-v591",
+    "body": "mars",
+    "role": "full-albedo-source",
+    "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "outputPath": "source-cache/celestial-convergence-v591/mars/Mars_Viking_ClrMosaic_global_925m.tif",
+    "allowedHosts": [
+      "asc-pds-services.s3.us-west-2.amazonaws.com"
+    ],
+    "expectedMediaTypes": [
+      "image/tiff",
+      "image/tif",
+      "application/octet-stream",
+      "binary/octet-stream"
+    ],
+    "expectedBytes": 797888177,
+    "expectedWidth": 23059,
+    "expectedHeight": 11530,
+    "license": {
+      "id": "NASA-USGS-public-domain",
+      "url": "https://astrogeology.usgs.gov/search/map/mars_viking_global_color_mosaic_925m"
+    },
+    "observationIdentity": "USGS Mars Viking Global Color Mosaic 925 m full GeoTIFF",
+    "observationLimit": "The admitted 925 m global color mosaic is the observational-detail ceiling; delivery derivatives cannot add detail.",
+    "presentationOnly": true
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "exactObjectKeyRequired": true
+  }
+}

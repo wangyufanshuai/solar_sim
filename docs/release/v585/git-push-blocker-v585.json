@@ -1,0 +1,34 @@
+{
+  "version": "v585-git-push-blocker-receipt-v1",
+  "generatedAt": "2026-08-04T15:20:22.9498494Z",
+  "classification": "blocked-no-remote-configured",
+  "repository": {
+    "root": "E:/86137/myai",
+    "branch": "codex/orbit-atlas-visual-freeze-v585",
+    "observedHead": "88d22ebce7714f2f70732c20e9116dfc8b289a86",
+    "remoteCount": 0,
+    "remotes": []
+  },
+  "localCommits": [
+    "467ab879 fix(visual): restore frozen Legacy V9 stable lane",
+    "21d940e4 feat(visual): isolate v562 preview asset authority",
+    "513ec55b test(release): add v585 visual freeze qualification",
+    "88d22ebc docs(release): seal v585 visual freeze evidence"
+  ],
+  "lastPushAttempt": {
+    "command": "git push -u origin codex/orbit-atlas-visual-freeze-v585",
+    "exitCode": 128,
+    "stderr": "fatal: 'origin' does not appear to be a git repository",
+    "remoteMutationPerformed": false
+  },
+  "qualification": {
+    "localCommitsPreserved": true,
+    "remoteConfigured": false,
+    "pushCompleted": false,
+    "remoteGuessedOrAdded": false,
+    "forcePushUsed": false,
+    "productionDeploymentAffected": false
+  },
+  "nextRequiredAuthority": "Provide or confirm the exact repository remote URL, or configure origin outside this evidence run.",
+  "receiptSha256": "8eaf85ee9c7a919f69c833a4f4fec84bb86564ca3120a554aa07f27dc05632ae"
+}

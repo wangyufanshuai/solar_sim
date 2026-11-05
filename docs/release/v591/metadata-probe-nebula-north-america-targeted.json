@@ -1,0 +1,78 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "nebula-north-america-targeted",
+  "probedAt": "2026-08-13T11:32:13.090Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "north-america-nebula",
+  "role": "real-coordinate-nebula-targeted-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=North%20America%20Nebula&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=North%20America%20Nebula&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 4848,
+    "responseSha256": "8a42d6b71cd5aed01fe4860ef8e53af3fe725ce731b1110801a6231c56ff8d15"
+  },
+  "totalHits": 3,
+  "candidates": [
+    {
+      "nasaId": "PIA13845",
+      "title": "North America Nebula in Different Lights",
+      "description": "This view of the North America nebula combines both visible and infrared light observations, taken by the Digitized Sky Survey and NASA Spitzer Space Telescope. Clusters of young stars about one million years old can be found throughout the image.",
+      "dateCreated": "2011-02-10T18:00:48Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13845/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13845/PIA13845~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA13843",
+      "title": "The Case of the Disappearing Continent",
+      "description": "This infrared image from NASA Spitzer Space Telescope shows a swirling landscape of stars known as the North America nebula. Clusters of young stars about one million years old can be found throughout the image.",
+      "dateCreated": "2011-02-10T18:00:46Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13843/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13843/PIA13843~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA13844",
+      "title": "An Extended Stellar Family",
+      "description": "This visible light/infrared image from NASA Spitzer Space Telescope shows a swirling landscape of stars known as the North America nebula. Clusters of young stars about one million years old can be found throughout the image.",
+      "dateCreated": "2011-02-10T18:00:47Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Spitzer Space Telescope"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13844/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13844/PIA13844~thumb.jpg"
+    }
+  ],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "5a839ddcf53c8754504f1998d93f55068fae5217a0b20526facf4ea2468f2c8f"
+}

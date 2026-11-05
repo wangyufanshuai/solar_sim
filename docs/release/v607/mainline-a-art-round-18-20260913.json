@@ -1,0 +1,19 @@
+{
+  "round": 18,
+  "date": "2026-09-13",
+  "title": "Constellation object-browser index cue",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/UniverseSandboxHud.tsx",
+    "artChange": "Marked the constellation list as a Mainline A discovery surface so browser audits and future visual instrumentation can distinguish the 12-item constellation index from nearby-star results."
+  },
+  "validation": {
+    "eslint": "passed",
+    "vitest": "celestialCatalog.test.ts + mainlineAMetadataV607.test.ts: 32/32",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The label-to-passport interaction still needs browser confirmation after opening the HUD index.",
+    "Beta remains open at 12 hero stars and 12 rights-cleared nebulae."
+  ]
+}

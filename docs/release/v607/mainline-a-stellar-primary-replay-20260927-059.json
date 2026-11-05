@@ -1,0 +1,136 @@
+{
+  "schema": "mainline-a-stellar-primary-replay-audit-v1",
+  "generatedAt": "2026-09-27T06:23:26.334Z",
+  "evidenceClass": "static",
+  "status": "passed",
+  "captureLedgers": [
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059.json",
+      "sha256": "34c29e33a027670281aa9e262cec33a33cde5336c6df1b491286ae6dc21121f4",
+      "bytes": 10316
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059b.json",
+      "sha256": "48f56316a8bb3515df0ae7d3b1e6e9e09cbb62e41d4e5eaa3115e8daed8b67cc",
+      "bytes": 5769
+    },
+    {
+      "path": "docs/release/v607/mainline-a-stellar-primary-capture-20260927-059c.json",
+      "sha256": "5c71b619975d2ff4d96dfb551c5471080c947fcf2e479ff2bd08bedd23aea1d4",
+      "bytes": 2852
+    }
+  ],
+  "counts": {
+    "requestedDocuments": 10,
+    "rawArtifacts": 9,
+    "attempts": 11,
+    "successfulAttempts": 9,
+    "failedNetworkAttempts": 2,
+    "capturedBytes": 24001634,
+    "componentConfirmed": 0
+  },
+  "checks": [
+    {
+      "id": "acrux-paper",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "spica-paper",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "regulus-paper",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "polaris-paper",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "acrux-hip2-tsv",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "hip2-readme",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "acrux-hip-main-tsv",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "hip-main-readme",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "regulus-companion-paper",
+      "rawVerified": true,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 1,
+      "responseCaptured": 1
+    },
+    {
+      "id": "acrux-hip-components-tsv",
+      "rawVerified": false,
+      "requestFingerprintVerified": true,
+      "attemptFingerprintsVerified": 2,
+      "responseCaptured": 0
+    }
+  ],
+  "protectedFiles": [
+    {
+      "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+      "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+      "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    }
+  ],
+  "protectedFilesUnchanged": true,
+  "replayMethod": "Recompute exact persisted raw bytes and JSON.stringify(request) SHA-256; compare all saved attempts and boundaries.",
+  "scope": "Local replay integrity only; HTTPS origin and scientific correctness are not proved by a hash.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "componentConfirmed": false,
+    "rightsApproval": false,
+    "releaseApproved": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

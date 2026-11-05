@@ -1,0 +1,33 @@
+{
+  "round": 40,
+  "date": "2026-09-13",
+  "title": "Lite mobile sky and roster browser proof",
+  "status": "verified-browser-mobile",
+  "scope": {
+    "runtime": "vercel-lite delivery profile via dev:atlas:local-shadow",
+    "artChange": "Verified the Lite quality split together with the 390x844 hero roster surface."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3018/",
+    "deliveryProfile": "vercel-lite",
+    "viewport": "390x844",
+    "heroStatusCardCount": 24,
+    "scrollWidth": 340,
+    "clientWidth": 340,
+    "horizontalOverflow": false,
+    "skyResources": [
+      "atlas-lite/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "atlas-lite/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "atlas-lite/textures/sky/orbit-atlas-v9-dust-2k.jpg"
+    ],
+    "requestFailures": 0
+  },
+  "validation": {
+    "playwright": "Chrome headless viewport 390x844; roster opened and selectors resolved",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This proves one Lite mobile viewport and does not establish a full device matrix or sustained performance gate.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

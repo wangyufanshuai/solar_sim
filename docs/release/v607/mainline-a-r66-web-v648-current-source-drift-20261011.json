@@ -1,0 +1,46 @@
+{
+  "schema": "mainline-a-r66-web-v648-current-source-drift",
+  "observedAt": "2026-10-11T10:28:51.000Z",
+  "status": "historical-v648-browser-evidence-not-current-source",
+  "branch": "codex/solar-sim-mainline-a",
+  "headAtHistoricalCapture": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "historicalSourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "currentSourceSha256": "ca0747d6fe481a7786b8b2c958f67c5e0b3c61db12ba41000d151bdb35dd5515",
+  "historicalBuildId": "8XBcnLcHwAPGkydjoHvOV",
+  "historicalEvidence": "docs/release/v607/mainline-a-r66-web-v648-canonical-scene-supplement-20261008.json",
+  "revalidation": {
+    "command": "node scripts/verify-mainline-a-web-canonical-scene-v648.mjs --run 20261007-v648scene05",
+    "status": "failed-for-current-source",
+    "issues": ["build-not-current-stable", "desktop:build-drift", "mobile:build-drift"],
+    "historicalItemsRetained": { "desktop": 36, "mobileViewport": 36, "screenshotsRehashed": 72 },
+    "currentSourceProductionBuild": "not-run",
+    "currentSourceBrowserMatrix": "not-run",
+    "currentSourcePerformance": "not-run"
+  },
+  "workingTreeObservation": {
+    "physicsFilesModifiedInSharedTree": [
+      "app/lib/physicsRuntime.ts",
+      "app/lib/physicsSharedBuffer.ts",
+      "app/lib/solarSystemPhysics.ts",
+      "app/workers/physics.worker.ts"
+    ],
+    "causalityOfSourceDrift": "not-attributed-to-one-window-or-file",
+    "physicsFilesEditedByThisMainlineABatch": false,
+    "parentGitOperated": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "historicalReceiptOverwritten": false
+  },
+  "claims": {
+    "currentSourceBrowserAcceptance": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "mainline-a-b3-evidence-session-verification-v642",
+  "verifiedAt": "2026-09-29T07:29:50.442Z",
+  "status": "verified-local-evidence-external-held",
+  "input": {
+    "path": "docs/release/v607/mainline-a-b3-evidence-session-v642-20260929.json",
+    "sha256": "020abbdd0e9213c5aaa31b52882c52affc2887fdca5c136617cebc2f86ad958f"
+  },
+  "counts": {
+    "records": 11,
+    "observed": 8,
+    "required": 10,
+    "negativePassed": 4
+  },
+  "negatives": [
+    {
+      "name": "build-id",
+      "rejected": true,
+      "issues": [
+        "build-identity"
+      ]
+    },
+    {
+      "name": "http-sha",
+      "rejected": true,
+      "issues": [
+        "http-sha256"
+      ]
+    },
+    {
+      "name": "component",
+      "rejected": true,
+      "issues": [
+        "session-validation",
+        "session-fingerprint",
+        "component-promotion"
+      ]
+    },
+    {
+      "name": "reportable",
+      "rejected": true,
+      "issues": [
+        "reportable-claim"
+      ]
+    }
+  ],
+  "openGates": [
+    "performance",
+    "external-source"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "scientificPayloadWriteback": false,
+    "snapshotMutation": false
+  },
+  "claims": {
+    "browserAcceptance": false,
+    "visualAcceptance": false,
+    "rendererDrawObserved": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "realUserValidation": false
+  }
+}

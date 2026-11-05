@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:31.874Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "virgo-a-galaxy",
+  "category": "galaxy",
+  "query": "M87 Virgo A Galaxy Spitzer image",
+  "requiredTermGroups": [
+    [
+      "m87",
+      "virgo a"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M87+Virgo+A+Galaxy+Spitzer+image&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M87+Virgo+A+Galaxy+Spitzer+image&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 180,
+    "responseSha256": "6b9951382c14a738c9e689a928dcbd2df76aaa5a985840c6fa3aae9ec873c9c8"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "aabbfeaee899484c59b37db9ab7155055e5073cc733342121ad5c6dd84bc1208"
+}

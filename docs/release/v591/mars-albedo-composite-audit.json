@@ -1,0 +1,131 @@
+{
+  "version": "v591-mars-albedo-composite-audit-v1",
+  "generatedAt": "2026-08-10T00:00:00Z",
+  "status": "passed-observational-composite",
+  "directIdentityNegativeReceiptSha256": "f7acac6bd69edb339b003a9b8facd1b4d1b81c496b56f15f69b63111684288d8",
+  "fullSourceThroughputNegativeReceiptSha256": "e9c7c217b14c36ed93d0879f9049c1ed18b4af2a5148336b595b870a92b2ca74",
+  "nasa3dTiffNegativeReceiptSha256": "486e5b95ae253b453008b8ba273d03c470d8167feda6288054448d9c77e48e98",
+  "nasa3dJpegNegativeReceiptSha256": "9c92e6de88f723924a0b1d80a1cd965598bd303fd306d6a4b81a5af9e476af5e",
+  "sources": {
+    "lowFrequencyAlbedo": {
+      "path": "source-cache/celestial-convergence-v591/mars/mars_viking_clrmosaic_global_1024.jpg",
+      "url": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+      "bytes": 60229,
+      "sha256": "1368021e0416da0f626a337bd79d8b26e6e67b2b8b49cccb6103dad25b333a9b",
+      "width": 1024,
+      "height": 512,
+      "license": {
+        "id": "NASA-USGS-public-domain",
+        "url": "https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m"
+      },
+      "identity": "USGS Mars Viking Global Color Mosaic 925 m product preview in global equirectangular projection",
+      "role": "USGS Viking low-frequency color and albedo anchor"
+    },
+    "highFrequencyResidual": {
+      "path": "public/textures/candidate-v588/ktx2/mars-albedo.ktx2",
+      "bytes": 5719476,
+      "sha256": "a6e64c0ce12e18ffe9f08bc48578db2ed302c36fb44283d264d5b1b3d3e5bfc1",
+      "width": 8192,
+      "height": 4096,
+      "license": {
+        "id": "NASA-public-domain-and-project-source-manifests",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "role": "read-only NASA-admitted high-frequency luminance residual; no low-frequency color authority"
+    }
+  },
+  "derivation": {
+    "tool": "KTX-Software+sharp+v591-periodic-high-pass-composite",
+    "version": "node-24.14.0;sharp-0.35.3;ktx-4.4.2",
+    "parameters": {
+      "outputDimensions": "8192x4096",
+      "lowFrequencyResize": "lanczos3",
+      "detailBlurSigma": 10,
+      "detailGain": 0.62,
+      "detailChannel": "linear-luminance-residual-applied-equally-to-srgb-channels",
+      "longitudeSeam": "last-column-exact-copy-of-first-column",
+      "generativeOrAiDetail": false
+    },
+    "detailResidualRms": 6.527161558330286
+  },
+  "comparison": {
+    "width": 256,
+    "height": 128,
+    "luminanceCorrelation": 0.9994856935110522,
+    "gradientCorrelation": 0.9970233063796741,
+    "thresholds": {
+      "luminanceCorrelationMinimum": 0.8,
+      "gradientCorrelationMinimum": 0.5
+    }
+  },
+  "claims": {
+    "directEightKilometreUsGsProduct": false,
+    "usgsPreviewUpscaledAndPresentedAsNativeDetail": false,
+    "observationalComposite": true,
+    "presentationOnly": true,
+    "scientificPayloadWriteback": false
+  },
+  "output": {
+    "desktopKtx2": {
+      "url": "/textures/candidate-v591/mars/full/desktop/mars-albedo.ktx2",
+      "bytes": 26548465,
+      "sha256": "2ad4c1f2d0d0d600a0b1c84780475310e157a86be68fc693853fcfdaf6fd08ca",
+      "width": 8192,
+      "height": 4096,
+      "format": "ktx2",
+      "colorSpace": "srgb",
+      "compression": "uastc-q2-rdo-0.75-single-thread-zstd10-mipmapped"
+    },
+    "desktopFallback": {
+      "url": "/textures/candidate-v591/mars/full/desktop/mars-albedo.webp",
+      "bytes": 1374954,
+      "sha256": "019601c0a47f31807aa707a0f7bbb2e70ce2df028dfd048288a21cd882fcfb0a",
+      "width": 4096,
+      "height": 2048,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-94"
+    },
+    "mobileKtx2": {
+      "url": "/textures/candidate-v591/mars/full/mobile/mars-albedo.ktx2",
+      "bytes": 1930875,
+      "sha256": "575d76b6f4c01029f15f2117940428a80647a98bf6589cca9424de127480c866",
+      "width": 2048,
+      "height": 1024,
+      "format": "ktx2",
+      "colorSpace": "srgb",
+      "compression": "uastc-q2-rdo-0.75-single-thread-zstd10-mipmapped"
+    },
+    "mobileFallback": {
+      "url": "/textures/candidate-v591/mars/full/mobile/mars-albedo.webp",
+      "bytes": 378234,
+      "sha256": "dd26f3a6524545d4f9934fb4e21b6ce55f0128ace5cbc45208a8938da59f16b6",
+      "width": 2048,
+      "height": 1024,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-94"
+    },
+    "liteDesktop": {
+      "url": "/textures/candidate-v591/mars/lite/desktop/mars-albedo.webp",
+      "bytes": 78786,
+      "sha256": "0cc68e259a4dc3fff803e0ec5de6bb83ddac466a740bba24c50f7bcdacdb82dc",
+      "width": 1024,
+      "height": 512,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-90"
+    },
+    "liteMobile": {
+      "url": "/textures/candidate-v591/mars/lite/mobile/mars-albedo.webp",
+      "bytes": 24204,
+      "sha256": "547e64d61ec3f1f149a38a70e578199aacd3d2abac04d12ea635678055c6db01",
+      "width": 512,
+      "height": 256,
+      "format": "webp",
+      "colorSpace": "srgb",
+      "compression": "webp-quality-90"
+    }
+  },
+  "receiptSha256": "e58c628183e9878ce793b2ea57746daa363c90add67d6ba513a15c6a35f68f0f"
+}

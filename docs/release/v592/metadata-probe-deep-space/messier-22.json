@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:38.118Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "messier-22",
+  "category": "cluster",
+  "query": "Messier 22 globular cluster",
+  "requiredTermGroups": [
+    [
+      "messier 22",
+      "m22",
+      "ngc 6656"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Messier%2022%20globular%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Messier%2022%20globular%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 180,
+    "responseSha256": "e22c270c32a2fbf2f3bcbc0c0b7b8d5c06b7812f3c575e601cb69b7b364f1f5d"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "2a4fc8e6ebd35cc580c8f559591cf535d7d68ec5ffef1febb18dd84080e84af0"
+}

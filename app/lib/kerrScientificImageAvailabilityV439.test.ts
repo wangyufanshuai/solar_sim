@@ -1,0 +1,5 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { createKerrScientificImageAvailabilitySummaryV439, parseKerrScientificImageAvailabilityOracleV439 } from "./kerrScientificImageAvailabilityV439";
+const oracle = JSON.parse(readFileSync("dist/science/kerr-scientific-image-availability-v439/scientific-image-availability-oracle.json", "utf8"));
+describe("v439 scientific image availability", () => { it("keeps sparse authority and calibrated image boundary separate", () => { const parsed = parseKerrScientificImageAvailabilityOracleV439(oracle), summary = createKerrScientificImageAvailabilitySummaryV439(parsed); expect(summary.sparseAuthorityPoints).toHaveLength(4); expect(summary.counts.responseBackedPixelCount).toBe(0); expect(summary.boundary).toMatchObject({ sparseAuthorityAvailable: true, scienceRasterAvailable: false, fitsAvailable: false, pngAvailable: false }); }); it("rejects a synthetic raster claim", () => { expect(() => parseKerrScientificImageAvailabilityOracleV439({ ...oracle, counts: { ...oracle.counts, scienceRasterCount: 1 } })).toThrow("v439-oracle-identity"); }); });

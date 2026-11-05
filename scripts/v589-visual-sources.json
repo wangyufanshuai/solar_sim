@@ -1,0 +1,112 @@
+{
+  "version": "v589-public-domain-visual-source-registry-v1",
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetry": false,
+    "automaticSubstitution": false,
+    "allowedHosts": [
+      "assets.science.nasa.gov",
+      "eoimages.gsfc.nasa.gov",
+      "neo.gsfc.nasa.gov",
+      "svs.gsfc.nasa.gov",
+      "planetarymaps.usgs.gov",
+      "astrogeology.usgs.gov",
+      "pds.nasa.gov",
+      "nasa3d.arc.nasa.gov",
+      "polyhaven.com",
+      "dl.polyhaven.org"
+    ]
+  },
+  "sources": [
+    {
+      "id": "sun-albedo-source",
+      "body": "sun",
+      "role": "albedo",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia03/pia03149/PIA03149.jpg",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "destination": "public/vendor/celestial-art-v589/sources/sun-albedo.jpg"
+    },
+    {
+      "id": "mercury-albedo-source",
+      "body": "mercury",
+      "role": "albedo",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15063/PIA15063.jpg",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "destination": "public/vendor/celestial-art-v589/sources/mercury-albedo.jpg"
+    },
+    {
+      "id": "moon-albedo-source",
+      "body": "moon",
+      "role": "albedo",
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_poles_4k.tif",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/4720/",
+      "destination": "public/vendor/celestial-art-v589/sources/moon-albedo.tif"
+    },
+    {
+      "id": "moon-height-source",
+      "body": "moon",
+      "role": "height",
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_4.tif",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/4720/",
+      "destination": "public/vendor/celestial-art-v589/sources/moon-height.tif"
+    },
+    {
+      "id": "earth-height-source",
+      "body": "earth",
+      "role": "height",
+      "url": "https://eoimages.gsfc.nasa.gov/images/imagerecords/73000/73934/gebco_08_rev_elev_21600x10800.png",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://visibleearth.nasa.gov/images/73934/topography",
+      "destination": "public/vendor/celestial-art-v589/sources/earth-height-21600x10800.png"
+    },
+    {
+      "id": "ceres-albedo-source",
+      "body": "ceres",
+      "role": "albedo",
+      "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia21/pia21090/PIA21090.jpg",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "destination": "public/vendor/celestial-art-v589/sources/ceres-albedo.jpg"
+    },
+    {
+      "id": "bennu-model-source",
+      "body": "bennu",
+      "role": "model-glb",
+      "url": "https://svs.gsfc.nasa.gov/vis/a000000/a005000/a005069/g_00880mm_alt_ptm_0000n00000_v020.glb",
+      "license": "NASA-public-domain",
+      "licenseUrl": "https://svs.gsfc.nasa.gov/5069/",
+      "destination": "public/vendor/celestial-art-v589/sources/bennu-v20.glb"
+    },
+    {
+      "id": "regolith-diffuse-source",
+      "body": "bennu",
+      "role": "regolith-diffuse",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_diff_1k.jpg",
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-diffuse-1k.jpg"
+    },
+    {
+      "id": "regolith-normal-source",
+      "body": "bennu",
+      "role": "regolith-normal",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_nor_gl_1k.jpg",
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-normal-1k.jpg"
+    },
+    {
+      "id": "regolith-roughness-source",
+      "body": "bennu",
+      "role": "regolith-roughness",
+      "url": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/1k/aerial_ground_rock/aerial_ground_rock_rough_1k.jpg",
+      "license": "Poly-Haven-CC0",
+      "licenseUrl": "https://polyhaven.com/a/aerial_ground_rock",
+      "destination": "public/vendor/celestial-art-v589/sources/regolith-roughness-1k.jpg"
+    }
+  ]
+}

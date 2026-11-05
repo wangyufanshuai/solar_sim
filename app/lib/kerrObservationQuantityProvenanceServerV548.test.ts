@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrObservationQuantityProvenanceV548, resetKerrObservationQuantityProvenanceServerCacheForTestsV548 } from "./kerrObservationQuantityProvenanceServerV548";
+describe("v548 provenance server", () => { it("loads the bounded SHA-locked registry through one cache entry", async () => { resetKerrObservationQuantityProvenanceServerCacheForTestsV548(); const first = await loadKerrObservationQuantityProvenanceV548(), second = await loadKerrObservationQuantityProvenanceV548(); expect(first).toBe(second); expect(first.artifact.quantityRegistry).toHaveLength(10); expect(first.export.bytes.byteLength).toBeGreaterThan(0); expect(first.artifact.qualification.measuredAuthorityGranted).toBe(false); }); });

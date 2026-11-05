@@ -1,0 +1,25 @@
+{
+  "round": 62,
+  "date": "2026-09-14",
+  "title": "a-line-canonical-coverage-freeze-v622",
+  "status": "technical-preflight-passed-final-freeze-pending",
+  "physicsKernelMutation": false,
+  "counts": {"total":36,"stars":12,"nebulae":12,"constellations":12,"signoffPending":12,"rightsPending":12,"runtimeCleared":0},
+  "implementation": [
+    "Generated 36-row canonical manifest with exact 12 stars, 12 nebulae and 12 constellations, route/source/hash/lifecycle fields and row/manifest digests.",
+    "Added route graph, duplicate/missing roster, asset path, lifecycle release and boundary preflight checks with deterministic replay and JSONL output.",
+    "Connected V622 freeze gate to the review panel with coverage, signoff, rights, lifecycle and next-action states."
+  ],
+  "validation": {
+    "coverageVerify":{"passed":true,"counts":{"stars":12,"nebulae":12,"constellations":12},"manifestDigest":"04a9a5c12b001dbe86bc6535dfdba744bc53019b50d125bdb2162df4124b9194"},
+    "freezeReplay":{"passed":true,"issues":0,"candidateEligible":false},
+    "vitest":{"passed":15,"failed":0,"files":4},
+    "eslint":{"passed":true,"scope":"V622 preflight/coverage/replay and review panel"},
+    "productionBuild":{"passed":true,"command":"npm run build:atlas:lite:current","profile":"vercel-lite","distDir":".next-atlas-lite-current","buildId":"xXoyCNGQLS5On1dSno4Py","buildIdSha256":"a534cd5e4c1b52a3d179e670bcac7feff3bd0ecda5d8eb2ed5dc5265170ab655"}
+  },
+  "http":{"productionUrl":"http://127.0.0.1:3019/","checks":[{"path":"/api/health","status":200,"defaultScientificKernel":"legacy-eih-1pn"}]},
+  "browser":{"productionUrl":"http://127.0.0.1:3019/","desktop":{"viewport":[1280,720],"coverage":"12/12/12","gateVisible":true,"lifecycleChecksVisible":true,"scrollWidth":1280,"clientWidth":1280,"consoleErrors":0,"consoleWarnings":4,"warningClass":"headless WebGL GPU stall; not a performance result"},"mobile":{"status":"not-run","reason":"No mobile viewport pass executed"},"screenshot":{"path":"docs/release/v607/screenshots/mainline-a-r62-canonical-freeze-desktop.png","bytes":230453,"sha256":"8542482231DBF505A54985017A9547F9EA0E40BA94F2871AA94CD44D7BBB509D"}},
+  "boundary":{"candidateOnly":true,"hold":true,"notAdmitted":true,"scientificPayloadWriteback":false,"runtimeWrites":false,"measurementWrites":false},
+  "evidenceBoundary":{"static":"Code, manifest, tests and receipts only","http":"Local production HTTP response","visual":"Desktop freeze gate screenshot","browser":"Headless browser semantic hooks and console capture","performance":"Not measured; GPU warnings are not performance evidence","externalSource":"Existing source/hash metadata only; no new rights approval","legalDecision":"not-granted"},
+  "openGates":["Technical 12/12/12 preflight passed, but final freeze remains pending 12 visual signoffs and canonical payload seal.","Nebula rights/payload, Beta star source review, mobile/multi-device performance, root/next-web alignment and final release packet remain open."]
+}

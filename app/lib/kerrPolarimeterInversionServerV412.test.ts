@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrPolarimeterInversionArtifactV412, resetKerrPolarimeterInversionServerV412CacheForTests } from "./kerrPolarimeterInversionServerV412";
+describe("v412 inversion server", () => { it("single-flights the full artifact while emitting a matrix-free summary", async () => { resetKerrPolarimeterInversionServerV412CacheForTests(); const first = await loadKerrPolarimeterInversionArtifactV412(); const second = await loadKerrPolarimeterInversionArtifactV412(); expect(second).toBe(first); expect(first.artifact.result.calibrationJacobian).toHaveLength(4); expect(first.summary).not.toHaveProperty("result"); expect(first.summary).not.toHaveProperty("reconstructedStokes"); }); });

@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v4",
+  "probedAt": "2026-08-19T13:15:17.351Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "sunflower-galaxy",
+  "category": "galaxy",
+  "query": "M63 galaxy NASA Goddard",
+  "requiredTermGroups": [
+    [
+      "m63",
+      "sunflower"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v3/sunflower-galaxy.json",
+    "receiptSha256": "167ee8981d288bcd0ecf77e4f8435e931fe27fdb6ece9db5411e9670cb09be4e",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M63+Sunflower+galaxy+NASA&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M63+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M63+galaxy+NASA+Goddard&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "6a34c9fd2990b4823e91eb65caf59b57ea06e1ae12b15c3f90b49471a7dafb14"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "1d5789580e187dd7e28af7557cdcc51c8388a0331b2eebff5514253b1f135196"
+}

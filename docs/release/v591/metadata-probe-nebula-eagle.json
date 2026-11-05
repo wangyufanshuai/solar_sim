@@ -1,0 +1,54 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "nebula-eagle",
+  "probedAt": "2026-08-13T10:30:07.038Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "eagle-nebula",
+  "role": "real-coordinate-nebula-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Eagle%20Nebula%20M16&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Eagle%20Nebula%20M16&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 2278,
+    "responseSha256": "689ce1fb6dd3a8777b352f3d94bff440dfe1f5a6fc92c67900fbe78eeb9a2a86"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "9514774",
+      "title": "History of Hubble Space Telescope (HST)",
+      "description": "These eerie, dark, pillar-like structures are actually columns of cool interstellar hydrogen gas and dust that are also incubators for new stars. The pillars protrude from the interior wall of a dark molecular cloud like stalagmites from the floor of a cavern. They are part of the Eagle Nebula (also called M16), a nearby star-forming region 7,000 light-years away, in the constellation Serpens. The ultraviolet light from hot, massive, newborn stars is responsible for illuminating the convoluted surfaces of the columns and the ghostly streamers of gas boiling away from their surfaces, producing the dramatic visual effects that highlight the three-dimensional nature of the clouds. This image was taken on April 1, 1995 with the Hubble Space Telescope Wide Field Planetary Camera 2. The color im",
+      "dateCreated": "1995-01-01T00:00:00Z",
+      "center": "MSFC",
+      "photographer": null,
+      "keywords": [
+        "Hubble Space Telescope",
+        "HST",
+        "Eagle Nebula",
+        "M16",
+        "Wide Field Planetary Camera 2"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/9514774/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/9514774/9514774~thumb.jpg"
+    }
+  ],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "b62c7bc07cc69a23359f2280a9902a2b44b7689e14e5a76b2bdf504a41d03248"
+}

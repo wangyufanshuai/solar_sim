@@ -1,0 +1,66 @@
+{
+  "version": "v592-major-moon-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:39:55.683Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "io",
+  "query": "Io Jupiter moon global map",
+  "requiredTerms": [
+    "io"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Io%20Jupiter%20moon%20global%20map&media_type=image&page_size=25",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Io%20Jupiter%20moon%20global%20map&media_type=image&page_size=25",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3465,
+    "responseSha256": "4d749b3e2089eaeec79ebdda48183dbfb9a470be488c727f062569f2f4bdeaa6"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA10099",
+      "title": "Changes on Io",
+      "description": "A global map of Jupiter moon Io derived from eight images taken by the Long Range Reconnaissance Imager LORRI on the New Horizons spacecraft, as it passed Jupiter on its way to Pluto in late February 2007.",
+      "dateCreated": "2007-10-09T18:00:08Z",
+      "center": "JPL",
+      "keywords": [
+        "Io",
+        "New Horizons"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA10099/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA10099/PIA10099~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA26486",
+      "title": " Surface Changes on Io",
+      "description": "This global map of Jupiter's moon Io – derived from images acquired during the 55th, 57th, 58th, and 60th close passes of the gas giant by NASA's Juno spacecraft – shows the volcanic activity and other surface changes detected by the JunoCam instrument. Cyan ovals denote areas of new, faded, or shifted plume and/or volatile deposits. Yellow ovals denote areas of probable new lava flows. Comparing JunoCam images to Galileo and New Horizons data reveals at least 20 new dark deposits, likely fresh lava flows or dark silicate ash deposits. Of these, six appear to be intra-patera resurfacing, while 11 appear to be lava flows outside of paterae. Fourteen new diffuse deposits associated with volcanic centers were also found. https://photojournal.jpl.nasa.gov/catalog/PIA26486",
+      "dateCreated": "2024-12-12T00:00:00Z",
+      "center": "JPL",
+      "keywords": [
+        "Juno",
+        "Io"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA26486/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA26486/PIA26486~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "2b4622c5db3fefc173b4b48412247a5cf761d58b068ea42eba76c6f38d68ab4f"
+}

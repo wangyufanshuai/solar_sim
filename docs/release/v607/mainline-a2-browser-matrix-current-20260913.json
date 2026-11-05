@@ -1,0 +1,128 @@
+{
+  "schema": "mainline-a2-browser-matrix-v2",
+  "capturedAt": "2026-09-13T03:40:12Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "viewports": [{ "width": 390, "height": 844 }, { "width": 1280, "height": 720 }],
+  "mobileScaleMatrix": [
+    {
+      "scaleBand": "solar",
+      "qualityTier": "mobile",
+      "presentationLodTier": "solar",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "boundaryOpacity": 0,
+      "asterismOpacity": 0,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": false
+    },
+    {
+      "scaleBand": "stellar",
+      "qualityTier": "mobile",
+      "presentationLodTier": "mid",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "boundaryOpacity": 0,
+      "asterismOpacity": 0,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": false
+    },
+    {
+      "scaleBand": "galactic",
+      "qualityTier": "mobile",
+      "presentationLodTier": "far",
+      "boundaryVisible": false,
+      "asterismVisible": false,
+      "boundaryOpacity": 0,
+      "asterismOpacity": 0,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 0,
+      "asterismReady": false
+    }
+  ],
+  "directSelection": {
+    "stellar": {
+      "qualityTier": "mobile",
+      "facts": 4,
+      "identity": 4,
+      "selectedCatalogIds": ["constellation:Ori", "constellation:UMa", "constellation:Cas", "constellation:Sco"]
+    },
+    "galactic": {
+      "qualityTier": "mobile",
+      "facts": 4,
+      "identity": 4,
+      "selectedCatalogIds": ["constellation:Ori", "constellation:UMa", "constellation:Cas", "constellation:Sco"]
+    }
+  },
+  "desktopQualityMatrix": [
+    {
+      "scaleBand": "stellar",
+      "qualityTier": "balanced",
+      "presentationLodTier": "mid",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": 0.012,
+      "asterismOpacity": 0.01371,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118
+    },
+    {
+      "scaleBand": "galactic",
+      "qualityTier": "balanced",
+      "presentationLodTier": "far",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": 0.012,
+      "asterismOpacity": 0.01371,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118
+    },
+    {
+      "scaleBand": "stellar",
+      "qualityTier": "dense",
+      "presentationLodTier": "mid",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": 0.01317,
+      "asterismOpacity": 0.02258,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118
+    },
+    {
+      "scaleBand": "galactic",
+      "qualityTier": "dense",
+      "presentationLodTier": "far",
+      "boundaryVisible": true,
+      "asterismVisible": true,
+      "boundaryOpacity": 0.01317,
+      "asterismOpacity": 0.02258,
+      "boundarySegmentCount": 111,
+      "asterismSegmentCount": 118
+    }
+  ],
+  "desktopVisualReceipt": "docs/release/v607/mainline-a2-visual-screenshots-current-20260913.json",
+  "desktopQualityScreenshots": [
+    "docs/release/v607/screenshots/mainline-a2-rb2-desktop-balanced-galactic.png",
+    "docs/release/v607/screenshots/mainline-a2-rb2-desktop-dense-galactic.png"
+  ],
+  "mobileScaleScreenshots": [
+    "docs/release/v607/screenshots/mainline-a2-rb2-mobile-solar.png",
+    "docs/release/v607/screenshots/mainline-a2-rb2-mobile-stellar.png",
+    "docs/release/v607/screenshots/mainline-a2-rb2-mobile-galactic.png"
+  ],
+  "boundaries": {
+    "mobileGeometry": "Passport and constellation facts fit the 390px viewport; A2 layer gates intentionally keep boundary/asterism hidden on mobile.",
+    "physics": "Scale and presentation markers are read-only; EIH, Newton N-body, 2PN/Lense-Thirring and Kerr kernels are unchanged.",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "status": "current-rb2-mobile-scale-selection-desktop-quality-variant-mobile-screenshots-and-four-constellation-selection-passed"
+}

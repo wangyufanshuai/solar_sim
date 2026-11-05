@@ -1,0 +1,13 @@
+import { atlasJsonResponseV275, atlasStrongEtagV275, consumeAtlasApiPolicyV275 } from "../../../../../lib/atlasApiPolicyV275";
+import { KERR_RESPONSE_AWARE_OFFLINE_REPLAY_API_VERSION_V540, type KerrResponseAwareOfflineReplayApiV540 } from "../../../../../lib/kerrResponseAwareOfflineReplayV540";
+import { loadKerrResponseAwareOfflineReplayV540 } from "../../../../../lib/kerrResponseAwareOfflineReplayServerV540";
+
+export const runtime = "nodejs";
+export const dynamic = "force-dynamic";
+export async function GET(request: Request): Promise<Response> {
+  const delivery = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE ?? "standalone-full";
+  if (delivery !== "local-shadow") return atlasJsonResponseV275("relativity-evidence", { version: KERR_RESPONSE_AWARE_OFFLINE_REPLAY_API_VERSION_V540, available: false, reason: delivery === "vercel-lite" ? "lite-boundary" : "local-shadow-only", summary: null } satisfies KerrResponseAwareOfflineReplayApiV540, { status: 200, headers: { "Cache-Control": "no-store" } });
+  const limited = consumeAtlasApiPolicyV275(request, "relativity-evidence"); if (limited) return limited;
+  try { const loaded = await loadKerrResponseAwareOfflineReplayV540(), download = new URL(request.url).searchParams.get("download"); if (download !== null) { if (!(download === "atlas" || download === "receipt")) return atlasJsonResponseV275("relativity-evidence", { error: "unsupported-export" }, { status: 400, headers: { "Cache-Control": "no-store" } }); const entry = loaded.exports[download]; return new Response(entry.bytes.buffer.slice(entry.bytes.byteOffset, entry.bytes.byteOffset + entry.bytes.byteLength) as ArrayBuffer, { headers: { "Content-Type": entry.contentType, "Content-Disposition": `attachment; filename=${entry.name}`, "Cache-Control": "no-store", ETag: `"${entry.fileSha256}"`, "X-Atlas-Kerr-Product": `v540-${download}-offline-replay-not-production` } }); } const body = JSON.stringify({ version: KERR_RESPONSE_AWARE_OFFLINE_REPLAY_API_VERSION_V540, available: true, reason: "ready", summary: loaded.summary } satisfies KerrResponseAwareOfflineReplayApiV540); if (Buffer.byteLength(body, "utf8") > 128 * 1024) throw new Error("v540-summary-size"); return new Response(body, { headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store", ETag: atlasStrongEtagV275(body), "X-Atlas-Kerr-Product": "v540-summary-offline-replay-not-production" } }); }
+  catch { return atlasJsonResponseV275("relativity-evidence", { version: KERR_RESPONSE_AWARE_OFFLINE_REPLAY_API_VERSION_V540, available: false, reason: "evidence-corrupt", summary: null } satisfies KerrResponseAwareOfflineReplayApiV540, { status: 503, headers: { "Cache-Control": "no-store" } }); }
+}

@@ -1,0 +1,4 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrResponseAwareReplayKitV541, resetKerrResponseAwareReplayKitServerCacheForTestsV541 } from "./kerrResponseAwareReplayKitServerV541";
+
+describe("v541 replay-kit server", () => { it("loads exact kit and validation receipt through a bounded cache", async () => { resetKerrResponseAwareReplayKitServerCacheForTestsV541(); const first = await loadKerrResponseAwareReplayKitV541(); const second = await loadKerrResponseAwareReplayKitV541(); expect(first).toBe(second); expect(first.exports.kit.fileSha256).toBe(first.artifact.kit.fileSha256); expect(Array.from(first.exports.kit.bytes.slice(0, 4))).toEqual([0x50, 0x4b, 0x03, 0x04]); expect(JSON.parse(new TextDecoder().decode(first.exports.result.bytes))).toEqual(first.artifact.validation.result); }); });

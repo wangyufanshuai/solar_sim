@@ -1,0 +1,74 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-09-27T07:09:35 [V7.6]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-09-27T07:09:35	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fh_dm_com&HIP=60718&-out.all=1	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+
+#RESOURCE=yCat_1239
+#Name: I/239
+#Title: The Hipparcos and Tycho Catalogues (ESA 1997)
+#INFO	ivoid=ivo://cds.vizier/i/239	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/i/239	    IVOID of underlying data collection
+#INFO	creator=ESA 1997	    First author or institution
+#INFO	cites=1997HIP...C......0E	    Article or Data origin sources
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/I/239	    Dataset landing page
+#INFO	publication_date=2021-11-18	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_1991.250:	ICRS
+#Table	I_239_h_dm_com:
+#Name: I/239/h_dm_com
+#Title: Double and Multiples: Component solutions -COMP
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	CCDM	(A10)	CCDM number (DC1)	[ucd=meta.id.cross]
+#Column	S	(I1)	Solution identifier (DC2)	[ucd=meta.number]
+#Column	Type	(A1)	[FIL]Type of solution (DC3)	[ucd=meta.code]
+#Column	Source	(A1)	[CFN] Solution source (DC4)	[ucd=meta.bib]
+#Column	Qual	(A1)	[ABCD] Solution quality (DC5)	[ucd=meta.code.qual;stat.fit]
+#Column	Notes	(A1)	[DGPWXYZ] Existence of notes (DC6)	[ucd=meta.note]
+#Column	Nsys	(I1)	Number of solutions for the system (DCM1)	[ucd=meta.number]
+#Column	Ncomp	(I2)	Number of components in this solution (DCM2)	[ucd=meta.number]
+#Column	Nparm	(I2)	Number of free parameters in solution (DCM3)	[ucd=meta.number]
+#Column	Ncorr	(I2)	Number of correlation records (DCM4)	[ucd=stat.correlation]
+#Column	seq	(I2)	Sequential component number (DCM6)	[ucd=meta.id;meta.main]
+#Column	comp_id	(A1)	Component identifier (DC7)	[ucd=meta.id.part]
+#Column	HIP	(I6)	HIP number (DC8)	[ucd=meta.id]
+#Column	Hp	(F6.3)	Magnitude of component (DC9)	[ucd=phot.mag;em.opt.V]
+#Column	e_Hp	(F6.3)	Standard error of Hp magnitude (DC10)	[ucd=stat.error]
+#Column	BT	(F6.3)	? Magnitude of component, BT (DC11)	[ucd=phot.mag;em.opt.B]
+#Column	e_BT	(F6.3)	? Standard error of BT (DC12)	[ucd=stat.error;phot.mag]
+#Column	VT	(F6.3)	? Magnitude of component, VT (DC13)	[ucd=phot.mag;em.opt.V]
+#Column	e_VT	(F6.3)	? Standard error of VT (DC14)	[ucd=stat.error;phot.mag]
+#Column	RAICRS	(F12.8)	alpha, degrees (ICRS, Epoch=J1991.25) (DC15)	[ucd=pos.eq.ra;meta.main]
+#Column	DEICRS	(F12.8)	delta, degrees (ICRS, Epoch=J1991.25) (DC16)	[ucd=pos.eq.dec;meta.main]
+#Column	Plx	(F7.2)	Trigonometric parallax (DC17)	[ucd=pos.parallax.trig]
+#Column	pmRA	(F8.2)	Proper motion in mu_alpha.cos(delta)ICRS(DC18)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.2)	Proper motion in mu_delta in ICRS (DC19)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_RAICRS	(F6.2)	Standard error in RA*cos(DEdeg) (DC20)	[ucd=stat.error;pos.eq.ra]
+#Column	e_DEICRS	(F6.2)	Standard error in DE (DC21)	[ucd=stat.error;pos.eq.dec]
+#Column	e_Plx	(F6.2)	Standard error in Plx (DC22)	[ucd=stat.error;pos.parallax]
+#Column	e_pmRA	(F6.2)	Standard error in pmRA (DC23)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	e_pmDE	(F6.2)	Standard error in pmDE (DC24)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	ref	(A1)	Reference component for following data (DC25)	[ucd=meta.ref]
+#Column	theta	(F7.3)	? Position angle (DC26)	[ucd=pos.posAng]
+#Column	rho	(F8.3)	? Separation from reference component (DC27)	[ucd=pos.angDistance]
+#Column	d.theta	(F8.3)	? Rate of change of theta (DC28)	[ucd=arith.rate;pos.posAng]
+#Column	d.rho	(F6.3)	? Rate of change of separation (DC29)	[ucd=arith.rate;pos.angDistance]
+#Column	seq_ref	(I2)	Sequential record number (DCM7)	[ucd=meta.record]
+#Column	flag	(a25)	Status flags for parameters (DCM8)	[ucd=meta.code.error]
+#Column	_RA.icrs	(F12.8)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F12.8)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+recno	CCDM	S	Type	Source	Qual	Notes	Nsys	Ncomp	Nparm	Ncorr	seq	comp_id	HIP	Hp	e_Hp	BT	e_BT	VT	e_VT	RAICRS	DEICRS	Plx	pmRA	pmDE	e_RAICRS	e_DEICRS	e_Plx	e_pmRA	e_pmDE	ref	theta	rho	d.theta	d.rho	seq_ref	flag	_RA.icrs	_DE.icrs
+ 	 	 	 	 	 	 	 	 	 	 	 	 	 	mag	mag	mag	mag	mag	mag	deg	deg	mas	mas/yr	mas/yr	mas	mas	mas	mas/yr	mas/yr	 	deg	arcsec	deg/yr	arcsec/yr	 	 	deg	deg
+--------	----------	-	-	-	-	-	-	--	--	--	--	-	------	------	------	------	------	------	------	------------	------------	-------	--------	--------	------	------	------	------	------	-	-------	--------	--------	------	--	-------------------------	------------	------------
+   12515	12266-6306	1	L	C	A	P	1	 2	11	 1	 1	A	 60718	 1.251	 0.003	 1.053	 0.016	 1.245	 0.013	186.64975585	-63.09905586	  10.17	  -35.37	  -14.73	  0.55	  0.68	  0.67	  0.58	  0.66	 	       	        	        	      	 0	111111                   	186.64956584	-63.09909166
+   12516	12266-6306	1	L	C	A	P	1	 2	11	 1	 2	B	 60718	 1.636	 0.005	 1.366	 0.014	 1.547	 0.016	186.65207099	-63.09950428	  10.17	  -42.53	   -7.69	  1.68	  1.98	  0.67	  1.03	  1.05	A	113.180	   4.102	  -0.050	-0.009	 1	111011                   	186.65184252	-63.09952297
+

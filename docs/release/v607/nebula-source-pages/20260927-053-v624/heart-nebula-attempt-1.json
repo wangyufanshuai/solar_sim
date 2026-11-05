@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:44:48.635Z",
+  "endedAt": "2026-09-27T02:44:50.118Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/heart-and-soul/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "dc9d9b959ef6c9af16726533a5b9572f4a14339a6dcc6b6585341a6205e1afd5",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/heart-and-soul/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 269857,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/heart-nebula-attempt-1.html",
+  "sha256": "80e301d515b0827f9aea48d32eb90f181b9d13ee905c9f955f19645622cbc4f4",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Heart and Soul",
+    "expectedPia": "PIA13112",
+    "observedPiaIds": [
+      "PIA13112"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/UCLA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13112/PIA13112.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

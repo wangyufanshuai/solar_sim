@@ -1,0 +1,84 @@
+{
+  "version": "v585-vercel-preview-deployment-receipt-v1",
+  "generatedAt": "2026-08-04T15:20:22.9498494Z",
+  "deployment": {
+    "id": "dpl_9ixwYBCfWxeYg2ytgsbwxcG5sUt9",
+    "projectId": "prj_fqecbskqXmCUg4HDzU6CcEAkUuz3",
+    "projectName": "next-web",
+    "orgId": "team_WipvkBvLZ4KxpRAVRXvsM1g8",
+    "teamSlug": "wyufan43-3383s-projects",
+    "url": "https://next-7nlewylfj-wyufan43-3383s-projects.vercel.app",
+    "inspectorUrl": "https://vercel.com/wyufan43-3383s-projects/next-web/9ixwYBCfWxeYg2ytgsbwxcG5sUt9",
+    "previewAlias": "https://next-web-wyufan43-3383-wyufan43-3383s-projects.vercel.app",
+    "target": "preview",
+    "readyState": "READY",
+    "createdAt": "2026-08-04T15:03:52.906Z",
+    "buildCompletedAt": "2026-08-04T15:05:54.677Z",
+    "buildRegion": "iad1",
+    "buildMachine": {
+      "cores": 2,
+      "memoryGiB": 8
+    },
+    "sourceCommit": "88d22ebce7714f2f70732c20e9116dfc8b289a86",
+    "sourceBranch": "codex/orbit-atlas-visual-freeze-v585",
+    "sourceWorktree": "E:/86137/myai/orbit-atlas-v585-vercel-worktree",
+    "detachedHead": true,
+    "sourceUploadDisplay": "160MB",
+    "deploymentFileCount": 1941,
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build:vercel:lite",
+    "nodeVersion": "24.x",
+    "nextVersion": "16.3.0",
+    "localCliVersion": "58.5.1",
+    "remoteCliVersion": "58.1.0"
+  },
+  "browserObservation": {
+    "surface": "Codex In-app Browser",
+    "url": "https://next-7nlewylfj-wyufan43-3383s-projects.vercel.app/",
+    "title": "Orbit Atlas | 相对论宇宙图谱",
+    "rootReached": true,
+    "defaultVisualProfile": "legacy-v9",
+    "desktopViewport": {
+      "width": 1440,
+      "height": 900,
+      "screenshotObserved": true,
+      "consoleWarningOrErrorCount": 0,
+      "pageAssetCount": 36,
+      "assetCounts": {
+        "font": 6,
+        "image": 12,
+        "other": 3,
+        "script": 13,
+        "stylesheet": 2,
+        "video": 0
+      }
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844,
+      "pluginObservationComplete": false,
+      "status": "browser-plugin-runner-timeout-formal-local-playwright-remains-qualified"
+    },
+    "browserObservationIsHeadQualification": false
+  },
+  "qualification": {
+    "previewBuildReady": true,
+    "targetConfirmedPreview": true,
+    "sourceCommitMatched": true,
+    "browserDirectRootReached": true,
+    "browserTitleMatched": true,
+    "browserDefaultLegacyV9Observed": true,
+    "publicHeadAllRequired200": false,
+    "productionFlagUsed": false,
+    "productionAliasChanged": false,
+    "formalProductPointerChanged": false,
+    "deploymentDeleted": false,
+    "productionPromotionAllowed": false
+  },
+  "limitations": [
+    "Browser reachability does not replace the required per-resource HEAD audit.",
+    "The Node HEAD runner returned fetch failed for every required URL in its single no-retry audit.",
+    "The mobile in-app-browser observation timed out; formal desktop/mobile qualification remains the committed Playwright matrix."
+  ],
+  "receiptSha256": "74e5250ec11a35aeb2b04994abb01ceec9ea5de9f2f75ec2d513aebd00b5a0b4"
+}

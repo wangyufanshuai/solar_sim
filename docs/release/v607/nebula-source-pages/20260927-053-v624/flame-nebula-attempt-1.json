@@ -1,0 +1,69 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:44:48.650Z",
+  "endedAt": "2026-09-27T02:44:50.661Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "00c98fd4a0aea0e19258f618d78f357b3f595a8fd6e7fa6278a5a46d4bda96d6",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 273238,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/flame-nebula-attempt-1.html",
+  "sha256": "bd46fe88224b2f23e6fdda5205447a8ebca8a06c4c75ba441b66624622235cc2",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "A Different View of the Flame Nebula",
+    "expectedPia": "PIA15635",
+    "observedPiaIds": [
+      "PIA15635",
+      "PIA13448"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/UCLA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15635/PIA15635.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

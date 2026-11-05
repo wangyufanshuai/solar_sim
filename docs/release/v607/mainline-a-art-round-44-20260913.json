@@ -1,0 +1,22 @@
+{
+  "round": 44,
+  "date": "2026-09-13",
+  "title": "Atlas resource lifecycle deterministic gate",
+  "status": "verified-static-lifecycle",
+  "scope": {
+    "tests": [
+      "app/lib/atlasResourceLifecycleV173.test.ts",
+      "app/lib/atlasResourceLifecycleV275.test.ts",
+      "app/lib/atlasResourceLifecycleReplayV335.test.ts"
+    ],
+    "artChange": "Revalidated shared acquire/release and replay lifecycle contracts after Lite sky quality selection changes."
+  },
+  "validation": {
+    "vitest": "3 files, 11/11 tests passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Deterministic lifecycle tests do not replace long-running browser GPU/heap soak evidence.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

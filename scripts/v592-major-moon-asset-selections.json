@@ -1,0 +1,26 @@
+{
+  "version": "v592-major-moon-asset-selections-v1",
+  "policy": {
+    "selectionIsManualTechnicalJudgement": true,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "itemLevelLicenseReviewRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "selections": [
+    { "target": "io", "nasaId": "PIA26486", "selectionReason": "recent Juno-derived global map; annotation and texture suitability review still required" },
+    { "target": "ganymede", "nasaId": "PIA17902", "selectionReason": "Voyager/Galileo global color mosaic with geologic overlay; clean-texture suitability review required" },
+    { "target": "titan", "nasaId": "PIA19658", "selectionReason": "Cassini ISS global equidistant map" },
+    { "target": "enceladus", "nasaId": "PIA14937", "selectionReason": "Cassini global mosaic map" },
+    { "target": "rhea", "nasaId": "PIA12803", "selectionReason": "Cassini/Voyager global digital map" },
+    { "target": "iapetus", "nasaId": "PIA07778", "selectionReason": "Cassini/Voyager global equidistant map" },
+    { "target": "triton", "nasaId": "PIA18668", "selectionReason": "Voyager-derived global color map" },
+    { "target": "charon", "nasaId": "PIA19866", "selectionReason": "New Horizons simple-cylindrical global map" }
+  ],
+  "unresolved": [
+    { "target": "europa", "reason": "search-complete-no-global-map-candidate-selected" },
+    { "target": "callisto", "reason": "search-complete-zero-results" },
+    { "target": "miranda", "reason": "search-complete-zero-results" },
+    { "target": "titania", "reason": "search-complete-zero-results" }
+  ]
+}

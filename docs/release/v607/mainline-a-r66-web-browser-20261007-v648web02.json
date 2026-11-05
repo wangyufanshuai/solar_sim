@@ -1,0 +1,162 @@
+{
+  "schema": "mainline-a-web-browser-v647",
+  "status": "observed-local-release-blocked",
+  "generatedAt": "2026-10-07T13:05:01.426Z",
+  "evidenceClass": "browser",
+  "browser": "Playwright CLI Chrome local",
+  "browserPermissionBypass": false,
+  "toolResult": {
+    "isError": false,
+    "source": "local-playwright-cli-eval-and-screenshot",
+    "rawOutputsPinned": true
+  },
+  "navigationSucceeded": true,
+  "domInspection": "observed",
+  "url": "http://127.0.0.1:3091/",
+  "build": {
+    "buildId": "8XBcnLcHwAPGkydjoHvOV",
+    "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "buildReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+    "bytes": 472504,
+    "sha256": "d386a191a28502aa0785fbd7f16d149be151cccb05c540299e20f8ab8385bf14"
+  },
+  "desktop": {
+    "status": "passed",
+    "device": "desktop",
+    "viewport": [
+      1280,
+      720
+    ],
+    "url": "http://127.0.0.1:3091/",
+    "capturedAt": "2026-10-07T13:04:47.311Z",
+    "dom": {
+      "clientWidth": 1280,
+      "clientHeight": 720,
+      "scrollWidth": 1280,
+      "scrollHeight": 720,
+      "markers": {
+        "shell": true,
+        "scientificPayloadWriteback": "false",
+        "releaseBoundary": "candidate-only-hold-not-admitted"
+      },
+      "build": {
+        "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+      }
+    },
+    "screenshot": {
+      "path": "output/playwright/mainline-a-web-v648-atlas-desktop-20261007-v648web02.png",
+      "bytes": 233886,
+      "sha256": "233fd7ce6d95d614e94f80e5820672bcd54602d072d30fc2a7bdc75033ca6111",
+      "imageSize": [
+        1280,
+        720
+      ]
+    },
+    "rawCapture": {
+      "path": "docs/release/v607/mainline-a-r66-browser-desktop-raw-20261007-v648web02.json",
+      "bytes": 2012,
+      "sha256": "dcd1bce4cff1e4052b10a1e2b62f7ac70dd92dec244cee81d3b19de9610b5ce0"
+    },
+    "sceneActivity": null
+  },
+  "mobileViewport": {
+    "status": "passed",
+    "device": "mobile viewport",
+    "viewport": [
+      390,
+      844
+    ],
+    "url": "http://127.0.0.1:3091/",
+    "capturedAt": "2026-10-07T13:04:51.344Z",
+    "dom": {
+      "clientWidth": 390,
+      "clientHeight": 844,
+      "scrollWidth": 390,
+      "scrollHeight": 844,
+      "markers": {
+        "shell": true,
+        "scientificPayloadWriteback": "false",
+        "releaseBoundary": "candidate-only-hold-not-admitted"
+      },
+      "build": {
+        "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+      }
+    },
+    "screenshot": {
+      "path": "output/playwright/mainline-a-web-v648-atlas-mobile-20261007-v648web02.png",
+      "bytes": 59781,
+      "sha256": "d4f83c09514c27bf520eb62e38317f0f22fdc2d9926ab399187374707bb7889b",
+      "imageSize": [
+        390,
+        844
+      ]
+    },
+    "rawCapture": {
+      "path": "docs/release/v607/mainline-a-r66-browser-mobile-raw-20261007-v648web02.json",
+      "bytes": 1840,
+      "sha256": "b90859f755ac12d7c4eaf2df9a5b7ceb9c57f6c1b0dce5e112321eda2826df5c"
+    },
+    "sceneActivity": null
+  },
+  "physicalMobile": "not-run",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "legalClearance": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  },
+  "notes": [
+    "Local browser DOM and PNG dimensions are cross-checked against one preserved build.",
+    "This receipt does not establish a 30-minute performance result, physical-device result, rights approval or real-user validation."
+  ],
+  "technicalObservation": "passed",
+  "webRights": {
+    "desktop": {
+      "device": "desktop",
+      "atlasOpen": true,
+      "webRelease": "blocked-rights-pending",
+      "localDisplayed": 12,
+      "candidateRecords": 18,
+      "signedRights": 0,
+      "reviewPending": 30,
+      "licenseRecorded": 12,
+      "selectedAdmission": "candidate-only",
+      "selectedRightsReview": "pending",
+      "clearedClaimVisible": false,
+      "closeButtonNoWrap": true
+    },
+    "mobileViewport": {
+      "device": "mobile-viewport",
+      "atlasOpen": true,
+      "webRelease": "blocked-rights-pending",
+      "localDisplayed": 12,
+      "candidateRecords": 18,
+      "signedRights": 0,
+      "reviewPending": 30,
+      "licenseRecorded": 12,
+      "selectedAdmission": "candidate-only",
+      "selectedRightsReview": "pending",
+      "clearedClaimVisible": false,
+      "closeButtonNoWrap": true
+    }
+  },
+  "note": "Local Chrome DOM and screenshot verification; source license labels did not promote rights or web release."
+}

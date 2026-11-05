@@ -1,0 +1,51 @@
+{
+  "schema": "mainline-a-performance-replay-v625",
+  "generatedAt": "2026-09-22T04:27:51.492Z",
+  "sourceReceipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+  "sourceReceiptDigest": "73e1d69a",
+  "replayMode": "deterministic-ledger-replay",
+  "evidenceClass": "static-replay",
+  "runs": [
+    {
+      "runId": "r65-desktop-001-fe35fa4c",
+      "key": "desktop:atlas:1280:720:1.5",
+      "device": "desktop",
+      "scenario": "atlas",
+      "frameSamples": 717,
+      "p95Ms": 5.649999999994179,
+      "medianFps": 180.0180017999348,
+      "resourceBefore": "f6448291",
+      "resourceAfter": "f6448291",
+      "lifecycle": "baseline",
+      "status": "complete"
+    },
+    {
+      "runId": "r65-mobile-002-d0eebd28",
+      "key": "mobile:atlas:390:844:1.0000000298023224",
+      "device": "mobile",
+      "scenario": "atlas",
+      "frameSamples": 718,
+      "p95Ms": 5.615750000003755,
+      "medianFps": 180.0180017999348,
+      "resourceBefore": "38a923ae",
+      "resourceAfter": "38a923ae",
+      "lifecycle": "baseline",
+      "status": "complete"
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed"
+  },
+  "failures": [
+    "required-long-run-or-physical-device-missing"
+  ],
+  "status": "blocked",
+  "notes": [
+    "Replay validates ledger shape and resource identity only.",
+    "It does not create frames, memory samples, screenshots, device results, or scientific evidence."
+  ]
+}

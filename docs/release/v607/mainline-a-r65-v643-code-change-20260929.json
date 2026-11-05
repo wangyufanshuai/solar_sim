@@ -1,0 +1,73 @@
+{
+  "schema": "mainline-a-code-change-receipt-v643",
+  "round": "R65",
+  "generatedAt": "2026-09-29T11:15:15.9771383Z",
+  "baseline": "156ec77",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1726,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "testsExcluded": true,
+  "files": [
+    {
+      "path": "app/lib/mainlineAR65LongRunV643.ts",
+      "effectiveLines": 815,
+      "bytes": 43413
+    },
+    {
+      "path": "app/components/MainlineAR65LongRunPanelV643.tsx",
+      "effectiveLines": 353,
+      "bytes": 23131
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.tsx",
+      "effectiveLines": 268,
+      "bytes": 20741
+    },
+    {
+      "path": "app/components/MainlineAPerformanceSurfaceV637.tsx",
+      "effectiveLines": 66,
+      "bytes": 3635
+    },
+    {
+      "path": "scripts/build-mainline-a-r65-longrun-v643.ts",
+      "effectiveLines": 224,
+      "bytes": 9742
+    }
+  ],
+  "validation": {
+    "browser": "passed desktop 1280x720 and mobile viewport 390x844",
+    "typescript": "passed",
+    "node": "passed 2/2 builder tests",
+    "http": "passed page+health 200",
+    "physicalMobile": "not-run",
+    "longRun": "not-run",
+    "vitest": "passed 9/9",
+    "eslint": "passed",
+    "productionBuild": "passed"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "physicalDevicePromotion": "closed",
+    "physicsKernelsUnmodified": true,
+    "parentGitMutation": false
+  },
+  "excluded": [
+    "tests",
+    "generated receipts",
+    "screenshots",
+    "documentation",
+    "fixture observations",
+    "timeout observations"
+  ],
+  "notes": [
+    "V643 verifier rejects forged wall-clock duration, sparse coverage, missing activity registry change, viewport drift, build drift and listener leakage.",
+    "The 1726-line count is current effective production/tool surface for the complete R65 V643 batch; tests are excluded."
+  ],
+  "sha256": "89d2433576411ee8d8729f2faa4c850b0097373f6a534ef2a900d8a5ddb98edb"
+}

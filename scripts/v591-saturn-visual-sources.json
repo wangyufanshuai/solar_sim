@@ -1,0 +1,69 @@
+{
+  "version": "v591-saturn-visual-source-acquisition-v1",
+  "metadataProbe": {
+    "mission": "Cassini-Huygens",
+    "instrumentFamily": "Cassini Imaging Science Subsystem",
+    "sourceCatalog": "NASA Image and Video Library / NASA-JPL Photojournal",
+    "atmosphereProductIdentity": "PIA21617 Cassini Noodle Mosaic of Saturn",
+    "ringProductIdentity": "PIA21628 Cassini high-resolution natural-color Saturn ring mosaic"
+  },
+  "assets": [
+    {
+      "id": "saturn-cassini-atmosphere-source-v591",
+      "body": "saturn",
+      "role": "atmosphere-source",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA21617/PIA21617~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/saturn/PIA21617-saturn-noodle-mosaic.jpg",
+      "allowedHosts": [
+        "images-assets.nasa.gov"
+      ],
+      "expectedMediaTypes": [
+        "image/jpeg",
+        "image/jpg",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 1200,
+      "minimumHeight": 800,
+      "license": {
+        "id": "NASA-JPL-public-domain",
+        "url": "https://images.nasa.gov/details/PIA21617"
+      },
+      "observationIdentity": "Cassini narrow-angle natural-color Saturn mosaic PIA21617",
+      "observationLimit": "Presentation source for Saturn atmosphere and source-derived zonal structure; no scientific authority or inferred unseen longitude detail.",
+      "presentationOnly": true
+    },
+    {
+      "id": "saturn-cassini-rings-source-v591",
+      "body": "saturn",
+      "role": "ring-color-optical-depth-source",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA21628/PIA21628~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/saturn/PIA21628-saturn-rings.jpg",
+      "allowedHosts": [
+        "images-assets.nasa.gov"
+      ],
+      "expectedMediaTypes": [
+        "image/jpeg",
+        "image/jpg",
+        "application/octet-stream",
+        "binary/octet-stream"
+      ],
+      "minimumWidth": 1000,
+      "minimumHeight": 128,
+      "license": {
+        "id": "NASA-JPL-public-domain",
+        "url": "https://images.nasa.gov/details/PIA21628"
+      },
+      "observationIdentity": "Cassini natural-color high-resolution Saturn ring mosaic PIA21628",
+      "observationLimit": "Presentation source for deterministic radial color and optical-depth profiles; geometric gap radii remain explicitly registered presentation parameters.",
+      "presentationOnly": true
+    }
+  ],
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "redirectPolicy": "manual-allowlist-block",
+    "atomicWrite": ".part-to-final"
+  }
+}

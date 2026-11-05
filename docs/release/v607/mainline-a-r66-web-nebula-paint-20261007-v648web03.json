@@ -1,0 +1,64 @@
+{
+  "schema": "mainline-a-web-nebula-paint-correction-v648",
+  "evidenceClass": "visual",
+  "status": "verified-local-visual-capture-correction",
+  "issues": [],
+  "buildId": "mainline-a-4f5a5614bacd1e7e",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "oldMean": 15.178513793898409,
+  "newMean": 61.65399664438126,
+  "brightnessRatio": 4.061925790729621,
+  "region": {
+    "left": 26,
+    "top": 131,
+    "width": 338,
+    "height": 308
+  },
+  "physicalMobile": "not-run",
+  "inputs": {
+    "build": {
+      "path": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+      "bytes": 472504,
+      "sha256": "d386a191a28502aa0785fbd7f16d149be151cccb05c540299e20f8ab8385bf14"
+    },
+    "previousMobile": {
+      "path": "docs/release/v607/mainline-a-r66-browser-mobile-raw-20261007-v648web02.json",
+      "bytes": 1840,
+      "sha256": "b90859f755ac12d7c4eaf2df9a5b7ceb9c57f6c1b0dce5e112321eda2826df5c"
+    },
+    "currentDesktop": {
+      "path": "docs/release/v607/mainline-a-r66-browser-desktop-raw-20261007-v648web03.json",
+      "bytes": 2067,
+      "sha256": "ce86ebf80fd0cf0630e471d079b392cd79eb7dccfd6752cb11f1fdf2d60f8dae"
+    },
+    "currentMobile": {
+      "path": "docs/release/v607/mainline-a-r66-browser-mobile-raw-20261007-v648web03.json",
+      "bytes": 1895,
+      "sha256": "7c3bb14a14ce38aea7d7de7e1f323077ccd7fab88d25263a7e7f8d7c8dc2f0fa"
+    },
+    "previousShot": {
+      "path": "output/playwright/mainline-a-web-v648-detail-mobile-20261007-v648web02.png",
+      "bytes": 51628,
+      "sha256": "049984fa6a076c94db00b90c2710b06bb5b43e74d61e5a43abe2dcc807a9415d"
+    },
+    "currentShot": {
+      "path": "output/playwright/mainline-a-web-v648-detail-mobile-20261007-v648web03.png",
+      "bytes": 191196,
+      "sha256": "bf10eb32ec5bed10e34612f7dbf2ed52ba7cee56c6d1aa23d22c07593877cc1e"
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  },
+  "note": "The earlier mobile screenshot was captured before the image opacity transition settled; the original image file was not changed."
+}

@@ -1,0 +1,32 @@
+{
+  "version": "v592-major-moon-usgs-ckan-probe-v1",
+  "probedAt": "2026-08-19T13:36:08.823Z",
+  "status": "blocked-no-automatic-retry",
+  "probeId": "callisto-ckan-global-mosaic",
+  "target": "callisto",
+  "query": "Callisto global mosaic",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "visualPayloadDownloaded": false,
+    "redirectFollowed": false,
+    "itemLevelLicenseReviewRequired": true,
+    "metadataDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://astrogeology.usgs.gov/ckan/api/3/action/package_search?q=Callisto%20global%20mosaic&rows=100",
+    "finalUrl": "https://astrogeology.usgs.gov/ckan/api/3/action/package_search?q=Callisto%20global%20mosaic&rows=100",
+    "status": 404,
+    "contentType": "text/html; charset=utf-8",
+    "responseBytes": 11945,
+    "responseSha256": "7b25d3d0af99b8f595e088e0b1097f3d1be5265b51c9459e886e625f58252941",
+    "outputPath": "source-cache/v592/major-moons/usgs-ckan/callisto-ckan-global-mosaic.json",
+    "redirectLocation": null,
+    "networkError": null
+  },
+  "totalMatches": 0,
+  "packages": [],
+  "visualAssetAdmission": false,
+  "receiptSha256": "3d1ee6b8a239321e280f76a17614230c829e12571dd27baacf994b056a5fc30f"
+}

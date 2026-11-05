@@ -1,0 +1,85 @@
+{
+  "version": "v591-bennu-visual-acquisition-receipt-v1",
+  "acquiredAt": "2026-08-11T12:10:19.984Z",
+  "status": "acquired-single-request-no-retry",
+  "policy": {
+    "singleRequestPerUrl": true,
+    "automaticRetry": false,
+    "automaticSubstitution": false,
+    "allowedHosts": [
+      "dl.polyhaven.org"
+    ]
+  },
+  "requestedUrlCount": 3,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "assets": [
+    {
+      "id": "bennu-regolith-diffuse-source",
+      "body": "bennu",
+      "role": "cc0-regolith-micro-albedo",
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_diff_4k.jpg",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_diff_4k.jpg",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/jpeg",
+      "outputPath": "source-cache/celestial-convergence-v591/bennu/aerial-ground-rock-diffuse-4k.jpg",
+      "bytes": 9194295,
+      "sha256": "b345b2512fd23098be99a9ec36df2ebf5b665c500e9ef419da1b5515961bfe51",
+      "width": 4096,
+      "height": 4096,
+      "license": {
+        "id": "Poly-Haven-CC0",
+        "url": "https://polyhaven.com/a/aerial_ground_rock"
+      },
+      "observationIdentity": "Poly Haven aerial_ground_rock 4K diffuse CC0 microtexture",
+      "observationLimit": "Terrestrial CC0 microtexture used only for bounded triplanar surface variation; it is not Bennu observation data and does not alter the NASA shape model.",
+      "presentationOnly": true
+    },
+    {
+      "id": "bennu-regolith-normal-source",
+      "body": "bennu",
+      "role": "cc0-regolith-micro-normal",
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_nor_gl_4k.jpg",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_nor_gl_4k.jpg",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/jpeg",
+      "outputPath": "source-cache/celestial-convergence-v591/bennu/aerial-ground-rock-normal-gl-4k.jpg",
+      "bytes": 9331501,
+      "sha256": "ce9b7df42a7cf68603b279e173e9f9bd57403306974220d94677c6d4f373e776",
+      "width": 4096,
+      "height": 4096,
+      "license": {
+        "id": "Poly-Haven-CC0",
+        "url": "https://polyhaven.com/a/aerial_ground_rock"
+      },
+      "observationIdentity": "Poly Haven aerial_ground_rock 4K OpenGL normal CC0 microtexture",
+      "observationLimit": "Terrestrial CC0 microtexture used only for bounded triplanar surface variation; it is not Bennu topography or observation data.",
+      "presentationOnly": true
+    },
+    {
+      "id": "bennu-regolith-roughness-source",
+      "body": "bennu",
+      "role": "cc0-regolith-micro-roughness",
+      "sourceUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_rough_4k.jpg",
+      "finalUrl": "https://dl.polyhaven.org/file/ph-assets/Textures/jpg/4k/aerial_ground_rock/aerial_ground_rock_rough_4k.jpg",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/jpeg",
+      "outputPath": "source-cache/celestial-convergence-v591/bennu/aerial-ground-rock-roughness-4k.jpg",
+      "bytes": 5776276,
+      "sha256": "dc181549c164c6639fd2e1093144709094614bb6723749175c2e21442a2e1587",
+      "width": 4096,
+      "height": 4096,
+      "license": {
+        "id": "Poly-Haven-CC0",
+        "url": "https://polyhaven.com/a/aerial_ground_rock"
+      },
+      "observationIdentity": "Poly Haven aerial_ground_rock 4K roughness CC0 microtexture",
+      "observationLimit": "Terrestrial CC0 microtexture used only for bounded triplanar surface variation; it is not Bennu photometry or observation data.",
+      "presentationOnly": true
+    }
+  ],
+  "receiptSha256": "7c2df60ee610ba33a42e346bd371ab2672139e256b654f777bdc06d95b3aafd8"
+}

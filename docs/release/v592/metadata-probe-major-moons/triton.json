@@ -1,0 +1,52 @@
+{
+  "version": "v592-major-moon-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:40:08.042Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "triton",
+  "query": "Triton Neptune moon global map",
+  "requiredTerms": [
+    "triton"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Triton%20Neptune%20moon%20global%20map&media_type=image&page_size=25",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Triton%20Neptune%20moon%20global%20map&media_type=image&page_size=25",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1753,
+    "responseSha256": "6cbc3c23030cd59bca857e520589246fb4fc03bed6478076342b946fd667b446"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA18668",
+      "title": "Map of Triton",
+      "description": "NASA Voyager 2 spacecraft flew by Triton, a moon of Neptune, in the summer of 1989. Dr. Paul Schenk, a scientist at the Lunar and Planetary Institute in Houston, used Voyager data to construct the best-ever global color map of Triton.",
+      "dateCreated": "2014-08-21T19:36:16Z",
+      "center": "JPL",
+      "keywords": [
+        "Triton",
+        "Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA18668/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA18668/PIA18668~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "fdd67eca6b895284b091effe0518de012489ac4edc1d3e15b25238571d109bcf"
+}

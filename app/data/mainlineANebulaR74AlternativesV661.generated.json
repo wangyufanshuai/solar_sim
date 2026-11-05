@@ -1,0 +1,448 @@
+{
+  "schema": "mainline-a-r74-alternative-overlay-v661",
+  "evidenceClass": "offline-replayed-official-page-candidate",
+  "generatedAt": "2026-10-13T03:59:43.872Z",
+  "ledger": {
+    "path": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+    "bytes": 24048,
+    "sha256": "767003b07374a8dad488644bc9ccd77336c0934b5b04ad54c1893a7c6aee5221"
+  },
+  "counts": {
+    "heldTargets": 5,
+    "officialPagesAttempted": 6,
+    "officialPagesCaptured": 6,
+    "pageIdentityCandidates": 5,
+    "conflictingPages": 1,
+    "imageRequestsExecuted": 0,
+    "imageResponsesCaptured": 0,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "rows": [
+    {
+      "id": "ring-nebula",
+      "alternatives": [
+        {
+          "sourceKey": "ring-photojournal",
+          "kind": "photojournal",
+          "sourceUrl": "https://science.nasa.gov/photojournal/ring-beholds-a-delicate-flower/",
+          "sourceState": "page-captured-rights-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/ring-beholds-a-delicate-flower/",
+          "requestFingerprint": "3b038a1c5b716275a7cb5d567e8c26efc499b6ccb993d64c445429e6cafb4917",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/ring-photojournal-048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc.html",
+            "bytes": 271453,
+            "sha256": "048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc"
+          },
+          "title": "Ring Beholds a Delicate Flower",
+          "nasaId": "PIA07343",
+          "target": "Ring Nebula",
+          "objectName": null,
+          "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+          "partnerMarkers": [
+            "Harvard-Smithsonian"
+          ],
+          "downloads": [
+            {
+              "name": "Ring Beholds a Delicate Flower",
+              "format": "JPEG (296.98 KB)",
+              "size": "2104 × 1726",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07343/PIA07343.jpg"
+            },
+            {
+              "name": "Ring Beholds a Delicate Flower",
+              "format": "TIFF (6.91 MB)",
+              "size": null,
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07343/PIA07343.tif"
+            },
+            {
+              "name": "Ring Beholds a Delicate Flower",
+              "format": "GIF (11.94 KB)",
+              "size": "312 × 256",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07343/PIA07343.gif"
+            },
+            {
+              "name": "Ring Beholds a Delicate Flower",
+              "format": "MOV (51.09 MB)",
+              "size": "5000 × 1848",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07343/PIA07343.mov"
+            }
+          ],
+          "identityState": "page-identity-confirmed",
+          "inspectionIssues": [],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      ],
+      "preferredSourceKey": "ring-photojournal",
+      "pageIdentityCandidate": true,
+      "conflicts": [],
+      "imageState": "policy-hold-unrequested",
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsStatus": "pending",
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "dumbbell-nebula",
+      "alternatives": [
+        {
+          "sourceKey": "dumbbell-spitzer",
+          "kind": "photojournal",
+          "sourceUrl": "https://science.nasa.gov/photojournal/weighing-in-on-the-dumbbell-nebula/",
+          "sourceState": "identity-conflict-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/weighing-in-on-the-dumbbell-nebula/",
+          "requestFingerprint": "3f8f74b3db3f4cf7712a896a4f8efa0d07b22e61b3d26ea24b3792063404f5e2",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-spitzer-d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4.html",
+            "bytes": 268729,
+            "sha256": "d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4"
+          },
+          "title": "Weighing in on the Dumbbell Nebula",
+          "nasaId": "PIA14417",
+          "target": "Helix Nebula",
+          "objectName": null,
+          "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+          "partnerMarkers": [
+            "Harvard-Smithsonian"
+          ],
+          "downloads": [
+            {
+              "name": "Weighing in on the Dumbbell Nebula",
+              "format": "JPEG (484.22 KB)",
+              "size": "2800 × 1400",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14417/PIA14417.jpg"
+            },
+            {
+              "name": "Weighing in on the Dumbbell Nebula",
+              "format": "TIFF (11.22 MB)",
+              "size": null,
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14417/PIA14417.tif"
+            }
+          ],
+          "identityState": "identity-conflict",
+          "inspectionIssues": [
+            "target-identity-conflict"
+          ],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        },
+        {
+          "sourceKey": "dumbbell-hubble",
+          "kind": "hubble-asset",
+          "sourceUrl": "https://science.nasa.gov/asset/hubble/the-dumbbell-nebula-m27/",
+          "sourceState": "page-captured-rights-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/asset/hubble/the-dumbbell-nebula-m27/",
+          "requestFingerprint": "bb8e52d6efde128223d9325641385ab02e163bce828ce8d6d620ea2aafb49b08",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-hubble-2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e.html",
+            "bytes": 298800,
+            "sha256": "2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e"
+          },
+          "title": "The Dumbbell Nebula (M27)",
+          "nasaId": null,
+          "target": null,
+          "objectName": "Dumbbell Nebula, M27, NGC 6853",
+          "credit": "NASA and The Hubble Heritage Team (STScI/AURA)",
+          "partnerMarkers": [
+            "STScI",
+            "AURA"
+          ],
+          "downloads": [
+            {
+              "name": "1478 × 1504",
+              "format": "jpg (1.67 MB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif/jcr:content/renditions/1478x1504.jpg"
+            },
+            {
+              "name": "1478 × 1504",
+              "format": "tif (6.37 MB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif"
+            },
+            {
+              "name": "786 × 800",
+              "format": "jpg (38.32 KB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif/jcr:content/renditions/786x800.jpg"
+            },
+            {
+              "name": "200 × 200",
+              "format": "jpg (7.68 KB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif/jcr:content/renditions/200x200.jpg"
+            },
+            {
+              "name": "393 × 400",
+              "format": "jpg (15.01 KB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif/jcr:content/renditions/393x400.jpg"
+            }
+          ],
+          "identityState": "page-identity-confirmed",
+          "inspectionIssues": [],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      ],
+      "preferredSourceKey": "dumbbell-hubble",
+      "pageIdentityCandidate": true,
+      "conflicts": [
+        "dumbbell-spitzer"
+      ],
+      "imageState": "policy-hold-unrequested",
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsStatus": "pending",
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "bubble-nebula",
+      "alternatives": [
+        {
+          "sourceKey": "bubble-hubble",
+          "kind": "hubble-asset",
+          "sourceUrl": "https://science.nasa.gov/asset/hubble/mosaic-image-of-the-bubble-nebula/",
+          "sourceState": "page-captured-rights-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/asset/hubble/mosaic-image-of-the-bubble-nebula/",
+          "requestFingerprint": "2604bce24a579600ff539b406b0599b2921616675a8343ad7868247fe0aa61cf",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/bubble-hubble-bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477.html",
+            "bytes": 274737,
+            "sha256": "bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477"
+          },
+          "title": "Mosaic Image of the Bubble Nebula",
+          "nasaId": null,
+          "target": null,
+          "objectName": null,
+          "credit": "NASA and STScI",
+          "partnerMarkers": [
+            "STScI"
+          ],
+          "downloads": [
+            {
+              "name": "1800 × 2547",
+              "format": "jpg (468.96 KB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/infographics/STScI-01EVSVFNPZGZSA6505GFJK9SP0.png/jcr:content/renditions/1800x2547.jpg"
+            },
+            {
+              "name": "1801 × 2549",
+              "format": "png (1.34 MB)",
+              "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/infographics/STScI-01EVSVFNPZGZSA6505GFJK9SP0.png"
+            }
+          ],
+          "identityState": "page-identity-confirmed",
+          "inspectionIssues": [],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      ],
+      "preferredSourceKey": "bubble-hubble",
+      "pageIdentityCandidate": true,
+      "conflicts": [],
+      "imageState": "policy-hold-unrequested",
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsStatus": "pending",
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "cats-eye-nebula",
+      "alternatives": [
+        {
+          "sourceKey": "cats-eye-photojournal",
+          "kind": "photojournal",
+          "sourceUrl": "https://science.nasa.gov/photojournal/galactic-dust-bunnies-found-to-contain-carbon-after-all/",
+          "sourceState": "page-captured-rights-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/galactic-dust-bunnies-found-to-contain-carbon-after-all/",
+          "requestFingerprint": "acbe7409abadf1eec5c7d2c9a5063b793a919da3ff1d4e76a078bea5a4a4690e",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/cats-eye-photojournal-6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80.html",
+            "bytes": 269111,
+            "sha256": "6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80"
+          },
+          "title": "Galactic Dust Bunnies Found to Contain Carbon After All",
+          "nasaId": "PIA11827",
+          "target": "NGC 6543",
+          "objectName": null,
+          "credit": "NASA/JPL-Caltech",
+          "partnerMarkers": [],
+          "downloads": [
+            {
+              "name": "Galactic Dust Bunnies Found to Contain Carbon After All",
+              "format": "JPEG (226.60 KB)",
+              "size": "1700 × 1700",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia11/pia11827/PIA11827.jpg"
+            },
+            {
+              "name": "Galactic Dust Bunnies Found to Contain Carbon After All",
+              "format": "TIFF (8.28 MB)",
+              "size": null,
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia11/pia11827/PIA11827.tif"
+            }
+          ],
+          "identityState": "page-identity-confirmed",
+          "inspectionIssues": [],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      ],
+      "preferredSourceKey": "cats-eye-photojournal",
+      "pageIdentityCandidate": true,
+      "conflicts": [],
+      "imageState": "policy-hold-unrequested",
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsStatus": "pending",
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "omega-nebula",
+      "alternatives": [
+        {
+          "sourceKey": "omega-photojournal",
+          "kind": "photojournal",
+          "sourceUrl": "https://science.nasa.gov/photojournal/celestial-sea-of-stars/",
+          "sourceState": "page-captured-rights-hold",
+          "responseCaptured": 1,
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "finalUrl": "https://science.nasa.gov/photojournal/celestial-sea-of-stars/",
+          "requestFingerprint": "a16c549ae8f7c9b8a44ce7dc965ee2ae861ba36364de49d5d21bd7535a475f91",
+          "retryCount": 0,
+          "timeout": false,
+          "errorClass": null,
+          "rawArtifact": {
+            "path": "docs/release/v607/nebula-r74-v661/raw/omega-photojournal-7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe.html",
+            "bytes": 268393,
+            "sha256": "7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe"
+          },
+          "title": "Celestial Sea of Stars",
+          "nasaId": "PIA12071",
+          "target": "M17",
+          "objectName": null,
+          "credit": "NASA/JPL-Caltech/Univ. of Wisc.",
+          "partnerMarkers": [
+            "Univ. of Wisc."
+          ],
+          "downloads": [
+            {
+              "name": "Celestial Sea of Stars",
+              "format": "JPEG (1.10 MB)",
+              "size": "2674 × 2176",
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia12/pia12071/PIA12071.jpg"
+            },
+            {
+              "name": "Celestial Sea of Stars",
+              "format": "TIFF (16.66 MB)",
+              "size": null,
+              "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia12/pia12071/PIA12071.tif"
+            }
+          ],
+          "identityState": "page-identity-confirmed",
+          "inspectionIssues": [],
+          "rightsStatus": "pending",
+          "imageRequestExecuted": false,
+          "imageResponseCaptured": 0,
+          "hold": true,
+          "notAdmitted": true,
+          "runtimeAdmission": "candidate-only",
+          "scientificPayloadWriteback": false
+        }
+      ],
+      "preferredSourceKey": "omega-photojournal",
+      "pageIdentityCandidate": true,
+      "conflicts": [],
+      "imageState": "policy-hold-unrequested",
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsStatus": "pending",
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "rightsSigned": false,
+    "runtimeAdmitted": false,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

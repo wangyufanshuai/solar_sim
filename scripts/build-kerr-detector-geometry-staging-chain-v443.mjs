@@ -1,0 +1,10 @@
+import { spawnSync } from "node:child_process";
+import { mkdirSync } from "node:fs";
+import { resolve } from "node:path";
+const root = process.cwd();
+const temp = resolve(root, "dist/temp/v443");
+mkdirSync(temp, { recursive: true });
+const env = { ...process.env, TEMP: temp, TMP: temp };
+const result = spawnSync(process.execPath, [resolve(root, "node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-detector-geometry-staging-v443.ts"], { cwd: root, stdio: "inherit", shell: false, env });
+if (result.error) throw result.error;
+if (result.status !== 0) throw new Error(`v443 staging builder failed with ${result.status}`);

@@ -1,0 +1,280 @@
+{
+  "version": "v562-atlas-browser-qualification-v1",
+  "generatedAt": "2026-08-03T03:30:00Z",
+  "status": "passed-standalone-desktop-mobile-visual-regression-pending",
+  "build": {
+    "id": "9iNDsQyQI-c8ClPgqRE93",
+    "profile": "standalone-full",
+    "distDir": ".next-atlas-standalone-current",
+    "heapMb": 8192,
+    "standaloneTopologyQualified": true,
+    "rollbackSlotAvailable": true,
+    "buildReceiptSha256": "427976db0e4b2ee32bf9ea36ef1866c8399cb5564880201a4fcd033b295a8125"
+  },
+  "visual": {
+    "candidate": "v562-visual-candidate-ktx2-first",
+    "manifestSha256": "a9ca1196e05c408004902cfa79af3d3fa3389e3ff17b386cd1d23bb74b3c69fd",
+    "browserSurface": "Codex In-app Browser",
+    "screenshotReview": "captured-and-manually-inspected-no-baseline-diff",
+    "visualRegressionQualified": false
+  },
+  "thresholds": {
+    "overviewMedianFpsMin": 55,
+    "scientificSceneMedianFpsMin": 45,
+    "frameP95MsMax": 50,
+    "minimumFrameSamples": 241,
+    "canvasCount": 1,
+    "errorCount": 0
+  },
+  "observations": {
+    "desktop": {
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "qualityTier": "balanced",
+      "sceneMode": "atlas",
+      "medianFps": 166.8,
+      "frameP50Ms": 6,
+      "frameP95Ms": 6.3,
+      "frameSamples": 720,
+      "sampleStatus": "ready",
+      "canvasCount": 1,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "rendererErrors": [],
+      "adapter": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "softwareRenderer": false,
+        "contextLost": false
+      },
+      "capture": {
+        "path": "output/playwright/orbit-atlas-final-desktop-iab-1440x900.jpg",
+        "bytes": 61848,
+        "sha256": "ed5b75d37252ce2650cae9ba748779c214f576de2f5b40d4d7888598ab3d4deb",
+        "format": "jpeg",
+        "width": 1440,
+        "height": 900
+      },
+      "resourceBaseline": {
+        "canvasCount": 1,
+        "sceneRevision": "0",
+        "total": "14",
+        "workers": "1",
+        "renderTargets": "0",
+        "gpuBuffers": "1",
+        "gpuPipelines": "0",
+        "gpuQueries": "0",
+        "textures": "11",
+        "objectUrls": "0",
+        "typedArrayCaches": "0",
+        "cameraLocks": "0",
+        "estimatedGpuBytes": "100983369",
+        "identityDigest": "b0567d64",
+        "ownerCount": "3"
+      },
+      "resourceReleased": {
+        "canvasCount": 1,
+        "sceneRevision": "0",
+        "total": "14",
+        "workers": "1",
+        "renderTargets": "0",
+        "gpuBuffers": "1",
+        "gpuPipelines": "0",
+        "gpuQueries": "0",
+        "textures": "11",
+        "objectUrls": "0",
+        "typedArrayCaches": "0",
+        "cameraLocks": "0",
+        "estimatedGpuBytes": "100983369",
+        "identityDigest": "b0567d64",
+        "ownerCount": "3"
+      }
+    },
+    "mobile": {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "qualityTier": "mobile-safe",
+      "sceneMode": "atlas",
+      "medianFps": 166.9,
+      "frameP50Ms": 6,
+      "frameP95Ms": 6.1,
+      "frameSamples": 720,
+      "sampleStatus": "ready",
+      "canvasCount": 1,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "rendererErrors": [],
+      "adapter": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)",
+        "softwareRenderer": false,
+        "contextLost": false
+      },
+      "capture": {
+        "path": "output/playwright/orbit-atlas-final-mobile-iab-390x844.jpg",
+        "bytes": 24138,
+        "sha256": "f4476b0d882eae45d93876f06c1aa861a811e7c48e1febb764541a367f8bc230",
+        "format": "jpeg",
+        "width": 390,
+        "height": 844
+      },
+      "resourceBaseline": {
+        "canvasCount": 1,
+        "sceneRevision": "0",
+        "total": "14",
+        "workers": "1",
+        "renderTargets": "0",
+        "gpuBuffers": "1",
+        "gpuPipelines": "0",
+        "gpuQueries": "0",
+        "textures": "11",
+        "objectUrls": "0",
+        "typedArrayCaches": "0",
+        "cameraLocks": "0",
+        "estimatedGpuBytes": "33634505",
+        "identityDigest": "cc4d6b0b",
+        "ownerCount": "3"
+      },
+      "resourceReleased": {
+        "canvasCount": 1,
+        "sceneRevision": "0",
+        "total": "14",
+        "workers": "1",
+        "renderTargets": "0",
+        "gpuBuffers": "1",
+        "gpuPipelines": "0",
+        "gpuQueries": "0",
+        "textures": "11",
+        "objectUrls": "0",
+        "typedArrayCaches": "0",
+        "cameraLocks": "0",
+        "estimatedGpuBytes": "33634505",
+        "identityDigest": "cc4d6b0b",
+        "ownerCount": "3"
+      }
+    }
+  },
+  "qualification": {
+    "desktopBrowser": true,
+    "mobileBrowser": true,
+    "hardwareRenderer": true,
+    "singleCanvas": true,
+    "consoleErrorsZero": true,
+    "pageErrorsZero": true,
+    "rendererErrorsZero": true,
+    "resourceLifecycleReturned": true,
+    "overviewPerformanceQualified": true,
+    "visualRegressionQualified": false,
+    "scientificScenePerformanceQualified": false,
+    "soakQualified": false
+  },
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalDefaultKernel": "legacy-eih-1pn",
+    "historicalVisualAssetsRestored": false,
+    "historicalEvidenceRewritten": false,
+    "measuredAuthorityGranted": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "gpuRun": false,
+    "productionPromotionAllowed": false,
+    "publicDeploymentAllowed": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/api/atlas/content-packs/[pack]/files/[...path]/route.ts",
+      "bytes": 3212,
+      "sha256": "8d2775b904db936fe89ac2a396d7e4c093f7b511e746f25d8afcbbba0aac96a9"
+    },
+    {
+      "path": "app/components/GalaxyEnvironmentSphere.tsx",
+      "bytes": 38296,
+      "sha256": "92ce973f1948c8f303a1715d896dfb1e70e42b2420f740578722d39bfb901590"
+    },
+    {
+      "path": "app/data/planetTextureManifest.ts",
+      "bytes": 3024,
+      "sha256": "762a6ff03b296231f8ad75ae0a8b1e176bc7af791522dda4d56ea53b62be47f8"
+    },
+    {
+      "path": "app/lib/atlasContentPackServerV3.ts",
+      "bytes": 12494,
+      "sha256": "981ce4e00046d55c986055e8ef6e134147b79852ea4e005f130241b5b25c61ea"
+    },
+    {
+      "path": "app/lib/atlasProxyContractV562.ts",
+      "bytes": 2360,
+      "sha256": "47bcff962dd7e433137ecdcf3b392e413e336a063e1a7bb6c42fbd8d9d9374c1"
+    },
+    {
+      "path": "app/lib/atlasVisualRuntimeCandidateV562.ts",
+      "bytes": 940,
+      "sha256": "dee33f72c7344ca083d7e927ece4da3e667d29597c6af3bcb68ad691ca9cf981"
+    },
+    {
+      "path": "app/lib/kerrSpectralEnvelopeV356.ts",
+      "bytes": 17781,
+      "sha256": "7675d55dc6e247b5e39c7312ad727457ed13d927531b1f05348b48e6cb05ad3c"
+    },
+    {
+      "path": "app/lib/planetAlbedoUrl.ts",
+      "bytes": 2340,
+      "sha256": "7d301800f059173d5f85390ce3e3e2b6210cff68cd96584f5cb1af2dd80d67bb"
+    },
+    {
+      "path": "app/lib/sha256BrowserV566.ts",
+      "bytes": 3423,
+      "sha256": "6f2150f7385de4f92107aa0dc9c0782dcff1622f55867f5ca31255111783d7da"
+    },
+    {
+      "path": "dist/release/atlas-build-resource-v562.json",
+      "bytes": 474,
+      "sha256": "427976db0e4b2ee32bf9ea36ef1866c8399cb5564880201a4fcd033b295a8125"
+    },
+    {
+      "path": "dist/science/atlas-visual-candidate-v562/manifest.json",
+      "bytes": 7384,
+      "sha256": "4207e5c1cce58185e16b98903d2bfed8f6f8822e8f19534c41167e978c025e55"
+    },
+    {
+      "path": "next.config.mjs",
+      "bytes": 6179,
+      "sha256": "3fc6401053d409663a66f26e9b810e18ec281041d0c333ec4f22e45fea78bf9a"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-final-desktop-iab-1440x900.jpg",
+      "bytes": 61848,
+      "sha256": "ed5b75d37252ce2650cae9ba748779c214f576de2f5b40d4d7888598ab3d4deb"
+    },
+    {
+      "path": "output/playwright/orbit-atlas-final-mobile-iab-390x844.jpg",
+      "bytes": 24138,
+      "sha256": "f4476b0d882eae45d93876f06c1aa861a811e7c48e1febb764541a367f8bc230"
+    },
+    {
+      "path": "proxy.ts",
+      "bytes": 2769,
+      "sha256": "49f48f90792f9901deedcec29bd4473867749260ea64841aa83505fdef7df91d"
+    },
+    {
+      "path": "scripts/build-atlas-profile.mjs",
+      "bytes": 15738,
+      "sha256": "c34fb0d9d4838bc4ef5a5ed7accf46552c43175a0ca005703b374e30a11aaf0c"
+    },
+    {
+      "path": "scripts/build-browser-qualification-v562.mjs",
+      "bytes": 9008,
+      "sha256": "19e9bf64c934c05a47e96146ab030063991bada2964896c0b3009bdb399f7897"
+    },
+    {
+      "path": "scripts/verify-browser-qualification-v562.mjs",
+      "bytes": 3473,
+      "sha256": "b197bdd210877b9e91fc83a3ce0a4a112eb3c0269f7990c5d575b610632b69a4"
+    }
+  ],
+  "sourceSha256": "5321cedb302dad2ec4c0041725b2be0ea65802c47783e7c573b9f2d3d469faf4",
+  "receiptSha256": "af65ea1cc44351b1050969b5371f12334e49ec5d9e6a14c9db8948f750593217"
+}

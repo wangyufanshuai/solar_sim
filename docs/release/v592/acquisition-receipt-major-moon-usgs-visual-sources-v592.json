@@ -1,0 +1,48 @@
+{
+  "version": "v592-major-moon-usgs-visual-source-acquisition-v1",
+  "generatedAt": "2026-08-19T13:42:20.149Z",
+  "status": "partial-committed-with-terminal-failures-no-retry",
+  "policy": {
+    "requestCountPerUrl": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "redirectFollowed": false,
+    "atomicWrite": ".part-to-final",
+    "sourceCacheMaximumBytes": 2147483648,
+    "visualAssetAdmissionGrantedByAcquisition": false,
+    "scientificAuthorityGranted": false,
+    "presentationOnly": true
+  },
+  "requestCount": 3,
+  "assets": [],
+  "failures": [
+    {
+      "target": "io",
+      "id": "io-usgs-color-merged-global-mosaic-1km",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-major-moon-usgs-source-http:io-usgs-color-merged-global-mosaic-1km:302:https://planetarymaps.usgs.gov/mosaic/Io_GalileoSSI-Voyager_Global_Mosaic_ClrMerge_1km.tif"
+    },
+    {
+      "target": "ganymede",
+      "id": "ganymede-usgs-color-global-mosaic-1435m",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-major-moon-usgs-source-http:ganymede-usgs-color-global-mosaic-1435m:302:https://planetarymaps.usgs.gov/mosaic/Ganymede_Voyager_GalileoSSI_Global_ClrMosaic_1435m.tif"
+    },
+    {
+      "target": "callisto",
+      "id": "callisto-usgs-global-mosaic-1km",
+      "url": "https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif",
+      "requestCount": 1,
+      "automaticRetryPerformed": false,
+      "automaticReplacementPerformed": false,
+      "error": "v592-major-moon-usgs-source-http:callisto-usgs-global-mosaic-1km:302:https://planetarymaps.usgs.gov/mosaic/Callisto_Voyager_GalileoSSI_global_mosaic_1km.tif"
+    }
+  ],
+  "receiptSha256": "2892b51bff44a8c712bd633e85aab90c200f2253b6470d59c22d3b5c70034697"
+}

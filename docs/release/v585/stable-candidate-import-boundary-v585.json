@@ -1,0 +1,112 @@
+{
+  "version": "v585-stable-candidate-import-boundary-v1",
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "status": "qualified-fail-closed-three-lane-boundary",
+  "lanes": {
+    "stable": {
+      "id": "stable-v263-legacy-v9",
+      "entries": [
+        "app/page.tsx"
+      ],
+      "graphFileCount": 1049,
+      "forbiddenImports": [],
+      "defaultProfile": "legacy-v9",
+      "defaultSky": "ORBIT_ATLAS_SKY",
+      "candidateActivation": false
+    },
+    "candidate": {
+      "id": "candidate-v562",
+      "entries": [
+        "app/local-shadow-v562/page.tsx"
+      ],
+      "graphFileCount": 14,
+      "runtimeModulePresent": true,
+      "activation": "explicit-route-only"
+    },
+    "experimental": {
+      "id": "experimental-hero",
+      "entry": "app/components/OrbitAtlasHeroScenesV562.tsx",
+      "activation": "explicit-local-shadow-control-only",
+      "canvasAdded": false,
+      "scienceWriteback": false
+    }
+  },
+  "deliveryMatrix": [
+    {
+      "surface": "ordinary-home",
+      "route": "/",
+      "entry": "app/page.tsx",
+      "lane": "stable-v263-legacy-v9",
+      "candidateImported": false
+    },
+    {
+      "surface": "standalone",
+      "route": "/",
+      "entry": "app/page.tsx",
+      "lane": "stable-v263-legacy-v9",
+      "candidateImported": false
+    },
+    {
+      "surface": "Lite",
+      "route": "/",
+      "entry": "app/page.tsx",
+      "lane": "stable-v263-legacy-v9",
+      "candidateImported": false
+    },
+    {
+      "surface": "local-shadow-v562",
+      "route": "/local-shadow-v562",
+      "entry": "app/local-shadow-v562/page.tsx",
+      "lane": "candidate-v562",
+      "candidateImported": true
+    }
+  ],
+  "hardGates": {
+    "stableRootNoCandidateV": true,
+    "stableRootNoLocalShadow": true,
+    "stableDefaultLegacyV9": true,
+    "candidateExplicitOnly": true,
+    "scienceAndVisualPointersIndependent": true,
+    "singleCanvasBoundary": true,
+    "candidateScienceWriteback": false
+  },
+  "sourceManifest": [
+    {
+      "path": "app/ClientAppShell.tsx",
+      "bytes": 2088,
+      "sha256": "020df17b4ff0d3ab9b18302dd2b8dff36e26d7e218b9b0e3fcc1bba49994ff03"
+    },
+    {
+      "path": "app/components/GalaxyEnvironmentSphere.tsx",
+      "bytes": 38258,
+      "sha256": "ef384c0bf27f6d877cb329107af3b0f4ef3d54215863fd8038e6b3582ff8d4e3"
+    },
+    {
+      "path": "app/lib/atlasRuntimeStore.ts",
+      "bytes": 12264,
+      "sha256": "fa1bce5b1edbfd1c7d4bc0b560c7790de69181aa9d102e6ae9c66410df1226b8"
+    },
+    {
+      "path": "app/lib/atlasVisualAuthorityV585.ts",
+      "bytes": 1706,
+      "sha256": "6d20a5c9fb35eed534ef1fbdb6acfa6dde845be2b8624fb58ee6ef2a48d989ab"
+    },
+    {
+      "path": "app/lib/atlasVisualRuntimeCandidateV562.ts",
+      "bytes": 1048,
+      "sha256": "1a69f806765a15e0b748400ec2567e7ab2622075ab1f0e1472b9a5f0cb1b650e"
+    },
+    {
+      "path": "app/local-shadow-v562/page.tsx",
+      "bytes": 1829,
+      "sha256": "cafb4f637bf6be9c3d030f8d7862418eb9b4db37a5fa162073bcec2c158609cb"
+    },
+    {
+      "path": "app/page.tsx",
+      "bytes": 112,
+      "sha256": "72d50b61f9cf272b1a7355ba5a5d13ae0b2688f112d285429f7cd96c0c9da133"
+    }
+  ],
+  "sourceSha256": "9cb694e588cf70460cb3ccf5cbfec9653f9bf24315bfe932eeb0126513784c16",
+  "artifactSha256": "c3c21c048261be4005b4c221c696492059e391f82f1c007d9c291d9b65ba99d5"
+}

@@ -1,0 +1,361 @@
+{
+  "schema": "mainline-a-r61-structured-evidence-report-v621",
+  "generatedAt": "2026-09-22T02:00:17.395Z",
+  "source": {
+    "pack": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "ledger": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+    "packSchema": "mainline-a-beta-stellar-structured-candidate-pack-v621",
+    "ledgerSchema": "mainline-a-beta-stellar-raw-attempt-ledger-v620"
+  },
+  "summary": {
+    "total": 4,
+    "pending": 0,
+    "rawOnly": 0,
+    "structured": 4,
+    "blocked": 4,
+    "averageScore": 78,
+    "sourceLedger": {
+      "total": 4,
+      "sourceRefs": 8,
+      "validSourceRefs": 8,
+      "componentRefs": 9,
+      "validComponentRefs": 0,
+      "closedSources": 0
+    },
+    "scientificPayloadWriteback": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "fingerprint": "e851230657bb813ccea41c815b5db97207dc6df9dd81e7dbe4c799ed87453a93"
+  },
+  "rows": [
+    {
+      "id": "acrux",
+      "state": "structured",
+      "score": 78,
+      "parseReady": false,
+      "blockers": 2,
+      "sourceRefs": 2,
+      "componentRefs": 2,
+      "nextAction": "确认组件身份与来源引用",
+      "writeback": false
+    },
+    {
+      "id": "polaris",
+      "state": "structured",
+      "score": 78,
+      "parseReady": false,
+      "blockers": 2,
+      "sourceRefs": 2,
+      "componentRefs": 3,
+      "nextAction": "确认组件身份与来源引用",
+      "writeback": false
+    },
+    {
+      "id": "regulus",
+      "state": "structured",
+      "score": 78,
+      "parseReady": false,
+      "blockers": 2,
+      "sourceRefs": 2,
+      "componentRefs": 2,
+      "nextAction": "确认组件身份与来源引用",
+      "writeback": false
+    },
+    {
+      "id": "spica",
+      "state": "structured",
+      "score": 78,
+      "parseReady": false,
+      "blockers": 2,
+      "sourceRefs": 2,
+      "componentRefs": 2,
+      "nextAction": "确认组件身份与来源引用",
+      "writeback": false
+    }
+  ],
+  "candidates": [
+    {
+      "id": "acrux",
+      "queryIdentifier": "* alf01 Cru",
+      "state": "structured",
+      "raw": {
+        "captured": 1,
+        "transport": "https-html",
+        "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+        "responseBytes": 41374,
+        "contentType": "text/html; charset=utf-8",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru"
+      },
+      "expectedSnapshotRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "expectedProjectionRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "snapshotRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "projectionRecordDigest": "6283e0cf5cb92c64d6afc68317c6f96eaa88074ab8a603be3c14031dbc180cb9",
+      "identity": {
+        "canonicalName": "* alf01 Cru",
+        "component": null
+      },
+      "fields": {
+        "canonicalName": "* alf01 Cru",
+        "objectType": "Star",
+        "spectralType": "B0.5IV E",
+        "raDeg": 186.6495666666667,
+        "decDeg": -63.099091666666666,
+        "properMotionRaMasYr": 12,
+        "properMotionDecMasYr": 26,
+        "identifiers": "HD 108248;CSI -62 2745 41;N30 2873;TYC 8979-3464-1;* alf01 Cru;FK5 462;PMSC 12210-6233A;WDS J12266-6306A;ALS 14968;GC 16952;PPM 359410;WEB 10799;CCDM J12266-6306A;GCRV 7471;ROT 1822;[B10] 3237;CPC 20.1 3594;HR 4730;SAO 251904;CPD -62 2745A;IDS 12210-6233 A;SKY# 23285;Velocities;Rot;PM;SpT;IUE"
+      },
+      "sourceRefs": [
+        {
+          "id": "acrux-source-0",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+          "role": "object",
+          "label": "SIMBAD object page",
+          "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30"
+        },
+        {
+          "id": "acrux-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf01%20Cru",
+          "role": "object",
+          "label": "raw artifact",
+          "sha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30"
+        }
+      ],
+      "componentRefs": [
+        {
+          "id": "acrux-component-hint-0",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?CCDM%20J12266-6306A",
+          "role": "component",
+          "label": "CCDM J12266-6306A · identity hint only",
+          "sha256": null
+        },
+        {
+          "id": "acrux-component-hint-1",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?WDS%20J12266-6306A",
+          "role": "component",
+          "label": "WDS J12266-6306A · identity hint only",
+          "sha256": null
+        }
+      ],
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spica",
+      "queryIdentifier": "* alf Vir",
+      "state": "structured",
+      "raw": {
+        "captured": 1,
+        "transport": "https-html",
+        "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+        "responseBytes": 58748,
+        "contentType": "text/html; charset=utf-8",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir"
+      },
+      "expectedSnapshotRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "expectedProjectionRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "snapshotRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "projectionRecordDigest": "81276ed6687b07e71d8373419ae4913a6f1e44891af578ae37563429bab82996",
+      "identity": {
+        "canonicalName": "* alf Vir",
+        "component": null
+      },
+      "fields": {
+        "canonicalName": "* alf Vir",
+        "objectType": "beta Cep Variable",
+        "spectralType": "B1V C",
+        "raDeg": 201.298247375,
+        "decDeg": -11.161319472222223,
+        "properMotionRaMasYr": 13,
+        "properMotionDecMasYr": 25,
+        "identifiers": "* alf Vir;GEN# +1.00116658;NAME Spica;SAO 157923;* 67 Vir;GSC 05547-01518;PLX 3063;SBC7 487;AKARI -IRC-V1 J1325115-110940;HD 116658;PMC 90-93 354;SBC9 766;ALS 14813;HGAM 623;PPM 227262;SKY# 24751;BD -10 3672;HIC 65474;RAFGL 1622;TD1 16831;CCDM J13252-1109A;HIP 65474;RBS 1263;TIC 178999156;CSI -10 3672 1;HR 5056;2RE J132508-111117;TYC 5547-1518-1;2E 3039;IDS 13200-1038 A;2RE J1325-111;UBV 12103;2E 1322.5-1053;IRAS 13225-1054;RE J132512-110856;UBV M 19362;1ES 1322-10.8;IRC -10286;RE J1325-110;uvby98 100116658"
+      },
+      "sourceRefs": [
+        {
+          "id": "spica-source-0",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+          "role": "object",
+          "label": "SIMBAD object page",
+          "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b"
+        },
+        {
+          "id": "spica-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir",
+          "role": "object",
+          "label": "raw artifact",
+          "sha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b"
+        }
+      ],
+      "componentRefs": [
+        {
+          "id": "spica-component-hint-0",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?CCDM%20J13252-1109A",
+          "role": "component",
+          "label": "CCDM J13252-1109A · identity hint only",
+          "sha256": null
+        },
+        {
+          "id": "spica-component-hint-1",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?WDS%20J13252-1110A",
+          "role": "component",
+          "label": "WDS J13252-1110A · identity hint only",
+          "sha256": null
+        }
+      ],
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "regulus",
+      "queryIdentifier": "* alf Leo",
+      "state": "structured",
+      "raw": {
+        "captured": 1,
+        "transport": "https-html",
+        "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+        "responseBytes": 58144,
+        "contentType": "text/html; charset=utf-8",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo"
+      },
+      "expectedSnapshotRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "expectedProjectionRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "snapshotRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "projectionRecordDigest": "a30e3e314621ba90d4b37cbd8005de6c21a5f381b3e6f38bc9ad46fd6d07c0bd",
+      "identity": {
+        "canonicalName": "* alf Leo",
+        "component": null
+      },
+      "fields": {
+        "canonicalName": "* alf Leo",
+        "objectType": "High Proper Motion Star",
+        "spectralType": "B8IVn C",
+        "raDeg": 152.09296245833335,
+        "decDeg": 11.967208777777778,
+        "properMotionRaMasYr": 10,
+        "properMotionDecMasYr": 8,
+        "identifiers": "LTT 12716;2E 1005.5+1213;LSPM J1008+1158;SRS 30380;* alf Leo;FK5 380;2MASS J10082229+1158018;SV* ZI 793;* 32 Leo;GC 13926;N30 2414;TD1 14585;** STF 5006A;GCRV 6417;NAME Regulus;TIC 357348164;ADS 7654 A;GEN# +1.00087901A;NLTT 23490;TIC 471011645;AG +12 1199;GJ 9316 A;NSV 4750;TYC 833-1381-1;AP J10082229+1158018;HD 87901;PLX 2384;UBV 9452;ASCC 949713;HGAM 596;PMC 90-93 274;UBV M 15960;BD +12 2149;HIC 49669;PMSC 10030+1227A;USNO -B1.0 1019-00203254;CCDM J10083+1159A;HIP 49669;PPM 127140;uvby98 100087901 A;CNS5 2491;HR 3982"
+      },
+      "sourceRefs": [
+        {
+          "id": "regulus-source-0",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+          "role": "object",
+          "label": "SIMBAD object page",
+          "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801"
+        },
+        {
+          "id": "regulus-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Leo",
+          "role": "object",
+          "label": "raw artifact",
+          "sha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801"
+        }
+      ],
+      "componentRefs": [
+        {
+          "id": "regulus-component-hint-0",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?CCDM%20J10083%2b1159A",
+          "role": "component",
+          "label": "CCDM J10083+1159A · identity hint only",
+          "sha256": null
+        },
+        {
+          "id": "regulus-component-hint-1",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?WDS%20J10084%2b1158A",
+          "role": "component",
+          "label": "WDS J10084+1158A · identity hint only",
+          "sha256": null
+        }
+      ],
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "polaris",
+      "queryIdentifier": "* alf UMi",
+      "state": "structured",
+      "raw": {
+        "captured": 1,
+        "transport": "https-html",
+        "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+        "responseBytes": 54527,
+        "contentType": "text/html; charset=utf-8",
+        "sourceUrl": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi"
+      },
+      "expectedSnapshotRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "expectedProjectionRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "snapshotRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "projectionRecordDigest": "5c70e01ec2c06a1f85b3c7c736a066a6715363b8e72b6d1f2e6bc2384fc6be9a",
+      "identity": {
+        "canonicalName": "* alf UMi",
+        "component": null
+      },
+      "fields": {
+        "canonicalName": "* alf UMi",
+        "objectType": "Classical Cepheid Variable",
+        "spectralType": "F8Ib C",
+        "raDeg": 37.954560666666666,
+        "decDeg": 89.26410897222222,
+        "properMotionRaMasYr": 2,
+        "properMotionDecMasYr": 31,
+        "identifiers": "* alf UMi;GCRV 1037;NAME Lodestar;TD1 835;* 1 UMi;GEN# +1.00008890A;NAME Polaris;TIC 303256075;** WRH 39;GSC 04628-00237;NAME North Star;TYC 4628-237-1;** STF 93A;HD 8890;PLX 299;UBV 21589;ADS 1477 A;HIC 11767;PLX 299.00;UBV M 8201;ADS 1477 AP;HIP 11767;PMC 90-93 640;V* alf UMi;AG +89 4;HR 424;PPM 431;WDS J02318+8916Aa,Ab;BD +88 8;IDS 01226+8846 A;ROT 3491;WDS J02318+8916A;CCDM J02319+8915A;IRAS 01490+8901;SAO 308;WEB 2438;CSI +88 8 1;JP11 498;SBC7 51;AAVSO 0122+88;FK5 907;2MASS J02314822+8915503;SBC9 76"
+      },
+      "sourceRefs": [
+        {
+          "id": "polaris-source-0",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+          "role": "object",
+          "label": "SIMBAD object page",
+          "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5"
+        },
+        {
+          "id": "polaris-source-1",
+          "url": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20UMi",
+          "role": "object",
+          "label": "raw artifact",
+          "sha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5"
+        }
+      ],
+      "componentRefs": [
+        {
+          "id": "polaris-component-hint-0",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?CCDM%20J02319%2b8915A",
+          "role": "component",
+          "label": "CCDM J02319+8915A · identity hint only",
+          "sha256": null
+        },
+        {
+          "id": "polaris-component-hint-1",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?WDS%20J02318%2b8916A",
+          "role": "component",
+          "label": "WDS J02318+8916A · identity hint only",
+          "sha256": null
+        },
+        {
+          "id": "polaris-component-hint-2",
+          "url": "https://vizier.cds.unistra.fr/viz-bin/VizieR-S?WDS%20J02318%2b8916Aa%2cAb",
+          "role": "component",
+          "label": "WDS J02318+8916Aa,Ab · identity hint only",
+          "sha256": null
+        }
+      ],
+      "reviewDecision": "hold",
+      "runtimeAdmission": "candidate-only",
+      "measurementAdmission": "not-admitted",
+      "scientificPayloadWriteback": false
+    }
+  ]
+}

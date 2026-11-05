@@ -1,0 +1,267 @@
+{
+  "version": "v592-nebula-source-visual-analysis-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "six-runtime-derivation-candidates-one-visual-coverage-blocked",
+  "policy": {
+    "noInpainting": true,
+    "noSyntheticCoverageFill": true,
+    "noObservationDataClaimForMissingPixels": true,
+    "mappedColorMustRemainLabeled": true,
+    "scienceNeverLoadsImagePayload": true,
+    "runtimeAssetAdmissionGranted": false
+  },
+  "sourceAcquisitionReceiptSha256": "9e8ebaf628e624d678bc7bf56b313d37c4ec03d4f3d3f6e5407a3146990fddd8",
+  "licenseReviewReceiptSha256": "3c6d3382b532403e62cbe32aaf5584d592b5678ebb04d164e0371c817f11b3cd",
+  "summary": {
+    "analyzedCount": 7,
+    "runtimeDerivationCandidateCount": 6,
+    "visualCoverageBlockedCount": 1,
+    "runtimeAssetAdmittedCount": 0
+  },
+  "derivableTargets": [
+    "heart-nebula",
+    "soul-nebula",
+    "witch-head-nebula",
+    "flame-nebula",
+    "pacman-nebula",
+    "running-chicken-nebula"
+  ],
+  "blockedTargets": [
+    "california-nebula"
+  ],
+  "analyses": [
+    {
+      "target": "california-nebula",
+      "nasaId": "PIA23650",
+      "sourcePath": "source-cache/v592/nebulae/visual/california-nebula-PIA23650-orig.jpg",
+      "sourceSha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396",
+      "sourceDimensions": [
+        3317,
+        1902
+      ],
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3317,
+        "height": 1902
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 30.166268685333,
+        "darkPixelFraction": 0.49889183044433594,
+        "nearBlackPixelFraction": 0.3115501403808594
+      },
+      "visualInspectionDecision": "blocked-multi-panel-observation-plate",
+      "visualInspectionNote": "source is a three-panel infrared observation plate with black margins; no panel may be silently promoted to a global sky impostor",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "target": "heart-nebula",
+      "nasaId": "PIA13112",
+      "sourcePath": "source-cache/v592/nebulae/visual/heart-nebula-PIA13112-orig.jpg",
+      "sourceSha256": "d8c9f8cf688262a3bcf8dee19dfd0a9b7967010ed9be59ae0de7e3b6dcf9da9d",
+      "sourceDimensions": [
+        7252,
+        5142
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 7252,
+        "height": 5142
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 58.627006556694155,
+        "darkPixelFraction": 0.05688667297363281,
+        "nearBlackPixelFraction": 0.00054168701171875
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "single WISE Heart and Soul mosaic frame; mapped infrared color remains labeled",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "soul-nebula",
+      "nasaId": "PIA13014",
+      "sourcePath": "source-cache/v592/nebulae/visual/soul-nebula-PIA13014-orig.jpg",
+      "sourceSha256": "161f8de46c8754b8326c9723194a6ea9f7546847086cbeca6f970803da46982f",
+      "sourceDimensions": [
+        6660,
+        3482
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 6660,
+        "height": 3482
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 57.2867714456972,
+        "darkPixelFraction": 0.06367778778076172,
+        "nearBlackPixelFraction": 0.000804901123046875
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "single WISE Soul mosaic frame; mapped infrared color remains labeled",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "witch-head-nebula",
+      "nasaId": "PIA17553",
+      "sourcePath": "source-cache/v592/nebulae/visual/witch-head-nebula-PIA17553-orig.jpg",
+      "sourceSha256": "6bec27f264d69e83c27e1e7e5ea3ca2659c2bd11f60e7ad1b6cfbb16d2121ae3",
+      "sourceDimensions": [
+        9163,
+        9163
+      ],
+      "cropPolicy": "center-square-inset-192",
+      "crop": {
+        "left": 192,
+        "top": 192,
+        "width": 8779,
+        "height": 8779
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 27.64545808010279,
+        "darkPixelFraction": 0.5361413955688477,
+        "nearBlackPixelFraction": 0.006447792053222656
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "remove a small black edge artifact while preserving the WISE field; no inpainting",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "flame-nebula",
+      "nasaId": "PIA15635",
+      "sourcePath": "source-cache/v592/nebulae/visual/flame-nebula-PIA15635-orig.jpg",
+      "sourceSha256": "194bc387497f375fd40b3fb6c6b8c4cb448ed64c4ccccd7ff5d6fe86ad624212",
+      "sourceDimensions": [
+        5525,
+        5535
+      ],
+      "cropPolicy": "center-square",
+      "crop": {
+        "left": 0,
+        "top": 5,
+        "width": 5525,
+        "height": 5525
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 36.43907759747434,
+        "darkPixelFraction": 0.3409404754638672,
+        "nearBlackPixelFraction": 0.005431175231933594
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "near-square WISE field, center crop only",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "pacman-nebula",
+      "nasaId": "PIA14731",
+      "sourcePath": "source-cache/v592/nebulae/visual/pacman-nebula-PIA14731-orig.jpg",
+      "sourceSha256": "92b73f06383ce5a27e785880bbaf4fb6290261faa5dc61d5c84683340f71f8ce",
+      "sourceDimensions": [
+        3600,
+        2719
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3600,
+        "height": 2719
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 71.03602183284383,
+        "darkPixelFraction": 0.17615032196044922,
+        "nearBlackPixelFraction": 0.038463592529296875
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "single Chandra/Spitzer composite; mapped X-ray/infrared color remains labeled",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "target": "running-chicken-nebula",
+      "nasaId": "PIA13451",
+      "sourcePath": "source-cache/v592/nebulae/visual/running-chicken-nebula-PIA13451-orig.jpg",
+      "sourceSha256": "2fce4f326fd5263856e0a77b9887e72a81679195290570a56a1874acac59c08b",
+      "sourceDimensions": [
+        3700,
+        3700
+      ],
+      "cropPolicy": "full-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3700,
+        "height": 3700
+      },
+      "metrics": {
+        "analysisWidth": 1024,
+        "analysisHeight": 1024,
+        "meanLuma": 64.498849131969,
+        "darkPixelFraction": 0.03816986083984375,
+        "nearBlackPixelFraction": 0.002849578857421875
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspectionNote": "single WISE Lambda Centauri field; mapped infrared color remains labeled",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 4,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "syntheticScientificData": false
+      }
+    }
+  ],
+  "receiptSha256": "1097a3b31c6cd46570483e07683980a46ff5c1e6e616aad3e9cc9e8eb3b176ee"
+}

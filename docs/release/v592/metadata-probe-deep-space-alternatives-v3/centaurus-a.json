@@ -1,0 +1,75 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v3",
+  "probedAt": "2026-08-19T12:42:21.529Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "centaurus-a",
+  "category": "galaxy",
+  "query": "Centaurus A Chandra galaxy",
+  "requiredTermGroups": [
+    [
+      "ngc 5128",
+      "centaurus a",
+      "centaurus-a"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v2/centaurus-a.json",
+    "receiptSha256": "3ff837d68dc0629c1f4c01d927be879445bae7967be179cc328b6a065b282a96",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=NGC+5128&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Centaurus+A+Chandra+galaxy&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Centaurus+A+Chandra+galaxy&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 4264,
+    "responseSha256": "a89ef2581ebe902852ce20d5e19f5d747882ff4e2e19773058cc484c21b0348e"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA04624",
+      "title": "Galaxy Centaurus A",
+      "description": "This image of the active galaxy Centaurus A was taken by NASA's Galaxy Evolution Explorer on June 7, 2003. The galaxy is located 30 million light-years from Earth and is seen edge on, with a prominent dust lane across the major axis. In this image the near ultraviolet emission is represented as green, and the far ultraviolet emission as blue. The galaxy exhibits jets of high energy particles, which were traced by the X-ray emission and measured by NASA's Chandra X-ray Observatory. These X-ray emissions are seen as red in the image. Several regions of ultraviolet emission can be seen where the jets of high energy particles intersect with hydrogen clouds in the upper left corner of the image. The emission shown may be the result of recent star formation triggered by the compression of gas by the jet. http://photojournal.jpl.nasa.gov/catalog/PIA04624",
+      "center": "JPL",
+      "creator": null,
+      "dateCreated": "2003-07-25T16:19:53Z",
+      "keywords": [
+        "Galaxy Evolution Explorer GALEX",
+        "Centaurus A"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04624/collection.json"
+    },
+    {
+      "nasaId": "0202374",
+      "title": "History of Chandra X-Ray Observatory",
+      "description": "This is a photo taken by NASA's Chandra X-ray Observatory that reveals the remains of an explosion in the form of two enormous arcs of multimillion-degree gas in the galaxy Centaurus A that appear to be part of a ring 25,000 light years in diameter. The size and location of the ring suggest that it could have been an explosion that occurred about 10 million years ago. A composite image made with radio (red and green), optical (yellow-orange), and X-ray data (blue) presents a sturning tableau of a turbulent galaxy. A broad band of dust and cold gas is bisected at an angle by opposing jets of high-energy particles blasting away from the supermassive black hole in the nucleus. Lying in a plane perpendicular to the jets are the two large arcs of x-ray emitting multi-million degree gas. This discovery can help astronomers better understand the cause and effect of violent outbursts from the vicinity of supermassive black holes of active galaxies. The Chandra program is managed by the Marshall Space Flight Center in Huntsville, Alabama.",
+      "center": "MSFC",
+      "creator": null,
+      "dateCreated": "2002-07-31T00:00:00Z",
+      "keywords": [
+        "Centaur A",
+        "Chandra",
+        "Eruption"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/0202374/collection.json"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "2f49f6d1ebec4c3b23c238716d4bbc318408ff7125d8aa44ba6b90c6f7a0562f"
+}

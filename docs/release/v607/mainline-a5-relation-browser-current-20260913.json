@@ -1,0 +1,61 @@
+{
+  "schema": "mainline-a5-relation-browser-v3",
+  "capturedAt": "2026-09-13T02:38:34Z",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "browser": "Codex In-app Browser",
+  "viewport": { "width": 1280, "height": 720 },
+  "scenario": {
+    "id": "m1-crab-pulsar-reversible-route-rb2-bound",
+    "actions": [
+      "open object browser",
+      "search 蟹状",
+      "select 蟹状星云 M1",
+      "click 目录关联：Crab Pulsar",
+      "expand 大质量恒星：怎样改变周围环境",
+      "click 04M1｜爆发之后的遗迹"
+    ],
+    "observed": {
+      "m1Passport": "M1 passport exposes licensed potw1644a image, Optical V encoding, provenance links and route card",
+      "forwardSelectedCatalogId": "pulsar:b0531+21",
+      "forwardFocusMarker": "data-deep-sky-focus-id=pulsar:b0531+21",
+      "forwardCommand": {
+        "kind": "catalog-object",
+        "objectId": "pulsar:b0531+21",
+        "source": "object-browser",
+        "focusMarker": "pulsar:b0531+21"
+      },
+      "externalPassport": "Crab Pulsar passport opened with route context",
+      "reverseSelectedCatalogId": "nebula:m1",
+      "reverseFocusMarker": "data-deep-sky-focus-id=nebula:m1",
+      "reverseCommand": {
+        "kind": "catalog-object",
+        "objectId": "nebula:m1",
+        "source": "object-browser",
+        "focusMarker": "nebula:m1"
+      },
+      "returnPassport": "Crab Nebula passport restored",
+      "relationType": "物理关联"
+    },
+    "status": "observed-reversible-external-edge-rb2-bound-with-command-marker"
+  },
+  "boundaries": {
+    "relationScope": "one external edge browser-verified on the Rb2 bound build; this does not close the full five-route click matrix",
+    "cameraDispatch": "The presentation marker exposes catalog-object, object-browser, target object ID and focus sequence; no direction vector or independent camera receipt is exposed in this run.",
+    "performance": "pending",
+    "release": "not-qualified"
+  },
+  "remaining": [
+    "Independent camera position/target/direction telemetry is still pending."
+  ],
+  "supersededEvidence": {
+    "routeMatrix": "docs/release/v607/mainline-a5-route-matrix-current-20260913.json",
+    "focusLifecycle": "docs/release/v607/mainline-a5-focus-lifecycle-current-20260913.json",
+    "note": "The earlier one-edge receipt remains as a focused sub-receipt; five-route, direct-relation and lifecycle claims are carried by the newer bound receipts."
+  }
+}

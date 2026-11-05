@@ -1,0 +1,21 @@
+{
+  "round": 58,
+  "date": "2026-09-14",
+  "scope": "Beta stellar V618 fresh capture intake",
+  "effectiveChangedLines": 501,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R58 generator/test/utility files; panel, generated pack and package integration are additional.",
+  "files": [
+    {"path": "scripts/build-mainline-a-beta-stellar-fresh-capture-v618.mjs", "lines": 166, "sha256": "8db483012cbc68ad4fd5eae1384ef91fcc1d366594a1e50117987c8e07498d46"},
+    {"path": "scripts/build-mainline-a-beta-stellar-fresh-capture-v618.test.mjs", "lines": 116, "sha256": "4a75dacf71fad7d605eb554a8924b7275fc02a7cad56b92a9cba149da481e350"},
+    {"path": "app/lib/mainlineABetaStellarFreshCaptureV618.ts", "lines": 139, "sha256": "6cf0fed43b40517fef5825324bc3e3021521464c333bea7c141f325c028101aa"},
+    {"path": "app/lib/mainlineABetaStellarFreshCaptureV618.test.ts", "lines": 80, "sha256": "f129fa2a54d78e6bf0c45331e15c3b51e2717e35c61f09f201da4e7fd57f305c"}
+  ],
+  "integrationFiles": [
+    {"path": "app/data/mainlineABetaStellarFreshCaptureV618.generated.json", "sha256": "b6938d150d8553a01455bc2280458d5850bbb95cd67b4d674f30df4a4430e38f"},
+    {"path": "app/components/MainlineABetaHeroReviewPanelV611.tsx", "sha256": "a788c17c4c45eb779862629b29086dbd87da64a2d9619fc88fb527d4a44f191e"},
+    {"path": "app/components/MainlineABetaHeroReviewPanelV611.test.tsx", "sha256": "726aceedcc7ba2a11c91199890a1ab74f77c4fd0894dc66f6563290dc4c80a9a"},
+    {"path": "package.json", "sha256": "af2a55d97195b8a0d2e0b68b78c1260523b19490aa41edaaeff36584f573f035"}
+  ]
+}

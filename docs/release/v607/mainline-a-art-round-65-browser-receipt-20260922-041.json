@@ -1,0 +1,82 @@
+{
+  "schema": "mainline-a-art-round-receipt",
+  "version": "r65-multi-device-lifecycle-increment-v625",
+  "round": 65,
+  "runId": "20260922-041",
+  "generatedAt": "2026-09-22T02:16:00.000Z",
+  "status": "blocked-open-gates",
+  "goalStatus": "active",
+  "build": {
+    "receipt": "docs/release/v607/mainline-a-r65-build-20260922-041.json",
+    "buildId": "vmiGPjV9zOaHVQPnJuKPU",
+    "runtimeBuildId": "mainline-a-2f4af686d247d514",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r65-browser-receipt-code-change-20260922-041.json",
+  "performanceReceipt": "docs/release/v607/mainline-a-r65-performance-v625-20260922-041.json",
+  "performanceReplay": "docs/release/v607/mainline-a-r65-performance-replay-v625-20260922-041.json",
+  "domObservationLedger": "docs/release/v607/mainline-a-r65-browser-dom-20260922-041.json",
+  "coverage": {
+    "desktopRuns": 3,
+    "mobileViewportRuns": 3,
+    "repeatRuns": 6,
+    "desktopResourceDigest": "f6448291",
+    "mobileResourceDigest": "38a923ae",
+    "allResourceLifecycleBaseline": true,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "longRunRequestedMs": 1800000,
+    "longRunObservedMs": 0,
+    "physicalMobileDevice": "not-run"
+  },
+  "evidence": {
+    "static": {
+      "receiptBuilderTests": "3/3 passed",
+      "vitest": "13/13 passed",
+      "eslint": "passed",
+      "audit": "static checks passed; runtime gate blocked"
+    },
+    "http": {
+      "build": "passed",
+      "route": "local preserved build on 127.0.0.1:3051"
+    },
+    "visual": {
+      "screenshots": "not used to establish performance",
+      "panel": "opened during all six browser samples"
+    },
+    "browser": {
+      "surface": "Codex in-app browser",
+      "desktopViewport": "1280x720",
+      "mobileViewport": "390x844",
+      "consoleWarningsOrErrors": "none observed"
+    },
+    "performance": {
+      "class": "browser-runtime-observation",
+      "productionPerformanceClaim": false,
+      "realUserValidation": false,
+      "status": "blocked"
+    },
+    "externalSource": "not applicable to runtime performance receipt",
+    "mobilePhysical": "not-run"
+  },
+  "blockers": [
+    "long-run-observation-required",
+    "physical-device-not-run"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "notes": [
+    "This is an incremental R65 browser receipt; the original R65 >=1000-line batch receipt remains authoritative for the round threshold.",
+    "Mobile is a simulated browser viewport, not a physical handset.",
+    "A six-run ledger and stable resource identity do not prove production performance, long-run stability, or real-user experience.",
+    "RunRow panelVisible was recorded false by the existing visibility hook even though the panel was open; this observation is retained as-is and is not promoted to a pass."
+  ]
+}

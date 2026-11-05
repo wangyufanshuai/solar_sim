@@ -1,0 +1,80 @@
+{
+  "version": "v592-major-moon-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:40:05.202Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "rhea",
+  "query": "Rhea Saturn moon global map",
+  "requiredTerms": [
+    "rhea"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Rhea%20Saturn%20moon%20global%20map&media_type=image&page_size=25",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Rhea%20Saturn%20moon%20global%20map&media_type=image&page_size=25",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 6017,
+    "responseSha256": "21640f84cca2957528b41ceb8c56e803509e336701c548d77ca3101737a77d64"
+  },
+  "totalHits": 3,
+  "candidates": [
+    {
+      "nasaId": "PIA12803",
+      "title": "Map of Rhea - November 2009",
+      "description": "This global digital map of Saturn moon Rhea was created using data obtained by NASA Cassini and Voyager spacecraft.",
+      "dateCreated": "2010-12-21T16:00:01Z",
+      "center": "JPL",
+      "keywords": [
+        "Rhea",
+        "Cassini-Huygens"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA12803/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA12803/PIA12803~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA08343",
+      "title": "Map of Rhea - December 2006",
+      "description": "This global digital map of Saturn moon Rhea was created using data taken during NASA Cassini and Voyager spacecraft flybys",
+      "dateCreated": "2006-12-29T17:45:07Z",
+      "center": "JPL",
+      "keywords": [
+        "Rhea",
+        "Cassini-Huygens"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA08343/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA08343/PIA08343~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA10094",
+      "title": "Saturn Ring",
+      "description": "Like Earth, Saturn has an invisible ring of energetic ions trapped in its magnetic field. This feature is known as a \"ring current.\" This ring current has been imaged with a special camera on Cassini sensitive to energetic neutral atoms. This is a false color map of the intensity of the energetic neutral atoms emitted from the ring current through a processed called charged exchange. In this process a trapped energetic ion steals and electron from cold gas atoms and becomes neutral and escapes the magnetic field. The Cassini Magnetospheric Imaging Instrument's ion and neutral camera records the intensity of the escaping particles, which provides a map of the ring current. In this image, the colors represent the intensity of the neutral emission, which is a reflection of the trapped ions. This \"ring\" is much farther from Saturn (roughly five times farther) than Saturn's famous icy rings. ",
+      "dateCreated": "2007-12-12T17:00:02Z",
+      "center": "JPL",
+      "keywords": [
+        "S Rings",
+        "Cassini-Huygens"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA10094/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA10094/PIA10094~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 3,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "fb2e1b766fc60858b059f8c6da82adf5f639ba9c3e18e271e0bd9f878184cf7e"
+}

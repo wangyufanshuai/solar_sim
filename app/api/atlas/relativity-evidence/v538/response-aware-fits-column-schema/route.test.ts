@@ -1,0 +1,9 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+
+const previous = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (previous === undefined) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = previous; });
+describe("v538 column-schema route", () => {
+  it("serves bounded semantics and CSV only in local-shadow", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "local-shadow"; const summary = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v538/response-aware-fits-column-schema", { headers: { "x-forwarded-for": "127.0.0.539" } })); expect(summary.status).toBe(200); expect(summary.headers.get("cache-control")).toBe("no-store"); expect((await summary.json()).summary.counts.qualifiedColumnCount).toBe(17); const csv = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v538/response-aware-fits-column-schema?download=csv", { headers: { "x-forwarded-for": "127.0.0.540" } })); expect(csv.status).toBe(200); expect(csv.headers.get("content-type")).toContain("text/csv"); expect(csv.headers.get("x-atlas-kerr-product")).toContain("not-measurement"); expect((await csv.text()).trimEnd().split("\n")).toHaveLength(18); });
+  it("fails closed for ordinary standalone and Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v538/response-aware-fits-column-schema"))).json()).reason).toBe("local-shadow-only"); process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v538/response-aware-fits-column-schema"))).json()).reason).toBe("lite-boundary"); });
+});

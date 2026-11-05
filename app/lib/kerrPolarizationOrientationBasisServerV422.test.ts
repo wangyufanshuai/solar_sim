@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrPolarizationOrientationBasisV422, resetKerrPolarizationOrientationBasisServerV422CacheForTests } from "./kerrPolarizationOrientationBasisServerV422";
+describe("v422 orientation-basis server", () => { it("single-flights four SHA-verified products with fail-closed measurement semantics", async () => { resetKerrPolarizationOrientationBasisServerV422CacheForTests(); const first = await loadKerrPolarizationOrientationBasisV422(); expect(await loadKerrPolarizationOrientationBasisV422()).toBe(first); expect(first.summary.rows).toHaveLength(4); expect(first.manifest.stokesMeasurement).toBe("unavailable-no-I-Q-U-V"); expect(first.manifest.rasterMaskGenerated).toBe(false); }); });

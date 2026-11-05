@@ -1,0 +1,162 @@
+{
+  "schema": "mainline-a-b2-evidence-checkpoint-v638",
+  "recordedAt": "2026-09-28T03:21:55.239Z",
+  "batch": "B2",
+  "status": "visual-repair-required",
+  "developmentRoundComplete": false,
+  "overallGoalComplete": false,
+  "build": {
+    "buildId": "mainline-a-5b7be2f948fa9171",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "buildReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-build-20260928-068f.json",
+    "bytes": 467629,
+    "sha256": "642929f7a5459b45139806b42333916a5823c148779e1d6eda5ddf6488192818"
+  },
+  "sourceStableAtBuild": true,
+  "workingSource": "visual-repairs-in-progress; 068f does not include them",
+  "static": {
+    "scope": "068f only",
+    "vitest": {
+      "passed": 586,
+      "artifact": {
+        "path": "tmp/mainline-a-b2-vitest-068f.json",
+        "bytes": 224018,
+        "sha256": "4ea684ab390bd9888e163af7ea14b1bfd1dd95133427354760623a34530ff7ef"
+      }
+    },
+    "node": {
+      "passed": 76,
+      "logs": [
+        {
+          "path": "tmp/mainline-a-b2-node-068f.log",
+          "bytes": 4468,
+          "sha256": "64ff48c3a99f840d0aec287b6d35f7b4835b2e8a8e721bbafd4128ce7750b738"
+        },
+        {
+          "path": "tmp/mainline-a-b2-node-replay-068f.log",
+          "bytes": 2894,
+          "sha256": "f0a7bea2435314f5eaf39752d0d44b935e2dbe657c6412270573e6422026550b"
+        }
+      ]
+    },
+    "eslint": {
+      "files": 61,
+      "errors": 0,
+      "warnings": 0,
+      "artifact": {
+        "path": "tmp/mainline-a-b2-eslint-068f.json",
+        "bytes": 15934,
+        "sha256": "a94744f977423af639ab38a02874e47086ef771d36d8a4435c26b26273e20c25"
+      }
+    }
+  },
+  "http": [
+    {
+      "path": "docs/release/v607/mainline-a-b2-http-20260928-068f.json",
+      "bytes": 13315,
+      "sha256": "683d136d247e921a636be342aacc4085e1c4527af4f598fa24b1665566794ed7"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-b2-nebula-http-20260928-068f.json",
+      "bytes": 43886,
+      "sha256": "ee136383a9f4e9f332fffca928a06f7f382e8bd803c7a19b4637f947fa430024"
+    }
+  ],
+  "browser": {
+    "status": "canonical36-measured-local",
+    "stars": 12,
+    "nebulae": 12,
+    "constellations": 12,
+    "identity": {
+      "path": "tmp/mainline-a-b2-browser-identity-36-068f.json",
+      "bytes": 467,
+      "sha256": "152b41c3f2a63d8acc12beffb962ffde0be2621be797f057909fbb8de406320d"
+    },
+    "actualUiBundle": {
+      "path": "tmp/mainline-a-b2-batch-36-068f.json",
+      "bytes": 1976270,
+      "sha256": "1716b18d65a8359bf9108e6a145792d7bef8c1abb40ac77ca5e0d0e2bdc13299"
+    },
+    "extraction": "Read actual textarea value in bounded slices without JSON reconstruction; all 36 embedded strings equal individually saved raw bytes.",
+    "intake": {
+      "path": "tmp/mainline-a-b2-intake-36-068f/intake.json",
+      "bytes": 54882,
+      "sha256": "1930bbcdf800efdabdf8b721319c3edc05de590511e12badb0259120ff6e3873"
+    },
+    "replay": {
+      "path": "tmp/mainline-a-b2-intake-36-068f/replay.json",
+      "bytes": 17626,
+      "sha256": "9488ae0af9c05c5709f62885dec5515ab6864d4e091fbfeaae6245d6712582f8"
+    },
+    "controlledFault": {
+      "path": "docs/release/v607/mainline-a-b2-controlled-fault-20260928-081.json",
+      "bytes": 4527,
+      "sha256": "4603a4b8b2b5cc3a4ceee2342c488b991fa357b53bd07187fcc1d3e32003b2a3"
+    }
+  },
+  "visual": {
+    "path": "docs/release/v607/mainline-a-b2-visual-review-20260928-081.json",
+    "bytes": 27087,
+    "sha256": "9611f75dece9d46c023303dbc9cf4bccc33c22dba7a884bcf6ff03ae7bccc2fa"
+  },
+  "performance": {
+    "path": "docs/release/v607/mainline-a-b2-short-performance-20260928-081.json",
+    "bytes": 133042,
+    "sha256": "87831c88089399809fbcaff6327cddac5b8112eaeaafbbda6ed7ac4fcdecfc39"
+  },
+  "mobile": {
+    "status": "viewport-observed-with-blocking-overlay",
+    "width": 390,
+    "height": 844,
+    "state": {
+      "path": "tmp/mainline-a-b2-mobile-helix-068f.json",
+      "bytes": 591,
+      "sha256": "0d7e33ae45f269be624d0264f3b7036dab8904e8d3fb1ba7947c84c7e45e8e01"
+    },
+    "screenshot": {
+      "path": "tmp/mainline-a-b2-mobile-helix-068f.jpg",
+      "bytes": 37580,
+      "sha256": "d63837521f38308fd5f63971be997edcf745d927b0d4dbd10eca060dc18f3e0b"
+    },
+    "physicalMobile": "not-run"
+  },
+  "externalSource": {
+    "scientificComponentReview": "pending-four-stars",
+    "additionalNebulaRightsSignatures": "pending-0-of-12",
+    "newConstellationAnchorRaw": "collection-in-progress-not-yet-admitted",
+    "rightsApproval": false
+  },
+  "frozenData": [
+    {
+      "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+      "bytes": 6448,
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+      "bytes": 7536,
+      "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+      "bytes": 17429,
+      "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+      "bytes": 17973,
+      "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+    }
+  ],
+  "nextAction": "Finish sourced constellation correction and visual repairs, rerun static checks, build a new preserved candidate, then rerun browser evidence.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsApproval": false
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "version": "v592-rotation-reference-receipt-v1",
+  "generatedAt": "2026-08-15T00:00:00Z",
+  "status": "14-of-16-absolute-rotation-admitted-16-of-16-kinematics-admitted",
+  "packetPath": "public/data/living-universe-v592/rotation-reference.json",
+  "packetSha256": "551c1a8b706da9f2e9c1ad866e0b1d20db05e7fca71982822dd0b80f53bf22cb",
+  "generatedModulePath": "app/data/celestialRotationV592.generated.ts",
+  "generatedModuleSha256": "4c141dc6f8bc0034d7cc56a3448b2071b866a4edd99dc3e4abd9c5856aa8ee70",
+  "source": {
+    "path": "tools/science-cache/naif-v201/pck00011.tpc",
+    "sha256": "3dff7b1dbeceaa01f25467767d3fa25816051c85d162d1edf04acb310ee28bb1",
+    "bytes": 131226,
+    "origin": "NASA-JPL-NAIF-generic-kernels",
+    "originUrl": "https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc",
+    "license": "NASA-JPL-public-domain",
+    "reusePolicy": "existing-local-exact-byte-reference;no-network-request"
+  },
+  "admission": {
+    "admittedCount": 14,
+    "absoluteAdmittedCount": 14,
+    "kinematicAdmittedCount": 16,
+    "requiredCount": 16,
+    "admittedBodies": [
+      "sun",
+      "mercury",
+      "venus",
+      "earth",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "uranus",
+      "neptune",
+      "ceres",
+      "vesta",
+      "eros",
+      "tempel-1"
+    ],
+    "incompleteBodies": [
+      "bennu",
+      "kleopatra"
+    ],
+    "kinematicBodies": [
+      "sun",
+      "mercury",
+      "venus",
+      "earth",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "uranus",
+      "neptune",
+      "ceres",
+      "vesta",
+      "bennu",
+      "eros",
+      "kleopatra",
+      "tempel-1"
+    ]
+  },
+  "unresolvedGate": "missing-authoritative-absolute-prime-meridian;catalog-kinematics-use-disclosed-native-model-W0",
+  "authority": {
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false
+  },
+  "receiptSha256": "da1b7891cd2fab63b656231bc41f723a1b49291740714226f0a0b14dbd9b07a6"
+}

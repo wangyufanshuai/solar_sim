@@ -1,0 +1,132 @@
+{
+  "schema": "mainline-a-r66-web-v648-nebula-matrix-supplement",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T15:07:00.000Z",
+  "status": "verified-local-browser-nebula-matrix-candidate-release-blocked",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+  "coverage": {
+    "canonicalManifestTotal": 36,
+    "nebulaeInCurrentV648BrowserMatrix": 12,
+    "desktopPainted": 12,
+    "mobileViewportPainted": 12,
+    "starsAndConstellationsInCurrentV648ItemMatrix": "not-run",
+    "historicalCanonical36BrowserBuild": "mainline-a-93b297e97cc3a2ce",
+    "historicalCanonical36StatusForV648": "stale-build-evidence",
+    "physicalMobile": "not-run"
+  },
+  "evidence": {
+    "static": {
+      "buildReceipt": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+      "canonicalManifest": {
+        "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+        "bytes": 38349,
+        "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+      },
+      "codeChange": {
+        "path": "docs/release/v607/mainline-a-r66-web-v648-matrix-code-change-20261007.json",
+        "sha256": "c520799a0989c9a1ef36c4218f891578fbd43b4c9d970fdeac56b611456e9dee",
+        "newEffectiveToolLines": 471,
+        "modifiedEffectiveToolLines": 0,
+        "newTestLinesExcluded": 96,
+        "cumulativeV648EffectiveLowerBound": 2557
+      },
+      "nodeSyntax": "passed-for-three-new-scripts",
+      "nodeNegativeAndReplayTests": "7/7 passed",
+      "targetedEslint": "passed-no-warnings",
+      "vitest": "15/15 targeted nebula application tests passed after supplement; 14/14 focused V648 application tests passed before tool-only supplement",
+      "productionBuild": "passed-preserved-V648-build-source-hash-unchanged"
+    },
+    "HTTP": {
+      "existingTwelveAssetReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-http-20261007-v648web01.json",
+        "sha256": "1bcccbe7e4d2a17ba7fed563e34248da298a41a63761f521e0b1aec35ac3bdeb",
+        "result": "12/12 local image bodies matched pinned byte counts and SHA-256"
+      },
+      "currentServerCheckAt": "2026-10-07T15:04:53.550Z",
+      "homeStatus": 200,
+      "healthStatus": 200,
+      "origin": "http://127.0.0.1:3091"
+    },
+    "visual": {
+      "screenshotsCaptured": 24,
+      "screenshotsIndividuallyHashedInVerifier": 24,
+      "manuallyInspectedExamples": [
+        {
+          "path": "output/playwright/mainline-a-web-nebula-matrix-mobile-m42-20261007-v648matrix02.png",
+          "sha256": "2c61548a9cf07c8b73a24be28c416639c5c2142dd850aa7274ac6c59dd993b57"
+        },
+        {
+          "path": "output/playwright/mainline-a-web-nebula-matrix-desktop-b33-20261007-v648matrix02.png",
+          "sha256": "ecdd3b6eb22a4049686fe46f94bd13d6be5abd45f951d022b6bbc99f2d005da0"
+        }
+      ],
+      "scope": "local screenshots show current build after image decode and opacity transition; no human acceptance claim"
+    },
+    "browser": {
+      "raw": {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-matrix-raw-20261007-v648matrix02.json",
+        "bytes": 50380,
+        "sha256": "625c94cd847727a346b08536149890114c24e32ce4d6d650f3c7347bf5cabb36"
+      },
+      "verification": {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-matrix-verification-20261007-v648matrix02.json",
+        "bytes": 11939,
+        "sha256": "e3b5f38ff4850ad0e410a162c00a31474f40d0648e5222b1a1b2e549c2553a9e",
+        "replay": "passed"
+      },
+      "viewport": {
+        "desktop": [1280, 720],
+        "mobileSimulation": [390, 844]
+      },
+      "faultRecovery": "browser-injected-local-image-request-failure-then-retry-loaded",
+      "firstAttempt": {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-matrix-attempt-20261007-v648matrix01.json",
+        "sha256": "769523692238e31c5ace73ee8f5075538319f08bac4e9ff92599c65ce664801e",
+        "status": "incomplete-lazy-image-request-not-triggered-before-timeout",
+        "promotion": false
+      }
+    },
+    "performance": {
+      "newPerformanceObservation": "not-run-in-this-supplement",
+      "currentBuildExistingTwoLongRuns": {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-20261007-v648long01.json",
+        "sha256": "0b56764b3b1771fe85040f93e5cee10960f37e948fcec6ee6847aae49d228929",
+        "result": "two-independent-local-browser-observations-1802-seconds-each"
+      },
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "newExternalScientificOrRightsEvidence": "none",
+      "humanRightsSignoff": "0/12-pending",
+      "stellarPhysicalComponentIdentity": "0/4-pending"
+    }
+  },
+  "remainingGates": [
+    "A-line nebula human copyright signoff remains pending 0/12.",
+    "Acrux, Spica, Regulus and Polaris physical component identity admission remains pending 0/4.",
+    "A current V648 per-item browser matrix for twelve stars and twelve constellations has not yet been run.",
+    "Physical mobile is not available; mobile evidence is a Chrome viewport simulation.",
+    "Root-app alignment is outside the next-web-only working scope and root canonical manifest is absent."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "canonicalV622DigestChanged": false,
+    "applicationSourceChanged": false,
+    "physicsKernelChangedByThisBatch": false,
+    "parentGitOperated": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

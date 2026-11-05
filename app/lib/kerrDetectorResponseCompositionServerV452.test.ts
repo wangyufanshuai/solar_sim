@@ -1,0 +1,4 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { loadKerrDetectorResponseCompositionV452, resetKerrDetectorResponseCompositionServerCacheForTestsV452 } from "./kerrDetectorResponseCompositionServerV452";
+afterEach(() => resetKerrDetectorResponseCompositionServerCacheForTestsV452());
+describe("v452 response composition server", () => { it("single-flights bounded summary and keeps three exports allowlisted", async () => { const first = loadKerrDetectorResponseCompositionV452(); const second = loadKerrDetectorResponseCompositionV452(); const [a, b] = await Promise.all([first, second]); expect(a.artifact.artifactSha256).toBe(b.artifact.artifactSha256); expect(a.summary.rows).toHaveLength(4); expect(Object.keys(a.exports)).toEqual(["qualification", "fixture", "oracle"]); }); });

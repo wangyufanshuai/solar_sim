@@ -1,0 +1,56 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 4,
+  "title": "galactic-marker-luminance-separation",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:09:32 UTC",
+  "status": "round-04-code-and-dev-visual-evidence-passed-with-preexisting-art-polish-baseline-regression",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": [
+    "EIH/Newton N-body kernels unchanged",
+    "2PN Lense-Thirring and Kerr kernels unchanged",
+    "catalog coordinates, distances and object counts unchanged"
+  ],
+  "code": {
+    "file": "app/components/NebulaMarkers.tsx",
+    "changes": [
+      "added vDistanceBand from final screen point size",
+      "added 0.76-1.00 markerSeparation alpha ramp",
+      "kept 10px minimum, 118px maximum and lifecycle disposal unchanged"
+    ]
+  },
+  "browser": {
+    "mode": "in-app browser",
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "route": "银河系 scale band",
+    "visibleAssertions": [
+      "canvas=1",
+      "viewport width=1280",
+      "console error count=0"
+    ],
+    "screenshot": "docs/release/v607/screenshots/mainline-a-round-04-galactic-marker-hierarchy-20260913.png",
+    "screenshotBytes": 149093,
+    "evidenceBoundary": "development preview visual evidence; no performance claim"
+  },
+  "tests": {
+    "eslint": {
+      "command": "npx eslint app/components/NebulaMarkers.tsx",
+      "passed": true
+    },
+    "vitest": {
+      "command": "npx vitest run app/components/stellarResourceTeardownV596.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**",
+      "passed": true,
+      "tests": 2
+    },
+    "baselineRegression": {
+      "command": "npx vitest run app/lib/atlasArtPolish.horizons.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**",
+      "passed": false,
+      "failure": "constellation-layer-lock regressed; constellation surface is pre-existing dirty-tree change and untouched in round 04"
+    }
+  },
+  "releaseBinding": {
+    "buildId": "h08Dhkk9omMt2ifEk6SBu",
+    "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b",
+    "note": "packet regenerated after receipt"
+  }
+}

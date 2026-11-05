@@ -1,0 +1,1422 @@
+{
+  "version": "v592-gaia-constellation-browser-capture-v1",
+  "capturedAt": "2026-08-16T04:31:24.473Z",
+  "route": "http://127.0.0.1:3016/local-shadow-v592",
+  "deliveryTier": "standalone-full",
+  "observedCandidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+  "observedSourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+  "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+  "catalogContract": {
+    "desktopRecordCount": 60000,
+    "mobileRecordCount": 18000,
+    "gaiaAnchorCount": 420,
+    "retainedAnchorCount": 420,
+    "constellationCount": 88,
+    "waypointCount": 484,
+    "desktopDefaultCount": 12,
+    "mobileDefaultCount": 8,
+    "focusMapping": {
+      "orion": "Ori",
+      "ursa-major": "UMa",
+      "cassiopeia": "Cas"
+    },
+    "normalizedSphereRadius": 231.88,
+    "labelLanguage": "latin-chinese-iau-code",
+    "iauBoundaryAdmission": "blocked-source-not-admitted"
+  },
+  "diagnostics": {
+    "errorCount": 0,
+    "warningCount": 0,
+    "shaderOrWebglErrorCount": 0,
+    "pageErrorCount": 0,
+    "consoleEntries": [],
+    "browserHarnessTelemetryNoise": "excluded-non-page-Statsig-network-timeout"
+  },
+  "policy": {
+    "inAppBrowserOnly": true,
+    "singleCanvasRequired": true,
+    "gaiaOnlyPositionColorMagnitude": true,
+    "deterministicPsf": true,
+    "randomTwinkle": false,
+    "randomParallax": false,
+    "depthTest": true,
+    "foregroundOcclusion": true,
+    "scientificPayloadWriteback": false,
+    "scientificCoordinateMutation": false,
+    "presentationOnly": true
+  },
+  "frames": [
+    {
+      "name": "desktop-overview-science-1440x900",
+      "mode": "science",
+      "focusLabel": "Overview",
+      "backgroundSegmentCount": 72,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "overview-defaults",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 31,
+      "focusCode": "none",
+      "focusTarget": "overview",
+      "focusedSegmentCount": 0,
+      "foregroundOccluderCount": 10,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 304040458,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 12,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "UMa",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Ursa Major大熊座UMa"
+        },
+        {
+          "code": "Cas",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Cassiopeia仙后座Cas"
+        },
+        {
+          "code": "Cyg",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.618490219116211,
+            "width": 67.68148040771484,
+            "x": 1723.0130615234375,
+            "y": -1892.493896484375
+          },
+          "text": "Cygnus天鹅座Cyg"
+        },
+        {
+          "code": "Lyr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.347982406616211,
+            "width": 57.26090621948242,
+            "x": 826.6885986328125,
+            "y": -1370.971435546875
+          },
+          "text": "Lyra天琴座Lyr"
+        },
+        {
+          "code": "Aql",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.899190902709961,
+            "width": 62.494224548339844,
+            "x": 1152.40673828125,
+            "y": -344.1650085449219
+          },
+          "text": "Aquila天鹰座Aql"
+        },
+        {
+          "code": "Tau",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Taurus金牛座Tau"
+        },
+        {
+          "code": "Gem",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Gemini双子座Gem"
+        },
+        {
+          "code": "Leo",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Leo狮子座Leo"
+        },
+        {
+          "code": "Sco",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.5130615234375,
+            "width": 67.73638916015625,
+            "x": 176.5926971435547,
+            "y": 526.7620239257812
+          },
+          "text": "Scorpius天蝎座Sco"
+        },
+        {
+          "code": "Sgr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.435995101928711,
+            "width": 75.25224304199219,
+            "x": 607.4849243164062,
+            "y": 494.91363525390625
+          },
+          "text": "Sagittarius人马座Sgr"
+        },
+        {
+          "code": "Ori",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Orion猎户座Ori"
+        },
+        {
+          "code": "Cru",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.295573234558105,
+            "width": 64.02022552490234,
+            "x": -418.8272399902344,
+            "y": 1884.6751708984375
+          },
+          "text": "Crux南十字座Cru"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-overview-science-1440x900.jpg",
+      "screenshotBytes": 145110,
+      "screenshotSha256": "2491905a63e4ba43308159404f42f47b93ff633aa0b28da56a0d7ea5e6f86bc4"
+    },
+    {
+      "name": "desktop-overview-cinematic-1440x900",
+      "mode": "cinematic",
+      "focusLabel": "Overview",
+      "backgroundSegmentCount": 72,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "overview-defaults",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 36,
+      "focusCode": "none",
+      "focusTarget": "overview",
+      "focusedSegmentCount": 0,
+      "foregroundOccluderCount": 10,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 321866330,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 12,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "UMa",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Ursa Major大熊座UMa"
+        },
+        {
+          "code": "Cas",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Cassiopeia仙后座Cas"
+        },
+        {
+          "code": "Cyg",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.618490219116211,
+            "width": 67.68148040771484,
+            "x": 1723.0130615234375,
+            "y": -1892.493896484375
+          },
+          "text": "Cygnus天鹅座Cyg"
+        },
+        {
+          "code": "Lyr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.347982406616211,
+            "width": 57.26090621948242,
+            "x": 826.6885986328125,
+            "y": -1370.971435546875
+          },
+          "text": "Lyra天琴座Lyr"
+        },
+        {
+          "code": "Aql",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.899190902709961,
+            "width": 62.494224548339844,
+            "x": 1152.40673828125,
+            "y": -344.1650085449219
+          },
+          "text": "Aquila天鹰座Aql"
+        },
+        {
+          "code": "Tau",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Taurus金牛座Tau"
+        },
+        {
+          "code": "Gem",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Gemini双子座Gem"
+        },
+        {
+          "code": "Leo",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Leo狮子座Leo"
+        },
+        {
+          "code": "Sco",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.5130615234375,
+            "width": 67.73638916015625,
+            "x": 176.5926971435547,
+            "y": 526.7620239257812
+          },
+          "text": "Scorpius天蝎座Sco"
+        },
+        {
+          "code": "Sgr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 12.435995101928711,
+            "width": 75.25224304199219,
+            "x": 607.4849243164062,
+            "y": 494.91363525390625
+          },
+          "text": "Sagittarius人马座Sgr"
+        },
+        {
+          "code": "Ori",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Orion猎户座Ori"
+        },
+        {
+          "code": "Cru",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 13.295573234558105,
+            "width": 64.02022552490234,
+            "x": -418.8272399902344,
+            "y": 1884.6751708984375
+          },
+          "text": "Crux南十字座Cru"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-overview-cinematic-1440x900.jpg",
+      "screenshotBytes": 170684,
+      "screenshotSha256": "a19a578ca7b6c98fd548e77ae09b87c5e9da750e6f9f6be5a54d089b8047e7c1"
+    },
+    {
+      "name": "desktop-orion-science-1440x900",
+      "mode": "science",
+      "focusLabel": "Orion",
+      "backgroundSegmentCount": 66,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Ori",
+      "focusTarget": "orion",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Ori",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 21.94099998474121,
+            "width": 106.08512878417969,
+            "x": 659.0004272460938,
+            "y": 491.57012939453125
+          },
+          "text": "Orion猎户座Ori"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-orion-science-1440x900.jpg",
+      "screenshotBytes": 144609,
+      "screenshotSha256": "b6fb5530f6442ea8f1f4d7fc59767871b7822de14756c6d2371526845b8e3ca1"
+    },
+    {
+      "name": "desktop-orion-cinematic-1440x900",
+      "mode": "cinematic",
+      "focusLabel": "Orion",
+      "backgroundSegmentCount": 66,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Ori",
+      "focusTarget": "orion",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Ori",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 21.94099998474121,
+            "width": 106.08512878417969,
+            "x": 659.0004272460938,
+            "y": 491.57012939453125
+          },
+          "text": "Orion猎户座Ori"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-orion-cinematic-1440x900.jpg",
+      "screenshotBytes": 165860,
+      "screenshotSha256": "8db37d991809c85614431b14e0e3c3b75ef88c5c34d7897ad9af33365d1c0d01"
+    },
+    {
+      "name": "desktop-ursa-major-science-1440x900",
+      "mode": "science",
+      "focusLabel": "Ursa Major",
+      "backgroundSegmentCount": 66,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 6,
+      "focusCode": "UMa",
+      "focusTarget": "ursa-major",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "UMa",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 22.305828094482422,
+            "width": 140.8773651123047,
+            "x": 852.5485229492188,
+            "y": 392.39239501953125
+          },
+          "text": "Ursa Major大熊座UMa"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-ursa-major-science-1440x900.jpg",
+      "screenshotBytes": 122374,
+      "screenshotSha256": "cb9fe1786f33d5a4b6c7f0be4640cbb97ed703a1981331052ed64b4ca580943b"
+    },
+    {
+      "name": "desktop-ursa-major-cinematic-1440x900",
+      "mode": "cinematic",
+      "focusLabel": "Ursa Major",
+      "backgroundSegmentCount": 66,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 6,
+      "focusCode": "UMa",
+      "focusTarget": "ursa-major",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "UMa",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 22.305828094482422,
+            "width": 140.8773651123047,
+            "x": 852.5485229492188,
+            "y": 392.39239501953125
+          },
+          "text": "Ursa Major大熊座UMa"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-ursa-major-cinematic-1440x900.jpg",
+      "screenshotBytes": 127707,
+      "screenshotSha256": "8792dd8008fcb835357c1e72d9d99b883f517352ae8dbda4b73b44cc91b0d5d2"
+    },
+    {
+      "name": "desktop-cassiopeia-science-1440x900",
+      "mode": "science",
+      "focusLabel": "Cassiopeia",
+      "backgroundSegmentCount": 68,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Cas",
+      "focusTarget": "cassiopeia",
+      "focusedSegmentCount": 4,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 239.81,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Cas",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 22.80126953125,
+            "width": 139.19686889648438,
+            "x": 611.3116455078125,
+            "y": 461.3736572265625
+          },
+          "text": "Cassiopeia仙后座Cas"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-cassiopeia-science-1440x900.jpg",
+      "screenshotBytes": 154431,
+      "screenshotSha256": "e2e7bc53ab03e08182bb831b448d42f2c9014c62e0018888610572155163fa7e"
+    },
+    {
+      "name": "desktop-cassiopeia-cinematic-1440x900",
+      "mode": "cinematic",
+      "focusLabel": "Cassiopeia",
+      "backgroundSegmentCount": 68,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 12,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Cas",
+      "focusTarget": "cassiopeia",
+      "focusedSegmentCount": 4,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-plus-stratified-14000-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 60000,
+      "gaiaRenderedBrightPsfCount": 108,
+      "gaiaRenderedCatalogCount": 21575,
+      "gaiaRenderedFaintCount": 20162,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 100663334,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Cas",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 22.80126953125,
+            "width": 139.19686889648438,
+            "x": 611.3116455078125,
+            "y": 461.3736572265625
+          },
+          "text": "Cassiopeia仙后座Cas"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 72,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 144,
+      "viewport": {
+        "devicePixelRatio": 1.5,
+        "height": 900,
+        "width": 1440
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr,Tau,Gem,Leo,Cru",
+      "visibleCount": 12,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/desktop-cassiopeia-cinematic-1440x900.jpg",
+      "screenshotBytes": 180097,
+      "screenshotSha256": "d4822d9522bac9ea3d2d544ff9d753c4a86bd2f69c16d2310bf7f409177a3643"
+    },
+    {
+      "name": "mobile-overview-science-390x844",
+      "mode": "science",
+      "focusLabel": "Overview",
+      "backgroundSegmentCount": 50,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "overview-defaults",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 8,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 22,
+      "focusCode": "none",
+      "focusTarget": "overview",
+      "focusedSegmentCount": 0,
+      "foregroundOccluderCount": 6,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-v589-readonly-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 18000,
+      "gaiaRenderedBrightPsfCount": 106,
+      "gaiaRenderedCatalogCount": 17693,
+      "gaiaRenderedFaintCount": 201,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 118180325,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 8,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Cas",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Cassiopeia仙后座Cas"
+        },
+        {
+          "code": "UMa",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Ursa Major大熊座UMa"
+        },
+        {
+          "code": "Cyg",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 11.142416000366211,
+            "width": 55.375732421875,
+            "x": 1289.6949462890625,
+            "y": -1774.2332763671875
+          },
+          "text": "Cygnus天鹅座Cyg"
+        },
+        {
+          "code": "Lyr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.920980453491211,
+            "width": 46.849853515625,
+            "x": 448.51873779296875,
+            "y": -1285.1708984375
+          },
+          "text": "Lyra天琴座Lyr"
+        },
+        {
+          "code": "Aql",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.553874015808105,
+            "width": 51.131675720214844,
+            "x": 754.2828369140625,
+            "y": -322.27154541015625
+          },
+          "text": "Aquila天鹰座Aql"
+        },
+        {
+          "code": "Sco",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.237956047058105,
+            "width": 55.42069625854492,
+            "x": -160.50035095214844,
+            "y": 494.4500732421875
+          },
+          "text": "Scorpius天蝎座Sco"
+        },
+        {
+          "code": "Sgr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.174886703491211,
+            "width": 61.57004928588867,
+            "x": 244.03024291992188,
+            "y": 464.58062744140625
+          },
+          "text": "Sagittarius人马座Sgr"
+        },
+        {
+          "code": "Ori",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Orion猎户座Ori"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 50,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 100,
+      "viewport": {
+        "devicePixelRatio": 1.0000000298023224,
+        "height": 844,
+        "width": 390
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr",
+      "visibleCount": 8,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/mobile-overview-science-390x844.jpg",
+      "screenshotBytes": 38363,
+      "screenshotSha256": "f5fdae35f805e4bcc386b68ffb0d1248435da6e7064950d6b8a6d3bd965b4521",
+      "cameraCoordinateMutation": false,
+      "cameraFocusCode": "Cas",
+      "cameraFovDeg": 58,
+      "cameraFraming": "inactive",
+      "cameraViewOffsetPx": 0,
+      "mobileSkyReferencePresent": true
+    },
+    {
+      "name": "mobile-overview-cinematic-390x844",
+      "mode": "cinematic",
+      "focusLabel": "Overview",
+      "backgroundSegmentCount": 50,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "overview-defaults",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 8,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 27,
+      "focusCode": "none",
+      "focusTarget": "overview",
+      "focusedSegmentCount": 0,
+      "foregroundOccluderCount": 6,
+      "fpsGate": "passed",
+      "fpsMedian": 239.81,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-v589-readonly-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 18000,
+      "gaiaRenderedBrightPsfCount": 106,
+      "gaiaRenderedCatalogCount": 17693,
+      "gaiaRenderedFaintCount": 201,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 123423285,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 8,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Cas",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Cassiopeia仙后座Cas"
+        },
+        {
+          "code": "UMa",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Ursa Major大熊座UMa"
+        },
+        {
+          "code": "Cyg",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 11.142416000366211,
+            "width": 55.375732421875,
+            "x": 1289.6949462890625,
+            "y": -1774.2332763671875
+          },
+          "text": "Cygnus天鹅座Cyg"
+        },
+        {
+          "code": "Lyr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.920980453491211,
+            "width": 46.849853515625,
+            "x": 448.51873779296875,
+            "y": -1285.1708984375
+          },
+          "text": "Lyra天琴座Lyr"
+        },
+        {
+          "code": "Aql",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.553874015808105,
+            "width": 51.131675720214844,
+            "x": 754.2828369140625,
+            "y": -322.27154541015625
+          },
+          "text": "Aquila天鹰座Aql"
+        },
+        {
+          "code": "Sco",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.237956047058105,
+            "width": 55.42069625854492,
+            "x": -160.50035095214844,
+            "y": 494.4500732421875
+          },
+          "text": "Scorpius天蝎座Sco"
+        },
+        {
+          "code": "Sgr",
+          "display": "block",
+          "focused": false,
+          "rect": {
+            "height": 10.174886703491211,
+            "width": 61.57004928588867,
+            "x": 244.03024291992188,
+            "y": 464.58062744140625
+          },
+          "text": "Sagittarius人马座Sgr"
+        },
+        {
+          "code": "Ori",
+          "display": "none",
+          "focused": false,
+          "rect": {
+            "height": 0,
+            "width": 0,
+            "x": 0,
+            "y": 0
+          },
+          "text": "Orion猎户座Ori"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 50,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 100,
+      "viewport": {
+        "devicePixelRatio": 1.0000000298023224,
+        "height": 844,
+        "width": 390
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr",
+      "visibleCount": 8,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/mobile-overview-cinematic-390x844.jpg",
+      "screenshotBytes": 46855,
+      "screenshotSha256": "bde1432a938f3c091e93e6ed41e2d39c282071eb1dfc153faa74b0d40fc8c00d",
+      "cameraCoordinateMutation": false,
+      "cameraFocusCode": "Cas",
+      "cameraFovDeg": 58,
+      "cameraFraming": "inactive",
+      "cameraViewOffsetPx": 0,
+      "mobileSkyReferencePresent": true
+    },
+    {
+      "name": "mobile-orion-cinematic-390x844",
+      "mode": "cinematic",
+      "focusLabel": "Orion",
+      "backgroundSegmentCount": 44,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 8,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Ori",
+      "focusTarget": "orion",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-v589-readonly-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 18000,
+      "gaiaRenderedBrightPsfCount": 106,
+      "gaiaRenderedCatalogCount": 17693,
+      "gaiaRenderedFaintCount": 201,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 67108865,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Ori",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 13.655314445495605,
+            "width": 66.02364349365234,
+            "x": 161.98818969726562,
+            "y": 450.6024169921875
+          },
+          "text": "Orion猎户座Ori"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 50,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 100,
+      "viewport": {
+        "devicePixelRatio": 1.0000000298023224,
+        "height": 844,
+        "width": 390
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr",
+      "visibleCount": 8,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/mobile-orion-cinematic-390x844.jpg",
+      "screenshotBytes": 34830,
+      "screenshotSha256": "86bca9bb1ec1eb1bdc9451398b218e949ef57ac743333bf0e918b5f8530cc1ba",
+      "cameraCoordinateMutation": false,
+      "cameraFocusCode": "Ori",
+      "cameraFovDeg": 56,
+      "cameraFraming": "mobile-focus-projection-only",
+      "cameraViewOffsetPx": 102.94,
+      "mobileSkyReferencePresent": true
+    },
+    {
+      "name": "mobile-ursa-major-cinematic-390x844",
+      "mode": "cinematic",
+      "focusLabel": "Ursa Major",
+      "backgroundSegmentCount": 44,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 8,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 6,
+      "focusCode": "UMa",
+      "focusTarget": "ursa-major",
+      "focusedSegmentCount": 6,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-v589-readonly-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 18000,
+      "gaiaRenderedBrightPsfCount": 106,
+      "gaiaRenderedCatalogCount": 17693,
+      "gaiaRenderedFaintCount": 201,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 67108865,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "UMa",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 10.159627914428711,
+            "width": 64.16520690917969,
+            "x": 162.9174041748047,
+            "y": 393.79833984375
+          },
+          "text": "Ursa Major大熊座UMa"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 50,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 100,
+      "viewport": {
+        "devicePixelRatio": 1.0000000298023224,
+        "height": 844,
+        "width": 390
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr",
+      "visibleCount": 8,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/mobile-ursa-major-cinematic-390x844.jpg",
+      "screenshotBytes": 33816,
+      "screenshotSha256": "5044cd97e5142418944c58d58951163969030373e06d7a6c9ba373aa880365a8",
+      "cameraCoordinateMutation": false,
+      "cameraFocusCode": "UMa",
+      "cameraFovDeg": 72,
+      "cameraFraming": "mobile-focus-projection-only",
+      "cameraViewOffsetPx": 179.85,
+      "mobileSkyReferencePresent": true
+    },
+    {
+      "name": "mobile-cassiopeia-cinematic-390x844",
+      "mode": "cinematic",
+      "focusLabel": "Cassiopeia",
+      "backgroundSegmentCount": 46,
+      "buildFingerprint": "522fdcc1c1c207e7f94e1c0a33d0b14a973f00ff6ff106a705001e7898aafb80",
+      "candidateManifestSha256": "2ea04248f2abf635522bb2e38f3a5413cc625082d613c289222b4705020c4723",
+      "canvasCount": 1,
+      "closeupPolicy": "focused-emphasized-nonfocus-suppressed",
+      "constellationCount": 88,
+      "constellationStatus": "ready",
+      "defaultCount": 8,
+      "depthPolicy": "depth-test-true-foreground-occlusion",
+      "drawCalls": 9,
+      "focusCode": "Cas",
+      "focusTarget": "cassiopeia",
+      "focusedSegmentCount": 4,
+      "foregroundOccluderCount": 0,
+      "fpsGate": "passed",
+      "fpsMedian": 240.1,
+      "gaiaAnchorCount": 420,
+      "gaiaCatalog": "gaia-lite-46000-v589-readonly-direct-v592",
+      "gaiaPsfPolicy": "linear-Moffat-Airy-deterministic-source-id-optics",
+      "gaiaRecordCount": 18000,
+      "gaiaRenderedBrightPsfCount": 106,
+      "gaiaRenderedCatalogCount": 17693,
+      "gaiaRenderedFaintCount": 201,
+      "gaiaRetainedAnchorCount": 420,
+      "gaiaStatus": "ready",
+      "gaiaTransport": "direct-public-sha-verified-readonly-v592",
+      "gpuBytes": 67108865,
+      "htmlOcclusionScope": "visible-hero-meshes-only-no-sky-sphere",
+      "iauBoundaryAdmission": "blocked-source-not-admitted",
+      "labelCount": 1,
+      "labelLanguage": "latin-chinese-iau-code",
+      "labels": [
+        {
+          "code": "Cas",
+          "display": "block",
+          "focused": true,
+          "rect": {
+            "height": 13.612142562866211,
+            "width": 83.09920501708984,
+            "x": 153.45040893554688,
+            "y": 429.8433837890625
+          },
+          "text": "Cassiopeia仙后座Cas"
+        }
+      ],
+      "normalizedDirections": true,
+      "payloadStable": true,
+      "presentationOnly": true,
+      "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "scientificWriteback": false,
+      "segmentCount": 50,
+      "sourceManifestSha256": "f19d4bad73c09829fcabfca7aa4bbd133872a284b5d0528b59ea3bbccfa153dc",
+      "sphereRadius": 231.88,
+      "vertexCount": 100,
+      "viewport": {
+        "devicePixelRatio": 1.0000000298023224,
+        "height": 844,
+        "width": 390
+      },
+      "visibleCodes": "Ori,UMa,Cas,Cyg,Lyr,Aql,Sco,Sgr",
+      "visibleCount": 8,
+      "waypointCount": 484,
+      "screenshotPath": "docs/release/v592/screenshots/gaia-constellation-matrix/mobile-cassiopeia-cinematic-390x844.jpg",
+      "screenshotBytes": 16772,
+      "screenshotSha256": "fbf4c44c7ecc99d484135a9a62dd8bcb0ccb34cc84788d734b481f529ebae7a0",
+      "cameraCoordinateMutation": false,
+      "cameraFocusCode": "Cas",
+      "cameraFovDeg": 58,
+      "cameraFraming": "mobile-focus-projection-only",
+      "cameraViewOffsetPx": 78.52,
+      "mobileSkyReferencePresent": true
+    }
+  ]
+}

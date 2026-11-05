@@ -1,0 +1,415 @@
+{
+  "schema": "mainline-a-root-source-audit-v627",
+  "version": "v627-read-only-root-source-inventory",
+  "generatedAt": "2026-09-27T03:22:37.241Z",
+  "status": "blocked",
+  "evidenceClass": "static",
+  "evidenceClasses": [
+    "static"
+  ],
+  "workspaceBoundary": {
+    "nextWeb": "E:\\86137\\myai\\solar_sim\\next-web",
+    "parentRoot": "E:\\86137\\myai\\solar_sim",
+    "canonicalRoot": "E:\\86137\\myai\\solar_sim\\web",
+    "rootPath": "E:\\86137\\myai\\solar_sim\\web",
+    "rootRealPath": "E:\\86137\\myai\\solar_sim\\web",
+    "readOnlyInput": true,
+    "rootWrites": false,
+    "parentGitOps": false,
+    "outputWithinNextWeb": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed",
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "root": {
+    "package": {
+      "path": "package.json",
+      "present": true,
+      "packageName": "solar-sim-viz",
+      "packageType": "module",
+      "releaseIdentity": "solar-sim-mainline-a",
+      "scripts": [
+        "build",
+        "dev",
+        "preview"
+      ],
+      "sha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+      "errors": []
+    },
+    "packageLock": {
+      "path": "package-lock.json",
+      "present": true,
+      "packageName": "solar-sim-viz",
+      "lockfileVersion": 3,
+      "sha256": "150a3d63346808860efea21e5a6fd952b48e7aa370697db859ed41d1ae723f01",
+      "errors": []
+    },
+    "source": {
+      "sourceFileCount": 3,
+      "publicFileCount": 3,
+      "directorySummary": [
+        {
+          "directory": "README.md",
+          "fileCount": 1,
+          "bytes": 2562,
+          "binaryFiles": 0,
+          "textFiles": 1,
+          "hashedFiles": 1,
+          "markerFiles": []
+        },
+        {
+          "directory": "index.html",
+          "fileCount": 1,
+          "bytes": 2735,
+          "binaryFiles": 0,
+          "textFiles": 1,
+          "hashedFiles": 1,
+          "markerFiles": []
+        },
+        {
+          "directory": "package-lock.json",
+          "fileCount": 1,
+          "bytes": 34557,
+          "binaryFiles": 0,
+          "textFiles": 1,
+          "hashedFiles": 1,
+          "markerFiles": []
+        },
+        {
+          "directory": "package.json",
+          "fileCount": 1,
+          "bytes": 279,
+          "binaryFiles": 0,
+          "textFiles": 1,
+          "hashedFiles": 1,
+          "markerFiles": []
+        },
+        {
+          "directory": "public",
+          "fileCount": 3,
+          "bytes": 1464,
+          "binaryFiles": 0,
+          "textFiles": 3,
+          "hashedFiles": 3,
+          "markerFiles": []
+        },
+        {
+          "directory": "src",
+          "fileCount": 2,
+          "bytes": 18544,
+          "binaryFiles": 0,
+          "textFiles": 2,
+          "hashedFiles": 2,
+          "markerFiles": [
+            "src/main.js"
+          ]
+        },
+        {
+          "directory": "vite.config.js",
+          "fileCount": 1,
+          "bytes": 510,
+          "binaryFiles": 0,
+          "textFiles": 1,
+          "hashedFiles": 1,
+          "markerFiles": [
+            "vite.config.js"
+          ]
+        }
+      ],
+      "markerTotals": {
+        "mainline": 0,
+        "canonical": 0,
+        "stellar": 0,
+        "nebula": 0,
+        "constellation": 0,
+        "assetRoute": 2
+      },
+      "markerFiles": [
+        "src/main.js"
+      ],
+      "routeLikeFiles": [
+        "src/main.js"
+      ],
+      "mainlineFiles": [],
+      "hasMainlineMarkers": false,
+      "hasCanonicalMarkers": false,
+      "hasAssetRouteMarkers": true
+    },
+    "manifests": [],
+    "inventory": {
+      "files": [
+        {
+          "path": "index.html",
+          "kind": "entrypoint",
+          "bytes": 2735,
+          "binary": false,
+          "sha256": "ac97594f480700805b9c35a29897880d3abb6fcddd776108b6ccde5665bfa88c",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 0
+          },
+          "markers": []
+        },
+        {
+          "path": "package-lock.json",
+          "kind": "package-metadata",
+          "bytes": 34557,
+          "binary": false,
+          "sha256": "150a3d63346808860efea21e5a6fd952b48e7aa370697db859ed41d1ae723f01",
+          "markerCounts": {},
+          "markers": []
+        },
+        {
+          "path": "package.json",
+          "kind": "package-metadata",
+          "bytes": 279,
+          "binary": false,
+          "sha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+          "markerCounts": {},
+          "markers": []
+        },
+        {
+          "path": "public/observation_placeholder.svg",
+          "kind": "public-asset",
+          "bytes": 663,
+          "binary": false,
+          "sha256": "5aab8f88f0a3df79956b46f86d86f85eaf963b42717f1f7a94ebf5431e329ad9",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 0
+          },
+          "markers": []
+        },
+        {
+          "path": "public/reference_ui_inspiration.txt",
+          "kind": "public-asset",
+          "bytes": 254,
+          "binary": false,
+          "sha256": "e4adb2fb3be717edf7c05b72f94612bbae546dd15071a6642e2dec8e33f7bbb3",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 0
+          },
+          "markers": []
+        },
+        {
+          "path": "public/textures/README.md",
+          "kind": "public-asset",
+          "bytes": 547,
+          "binary": false,
+          "sha256": "980300dd6cb144d9ca404282d9a80fde2de2f46bc7097f4e67c0f7d86b084010",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 0
+          },
+          "markers": []
+        },
+        {
+          "path": "README.md",
+          "kind": "project-metadata",
+          "bytes": 2562,
+          "binary": false,
+          "sha256": "e46b8e9349f9f3afd1ed4202ea3d5f42aaa6c78521f84842be437a7055986984",
+          "markerCounts": {},
+          "markers": []
+        },
+        {
+          "path": "src/main.js",
+          "kind": "source",
+          "bytes": 14837,
+          "binary": false,
+          "sha256": "75638734275c1584aa7d80759c9d571d58da1e862415ae7810fe2bebb3ecad08",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 2
+          },
+          "markers": [
+            "assetRoute"
+          ]
+        },
+        {
+          "path": "src/style.css",
+          "kind": "source",
+          "bytes": 3707,
+          "binary": false,
+          "sha256": "7a69b1ae1ccd436ec846ac409d1c0a489954c412cf1246cedebea8e5a3a23f1e",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 0
+          },
+          "markers": []
+        },
+        {
+          "path": "vite.config.js",
+          "kind": "project-metadata",
+          "bytes": 510,
+          "binary": false,
+          "sha256": "a0d00d1ff08cc1f94f5a2b44e0f3479361d336042e05b77558415e5a5109c60f",
+          "markerCounts": {
+            "mainline": 0,
+            "canonical": 0,
+            "stellar": 0,
+            "nebula": 0,
+            "constellation": 0,
+            "assetRoute": 1
+          },
+          "markers": [
+            "assetRoute"
+          ]
+        }
+      ],
+      "errors": [],
+      "visited": 10,
+      "totalBytes": 60651,
+      "fileCount": 10,
+      "inventorySha256": "b9cbb44556622b28aff92baa58c3a28b13dd8c9c2803593e575adce91d68fc56"
+    }
+  },
+  "classification": {
+    "issues": [
+      {
+        "code": "root-manifest-not-observed",
+        "severity": "error",
+        "detail": "no canonical coverage manifest was observed in the root input",
+        "evidenceClass": "static"
+      },
+      {
+        "code": "root-mainline-markers-absent",
+        "severity": "info",
+        "detail": "root source contains no Mainline A marker; absence is recorded, not inferred as coverage",
+        "evidenceClass": "static"
+      },
+      {
+        "code": "root-canonical-markers-absent",
+        "severity": "info",
+        "detail": "root source contains no canonical marker",
+        "evidenceClass": "static"
+      }
+    ],
+    "blockers": [
+      "root-manifest-not-observed"
+    ],
+    "canonical": true,
+    "validManifestCount": 0
+  },
+  "gates": [
+    {
+      "id": "root-path-boundary",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    {
+      "id": "root-package-identity",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    {
+      "id": "root-source-inventory",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": []
+    },
+    {
+      "id": "root-canonical-manifest",
+      "state": "blocked",
+      "required": true,
+      "evidenceClass": "static",
+      "blockers": [
+        "root-manifest-not-observed"
+      ]
+    },
+    {
+      "id": "no-synthetic-promotion",
+      "state": "passed",
+      "required": true,
+      "evidenceClass": "rollback",
+      "blockers": []
+    }
+  ],
+  "claimsClosed": {
+    "rootSourceObserved": true,
+    "rootCoverage": false,
+    "manifestParity": false,
+    "scientificValidity": false,
+    "legalClearance": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  },
+  "blockers": [
+    "root-manifest-not-observed"
+  ],
+  "issues": [
+    {
+      "code": "root-manifest-not-observed",
+      "severity": "error",
+      "detail": "no canonical coverage manifest was observed in the root input",
+      "evidenceClass": "static"
+    },
+    {
+      "code": "root-mainline-markers-absent",
+      "severity": "info",
+      "detail": "root source contains no Mainline A marker; absence is recorded, not inferred as coverage",
+      "evidenceClass": "static"
+    },
+    {
+      "code": "root-canonical-markers-absent",
+      "severity": "info",
+      "detail": "root source contains no canonical marker",
+      "evidenceClass": "static"
+    }
+  ],
+  "writes": {
+    "root": false,
+    "parentGit": false,
+    "scientificPayload": false,
+    "output": true
+  },
+  "inputDigests": {
+    "packageSha256": "0979e9a2374a2f295f51ea1b7a79672ba5897e1eb9008522d5e8bf7d07cc1405",
+    "packageLockSha256": "150a3d63346808860efea21e5a6fd952b48e7aa370697db859ed41d1ae723f01",
+    "inventorySha256": "b9cbb44556622b28aff92baa58c3a28b13dd8c9c2803593e575adce91d68fc56",
+    "manifestSha256": [],
+    "reportInputsSha256": "799a736fa86c7e1525ffeb9bd358acc76882c638c0727a31c720190f7bc28a79"
+  },
+  "notes": [
+    "This audit inventories the canonical root input without writing to it or invoking Git.",
+    "Source names, route markers, screenshots, and copied fixtures do not constitute canonical coverage evidence.",
+    "A missing or invalid root manifest remains blocked; next-web coverage is never substituted.",
+    "No network access, candidate promotion, scientific payload writeback, or physics-kernel operation is performed."
+  ]
+}

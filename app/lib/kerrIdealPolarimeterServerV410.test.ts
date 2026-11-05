@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrIdealPolarimeterArtifactV410, resetKerrIdealPolarimeterServerV410CacheForTests } from "./kerrIdealPolarimeterServerV410";
+describe("v410 ideal polarimeter server", () => { it("single-flights the 96-row artifact and emits four representative rays only", async () => { resetKerrIdealPolarimeterServerV410CacheForTests(); const first = await loadKerrIdealPolarimeterArtifactV410(); const second = await loadKerrIdealPolarimeterArtifactV410(); expect(second).toBe(first); expect(first.artifact.view.modulationRows).toHaveLength(96); expect(first.summary.representativeRays).toHaveLength(4); expect(first.summary).not.toHaveProperty("modulationRows"); expect(first.summary).not.toHaveProperty("reconstructions"); }); });

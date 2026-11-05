@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:30.557Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "pinwheel-galaxy",
+  "category": "galaxy",
+  "query": "M101 Pinwheel Galaxy GALEX",
+  "requiredTermGroups": [
+    [
+      "m101",
+      "pinwheel"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M101+Pinwheel+Galaxy+GALEX&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M101+Pinwheel+Galaxy+GALEX&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 174,
+    "responseSha256": "78f327c98c613a1096bef8a8a151495b8e1aef89d5e0d8a8e7eda0960fae9e63"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "b2c42849260f03b488e53fd2c3bb966815191c2aee2e2bd121171fe70d0d9859"
+}

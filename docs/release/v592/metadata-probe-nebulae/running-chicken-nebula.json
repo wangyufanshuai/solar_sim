@@ -1,0 +1,51 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-15T04:13:37.498Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "running-chicken-nebula",
+  "query": "Running Chicken Nebula",
+  "requiredTerms": [
+    "running",
+    "chicken",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Running%20Chicken%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Running%20Chicken%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1683,
+    "responseSha256": "611941e8dda3a45cc3db65ab9ba89a26e4152e58e967c6866acc46ac23498abf"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA13451",
+      "title": "Chasing Chickens in the Lambda Centauri Nebula",
+      "description": "This infrared image from NASA Wide-field Infrared Survey Explorer shows the Lambda Centauri nebula, a star-forming cloud in our Milky Way galaxy, also known as the Running Chicken nebula.",
+      "dateCreated": "2010-12-22T07:07:31Z",
+      "center": "JPL",
+      "keywords": [
+        "Wide-field Infrared Survey Explorer WISE"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13451/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "d1120b15eebc5c7be3cd27355a81869e0aa76b0453bc94e160e3f8fc68b2e6ce"
+}

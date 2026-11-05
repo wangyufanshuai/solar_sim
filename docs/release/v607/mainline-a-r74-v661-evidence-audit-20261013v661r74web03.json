@@ -1,0 +1,117 @@
+{
+  "schema": "mainline-a-r74-layered-evidence-audit-v661",
+  "status": "verified-current-source-local-candidate-hold",
+  "observedAt": "2026-10-13T04:18:21.343Z",
+  "buildId": "e_ORAUffXf09ZS9hgjY6j",
+  "appSourceSha256": "b2de8addac0f5745c5c74d1d629908b82b2716408460364884e56c26bf7d9eb1",
+  "evidence": {
+    "static": {
+      "status": "local-tests-and-build-passed",
+      "build": {
+        "path": "docs/release/v607/mainline-a-r74-build-20261013v661r74web02.json",
+        "bytes": 478864,
+        "sha256": "c3298041d4b90374e2ff8431bca3724cee876f57afb865a1a3e5c2df92194e8b"
+      },
+      "v616Snapshot": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b",
+      "v616Projection": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    },
+    "http": {
+      "status": "local-production-server-passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r74-v661-http-20261013v661r74web03.json",
+        "bytes": 4290,
+        "sha256": "d5b78255f6411b8d66fdb38d072207a29a11469fe95f07de9c4f124b673ce39a"
+      },
+      "allowedSample": 200,
+      "heldImages": [
+        404,
+        404,
+        404,
+        404,
+        404
+      ]
+    },
+    "visual": {
+      "status": "four-screenshots-pinned-no-human-signoff",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r74-v661-visual-20261013v661r74web03.json",
+        "bytes": 1603,
+        "sha256": "5b9538833b065a0a3a2036c0f914610f0128982c6edca3945900f69bfb3980df"
+      },
+      "screenshots": [
+        {
+          "path": "docs/release/v607/mainline-a-r74-v661-desktop-conflict-20261013v661r74web03.png",
+          "bytes": 172514,
+          "sha256": "9234405c2badb3b6d53ba788a511cef598f6f1bcc9998267934a973e74f4eb18"
+        },
+        {
+          "path": "docs/release/v607/mainline-a-r74-v661-desktop-detail-20261013v661r74web03.png",
+          "bytes": 171129,
+          "sha256": "f524d6776f2c80c73299fa5defa382888ea4eab559cb6f6b587d498533c389be"
+        },
+        {
+          "path": "docs/release/v607/mainline-a-r74-v661-mobile-viewport-conflict-20261013v661r74web03.png",
+          "bytes": 61542,
+          "sha256": "eb63033306bd769cbbd7748e1194e0cecd99d7636304b24e043e28ddfb413b49"
+        },
+        {
+          "path": "docs/release/v607/mainline-a-r74-v661-mobile-viewport-detail-20261013v661r74web03.png",
+          "bytes": 72968,
+          "sha256": "bd475bf431d76d0c85c5e0756a7418ade14010226683856a66a00649a3da8ec5"
+        }
+      ]
+    },
+    "browser": {
+      "status": "desktop-and-simulated-mobile-viewport-passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r74-v661-browser-20261013v661r74web03.json",
+        "bytes": 5156,
+        "sha256": "3d0b68c693d7858bb1816104a2cd88934fdd5c385b25ae225faae2d7f042e595"
+      },
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "short-local-diagnostic-only",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r74-v661-performance-20261013v661r74web03.json",
+        "bytes": 1068,
+        "sha256": "ac2fe687f44d076888a05e0032dedbe611c439bf61fc6d69aa9c826a717c0069"
+      },
+      "currentSourceLongRun": "not-run-in-r74",
+      "productionPerformanceClaimed": false
+    },
+    "externalSource": {
+      "status": "six-real-https-pages-replayed",
+      "ledger": {
+        "path": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+        "bytes": 24048,
+        "sha256": "767003b07374a8dad488644bc9ccd77336c0934b5b04ad54c1893a7c6aee5221"
+      },
+      "audit": {
+        "path": "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json",
+        "bytes": 1751,
+        "sha256": "c0b02617a3c4090ad1ee6f8cb98f0e462b5260c05a9ac00afd6ba1f7bbe3dd6a"
+      },
+      "officialPagesCaptured": 6,
+      "identityConflicts": 1,
+      "imageRequestsExecuted": 0,
+      "rightsSigned": 0
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "runtimeAdmitted": 0,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "independentNasaAuthentication": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "schema": "mainline-a-b3-evidence-session-receipt-v642",
+  "recordedAt": "2026-09-29T07:29:49.471Z",
+  "status": "local-evidence-observed-external-gates-held",
+  "plan": {
+    "path": "app/data/mainlineABetaStellarRosterEvidenceV642.generated.json",
+    "sha256": "112214fd3057e2d06a2809e1bd6325fc7c17f2c6bf991ff68b5c656832b6b872"
+  },
+  "build": {
+    "path": "docs/release/v607/mainline-a-r66-build-b3v642-20260929-002.json",
+    "sha256": "1dbaa540f6871a32de48679025deb919a6787dda50b1cb704fd8f4b0196bd2f2",
+    "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+    "runtimeBuildId": "mainline-a-d29dbf0f3f1039c8",
+    "sourceStable": true
+  },
+  "http": {
+    "path": "docs/release/v607/mainline-a-b3-http-v642-20260929.json",
+    "sha256": "e1d70b58d0fdcf08192112b540bc0701b8060cf7aeab2eee34cc905c46c21434",
+    "status": "passed"
+  },
+  "browser": {
+    "path": "docs/release/v607/mainline-a-b3-browser-v642-20260929.json",
+    "sha256": "d36ce094d6ec2463b41989143ee897e314fd2e2eee54ef4504a957b57ff81eef",
+    "desktop": true,
+    "mobileViewport": true,
+    "physicalMobile": false
+  },
+  "replay": {
+    "total": 11,
+    "required": 10,
+    "observed": 8,
+    "openGateIds": [
+      "performance",
+      "external-source"
+    ],
+    "reportable": false
+  },
+  "session": {
+    "schema": "mainline-a-beta-stellar-roster-evidence-v642",
+    "generatedAt": "2026-09-29T00:00:00.000Z",
+    "roster": {
+      "path": "app/data/mainlineABetaStellarRosterV641.generated.json",
+      "sha256": "b2ee2bcb455177c4f50e354d726500b3d9dc8b7dc806329452cd07d0314eb7ee",
+      "total": 24,
+      "runtimeExisting": 20,
+      "candidateHold": 4,
+      "componentConfirmed": 0
+    },
+    "build": {
+      "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+      "distDir": ".next-mainline-a-r66-b3v642-20260929-002/.next",
+      "sourceStableAtBuild": true
+    },
+    "records": [
+      {
+        "id": "static-v641-roster",
+        "evidenceClass": "static",
+        "title": "V641 24-row roster and immutable fingerprint",
+        "required": true,
+        "state": "passed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.467Z",
+        "endedAt": "2026-09-29T07:29:49.467Z",
+        "source": "app/data/mainlineABetaStellarRosterV641.generated.json",
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": "b2ee2bcb455177c4f50e354d726500b3d9dc8b7dc806329452cd07d0314eb7ee",
+        "observationFingerprint": "1006d3b2279a212667373e6307cde74e0c7123d18546fc93fe45ce3c7f1d6aa0",
+        "details": [
+          "24 rows: 20 existing references, 4 candidate hold, component confirmed 0",
+          "staged roster SHA matches current source and build input"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "static-v641-negative",
+        "evidenceClass": "static",
+        "title": "V641 promotion, synthetic-source and tamper negatives",
+        "required": true,
+        "state": "passed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.467Z",
+        "endedAt": "2026-09-29T07:29:49.467Z",
+        "source": "docs/release/v607/mainline-a-b3-stellar-roster-audit-v641.json",
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": "10e9a01f8fe37df967b6d11ec8e93121890a29066b55172884129925a4cb8200",
+        "observationFingerprint": "8c58d1a15a74ddc9200ac299fd6b18f077e14c8c03559c23c69ed3feb2da2f19",
+        "details": [
+          "V641 audit negative cases include duplicate, admission, synthetic source, fingerprint and component promotion",
+          "V642 audit rejects build mismatch, visual claim, external promotion and missing rows"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "http-home",
+        "evidenceClass": "http",
+        "title": "new build home response and runtime identity",
+        "required": true,
+        "state": "passed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.386Z",
+        "endedAt": "2026-09-29T07:29:49.429Z",
+        "source": "http://127.0.0.1:3078/",
+        "httpStatus": 200,
+        "contentType": "text/html; charset=utf-8",
+        "finalUrl": "http://127.0.0.1:3078/",
+        "redirectChain": [],
+        "bytes": 8696,
+        "sha256": "364fdf96f64d3d6818ec6a6b472102ec91e6397a04ec5867736084755c6789e5",
+        "observationFingerprint": "542ae0edfd2fa7b48340b5db8d30a5ba7cea3ee87164388e9c5e76322641d5c5",
+        "details": [
+          "local production home HTML and script entry observed"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "http-health",
+        "evidenceClass": "http",
+        "title": "new build health response and kernel boundary",
+        "required": true,
+        "state": "passed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.402Z",
+        "endedAt": "2026-09-29T07:29:49.424Z",
+        "source": "http://127.0.0.1:3078/api/health",
+        "httpStatus": 200,
+        "contentType": "application/json",
+        "finalUrl": "http://127.0.0.1:3078/api/health",
+        "redirectChain": [],
+        "bytes": 241,
+        "sha256": "43c62546e1fe1dce0b785f70c2b3fc121f6ca0ac167781382643ef4b326ad80c",
+        "observationFingerprint": "cf3995c13924a401dddbd59abb5f4ba0d90823b52edddf05540d6663ee3a4ba5",
+        "details": [
+          "local production health JSON; default kernel legacy-eih-1pn"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "http-roster-panel",
+        "evidenceClass": "http",
+        "title": "V641 roster DOM marker delivered by the new build",
+        "required": true,
+        "state": "passed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.403Z",
+        "endedAt": "2026-09-29T07:29:49.461Z",
+        "source": "http://127.0.0.1:3078/_next/static/chunks/4868.d564d962984151db.js",
+        "httpStatus": 200,
+        "contentType": "application/javascript; charset=UTF-8",
+        "finalUrl": "http://127.0.0.1:3078/_next/static/chunks/4868.d564d962984151db.js",
+        "redirectChain": [],
+        "bytes": 2236067,
+        "sha256": "b0d3fac4f0dbaa29d05e80e7f1931d03a09b9fa5c5ba301acdd4b92922a6099d",
+        "observationFingerprint": "15e9afd1005dbe91ba91226dc4adcbf9037a6ffc1ef27c97b05694bfcb0630df",
+        "details": [
+          "served JavaScript chunk contains V641 roster and V642 evidence panel markers"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "visual-desktop",
+        "evidenceClass": "visual",
+        "title": "desktop screenshot of the V641 evidence panel",
+        "required": true,
+        "state": "observed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.467Z",
+        "endedAt": "2026-09-29T07:29:49.467Z",
+        "source": "docs/release/v607/screenshots/mainline-a-b3-v642-evidence-panel-20260929.png",
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": 87265,
+        "sha256": "2dc800a7a81713619a2c43849c8da9e038d114c9b84328933dc02a7751b9dc6c",
+        "observationFingerprint": "4c1dd37be7960e549f5b66a59b71400163438128392c9c9102e8ff36304f0ac5",
+        "details": [
+          "local desktop screenshot of V642 panel",
+          "human visual signoff remains pending"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "browser-desktop",
+        "evidenceClass": "browser",
+        "title": "desktop interaction and readable accessibility state",
+        "required": true,
+        "state": "observed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.467Z",
+        "endedAt": "2026-09-29T07:29:49.467Z",
+        "source": "docs/release/v607/mainline-a-b3-browser-v642-20260929.json",
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": "d36ce094d6ec2463b41989143ee897e314fd2e2eee54ef4504a957b57ff81eef",
+        "observationFingerprint": "58960d6cda53c63c757669ea69c273971447cb52c54ae5574716a46348dc0682",
+        "details": [
+          "1280x720 dialog, 24 roster rows, four candidate holds, six evidence classes",
+          "HTTP class switch showed three planned records; console had no errors or warnings"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "browser-mobile",
+        "evidenceClass": "browser",
+        "title": "available mobile viewport interaction",
+        "required": false,
+        "state": "observed",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": "2026-09-29T07:29:49.467Z",
+        "endedAt": "2026-09-29T07:29:49.467Z",
+        "source": "docs/release/v607/screenshots/mainline-a-b3-v642-evidence-panel-mobile-20260929.png",
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": 38458,
+        "sha256": "2a7ee7e3b4908ef2e29ab479dbe4cb6992dadbc28af87b5e5803a87d4d3d77a3",
+        "observationFingerprint": "9948e03f7fc6e0d0bd1a9464c7385056bb1b9fb5422831e359f4e398e3d5a9ec",
+        "details": [
+          "390x844 in-app viewport, 24 roster rows, no document horizontal overflow",
+          "viewport check is not a physical-device test"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "performance-long-run",
+        "evidenceClass": "performance",
+        "title": "long-run frame, memory and resource lifecycle observation",
+        "required": true,
+        "state": "not-run",
+        "buildId": "kpzfJrcJ2XarC7SFZpPv3",
+        "startedAt": null,
+        "endedAt": null,
+        "source": null,
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": null,
+        "observationFingerprint": "494cf04f2e545dd69e8869ce60e3a759505cd58c24d7960e47d461aee72d22a5",
+        "details": [
+          "B3 used build, HTTP and short browser interaction only",
+          "two independent >=30-minute observations and physical GPU memory were not collected"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "external-stellar-identity",
+        "evidenceClass": "external-source",
+        "title": "four candidate component identities and source review",
+        "required": true,
+        "state": "blocked",
+        "buildId": null,
+        "startedAt": null,
+        "endedAt": null,
+        "source": null,
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": null,
+        "observationFingerprint": null,
+        "details": [
+          "external review is required; local evidence cannot promote this gate"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      },
+      {
+        "id": "external-nebula-rights",
+        "evidenceClass": "external-source",
+        "title": "nebula source and rights signatures",
+        "required": true,
+        "state": "blocked",
+        "buildId": null,
+        "startedAt": null,
+        "endedAt": null,
+        "source": null,
+        "httpStatus": null,
+        "contentType": null,
+        "finalUrl": null,
+        "redirectChain": [],
+        "bytes": null,
+        "sha256": null,
+        "observationFingerprint": null,
+        "details": [
+          "external review is required; local evidence cannot promote this gate"
+        ],
+        "claims": {
+          "browserDrawObserved": false,
+          "visualAcceptance": false,
+          "productionPerformance": false,
+          "scientificValidity": false,
+          "rightsApproved": false
+        }
+      }
+    ],
+    "boundary": {
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "runtimeWrites": false,
+      "measurementWrites": false,
+      "scientificPayloadWriteback": false,
+      "snapshotMutation": false
+    },
+    "claims": {
+      "browserAcceptance": false,
+      "visualAcceptance": false,
+      "rendererDrawObserved": false,
+      "productionPerformance": false,
+      "scientificValidity": false,
+      "copyrightApproval": false,
+      "realUserValidation": false
+    },
+    "fingerprint": "ea4e81b351feb26d0e7d1811b13988aa9506438fcebf9a4386bd2f65213f691b"
+  },
+  "evidenceClasses": {
+    "static": "passed-local",
+    "http": "passed-local",
+    "visual": "observed-local",
+    "browser": "observed-local",
+    "performance": "not-run-long-run",
+    "externalSource": "held"
+  },
+  "limits": [
+    "Local browser screenshots do not prove human visual acceptance or real-user validation.",
+    "Local HTTP timings are not production performance.",
+    "The four stellar component identities and rights remain pending; no scientific payload was written back."
+  ]
+}

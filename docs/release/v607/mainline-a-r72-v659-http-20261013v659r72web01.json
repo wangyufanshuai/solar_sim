@@ -1,0 +1,66 @@
+{
+  "schema": "mainline-a-r72-local-http-v659",
+  "status": "passed-current-source-local-production-build",
+  "buildReceipt": "docs/release/v607/mainline-a-r72-build-20261013v659r72web01.json",
+  "buildId": "O5n09rQbOkY0Xqm2O8Yoz",
+  "runtimeBuildId": "mainline-a-ed06f728f80c7d37",
+  "sourceSha256": "ed06f728f80c7d37a10d86c4e99f2f1b737570299711136db66332ae88f0e10d",
+  "origin": "http://127.0.0.1:3115",
+  "home": {
+    "status": 200,
+    "finalUrl": "http://127.0.0.1:3115/",
+    "bytes": 8696,
+    "sha256": "1932bf4f0efe3c47bbad970de12f11cc38904ceac78594e3866b7eceb0065742"
+  },
+  "health": {
+    "status": 200,
+    "bytes": 241,
+    "sha256": "58d467d2da51213d88ba8cf10d6de297abcbe9dbf6d0c1eb092e9abf9abf6bf1"
+  },
+  "image": {
+    "id": "california-nebula",
+    "nasaId": "PIA23650",
+    "route": "/api/atlas/mainline-a-r72-source/california-nebula",
+    "status": 200,
+    "bytes": 758960,
+    "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396",
+    "contentType": "image/jpeg",
+    "candidate": "candidate-hold",
+    "rights": "pending",
+    "scientificPayloadWriteback": "false"
+  },
+  "negatives": {
+    "heldIds": [
+      "ring-nebula",
+      "dumbbell-nebula",
+      "bubble-nebula",
+      "cats-eye-nebula",
+      "omega-nebula"
+    ],
+    "heldStatuses": [
+      404,
+      404,
+      404,
+      404,
+      404
+    ],
+    "defaultDisabled": 404,
+    "invalidId": 404,
+    "foreignOrigin": 404
+  },
+  "counts": {
+    "imageShaMatches": 1,
+    "heldImagesServed": 0,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "claims": {
+    "publicDeployment": false,
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "scientificPayloadWriteback": false
+  }
+}

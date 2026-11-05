@@ -1,0 +1,340 @@
+{
+  "version": "v216-relativity-reproducible-research-dossier",
+  "generatedAt": "2026-07-17T00:54:41.620Z",
+  "status": "relativity-v10-research-candidate-shadow-retained",
+  "releaseLabelApplied": false,
+  "baseline": {
+    "dossier": "dist/release/orbit-atlas-v208-relativity-dossier.json",
+    "sha256": "25b2c0ac6e0bf983bc878b0ed8a40ad2dbf9f210cb2826c7334e23f26fbbf00e",
+    "status": "relativity-v9-research-candidate-shadow-retained"
+  },
+  "runtime": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "r3f": "9.6.1",
+    "three": "^0.170.0",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "candidateKernel": "barycentric-eih-1pn-j2-2pn-lt-v9",
+    "candidateStatus": "shadow-retained",
+    "liveWorkerPhysicsMutated": false,
+    "scientificPromotionApplied": false
+  },
+  "weakField": {
+    "referenceBundle": {
+      "file": "dist/science/relativity-reference-bundle-v10.json",
+      "sha256": "7a9a2882536e25d296954625a58b25179f0e03a7c2e3066ab83b6b8bf2924909",
+      "sourceCounts": {
+        "de440-naif": 34,
+        "horizons-frozen": 34
+      },
+      "gate": {
+        "provenanceReady": true,
+        "frameReady": true,
+        "timeScaleReady": true,
+        "epochCount": true,
+        "sourceEpochCount": true,
+        "bodyCounts": true,
+        "hashesPresent": true,
+        "rawAndConvertedSeparated": true,
+        "localOnlyAssets": true,
+        "passed": true
+      }
+    },
+    "stm": {
+      "file": "dist/science/relativity-stm-fit-v10.json",
+      "rerun": "dist/science/relativity-stm-fit-v10-rerun.json",
+      "sha256": "ef7d6cca35776a732f23811438f802639fed9e8baf2fe6dd64e7091c1f9cd92a",
+      "canonicalEvidenceSha256": "bc988a8800498ae1bb6e9223d6eb5213617a38dcd2f7bf6c8f1f531585f9a87e",
+      "rerunCanonicalEvidenceSha256": "bc988a8800498ae1bb6e9223d6eb5213617a38dcd2f7bf6c8f1f531585f9a87e",
+      "gate": {
+        "bundleHashMatches": true,
+        "deterministicRerun": true,
+        "rawPropagationPreserved": true,
+        "covariancePresent": true,
+        "groupedPressPresent": true,
+        "blindHoldoutImproved": false,
+        "promotionQualified": false,
+        "passedForPromotion": false
+      },
+      "reports": [
+        {
+          "mode": "legacy-eih-1pn",
+          "conditionNumber": 1.4128837680816904,
+          "regularizationLambda": 10000,
+          "calibrationWeightedRms": 270.9542162290139,
+          "leaveOneDayOutRms": 271.04313596111183,
+          "raw": [
+            {
+              "offsetDays": 365,
+              "weightedRms": 271.4949638843008,
+              "positionRmsKm": 660.9602431144707
+            },
+            {
+              "offsetDays": 3652.5,
+              "weightedRms": 279.0111969665555,
+              "positionRmsKm": 679.4834158231467
+            }
+          ],
+          "fitted": [
+            {
+              "offsetDays": 365,
+              "weightedRms": 273.09610202931134,
+              "positionRmsKm": 664.9064646427285
+            },
+            {
+              "offsetDays": 3652.5,
+              "weightedRms": 293.0407462030697,
+              "positionRmsKm": 714.0404854521726
+            }
+          ]
+        },
+        {
+          "mode": "full-eih-1pn-2pn-lt",
+          "conditionNumber": 1.4128837867220325,
+          "regularizationLambda": 10000,
+          "calibrationWeightedRms": 270.9542162204696,
+          "leaveOneDayOutRms": 271.04313597258164,
+          "raw": [
+            {
+              "offsetDays": 365,
+              "weightedRms": 271.494963541251,
+              "positionRmsKm": 660.9602422691382
+            },
+            {
+              "offsetDays": 3652.5,
+              "weightedRms": 279.0112706544225,
+              "positionRmsKm": 679.4835974132175
+            }
+          ],
+          "fitted": [
+            {
+              "offsetDays": 365,
+              "weightedRms": 273.0961019829289,
+              "positionRmsKm": 664.9064645285064
+            },
+            {
+              "offsetDays": 3652.5,
+              "weightedRms": 293.04074765738096,
+              "positionRmsKm": 714.040489031513
+            }
+          ]
+        }
+      ]
+    },
+    "hundredYearDiagnostic": {
+      "file": "dist/science/relativity-100y-diagnostic-v10.json",
+      "sha256": "42b01874c27f73d3bd14643d1cbaf999d3f491301426b8a02ee06821e947bff5",
+      "canonicalEvidenceSha256": "e6f489a6340d64c6800c6db7e4c3ec2bb1235bd9ac74af02a3231f0c92a9c182",
+      "gate": {
+        "diagnosticOnly": true,
+        "allSixModes": true,
+        "bundleHashMatches": true,
+        "canonicalEvidencePresent": true,
+        "promotionDecision": true,
+        "passed": true
+      }
+    },
+    "promotionDecision": "shadow-retained"
+  },
+  "strongField": {
+    "kerrSchild": {
+      "file": "dist/science/kerr-schild-reference-v4.json",
+      "sha256": "87191f6eaf2911b5b4f8c4d786ef92fbb14bafbde8dd82e3916b2020f89a3ce0",
+      "canonicalEvidenceSha256": "bc857ceb990c45b4a45b858c052bf02aa2f4039380ca085acf00260197ed626b",
+      "rerunCanonicalEvidenceSha256": "bc857ceb990c45b4a45b858c052bf02aa2f4039380ca085acf00260197ed626b",
+      "maxNullConstraint": 5.900781790634982e-10,
+      "gate": {
+        "deterministicRerun": true,
+        "rayCount": true,
+        "classificationStateValid": true,
+        "nullConstraintBelow1e10": false
+      }
+    },
+    "cpuCrossValidation": {
+      "file": "dist/science/kerr-cross-validation-v4.json",
+      "sha256": "71d9a133a0175d66d79282d0ce5298097271c12bfff7172a70cde3c53eeb78e4",
+      "canonicalEvidenceSha256": "bb01e9ac63d17b98fda02f4c15638b1ee3b7f66535e49cea5d1021e91efccd90",
+      "rerunCanonicalEvidenceSha256": "bb01e9ac63d17b98fda02f4c15638b1ee3b7f66535e49cea5d1021e91efccd90",
+      "classificationAgreement": 1,
+      "gate": {
+        "deterministicRerun": true,
+        "classificationAgreementAtLeast999": true,
+        "kerrSchildNullBelow1e10": false,
+        "carterNullBelow1e10": false,
+        "redshiftCrossValidated": false,
+        "polarizationCrossValidated": false,
+        "passed": false
+      }
+    },
+    "promotionDecision": "shadow-retained"
+  },
+  "validation": {
+    "focused": "28/28 passed across 8 files",
+    "typescript": "passed",
+    "fullRegression": "674/674 passed across 107 files",
+    "productionBuilds": {
+      "standalone": {
+        "passed": true,
+        "buildId": "b6rmknSfQgaf4Qe4R44hQ"
+      },
+      "vercelLite": {
+        "passed": true,
+        "buildId": "f2VZ1KkbM905-sCxntptp"
+      },
+      "traceIsolationRepair": "passed-both-profiles-with-active-dev-standalone-temporarily-isolated"
+    },
+    "clientBundle": {
+      "standaloneTransferBytes": 624244,
+      "liteTransferBytes": 624245,
+      "releaseTargetBytes": 624640,
+      "standaloneMarginBytes": 396,
+      "liteMarginBytes": 395,
+      "passed": true
+    },
+    "contentPacks": {
+      "packCount": 6,
+      "verifiedFileCount": 805,
+      "manifestFileCount": 805,
+      "failureCount": 0,
+      "passed": true
+    },
+    "vercelLiteManifest": "595 files / 65.9 MiB / no loopback fallback",
+    "browserQa": {
+      "standalone": "9 passed / 1 viewport skip",
+      "vercelLite": "2/2 passed",
+      "kerrLifecycle": "2/2 passed",
+      "pageTestFailures": 0,
+      "serverReloadNoise": "one ERR_INVALID_STATE Controller-already-closed event during same-page cold reload"
+    },
+    "lifecycleSoak": {
+      "passed": true,
+      "measuredCycles": 10,
+      "baselineHeap": 39578308,
+      "finalHeap": 42638336,
+      "heapLimit": 73132740,
+      "released": {
+        "workers": 2,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      }
+    },
+    "namedHardwarePerformance": {
+      "passed": true,
+      "adapter": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)"
+      },
+      "softwareRenderer": false,
+      "samples": [
+        {
+          "id": "overview",
+          "sceneMode": "atlas",
+          "medianFps": 166.7,
+          "frameP50Ms": 6,
+          "frameP95Ms": 12,
+          "longestTaskMs": 0,
+          "frameSamples": 1415,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 25,
+          "textures": 18,
+          "renderTargets": 0
+        },
+        {
+          "id": "earth-inspect",
+          "sceneMode": "inspect",
+          "medianFps": 91.7,
+          "frameP50Ms": 10.9,
+          "frameP95Ms": 16.4,
+          "longestTaskMs": 0,
+          "frameSamples": 1059,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 31,
+          "textures": 24,
+          "renderTargets": 0
+        },
+        {
+          "id": "gaia-stellar",
+          "sceneMode": "inspect",
+          "medianFps": 167.4,
+          "frameP50Ms": 6,
+          "frameP95Ms": 6.1,
+          "longestTaskMs": 0,
+          "frameSamples": 1714,
+          "drawCalls": 1,
+          "triangles": 1,
+          "programs": 28,
+          "textures": 18,
+          "renderTargets": 0
+        },
+        {
+          "id": "launch",
+          "sceneMode": "launch",
+          "medianFps": 168.6,
+          "frameP50Ms": 5.9,
+          "frameP95Ms": 6.1,
+          "longestTaskMs": 61,
+          "frameSamples": 1719,
+          "drawCalls": 40,
+          "triangles": 89696,
+          "programs": 15,
+          "textures": 6,
+          "renderTargets": 0
+        },
+        {
+          "id": "kerr",
+          "sceneMode": "kerr",
+          "medianFps": 166.3,
+          "frameP50Ms": 6,
+          "frameP95Ms": 12.1,
+          "longestTaskMs": 0,
+          "frameSamples": 1248,
+          "drawCalls": 1,
+          "triangles": 2,
+          "programs": 28,
+          "textures": 20,
+          "renderTargets": 1
+        }
+      ],
+      "drawCallBoundary": "observational-only-not-used-as-optimization-proof"
+    }
+  },
+  "blockers": [
+    "The nonlinear STM calibration is deterministic, but the 365-day and ten-year blind holdouts are worse than raw propagation.",
+    "Kerr-Schild maximum normalized null drift is 5.900782e-10, above the 1e-10 reference gate.",
+    "The Carter cross-grid maximum null diagnostic is 7.648807e-10, above the 1e-10 reference gate.",
+    "Kerr redshift and Walker-Penrose polarization have not yet been independently cross-validated.",
+    "Cold Canvas-ready JavaScript has only 396 B standalone and 395 B Lite margin below the 624640 B gate.",
+    "The 100-year program is diagnostic-only and cannot be used as a promotion gate.",
+    "External clean-Windows MSI/NSIS installation, uninstall and reinstall evidence remains pending."
+  ],
+  "boundaries": {
+    "rawPropagationReplaced": false,
+    "hundredYearPromotionGate": false,
+    "numericalRelativity": "not-claimed",
+    "blackHoleMerger": "not-implemented",
+    "grmhd": "not-claimed-analytic-thin-disk-only",
+    "cloudDeployment": "not-performed",
+    "signing": "not-performed",
+    "gitMutation": "no-reset-revert-clean-stage-or-commit"
+  },
+  "sourceSha256": {
+    "app/lib/relativityResearchV10.ts": "e096279c20134371f30e021d3fbc4b4ec400e0c1f926eca48e453139a0e709e5",
+    "app/lib/relativityResearchEvidenceV216.ts": "8504a8b2f46a77dac376ba204ce079b57b689609d5c0a3e93df143dfcf24e328",
+    "app/lib/kerrReferenceV4.ts": "76cf0f412b31179922a290e63294af5fecbc5c40093d28b65c0bf1e97227cafb",
+    "app/components/RelativityResearchWorkspaceV9.tsx": "16cf1a36036d72130463c9734b5ce70b24273c96b8e12e8dcfaf6db0ff1f0210",
+    "scripts/build-relativity-reference-bundle-v10.py": "d6bc3dc2ae428488b8198d15d41ea060bae4facfc29b38e008a13a0d9a948f27",
+    "scripts/run-relativity-stm-fit-v10.py": "44fb57e60b1a576cb24c4035df89ff05b2d430dc6ad605bf3a434fb77082cbb2",
+    "scripts/run-relativity-100y-diagnostic-v10.py": "ad107fc1aca83e01731f391d0e0e547377f321443fcdf0d4085c7c6cc57d82ac",
+    "scripts/run-kerr-schild-reference-v4.py": "2dcf0860f2196921ea5de1a37290b58ae9acf2736d389faf182b19bb5a7879ae",
+    "scripts/build-kerr-cross-validation-v4.py": "a13052adc950f77ffc508f6c11f57141f5d56e56750000c790bb38a131a54339",
+    "scripts/build-atlas-profile.mjs": "240811122f1c0f0d18dada233c0e63bb42deb93741d551a7d6b20f4e16c5f42c",
+    "scripts/build-v216-relativity-dossier.mjs": "20a2b7068d35d832ed40b285e5d034d92c38368e0e0b647b33a4b68c222fcacc"
+  }
+}

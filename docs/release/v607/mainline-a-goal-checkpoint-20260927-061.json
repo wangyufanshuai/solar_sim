@@ -1,0 +1,117 @@
+{
+  "schema": "mainline-a-goal-checkpoint-v1",
+  "recordedAt": "2026-09-27T07:22:52.949Z",
+  "runId": "20260927-061",
+  "previousGoalTurn": {
+    "runId": "20260927-060",
+    "classification": "progress",
+    "basis": "Three real primary artifacts, 76 measurement candidates and one completed public-source Browser Use run."
+  },
+  "completedNow": {
+    "action": "Independent read-only review of 060 packet",
+    "uniqueReferences": 23,
+    "rawArtifacts": 3,
+    "requestFingerprints": 3,
+    "attemptFingerprints": 3,
+    "candidateRows": 76,
+    "mismatches": 0,
+    "protectedFilesUnchanged": 4
+  },
+  "previousAudit": {
+    "path": "docs/release/v607/mainline-a-technical-acceptance-audit-20260927-060.json",
+    "sha256": "59687d56266e9aeb6ebf8bcf1cb3522fa998e93eeed54613e6ce30335a8d029d"
+  },
+  "currentRepository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "statusEntryCount": 1590
+  },
+  "staticCheckThisTurn": {
+    "command": "node scripts/build-mainline-a-beta-stellar-raw-capture-v619.mjs --check",
+    "status": "verified",
+    "total": 4,
+    "pending": 4
+  },
+  "existingPreviewSearch": {
+    "status": "no-matches-in-limited-scope",
+    "roots": [
+      "README.md",
+      "docs/release/v607",
+      ".vercel"
+    ],
+    "filePatterns": [
+      "README*.md",
+      "*deployment*.json",
+      "*preview*.json",
+      "*vercel*.json"
+    ],
+    "searchedMarkers": [
+      "vercel.app",
+      "netlify.app",
+      "previewUrl",
+      "deploymentUrl"
+    ],
+    "exhaustiveDeploymentSearch": false,
+    "appUrlObtained": false
+  },
+  "browser": {
+    "selectedPlugin": "Browser Use",
+    "publicSourceRun": "completed-in-060",
+    "publicRunId": "f41ad569-166a-4dc3-9335-bce3dbb351af",
+    "activePublicRun": false,
+    "applicationVisitedThisTurn": false,
+    "historicalPermissionFailureRetried": false,
+    "existingTestUrlQuestion": "unanswered",
+    "indirectBypass": false
+  },
+  "evidenceThisTurn": {
+    "static": "limited-check-and-independent-integrity-review",
+    "http": "not-run",
+    "visual": "not-run",
+    "browser": "application-not-run",
+    "performance": "not-run",
+    "externalSource": "prior-raw-replayed-no-new-network-capture"
+  },
+  "codeChange": {
+    "newDevelopmentRound": false,
+    "productionAddedLines": 0,
+    "productionModifiedLines": 0,
+    "effectiveCodeFiles": [],
+    "temporaryCheckpointScriptExcluded": true
+  },
+  "release": {
+    "inheritedGatesPassed": 6,
+    "gatesTotal": 17,
+    "newGatesClosed": 0,
+    "goalComplete": false,
+    "rightsPending": 12,
+    "stellarComponentPending": 4
+  },
+  "resumedAudit": {
+    "afterBlockedTurn": "20260927-059",
+    "resumedTurns": [
+      "20260927-060",
+      "20260927-061"
+    ],
+    "applicationAccessDependencyStillUnresolved": true,
+    "goalLeftActive": true,
+    "blockedThresholdMet": false,
+    "noActiveHandleToPoll": true
+  },
+  "nextRequiredInputs": [
+    "Existing approved browser-accessible application test URL, or recovery of local browser permission checks",
+    "Authoritative root canonical manifest through read-only input",
+    "Actual scientific review, device and independent long-run observations"
+  ],
+  "rightsDirective": "Keep unsigned rights pending; do not repeat the preference question.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "releaseApproved": false
+  }
+}

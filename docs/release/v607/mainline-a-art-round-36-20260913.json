@@ -1,0 +1,30 @@
+{
+  "round": 36,
+  "date": "2026-09-13",
+  "title": "Local-shadow browser asset performance baseline",
+  "status": "superseded-profile-mismatch",
+  "correctedByRound": 37,
+  "scope": {
+    "runtime": "npm run dev:atlas:local-shadow (profile identity was not captured in the original run)",
+    "artChange": "Collected a browser resource baseline after enabling the explicit content-pack root, separating asset delivery health from the final performance gate."
+  },
+  "browser": {
+    "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite",
+    "resourceCount": 29,
+    "contentPackAssetCount": 14,
+    "assetTransferBytes": 25566471,
+    "assetDecodedBytes": 25562271,
+    "maxAssetDurationMs": 5071.215,
+    "requestFailures": 0,
+    "viewport": "1280x720",
+    "measurement": "PerformanceResourceTiming transferSize/decodedBodySize; local dev cold-load baseline"
+  },
+  "validation": {
+    "playwright": "Chrome headless networkidle; 0 failed requests",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Superseded because the original process profile was not captured; use Round 37 for the authoritative local-shadow baseline.",
+    "Large asset transfer remains a follow-up optimization target; Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

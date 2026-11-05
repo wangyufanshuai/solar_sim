@@ -1,0 +1,118 @@
+{
+  "schema": "mainline-a-resource-observation-replay-v633",
+  "evidenceClass": "offline-replay-of-local-browser-observation",
+  "rawSha256": "65b9a16b3a36ba41bf7575e79bf31a32c88cf9ada982dfad5cc46cb1e57b66f9",
+  "expectedSha256": "65b9a16b3a36ba41bf7575e79bf31a32c88cf9ada982dfad5cc46cb1e57b66f9",
+  "byteLength": 49086,
+  "runId": "r65-registry-507612d3-e496-4922-b25c-be9ace27fb07",
+  "build": {
+    "buildId": "mainline-a-280138c149008279",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "observationSummary": {
+    "validated": true,
+    "startedAt": "2026-09-27T14:35:49.298Z",
+    "endedAt": "2026-09-27T14:38:30.761Z",
+    "durationMs": 161463,
+    "requestedDurationMs": 30000,
+    "device": "desktop",
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "devicePixelRatio": 1,
+      "device": "desktop"
+    },
+    "visibility": {
+      "startedVisible": true,
+      "endedVisible": true,
+      "interruptions": 0
+    },
+    "sessionState": "finished",
+    "durationSatisfied": true,
+    "frameSummarySource": "requestAnimationFrame",
+    "frameSummaryMethod": "fixed-histogram-upper-bound",
+    "frameSummary": {
+      "sampleCount": 28991,
+      "totalMs": 161453.06,
+      "minMs": 3.5599999999976717,
+      "p50Ms": 5.75,
+      "p95Ms": 5.75,
+      "maxMs": 138.88000000000466
+    },
+    "checkpoints": [
+      {
+        "phase": "baseline",
+        "capturedAt": "2026-09-27T14:35:49.298Z",
+        "elapsedMs": 0,
+        "scene": "inspect"
+      },
+      {
+        "phase": "active",
+        "capturedAt": "2026-09-27T14:38:28.584Z",
+        "elapsedMs": 159286.4849999994,
+        "scene": "inspect"
+      },
+      {
+        "phase": "returned",
+        "capturedAt": "2026-09-27T14:38:30.760Z",
+        "elapsedMs": 161461.74500000104,
+        "scene": "inspect"
+      }
+    ],
+    "timeline": [
+      {
+        "elapsedMs": 1.3399999998509884,
+        "event": "baseline",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 159287.0850000009,
+        "event": "active",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 161462.55000000075,
+        "event": "returned",
+        "scene": "inspect"
+      },
+      {
+        "elapsedMs": 161462.57500000298,
+        "event": "finished",
+        "scene": "inspect"
+      }
+    ],
+    "sessionIssues": [],
+    "objectCycle": {
+      "mode": "canonical-object",
+      "target": {
+        "kind": "nebula",
+        "id": "m42",
+        "route": "mainline-a3-nebula-visual",
+        "assetHash": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+      },
+      "manifestDigest": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+    }
+  },
+  "status": "measured-local",
+  "issues": [],
+  "acquiredCount": 3,
+  "releasedCount": 3,
+  "retainedCount": 0,
+  "baselineRestored": true,
+  "resourceBehavior": "acquire-release",
+  "resourceReleaseObserved": true,
+  "registryEstimatedBytesDelta": 0,
+  "physicalGpuMemoryClaim": false,
+  "scientificPayloadWriteback": false,
+  "limits": {
+    "registryBytes": "estimated allocation accounting; not physical GPU memory",
+    "authenticity": "hash and structure validation do not independently authenticate browser origin",
+    "performance": "local sample; not production performance or real-user validation",
+    "frameSummary": "browser requestAnimationFrame (RAF) intervals; not renderer frame time or proof that a canvas rendered",
+    "admission": "candidate-only / hold / not-admitted"
+  },
+  "input": "tmp/mainline-a-b2-browser-nebula-m42-01-keyboard-recovery-068d.json",
+  "buildReceipt": "docs/release/v607/mainline-a-r66-build-20260927-068d.json",
+  "buildReceiptSha256": "40f665f328a65fa770e5a1d048ddd0f1533247075401d5448d256b14ead3b6e6"
+}

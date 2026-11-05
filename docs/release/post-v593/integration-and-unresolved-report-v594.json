@@ -1,0 +1,307 @@
+{
+  "version": "post-v593-stellar-relativity-integration-and-unresolved-report-v1",
+  "generatedAt": "2026-08-27T14:00:23.612Z",
+  "status": "qualified-v594-closure-passed-original-excellence-objective-incomplete",
+  "scope": "post-qualification-completion-audit-of-current-v594-identity",
+  "candidate": {
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "buildId": "v594b-74e75f5bf05b772b563b94c583486e64908b0c3ab12c4079bf4b590f67726d8a",
+    "liteBuildId": "v594b-fb312d0da4556cca2f83a115eb6ef68eefc98df48e789d5b07250f5c13e80fe0",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "formalProductPointer": "v263",
+    "closureDossierSha256": "a70645f4a124b6fb6d1eb3a061eb15cf66618154c1a2884acc1730cb41bd3865",
+    "resealReceiptSha256": "406bb72a58aade66c877c75f4bea220e8b42181217efee1e4d9a1d20b46e4664",
+    "humanDecisionSha256": "2349c5f0a79696ebf617b3aa7e299db8981eb2755f63c5eec91c663517930762"
+  },
+  "qualification": {
+    "v594ClosureComplete": true,
+    "readonlyVerifierStatus": "passed-readonly-qualified-additive-v594-stellar-relativity-candidate",
+    "readonlyVerifierWritesPerformed": false,
+    "originalGoalComplete": false,
+    "formalEvidence": false,
+    "promotion": "none",
+    "reportTrackedByV594SourceManifest": false,
+    "reason": "This post-qualification report records completion truth without mutating or expanding the already approved v594 identity."
+  },
+  "requirements": [
+    {
+      "id": "phase0-contract-freeze",
+      "status": "PASS",
+      "claim": "The read-only v593 baseline, stellar and relativity authority matrices, allowed APIs, anti-patterns, gaps, and phase exit conditions were recorded before implementation.",
+      "evidence": [
+        "docs/release/post-v593/phase0-contract-freeze.md"
+      ],
+      "limits": "The detailed execution plan was maintained by the active goal and is reconstructed below as an evidence map; the phase-0 document itself is not part of the sealed v594 source manifest."
+    },
+    {
+      "id": "stellar-field-provenance-24",
+      "status": "PASS",
+      "claim": "All 24 first-roster heroes have schema-complete field-level provenance with explicit unknown/search-not-found/presentation-only boundaries.",
+      "evidence": [
+        "public/data/post-v593-stellar-relativity/stellar-provenance-v1.json",
+        "docs/release/post-v593/stellar-provenance-receipt-v1.json",
+        "docs/release/post-v593/stellar-source-intake-v1.md"
+      ],
+      "limits": "20 identities are directly bound; capella-a, spica, regulus, and polaris remain render-anchor-only. Measurement and provenance admission remain 0/24 by design."
+    },
+    {
+      "id": "stellar-generated-catalog-and-typed-api",
+      "status": "PASS",
+      "claim": "Generated catalog and typed APIs are bound into the current source identity.",
+      "evidence": [
+        "app/data/stellarHeroesV592.generated.ts",
+        "app/data/stellarProvenanceCandidate.generated.ts",
+        "app/lib/stellarHeroesV592.ts",
+        "app/lib/stellarProvenanceCandidate.ts"
+      ],
+      "limits": "Generated records are presentation inputs and do not grant measurement authority."
+    },
+    {
+      "id": "stellar-material-and-phenomenology-contract",
+      "status": "PASS",
+      "claim": "The current source contains deterministic archetype, material, variability, pulsation fail-closed, and binary presentation-only contracts.",
+      "evidence": [
+        "app/lib/stellarArchetypeProfileV1.ts",
+        "app/lib/stellarPhenomenologyV1.ts",
+        "app/lib/stellarPortraitRenderContractV594.ts",
+        "app/components/StellarHeroV592.tsx"
+      ],
+      "limits": "Pulsation remains disabled with null amplitude and period because no admitted values exist; binary companions never claim orbital solutions."
+    },
+    {
+      "id": "stellar-24-selectable-main-route",
+      "status": "PASS-SUPPLEMENTAL",
+      "claim": "All 24 heroes were selected and mounted on the formal slash route with one connected Canvas and no blockers.",
+      "evidence": [
+        "tmp/v594-staging/6599398a6fab-e92484940ba9-24-hero-browser-matrix-20260827/batch.json"
+      ],
+      "limits": "The matrix is explicitly supplemental, formalEvidence=false, and covers cinematic selection rather than a 24-by-2 visual matrix."
+    },
+    {
+      "id": "stellar-science-cinematic-contract-matrix",
+      "status": "PASS-CONTRACT-PARTIAL-BROWSER",
+      "claim": "All 24 heroes produce sealed Science and Cinematic render contracts, with linear Science and presentation-only Cinematic layers separated.",
+      "evidence": [
+        "app/lib/stellarPortraitRenderContractV594.test.ts",
+        "app/lib/stellarPortraitRenderContractV594.ts",
+        "tmp/v594-staging/6599398a6fab-e92484940ba9-full-browser-20260827/batch.json"
+      ],
+      "limits": "There is no current-identity browser capture matrix containing both Science and Cinematic frames for every one of the 24 heroes."
+    },
+    {
+      "id": "stellar-same-build-ab-and-human-signoff",
+      "status": "PASS",
+      "claim": "Seven representative stellar archetypes plus the relativity workbench have same-build baseline/candidate A/B evidence and owner-approved 8/8 signoff.",
+      "evidence": [
+        "tmp/v594-staging/6599398a6fab-e92484940ba9-exact-ab-20260827/batch.json",
+        "docs/release/v594/human-visual-signoff-v594.json"
+      ],
+      "limits": "The signoff is bound only to the exact current challenge and is not transferable to a new source or candidate identity."
+    },
+    {
+      "id": "weak-field-independent-reference",
+      "status": "PASS",
+      "claim": "The independent shadow reference provides per-body, aggregate, effect-isolation, convergence, reverse-time, reproducibility, and SHA-bound trajectory evidence.",
+      "evidence": [
+        "public/data/post-v593-stellar-relativity/relativity-trajectory-reference-v3.json",
+        "docs/release/post-v593/relativity-trajectory-reference-receipt-v3.json",
+        "app/lib/relativityReferenceRunnerV3.ts",
+        "app/lib/relativityTrajectoryReferenceV3.ts"
+      ],
+      "limits": "The formal default remains legacy-eih-1pn and V2 remains shadow-only with no promotion decision."
+    },
+    {
+      "id": "kerr-null-3d-independent-reference",
+      "status": "PASS",
+      "claim": "The external CPU float64 Kerr observation lane integrates 3D theta dynamics for null rays and is checked by an independent Cartesian ingoing Kerr-Schild Hamiltonian oracle.",
+      "evidence": [
+        "public/data/post-v593-stellar-relativity/relativity-reference-v3.json",
+        "docs/release/post-v593/relativity-reference-receipt-v3.json",
+        "E:/86137/myai/orbit-relativity-engine/docs/KERR_OBSERVATION_REFERENCE_V3.md"
+      ],
+      "limits": "This reference does not grant Web runtime, measured, radiative-transfer, GPU, GRMHD, or numerical-relativity authority."
+    },
+    {
+      "id": "kerr-invariants-and-terminal-classes",
+      "status": "PARTIAL",
+      "claim": "The qualified null-ray lane measures Hamiltonian and Carter-Q drift and covers capture, disk-hit, escape, radial-turn, polar-turn, and separatrix strata.",
+      "evidence": [
+        "E:/86137/myai/orbit-relativity-engine/dist/observation-v3-post-v593-convergence-d8-1f35420354d5/observation-summary.json",
+        "E:/86137/myai/orbit-relativity-engine/dist/observation-v3-post-v593-convergence-d8-1f35420354d5/observation-verification-receipt.json"
+      ],
+      "limits": "Energy and Lz drift are not independently reported, and escape-with-turning is not sealed as an explicit scatter fixture."
+    },
+    {
+      "id": "kerr-timelike-reference",
+      "status": "MISSING",
+      "claim": "A timelike 3D Kerr geodesic reference with invariant, convergence, reverse-time, and terminal-class evidence is required.",
+      "evidence": [],
+      "limits": "The current qualified observation lane is explicitly a null-ray reference; the Web teaching kernel is non-authoritative."
+    },
+    {
+      "id": "kerr-analytic-anchors",
+      "status": "PARTIAL",
+      "claim": "Schwarzschild photon-sphere, ISCO, and shadow-radius anchors exist in the external engine source and tests.",
+      "evidence": [
+        "E:/86137/myai/orbit-relativity-engine/orbit_relativity_engine/kerr.py",
+        "E:/86137/myai/orbit-relativity-engine/tests/test_engine.py"
+      ],
+      "limits": "Those older anchor results are not fully bound into the qualified v3 observation summary, and the older Carter-separated helper contains a hard-coded zero carterDrift field that is not used as v594 authority."
+    },
+    {
+      "id": "relativity-payload-lane-separation",
+      "status": "PASS-SOURCE-BOUNDARY",
+      "claim": "Science, Cinematic, GPU differential, and observation projection lanes retain distinct authority boundaries and cannot promote each other automatically.",
+      "evidence": [
+        "app/components/PostV593RelativityWorkbenchPanel.tsx",
+        "app/workers/kerrGpuDifferentialProbeV318.worker.ts",
+        "public/data/kerr-observation-v587/visual-manifest.json",
+        "docs/release/post-v593/phase0-contract-freeze.md"
+      ],
+      "limits": "No GPU or measured authority is granted; failed dense shards remain non-aggregatable."
+    },
+    {
+      "id": "main-product-integration",
+      "status": "PASS",
+      "claim": "The stellar selector/material bridge and relativity workbench are integrated into the slash route while preserving the existing app shell and single Canvas.",
+      "evidence": [
+        "app/page.tsx",
+        "app/AtlasRuntimeWorkbench.tsx",
+        "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+        "app/components/AtlasSceneHost.tsx",
+        "app/components/UniverseCanvas.tsx"
+      ],
+      "limits": "This is an additive candidate and does not advance formalProductPointer beyond v263."
+    },
+    {
+      "id": "product-capability-continuity",
+      "status": "PASS",
+      "claim": "Navigator, Mission, reports, content packs, Cinematic/Science/Validation modes, scene exit, worker termination, and GPU disposal contracts remain available.",
+      "evidence": [
+        "app/AtlasRuntimeWorkbench.tsx",
+        "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+        "scripts/build-content-packs.mjs",
+        "docs/release/v594/resource-lifecycle-v594.json",
+        "docs/release/v594/soak-v594.json"
+      ],
+      "limits": "The formal browser matrix samples representative product flows rather than exhaustively replaying every historical panel."
+    },
+    {
+      "id": "full-lite-browser-and-runtime-evidence",
+      "status": "PASS",
+      "claim": "Independent Full and Lite builds, main-route browser matrices, exact A/B, same-realm lifecycle, and CDP renderer/heap soak are bound to the current identity.",
+      "evidence": [
+        "docs/release/v594/final-sealed-browser-gate-v594.json",
+        "docs/release/v594/lite-browser-matrix-v594.json",
+        "docs/release/v594/resource-lifecycle-v594.json",
+        "docs/release/v594/soak-v594.json",
+        "docs/release/v594/release-export-v594.json"
+      ],
+      "limits": "The 390x844 Lite run is a Chromium viewport and must not be described as a physical mobile-device run."
+    },
+    {
+      "id": "real-device-matrix",
+      "status": "MISSING",
+      "claim": "A current-identity matrix captured on disclosed physical hardware is required.",
+      "evidence": [],
+      "limits": "No existing v594 receipt proves a physical phone, tablet, or independently disclosed desktop hardware/browser run."
+    },
+    {
+      "id": "canonical-identity-closure",
+      "status": "PASS",
+      "claim": "Canonical source/build/candidate identity, owner-authorized 8/8 decision, closure dossier, double byte-identical reseal, and readonly verifier all pass.",
+      "evidence": [
+        "docs/release/v594/source-manifest-v594.json",
+        "dist/release/atlas-v594-standalone-build-resource.json",
+        "dist/release/atlas-v594-lite-build-resource.json",
+        "docs/release/v594/human-visual-signoff-v594.json",
+        "docs/release/v594/release-export-v594.json",
+        "docs/release/v594/reseal-receipt-v594.json"
+      ],
+      "limits": "Qualification is additive only and production promotion remains separately owner-authorized."
+    }
+  ],
+  "implementationVerificationPlan": [
+    {
+      "phase": "evidence-only-current-identity",
+      "actions": [
+        "Capture a disclosed physical desktop hardware/browser row without claiming mobile coverage.",
+        "Capture all 24 heroes in both Science and Cinematic modes from the current Full build.",
+        "Seal both matrices as supplemental current-identity evidence unless the formal closure contract is explicitly revised."
+      ],
+      "sourceMutationAllowed": false,
+      "humanDecisionMigrationAllowed": false
+    },
+    {
+      "phase": "new-numerical-identity",
+      "actions": [
+        "Implement an independent timelike 3D Kerr Hamiltonian reference.",
+        "Measure and seal E, Lz, Carter-Q, mass-shell/Hamiltonian drift instead of relying on constant-coordinate representation.",
+        "Add named bound, capture, explicit scatter, and escape fixtures with step convergence and reverse-time checks.",
+        "Bind analytic Schwarzschild/Kerr anchors into the qualified report and remove every hard-coded zero drift from any authority path.",
+        "Regenerate source, candidate, build, browser, lifecycle, soak, A/B, challenge, signoff, closure, reseal, and readonly-verifier evidence for the new identity."
+      ],
+      "sourceMutationAllowed": true,
+      "requiresNewSourceAndCandidateIdentity": true,
+      "requiresNewHumanDecision": true
+    }
+  ],
+  "unresolvedBlockers": [
+    {
+      "id": "current-identity-real-device-evidence",
+      "severity": "evidence-gap",
+      "status": "open",
+      "sourceMutationRequired": false,
+      "externalStateRequired": true
+    },
+    {
+      "id": "current-identity-24-by-2-science-cinematic-browser-matrix",
+      "severity": "evidence-gap",
+      "status": "open",
+      "sourceMutationRequired": false,
+      "externalStateRequired": false
+    },
+    {
+      "id": "kerr-timelike-3d-reference",
+      "severity": "numerical-contract-gap",
+      "status": "open",
+      "sourceMutationRequired": true,
+      "requiresNewIdentity": true
+    },
+    {
+      "id": "kerr-independent-energy-and-lz-drift",
+      "severity": "numerical-evidence-gap",
+      "status": "open",
+      "sourceMutationRequired": true,
+      "requiresNewIdentity": true
+    },
+    {
+      "id": "kerr-explicit-scatter-fixture",
+      "severity": "numerical-test-gap",
+      "status": "open",
+      "sourceMutationRequired": true,
+      "requiresNewIdentity": true
+    },
+    {
+      "id": "qualified-kerr-analytic-anchor-binding",
+      "severity": "numerical-evidence-gap",
+      "status": "open",
+      "sourceMutationRequired": true,
+      "requiresNewIdentity": true
+    }
+  ],
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "reportSha256": "5219b2877abf0ffe251bb111b1185a913d271d3b45db1d7c1bc6cd5b08cd40df"
+}

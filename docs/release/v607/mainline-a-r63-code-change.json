@@ -1,0 +1,21 @@
+{
+  "round": 63,
+  "date": "2026-09-14",
+  "scope": "Beta nebula six-image HTTPS acquisition ledger, artifact replay and policy gate",
+  "effectiveChangedLines": 1002,
+  "minimumRequired": 1000,
+  "countMethod": "Nonblank, noncomment production lines in V623 collector, typed acquisition ledger/policy utilities, artifact verifier and audit CLI; tests, generated ledger and receipts excluded.",
+  "files": [
+    {"path":"app/lib/mainlineANebulaAcquisitionLedgerV623.ts","effectiveLines":415},
+    {"path":"app/lib/mainlineANebulaAcquisitionPolicyV623.ts","effectiveLines":298},
+    {"path":"app/lib/mainlineANebulaArtifactReplayV623.ts","effectiveLines":104},
+    {"path":"scripts/audit-mainline-a-nebula-images-v623.mjs","effectiveLines":165},
+    {"path":"scripts/collect-mainline-a-nebula-images-v623.mjs","effectiveLines":20}
+  ],
+  "testsExcluded": [
+    "app/lib/mainlineANebulaAcquisitionLedgerV623.test.ts",
+    "app/lib/mainlineANebulaAcquisitionPolicyV623.test.ts",
+    "app/lib/mainlineANebulaArtifactReplayV623.test.ts",
+    "scripts/collect-mainline-a-nebula-images-v623.test.mjs"
+  ]
+}

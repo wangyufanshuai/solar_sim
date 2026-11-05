@@ -1,0 +1,94 @@
+{
+  "version": "v592-major-moon-secondary-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T13:28:40.587Z",
+  "status": "secondary-asset-manifest-probe-complete-no-payload",
+  "probeId": "ganymede-pia17901",
+  "target": "ganymede",
+  "selection": {
+    "nasaId": "PIA17901",
+    "title": "Ganymede Global Geologic Map and Global Image Mosaic",
+    "description": "To present the best information in a single view of Jupiter moon Ganymede, a global image mosaic was assembled, incorporating the best available imagery from NASA Voyager 1 and 2 spacecraft and NASA Galileo spacecraft.",
+    "center": "JPL",
+    "metadataReceiptSha256": "77e4c04f3731a7bb933a988b0321b811b00690a23d08f9e7e607c0dff13de37e",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17901/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA17901/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA17901/collection.json",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 262,
+    "responseSha256": "c7a447ab496e107d8abf806fb3a369dde013885fe5809916cd0f8ad6dff43fe6"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17901/PIA17901~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17901~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17901/PIA17901~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17901/PIA17901~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17901~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17901/PIA17901~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17901/PIA17901~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17901~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17901/PIA17901~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17901/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17901/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "f965014d6d1ec56160d84dc87491c0e23d07d09a15670cfdcd5f8fcee585edd8"
+}

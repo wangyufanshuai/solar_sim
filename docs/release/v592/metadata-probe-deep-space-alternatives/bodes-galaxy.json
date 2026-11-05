@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:28.292Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "bodes-galaxy",
+  "category": "galaxy",
+  "query": "M81 Bode Galaxy Spitzer",
+  "requiredTermGroups": [
+    [
+      "m81",
+      "bode"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M81+Bode+Galaxy+Spitzer&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M81+Bode+Galaxy+Spitzer&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "7e6e9258551ac5258b8f26a4de7ba04740aede9aacbb36fc9490f9cadbe4425b"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "9f57cad5e11291fe7343fbe6300c896dcb9c36cfac6f2fef4a013f5660c41fd1"
+}

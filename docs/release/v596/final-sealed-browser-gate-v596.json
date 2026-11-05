@@ -1,0 +1,294 @@
+{
+  "version": "v596-final-sealed-browser-gate-v1",
+  "generatedAt": "2026-09-01T13:18:08.138Z",
+  "status": "passed-current-v596-full-lite-exact-stellar-24x2-and-six-scene-family-browser-gates-human-signoff-pending",
+  "candidate": {
+    "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+    "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+    "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+    "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+    "deploymentId": "v596-88236d680207-16b09ac7458e",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "matrices": {
+    "full": {
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "frameCount": 13,
+      "stageReceiptSha256": "1f6df3b535921766ec958a4d1e31d96049a861b5d2d8f37a057310d66dfcec38",
+      "batchSha256": "142608963bd425bd288feda7400617868af17a9d92e49fe7a1164fb3b269d8c7",
+      "stage": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/full-r1/stage.json",
+        "bytes": 2593,
+        "sha256": "5e65d6f38f3ed275dacc5d25bedd8bac4d6f6b885ca54f94f68548068e8f1f76"
+      },
+      "batch": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/full-r1/batch.json",
+        "bytes": 47756,
+        "sha256": "f11d5bfbe7af1566a8db6a8a6ba00a4f7895a0ca4b958ef991b2907e0420a8ca"
+      }
+    },
+    "lite": {
+      "frameCount": 8,
+      "receiptSha256": "605b1d5f87c026ff7d4f59388928af5c1c180e8a73d5fb4be77568b56b649bed",
+      "receipt": {
+        "path": "docs/release/v596/lite-browser-matrix-v596.json",
+        "bytes": 2139,
+        "sha256": "1566a02e570a74e0238722b8901cfce93fc85b3b822115a4e10bc865dcabd8a3"
+      },
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-de75f4006dcda4bb3452f3c8e617692072b021928351647e103f606f7bf9be44",
+        "buildFingerprint": "de75f4006dcda4bb3452f3c8e617692072b021928351647e103f606f7bf9be44",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "vercel-lite"
+      }
+    },
+    "exactAb": {
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "pairCount": 8,
+      "frameCount": 16,
+      "passes": [
+        "hot-radiative",
+        "blue-supergiant-wind",
+        "solar-like-convective",
+        "cool-convective",
+        "red-giant-supergiant",
+        "warm-radiative-convective",
+        "rapid-rotator-gravity-darkened",
+        "science-cinematic-boundary"
+      ],
+      "lanes": [
+        "baseline-v595-cinematic",
+        "candidate-v596-cinematic",
+        "candidate-v596-science"
+      ],
+      "pairs": [
+        {
+          "id": "hot-radiative",
+          "leftFrameId": "hot-radiative-v595-cinematic",
+          "rightFrameId": "hot-radiative-v596-cinematic"
+        },
+        {
+          "id": "blue-supergiant-wind",
+          "leftFrameId": "blue-supergiant-wind-v595-cinematic",
+          "rightFrameId": "blue-supergiant-wind-v596-cinematic"
+        },
+        {
+          "id": "solar-like-convective",
+          "leftFrameId": "solar-like-convective-v595-cinematic",
+          "rightFrameId": "solar-like-convective-v596-cinematic"
+        },
+        {
+          "id": "cool-convective",
+          "leftFrameId": "cool-convective-v595-cinematic",
+          "rightFrameId": "cool-convective-v596-cinematic"
+        },
+        {
+          "id": "red-giant-supergiant",
+          "leftFrameId": "red-giant-supergiant-v595-cinematic",
+          "rightFrameId": "red-giant-supergiant-v596-cinematic"
+        },
+        {
+          "id": "warm-radiative-convective",
+          "leftFrameId": "warm-radiative-convective-v595-cinematic",
+          "rightFrameId": "warm-radiative-convective-v596-cinematic"
+        },
+        {
+          "id": "rapid-rotator-gravity-darkened",
+          "leftFrameId": "rapid-rotator-gravity-darkened-v595-cinematic",
+          "rightFrameId": "rapid-rotator-gravity-darkened-v596-cinematic"
+        },
+        {
+          "id": "science-cinematic-boundary",
+          "leftFrameId": "science-cinematic-boundary-v596-science",
+          "rightFrameId": "science-cinematic-boundary-v596-cinematic"
+        }
+      ],
+      "visibleLeapBoundaryVerified": true,
+      "stageReceiptSha256": "04971697e889dfe208abf2dbc66ca6a6cd193c30cdebf9fd332d4b0c7fdb9fe3",
+      "batchSha256": "e314000d1bddfeb2dab09c6f27329524f638c7e5066e42363a944b073dc4f22e",
+      "stage": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/exact-r1/stage.json",
+        "bytes": 4423,
+        "sha256": "21a8cfd42d3b33f695e7ff80817476471dd07f51b031f06112dbe0e681bdc280"
+      },
+      "batch": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/exact-r1/batch.json",
+        "bytes": 62707,
+        "sha256": "e4a2d1b473c0d2c07e9fdda795e9e00e2716844ca1cb575598a64cd04470ac14"
+      }
+    },
+    "stellarScienceCinematic": {
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "targetCount": 24,
+      "modeCount": 2,
+      "frameCount": 48,
+      "targetIds": [
+        "sirius-a",
+        "canopus",
+        "alpha-centauri-a",
+        "alpha-centauri-b",
+        "arcturus",
+        "vega",
+        "capella-a",
+        "rigel",
+        "procyon-a",
+        "betelgeuse",
+        "aldebaran",
+        "antares",
+        "achernar",
+        "hadar",
+        "altair",
+        "acrux",
+        "spica",
+        "pollux",
+        "fomalhaut",
+        "deneb",
+        "regulus",
+        "polaris",
+        "bellatrix",
+        "alnilam"
+      ],
+      "modes": [
+        "science",
+        "cinematic"
+      ],
+      "receiptSha256": "709239d42bcc3491f9263b99bd1a10044594d455242f25dd529278fc521c898c",
+      "formalEvidence": true,
+      "promotion": "none",
+      "receipt": {
+        "path": "tmp/v596-staging/v596-checkpoint-26c63b2df7aa-5f681cdc38f3/phase4-24x2-formal-88236d680207-16b09ac7458e-r1/batch.json",
+        "bytes": 798892,
+        "sha256": "a2732c616e9f185b0d428e0ae8946174e14688eb57d96d135f0727275b5b94e5"
+      }
+    },
+    "productSceneFamilies": {
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "familyCount": 6,
+      "orderedFamilies": [
+        "orbit-atlas-overview",
+        "object-inspect",
+        "stellar-exoplanet-systems",
+        "mission-launch",
+        "relativity-lab",
+        "scene-lab"
+      ],
+      "singleCanvasPolicy": "one-shared-main-canvas",
+      "receiptSha256": "50d114e9f8bc9297dc20d72d31b1a7ca94e6dd391ce750ff2d9b2630d5640596",
+      "supplementalOnly": true,
+      "formalEvidence": false,
+      "promotion": "none",
+      "receipt": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/product-scenes-r2/receipt.json",
+        "bytes": 64613,
+        "sha256": "e8dd4c83ee387657758717ddb04df142ec5904db0cc71d2c3668f7037573965b"
+      }
+    }
+  },
+  "supplemental": {
+    "realDesktopChrome": {
+      "candidate": {
+        "sourceManifestSha256": "88236d680207a5696f9df54655b638210a13bbeed9391e9ba75af81d6cdec2ae",
+        "candidateManifestSha256": "16b09ac7458e3e8dda6f35da42fab830fe6e9704f3ef65829e3cde7d7d179641",
+        "buildId": "v596b-1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "buildFingerprint": "1d6134033017db009f0bebb58a31a11e7567386f38333ae06499581845de1d8b",
+        "deploymentId": "v596-88236d680207-16b09ac7458e",
+        "formalProductPointer": "v263",
+        "deliveryTier": "standalone-full"
+      },
+      "status": "passed-supplemental-real-desktop-eligible",
+      "supplementalOnly": true,
+      "formalEvidence": false,
+      "promotion": "none",
+      "realDesktopEligible": true,
+      "realMobileEligible": false,
+      "receiptSha256": "21311e9de850135c4786b4b7f0e60b1bbc6dee8601bc6cb47274a9ec8d913420",
+      "receipt": {
+        "path": "tmp/v596-staging/formal-88236d680207-16b09ac7458e/real-desktop-r1/receipt.json",
+        "bytes": 7634,
+        "sha256": "a8e4d95847382c08150fc90f752a70ad0be8225ebe9f8fabce633430ead30b4e"
+      }
+    },
+    "physicalMobile": {
+      "status": "not-present-not-faked",
+      "evidence": null,
+      "formalEvidence": false,
+      "promotion": "none",
+      "emulatedViewportSubstitutionAllowed": false
+    }
+  },
+  "fullLiteIndependentBuilds": true,
+  "exactAbSameStandaloneBuild": true,
+  "exactVisibleLeapBoundaryVerified": true,
+  "priorV595HumanDecisionInherited": false,
+  "humanDecision": "separate-pending-not-generated",
+  "boundaries": {
+    "formalProductPointer": "v263",
+    "priorV595IdentityReused": false,
+    "priorV595HumanDecisionInherited": false,
+    "priorV595HumanDecisionReceiptSha256": null,
+    "scientificPayloadMutationAllowed": false,
+    "productionPromotionAllowed": false,
+    "timelikeKerr": {
+      "referenceCandidateOnly": true,
+      "admissionSha256": "52123a1ee9f0d08526176964815b9679c578590bdced6cec4891bc4cb3e61e0d",
+      "admissionReceiptSha256": "98777b240f911dbcf3c21b4a6d067d42a03f31fd8cf2fce9edd2b596e219656a",
+      "formalEvidence": false,
+      "promotion": "none",
+      "defaultKernel": "legacy-eih-1pn"
+    }
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "resolvedSurfaceAuthorityGranted": false,
+    "observationTextureAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "8320b40ab7c8900991bc3ed0ab8bcaba0016eef6e2217d28f84decb1953e577a"
+}

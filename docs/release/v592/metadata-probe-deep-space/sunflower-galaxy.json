@@ -1,0 +1,43 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:31.225Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "sunflower-galaxy",
+  "category": "galaxy",
+  "query": "Sunflower Galaxy M63",
+  "requiredTermGroups": [
+    [
+      "sunflower",
+      "m63"
+    ],
+    [
+      "galaxy"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Sunflower%20Galaxy%20M63&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Sunflower%20Galaxy%20M63&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "286714f3813ff73d23601100e6535d10e3c9381554b981707b3825913b74098b"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "77d96ca17349093ee7e96c8163d82e6f34717c4d2fe69a29d4ed0bde66dd41e4"
+}

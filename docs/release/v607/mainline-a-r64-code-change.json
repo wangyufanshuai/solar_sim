@@ -1,0 +1,69 @@
+{
+  "round": 64,
+  "date": "2026-09-14",
+  "scope": "Real HTTPS nebula batch acquisition, preserved attempts, fail-closed disk replay, integrated audit, retention and immutable production-build staging",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "branch": "codex/solar-sim-mainline-a",
+  "effectiveChangedLines": 1380,
+  "addedLines": 1499,
+  "modifiedLines": 0,
+  "minimumRequired": 1000,
+  "testsExcluded": true,
+  "countMethod": "Conservative nonblank/noncomment production lines in seven newly added and connected files. Multi-round tracked integration edits, tests, orphan ArtifactReplayV624 module, copied build sources, JSON payloads, receipts, screenshots and documentation excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineANebulaBatchViewV624.ts",
+      "addedLines": 152,
+      "modifiedLines": 0,
+      "effectiveLines": 124,
+      "sha256": "4aa604bb70c385d31fd855d9e49e365a80558752f662c47f2c72cc239c585e0a"
+    },
+    {
+      "path": "app/lib/mainlineANebulaBatchAuditV624.ts",
+      "addedLines": 323,
+      "modifiedLines": 0,
+      "effectiveLines": 309,
+      "sha256": "c5c0cb54f0c29bbf2e8594dd19362efef6210a0bbafae729337e2fb4fe396d62"
+    },
+    {
+      "path": "app/components/MainlineANebulaBatchPanelV624.tsx",
+      "addedLines": 103,
+      "modifiedLines": 0,
+      "effectiveLines": 96,
+      "sha256": "aa78bcfed5fd353f37fcdc38534bd1ca77ac50aeb5abb99684a946be918f2925"
+    },
+    {
+      "path": "scripts/collect-mainline-a-nebula-batch-v624.mjs",
+      "addedLines": 358,
+      "modifiedLines": 0,
+      "effectiveLines": 329,
+      "sha256": "b8415dd14980547d51d5c2a8474bc7b67f8d85dfa4be9afb12af63237f250a3d"
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-batch-v624.mjs",
+      "addedLines": 270,
+      "modifiedLines": 0,
+      "effectiveLines": 247,
+      "sha256": "7028af7d3637c2f856320545cc63fbc15ebe0dde3311f4c1f34b061de36c07f1"
+    },
+    {
+      "path": "scripts/audit-mainline-a-nebula-retention-v624.mjs",
+      "addedLines": 124,
+      "modifiedLines": 0,
+      "effectiveLines": 117,
+      "sha256": "fae05ca4f72722820a407e7ef819d797324159bb99b2418189501d9964a1291c"
+    },
+    {
+      "path": "scripts/build-mainline-a-preserved.mjs",
+      "addedLines": 169,
+      "modifiedLines": 0,
+      "effectiveLines": 158,
+      "sha256": "b56ccab075986ccd738c356788d681cd45d64dc28430030df291c708e862aa34"
+    }
+  ],
+  "excludedLegacyUnintegratedModule": "app/lib/mainlineANebulaArtifactReplayV624.ts",
+  "integrationOutsideCount": [
+    "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "package.json"
+  ]
+}

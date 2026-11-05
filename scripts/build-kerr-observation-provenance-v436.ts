@@ -1,0 +1,25 @@
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+
+const root = process.cwd();
+const out = "dist/science/kerr-observation-provenance-v436";
+const oraclePath = `${out}/observation-provenance-oracle.json`;
+const contractPath = `${out}/observation-provenance-contract.json`;
+const transient = new Set(["generatedAt", "artifactSha256"]);
+const canonicalize = (value: unknown): unknown => Array.isArray(value) ? value.map(canonicalize) : !value || typeof value !== "object" ? value : Object.fromEntries(Object.entries(value).filter(([key]) => !transient.has(key)).sort(([a], [b]) => a.localeCompare(b)).map(([key, entry]) => [key, canonicalize(entry)]));
+const sha = (value: unknown): string => createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
+const fileSha = (path: string): string => createHash("sha256").update(readFileSync(resolve(root, path))).digest("hex");
+const atomic = (path: string, value: unknown): void => { const target = resolve(root, path); mkdirSync(dirname(target), { recursive: true }); const temp = `${target}.${process.pid}.part`; writeFileSync(temp, `${JSON.stringify(value, null, 2)}\n`, "utf8"); renameSync(temp, target); };
+const oracle = JSON.parse(readFileSync(resolve(root, oraclePath), "utf8")) as Record<string, unknown>;
+const contract = JSON.parse(readFileSync(resolve(root, contractPath), "utf8")) as Record<string, unknown>;
+const rawPayloads = oracle.payloads as readonly Record<string, unknown>[] | undefined;
+const counts = oracle.counts as Record<string, unknown> | undefined;
+if (oracle.version !== "v436-kerr-observation-provenance-python-oracle-v1" || rawPayloads?.length !== 4 || counts?.scienceApplicationCount !== 0 || contract.version !== "v436-kerr-observation-provenance-contract-v1") throw new Error("v436-builder-input");
+const payloads = rawPayloads;
+const artifactUnsigned = { version: "v436-kerr-observation-provenance-artifact-v1", generatedAt: oracle.generatedAt, status: oracle.status, sourceFiles: { pythonOracleFileSha256: fileSha(oraclePath), contractFileSha256: fileSha(contractPath) }, sourceOracleArtifactSha256: oracle.artifactSha256, sourceV296EvidenceSha256: oracle.sourceV296EvidenceSha256, sourceV297EvidenceSha256: oracle.sourceV297EvidenceSha256, sourceV435EvidenceSha256: oracle.sourceV435EvidenceSha256, payloads, counts: oracle.counts, qualification: oracle.qualification, rendererBoundary: contract, deterministicReplay: true, networkAttempted: false, importAttempted: false, denseShardExecuted: false, scienceApplicationCount: 0, formalProductPointer: "v263", denseCampaignStatus: "incomplete-0-of-49", boundary: "v436-immutable-science-observation-payload-cinematic-readonly-presentation-measured-import-pending" };
+const artifact = { ...artifactUnsigned, artifactSha256: sha(artifactUnsigned) };
+atomic(`${out}/observation-provenance.json`, artifact);
+const csv = ["rayId,spin,classification,emissionRadiusM,redshift,walkerPenroseEvpaDeg,parallelTransportEvpaDeg,evpaDifferenceDeg", ...payloads.map((payload) => [payload.rayId, payload.spin, payload.classification, payload.emissionRadiusM, payload.redshift, payload.walkerPenroseEvpaDeg, payload.parallelTransportEvpaDeg, payload.evpaDifferenceDeg].join(","))].join("\n") + "\n";
+const csvPath = resolve(root, `${out}/observation-provenance.csv`); const csvPart = `${csvPath}.${process.pid}.part`; writeFileSync(csvPart, csv, "utf8"); renameSync(csvPart, csvPath);
+console.log(JSON.stringify({ status: artifact.status, artifactSha256: artifact.artifactSha256, payloads: payloads.length, scienceApplications: 0, denseCampaign: "incomplete-0-of-49" }, null, 2));

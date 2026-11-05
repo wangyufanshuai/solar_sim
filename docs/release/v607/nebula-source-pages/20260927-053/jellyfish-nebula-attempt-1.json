@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:40:38.556Z",
+  "endedAt": "2026-09-27T02:40:40.258Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "eed09bcd7d11f92296f0d2388cb6cadbd610a80a67feeb2e4c83580901e475da",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/an-explosion-of-infrared-color/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 272952,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/jellyfish-nebula-attempt-1.html",
+  "sha256": "53fcbade90bbd643686e8ac493e6aa691efb4c2da01b67d00b8af608cbeca898",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "An Explosion of Infrared Color",
+    "expectedPia": "PIA13449",
+    "observedPiaIds": [
+      "PIA13449"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/UCLA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13449/PIA13449.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

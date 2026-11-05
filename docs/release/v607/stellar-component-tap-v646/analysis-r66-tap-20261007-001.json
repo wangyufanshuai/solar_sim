@@ -1,0 +1,206 @@
+{
+  "schema": "mainline-a-stellar-tap-cross-id-analysis-v646",
+  "createdAt": "2026-10-07T06:53:29.660Z",
+  "evidenceClass": "external-source-structured-candidate",
+  "status": "four-cross-ids-matched-four-component-identities-pending",
+  "inputs": {
+    "captureLedger": {
+      "path": "docs/release/v607/stellar-component-tap-v646/ledger-r66-tap-20261007-001.json",
+      "bytes": 18532,
+      "sha256": "41d2281c6971e775ab8f5ee696d47d84d2cc2e67d72c7309afa4d87cf4ded8dc"
+    },
+    "offlineReplay": {
+      "path": "docs/release/v607/stellar-component-tap-v646/replay-r66-tap-20261007-001.json",
+      "bytes": 1376,
+      "sha256": "a208f74d41c9a02b94f015a2de2f99843a66c40b0aee40afb386cf9dac7dd7ad"
+    },
+    "wdsReviewPacket": {
+      "path": "docs/release/v607/mainline-a-r66-stellar-component-review-packet-20261007.json",
+      "bytes": 22734,
+      "sha256": "50db072008c8126a451214c001f68d1c2958fe8abd6f684a1d9083bffe24420b"
+    }
+  },
+  "summary": {
+    "responseCaptured": 4,
+    "heroToWdsPrimaryCrossIdsMatched": 4,
+    "physicalComponentIdentitiesConfirmed": 0,
+    "rightsApproved": 0
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "wdsSystemId": "12266-6306",
+      "heroIdentifier": "* alf01 Cru",
+      "simbadObject": {
+        "oidref": "11606360",
+        "mainId": "* alf01 Cru",
+        "objectType": "*",
+        "raDeg": 186.6495666666667,
+        "decDeg": -63.09909166666667
+      },
+      "wdsPrimaryCrossId": "WDS J12266-6306A",
+      "heroAndWdsPrimarySameSimbadObject": true,
+      "otherComponentObjects": [
+        {
+          "identifier": "WDS J12266-6306B",
+          "oidref": "11606361",
+          "mainId": "* alf02 Cru"
+        },
+        {
+          "identifier": "WDS J12266-6306C",
+          "oidref": "3297896",
+          "mainId": "HD 108250"
+        }
+      ],
+      "closePairAlias": null,
+      "individuallyResolvedCloseComponentsFound": 0,
+      "warnings": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/acrux-f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b.csv",
+        "bytes": 353,
+        "sha256": "f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b"
+      },
+      "candidateCrossIdStatus": "same-simbad-object",
+      "physicalComponentIdentityStatus": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spica",
+      "wdsSystemId": "13252-1110",
+      "heroIdentifier": "* alf Vir",
+      "simbadObject": {
+        "oidref": "2140887",
+        "mainId": "* alf Vir",
+        "objectType": "bC*",
+        "raDeg": 201.2982473615632,
+        "decDeg": -11.161319485111932
+      },
+      "wdsPrimaryCrossId": "WDS J13252-1110A",
+      "heroAndWdsPrimarySameSimbadObject": true,
+      "otherComponentObjects": [],
+      "closePairAlias": null,
+      "individuallyResolvedCloseComponentsFound": 0,
+      "warnings": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query",
+        "no-distinct-wide-companion-in-bounded-query"
+      ],
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/spica-c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5.csv",
+        "bytes": 190,
+        "sha256": "c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5"
+      },
+      "candidateCrossIdStatus": "same-simbad-object",
+      "physicalComponentIdentityStatus": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "regulus",
+      "wdsSystemId": "10084+1158",
+      "heroIdentifier": "* alf Leo",
+      "simbadObject": {
+        "oidref": "1689590",
+        "mainId": "* alf Leo",
+        "objectType": "PM*",
+        "raDeg": 152.09296243828146,
+        "decDeg": 11.967208776100023
+      },
+      "wdsPrimaryCrossId": "WDS J10084+1158A",
+      "heroAndWdsPrimarySameSimbadObject": true,
+      "otherComponentObjects": [
+        {
+          "identifier": "WDS J10084+1158B",
+          "oidref": "1689552",
+          "mainId": "* alf Leo B"
+        },
+        {
+          "identifier": "WDS J10084+1158C",
+          "oidref": "15596632",
+          "mainId": "* alf Leo C"
+        },
+        {
+          "identifier": "WDS J10084+1158D",
+          "oidref": "1689553",
+          "mainId": "UCAC2  35936287"
+        }
+      ],
+      "closePairAlias": null,
+      "individuallyResolvedCloseComponentsFound": 0,
+      "warnings": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/regulus-7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7.csv",
+        "bytes": 431,
+        "sha256": "7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7"
+      },
+      "candidateCrossIdStatus": "same-simbad-object",
+      "physicalComponentIdentityStatus": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "polaris",
+      "wdsSystemId": "02318+8916",
+      "heroIdentifier": "* alf UMi",
+      "simbadObject": {
+        "oidref": "317713",
+        "mainId": "* alf UMi",
+        "objectType": "cC*",
+        "raDeg": 37.954560670189856,
+        "decDeg": 89.26410896994187
+      },
+      "wdsPrimaryCrossId": "WDS J02318+8916A",
+      "heroAndWdsPrimarySameSimbadObject": true,
+      "otherComponentObjects": [
+        {
+          "identifier": "WDS J02318+8916B",
+          "oidref": "317445",
+          "mainId": "* alf UMi B"
+        },
+        {
+          "identifier": "WDS J02318+8916C",
+          "oidref": "317447",
+          "mainId": "UCAC3 359-258"
+        },
+        {
+          "identifier": "WDS J02318+8916D",
+          "oidref": "6067180",
+          "mainId": "UCAC3 359-247"
+        }
+      ],
+      "closePairAlias": {
+        "identifier": "WDS J02318+8916Aa,Ab",
+        "oidref": "317713",
+        "sameSimbadObjectAsHero": true
+      },
+      "individuallyResolvedCloseComponentsFound": 0,
+      "warnings": [
+        "close-pair-identifier-aliases-primary-simbad-object",
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/polaris-62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4.csv",
+        "bytes": 502,
+        "sha256": "62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4"
+      },
+      "candidateCrossIdStatus": "same-simbad-object",
+      "physicalComponentIdentityStatus": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "reviewRule": "SIMBAD oidref equality proves an exact database cross-identification for queried labels. It does not prove that a product hero denotes one physical star rather than an unresolved or composite component.",
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "componentConfirmed": false,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "rightsApproved": false
+  }
+}

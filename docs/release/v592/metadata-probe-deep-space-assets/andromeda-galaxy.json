@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:33.515Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "andromeda-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "andromeda-galaxy.json",
+    "metadataReceiptSha256": "aff89501585980a9368126c4f7ba08e2dbf0bb801a03a6060db819a1bac9631b",
+    "nasaId": "PIA15416",
+    "title": "Andromeda",
+    "description": "Hot stars burn brightly in this new image from NASA Galaxy Evolution Explorer, showing the ultraviolet side of a familiar face. Approximately 2.5 million light-years away, the Andromeda galaxy, or M31, is our Milky Way largest galactic neighbor.",
+    "center": "JPL",
+    "identityTerms": [
+      "andromeda"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA15416/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA15416/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA15416/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "e62c980e54a576338d3eee97d58b8f3b88091b3d3b5f7a6224b73f30b1a58224"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/PIA15416~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15416~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/PIA15416~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15416~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/PIA15416~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15416~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/PIA15416~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15416~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/PIA15416~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA15416~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/PIA15416~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA15416/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA15416/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "ec264c817d43299ce149e8885cf0b8b2160e6fdd111a6266e0a5461ab7f38028"
+}

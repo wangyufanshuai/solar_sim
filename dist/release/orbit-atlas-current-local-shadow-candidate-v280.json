@@ -1,0 +1,78 @@
+{
+  "version": "orbit-atlas-current-local-shadow-candidate-v280",
+  "generatedAt": "2026-07-25T08:31:40.737Z",
+  "status": "partial-local-shadow-formal-product-v263-retained",
+  "formalProductPointer": "dist/release/orbit-atlas-current-product-evidence-v263.json",
+  "formalProductPointerSha256": "5f59d18a66d4415747e1068213b5e1acf719b3ce4e10cb20bc58713f40b2ac5b",
+  "formalProductPointerAdvanced": false,
+  "localShadowPromotionApplied": false,
+  "publicDeploymentBlocked": true,
+  "validation": {
+    "focused": {
+      "status": "failed",
+      "evidence": "dist/science/v280-focused-negative-evidence.json"
+    },
+    "heavyQualificationStarted": false
+  },
+  "capabilities": {
+    "v276": {
+      "state": "implemented-awaiting-qualification",
+      "evidence": "dist/science/relativity-reference-v276/reference-evidence.json"
+    },
+    "v277": {
+      "state": "implemented-awaiting-qualification",
+      "evidence": "dist/science/kerr-reference-v277/short-gate-evidence.json"
+    },
+    "v278": {
+      "state": "implemented-awaiting-qualification",
+      "evidence": "dist/science/strong-gravity-v278-shadow-evidence.json"
+    },
+    "v279": {
+      "state": "incomplete",
+      "evidence": "dist/science/kerr-campaign-v279/campaign-state.json"
+    },
+    "v280": {
+      "state": "blocked",
+      "evidence": "dist/science/unified-relativity-workbench-v280-shadow-evidence.json",
+      "reason": "failed-focused-line-budget-no-retry"
+    }
+  },
+  "sourceHashes": {
+    "app/lib/relativityReferenceV276.ts": "bfe1bf8526d427b10f7dfc94bdb927334bb518cb12059bec4e09994cc6185844",
+    "app/lib/kerrReferenceV277.ts": "014821dbdef655decd8030451f4d974075d7ceb21dc0a6fe91ac5f60165af0dc",
+    "app/lib/strongGravityRenderingV278.ts": "276e6a06f950d4479e84561ba7c5d0781ad22f66188abecfeaa641e4a11cb905",
+    "app/lib/kerrCampaignV279.ts": "61ba53cc0392ddc024d15eda4364eb85e26f9f2ab3fbd7d43f4b401a3a9e211a",
+    "app/lib/relativityWorkbenchV280.ts": "d11d4dcd51d2da7e04996b67434bd4dd7e3e017dd5f5b3344aabfa45d09320c5",
+    "app/lib/atlasVisualProfileV280.ts": "d636c199e2d9bef3923e017cd1f5bae70f7b894814fb1dd3f1c40fb7a4011581",
+    "app/components/RelativityResearchWorkbenchV280.tsx": "e35a3c0ea561eea6b090f6aa831868015b8ec9aa43666137777f92f00edf97c7",
+    "app/components/RelativityResearchWorkspaceSection.tsx": "3c19c2c47c87102ca57993a559ecedae16e0274f481abf2d4346aa5e589ef370"
+  },
+  "visualProfiles": {
+    "formalDefault": "legacy-v9",
+    "localShadowCandidate": "science-cinematic-v4-v280",
+    "localShadowDefaultApplied": false
+  },
+  "science": {
+    "status": "science-failed-shadow-retained",
+    "defaultKernel": "legacy-eih-1pn",
+    "codeSha256": "0debb41b96f001f92f498ef6a36ceff77ede7f0dd2bdbe3c6e9db3dfbf6090a8",
+    "screenSha256": "08f42a50bc787df62dc018ee56b5f7b58065dcafe2e2a3703e3e67f3e6d94037",
+    "workerPhysicsMutation": "not-applied",
+    "eihOnePnMutation": "not-applied",
+    "kerrMutation": "not-applied"
+  },
+  "contracts": {
+    "singleCanvas": true,
+    "sceneRevisionSemanticsChanged": false,
+    "legacyRootAttributes": 603,
+    "evidenceLedgerClaims": 84
+  },
+  "boundaries": {
+    "v276": "offline-reference-only",
+    "v277": "corrected-kerr-test-particle-zamo-not-grmhd",
+    "v278": "science-payload-separated-from-cinematic-decoration",
+    "v279": "cpu-authority-optional-webgpu-no-partial-aggregate",
+    "v280": "read-only-artifacts-bounded-preview-no-arbitrary-code"
+  },
+  "pointerSha256": "e4e92232aa2a895d3a5b3617e76d88f6366a3f2de1a922e7f5f82bf6b49303fd"
+}

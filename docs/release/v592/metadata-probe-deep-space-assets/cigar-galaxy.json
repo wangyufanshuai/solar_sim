@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:39.780Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "cigar-galaxy",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbeFile": "cigar-galaxy.json",
+    "metadataReceiptSha256": "a7b3b443099b5e051970ae905de335a69a3c26dea3094c7bfa16f5a3d4efd44a",
+    "nasaId": "PIA17847",
+    "title": "Seeing Through a Veil of Dust",
+    "description": "The closest supernova of its kind to be observed in the last few decades, M82 or the Cigar galaxy, has sparked a global observing campaign involving legions of instruments on the ground and in space, including NASA Spitzer Space Telescope.",
+    "center": "JPL",
+    "identityTerms": [
+      "cigar"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17847/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA17847/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA17847/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "0e3be46a0f9adfa6298948aa282346b0e8d5aabdabf6a7acd8a560ab8da67890"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/PIA17847~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17847~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/PIA17847~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17847~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/PIA17847~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17847~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/PIA17847~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17847~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/PIA17847~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17847~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/PIA17847~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17847/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17847/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "8235c41743e7dfad346ed80b1ce52444c2bd402dc43b7a788e6395c31fa63fa7"
+}

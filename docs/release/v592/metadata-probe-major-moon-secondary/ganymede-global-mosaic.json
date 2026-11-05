@@ -1,0 +1,84 @@
+{
+  "version": "v592-major-moon-secondary-metadata-probe-v1",
+  "probedAt": "2026-08-19T13:27:24.934Z",
+  "status": "secondary-metadata-probe-complete-no-payload",
+  "probeId": "ganymede-global-mosaic",
+  "target": "ganymede",
+  "query": "Ganymede global mosaic",
+  "requiredTerms": [
+    "ganymede"
+  ],
+  "preferredTerms": [
+    "global",
+    "map",
+    "mosaic"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Ganymede%20global%20mosaic&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Ganymede%20global%20mosaic&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 2795,
+    "responseSha256": "c854689d153f63a0c3f8ac14124835e36282b6e69dc7dce3d6464fc45975e792"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "PIA17901",
+      "title": "Ganymede Global Geologic Map and Global Image Mosaic",
+      "description": "To present the best information in a single view of Jupiter moon Ganymede, a global image mosaic was assembled, incorporating the best available imagery from NASA Voyager 1 and 2 spacecraft and NASA Galileo spacecraft.",
+      "dateCreated": "2014-02-12T17:53:01Z",
+      "center": "JPL",
+      "keywords": [
+        "Ganymede",
+        "Galileo,Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "map",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17901/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA17901/PIA17901~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA17902",
+      "title": "Rotating Globe of Ganymede Geology",
+      "description": "This is a frame from an animation of a rotating globe of Jupiter moon Ganymede, with a geologic map superimposed over a global color mosaic, incorporating the best available imagery from NASA Voyager 1 and 2 spacecraft, and Galileo spacecraft.",
+      "dateCreated": "2014-02-12T17:53:02Z",
+      "center": "JPL",
+      "keywords": [
+        "Ganymede",
+        "Galileo,Voyager"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "map",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17902/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 2,
+  "preferredCandidateCount": 2,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "77e4c04f3731a7bb933a988b0321b811b00690a23d08f9e7e607c0dff13de37e"
+}

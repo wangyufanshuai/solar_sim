@@ -1,0 +1,19 @@
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+
+for (const [command, args] of [
+  ["python", ["scripts/run-kerr-fixed-band-stokes-v520.py"]],
+  [
+    process.execPath,
+    [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-fixed-band-stokes-runtime-v520.ts"],
+  ],
+]) {
+  const result = spawnSync(command, args, {
+    cwd: process.cwd(),
+    encoding: "utf8",
+    stdio: "inherit",
+  });
+  if (result.status !== 0) throw new Error(`v520-build-exit-${result.status}:${command}`);
+}
+
+await import("./build-shadow-candidate-v520.mjs");

@@ -1,0 +1,94 @@
+{
+  "version": "v592-major-moon-asset-manifest-probe-v1",
+  "probedAt": "2026-08-15T04:42:28.416Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "ganymede",
+  "selection": {
+    "nasaId": "PIA17902",
+    "title": "Rotating Globe of Ganymede Geology",
+    "description": "This is a frame from an animation of a rotating globe of Jupiter moon Ganymede, with a geologic map superimposed over a global color mosaic, incorporating the best available imagery from NASA Voyager 1 and 2 spacecraft, and Galileo spacecraft.",
+    "center": "JPL",
+    "selectionReason": "Voyager/Galileo global color mosaic with geologic overlay; clean-texture suitability review required",
+    "metadataReceiptSha256": "ced15fbfaf6f186915adf2cbeaacb8b0eabea9751fb11f2d6e976d8f42a534a8",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA17902/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA17902/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA17902/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "4a1032a450003c428547e0b19ab62ffa3d3163b3470b94f0705e0b7e0af4d3db"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17902/PIA17902~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17902~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17902/PIA17902~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17902~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17902/PIA17902~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA17902~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17902/PIA17902~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA17902/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA17902/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "e0c9bf4ff026bd343d4d1bc40dd4bbd840de48eb4972698c21857a246f1b6ab4"
+}

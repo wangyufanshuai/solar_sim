@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v5",
+  "probedAt": "2026-08-19T13:17:46.483Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "cigar-galaxy",
+  "category": "galaxy",
+  "query": "NGC 3034",
+  "requiredTermGroups": [
+    [
+      "ngc 3034",
+      "m82",
+      "cigar"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v4/cigar-galaxy.json",
+    "receiptSha256": "c7260e8b9af388a168fd8bc0e0bf07f3f31360b4832f8b6416148d945bac5aea",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M82+galaxy+NASA+Goddard&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+3034&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+3034&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "33e4298b7d0f4e4d008f1b59ecffb10b29e11be4844901a94b71122e146bad45"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "a9daee3ce7e43e618757eabce2b145bc81b2fe0dc116723becb37536727d2326"
+}

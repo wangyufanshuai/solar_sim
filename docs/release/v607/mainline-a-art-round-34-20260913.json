@@ -1,0 +1,28 @@
+{
+  "round": 34,
+  "date": "2026-09-13",
+  "title": "Core content-pack HTTP asset probe",
+  "status": "verified-http-local-shadow",
+  "scope": {
+    "runtime": "Next dev with ATLAS_LOCAL_ASSET_PACK_ROOT=dist/content-packs",
+    "artChange": "Verified the core content-pack route serves representative sky, planet texture, planet manifest, and Gaia catalog assets when the explicit pack root is configured."
+  },
+  "http": {
+    "baseUrl": "http://127.0.0.1:3018",
+    "pack": "core",
+    "requests": [
+      { "path": "data/planet-textures-v2.json", "status": 200, "contentLength": 16232, "etag": "87977c460875ee1b2d28cee895ff0779693ae0e6937ca937c6049dfd56f78b34" },
+      { "path": "textures/sky/orbit-atlas-v9-base-4k.jpg", "status": 200, "contentLength": 2594446, "etag": "eea88c57a8fd769c0ca70bcd53006a0314b9e8fab40dba1ad4a8b2317c24a0dc" },
+      { "path": "textures/planets/earth.jpg", "status": 200, "contentLength": 463087, "etag": "767ee1dc6eb3802699bfccf6f264880f8acd0b80de3191cd24984fe279b07b7c" },
+      { "path": "data/gaia-dr3-nearby-46000-v255.json", "status": 200, "contentLength": 6344592, "etag": "b5ceb648a3449d9c2af8765e2526eb2b510c73a4d86b135adbf45b765dc3b596" }
+    ]
+  },
+  "validation": {
+    "playwright": "Chrome request probe: 4/4 HTTP 200",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The probe is local-shadow HTTP evidence and requires an explicit content-pack root; it is not a public deployment check.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

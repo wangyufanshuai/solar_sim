@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.21)
+project(nr_fo_zero_step_inspector LANGUAGES CXX)
+
+# These are test-only executables. The original solver CLI remains unchanged.
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+find_package(OpenMP REQUIRED COMPONENTS CXX)
+
+foreach(variant IN ITEMS old new)
+  string(TOUPPER "${variant}" upper_variant)
+  set(source_variable "NR_${upper_variant}_SOURCE")
+  if(NOT DEFINED ${source_variable} OR NOT EXISTS "${${source_variable}}")
+    message(FATAL_ERROR "${source_variable} must name an existing, identity-bound solver source")
+  endif()
+  add_executable(nr-fo-inspect-${variant} inspect.cpp)
+  target_link_libraries(nr-fo-inspect-${variant} PRIVATE OpenMP::OpenMP_CXX)
+  target_compile_definitions(nr-fo-inspect-${variant} PRIVATE NR_K2_HAS_OPENMP=1
+    "NR_SHADOW_SOURCE=\"${${source_variable}}\"")
+  if(MSVC)
+    target_compile_options(nr-fo-inspect-${variant} PRIVATE /W4 /permissive-)
+  else()
+    target_compile_options(nr-fo-inspect-${variant} PRIVATE -Wall -Wextra -Wpedantic)
+  endif()
+endforeach()

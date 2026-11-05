@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v5",
+  "probedAt": "2026-08-19T13:17:46.464Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "pinwheel-galaxy",
+  "category": "galaxy",
+  "query": "NGC 5457",
+  "requiredTermGroups": [
+    [
+      "ngc 5457",
+      "m101",
+      "pinwheel"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives-v4/pinwheel-galaxy.json",
+    "receiptSha256": "396867c45ab2ceec0dc5af7e3234dad1c6ff550ee79d27fc60d9cb938f9bff8a",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M101+galaxy+NASA+Goddard&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+5457&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+5457&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "110795684acd4a9fafe8046f8e620f69d91b09252ae6bbcdb7db957bc3a8ef5c"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "41c899c4a915f40958dd2003b89221c15c4dd931e356282f13cfeb3812899d1e"
+}

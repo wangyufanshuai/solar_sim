@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrMeasuredSidecarAdmissionV549, resetKerrMeasuredSidecarAdmissionServerCacheForTestsV549 } from "./kerrMeasuredSidecarAdmissionServerV549";
+describe("v549 sidecar server", () => { it("loads atlas and fixture receipt through one bounded cache", async () => { resetKerrMeasuredSidecarAdmissionServerCacheForTestsV549(); const first = await loadKerrMeasuredSidecarAdmissionV549(), second = await loadKerrMeasuredSidecarAdmissionV549(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "receipt"]); expect(first.artifact.syntheticFixtures.receiptCanonicalSha256).toBeTruthy(); }); });

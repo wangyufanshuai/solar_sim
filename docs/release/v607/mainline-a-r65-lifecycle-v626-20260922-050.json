@@ -1,0 +1,189 @@
+{
+  "schema": "mainline-a-r65-lifecycle-audit-v626",
+  "version": "v626-mainline-a-r65-lifecycle-audit",
+  "generatedAt": "2026-09-22T05:23:13.509Z",
+  "evidenceClass": "static-lifecycle-verifier",
+  "status": "blocked",
+  "source": {
+    "receipt": "docs/release/v607/mainline-a-r65-performance-v625-20260922-050.json",
+    "receiptSha256": "5ef0268087575ae502a5614518807e5d3b304072c329293bb1bfb6a3b3e00d95",
+    "sourceSchema": "mainline-a-performance-evidence-v625",
+    "sourceVersion": "v625-mainline-a-multi-device-lifecycle-evidence"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": true,
+    "runtimePromotion": "closed"
+  },
+  "coverage": {
+    "runCount": 6,
+    "desktopRuns": 3,
+    "mobileRuns": 3,
+    "completeRuns": 0,
+    "blockedRuns": 6,
+    "digestOnlyRuns": 6,
+    "fullRegistryRuns": 0,
+    "repeat": {
+      "requested": 3,
+      "observed": 6,
+      "complete": 6,
+      "baseline": 6,
+      "registryBacked": false,
+      "status": "blocked",
+      "reason": "repeat-cycle resource evidence is digest-only or missing"
+    }
+  },
+  "physicalMobile": {
+    "status": "not-run",
+    "reason": "no explicit physical-device observation"
+  },
+  "longRun": {
+    "status": "not-run",
+    "requestedMs": 1800000,
+    "observedMs": 0,
+    "maxRunMs": 4004.765000000596,
+    "reason": "no signed long-run observation; receipt metadata cannot promote itself"
+  },
+  "buildIdentity": {
+    "status": "bound",
+    "buildId": "mainline-a-8848c553e957b8fb",
+    "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "missing": [],
+    "runtimeMismatch": false,
+    "runMismatches": 0,
+    "reason": "receipt and every run share one build identity"
+  },
+  "runAudits": [
+    {
+      "index": 0,
+      "runId": "r65-desktop-014-3b347c16",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "index": 1,
+      "runId": "r65-desktop-015-74e7d74a",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "runId": "r65-desktop-016-e1e75b0a",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "runId": "r65-mobile-011-3f69c735",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "runId": "r65-mobile-012-084950cd",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "runId": "r65-mobile-013-f323f5ba",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "status": "blocked",
+      "resourceEvidence": "digest-only",
+      "resourceStatus": "baseline",
+      "issues": [
+        {
+          "code": "digest-only-baseline",
+          "detail": "digest equality is insufficient to certify lifecycle release",
+          "location": "resources.status",
+          "severity": "error"
+        }
+      ]
+    }
+  ],
+  "blockers": [
+    "digest-only-baseline:resources.status",
+    "long-run-observation-required",
+    "physical-device-not-run",
+    "repeat-cycle-lifecycle-unqualified",
+    "resource-lifecycle-digest-only",
+    "resource-registry-not-captured"
+  ],
+  "claims": {
+    "physicalMobilePerformance": false,
+    "longRunPerformance": false,
+    "resourceRelease": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  },
+  "notes": [
+    "This verifier accepts only explicit source receipt fields and never promotes a mobile viewport to a physical device.",
+    "Digest equality cannot prove texture, GPU, worker, owner, or memory release; full registry snapshots are required for lifecycle qualification.",
+    "A long-run duration field is metadata until signed observation evidence is present.",
+    "The audit is static evidence and cannot establish real-user validation, production performance, scientific validity, or copyright approval.",
+    "Candidate-only / hold / not-admitted; scientificPayloadWriteback=false."
+  ],
+  "auditDigest": "687ca413512f66eabc869431ee760d7a68f7425146298785d8264f5a95065df8"
+}

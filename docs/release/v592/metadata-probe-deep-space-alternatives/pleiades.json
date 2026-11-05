@@ -1,0 +1,38 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:34.608Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "pleiades",
+  "category": "cluster",
+  "query": "M45 Pleiades Spitzer",
+  "requiredTermGroups": [
+    [
+      "m45",
+      "pleiades",
+      "seven sisters"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M45+Pleiades+Spitzer&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M45+Pleiades+Spitzer&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 168,
+    "responseSha256": "297cfe7605d407153523c31b2b244c9af8b15028b485be4c8d8f2876b2152579"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "2f882ec8eb6a05e872877062c121fcc4c9ff15f860a1bf766a3e2c1d9e7a63fc"
+}

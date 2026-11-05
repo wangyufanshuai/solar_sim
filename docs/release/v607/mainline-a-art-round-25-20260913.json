@@ -1,0 +1,19 @@
+{
+  "round": 25,
+  "date": "2026-09-13",
+  "title": "Mainline A constellation index identity markers",
+  "status": "verified-static",
+  "scope": {
+    "files": ["app/data/mainlineAMetadataV607.ts", "app/components/UniverseSandboxHud.tsx"],
+    "artChange": "Exported the canonical 12-code Mainline A constellation list and marked matching entries inside the full 88-constellation browser index with data-mainline-a-current=true."
+  },
+  "validation": {
+    "vitest": "mainlineAMetadataV607.test.ts + celestialCatalog.test.ts: 32/32",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The marker identifies the current subset; it does not change the remaining catalog entries or claim their art is complete.",
+    "Beta remains open at 24 hero stars and 24 rights-cleared nebulae."
+  ]
+}

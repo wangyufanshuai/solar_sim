@@ -1,0 +1,1022 @@
+                                              Mon. Not. R. Astron. Soc. 000, 1–13 (2014)       Printed 24 September 2018     (MN LATEX style file v2.2)
+
+
+
+
+                                              Stellar modelling of Spica, a high-mass spectroscopic binary with a
+                                              β Cep variable primary component⋆
+
+
+
+
+arXiv:1601.08069v2 [astro-ph.SR] 8 Feb 2016
+                                              A. Tkachenko,1,† J. M. Matthews,2 , C. Aerts,1,3 K. Pavlovski,4 P. I. Pápics,1 ‡
+                                              K. Zwintz,5 C. Cameron,2,6 G. A. H. Walker,2 R. Kuschnig,7 P. Degroote,1,
+                                              J. Debosscher,1 E. Moravveji,1, V. Kolbas,4 D. B. Guenther,8 A. F. J. Moffat,9
+                                              J.
+                                              1
+                                                 F. Rowe,10 S. M. Rucinski,11 D. Sasselov,12 and W. W. Weiss,7
+                                                  Instituut voor Sterrenkunde, KU Leuven, Celestijnenlaan 200D, B-3001 Leuven, Belgium
+                                              2 Department of Physics and Astronomy, University of British Columbia, 6224 Agricultural Road, Vancouver, BC V6T 1Z1, Canada
+                                              3 Department of Astrophysics, IMAPP, Radboud University Nijmegen, 6500 GL Nijmegen, The Netherlands
+                                              4
+                                                Department of Physics, University of Zagreb, Bijenička cesta 32, 10000 Zagreb, Croatia
+                                              5
+                                                Institute for Astro- and Particle Physics, University of Innsbruck, Technikerstrasse 25/8, Austria
+                                              6
+                                                Department of Mathematics, Physics & Geology, Cape Breton University, 1250 Grand Lake Road, Sydney, Nova Scotia, Canada, B1P 6L2
+                                              7
+                                                University of Vienna, Institute of Astronomy, Türkenschanzstrasse 17, 1180 Vienna, Austria
+                                              8
+                                                Department of Astronomy and Physics, St. Marys University, Halifax, NS B3H 3C3, Canada
+                                              9 Départment de physique, Université de Montréal, C.P.6128, Succ. Centre-Ville, Montréal, QC H3C 3J7, Canada
+                                              10 NASA-Ames Research Park, MS-244-30, Moffett Field, CA 94035, USA
+                                              11 Department of Astronomy & Astrophysics, University of Toronto, 50 St. George Street, Toronto, ON M5S 3H4, Canada
+                                              12 Harvard-Smithsonian Center for Astrophysics, 60 Garden Street, Cambridge, MA 02138, USA
+
+
+
+
+                                              Received date; accepted date
+
+
+
+                                                                                       ABSTRACT
+                                                                                       Binary stars provide a valuable test of stellar structure and evolution, because the masses of the
+                                                                                       individual stellar components can be derived with high accuracy and in a model-independent
+                                                                                       way. In this work, we study Spica, an eccentric double-lined spectroscopic binary system
+                                                                                       with a β Cep type variable primary component. We use state-of-the-art modelling tools to de-
+                                                                                       termine accurate orbital elements of the binary system and atmospheric parameters of both
+                                                                                       stellar components. We interpret the short-period variability intrinsic to the primary compo-
+                                                                                       nent, detected on top of the orbital motion both in the photometric and spectroscopic data. The
+                                                                                       non-LTE based spectrum analysis reveals two stars of similar atmospheric chemical composi-
+                                                                                       tion consistent with the present day cosmic abundance standard defined by Nieva & Przybilla
+                                                                                       (2012). The masses and radii of the stars are found to be 11.43±1.15 M⊙ and 7.21±0.75 M⊙ ,
+                                                                                       and 7.47±0.54 R⊙ and 3.74±0.53 R⊙ for the primary and secondary, respectively. We find
+                                                                                       the primary component to pulsate in three independent modes, of which one is identified as
+                                                                                       a radial mode, while the two others are found to be non-radial, low degree l modes. The fre-
+                                                                                       quency of one of these modes is an exact multiple of the orbital frequency, and the l = m = 2
+                                                                                       mode identification suggests a tidal nature for this particular mode. We find a very good agree-
+                                                                                       ment between the derived dynamical and evolutionary masses for the Spica system to within
+                                                                                       the observational errors of the measured masses. The age of the system is estimated to be
+                                                                                       12.5±1 Myr.
+                                                                                       Key words: binaries: spectroscopic — stars: individual (α Virginis) — stars: fundamental
+                                                                                       parameters — stars: variables: general — stars: oscillations
+
+
+
+                                                                                                                              1 INTRODUCTION
+
+                                              ⋆ Based on data from the MOST satellite, a Canadian Space Agency mis-
+                                                                                                                              Spectroscopic binary stars provide a valuable test of stellar struc-
+                                              sion, jointly operated by Dynacon Inc., the University of Toronto Institute
+                                                                                                                              ture and evolution models since accurate, model-independent dy-
+                                              for Aerospace Studies and the University of British Columbia, with the as-
+                                              sistance of the University of Vienna.                                           namical masses can be measured for the individual stellar com-
+                                              † Postdoctoral Fellow of the Research Foundation Flanders                       ponents of a binary. Moreover, an existence of pulsating stars in
+                                              ‡ Postdoctoral Fellow of the Research Foundation Flanders                       binary systems allows the confrontation of the dynamical masses
+2      A. Tkachenko et al.
+with those obtained from the asteroseismic analysis. Since the latter     Table 1. List of the spectroscopic observations of Spica. JD is the Julian
+masses are model-dependent, pulsators in binary systems provide           Date, N gives the number of spectra taken during the corresponding obser-
+a test of the theory of stellar evolution and oscillations. Apart from    vational period.
+that, massive stars in binary systems are known to suffer from the
+so-called mass discrepancy problem, which is important to investi-                                 Time period                       N
+gate in the context of improving the current theories of stellar struc-                  Calendar date     JD (2 454 000+)
+ture and evolution. The term mass discrepancy was first introduced
+                                                                                       19.03–01.04.2007           178–191          772
+by Herrero et al. (1992) and in its original formulation refers to the                 18.04–30.04.2007           208–220          798
+disagreement between the spectroscopic and evolutionary masses                         22.07–30.07.2007           304–312          161
+of the star. The evolutionary mass is the one estimated by fitting
+                                                                                       Total number of spectra:                  1731
+evolutionary tracks to a position of the star in the Hertzspung-
+Russel or T eff -log g Kiel diagram, whereas the spectroscopic mass
+stands for the stellar mass computed from the spectroscopically de-
+rived value of the surface gravity and from the radius of the star.       quencies on short time scales, and there is quite some diversity in
+The radius is in turn calculated from the absolute visual magnitude       the reported frequencies the Spica system was found to pulsate in
+of the star and the (effective temperature dependent) integral of stel-   (see Sect. 6 for an overview). The fact that the system is eccen-
+lar flux over the wavelength (see Kudritzki 1980). Thus, the defi-        tric and the intrinsic pulsations of the more evolved component are
+nition of the mass discrepancy by Herrero et al. (1992) has nothing       in the range below 6 d−1 (69.4 µHz) makes it an interesting target
+to do specifically with binary systems but refers to massive stars in     to search for pulsations that are resonantly driven by the dynamic
+general. We keep on using the term mass discrepancy in application        tide. These so-called tidally induced pulsations (Aerts et al. 2010,
+to binary systems throughout the paper, and warn the reader that we       Chapter 2) have so far been detected in BA main-sequence stars
+refer to the discrepancy between the evolutionary masses and those        with masses below 5 M⊙ (e.g., Welsh et al. 2011; Thompson et al.
+inferred from binary dynamics (dynamical masses).                         2012; Hambleton et al. 2013; Pápics et al. 2013) but never in early
+      This paper is the third in a series and concerns a detailed in-     B-type stars. Should this type of stellar oscillation be found in ei-
+vestigation of Spica, a short-period double-lined spectroscopic bi-       ther of the stellar components of the Spica system, it will be the
+nary containing a massive star, where we address the above men-           first massive binary in which resonantly driven oscillations have
+tioned problems. In the two previous studies, the double-lined spec-      been detected. Such a detection would make Spica an important
+troscopic binary systems V380 Cyg (Tkachenko et al. 2014a) and            test case for the evolution of massive stars in binary systems as the
+σ Scorpii (Tkachenko et al. 2014b) have been investigated. The as-        tidally-induced pulsations are expected to play a significant role in
+teroseismic modelling of the primary component of σ Sco was               angular momentum exchange between the orbit and the individual
+largely successful leading to the mass and radius determination to        stellar components, and thus in the evolution of the orbital elements
+precisions of 10% or better, which is a factor of three more accurate     of the system with time.
+than the corresponding values derived from the combined spectro-                Better observational constraints on the oscillation behaviour
+scopic orbital and atmospheric parameters, and the interferometric        of Spica could be obtained if high-quality space-based were avail-
+orbital inclination angle (taken from North et al. 2007). We have         able for this star. Moreover, the system was also reported by
+found an evidence of the mass discrepancy for the secondary com-          Desmet et al. (2009) as possibly a grazingly eclipsing binary, so
+ponent of the binary, i.e. the evolutionary models suggest higher         good quality observational data coupled to state-of-the-art analysis
+mass than the one inferred from the binary dynamics. The study of         are required to detect a tiny eclipse signal, if present at all. A pos-
+V380 Cyg benefited from the fact that it is an eclipsing system with      sible detection of the eclipses in the photometric data of the system
+space-based photometry available, thus the dynamical masses and           could help to constrain the fundamental properties of the individual
+radii of the individual stellar components could be derived to pre-       stellar parameters to a better precision than is currently available.
+cisions approaching 1% level. Both components of the binary were                Overall, our study addresses several scientific questions at the
+found to show significant discrepancy between the dynamical and           same time. First of all, we aim at improving the understanding of
+evolutionary masses, leading us to the conclusion that the single         the pulsational behaviour of the Spica system using and improved
+star evolutionary models are inadequate for this particular system.       observational dataset, including high-quality photometric obser-
+      Spica (V = 0.97 mag, discovered to be a spectroscopic bi-           vations from space combined with high-quality high-resolution
+nary by Vogel 1890) is an important system to study in the con-           ground-based spectroscopy (see Sect.2). The orbital configuration
+text of testing the current theories of stellar structure and evolution   of the system is determined in Sects. 3 and 4, with a particular in-
+for massive stars, which are way more uncertain than the models           terest in whether the star could be a grazingly eclipsing system.
+for lower mass stars. The more evolved primary component is also          We also perform a detailed (atmospheric) chemical composition
+known to be an intrinsically variable star that belongs to the class      analysis for both stellar components of the binary (Sect. 5), which
+of β Cep variables (Aerts et al. 2010, Chapter 2) and pulsates in         particularly allows us to see whether a increased nitrogen abun-
+pressure modes. As a consequence, the system was the subject of           dance at the surface of the star due to rotational mixing applies
+numerous studies addressing both the questions on configuration of        to the Spica system as reported in the literature (e.g., Hunter et al.
+the orbit as well as on the variability intrinsic to the primary com-     2008; Brott et al. 2011). The intrinsic variability of the more mas-
+ponent. For example, Shobbrook et al. (1972) used both the newly          sive component of the Spica system is explored in detail in Sect. 6.
+obtained and historical RV data to determine orbital parameters of        This includes detailed frequency analysis, identification of the in-
+the binary. The obtained solution was found to be in good agree-          dividual pulsation modes from spectroscopic data, and a search for
+ment with the one reported by Herbison-Evans et al. (1971).               observational signatures of tidally-induced pulsations. The possi-
+      Despite the extensive investigations in the past, the oscilla-      bility of detecting for the first time forced oscillations in a high-
+tion behaviour of Spica is currently not well understood: several         mass star (> 5M⊙ ) defines the second scientific question we ad-
+studies reported about irregular variability of the individual fre-       dress in this study. Finally, we investigate the binary system in the
+                                                                                                                             Stellar modelling of Spica                 3
+
+                           -0.02
+
+
+
+
+                           -0.01
+
+
+
+
+         Delta magnitude
+                           0.00
+
+
+
+
+                           0.01
+
+
+
+
+                           0.02
+
+                               185                        190                      195                      200                       205                     210
+
+                                                                                          HJD (2454000+)
+
+
+
+
+                            1.0
+
+
+
+
+        Normalized flux
+                            0.9
+
+
+
+
+                            0.8
+
+
+
+
+                            0.7
+
+
+
+
+                            0.6
+
+
+                              4200                              4300                           4400                            4500                           4600
+
+
+                                                                                          Wavelength [A]
+
+
+
+
+                                     Figure 1. The MOST light curve (top) and a portion of the normalized, composite coralie spectrum (bottom) of Spica.
+
+
+context of the above-mentioned mass discrepancy problem by com-                                   term instrumental trend has been removed by fitting a second-order
+paring the (spectroscopically inferred) positions of the individual                               degree polynomial to the entire data set.
+stellar components in the T eff -log g Kiel diagram with the evolu-                                     The observational data set we analyse in this study is unique in
+tionary tracks (Sect. 7).                                                                         the sense that 1) photometric data were obtained for the Spica sys-
+                                                                                                  tem from space for the first time and are expected to provide much
+                                                                                                  better constraints on the orbital configuration of the system and
+                                                                                                  on the intrinsic variability of the individual stellar components; 2)
+2 OBSERVATIONS AND DATA REDUCTION                                                                 the photometric data are complemented with extensive time-series
+                                                                                                  of ground-based spectroscopic observations that were taken during
+We obtained 1731 high resolution (R = 50 000) high signal-to-noise                                the same period of time. Detailed (combined) analysis of these data
+ratio (S/N) spectra with the coralie spectrograph attached to the                                 sets allows us to cross-match the photometrically inferred oscilla-
+1.2m Euler Swiss Telescope (La Silla, Chile). The data were gath-                                 tion frequencies with those extracted from the spectroscopic data.
+ered in three different runs, in March, April, and July 2007, and                                 The frequencies found in both data sets can be safely considered as
+cover wide wavelength range between 381 and 681 nm. Table 1                                       intrinsic to the star and used for identification of the individual pul-
+gives the journal of our observations and lists calendar and Julian                               sation mode geometries based on well-sampled spectroscopic data.
+dates of the beginning and the end of the observing run, as well as                               The output of such an analysis is one of the main pre-conditions for
+the number of spectra that were obtained within each of the runs.                                 a detailed asteroseismic modelling of the star.
+      The spectroscopic data were reduced by means of a dedicated
+data reduction pipeline. The procedure included bias and stray-light
+subtraction, cosmic rays filtering, flat fielding, wavelength calibra-
+                                                                                                  3 MODELLING THE LIGHT- AND RV-CURVE DATA
+tion by ThAr lamp, and order merging. Normalisation to the local
+continuum has been done by fitting a cubic spline function through                                We used the method described in Pápics et al. (2013) to deter-
+some tens of carefully selected continuum points. The whole nor-                                  mine the RVs of both components from the composite observed
+malisation procedure as well as its implementation are described in                               spectra. Briefly, the method relies on the fitting of composite syn-
+more detail in Pápics et al. (2012).                                                             thetic spectra to the observations, and comprises of two basic steps.
+      Photometric data were gathered with the MOST space-based                                    First, a rough estimate of the spectroscopic parameters is made
+mission (Walker et al. 2003). The satellite is equipped with a 15-                                by fitting synthetic spectra to a single, high-quality observation
+cm Rumak-Maksutov optical telescope feeding a CCD photometer.                                     taken at the orbital phase of largest RV separation, in a grid of
+The Spica system was observed in the “Fabry mode” of MOST                                         T eff , log g, v sin i, and [M/H], in the range of several helium and
+(Walker et al. 2003), and was sampled using ∼30 second exposures                                  metallic lines, as well as in the regions of Balmer Hβ and Hγ
+over a baseline of 22.92 days in March-April 2007. The single point                               line profiles. In the second step, the atmospheric parameters are
+precision is of the order of 1–2 mmag; the complete light curve                                   fixed to the values derived in the previous step, and RVs are deter-
+of the system is illustrated in Fig. 1 (top panel). For the analysis,                             mined by fitting composite synthetic spectra to all observed spec-
+the light curve was converted to a magnitude scale; a small, long                                 tra leaving RVs of both components as variables. In our case, we
+4        A. Tkachenko et al.
+
+Table 2. Summary of the parameters for the final phoebe 2.0 solution of      found to be optimal in the sense that it provided good enough sam-
+the MOST light- and coralie radial velocity curves of Spica. A and B refer   pling of the light curve and allowed to suppress the amplitude of
+to the primary and secondary stars, respectively. The uncertainties on the   the oscillations significantly.
+parameters come from Markov Chain Monte Carlo simulations.                           A detached configuration of the system has been assumed in
+                                                                             our calculations. Given the previously reported values for v sin i and
+    Parameter                           Value          Uncertainty           radii of both components, as well as of the orbital inclination angle
+                                                                             (e.g., Herbison-Evans et al. 1971; Lyubimkov et al. 1995), the syn-
+    Orbital period, P (d)               4.0145           0.0001
+    T0 (HJD 24 54 000.+)                189.40            0.02
+                                                                             chronicity parameter was set to 2.0 and 1.5 for the primary and sec-
+    Orbital eccentricity∗ , e           0.133             0.017              ondary star, respectively. Our final solution will show that this as-
+    Longitude of periastron, ω (◦ )     255.6             12.2               sumption is very close to reality. The gravity darkening coefficients
+    Mass ratio∗ , q                     0.6307            0.023              were set to unity and the third light was fixed at zero. The effect of
+    Orbital inclination, i (◦ )         63.1               2.5               limb darkening is taken into account by means of the non-linear low
+    Orbital semimajor axis (R⊙ )        28.20             0.92               introduced by Claret (2000). Unlike, e.g., the Wilson-Devinney ap-
+    Systemic velocity, γ (km s−1 )      -0.5               1.1               proach where one, global set of coefficients is assumed to be valid
+    Rotation rates, A, B                2.0, 1.5                             on the entire star, phoebe2.0 takes into account the dependency of
+    Gravity darkening, A, B             1.0, 1.0                             the coefficients on local conditions (effective temperature, gravity)
+    Third light                         0.0
+                                                                             on the star. This way, the limb darkening coefficients are not decou-
+    Star A potential                    4.67              0.21
+    Star B potential                    6.08              0.50
+                                                                             pled from the intensities anymore but are assumed to vary locally
+    Fractional polar radii, A, B        0.250, 0.132   0.08, 0.05            over the surface (Degroote et al. 2013).
+    Fractional equatorial radii, A, B   0.282, 0.134   0.09, 0.04                    The time of periastron passage (T0 ), the eccentricity (e), the
+    T eff star A∗ (K)                   25 300            500                orbital inclination angle (i), the longitude of periastron (ω), the
+    T eff star B (K)                    20 585            850                semi-major axis (a), the systemic velocity (γ), the dimensionless
+    ∗ adopted from spectroscopy                                              potentials (Ω1,2 ), and the effective temperature of the secondary
+                                                                             (T eff,2 ) were set as adjustable parameters. The effective temper-
+                                                                             ature of the primary (T eff,1 ) was initially fixed to the value of
+could skip the first (rather time-consuming) step, and we used the           24 700 K as derived by Lyubimkov et al. (1995), while the final so-
+parameters T eff =24 700/20 800, log g=3.7/4.2, v sin i=161/70, and          lution was computed assuming our spectroscopically derived value
+[M/H]=0.0/0.0 reported by Lyubimkov et al. (1995) for the pri-               of 25 300 K (see Sect. 5). Fixing the effective temperature of one
+mary/secondary component.                                                    of the stars is essential as only the temperature ratio of the two
+      As pointed out by Harrington et al. (2009), the determina-             components can be constrained from white light photometry deliv-
+tion of the RVs of both binary components is complicated due to              ered by MOST. The final set of the parameters is given in Table 2,
+non-negligible line-profile variability (LPV) intrinsic to the pri-          along with the uncertainties derived by means of the Markov Chain
+mary component. In the result, the individual RVs of the primary             Monte Carlo simulations. We also provide fractional radii (stel-
+measured as the first order moment of the line profile may dif-              lar radii divided by the orbital semi-major axis) which are needed
+fer by up to 16 km s−1 from the average value, depending on the              to compute the physical properties of the two stars. The system
+range of the profile that is used for the measurement (see Fig.3 in          configuration is represented schematically at four different orbital
+Harrington et al. 2009). Moreover, at the phases of close RV sepa-           phases in Fig. 2, while the quality of the fit of the phase-folded
+ration of the components, an additional uncertainty is added by the          MOST light curve is illustrated in Fig. 3. As one can see (bottom
+secondary to the RVs of the primary, but also the RVs of the sec-            left panel in Fig. 2), the orbital inclination of Spica is such that
+ondary are affected by the LPV of the primary component. Both ef-            it appears to be a nearly eclipsing system. Provided the error bars
+fects were clearly visible in our RVs, measured with the procedure           on the potentials of the two stars and the orbital inclination angle
+outlined above. Thus, we used these RVs to provide initial guesses           given in Table 2, Spica might indeed be a grazingly eclipsing bi-
+for the orbital parameters, but the final orbital solution was obtained      nary system, where the more evolved primary partially blocks the
+by iterating between the light curve fitting (using the most recent          light of the secondary component near phase 0.5, as suggested by
+version of the phoebe2.0 code1 , Degroote et al. (2013); Prša et al.        Desmet et al. (2009). Though the discovery of eclipses in this sys-
+(2013), see below) and the method of spectral disentangling (spd,            tem would be an exciting result, it would hardly help better con-
+see Sect.4). Such approach has an advantage in that it allows to             strain orbital and physical parameters of the system.
+(at least partially) remove the degeneracy between the longitude                     A clear residual signal can be seen on top of the one due to
+of periastron (ω) and the eccentricity (e) of the system. In prac-           the ellipsoidal variability of stars in the MOST light curve of Spica
+tice, the former parameter is better constrained from the light curve,       (see Fig. 3). This signal is clearly intrinsic to the star and will be
+whereas the eccentricity is better defined from the shape of the RV-         discussed in Sect. 6 in more detail. We did not use the residual RVs
+curve of the system. This is exactly the reason why the eccentricity         obtained at this step for further analysis, as the more accurate spec-
+reported in Table 2 is mentioned as “adopted from spectroscopy”              troscopic information can be extracted from the original, composite
+but the ω value given in Table 3 is the one that comes from the light        spectra of a binary by subtracting the contribution of either of the
+curve solution.                                                              binary components beforehand, using the corresponding disentan-
+      The variability intrinsic to the primary component is also pro-        gled spectrum (see Sect. 6).
+nounced in the MOST light curve. To minimize the effect of this
+variability on the phoebe2.0 solution, the data were binned into 200
+orbital phase bins of equal width. This number of phase bins was
+                                                                             4 SPECTRAL DISENTANGLING
+                                                                             To separate the spectra of two components, we used the method
+1   http://phoebe-project.org/                                               of spectral disentangling (spd, hereafter) originally proposed by
+                                                                                                                            Stellar modelling of Spica               5
+                                                                                                          250
+
+
+                                                                                                          200
+
+
+                                                                                                          150
+
+
+                                                                                  ]                       100
+                                                                                 -1
+
+
+
+
+                                                                                  Radial velocity [km s
+                                                                                                           50
+
+
+                                                                                                             0
+
+
+                                                                                                           -50
+
+
+                                                                                                          -100
+
+
+                                                                                                          -150
+
+
+                                                                                                          -200
+
+
+                                                                                                          -250
+                                                                                                              0.0   0.2         0.4          0.6         0.8   1.0
+
+                                                                                                                          Orbital phase (P = 4.0145 d)
+
+
+
+
+                                                                                 Figure 4. RVs of both binary components computed from the orbital solu-
+                                                                                 tion reported in Table 3. The primary component is shown by open circles,
+                                                                                 whereas the secondary with open triangles.
+
+
+
+                                                                                 photometric analysis (see Table 3). The wavelength range of the
+Figure 2. Schematic representation of the Spica binary system at four dif-       separated spectra covers several Balmer lines (Hδ , Hγ , and Hβ )
+ferent orbital phases. Phase zero corresponds to the time of periastron pas-     and extends up 5 300 Å. The whole red part of the spectrum was
+sage. X and Y axes give the distance from the center of mass in units of         avoided in the disentangling because of numerous telluric contri-
+solar radii.
+                                                                                 butions and a few stellar lines only present in that part of the spec-
+                                                                                 trum. Instead, spd was performed on individual stellar lines in the
+                  -0.02                                                          red part of the spectrum, that were advantageous to have for the
+                                                                                 analysis of chemical composition of the components (e.g., Si III
+                  -0.01                                                          λλ 5741 Å line and a few nitrogen, carbon, and aluminium lines
+                                                                                 nearby). The blue part of the spectrum was avoided because of
+                                                                                 uncertain continuum normalization. So, the spectral window that
+
+
+Delta magnitude
+                  0.00
+                                                                                 was finally used for the spectrum analysis covers the wavelength
+                                                                                 range between 4 000 and 5 300 Å. The final orbital solution was
+                  0.01
+                                                                                 obtained by computing the mean orbital elements from all wave-
+                                                                                 length intervals mentioned above; the values are reported and com-
+                  0.02
+                                                                                 pared to the previous findings in Table 3. All parameters are found
+                                                                                 to agree within the quoted error bars with the values reported by
+                  0.03                                                           Herbison-Evans et al. (1971) and Shobbrook et al. (1972). Using
+                                                                                 the value of T0 reported by Shobbrook et al. (1972) and the apsidal
+                  0.04                                                           motion period Paps = 139 ± 7 years derived by Aufdenberg et al.
+                          0.0   0.2         0.4          0.6         0.8   1.0
+                                                                                 (2007), we calculate ω to be between 230◦ and 255◦ for the period
+                                      Orbital phase (P = 4.0145 d)
+                                                                                 of our observations. Thus, the obtained by us value for the longi-
+                                                                                 tude of periastron of 255.6±12.2◦ is in agreement with Paps reported
+Figure 3. Best fit model (solid, thick line) to the phase-folded MOST
+light curve (open circles). The residuals have been shifted downwards by
+                                                                                 by Aufdenberg et al. (2007). Figure 4 illustrates the final solution
+0.03 mag for clarity.                                                            in terms of the computed RVs of both components, and, at the same
+                                                                                 time, gives an impression about the orbital phase coverage achieved
+                                                                                 with our spectroscopic material.
+Simon & Sturm (1994), and formulated by Hadrava (1995) in                              Since the primary of Spica is known to be a variable star of
+Fourier space. The code we use is the the FDbinary code by                       β Cep type, and the spd method assumes no variability intrinsic to
+Ilijic et al. (2004). The method is designed to optimize simultane-              either of the components of a binary system, the input data used for
+ously for the spectra of individual binary components and orbital                the spectral disentangling need some additional commenting. We
+elements of the system. The procedure we used here is similar to                 used the approach adopted in Tkachenko et al. (2014b), that is we
+the one described in Tkachenko et al. (2014a,b), that is: in the first           binned the original spectra with orbital period derived in Sect. 3.
+step, the orbital elements were derived from several spectral re-                From a set of experiments, we found 25 orbital phase bins to be
+gions centered at prominent lines of neutral helium and doubly-                  the optimal choice, which provided a minimum number of orbital
+ionized silicon (He I λλ 4388, 4471, 4920, 5015 Å and Si III                     phase gaps, and sufficiently uniform distribution of the spectra over
+triplet λλ 4553, 4568, and 4575 Å), and in the second step, the                  the bins. There are several advantages of using binned data instead
+obtained orbital solution was used to separate the spectra of indi-              of the original spectra, provided a large number of spectra is avail-
+vidual binary components in the entire wavelength range. In this                 able: i) a significantly reduced number of input spectra for spd (25
+particular case, the orbital elements used for the spectral separa-              compared to the original 1731 measurements), which in turn re-
+tion are the ones obtained from the combined spectroscopic and                   duces the computation time; ii) a much higher S/N for each spec-
+6      A. Tkachenko et al.
+
+
+
+
+Figure 5. A portion of the separated (non-corrected for the individual light contributions) spectra of both stellar components of the Spica binary system. The
+spectrum of the secondary was shifted downwards by 0.25 (in continuum units) for clarity. The most prominent lines present in the spectra of both stars are
+also indicated.
+
+
+
+Table 3. Orbital elements for Spica as derived by Herbison-Evans et al.            Table 4. Atmospheric parameters of both components of the Spica binary
+(1971, indicated as H-E1971), Shobbrook et al. (1972, indicated as S1972),         system. Equatorial velocities were computed under the assumption of copla-
+and in this study. Errors are given in parentheses in terms of last digits. Sub-   narity.
+scripts 1 and 2 refer to the primary and secondary component, respectively.
+                                                                                    Parameter      Unit        Primary        Secondary
+ Param. Unit           H-E1971           S1972            this study
+                                                                                    T eff          K         25 300±500      20 900±800
+ P        days         4.01455(3)        4.01454(3)       4.0145(1)∗∗               log g          dex         3.71±0.10       4.15±0.15
+ K1       km s−1       123.9(1.4)        124(4)           123.7(1.6)                v sin i        km s−1     165.3±4.5        58.8±1.5
+ K2       km s−1       198.8(1.5)        197(8)           196.1(1.6)                vturb          km s−1       5.0±1.0         3.0±1.0
+ e                     0.146(9)          0.14(3)          0.133(17)                 light factor   %           85.5±1.5        14.5±1.5
+ ω∗       degrees, ◦   138(6)            142(8)           255.6(12.2)∗∗             veq            km s−1     185.4±9.2        65.9±3.2
+ T0       HJD          2440678.09(7)     2440284.76(8)    2454189.40(2)∗∗
+ ∗ The values measured at T
+                            0
+ ∗∗ Fixed from the phoebe2.0 solution (see Sect. 3)
+                                                                                   log g from which the spectroscopic analysis of OB-stars is known
+                                                                                   to suffer, leading to the measurement of accurate individual abun-
+trum; and iii) the oscillation signal is suppressed to a level that it             dances. This is not the case for non-eclipsing systems, where the
+has only a minor impact on the results of the disentangling.                       precision achieved on the fundamental atmospheric parameters and
+       A portion of the separated spectra of both components is                    chemical composition of the components is comparable to the one
+shown in Fig. 5, along with identification of most prominant spec-                 expected for single stars. However, spectroscopic analysis still is
+tral lines found in the spectra of both components. The spectra sug-               superior to the analysis of broad-band photometry, in the sense that
+gest that both components are B-type stars with the primary com-                   the atmospheric parameters measured from stellar spectra are more
+ponent rotating significantly faster than the secondary. A detailed                accurate than the values inferred from photometric data.
+spectrum analysis of both binary components is presented in the                          Before the spectra of individual binary components can be
+next section.                                                                      analysed to determine basic atmospheric parameters and individ-
+                                                                                   ual abundances, they need to be renormalised to the individual con-
+                                                                                   tinua of the component stars. This is done by means of the light
+                                                                                   ratio, which is often determined from photometric data for eclips-
+5 SPECTRUM ANALYSIS OF BINARY COMPONENTS
+                                                                                   ing binaries and by means of the constrained fitting (i.e., fitting
+Eclipsing binaries are a prime source of accurate masses and radii                 for the light ratio simultaneously with other fundamental parame-
+of stars, given high-quality photometric and spectroscopic data                    ters, Tamajo et al. 2011) for non-eclipsing systems. In the partic-
+can be obtained for them. Moreover, the atmospheric parame-                        ular case of Spica, we fit for the light ratio and the other atmo-
+ters and chemical composition of individual stellar components of                  spheric parameters of the individual stellar components simultane-
+such systems can often be measured to a higher precision than                      ously, so that the light contribution of each of the stars is one of
+for single stars of similar spectral type and luminosity class (see,               the output parameters from our spectrum analysis. The fundamen-
+e.g., Pavlovski & Hensberge 2005; Pavlovski & Southworth 2009;                     tal parameters and chemical composition of both stars were derived
+Tkachenko et al. 2009, 2010, 2014a). This becomes possible due to                  by fitting their disentangled spectra to a grid of synthetic spectra,
+the fact that the surface gravity of a stellar component can be com-               based on the so-called hybrid approach. The latter assumes the us-
+puted directly from its mass and radius, and thus fixed in the spec-               age of LTE-based atmosphere models and non-LTE spectral synthe-
+troscopic analysis. This removes the degeneracy between T eff and                  sis, in our case computed with the atlas9 (Kurucz 1993), and de-
+                                                                                                               Stellar modelling of Spica                   7
+
+
+
+
+Figure 6. Best fit model (solid line) to the disentangled spectra (symbols) of both components of the Spica binary system. The spectrum of the secondary was
+vertically shifted for clarity.
+
+
+
+
+Figure 7. Fits of the theoretical spectra (lines) to the renormalised disentangled spectra of both stars (symbols) in the regions of carbon (top) and nitrogen
+(bottom) lines, and assuming different abundances of these elements. The columns (from left to right) refer to the primary and secondary component; the
+assumed abundances are indicated in the plot, where the smallest number corresponds to the weakest line. Note different X and Y scales for the primary and
+secondary which is due to large difference in v sin i values of the two stars.
+
+
+tail (Butler 1984) and surface (Giddings 1981) codes, respectively.               blending of spectral lines. 2) The determination of atmospheric pa-
+Justification of such approach is discussed in Nieva & Przybilla                  rameters such as T eff and log g, as well as the individual light fac-
+(2007). The adopted spectrum analysis procedure is discussed in                   tors is largely based on fitting the Balmer lines (Hδ , Hγ , and Hβ ). 3)
+Tkachenko et al. (2014a,b) in full detail but here we summarize a                 Microturbulent velocities are determined by fitting selected oxygen
+few key points only: 1) the whole analysis is based on the method                 lines requiring a null correlation between the individual abundances
+of spectrum synthesis where a grid of synthetic spectra is fitted to              and the equivalent widths of the corresponding spectral lines. The
+the observations. Not only this concerns the determination of the                 lines selected are those from Simón-Dı́az (2010). We also use sili-
+atmospheric parameters of the individual stellar components but                   con lines as an additional check of the reliability of the determined
+also their chemical compositions: both stars exhibit significant line             microturbulent velocity. The projected rotational velocities of the
+broadening in their spectra, so the method of spectral synthesis is               stars are determined by fitting the metal line spectrum of each of
+superior for the determination of individual abundances compared                  the components.
+to the equivalent width measurements which suffers from heavy                           Tables 4 and 5 list the atmospheric parameters and in-
+8         A. Tkachenko et al.
+
+Table 5. Photospheric abundances derived for both stellar components of        this study agree within the error bars with both the Cosmic Abun-
+the Spica binary system. Abundances are expressed relative to the abun-        dance Standard (Nieva & Przybilla 2012) and chemical composi-
+dance of hydrogen, log ǫ(H) = 12.0. The third and the fourth columns give      tion of the Sun as derived by Asplund et al. (2009). An exception
+the number of lines used and the difference between abundances of a binary     is the abundances of carbon and aluminium in the atmosphere of
+component and those of the Sun, respectively. Present-day cosmic abun-         the primary component, which seem to be slightly overabundant
+dances from Galactic OB stars (Nieva & Przybilla 2012) are given in the        given our 1σ uncertainties. We do not find any increase in the sur-
+fifth column. The last column lists the solar abundances from Asplund et al.   face nitrogen abundance for either of the binary components, which
+(2009).
+                                                                               puts both stars in the Group 1 of Hunter et al. (2008, Figure 1). For
+                                                                               the further analysis, we will assume solar chemical composition for
+    El.     log ǫ(X)     N        [X/H]        OB stars          Sun
+                                                                               both binary components, as the above mentioned deviations of car-
+                           Primary component                                   bon and aluminium found for the primary will not have any impact
+    He     10.97±0.06     6     0.00±0.06     10.99±0.01      10.97±0.01       on the analysis outlined in the next sections.
+    C       8.19±0.05     4    -0.20±0.07      8.33±0.04       8.39±0.05
+    N       7.76±0.04    17    -0.02±0.07      7.79±0.04       7.78±0.06
+    O       8.72±0.08     8     0.06±0.09      8.76±0.05       8.66±0.05       6 FREQUENCY ANALYSIS AND MODE
+    Mg      7.50±0.10     1    -0.03±0.13      7.56±0.05       7.53±0.09         IDENTIFICATION
+    Si      7.41±0.20     6    -0.10±0.20      7.50±0.05       7.51±0.04
+    Al      6.20±0.08     2    -0.17±0.09                      6.37±0.04       In this section, we address the question of the variability intrinsic to
+                                                                               either of the binary components, that manifests itself in terms of the
+                          Secondary component
+                                                                               brightness and line profile variations. The results of spectroscopic
+    He     10.98±0.07     6    0.01±0.07      10.99±0.01      10.97±0.01       mode identification are also presented and discussed.
+    C       8.26±0.14     4    -0.13±0.15      8.33±0.04       8.39±0.05
+    N       7.81±0.19    17    0.03±0.20       7.79±0.04       7.78±0.06
+    O       8.82±0.23     8     0.16±0.24      8.76±0.05       8.66±0.05       6.1 Previous work
+    Mg      7.45±0.16     1    -0.08±0.18      7.56±0.05       7.53±0.09
+    Si      7.52±0.24     6    0.01±0.24       7.50±0.05       7.51±0.04       The intrinsic variability of the primary component of Spica was ex-
+    Al      6.16±0.17     2    -0.20±0.17                      6.37±0.04       tensively studied in the past. Shobbrook et al. (1969) were the first
+                                                                               to report on the detection of light variations intrinsic to the evolved
+                                                                               primary with frequency of ∼5.75 d−1 (66.53 µHz). The variabil-
+dividual abundances for both stellar components of the Spica                   ity has been attributed to a radial pulsation mode, thus the star
+binary system. The primary component is found to be hot-                       has been classified as a β Cep-type variable. Smak (1970) came
+ter and more evolved than its companion, whereas both stars                    to the same conclusion and reported about a steady decrease of
+have the same chemical composition within the quoted error                     the dominant pulsation period at a rate of about 5 seconds per
+bars. The errors are 1σ uncertainties, that for individual abun-               century. Shobbrook et al. (1972) investigated the system based on
+dances take into account line-to-line scatter and the error prop-              newly obtained photometric and spectroscopic data and confirmed
+agation from the atmospheric parameters. The spectroscopically                 the primary to be a variable star with the dominant frequency of
+derived effective temperature of the secondary and surface grav-               ∼5.75 d−1 (66.53 µHz). However, the authors found the pulsation
+ities of both stars are in good agreement with the correspond-                 mode to be variable in amplitude with the variability being random.
+ing values of T eff,2 =20 585±850 K, log g1 =3.75±0.11 dex, and                A second pulsation mode was detected at a frequency of ∼3.97 d−1
+log g2 =4.15±0.16 dex obtained from the light curve fitting and                (45.93 µHz) in the radial velocity (RV) data and interpreted as the
+the dynamical masses and radii of the stars, respectively. The                 fundamental radial mode. The dominant mode was proposed to be
+same concerns light factors: the light curve solution delivers                 due to the first overtone radial pulsation.
+contributions of 84.4/15.6% for the primary/secondary, which                        Walker et al. (1982) investigated new spectroscopic data ob-
+is in agreement with the spectroscopic findings within about                   tained at orbital phases of large RV separation of the components.
+1%. Our atmospheric parameters are also in good agreement                      The authors detected “bumps” moving across line profiles of the
+with the values reported by Lyubimkov et al. (1995), who found                 primary, just in line with the expectations for non-radial pulsations.
+T eff =24 700±500/20 800±1 500 K, log g=3.7±0.1/4.2±0.2 dex, and                    A detailed study of the variability intrinsic to the primary com-
+v sin i=161±2/70±5 km s−1 for the primary/secondary component.                 ponent was performed by Smith (1985a,b). About 500 high reso-
+Any discrepancies between our parameters and those determined                  lution, high signal-to-noise-ratio (S/N) spectra were collected and
+by Lyubimkov et al. (1995) can be attributed to the fact that, in the          analysed in the region of the Si III triplet at λλ 4553, 4568, and
+latter study, the analysis was based on the original, composite spec-          4575 Å. Clear, though low-amplitude, variability has been detected
+tra of the binary. The approach implemented in the current study               in the RV data of all three components of the triplet. The signal
+and that is based on the analysis of the disentangled spectra of both          was found to be due to four modes, f1 ∼3.68 d−1 (42.58 µHz),
+components is more accurate as it does not suffer from spectral line           f2 ∼7.5 d−1 (86.77 µHz), f3 ∼0.49 d−1 (5.67 µHz), and f4 ∼2.99 d−1
+blending due to the contribution of a companion star.                          (34.59 µHz); no evidence of the previously reported radial mode
+       The quality of the fit to three Balmer lines (Hδ , Hγ , and Hβ ) in     with frequency of ∼5.75 d−1 (66.53 µHz) was found in the data.
+the spectra of both stars is shown in Fig. 6. A set of carbon and ni-          From the spacings between individual “bumps” detected in the sil-
+trogen lines in the spectra of both binary components is illustrated           icon line profiles of the primary, the modes f1 and f2 were found
+in Fig. 7, along with the theoretical spectra computed assuming dif-           to have geometries corresponding to l = m = 8 and l = m = 16,
+ferent abundances of these elements. A significant difference in ro-           respectively. The author also claims that these two modes have the
+tational broadening of the spectral lines of the stars is easily caught        same, high radial order n. The third mode at 0.49 d−1 (5.67 µHz)
+by eye, as well as the similarity in their chemical compositions. Fi-          was attributed to the spectroscopic analog of the photometric el-
+nally, we note that chemical compositions of both stars found in               lipsoidal variability and identified as an l = 2 mode. It is worth
+                                                                                                                                   Stellar modelling of Spica                             9
+
+Table 6. Results of the frequency analysis. The Rayleigh limit amounts to 0.044 d−1 for the photometry and 0.008 d−1 for the spectroscopy. Errors in the
+amplitude are given in parenthesis in terms of last digits. The photometric frequencies which are in common with the spectroscopic ones are highlighted in
+boldface.
+
+                       Photometry                                                                                       Spectroscopy
+
+                                                                            Pixel-by-pixel                                                                  RV
+                       (magnitude)                                        (continuum units)                                                               (km s−1 )
+
+ fi   Freq (d−1 )      Freq (µHz)    Amplitude    S/N   Freq (d−1 )        Freq (µHz)                    Amplitude      S/N    Freq (d−1 )          Freq (µHz)        Amplitude    S/N
+
+ f1   0.694            8.030         0.00198(7)   6.9   3.001 (12forb )    34.722                        0.014(1)       10.8   2.998 (12forb )      23.117            4.32(3)      12.1
+ f2   0.638            7.382         0.00114(7)   5.5   5.748              66.504                        0.012(2)       7.4    5.751                66.539            1.93(3)      4.5
+ f3   1.486            17.193        0.00108(5)   5.0   0.252 (forb )      2.916                         0.011(1)       5.6    0.248                2.869             1.4          4.1
+ f4   0.254 (forb )    2.939         0.00083(5)   4.4   2.162              25.014                        0.007(1)       4.0    —                    —                 —            —
+ f5   0.741 (3forb )   8.573         0.00082(5)   4.1
+ f6   2.149            24.864        0.00063(4)   4.0
+ f7   5.755            66.585        0.00057(3)   5.5
+
+
+                                                                                                                                              Wavelength [A]
+noting that this variability was detected indirectly, as a perturbing
+agent on the l = 8 mode. Smith (1985a) concluded that the system                                                 4546       4548       4550        4552        4554     4556      4558
+
+
+
+
+                                                                                     Normalized flux
+                                                                                                          1.00
+
+
+has achieved angular momentum equilibrium by eventually rotating                                          0.98
+
+bisynchronously, i.e. with the rotation period of the primary being
+                                                                                                          0.96
+half of the orbital period of the binary.
+      The f4 ∼2.99 d−1 (34.59 µHz) mode was analysed by Smith                                             0.94
+
+
+
+(1985b) in detail based on the data set obtained by Smith (1985a).                                       54215
+
+
+The author found that the variability in question has very distinct
+behavior: unlike non-radial pulsations that show continuously trav-                                      54210
+
+
+
+elling bumps from blue to red wing of the line profile or vice verse,                                    54205
+
+
+
+
+                                                                                       HJD (24 00000+)
+this variability is characterized by nearly stationary absorption like
+features in the wings. The amplitude of these features was found to                                      54200
+
+
+be variable, making them to disappear and reappear again during
+                                                                                                         54195
+the variability cycle. Smith (1985b) found that the variability due
+to the f4 ∼2.99 d−1 (34.59 µHz) mode can be well reproduced with                                         54190
+
+
+a spherical harmonic function with the radial component of the dis-
+placement vector suppressed. Thus, the mode was found to have                                            54185
+
+
+
+characteristics similar to those of toroidal modes, and was desig-
+                                                                                                         54180
+
+nated by the author as a “quasi-toroidal mode”.
+                                                                                                                 4546       4548       4550        4552        4554     4556      4558
+      Harrington et al. (2009) presented an analysis of high reso-
+                                                                                                                                              Wavelength [A]
+lution spectra taken with the espadons instrument attached to the
+Canada France Hawaii Telescope. The authors reported the de-                        Figure 8. Top: Average profile of the Si III λλ 4552.6 Å line computed
+tection of the lines of the secondary component in their spec-                      from the time series of 162 composite spectra taken within narrow range
+tra, and classified both components as B-type stars. The authors                    in orbital phase. Bottom: Time-series of the residual spectra obtained af-
+found all weak spectral lines in their spectra to display discrete                  ter subtraction of the average profile. The grey scale represent the residual
+narrow features which could not be identified in He I and Balmer                    intensity at each wavelength pixel.
+lines. The authors concluded that tidal flows exerted by the main-
+sequence secondary on the evolved primary are the main contribu-
+                                                                                    ical description of the procedure can be found in Degroote et al.
+tor to the short-term variability observed in the line profiles of the
+                                                                                    (2009).
+Spica system. Palate et al. (2013) arrived to a similar conclusion
+                                                                                          The list of photometric frequencies extracted from the MOST
+by analysing the data set obtained by Harrington et al. (2009) and
+                                                                                    light curve is given in Table 6 (first column, labeled “Photometry”).
+using improved methodology. The conclusions of these two papers
+                                                                                    The frequencies with values of S/N above 4 are listed only. Those
+will be discussed in the context of our own results in the last section
+                                                                                    which are in common with the spectroscopic frequencies are high-
+of the current study.
+                                                                                    lighted in boldface. Frequencies f4 and f5 are linked to the orbital
+                                                                                    frequency of the binary system and are due to imperfect removal
+                                                                                    of the orbital signal from the original light curve. Frequency f7 has
+6.2 MOST photometry
+                                                                                    been previously reported in the literature as a radial pulsation mode
+The photometric solution obtained in Sect. 3 was used to com-                       with (randomly) variable amplitude (e.g., Shobbrook et al. 1969,
+pute residuals from the original MOST light curve illustrated in                    1972). Smith (1985a) reported that this frequency could not be de-
+Fig. 1 (top panel). For the extraction of individual frequencies, am-               tected in his spectroscopic data, but stressed that there is no rea-
+plitudes, and phases from the residual signal, we used the Lomb-                    son to assume that the mode will not return eventually. All other
+Scargle version of the discrete Fourier transform (Lomb 1976;                       frequencies detected by us in the MOST photometry are new and
+Scargle 1982) and consecutive prewhitening. A detailed mathemat-                    have not been reported in the literature before. Based on the results
+10                               A. Tkachenko et al.
+                                                                                     -1                                                                                                                    -1
+                                                  f    = 3.001 d                          (34.722     Hz)                                                                               f    = 5.748 d          (66.504   Hz)
+                                                  1                                                                                                                                      2
+
+
+
+
+ Amplitude (% of cont)
+                                                                                                                                                                                                                                                                       Amplitude (% of cont)
+                         0.005
+                                                                                                                                                                                                       l = 0, m = 0                                           0.003
+                         0.004
+                                                                                     l = 2, m = 2
+                                                                                                                                                                                                       l = 1, m = 0
+
+                         0.003                                                                                                                                                                         l = 1, m = 1                                           0.002
+
+                         0.002
+                                                                                                                                                                                                                                                              0.001
+                         0.001
+
+                         0.000                                                                                                                                                                                                                                0.000
+
+                           0.4                                                                                                                                                                                                                                -0.4
+                                                                                                                                                                                                                                         l = 0, m = 0
+ )                                                                    l = 2, m = 2
+                                                                                                                                                                                                                                                              -0.8
+
+
+                                                                                                                                                                                                                                                                      Phase (2
+                                                                                                                                                                                                                                         l = 1, m = 0
+                           0.0
+
+
+ Phase (2
+                                                                                                                                                                                                                                         l = 1, m = 1
+                                                                                                                                                                                                                                                              -1.2
+                          -0.4
+                                                                                                                                                                                                                                                              -1.6    )
+
+                          -0.8
+                                                                                                                                                                                                                                                              -2.0
+                                  -200     -100                         0                                      100          200                   -200                       -100                      0                           100                  200
+                                                                                                      -1                                                                                                                  -1
+                                                      Doppler velocity [km s                               ]                                                                                Doppler velocity [km s             ]
+
+
+                                                                                                                                                        -1
+                                                                                                                                     f   = 2.162 d           (25.014       Hz)
+                                                                                                                                     4
+
+
+
+
+                                                             Amplitude (% of cont)
+                                                                                          0.003
+                                                                                                                                         l = 2, m = 2
+
+                                                                                                                                         l = 3, m = 1
+                                                                                          0.002
+
+
+                                                                                          0.001
+
+
+                                                                                          0.000
+
+
+                                                                                            1.2
+                                                             )
+                                                                                                                                                                                 l = 2, m = 2
+                                                                                            0.8
+
+
+                                                             Phase (2
+                                                                                                                                                                                 l = 3, m = 1
+
+                                                                                            0.4
+
+                                                                                            0.0
+
+                                                                                           -0.4
+
+                                                                                                    -200             -100                     0                            100                   200
+                                                                                                                                                                  -1
+                                                                                                                                  Doppler velocity [km s               ]
+
+
+
+Figure 9. Amplitude and phase distributions across the line profile for three pulsations modes: f1 =3.001 d−1 (top left), f2 =5.748 d−1 (top right), and
+f4 =2.162 d−1 (bottom). The best fit models are overplotted with the lines of different style; the corresponding mode geometry is indicated in each subplot.
+
+
+of our spectroscopic investigations (see below), we conclude that                                                                                        In the next step, we used the disentangled spectrum of the sec-
+it is the primary component that is responsible for the photometric                                                                                ondary obtained in Sect. 4 to subtract the contribution of this star
+variability occurring on top of the orbital signal.                                                                                                from the composite spectra of the binary. To test how good the re-
+                                                                                                                                                   moval of the secondary’s contribution is, we did the frequency anal-
+                                                                                                                                                   ysis of two different sets of the residual spectra: i) all 1731 spectra;
+6.3 High-resolution spectroscopy                                                                                                                   ii) excluding the spectra where the lines of the secondary compo-
+                                                                                                                                                   nent merge with the lines of the primary. The goal of this exercise
+Our very first exercise with the spectra was to figure out which of
+                                                                                                                                                   was to check which spurious frequencies will appear in the data
+the stars is intrinsically variable in the system. To do so, we have
+                                                                                                                                                   due to the imperfect subtraction of the contribution of a companion
+selected all individual spectra in a narrow range of orbital phase
+                                                                                                                                                   star from the composite line profiles. We found that the frequen-
+to make sure that all dynamics we see in the line profiles is due
+                                                                                                                                                   cies at two and three times the orbital frequency (the second and
+to variability intrinsic to either of the binary components and not
+                                                                                                                                                   the third harmonics of forb ) show up in the first data set while they
+due to the orbital motion within the system. Also, if all variability
+                                                                                                                                                   could not be detected in our second, orbital phase restricted data
+was due to tides and/or tidally locked (see, e.g., Harrington et al.
+                                                                                                                                                   set. Thus, we conclude that these two frequencies are not real, and
+2009; Palate et al. 2013), one would expect the signal to be repet-
+                                                                                                                                                   base our further analysis on the second set of 716 spectra. Interest-
+itive with orbital cycle, i.e. nearly the same line profile pattern
+                                                                                                                                                   ingly, Smith (1985a) reported on the detection of 2forb periodicity
+would be observed at a given orbital phase every orbital cycle
+                                                                                                                                                   in his spectra, and attributed it to an l = m = +2 “equilibrium” tidal
+(see Harrington et al. 2009, Figure 6). We did the above mentioned
+                                                                                                                                                   mode, which is basically a spectroscopic equivalent of the photo-
+exercise for both quadratures, where the spectral features of the
+                                                                                                                                                   metric ellipsoidal variability. This type of signal was also theoret-
+two stars are well separated in wavelength. Since the obtained re-
+                                                                                                                                                   ically predicted by Harrington et al. (2009) to occur in the Spica
+sults are essentially the same for both orbital phases, we illustrate
+                                                                                                                                                   system due to the tidal flows exerted by the components on each
+only one of them in Fig. 8. The top panel shows the average Si III
+                                                                                                                                                   other. Our test with the real data shows that the signal at low or-
+λλ 4552.6 Å line, where the contribution of the secondary can be
+                                                                                                                                                   der harmonics of the orbital frequency is easily introduced into the
+clearly distinguished from the one of the primary. The bottom panel
+                                                                                                                                                   data artificially, when the contribution of the secondary component
+illustrates a time-series of the residual profiles obtained by subtract-
+                                                                                                                                                   is taken into account inappropriately, one way or the other.
+ing the average profile from the individual spectra. There are 162
+spectra shown in total; all of them were used to compute the average                                                                                    The individual frequencies have been extracted from both RVs
+profile shown in the top panel. One can clearly see bumps moving                                                                                   (computed as the first order moment of the spectral line) and the
+from blue to red wing of the profile of the primary component, the                                                                                 line profiles themselves, using discrete Fourier-transform (DFT)
+signal typical for non-radial pulsations. There is no variability in                                                                               and a consecutive prewhitening procedure as implemented in the
+our data that could be attributed to the secondary component.                                                                                      famias (Zima 2008) software package. Following the procedure de-
+                                                                                                       Stellar modelling of Spica                11
+scribed in Tkachenko et al. (2014a), the DFT was computed up               Table 7. Fundamental stellar parameters of both components of the Spica
+to the Nyquist frequency, the amplitudes and phases were opti-             binary system derived from the combined photometric and spectroscopic
+mised at each step of the prewhitening procedure while keeping             solution.
+the frequency values fixed, and the frequencies were accepted as
+significant ones if their S/N was higher or equal to 4 (Breger et al.       Parameter                        Unit     Primary        Secondary
+1993). For the analysis, we used the Si III triplet λλ 4553, 4568,
+                                                                            Mass, M                          M⊙      11.43±1.15      7.21±0.75
+and 4575 Å, but neglected all other lines potentially sensitive to
+                                                                            Radius, R                        R⊙       7.47±0.54      3.74±0.53
+non-radial pulsations (like He or Mg lines), because of high de-            Luminosity, log L                L⊙      4.312±0.095    3.353±0.181
+gree of their blending due to the rapid rotation of the star. The final     Effective temperature1 , T eff   K      25 300±500     20 900±800
+list of frequencies is given in the second column of Table 6, la-           Surface gravity1 , log g         dex      3.71±0.10      4.15±0.15
+beled “Spectroscopy”. Frequencies f2 ∼5.75 d−1 (66.53 µHz) and
+                                                                            1
+f3 ∼0.25 d−1 (2.89 µHz) were found both in the RVs and in the                   adopted from spectroscopy (see Table 4)
+line profiles themselves, and agree within the error bars with the
+frequencies f7 and f4 detected in the photometric data. As it has
+been discussed in the previous section already, the former is likely       into account in the famias model. The f1 =3.001 d−1 (34.722 µHz)
+a radial mode whereas the latter is the orbital frequency. There is a      mode is unambiguously identified as an l = m = 2 mode. No unique
+frequency, f1 ∼3.00 d−1 (34.71 µHz), that shows up in both spec-           solution could be found for the modes f2 and f4 , though the range
+troscopic observables, but could not be detected in the MOST pho-          in both quantum numbers is well constrained: we find that the for-
+tometry. This one is close to the 12th harmonic of the orbital fre-        mer mode is likely a radial or l = 1 mode, while the latter is either
+quency and is thus a good candidate for a mode excited by means of         l = 2 or l = 3 mode. All our best solutions with χ2 values below 20
+the dynamical tides expected to occur in eccentric binary systems.         suggest a range in the inclination angle of rotation axis irot between
+The same frequency was detected by Smith (1985a) in his spec-              53 and 66 degrees. This value is in good agreement with the orbital
+troscopic data and explained in terms of a tidally forced “quasi-          inclination of iorb = 63.1 degrees.
+toroidal” mode (Smith 1985b). The last frequency, f4 ∼2.16 d−1
+(24.99 µHz), could be detected in the line profiles but not in the
+RV data, and has a low amplitude both in the spectroscopic and the
+photometric data.
+      We used famias to identify all three modes, f1 , f2 , and f4 , de-
+                                                                           7 EVOLUTIONARY MODELS
+tected in our spectroscopic data. For that, we used the Fourier-
+parameter fit method (FPF, Zima et al. 2006), which is best suit-          The mesa stellar structure and evolution code (Paxton et al. 2011,
+able for mode identification in rapidly rotating stars. Identification     2013) was used to compute evolutionary models for both compo-
+of pulsation modes requires a knowledge of fundamental stellar             nents of the Spica system. Given that the secondary component
+parameters like mass, radius, effective temperature, surface grav-         rotates at about 10% of its critical velocity, we have chosen to
+ity, etc. These were set to the values obtained from our combined          compute non-rotating models for this star. Contrary, the primary
+photometric and spectroscopic solution, as summarized in the third         is found to rotate at ∼30% of its break-up velocity, and thus the ro-
+column of Table 7. The individual masses and radii of the stars            tation could not be neglected in the evolutionary model calculations
+were computed from binary dynamics and we refer the reader to              for this binary component. The initial abundance fractions (X, Y, Z)
+Tkachenko et al. (2014b, Section 5) for any details. The luminosi-         = (0.710, 0.276, 0.014) are those from Nieva & Przybilla (2012), in
+ties were computed from the dynamical radii and effective temper-          agreement with the spectroscopic findings (cf. Sect. 5). Convective
+atures of stars. In the first step, the modes were identified inde-        core overshoot is described with an exponentially decaying pre-
+pendently of each other, that is each time the star was treated as a       scription of Herwig (2000). The Ledoux criterion is used in the
+mono-periodic pulsator. This often allows to narrow the range in           convection treatment. The OPAL opacity tables Iglesias & Rogers
+free parameters, particularly in l and m quantum numbers, which            (1996) and MESA equation-of-state are used.
+in turn significantly reduces the calculation time when the multi-               Figure 10 illustrates the position of both stellar components of
+periodic solution is searched for. To provide sufficient spatial reso-     the Spica system in the T eff -log g diagram. The error bars are those
+lution, we divided the stellar surface into 10 000 segments. At each       obtained from 1σ combined spectroscopic and photometric uncer-
+iteration step the amplitude and phase distributions across the pro-       tainties (cf. Table 4). The evolutionary tracks are shown with solid
+file were optimized along with the zero-point profile. Besides the         lines for dynamical masses of both stars and the corresponding er-
+l and m quantum numbers and intrinsic amplitudes of the modes,             ror bars (cf. Table 7). The tracks were computed for the overshoot
+the intrinsic width of the Gaussian profile σ, projected rotational        parameter fov = 0.01 (αov ≈ 0.1 H p ); we also show the track com-
+velocity of the star v sin i, and the inclination of its rotational axis   puted with fov = 0.03 (αov ≈ 0.3 H p ) for a single mass value to
+irot were set as free parameters. Since famias assumes an alignment        illustrate the effect of overshoot on the evolutionary path of the star.
+between rotation and pulsation axes, it is possible to check for           Dashed lines show isochrones corresponding to 11.5 (bottom), 12.5
+possible spin-orbit misalignment by keeping irot as a free param-          (middle), and 13.5 (top) Myr. The latter were computed assuming
+eter. Figure 9 illustrates the distributions of amplitude and phase        overshoot of fov = 0.01. We find that the position of the unevolved
+across the line profile for all three modes: f1 =3.001 d−1 (top left),     secondary agrees very well with its dynamical mass evolutionary
+f2 =5.748 d−1 (top right), and f4 =2.162 d−1 (bottom). The best fit        track. The same holds for the primary when the error bars on the
+models with χ2 values below 20 are overplotted with the lines of           mass, T eff , and log g of the star are taken into account. The positions
+different style; the corresponding mode geometries are indicated in        of both stars are in good agreement with the isochrone correspond-
+the plots. Such large values of χ2 , that are obviously linked to the      ing to 12.5 Myr. By taking into account the errors on T eff and log g
+inconsistency between the model and observations in Fig. 9, can            for the primary component, we estimate the accuracy for the age to
+be attributed to the fact the high-order rotation effects are not taken    be of ±1 Myr.
+12       A. Tkachenko et al.
+                                                                                 cies, implying that the actual errors on individual frequencies are
+                                                                                 larger than the difference between the observed and theoretical val-
+                                                                                 ues. The corresponding models cover entire parameter range in the
+                                                                                 fundamental stellar parameters such as the effective temperature,
+                                                                                 surface gravity, mass, radius, etc., implying that detailed asteroseis-
+                                                                                 mic analysis is not feasible with the data set we currently have. An
+                                                                                 accumulation of additional spectroscopic material would help to in-
+                                                                                 crease the frequency resolution, and thus would make the seismic
+                                                                                 analysis feasible for the primary component of Spica.
+                                                                                       The mass discrepancy problem remains an unresolved issue
+                                                                                 in the massive binary research area for at least a few decades.
+                                                                                 It clearly points to some shortcomings in the current theories of
+                                                                                 stellar structure and evolution since the masses of the compo-
+                                                                                 nent stars measured from binary dynamics are model-independent
+                                                                                 values. As of today, the mass discrepancy problem, one way or
+                                                                                 the other, was addressed in several studies (e.g., Burkholder et al.
+Figure 10. Location of the primary and secondary components of the Spica
+                                                                                 1997; Pavlovski et al. 2009; Tkachenko et al. 2014a,b; Garcia et al.
+system in the T eff -log g Kiel diagram, along with the mesa evolutionary
+tracks. A track corresponding to a higher overshoot is shown for one se-
+                                                                                 2014). The majority of the studies reported on a significant discrep-
+lected mass to illustrate that it is impossible to constrain overshoot parame-   ancy between the dynamical and evolutionary masses, in a very
+ter fov from the models due to large error box in the determined fundamental     few cases, the models were successful in matching the dynamical
+parameters. Dashed lines show three isochrones corresponding (from bot-          masses of the component stars. Revealing the shortcomings in the
+tom to top) to 11.5, 12.5, and 13.5 Myr                                          current theories of stellar structure and evolution requires a statisti-
+                                                                                 cally significant, homogeneously analysed sample of massive bina-
+                                                                                 ries, whereas currently the analysis methods as well as the evolu-
+8 SUMMARY AND DISCUSSION                                                         tionary models used by different authors are quite diverse. Spica is
+In this paper, we presented a detailed analysis of the Spica close bi-           the third massive binary system, after V380 Cyg and σ Sco, that has
+nary system, based on high-resolution spectroscopy obtained with                 been analysed by us in a consistent, homogeneous way, using the
+the coralie spectrograph and space-based photometry gathered                     same modelling tools as for the other two binaries. We will extend
+with the MOST mission. In total, 1731 spectra and ∼23 days of                    our sample of massive binaries by adding about a dozen of eclips-
+nearly continuous photometric measurements have been analysed                    ing systems that we have recently discovered in the Campaign 0
+with the state-of-the-art modelling techniques. We found that the                data of the K2 mission. More systems are expected to be found in
+Spica system is close to showing a grazing secondary eclipse, the                other fields of view of the K2 missions as well. With a few dozens
+fact exciting by itself but hardly helpful for the analysis in terms of          of the systems in total analysed in a consistent way, we will be able
+a better precision on the fundamental parameters of the component                to get more insight into the nature of the mass discrepancy problem
+stars. Both binary components are found to have similar chemical                 for massive stars.
+composition consistent with the cosmic abundances derived from
+Galactic OB stars (Nieva & Przybilla 2012).
+      A comparison of the positions of both stars in the T eff -log g di-        ACKNOWLEDGEMENTS
+agram with the mesa evolutionary models reveals a good agreement
+for the secondary component. This result differs from the one ob-                The research leading to these results has received funding from
+tained by us for the V380 Cyg (Tkachenko et al. 2014a) and Sigma                 the European Community’s Seventh Framework Programme FP7-
+Scorpii (Tkachenko et al. 2014b) systems, where the unevolved                    SPACE-2011-1, project number 312844 (SPACEINN), and from
+secondary components were found to show significant discrepancy                  the Fund for Scientific Research of Flanders (FWO), Belgium, un-
+between their evolutionary and dynamical masses. A small mass                    der grant agreement G.0B69.13. E.M. has received funding from
+discrepancy is not excluded for the primary component of Spica,                  the People Programme (Marie Curie Actions) of the European
+though no definite conclusion can be drawn on this aspect because                Unions Seventh Framework Programme FP7/2007-2013/ under
+of rather large uncertainty of about 10% in the stellar mass.                    REA grant agreement n◦ 623303 for the project ASAMBA. K.P.
+      Contrary to Harrington et al. (2009) and Palate et al. (2013)              was (partially) supported by the Croatian Science Foundation un-
+suggesting that the line profile variations observed in the primary              der the grant 2014-09-8656. K.Z. acknowledges support by the
+component can be naturally explained in terms of surface tidal                   Austrian Fonds zur Foerderung der wissenschaftlichen Forschung
+flows exerted on it by the secondary, we find a clear evidence of                (FWF, project V431-NBL). Mode identification results with the
+non-radial pulsation modes in the system. One of the modes is inter-             software package famias developed in the framework of the FP6
+preted by us as being excited through a resonance between the free               European Coordination Action HELAS (http://www.helas-eu.org/).
+oscillation of the primary and the dynamical tides in the binary sys-            A.T. dedicates this work to his grandfather, A. Solomchenko, who
+tem. If confirmed with future observations, the Spica system will be             passed away in January 2016.
+the first massive binary (with the mass of the pulsating component
+larger than 5 M⊙ ) in which tidally-induced pulsations have been
+detected. Unfortunately, our attempt to carry out detailed astero-
+                                                                                 REFERENCES
+seismic modelling for the primary component of the Spica system
+was unsuccessful due to insufficient frequency resolution achieved                Aerts, C., de Pauw, M., & Waelkens, C. 1992, A&A, 266, 294
+with our data. In the result, several tens of models with χ2 values               Aerts, C., Christensen-Dalsgaard, J., & Kurtz, D. W. 2010, Aster-
+below 1 were found when attempting to fit the observed frequen-                    oseismology, Springer, Heidelberg
+                                                                                            Stellar modelling of Spica              13
+Asplund, M., Grevesse, N., Sauval, A.J., & Scott, P., 2009,           Shobbrook, R. R., Lomb, N. R., & Herbison-Evans, D. 1972, MN-
+  ARA&A, 47, 481                                                       RAS, 156, 165
+Aufdenberg, J. P., Ireland, M. J., Mérand, A., et al. 2007, IAU      Simón-Dı́az, S. 2010, A&A, 510, A22
+  Symposium, 240, 271                                                 Simon, K. P., & Sturm, E. 1994, A&A, 281, 286
+Breger, M., Stich, J., Garrido, R., et al. 1993, A&A, 271, 482        Smak, J. 1970, AcA, 20, 75
+Brott, I., Evans, C. J., Hunter, I., et al. 2011, A&A, 530, A116      Smith, M. A. 1985a, ApJ, 297, 206
+Burkholder, V., Massey, P., & Morrell, N. 1997, ApJ, 490, 328         Smith, M. A. 1985b, ApJ, 297, 224
+Butler, K. 1984, PhD thesis, University of London, UK                 Tamajo, E., Pavlovski, K., & Southworth, J. 2011, A&A, 526, A76
+Claret, A. 2000, A&A, 363, 1081                                       Thompson, S. E., Everett, M., Mullally, F., et al. 2012, ApJ, 753,
+Degroote, P., Aerts, C., Ollivier, M., et al. 2009, A&A, 506, 471      86
+Degroote, P., Conroy, K., Hambleton, K., et al. 2013, EAS Publi-      Tkachenko, A., Lehmann, H., & Mkrtichian, D. E. 2009, A&A,
+  cations Series, 64, 277                                              504, 991
+Desmet, M., Aerts, C., Matthews, J. M., et al. 2009, American         Tkachenko, A., Lehmann, H., & Mkrtichian, D. 2010, AJ, 139,
+  Institute of Physics Conference Series, 1170, 376                    1327
+Garcia, E. V., Stassun, K. G., Pavlovski, K., et al. 2014, AJ, 148,   Tkachenko, A., Degroote, P., Aerts, C., et al. 2014a, MNRAS,
+  39                                                                   438, 3093
+Giddings, J. R. 1981, PhD thesis, University of London, UK            Tkachenko, A., Aerts, C., Pavlovski, K., et al. 2014b, MNRAS,
+Hadrava, P. 1995, A&AS, 114, 393                                       442, 616
+Hambleton, K. M., Kurtz, D. W., Prša, A., et al. 2013, MNRAS,        Vogel, H. C. 1890, The Observatory, 13, 367
+  434, 925                                                            Walker, G. A. H., Moyles, K., Yang, S., & Fahlman, G. G. 1982,
+                                                                       PASP, 94, 143
+Harrington, D., Koenigsberger, G., Moreno, E., & Kuhn, J. 2009,
+                                                                      Walker, G., Matthews, J., Kuschnig, R., et al. 2003, PASP, 115,
+  ApJ, 704, 813
+                                                                       1023
+Herbison-Evans, D., Hanbury Brown, R., Davis, J., & Allen, L. R.
+                                                                      Welsh, W. F., Orosz, J. A., Aerts, C., et al. 2011, ApJS, 197, 4
+  1971, MNRAS, 151, 161
+                                                                      Wilson, R. E. 1979, ApJ, 234, 1054
+Herrero, A., Kudritzki, R. P., Vilchez, J. M., et al. 1992, A&A,
+                                                                      Wilson, R. E., & Devinney, E. J. 1971, ApJ, 166, 605
+  261, 209
+                                                                      Zima, W. 2008, Communications in Asteroseismology, 155, 17
+Herwig, F. 2000, A&A, 360, 952
+                                                                      Zima, W., Wright, D., Bentley, J., et al. 2006, A&A, 455, 235
+Hunter, I., Brott, I., Lennon, D. J., et al. 2008, ApJL, 676, L29
+Iglesias, C. A. & Rogers, F. J. 1996, ApJ, 464, 943
+Ilijic, S., Hensberge, H., Pavlovski, K., & Freyhammer, L. M.
+  2004, Spectroscopically and Spatially Resolving the Compo-
+  nents of the Close Binary Stars, 318, 111
+Kudritzki, R.-P. 1980, A&A, 85, 174
+Kurucz, R. 1993, ATLAS9 Stellar Atmosphere Programs and 2
+  km/s grid. Kurucz CD-ROM No. 13. Cambridge, Mass.: Smith-
+  sonian Astrophysical Observatory, 1993., 13
+Lomb, N. R. 1976, Ap&SS, 39, 447
+Lyubimkov, L. S., Rachkovskaya, T. M., Rostopchin, S. I., &
+  Tarasov, A. E. 1995, Astronomy Reports, 39, 186
+Nieva, M. F., & Przybilla, N. 2007, A&A, 467, 295
+Nieva, M.-F., & Przybilla, N. 2012, A&A, 539, A143
+North, J. R., Davis, J., Tuthill, P. G., Tango, W. J., & Robertson,
+  J. G. 2007, MNRAS, 380, 1276
+Palate, M., Koenigsberger, G., Rauw, G., Harrington, D., &
+  Moreno, E. 2013, A&A, 556, A49
+Pápics, P. I., Briquet, M., Baglin, A., et al. 2012, A&A, 542, A55
+Pápics, P. I., Tkachenko, A., Aerts, C., et al. 2013, A&A, 553,
+  A127
+Pavlovski, K., & Hensberge, H. 2005, A&A, 439, 309
+Pavlovski, K., & Southworth, J. 2009, MNRAS, 394, 1519
+Pavlovski, K., Tamajo, E., Koubský, P., et al. 2009, MNRAS, 400,
+  791
+Paxton, B., Bildsten, L., Dotter, A., Herwig, F., Lesaffre, P., &
+  Timmes, F. 2011, ApJS, 192, 3
+Paxton, B., Cantiello, M., Arras, P., et al. 2013, ApJS, 208, 4
+Prša, A., & Zwitter, T. 2005, ApJ, 628, 426
+Prša, A., Degroote, P., Conroy, K., et al. 2013, EAS Publications
+  Series, 64, 259
+Scargle, J. D. 1982, ApJ, 263, 835
+Shobbrook, R. R., Herbison-Evans, D., Johnston, I. D., & Lomb,
+  N. R. 1969, MNRAS, 145, 131
+

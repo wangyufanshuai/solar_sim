@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { resolveKerrPhotonMetrologyObservatoryIntentV557 } from "./kerrPhotonMetrologyObservatoryIntentV557";
+describe("v557 photon metrology intent", () => { it("keeps coordinate provenance local-shadow-only", () => { expect(resolveKerrPhotonMetrologyObservatoryIntentV557("local-shadow", true)).toMatchObject({ observatoryImportAuthorized: true, detailComponentCatalogSize: 58, coordinateProductCount: 2, rayIndexRowCount: 16, measuredPixelCount: 0, canvasCreated: false }); expect(resolveKerrPhotonMetrologyObservatoryIntentV557("vercel-lite", true).reason).toBe("lite-boundary"); expect(resolveKerrPhotonMetrologyObservatoryIntentV557("standalone-full", true).reason).toBe("standalone-boundary"); }); });

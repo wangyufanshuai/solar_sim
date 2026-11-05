@@ -1,0 +1,94 @@
+{
+  "schema": "mainline-a-r66-web-v653-tooling-code-change",
+  "round": "R66-web-only-continuation",
+  "date": "2026-10-11",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "applicationSourceSha256": "f86295b3b959a6a5217e1f58d148b11a38ef800219c5a80f9f59fb87e4dea79f",
+  "productionBuildId": "7jCmHHTeCrDTqbh6csQIR",
+  "scope": "Current-build 30-minute browser driver, six real official NASA source pages, six official JPEG byte links, six decoded-pixel comparisons, offline replay, negative validation, and candidate evidence packaging.",
+  "countMethod": "Nonblank noncomment lines of nine new production/tooling scripts. Tests, screenshots, raw image bytes, generated manifests, receipts, and documentation are excluded. Each line is counted once. The five application lines from the earlier V649 continuation are referenced but not added to this continuation's count.",
+  "effectiveCode": {
+    "newProductionToolLines": 2242,
+    "modifiedApplicationLinesThisContinuation": 0,
+    "effectiveChangedLinesThisContinuation": 2242,
+    "earlierV649ApplicationAndToolLowerBound": 535,
+    "combinedV649ThroughV653LowerBound": 2777,
+    "testLinesExcluded": true,
+    "minimumPerRound": 500,
+    "minimumMet": true
+  },
+  "files": [
+    {
+      "path": "scripts/capture-mainline-a-web-r65-longrun-v650.mjs",
+      "role": "real-current-build-two-viewport-resource-and-frame-observation",
+      "effectiveLines": 328,
+      "sha256": "8a7ec4b90638cbf9750b5d8874b62433890ea09e87c31a06c3355c597cca706a"
+    },
+    {
+      "path": "scripts/mainline-a-nebula-source-page-v651.mjs",
+      "role": "fixed-six-source-page-contract-and-parser",
+      "effectiveLines": 151,
+      "sha256": "ad2889c7214bf0ce83b1a05ba4089354709cd988b8099dbd1c310179c82e026a"
+    },
+    {
+      "path": "scripts/collect-mainline-a-nebula-source-pages-v651.mjs",
+      "role": "real-HTTPS-source-page-collector-and-attempt-ledger",
+      "effectiveLines": 290,
+      "sha256": "4342811dbbd3f7faa536c771ab1e66b543d3c0f8091740719d9cd41d404bf063"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-source-pages-v651.mjs",
+      "role": "raw-HTML-SHA-replay-and-anti-forgery-checks",
+      "effectiveLines": 260,
+      "sha256": "bcb8397ecf29b97ebd63d654f2f7f8be6a9f43fc83a300bef3a59cc920c456d4"
+    },
+    {
+      "path": "scripts/build-mainline-a-web-evidence-supplement-v651.mjs",
+      "role": "current-build-HTTP-browser-performance-source-evidence-package-binding",
+      "effectiveLines": 322,
+      "sha256": "828c533b27c41c33ac8057abcf6550f8173b403316e01d486f71220e7563b4e5"
+    },
+    {
+      "path": "scripts/mainline-a-nebula-page-image-link-v652.mjs",
+      "role": "official-JPEG-URL-and-candidate-image-identity-contract",
+      "effectiveLines": 107,
+      "sha256": "b1574d050d0a88f75ade8bff6f2973a0305acdd7ca37a822a994fb96655e6fad"
+    },
+    {
+      "path": "scripts/collect-mainline-a-nebula-page-image-link-v652.mjs",
+      "role": "real-HTTPS-official-JPEG-collector-and-byte-attempt-ledger",
+      "effectiveLines": 292,
+      "sha256": "083c00486b777186c94ca1e24f00cd77f305b3856c9caac317d38835a3f49374"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-page-image-link-v652.mjs",
+      "role": "offline-byte-comparison-and-negative-replay",
+      "effectiveLines": 329,
+      "sha256": "a3dc3392ef3acde138a5f425f5b3ad8ad511d7722d2addc1174b34b91ccfe2b1"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-pixel-link-v653.mjs",
+      "role": "decoder-version-pinned-pixel-equivalence-audit-and-replay",
+      "effectiveLines": 163,
+      "sha256": "cc0a40a85325b4315b9da14934e40f7fd444c69dff30185a4b036ea7dc1138d5"
+    }
+  ],
+  "testFilesExcluded": [
+    "scripts/capture-mainline-a-web-r65-longrun-v650.test.mjs",
+    "scripts/mainline-a-nebula-source-page-v651.test.mjs",
+    "scripts/verify-mainline-a-nebula-source-pages-v651.test.mjs",
+    "scripts/mainline-a-nebula-page-image-link-v652.test.mjs",
+    "scripts/verify-mainline-a-nebula-page-image-link-v652.test.mjs",
+    "scripts/verify-mainline-a-nebula-pixel-link-v653.test.mjs",
+    "scripts/build-mainline-a-web-evidence-supplement-v651.test.mjs"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  }
+}

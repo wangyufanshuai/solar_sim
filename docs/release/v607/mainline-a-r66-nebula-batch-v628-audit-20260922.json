@@ -1,0 +1,48 @@
+{
+  "schema": "mainline-a-nebula-batch-audit-v628",
+  "batchId": "r66-beta-next-six",
+  "status": "pending-gates",
+  "source": {
+    "path": "app/data/mainlineANebulaRightsPackV613.generated.json",
+    "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7"
+  },
+  "counts": {
+    "rows": 6,
+    "captured": 3,
+    "attempts": 10,
+    "findings": 0,
+    "hardFindings": 0
+  },
+  "gates": {
+    "sourcePage": {
+      "observed": 0,
+      "required": 6,
+      "status": "pending"
+    },
+    "rawArtifact": {
+      "observed": 3,
+      "required": 6,
+      "status": "pending"
+    },
+    "rightsSignoff": {
+      "observed": 0,
+      "required": 6,
+      "status": "pending"
+    },
+    "candidateBoundary": {
+      "observed": 1,
+      "required": 1,
+      "status": "pass"
+    }
+  },
+  "findings": [],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "evidenceClass": "collector-ledger-and-artifact-integrity-audit-not-rights-approval",
+  "generatedAt": "2026-09-22T01:13:32.917Z",
+  "batchSha256": "a268999956b256a376195b7a4807e674e79a29ce198b3a541eef259586927e26"
+}

@@ -1,0 +1,156 @@
+{
+  "version": "v567-atlas-science-admission-v1",
+  "generatedAt": "2026-08-03T05:00:00Z",
+  "status": "blocked-radiative-measured-dense-gpu-public-promotion",
+  "transport": {
+    "qualified": true,
+    "authority": "cpu-float64-sparse-kerr-polarization"
+  },
+  "radiativeTransfer": {
+    "invariantFixtureQualified": true,
+    "productionQualified": false,
+    "status": "radiative-transfer-invariant-qualified-measured-input-blocked",
+    "reason": "engine-and-v466-production-transfer-remain-explicitly-blocked"
+  },
+  "measuredAuthority": {
+    "granted": false,
+    "metadataStatus": "blocked-metadata-identity-conflict",
+    "currentProbeStatus": "blocked-metadata-identity-conflict",
+    "currentProbeSha256": "66af293e2dec897fcff2d9e5e552835d9e53023df2e2cd939f454eef12760c13",
+    "sourceStatuses": [
+      {
+        "id": "heasarc-ixpe-master-catalog-metadata",
+        "status": "metadata-unavailable",
+        "httpStatus": 404
+      },
+      {
+        "id": "nasa-mirror-ixpe-master-catalog-metadata",
+        "status": "metadata-request-failed",
+        "httpStatus": null
+      }
+    ],
+    "payloadRead": false,
+    "automaticRetry": false,
+    "intakeStatus": "blocked-public-data-package-missing",
+    "reason": "ixpe-metadata-identity-conflict-and-public-package-missing"
+  },
+  "dense": {
+    "executed": false,
+    "status": "incomplete-0-of-49",
+    "completedShardCount": 0,
+    "plannedShardCount": 49,
+    "controllerPreflight": "blocked-v313-source-manifest-drift",
+    "stateMutationApplied": false,
+    "sourceDrift": [
+      {
+        "path": "scripts/atlas.mjs",
+        "expectedSha256": "7b163d96c6dc266b5f094b639f9aac5af520572aa33649395be69b5b3ca35dd3",
+        "actualSha256": "ed1de6503f494e7fba62d3f67bc79ff4a76aa5a884a467a968c5ac99ed260ffe"
+      },
+      {
+        "path": "app/components/RelativityResearchWorkbenchV280.tsx",
+        "expectedSha256": "a10708e26a406848271f6999f9bc413d73fd50d8587e5b9cfed7e838644b409b",
+        "actualSha256": "357ab7f101394bc0b1a62b709be53edbe90d46e42d733faf74be61b552ad99dd"
+      }
+    ]
+  },
+  "gpuShadow": {
+    "executed": false,
+    "qualified": false,
+    "reason": "radiative-transfer-and-dense-cpu-authority-prerequisites-not-qualified"
+  },
+  "publicRelease": {
+    "deployed": false,
+    "previewAuthorized": false,
+    "runtimeReleaseValidationQualified": false,
+    "scienceResearchPromotionAllowed": false,
+    "reason": "hero-visual-transition-and-science-admission-prerequisites-blocked"
+  },
+  "qualification": {
+    "runtimeReleaseValidation": false,
+    "productionRadiativeTransfer": false,
+    "measuredAuthority": false,
+    "denseCpuAuthority": false,
+    "gpuShadow": false,
+    "publicResearchRelease": false
+  },
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalDefaultKernel": "legacy-eih-1pn",
+    "historicalEvidenceRewritten": false,
+    "denseStateMutated": false,
+    "gpuRun": false,
+    "metadataNetworkAttempted": true,
+    "sciencePayloadNetworkAttempted": false,
+    "productionDeploymentAttempted": false
+  },
+  "sourceManifest": [
+    {
+      "path": "../../orbit-relativity-engine/dist/metadata-live-v567/metadata-probe.json",
+      "bytes": 1186,
+      "sha256": "98402c71e9fd5420a8f905e43fa7b7ec7a5e662710ddde1aabe8a8d4a616e4c2"
+    },
+    {
+      "path": "../../orbit-relativity-engine/examples/ixpe-cyg-x1-metadata-v563.json",
+      "bytes": 635,
+      "sha256": "2539ff46747877f06d0770b6debfaf512df0f716a432af170b8b0677a674eb73"
+    },
+    {
+      "path": "app/components/RelativityResearchWorkbenchV280.tsx",
+      "bytes": 22678,
+      "sha256": "357ab7f101394bc0b1a62b709be53edbe90d46e42d733faf74be61b552ad99dd"
+    },
+    {
+      "path": "dist/science/ixpe-measured-intake-v562/intake.json",
+      "bytes": 12237,
+      "sha256": "b32bbb9a863272f3bce5461f8e1c6c937b78c48f6d8cafb30020738a757794a0"
+    },
+    {
+      "path": "dist/science/ixpe-metadata-probe-v563/metadata-probe.json",
+      "bytes": 4698,
+      "sha256": "fc91e9525ed17b52f3b0d938d5a50a42ba2371fb81534bddf8f801c9c8457223"
+    },
+    {
+      "path": "dist/science/kerr-campaign-v314/campaign-state.json",
+      "bytes": 1734,
+      "sha256": "e4e124fa2a0802bdea728875f4e09366104c9340047d7535d605da2d16e1fd9d"
+    },
+    {
+      "path": "dist/science/kerr-radiative-transfer-v466/radiative-transfer.json",
+      "bytes": 2621,
+      "sha256": "002f9735309363aa34d0b91464a35df0a60941fdce2b39348d03ac179cfe4275"
+    },
+    {
+      "path": "dist/science/kerr-reference-v313/portable-envelope.json",
+      "bytes": 6250,
+      "sha256": "4e02c937dd693b43e8e8461d41d05b8cf8dc6a0474addb6f349f590f4e7aea88"
+    },
+    {
+      "path": "dist/science/orbit-relativity-engine-v561/import-manifest.json",
+      "bytes": 6742,
+      "sha256": "d3621818b66c5078d5d9f5e44393e4f24124f09b2a77887d9103fbac234ff59e"
+    },
+    {
+      "path": "scripts/atlas.mjs",
+      "bytes": 133089,
+      "sha256": "ed1de6503f494e7fba62d3f67bc79ff4a76aa5a884a467a968c5ac99ed260ffe"
+    },
+    {
+      "path": "scripts/build-runtime-release-gates-v567.mjs",
+      "bytes": 16188,
+      "sha256": "426a94b85f721233829fa5d3f7378a4cd8096e03b1a37e2c675b9d877281fc1f"
+    },
+    {
+      "path": "scripts/run-kerr-dense-campaign-v314.py",
+      "bytes": 28965,
+      "sha256": "1c54bacb77fff277d35733bea587104097661167837fbf3adc5b8a601386013f"
+    },
+    {
+      "path": "scripts/verify-runtime-release-gates-v567.mjs",
+      "bytes": 3953,
+      "sha256": "fc92bf410a499711d967de7afb2241c427c482e216d8e88c2f68070998e51bc1"
+    }
+  ],
+  "sourceSha256": "5061e4cfd67e9cc28fc5ce94d5b295646d84c4e87274216b0a3cde93221981be",
+  "receiptSha256": "be6884275b0889e556261b93d93583466acd72b926b939893d1517ba42dffc65"
+}

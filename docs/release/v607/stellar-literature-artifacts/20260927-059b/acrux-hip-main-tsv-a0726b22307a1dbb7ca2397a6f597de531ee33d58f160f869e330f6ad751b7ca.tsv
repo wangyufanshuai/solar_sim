@@ -1,0 +1,115 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-09-27T06:11:33 [V7.6]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-09-27T06:11:33	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F239%2Fhip_main&HIP=60718&-out.all=1	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+
+#RESOURCE=yCat_1239
+#Name: I/239
+#Title: The Hipparcos and Tycho Catalogues (ESA 1997)
+#INFO	ivoid=ivo://cds.vizier/i/239	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/i/239	    IVOID of underlying data collection
+#INFO	creator=ESA 1997	    First author or institution
+#INFO	cites=1997HIP...C......0E	    Article or Data origin sources
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/I/239	    Dataset landing page
+#INFO	publication_date=2021-11-18	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	H_1991.250:	ICRS
+#Table	I_239_hip_main:
+#Name: I/239/hip_main
+#Title: The Hipparcos Main Catalogue
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	HIP	(I6)	Identifier (HIP number) (H1)	[ucd=meta.id;meta.main]
+#Column	Proxy	(A1)	[HT] Proximity flag (H2)	[ucd=meta.code]
+#Column	RAhms	(A11)	Right ascension in h m s, ICRS (J1991.25) (H3)	[ucd=pos.eq.ra]
+#Column	DEdms	(A11)	Declination in deg ' ", ICRS (J1991.25) (H4)	[ucd=pos.eq.dec]
+#Column	Vmag	(F5.2)	? Magnitude in Johnson V (H5)	[ucd=phot.mag;em.opt.V]
+#Column	VarFlag	(I1)	[1,3]? Coarse variability flag (H6)	[ucd=meta.code;src.var]
+#Column	r_Vmag	(A1)	[GHT] Source of magnitude (H7)	[ucd=meta.ref;pos.frame]
+#Column	RAICRS	(F12.8)	? alpha, degrees (ICRS, Epoch=J1991.25) (H8)	[ucd=pos.eq.ra;meta.main]
+#Column	DEICRS	(F12.8)	? delta, degrees (ICRS, Epoch=J1991.25) (H9)	[ucd=pos.eq.dec;meta.main]
+#Column	AstroRef	(A1)	[*+A-Z] Reference flag for astrometry (H10)	[ucd=meta.bib]
+#Column	Plx	(F7.2)	? Trigonometric parallax (H11)	[ucd=pos.parallax.trig]
+#Column	pmRA	(F8.2)	*? Proper motion mu_alpha.cos(delta), ICRS(H12)	[ucd=pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.2)	*? Proper motion mu_delta, ICRS (H13)	[ucd=pos.pm;pos.eq.dec]
+#Column	e_RAICRS	(F6.2)	*? Standard error in RA*cos(DEdeg) (H14)	[ucd=stat.error;pos.eq.ra]
+#Column	e_DEICRS	(F6.2)	*? Standard error in DE (H15)	[ucd=stat.error;pos.eq.dec]
+#Column	e_Plx	(F6.2)	? Standard error in Plx (H16)	[ucd=stat.error;pos.parallax]
+#Column	e_pmRA	(F6.2)	? Standard error in pmRA (H17)	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	e_pmDE	(F6.2)	? Standard error in pmDE (H18)	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	DE:RA	(F5.2)	[-1/1]? Correlation, DE/RA*cos(delta) (H19)	[ucd=stat.correlation]
+#Column	Plx:RA	(F5.2)	[-1/1]? Correlation, Plx/RA*cos(delta) (H20)	[ucd=stat.correlation]
+#Column	Plx:DE	(F5.2)	[-1/1]? Correlation, Plx/DE (H21)	[ucd=stat.correlation]
+#Column	pmRA:RA	(F5.2)	[-1/1]? Correlation, pmRA/RA*cos(delta) (H22)	[ucd=stat.correlation]
+#Column	pmRA:DE	(F5.2)	[-1/1]? Correlation, pmRA/DE (H23)	[ucd=stat.correlation]
+#Column	pmRA:Plx	(F5.2)	[-1/1]? Correlation, pmRA/Plx (H24)	[ucd=stat.correlation]
+#Column	pmDE:RA	(F5.2)	[-1/1]? Correlation, pmDE/RA*cos(delta) (H25)	[ucd=stat.correlation]
+#Column	pmDE:DE	(F5.2)	[-1/1]? Correlation, pmDE/DE (H26)	[ucd=stat.correlation]
+#Column	pmDE:Plx	(F5.2)	[-1/1]? Correlation, pmDE/Plx (H27)	[ucd=stat.correlation]
+#Column	pmDE:pmRA	(F5.2)	[-1/1]? Correlation, pmDE/pmRA (H28)	[ucd=stat.correlation]
+#Column	F1	(I3)	? Percentage of rejected data (H29)	[ucd=stat.value;arith.ratio]
+#Column	F2	(F5.2)	? Goodness-of-fit parameter (H30)	[ucd=stat.fit.goodness]
+#Column	BTmag	(F6.3)	? Mean BT magnitude (H32)	[ucd=phot.mag;em.opt.B]
+#Column	e_BTmag	(F6.3)	? Standard error on BTmag (H33)	[ucd=stat.error;phot.mag]
+#Column	VTmag	(F6.3)	? Mean VT magnitude (H34)	[ucd=phot.mag;em.opt.V]
+#Column	e_VTmag	(F6.3)	? Standard error on VTmag (H35)	[ucd=stat.error;phot.mag]
+#Column	m_BTmag	(A1)	[A-Z*-] Reference flag for BT and VTmag (H36)	[ucd=meta.code.multip]
+#Column	B-V	(F6.3)	? Johnson B-V colour (H37)	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	? Standard error on B-V (H38)	[ucd=stat.error;phot.color;em.opt.B]
+#Column	r_B-V	(A1)	[GT] Source of B-V from Ground or Tycho (H39)	[ucd=meta.ref;phot.color;em.opt.B]
+#Column	V-I	(F5.2)	? Colour index in Cousins' system (H40)	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	e_V-I	(F5.2)	? Standard error on V-I (H41)	[ucd=stat.error;phot.color;em.opt.V]
+#Column	r_V-I	(A1)	[A-T] Source of V-I (H42)	[ucd=meta.ref;phot.color;em.opt.V]
+#Column	CombMag	(A1)	[*] Flag for combined Vmag, B-V, V-I (H43)	[ucd=meta.code]
+#Column	Hpmag	(F7.4)	? Median magnitude in Hipparcos system (H44)	[ucd=phot.mag;em.opt.V]
+#Column	e_Hpmag	(F7.4)	? Standard error on Hpmag (H45)	[ucd=stat.error;phot.mag]
+#Column	Hpscat	(F6.3)	? Scatter on Hpmag (H46)	[ucd=stat.error]
+#Column	o_Hpmag	(I3)	? Number of observations for Hpmag (H47)	[ucd=meta.number]
+#Column	m_Hpmag	(A1)	[A-Z*-] Reference flag for Hpmag (H48)	[ucd=meta.code.multip]
+#Column	Hpmax	(F5.2)	? Hpmag at maximum (5th percentile) (H49)	[ucd=stat.error]
+#Column	HPmin	(F5.2)	? Hpmag at minimum (95th percentile) (H50)	[ucd=stat.error]
+#Column	Period	(F7.2)	? Variability period (days) (H51)	[ucd=src.var]
+#Column	HvarType	(A1)	[CDMPRU]? variability type (H52)	[ucd=meta.note]
+#Column	moreVar	(A1)	[12] Additional data about variability (H53)	[ucd=meta.code]
+#Column	morePhoto	(A1)	[ABC] Light curve Annex (H54)	[ucd=meta.code]
+#Column	CCDM	(A10)	CCDM identifier (H55)	[ucd=meta.id.cross]
+#Column	n_CCDM	(A1)	[HIM] Historical status flag (H56)	[ucd=meta.note]
+#Column	Nsys	(I2)	? Number of entries with same CCDM (H57)	[ucd=meta.number]
+#Column	Ncomp	(I2)	? Number of components in this entry (H58)	[ucd=meta.number]
+#Column	MultFlag	(A1)	[CGOVX] Double/Multiple Systems flag (H59)	[ucd=meta.code]
+#Column	Source	(A1)	[PFILS] Astrometric source flag (H60)	[ucd=meta.bib]
+#Column	Qual	(A1)	[ABCDS] Solution quality (H61)	[ucd=meta.code.qual;stat.fit]
+#Column	m_HIP	(A2)	Component identifiers (H62)	[ucd=meta.code.multip]
+#Column	theta	(I3)	? Position angle between components (H63)	[ucd=pos.posAng]
+#Column	rho	(F7.3)	? Angular separation between components (H64)	[ucd=pos.angDistance]
+#Column	e_rho	(F6.3)	? Standard error on rho (H65)	[ucd=stat.error]
+#Column	dHp	(F5.2)	? Magnitude difference of components (H66)	[ucd=phot.mag;arith.diff]
+#Column	e_dHp	(F5.2)	? Standard error on dHp (H67)	[ucd=stat.error]
+#Column	Survey	(A1)	[S] Flag indicating a Survey Star (H68)	[ucd=meta.code]
+#Column	Chart	(A1)	[DG] Identification Chart (H69)	[ucd=meta.id;obs.field]
+#Column	Notes	(A1)	[DGPWXYZ] Existence of notes (H70)	[ucd=meta.note]
+#Column	HD	(I6)	[1/359083]? HD number <III/135> (H71)	[ucd=meta.id.cross]
+#Column	BD	(A10)	Bonner DM <I/119>, <I/122> (H72)	[ucd=meta.id.cross]
+#Column	CoD	(A10)	Cordoba Durchmusterung (DM) <I/114> (H73)	[ucd=meta.id.cross]
+#Column	CPD	(A10)	Cape Photographic DM <I/108> (H74)	[ucd=meta.id.cross]
+#Column	(V-I)red	(F5.2)	V-I used for reductions (H75)	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	SpType	(a12)	Spectral type (H76)	[ucd=src.spType]
+#Column	r_SpType	(A1)	[1234GKSX]? Source of spectral type (H77)	[ucd=meta.ref;pos.frame]
+#Column	HIPep	(a5)	Hipparcos Epoch Photometry (Plot and List)	[ucd=meta.ref.url]
+#Column	Erratum	(a7)	VizieR added column, not part of original data	[ucd=meta.ref.url]
+#Column	_RA.icrs	(F12.8)	Right ascension (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.ra]
+#Column	_DE.icrs	(F12.8)	Declination (ICRS) at Epoch=J2000, proper motions taken into account	[ucd=pos.eq.dec]
+recno	HIP	Proxy	RAhms	DEdms	Vmag	VarFlag	r_Vmag	RAICRS	DEICRS	AstroRef	Plx	pmRA	pmDE	e_RAICRS	e_DEICRS	e_Plx	e_pmRA	e_pmDE	DE:RA	Plx:RA	Plx:DE	pmRA:RA	pmRA:DE	pmRA:Plx	pmDE:RA	pmDE:DE	pmDE:Plx	pmDE:pmRA	F1	F2	BTmag	e_BTmag	VTmag	e_VTmag	m_BTmag	B-V	e_B-V	r_B-V	V-I	e_V-I	r_V-I	CombMag	Hpmag	e_Hpmag	Hpscat	o_Hpmag	m_Hpmag	Hpmax	HPmin	Period	HvarType	moreVar	morePhoto	CCDM	n_CCDM	Nsys	Ncomp	MultFlag	Source	Qual	m_HIP	theta	rho	e_rho	dHp	e_dHp	Survey	Chart	Notes	HD	BD	CoD	CPD	(V-I)red	SpType	r_SpType	HIPep	Erratum	_RA.icrs	_DE.icrs
+ 	 	 	 	 	mag	 	 	deg	deg	 	mas	mas/yr	mas/yr	mas	mas	mas	mas/yr	mas/yr	 	 	 	 	 	 	 	 	 	 	%	 	mag	mag	mag	mag	 	mag	mag	 	mag	mag	 	 	mag	mag	mag	 	 	mag	mag	d	 	 	 	 	 	 	 	 	 	 	 	deg	arcsec	arcsec	mag	mag	 	 	 	 	 	 	 	mag	 	 	 	 	deg	deg
+--------	------	-	-----------	-----------	-----	-	-	------------	------------	-	-------	--------	--------	------	------	------	------	------	-----	-----	-----	-----	-----	-----	-----	-----	-----	-----	---	-----	------	------	------	------	-	------	------	-	-----	-----	-	-	-------	-------	------	---	-	-----	-----	-------	-	-	-	----------	-	--	--	-	-	-	--	---	-------	------	-----	-----	-	-	-	------	----------	----------	----------	-----	------------	-	-----	-------	------------	------------
+   60666	 60718	H	12 26 35.94	-63 05 56.6	 0.77	 	G	186.64975585	-63.09905586	A	  10.17	  -35.37	  -14.73	  0.55	  0.68	  0.67	  0.58	  0.66	 0.18	-0.05	 0.23	-0.11	-0.06	 0.03	-0.11	-0.32	 0.11	 0.20	 11	 0.63	 0.446	 0.011	 0.633	 0.010	*	-0.243	 0.012	G	-0.26	 0.02	A	*	 0.6739	 0.0008	 0.008	115	*	 0.66	 0.69	       	D	 	 	12266-6306	I	 1	 2	C	 	A	AB	113	  4.102	 0.002	 0.39	 0.01	S	 	P	108248	          	          	P-62  2745	-0.26	B0.5IV      	X	HIPep	Erratum	186.64956584	-63.09909166
+

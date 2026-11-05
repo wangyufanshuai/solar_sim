@@ -1,0 +1,105 @@
+{
+  "schema": "mainline-a6-build-observation-v1",
+  "verifiedAt": "2026-09-10",
+  "status": "production-build-passed-source-binding-not-established",
+  "command": "node scripts/build-atlas-profile.mjs --profile vercel-lite --dist-dir .next-mainline-a-v607-final2 --previous-dist-dir .next-mainline-a-v607-final2-previous",
+  "environment": {
+    "ATLAS_BUILD_RECEIPT_NAME": "atlas-mainline-a-v607-lite-build.json",
+    "ATLAS_NODE_HEAP_MB": "8192",
+    "ATLAS_ROUTE_OVERLAY": "on"
+  },
+  "execution": {
+    "sessionId": 5869,
+    "terminalObserved": true,
+    "exitCode": 0,
+    "compileSeconds": 22.1,
+    "typecheckSeconds": 23.6,
+    "staticPages": 10,
+    "buildId": "b0Qlo9DpNH8k4uiXN1wF3"
+  },
+  "currentRuntimeObservation": {
+    "command": "node --version",
+    "nodeVersion": "v24.14.0",
+    "scope": "Read-only workspace-shell observation after the build; not a separate build-runtime receipt."
+  },
+  "receiptSource": "dist/release/atlas-mainline-a-v607-lite-build.json",
+  "receipt": {
+    "version": "v562-atlas-build-resource-receipt-v1",
+    "status": "passed",
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-final2",
+    "buildId": "b0Qlo9DpNH8k4uiXN1wF3",
+    "deliveryTier": null,
+    "candidateSourceManifestSha256": null,
+    "deploymentId": null,
+    "heapMb": 8192,
+    "lowMemoryMode": true,
+    "swcRuntime": {
+      "mode": "native",
+      "nativeQualified": true,
+      "runnerWarning": null
+    },
+    "heapPolicyMaximumReached": true,
+    "routeOverlayDirectoryCount": 264,
+    "routeOverlayVersionedEvidenceDirectoryCount": 202,
+    "rootPageHeldForLocalShadow": false,
+    "skippedIsolation": [],
+    "prunedTraceDirectories": [],
+    "standaloneTopologyQualified": true,
+    "rollbackSlotAvailable": false,
+    "browserStarted": false,
+    "denseStarted": false,
+    "gpuStarted": false
+  },
+  "buildHistory": [
+    {
+      "sessionId": 81051,
+      "status": "passed",
+      "distDir": ".next-mainline-a-v607-a6",
+      "buildId": "sTK3yfNJPS3ESOQwfMbfr",
+      "exitCode": 0,
+      "compileSeconds": 27.7,
+      "typecheckSeconds": 27.0,
+      "staticPages": 10,
+      "sourceBinding": "not-established",
+      "note": "Historical terminal observation; the first run used the helper's default receipt name. Its identity and phase timings are not evidence for the latest build."
+    },
+    {
+      "sessionId": 42031,
+      "status": "passed",
+      "distDir": ".next-mainline-a-v607-final",
+      "buildId": "H5WDBj-Fb36aJLLe4ChTM",
+      "exitCode": 0,
+      "compileSeconds": 20.4,
+      "typecheckSeconds": 22.7,
+      "staticPages": 10,
+      "sourceBinding": "not-established",
+      "note": "Historical terminal observation and prior build record; the named raw receipt now describes final2."
+    }
+  ],
+  "typeChecking": {
+    "production": {
+      "status": "passed",
+      "tsconfig": ".atlas-build-tsconfig.json",
+      "scope": "Filtered production inputs; excludes test files, tests, scripts, tmp and the default .next directory."
+    },
+    "fullWorkspace": {
+      "status": "failed",
+      "exitCode": 1,
+      "file": "app/lib/kerrObservationEnvelopeV560.test.ts",
+      "missingArtifact": "dist/science/kerr-sparse-observation-envelope-v560/manifest.json",
+      "note": "The production typecheck excludes this test. No replacement science artifact was created; this documentation correction did not rerun tsc."
+    }
+  },
+  "sourceBinding": "not-established",
+  "currentSourceBinding": {
+    "status": "not-established",
+    "packetConsumedByBuild": false,
+    "candidateSourceManifestSha256": null,
+    "packetReceipt": "docs/release/v607/mainline-a-stage-a6-release-packet.json",
+    "archiveVerificationMethod": "node scripts/build-mainline-a6-release-packet.mjs --verify-existing",
+    "note": "ZIP verification compares archived bytes with the worktree at verification time. The build helper does not consume that packet, and no immutable input manifest binds this build to those bytes. Archive/worktree agreement does not establish build-input provenance."
+  },
+  "browserPerformanceQualified": false,
+  "finalReleaseQualified": false
+}

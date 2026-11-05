@@ -1,0 +1,414 @@
+{
+  "schema": "mainline-a-m0-m1-delivery-v1",
+  "createdAt": "2026-10-15T06:44:39.450Z",
+  "localDate": "2026-10-15",
+  "timezone": "Asia/Shanghai",
+  "status": "m0-m1-engineering-and-agent-visual-checks-passed-candidate-only",
+  "sourceSha256": "329571ee7cb34a03701cac3eae882f9b402216611ebb24d5ae59c4aec130cbac",
+  "buildId": "CrhZfK3iuN4QsWw94kTzP",
+  "runtimeBuildId": "mainline-a-329571ee7cb34a03",
+  "sourceStable": true,
+  "milestones": {
+    "M0": "baseline-recreated-and-pinned",
+    "M1": "implemented-and-verified",
+    "M2": "not-in-scope",
+    "M3": "not-in-scope",
+    "M4": "existing-navigation-regression-only",
+    "M5": "not-in-scope"
+  },
+  "validation": {
+    "vitest": {
+      "files": 13,
+      "tests": 194,
+      "exitCode": 0
+    },
+    "node": {
+      "tests": 6,
+      "exitCode": 0
+    },
+    "eslint": {
+      "files": 12,
+      "exitCode": 0
+    },
+    "build": {
+      "profile": "vercel-lite",
+      "exitCode": 0
+    },
+    "http": {
+      "modes": 2,
+      "requestsPerMode": 40,
+      "totalRequests": 80
+    },
+    "browser": {
+      "views": 6,
+      "rawScreenshots": 12,
+      "comparisonImages": 6,
+      "interactionScreenshots": 28,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "horizontalOverflow": false,
+      "canvasesPerView": 1,
+      "physicalDevice": false,
+      "routeTransitions": 8
+    }
+  },
+  "agentVisualReview": {
+    "reviewedAt": "2026-10-15T06:44:39.451Z",
+    "reviewer": "assistant",
+    "defaultViews": [
+      {
+        "device": "desktop",
+        "scene": "sirius-a",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      },
+      {
+        "device": "desktop",
+        "scene": "Ori",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      },
+      {
+        "device": "desktop",
+        "scene": "m42",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      },
+      {
+        "device": "mobile",
+        "scene": "sirius-a",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      },
+      {
+        "device": "mobile",
+        "scene": "Ori",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      },
+      {
+        "device": "mobile",
+        "scene": "m42",
+        "status": "pass",
+        "checks": [
+          "clear-main-subject",
+          "default-secondary-art-collapsed",
+          "readable-hierarchy",
+          "no-critical-subject-occlusion",
+          "boundary-and-source-access-preserved"
+        ]
+      }
+    ],
+    "interactionSamples": [
+      "mobile-m42-caption-expanded",
+      "mobile-Ori-sources-expanded",
+      "mobile-sirius-a-comparison-expanded"
+    ],
+    "humanSignoff": "pending",
+    "materialUnificationScope": "M2-not-claimed"
+  },
+  "resolvedDefect": {
+    "trigger": "M42 caption Enter synthesizes click",
+    "before": "click reached Canvas onPointerMissed and cleared focus",
+    "fix": "stop click propagation at caption figure",
+    "verified": "expanded-and-collapsed-with-same-selected-object-and-image-attempt-on-both-viewports"
+  },
+  "preservedAttempts": [
+    {
+      "id": "20261014-m1web01",
+      "status": "interrupted-no-completion-receipt-cause-unconfirmed"
+    },
+    {
+      "id": "20261015-m1web02",
+      "status": "build-passed-browser-defect-found-superseded"
+    },
+    {
+      "id": "20261015-after01",
+      "status": "failed-preserved"
+    },
+    {
+      "id": "20261015-m1web03",
+      "status": "final-build-passed"
+    },
+    {
+      "id": "20261015-after02",
+      "status": "final-six-view-browser-passed"
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicReleaseApproved": false,
+    "rightsSignoff": "pending",
+    "humanVisualSignoff": "pending",
+    "physicalMobile": "not-run",
+    "longRunPerformance": "not-run-on-final-build",
+    "fullRepositoryTestSuite": "not-run",
+    "physicsSources": "unchanged-relative-to-M0"
+  },
+  "artifacts": [
+    {
+      "path": "docs/release/v607/mainline-a-r81-build-20261015-m1web03.json",
+      "bytes": 482074,
+      "sha256": "f89dfba99afc7b4ace7ec4b1c2dd3484a1db13e672265d9399695daa724d4008"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-enabled-20261015-m1http01.json",
+      "bytes": 43408,
+      "sha256": "bc83347c9a9a9d667e14aa62c78b7b4ba053e769c28ac7209a7b71741af6246f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-http-default-off-20261015-m1http01.json",
+      "bytes": 41891,
+      "sha256": "59aa756e35ce1670f3e4fc00cedd3c20936cc5e32272be2aadfcc7d58f38fc90"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m1-code-change-20261015.json",
+      "bytes": 40548,
+      "sha256": "b164c267852d9c7dfbef7438bc74b1d5c9679647c84eb5f0e5ffb569f3435818"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/baseline-inputs.json",
+      "bytes": 466751,
+      "sha256": "aa1f12b8358dd4f13ca3ad800d040781fb9985f658e6942b35cbbc4ed865764a"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/before/receipt.json",
+      "bytes": 15690,
+      "sha256": "ea18acda8202d347122cece93cf28aabcd3f0e0fd7bf9d5c6ebe580d03698186"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/after/receipt.json",
+      "bytes": 39258,
+      "sha256": "73fac09eb58fb6d7f67229f028aa5dac6bc1b7829724fa02d4d996832f12615e"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/comparison-manifest.json",
+      "bytes": 5532,
+      "sha256": "c05817675cc31260bd12a16b28681e1118ed36aa77da39c2f175ceef9b3f17eb"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/comparison-gallery.html",
+      "bytes": 3127,
+      "sha256": "f5e245f9e03f6c841b1555ade7547627db6ee911cc146466f0d36b56b942d5a5"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/vitest-final-20261015.log",
+      "bytes": 425,
+      "sha256": "507357078ff8483b7989dfb16997925fc8346dac026e3549e1faf8c208a9a2ff"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/node-tests-final-20261015.log",
+      "bytes": 653,
+      "sha256": "862a9c31f707b08f40a3d868c69c897d27b8ea09c1687d9be876c5e0db805d58"
+    },
+    {
+      "path": "output/playwright/mainline-a-m1-20261014/eslint-final-20261015.log",
+      "bytes": 92,
+      "sha256": "45a8e3cf9874a3407604e2f60abc869ce09eb80a8235a4d2daf043e73ecafcdd"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m1-browser.mjs",
+      "bytes": 26344,
+      "sha256": "f6e43c9e5d606b9ae7ce8124424e618fe2dad605d6ec38246c3d36a01288d3af"
+    },
+    {
+      "path": "scripts/capture-mainline-a-m1-browser.test.mjs",
+      "bytes": 5005,
+      "sha256": "9809043506434fa038fb56bb52cbe13f85f836459b40c7dd1a165144bc971d41"
+    },
+    {
+      "path": "scripts/render-mainline-a-m1-comparisons.mjs",
+      "bytes": 7112,
+      "sha256": "23515731f5a4530a77895dd820f3af77297f930a3f76fc55da36e80c04b6d34d"
+    },
+    {
+      "path": "scripts/verify-mainline-a-m1-http.mjs",
+      "bytes": 9140,
+      "sha256": "54af330e8ed239ee12a0e3c06aa35532a0370643cfdf0de9675f9f5969d2508b"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-m0-m1-delivery-20261015.md",
+      "bytes": 6941,
+      "sha256": "aba79c9b833ff15e18c75416f524e48a95b30793b17dd4cd43130461b95b3eae"
+    }
+  ],
+  "comparisons": [
+    {
+      "key": "desktop-sirius-a",
+      "title": "Sirius A · 天狼星",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/desktop-sirius-a.png",
+      "bytes": 376747,
+      "sha256": "4369b89bcd74f783876bf7d0582cd6b488a901d78ef876b9ed317a47de9a89df",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/desktop-sirius-a.png",
+          "bytes": 216374,
+          "sha256": "9293b184dbe22f26fb6cfa619f7a5512fad4cfbbe8f80f14df9de0991bec9a29"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/desktop-sirius-a.png",
+          "bytes": 158182,
+          "sha256": "a9bd6e75f8b9e56dfc5aae82fb92ad6b961df1b22046955dd6a9b1247c0d3f80"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    },
+    {
+      "key": "desktop-Ori",
+      "title": "Orion · 猎户座",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/desktop-Ori.png",
+      "bytes": 1304540,
+      "sha256": "613b6aad15562a846389d1866c6cce884deb8df6caa33fbb99350c053845e782",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/desktop-Ori.png",
+          "bytes": 630202,
+          "sha256": "70227ca2d39dd99c025f7c1bf55f9639758cd34e396afb7ff0264f81a52d037b"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/desktop-Ori.png",
+          "bytes": 637399,
+          "sha256": "80a44fa9823f24e7363f6cd71cdb3160835e487779c16f8229730d9c2439c2ea"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    },
+    {
+      "key": "desktop-m42",
+      "title": "M42 · 猎户座大星云",
+      "viewport": [
+        1280,
+        720
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/desktop-m42.png",
+      "bytes": 1433642,
+      "sha256": "a4a4f6dae7be832bd317a12f17f6fcac83a264a78dabd29ef5b4ad82e09f1045",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/desktop-m42.png",
+          "bytes": 740124,
+          "sha256": "dadda6161a863cb205c83576f21cab41b55ae3cc583d77042e6168f0cc4843b8"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/desktop-m42.png",
+          "bytes": 719707,
+          "sha256": "f0d5db3e203a8bc8667f89c18cbaa72881812236b5b0cf2061a086571b49fd7a"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    },
+    {
+      "key": "mobile-sirius-a",
+      "title": "Sirius A · 天狼星",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/mobile-sirius-a.png",
+      "bytes": 143314,
+      "sha256": "9e58130f5ed384585a2dfccf98b6b1c9fe65bc3a4b8ab7ea81567785f2c48f3d",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/mobile-sirius-a.png",
+          "bytes": 66235,
+          "sha256": "2bce86e1e2cefadc0eb5f146d36f3cdbf3bfd788ba793e9d4f101260c852808a"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/mobile-sirius-a.png",
+          "bytes": 60104,
+          "sha256": "e5f416e04c7e32a4237678ef0189200102421575f28fb54bc929fb54751a6eee"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    },
+    {
+      "key": "mobile-Ori",
+      "title": "Orion · 猎户座",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/mobile-Ori.png",
+      "bytes": 422180,
+      "sha256": "76337b344d691237491a655a014a374b4a701c16e4f8debdff6d50617bcb4f9c",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/mobile-Ori.png",
+          "bytes": 189726,
+          "sha256": "9a7aecf34fff83c7f7b15f3072858436bb12ef208195dcc981dcc2d5c7153187"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/mobile-Ori.png",
+          "bytes": 206194,
+          "sha256": "0b3c5cdb8d55df3193eb34c33e8cfadd008916e21754cd46c057321035da9b43"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    },
+    {
+      "key": "mobile-m42",
+      "title": "M42 · 猎户座大星云",
+      "viewport": [
+        390,
+        844
+      ],
+      "path": "output/playwright/mainline-a-m1-20261014/comparisons/mobile-m42.png",
+      "bytes": 601057,
+      "sha256": "bd2ed61a1f44e1b309cb91045a74723acb2f2f702b41bfccfe8added2553a872",
+      "sourceScreenshots": [
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/before/mobile-m42.png",
+          "bytes": 263960,
+          "sha256": "97fedd98a12961fc43b1ef62b48be3f2051104cf7b250ea8a2991f291bf675eb"
+        },
+        {
+          "path": "output/playwright/mainline-a-m1-20261014/after/mobile-m42.png",
+          "bytes": 304036,
+          "sha256": "4d76cdc815cba71451f9cf25d4c894e8697c483dc7377dcd2304670e508d472f"
+        }
+      ],
+      "composition": "browser-rendered-side-by-side-original-pixels-unmodified"
+    }
+  ]
+}

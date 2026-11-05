@@ -1,0 +1,49 @@
+{
+  "schema": "mainline-a-code-change-receipt-v654",
+  "round": 67,
+  "date": "2026-10-12",
+  "repositoryBoundary": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "headAtBuild": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "scope": "B1 six official NASA source pages, page JPEG pixel linkage, offline verifier, read-only web overlay and local browser/HTTP probes",
+  "countPolicy": "Physical nonblank non-comment source lines in this R67 batch; excludes generated JSON, raw artifacts, screenshots, receipts, pure documentation, and pre-existing dirty worktree changes. Tests are reported separately from the production/tool threshold.",
+  "productionAndToolFiles": [
+    { "path": "scripts/mainline-a-nebula-b1-source-v654.mjs", "newEffectiveLines": 179 },
+    { "path": "scripts/collect-mainline-a-nebula-b1-v654.mjs", "newEffectiveLines": 250 },
+    { "path": "scripts/verify-mainline-a-nebula-b1-v654.mjs", "newEffectiveLines": 284 },
+    { "path": "scripts/collect-mainline-a-nebula-b1-image-v654.mjs", "newEffectiveLines": 171 },
+    { "path": "scripts/verify-mainline-a-nebula-b1-image-v654.mjs", "newEffectiveLines": 368 },
+    { "path": "scripts/build-mainline-a-nebula-b1-web-v654.mjs", "newEffectiveLines": 129 },
+    { "path": "scripts/capture-mainline-a-nebula-b1-browser-v654.mjs", "newEffectiveLines": 191 },
+    { "path": "scripts/verify-mainline-a-nebula-b1-http-v654.mjs", "newEffectiveLines": 92 },
+    { "path": "app/lib/mainlineANebulaB1SourceV654.ts", "newEffectiveLines": 175 },
+    { "path": "app/components/MainlineANebulaB1SourcePanelV654.tsx", "newEffectiveLines": 98 },
+    { "path": "app/components/MainlineANebulaReviewPanelV610.tsx", "newEffectiveLines": 4, "note": "R67-only import and panel insertion; this tracked file also contains unrelated earlier dirty changes" }
+  ],
+  "testFiles": [
+    { "path": "scripts/mainline-a-nebula-b1-v654.test.mjs", "newEffectiveLines": 191 },
+    { "path": "app/lib/mainlineANebulaB1SourceV654.test.tsx", "newEffectiveLines": 86 }
+  ],
+  "totals": {
+    "newEffectiveProductionAndToolLines": 1941,
+    "newEffectiveTestLines": 277,
+    "newEffectiveCodeLinesIncludingTests": 2218,
+    "modifiedEffectiveExistingLines": 0,
+    "removedEffectiveLines": 0,
+    "minimumProductionAndToolCodeLines": 500,
+    "minimumMet": true
+  },
+  "excludedGeneratedData": [
+    "app/data/mainlineANebulaB1SourceV654.generated.json",
+    "docs/release/v607/nebula-source-pages/v654",
+    "docs/release/v607/nebula-page-image-artifacts/v654"
+  ],
+  "boundaries": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelsModifiedByR67": false,
+    "parentGitOperated": false
+  }
+}

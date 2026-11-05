@@ -1,0 +1,77 @@
+{
+  "schema": "mainline-a-code-change-receipt-v626",
+  "round": "R66",
+  "generatedAt": "2026-09-20T14:29:40.553Z",
+  "scope": "next-web only; root app inputs were read-only",
+  "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "boundaryBaseline": "af61a2f",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "effectiveProductionLines": 1469,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "testsExcluded": true,
+  "countMethod": "Nonblank, noncomment production lines in four new R66 typed/CLI HTTP/package files; tests, generated receipts, screenshots and documentation excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineAReleaseAlignmentV626.ts",
+      "effectiveLines": 644,
+      "bytes": 33006,
+      "sha256": "af241ca5570b20910430fbefcd58b5a21fb68ff1ed0e97132d06213a88acb316",
+      "role": "typed alignment, source/rights/runtime closures, gates, rollback and package contract"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "effectiveLines": 469,
+      "bytes": 29480,
+      "sha256": "8ff2bd39768f9c468ffc5558df5939cc8734616d0e8a931887faa2869029ff24",
+      "role": "read-only root mirror and next-web digest audit"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "effectiveLines": 276,
+      "bytes": 14514,
+      "sha256": "1cc8acf048c685d0bb55a2c230d5a0dbdfcf7f9a64b13859547eeb58ab05e660",
+      "role": "candidate release package, rollback, gate checklist and manifest"
+    },
+    {
+      "path": "scripts/collect-mainline-a-r66-http-evidence-v626.mjs",
+      "effectiveLines": 80,
+      "bytes": 3536,
+      "sha256": "fd6ea913f5d0a652e5e7451b588c788d171babbe5340e65e432f1d0a173b729a",
+      "role": "R66 local production HTTP/build binding collector"
+    }
+  ],
+  "integrationFiles": [
+    "package.json",
+    "scripts/build-mainline-a-preserved.mjs",
+    "app/components/AtlasAppShell.tsx",
+    "app/components/PostV593StellarRosterPanel.tsx"
+  ],
+  "excluded": [
+    "tests",
+    "generated JSON",
+    "screenshots",
+    "receipts",
+    "docs",
+    "standard build logs",
+    "root app source files"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "validation": {
+    "alignment": "blocked",
+    "package": "blocked",
+    "preservedProductionBuild": "passed",
+    "http": true,
+    "browser": true,
+    "physicalMobile": "not-run",
+    "longRun": "not-run"
+  }
+}

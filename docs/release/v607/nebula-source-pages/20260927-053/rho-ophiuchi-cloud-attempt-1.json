@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:40:38.574Z",
+  "endedAt": "2026-09-27T02:40:40.354Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "3a85a03ecfbede5e5f30e5da618851bd7f17dac2838798513e6a53587abf238b",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/young-stars-in-their-baby-blanket-of-dust-2/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 271531,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/rho-ophiuchi-cloud-attempt-1.html",
+  "sha256": "63b81a9b3498b843ccb50221b362db33de7c48616a71de3dcfe04d3cee41a72c",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Young Stars in Their Baby Blanket of Dust",
+    "expectedPia": "PIA10182",
+    "observedPiaIds": [
+      "PIA10182"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia10/pia10182/PIA10182.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "schema": "mainline-a-r78-performance-v665",
+  "evidenceClass": "local-browser-long-run-diagnostic",
+  "status": "two-current-source-local-longruns-verified",
+  "generatedAt": "2026-10-13T08:28:45.625Z",
+  "sourceSha256": "d9bbd6b9d0d419e2a852cf0f896bf415659483ef7e96989fa961ae003495b528",
+  "buildId": "7E47aPkOGA-FgCclu-0MW",
+  "runtimeBuildId": "mainline-a-d9bbd6b9d0d419e2",
+  "freezeFingerprint": "560e375e07e288133e0644ce250366cd3e4d31c05e23fd275c1472608189a78a",
+  "inputs": [
+    {
+      "path": "docs/release/v607/mainline-a-r77-build-20261013v664r77web01.json",
+      "bytes": 480176,
+      "sha256": "653513ad14ec9ac2e69b3f13ed62c7d157d3f6ca0f9fc25de0482b4b387bb56a"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-freeze-20261013v664r77freeze01.json",
+      "bytes": 78532,
+      "sha256": "d9f2e88797f35026cb1de8271db093c9c1ca11bba4ec9a20b9b83d355505ccf6"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-evidence-audit-20261013v664r77web01.json",
+      "bytes": 2930,
+      "sha256": "648a1124a4d5fbc7b9e2bbb855798139e92eea4d8c4f5a944c7690cca95c5656"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r77-v664-round-20261013.json",
+      "bytes": 6692,
+      "sha256": "586f0e48aaa5ca02397d3199da0ff9a78215f34ca35914fc84d0e8fd16c0b5ff"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r78-v665-browser-final-raw-20261013-v665long01.json",
+      "bytes": 80214681,
+      "sha256": "b20b772ce1e350cb63fa6b8929269c108a81f5188cfd47996862c71f547fb754"
+    }
+  ],
+  "observations": [
+    {
+      "device": "desktop",
+      "sessionId": "r65-v643-ff7b5d43-89c0-4ace-8bf7-68d1782fdbb6",
+      "durationMs": 1802003.0249999985,
+      "frameSamples": 315232,
+      "memorySamples": 1803,
+      "frameP95Ms": 5.690000000060536,
+      "frameBudget": {
+        "count": 315231,
+        "above16Ms": 74,
+        "above33Ms": 6,
+        "above50Ms": 0,
+        "medianDerivedFps": 180.01800179474745,
+        "metric": "browser-animation-frame-interval-not-production-fps"
+      },
+      "frameTailTrend": {
+        "firstP95Ms": 5.677500000027067,
+        "lastP95Ms": 11.0625,
+        "ratio": 1.9484808454332472,
+        "advisory": "late-window-frame-tail-review",
+        "interpretation": "local-browser-diagnostic-not-production-performance"
+      },
+      "heapDeltaBytes": 7173564,
+      "heapTrend": {
+        "measuredWindows": 6,
+        "netBytes": 5615802,
+        "slopeBytesPerMinute": 284810.33714285714,
+        "nondecreasingTransitions": 2,
+        "advisory": "no-sustained-growth-signal"
+      },
+      "resourceTotals": [
+        27,
+        31,
+        27
+      ],
+      "resourceIdentityDigests": [
+        "79594999",
+        "450c1726",
+        "79594999"
+      ],
+      "renderableAcquired": [
+        {
+          "identity": "[\"model\",\"atlas\",\"mainline-a-nebula-observation-plane\",\"m42-plane-geometry\",null,null]",
+          "kind": "model",
+          "owner": "mainline-a-nebula-observation-plane",
+          "deltaCount": 1,
+          "deltaBytes": 140,
+          "contentSha256": null
+        },
+        {
+          "identity": "[\"texture\",\"atlas\",\"mainline-a-nebula-scene-v607\",\"v607-nebula-m42\",\"35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3\",null]",
+          "kind": "texture",
+          "owner": "mainline-a-nebula-scene-v607",
+          "deltaCount": 1,
+          "deltaBytes": 7055360,
+          "contentSha256": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+        }
+      ],
+      "frameWindows": [
+        {
+          "index": 0,
+          "count": 53934,
+          "p95Ms": 5.67500000000291,
+          "p99Ms": 5.725000000005821,
+          "longTaskCount": 1
+        },
+        {
+          "index": 1,
+          "count": 53862,
+          "p95Ms": 5.680000000051223,
+          "p99Ms": 5.739999999990687,
+          "longTaskCount": 0
+        },
+        {
+          "index": 2,
+          "count": 53354,
+          "p95Ms": 5.685000000055879,
+          "p99Ms": 11.089999999967404,
+          "longTaskCount": 0
+        },
+        {
+          "index": 3,
+          "count": 52725,
+          "p95Ms": 5.694999999832362,
+          "p99Ms": 11.114999999990687,
+          "longTaskCount": 0
+        },
+        {
+          "index": 4,
+          "count": 49722,
+          "p95Ms": 11.104999999981374,
+          "p99Ms": 11.139999999897555,
+          "longTaskCount": 0
+        },
+        {
+          "index": 5,
+          "count": 51635,
+          "p95Ms": 11.020000000018626,
+          "p99Ms": 11.140000000130385,
+          "longTaskCount": 0
+        }
+      ],
+      "memoryWindows": [
+        {
+          "index": 0,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 154082004,
+          "lastUsedBytes": 155639766,
+          "deltaBytes": 1557762
+        },
+        {
+          "index": 1,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 155848869,
+          "lastUsedBytes": 145263034,
+          "deltaBytes": -10585835
+        },
+        {
+          "index": 2,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 145430290,
+          "lastUsedBytes": 142184086,
+          "deltaBytes": -3246204
+        },
+        {
+          "index": 3,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 142368594,
+          "lastUsedBytes": 139215131,
+          "deltaBytes": -3153463
+        },
+        {
+          "index": 4,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 139304391,
+          "lastUsedBytes": 153506952,
+          "deltaBytes": 14202561
+        },
+        {
+          "index": 5,
+          "count": 303,
+          "usedSamples": 303,
+          "firstUsedBytes": 149024987,
+          "lastUsedBytes": 161255568,
+          "deltaBytes": 12230581
+        }
+      ],
+      "issues": []
+    },
+    {
+      "device": "mobile",
+      "sessionId": "r65-v643-28f6a6f8-c6d8-4f5f-be16-8559340c5d59",
+      "durationMs": 1802005.3450000025,
+      "frameSamples": 323586,
+      "memorySamples": 1803,
+      "frameP95Ms": 5.635000000242144,
+      "frameBudget": {
+        "count": 323585,
+        "above16Ms": 14,
+        "above33Ms": 2,
+        "above50Ms": 2,
+        "medianDerivedFps": 180.01800179474745,
+        "metric": "browser-animation-frame-interval-not-production-fps"
+      },
+      "frameTailTrend": {
+        "firstP95Ms": 5.6450000000186265,
+        "lastP95Ms": 5.635000000009313,
+        "ratio": 0.9982285208132364,
+        "advisory": "no-late-window-tail-signal",
+        "interpretation": "local-browser-diagnostic-not-production-performance"
+      },
+      "heapDeltaBytes": 6135091,
+      "heapTrend": {
+        "measuredWindows": 6,
+        "netBytes": 16524095,
+        "slopeBytesPerMinute": 563263.2514285714,
+        "nondecreasingTransitions": 4,
+        "advisory": "no-sustained-growth-signal"
+      },
+      "resourceTotals": [
+        27,
+        31,
+        27
+      ],
+      "resourceIdentityDigests": [
+        "dca40f10",
+        "12d2d165",
+        "dca40f10"
+      ],
+      "renderableAcquired": [
+        {
+          "identity": "[\"model\",\"atlas\",\"mainline-a-nebula-observation-plane\",\"m42-plane-geometry\",null,null]",
+          "kind": "model",
+          "owner": "mainline-a-nebula-observation-plane",
+          "deltaCount": 1,
+          "deltaBytes": 140,
+          "contentSha256": null
+        },
+        {
+          "identity": "[\"texture\",\"atlas\",\"mainline-a-nebula-scene-v607\",\"v607-nebula-m42\",\"35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3\",null]",
+          "kind": "texture",
+          "owner": "mainline-a-nebula-scene-v607",
+          "deltaCount": 1,
+          "deltaBytes": 7055360,
+          "contentSha256": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+        }
+      ],
+      "frameWindows": [
+        {
+          "index": 0,
+          "count": 53825,
+          "p95Ms": 5.6450000000186265,
+          "p99Ms": 5.699999999953434,
+          "longTaskCount": 2
+        },
+        {
+          "index": 1,
+          "count": 53598,
+          "p95Ms": 5.6450000000186265,
+          "p99Ms": 5.720000000204891,
+          "longTaskCount": 0
+        },
+        {
+          "index": 2,
+          "count": 53939,
+          "p95Ms": 5.629999999888241,
+          "p99Ms": 5.685000000055879,
+          "longTaskCount": 0
+        },
+        {
+          "index": 3,
+          "count": 53916,
+          "p95Ms": 5.639999999664724,
+          "p99Ms": 5.689999999944121,
+          "longTaskCount": 0
+        },
+        {
+          "index": 4,
+          "count": 53973,
+          "p95Ms": 5.640000000130385,
+          "p99Ms": 5.689999999944121,
+          "longTaskCount": 0
+        },
+        {
+          "index": 5,
+          "count": 54335,
+          "p95Ms": 5.629999999888241,
+          "p99Ms": 5.680000000167638,
+          "longTaskCount": 0
+        }
+      ],
+      "memoryWindows": [
+        {
+          "index": 0,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 164809846,
+          "lastUsedBytes": 154420842,
+          "deltaBytes": -10389004
+        },
+        {
+          "index": 1,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 145132355,
+          "lastUsedBytes": 157888487,
+          "deltaBytes": 12756132
+        },
+        {
+          "index": 2,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 156161336,
+          "lastUsedBytes": 162581502,
+          "deltaBytes": 6420166
+        },
+        {
+          "index": 3,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 149522530,
+          "lastUsedBytes": 175140824,
+          "deltaBytes": 25618294
+        },
+        {
+          "index": 4,
+          "count": 300,
+          "usedSamples": 300,
+          "firstUsedBytes": 163275420,
+          "lastUsedBytes": 159018911,
+          "deltaBytes": -4256509
+        },
+        {
+          "index": 5,
+          "count": 303,
+          "usedSamples": 303,
+          "firstUsedBytes": 173956557,
+          "lastUsedBytes": 170944937,
+          "deltaBytes": -3011620
+        }
+      ],
+      "issues": []
+    }
+  ],
+  "measuredAt": [
+    {
+      "device": "desktop",
+      "startedAt": "2026-10-13T07:27:10.499Z",
+      "endedAt": "2026-10-13T07:57:12.501Z",
+      "observedDurationMs": 1802003.0249999985,
+      "sessionId": "r65-v643-ff7b5d43-89c0-4ace-8bf7-68d1782fdbb6",
+      "independenceKey": "independent-3094e1c3-3ddd-4c93-9ae3-847d679e7f35",
+      "visibilityInterruptions": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0
+    },
+    {
+      "device": "mobile",
+      "startedAt": "2026-10-13T07:57:34.137Z",
+      "endedAt": "2026-10-13T08:27:36.143Z",
+      "observedDurationMs": 1802005.3450000025,
+      "sessionId": "r65-v643-28f6a6f8-c6d8-4f5f-be16-8559340c5d59",
+      "independenceKey": "independent-28d12cd9-478f-41bc-8dea-f75636673be9",
+      "visibilityInterruptions": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0
+    }
+  ],
+  "errors": [],
+  "claimScope": {
+    "localBrowserDiagnostic": true,
+    "twoIndependentObservations": true,
+    "physicalMobile": "not-run",
+    "realUserValidation": false,
+    "productionPerformanceEstablished": false,
+    "frameTimingsAreBrowserSamples": true,
+    "heapIsBrowserReportedNotPhysicalMemory": true,
+    "resourceBytesAreRegistryEstimatesNotMeasuredGpuMemory": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  }
+}

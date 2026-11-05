@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrStokesTransferArtifactV406, resetKerrStokesTransferServerV406CacheForTests } from "./kerrStokesTransferServerV406";
+describe("v406 Stokes server", () => { it("loads one canonical artifact and emits a summary without 24 samples", async () => { resetKerrStokesTransferServerV406CacheForTests(); const first = await loadKerrStokesTransferArtifactV406(); const second = await loadKerrStokesTransferArtifactV406(); expect(second).toBe(first); expect(first.artifact.view.samples).toHaveLength(24); expect(first.summary.referenceRays).toHaveLength(4); expect(first.summary).not.toHaveProperty("samples"); expect(first.summary.boundary).toBe("summary-only-no-full-sample-array-in-react-state"); }); });

@@ -1,0 +1,128 @@
+{
+  "schema": "mainline-a-r66-web-round-completion-v648",
+  "round": "R66-web-only-continuation",
+  "generatedAt": "2026-10-07T13:12:00.000Z",
+  "deliveryTarget": "next-web-only-local-technical-review",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "status": {
+    "localWebTechnicalReview": "qualified-current-build",
+    "candidateEvidencePackage": "verified-candidate-blocked",
+    "publicWebRelease": "blocked",
+    "scientificAdmission": "blocked",
+    "currentSourceLongRun": "not-run-v647-history-only",
+    "physicalMobile": "not-run-web-viewport-only",
+    "rootAlignment": "out-of-scope-for-current-web-only-batch",
+    "starComponentIdentitySigned": "0/4",
+    "nebulaHumanRightsSigned": "0/12"
+  },
+  "effectiveCode": {
+    "receipt": "docs/release/v607/mainline-a-r66-web-v648-code-change-20261007.json",
+    "sha256": "69245ed1380972f49971339972c8c49e8de1e4c713cfb8ce8f11ff515c9c16d8",
+    "newLines": 1316,
+    "modifiedLines": 26,
+    "totalEffectiveChangedLines": 1342,
+    "newTestLinesExcludedAtLeast": 512,
+    "cumulativeR66LowerBound": 4427,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "checks": {
+    "node": "20/20 V648 static, HTTP, browser and candidate-package negative/replay tests passed",
+    "vitest": "14/14 focused V648 tests passed; 59/59 earlier A-line regression tests passed before tool-only additions",
+    "targetedEslint": "passed for all touched production, tool and test code",
+    "typescript": "passed in preserved V648 production build; standalone global tsc is polluted by pre-existing tmp tests",
+    "productionBuild": "passed; source stable; no post-build app/config/package edits",
+    "http": "page and health 200; scripts bound to build; 12/12 local JPEG bodies and credits matched pinned bytes",
+    "visual": "three current-build Chrome screenshots inspected: desktop atlas, mobile atlas, mobile detail",
+    "browser": "1280x720 desktop and 390x844 mobile viewport; M42 decoded in both, M1 decoded on desktop; search 30 to 0 to 30; rights hold remains",
+    "performance": "two current-build 120-frame local browser samples; desktop p95 7.19 ms, mobile viewport p95 7.14 ms; no production performance claim",
+    "externalSource": "V646 source supplement is historical for V648; no new scientific or rights approval imported",
+    "candidatePackage": "current V648 build and evidence pinned; package remains candidate-blocked-current-source"
+  },
+  "evidence": {
+    "static": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+        "sha256": "d386a191a28502aa0785fbd7f16d149be151cccb05c540299e20f8ab8385bf14"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-rights-20261007-v648web01.json",
+        "sha256": "1b933714e1fe3f89cb09f954360a0fe44c4a7b6afcd23120188b6d855b7cc86d"
+      }
+    ],
+    "HTTP": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-http-20261007-v648web01.json",
+        "sha256": "6bf18fdb25ec6893a49a4493d8ee805ab6740e2bed02cab943ccb438ace06adc"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-http-20261007-v648web01.json",
+        "sha256": "1bcccbe7e4d2a17ba7fed563e34248da298a41a63761f521e0b1aec35ac3bdeb",
+        "matchedImages": 12
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-visual-20261007-v648web02.json",
+        "sha256": "6949da9403b45dc25e953c17595c5e255c74e96efcaeab31cab031095a2388a2",
+        "screenshots": 3
+      }
+    ],
+    "browser": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-browser-20261007-v648web02.json",
+        "sha256": "620d27107d8f6bc64168ea012975d075b5e81d9000a43108f1f5ecf3dd0aab51"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-browser-20261007-v648web02.json",
+        "sha256": "a3e79cd76c96931a5c45252cd83c182f7463a369560fe0ec429acc37a294a425",
+        "status": "verified-local-browser-candidate-release-blocked"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-search-20261007-v648web01.json",
+        "sha256": "9c3587ae21fbdd86799a83ddf6c53aa714bdff714bbe9748fdf9642ff8f5bd5b"
+      }
+    ],
+    "performance": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-performance-20261007-v648perf01.json",
+        "sha256": "84c5330126e6d656139757eebe6d1f5b4f14d53457998b0066e40a8c7a4effd4",
+        "scope": "two short 120-frame local browser samples",
+        "currentSourceLongRun": "not-run"
+      }
+    ],
+    "externalSource": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-v646-evidence-supplement-20261007.json",
+        "sha256": "3de12379977f6a676b870cafbaea74eaecae75196d350215af8c669e715f661c",
+        "currentSource": false,
+        "status": "historical-pending"
+      }
+    ]
+  },
+  "releaseGates": [
+    "Twelve local nebula previews have source license labels but 0/12 individual human copyright signoffs; public web release remains blocked by the user's pending decision.",
+    "Acrux, Spica, Regulus and Polaris component identities remain 0/4 scientifically admitted; candidate-only display does not resolve their science gate.",
+    "V647's two 30-minute runs are historical for the changed V648 app source; current-build long-run remains unmeasured.",
+    "A physical device was unavailable and is marked not-run; the web-only batch did exercise a mobile viewport."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "canonicalV622DigestChanged": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

@@ -1,0 +1,65 @@
+#
+#   VizieR Astronomical Server vizier.cds.unistra.fr
+#    Date: 2026-09-27T06:09:33 [V7.6]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-09-27T06:09:33	  Query execution date
+#INFO	request=https://vizier.cds.unistra.fr/viz-bin/asu-tsv?-source=I%2F311%2Fhip2&HIP=60718&-out.all=1	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+
+#RESOURCE=yCat_1311
+#Name: I/311
+#Title: Hipparcos, the New Reduction (van Leeuwen, 2007)
+#INFO	ivoid=ivo://cds.vizier/i/311	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/i/311	    IVOID of underlying data collection
+#INFO	creator=van Leeuwen F.	    First author or institution
+#INFO	cites=bibcode:2007A&A...474..653V	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2007	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/I/311	    Dataset landing page
+#INFO	publication_date=2017-12-22	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Coosys	J2000_1991.250:	eq_FK5 J2000
+#Table	I_311_hip2:
+#Name: I/311/hip2
+#Title: The Astrometric Catalogue
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	HIP	(I6)	Hipparcos identifier	[ucd=meta.id;meta.main]
+#Column	n_HIP	(A1)	Simbad column added by the CDS	[ucd=meta.note]
+#Column	Sn	(I3)	[0,159] Solution type new reduction (1)	[ucd=meta.id;stat.fit]
+#Column	So	(I1)	[0,5] Solution type old reduction (2)	[ucd=meta.id;stat.fit]
+#Column	Nc	(I1)	Number of components	[ucd=meta.number]
+#Column	RArad	(F12.8)	Right Ascension in ICRS, Ep=1991.25	[ucd=pos.eq.ra;meta.main]
+#Column	e_RArad	(F6.2)	Formal error on RArad	[ucd=stat.error]
+#Column	DErad	(F12.8)	Declination in ICRS, Ep=1991.25	[ucd=pos.eq.dec;meta.main]
+#Column	e_DErad	(F6.2)	Formal error on DErad	[ucd=stat.error]
+#Column	Plx	(F7.2)	Parallax	[ucd=pos.parallax]
+#Column	e_Plx	(F6.2)	Formal error on Plx	[ucd=stat.error;pos.parallax]
+#Column	pmRA	(F8.2)	Proper motion in Right Ascension	[ucd=pos.pm;pos.eq.ra]
+#Column	e_pmRA	(F6.2)	Formal error on pmRA	[ucd=stat.error;pos.pm;pos.eq.ra]
+#Column	pmDE	(F8.2)	Proper motion in Declination	[ucd=pos.pm;pos.eq.dec]
+#Column	e_pmDE	(F6.2)	Formal error on pmDE	[ucd=stat.error;pos.pm;pos.eq.dec]
+#Column	Ntr	(I3)	Number of field transits used	[ucd=meta.id;obs.field]
+#Column	F2	(F5.2)	Goodness of fit	[ucd=stat.fit.goodness]
+#Column	F1	(I2)	Percentage rejected data	[ucd=stat.value;arith.ratio]
+#Column	var	(F6.1)	Cosmic dispersion added (stochastic solution)	[ucd=stat.fit.residual]
+#Column	Hpmag	(F7.4)	Hipparcos magnitude	[ucd=phot.mag;em.opt.V]
+#Column	e_Hpmag	(F7.4)	Error on mean Hpmag	[ucd=stat.error;phot.mag;em.IR.H]
+#Column	sHp	(F6.3)	Scatter of Hpmag	[ucd=stat.error]
+#Column	VA	(I1)	[0,2] Reference to variability annex	[ucd=meta.note]
+#Column	B-V	(F6.3)	Colour index	[ucd=phot.color;em.opt.B;em.opt.V]
+#Column	e_B-V	(F6.3)	Formal error on colour index	[ucd=stat.error;phot.color;em.opt.B]
+#Column	V-I	(F6.3)	V-I colour index	[ucd=phot.color;em.opt.V;em.opt.I]
+#Column	HIP1	(A4)	Data from the first edition of the Hipparcos Catalog (1997, Cat. I/239)	[ucd=meta.ref.url]
+#Column	Phot	(A4)	Hipparcos Epoch Photometry (Plot and List) from the 1997 edition	[ucd=meta.ref.url]
+recno	HIP	n_HIP	Sn	So	Nc	RArad	e_RArad	DErad	e_DErad	Plx	e_Plx	pmRA	e_pmRA	pmDE	e_pmDE	Ntr	F2	F1	var	Hpmag	e_Hpmag	sHp	VA	B-V	e_B-V	V-I	HIP1	Phot
+ 	 	 	 	 	 	deg	mas	deg	mas	mas	mas	mas/yr	mas/yr	mas/yr	mas/yr	 	 	%	 	mag	mag	mag	 	mag	mag	mag	 	
+--------	------	-	---	-	-	------------	------	------------	------	-------	------	--------	------	--------	------	---	-----	--	------	-------	-------	------	-	------	------	------	----	----
+   60515	 60718	P	 17	3	2	186.64975588	  0.37	-63.09905674	  0.36	  10.13	  0.50	  -35.83	  0.47	  -14.86	  0.43	153	23.94	 0	   0.0	 0.6739	 0.0008	 0.008	0	-0.243	 0.012	-0.260	HIP1	Phot
+

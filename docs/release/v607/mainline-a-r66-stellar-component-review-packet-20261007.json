@@ -1,0 +1,671 @@
+{
+  "schema": "mainline-a-r66-stellar-component-review-packet-v645",
+  "createdAt": "2026-10-07T06:45:16.688Z",
+  "evidenceClass": "external-source-candidate-review",
+  "status": "four-component-identities-unresolved",
+  "sourceCandidatePack": {
+    "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+    "bytes": 17973,
+    "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+  },
+  "captureLedger": {
+    "path": "docs/release/v607/mainline-a-stellar-components-v634-20260927-056.json",
+    "bytes": 14316,
+    "sha256": "92e17d5ebd727af611aa7b12c781bef2d91568075b573e5f2f2bf52e88cbc06e"
+  },
+  "parsedLedger": {
+    "path": "docs/release/v607/stellar-component-candidate-ledger/v634/6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb.json",
+    "bytes": 47878,
+    "sha256": "6644a8ac1fa31536f68ba747a932e8b6215d7f39a53e624cc2696448ecc131cb"
+  },
+  "catalogueDefinition": {
+    "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51.txt",
+    "bytes": 41416,
+    "sha256": "262029d9aaf05a1fb80a29376bea33d6768cbfe091d7e790a995088fbe568f51",
+    "relevantLines": [
+      99,
+      113
+    ]
+  },
+  "interpretationReference": {
+    "title": "USNO WDS FAQ",
+    "url": "https://crf.usno.navy.mil/wdscfaq",
+    "role": "component-notation guidance only; not a component-specific match"
+  },
+  "summary": {
+    "structuredResponsesCaptured": 4,
+    "rawPairRowsRecomputed": 25,
+    "componentIdentitiesConfirmed": 0,
+    "rightsApproved": 0
+  },
+  "records": [
+    {
+      "id": "acrux",
+      "sourceQueryIdentifier": "* alf01 Cru",
+      "wdsSystemId": "12266-6306",
+      "sourceWdsIdentifiers": [
+        "WDS J12266-6306A"
+      ],
+      "sourceRawPageSha256": "4ee690d435d4d5458e1419040a290f82803aef4227b78b6a7b1c4e934c787c30",
+      "sourceArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+        "bytes": 5406,
+        "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99"
+      },
+      "pairRows": [
+        {
+          "key": "12266-6306|DUN 252|AB",
+          "componentPair": "AB",
+          "members": [
+            "A",
+            "B"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1826,
+          "lastObservationYear": 2024,
+          "observationCount": 104,
+          "separationArcsec": 3.5,
+          "warnings": [],
+          "rawSpan": {
+            "line": 57,
+            "byteStart": 3700,
+            "byteEnd": 3854,
+            "sha256": "221580285dd963b6cba86d9461b08394379142054ea0b28694fafe8fcdff7932"
+          }
+        },
+        {
+          "key": "12266-6306|DUN 252|AC",
+          "componentPair": "AC",
+          "members": [
+            "A",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1750,
+          "lastObservationYear": 2020,
+          "observationCount": 36,
+          "separationArcsec": 89,
+          "warnings": [],
+          "rawSpan": {
+            "line": 58,
+            "byteStart": 3855,
+            "byteEnd": 4009,
+            "sha256": "daf7b2081f6f6db9f803016067ee0e58b5b8d6fda5dc2c03b0ff67fdb3301404"
+          }
+        },
+        {
+          "key": "12266-6306|ANT   1|AG",
+          "componentPair": "AG",
+          "members": [
+            "A",
+            "G"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2000,
+          "lastObservationYear": 2014,
+          "observationCount": 5,
+          "separationArcsec": 58.7,
+          "warnings": [],
+          "rawSpan": {
+            "line": 59,
+            "byteStart": 4010,
+            "byteEnd": 4164,
+            "sha256": "4ad6bd26930782b8f1a45b43c576c4c5549f9b044e739aa676422580d66f2478"
+          }
+        },
+        {
+          "key": "12266-6306|ANT   1|AH",
+          "componentPair": "AH",
+          "members": [
+            "A",
+            "H"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2007,
+          "lastObservationYear": 2013,
+          "observationCount": 3,
+          "separationArcsec": 47.3,
+          "warnings": [],
+          "rawSpan": {
+            "line": 60,
+            "byteStart": 4165,
+            "byteEnd": 4319,
+            "sha256": "5ba7e3fe738afe500cb2368f3b8c104491873f291c4fcd4a878fad11581bed1b"
+          }
+        },
+        {
+          "key": "12266-6306|ANT   1|AI",
+          "componentPair": "AI",
+          "members": [
+            "A",
+            "I"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2000,
+          "lastObservationYear": 2013,
+          "observationCount": 4,
+          "separationArcsec": 63.3,
+          "warnings": [],
+          "rawSpan": {
+            "line": 61,
+            "byteStart": 4320,
+            "byteEnd": 4474,
+            "sha256": "6cc2d2eee557e352b390906f3c6521153a44401eb08aa1a7af62fdd3aa18cc63"
+          }
+        },
+        {
+          "key": "12266-6306|ANT   7|AJ",
+          "componentPair": "AJ",
+          "members": [
+            "A",
+            "J"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2000,
+          "lastObservationYear": 2010,
+          "observationCount": 2,
+          "separationArcsec": 29.6,
+          "warnings": [],
+          "rawSpan": {
+            "line": 62,
+            "byteStart": 4475,
+            "byteEnd": 4629,
+            "sha256": "1a867884e28d4cbac0c3230dc388c33bbce92ed33e0de79cfa140489eb61c7bd"
+          }
+        },
+        {
+          "key": "12266-6306|ANT   7|AK",
+          "componentPair": "AK",
+          "members": [
+            "A",
+            "K"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2000,
+          "lastObservationYear": 2010,
+          "observationCount": 2,
+          "separationArcsec": 125.2,
+          "warnings": [],
+          "rawSpan": {
+            "line": 63,
+            "byteStart": 4630,
+            "byteEnd": 4784,
+            "sha256": "68fcd06a40719b2d70c15083f3e49ebfa0419b086198fdbd4d112044a18cd6c7"
+          }
+        },
+        {
+          "key": "12266-6306|DUN 252|BC",
+          "componentPair": "BC",
+          "members": [
+            "B",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1826,
+          "lastObservationYear": 2020,
+          "observationCount": 18,
+          "separationArcsec": 89,
+          "warnings": [],
+          "rawSpan": {
+            "line": 64,
+            "byteStart": 4785,
+            "byteEnd": 4939,
+            "sha256": "b449224cdcb04bd253abb5918f89e3a120b7128e066c6f5146bb44565797d589"
+          }
+        },
+        {
+          "key": "12266-6306|TOK   7|CD",
+          "componentPair": "CD",
+          "members": [
+            "C",
+            "D"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1997,
+          "lastObservationYear": 2000,
+          "observationCount": 2,
+          "separationArcsec": 2.4,
+          "warnings": [],
+          "rawSpan": {
+            "line": 65,
+            "byteStart": 4940,
+            "byteEnd": 5094,
+            "sha256": "907583c469aa4999eacacbb03eb97661c494d5f75383cbcf9adde5969c70fe18"
+          }
+        },
+        {
+          "key": "12266-6306|TOK   7|CE",
+          "componentPair": "CE",
+          "members": [
+            "C",
+            "E"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1997,
+          "lastObservationYear": 1997,
+          "observationCount": 1,
+          "separationArcsec": 4.9,
+          "warnings": [],
+          "rawSpan": {
+            "line": 66,
+            "byteStart": 5095,
+            "byteEnd": 5249,
+            "sha256": "6cf0ff38855c0672eb4a66aaf230ed0f65a30325e260e75767ce9392c9415366"
+          }
+        },
+        {
+          "key": "12266-6306|TOK   7|CF",
+          "componentPair": "CF",
+          "members": [
+            "C",
+            "F"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1997,
+          "lastObservationYear": 2015,
+          "observationCount": 2,
+          "separationArcsec": 7.4,
+          "warnings": [],
+          "rawSpan": {
+            "line": 67,
+            "byteStart": 5250,
+            "byteEnd": 5404,
+            "sha256": "e8356cd4d7301098aef3b81a97a18f5e39fe060a7da477afeab704117d00695e"
+          }
+        }
+      ],
+      "pairCount": 11,
+      "provisionalInterpretation": "WDS pair rows and SIMBAD cross-identification suffixes constrain the system, but do not alone establish the hero target as one physical component.",
+      "reviewQuestion": "Does the hero target identify WDS A as an unresolved component, a specific close subsystem, or the full Acrux multiple system? Which component-specific cross-identification proves it?",
+      "requiredDecision": [
+        "record the intended hero object or aggregate",
+        "bind one component-specific identifier to that object with primary-source evidence",
+        "check component notation, epoch and positional consistency",
+        "retain independent reviewer decision and citation"
+      ],
+      "status": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spica",
+      "sourceQueryIdentifier": "* alf Vir",
+      "wdsSystemId": "13252-1110",
+      "sourceWdsIdentifiers": [
+        "WDS J13252-1110A"
+      ],
+      "sourceRawPageSha256": "86ddc92c02bb2a7c6b8e8ac8d4f8c3bfd7bbb0429085c4409b322f0f054ba31b",
+      "sourceArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+        "bytes": 4321,
+        "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3"
+      },
+      "pairRows": [
+        {
+          "key": "13252-1110|OCC 418|Aa,Ab",
+          "componentPair": "Aa,Ab",
+          "members": [
+            "Aa",
+            "Ab"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1975,
+          "lastObservationYear": 1995,
+          "observationCount": 0,
+          "separationArcsec": null,
+          "warnings": [
+            "separation-missing-or-invalid"
+          ],
+          "rawSpan": {
+            "line": 57,
+            "byteStart": 3700,
+            "byteEnd": 3854,
+            "sha256": "0e9581d38738d496bc49533ffe54b4b41e09c8e2dcd0e47bb5277ed721cd1dbe"
+          }
+        },
+        {
+          "key": "13252-1110|OCC 418|Aa,Ac",
+          "componentPair": "Aa,Ac",
+          "members": [
+            "Aa",
+            "Ac"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1975,
+          "lastObservationYear": 1975,
+          "observationCount": 0,
+          "separationArcsec": 0.5,
+          "warnings": [],
+          "rawSpan": {
+            "line": 58,
+            "byteStart": 3855,
+            "byteEnd": 4009,
+            "sha256": "0aa6c2f9589449bbeadab4a81a4103b8e1b2190f141029c09b97b53b16095492"
+          }
+        },
+        {
+          "key": "13252-1110|BUP 150|AB",
+          "componentPair": "AB",
+          "members": [
+            "A",
+            "B"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1879,
+          "lastObservationYear": 2010,
+          "observationCount": 5,
+          "separationArcsec": 151.9,
+          "warnings": [],
+          "rawSpan": {
+            "line": 59,
+            "byteStart": 4010,
+            "byteEnd": 4164,
+            "sha256": "a15d5dcb0cd23dbcf5741273fa451d068692d40f0bacbe6a4b210b5fb15fc121"
+          }
+        },
+        {
+          "key": "13252-1110|BUP 150|AC",
+          "componentPair": "AC",
+          "members": [
+            "A",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1879,
+          "lastObservationYear": 2010,
+          "observationCount": 3,
+          "separationArcsec": 367.3,
+          "warnings": [],
+          "rawSpan": {
+            "line": 60,
+            "byteStart": 4165,
+            "byteEnd": 4319,
+            "sha256": "10176fc7eba85482d6737fea5e1534729a739f1c0be705ea1f8e95f870f5527f"
+          }
+        }
+      ],
+      "pairCount": 4,
+      "provisionalInterpretation": "WDS pair rows and SIMBAD cross-identification suffixes constrain the system, but do not alone establish the hero target as one physical component.",
+      "reviewQuestion": "Does the hero target identify WDS A as an unresolved system or a physical member such as Aa? The Aa,Ab catalogue row has no valid last separation and zero reported means.",
+      "requiredDecision": [
+        "record the intended hero object or aggregate",
+        "bind one component-specific identifier to that object with primary-source evidence",
+        "check component notation, epoch and positional consistency",
+        "retain independent reviewer decision and citation"
+      ],
+      "status": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "regulus",
+      "sourceQueryIdentifier": "* alf Leo",
+      "wdsSystemId": "10084+1158",
+      "sourceWdsIdentifiers": [
+        "WDS J10084+1158A"
+      ],
+      "sourceRawPageSha256": "1b76790cfa6bbe2e08e0b4811433953da65527e9039188c7d5685ea003337801",
+      "sourceArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+        "bytes": 4323,
+        "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346"
+      },
+      "pairRows": [
+        {
+          "key": "10084+1158|STFB  6|AB",
+          "componentPair": "AB",
+          "members": [
+            "A",
+            "B"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1779,
+          "lastObservationYear": 2023,
+          "observationCount": 69,
+          "separationArcsec": 175.9,
+          "warnings": [],
+          "rawSpan": {
+            "line": 57,
+            "byteStart": 3702,
+            "byteEnd": 3856,
+            "sha256": "9fe2d0469c85ae92e8e4fefd42f9ab505af5a6b6e40d118c9c02b40422fe37f1"
+          }
+        },
+        {
+          "key": "10084+1158|HDO 127|AD",
+          "componentPair": "AD",
+          "members": [
+            "A",
+            "D"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1924,
+          "lastObservationYear": 2015,
+          "observationCount": 7,
+          "separationArcsec": 195.3,
+          "warnings": [],
+          "rawSpan": {
+            "line": 58,
+            "byteStart": 3857,
+            "byteEnd": 4011,
+            "sha256": "8193d9d3a020c27c014d935e765cc81725d6c660509fa822b911b385d3c96cfe"
+          }
+        },
+        {
+          "key": "10084+1158|HDO 127|BC",
+          "componentPair": "BC",
+          "members": [
+            "B",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1867,
+          "lastObservationYear": 2021,
+          "observationCount": 22,
+          "separationArcsec": 2.1,
+          "warnings": [],
+          "rawSpan": {
+            "line": 59,
+            "byteStart": 4012,
+            "byteEnd": 4166,
+            "sha256": "7e5085e696ca5cd0f5cda25e7064feb90de83a04e102915c978646340626036e"
+          }
+        },
+        {
+          "key": "10084+1158|HDO 127|BD",
+          "componentPair": "BD",
+          "members": [
+            "B",
+            "D"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1907,
+          "lastObservationYear": 2015,
+          "observationCount": 10,
+          "separationArcsec": 109.1,
+          "warnings": [],
+          "rawSpan": {
+            "line": 60,
+            "byteStart": 4167,
+            "byteEnd": 4321,
+            "sha256": "5338875f4ab20a2058785d005bda2adf16f186d488d1ac8b547deb8a4ee32524"
+          }
+        }
+      ],
+      "pairCount": 4,
+      "provisionalInterpretation": "WDS pair rows and SIMBAD cross-identification suffixes constrain the system, but do not alone establish the hero target as one physical component.",
+      "reviewQuestion": "Does the hero target identify WDS A alone, an A subsystem, or the full system? AB/AD are relative pair measurements; BC/BD describe different component relationships.",
+      "requiredDecision": [
+        "record the intended hero object or aggregate",
+        "bind one component-specific identifier to that object with primary-source evidence",
+        "check component notation, epoch and positional consistency",
+        "retain independent reviewer decision and citation"
+      ],
+      "status": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "polaris",
+      "sourceQueryIdentifier": "* alf UMi",
+      "wdsSystemId": "02318+8916",
+      "sourceWdsIdentifiers": [
+        "WDS J02318+8916A",
+        "WDS J02318+8916Aa,Ab"
+      ],
+      "sourceRawPageSha256": "74b9b630aba98c44e24623aa56c1e8177ff69d230292e59c7969f6e1998f69f5",
+      "sourceArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+        "bytes": 4633,
+        "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8"
+      },
+      "pairRows": [
+        {
+          "key": "02318+8916|WRH  39|Aa,Ab",
+          "componentPair": "Aa,Ab",
+          "members": [
+            "Aa",
+            "Ab"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1937,
+          "lastObservationYear": 2023,
+          "observationCount": 14,
+          "separationArcsec": 0.1,
+          "warnings": [],
+          "rawSpan": {
+            "line": 57,
+            "byteStart": 3702,
+            "byteEnd": 3856,
+            "sha256": "7c9e07804bed182252b5417860d56c2f7bac3948920b75f6764cb0b80fbff556"
+          }
+        },
+        {
+          "key": "02318+8916|STF  93|AB",
+          "componentPair": "AB",
+          "members": [
+            "A",
+            "B"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1779,
+          "lastObservationYear": 2016,
+          "observationCount": 65,
+          "separationArcsec": 18.4,
+          "warnings": [],
+          "rawSpan": {
+            "line": 58,
+            "byteStart": 3857,
+            "byteEnd": 4011,
+            "sha256": "b57442d62352a07ddfc962eae0295942871002a0911c9aae71c9793c8a89eb90"
+          }
+        },
+        {
+          "key": "02318+8916|STF  93|AC",
+          "componentPair": "AC",
+          "members": [
+            "A",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1884,
+          "lastObservationYear": 2016,
+          "observationCount": 7,
+          "separationArcsec": 39,
+          "warnings": [],
+          "rawSpan": {
+            "line": 59,
+            "byteStart": 4012,
+            "byteEnd": 4166,
+            "sha256": "f953bc16a21b54472f035a3e80551bbb43ca6110b17ab5135b6363182f5dda92"
+          }
+        },
+        {
+          "key": "02318+8916|STF  93|AD",
+          "componentPair": "AD",
+          "members": [
+            "A",
+            "D"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 1884,
+          "lastObservationYear": 2016,
+          "observationCount": 8,
+          "separationArcsec": 83.2,
+          "warnings": [],
+          "rawSpan": {
+            "line": 60,
+            "byteStart": 4167,
+            "byteEnd": 4321,
+            "sha256": "c11d7c6e2bb6d25e0069d1b5eaa4ecd2c401df6f13754d5a545338c893795ec8"
+          }
+        },
+        {
+          "key": "02318+8916|STF  93|BC",
+          "componentPair": "BC",
+          "members": [
+            "B",
+            "C"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2005,
+          "lastObservationYear": 2015,
+          "observationCount": 4,
+          "separationArcsec": 53.1,
+          "warnings": [],
+          "rawSpan": {
+            "line": 61,
+            "byteStart": 4322,
+            "byteEnd": 4476,
+            "sha256": "3654fb5171b469b2cd65459e6a16b9357c5ca37d8e021553dc3ab1296495ab17"
+          }
+        },
+        {
+          "key": "02318+8916|STF  93|BD",
+          "componentPair": "BD",
+          "members": [
+            "B",
+            "D"
+          ],
+          "relation": "explicit-pair",
+          "firstObservationYear": 2005,
+          "lastObservationYear": 2016,
+          "observationCount": 4,
+          "separationArcsec": 69.3,
+          "warnings": [],
+          "rawSpan": {
+            "line": 62,
+            "byteStart": 4477,
+            "byteEnd": 4631,
+            "sha256": "a210fe6cf0c0e248d539c645ef689968958aeda6855ff81e89a923ac9b5f6d6c"
+          }
+        }
+      ],
+      "pairCount": 6,
+      "provisionalInterpretation": "WDS pair rows and SIMBAD cross-identification suffixes constrain the system, but do not alone establish the hero target as one physical component.",
+      "reviewQuestion": "Does the hero target identify WDS A as the aggregate, Aa as the Cepheid, or another component? The source identifiers include both A and Aa,Ab hints.",
+      "requiredDecision": [
+        "record the intended hero object or aggregate",
+        "bind one component-specific identifier to that object with primary-source evidence",
+        "check component notation, epoch and positional consistency",
+        "retain independent reviewer decision and citation"
+      ],
+      "status": "review-required",
+      "componentIdentityConfirmed": false,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "rightsApproved": false
+  },
+  "limits": {
+    "pairRows": "WDS reports relative pair measurements and component labels, not a unique physical identity for each product hero target.",
+    "sourceIdentifiers": "A cross-identification suffix is a candidate mapping until a component-specific source and reviewer decision agree.",
+    "approval": "This packet is not scientific admission, rights approval, or runtime writeback."
+  }
+}

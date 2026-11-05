@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:44.494Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "heart-nebula",
+  "selection": {
+    "metadataProbe": "heart-nebula",
+    "metadataReceiptSha256": "8b2943533b3e73a3e56e48f28ad41ace43c949a2a9b77a958ded1201e15a3268",
+    "nasaId": "PIA13112",
+    "title": "Heart and Soul",
+    "description": "NASA Wide-field Infrared Survey Explorer has captured a huge mosaic of two bubbling clouds in space, known as the Heart and Soul nebulae.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13112/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA13112/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA13112/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "3be78787a4020fd38540ac4348b49af11a9ad882b323e45affd43a2aeb7a6a10"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13112~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/PIA13112~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13112~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/PIA13112~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13112~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/PIA13112~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13112~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/PIA13112~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13112~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/PIA13112~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13112/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13112/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "e342293357a4cc069d767ae6b16466081c7c0fcab978c94119c3318212583e34"
+}

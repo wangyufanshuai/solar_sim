@@ -1,0 +1,88 @@
+{
+  "schema": "mainline-a-browser-evidence-v626",
+  "observedAt": "2026-09-21T01:50:39.722Z",
+  "round": "R66",
+  "url": "http://127.0.0.1:3040/",
+  "stagePath": ".next-mainline-a-r66-20260921-017",
+  "buildId": "EaJPTB-HsuRJl1CvY9VVm",
+  "runtimeBuildId": "mainline-a-4def7022b36418a4",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "desktop": {
+    "viewport": [
+      1280,
+      720
+    ],
+    "markers": {
+      "build": "mainline-a-4def7022b36418a4",
+      "releaseIdentity": null,
+      "rootRuntime": null,
+      "nextRuntime": null,
+      "mainlineNebulaBatch": "v624",
+      "mainlineNebulaRightsClosure": "v627",
+      "nebulaBoundary": "closed",
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "nebulaClosure": true,
+        "rightsPending": true
+      }
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260921-017.png",
+      "sha256": "6893f35c287e80cc2c0ceb8c01bd558b3754d0609301b2e77a373696b346e8e2"
+    }
+  },
+  "mobileViewport": {
+    "viewport": [
+      390,
+      844
+    ],
+    "markers": {
+      "build": "mainline-a-4def7022b36418a4",
+      "mainlineNebulaRightsClosure": "v627",
+      "scientificPayloadWriteback": false,
+      "candidateOnly": true,
+      "hold": true,
+      "notAdmitted": true,
+      "shell": true,
+      "textSignals": {
+        "nebulaClosure": true,
+        "rightsPending": true
+      }
+    },
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260921-017.png",
+      "sha256": "f634b122cc62ef007ea9eab086d63a48fe847caa6d88e140d1a26346cb840fb2"
+    }
+  },
+  "console": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "performance": {
+    "status": "not-claimed",
+    "source": "R65 four-second browser samples remain separate; this browser pass does not claim production or real-user performance"
+  },
+  "physicalMobile": "not-run",
+  "evidenceClass": "in-app-browser-local-visual-and-build-binding",
+  "claimsClosed": {
+    "visualReview": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "notes": [
+    "DOM marker release identity/runtime package fields were not exposed on this build; static alignment receipt remains authoritative for package identity.",
+    "The V627 panel visibly reports candidate-only, hold, not-admitted and scientificPayloadWriteback=false; rights remain pending."
+  ]
+}

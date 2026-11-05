@@ -1,0 +1,26 @@
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { parseKerrSpectralCorrelationResponseArtifactV354 } from "../app/lib/kerrSpectralCorrelationResponseV354";
+import { parseKerrSpectralEigenmodeAuditArtifactV355 } from "../app/lib/kerrSpectralEigenmodeAuditV355";
+import { parseKerrSpectralEnvelopeArtifactV356 } from "../app/lib/kerrSpectralEnvelopeV356";
+import { createKerrSpectralConfidenceScaleV357, parseKerrSpectralConfidenceScaleArtifactV357 } from "../app/lib/kerrSpectralConfidenceScaleV357";
+
+const root = process.cwd();
+const paths = { envelope: "dist/science/kerr-spectral-envelope-v356/audit.json", eigenmode: "dist/science/kerr-spectral-eigenmode-audit-v355/audit.json", correlation: "dist/science/kerr-spectral-correlation-response-v354/audit.json", output: "dist/science/kerr-spectral-confidence-scale-v357/audit.json", replay: "dist/science/kerr-spectral-confidence-scale-v357/replay.json" } as const;
+const bytes = (path: string) => readFileSync(resolve(root, path));
+const fileSha256 = (path: string) => createHash("sha256").update(bytes(path)).digest("hex");
+const canonicalize = (value: unknown): unknown => Array.isArray(value) ? value.map(canonicalize) : !value || typeof value !== "object" ? value : Object.fromEntries(Object.entries(value as Record<string, unknown>).filter(([key]) => !["generatedAt", "artifactSha256"].includes(key)).sort(([left], [right]) => left.localeCompare(right)).map(([key, entry]) => [key, canonicalize(entry)]));
+const canonicalSha256 = (value: unknown) => createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
+const atomicWrite = (path: string, value: unknown) => { const target = resolve(root, path); mkdirSync(dirname(target), { recursive: true }); const temporary = `${target}.${process.pid}.part`; writeFileSync(temporary, `${JSON.stringify(value, null, 2)}\n`); renameSync(temporary, target); };
+const envelope = parseKerrSpectralEnvelopeArtifactV356(JSON.parse(bytes(paths.envelope).toString("utf8")));
+const eigenmode = parseKerrSpectralEigenmodeAuditArtifactV355(JSON.parse(bytes(paths.eigenmode).toString("utf8")));
+const correlation = parseKerrSpectralCorrelationResponseArtifactV354(JSON.parse(bytes(paths.correlation).toString("utf8")));
+const source = { envelopePath: paths.envelope, envelopeFileSha256: fileSha256(paths.envelope), envelopeArtifactSha256: envelope.artifactSha256, eigenmodeArtifactSha256: eigenmode.artifactSha256, correlationArtifactSha256: correlation.artifactSha256, fullShortAuthoritySha256: envelope.source.fullShortAuthoritySha256 } as const;
+const unsigned = createKerrSpectralConfidenceScaleV357(envelope, eigenmode, correlation, source, "pending");
+const artifact = parseKerrSpectralConfidenceScaleArtifactV357({ ...unsigned, artifactSha256: canonicalSha256(unsigned) });
+atomicWrite(paths.output, artifact);
+const repeated = createKerrSpectralConfidenceScaleV357(envelope, eigenmode, correlation, source, "pending");
+const replayUnsigned = { version: "v357-kerr-spectral-confidence-scale-replay-v1", generatedAt: new Date().toISOString(), status: artifact.status, auditArtifactSha256: artifact.artifactSha256, deterministic: JSON.stringify(artifact.rays) === JSON.stringify(repeated.rays), levels: artifact.scaleConvention.levels, ellipseRadiusMaximumDifference: artifact.maxima.ellipseRadiusMaximumDifference, ellipsoidRadiusMaximumDifference: artifact.maxima.ellipsoidRadiusMaximumDifference, ellipseAreaScaleRelativeDifference: artifact.maxima.ellipseAreaScaleRelativeDifference, reconstructionInvariantRelativeDifference: artifact.maxima.reconstructionInvariantRelativeDifference, noMeasuredCoverageClaim: artifact.measuredConfidenceAuthority.startsWith("unavailable"), noScienceMutation: true, scienceCinematicBoundary: artifact.scienceCinematicBoundary, denseCampaignStatus: artifact.denseCampaignStatus, browserQualification: artifact.browserQualification };
+atomicWrite(paths.replay, { ...replayUnsigned, artifactSha256: canonicalSha256(replayUnsigned) });
+console.log(JSON.stringify({ status: artifact.status, artifactSha256: artifact.artifactSha256, levels: artifact.scaleConvention.levels, ellipseLevels: artifact.counts.ellipseLevelCount, ellipsoidLevels: artifact.counts.ellipsoidLevelCount, ellipseRadius: artifact.maxima.ellipseRadiusMaximumDifference, ellipsoidRadius: artifact.maxima.ellipsoidRadiusMaximumDifference, areaScale: artifact.maxima.ellipseAreaScaleRelativeDifference, measuredAuthority: artifact.measuredConfidenceAuthority, dense: artifact.denseCampaignStatus }, null, 2));

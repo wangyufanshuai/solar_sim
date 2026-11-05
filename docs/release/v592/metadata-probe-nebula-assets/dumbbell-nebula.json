@@ -1,0 +1,94 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:41.030Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "dumbbell-nebula",
+  "selection": {
+    "metadataProbe": "dumbbell-nebula",
+    "metadataReceiptSha256": "6317e0a448282de2266488de9a1607c6c8bfd05e9512e40300296df99539f1d3",
+    "nasaId": "PIA04249",
+    "title": "Close-up of M27, the Dumbbell Nebula",
+    "description": "An aging star last hurrah creates a flurry of glowing knots of gas that appear to be streaking through space. This closeup image of the Dumbbell Nebula was taken by the JPL-built and designed WFC3 camera, onboard NASA's Hubble Space Telescope. http://photojournal.jpl.nasa.gov/catalog/PIA04249",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA04249/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA04249/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA04249/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "e96d36352cef9ac3e1085dc94f94287ae8857e61e8e233b5d8cc51d83e5d7bde"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04249~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04249/PIA04249~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04249~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04249/PIA04249~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA04249~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04249/PIA04249~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA04249/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA04249/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "d7940a427ee23cec440b27c6d7e3c97151a443b12a3214a42c8bcf039ab16a6d"
+}

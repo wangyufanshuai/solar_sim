@@ -1,0 +1,106 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:22:52.410Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "cats-eye-nebula",
+  "selection": {
+    "metadataProbe": "ring-nebula",
+    "metadataReceiptSha256": "49e0a6a67ad17b2e545b53b7a7aaa1f2368cc452cb9089fc232fdaf647117490",
+    "nasaId": "GSFC_20171208_Archive_e002155",
+    "title": "Cat's Eye Nebula",
+    "description": "The Cat's Eye Nebula, one of the first planetary nebulae discovered, also has one of the most complex forms known to this kind of nebula. Eleven rings, or shells, of gas make up the Cat's Eye. The full beauty of the Cat's Eye Nebula is revealed in this detailed view from NASA's Hubble Space Telescope. The image from Hubble's Advanced Camera for Surveys (ACS) shows a bull's eye pattern of eleven or even more concentric rings, or shells, around the Cat's Eye. Each 'ring' is actually the edge of a spherical bubble seen projected onto the sky -- that's why it appears bright along its outer edge. Observations suggest the star ejected its mass in a series of pulses at 1,500-year intervals. These convulsions created dust shells, each of which contain as much mass as all of the planets in our solar system combined (still only one percent of the Sun's mass). These concentric shells make a layered",
+    "center": "GSFC",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/collection.json",
+    "status": 200,
+    "responseBytes": 519,
+    "responseSha256": "61960847ca1da94cbdac8a8c9462ec16add189637b66fddbe5ffb9c94d2876bd"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e002155~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e002155~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e002155~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "GSFC_20171208_Archive_e002155~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/GSFC_20171208_Archive_e002155~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e002155/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 5,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 5,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "d2b67f2c1724d03cca74db148c7bd112acddb90b07446ba3032ea69bce85814b"
+}

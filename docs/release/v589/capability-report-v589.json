@@ -1,0 +1,80 @@
+{
+  "version": "v589-celestial-art-capability-report-v1",
+  "generatedAt": "2026-08-09T10:00:00Z",
+  "status": "implemented-partial-assets-browser-qualified-soak-and-vercel-blocked",
+  "candidate": {
+    "route": "/local-shadow-v589",
+    "manifestSha256": "55b7d584969502b83444523726fa983cd11695b5d6abe6245e9faa42f2212671",
+    "pointerSha256": "fd39f7b96d47b0775c83f331b56c228727abd01e2460ba7e55644277985647df",
+    "formalProductPointer": "v263"
+  },
+  "capabilities": {
+    "singleCanvas": true,
+    "scienceCinematicSharedGeometry": true,
+    "scientificPayloadWriteback": false,
+    "gaiaLiteRows": 46000,
+    "gaiaStandaloneRange10m": "manifest-directory-http-range-worker-active-not-science-authority",
+    "starLayers": [
+      "faint-points",
+      "catalog-points",
+      "bright-instanced-psf"
+    ],
+    "magnitudeFluxLaw": "10^(-0.4m)",
+    "bpRpColor": true,
+    "randomTwinkle": false,
+    "constellationBindings": "484/484-under-1.5deg",
+    "constellationDepthOcclusion": true,
+    "orbitSystem": "v588-visual-baseline-extended-to-16-bodies",
+    "heroAdmittedBodies": [
+      "sun",
+      "earth",
+      "moon",
+      "jupiter",
+      "saturn",
+      "uranus",
+      "neptune",
+      "bennu"
+    ],
+    "heroBlockedBodies": [
+      "mercury",
+      "venus",
+      "mars",
+      "ceres",
+      "vesta",
+      "eros",
+      "kleopatra",
+      "tempel-1"
+    ],
+    "heroProceduralFallback": false,
+    "moonDemNormalAndRoughness": true,
+    "visualAcquisitionCount": 10,
+    "nasaPublicDomainAcquisitionCount": 7,
+    "polyHavenCc0AcquisitionCount": 3,
+    "bennuModelLod": "3/3-verified-meshopt-normals-stable-pivot",
+    "bennuModelAdmission": "admitted",
+    "earthDemNormalAdmission": "admitted",
+    "ktx2FirstWithVerifiedWebpFallback": true,
+    "liteIncrementBytes": 9331803,
+    "standaloneBuild": "passed",
+    "liteBuild": "passed"
+  },
+  "blockedGates": {
+    "allSixteenHeroAdmission": "blocked:mercury,venus,mars,ceres,vesta,eros,kleopatra,tempel-1",
+    "browserVisualMatrix": "passed",
+    "fps": "passed",
+    "soak": "blocked-30-minute-soak-not-qualified",
+    "resourceLifecycle": "passed-released-zero",
+    "vercelPreview": "blocked-vercel-scope-mismatch",
+    "productionRelease": "not-authorized"
+  },
+  "evidence": {
+    "sourceManifestSha256": "93b57b96c3ae1d0e64d7d8d1f6f4d280f1be9502e3c006c8feb617292a0fffa2",
+    "postBuildReceiptSha256": "f8abb169dd9a67ac94d4a871aa0859dca7d8152073de3e8b330d66ca7617584d",
+    "freezeAfterSha256": "3db1a7cc68d063457bb64c405baaf8427b9ab6e7dc31526cddc3bef8a009f5b2",
+    "browserReceiptSha256": "8d492372006505ebc842884e2c9ac2ed6a73f726e19a48efd504e80f56f8d870",
+    "browserScreenshotManifestSha256": "4351ecc43eb26e3ab69c167d1142bb7ad4c68614e9335968e90c8b97a7979218",
+    "vercelReceiptSha256": "3947f7c8f784df7bd674974c987941c6dd27535bd85ca10453e9345bb59b06bc"
+  },
+  "releaseAuthorized": false,
+  "reportSha256": "4d08b4297057ee16299f1280764fcff8a64d0cd4b6b027330c97cfa4a8e39ba1"
+}

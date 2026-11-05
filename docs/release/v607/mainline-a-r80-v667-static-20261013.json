@@ -1,0 +1,37 @@
+{
+  "schema": "mainline-a-r80-static-v667",
+  "round": 80,
+  "date": "2026-10-13",
+  "status": "passed-current-source-local",
+  "appSourceSha256": "5197fc3dcc073ff95b859091da38415c596a85a28c44c32cd1b4f0530c238dd6",
+  "node": {
+    "status": "passed",
+    "command": "node --import tsx --test scripts/verify-mainline-a-r80-http-v667.test.mjs scripts/capture-mainline-a-r80-browser-v667.test.mjs scripts/verify-mainline-a-r80-scenes-v667.test.mjs scripts/replay-mainline-a-r80-evidence-v667.test.mjs scripts/audit-mainline-a-r79-visual-v666.test.mjs scripts/verify-mainline-a-r79-external-v666.test.mjs",
+    "passed": 37,
+    "failed": 0
+  },
+  "vitest": {
+    "status": "passed",
+    "passed": 49,
+    "failed": 0,
+    "scope": "R80 visual session, R79 image probe and review, V662 acceptance, V610 review panel"
+  },
+  "targetedEslint": {
+    "status": "passed-zero-warnings",
+    "scope": "14 new and directly modified R80 app, tool, and test files"
+  },
+  "productionBuildTypeScript": "passed-in-preserved-build-web01",
+  "genericRepositoryTsc": "not-claimed",
+  "currentSourceBuildReceipt": "docs/release/v607/mainline-a-r80-build-20261013v667r80web01.json",
+  "offlineVisualAudit": "docs/release/v607/mainline-a-r79-v666-visual-static-20261013v666r79visual04.json",
+  "offlineVisualReplay": "docs/release/v607/mainline-a-r79-v666-visual-replay-20261013v666r79visual04.json",
+  "crossEvidenceReplay": "docs/release/v607/mainline-a-r80-v667-evidence-replay-20261013.json",
+  "immutableV616SnapshotAndProjectionChangedByRound": false,
+  "claims": {
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "humanVisualSignoff": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

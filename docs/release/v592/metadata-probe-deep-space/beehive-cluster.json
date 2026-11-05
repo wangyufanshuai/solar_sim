@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:39.263Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "beehive-cluster",
+  "category": "cluster",
+  "query": "Beehive Cluster M44",
+  "requiredTermGroups": [
+    [
+      "beehive",
+      "m44",
+      "praesepe"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Beehive%20Cluster%20M44&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Beehive%20Cluster%20M44&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 170,
+    "responseSha256": "b785240412af7d26f77bb94e5e09408dd3f0fd7ba2ed33581e16ede24af62c2d"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "99eafa7bce1ccdac73cf5f7eb009d98ccbd30513cfb57ecd2613724512fbde45"
+}

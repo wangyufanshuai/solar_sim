@@ -1,0 +1,33 @@
+{
+  "version": "v591-venus-s3-path-alias-metadata-probe-v1",
+  "probedAt": "2026-08-14T11:07:10.557Z",
+  "status": "metadata-candidate-confirmed-no-payload",
+  "target": "venus",
+  "archiveIdentity": "USGS Astrogeology PDS public S3 bucket via AWS regional path-style endpoint",
+  "requestCount": 1,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "payloadDownloaded": false,
+  "request": {
+    "url": "https://s3.us-west-2.amazonaws.com/asc-pds-services?list-type=2&prefix=mosaic%2FVenus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub&max-keys=10",
+    "finalUrl": "https://s3.us-west-2.amazonaws.com/asc-pds-services?list-type=2&prefix=mosaic%2FVenus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub&max-keys=10",
+    "httpStatus": 200,
+    "mediaType": "application/xml",
+    "bytes": 834,
+    "sha256": "4f70cbdf8512b57e1153f490fba1720c8fba02f5488a1621debb6e78aa5535bc",
+    "rawPath": "source-cache/celestial-convergence-v591/venus/metadata/s3-path-alias-listing.xml"
+  },
+  "candidate": {
+    "bucket": "asc-pds-services",
+    "key": "mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub",
+    "bytes": 49841063,
+    "etag": "31030252e464d93233aab6265efba449-6",
+    "directUrl": "https://s3.us-west-2.amazonaws.com/asc-pds-services/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub",
+    "identityRelation": "same-USGS-object-key-bytes-etag-as-terminal-virtual-host-attempt-new-url-not-retry"
+  },
+  "license": {
+    "id": "USGS-public-domain",
+    "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+  },
+  "receiptSha256": "e8801509fecf9f440f7f760d72c4afc3477f8fb0caa31cafafec77b1e30dad66"
+}

@@ -1,0 +1,99 @@
+{
+  "schema": "mainline-a-http-evidence-v626",
+  "observedAt": "2026-09-20T15:33:00.378Z",
+  "url": "http://127.0.0.1:3040",
+  "stagePath": ".next-mainline-a-r66-20260920-008",
+  "buildId": "ZFv-l-jxGEoQNLpcxGiE0",
+  "runtimeBuildId": "mainline-a-49be5261e1afd43d",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "pageStatus": 200,
+  "htmlBytes": 8696,
+  "healthStatus": 200,
+  "health": {
+    "schemaVersion": "v227-atlas-production-health-v1",
+    "status": "ok",
+    "productVersion": "1.0.0",
+    "deliveryProfile": "vercel-lite",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "deploymentId": null,
+    "commitSha": null,
+    "checkedAt": "2026-09-20T15:33:00.299Z"
+  },
+  "scriptAssets": [
+    {
+      "src": "/_next/static/chunks/c7879cf7-5841dac24ceb5ec9.js",
+      "status": 200,
+      "bytes": 201059,
+      "sha256": "ec1a3be808654073ef372c73a2e62818b3e35e9e0d03dab4c192d27a2bba38c5",
+      "matchesBuild": true,
+      "elapsedMs": 19.863
+    },
+    {
+      "src": "/_next/static/chunks/5158-51f498161949687a.js",
+      "status": 200,
+      "bytes": 239847,
+      "sha256": "6f7658c14901a37636ffe0769df8a9e9365e17f13b7d0e758b42e3caed99ecdf",
+      "matchesBuild": true,
+      "elapsedMs": 21.447
+    },
+    {
+      "src": "/_next/static/chunks/main-app-71260e4192c3a03b.js",
+      "status": 200,
+      "bytes": 527,
+      "sha256": "13959b8a9b5fbc11ef0eb537219355e2560af8c76f7f57c189451bac267290bd",
+      "matchesBuild": true,
+      "elapsedMs": 5.904
+    },
+    {
+      "src": "/_next/static/chunks/app/page-2f4d563d3e0ca425.js",
+      "status": 200,
+      "bytes": 5025,
+      "sha256": "4d5e6beba41eafe20d1913b73c010ff02c488e18f1a3159024beb5c9e0f6b576",
+      "matchesBuild": true,
+      "elapsedMs": 10.192
+    },
+    {
+      "src": "/_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "bytes": 112594,
+      "sha256": "0973c1d64c88adc8e3c950410cb58b288f72118d5965b78049438deb8f2f9683",
+      "matchesBuild": true,
+      "elapsedMs": 11.944
+    },
+    {
+      "src": "/_next/static/chunks/webpack-6b7db9e15bc6f6fb.js",
+      "status": 200,
+      "bytes": 5666,
+      "sha256": "d8db6bdf9e65a1dac55c6669e9b429dfc91476b2d9de832375204100e743f5cb",
+      "matchesBuild": true,
+      "elapsedMs": 4.419
+    }
+  ],
+  "allScriptAssetsOk": true,
+  "timings": [
+    {
+      "route": "/",
+      "status": 200,
+      "bytes": 8696,
+      "elapsedMs": 65.442
+    },
+    {
+      "route": "/api/health",
+      "status": 200,
+      "bytes": 241,
+      "elapsedMs": 8.028
+    }
+  ],
+  "evidenceClass": "local-production-http-build-binding-not-performance",
+  "performanceClaim": false,
+  "realUserValidation": false,
+  "scientificPayloadWriteback": false,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "sourceReport": "docs/release/v607/mainline-a-r66-build-20260920-008.json"
+}

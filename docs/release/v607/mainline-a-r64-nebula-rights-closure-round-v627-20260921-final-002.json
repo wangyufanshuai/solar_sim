@@ -1,0 +1,69 @@
+{
+  "schema": "mainline-a-nebula-rights-closure-round-v627",
+  "round": "R64",
+  "generatedAt": "2026-09-21T01:33:50.353Z",
+  "status": "pending",
+  "objective": "Beta nebula source and rights closure replay for captured and offline ledgers",
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627-code-change-20260921-final-004.json",
+  "closureReceipt": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+  "replayReceipt": "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json",
+  "effectiveProductionLines": 915,
+  "evidence": {
+    "static": {
+      "status": "pass",
+      "paths": [
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.jsonl",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.csv",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json"
+      ]
+    },
+    "externalSource": {
+      "status": "pending",
+      "detail": "12 nebula rows have source ledger/artifact evidence; item-level rights signoff remains pending"
+    },
+    "http": {
+      "status": "not-run",
+      "detail": "CLI subtask did not launch HTTP"
+    },
+    "visual": {
+      "status": "not-run",
+      "detail": "CLI subtask did not capture visual evidence"
+    },
+    "browser": {
+      "status": "not-run",
+      "detail": "CLI subtask did not use browser"
+    },
+    "performance": {
+      "status": "not-run",
+      "detail": "CLI subtask did not claim performance"
+    }
+  },
+  "gates": {
+    "sourceClosure": "pass",
+    "artifactClosure": "pass",
+    "rightsClosure": "hold",
+    "runtimeAdmission": "closed",
+    "scientificPayloadWriteback": "closed"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "copyrightApproval": false,
+    "physicsKernelMutation": false
+  },
+  "blockers": [
+    "rights-signoff-pending"
+  ],
+  "claimsClosed": {
+    "rights": false,
+    "runtime": false,
+    "scientificPayloadWriteback": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

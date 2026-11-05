@@ -1,0 +1,260 @@
+{
+  "schema": "mainline-a-art-round-receipt-v633",
+  "round": "R65-continuation",
+  "date": "2026-09-27",
+  "newDevelopmentRound": false,
+  "title": "Technical asset acceptance and freeze evidence correction in the existing V633 batch",
+  "status": "in-progress-browser-and-signoff-pending",
+  "accepted": false,
+  "goalStatus": "active",
+  "buildId": "Yoz5ftQLSiahac9yI8UV_",
+  "runtimeBuildId": "mainline-a-a5cadfdaf9882d6f",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "previous": {
+    "path": "docs/release/v607/mainline-a-art-round-65-v633-20260927-053.json",
+    "sha256": "dbbf97c07de906866d6fc0d87a24f7594bca6fd00345fbf2b991babc50212e14"
+  },
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r65-v633-code-change-20260927-054.json",
+    "sha256": "22e561ec72c5c856b1518ec6b46d1755bcd5e05d8c9adf4f2e40e78f68007add"
+  },
+  "cumulativeEffectiveProductionLines": 1171,
+  "minimumEffectiveProductionLines": 1000,
+  "cumulativeAddedLines": 2431,
+  "cumulativeRemovedLines": 62,
+  "latestIncrementalEffectiveProductionLines": 76,
+  "testsExcludedFromEffectiveProductionCount": true,
+  "implementation": [
+    "Continued the V633 resource observation, session and offline replay implementation; current code bytes remain bound to receipts.",
+    "Completed actual raw capture for the three missing V628 nebula images; all twelve extension images are captured and hash-replayable.",
+    "Preserved global attempt history while fixing collection-local retry validation in V629.",
+    "Removed manufactured routes and allocation/release observations from V622 replay; static contracts and fixtures cannot assert a runtime freeze.",
+    "Executed exact-byte software decode and manifest validation for twelve raw images and 132 derived candidate files.",
+    "Preserved item-level copyright review as pending following the explicit user directive."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed-with-freeze-gate-held",
+      "currentContinuation": {
+        "nodePassed": 53,
+        "nodeScope": "19 V628 pipeline + 26 V629 source ledger + 8 V622 replay",
+        "vitestPassed": 41,
+        "vitestScope": "19 V628/V610 model/panel + 22 V622 preflight/coverage",
+        "targetedEslint": "passed",
+        "diffCheck": "passed",
+        "allTestsRerunOn054Claim": false,
+        "v622FinalCommands": [
+          {
+            "command": "npx vitest run app/lib/mainlineAFreezePreflightV622.test.ts app/lib/mainlineACanonicalCoverageV622.test.ts app/data/mainlineACanonicalCoverageV622.test.ts --exclude tmp/** --exclude **/.next*/**",
+            "exitCode": 0,
+            "passed": 22
+          },
+          {
+            "command": "node --import tsx --test scripts/replay-mainline-a-canonical-coverage-v622.test.ts",
+            "exitCode": 0,
+            "passed": 8
+          },
+          {
+            "command": "npx eslint scripts/replay-mainline-a-canonical-coverage-v622.ts scripts/replay-mainline-a-canonical-coverage-v622.test.ts app/lib/mainlineAFreezePreflightV622.ts app/lib/mainlineAFreezePreflightV622.test.ts",
+            "exitCode": 0
+          }
+        ],
+        "v622ResultLocation": "agent tool outputs; no separate log file; final source hashes independently rechecked"
+      },
+      "previousUnchangedV633": {
+        "nodePassed": 38,
+        "vitestPassed": 81,
+        "receipt": {
+          "path": "docs/release/v607/mainline-a-art-round-65-v633-20260927-052.json",
+          "sha256": "f01b69c85e0eebdd4ef32427a9a9fa805b4524d4fc65b419c6f6ba2052233f05"
+        },
+        "rerunClaim": false
+      },
+      "build": {
+        "path": "docs/release/v607/mainline-a-r65-build-20260927-054.json",
+        "sha256": "e4e95b46e30ccdee7744ae972951088874011151c62c8c7918e47854fba06eb9"
+      },
+      "buildScope": "vercel-lite production app/config build; scripts verified independently",
+      "exactInputIntegrity": {
+        "path": "docs/release/v607/mainline-a-r65-input-integrity-20260927-054.json",
+        "sha256": "577fd718d5520b777a3aa989f01519a61ef1c0e5983497d81c7c5a85ac7f9e60"
+      },
+      "technicalAssets": {
+        "receipt": {
+          "path": "docs/release/v607/mainline-a-nebula-technical-assets-20260927-053.json",
+          "sha256": "2ebfd1bbdce703af9eb76645ec1007d43dd6d2dd94dd4f84f321a4caa69ce5ce"
+        },
+        "counts": {
+          "candidates": 12,
+          "rawFullDecodePassed": 12,
+          "sourcePackLinked": 12,
+          "manifests": 3,
+          "manifestSealsPassed": 3,
+          "derivedReferences": 168,
+          "derivedUniqueFiles": 132,
+          "derivedPassed": 132,
+          "derivedRasterFullDecoded": 72,
+          "derivedKtxContainerParsed": 60,
+          "candidateFailures": 0,
+          "globalIssues": 0
+        },
+        "ktxTranscode": "not-run",
+        "gpuUpload": "not-run"
+      },
+      "freeze": {
+        "receipt": {
+          "path": "docs/release/v607/mainline-a-r62-freeze-replay-20260927-054.json",
+          "sha256": "4a4031f70b37eb34153a2230209191aa24237675b46416494ae2ebdfe4c1ee65"
+        },
+        "canonicalCoverage": {
+          "stars": 12,
+          "constellations": 12,
+          "nebulae": 12
+        },
+        "contractValid": false,
+        "freezePassed": false,
+        "runtimeObserved": false,
+        "missingRouteEvidence": 36,
+        "missingLifecycleEvidence": 36,
+        "missingRuntimeObservation": 1,
+        "oldReceiptsPreserved": true
+      },
+      "nodeLog": {
+        "path": "tmp/mainline-a-nebula-v628-node-20260927-053.log",
+        "sha256": "ee82534e38dca64f048d515f53fa8b7d365003d5a4a95e1c072fce55037c3dfd"
+      },
+      "vitestLog": {
+        "path": "tmp/mainline-a-nebula-v628-vitest-20260927-053.log",
+        "sha256": "df281b80a4ce28e016bbe38977a62ea55f6037f9f99697eee13222d037b39df0"
+      }
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-http-20260927-054.json",
+        "sha256": "2427d8bd17668ad5eb1a818051f63e880e77fbb4e14d16b4115247b0d2869683"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "scriptAssetsMatched": 6,
+      "performanceClaim": false,
+      "earlierAssetChecks": {
+        "buildId": "vg-AGvh4WczZfrlBXiK09",
+        "runtimeBuildId": "mainline-a-8953acc2064dae48",
+        "canonicalNebulaAssets": {
+          "count": 12,
+          "receipt": {
+            "path": "docs/release/v607/mainline-a-canonical-assets-http-20260927-053.json",
+            "sha256": "fac985baad2d92ed9c1f68ece9376f2c85d7d082055ecfd1c488478e4f764dd5"
+          }
+        },
+        "candidateDerivedFiles": {
+          "count": 132,
+          "receipt": {
+            "path": "docs/release/v607/mainline-a-candidate-assets-http-20260927-053.json",
+            "sha256": "b863de6e501e5a7f354e7e81cbd9d35c43abadb2990e666506eaf33efad22139"
+          }
+        },
+        "currentBuildRerunClaim": false
+      }
+    },
+    "visual": {
+      "browserVisual": "not-run",
+      "rawImageInspection": {
+        "status": "observed-local-asset-preview-only",
+        "ids": [
+          "jellyfish-nebula",
+          "cepheus-c-nebula",
+          "dragon-lair-nebula"
+        ],
+        "method": "view_image resized previews of saved raw artifacts",
+        "finding": "Three image files displayed as nonblank astronomical imagery; no application rendering, scientific validity or rights acceptance claim."
+      }
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-browser-v633-20260927-054.json",
+        "sha256": "c810d35977389497fcab765ad3516ee4f51c20cac0a6bb9a411fd775c90b076c"
+      },
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r65-performance-v633-20260927-054.json",
+        "sha256": "e93d2b580c56ac17258d73c532450b19b18191e799fc04a57aeaef722e931487"
+      }
+    },
+    "externalSource": {
+      "status": "raw-evidence-captured-review-pending",
+      "closure": {
+        "path": "docs/release/v607/mainline-a-nebula-source-artifact-closure-20260927-053.json",
+        "sha256": "a2927a93ebf4faa2aed2648cf8750657d92c6455f1c8fe42c5e010012df74113"
+      },
+      "newRawImages": 3,
+      "betaExtensionRawImagesTotal": 12,
+      "sourcePagesCaptured": 12,
+      "policyPagesCaptured": 1,
+      "rightsSigned": 0,
+      "rightsPending": 12,
+      "scientificAdmissions": 0
+    },
+    "sourceLedger": {
+      "status": "blocked",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-source-rights-ledger-v629-20260927-053.json",
+        "sha256": "f1591298c14ccb3ab29b9cc6ec6ed0084420ccc3fc142d7bc85ea02959fc166f"
+      },
+      "replay": {
+        "path": "docs/release/v607/mainline-a-source-rights-replay-v629-20260927-053.json",
+        "sha256": "cbd609827cc3d421c476a73b09f6ffe2b1ea67adb212ba01291681ef9185e695"
+      },
+      "captured": 10,
+      "scope": "four stellar candidates plus six V628 nebula candidates; does not represent full Beta roster",
+      "rightsSigned": 0
+    }
+  },
+  "humanReview": {
+    "status": "pending",
+    "reviewer": null,
+    "rightsSigned": 0,
+    "rightsPending": 12,
+    "directive": {
+      "path": "docs/release/v607/mainline-a-rights-pending-directive-20260927-053.json",
+      "sha256": "92b4d97376e36df886dc753f0e834e60e954d477d98dcf632c292130a273bcf2"
+    },
+    "userReply": "暂时保持 pending，继续技术验收",
+    "humanSignatureGranted": false,
+    "rightsApproval": false,
+    "continueTechnicalAcceptance": true,
+    "checklists": [
+      "docs/release/v607/nebula-source-pages/20260927-053/HUMAN-REVIEW-CHECKLIST.md",
+      "docs/release/v607/nebula-source-pages/20260927-053-v624/HUMAN-REVIEW-CHECKLIST.md"
+    ]
+  },
+  "openGates": [
+    "Browser access unavailable before navigation; desktop and mobile viewport visual/interaction acceptance remain not-run.",
+    "Actual V633 baseline/active/returned resource observations, repeated runs, physical mobile and long-run measurements.",
+    "Twelve extension image source/rights signatures remain pending by explicit user directive.",
+    "Four stellar component identities and source admission remain pending.",
+    "A-line 12/12/12 catalog is statically complete; actual route/lifecycle observation and human visual acceptance remain open.",
+    "Root/next-web read-only parity and final release package must be rebound after unresolved gates pass."
+  ],
+  "ownedServer": {
+    "pid": 37800,
+    "status": "stopped-after-http-and-browser-attempt",
+    "onlyOwnedProcessStopped": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

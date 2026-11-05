@@ -1,0 +1,162 @@
+{
+  "schema": "mainline-a-r66-web-v648-final-technical-round",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T14:38:00.000Z",
+  "deliveryTarget": "next-web-only-local-technical-review",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "runtimeBuildId": "mainline-a-4f5a5614bacd1e7e",
+  "status": {
+    "localWebTechnicalReview": "qualified-current-source-two-long-runs",
+    "webCandidatePackage": "candidate-blocked-current-source-longrun-qualified",
+    "publicWebRelease": "blocked",
+    "scientificAdmission": "blocked",
+    "physicalMobile": "not-run-web-viewport-only",
+    "rootAlignment": "out-of-scope-for-current-web-only-batch",
+    "stellarComponentIdentitySigned": "0/4",
+    "nebulaHumanRightsSigned": "0/12"
+  },
+  "effectiveCode": {
+    "baseRoundReceipt": "docs/release/v607/mainline-a-r66-web-v648-round-20261007.json",
+    "longRunToolingReceipt": "docs/release/v607/mainline-a-r66-web-v648-longrun-tooling-code-change-20261007.json",
+    "finalToolingReceipt": "docs/release/v607/mainline-a-r66-web-v648-final-tooling-code-change-20261007.json",
+    "finalToolingSha256": "9930d85ef7427642848d0f422e4506267c05d60aaa34cfb533bcaa5402c626e2",
+    "newLinesAtLeastThisSupplement": 175,
+    "modifiedLinesAtLeastThisSupplement": 1,
+    "cumulativeV648EffectiveLowerBound": 2086,
+    "cumulativeR66EffectiveLowerBound": 5171,
+    "testLinesExcludedThisSupplement": 116,
+    "minimumPerRound": 500,
+    "minimumMet": true
+  },
+  "checks": {
+    "node": "6/6 paint verifier and replay tests passed; earlier 12/12 long-run tooling tests passed",
+    "vitest": "14/14 focused V648 application tests passed before tool-only additions",
+    "targetedEslint": "passed for all final touched capture, verifier and test files",
+    "typescript": "passed in preserved V648 production build; no later application source edit",
+    "productionBuild": "passed, source hash unchanged after tool-only changes",
+    "http": "page 200 and health 200 after two browser long runs",
+    "visual": "M42 mobile detail recaptured after loaded state and computed opacity 1; old-to-new screenshot-region mean ratio 4.0619",
+    "browser": "two independent current-source 30-minute observations, desktop and mobile viewport, both offline-valid",
+    "performance": "local browser observation only; desktop and mobile viewport each 1802 seconds; both resource cycles 27 to 31 to 27",
+    "externalSource": "historical source and license labels remain pending for current scientific or rights admission"
+  },
+  "evidence": {
+    "static": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-build-20261007-v648web01.json",
+        "sha256": "d386a191a28502aa0785fbd7f16d149be151cccb05c540299e20f8ab8385bf14"
+      }
+    ],
+    "HTTP": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-http-20261007-v648web01.json",
+        "sha256": "6bf18fdb25ec6893a49a4493d8ee805ab6740e2bed02cab943ccb438ace06adc"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-http-20261007-v648web01.json",
+        "sha256": "1bcccbe7e4d2a17ba7fed563e34248da298a41a63761f521e0b1aec35ac3bdeb"
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-nebula-paint-20261007-v648web03-final.json",
+        "sha256": "d30ceeca009c2c927a09139fbc3868bcd66ddfbb09ead6cb5dfdfdad5502b2cd"
+      },
+      {
+        "path": "output/playwright/mainline-a-web-v648-detail-mobile-20261007-v648web03.png",
+        "sha256": "bf10eb32ec5bed10e34612f7dbf2ed52ba7cee56c6d1aa23d22c07593877cc1e"
+      }
+    ],
+    "browser": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-browser-final-raw-20261007-v648long01.json",
+        "sha256": "53e2357b7a2e4acd30ebc51ba2ebac3603e2391098563a3349f5eb1e4d144056",
+        "bytes": 53221283
+      }
+    ],
+    "performance": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-20261007-v648long01.json",
+        "sha256": "0b56764b3b1771fe85040f93e5cee10960f37e948fcec6ee6847aae49d228929"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-replay-20261007-v648long01.json",
+        "sha256": "643699d85ee5d658b38cb31f194c65e595c819a1c8df583fe992037c2be23422"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-binding-20261007-v648long01.json",
+        "sha256": "3d46d781bd9dba885fddfb6584cfc6e04bc4d0914b84e189a997301f79349d2a"
+      }
+    ],
+    "externalSource": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-v646-evidence-supplement-20261007.json",
+        "sha256": "3de12379977f6a676b870cafbaea74eaecae75196d350215af8c669e715f661c",
+        "currentSource": false,
+        "status": "historical-pending"
+      }
+    ],
+    "candidatePackage": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-longrun-candidate-20261007-v648long01.json",
+        "sha256": "4f561b6a1eec512612a7c57a8e4e11172ad57abdb1feffd369853957c0d6448f",
+        "status": "candidate-blocked-current-source-longrun-qualified"
+      }
+    ]
+  },
+  "observations": [
+    {
+      "device": "desktop",
+      "viewport": [1280, 720],
+      "durationMs": 1802003.885,
+      "frameSamples": 266302,
+      "frameP95Ms": 7.11,
+      "memorySamples": 1803,
+      "heapDeltaBytes": 21649304,
+      "resourceTotals": [27, 31, 27],
+      "visibilityInterruptions": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0
+    },
+    {
+      "device": "mobile-viewport",
+      "viewport": [390, 844],
+      "durationMs": 1802002.18,
+      "frameSamples": 159702,
+      "frameP95Ms": 7.1,
+      "memorySamples": 1803,
+      "heapDeltaBytes": -256273923,
+      "resourceTotals": [27, 31, 27],
+      "visibilityInterruptions": 0,
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "physicalMobile": false
+    }
+  ],
+  "releaseGates": [
+    "12 local A-line nebula previews remain unsigned for human copyright review; 0/12 signed.",
+    "Acrux, Spica, Regulus and Polaris physical component identities remain 0/4 scientifically admitted.",
+    "The root app lacks the canonical manifest; the root comparison remains outside this user-selected next-web-only batch.",
+    "No physical mobile device was available; the mobile result is a browser viewport simulation."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "canonicalV622DigestChanged": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

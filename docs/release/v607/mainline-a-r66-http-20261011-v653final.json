@@ -1,0 +1,64 @@
+{
+  "schema": "mainline-a-http-evidence-v626",
+  "status": "blocked",
+  "observedAt": "2026-10-12T02:55:16.566Z",
+  "url": "http://127.0.0.1:3093",
+  "stagePath": ".next-mainline-a-r66-20261011-v649web02",
+  "buildId": "7jCmHHTeCrDTqbh6csQIR",
+  "runtimeBuildId": "mainline-a-f86295b3b959a6a5",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "buildReportValid": true,
+  "pageStatus": null,
+  "pageFinalUrl": null,
+  "pageRedirected": false,
+  "htmlBytes": 0,
+  "healthStatus": null,
+  "healthFinalUrl": null,
+  "healthRedirected": false,
+  "health": null,
+  "scriptAssets": [],
+  "allScriptAssetsOk": false,
+  "errors": [
+    "page-request-failed-or-redirected",
+    "health-request-failed-or-redirected"
+  ],
+  "timings": [
+    {
+      "route": "/",
+      "status": null,
+      "bytes": 0,
+      "elapsedMs": 18.923,
+      "finalUrl": null,
+      "redirected": false,
+      "error": "TypeError:fetch failed"
+    },
+    {
+      "route": "/api/health",
+      "status": null,
+      "bytes": 0,
+      "elapsedMs": 1.143,
+      "finalUrl": null,
+      "redirected": false,
+      "error": "TypeError:fetch failed"
+    }
+  ],
+  "evidenceClass": "local-production-http-build-binding-not-performance",
+  "performanceClaim": false,
+  "realUserValidation": false,
+  "scientificPayloadWriteback": false,
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false
+  },
+  "sourceReport": "docs/release/v607/mainline-a-r66-build-20261011-v649web02.json",
+  "buildReportError": null,
+  "savedReceipt": {
+    "present": false,
+    "valid": false,
+    "status": null,
+    "error": "saved-receipt-not-present"
+  }
+}

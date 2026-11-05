@@ -1,0 +1,121 @@
+{
+  "version": "v592-deep-space-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T05:16:47.835Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "omega-centauri",
+  "category": "cluster",
+  "selection": {
+    "metadataProbeFile": "omega-centauri.json",
+    "metadataReceiptSha256": "dfb11f0a5a83f9401409b5b9aabda8ab6705e85adf99ea88e0c5560bd2ce1ec4",
+    "nasaId": "PIA13125",
+    "title": "Omega Centauri",
+    "description": "NASA Wide-field Infrared Survey Explorer has captured a favorite observing target of amateur astronomers, Omega Centauri. This celestial cluster of stars can be found in the constellation Centaurus.",
+    "center": "JPL",
+    "identityTerms": [
+      "omega centauri"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13125/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA13125/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA13125/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "ab2fc285cfb67408f9128c82a26016fd446179b1e6ab9a22e0043f10aeef0c3b"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/PIA13125~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13125~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/PIA13125~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13125~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/PIA13125~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13125~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/PIA13125~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13125~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/PIA13125~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13125~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/PIA13125~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13125/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13125/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "72dfae2a98aff0baaaa06d8124842836b2074a3812f6b5b19fe02bd792953ed8"
+}

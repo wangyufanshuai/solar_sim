@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-11-03T05:48:22.309Z",
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "stepScale": 0.04,
+  "W": 128,
+  "H": 128,
+  "rOut": 20,
+  "summary": [
+    {
+      "config": "a0.9-i75",
+      "pixels": 16384,
+      "refMs": 3127,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 9351,
+      "redshiftRelErr": {
+        "median": 8.760538632841081e-8,
+        "p99": 0.0000011074960752535566,
+        "max": 0.00010215590681476605
+      },
+      "emitRadiusRelErrMax": 0.00126605404155554,
+      "refMaxHamiltonian": 0.0000028781360015273094
+    },
+    {
+      "config": "a0-i60",
+      "pixels": 16384,
+      "refMs": 2974,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 11138,
+      "redshiftRelErr": {
+        "median": 7.7745379932602e-8,
+        "p99": 5.52088916340709e-7,
+        "max": 0.00002851562811824997
+      },
+      "emitRadiusRelErrMax": 0.00008641098941647648,
+      "refMaxHamiltonian": 9.527866495773196e-9
+    },
+    {
+      "config": "a0.99-i85",
+      "pixels": 16384,
+      "refMs": 4615,
+      "statusAgreement": 0.999755859375,
+      "mismatches": {
+        "disk->4": 1,
+        "captured->3": 1,
+        "captured->1": 2
+      },
+      "gpuStepBudgetExhausted": 1,
+      "diskPixelsCompared": 4473,
+      "redshiftRelErr": {
+        "median": 1.1657377539968907e-7,
+        "p99": 0.000005591894034093214,
+        "max": 0.000034199024301464984
+      },
+      "emitRadiusRelErrMax": 0.0000067766546348397775,
+      "refMaxHamiltonian": 0.000040930695831775665
+    },
+    {
+      "config": "a-0.6-i45",
+      "pixels": 16384,
+      "refMs": 2929,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 10745,
+      "redshiftRelErr": {
+        "median": 7.97429074847307e-8,
+        "p99": 4.387280445743484e-7,
+        "max": 0.000030614301860738725
+      },
+      "emitRadiusRelErrMax": 0.000082809035497683,
+      "refMaxHamiltonian": 1.9279832486063242e-7
+    }
+  ]
+}

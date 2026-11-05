@@ -1,0 +1,736 @@
+{
+  "schema": "mainline-a-performance-evidence-v625",
+  "version": "v625-mainline-a-multi-device-lifecycle-evidence",
+  "generatedAt": "2026-09-22T05:20:48.581Z",
+  "build": {
+    "buildId": "mainline-a-8848c553e957b8fb",
+    "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+    "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+    "artifactBuildIdSource": "passed-build-report",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "route": "/",
+    "source": "runtime-marker"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimePromotion": "closed"
+  },
+  "requestedDevices": [
+    "desktop",
+    "mobile"
+  ],
+  "runs": [
+    {
+      "runId": "r65-desktop-014-3b347c16",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1,
+        "orientation": "landscape",
+        "userAgentClass": "desktop-browser"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:18:36.346Z",
+      "endedAt": "2026-09-22T05:18:40.349Z",
+      "durationMs": 4003.2400000002235,
+      "frame": {
+        "sampleCount": 721,
+        "durationMs": 4003.2400000002235,
+        "p50Ms": 5.559999999997672,
+        "p95Ms": 5.690000000002328,
+        "maxMs": 5.835000000020955,
+        "medianFps": 179.85611510798898,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 159481008,
+        "jsHeapTotalBytes": 203907500,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 0,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    },
+    {
+      "runId": "r65-desktop-015-74e7d74a",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1,
+        "orientation": "landscape",
+        "userAgentClass": "desktop-browser"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:18:41.827Z",
+      "endedAt": "2026-09-22T05:18:45.828Z",
+      "durationMs": 4001.25,
+      "frame": {
+        "sampleCount": 720,
+        "durationMs": 4001.25,
+        "p50Ms": 5.554999999993015,
+        "p95Ms": 5.690000000002328,
+        "maxMs": 5.73499999998603,
+        "medianFps": 180.01800180040638,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 134730117,
+        "jsHeapTotalBytes": 204692657,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 1,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    },
+    {
+      "runId": "r65-desktop-016-e1e75b0a",
+      "device": "desktop",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "devicePixelRatio": 1,
+        "orientation": "landscape",
+        "userAgentClass": "desktop-browser"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:18:47.345Z",
+      "endedAt": "2026-09-22T05:18:51.349Z",
+      "durationMs": 4004.4099999982864,
+      "frame": {
+        "sampleCount": 720,
+        "durationMs": 4004.4099999982864,
+        "p50Ms": 5.554999999993015,
+        "p95Ms": 5.665250000034575,
+        "maxMs": 11.18999999994412,
+        "medianFps": 180.01800180040638,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 144058473,
+        "jsHeapTotalBytes": 204955149,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "f6448291",
+          "revision": 46,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 2,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    },
+    {
+      "runId": "r65-mobile-011-3f69c735",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1,
+        "orientation": "portrait",
+        "userAgentClass": "mobile-viewport"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:17:35.306Z",
+      "endedAt": "2026-09-22T05:17:39.310Z",
+      "durationMs": 4004.1150000002235,
+      "frame": {
+        "sampleCount": 721,
+        "durationMs": 4004.1150000002235,
+        "p50Ms": 5.554999999993015,
+        "p95Ms": 5.6749999999883585,
+        "maxMs": 5.769999999989523,
+        "medianFps": 180.01800180040638,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 133108735,
+        "jsHeapTotalBytes": 203978363,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 0,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    },
+    {
+      "runId": "r65-mobile-012-084950cd",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1,
+        "orientation": "portrait",
+        "userAgentClass": "mobile-viewport"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:17:40.789Z",
+      "endedAt": "2026-09-22T05:17:44.790Z",
+      "durationMs": 4000.570000000298,
+      "frame": {
+        "sampleCount": 708,
+        "durationMs": 4000.570000000298,
+        "p50Ms": 5.555000000022119,
+        "p95Ms": 5.679999999993015,
+        "maxMs": 72.35500000001048,
+        "medianFps": 180.01800179946324,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 0.998587570621469
+      },
+      "memory": {
+        "jsHeapUsedBytes": 130110197,
+        "jsHeapTotalBytes": 203190525,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 1,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    },
+    {
+      "runId": "r65-mobile-013-f323f5ba",
+      "device": "mobile",
+      "scenario": "repeat-cycle",
+      "viewport": {
+        "width": 390,
+        "height": 844,
+        "devicePixelRatio": 1,
+        "orientation": "portrait",
+        "userAgentClass": "mobile-viewport"
+      },
+      "build": {
+        "buildId": "mainline-a-8848c553e957b8fb",
+        "runtimeBuildId": "mainline-a-8848c553e957b8fb",
+        "artifactBuildId": "DKt91tHlwaSONTonnK5K-",
+        "branch": "codex/solar-sim-mainline-a",
+        "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "route": "/",
+        "source": "runtime-marker"
+      },
+      "visibility": {
+        "documentVisibility": "visible",
+        "rootVisible": true,
+        "canvasCount": 1,
+        "panelVisible": true
+      },
+      "startedAt": "2026-09-22T05:17:46.278Z",
+      "endedAt": "2026-09-22T05:17:50.282Z",
+      "durationMs": 4004.765000000596,
+      "frame": {
+        "sampleCount": 721,
+        "durationMs": 4004.765000000596,
+        "p50Ms": 5.554999999993015,
+        "p95Ms": 5.679999999993015,
+        "maxMs": 5.809999999997672,
+        "medianFps": 180.01800180040638,
+        "longTaskCount": 0,
+        "longTaskMaxMs": null,
+        "under50MsRatio": 1
+      },
+      "memory": {
+        "jsHeapUsedBytes": 141425789,
+        "jsHeapTotalBytes": 203714993,
+        "jsHeapLimitBytes": 4395630592,
+        "deviceMemoryGb": null,
+        "source": "performance-memory"
+      },
+      "resources": {
+        "before": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "before",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "after": {
+          "identityDigest": "38a923ae",
+          "revision": 38,
+          "source": "raw-dom-dataset",
+          "side": "after",
+          "fieldsAvailable": [
+            "identityDigest",
+            "revision"
+          ],
+          "registryContents": "unavailable"
+        },
+        "diff": {
+          "status": "baseline",
+          "evidenceAvailable": false,
+          "observedDigestEqual": true,
+          "unavailableFields": [
+            "total",
+            "workers",
+            "gpuRenderTargets",
+            "gpuBuffers",
+            "gpuComputePipelines",
+            "gpuQueries",
+            "textures",
+            "models",
+            "subscriptions",
+            "objectUrls",
+            "typedArrayCaches",
+            "cameraLocks",
+            "estimatedBytes",
+            "estimatedGpuBytes",
+            "identityChanged",
+            "ownerChanged"
+          ],
+          "reason": "raw DOM contains resource identity digests only; registry snapshots were not captured"
+        },
+        "status": "baseline",
+        "releasedOwners": [],
+        "unreleasedOwners": [],
+        "repeatedRunIndex": 2,
+        "evidenceLimit": "digest-equality-only"
+      },
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "status": "complete",
+      "evidenceClass": "browser-runtime-observation",
+      "notes": [
+        "rows-copied-from-unmodified-element-dataset-map",
+        "observed-scenario:repeat-cycle",
+        "resource-digest-only-no-registry-snapshot",
+        "DOM digest equality is not proof of resource release or memory stability"
+      ]
+    }
+  ],
+  "repeatRuns": 6,
+  "longRunRequestedMs": 1800000,
+  "longRunObservedMs": 0,
+  "status": "blocked",
+  "evidenceClass": "browser-runtime-observation",
+  "blockers": [
+    "physical-device-not-run",
+    "long-run-observation-required"
+  ],
+  "notes": [
+    "Generated only from raw DOM dataset maps; no prior receipt was read as evidence.",
+    "Desktop and mobile rows are simulated browser observations and do not establish physical-device, production, or real-user performance.",
+    "Resource fields are digest-only observations; raw DOM does not contain registry contents or a recomputable resource diff.",
+    "DOM digest equality alone cannot prove texture, GPU, worker, owner, or memory release.",
+    "No screenshot, fixture, timeout artifact, or generated manifest is treated as performance proof.",
+    "scientificPayloadWriteback=false; candidate-only / hold / not-admitted."
+  ],
+  "observationSource": {
+    "input": "docs/release/v607/mainline-a-r65-browser-dom-20260922-050-raw.json",
+    "inputSha256": "8bb39df507c7867e8409436022bb0be618fca39383e02b5a609a847e7c7260d4",
+    "buildReport": "docs/release/v607/mainline-a-r66-build-20260922-050.json",
+    "buildReportSha256": "f78c2bf716817065c17e607bb5e61fb24e0da3f3ee8a94cbc434ed2acd278427",
+    "schema": "mainline-a-browser-performance-raw-dom-v625",
+    "capturedAt": "2026-09-22T05:19:51.291Z",
+    "surface": "Codex in-app browser",
+    "url": "http://127.0.0.1:3057/",
+    "physicalMobileDevice": "not-run",
+    "consoleObservation": {
+      "consoleErrors": 0,
+      "pageErrors": 0,
+      "logs": []
+    },
+    "realUserValidation": false,
+    "productionPerformanceClaim": false,
+    "resourceSnapshot": "not-provided-by-raw-dom",
+    "ignoredBase": null
+  },
+  "staticEvidence": {
+    "schemaValid": true,
+    "digest": "f90b5abe",
+    "verifiedAt": "2026-09-22T05:20:48.589Z"
+  }
+}

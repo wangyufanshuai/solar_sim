@@ -1,0 +1,128 @@
+<title>Kerr Observatory v4</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500&display=swap">
+<style>
+/* Layout: one-screen instrument. Live trace fills the stage; a narrow instrument
+   column on the right holds controls, analytic readouts and the validation record. */
+:root {
+  --void: #050506;
+  --panel: #0d0c0b;
+  --rule: #2a2622;
+  --ink: #ece4d8;
+  --ink-dim: #9a9086;
+  --copper: #e09a5b;
+  --cyan: #8fc9d6;
+  --good: #8fcf9a;
+  --f-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans Condensed", "Arial Narrow", system-ui, sans-serif;
+  --f-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: dark;
+}
+html, body { height: 100%; }
+body { background: var(--void); color: var(--ink); font-family: var(--f-body); font-size: 14px; }
+.app { height: 100%; display: grid; grid-template-columns: minmax(0, 1fr) 320px; }
+.stage { position: relative; min-width: 0; min-height: 0; background: var(--void); }
+#view { width: 100%; height: 100%; display: block; cursor: grab; touch-action: none; image-rendering: auto; }
+#view:active { cursor: grabbing; }
+.stage-label { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); top: 16px; pointer-events: none; display: grid; gap: 4px; }
+.stage-label h1 { margin: 0; font-family: var(--f-display); font-weight: 500; font-size: 30px; letter-spacing: 0.01em; color: var(--ink); text-wrap: balance; }
+.stage-label p { margin: 0; font-family: var(--f-data); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-dim); }
+.hint { position: absolute; left: max(16px, env(safe-area-inset-left, 0px)); bottom: 14px; font-family: var(--f-data); font-size: 11px; color: var(--ink-dim); pointer-events: none; }
+.frame-time { position: absolute; right: 16px; bottom: 14px; font-family: var(--f-data); font-size: 11px; color: var(--ink-dim); font-variant-numeric: tabular-nums; }
+aside { background: var(--panel); border-left: 1px solid var(--rule); overflow-y: auto; padding-block: 18px 24px; padding-left: 18px; padding-right: max(18px, env(safe-area-inset-right, 0px)); display: flex; flex-direction: column; gap: 22px; }
+section { display: grid; gap: 10px; }
+.eyebrow { margin: 0; font-family: var(--f-data); font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-dim); }
+.modes { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--rule); }
+.modes button { appearance: none; background: transparent; color: var(--ink-dim); border: 0; padding: 9px 0; font: 500 12px var(--f-data); letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer; }
+.modes button + button { border-left: 1px solid var(--rule); }
+.modes button[aria-pressed="true"] { color: var(--void); background: var(--copper); }
+.modes button:focus-visible, input:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+#mode-note { margin: 0; color: var(--ink-dim); font-size: 13px; line-height: 1.45; }
+.ctl { display: grid; grid-template-columns: 1fr auto; gap: 4px 8px; align-items: baseline; }
+.ctl label { font-size: 13px; color: var(--ink); }
+.ctl output { font-family: var(--f-data); font-size: 12px; color: var(--copper); font-variant-numeric: tabular-nums; }
+.ctl input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: var(--copper); margin: 0; }
+.check { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+.check input { accent-color: var(--copper); }
+dl { margin: 0; display: grid; grid-template-columns: 1fr auto; gap: 6px 10px; }
+dt { color: var(--ink-dim); font-size: 13px; }
+dd { margin: 0; font-family: var(--f-data); font-size: 12px; color: var(--cyan); font-variant-numeric: tabular-nums; text-align: right; }
+table { width: 100%; border-collapse: collapse; font-family: var(--f-data); font-size: 11px; font-variant-numeric: tabular-nums; }
+th { text-align: left; font-weight: 400; color: var(--ink-dim); padding: 0 0 6px; border-bottom: 1px solid var(--rule); }
+td { padding: 6px 0; border-bottom: 1px solid var(--rule); color: var(--ink); }
+td.ok { color: var(--good); }
+th:not(:first-child), td:not(:first-child) { text-align: right; }
+.fine { margin: 0; color: var(--ink-dim); font-size: 12.5px; line-height: 1.5; }
+#fallback[hidden], [hidden] { display: none !important; }
+#fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--ink-dim); }
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 58vh auto; height: auto; }
+  html, body { height: auto; }
+  aside { border-left: 0; border-top: 1px solid var(--rule); padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .stage-label h1 { font-size: 24px; }
+  .hint { display: none; }
+}
+</style>
+
+<div class="app">
+  <div class="stage">
+    <canvas id="view" aria-label="Live Kerr black hole ray-traced view. Drag to orbit, scroll to change distance."></canvas>
+    <div class="stage-label">
+      <h1>Kerr Observatory</h1>
+      <p>per-pixel null geodesics · Kerr–Schild · thin disk</p>
+    </div>
+    <div class="hint">drag to orbit · scroll to move in or out</div>
+    <div class="frame-time" id="ro-frame">—</div>
+    <div id="fallback" hidden>This view needs WebGL2. Open the page in a current desktop browser.</div>
+  </div>
+
+  <aside>
+    <section>
+      <p class="eyebrow">Display</p>
+      <div class="modes" role="group" aria-label="Display mode">
+        <button type="button" data-mode="cinematic" aria-pressed="true">Cinematic</button>
+        <button type="button" data-mode="science" aria-pressed="false">Science</button>
+      </div>
+      <p id="mode-note">Same geometry, redshift and colour. Adds disk turbulence, luminance compression (γ = 0.5) and bloom.</p>
+    </section>
+
+    <section>
+      <p class="eyebrow">Black hole and observer</p>
+      <div class="ctl"><label for="in-spin">Spin a/M</label><output id="val-spin">0.900</output><input id="in-spin" type="range" min="-0.99" max="0.99" step="0.01"></div>
+      <div class="ctl"><label for="in-incl">Inclination from spin axis</label><output id="val-incl">83°</output><input id="in-incl" type="range" min="3" max="177" step="1"></div>
+      <div class="ctl"><label for="in-dist">Observer distance</label><output id="val-dist">110 M</output><input id="in-dist" type="range" min="18" max="400" step="1"></div>
+      <div class="ctl"><label for="in-temp">Disk peak temperature</label><output id="val-temp">7.0 kK</output><input id="in-temp" type="range" min="3000" max="30000" step="100"></div>
+      <label class="check"><input id="in-animate" type="checkbox"> Keplerian disk rotation (re-traces every frame)</label>
+    </section>
+
+    <section>
+      <p class="eyebrow">Analytic radii (units of M)</p>
+      <dl>
+        <dt>Outer horizon r₊</dt><dd id="ro-rh">—</dd>
+        <dt>Disk inner edge (ISCO)</dt><dd id="ro-isco">—</dd>
+        <dt>Photon orbits co / counter</dt><dd id="ro-ph">—</dd>
+      </dl>
+    </section>
+
+    <section>
+      <p class="eyebrow">GPU vs float64 reference · 128×128</p>
+      <table>
+        <thead><tr><th>case</th><th>class match</th><th>max |Δg|/g</th></tr></thead>
+        <tbody>
+          <tr><td>a 0.9 · i 75°</td><td class="ok">100%</td><td>1.0e-4</td></tr>
+          <tr><td>a 0 · i 60°</td><td class="ok">100%</td><td>2.9e-5</td></tr>
+          <tr><td>a 0.99 · i 85°</td><td class="ok">99.98%</td><td>3.4e-5</td></tr>
+          <tr><td>a −0.6 · i 45°</td><td class="ok">100%</td><td>3.1e-5</td></tr>
+        </tbody>
+      </table>
+      <p class="fine">Reference: Dormand–Prince 5(4), rtol 1e-10. It reproduces the Schwarzschild shadow to 1e-6, both Kerr shadow edges at a = 0.9 to 0.01 M, and face-on redshift to 1e-8.</p>
+    </section>
+
+    <section>
+      <p class="eyebrow">Model scope</p>
+      <p class="fine">Vacuum Kerr, test photons, opaque Novikov–Thorne disk from the ISCO outward, static observer. Colour is the blackbody at the observed temperature g·T. No plasma, no GRMHD. Stars are procedural, not a catalogue.</p>
+    </section>
+  </aside>
+</div>
+<script>/*__BUNDLE__*/</script>

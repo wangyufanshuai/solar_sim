@@ -1,0 +1,155 @@
+{
+  "method": "Trim lines, exclude blank and comment-only lines before SequenceMatcher; replacement paired lines count once as modified, unpaired lines as added or removed. No generated projection, images, receipts, docs, lockfiles or unbaselined changes counted. Additionally exclude editorial copy, count-only tests and render-receipt input list. For the unbaselined intake file count only the four functions independently confirmed new in R48; exclude all edits to existing functions and the whole intake test file.",
+  "files": [
+    {
+      "path": "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "baseline": "tmp/r48-before/app/components/AtlasRuntimeWorkbenchSurface.tsx",
+      "added": 0,
+      "modified": 1,
+      "removed": 0,
+      "sha256": "5924fadf89c3393b682e0268e45aa15a4c4e844bfc8dbbadf32fd2611f7e30f4",
+      "baselineSha256": "bbfee7453a74d39020391c976eea330cec1b41ccbd3a45d84c4d81e71cc6aa90"
+    },
+    {
+      "path": "app/components/MainlineAStellarAtlasV608.tsx",
+      "baseline": "new-in-r48",
+      "added": 128,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "9c6b7cf5fba27c1a6ca25ef2658ee9f18ef385fdb1d8f394c29cf54fa4704b02",
+      "baselineSha256": null
+    },
+    {
+      "path": "app/components/PostV593StellarRosterPanel.tsx",
+      "baseline": "tmp/r48-before/app/components/PostV593StellarRosterPanel.tsx",
+      "added": 4,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "845e9382f25106294f4df600ac3f4cd10347dc389431f55379e0fef20200ac61",
+      "baselineSha256": "8e0a6c156da94a482e5eebeb07b56ee8472fbe37fb407bf4ac4264920ebd7104"
+    },
+    {
+      "path": "app/data/mainlineAMetadataV607.ts",
+      "baseline": "tmp/r48-before/app/data/mainlineAMetadataV607.ts",
+      "added": 3,
+      "modified": 3,
+      "removed": 0,
+      "sha256": "a2de61c9e822e7e9bd06f1ac04233cd0044c80ac0a285ca8d3c440dac9307a70",
+      "baselineSha256": "f0b66429c3e87a223a0b620c37544237de6a04a38700f431414bd3d8d47407ed"
+    },
+    {
+      "path": "app/data/mainlineAStellarEvidenceV607.ts",
+      "baseline": "tmp/r48-before/app/data/mainlineAStellarEvidenceV607.ts",
+      "added": 8,
+      "modified": 2,
+      "removed": 0,
+      "sha256": "5fdf7948677effe0b12aa9ee46126ee4553e7c2fc389c26da538fcf1055af792",
+      "baselineSha256": "e6e147d3fa1f730b79b9950f89a74ddcff91f7c90aa3ec4645892b76818f42fe"
+    },
+    {
+      "path": "app/lib/mainlineAStellarAtlasV608.test.tsx",
+      "baseline": "new-in-r48",
+      "added": 96,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "5279196250af816f49a25275de077faf6f186dd9aefddb49c2d9a2dc78adf608",
+      "baselineSha256": null
+    },
+    {
+      "path": "app/lib/mainlineAStellarAtlasV608.ts",
+      "baseline": "new-in-r48",
+      "added": 67,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "a849bb7bd3b3847afebae719d5b4931ca50ba922c580b736fe6134ea7cce6012",
+      "baselineSha256": null
+    },
+    {
+      "path": "scripts/project-mainline-a-beta-stellar.mjs",
+      "baseline": "new-in-r48",
+      "added": 112,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "31463c8bb4c08ef320a668442ae7722229b37f8584b54d5a6daded35653a88cc",
+      "baselineSha256": null
+    },
+    {
+      "path": "scripts/project-mainline-a-beta-stellar.test.mjs",
+      "baseline": "new-in-r48",
+      "added": 74,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "9dd038743417b040f096b5da979cb85503f95382b668059dbd4e48d82bf94e82",
+      "baselineSha256": null
+    },
+    {
+      "path": "app/data/mainlineABetaAssetIntakeV607.ts",
+      "baseline": "new-function-intervals-only-confirmed-by-implementing-agent-r48_intake_validation",
+      "intervals": [
+        [
+          208,
+          220
+        ],
+        [
+          222,
+          224
+        ],
+        [
+          226,
+          232
+        ],
+        [
+          234,
+          242
+        ]
+      ],
+      "added": 30,
+      "modified": 0,
+      "removed": 0,
+      "sha256": "bd8d96e56a106f9642810a2aae1d119f887b8847cdd78b784e22d525df75980a",
+      "functions": [
+        "validateRecordShape",
+        "uniqueReasons",
+        "evidenceReasons",
+        "includesNormalizedBlocker"
+      ]
+    }
+  ],
+  "totals": {
+    "added": 522,
+    "modified": 6,
+    "removed": 0
+  },
+  "effectiveChangedLines": 528,
+  "excludedFiles": [
+    {
+      "path": "app/data/mainlineABetaStellarNarrativesV607.ts",
+      "reason": "original editorial copy excluded conservatively"
+    },
+    {
+      "path": "app/components/MainlineABetaIntakePanelV607.test.tsx",
+      "reason": "count-only expectation update"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroEvidenceIntakeV607.test.ts",
+      "reason": "count-only expectation update"
+    },
+    {
+      "path": "app/data/mainlineABetaHeroRosterV607.test.ts",
+      "reason": "count-only expectation update"
+    },
+    {
+      "path": "app/data/mainlineAMetadataV607.test.ts",
+      "reason": "roster expectation update"
+    },
+    {
+      "path": "app/data/mainlineAStellarEvidenceV607.test.ts",
+      "reason": "roster expectation update"
+    },
+    {
+      "path": "scripts/render-mainline-a4-portraits.ts",
+      "reason": "render receipt input-list update excluded conservatively"
+    }
+  ],
+  "minimumMet": true
+}

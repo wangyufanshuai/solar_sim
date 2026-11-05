@@ -1,0 +1,141 @@
+{
+  "version": "v592-browser-soak-resource-receipt-v1",
+  "generatedAt": "2026-08-21T14:29:25.864Z",
+  "status": "completed-30-minute-visible-soak-renderer-stable-js-heap-telemetry-qualified",
+  "route": "/local-shadow-v592",
+  "browser": "Codex in-app browser",
+  "capturedCandidateManifestSha256": "8e0b9c8db57ed8bcdfce10d7246083cc640a0639c1418e034647b2e5b1b4a6ba",
+  "capturedBuildIds": {
+    "standalone": "_AuLrYsnkF6LKRkbE8LfH",
+    "lite": "w_11BYV1wBzs3Cg6ulhyi"
+  },
+  "source": {
+    "samples": {
+      "path": "docs/release/v592/browser-soak-raw-samples-heap-v592.csv",
+      "bytes": 9023,
+      "sha256": "ddc5c3c460fb784b428e53cbe000c0d2421947749319d8df7f5eeb129d24faaf"
+    },
+    "releaseRestore": {
+      "path": "docs/release/v592/browser-release-restore-raw-v592.json",
+      "bytes": 7733,
+      "sha256": "fc6fb30348fa309a45566a2b4121da3f27751687f5cab7bd7cf43d9db8dd8259"
+    },
+    "finalSoakScreenshot": {
+      "path": "docs/release/v592/screenshots/live-matrix/soak-final-30m.png",
+      "bytes": 123310,
+      "sha256": "52e812492442e3234f2ae6c4886caa359b94e6af16cd4cef6cb528eba9700e45"
+    },
+    "releaseScreenshot": {
+      "path": "docs/release/v592/screenshots/live-matrix/resource-release-zero-final.png",
+      "bytes": 57140,
+      "sha256": "cf26da2e72bc9f1469c82e5bc69abea1d0234a2f8ee26df5112c924ea5f37e6a"
+    },
+    "restoreScreenshot": {
+      "path": "docs/release/v592/screenshots/live-matrix/resource-restore-final.png",
+      "bytes": 123310,
+      "sha256": "52e812492442e3234f2ae6c4886caa359b94e6af16cd4cef6cb528eba9700e45"
+    }
+  },
+  "soak": {
+    "durationMs": 1899829,
+    "sampleCount": 59,
+    "visibleSampleCount": 59,
+    "fpsMedian": {
+      "minimum": 239.52,
+      "median": 240.1,
+      "maximum": 240.38
+    },
+    "rendererResources": {
+      "gpuBytes": 178975590,
+      "resourceBytes": 181701510,
+      "textures": 7,
+      "programs": 8,
+      "drawCalls": 10,
+      "sustainedGrowthObserved": false
+    },
+    "memoryTelemetry": {
+      "state": "available-performance-memory",
+      "availableSampleCount": 59,
+      "baselineUsedBytes": 274141464,
+      "finalUsedBytes": 285870685,
+      "minimumUsedBytes": 269983524,
+      "maximumUsedBytes": 299338809,
+      "finalGrowthBytes": 11729221,
+      "peakGrowthBytes": 25197345,
+      "finalGrowthMaximumBytes": 67108864,
+      "peakGrowthMaximumBytes": 134217728,
+      "jsHeapGrowthGatePassed": true,
+      "rendererResourceCountersUsedAsSupplement": false
+    },
+    "canvasCount": 1,
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "scientificPayloadStable": true,
+    "scientificPayloadWriteback": false,
+    "consolePageWebglErrorWarningCount": 0
+  },
+  "resourceLifecycle": {
+    "strictCycleCount": 4,
+    "releasedState": {
+      "candidateBytes": 0,
+      "candidateResources": 0,
+      "canvasCount": 1,
+      "focusTarget": "mars",
+      "mode": "cinematic",
+      "payloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "payloadStable": true,
+      "programDelta": 0,
+      "registryStatus": "baseline",
+      "releaseStatus": "released-zero",
+      "rendererGeometryDelta": 0,
+      "rendererTextureDelta": 0,
+      "sceneMounted": false,
+      "sceneNodes": 0,
+      "scientificWriteback": false,
+      "selectedBody": "mars"
+    },
+    "restoredState": {
+      "candidateBytes": 178957158,
+      "candidateResources": 10,
+      "canvasCount": 1,
+      "focusTarget": "mars",
+      "mode": "cinematic",
+      "payloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+      "payloadStable": true,
+      "programDelta": 8,
+      "registryStatus": "drift",
+      "releaseStatus": "armed",
+      "rendererGeometryDelta": 11,
+      "rendererTextureDelta": 7,
+      "sceneMounted": true,
+      "sceneNodes": 40,
+      "scientificWriteback": false,
+      "selectedBody": "mars"
+    },
+    "rendererMemoryPolicy": "texture-zero;geometry-shared-global-observational-only",
+    "releaseZeroPassed": true,
+    "restoreBaselinePassed": true
+  },
+  "admission": {
+    "thirtyMinuteDurationPassed": true,
+    "visibilityPassed": true,
+    "performancePassed": true,
+    "rendererResourceNoGrowthPassed": true,
+    "releaseRestorePassed": true,
+    "jsHeapTelemetryAvailable": true,
+    "jsHeapGrowthGatePassed": true,
+    "fullMemoryGatePassed": true,
+    "singleCanvasPassed": true,
+    "payloadIsolationPassed": true,
+    "errorGatePassed": true
+  },
+  "policy": {
+    "noSyntheticTelemetry": true,
+    "noHeapClaimWhenUnavailable": true,
+    "heapGrowthThresholdsPreRegistered": true,
+    "noAlternateBrowser": true,
+    "noProductionDeployment": true,
+    "formalProductPointer": "v263",
+    "scientificPayloadWriteback": false
+  },
+  "receiptSha256": "2cf65abc0e101a6f1cc555b42c6f6698c5b2a0909d5989f1354364fde13295cc"
+}

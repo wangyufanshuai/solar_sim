@@ -1,0 +1,36 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:03:21.884Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "thors-helmet-nebula",
+  "query": "NGC 2359 Thor Helmet Nebula",
+  "requiredTerms": [
+    "2359",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC%202359%20Thor%20Helmet%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC%202359%20Thor%20Helmet%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 182,
+    "responseSha256": "56c607b73ac5400eea6dca9264930f93310a9cbed454b788f50600b6a7d94bba"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "cd9a33cae55073db458bb4298cb80563a02380512227e98484880a04b61dc1ed"
+}

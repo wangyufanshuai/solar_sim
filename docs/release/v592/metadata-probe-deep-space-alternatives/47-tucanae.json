@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:35.948Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "47-tucanae",
+  "category": "cluster",
+  "query": "47 Tucanae Chandra",
+  "requiredTermGroups": [
+    [
+      "47 tuc",
+      "tucanae"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=47+Tucanae+Chandra&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=47+Tucanae+Chandra&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 166,
+    "responseSha256": "0c09aa2d35f1dafef2c5033a1ad672c41cf9a96b8f18f8dd54edd34265beb2f3"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "86b9017c578195e5b1e29de4438d117c2ea6904ada67c794048547383b5774a2"
+}

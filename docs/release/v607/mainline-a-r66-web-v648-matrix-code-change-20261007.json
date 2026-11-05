@@ -1,0 +1,46 @@
+{
+  "schema": "mainline-a-r66-web-v648-matrix-code-change",
+  "round": "R66-web-only-continuation-of-v648",
+  "generatedAt": "2026-10-07T15:06:29.000Z",
+  "status": "completed-local-browser-evidence-tooling",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9",
+  "buildId": "8XBcnLcHwAPGkydjoHvOV",
+  "effectiveChangeDefinition": "new nonempty noncomment production/tool code lines; test, receipt, PNG, manifest, generated and documentation lines excluded",
+  "newEffectiveToolLines": 471,
+  "modifiedEffectiveToolLines": 0,
+  "newTestLinesExcluded": 96,
+  "cumulativeV648EffectiveLowerBound": 2557,
+  "cumulativeR66EffectiveLowerBound": 5642,
+  "minimumPerRound": 500,
+  "minimumMetByCumulativeV648Batch": true,
+  "files": [
+    {
+      "path": "scripts/capture-mainline-a-web-nebula-matrix-v648.mjs",
+      "role": "real Chrome current-build 12-by-2 capture and fault-recovery tool",
+      "newEffectiveLines": 252,
+      "sha256": "b34383c29142f855bffe2c7c5a27ed9a0a65a338daf43d199e6674ea0050305a"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-nebula-matrix-v648.mjs",
+      "role": "offline screenshot, source, rights, build and replay verifier",
+      "newEffectiveLines": 219,
+      "sha256": "273cebe080067a2410120fcf46f56387fd1bca2aa77117fb9436f8de017b6912"
+    },
+    {
+      "path": "scripts/verify-mainline-a-web-nebula-matrix-v648.test.mjs",
+      "role": "positive and forged-rights, premature-paint, screenshot, source, fault-claim and replay negative tests",
+      "testLinesExcluded": 96,
+      "sha256": "bb2ae7fe35c1734d0b5411eadda49d9a7a03b797975f14517cd79f99b4493125"
+    }
+  ],
+  "scope": {
+    "applicationSourceChanged": false,
+    "productionBuildChanged": false,
+    "physicsKernelChangedByThisBatch": false,
+    "parentGitOperated": false,
+    "scientificPayloadWriteback": false,
+    "standaloneRoundClaim": false
+  }
+}

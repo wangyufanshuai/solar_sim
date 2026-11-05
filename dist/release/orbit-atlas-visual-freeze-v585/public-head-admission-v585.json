@@ -1,0 +1,349 @@
+{
+  "version": "v585-public-head-admission-receipt-v1",
+  "generatedAt": "2026-08-04T16:06:46.2620106Z",
+  "deployment": {
+    "id": "dpl_9ixwYBCfWxeYg2ytgsbwxcG5sUt9",
+    "projectId": "prj_fqecbskqXmCUg4HDzU6CcEAkUuz3",
+    "url": "https://next-7nlewylfj-wyufan43-3383s-projects.vercel.app",
+    "domain": "next-7nlewylfj-wyufan43-3383s-projects.vercel.app",
+    "environment": "preview"
+  },
+  "dispatch": {
+    "surface": "Codex In-app Browser CDP Runtime.evaluate",
+    "runnerIdentity": "codex-in-app-browser-cdp-fetch",
+    "requestMethod": "HEAD",
+    "automaticRetry": false,
+    "automaticTargetReplacement": false,
+    "payloadDownloaded": false,
+    "oneRequestPerRequiredPath": true,
+    "controlResult": "cdp-command-timeout-after-all-requests-dispatched",
+    "responseRecovery": "vercel-platform-request-logs"
+  },
+  "platformLogObservation": {
+    "source": "Vercel request logs",
+    "queryWindow": {
+      "since": "2026-08-04T16:02:00Z",
+      "until": "2026-08-04T16:03:00Z"
+    },
+    "firstRequestAt": "2026-08-04T16:02:31.905Z",
+    "lastRequestAt": "2026-08-04T16:02:51.724Z",
+    "sourceType": "serverless-middleware",
+    "requestCount": 29
+  },
+  "requests": [
+    {
+      "logicalId": "root",
+      "lane": "deployment",
+      "path": "/",
+      "requestLogId": "w68s4-1785859351905-832f85bd431f",
+      "timestamp": 1785859351905,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "health",
+      "lane": "deployment",
+      "path": "/api/health",
+      "requestLogId": "4zwj9-1785859352286-bc9b32abc425",
+      "timestamp": 1785859352286,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "orbit-atlas-v9-base-8k.jpg",
+      "lane": "stable-v263-legacy-v9",
+      "path": "/atlas-lite/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "requestLogId": "6dv9n-1785859353623-6f06ae311aa9",
+      "timestamp": 1785859353623,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "orbit-atlas-v9-base-4k.jpg",
+      "lane": "stable-v263-legacy-v9",
+      "path": "/atlas-lite/textures/sky/orbit-atlas-v9-base-4k.jpg",
+      "requestLogId": "5q67d-1785859354030-c2a9560786ce",
+      "timestamp": 1785859354030,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "orbit-atlas-v9-stars-4k.jpg",
+      "lane": "stable-v263-legacy-v9",
+      "path": "/atlas-lite/textures/sky/orbit-atlas-v9-stars-4k.jpg",
+      "requestLogId": "5f2bv-1785859354423-bff553f94f53",
+      "timestamp": 1785859354423,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "orbit-atlas-v9-stars-2k.jpg",
+      "lane": "stable-v263-legacy-v9",
+      "path": "/atlas-lite/textures/sky/orbit-atlas-v9-stars-2k.jpg",
+      "requestLogId": "7q2s6-1785859355748-d5e364c01056",
+      "timestamp": 1785859355748,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "orbit-atlas-v9-dust-2k.jpg",
+      "lane": "stable-v263-legacy-v9",
+      "path": "/atlas-lite/textures/sky/orbit-atlas-v9-dust-2k.jpg",
+      "requestLogId": "pcwl4-1785859356117-3053adbae79c",
+      "timestamp": 1785859356117,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "HIT"
+    },
+    {
+      "logicalId": "sky-base-desktop:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/sky/sky-base-desktop-8k.jpg",
+      "requestLogId": "7q2s6-1785859356508-2f4ed659c658",
+      "timestamp": 1785859356508,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-base-mobile:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/sky/sky-base-mobile-4k.jpg",
+      "requestLogId": "tlwmt-1785859357257-089432326f30",
+      "timestamp": 1785859357257,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-stars-desktop:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/sky/sky-stars-desktop-4k.jpg",
+      "requestLogId": "9cgbd-1785859357952-7dc968efa087",
+      "timestamp": 1785859357952,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-stars-mobile:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/sky/sky-stars-mobile-2k.jpg",
+      "requestLogId": "9cgbd-1785859358585-d918ef4100bf",
+      "timestamp": 1785859358585,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-dust-shared:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/sky/sky-dust-shared-2k.jpg",
+      "requestLogId": "8b9lv-1785859359115-63dc4172999d",
+      "timestamp": 1785859359115,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "earth-albedo:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/earth-albedo.ktx2",
+      "requestLogId": "8b9lv-1785859359776-01c95f073f6c",
+      "timestamp": 1785859359776,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "earth-cloud-alpha:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/earth-cloud-alpha.ktx2",
+      "requestLogId": "nfmdx-1785859360515-4d6af25027b4",
+      "timestamp": 1785859360515,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "jupiter-albedo:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/jupiter-albedo.ktx2",
+      "requestLogId": "w84jp-1785859361987-30b9f2e38211",
+      "timestamp": 1785859361987,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "jupiter-band-mask:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/jupiter-band-mask.ktx2",
+      "requestLogId": "7trrn-1785859362751-2ed807247ba3",
+      "timestamp": 1785859362751,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "saturn-albedo:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/saturn-albedo.ktx2",
+      "requestLogId": "9xqnw-1785859363353-b8e6ec18a218",
+      "timestamp": 1785859363353,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "saturn-ring-alpha:lite",
+      "lane": "candidate-v562",
+      "path": "/atlas-lite/textures/candidate-v562/ktx2/saturn-ring-alpha.ktx2",
+      "requestLogId": "b5p9g-1785859363903-47fc92f8a17f",
+      "timestamp": 1785859363903,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-base-desktop:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/sky/sky-base-desktop-8k.jpg",
+      "requestLogId": "gwvhg-1785859364491-798f3206864b",
+      "timestamp": 1785859364491,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-base-mobile:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/sky/sky-base-mobile-4k.jpg",
+      "requestLogId": "cs9wj-1785859365351-fe88c82827ea",
+      "timestamp": 1785859365351,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-stars-desktop:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/sky/sky-stars-desktop-4k.jpg",
+      "requestLogId": "4gh9q-1785859366366-a59faec8d8ad",
+      "timestamp": 1785859366366,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-stars-mobile:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/sky/sky-stars-mobile-2k.jpg",
+      "requestLogId": "8vzjd-1785859367049-72d20b7db10c",
+      "timestamp": 1785859367049,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "sky-dust-shared:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/sky/sky-dust-shared-2k.jpg",
+      "requestLogId": "lfzk8-1785859367679-8c18349d0767",
+      "timestamp": 1785859367679,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "earth-albedo:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/earth-albedo.ktx2",
+      "requestLogId": "9xqnw-1785859368281-5fd5eee8a1ab",
+      "timestamp": 1785859368281,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "earth-cloud-alpha:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/earth-cloud-alpha.ktx2",
+      "requestLogId": "mgc9v-1785859369027-48e4913ecfc7",
+      "timestamp": 1785859369027,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "jupiter-albedo:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/jupiter-albedo.ktx2",
+      "requestLogId": "hr7w8-1785859369921-8182a0a387a8",
+      "timestamp": 1785859369921,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "jupiter-band-mask:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/jupiter-band-mask.ktx2",
+      "requestLogId": "2js2z-1785859370490-d92e455f9b34",
+      "timestamp": 1785859370490,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "saturn-albedo:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/saturn-albedo.ktx2",
+      "requestLogId": "5pdpg-1785859371139-09f027f539d1",
+      "timestamp": 1785859371139,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    },
+    {
+      "logicalId": "saturn-ring-alpha:direct",
+      "lane": "candidate-v562",
+      "path": "/textures/candidate-v562/ktx2/saturn-ring-alpha.ktx2",
+      "requestLogId": "qd8jk-1785859371724-6bbdc02ae129",
+      "timestamp": 1785859371724,
+      "method": "HEAD",
+      "status": 200,
+      "cache": "MISS"
+    }
+  ],
+  "transportHistory": {
+    "nodeFetchObservationArtifactSha256": "c54d6e9f7c498a99c025340d1909b44c32821830cf5223f45279ebf1e7e60c19",
+    "nodeFetchStatus": "blocked-fetch-failed",
+    "vercelCurlObservationArtifactSha256": "cf9a3e22ba02db8a01547f4b250087d096f9c4a148457aebc830ce626589b677",
+    "vercelCurlStatus": "blocked-7-connect-failures-22-timeouts",
+    "browserSandboxFetchAvailable": false,
+    "cdpFetchAvailable": true
+  },
+  "qualification": {
+    "requiredPathCount": 29,
+    "uniquePathCount": 29,
+    "headRequestCount": 29,
+    "status200Count": 29,
+    "http404Count": 0,
+    "allRequiredHead200": true,
+    "exactDeploymentIdentity": true,
+    "exactPreviewEnvironment": true,
+    "automaticRetry": false,
+    "automaticTargetReplacement": false,
+    "payloadDownloaded": false,
+    "productionAliasChanged": false,
+    "productionPromotionAllowed": false
+  },
+  "receiptSha256": "ff8e192c69127ee6a854b8c06bab043eca0774b0ca22b65a7217399de4912e25"
+}

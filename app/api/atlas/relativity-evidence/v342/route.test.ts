@@ -1,0 +1,8 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+const originalProfile = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (originalProfile == null) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = originalProfile; });
+describe("v342 raster evidence route", () => {
+  it("keeps raster out of Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; const response = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v342", { headers: { "x-forwarded-for": "127.0.0.342" } })); expect(response.status).toBe(200); expect(await response.json()).toMatchObject({ version: "v342-relativity-evidence-response", available: false, reason: "lite-boundary", snapshot: null }); });
+  it("returns bounded cells and no dense claim", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; const response = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v342", { headers: { "x-forwarded-for": "127.0.0.343" } })); const text = await response.text(); expect(response.status).toBe(200); expect(response.headers.get("cache-control")).toBe("no-store"); expect(response.headers.get("x-atlas-relativity-evidence")).toBe("v342"); expect(new TextEncoder().encode(text).byteLength).toBeLessThanOrEqual(128 * 1024); expect(JSON.parse(text)).toMatchObject({ available: true, snapshot: { current: { v342: { cellCount: 12, scienceProfileInvariant: true, cinematicCopiesDisjoint: true, denseStatus: "incomplete-0-of-49" } } } }); });
+});

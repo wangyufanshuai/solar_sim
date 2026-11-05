@@ -1,0 +1,189 @@
+{
+  "schema": "mainline-a-build-storage-preservation-v638",
+  "recordedAt": "2026-09-27T13:02:12.074Z",
+  "reason": "ENOSPC interrupted browser raw and HTTP receipt writes; preserve every historical output and restore working capacity without deleting files",
+  "operation": "NTFS transparent file compression via compact.exe /C; logical file bytes unchanged",
+  "scope": "Only exact repository-local build output paths; reparse points excluded, no OS compression setting or parent Git operations",
+  "currentBuild": {
+    "before": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-068b",
+      "fileCount": 4215,
+      "bytes": 43735736,
+      "aggregateSha256": "bd4fdd54b060c08f82ab023f086663c092a26c151fb11a5181d49a5f6db88ff9",
+      "links": [
+        ".next\\standalone\\node_modules",
+        ".next\\standalone\\public",
+        "data",
+        "docs",
+        "node_modules",
+        "public",
+        "scripts",
+        "source-cache"
+      ],
+      "largestGroups": [
+        [
+          ".next/standalone/.next",
+          9931992
+        ],
+        [
+          ".next/static/chunks",
+          6963266
+        ],
+        [
+          ".next/trace",
+          1414009
+        ],
+        [
+          ".next/static/media",
+          1045946
+        ],
+        [
+          ".next/server/chunks",
+          647207
+        ],
+        [
+          "app/data/stellarProvenanceCandidate.generated.ts",
+          585572
+        ],
+        [
+          ".next/server/app",
+          503972
+        ],
+        [
+          "app/lib/evidenceLedger",
+          397529
+        ],
+        [
+          ".next/static/css",
+          363385
+        ],
+        [
+          "package-lock.json",
+          357148
+        ],
+        [
+          ".next/server/middleware.js",
+          290795
+        ],
+        [
+          "app/lib/simulationDiagnosticsTypes",
+          239362
+        ]
+      ]
+    },
+    "after": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-068b",
+      "fileCount": 4215,
+      "bytes": 43735736,
+      "aggregateSha256": "bd4fdd54b060c08f82ab023f086663c092a26c151fb11a5181d49a5f6db88ff9",
+      "links": [
+        ".next\\standalone\\node_modules",
+        ".next\\standalone\\public",
+        "data",
+        "docs",
+        "node_modules",
+        "public",
+        "scripts",
+        "source-cache"
+      ]
+    }
+  },
+  "failedBuild": {
+    "before": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-068",
+      "fileCount": 3872,
+      "bytes": 33375817,
+      "aggregateSha256": "51e071d81ce1a5fc3d7efc85df060f94c8c2e3c07b2d03795724a41dcbcdd9ad",
+      "links": [
+        "data",
+        "docs",
+        "node_modules",
+        "public",
+        "scripts",
+        "source-cache"
+      ]
+    },
+    "after": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-068",
+      "fileCount": 3872,
+      "bytes": 33375817,
+      "aggregateSha256": "51e071d81ce1a5fc3d7efc85df060f94c8c2e3c07b2d03795724a41dcbcdd9ad"
+    }
+  },
+  "b1Build": {
+    "before": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066b",
+      "fileCount": 4205,
+      "bytes": 404628204,
+      "aggregateSha256": "70c9727edf8d7b9e89e9f66010cea2e3b5e4768bbbfd69e9c924050e8c33a853",
+      "links": [
+        ".next\\standalone\\node_modules",
+        ".next\\standalone\\public",
+        "data",
+        "docs",
+        "node_modules",
+        "public",
+        "scripts",
+        "source-cache"
+      ]
+    },
+    "after": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066b",
+      "fileCount": 4205,
+      "bytes": 404628204,
+      "aggregateSha256": "70c9727edf8d7b9e89e9f66010cea2e3b5e4768bbbfd69e9c924050e8c33a853"
+    }
+  },
+  "b1WebpackCache": {
+    "before": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066b\\.next\\cache\\webpack",
+      "fileCount": 6,
+      "bytes": 361103107,
+      "aggregateSha256": "be8fd69974a85e568812087793652d2ff22472b052ebc6760b395ccf0bf461b4",
+      "links": []
+    },
+    "after": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066b\\.next\\cache\\webpack",
+      "fileCount": 6,
+      "bytes": 361103107,
+      "aggregateSha256": "be8fd69974a85e568812087793652d2ff22472b052ebc6760b395ccf0bf461b4",
+      "links": []
+    }
+  },
+  "b1FailedWebpackCache": {
+    "before": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066\\.next\\cache\\webpack",
+      "fileCount": 6,
+      "bytes": 361073375,
+      "aggregateSha256": "9ec14dbcbdc507208d4d0883ad4bbd8772e8a7aece74a30f80074ce9eb31974f"
+    },
+    "after": {
+      "root": "E:\\86137\\myai\\solar_sim\\next-web\\.next-mainline-a-r66-20260927-066\\.next\\cache\\webpack",
+      "fileCount": 6,
+      "bytes": 361073375,
+      "aggregateSha256": "9ec14dbcbdc507208d4d0883ad4bbd8772e8a7aece74a30f80074ce9eb31974f"
+    },
+    "exitCode": 0,
+    "unchanged": true,
+    "summary": [
+      "��ѹ�� 6 ��Ŀ¼�е� 6 ���ļ���",
+      "�ܹ� 361,073,375 �ֽڵ����ݱ����� 151,686,462 �ֽ��С�",
+      "ѹ����Ϊ 2.4 �� 1��"
+    ],
+    "errors": ""
+  },
+  "freeBytesAfterObserved": 494710784,
+  "limitations": [
+    "Free space varies and must be checked immediately before a new build",
+    "Compression is not deletion; no file content was replaced",
+    "Physical on-disk compression can affect read cost; subsequent performance receipts must describe their local environment",
+    "These digests cover ordinary files, not linked external directories"
+  ],
+  "boundary": {
+    "parentGitMutation": false,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "fileDeletion": false,
+    "buildApproval": false
+  }
+}

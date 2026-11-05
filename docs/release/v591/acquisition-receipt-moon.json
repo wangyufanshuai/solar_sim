@@ -1,0 +1,78 @@
+{
+  "version": "v591-moon-visual-acquisition-receipt-v1",
+  "acquiredAt": "2026-08-10T17:29:51.780Z",
+  "status": "acquired-single-request-no-retry",
+  "metadataProbe": {
+    "url": "https://svs.gsfc.nasa.gov/api/4720",
+    "httpStatus": 200,
+    "etag": "04b450aef5b33350360e3df3f231ab21",
+    "observedAt": "2026-08-11T01:20:51+08:00",
+    "title": "CGI Moon Kit",
+    "mission": "Lunar Reconnaissance Orbiter",
+    "sensors": [
+      "LROC WAC",
+      "LOLA"
+    ]
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "allowedHosts": [
+      "svs.gsfc.nasa.gov"
+    ]
+  },
+  "requestedUrlCount": 2,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "assets": [
+    {
+      "id": "moon-albedo-source-v591",
+      "body": "moon",
+      "role": "albedo-source",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "finalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/lroc_color_16bit_srgb_8k.tif",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/tiff",
+      "outputPath": "source-cache/celestial-convergence-v591/moon/lroc-color-2025-16bit-srgb-8k.tif",
+      "bytes": 243289792,
+      "sha256": "db7808e878b6a55eb409bb231eab8deb477f84b5c9d7396d76ff73e5d54992d9",
+      "width": 8192,
+      "height": 4096,
+      "bitDepth": 16,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://svs.gsfc.nasa.gov/4720/"
+      },
+      "observationIdentity": "2025 LROC WAC color mosaic, 16-bit sRGB 8K derivative",
+      "observationLimit": "NASA SVS states that the color map is optimized for aesthetics rather than scientific analysis; v591 uses it only as a presentation albedo source.",
+      "presentationOnly": true
+    },
+    {
+      "id": "moon-height-source-v591",
+      "body": "moon",
+      "role": "height-source",
+      "sourceUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_16_uint.tif",
+      "finalUrl": "https://svs.gsfc.nasa.gov/vis/a000000/a004700/a004720/ldem_16_uint.tif",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/tiff",
+      "outputPath": "source-cache/celestial-convergence-v591/moon/ldem-16-uint.tif",
+      "bytes": 33201026,
+      "sha256": "45a2b32d56e81ed30db07fead8abc842b249b6511219d9ca2c53f81bc2dc5d62",
+      "width": 5760,
+      "height": 2880,
+      "bitDepth": 16,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://svs.gsfc.nasa.gov/4720/"
+      },
+      "observationIdentity": "LRO LOLA LDEM at 16 pixels per degree, unsigned 16-bit half-meter units",
+      "observationLimit": "Presentation geometry derives from the public LOLA cylindrical elevation product and does not alter Orbit Atlas scientific state.",
+      "presentationOnly": true
+    }
+  ],
+  "receiptSha256": "96a3c0f619d4ea443e492b6295ac5bfa2f3890e62a284bf6f4e9c81c1f815cb0"
+}

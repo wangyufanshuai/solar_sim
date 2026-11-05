@@ -1,0 +1,38 @@
+{
+  "version": "v592-deep-space-cluster-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-20T15:18:12.652Z",
+  "status": "metadata-probe-complete-no-payload",
+  "probeId": "beehive-cluster-ngc2632",
+  "target": "beehive-cluster",
+  "query": "M44 NGC 2632 open cluster",
+  "requiredTerms": [
+    "2632"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=M44%20NGC%202632%20open%20cluster&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=M44%20NGC%202632%20open%20cluster&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 181,
+    "responseSha256": "83a067b8c2e2cba7b2dbf7b275fea17e04abd28006575575485649af3a2595fb"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "d336d15f82c6ac768174184a8f74ded9cc3c17c904e77fb427a71e68542ee06e"
+}

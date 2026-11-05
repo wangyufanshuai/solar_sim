@@ -1,0 +1,58 @@
+{
+  "version": "v592-deep-space-metadata-probe-v1",
+  "probedAt": "2026-08-19T04:56:32.635Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "pleiades",
+  "category": "cluster",
+  "query": "Pleiades M45 star cluster",
+  "requiredTermGroups": [
+    [
+      "pleiades",
+      "m45"
+    ],
+    [
+      "cluster"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Pleiades%20M45%20star%20cluster&media_type=image&page_size=30",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Pleiades%20M45%20star%20cluster&media_type=image&page_size=30",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 873,
+    "responseSha256": "6a46f8d89723c0449c2219886418569fde31abd17481f118b0a160fce15cde55"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA08260",
+      "title": "The Seven Sisters",
+      "description": "The stars of the Pleiades cluster, also known by the names M45 and the",
+      "dateCreated": "2006-09-06T12:50:53Z",
+      "center": "JPL",
+      "keywords": [
+        "Pleiades",
+        "Cassini-Huygens"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA08260/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA08260/PIA08260~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "e8682b62d49c20865da61a82f834c609bc5c42cba70dc573759e063ee62c540a"
+}

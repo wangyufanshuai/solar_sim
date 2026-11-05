@@ -1,0 +1,14 @@
+{
+  "schema": "mainline-a-art-round-v1",
+  "round": 8,
+  "title": "observation-card-scale-and-uncertainty-hierarchy",
+  "date": "2026-09-13",
+  "timestampUtc": "2026-09-13 11:42:00 UTC",
+  "status": "round-08-code-and-dev-browser-evidence-passed",
+  "scope": "Mainline A art/runtime presentation only",
+  "physicsBoundary": ["EIH/Newton N-body kernels unchanged", "2PN Lense-Thirring and Kerr kernels unchanged"],
+  "code": {"file": "app/components/CelestialObjectPassportPanel.tsx", "changes": ["added compact nebula angular-size and distance strip", "marked catalog-derived scale and missing uncertainty separately", "kept licensed image, source credit and portrait semantics unchanged"]},
+  "browser": {"mode": "in-app browser", "url": "http://127.0.0.1:3018/?deliveryProfile=vercel-lite", "route": "对象浏览器 -> M42 -> 天体档案", "viewport": {"width": 1280, "height": 720}, "runtime": {"scaleBoundaryText": "角径 ≈ 85′ / 距离 ≈ 412 pc / 数据：目录派生", "uncertaintyText": "不确定性：未提供误差；此值用于目录定位，不是图像标尺。", "markerRect": {"x": 910, "y": 274, "width": 309, "height": 50}, "canvasCount": 1, "documentOverflow": false, "consoleErrors": 0}, "screenshot": "docs/release/v607/screenshots/mainline-a-round-08-observation-card-detail-20260913.png", "screenshotBytes": 92968, "screenshotSha256": "194C289985787F5943099B89B2D446EED0F1395480822D79A023B26C735299D4", "evidenceBoundary": "development preview responsive visual/runtime evidence; no performance or production claim"},
+  "tests": {"eslint": {"command": "npx eslint app/components/CelestialObjectPassportPanel.tsx", "passed": true}, "vitest": {"command": "npx vitest run app/data/mainlineAMetadataV607.test.ts app/data/mainlineA3MetadataV607.test.ts app/data/mainlineAFirstSetNebulaCandidatesV607.test.ts --pool=threads --maxWorkers=1 --exclude tmp/** --exclude **/.next*/**", "passed": true, "tests": 26}},
+  "releaseBinding": {"buildId": "h08Dhkk9omMt2ifEk6SBu", "inputDigest": "d612c3f8188da9d9a3830e73c49fae433c98baa7812bb2eb3d353eddcaeeca2b", "note": "packet must be regenerated after round 08 receipt"}
+}

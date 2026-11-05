@@ -1,0 +1,64 @@
+{
+  "version": "v592-major-moon-secondary-metadata-probe-v1",
+  "probedAt": "2026-08-19T13:27:22.833Z",
+  "status": "secondary-metadata-probe-complete-no-payload",
+  "probeId": "io-global-mosaic",
+  "target": "io",
+  "query": "Io global mosaic",
+  "requiredTerms": [
+    "io"
+  ],
+  "preferredTerms": [
+    "global",
+    "map",
+    "mosaic"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Io%20global%20mosaic&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Io%20global%20mosaic&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 1007,
+    "responseSha256": "0c040af61f42815e27d3232d002a05192e2c760dda46a9513813dfff04bc520d"
+  },
+  "totalHits": 1,
+  "candidates": [
+    {
+      "nasaId": "PIA00585",
+      "title": "Color Global Mosaic of Io",
+      "description": "Color Global Mosaic of Io",
+      "dateCreated": "1997-11-18T12:16:07Z",
+      "center": "JPL",
+      "keywords": [
+        "Io",
+        "Galileo"
+      ],
+      "requiredTermsMatched": true,
+      "preferredTermsMatched": [
+        "global",
+        "mosaic"
+      ],
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00585/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA00585/PIA00585~thumb.jpg"
+    }
+  ],
+  "matchedCandidateCount": 1,
+  "preferredCandidateCount": 1,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "visualAssetAdmission": false,
+  "receiptSha256": "cfee371056bc1fb6195acc6faabc9c1faedd5cc56289182f628d6f202ef883e2"
+}

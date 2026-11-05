@@ -1,0 +1,37 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v1",
+  "probedAt": "2026-08-19T10:07:41.601Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "jewel-box-cluster",
+  "category": "cluster",
+  "query": "NGC 4755 Jewel Box cluster",
+  "requiredTermGroups": [
+    [
+      "ngc 4755",
+      "jewel box"
+    ]
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+4755+Jewel+Box+cluster&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+4755+Jewel+Box+cluster&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 174,
+    "responseSha256": "5670c7078756032bf5219bd403b2bb3f8495c87cca9a732c0506f27393048759"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "bae3e44eadb113520ab70e7824576ce6f48e44b68f47613b0c90ff714c7c7e7b"
+}

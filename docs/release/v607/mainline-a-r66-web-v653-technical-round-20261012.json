@@ -1,0 +1,166 @@
+{
+  "schema": "mainline-a-r66-web-v653-technical-round",
+  "round": "R66-web-only-continuation",
+  "generatedAt": "2026-10-12T02:57:53Z",
+  "deliveryTarget": "next-web-local-web-technical-review",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "f86295b3b959a6a5217e1f58d148b11a38ef800219c5a80f9f59fb87e4dea79f",
+  "buildId": "7jCmHHTeCrDTqbh6csQIR",
+  "status": {
+    "localWebTechnicalReview": "qualified-current-source-candidate",
+    "publicWebRelease": "blocked",
+    "scientificAdmission": "blocked",
+    "physicalMobile": "not-run-mobile-browser-viewport-only",
+    "rootAlignment": "out-of-scope-for-current-user-selected-web-only-batch",
+    "stellarComponentIdentitySigned": "0/4",
+    "aLineNebulaHumanRightsSigned": "0/12"
+  },
+  "effectiveCode": {
+    "receipt": "docs/release/v607/mainline-a-r66-web-v653-tooling-code-change-20261011.json",
+    "receiptSha256": "f86fb900659951a7ae48e6d8455469055f10abf531f4c241849ae03bf504093d",
+    "newProductionToolLines": 2242,
+    "modifiedApplicationLinesThisContinuation": 0,
+    "earlierV649ApplicationAndToolLowerBound": 535,
+    "combinedV649ThroughV653EffectiveLowerBound": 2777,
+    "testsExcluded": true,
+    "minimumPerRoundMet": true
+  },
+  "evidence": {
+    "static": {
+      "node": "83/83 positive-negative-and-replay tests passed with tsx runner",
+      "vitest": "24/24 focused application tests passed",
+      "targetedEslint": "passed-no-errors-or-warnings",
+      "nodeSyntax": "passed-for-new-tooling",
+      "worktreeBoundary": "passed-inner-repository-only",
+      "productionBuild": "passed-preserved-current-source-V649-build-no-application-source-change-afterward",
+      "buildReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-build-20261011-v649web02.json",
+        "sha256": "e44f8df67f8954bbca8bbc91d5b144a71ddd32c20a9e522486e65c67a06f135b"
+      },
+      "currentSourceShaRecomputedAfterOvernightRestart": true
+    },
+    "HTTP": {
+      "origin": "http://127.0.0.1:3093",
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "staticScriptsMatchingPreservedBuild": 6,
+      "successfulReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-http-20261012-v653final02.json",
+        "sha256": "930a069c05feffb4bb37bd14af992eef7e3b1fb84c9783f77435de4ef91d3613"
+      },
+      "retainedFailedAttempt": {
+        "path": "docs/release/v607/mainline-a-r66-http-20261011-v653final.json",
+        "sha256": "55117d70159cc27d46015fce4d8d00504436e3b2de2b785efc9591ca53f7391e",
+        "reason": "local-preview-server-was-stopped-overnight-no-response-captured"
+      },
+      "scope": "local-preserved-standalone-production-build-not-public-deployment"
+    },
+    "visual": {
+      "currentBuildPointerScreenshots": 72,
+      "individualHashesRecomputed": 72,
+      "manuallyInspectedSamples": [
+        {
+          "path": "output/playwright/mainline-a-web-pointer-desktop-nebula-m42-20261011-v649pointer02.png",
+          "sha256": "83b2c066e51fa83f0514d98edadcf0161c9613a1f89f9b2ee9423ac220615525"
+        },
+        {
+          "path": "output/playwright/mainline-a-web-pointer-mobile-nebula-m42-20261011-v649pointer02.png",
+          "sha256": "8d83a7706904060d8012b62764f02e423598c4595214d027ac91ca482f970208"
+        },
+        {
+          "path": "output/playwright/mainline-a-web-pointer-desktop-star-sirius-a-20261011-v649pointer02.png",
+          "sha256": "3179aceed29d49701027359ba59ac86c264521c2fd3fd8ec416d64d1c0c6cb0b"
+        }
+      ],
+      "humanAcceptanceClaim": false
+    },
+    "browser": {
+      "desktopRealPointerRoutes": 36,
+      "mobileViewportRealPointerRoutes": 36,
+      "keyboardActivations": 0,
+      "pointerMatrixReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-web-pointer-verification-20261011-v649pointer02.json",
+        "sha256": "0517040ce02bde7dba2cb5ba387b97538f45cf21abfefd02372a4af7addc222f"
+      },
+      "longRunRaw": {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-browser-final-raw-20261011-v650long01.json",
+        "sha256": "b020ff445cb138edefa9a7999a65e598019c49c5c6dd0d361c9eaa7986b85611"
+      },
+      "physicalMobile": false,
+      "realUserValidation": false
+    },
+    "performance": {
+      "evidenceClass": "local-browser-observation-not-production-performance",
+      "currentBuildIndependentObservations": 2,
+      "desktopDurationMs": 1802001.68,
+      "desktopFrameP95Ms": 7.085,
+      "desktopMemoryDeltaBytes": 13344693,
+      "mobileViewportDurationMs": 1802002.91,
+      "mobileViewportFrameP95Ms": 7.11,
+      "mobileViewportMemoryDeltaBytes": -961498,
+      "resourceTotalsBoth": [27, 31, 27],
+      "consoleErrorsBoth": 0,
+      "pageErrorsBoth": 0,
+      "bindingReceipt": {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-binding-20261011-v650long01.json",
+        "sha256": "3ccf38203af198f87936970225b531bb05f80904c39c1d6ae2b9b3c623a5d94e",
+        "offlineReplay": "passed"
+      },
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "officialB2SourcePagesCaptured": 6,
+      "officialPageJpegsCaptured": 6,
+      "rawByteIdenticalToExistingCandidate": 1,
+      "rawVariantsWithIdenticalDecodedPixels": 5,
+      "decodedPixelsIdentical": 6,
+      "humanRightsSigned": 0,
+      "sourcePageAudit": {
+        "path": "docs/release/v607/mainline-a-r66-nebula-source-page-audit-20261011-v651page01.json",
+        "sha256": "08d229607b4637dc7c8f1a2c344791936bbdcb9b8bc23143dd0a1d348f0b691f"
+      },
+      "rawByteAudit": {
+        "path": "docs/release/v607/mainline-a-r66-nebula-page-image-link-audit-20261011-v652link01-fixed.json",
+        "sha256": "f16568ef3f7980b64b0c4676429b5f15c4e998acbf2dd1fc2a67087d881faa93"
+      },
+      "decodedPixelAudit": {
+        "path": "docs/release/v607/mainline-a-r66-nebula-pixel-link-audit-20261011-v653pixel01.json",
+        "sha256": "08c70ca01d32dfe4787d62263a829f6412754d2c2561eada1f10cce3d73d7cd9"
+      },
+      "B1OfficialPageDiscoveryOnly": "6-urls-raw-capture-pending",
+      "copyrightApproval": false,
+      "scientificValidity": false
+    }
+  },
+  "evidenceSupplement": {
+    "path": "docs/release/v607/mainline-a-r66-web-current-evidence-supplement-20261011-v653.json",
+    "sha256": "c11d9e74dab887e54a02dc2e6e2ad07bc8931bb25ad96c1eccc46b7e454fddfb",
+    "offlineReplay": "passed",
+    "status": "candidate-blocked-current-source-technical-evidence"
+  },
+  "releaseGates": [
+    "A-line 12 local nebula previews remain pending individual human copyright signoff; 0/12 signed.",
+    "Acrux, Spica, Regulus and Polaris physical component identity remains 0/4 scientifically admitted.",
+    "B1 six official source-page URLs are located but their raw HTML and direct-image linkage are not captured in this batch.",
+    "B2 candidate generated data and application panel still display source-page-pending until the verified V651-V653 overlay is integrated into the next application build.",
+    "Root-app parity and physical-device mobile test are outside this web-only technical batch and are not passed."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "canonicalV622DigestChanged": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "claims": {
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "scientificValidity": false,
+    "copyrightApproval": false,
+    "publicWebReleaseApproved": false
+  }
+}

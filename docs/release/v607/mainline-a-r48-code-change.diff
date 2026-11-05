@@ -1,0 +1,678 @@
+--- tmp/r48-before/app/components/AtlasRuntimeWorkbenchSurface.tsx
++++ app/components/AtlasRuntimeWorkbenchSurface.tsx
+@@ -516,7 +516,7 @@
+           onFocus={onNearbyStarFocus}
+         />
+       ) : null}
+-      {!launchRuntimeActive && !mobilePassportOpen ? <MainlineABetaIntakePanelV607 /> : null}
++      {!launchRuntimeActive && !mobilePassportOpen && atlasToolsOpen ? <MainlineABetaIntakePanelV607 /> : null}
+       {!launchRuntimeActive && !mobilePassportOpen ? (
+         <PostV593RelativityWorkbenchPanel
+           mode={postV593RelativityMode}
+--- new-in-r48
++++ app/components/MainlineAStellarAtlasV608.tsx
+@@ -0,0 +1,135 @@
++"use client";
++
++import { useEffect, useId, useMemo, useRef, useState } from "react";
++import { MAINLINE_A_CURRENT_STARS } from "../data/mainlineAMetadataV607";
++import {
++  STELLAR_ATLAS_FAMILIES, selectStellarAtlasStars, stellarAtlasColor,
++  stellarAtlasGeometry, stellarAtlasReferenceRadius, stellarAtlasFocusTarget,
++  type StellarAtlasFamily, type StellarAtlasOrder, type StellarAtlasScale,
++} from "../lib/mainlineAStellarAtlasV608";
++import MainlineAStellarPortraitV607 from "./MainlineAStellarPortraitV607";
++
++type Props = { onClose: () => void; onFocus: (direction: [number, number, number], catalogId?: string) => void };
++
++export default function MainlineAStellarAtlasV608({ onClose, onFocus }: Props) {
++  const [family, setFamily] = useState<StellarAtlasFamily>("all");
++  const [search, setSearch] = useState("");
++  const [scale, setScale] = useState<StellarAtlasScale>("normalized");
++  const [order, setOrder] = useState<StellarAtlasOrder>("catalog");
++  const [selectedId, setSelectedId] = useState("altair");
++  const headingId = useId();
++  const dialogRef = useRef<HTMLDialogElement>(null);
++  const detailRef = useRef<HTMLElement>(null);
++  const listRef = useRef<HTMLElement>(null);
++  const stars = useMemo(() => selectStellarAtlasStars(MAINLINE_A_CURRENT_STARS, { family, search, order }), [family, search, order]);
++  const referenceRadius = stellarAtlasReferenceRadius(MAINLINE_A_CURRENT_STARS);
++  const selected = MAINLINE_A_CURRENT_STARS.find((star) => star.id === selectedId) ?? MAINLINE_A_CURRENT_STARS[0];
++
++  useEffect(() => {
++    const dialog = dialogRef.current;
++    const previousFocus = document.activeElement;
++    dialog?.showModal();
++    return () => {
++      dialog?.close();
++      if (previousFocus instanceof HTMLElement && previousFocus.isConnected) previousFocus.focus();
++    };
++  }, []);
++
++  function focusSelected() {
++    const target = stellarAtlasFocusTarget(selected);
++    onFocus(target.direction, target.catalogId);
++    onClose();
++  }
++
++  function selectPortrait(id: string) {
++    setSelectedId(id);
++    if (window.matchMedia("(max-width: 1023px)").matches) {
++      detailRef.current?.scrollIntoView({ block: "start", behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" });
++    }
++  }
++
++  return (
++    <dialog ref={dialogRef} onCancel={onClose} aria-labelledby={headingId}
++      className="fixed m-auto h-[min(850px,94dvh)] max-h-[94dvh] w-[min(1180px,96vw)] max-w-[96vw] overflow-hidden rounded-xl border border-amber-100/20 bg-[#071018] p-0 text-slate-200 shadow-2xl backdrop:bg-black/75"
++      data-mainline-a-stellar-atlas="true" data-mainline-a-atlas-scale={scale}>
++      <div className="flex h-full min-h-0 flex-col">
++        <header className="flex shrink-0 items-center justify-between gap-3 border-b border-white/10 px-4 py-3 sm:px-6">
++          <div>
++            <div className="font-mono text-[9px] tracking-[.3em] text-amber-100/50">STELLAR ATLAS / MAINLINE A</div>
++            <h2 id={headingId} className="mt-1 text-lg text-amber-50">恒星图集 <span className="ml-2 font-mono text-xs text-slate-500">{MAINLINE_A_CURRENT_STARS.length} 颗光球示意</span></h2>
++          </div>
++          <button type="button" onClick={onClose} aria-label="关闭恒星图集" className="min-h-11 rounded px-3 text-sm hover:bg-white/10">关闭 ×</button>
++        </header>
++        <div className="min-h-0 flex-1 overflow-y-auto lg:overflow-hidden">
++          <div className="grid min-h-full lg:h-full lg:grid-cols-[minmax(0,1fr)_340px]">
++            <section ref={listRef} aria-label="恒星对照" className="min-w-0 p-4 sm:p-6 lg:overflow-y-auto">
++              <p className="mb-4 max-w-xl text-xs leading-6 text-slate-400">从橙红色巨星到蓝白色亮星，比较目录参数塑造的光球。选择一颗恒星查看细节，再回到星空定位。</p>
++              <div className="flex flex-wrap gap-1.5" aria-label="色温与形态筛选">
++                {STELLAR_ATLAS_FAMILIES.map((item) => <button key={item.id} type="button" onClick={() => setFamily(item.id)} aria-pressed={family === item.id}
++                  className={`min-h-10 rounded border px-2.5 text-[11px] ${family === item.id ? "border-amber-100/40 bg-amber-100/10 text-amber-50" : "border-white/10 text-slate-400 hover:bg-white/5"}`}>{item.label}</button>)}
++              </div>
++              <div className="my-3 flex flex-wrap gap-2">
++                <input aria-label="搜索恒星图集" value={search} onChange={(event) => setSearch(event.target.value)} placeholder="名称、星座或光谱型"
++                  className="min-h-10 min-w-0 flex-1 rounded border border-white/15 bg-black/20 px-3 text-xs" />
++                <select aria-label="恒星排序" value={order} onChange={(event) => setOrder(event.target.value as StellarAtlasOrder)} className="min-h-10 rounded border border-white/15 bg-[#101c29] px-2 text-xs">
++                  <option value="catalog">图集顺序</option><option value="temperature">色温从低到高</option><option value="radius">半径从小到大</option>
++                </select>
++              </div>
++              <div className="mb-4 rounded border border-white/10 bg-white/[0.02] p-3">
++                <div className="flex flex-wrap gap-2">
++                  <button type="button" aria-pressed={scale === "normalized"} onClick={() => setScale("normalized")} className="min-h-9 rounded border border-white/15 px-2 text-xs aria-pressed:border-cyan-200/40 aria-pressed:text-cyan-100">按卡片归一</button>
++                  <button type="button" aria-pressed={scale === "shared-radius"} onClick={() => setScale("shared-radius")} className="min-h-9 rounded border border-white/15 px-2 text-xs aria-pressed:border-cyan-200/40 aria-pressed:text-cyan-100">统一半径比例</button>
++                </div>
++                <p className="mt-2 text-[10px] leading-5 text-slate-400">{scale === "normalized"
++                  ? "每张光球填满相同画幅，便于比较颜色与扁率；大小不代表真实半径或视亮度。"
++                  : `全图使用线性半径比例，最大展示半径 ${referenceRadius.toLocaleString("zh-CN")} R☉。小于一像素的光球用十字定位，不额外放大。`}</p>
++              </div>
++              <p role="status" className="mb-2 text-xs text-slate-500">显示 {stars.length} / {MAINLINE_A_CURRENT_STARS.length} 颗</p>
++              <div className="grid grid-cols-2 gap-2 sm:grid-cols-3" data-mainline-a-atlas-result-count={stars.length}>
++                {stars.map((star) => {
++                  const geometry = stellarAtlasGeometry(star, scale, referenceRadius);
++                  const color = stellarAtlasColor(star.artDirection.colorTemperatureK);
++                  const glyphId = `${headingId}-${star.id}`;
++                  return <button key={star.id} type="button" onClick={() => selectPortrait(star.id)} aria-pressed={star.id === selectedId}
++                    data-mainline-a-atlas-star={star.id} aria-label={`查看 ${star.displayName}`}
++                    className={`min-w-0 overflow-hidden rounded-lg border p-2 text-left transition-colors ${star.id === selectedId ? "border-amber-100/45 bg-[#16212c]" : "border-white/10 bg-[#0a151f] hover:border-slate-500"}`}>
++                    <svg viewBox="0 0 150 100" className="w-full" aria-hidden="true">
++                      <defs>
++                        <radialGradient id={`${glyphId}-body`} cx="42%" cy="36%" r="66%">
++                          <stop offset="0" stopColor="#fff7e6" />
++                          <stop offset=".35" stopColor={color} />
++                          <stop offset=".75" stopColor={color} stopOpacity=".82" />
++                          <stop offset="1" stopColor={color} stopOpacity=".22" />
++                        </radialGradient>
++                        <radialGradient id={`${glyphId}-halo`}>
++                          <stop offset=".45" stopColor={color} stopOpacity=".16" />
++                          <stop offset="1" stopColor={color} stopOpacity="0" />
++                        </radialGradient>
++                      </defs>
++                      <ellipse cx="75" cy="46" rx={geometry.rx * 1.5} ry={geometry.ry * 1.5} fill={`url(#${glyphId}-halo)`} />
++                      <ellipse cx="75" cy="46" rx={geometry.rx} ry={geometry.ry} fill={`url(#${glyphId}-body)`} />
++                      {geometry.subpixel ? <path d="M68 46h-5m19 0h5M75 39v-5m0 19v5" stroke="#a9b8c8" strokeWidth=".6" /> : null}
++                      <path d="M15 85H135" stroke="#ffffff" strokeOpacity=".06" />
++                    </svg>
++                    <span className="block truncate text-xs text-slate-100">{star.displayName}</span>
++                    <span className="mt-1 block truncate font-mono text-[9px] text-slate-400">{star.artDirection.colorTemperatureK.toLocaleString("zh-CN")} K · {star.artDirection.radiusSolar.toLocaleString("zh-CN")} R☉</span>
++                  </button>;
++                })}
++              </div>
++              {!stars.length ? <p className="py-8 text-center text-sm text-slate-400">没有匹配的恒星，试试其他名称或类别。</p> : null}
++            </section>
++            <aside ref={detailRef} aria-label="已选恒星" className="min-w-0 border-t border-white/10 bg-[#0b141e] p-4 lg:overflow-y-auto lg:border-l lg:border-t-0" data-mainline-a-atlas-selected={selected.id}>
++              <button type="button" onClick={() => listRef.current?.scrollIntoView({ block: "start" })} className="mb-3 min-h-10 rounded border border-white/15 px-3 text-xs text-slate-300 lg:hidden">← 返回恒星列表</button>
++              <h3 className="text-base text-amber-50">{selected.displayName}</h3>
++              <p className="mt-1 text-xs text-slate-400">{selected.narrative.summaryCn}</p>
++              <MainlineAStellarPortraitV607 key={selected.id} objectId={selected.id} title={selected.displayName} profile={selected.artDirection} />
++              <p className="text-xs leading-6 text-slate-400">{selected.narrative.detailCn}</p>
++              <button type="button" onClick={focusSelected} className="mt-4 min-h-11 w-full rounded border border-amber-100/30 bg-amber-100/10 text-sm text-amber-50 hover:bg-amber-100/15">在星空中定位</button>
++              <a href={selected.evidence.sources[0]?.sourceUrl} target="_blank" rel="noreferrer" className="mt-2 block py-2 text-center text-xs text-cyan-100/65 underline">查看 SIMBAD 来源参考</a>
++            </aside>
++          </div>
++        </div>
++      </div>
++    </dialog>
++  );
++}
+--- tmp/r48-before/app/components/PostV593StellarRosterPanel.tsx
++++ app/components/PostV593StellarRosterPanel.tsx
+@@ -1,6 +1,7 @@
+ "use client";
+ 
+ import { useMemo, useState } from "react";
++import MainlineAStellarAtlasV608 from "./MainlineAStellarAtlasV608";
+ import {
+   STELLAR_HERO_BY_ID_V592,
+   STELLAR_HEROES_V592,
+@@ -31,6 +32,7 @@
+   onFocus: (direction: [number, number, number], catalogId?: string) => void;
+ }>) {
+   const [open, setOpen] = useState(false);
++  const [atlasOpen, setAtlasOpen] = useState(false);
+   const selectedId = selectedCatalogId.startsWith("stellar-hero:")
+     ? selectedCatalogId.slice("stellar-hero:".length)
+     : selectedCatalogId;
+@@ -62,6 +64,8 @@
+       >
+         Named stellar roster · 24
+       </button>
++      <button type="button" onClick={() => { setOpen(false); setAtlasOpen(true); }} className="ml-1 min-h-10 border border-amber-100/25 bg-[#020609]/88 px-3 text-[10px] text-amber-50/80">恒星图集</button>
++      {atlasOpen ? <MainlineAStellarAtlasV608 onClose={() => setAtlasOpen(false)} onFocus={onFocus} /> : null}
+       {open ? (
+         <div className="mt-1 min-w-0 max-h-[70dvh] overflow-y-auto overflow-x-hidden border border-cyan-100/18 bg-[#020609]/94 p-2 shadow-2xl backdrop-blur-xl" data-mainline-a-hero-roster-scroll="true">
+           <div className="mb-2 rounded border border-amber-100/15 bg-amber-100/[0.035] px-2 py-1.5 text-[7px] uppercase leading-4 tracking-[.1em] text-amber-50/60" data-mainline-a-hero-coverage="true">
+--- tmp/r48-before/app/data/mainlineAMetadataV607.ts
++++ app/data/mainlineAMetadataV607.ts
+@@ -5,7 +5,8 @@
+ import { MAINLINE_A_CURRENT_IAU_BOUNDARIES } from "./mainlineAConstellationCurrentBoundaryDataV607";
+ import { MAINLINE_A3_NEBULA_ASSET_CANDIDATES } from "./mainlineAFirstSetNebulaCandidatesV607";
+ import { MAINLINE_A3_NEBULA_VISUAL_ASSETS_ALL } from "./mainlineANebulaVisualAssetsV607.all.generated";
+-import { MAINLINE_A4_CURRENT_STELLAR_EVIDENCE } from "./mainlineAStellarEvidenceV607";
++import { MAINLINE_A4_CURRENT_STELLAR_EVIDENCE, MAINLINE_A_BETA_REFERENCE_READY_IDS } from "./mainlineAStellarEvidenceV607";
++import { MAINLINE_A_BETA_STELLAR_NARRATIVES } from "./mainlineABetaStellarNarrativesV607";
+ import type { ConstellationMetadataV607, NebulaMetadataV607WithEncoding, ProvenanceV607, StarMetadataV607WithArtDirection } from "../lib/celestialObjectContractV607";
+ 
+ const retrievedAt = "2026-09-09";
+@@ -39,6 +40,7 @@
+   "capella-a",
+   "procyon-a",
+   "aldebaran",
++  ...MAINLINE_A_BETA_REFERENCE_READY_IDS,
+ ] as const;
+ const constellationNarratives: Record<string, { summaryCn: string; detailCn: string }> = {
+   Ori: { summaryCn: "冬季最醒目的赤道星座", detailCn: "猎户座以参宿四、参宿七和腰带三星构成辨识度最高的星官结构；M42 位于腰带南侧剑鞘区域，是后续星云联动的首个入口。" },
+@@ -140,10 +142,11 @@
+   type HeroRecord = Record<string, unknown> & { id: string; name: string; gaiaSourceId?: string; gaiaCrossmatchStatus?: string; apparentMagnitudeV?: number; temperatureK?: number; radiusSolar?: number; luminositySolar?: number; equatorialPolarRadiusRatio?: number; shaderProfile?: string; raDeg?: number; decDeg?: number; distancePc?: number; spectralType?: string };
+   const row = (STELLAR_HEROES_V592 as readonly HeroRecord[]).find((item) => item.id === id);
+   if (!row) throw new Error(`Missing stellar hero ${id}`);
+-  const narrative = starNarratives[id];
++  const narrative = starNarratives[id] ?? MAINLINE_A_BETA_STELLAR_NARRATIVES[id];
++  if (!narrative) throw new Error(`Missing stellar narrative ${id}`);
+   const evidence = MAINLINE_A4_CURRENT_STELLAR_EVIDENCE[id];
+   if (!evidence) throw new Error(`Missing stellar evidence ${id}`);
+-  const relatedObjectIds = id === "betelgeuse" || id === "rigel" ? ["Ori", "m42"] : id === "antares" ? ["Sco"] : [];
++  const relatedObjectIds = MAINLINE_A_BETA_STELLAR_NARRATIVES[id]?.relatedObjectIds ?? (id === "betelgeuse" || id === "rigel" ? ["Ori", "m42"] : id === "antares" ? ["Sco"] : []);
+   const gaiaSourceId = String(row.gaiaSourceId ?? "");
+   const raDeg = Number(row.raDeg);
+   const decDeg = Number(row.decDeg);
+--- tmp/r48-before/app/data/mainlineAStellarEvidenceV607.ts
++++ app/data/mainlineAStellarEvidenceV607.ts
+@@ -1,5 +1,6 @@
+ import type { ProvenanceV607, StellarEvidenceV607, StellarReferenceQuantityV607 } from "../lib/celestialObjectContractV607";
+ import { STELLAR_HEROES_V592 } from "./stellarHeroesV592.generated";
++import { MAINLINE_A_BETA_STELLAR_PROJECTION } from "./mainlineABetaStellarProjectionV607.generated";
+ 
+ // Small first-set projection; the full source tables remain outside the client bundle.
+ // Tests compare these values with the sealed source snapshot and provenance manifest.
+@@ -49,7 +50,15 @@
+ 
+ const FIRST_SET_IDS = new Set(["alpha-centauri-a", "achernar", "betelgeuse", "sirius-a", "rigel", "antares"]);
+ 
+-function createStellarEvidence(references: readonly (typeof PARALLAX_REFERENCES)[number][]): Readonly<Record<string, StellarEvidenceV607>> {
++type ParallaxReference = { id: string; simbadIdentifier: string; parallaxMas: number; errorMas: number; bibcode: string };
++const betaReferences: ParallaxReference[] = MAINLINE_A_BETA_STELLAR_PROJECTION.rows.flatMap((row) => {
++  if (!row.presentationReferenceReady) return [];
++  if (typeof row.parallaxMas !== "number" || typeof row.errorMas !== "number" || !row.bibcode || !row.simbadIdentifier) return [];
++  return [{ id: row.id, simbadIdentifier: row.simbadIdentifier, parallaxMas: row.parallaxMas, errorMas: row.errorMas, bibcode: row.bibcode }];
++});
++export const MAINLINE_A_BETA_REFERENCE_READY_IDS: readonly string[] = betaReferences.map((row) => row.id);
++
++function createStellarEvidence(references: readonly ParallaxReference[]): Readonly<Record<string, StellarEvidenceV607>> {
+   return Object.fromEntries(references.map((reference) => {
+   const hero = STELLAR_HEROES_V592.find((row) => row.id === reference.id);
+   if (!hero) throw new Error(`Missing A4 stellar hero ${reference.id}`);
+@@ -99,5 +108,5 @@
+ /** Historical A4 six-star evidence projection; retained for old receipts. */
+ export const MAINLINE_A4_STELLAR_EVIDENCE: Readonly<Record<string, StellarEvidenceV607>> = createStellarEvidence(PARALLAX_REFERENCES.filter((reference) => FIRST_SET_IDS.has(reference.id)));
+ 
+-/** Additive evidence map for the current twelve-star art roster. */
+-export const MAINLINE_A4_CURRENT_STELLAR_EVIDENCE: Readonly<Record<string, StellarEvidenceV607>> = createStellarEvidence(PARALLAX_REFERENCES);
++/** Additive references; unresolved components and missing parallaxes remain outside. */
++export const MAINLINE_A4_CURRENT_STELLAR_EVIDENCE: Readonly<Record<string, StellarEvidenceV607>> = createStellarEvidence([...PARALLAX_REFERENCES, ...betaReferences]);
+--- new-in-r48
++++ app/lib/mainlineAStellarAtlasV608.test.tsx
+@@ -0,0 +1,98 @@
++import { createElement } from "react";
++import { renderToStaticMarkup } from "react-dom/server";
++import { describe, it, expect } from "vitest";
++import { MAINLINE_A_CURRENT_STARS } from "../data/mainlineAMetadataV607";
++import { getMainlineA1CatalogId, getMainlineA1ObjectByCatalogId } from "../data/mainlineARegistryV607";
++import { createCelestialObjectPassport } from "./celestialCatalog";
++import MainlineAStellarAtlasV608 from "../components/MainlineAStellarAtlasV608";
++import MainlineAStellarPortraitV607 from "../components/MainlineAStellarPortraitV607";
++import { selectStellarAtlasStars, stellarAtlasColor, stellarAtlasGeometry, stellarAtlasReferenceRadius, stellarAtlasFocusTarget } from "./mainlineAStellarAtlasV608";
++import { selectedSkyTargetDescriptor } from "./selectedSkyTarget";
++
++const stars = MAINLINE_A_CURRENT_STARS;
++const defaults = { family: "all", search: "", order: "catalog" } as const;
++
++describe("stellar atlas comparison and navigation", () => {
++  it("preserves Alpha Centauri B and every named identity through scene focus", () => {
++    for (const star of stars) {
++      const target = stellarAtlasFocusTarget(star);
++      expect(selectedSkyTargetDescriptor(target.catalogId, [])?.id).toBe(`stellar-hero:${star.id}`);
++      expect(Math.hypot(...target.direction)).toBeCloseTo(1, 12);
++    }
++    expect(() => stellarAtlasFocusTarget({ ...stars[0], science: { coordinateFrame: "ICRS-J2000" } })).toThrow("Missing stellar focus coordinates");
++  });
++  it("has twenty source-backed portraits and retains physical writeback boundaries", () => {
++    expect(stars).toHaveLength(20);
++    for (const star of stars) {
++      expect(star.evidence.scientificPayloadWriteback).toBe(false);
++      expect(star.evidence.gaiaAssociation.namedStarIdentityConfirmed).toBe(false);
++      expect(star.evidence.referenceDistance.parallaxMas).toBeGreaterThan(0);
++      expect(star.narrative.detailCn.length).toBeGreaterThan(100);
++    }
++  });
++  it("resolves every portrait through the real catalog and passport", () => {
++    for (const star of stars) {
++      const id = getMainlineA1CatalogId(star.id)!;
++      expect(id, star.id).toBeTruthy();
++      expect(createCelestialObjectPassport(id), star.id).not.toBeNull();
++      expect(getMainlineA1ObjectByCatalogId(id)?.id).toBe(star.id);
++    }
++  });
++  it("partitions temperature families without dropping or duplicating stars", () => {
++    const partition = ["cool", "warm", "hot"].flatMap((family) => selectStellarAtlasStars(stars, { ...defaults, family: family as "cool" | "warm" | "hot" }));
++    expect(partition).toHaveLength(stars.length);
++    expect(new Set(partition.map((star) => star.id)).size).toBe(stars.length);
++  });
++  it("filters flattened stars, Chinese narrative text and empty results", () => {
++    expect(selectStellarAtlasStars(stars, { ...defaults, family: "flattened" }).some((star) => star.id === "achernar")).toBe(true);
++    expect(selectStellarAtlasStars(stars, { ...defaults, search: "河鼓二" }).map((star) => star.id)).toEqual(["altair"]);
++    expect(selectStellarAtlasStars(stars, { ...defaults, search: "not-a-star" })).toEqual([]);
++    expect(selectStellarAtlasStars(stars, { ...defaults, search: " ALTAIR " })[0].id).toBe("altair");
++  });
++  it("sorts numeric values without mutating the runtime catalog", () => {
++    const before = stars.map((star) => star.id);
++    const sorted = selectStellarAtlasStars(stars, { ...defaults, order: "radius" });
++    expect(sorted[0].artDirection.radiusSolar).toBeLessThan(sorted.at(-1)!.artDirection.radiusSolar);
++    expect(stars.map((star) => star.id)).toEqual(before);
++  });
++  it("uses linear radius scaling and keeps subpixel stars below one pixel", () => {
++    const maximum = stellarAtlasReferenceRadius(stars);
++    const small = stars.find((star) => star.id === "alpha-centauri-b")!;
++    const large = stars.find((star) => star.artDirection.radiusSolar === maximum)!;
++    const a = stellarAtlasGeometry(small, "shared-radius", maximum);
++    const b = stellarAtlasGeometry(large, "shared-radius", maximum);
++    expect(b.rx).toBe(34);
++    expect(a.rx / b.rx).toBeCloseTo(small.artDirection.radiusSolar / large.artDirection.radiusSolar, 12);
++    expect(a.subpixel).toBe(true);
++    expect(a.rx).toBeLessThan(1);
++  });
++  it("normalizes size while preserving the declared flattening ratio", () => {
++    for (const star of stars) {
++      const geometry = stellarAtlasGeometry(star, "normalized", 1000);
++      expect(geometry.rx).toBe(34);
++      expect(geometry.rx / geometry.ry).toBeCloseTo(star.artDirection.equatorialPolarRadiusRatio, 10);
++    }
++  });
++  it("handles invalid display parameters without non-finite SVG geometry", () => {
++    const invalid = { ...stars[0], artDirection: { ...stars[0].artDirection, radiusSolar: Number.NaN } };
++    expect(stellarAtlasGeometry(invalid, "shared-radius", 0)).toEqual({ rx: 0, ry: 0, subpixel: true });
++    expect(stellarAtlasColor(Number.NaN)).toBe("#a8afbb");
++    expect(stellarAtlasReferenceRadius([])).toBe(0);
++  });
++  it("renders the actual atlas with twenty distinct selectable cards", () => {
++    const html = renderToStaticMarkup(createElement(MainlineAStellarAtlasV608, { onClose() {}, onFocus() {} }));
++    expect((html.match(/data-mainline-a-atlas-star=/g) ?? [])).toHaveLength(20);
++    expect(html).toContain("统一半径比例");
++    expect(html).toContain("在星空中定位");
++    expect(html).toContain('data-mainline-a-atlas-selected="altair"');
++    expect(html).toContain("非观测表面");
++  });
++  it("renders all new portraits with unique semantic object identity", () => {
++    for (const star of stars.slice(12)) {
++      const html = renderToStaticMarkup(createElement(MainlineAStellarPortraitV607, { objectId: star.id, title: star.displayName, profile: star.artDirection }));
++      expect(html).toContain(`data-mainline-a-stellar-portrait="${star.id}"`);
++      expect(html).toContain(star.displayName);
++      expect(html).toContain("非已解析的真实表面");
++    }
++  });
++});
+--- new-in-r48
++++ app/lib/mainlineAStellarAtlasV608.ts
+@@ -0,0 +1,77 @@
++import type { StarMetadataV607WithArtDirection } from "./celestialObjectContractV607";
++
++export type StellarAtlasFamily = "all" | "cool" | "warm" | "hot" | "flattened";
++export type StellarAtlasScale = "normalized" | "shared-radius";
++export type StellarAtlasOrder = "catalog" | "temperature" | "radius";
++
++export const STELLAR_ATLAS_FAMILIES: readonly { id: StellarAtlasFamily; label: string }[] = [
++  { id: "all", label: "全部恒星" },
++  { id: "cool", label: "冷色温 · 橙红" },
++  { id: "warm", label: "中间色温 · 暖白" },
++  { id: "hot", label: "高色温 · 蓝白" },
++  { id: "flattened", label: "旋转扁率" },
++];
++
++export function stellarAtlasColor(temperature: number): string {
++  if (!Number.isFinite(temperature)) return "#a8afbb";
++  if (temperature < 4500) return "#ffb079";
++  if (temperature < 7500) return "#ffecd0";
++  if (temperature < 12000) return "#e8f0ff";
++  return "#a8ccff";
++}
++
++export function matchesStellarAtlasFamily(star: StarMetadataV607WithArtDirection, family: StellarAtlasFamily): boolean {
++  const profile = star.artDirection;
++  switch (family) {
++    case "cool": return profile.colorTemperatureK < 4500;
++    case "warm": return profile.colorTemperatureK >= 4500 && profile.colorTemperatureK < 7500;
++    case "hot": return profile.colorTemperatureK >= 7500;
++    case "flattened": return profile.equatorialPolarRadiusRatio > 1.05;
++    default: return true;
++  }
++}
++
++export function selectStellarAtlasStars(
++  stars: readonly StarMetadataV607WithArtDirection[],
++  options: { family: StellarAtlasFamily; search: string; order: StellarAtlasOrder },
++): StarMetadataV607WithArtDirection[] {
++  const query = options.search.trim().toLocaleLowerCase();
++  const filtered = stars.filter((star) => matchesStellarAtlasFamily(star, options.family)
++    && (!query || [star.id, star.displayName, star.narrative.summaryCn, star.science.spectralType]
++      .join(" ").toLocaleLowerCase().includes(query)));
++  if (options.order === "catalog") return filtered;
++  const key = options.order === "temperature" ? "colorTemperatureK" : "radiusSolar";
++  return filtered.sort((a, b) => a.artDirection[key] - b.artDirection[key] || a.id.localeCompare(b.id));
++}
++
++/** Linear radius comparison; subpixel stars remain subpixel and get a pointer label. */
++export function stellarAtlasGeometry(
++  star: StarMetadataV607WithArtDirection,
++  scale: StellarAtlasScale,
++  referenceRadius: number,
++): { rx: number; ry: number; subpixel: boolean } {
++  const radius = star.artDirection.radiusSolar;
++  const ratio = star.artDirection.equatorialPolarRadiusRatio;
++  if (!Number.isFinite(radius) || radius <= 0 || !Number.isFinite(ratio) || ratio < 1) {
++    return { rx: 0, ry: 0, subpixel: true };
++  }
++  const rx = scale === "normalized" ? 34
++    : Number.isFinite(referenceRadius) && referenceRadius > 0 ? 34 * radius / referenceRadius : 0;
++  return { rx, ry: rx / ratio, subpixel: rx < 1 };
++}
++
++export function stellarAtlasReferenceRadius(stars: readonly StarMetadataV607WithArtDirection[]): number {
++  return stars.reduce((maximum, star) => Math.max(maximum, Number.isFinite(star.artDirection.radiusSolar) ? star.artDirection.radiusSolar : 0), 0);
++}
++
++/** Preserve component identity through the existing named-star focus controller. */
++export function stellarAtlasFocusTarget(star: StarMetadataV607WithArtDirection) {
++  const { raDeg, decDeg } = star.science;
++  if (raDeg === undefined || decDeg === undefined || !Number.isFinite(raDeg) || !Number.isFinite(decDeg)) {
++    throw new Error(`Missing stellar focus coordinates: ${star.id}`);
++  }
++  const ra = raDeg * Math.PI / 180;
++  const dec = decDeg * Math.PI / 180;
++  const direction: [number, number, number] = [Math.cos(dec) * Math.cos(ra), Math.sin(dec), Math.cos(dec) * Math.sin(ra)];
++  return { direction, catalogId: `stellar-hero:${star.id}` };
++}
+--- new-in-r48
++++ scripts/project-mainline-a-beta-stellar.mjs
+@@ -0,0 +1,121 @@
++import { createHash } from "node:crypto";
++import { readFileSync, writeFileSync } from "node:fs";
++import path from "node:path";
++import { fileURLToPath } from "node:url";
++
++export const SNAPSHOT_PATH = "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json";
++export const EXPECTED_SEAL = "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061";
++export const BETA_IDS = [
++  "alpha-centauri-b", "hadar", "altair", "acrux", "spica", "pollux",
++  "fomalhaut", "deneb", "regulus", "polaris", "bellatrix", "alnilam",
++];
++
++export function canonicalize(value) {
++  if (Array.isArray(value)) return value.map(canonicalize);
++  if (value && typeof value === "object") {
++    return Object.fromEntries(Object.entries(value)
++      .sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0)
++      .map(([key, item]) => [key, canonicalize(item)]));
++  }
++  return value;
++}
++
++export function digest(value) {
++  return createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
++}
++
++function finite(value) {
++  return typeof value === "number" && Number.isFinite(value);
++}
++
++/** Compile a bounded factual projection; do not infer component identity. */
++export function projectSnapshot(snapshot, expectedSeal = EXPECTED_SEAL) {
++  if (!snapshot || typeof snapshot !== "object") throw new Error("Snapshot must be an object");
++  const { snapshotSha256, ...unsigned } = snapshot;
++  if (snapshotSha256 !== expectedSeal || digest(unsigned) !== expectedSeal) {
++    throw new Error("SIMBAD snapshot seal mismatch");
++  }
++  if (!Array.isArray(snapshot.records)) throw new Error("Snapshot records missing");
++  if (!snapshot.service?.citation || !snapshot.service?.license) throw new Error("Source attribution missing");
++  const seen = new Set();
++  for (const row of snapshot.records) {
++    if (seen.has(row.id)) throw new Error(`Duplicate snapshot identity: ${row.id}`);
++    seen.add(row.id);
++  }
++  const rows = BETA_IDS.map((id) => {
++    const row = snapshot.records.find((candidate) => candidate.id === id);
++    if (!row) throw new Error(`Missing Beta source record: ${id}`);
++    const issues = [];
++    if (row.queryStatus !== "resolved") issues.push("source-unresolved");
++    if (!["exact-component", "exact-named-star"].includes(row.resolutionClass)) {
++      issues.push("component-identity-ambiguous");
++    }
++    if (typeof row.mainId !== "string" || !row.mainId.trim()) issues.push("source-identifier-missing");
++    const parallax = row.parallax;
++    if (!finite(parallax?.valueMas) || parallax.valueMas <= 0) issues.push("positive-parallax-missing");
++    if (!finite(parallax?.errorMas) || parallax.errorMas < 0) issues.push("parallax-error-missing");
++    if (typeof parallax?.bibcode !== "string" || !parallax.bibcode.trim()) issues.push("upstream-reference-missing");
++    return {
++      id,
++      simbadIdentifier: row.mainId ?? null,
++      resolutionClass: row.resolutionClass,
++      sourceRecordDigest: digest(row),
++      parallaxMas: parallax?.valueMas ?? null,
++      errorMas: parallax?.errorMas ?? null,
++      bibcode: parallax?.bibcode ?? null,
++      presentationReferenceReady: issues.length === 0,
++      blockingReasons: issues,
++      measurementAdmission: "not-admitted",
++    };
++  });
++  return {
++    schema: "mainline-a-beta-stellar-projection-v1",
++    sourcePath: SNAPSHOT_PATH,
++    snapshotSha256,
++    retrievedAt: snapshot.retrievedAt,
++    license: snapshot.service.license,
++    citation: snapshot.service.citation,
++    generatedFromExistingSnapshot: true,
++    scientificPayloadWriteback: false,
++    rows,
++  };
++}
++
++export function renderProjection(projection) {
++  return [
++    "// Derived from the sealed local SIMBAD snapshot; do not edit by hand.",
++    "// Source reference admission is distinct from scientific measurement authority.",
++    `export const MAINLINE_A_BETA_STELLAR_PROJECTION = ${JSON.stringify(projection, null, 2)} as const;`,
++    "",
++  ].join("\n");
++}
++
++export function run({ root, check = false }) {
++  const snapshot = JSON.parse(readFileSync(path.join(root, SNAPSHOT_PATH), "utf8"));
++  const projection = projectSnapshot(snapshot);
++  const target = path.join(root, "app/data/mainlineABetaStellarProjectionV607.generated.ts");
++  const code = renderProjection(projection);
++  if (check) {
++    if (readFileSync(target, "utf8") !== code) throw new Error("Stellar projection is stale; regenerate it");
++  } else {
++    writeFileSync(target, code);
++  }
++  return {
++    sourcePath: SNAPSHOT_PATH,
++    sourceBytesSha256: createHash("sha256").update(readFileSync(path.join(root, SNAPSHOT_PATH))).digest("hex"),
++    snapshotSha256: projection.snapshotSha256,
++    ready: projection.rows.filter((row) => row.presentationReferenceReady).map((row) => row.id),
++    pending: projection.rows.filter((row) => !row.presentationReferenceReady).map((row) => ({ id: row.id, reasons: row.blockingReasons })),
++    check,
++  };
++}
++
++const self = fileURLToPath(import.meta.url);
++if (process.argv[1] && path.resolve(process.argv[1]) === self) {
++  try {
++    console.log(JSON.stringify(run({ root: path.resolve(path.dirname(self), ".."), check: process.argv.includes("--check") }), null, 2));
++  } catch (error) {
++    console.error(error.message);
++    process.exitCode = 1;
++  }
++}
+--- new-in-r48
++++ scripts/project-mainline-a-beta-stellar.test.mjs
+@@ -0,0 +1,82 @@
++import { readFileSync } from "node:fs";
++import { test } from "node:test";
++import assert from "node:assert/strict";
++import { BETA_IDS, EXPECTED_SEAL, digest, projectSnapshot, renderProjection, run } from "./project-mainline-a-beta-stellar.mjs";
++
++const snapshot = JSON.parse(readFileSync(new URL("../docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json", import.meta.url), "utf8"));
++function reseal(value) {
++  const unsigned = { ...value };
++  delete unsigned.snapshotSha256;
++  return { ...unsigned, snapshotSha256: digest(unsigned) };
++}
++function changedRow(id, mutate) {
++  const copy = structuredClone(snapshot);
++  mutate(copy.records.find((row) => row.id === id));
++  return reseal(copy);
++}
++
++test("existing source seal yields eight references and four explicit gaps", () => {
++  const projected = projectSnapshot(snapshot);
++  assert.equal(projected.snapshotSha256, EXPECTED_SEAL);
++  assert.equal(projected.rows.length, BETA_IDS.length);
++  assert.equal(projected.rows.filter((row) => row.presentationReferenceReady).length, 8);
++  assert.deepEqual(projected.rows.filter((row) => !row.presentationReferenceReady).map((row) => row.id), ["acrux", "spica", "regulus", "polaris"]);
++  assert.equal(projected.generatedFromExistingSnapshot, true);
++  assert.ok(projected.rows.every((row) => row.measurementAdmission === "not-admitted"));
++});
++
++test("changed source bytes cannot pass the pinned canonical seal", () => {
++  const corrupted = structuredClone(snapshot);
++  corrupted.records[0].parallax.valueMas += 1;
++  assert.throws(() => projectSnapshot(corrupted), /seal mismatch/);
++  const resealed = reseal(corrupted);
++  assert.throws(() => projectSnapshot(resealed), /seal mismatch/);
++});
++
++test("record digests and values bind to the precise source row", () => {
++  for (const row of projectSnapshot(snapshot).rows) {
++    const original = snapshot.records.find((candidate) => candidate.id === row.id);
++    assert.equal(row.sourceRecordDigest, digest(original));
++    assert.equal(row.simbadIdentifier, original.mainId);
++    assert.equal(row.parallaxMas, original.parallax.valueMas);
++    assert.equal(row.errorMas, original.parallax.errorMas);
++    assert.equal(row.bibcode, original.parallax.bibcode);
++  }
++});
++
++test("missing and non-positive parallax are never filled from another field", () => {
++  for (const value of [null, 0, -3]) {
++    const modified = changedRow("altair", (row) => { row.parallax.valueMas = value; });
++    const row = projectSnapshot(modified, modified.snapshotSha256).rows.find((item) => item.id === "altair");
++    assert.equal(row.presentationReferenceReady, false);
++    assert.ok(row.blockingReasons.includes("positive-parallax-missing"));
++    assert.equal(row.parallaxMas, value);
++  }
++});
++
++test("unresolved identities, missing uncertainty and absent bibliography stay blocked", () => {
++  const modified = changedRow("altair", (row) => {
++    row.queryStatus = "unresolved";
++    row.parallax.errorMas = null;
++    row.parallax.bibcode = "";
++  });
++  const row = projectSnapshot(modified, modified.snapshotSha256).rows.find((item) => item.id === "altair");
++  assert.deepEqual(row.blockingReasons, ["source-unresolved", "parallax-error-missing", "upstream-reference-missing"]);
++});
++
++test("a valid seal cannot hide duplicate or missing requested objects", () => {
++  const duplicate = structuredClone(snapshot);
++  duplicate.records.push(duplicate.records[0]);
++  const sealedDuplicate = reseal(duplicate);
++  assert.throws(() => projectSnapshot(sealedDuplicate, sealedDuplicate.snapshotSha256), /Duplicate/);
++  const missing = structuredClone(snapshot);
++  missing.records = missing.records.filter((row) => row.id !== "altair");
++  const sealedMissing = reseal(missing);
++  assert.throws(() => projectSnapshot(sealedMissing, sealedMissing.snapshotSha256), /Missing Beta/);
++});
++
++test("projection output is deterministic and the checked-in projection is current", () => {
++  assert.equal(renderProjection(projectSnapshot(snapshot)), renderProjection(projectSnapshot(snapshot)));
++  const root = new URL("../", import.meta.url);
++  assert.equal(run({ root: decodeURIComponent(root.pathname).replace(/^\/(\w:)/, "$1"), check: true }).check, true);
++});
+--- confirmed-absent-before-r48/app/data/mainlineABetaAssetIntakeV607.ts
++++ app/data/mainlineABetaAssetIntakeV607.ts
+@@ -0,0 +208,13 @@
++function validateRecordShape(record: MainlineABetaAssetRecordV607): string[] {
++  const reasons: string[] = [];
++  if (!hasNonEmpty(record.id)) reasons.push("asset-id-required");
++  if (!hasNonEmpty(record.displayName)) reasons.push("asset-display-name-required");
++  if (record.kind !== "hero-star" && record.kind !== "nebula") reasons.push("asset-kind-invalid");
++  if (!Number.isInteger(record.queueOrder) || record.queueOrder < 1) reasons.push("asset-queue-order-invalid");
++  if (!STATUS_ORDER.includes(record.status)) reasons.push("asset-status-invalid");
++  if (record.admission !== "admitted" && record.admission !== "not-admitted") reasons.push("asset-admission-invalid");
++  if (!Array.isArray(record.blockingReasons) || !record.blockingReasons.every((reason) => hasNonEmpty(reason))) {
++    reasons.push("asset-blocking-reasons-invalid");
++  }
++  return reasons;
++}
+--- confirmed-absent-before-r48/app/data/mainlineABetaAssetIntakeV607.ts
++++ app/data/mainlineABetaAssetIntakeV607.ts
+@@ -0,0 +222,3 @@
++function uniqueReasons(reasons: readonly string[]): string[] {
++  return reasons.filter((reason, index, all) => all.indexOf(reason) === index);
++}
+--- confirmed-absent-before-r48/app/data/mainlineABetaAssetIntakeV607.ts
++++ app/data/mainlineABetaAssetIntakeV607.ts
+@@ -0,0 +226,7 @@
++function evidenceReasons(record: MainlineABetaAssetRecordV607): string[] {
++  return uniqueReasons([
++    ...validateSource(record.source),
++    ...validateRights(record.rights),
++    ...validateImage(record.image),
++  ]);
++}
+--- confirmed-absent-before-r48/app/data/mainlineABetaAssetIntakeV607.ts
++++ app/data/mainlineABetaAssetIntakeV607.ts
+@@ -0,0 +234,9 @@
++function includesNormalizedBlocker(record: MainlineABetaAssetRecordV607, reason: string): boolean {
++  if (!Array.isArray(record.blockingReasons)) return false;
++  if (record.blockingReasons.includes(reason)) return true;
++  // Nebula intake uses a more specific source-image label for the same
++  // fail-closed source-snapshot gate used by hero-star intake.
++  return reason === "source-snapshot-required"
++    && record.kind === "nebula"
++    && record.blockingReasons.includes("source-image-required");
++}

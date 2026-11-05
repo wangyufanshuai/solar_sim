@@ -1,0 +1,38 @@
+{
+  "schema": "mainline-a6-science-manifest-blocker-v1",
+  "checkedAt": "2026-09-13T04:32:18Z",
+  "scope": "full-workspace TypeScript prerequisite for historical v560 Kerr observation envelope",
+  "authoritativeBuilder": "scripts/build-kerr-observation-envelope-v560.py",
+  "attemptedCommands": [
+    "npx tsc --noEmit --incremental false",
+    "python scripts/build-kerr-observation-envelope-v560.py --verify"
+  ],
+  "missingArtifacts": [
+    "dist/science/kerr-sparse-observation-envelope-v560/manifest.json",
+    "dist/science/kerr-sparse-science-image-products-v556/manifest.json",
+    "dist/science/kerr-sparse-coordinate-products-v557/manifest.json",
+    "dist/science/kerr-response-provenance-pack-v558/manifest.json",
+    "dist/science/kerr-response-provenance-pack-v558/atlas.json",
+    "dist/science/kerr-response-uncertainty-ledger-v559/manifest.json",
+    "dist/science/kerr-response-uncertainty-ledger-v559/atlas.json",
+    "dist/science/kerr-response-uncertainty-ledger-v559/runtime-audit.json",
+    "dist/science/orbit-atlas-shadow-v559-evidence.json",
+    "dist/science/kerr-campaign-v314/campaign-state.json"
+  ],
+  "availablePrerequisites": [
+    "scripts/build-kerr-observation-envelope-v560.py",
+    "scripts/orbit_atlas_v560_observation_envelope_validator.py",
+    "dist/release/orbit-atlas-current-product-evidence-v263.json"
+  ],
+  "observedTypecheck": {
+    "command": "npx tsc --noEmit --incremental false --pretty false",
+    "exitCode": 2,
+    "errors": [
+      "app/lib/kerrObservationEnvelopeV560.test.ts(1,60): Cannot find module '../../dist/science/kerr-sparse-observation-envelope-v560/manifest.json' or its corresponding type declarations."
+    ],
+    "note": "The Mainline A3 texture fixture constructor type error is resolved; the latest full-workspace run still exits 2 only because the authoritative v560 science manifest chain is absent."
+  },
+  "status": "blocked-authoritative-v556-to-v559-science-input-chain-absent",
+  "resolution": "Restore the trusted historical v556-v559 and v314 science products, verify their embedded hashes and boundary fields, run the v560 builder, then rerun full tsc. Do not create placeholders or exclude the importing test.",
+  "mainlineBoundary": "This blocker is outside the Mainline A art/runtime overlay; EIH, Newton N-body, 2PN/Lense-Thirring and Kerr source files were not modified."
+}

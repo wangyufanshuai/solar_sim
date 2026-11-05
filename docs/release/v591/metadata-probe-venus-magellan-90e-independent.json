@@ -1,0 +1,63 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "venus-magellan-90e-independent",
+  "probedAt": "2026-08-14T07:47:53.930Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "venus",
+  "role": "same-target-independent-nasa-magellan-90-east-surface-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Venus%20computer%20simulated%20global%20view%2090%20degrees%20east&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Venus%20computer%20simulated%20global%20view%2090%20degrees%20east&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 3381,
+    "responseSha256": "8e0e830688a15679cd933d66687219bb0611e3425ab0c09573fb67b6a87d43ea"
+  },
+  "totalHits": 2,
+  "candidates": [
+    {
+      "nasaId": "ARC-1991-AC91-3009",
+      "title": "ARC-1991-AC91-3009",
+      "description": "The northern hemisphere is displayed in this global view of the surface of Venus. The north pole is at the center of the image; with 0 degrees, 90 degrees , 180 degrees, 270 degrees east longitudes at 6, 3, 12 and 9 0'clock positions, repectively, of an imagery clock face. Magellan synthetic aperture radar mosaics from the first cycle of Magelolan mapping are mapped onto a computer-simulated globe to create this image. Data gaps are filled with Pioneere-Venus Orbiter data, or a constant mid-range value. Simulated color is used to enhance small-scale structure. The simulated hues are based on color images recorded by the Soviet Venera 13 & 14 spacecraft.",
+      "dateCreated": "1991-10-29T00:00:00Z",
+      "center": "ARC",
+      "photographer": "JPL",
+      "keywords": [],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/ARC-1991-AC91-3009/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/ARC-1991-AC91-3009/ARC-1991-AC91-3009~thumb.jpg"
+    },
+    {
+      "nasaId": "PIA00270",
+      "title": "Venus - Computer Simulated Global View Centered at 90 Degrees East Longitude",
+      "description": "The northern hemisphere is displayed in this global view of the surface of Venus as seen by NASA Magellan spacecraft. http://photojournal.jpl.nasa.gov/catalog/PIA00270",
+      "dateCreated": "1996-09-23T12:07:22Z",
+      "center": "JPL",
+      "photographer": null,
+      "keywords": [
+        "Venus",
+        "Magellan"
+      ],
+      "requiredTermsMatched": true,
+      "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA00270/collection.json",
+      "previewUrl": "https://images-assets.nasa.gov/image/PIA00270/PIA00270~thumb.jpg"
+    }
+  ],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "cabf7e6187c950205374eccbba6f865b85eb0809d286f5ef9ee4b405d9a46356"
+}

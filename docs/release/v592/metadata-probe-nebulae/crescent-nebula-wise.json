@@ -1,0 +1,36 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:04:08.943Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "crescent-nebula-wise",
+  "query": "Crescent Nebula WISE",
+  "requiredTerms": [
+    "crescent",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Crescent%20Nebula%20WISE&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Crescent%20Nebula%20WISE&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 171,
+    "responseSha256": "0aaa7b7e981c7acb370e56b714550448a4b6cff6e1c9b45c12926de8c68defd6"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "cbe2b7175cac85008c2aeaaea6978133d029e6cf722975fff134cbb9bca9eda9"
+}

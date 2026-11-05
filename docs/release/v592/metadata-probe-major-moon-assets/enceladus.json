@@ -1,0 +1,118 @@
+{
+  "version": "v592-major-moon-asset-manifest-probe-v1",
+  "probedAt": "2026-08-15T04:42:33.402Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "enceladus",
+  "selection": {
+    "nasaId": "PIA14937",
+    "title": "Map of Enceladus - December 2011",
+    "description": "This mosaic shows an updated global map of Saturn icy moon Enceladus, created using images taken during flybys of NASA Cassini spacecraft. The map incorporates new images taken during flybys in December 2011.",
+    "center": "JPL",
+    "selectionReason": "Cassini global mosaic map",
+    "metadataReceiptSha256": "58028e8a38a08f22e1c64a0375e65601bbb58b065cc110fbb28d37f0c85a5f74",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA14937/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA14937/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA14937/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "26405f7fd53f1eb7bcb0a9d0a92157b8d13c89fead179339cc2f26de955ae71e"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/PIA14937~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14937~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/PIA14937~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14937~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/PIA14937~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14937~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/PIA14937~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14937~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/PIA14937~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA14937~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/PIA14937~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA14937/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA14937/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "0f11baad5ee6751e30deee0a8c144b69a6a5ec8600876348afee0a5301714f0a"
+}

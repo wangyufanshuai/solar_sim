@@ -1,0 +1,71 @@
+{
+  "schema": "mainline-a6-browser-performance-v1",
+  "capturedAt": "2026-09-13T03:52:57Z",
+  "browser": "Codex In-app Browser",
+  "build": {
+    "profile": "vercel-lite",
+    "distDir": ".next-mainline-a-v607-bound",
+    "buildId": "Rb2oRPUZ-GbU9oLlj_fRY",
+    "inputDigest": "8e0cdb0724b76068c04fe8f9c25a2d67382f50c38e40a28675463a0233687ded",
+    "url": "http://127.0.0.1:3017/"
+  },
+  "observations": [
+    {
+      "id": "desktop-solar-balanced",
+      "viewport": { "width": 1280, "height": 720, "mode": "browser-emulation" },
+      "qualityTier": "balanced",
+      "frameSamples": 720,
+      "medianFps": 180.2,
+      "frameP50Ms": 5.6,
+      "frameP95Ms": 5.7,
+      "rafP95Ms": 5.7,
+      "longTaskMaxMs": 1562.0,
+      "resourceRevision": 14,
+      "resourceTotal": 14,
+      "resourceTextures": 11,
+      "resourceWorkers": 1,
+      "resourceSubscriptions": 1,
+      "resourceIdentityDigest": "16a0ce4b",
+      "consoleAndPageErrors": 0
+    },
+    {
+      "id": "mobile-galactic-balanced",
+      "viewport": { "width": 390, "height": 844, "mode": "browser-emulation" },
+      "qualityTier": "mobile-safe",
+      "frameSamples": 671,
+      "medianFps": 180.0,
+      "frameP50Ms": 5.6,
+      "frameP95Ms": 5.7,
+      "rafP95Ms": 5.7,
+      "longTaskMaxMs": 2158.0,
+      "resourceRevision": 14,
+      "resourceTotal": 14,
+      "resourceTextures": 11,
+      "resourceWorkers": 1,
+      "resourceSubscriptions": 1,
+      "resourceIdentityDigest": "38a923ae",
+      "consoleAndPageErrors": 0
+    }
+  ],
+  "thresholds": {
+    "minimumFrameSamples": 241,
+    "maximumFrameP95Ms": 50,
+    "minimumMedianFps": 45,
+    "resourceIdentityStableWithinObservation": true
+  },
+  "warmupReview": {
+    "id": "desktop-solar-balanced-22s-followup",
+    "windowSeconds": 22,
+    "frameSamples": 720,
+    "medianFps": 179.7,
+    "frameP95Ms": 5.7,
+    "longTaskMaxMs": 1573.0,
+    "interpretation": "frame budget remains stable after warmup; long-task peak persists and requires investigation before release qualification"
+  },
+  "status": "browser-emulated-desktop-mobile-frame-budget-and-resource-snapshot-pass-long-task-review-pending",
+  "boundaries": [
+    "These are Codex In-app Browser emulation samples, not physical-device or public-SLA evidence.",
+    "Frame and resource markers are presentation/runtime diagnostics; no EIH, Newton N-body, 2PN/Lense-Thirring or Kerr kernel mutation is claimed.",
+    "Long-task maxima are recorded for review and do not get converted into a production performance certification."
+  ]
+}

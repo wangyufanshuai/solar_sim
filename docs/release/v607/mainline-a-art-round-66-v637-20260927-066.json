@@ -1,0 +1,253 @@
+{
+  "schema": "mainline-a-art-round-v637",
+  "round": "R66-continuation",
+  "batch": "B1",
+  "version": "V637",
+  "recordedAt": "2026-09-27T11:26:32.038Z",
+  "status": "implementation-and-bounded-technical-verification-complete",
+  "overallGoalComplete": false,
+  "repository": "E:/86137/myai/solar_sim/next-web",
+  "identity": {
+    "runtimeBuildId": "mainline-a-1a7efa4d339d80a7",
+    "buildId": "GYRGfmHS7ipvhzqC7nOUU",
+    "sourceSha256": "1a7efa4d339d80a7727f079b306fa46432fbf365eb6e1d43d33327814a9c5ac3",
+    "sourceInputs": 2365,
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "baseline": "Existing dirty workspace snapshot; no reset/checkout/clean/delete/stage/commit",
+  "initialGitStatusEntries": 1604,
+  "features": [
+    "Responsive shared scale-navigation and toolbar layout, with measured title clearance",
+    "Exclusive foreground panel state, native-dialog Escape coordination, custom roster Tab loop and focus restoration",
+    "Independent dockable performance observer retains its samples while foreground panels are used",
+    "Nebula missing-value normalization, validated kinds, exact catalog alias matching, stable missing-last ordering and selection/filter reconciliation",
+    "Existing A-line image preview with load/error/retry, byte/hash/credit binding; candidate images stay outside runtime admission",
+    "Read-only build-bound layout observation intake and geometry/focus verifier"
+  ],
+  "codeChange": {
+    "path": "docs/release/v607/mainline-a-r66-v637-code-change-20260927-066.json",
+    "bytes": 8578,
+    "sha256": "5c3ba88df6c8b055c7988896e6ad192b0f3d9705956183707add93378376379c"
+  },
+  "effectiveProductionLines": 1245,
+  "lineStatistics": {
+    "diffAdded": 2374,
+    "diffRemoved": 140,
+    "modifiedPairs": 137,
+    "unpairedAdded": 2237,
+    "unpairedRemoved": 3,
+    "testsAndStylesExcludedFromEffective": true
+  },
+  "effectiveCodeFiles": [
+    "app/components/AtlasRuntimeWorkbenchSurface.tsx",
+    "app/components/AtlasScaleNavigatorV260.tsx",
+    "app/components/MainlineANebulaAtlasV609.tsx",
+    "app/components/MainlineAPerformanceSurfaceV637.tsx",
+    "app/components/MainlineAWorkspaceNavigationV637.tsx",
+    "app/components/OrbitAtlasHud.tsx",
+    "app/components/PostV593StellarRosterPanel.tsx",
+    "app/lib/mainlineANebulaAtlasV609.ts",
+    "app/lib/mainlineANebulaPresentationV637.ts",
+    "app/lib/mainlineANebulaReviewV610.ts",
+    "app/lib/mainlineAPanelNavigationV637.ts",
+    "app/lib/useMainlineAPanelNavigationV637.ts",
+    "scripts/audit-mainline-a-presentation-v637.ts"
+  ],
+  "evidence": {
+    "static": {
+      "node": {
+        "passed": 8,
+        "log": {
+          "path": "tmp/mainline-a-b1-node-066.log",
+          "bytes": 763,
+          "sha256": "6c9beaf2c519d25dcb921851a1e8c988d2cbeccac6aedab839c2a7448ae42261"
+        }
+      },
+      "vitest": {
+        "passed": 221,
+        "files": 13,
+        "log": {
+          "path": "tmp/mainline-a-b1-vitest-066b.log",
+          "bytes": 869,
+          "sha256": "765e070ba4df0484cca827a5291819ce77d96aec8724eeb178d4f78b4e21515f"
+        }
+      },
+      "eslint": {
+        "uniqueFiles": 18,
+        "errors": 0,
+        "warnings": 0,
+        "reports": [
+          {
+            "path": "tmp/mainline-a-b1-eslint-066.json",
+            "bytes": 4692,
+            "sha256": "e3a54c55d7ff16280a82b82d388fbec73822c898e5a9a0f55365f209e9295241"
+          },
+          {
+            "path": "tmp/mainline-a-b1-eslint-066b.json",
+            "bytes": 776,
+            "sha256": "7cfb912643b8bded7489f5942a9c3a505063864df8c99cd355fb90556536de99"
+          }
+        ]
+      },
+      "build": {
+        "path": "docs/release/v607/mainline-a-r66-build-20260927-066b.json",
+        "bytes": 463862,
+        "sha256": "373d89b588a5e877b6190e1d0e43670d440e2da770240a7c35c652903e375458"
+      },
+      "buildFailurePreserved": {
+        "path": "docs/release/v607/mainline-a-r66-build-20260927-066.json",
+        "bytes": 463692,
+        "sha256": "c589ece4665a1375f66650d626fbfa07d2131c3c4e2a724f4f947a1acec204b2"
+      },
+      "sourceStableAndCurrent": true,
+      "layoutReplay": {
+        "path": "docs/release/v607/mainline-a-b1-layout-audit-20260927-066.json",
+        "bytes": 1504,
+        "sha256": "0c4b1c474ca757ddd1c60db1d96e070efa7b58dba2928b0b356fb72276e1e337"
+      },
+      "layoutSamples": 11,
+      "protectedFiles": [
+        {
+          "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+          "bytes": 6448,
+          "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310",
+          "unchanged": true
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+          "bytes": 7536,
+          "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd",
+          "unchanged": true
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "bytes": 17429,
+          "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2",
+          "unchanged": true
+        },
+        {
+          "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "bytes": 17973,
+          "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c",
+          "unchanged": true
+        }
+      ]
+    },
+    "http": {
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-b1-http-20260927-066.json",
+        "bytes": 4389,
+        "sha256": "308210bf5630421bd2dca93c5e10e401ed6ad63be03c1b3dbb86340af342d098"
+      },
+      "imageBytes": {
+        "path": "docs/release/v607/mainline-a-b1-preview-http-20260927-066.json",
+        "bytes": 390,
+        "sha256": "c2d7b08165e0e435f6a5a75fa4e92ee43d669c0b3c0b4795c1985a8b4d4fc06b"
+      },
+      "entryFilesMatched": 8
+    },
+    "visual": {
+      "status": "seven-screenshots-inspected-for-B1",
+      "screenshots": [
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-desktop-home-20260927-066.png",
+          "bytes": 135884,
+          "sha256": "02acf2ec4b82546691096011913b97be1ebbe30044c6b184efb4e33bee78aa02"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-nebula-current-20260927-066.png",
+          "bytes": 89031,
+          "sha256": "75a10a3c401decdc9199850afc3bd2946269df9b9e159747e28771acd2e4e2bc"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-nebula-candidate-20260927-066.png",
+          "bytes": 82874,
+          "sha256": "b7db984d59e816b53a93d45d519e4a06f65b08aadd0b16c295d56dd5481de1f8"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-roster-observer-20260927-066.png",
+          "bytes": 83527,
+          "sha256": "4fc84406411bde192c4832a69611a3dd7a75916a734f3d4641a55ac0cb1c7d17"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-mobile-home-20260927-066.png",
+          "bytes": 51915,
+          "sha256": "9978c2cb6fcb0e6d3b74ef314bf2fdb071bfb292fa8fc2c8a8be70b7b8efae3a"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-mobile-nebula-20260927-066.png",
+          "bytes": 34744,
+          "sha256": "e2083e74f3d82419cea6ccebaf7e5e08a05d8bf292a338703938ca8fcca461e0"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-b1-landscape-home-20260927-066.png",
+          "bytes": 45106,
+          "sha256": "9def9d09ddb01dc2c553057267c122c97e51f25314332b2f4bc0c03bd0ddf1d4"
+        }
+      ],
+      "humanSignoff": false,
+      "scientificValidity": false
+    },
+    "browser": {
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-b1-browser-20260927-066.json",
+        "bytes": 2379,
+        "sha256": "2471bc7df4002fe622907e19b304dc8cf934de56b6820d92e5593910eb45756d"
+      },
+      "canonical36": "pending",
+      "physicalDevice": "not-run"
+    },
+    "performance": {
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-b1-performance-20260927-066.json",
+        "bytes": 2436,
+        "sha256": "f49ad018708fed2fb99f2dd28d5752867817ad7f5a03534baba16475af7d3333"
+      },
+      "productionQualification": false
+    },
+    "externalSource": {
+      "status": "no-new-external-capture-or-signoff",
+      "newNetworkCaptures": 0,
+      "stellarComponentPending": 4,
+      "nebulaRightsSignatures": 0,
+      "nebulaRightsPending": 12,
+      "scientificValidity": false,
+      "copyrightApproval": false
+    }
+  },
+  "remainingGates": [
+    "A-line 36-object full route/load/switch/failure/release acceptance",
+    "Four Beta stellar component identities and reviewed candidate integration",
+    "Twelve additional nebula runtime/preview integration and rights signatures",
+    "Two independent >=30 minute observations plus physical-device evidence when available",
+    "Authoritative root manifest input and read-only parity",
+    "Candidate package/restore/rollback revalidation against final selected build"
+  ],
+  "followupFinding": "Hero review still shows historical V619 0/4 beside newer 4/4 attempt evidence; B3 should clearly label version provenance without rewriting frozen inputs.",
+  "continuation": {
+    "currentTurn": "progress",
+    "previousTurn": "planning; no development credit claimed",
+    "consecutiveNoProgressGoalTurns": 0,
+    "nextBatch": "B2: current-build 36-object acceptance and related fixes",
+    "goalStatus": "active"
+  },
+  "preview": {
+    "url": "http://127.0.0.1:3066/",
+    "directory": ".next-mainline-a-r66-20260927-066b/.next/standalone",
+    "pidObserved": 44080,
+    "execSession": 59800,
+    "loopbackOnly": true,
+    "leftRunning": true,
+    "previousPreview3057Preserved": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "releaseApproved": false
+  }
+}

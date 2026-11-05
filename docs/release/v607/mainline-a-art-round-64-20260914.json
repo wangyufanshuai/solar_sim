@@ -1,0 +1,236 @@
+{
+  "round": 64,
+  "date": "2026-09-14",
+  "title": "beta-nebula-six-image-raw-capture-replay-and-retention-v624",
+  "status": "engineering-batch-verified-rights-and-final-signoff-pending",
+  "repository": "E:\\86137\\myai\\solar_sim\\next-web",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "branch": "codex/solar-sim-mainline-a",
+  "physicsKernelMutation": false,
+  "scientificPayloadWriteback": false,
+  "counts": {
+    "candidates": 6,
+    "newHttpsRequests": 6,
+    "newHttp200Responses": 6,
+    "retainedLedgerAttempts": 13,
+    "selectedRawCaptures": 6,
+    "selectedArtifactsVerified": 6,
+    "historicalFilesVerified": 6,
+    "retainedArtifactFilesVerified": 12,
+    "distinctImageHashes": 6,
+    "rightsCleared": 0,
+    "runtimeAdmitted": 0
+  },
+  "legacyLedgerScope": "The archived pre-hardening snapshot plus this run are retained. Completeness of earlier overwritten attempts is not established.",
+  "implementation": [
+    "Real allowlisted HTTPS with timeout, size limit, explicit safe redirects, error telemetry and per-collection retry identity.",
+    "Append-only retained attempts, immutable SHA artifact paths, exact-byte ledger archives, offline output separation and verified prior-artifact reuse.",
+    "Fail-closed replay recomputes request fingerprints, historical/selected/all-attempt artifact bytes, dimensions, counts and path containment; saved report drift fails verification.",
+    "Production review panel uses the same typed audit, preserves rights hold, fixes search/detail selection and mobile search width, and exposes raw retention records.",
+    "Additive build runner copies only the existing formal Lite route graph into a new internal staging directory; original routes and builds remain untouched."
+  ],
+  "effectiveCode": {
+    "round": 64,
+    "date": "2026-09-14",
+    "scope": "Real HTTPS nebula batch acquisition, preserved attempts, fail-closed disk replay, integrated audit, retention and immutable production-build staging",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "branch": "codex/solar-sim-mainline-a",
+    "effectiveChangedLines": 1380,
+    "addedLines": 1499,
+    "modifiedLines": 0,
+    "minimumRequired": 1000,
+    "testsExcluded": true,
+    "countMethod": "Conservative nonblank/noncomment production lines in seven newly added and connected files. Multi-round tracked integration edits, tests, orphan ArtifactReplayV624 module, copied build sources, JSON payloads, receipts, screenshots and documentation excluded.",
+    "files": [
+      {
+        "path": "app/lib/mainlineANebulaBatchViewV624.ts",
+        "addedLines": 152,
+        "modifiedLines": 0,
+        "effectiveLines": 124,
+        "sha256": "4aa604bb70c385d31fd855d9e49e365a80558752f662c47f2c72cc239c585e0a"
+      },
+      {
+        "path": "app/lib/mainlineANebulaBatchAuditV624.ts",
+        "addedLines": 323,
+        "modifiedLines": 0,
+        "effectiveLines": 309,
+        "sha256": "c5c0cb54f0c29bbf2e8594dd19362efef6210a0bbafae729337e2fb4fe396d62"
+      },
+      {
+        "path": "app/components/MainlineANebulaBatchPanelV624.tsx",
+        "addedLines": 103,
+        "modifiedLines": 0,
+        "effectiveLines": 96,
+        "sha256": "aa78bcfed5fd353f37fcdc38534bd1ca77ac50aeb5abb99684a946be918f2925"
+      },
+      {
+        "path": "scripts/collect-mainline-a-nebula-batch-v624.mjs",
+        "addedLines": 358,
+        "modifiedLines": 0,
+        "effectiveLines": 329,
+        "sha256": "b8415dd14980547d51d5c2a8474bc7b67f8d85dfa4be9afb12af63237f250a3d"
+      },
+      {
+        "path": "scripts/replay-mainline-a-nebula-batch-v624.mjs",
+        "addedLines": 270,
+        "modifiedLines": 0,
+        "effectiveLines": 247,
+        "sha256": "7028af7d3637c2f856320545cc63fbc15ebe0dde3311f4c1f34b061de36c07f1"
+      },
+      {
+        "path": "scripts/audit-mainline-a-nebula-retention-v624.mjs",
+        "addedLines": 124,
+        "modifiedLines": 0,
+        "effectiveLines": 117,
+        "sha256": "fae05ca4f72722820a407e7ef819d797324159bb99b2418189501d9964a1291c"
+      },
+      {
+        "path": "scripts/build-mainline-a-preserved.mjs",
+        "addedLines": 169,
+        "modifiedLines": 0,
+        "effectiveLines": 158,
+        "sha256": "b56ccab075986ccd738c356788d681cd45d64dc28430030df291c708e862aa34"
+      }
+    ],
+    "excludedLegacyUnintegratedModule": "app/lib/mainlineANebulaArtifactReplayV624.ts",
+    "integrationOutsideCount": [
+      "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "package.json"
+    ]
+  },
+  "validation": {
+    "node": {
+      "passed": 20,
+      "failed": 0,
+      "log": "docs/release/v607/mainline-a-r64-node-final.log"
+    },
+    "vitest": {
+      "passed": 14,
+      "failed": 0,
+      "log": "docs/release/v607/mainline-a-r64-vitest-final.log"
+    },
+    "eslint": {
+      "passed": true,
+      "log": "docs/release/v607/mainline-a-r64-eslint-final.log"
+    },
+    "v619": {
+      "status": "verified",
+      "pending": 4
+    },
+    "v616": {
+      "gitDiffAgainstHead": "unchanged",
+      "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+    },
+    "productionBuild": {
+      "passed": true,
+      "buildId": "48a3NHvLheCoZYIJ_PwTv",
+      "sourceSha256": "c0ff483c182225e0941be83849cf47c7d02bb7bb6e09255c05755dd45443c1ab",
+      "sourceStable": true,
+      "distDir": ".next-mainline-a-r64-20260914-final04/.next",
+      "receipt": "docs/release/v607/mainline-a-r64-build-20260914-final04.json"
+    },
+    "replay": {
+      "status": "verified-with-rights-pending",
+      "fingerprint": "d84dbf9c07db78c9271aaec407a35933a6fc3e27e391dc6162bf24027d045da2",
+      "path": "docs/release/v607/mainline-a-r64-nebula-replay.json"
+    },
+    "retention": {
+      "status": "verified-retention-only",
+      "counts": {
+        "referenced": 12,
+        "verified": 12,
+        "unreferenced": 0,
+        "rightsUncleared": 6
+      },
+      "path": "docs/release/v607/mainline-a-r64-retention-audit.json"
+    }
+  },
+  "http": {
+    "status": 200,
+    "scriptAssetsMatched": 6,
+    "path": "docs/release/v607/mainline-a-r64-http-final04.json",
+    "buildId": "48a3NHvLheCoZYIJ_PwTv"
+  },
+  "browser": {
+    "path": "docs/release/v607/mainline-a-r64-browser-final04.json",
+    "surface": "Codex in-app browser",
+    "desktop": {
+      "observedAt": "2026-09-14T13:53:08.762Z",
+      "viewport": [
+        1280,
+        720
+      ],
+      "records": 6,
+      "audit": "consistent",
+      "boundary": "false",
+      "searchCount": 1,
+      "searchDetail": "soul-nebula",
+      "emptyResults": 0,
+      "emptyDetails": 0,
+      "auditGateText": "ledger-integritypass · 0/0\nraw-capture-linkagepass · 6/6\nhistorical-comparisonpass · 6/6\nrights-clearancehold · 0/6"
+    },
+    "mobile": {
+      "observedAt": "2026-09-14T13:53:44.342Z",
+      "viewport": [
+        390,
+        844
+      ],
+      "records": 1,
+      "detail": "soul-nebula",
+      "layout": {
+        "scrollWidth": 390,
+        "searchWidth": 300.3958435058594,
+        "width": 390
+      },
+      "allRecords": 6,
+      "failedFilterRecords": 0
+    },
+    "consoleErrors": 0,
+    "consoleWarnings": 0,
+    "screenshots": [
+      {
+        "path": "docs/release/v607/screenshots/mainline-a-r64-final04-desktop.png",
+        "bytes": 88465,
+        "sha256": "bb832447a662115e4e0519cb2680afb3c5806a72f3059913ed1585188b4a0eee"
+      },
+      {
+        "path": "docs/release/v607/screenshots/mainline-a-r64-final04-mobile.png",
+        "bytes": 46612,
+        "sha256": "304dc6cd7b5e8ef318f5ce7957f477f2d37191d0754a3fa792b3286bfa0d8fa5"
+      },
+      {
+        "path": "docs/release/v607/screenshots/mainline-a-r64-final04-audit-desktop.png",
+        "bytes": 76328,
+        "sha256": "484c286f35a176077bc538b8bc40b272b267652d1c3abc66bbbe8354bfd4dca6"
+      }
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "scientificRuntimeWrites": false,
+    "filesDeletedByRetention": 0
+  },
+  "evidenceBoundary": {
+    "static": "Node/Vitest/ESLint and production build: engineering validation only.",
+    "http": "Local production responses; six served script hashes match this exact build.",
+    "visual": "Desktop/mobile status-panel screenshots inspected locally. The legacy right-panel parameterized preview is not a downloaded observation image; final human visual signoff remains pending.",
+    "browser": "Codex in-app browser: search, selection, empty state, clear-search recovery, audit gates and mobile layout.",
+    "performance": {
+      "path": "docs/release/v607/mainline-a-r64-performance-local-http.json",
+      "scope": "Ten local HTTP response-completion timings only; no R64 GPU/frame-time or physical-device measurement."
+    },
+    "externalSource": "Six new actual NASA HTTPS image responses; raw artifacts preserved and rehashed. Local hash consistency does not establish scientific validity or copyright approval.",
+    "legalDecision": "not-granted"
+  },
+  "openGates": [
+    "Six R64 candidates still require item rights and final visual signoff; no runtime admission.",
+    "Beta 24-nebula raw-payload and rights closure is incomplete; R63 offline ledger is not network evidence.",
+    "R61 stellar component/source scientific admission and R62 canonical final signoffs remain pending.",
+    "R65 multi-device frame time, memory, texture release, soak and repeated runs remain open.",
+    "R66 root/next-web read-only comparison, final candidate package and rollback gate list remain open."
+  ],
+  "nextRound": 65
+}

@@ -1,0 +1,28 @@
+{
+  "round": 41,
+  "date": "2026-09-13",
+  "title": "Local-shadow reload lifecycle probe",
+  "status": "partial-browser-lifecycle",
+  "scope": {
+    "runtime": "npm run dev:atlas:local-shadow",
+    "artChange": "Ran repeated page loads to inspect resource-entry and heap stability before production-mode qualification."
+  },
+  "browser": {
+    "viewport": "1280x720",
+    "runs": [
+      { "run": 1, "elapsedMs": 17844, "resources": 31, "contentPack": 14, "heapBytes": 323348422 },
+      { "run": 2, "elapsedMs": 2564, "resources": 12, "contentPack": 1, "heapBytes": 224450761 },
+      { "run": 3, "elapsedMs": 2520, "resources": 12, "contentPack": 1, "heapBytes": 278686351 }
+    ],
+    "requestFailures": 1,
+    "failedUrl": "http://127.0.0.1:3018/?_rsc=bFe_VC0g8VplWXKP"
+  },
+  "validation": {
+    "playwright": "Chrome headless repeated loads; lifecycle probe completed but one dev RSC request failed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Dev-mode RSC failure and non-comparable resource-entry counts make this unsuitable as a passing lifecycle receipt.",
+    "Production build/restart lifecycle and sustained GPU/memory evidence remain open; Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

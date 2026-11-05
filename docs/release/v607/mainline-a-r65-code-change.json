@@ -1,0 +1,68 @@
+{
+  "schema": "mainline-a-code-change-receipt-v625",
+  "round": "R65",
+  "generatedAt": "2026-09-20T13:44:26.588Z",
+  "scope": "next-web only",
+  "baseline": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "branch": "codex/solar-sim-mainline-a",
+  "effectiveProductionLines": 1331,
+  "files": [
+    {
+      "path": "app/lib/mainlineAPerformanceEvidenceV625.ts",
+      "effectiveLines": 627,
+      "role": "typed evidence contract, digest, frame/memory/resource aggregation"
+    },
+    {
+      "path": "app/lib/mainlineAPerformanceSessionV625.ts",
+      "effectiveLines": 253,
+      "role": "real browser RAF/PerformanceObserver session and lifecycle snapshots"
+    },
+    {
+      "path": "app/components/MainlineAPerformancePanelV625.tsx",
+      "effectiveLines": 211,
+      "role": "desktop/mobile controls, repeat mode, auditable DOM ledger"
+    },
+    {
+      "path": "scripts/audit-mainline-a-performance-v625.mjs",
+      "effectiveLines": 149,
+      "role": "fail-closed static/build/runtime receipt audit"
+    },
+    {
+      "path": "scripts/replay-mainline-a-performance-v625.mjs",
+      "effectiveLines": 91,
+      "role": "deterministic receipt replay and CSV surface"
+    }
+  ],
+  "integrationFiles": [
+    "app/components/AtlasAppShell.tsx",
+    "app/components/PostV593StellarRosterPanel.tsx",
+    "scripts/build-mainline-a-preserved.mjs",
+    "package.json"
+  ],
+  "excluded": [
+    "tests",
+    "generated JSON",
+    "screenshots",
+    "receipts",
+    "docs",
+    "standard build logs",
+    "existing R61-R64 files"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelsUnmodified": true
+  },
+  "validation": {
+    "vitest": "10/10 passed",
+    "eslint": "targeted passed",
+    "standardBuild": "failed-existing webpack node:crypto/fs/path scheme errors",
+    "preservedProductionBuild": "passed build 004",
+    "http": "200 page + 200 health",
+    "browser": "desktop+mobile local viewport observations",
+    "physicalMobile": "not-run",
+    "longRun": "not-run"
+  }
+}

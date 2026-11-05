@@ -1,0 +1,19 @@
+{
+  "round": 21,
+  "date": "2026-09-13",
+  "title": "Nebula rights and source-state badge",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/MainlineANebulaPortraitV607.tsx",
+    "artChange": "Added a persistent CC BY 4.0 / official-original badge and allowed the header to wrap on narrow screens, making the rights and display state visible without altering image bytes."
+  },
+  "validation": {
+    "eslint": "passed",
+    "vitest": "mainlineA3MetadataV607.test.ts + mainlineANebulaVisualAssetsV607.all.test.ts: 4/4",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The badge applies to the 12 currently cleared runtime images; candidate NASA assets remain outside runtime until item-level rights are closed.",
+    "Beta remains open at 24 sourced nebula images and 24 hero stars."
+  ]
+}

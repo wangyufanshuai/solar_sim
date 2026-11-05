@@ -1,0 +1,337 @@
+{
+  "schema": "mainline-a-r76-http-v663",
+  "status": "passed-local-production-build-candidate-hold",
+  "startedAt": "2026-10-13T06:20:01.513Z",
+  "endedAt": "2026-10-13T06:20:02.869Z",
+  "origin": "http://127.0.0.1:3128",
+  "buildId": "a48HlULcfSdTUEzomoiST",
+  "runtimeBuildId": "mainline-a-499bad4fd02531ad",
+  "appSourceSha256": "499bad4fd02531ad08bce7d0c145c04ceaf64c7986b774e8dbdbe57b4489c5f9",
+  "buildReceipt": "docs/release/v607/mainline-a-r76-build-20261013v663r76web01.json",
+  "observations": {
+    "home": {
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3128/",
+      "contentType": "text/html; charset=utf-8",
+      "candidateOnly": null,
+      "admission": null,
+      "writeback": null,
+      "bytes": 8696,
+      "json": null
+    },
+    "health": {
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3128/api/health",
+      "contentType": "application/json",
+      "candidateOnly": null,
+      "admission": null,
+      "writeback": null,
+      "bytes": 241,
+      "json": {
+        "schemaVersion": "v227-atlas-production-health-v1",
+        "status": "ok",
+        "productVersion": "1.0.0",
+        "deliveryProfile": "vercel-lite",
+        "defaultScientificKernel": "legacy-eih-1pn",
+        "deploymentId": null,
+        "commitSha": null,
+        "checkedAt": "2026-10-13T06:20:01.676Z"
+      }
+    },
+    "readiness": {
+      "status": 200,
+      "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-web-readiness",
+      "contentType": "application/json",
+      "candidateOnly": "true",
+      "admission": "hold",
+      "writeback": "false",
+      "bytes": 4644,
+      "json": {
+        "schema": "mainline-a-r76-web-readiness-http-v663",
+        "status": "candidate-hold",
+        "sourceFingerprint": "69047c3427f1b3f7490af829c8c653120b8cde428785cbb3fdf2111735ad527a",
+        "publicWebReleaseAllowed": false,
+        "scientificPayloadWriteback": false,
+        "gates": [
+          {
+            "key": "stellar-component",
+            "label": "恒星组件身份",
+            "value": "0/4 已确认",
+            "reason": "交叉标识不是物理组件裁决",
+            "status": "pending"
+          },
+          {
+            "key": "nebula-image",
+            "label": "五张原图",
+            "value": "0/5 可获取",
+            "reason": "逐项策略仍禁止图像请求",
+            "status": "pending"
+          },
+          {
+            "key": "a-rights",
+            "label": "A 线星云版权",
+            "value": "0/12 已签",
+            "reason": "逐图签署待完成",
+            "status": "pending"
+          },
+          {
+            "key": "beta-rights",
+            "label": "Beta 星云版权",
+            "value": "0/24 已签",
+            "reason": "逐图签署待完成",
+            "status": "pending"
+          },
+          {
+            "key": "human-visual",
+            "label": "视觉签收",
+            "value": "待逐项签收",
+            "reason": "截图抽样不代替人工验收",
+            "status": "pending"
+          },
+          {
+            "key": "production-performance",
+            "label": "线上性能",
+            "value": "未验证",
+            "reason": "本机长跑不能代表真实用户",
+            "status": "pending"
+          }
+        ],
+        "items": [
+          {
+            "id": "acrux",
+            "group": "stellar-component",
+            "state": "component-review-hold",
+            "title": "Acrux",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/",
+            "issueCodes": [
+              "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 1,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "spica",
+            "group": "stellar-component",
+            "state": "component-review-hold",
+            "title": "Spica",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/",
+            "issueCodes": [
+              "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query",
+              "no-distinct-wide-companion-in-bounded-query"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 1,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "regulus",
+            "group": "stellar-component",
+            "state": "component-review-hold",
+            "title": "Regulus",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/",
+            "issueCodes": [
+              "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 1,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "polaris",
+            "group": "stellar-component",
+            "state": "component-review-hold",
+            "title": "Polaris",
+            "sourceUrl": "https://simbad.cds.unistra.fr/simbad/",
+            "issueCodes": [
+              "close-pair-identifier-aliases-primary-simbad-object",
+              "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 1,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "ring-nebula",
+            "group": "nebula-image",
+            "state": "image-acquisition-policy-hold",
+            "title": "Ring Beholds a Delicate Flower",
+            "sourceUrl": "https://science.nasa.gov/photojournal/ring-beholds-a-delicate-flower/",
+            "issueCodes": [
+              "restricted-partner-or-copyright-flag",
+              "source-resolution",
+              "source-format"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 0,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "dumbbell-nebula",
+            "group": "nebula-image",
+            "state": "image-acquisition-policy-hold",
+            "title": "The Dumbbell Nebula (M27)",
+            "sourceUrl": "https://science.nasa.gov/asset/hubble/the-dumbbell-nebula-m27/",
+            "issueCodes": [
+              "source-resolution",
+              "target-identity-conflict"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 0,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "bubble-nebula",
+            "group": "nebula-image",
+            "state": "image-acquisition-policy-hold",
+            "title": "Mosaic Image of the Bubble Nebula",
+            "sourceUrl": "https://science.nasa.gov/asset/hubble/mosaic-image-of-the-bubble-nebula/",
+            "issueCodes": [
+              "restricted-partner-or-copyright-flag",
+              "source-resolution",
+              "source-format"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 0,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "cats-eye-nebula",
+            "group": "nebula-image",
+            "state": "image-acquisition-policy-hold",
+            "title": "Galactic Dust Bunnies Found to Contain Carbon After All",
+            "sourceUrl": "https://science.nasa.gov/photojournal/galactic-dust-bunnies-found-to-contain-carbon-after-all/",
+            "issueCodes": [
+              "restricted-partner-or-copyright-flag",
+              "source-resolution",
+              "source-format",
+              "target-identity"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 0,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          },
+          {
+            "id": "omega-nebula",
+            "group": "nebula-image",
+            "state": "image-acquisition-policy-hold",
+            "title": "Celestial Sea of Stars",
+            "sourceUrl": "https://science.nasa.gov/photojournal/celestial-sea-of-stars/",
+            "issueCodes": [
+              "restricted-partner-or-copyright-flag"
+            ],
+            "requestExecuted": false,
+            "responseCaptured": 0,
+            "rightsSigned": false,
+            "runtimeAdmission": "candidate-only"
+          }
+        ],
+        "issueCodes": [],
+        "claims": {
+          "copyrightApproval": false,
+          "scientificValidity": false,
+          "productionPerformance": false,
+          "realUserValidation": false,
+          "physicalMobile": false,
+          "publicWebReleaseApproved": false
+        }
+      }
+    },
+    "heldImages": [
+      {
+        "id": "ring-nebula",
+        "status": 404,
+        "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-nebula-review/ring-nebula/detail",
+        "contentType": "application/json",
+        "candidateOnly": null,
+        "admission": null,
+        "writeback": null,
+        "bytes": 26,
+        "json": {
+          "status": "not-available"
+        }
+      },
+      {
+        "id": "dumbbell-nebula",
+        "status": 404,
+        "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-nebula-review/dumbbell-nebula/detail",
+        "contentType": "application/json",
+        "candidateOnly": null,
+        "admission": null,
+        "writeback": null,
+        "bytes": 26,
+        "json": {
+          "status": "not-available"
+        }
+      },
+      {
+        "id": "bubble-nebula",
+        "status": 404,
+        "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-nebula-review/bubble-nebula/detail",
+        "contentType": "application/json",
+        "candidateOnly": null,
+        "admission": null,
+        "writeback": null,
+        "bytes": 26,
+        "json": {
+          "status": "not-available"
+        }
+      },
+      {
+        "id": "cats-eye-nebula",
+        "status": 404,
+        "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-nebula-review/cats-eye-nebula/detail",
+        "contentType": "application/json",
+        "candidateOnly": null,
+        "admission": null,
+        "writeback": null,
+        "bytes": 26,
+        "json": {
+          "status": "not-available"
+        }
+      },
+      {
+        "id": "omega-nebula",
+        "status": 404,
+        "finalUrl": "http://127.0.0.1:3128/api/atlas/mainline-a-nebula-review/omega-nebula/detail",
+        "contentType": "application/json",
+        "candidateOnly": null,
+        "admission": null,
+        "writeback": null,
+        "bytes": 26,
+        "json": {
+          "status": "not-available"
+        }
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "issues": [],
+    "items": 9,
+    "gates": 6,
+    "heldImagesDenied": 5
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "publicWebReleaseApproved": false
+  }
+}

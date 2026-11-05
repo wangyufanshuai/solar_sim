@@ -1,0 +1,2 @@
+import { readFileSync } from "node:fs"; import { describe, expect, it } from "vitest";
+describe("v357 scale surface", () => { it("labels 1/2/3 sigma as a synthetic geometry convention", () => { const source = readFileSync("app/components/KerrSpectralConfidenceScaleSurfaceV357.tsx", "utf8"); expect(source).toContain("1σ / 2σ / 3σ geometry convention"); expect(source).toContain("not measured confidence"); expect(source).toContain("not probability coverage"); expect(source).toContain("never cinematic input"); expect(source).not.toContain("Math.random"); }); });

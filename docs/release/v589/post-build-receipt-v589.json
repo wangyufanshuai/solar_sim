@@ -1,0 +1,47 @@
+{
+  "version": "v589-post-build-receipt-v1",
+  "generatedAt": "2026-08-09T10:00:00Z",
+  "status": "standalone-and-lite-route-overlay-builds-passed",
+  "buildSlots": [
+    {
+      "tier": "standalone-full",
+      "distDir": ".next-atlas-v589-standalone-current",
+      "buildId": "3A5H2xtngZo_gjQP4vkxw",
+      "routePresent": true,
+      "standaloneTopologyPresent": true,
+      "profileSha256": "9c0836c9647eb4d21a9c6943afb936f9147670879452566c13436c953fde0b58",
+      "routeManifestSha256": "0f11115fc946a915e74a5fee332bf3c10f6c565db88af3a939dea7dd92640785"
+    },
+    {
+      "tier": "vercel-lite",
+      "distDir": ".next-atlas-v589-lite-current",
+      "buildId": "_BaKSl65c7jsAc4ttBfOI",
+      "routePresent": true,
+      "standaloneTopologyPresent": true,
+      "profileSha256": "0aff96621de152686489735a2622a154850b1cb6571fab3f596f51726cced0d6",
+      "routeManifestSha256": "0f11115fc946a915e74a5fee332bf3c10f6c565db88af3a939dea7dd92640785"
+    }
+  ],
+  "nodeHeapMaximumMiB": 8192,
+  "buildProcessPolicy": "single-profile-single-process-no-automatic-retry",
+  "swcRuntime": "official-wasm-fallback-native-binding-unavailable",
+  "route": "/local-shadow-v589",
+  "httpSmoke": {
+    "status": 200,
+    "source": "local-standalone-read-only-request",
+    "browserAuthority": false
+  },
+  "liteBudget": {
+    "baselineBytes": 75427134,
+    "v589IncrementBytes": 9331803,
+    "projectedBytes": 84758937,
+    "maximumBytes": 85983232,
+    "passed": true
+  },
+  "browserStarted": true,
+  "browserQualified": false,
+  "denseStarted": false,
+  "gpuScienceStarted": false,
+  "productionDeploymentStarted": false,
+  "receiptSha256": "f8abb169dd9a67ac94d4a871aa0859dca7d8152073de3e8b330d66ca7617584d"
+}

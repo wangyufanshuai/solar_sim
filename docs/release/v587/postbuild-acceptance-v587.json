@@ -1,0 +1,167 @@
+{
+  "version": "v587-postbuild-browser-acceptance-receipt-v1",
+  "generatedAt": "2026-08-08T15:04:46.644Z",
+  "status": "passed-postbuild-desktop-mobile-science-cinematic-30-minute-soak",
+  "build": {
+    "lite": {
+      "buildId": "UaKcE0xTuIAI_9g3zC4YY",
+      "profile": "vercel-lite",
+      "status": "passed",
+      "heapMb": 8192,
+      "rollbackSlotAvailable": true
+    },
+    "standalone": {
+      "buildId": "DaFAyqVRMFVuhbmamEsJx",
+      "profile": "standalone-full",
+      "status": "passed",
+      "heapMb": 8192,
+      "rollbackSlotAvailable": true
+    },
+    "localShadow": {
+      "buildId": "_ZWwNGZ9302JyU1FlhuMm",
+      "profile": "local-shadow",
+      "status": "passed",
+      "heapMb": 8192,
+      "rollbackSlotAvailable": true
+    },
+    "swcRuntime": {
+      "mode": "official-wasm-fallback",
+      "nativeQualified": false,
+      "runnerWarning": "native-swc-unavailable-official-wasm-fallback-used",
+      "nativeLoadError": "\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node is not a valid Win32 application.\r\n\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node"
+    },
+    "formalProfilesExcludeV587Route": true
+  },
+  "science": {
+    "engineManifestPath": "../../orbit-relativity-engine/dist/observation-v3-reference-v587-64x64-final/engine-manifest.json",
+    "engineManifestSha256": "fb313a453e13956b06ba40ed6a43e8479c4e9e0edbe4852c1039ef8489ff1524",
+    "artifactSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "sourceSha256": "15ca40a77d26391947fd659abbe0b8da35be50fc2ab0997b0e70c853bbee153a",
+    "summarySha256": "cfb39736cab2898b07ffd15b6013b202861527ecec7c81a5012d05f9813dc97e",
+    "scientificPayloadSha256": "784ddb4c94aa836b3dc6e517fa559178ae626f6aa5210b52b5ff8cd771785674",
+    "rays": 1380,
+    "events": 3179,
+    "kerrSchildOracle": "64/64",
+    "unresolvedCellCount": 0,
+    "projectionMaskedCellCount": 168,
+    "projectionMaskedAreaM2": 16.40625,
+    "geometryReferenceGranted": true,
+    "polarizationTransportReferenceGranted": true
+  },
+  "browser": {
+    "surface": "Codex In-app Browser",
+    "route": "http://127.0.0.1:3001/local-shadow-v587",
+    "desktopViewport": [
+      1440,
+      900
+    ],
+    "mobileViewport": [
+      390,
+      844
+    ],
+    "modes": [
+      "cinematic",
+      "science"
+    ],
+    "variants": [
+      "desktop",
+      "mobile"
+    ],
+    "canvasCount": {
+      "minimum": 1,
+      "maximum": 1
+    },
+    "browserErrorCount": 0,
+    "minimumMedianFps": 168.4,
+    "maximumFrameP95Ms": 11.79
+  },
+  "soak": {
+    "startedAt": "2026-08-08T14:34:08.694Z",
+    "finishedAt": "2026-08-08T15:04:46.644Z",
+    "durationSeconds": 1837.95,
+    "steadyCycleCount": 30,
+    "totalSampleCount": 32,
+    "baseline": {
+      "programs": 3,
+      "textures": 1,
+      "renderTargets": 0,
+      "resourceBytes": 1048576,
+      "resourceGpuBytes": 1048576
+    },
+    "released": {
+      "programs": 3,
+      "textures": 1,
+      "renderTargets": 0,
+      "resourceBytes": 1048576,
+      "resourceGpuBytes": 1048576
+    },
+    "resourceBaselineReturned": true,
+    "maximumPrograms": 4,
+    "maximumTextures": 1,
+    "maximumRenderTargets": 0,
+    "maximumTrackedBytes": 5760000,
+    "maximumTrackedGpuBytes": 5760000
+  },
+  "evidence": {
+    "rawSoak": {
+      "path": "docs/release/v587/postbuild-qa/browser-soak-raw-v587.json",
+      "bytes": 21102,
+      "sha256": "3dac8e80d34fe5c08d88fb684f1927519ceabe62da0c892d81466822044de1dd"
+    },
+    "screenshots": [
+      {
+        "path": "docs/release/v587/postbuild-qa/final-desktop-science-1440x900.png",
+        "bytes": 71713,
+        "sha256": "aaa931e7d4372ecd0f82292957ef6fcc881f30eaf6c1fe0c8951b20a0c6e56c6"
+      },
+      {
+        "path": "docs/release/v587/postbuild-qa/final-desktop-cinematic-1440x900.png",
+        "bytes": 86995,
+        "sha256": "ac9fbfca4c5591648e8bf94e94f7dae2884e317d16864cd67693abd656aaa216"
+      },
+      {
+        "path": "docs/release/v587/postbuild-qa/final-mobile-science-390x844.png",
+        "bytes": 16592,
+        "sha256": "b3b4fca91d3cc8e92e360e09a5ce170187bab7f73344f477916f1d468d7a2272"
+      },
+      {
+        "path": "docs/release/v587/postbuild-qa/final-mobile-cinematic-390x844.png",
+        "bytes": 25513,
+        "sha256": "7026537870fcbc6d252217f9538c624834ec56001b692a5edd76bb8194fc4abb"
+      }
+    ],
+    "webExportReceipt": {
+      "path": "public/data/kerr-observation-v587/web-export-receipt.json",
+      "bytes": 2324,
+      "sha256": "0cce213ed69146e2334733c5d776115ee1bce9a83515fda92b91f32af54adad1"
+    },
+    "summary": {
+      "path": "public/data/kerr-observation-v587/observation-summary.json",
+      "bytes": 393275,
+      "sha256": "8feec5951e698c07ad90c47b354e775c6105238f5d0c066153d7dcc719956dee"
+    }
+  },
+  "qualification": {
+    "postBuildRouteQualified": true,
+    "desktopBrowserQualified": true,
+    "mobileBrowserQualified": true,
+    "scienceCinematicPayloadImmutabilityQualified": true,
+    "scientificScenePerformanceQualified": true,
+    "soakQualified": true,
+    "resourceLifecycleQualified": true,
+    "consolePageRendererErrorsZero": true
+  },
+  "failures": [],
+  "boundary": {
+    "formalProductPointer": "v263",
+    "formalProductPointerChanged": false,
+    "denseCampaignStatus": "incomplete-0-of-49",
+    "denseExecutedByV587": false,
+    "gpuAuthorityGranted": false,
+    "measuredAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "productionDeploymentAttempted": false,
+    "publicReleaseAttempted": false
+  },
+  "receiptSha256": "e698815c28ee263bdc0dfcc62b06aef79d3f68b9e70c9e18f3d63aa05fdb4279"
+}

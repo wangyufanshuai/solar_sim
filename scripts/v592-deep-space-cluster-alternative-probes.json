@@ -1,0 +1,19 @@
+{
+  "version": "v592-deep-space-cluster-alternative-probes-v1",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHosts": ["images-api.nasa.gov", "images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false
+  },
+  "probes": [
+    { "id": "hercules-globular-cluster-ngc6205", "target": "hercules-globular-cluster", "query": "M13 NGC 6205 globular cluster", "requiredTerms": ["6205"] },
+    { "id": "messier-3-ngc5272", "target": "messier-3", "query": "M3 NGC 5272 globular cluster", "requiredTerms": ["5272"] },
+    { "id": "messier-15-ngc7078", "target": "messier-15", "query": "M15 NGC 7078 globular cluster", "requiredTerms": ["7078"] },
+    { "id": "beehive-cluster-ngc2632", "target": "beehive-cluster", "query": "M44 NGC 2632 open cluster", "requiredTerms": ["2632"] },
+    { "id": "double-cluster-ngc869-884", "target": "double-cluster", "query": "NGC 869 NGC 884 double cluster", "requiredTerms": ["869"] },
+    { "id": "jewel-box-cluster-ngc4755", "target": "jewel-box-cluster", "query": "NGC 4755 Jewel Box open cluster", "requiredTerms": ["4755"] }
+  ]
+}

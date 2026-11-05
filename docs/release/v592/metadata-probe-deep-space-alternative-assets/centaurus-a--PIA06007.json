@@ -1,0 +1,97 @@
+{
+  "version": "v592-deep-space-alternative-asset-manifest-probe-v1",
+  "probedAt": "2026-08-19T10:12:02.735Z",
+  "status": "alternative-asset-manifest-probe-complete-no-payload",
+  "selectionId": "centaurus-a--PIA06007",
+  "target": "centaurus-a",
+  "category": "galaxy",
+  "selection": {
+    "metadataProbePath": "docs/release/v592/metadata-probe-deep-space/centaurus-a.json",
+    "metadataReceiptSha256": "e1d61b65ccbbcfd125c654e7570c6b51d45be46b4eb90e48165f3f9f63fd02e7",
+    "nasaId": "PIA06007",
+    "title": "The Making of a Galactic Parallelogram",
+    "description": "This image taken by NASA Spitzer Space Telescope shows in unprecedented detail the galaxy Centaurus A last big meal: a spiral galaxy seemingly twisted into a parallelogram-shaped structure of dust. ",
+    "center": "JPL",
+    "identityTerms": [
+      "centaurus"
+    ],
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA06007/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "explicitHttpsAcquisitionRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA06007/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA06007/collection.json",
+    "status": 200,
+    "responseBytes": 262,
+    "responseSha256": "2565ab0edd1ef06f50f880a593055d389a2ea9ecef1c8d7cc168d4bacacf56ac"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA06007/PIA06007~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA06007~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA06007/PIA06007~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA06007/PIA06007~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA06007~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA06007/PIA06007~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA06007/PIA06007~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA06007~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA06007/PIA06007~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA06007/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA06007/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 4,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 0,
+    "insecureMetadataUrlCount": 4,
+    "explicitHttpsAcquisitionCandidateCount": 1,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "f7b2b0473d173ea3a36065b2b2ed602b1e7c275b40f7438c3140899e82d5dff5"
+}

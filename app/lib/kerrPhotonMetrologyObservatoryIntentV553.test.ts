@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { resolveKerrPhotonMetrologyObservatoryIntentV553 } from "./kerrPhotonMetrologyObservatoryIntentV553";
+describe("v553 photon metrology intent", () => { it("keeps the join local-shadow-only and no-canvas", () => { expect(resolveKerrPhotonMetrologyObservatoryIntentV553("local-shadow", true)).toMatchObject({ detailComponentCatalogSize: 55, authorityJoinStageCount: 5, requiredMeasuredInputCount: 15, observatoryImportAuthorized: true, canvasCreated: false, networkAttemptCount: 0 }); expect(resolveKerrPhotonMetrologyObservatoryIntentV553("vercel-lite", true).reason).toBe("lite-boundary"); }); });

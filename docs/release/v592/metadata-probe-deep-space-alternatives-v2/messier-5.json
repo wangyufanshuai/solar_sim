@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v2",
+  "probedAt": "2026-08-19T10:10:07.711Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "messier-5",
+  "category": "cluster",
+  "query": "NGC 5904",
+  "requiredTermGroups": [
+    [
+      "messier 5",
+      "m5",
+      "ngc 5904"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives/messier-5.json",
+    "receiptSha256": "5f77a192d7a64961f0072d9d7ac168519cc7e5f69889136aab13eb4a463e8d43",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=Messier+5+globular+cluster&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+5904&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+5904&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "69fe086b7225aeef1bc492f88b3251cb0f87a3d49ef399cdfb295fa377562ba8"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "5632f5416a45273d137a7bf9c3475d832635a8c87a137c8b37cfad3a0f0a0838"
+}

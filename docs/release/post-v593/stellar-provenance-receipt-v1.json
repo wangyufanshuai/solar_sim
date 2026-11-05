@@ -1,0 +1,183 @@
+{
+  "version": "post-v593-stellar-provenance-receipt-v1",
+  "provenanceSchemaVersion": "post-v593-stellar-field-provenance-v2",
+  "generatedAt": "2026-08-25T00:00:00Z",
+  "status": "24-hero-schema-complete-measurement-admission-blocked-honest-unknowns",
+  "manifestPath": "public/data/post-v593-stellar-relativity/stellar-provenance-v1.json",
+  "manifestSha256": "1a6e0c0acb1035e3c3652bcf0b1eb6889dc4c14d7ac98b1b42bc079307fcb9b7",
+  "sourceRegistrySha256": "541f21ced6f29c9bd69868f72e0b528e09d9921dfc7d330923b1d76486b1d129",
+  "generatedModulePath": "app/data/stellarProvenanceCandidate.generated.ts",
+  "generatedModuleSha256": "59df6a3d1ea695c0623f04fa6538bf17337db96f8e8aa78f51435a7f378d2aad",
+  "source": {
+    "packetPath": "public/data/living-universe-v592/stellar-heroes.json",
+    "packetSha256": "27efe0f8e645f72e4c4a2d35500dcb976fa19b7e35691b56ee588e6bb9650d47",
+    "packetVersion": "v592-stellar-hero-catalog-v1",
+    "simbadSnapshotPath": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+    "simbadSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+    "literatureSnapshotPath": "docs/release/post-v593/source-snapshots/stellar-literature-intake-2026-08-25.json",
+    "literatureSnapshotSha256": "61e198cf8939262703c4df4e6aee25f9e0e80daaad2836775b99f65938e59767",
+    "exaSearchLedgerPath": "docs/release/post-v593/source-snapshots/exa-stellar-source-search-ledger-2026-08-25.json",
+    "exaSearchLedgerSha256": "211c0fb853901830c6ae3526effc89140713b9995cdbac8f8775f74ca25e845b"
+  },
+  "searchAudit": {
+    "provider": "Exa",
+    "ledgerPath": "docs/release/post-v593/source-snapshots/exa-stellar-source-search-ledger-2026-08-25.json",
+    "ledgerSha256": "211c0fb853901830c6ae3526effc89140713b9995cdbac8f8775f74ca25e845b",
+    "replayStatus": "sealed-replay-replaces-unverifiable-historical-aggregate",
+    "workstreamCount": 4,
+    "queryCount": 26,
+    "sourcesReviewed": 130,
+    "returnedResultSlots": 130,
+    "uniqueNormalizedUrls": 101,
+    "duplicateResultSlots": 29,
+    "uniqueAdmittedSources": 15,
+    "historicalAggregateStatus": "unverifiable-historical-aggregate",
+    "policy": "sourcesReviewed is recomputed as the sum of requested numResults in the sealed ledger. Every returned slot preserves stable URL/title, source class, keep/drop reason, and exact-normalized-URL dedupe target. The unrecoverable historical 259 aggregate is a note only and is not build authority."
+  },
+  "registryUseAudit": {
+    "sourceCount": 32,
+    "sourcesWithUseCount": 32,
+    "removedUnusedAdsSourceCount": 2,
+    "removedUnusedAdsSourceKeys": [
+      "ads-1953apj-117-313j",
+      "ads-1993aspc-45-59l"
+    ],
+    "unusedSourceCount": 0
+  },
+  "coverage": {
+    "requiredFieldStatusCounts": {
+      "direct": 113,
+      "derived": 39,
+      "estimated": 0,
+      "presentation-only": 70,
+      "unknown": 24,
+      "search-not-found": 66
+    },
+    "fields": {
+      "identity": {
+        "direct": 20,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 4
+      },
+      "raDec": {
+        "direct": 20,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 4,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "epoch": {
+        "direct": 0,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 24,
+        "search-not-found": 0
+      },
+      "distance": {
+        "direct": 0,
+        "derived": 19,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 5
+      },
+      "spectralType": {
+        "direct": 20,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 4,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "temperature": {
+        "direct": 4,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 20,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "logg": {
+        "direct": 1,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 23
+      },
+      "radius": {
+        "direct": 4,
+        "derived": 20,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "luminosity": {
+        "direct": 2,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 22,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "rotation": {
+        "direct": 4,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 20,
+        "unknown": 0,
+        "search-not-found": 0
+      },
+      "orientation": {
+        "direct": 4,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 20
+      },
+      "variability": {
+        "direct": 12,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 12
+      },
+      "companions": {
+        "direct": 22,
+        "derived": 0,
+        "estimated": 0,
+        "presentation-only": 0,
+        "unknown": 0,
+        "search-not-found": 2
+      }
+    }
+  },
+  "admission": {
+    "rosterCount": 24,
+    "schemaCompleteCount": 24,
+    "identityBoundCount": 20,
+    "renderAnchorOnlyCount": 4,
+    "measurementAdmittedCount": 0,
+    "provenanceAdmittedCount": 0,
+    "presentationAdmittedCount": 24,
+    "status": "schema-complete-measurement-admission-blocked"
+  },
+  "authority": {
+    "scientificPayloadWriteback": false,
+    "scientificAuthorityChanged": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "observationTextureClaim": false
+  },
+  "formalProductPointer": "v263",
+  "productionReleaseAuthorized": false,
+  "receiptSha256": "808ede8997ec08d760d05aa7a55858944f48c023814ec3b8ee873fcdb8cbc35b"
+}

@@ -1,0 +1,21 @@
+{
+  "round": 62,
+  "date": "2026-09-14",
+  "scope": "A-line canonical 12/12/12 coverage, route/lifecycle freeze preflight and browser gate",
+  "effectiveChangedLines": 1020,
+  "minimumRequired": 1000,
+  "countMethod": "Nonblank, noncomment production lines in V622 preflight, typed coverage utility, manifest generator/replay, plus measured panel and package integration additions; tests and generated manifests excluded.",
+  "files": [
+    {"path":"app/lib/mainlineAFreezePreflightV622.ts","effectiveLines":271},
+    {"path":"app/lib/mainlineACanonicalCoverageV622.ts","effectiveLines":305},
+    {"path":"scripts/build-mainline-a-canonical-coverage-v622.ts","effectiveLines":68},
+    {"path":"scripts/replay-mainline-a-canonical-coverage-v622.ts","effectiveLines":177},
+    {"path":"app/components/MainlineABetaHeroReviewPanelV611.tsx","effectiveLines":177,"changeType":"freeze-gate-integration-additions"},
+    {"path":"package.json","effectiveLines":22,"changeType":"scripts"}
+  ],
+  "testsExcluded": [
+    "app/data/mainlineACanonicalCoverageV622.test.ts",
+    "app/lib/mainlineACanonicalCoverageV622.test.ts",
+    "app/lib/mainlineAFreezePreflightV622.test.ts"
+  ]
+}

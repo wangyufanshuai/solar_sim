@@ -1,0 +1,62 @@
+{
+  "version": "v591-visual-acquisition-receipt-v1",
+  "acquiredAt": "2026-08-10T10:45:29.133Z",
+  "status": "acquired-single-request-no-retry",
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final",
+    "allowedHosts": [
+      "sdo.gsfc.nasa.gov"
+    ]
+  },
+  "requestedUrlCount": 2,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "assets": [
+    {
+      "id": "sun-photosphere-source",
+      "body": "sun",
+      "role": "photosphere-source",
+      "sourceUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_HMIIC.jpg",
+      "finalUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_HMIIC.jpg",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/jpeg",
+      "outputPath": "source-cache/celestial-convergence-v591/sun/hmi-continuum-4096.jpg",
+      "bytes": 2995245,
+      "sha256": "289e627060e2223abdb62e9ea856f92ae153fefb820788bdc680293eb1ee7f6e",
+      "width": 4096,
+      "height": 4096,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "SDO/HMI intensitygram, acquisition-time latest frame",
+      "presentationOnly": true
+    },
+    {
+      "id": "sun-chromosphere-source",
+      "body": "sun",
+      "role": "chromosphere-source",
+      "sourceUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0304.jpg",
+      "finalUrl": "https://sdo.gsfc.nasa.gov/assets/img/latest/latest_4096_0304.jpg",
+      "redirectChain": [],
+      "httpStatus": 200,
+      "mediaType": "image/jpeg",
+      "outputPath": "source-cache/celestial-convergence-v591/sun/aia-304-4096.jpg",
+      "bytes": 4523701,
+      "sha256": "5ff0c22b8e6c4d7d10229d34808a4128667aad99051eb1671448640172892a4f",
+      "width": 4096,
+      "height": 4096,
+      "license": {
+        "id": "NASA-public-domain",
+        "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+      },
+      "observationIdentity": "SDO/AIA 304 angstrom, acquisition-time latest frame",
+      "presentationOnly": true
+    }
+  ],
+  "receiptSha256": "876c8e394d5161f25b236407eae112d0fd716bd52211b9fcd04e6e127489ff4d"
+}

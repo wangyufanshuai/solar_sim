@@ -1,0 +1,4 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+import { isAtlasShadowCapabilityPointerV422 } from "./atlasShadowCapabilityPointerV422";
+describe("v422 local-shadow pointer", () => { it("qualifies only the orientation basis and mask while refusing Stokes or raster promotion", () => { const pointer = JSON.parse(readFileSync("dist/release/orbit-atlas-current-local-shadow-candidate-v422.json", "utf8")); expect(isAtlasShadowCapabilityPointerV422(pointer)).toBe(true); expect(pointer.capabilities).toMatchObject({ v421AxialVectors: "qualified-preserved", v422OrientationBasis: "qualified-four-source-cos2chi-sin2chi", v422OrientationMask: "qualified-4-available", v422StokesMeasurementMask: "qualified-0-available", v422UnavailableSemantics: "qualified-unavailable-is-not-zero", v422RasterMask: "not-generated", v422StokesCube: "unavailable-no-I-Q-U-V-measurements", v314CorrectedDense: "incomplete-0-of-49" }); }); });

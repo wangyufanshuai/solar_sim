@@ -1,0 +1,165 @@
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+
+const root = process.cwd();
+const paths = {
+  previousEvidence: "dist/science/orbit-atlas-shadow-v493-evidence.json",
+  previousPointer: "dist/release/orbit-atlas-current-local-shadow-candidate-v493.json",
+  cockpit: "dist/science/kerr-photon-metrology-cockpit-v485/cockpit.json",
+  atlas: "dist/science/kerr-dimensionless-photon-atlas-v487/atlas.json",
+  lattice: "dist/science/kerr-redshift-contrast-lattice-v489/contrast-lattice.json",
+  gauge: "dist/science/kerr-redshift-gauge-reconstruction-v491/gauge-reconstruction.json",
+  edge: "dist/science/kerr-redshift-edge-redundancy-v493/edge-redundancy.json",
+  dense: "dist/science/kerr-campaign-v314/campaign-state.json",
+  formal: "dist/release/orbit-atlas-current-product-evidence-v263.json",
+  intent: "app/lib/kerrPhotonMetrologyObservatoryIntentV494.ts",
+  wrapper: "app/components/KerrPhotonMetrologyObservatoryIntentV494.tsx",
+  workbench: "app/components/RelativityResearchWorkbenchV280.tsx",
+  section: "app/components/RelativityResearchWorkspaceSection.tsx",
+  surfaces: "app/components/AtlasRuntimeWorkbenchLazySurfaces.tsx",
+  atlasClient: "app/lib/kerrDimensionlessPhotonAtlasClientV487.ts",
+  latticeClient: "app/lib/kerrRedshiftContrastLatticeClientV489.ts",
+  gaugeClient: "app/lib/kerrRedshiftGaugeReconstructionClientV491.ts",
+  edgeClient: "app/lib/kerrRedshiftEdgeRedundancyClientV493.ts",
+  output: "dist/science/kerr-photon-metrology-observatory-v494/integration.json",
+};
+const transient = new Set(["generatedAt", "artifactSha256", "payloadSha256", "stageChainSha256", "evidenceSha256", "pointerSha256"]);
+const bytes = (path) => readFileSync(resolve(root, path));
+const read = (path) => JSON.parse(bytes(path).toString("utf8"));
+const text = (path) => bytes(path).toString("utf8");
+const fileSha = (path) => createHash("sha256").update(bytes(path)).digest("hex");
+const canonicalize = (value) => Array.isArray(value) ? value.map(canonicalize) : !value || typeof value !== "object" ? value : Object.fromEntries(Object.entries(value).filter(([key]) => !transient.has(key)).sort(([a], [b]) => a < b ? -1 : a > b ? 1 : 0).map(([key, entry]) => [key, canonicalize(entry)]));
+const sha = (value) => createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
+const atomic = (path, value) => { const target = resolve(root, path); mkdirSync(dirname(target), { recursive: true }); const part = `${target}.${process.pid}.part`; writeFileSync(part, `${JSON.stringify(value, null, 2)}\n`); renameSync(part, target); };
+
+const previousEvidence = read(paths.previousEvidence);
+const previousPointer = read(paths.previousPointer);
+const cockpit = read(paths.cockpit);
+const atlas = read(paths.atlas);
+const lattice = read(paths.lattice);
+const gauge = read(paths.gauge);
+const edge = read(paths.edge);
+const dense = read(paths.dense);
+const formal = read(paths.formal);
+const formalEvidence = read(formal.source);
+if (
+  previousEvidence.version !== "orbit-atlas-shadow-v493-evidence-v1" || sha(previousEvidence) !== previousEvidence.evidenceSha256 ||
+  previousPointer.version !== "orbit-atlas-current-local-shadow-candidate-v493" || sha(previousPointer) !== previousPointer.pointerSha256 ||
+  cockpit.version !== "v485-kerr-photon-metrology-cockpit-artifact-v1" || sha(cockpit) !== cockpit.artifactSha256 ||
+  atlas.version !== "v487-kerr-dimensionless-photon-atlas-artifact-v1" || sha(atlas) !== atlas.artifactSha256 ||
+  lattice.version !== "v489-kerr-redshift-contrast-lattice-artifact-v1" || sha(lattice) !== lattice.artifactSha256 ||
+  gauge.version !== "v491-kerr-redshift-gauge-reconstruction-artifact-v1" || sha(gauge) !== gauge.artifactSha256 ||
+  edge.version !== "v493-kerr-redshift-edge-redundancy-artifact-v1" || sha(edge) !== edge.artifactSha256 ||
+  edge.contract.statisticalJackknifeAuthorityGranted !== false || edge.boundary.scienceRasterAuthorityGranted !== false ||
+  dense.status !== "incomplete-0-of-49" || dense.completedShardCount !== 0 || dense.attemptConsumed !== false ||
+  formal.version !== "v263-current-product-evidence-pointer" || formalEvidence.science?.defaultKernel !== "legacy-eih-1pn" || formalEvidence.contracts?.singleCanvas !== true || formalEvidence.contracts?.legacyRootAttributes !== 603 || formalEvidence.contracts?.evidenceLedgerClaims !== 84
+) throw new Error("v494-upstream-boundary");
+
+const intent = text(paths.intent);
+const wrapper = text(paths.wrapper);
+const workbench = text(paths.workbench);
+const section = text(paths.section);
+const surfaces = text(paths.surfaces);
+const clients = [text(paths.atlasClient), text(paths.latticeClient), text(paths.gaugeClient), text(paths.edgeClient)];
+if (
+  !intent.includes("automaticComponentImportBudget: authorized ? 1 : 0") || !intent.includes("automaticSummaryRequestBudget: authorized ? 1 : 0") || !intent.includes("detailComponentCatalogSize: 4") || !intent.includes("concurrentDetailSurfaceBudget: authorized ? 1 : 0") ||
+  !wrapper.includes('useState<KerrPhotonMetrologyDetailSurfaceV494>("none")') || !wrapper.includes('detail === "coordinate-atlas"') || !wrapper.includes('detail === "contrast-lattice"') || !wrapper.includes('detail === "gauge-reconstruction"') || !wrapper.includes('detail === "edge-redundancy"') || !wrapper.includes('current === id ? "none" : id') ||
+  wrapper.includes("loadKerrDimensionlessPhotonAtlasSummaryV487") || wrapper.includes("loadKerrRedshiftContrastLatticeSummaryV489") || wrapper.includes("loadKerrRedshiftGaugeReconstructionSummaryV491") || wrapper.includes("loadKerrRedshiftEdgeRedundancySummaryV493") ||
+  !workbench.includes('from "./KerrPhotonMetrologyObservatoryIntentV494"') || !workbench.includes('<KerrPhotonMetrologyObservatoryIntentV494 active={tab === "campaign-evidence"} />') ||
+  !section.includes('lazy(() => import("./RelativityResearchWorkbenchV280"))') || !surfaces.includes('lazy(() => import("./RelativityObservableAtlasPanel"))') ||
+  clients.some((source) => !source.includes("requestCount:0") && !source.includes("requestCount: 0")) || clients.some((source) => !source.includes("if(requestPromise)return requestPromise") && !source.includes("if (requestPromise) return requestPromise")) ||
+  [intent, wrapper].some((source) => source.includes("Math.random") || source.includes("<canvas") || source.includes("physicsEngine") || source.includes("setSceneRevision"))
+) throw new Error("v494-runtime-boundary");
+
+const sourcePaths = [
+  paths.previousEvidence, paths.previousPointer, paths.cockpit, paths.atlas, paths.lattice, paths.gauge, paths.edge, paths.dense, paths.formal,
+  paths.intent, paths.wrapper, paths.workbench, paths.section, paths.surfaces, paths.atlasClient, paths.latticeClient, paths.gaugeClient, paths.edgeClient,
+  "app/lib/atlasDeliveryProfile.ts", "app/lib/kerrPhotonMetrologyObservatoryIntentV494.test.ts", "app/components/KerrPhotonMetrologyObservatoryIntentV494.test.tsx",
+  "scripts/build-kerr-photon-metrology-observatory-v494.mjs",
+];
+const sourceManifest = sourcePaths.map((path) => ({ path, sha256: fileSha(path) }));
+const unsigned = {
+  version: "v494-kerr-photon-metrology-observatory-integration-v1",
+  generatedAt: "2026-08-01T00:00:00Z",
+  status: "implemented-five-level-four-exclusive-detail-observatory-heavy-browser-pending",
+  dependency: {
+    v493EvidenceSha256: previousEvidence.evidenceSha256,
+    v493PointerSha256: previousPointer.pointerSha256,
+    v485CockpitSha256: cockpit.artifactSha256,
+    v487AtlasSha256: atlas.artifactSha256,
+    v489LatticeSha256: lattice.artifactSha256,
+    v491GaugeSha256: gauge.artifactSha256,
+    v493EdgeRedundancySha256: edge.artifactSha256,
+    v314StateSha256: dense.stateSha256,
+  },
+  supersession: {
+    previousRuntimeWrapper: "KerrPhotonMetrologyObservatoryIntentV492",
+    currentRuntimeWrapper: "KerrPhotonMetrologyObservatoryIntentV494",
+    priorEvidenceOverwritten: false,
+    preservedCapabilities: ["v485-bounded-cockpit", "v487-coordinate-atlas", "v489-contrast-lattice", "v491-gauge-reconstruction", "v493-edge-redundancy"],
+  },
+  intentChain: {
+    publicPanelId: "relativity-observables",
+    publicPanelIdAddedByV494: false,
+    outerPanelImport: "lazy-RelativityObservableAtlasPanel",
+    workbenchImport: "lazy-RelativityResearchWorkbenchV280",
+    campaignMount: "campaign-evidence-tab-only",
+    automaticComponentImportCount: 1,
+    detailComponentCatalogSize: 4,
+    concurrentDetailSurfaceCount: 1,
+    detailDefault: "none",
+    componentIntentDepth: 4,
+    dataIntentDepth: 5,
+  },
+  requestBudget: {
+    sourceQualifiedSolarFirstScreenRequests: 0,
+    sourceQualifiedInactiveWorkbenchRequests: 0,
+    sourceQualifiedStandaloneRequests: 0,
+    sourceQualifiedLiteRequests: 0,
+    automaticCockpitSummaryRequestBudget: 1,
+    detailDataRequestAuthorizedByWrapper: false,
+    detailDataRequestCatalogSize: 4,
+    detailDataRequiresSecondExplicitIntent: true,
+    perDetailClientRequestBudget: 1,
+    browserObservedRequests: null,
+    browserQualification: "not-run",
+  },
+  scienceBoundary: {
+    cockpitSummaryMatrixElements: 0,
+    coordinateAtlasSummaryMatrixElements: 0,
+    contrastLatticeSummaryMatrixElements: 0,
+    gaugeSummaryMatrixElements: 0,
+    edgeRedundancySummaryMatrixElements: 0,
+    sciencePixelRows: 0,
+    scienceRasterAuthorityGranted: false,
+    detectorAuthorityGranted: false,
+    likelihoodAuthorityGranted: false,
+    statisticalJackknifeAuthorityGranted: false,
+    scienceWritebackAllowed: false,
+  },
+  lifecycle: { existingCanvasCount: 1, canvasCreatedByV494: false, sceneRevisionDelta: 0, physicsMutationAllowed: false, maximumConcurrentDetailSurfaces: 1, workerDeltaBeforeIntent: 0, textureDeltaBeforeIntent: 0, cameraLeaseDeltaBeforeIntent: 0 },
+  qualification: {
+    fiveLevelIntent: "source-qualified",
+    exclusiveDetailSurface: "source-qualified",
+    automaticCockpit: "implemented-awaiting-browser-qualification",
+    coordinateAtlasDetail: "implemented-explicit-intent",
+    contrastLatticeDetail: "implemented-explicit-intent",
+    gaugeReconstructionDetail: "implemented-explicit-intent",
+    edgeRedundancyDetail: "implemented-explicit-intent",
+    standaloneZeroLoad: "source-qualified-browser-not-run",
+    liteZeroLoad: "source-qualified-browser-not-run",
+    solarFirstScreenZeroLoad: "source-qualified-browser-not-run",
+    browser: "not-run",
+    visualMatrix: "not-run",
+    soak: "not-run",
+    rtxWebGpu: "not-run",
+  },
+  sourceManifest,
+  sourceSha256: sha(sourceManifest),
+  release: { formalProductPointer: "v263", formalProductPointerAdvanced: false, ordinaryStandaloneProfile: "legacy-v9", liteProfile: "legacy-v9", localShadowDefaultProfile: "legacy-v9", localShadowDefaultApplied: false, publicDeploymentBlocked: true },
+  boundary: "v494-five-level-local-shadow-intent-one-automatic-cockpit-four-mutually-exclusive-detail-shells-second-explicit-data-intent-no-science-product-jackknife-or-default-mutation",
+};
+const artifact = { ...unsigned, artifactSha256: sha(unsigned) };
+atomic(paths.output, artifact);
+console.log(JSON.stringify({ status: artifact.status, artifactSha256: artifact.artifactSha256, automaticComponents: 1, detailCatalog: 4, concurrentDetails: 1, componentIntentDepth: 4, dataIntentDepth: 5, browserQualification: "not-run", denseCampaign: "0/49" }, null, 2));

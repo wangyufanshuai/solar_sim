@@ -1,0 +1,1090 @@
+{
+  "schema": "mainline-a-r75-web-candidate-v662",
+  "status": "verified-local-web-candidate-hold-public-release-blocked",
+  "createdAt": "2026-10-13T05:54:14.870Z",
+  "buildId": "6LSkpkfh8Q3k6pVypBrfQ",
+  "runtimeBuildId": "mainline-a-6e206331b2aecc4d",
+  "appSourceSha256": "6e206331b2aecc4d6a480040a7d3ba99d40972435b3c0e82278b10c6832036db",
+  "rollbackReference": "docs/release/v607/mainline-a-r73-v660-web-candidate-20261013v660r73web02.json",
+  "toolSourcePaths": [
+    "app/lib/mainlineAWebAcceptanceV662.ts",
+    "app/components/MainlineAWebAcceptancePanelV662.tsx",
+    "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "scripts/build-mainline-a-r75-matrix-v662.mjs",
+    "scripts/verify-mainline-a-r75-matrix-v662.mjs",
+    "scripts/verify-mainline-a-r75-http-v662.mjs",
+    "scripts/verify-mainline-a-r75-http-disabled-v662.mjs",
+    "scripts/capture-mainline-a-r75-matrix-browser-v662.mjs",
+    "scripts/build-mainline-a-r75-visual-v662.mjs",
+    "scripts/audit-mainline-a-r75-evidence-v662.mjs",
+    "scripts/verify-mainline-a-r75-candidate-v662.mjs",
+    "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+    "scripts/capture-mainline-a-web-sky-browser-v656.mjs",
+    "scripts/capture-mainline-a-r73-browser-v660.mjs",
+    "scripts/capture-mainline-a-r73-longrun-v660.mjs",
+    "scripts/build-mainline-a-preserved.mjs",
+    "scripts/capture-mainline-a-web-r65-longrun-v650.mjs"
+  ],
+  "pinnedFiles": [
+    {
+      "role": "canonical",
+      "path": "app/data/mainlineACanonicalCoverageV622.generated.json",
+      "bytes": 38349,
+      "sha256": "1b710eda006fbdd1908b8c0cb070b546bdfd12d3fe96f9f315d3640f0a627377"
+    },
+    {
+      "role": "sky",
+      "path": "app/data/mainlineAWebSkyAtlasV656.generated.json",
+      "bytes": 27529,
+      "sha256": "8da5899d664e606357fd75babe4e2fdb131c25a652c2ee882ad1dccda7dd5c41"
+    },
+    {
+      "role": "nebula",
+      "path": "app/data/mainlineANebulaR73CatalogV660.generated.json",
+      "bytes": 62598,
+      "sha256": "3ab8bf639f8241cdfe042a4ac143031f76d6fe1f9ca0bdf133158b24d8f3b8db"
+    },
+    {
+      "role": "alternatives",
+      "path": "app/data/mainlineANebulaR74AlternativesV661.generated.json",
+      "bytes": 18161,
+      "sha256": "8f7c3c6247d1abc561ed19be26cc4254e51b6d94dc00375c508da02b3149f76f"
+    },
+    {
+      "path": "docs/release/v607/nebula-image-artifacts/r68/cepheus-c-nebula-pia23127-23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4.jpg",
+      "bytes": 9239217,
+      "sha256": "23ba34cc912ece30388710950613f9d689d4d03990c56dece4cf4db8d2f65ad4"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/cocoon-nebula-pia13441-c8347b3c7eae30f9a8ba9ac736306fc8ee54297154143f9f1605ae253e6eb730.jpg",
+      "bytes": 633645,
+      "sha256": "c8347b3c7eae30f9a8ba9ac736306fc8ee54297154143f9f1605ae253e6eb730"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/dragon-lair-nebula-pia13240-560db6b551b7f43250120d02dd08cee77cc554df1b66c89ffb7c7a535f8663d0.jpg",
+      "bytes": 6566741,
+      "sha256": "560db6b551b7f43250120d02dd08cee77cc554df1b66c89ffb7c7a535f8663d0"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/jellyfish-nebula-pia13449-4db2a069b3f8f11a9a3ab23ebc436e64027ab068b91f83b6274fe16f8e7f52a2.jpg",
+      "bytes": 1216669,
+      "sha256": "4db2a069b3f8f11a9a3ab23ebc436e64027ab068b91f83b6274fe16f8e7f52a2"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/monkey-head-nebula-pia19836-0383b96160be5e82af539b4d137151e71d18a7423349b3ebc029c9dd6db67b8f.jpg",
+      "bytes": 444646,
+      "sha256": "0383b96160be5e82af539b4d137151e71d18a7423349b3ebc029c9dd6db67b8f"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v652/rho-ophiuchi-cloud-pia10182-704d67853f0dc74c4ecb01f6460384795f45e8ddf206a95d78995fd77cd28236.jpg",
+      "bytes": 1064932,
+      "sha256": "704d67853f0dc74c4ecb01f6460384795f45e8ddf206a95d78995fd77cd28236"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/flame-nebula-pia15635-5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40.jpg",
+      "bytes": 1766924,
+      "sha256": "5844fc3cdc99cba1572b0f3b198bd604bc4099d7ee9ec2c77be4b10e194eab40"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/heart-nebula-pia13112-68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6.jpg",
+      "bytes": 5112886,
+      "sha256": "68f0de0d66564cd21eeb3885f576752c18d92adc4bc78ca70edba366366c83f6"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/pacman-nebula-pia14731-32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a.jpg",
+      "bytes": 797633,
+      "sha256": "32ec8104dbc4fadce7d06aa62fee6869a0a2fbc919aef150ce1ce32b7e59372a"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/running-chicken-nebula-pia13451-f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285.jpg",
+      "bytes": 1406005,
+      "sha256": "f8f52698c6ac55e90fa9f84e40755f19bd28bd79759b8f844748ffb957d20285"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/soul-nebula-pia13014-007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904.jpg",
+      "bytes": 2073793,
+      "sha256": "007749bcd3192b23dd6329453cd4dea7d212c6ad7599ebbeaaccc5da9472c904"
+    },
+    {
+      "path": "docs/release/v607/nebula-page-image-artifacts/v654/witch-head-nebula-pia17553-c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8.jpg",
+      "bytes": 7886121,
+      "sha256": "c0ba783d17d0b543d3bcccd0da6d6b188c28aba46a058dc064a73cd33cffcec8"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/flaming-star-nebula-image-b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb.jpg",
+      "bytes": 1224232,
+      "sha256": "b6b4e3f538bd96348ce7808110261ac129d561fe3ab8ef0207817499993310eb"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/sh2-235-nebula-image-e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c.jpg",
+      "bytes": 3002201,
+      "sha256": "e0dbf6770415af0176400077d24d73ca4e3e85693804bc4cf6cc8eefd64e928c"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/spider-nebula-image-03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726.jpg",
+      "bytes": 1305120,
+      "sha256": "03df2c25ae97ce0ab02289dc69bdef592ba75550a3796df22517bb612e230726"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tadpole-nebula-image-9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07.jpg",
+      "bytes": 1162880,
+      "sha256": "9b8ec49d858ae838375dedd4b98108cc8db34c78cea73514868073f826e48f07"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/tarantula-nebula-image-08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38.jpg",
+      "bytes": 5079804,
+      "sha256": "08859da59f392f5ff773fb6122f13e574ff16f1a5c06392f4aaf2f29c2ae2c38"
+    },
+    {
+      "path": "docs/release/v607/nebula-r71-v658/raw/w40-nebula-image-e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2.jpg",
+      "bytes": 1243620,
+      "sha256": "e1dc3f20b675093de061597dfa62ca354e8d2afeac8c10a2920bfb55af2437f2"
+    },
+    {
+      "path": "docs/release/v607/nebula-r72-v659/raw/california-nebula-image-b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396.jpg",
+      "bytes": 758960,
+      "sha256": "b42f7c38022ab811949c8c4e07e7f908ebcad88addcf3e60acd8bb8d526e9396"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/bubble-hubble-bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477.html",
+      "bytes": 274737,
+      "sha256": "bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/cats-eye-photojournal-6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80.html",
+      "bytes": 269111,
+      "sha256": "6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-hubble-2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e.html",
+      "bytes": 298800,
+      "sha256": "2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-spitzer-d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4.html",
+      "bytes": 268729,
+      "sha256": "d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/omega-photojournal-7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe.html",
+      "bytes": 268393,
+      "sha256": "7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/ring-photojournal-048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc.html",
+      "bytes": 271453,
+      "sha256": "048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cepheus-c-nebula-detail-2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3.webp",
+      "bytes": 197838,
+      "sha256": "2768b979b4068c1e24f3d748b76c23547a47793e9533b6daee326241ca4c5ae3"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/cocoon-nebula-detail-0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be.webp",
+      "bytes": 198784,
+      "sha256": "0db2a7a1d204aac9fadbaf9c0524e4048241a3c425922859d3608576e835d8be"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/dragon-lair-nebula-detail-0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe.webp",
+      "bytes": 376438,
+      "sha256": "0bfa3077979db719252761422cfa970936693bc3c50f3e636e48326b4e8bd4fe"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/flame-nebula-detail-38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc.webp",
+      "bytes": 140844,
+      "sha256": "38696cca83274ffd80079371911ae743706fb7bbc2d5fd666ba2329679727ecc"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/heart-nebula-detail-3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c.webp",
+      "bytes": 334852,
+      "sha256": "3caf7cb3775f624090f0d3b03d09b65c8e33794d4a5fe2dea6a7fcde2b71699c"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/jellyfish-nebula-detail-ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4.webp",
+      "bytes": 195446,
+      "sha256": "ac85ee727c87d3720903c5be4d3eee268136cb848835ea5124929c1f4412c3f4"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/monkey-head-nebula-detail-c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697.webp",
+      "bytes": 101614,
+      "sha256": "c9863db6a64e63852fa25eefbe60aecab669043fca085a6fa8a644fccef24697"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/pacman-nebula-detail-79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0.webp",
+      "bytes": 205082,
+      "sha256": "79ab3d7b6c49adf3ceaf7e62f7aa82293920c6327981d9f5afede4e5c61616e0"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/rho-ophiuchi-cloud-detail-183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2.webp",
+      "bytes": 72106,
+      "sha256": "183af1ec8f6b2e01e1e32e7087d9491e90dd75aa312a106f9dcd13fe63d015a2"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/running-chicken-nebula-detail-074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8.webp",
+      "bytes": 289312,
+      "sha256": "074b3571fabe3296da9a708588a9c3160586d703153fbe93a8355854997740f8"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/soul-nebula-detail-26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f.webp",
+      "bytes": 251874,
+      "sha256": "26871e50678625fe8e087c1b0875c03f845d08041d09911def64c0a306aafd2f"
+    },
+    {
+      "path": "docs/release/v607/nebula-review-derivatives/v655/witch-head-nebula-detail-4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd.webp",
+      "bytes": 247242,
+      "sha256": "4fc1fde99b01964c03d56e8848b10bae97d305fdddfa62a3ed664aee04b6cfdd"
+    },
+    {
+      "path": "public/textures/mainline-a/heic0105a.jpg",
+      "bytes": 280666,
+      "sha256": "81f1f34fc28d754b1521d86ea5e3cc5dd284ed62243b1911a6ba6c419191e7f8"
+    },
+    {
+      "path": "public/textures/mainline-a/heic0707a.jpg",
+      "bytes": 178050,
+      "sha256": "8071632a2d895f0bfdb8b5ff80456eafc3ff71ee2b8fa8e28b84b5994fcec4d3"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1310a.jpg",
+      "bytes": 181669,
+      "sha256": "8a3003ab28b0a3a45e97d63ef879a5c55a2029ded9cb174818f09646aeb3b806"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1501e.jpg",
+      "bytes": 493726,
+      "sha256": "9349f8d48d81a9998e46aab8cb0c87ef5a61c2fad093ce8c36fc9fa657e09e92"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1517b.jpg",
+      "bytes": 721718,
+      "sha256": "29f76f0a20aed10e08868ecedfffe27c983d30eabbb1904b982b616f9fbaa2af"
+    },
+    {
+      "path": "public/textures/mainline-a/heic1520a.jpg",
+      "bytes": 313032,
+      "sha256": "f66c90025e6a284bf1834f35ebacfa9ce5fce2684bf2b3ac60a6e1fc740fb176"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0205d.jpg",
+      "bytes": 181214,
+      "sha256": "35ce36bbff5099f2a6022bd47d5dfd78f2a55b09da98ffbdec7c98a6a85398e3"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0417c.jpg",
+      "bytes": 236179,
+      "sha256": "c56abd176306b9ea16c50fe20586b59cd9017203945d0ff1e4406054b86859d6"
+    },
+    {
+      "path": "public/textures/mainline-a/opo0432d.jpg",
+      "bytes": 149625,
+      "sha256": "172880d30f996236bf8c530c0079e33fa18810087926acd0998ca567ff2bb2d0"
+    },
+    {
+      "path": "public/textures/mainline-a/potm2602b.jpg",
+      "bytes": 144618,
+      "sha256": "69ab60734b2d03f3f07c3d114b35744d0f0973fbdcc1dd42141f14f3c6130721"
+    },
+    {
+      "path": "public/textures/mainline-a/potw1644a.jpg",
+      "bytes": 156750,
+      "sha256": "f4953a80a364d5b9ba23b77d9d5dd8bfa94d7715604eb207b168278e5a35d61f"
+    },
+    {
+      "path": "public/textures/mainline-a/potw1847a.jpg",
+      "bytes": 287379,
+      "sha256": "271752f5e51d29bc827e2cf171b2bb8ee3b81dc6798e511ebff6baaa17bd9598"
+    },
+    {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "bytes": 57424,
+      "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"
+    },
+    {
+      "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+      "bytes": 6135,
+      "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-build-20261013v662r75web02.json",
+      "bytes": 479243,
+      "sha256": "e54a5e64c904ea30831f19323f0d9ed3fd110026cd933e918db1dc18ecd54130"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-20261013v662r75web02.json",
+      "bytes": 68294,
+      "sha256": "1bdd94664b755c72125c003710d67904bbce997c2e45a487748731edcbd606ce"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-replay-20261013v662r75web02.json",
+      "bytes": 792,
+      "sha256": "66cefd463aee7334e30ff019b8c2d1d51ddd777e36445925dac161c4995a8fcc"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-http-20261013v662r75web02.json",
+      "bytes": 27280,
+      "sha256": "9d58f213f9db2fa6f33f5aaf27ee7d4c0b74f226879ea5cbeaca5edb506ef95f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-http-disabled-20261013v662r75web02.json",
+      "bytes": 10683,
+      "sha256": "dd48658e16511386afb6949c8522af8de35b981ac5ccdb4b79dd6cb90dd34bb5"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-browser-20261013v662r75web03.json",
+      "bytes": 27102,
+      "sha256": "8a336ed4897a7b714078e16fc14f70dd7ab6a0481867fb69fbf908a2be032622"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-web-canonical-scene-desktop-raw-20261013-v662scene01.json",
+      "bytes": 53345,
+      "sha256": "d3c0690fd43a1539e4a5e1df93b0c6f0d3bd312ae961e1512a64e608d0e9f47f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-web-canonical-scene-mobile-raw-20261013-v662scene02.json",
+      "bytes": 53235,
+      "sha256": "e10a7cd8f9eb039941e5b1a9216c4fbb833601876bbf81d1f6386087216210c5"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-browser-20261013v662r75web02.json",
+      "bytes": 14708,
+      "sha256": "0f025f0f38a67c3e0b7895bf9017de61fbc8c093456595b510ba2aae2fe50bcb"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-nebula-browser-20261013v662r75web02.json",
+      "bytes": 17904,
+      "sha256": "10fd2e235ec16cbc1ea05cd66defd8da76a8bc7530961705d83faab1cae31ae3"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-visual-20261013v662r75web02.json",
+      "bytes": 23791,
+      "sha256": "acf7dacc55cb83c9ca88494e72d2d4d1feebe8ed963ff057eefcfa2c06ff20be"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-longrun-audit-20261013v662r75long01.json",
+      "bytes": 1681,
+      "sha256": "1caa3d0a45f788843731b79bdcba26a3abe8bedb3ff35f98e4c30d5a00731ab9"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-browser-desktop-raw-20261013v662r75long01.json",
+      "bytes": 36911456,
+      "sha256": "cbd8444e4e1c8eb676fab59ecd59f7fafc476272a4fd8b3112eb29b90f9a55fe"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-browser-final-raw-20261013v662r75long01.json",
+      "bytes": 77380647,
+      "sha256": "965889debffdb4eb0a6d2c4a15885855990839102988d8bfb414a948f0a52c17"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+      "bytes": 24048,
+      "sha256": "767003b07374a8dad488644bc9ccd77336c0934b5b04ad54c1893a7c6aee5221"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json",
+      "bytes": 1751,
+      "sha256": "c0b02617a3c4090ad1ee6f8cb98f0e462b5260c05a9ac00afd6ba1f7bbe3dd6a"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r73-v660-web-candidate-20261013v660r73web02.json",
+      "bytes": 35569,
+      "sha256": "35aa76efc396d529b6dea3df3c54a18ced462b45560591d4fe961db64df4eabe"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-code-change-20261013.json",
+      "bytes": 5172,
+      "sha256": "77ec3c195e8ccee873f64905f59fa8d720f3d0793680e8dcc04f6190f5832deb"
+    },
+    {
+      "path": "app/lib/mainlineAWebAcceptanceV662.ts",
+      "bytes": 15117,
+      "sha256": "ec59c784b2390abc03276432a58f99eec6144a8466801400767ff1e6b3fc6384"
+    },
+    {
+      "path": "app/components/MainlineAWebAcceptancePanelV662.tsx",
+      "bytes": 12640,
+      "sha256": "4bd6a032a8e348b5dd52f806475454f6b60ce6bcc0449af08027b4c1b2d3ffd8"
+    },
+    {
+      "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "bytes": 29294,
+      "sha256": "ee51af7047967940fbc7e87df57184c1d8ffef21e8b05f3b587e19d0a370c395"
+    },
+    {
+      "path": "scripts/build-mainline-a-r75-matrix-v662.mjs",
+      "bytes": 7503,
+      "sha256": "c36517f59d5ee7b11fe31de1e859532b86aacfaf0dcb2dc2196157d82d4239a4"
+    },
+    {
+      "path": "scripts/verify-mainline-a-r75-matrix-v662.mjs",
+      "bytes": 7357,
+      "sha256": "4e5ea008ab79d57e1f8ad05e326380fa4fe92b63aa12debfb0913d88e2347c10"
+    },
+    {
+      "path": "scripts/verify-mainline-a-r75-http-v662.mjs",
+      "bytes": 7905,
+      "sha256": "c089bf46bca025c49d855cf068b300d4d4f550d92534b23b082b7482ace8b021"
+    },
+    {
+      "path": "scripts/verify-mainline-a-r75-http-disabled-v662.mjs",
+      "bytes": 5534,
+      "sha256": "024fd3a9c06e53037664b23e2d063dce9b4f00d2d8f5fa28437b0c064f648a77"
+    },
+    {
+      "path": "scripts/capture-mainline-a-r75-matrix-browser-v662.mjs",
+      "bytes": 12977,
+      "sha256": "b30faf82a05f7f8f4a963d48dc3b826a42b626682e8e63be5e0d3c4675c2085c"
+    },
+    {
+      "path": "scripts/build-mainline-a-r75-visual-v662.mjs",
+      "bytes": 6840,
+      "sha256": "04e7e628f3ba4e67b12edafebbdcf57bfea163febf05dd412205c8da5b9fb5a1"
+    },
+    {
+      "path": "scripts/audit-mainline-a-r75-evidence-v662.mjs",
+      "bytes": 19578,
+      "sha256": "cc831e13139f7c6c14634bbf3d4aaf0434b0f380c327020c19d99e12fe0969a0"
+    },
+    {
+      "path": "scripts/verify-mainline-a-r75-candidate-v662.mjs",
+      "bytes": 8951,
+      "sha256": "9be7dede1db27ed59907c7f7f395c863e669695b8490e6c02907920105d5c8ab"
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+      "bytes": 15625,
+      "sha256": "9dc9e3f7564fdd043f35b190f35d659f8c9eb44bb02917c5787929351c843575"
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-sky-browser-v656.mjs",
+      "bytes": 18479,
+      "sha256": "a43cb709cc0ec73281ffebb0b234dbdce07c4ccf0a7eb4198bf681aed2bb7cc3"
+    },
+    {
+      "path": "scripts/capture-mainline-a-r73-browser-v660.mjs",
+      "bytes": 17161,
+      "sha256": "8d67d1a2bc45ced8e80fb5a803ceeae4a2eca6a81fcfbc8099105c8edf97b30c"
+    },
+    {
+      "path": "scripts/capture-mainline-a-r73-longrun-v660.mjs",
+      "bytes": 11550,
+      "sha256": "583db50f611f255436161a45e60c0128fba08b2f0496ed58cfdf555fc4ba4ab6"
+    },
+    {
+      "path": "scripts/build-mainline-a-preserved.mjs",
+      "bytes": 13731,
+      "sha256": "2f057ea22f1336926908fde9808d3e57b43658a6dacef4872efa12a3ba53bbd7"
+    },
+    {
+      "path": "scripts/capture-mainline-a-web-r65-longrun-v650.mjs",
+      "bytes": 18716,
+      "sha256": "cb56ba4d8ec3d1f1e2d73c00d0615e67e9ab34f8125bced31cfcca6814a89978"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-alpha-centauri-a-20261013-v662scene01.png",
+      "bytes": 374883,
+      "sha256": "d58a0312fd7734618da26f3097291aa524a46f81bc35466f41a8993709b6e694"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-achernar-20261013-v662scene01.png",
+      "bytes": 324069,
+      "sha256": "c880a8d8590e0e904db3f1d3799335095a8841c5b072f3db75db15bd584e137e"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-betelgeuse-20261013-v662scene01.png",
+      "bytes": 520413,
+      "sha256": "c8b63bcfbc8dd5b27952b6d3d33502ef26d779f79481232a6de28db3a477739a"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-sirius-a-20261013-v662scene01.png",
+      "bytes": 226675,
+      "sha256": "52c54359f6d0c1c371c928adefe06655c2efc7c503803baeb518019d663e2e95"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-rigel-20261013-v662scene01.png",
+      "bytes": 406435,
+      "sha256": "f412fb1049ff48b60ba37f8c0a0aefc24c5e9825e2dc4306abed278b1a949ce8"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-antares-20261013-v662scene01.png",
+      "bytes": 690474,
+      "sha256": "8c5b61d9f3a0e6ff8892dd227d9cd7a3a49a7cfe6f164ed163053b24b985b202"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-canopus-20261013-v662scene01.png",
+      "bytes": 205064,
+      "sha256": "92e1310cc7a2e3690df7751fe8c332b33a48566a4bfe490ec6cae24f7cab0103"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-arcturus-20261013-v662scene01.png",
+      "bytes": 678988,
+      "sha256": "e13484c8d92998951199ef55e59f677c40ce8b5a3b3c503782c8792f108e6d0e"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-vega-20261013-v662scene01.png",
+      "bytes": 203234,
+      "sha256": "2dea98d861d23a8529662af3e6eebee54e813e29f22eea3d81a4b5e237915e04"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-capella-a-20261013-v662scene01.png",
+      "bytes": 732575,
+      "sha256": "4baef901482e768ee3428bb5b4bcd4b0a63f63404fab7cf2b0e788b3dc56d9e5"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-procyon-a-20261013-v662scene01.png",
+      "bytes": 401723,
+      "sha256": "ca86d03b9134538a1d4495c5dd6e2dd08da9dbb610820a313622c150ed6966f8"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-aldebaran-20261013-v662scene01.png",
+      "bytes": 788593,
+      "sha256": "6acadaf237bf97825a06de959a96064bf3af6cfcf1b1a7572f7c02dbc8192115"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Ori-20261013-v662scene01.png",
+      "bytes": 642712,
+      "sha256": "75b09c301d8d07e9c6e96500b5b1566403ff581849c13ae0f63582b4281344c8"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-UMa-20261013-v662scene01.png",
+      "bytes": 226267,
+      "sha256": "a5b49155aa0fb453a33c2f98f3fd4388c78c994f260a676c2a10c284a3cc078a"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cas-20261013-v662scene01.png",
+      "bytes": 196542,
+      "sha256": "8d22079462958c960a5f70b16b2d5c031b53effbd20b43747a6e67e06d2cea8b"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Sco-20261013-v662scene01.png",
+      "bytes": 811787,
+      "sha256": "915951544a7a4e9dc9ed464bf8ea8b9e9d909f310e5c085c11e16d3f792d94e2"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cyg-20261013-v662scene01.png",
+      "bytes": 144013,
+      "sha256": "6e54a498f87130c20099cbdc2b56bbb171fbb0be7e3d65f76deb97361b6ee551"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Gem-20261013-v662scene01.png",
+      "bytes": 841788,
+      "sha256": "ac7781ac4448ba26b9621ff36b3a3dfc9ae3e10ea9ec13db648c4833b44c46b4"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Leo-20261013-v662scene01.png",
+      "bytes": 718633,
+      "sha256": "f017fb4629f73df14408181be8a23688d2708c097467bd18b1660a25464ba04d"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cru-20261013-v662scene01.png",
+      "bytes": 195969,
+      "sha256": "79b1df9206fa8926c15842216fc78f03e28f6a554b036f158beeb084e2d6b706"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Lyr-20261013-v662scene01.png",
+      "bytes": 144605,
+      "sha256": "7213c0c14a913c609558941656e31d5c1d03c7b877d20ed53d4cdef59ebc446a"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Aql-20261013-v662scene01.png",
+      "bytes": 316144,
+      "sha256": "6836c1a3325db334b66289af17677c75214b77e980d040432f9a1539976ba349"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Tau-20261013-v662scene01.png",
+      "bytes": 886045,
+      "sha256": "bad0a27fbc46be758b0b6ba78efd98c12132cbc9ae9abf5ba809024046de5f54"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Sgr-20261013-v662scene01.png",
+      "bytes": 873602,
+      "sha256": "58b240cb783238d1c70ac453f92e4429a158f45a4d8bcee4c1c0ce2d7e14305a"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m42-20261013-v662scene01.png",
+      "bytes": 747929,
+      "sha256": "fbe9a754dcf03f64fdd2cf8cd2b000948e698b57a1e4ace2e81eee6e9f32181f"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m1-20261013-v662scene01.png",
+      "bytes": 449939,
+      "sha256": "11533550415db6337f5af0000e34918311367d3b2fad1a5f9cbde13ebef86486"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m8-20261013-v662scene01.png",
+      "bytes": 489220,
+      "sha256": "c042d29dd677af40e960e768dfd0bee934d5ed68debdac6b3d2acb0e05457622"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m16-20261013-v662scene01.png",
+      "bytes": 557660,
+      "sha256": "7b669239b84424a829e787ac9c117a442fde34687949a99068cf10493a6c367c"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m20-20261013-v662scene01.png",
+      "bytes": 374683,
+      "sha256": "0471c3dad79ba34a171d9e71a74f7b0235f68581b4f7d0121d845a796710cb4b"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m57-20261013-v662scene01.png",
+      "bytes": 834807,
+      "sha256": "ae0f89fb7fb19c17c79837ab554454020ff40f0c5496bea6d552a83241af28dd"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc7293-20261013-v662scene01.png",
+      "bytes": 722182,
+      "sha256": "a98f05941943dea85b4b979f858c1ee89364dcfef54a322989f9288919413924"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc6543-20261013-v662scene01.png",
+      "bytes": 447152,
+      "sha256": "78a57b7993cbb27a1e4b8630aa5c829ab265fbcf5945937e4fcf70947410284d"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc2237-20261013-v662scene01.png",
+      "bytes": 739453,
+      "sha256": "ef523b49b7fefe0123b77cece4992ebaa9ae4b612960ad1ddd0cbd68d5472686"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc6960-20261013-v662scene01.png",
+      "bytes": 888829,
+      "sha256": "a29af950778742fbff5d825fdf763d0685876faead6d4fc1b539c9037751c68a"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-carina-20261013-v662scene01.png",
+      "bytes": 591794,
+      "sha256": "c53f27ef0e7891429f0fbb0eedadc189763e6c2567fef507c374d55ce4f9c1a6"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-b33-20261013-v662scene01.png",
+      "bytes": 784806,
+      "sha256": "35653a05392082dfad28a3bb9af3df0bfec91cd7b3e09c81947571e1ffb6507e"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-alpha-centauri-a-20261013-v662scene02.png",
+      "bytes": 126652,
+      "sha256": "4ef791659dfe7d5aa3d4ecf2f7506ea1df00d54fb445c480043c920624bce425"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-achernar-20261013-v662scene02.png",
+      "bytes": 119395,
+      "sha256": "c1a4fac694a12978d3faf4b640192e449dd411ffc5c181a0071a23ea8deeef5c"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-betelgeuse-20261013-v662scene02.png",
+      "bytes": 124810,
+      "sha256": "9b7ca01097e83e462dc142208953d425ea8601c5b7063d3b7b7334263b25b18b"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-sirius-a-20261013-v662scene02.png",
+      "bytes": 119252,
+      "sha256": "f084b8c55f78788654cc017c9e6b6b4b05406ed678f3a32c7a1f7926e9792a5e"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-rigel-20261013-v662scene02.png",
+      "bytes": 123385,
+      "sha256": "088d2bebb4778af37f5e247221d510ccf2f2c8db48f8dbbcef9591c8f9b809c8"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-antares-20261013-v662scene02.png",
+      "bytes": 137337,
+      "sha256": "92ba1fa47ec1bed45a8defd2673f570524a5d55da36c045bd9afdfa19cf76bdf"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-canopus-20261013-v662scene02.png",
+      "bytes": 122583,
+      "sha256": "86895dc5c7ecfff6623d4bfe8f7341f15874483d5d87d2a894ca17f5475671b1"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-arcturus-20261013-v662scene02.png",
+      "bytes": 151863,
+      "sha256": "d4dc0a5bd3367956e5702e2ba457b9f3f95783d969142b763c5eb93135d28454"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-vega-20261013-v662scene02.png",
+      "bytes": 119444,
+      "sha256": "30fc696cedec5aca5a43a0a70d15df63029339cf18082aa243c2f4dd391d01c0"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-capella-a-20261013-v662scene02.png",
+      "bytes": 166452,
+      "sha256": "138e061a7c050413dd0e9921cea1a7ff873b6bf41b5c6c485b7de37b31c2e910"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-procyon-a-20261013-v662scene02.png",
+      "bytes": 130245,
+      "sha256": "67f20c16cb04b7fc10d6534c956a9b697b898febbc8da80fe828abaf9731328c"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-aldebaran-20261013-v662scene02.png",
+      "bytes": 148567,
+      "sha256": "b027def7db0ae84bf34ee67fa659a277fe70025d0e499323a4044e7c468ed0dc"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Ori-20261013-v662scene02.png",
+      "bytes": 113472,
+      "sha256": "8f03529d6ba9b34f1716ea199fe6419b99e102512914ccf6db43c8a8ca3b1014"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-UMa-20261013-v662scene02.png",
+      "bytes": 142260,
+      "sha256": "59b1f760a6b394bee935a76f4423427e875629572e1e1bc6d6ca8de619e490cc"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cas-20261013-v662scene02.png",
+      "bytes": 129680,
+      "sha256": "ba9cef9aeaa613109a3d3a4c728619b2c58132c9e662ba3647e38acf9281fbd4"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Sco-20261013-v662scene02.png",
+      "bytes": 129985,
+      "sha256": "debc749de67eb13021d1271e6aabd245ea894e2e40116b374310e869c7b2794d"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cyg-20261013-v662scene02.png",
+      "bytes": 119599,
+      "sha256": "ab6e3baa976444189d6bd2ebabc5ebe33657a170da5d7552e32d5632868c53fe"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Gem-20261013-v662scene02.png",
+      "bytes": 124131,
+      "sha256": "d30731320f6c81765b684ea083ad05f1f01842cd8720b4ed50ffdeb96fc0a598"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Leo-20261013-v662scene02.png",
+      "bytes": 120526,
+      "sha256": "ede9cfc9bc801adb3393a94694f0d98a828ba2f943e5d0a6c60e23fbd7348d52"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cru-20261013-v662scene02.png",
+      "bytes": 111767,
+      "sha256": "8dc8247e84a11688bc64341da4278ed7b5ac967566f3cbec84569b8c994af031"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Lyr-20261013-v662scene02.png",
+      "bytes": 116635,
+      "sha256": "3e3578a17ebe237d2634b0395c5961669a3663e7e053a8ad69c1e810341ee0cd"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Aql-20261013-v662scene02.png",
+      "bytes": 154242,
+      "sha256": "e910b50cc12aee33015b25742472812f22f06a9222c1967a20854668b19cd1d7"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Tau-20261013-v662scene02.png",
+      "bytes": 129332,
+      "sha256": "102904f944ea1e2e9d696ae816bd04bf50209296e4d3eaee439a8be250f80f76"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Sgr-20261013-v662scene02.png",
+      "bytes": 141992,
+      "sha256": "eb3d0550554c555b26e3c570bdb2e756b75e9e4c5a742ea60b9791cd15df7d4c"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m42-20261013-v662scene02.png",
+      "bytes": 213419,
+      "sha256": "78b49f08711cf6cd712cde9d6bcc0bb358be5bfa04d2d2f5391e1d8f5b5834d9"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m1-20261013-v662scene02.png",
+      "bytes": 182111,
+      "sha256": "fad00173dc938f238397e1b37d95bd9bbc02a1983e4258df5cc026f831e214c7"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m8-20261013-v662scene02.png",
+      "bytes": 235647,
+      "sha256": "dde56c5c9a3c22e0c78b5c5dfa3a0be640c85e6abc87f6efacbf84952e9da493"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m16-20261013-v662scene02.png",
+      "bytes": 210532,
+      "sha256": "825f6484af60e2c6a0de78a124efacc99c17226749dca0085a03bb2de0dea920"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m20-20261013-v662scene02.png",
+      "bytes": 170285,
+      "sha256": "be284354dddc5706cdba8d095a12e51d1147f5450d55da7a44123f7351852ff0"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m57-20261013-v662scene02.png",
+      "bytes": 210064,
+      "sha256": "d7ed2846104212b17632e1ef9908c90a65bc0bbb2e246180b29335f7b3a4abde"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc7293-20261013-v662scene02.png",
+      "bytes": 184026,
+      "sha256": "b843f6a7c79ba4715323ddc5983d2ff9b03c48191eb6f7d91434f4a733595120"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc6543-20261013-v662scene02.png",
+      "bytes": 203230,
+      "sha256": "067d7da3b555fbe7e56f4cf711e828ede0ef0ec673a2da214dd9e9a2b394187e"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc2237-20261013-v662scene02.png",
+      "bytes": 253931,
+      "sha256": "9e7e5845c833db5cd02c9bafcb8c2d2c465338bd975d9283ec24b96cefa37481"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc6960-20261013-v662scene02.png",
+      "bytes": 237208,
+      "sha256": "5e6e5746d8239a9af8c26492e31317505d0d355414be2586ddebb911fa5787e4"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-carina-20261013-v662scene02.png",
+      "bytes": 175873,
+      "sha256": "923790c252954e1c646bf4df9e054d9f856deba71c286f4d2331591b7d419d07"
+    },
+    {
+      "path": "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-b33-20261013-v662scene02.png",
+      "bytes": 214162,
+      "sha256": "075680e746bf72b58c5c1ed30e438b90da891722696c2b23276a8e09ed5f2546"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-desktop-stars-20261013v662r75web02.png",
+      "bytes": 210785,
+      "sha256": "2bedc707beb6455f95fe0b9c147485d651a9f28f0c5fd1e48ec6e887fd6ff6d3"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-desktop-constellations-20261013v662r75web02.png",
+      "bytes": 222065,
+      "sha256": "7fa44c28186ad77dfcecd96fdbb3464fa4da5cee3c23a11e11748741f0278b1f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-stars-20261013v662r75web02.png",
+      "bytes": 69740,
+      "sha256": "d5d120d8815e29d3685be23fc4754f58c91b9d2a53bcc9cd94fd2d403da35c96"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-constellations-20261013v662r75web02.png",
+      "bytes": 68653,
+      "sha256": "e245d762ed2c899de8b46034fe2487136f0443904331186a7afae4b197b6e822"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-star-detail-20261013v662r75web02.png",
+      "bytes": 108999,
+      "sha256": "b1f914ee6bdcc31c119a8c4c6ab05882fc86ebe9bc53ba54a5cdb6fd08ad3464"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-constellation-detail-20261013v662r75web02.png",
+      "bytes": 105679,
+      "sha256": "4e8c455d2eab066869fe4e397f38e2b0e74e968a2e32fb3259844e831b2288ad"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-desktop-overview-20261013v662r75web02.png",
+      "bytes": 181776,
+      "sha256": "35590bc27d7814395e7fd5dfd4d3a7833cd0801c519844530dc0de4035f26702"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-desktop-image-detail-20261013v662r75web02.png",
+      "bytes": 518236,
+      "sha256": "6acf351932a957f0ad0ddbbcd227ae6a99c3b1141a1d76ecfa3e2c76b63e1ecf"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-desktop-held-detail-20261013v662r75web02.png",
+      "bytes": 147392,
+      "sha256": "6aebd6b00456f56b641a91f6235fc55320235005a06c0307c36abc2a6e68d6b4"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-mobile-viewport-overview-20261013v662r75web02.png",
+      "bytes": 65584,
+      "sha256": "16cd7b515fea8b99ac1350a2aa1254ea15594c4b45b8284cf226860444a1ca2f"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-mobile-viewport-image-detail-20261013v662r75web02.png",
+      "bytes": 95958,
+      "sha256": "947989ab99e14f1cf0317e8e124ce9c65c94b35b622d1a063d7460ea1a6e72cb"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-mobile-viewport-held-detail-20261013v662r75web02.png",
+      "bytes": 57760,
+      "sha256": "73e5f013973385e16fe05991e6629c82c29bd05b01e1c9a47646e95af0629c58"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-desktop-overview-20261013v662r75web03.png",
+      "bytes": 223834,
+      "sha256": "6009fe34c4fdee22e4b0d1cad5a7faac4aee44db5c7af6b519230324fb934cd6"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-desktop-identity-conflict-20261013v662r75web03.png",
+      "bytes": 221101,
+      "sha256": "671361404e6260a2b82f5c8b8cc6ce1aede3a5f9a3ee0f3db9a4a1d7364c334e"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-mobile-viewport-overview-20261013v662r75web03.png",
+      "bytes": 62615,
+      "sha256": "7156c426dc1683f540d7ac6ab00da97f5df8cedbf20527c2821155e6b62afe93"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-r75-v662-matrix-mobile-viewport-identity-conflict-20261013v662r75web03.png",
+      "bytes": 69725,
+      "sha256": "b77149b16a3e312ec67d33197675a0a9f082b99814cd614cb6303f1f04b47ba1"
+    }
+  ],
+  "evidenceClasses": {
+    "static": [
+      "docs/release/v607/mainline-a-r75-build-20261013v662r75web02.json",
+      "docs/release/v607/mainline-a-r75-v662-matrix-20261013v662r75web02.json",
+      "docs/release/v607/mainline-a-r75-v662-matrix-replay-20261013v662r75web02.json",
+      "docs/release/v607/mainline-a-r75-v662-code-change-20261013.json",
+      "app/lib/mainlineAWebAcceptanceV662.ts",
+      "app/components/MainlineAWebAcceptancePanelV662.tsx",
+      "app/components/MainlineANebulaReviewPanelV610.tsx",
+      "scripts/build-mainline-a-r75-matrix-v662.mjs",
+      "scripts/verify-mainline-a-r75-matrix-v662.mjs",
+      "scripts/verify-mainline-a-r75-http-v662.mjs",
+      "scripts/verify-mainline-a-r75-http-disabled-v662.mjs",
+      "scripts/capture-mainline-a-r75-matrix-browser-v662.mjs",
+      "scripts/build-mainline-a-r75-visual-v662.mjs",
+      "scripts/audit-mainline-a-r75-evidence-v662.mjs",
+      "scripts/verify-mainline-a-r75-candidate-v662.mjs",
+      "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+      "scripts/capture-mainline-a-web-sky-browser-v656.mjs",
+      "scripts/capture-mainline-a-r73-browser-v660.mjs",
+      "scripts/capture-mainline-a-r73-longrun-v660.mjs",
+      "scripts/build-mainline-a-preserved.mjs",
+      "scripts/capture-mainline-a-web-r65-longrun-v650.mjs"
+    ],
+    "http": [
+      "docs/release/v607/mainline-a-r75-v662-http-20261013v662r75web02.json",
+      "docs/release/v607/mainline-a-r75-v662-http-disabled-20261013v662r75web02.json"
+    ],
+    "visual": [
+      "docs/release/v607/mainline-a-r75-v662-visual-20261013v662r75web02.json",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-alpha-centauri-a-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-achernar-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-betelgeuse-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-sirius-a-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-rigel-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-antares-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-canopus-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-arcturus-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-vega-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-capella-a-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-procyon-a-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-star-aldebaran-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Ori-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-UMa-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cas-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Sco-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cyg-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Gem-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Leo-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Cru-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Lyr-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Aql-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Tau-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-constellation-Sgr-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m42-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m1-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m8-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m16-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m20-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-m57-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc7293-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc6543-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc2237-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-ngc6960-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-carina-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-desktop-nebula-b33-20261013-v662scene01.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-alpha-centauri-a-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-achernar-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-betelgeuse-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-sirius-a-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-rigel-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-antares-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-canopus-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-arcturus-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-vega-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-capella-a-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-procyon-a-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-star-aldebaran-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Ori-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-UMa-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cas-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Sco-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cyg-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Gem-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Leo-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Cru-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Lyr-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Aql-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Tau-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-constellation-Sgr-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m42-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m1-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m8-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m16-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m20-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-m57-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc7293-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc6543-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc2237-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-ngc6960-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-carina-20261013-v662scene02.png",
+      "output/playwright/mainline-a-r75-web-canonical-scene-mobile-nebula-b33-20261013-v662scene02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-desktop-stars-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-desktop-constellations-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-stars-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-constellations-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-star-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-sky-mobile-viewport-constellation-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-desktop-overview-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-desktop-image-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-desktop-held-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-mobile-viewport-overview-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-mobile-viewport-image-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-mobile-viewport-held-detail-20261013v662r75web02.png",
+      "docs/release/v607/mainline-a-r75-v662-matrix-desktop-overview-20261013v662r75web03.png",
+      "docs/release/v607/mainline-a-r75-v662-matrix-desktop-identity-conflict-20261013v662r75web03.png",
+      "docs/release/v607/mainline-a-r75-v662-matrix-mobile-viewport-overview-20261013v662r75web03.png",
+      "docs/release/v607/mainline-a-r75-v662-matrix-mobile-viewport-identity-conflict-20261013v662r75web03.png"
+    ],
+    "browser": [
+      "docs/release/v607/mainline-a-r75-v662-matrix-browser-20261013v662r75web03.json",
+      "docs/release/v607/mainline-a-r75-web-canonical-scene-desktop-raw-20261013-v662scene01.json",
+      "docs/release/v607/mainline-a-r75-web-canonical-scene-mobile-raw-20261013-v662scene02.json",
+      "docs/release/v607/mainline-a-r75-v662-sky-browser-20261013v662r75web02.json",
+      "docs/release/v607/mainline-a-r75-v662-nebula-browser-20261013v662r75web02.json"
+    ],
+    "performance": [
+      "docs/release/v607/mainline-a-r75-v662-longrun-audit-20261013v662r75long01.json",
+      "docs/release/v607/mainline-a-r75-v662-browser-desktop-raw-20261013v662r75long01.json",
+      "docs/release/v607/mainline-a-r75-v662-browser-final-raw-20261013v662r75long01.json"
+    ],
+    "externalSource": [
+      "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+      "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json"
+    ]
+  },
+  "coverage": {
+    "aLine": [
+      12,
+      12,
+      12
+    ],
+    "betaStars": 24,
+    "betaConstellations": 12,
+    "betaNebulae": 24,
+    "reviewableNebulaImageChains": 19,
+    "imageHolds": 5,
+    "componentIdentitiesConfirmed": 0,
+    "rightsSigned": 0,
+    "runtimeAdmitted": 0
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

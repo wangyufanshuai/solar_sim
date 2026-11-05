@@ -1,0 +1,141 @@
+{
+  "schema": "mainline-a-art-round-receipt-v627",
+  "round": "R66",
+  "generatedAt": "2026-09-21T02:23:35.911Z",
+  "objective": "R66 root/next-web alignment with Beta nebula V627 source and rights closure panel",
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r66-nebula-rights-code-change-20260921-final-009.json",
+  "effectiveProductionLines": 1989,
+  "build": {
+    "status": "passed",
+    "receipt": "docs/release/v607/mainline-a-r66-build-20260921-017.json",
+    "buildId": "EaJPTB-HsuRJl1CvY9VVm",
+    "runtimeBuildId": "mainline-a-4def7022b36418a4",
+    "sourceStable": true,
+    "profile": "vercel-lite"
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "receipts": [
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.jsonl",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.csv",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json"
+      ],
+      "claim": "contract, replay, verifier and release alignment evidence only"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260921-017.json",
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "allScriptAssetsOk": true,
+      "claim": "local preserved-build HTTP binding; not performance"
+    },
+    "visual": {
+      "status": "passed",
+      "screenshots": [
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260921-017.png",
+          "sha256": "6893f35c287e80cc2c0ceb8c01bd558b3754d0609301b2e77a373696b346e8e2"
+        },
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260921-017.png",
+          "sha256": "f634b122cc62ef007ea9eab086d63a48fe847caa6d88e140d1a26346cb840fb2"
+        }
+      ],
+      "claim": "visual evidence only"
+    },
+    "browser": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260921-017.json",
+      "desktopViewport": [
+        1280,
+        720
+      ],
+      "mobileViewport": [
+        390,
+        844
+      ],
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "claim": "Codex in-app browser local observation only"
+    },
+    "performance": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "blockers": [
+        "long-run-observation-required",
+        "physical-device-not-run"
+      ],
+      "claim": "R65 samples retained; no production or real-user performance claim"
+    },
+    "externalSource": {
+      "status": "blocked",
+      "receipts": [
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627.json",
+        "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627.json",
+        "app/data/mainlineANebulaBatchV624.generated.json",
+        "app/data/mainlineANebulaImageAttemptLedgerV623.generated.json"
+      ],
+      "claim": "12 candidate rows, 6 captured and 6 offline pending; rights/signoff remain pending"
+    },
+    "releasePackage": {
+      "status": "blocked",
+      "pointer": "docs/release/v607/mainline-a-r66-release-package-v626-20260921-020.json",
+      "directory": "docs/release/v607/mainline-a-r66-package-20260921-020",
+      "claim": "candidate package metadata and reversible rollback only"
+    }
+  },
+  "alignment": {
+    "receipt": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "status": "blocked",
+    "rootMirror": "E:\\86137\\myai\\solar_sim\\web",
+    "rootReadOnly": true,
+    "releaseIdentity": "solar-sim-mainline-a",
+    "releaseIdentityMatch": true,
+    "sourceIdentityMatch": false,
+    "manifestParity": false,
+    "blockers": [
+      "beta-nebula-source-closure-pending",
+      "canonical-rights-signoff-pending",
+      "canonical-runtime-clearance-pending",
+      "long-run-not-run",
+      "nebula-rights-closure-pending",
+      "nebula-rights-review-pending",
+      "nebula-rights-signoff-pending",
+      "performance-receipt-blocked",
+      "physical-mobile-not-run",
+      "root-manifest-not-present",
+      "stellar-component-identity-pending"
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "openGates": [
+    "12 canonical signoffs",
+    "Beta 24 nebula source and rights closure",
+    "4 stellar component identities",
+    "root manifest parity",
+    "canonical runtime clearance",
+    "30-minute soak",
+    "physical mobile device"
+  ],
+  "claimsClosed": {
+    "publicDeployment": false,
+    "legalClearance": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  },
+  "notes": [
+    "V627 closure reads V624 raw batch and V623 attempt ledger without synthetic promotion.",
+    "No root file was written, no parent Git state was touched, and no physics kernel was modified."
+  ]
+}

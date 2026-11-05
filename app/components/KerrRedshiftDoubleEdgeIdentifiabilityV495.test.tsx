@@ -1,0 +1,6 @@
+import { readFileSync } from "node:fs";
+import { describe, expect, it } from "vitest";
+describe("v495 double-edge surface", () => {
+  it("requires explicit intent and preserves Science/Cinematic data", () => { const source = readFileSync("app/components/KerrRedshiftDoubleEdgeIdentifiabilityV495.tsx", "utf8"); expect(source).toContain("Load double-edge audit"); expect(source).not.toContain("useEffect"); expect(source).toContain('data-atlas-v495-statistical-robustness="false"'); expect(source).toContain('data-atlas-v495-science-writeback="false"'); expect(source).toContain('data-atlas-v495-science-raster="false"'); expect(source).toContain('data-atlas-v495-scene-revision-delta="0"'); expect(source).not.toContain("Math.random"); expect(source).not.toContain("<canvas"); });
+  it("keeps page and API local-shadow-only", () => { const page = readFileSync("app/local-shadow-v495/page.tsx", "utf8"), route = readFileSync("app/api/atlas/relativity-evidence/v495/redshift-double-edge-identifiability/route.ts", "utf8"); expect(page).toContain('NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE === "local-shadow"'); expect(route).toContain('delivery !== "local-shadow"'); expect(route).toContain("128 * 1024"); expect(route).toContain("Content-Security-Policy"); });
+});

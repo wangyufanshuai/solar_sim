@@ -1,0 +1,36 @@
+{
+  "version": "v592-nebula-metadata-probe-v1",
+  "probedAt": "2026-08-20T09:03:24.562Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "crescent-nebula",
+  "query": "NGC 6888 Crescent Nebula",
+  "requiredTerms": [
+    "6888",
+    "nebula"
+  ],
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "licensePolicy": "NASA media usage guidelines; item-level public-domain review required before payload admission"
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC%206888%20Crescent%20Nebula&media_type=image&page_size=20",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC%206888%20Crescent%20Nebula&media_type=image&page_size=20",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 177,
+    "responseSha256": "7dd6a7725ab71539ba30a481b2df9b081c2d1ab554e6a7545fe3c7d92d77a65a"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "adb7416ce507ff0b284edd1c5e9a27af67d738c5d8c4a7c1c0c346614663a500"
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "mainline-a-art-round-receipt-v607",
+  "round": "R66-continuation",
+  "date": "2026-09-22",
+  "title": "R66 readonly closure integration: root source, lifecycle and source-rights ledger on build 050",
+  "status": "blocked-open-gates",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "effectiveCodeLines": 1203,
+  "minimumRequired": 1000,
+  "implementation": [
+    "Added read-only root source inventory and canonical marker/manifest gate.",
+    "Added lifecycle audit that rejects digest-only resource observations as release evidence.",
+    "Added structured stellar/nebula source-rights ledger with immutable ordering, artifact and rights closure checks.",
+    "Rebound R66 alignment, identity bridge and release package to the build-050 HTTP/browser/performance/lifecycle evidence set."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "node": "73/73",
+      "vitest": "15/15",
+      "eslint": "passed",
+      "diffCheck": "passed"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260922-050.json"
+    },
+    "visual": {
+      "status": "captured",
+      "screenshots": [
+        "docs/release/v607/screenshots/mainline-a-r66-build050-desktop.png",
+        "docs/release/v607/screenshots/mainline-a-r66-build050-mobile.png"
+      ],
+      "claim": "local visual only"
+    },
+    "browser": {
+      "status": "captured",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260922-050.json",
+      "desktopViewport": "1280x720",
+      "mobileViewport": "390x844",
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "claim": "browser evidence only; no real-user validation"
+    },
+    "performance": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625-20260922-050.json",
+      "runs": 6,
+      "repeatRuns": 6,
+      "resourceEvidence": "digest-only",
+      "physicalMobile": "not-run",
+      "longRun": "not-run"
+    },
+    "externalSource": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-source-rights-ledger-v629.json",
+      "rows": 10,
+      "captured": 7,
+      "rightsPending": 10,
+      "rightsSigned": 0
+    },
+    "release": {
+      "status": "blocked",
+      "package": "docs/release/v607/mainline-a-r66-release-package-v626-20260922-050.json",
+      "blockers": [
+        "root-manifest-not-present",
+        "source-rights-ledger-blocked",
+        "stellar-component-identity-pending",
+        "beta-nebula-source-closure-pending",
+        "lifecycle-audit-blocked",
+        "physical-mobile-not-run",
+        "long-run-not-run"
+      ]
+    }
+  },
+  "openGates": [
+    "root manifest parity and canonical runtime clearance",
+    "stellar component identities and signed canonical rights",
+    "Beta nebula source-page and item-rights closure",
+    "full resource registry, physical mobile device and signed long-run evidence",
+    "24-item Beta nebula target remains incomplete"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "artifacts": {
+    "codeChange": "docs/release/v607/mainline-a-r66-continuation-code-change-20260922-050.json",
+    "build": "docs/release/v607/mainline-a-r66-build-20260922-050.json",
+    "http": "docs/release/v607/mainline-a-r66-http-20260922-050.json",
+    "browser": "docs/release/v607/mainline-a-r66-browser-20260922-050.json",
+    "alignment": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "releasePackage": "docs/release/v607/mainline-a-r66-release-package-v626-20260922-050.json"
+  },
+  "claims": {
+    "static": true,
+    "http": true,
+    "visual": true,
+    "browser": true,
+    "performance": false,
+    "externalSource": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  },
+  "generatedAt": "2026-09-22T05:29:20.1107225Z"
+}

@@ -1,0 +1,44 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v2",
+  "probedAt": "2026-08-19T10:10:10.112Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "double-cluster",
+  "category": "cluster",
+  "query": "NGC 869",
+  "requiredTermGroups": [
+    [
+      "ngc 869",
+      "double cluster"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives/double-cluster.json",
+    "receiptSha256": "65b9456439d9974577faf606f2be62b15914988e2250088c090af26dfe0a3ada",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=NGC+869+NGC+884+Double+Cluster&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+869&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+869&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 155,
+    "responseSha256": "a49e3c4171e2cbe6809713c2ed460cf69719f5b393c80426b2eaba72ef3408c1"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "0a99304b3fa4215161d532a399c33ea6b3251f7285887bd4aca41a02acb12ba3"
+}

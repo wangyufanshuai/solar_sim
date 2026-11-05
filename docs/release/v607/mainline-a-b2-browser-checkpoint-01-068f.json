@@ -1,0 +1,150 @@
+{
+  "schema": "mainline-a-browser-planning-checkpoint-v638",
+  "recordedAt": "2026-09-28T02:27:56.181Z",
+  "status": "partial-local",
+  "developmentRoundComplete": false,
+  "evidenceClass": "browser-with-separate-offline-replay",
+  "observation": {
+    "origin": "http://127.0.0.1:3072/",
+    "title": "Orbit Atlas | 相对论宇宙图谱",
+    "browser": "Codex in-app browser",
+    "build": {
+      "buildId": "mainline-a-5b7be2f948fa9171",
+      "branch": "codex/solar-sim-mainline-a",
+      "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+    },
+    "viewport": {
+      "width": 1280,
+      "height": 720,
+      "devicePixelRatio": 1.0000000298023224,
+      "device": "desktop"
+    },
+    "target": "star:achernar",
+    "runId": "r65-registry-7c54ec56-f638-4e7a-bff6-d31ccc94bca8",
+    "startedAt": "2026-09-28T02:00:59.026Z",
+    "endedAt": "2026-09-28T02:01:30.233Z",
+    "method": "Read the exact existing UI textarea value, clicked 显示批次 JSON through the visible button, saved the resulting exact UI bundle string without reconstruction using exclusive file creation, then ran the repository intake.",
+    "baseline": {
+      "kind": "star",
+      "id": "alpha-centauri-a",
+      "route": "mainline-a-stellar-parametric",
+      "assetHash": null,
+      "loading": "ready",
+      "error": null
+    },
+    "active": {
+      "kind": "star",
+      "id": "achernar",
+      "route": "mainline-a-stellar-parametric",
+      "assetHash": null,
+      "loading": "ready",
+      "error": null
+    },
+    "returned": {
+      "kind": "star",
+      "id": "alpha-centauri-a",
+      "route": "mainline-a-stellar-parametric",
+      "assetHash": null,
+      "loading": "ready",
+      "error": null
+    }
+  },
+  "coverage": {
+    "expected": 36,
+    "verified": 1,
+    "missing": [
+      "star:alpha-centauri-a",
+      "star:betelgeuse",
+      "star:sirius-a",
+      "star:rigel",
+      "star:antares",
+      "star:canopus",
+      "star:arcturus",
+      "star:vega",
+      "star:capella-a",
+      "star:procyon-a",
+      "star:aldebaran",
+      "nebula:m42",
+      "nebula:m1",
+      "nebula:m8",
+      "nebula:m16",
+      "nebula:m20",
+      "nebula:m57",
+      "nebula:ngc7293",
+      "nebula:ngc6543",
+      "nebula:ngc2237",
+      "nebula:ngc6960",
+      "nebula:carina",
+      "nebula:b33",
+      "constellation:Ori",
+      "constellation:UMa",
+      "constellation:Cas",
+      "constellation:Sco",
+      "constellation:Cyg",
+      "constellation:Gem",
+      "constellation:Leo",
+      "constellation:Cru",
+      "constellation:Lyr",
+      "constellation:Aql",
+      "constellation:Tau",
+      "constellation:Sgr"
+    ],
+    "individualIssues": [
+      {
+        "key": "star:achernar",
+        "status": "measured-local"
+      }
+    ],
+    "batchStatus": "incomplete-local",
+    "replayStatus": "blocked",
+    "replayIssues": [
+      "coverage:objects-not-observed",
+      "coverage:thirty-six-verified-roundtrips-required"
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "docs/release/v607/mainline-a-r66-build-20260928-068f.json",
+      "bytes": 467629,
+      "sha256": "642929f7a5459b45139806b42333916a5823c148779e1d6eda5ddf6488192818"
+    },
+    {
+      "path": "tmp/mainline-a-b2-browser-star-achernar-01-068f.json",
+      "bytes": 50206,
+      "sha256": "6524e7affc0be41fa546566ad3d97c0a2f66314aa7d39d48ef873af67b75f574"
+    },
+    {
+      "path": "tmp/mainline-a-b2-batch-01-068f.json",
+      "bytes": 56885,
+      "sha256": "33c28c97148f616c17f5c1d2bac6788b57ab28cb91f2ca3e18a8416c17fd7522"
+    },
+    {
+      "path": "tmp/mainline-a-b2-star-achernar-01-desktop-068f.jpg",
+      "bytes": 60423,
+      "sha256": "47e6eae590770c549e212c18e10282fe8c4dbdf67ef1625fe5e5fc484ed93e9c"
+    },
+    {
+      "path": "tmp/mainline-a-b2-intake-01-068f/intake.json",
+      "bytes": 7028,
+      "sha256": "8adc87454c860cbcad1ef8423df6b511feee29c5d466701a6b237caa8d927b1e"
+    },
+    {
+      "path": "tmp/mainline-a-b2-intake-01-068f/replay.json",
+      "bytes": 2906,
+      "sha256": "fd266372635b48850a702006eaafaa5b6e76ed60edc17e42a1eb09e9690da894"
+    }
+  ],
+  "limits": {
+    "browserAuthenticity": "This is an agent-authored record of actual UI actions, not an independently signed browser attestation.",
+    "visual": "The saved screenshot is an individual technical observation; the full visual matrix is incomplete and no human signoff is claimed.",
+    "performance": "Short local RAF/resource observation only; not GPU frame time, physical GPU memory, production or real-user performance.",
+    "release": "1/36 is not a closed canonical matrix; no round or release completion."
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "rightsApproval": false
+  }
+}

@@ -1,0 +1,5 @@
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+const tests = ["app/lib/kerrSupplementalCalibrationIntakeV545.test.ts", "app/lib/kerrSupplementalCalibrationIntakeServerV545.test.ts", "app/components/KerrSupplementalCalibrationIntakeV545.test.tsx", "app/components/kerrPhotonMetrologyDetailCatalogV545.test.ts", "app/api/atlas/relativity-evidence/v545/supplemental-calibration-intake/route.test.ts"], commands = [[process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-supplemental-calibration-intake-v545.ts"], "supplemental-intake"], [process.execPath, [resolve("node_modules/vitest/vitest.mjs"), "run", ...tests], "supplemental-tests"], [process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-supplemental-calibration-runtime-v545.ts"], "runtime"]];
+for (const [command, args, label] of commands) { const result = spawnSync(command, args, { cwd: process.cwd(), encoding: "utf8", stdio: "inherit" }); if (result.status !== 0) throw new Error(`v545-${label}-exit-${result.status}`); }
+await import("./build-shadow-candidate-v545.mjs");

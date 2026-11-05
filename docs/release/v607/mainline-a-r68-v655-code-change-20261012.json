@@ -1,0 +1,48 @@
+{
+  "schema": "mainline-a-code-change-receipt-v655",
+  "round": 68,
+  "date": "2026-10-12",
+  "repositoryBoundary": "E:/86137/myai/solar_sim/next-web",
+  "branch": "codex/solar-sim-mainline-a",
+  "headAtBuild": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "scope": "B1+B2 twelve-image local candidate review: derived previews, provenance pins, guarded read-only delivery, browser loading and release lifecycle",
+  "countPolicy": "Physical nonblank noncomment R68 source lines. Excludes generated JSON, image derivatives, screenshots, receipts, documentation, lock files, and earlier dirty-tree changes. Tests are separate from the production/tool threshold.",
+  "productionAndToolFiles": [
+    { "path": "scripts/build-mainline-a-nebula-review-v655.mjs", "newEffectiveLines": 285, "role": "source-bound derivative and offline replay builder" },
+    { "path": "scripts/verify-mainline-a-nebula-review-http-v655.mjs", "newEffectiveLines": 121, "role": "HTTP byte and boundary verifier" },
+    { "path": "scripts/capture-mainline-a-nebula-review-browser-v655.mjs", "newEffectiveLines": 254, "role": "desktop and mobile-viewport browser probe" },
+    { "path": "scripts/capture-mainline-a-nebula-review-matrix-v655.mjs", "newEffectiveLines": 166, "role": "all twelve details per viewport and resource release matrix" },
+    { "path": "app/lib/mainlineANebulaReviewAssetV655.ts", "newEffectiveLines": 178, "role": "manifest and request boundary validation" },
+    { "path": "app/lib/useMainlineANebulaReviewImageV655.ts", "newEffectiveLines": 141, "role": "client fetch, SHA-256, decode, retry and object URL release" },
+    { "path": "app/components/MainlineANebulaCandidateGalleryV655.tsx", "newEffectiveLines": 208, "role": "twelve-image local review UI" },
+    { "path": "app/api/atlas/mainline-a-nebula-review/[id]/[variant]/route.ts", "newEffectiveLines": 63, "role": "local-only read-only image route" },
+    { "path": "app/components/MainlineANebulaReviewPanelV610.tsx", "newEffectiveLines": 5, "modifiedEffectiveExistingLines": 1, "role": "gallery integration and illustration disclaimer", "note": "Only R68 edits are counted in this tracked file; earlier dirty-tree changes are excluded." }
+  ],
+  "testFiles": [
+    { "path": "scripts/build-mainline-a-nebula-review-v655.test.mjs", "newEffectiveLines": 85 },
+    { "path": "app/lib/mainlineANebulaReviewAssetV655.test.tsx", "newEffectiveLines": 120 }
+  ],
+  "totals": {
+    "newEffectiveCoreProductAndBuilderLines": 880,
+    "newEffectiveVerificationToolLines": 541,
+    "newEffectiveProductionAndToolLines": 1421,
+    "modifiedEffectiveExistingLines": 1,
+    "newEffectiveTestLines": 205,
+    "newEffectiveCodeLinesIncludingTests": 1626,
+    "effectiveChangedLinesIncludingModified": 1627,
+    "minimumProductionAndToolCodeLines": 500,
+    "minimumMet": true
+  },
+  "excludedGeneratedData": [
+    "app/data/mainlineANebulaCandidateReviewV655.generated.json",
+    "docs/release/v607/nebula-review-derivatives/v655"
+  ],
+  "boundaries": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelsModifiedByR68": false,
+    "parentGitOperated": false
+  }
+}

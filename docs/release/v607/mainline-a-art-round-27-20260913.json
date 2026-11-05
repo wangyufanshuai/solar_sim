@@ -1,0 +1,19 @@
+{
+  "round": 27,
+  "date": "2026-09-13",
+  "title": "Beta hero per-object evidence state markers",
+  "status": "verified-static",
+  "scope": {
+    "component": "app/components/PostV593StellarRosterPanel.tsx",
+    "artChange": "Added data-mainline-a-hero-status to every Beta hero button, resolving runtime-cleared versus evidence-pending from the canonical 24-entry roster."
+  },
+  "validation": {
+    "vitest": "PostV593StellarRosterPanel.test.tsx + mainlineABetaHeroRosterV607.test.ts: 4/4",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "Markers expose the evidence boundary for browser audits; they do not promote pending heroes into runtime art.",
+    "Beta remains open at 12/24 runtime-cleared hero stars and 12/24 rights-cleared nebulae."
+  ]
+}

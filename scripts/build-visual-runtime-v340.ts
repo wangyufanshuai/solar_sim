@@ -1,0 +1,25 @@
+import { createHash } from "node:crypto";
+import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { createAtlasVisualRuntimeMatrixV340 } from "../app/lib/atlasVisualRuntimeMatrixV340";
+import { createKerrCanonicalRayViewV315, createKerrScienceGeometrySourceViewV315, createKerrSciencePolarizationSourceViewV315, createSparseKerrSciencePayloadV315 } from "../app/lib/kerrSciencePayloadV315";
+import { replayKerrScienceCinematicV7V340 } from "../app/lib/kerrScienceCinematicV7V340";
+import { resolveAtlasVisualAssetSelectionV289 } from "../app/lib/atlasVisualAssetsV289";
+
+const root = process.cwd(); const output = "dist/science/atlas-visual-v7-v340/audit.json";
+const bytes = (relative: string) => readFileSync(resolve(root, relative)); const read = (relative: string) => JSON.parse(bytes(relative).toString("utf8")); const fileSha = (relative: string) => createHash("sha256").update(bytes(relative)).digest("hex");
+function canonicalize(value: unknown): unknown { if (Array.isArray(value)) return value.map(canonicalize); if (!value || typeof value !== "object") return value; return Object.fromEntries(Object.entries(value as Record<string, unknown>).filter(([key]) => !["generatedAt", "artifactSha256"].includes(key)).sort(([left], [right]) => left.localeCompare(right)).map(([key, entry]) => [key, canonicalize(entry)])); }
+const sha = (value: unknown) => createHash("sha256").update(JSON.stringify(canonicalize(value))).digest("hex");
+
+const matrix = createAtlasVisualRuntimeMatrixV340();
+const payload = createSparseKerrSciencePayloadV315(createKerrScienceGeometrySourceViewV315(read("dist/science/kerr-reference-v312/geometry-redshift-tolerance-short-gate.json")), createKerrSciencePolarizationSourceViewV315(read("dist/science/kerr-reference-v313/polarization-short-gate.json")), createKerrCanonicalRayViewV315(read("dist/science/kerr-campaign-v314/ray-plan.json")));
+const rendering = replayKerrScienceCinematicV7V340(payload);
+const assetReady = resolveAtlasVisualAssetSelectionV289({ deliveryProfile: "local-shadow", visualProfile: "science-cinematic-v7-v340", deepSpaceIntent: true });
+const assetBeforeIntent = resolveAtlasVisualAssetSelectionV289({ deliveryProfile: "local-shadow", visualProfile: "science-cinematic-v7-v340", deepSpaceIntent: false });
+const assetLite = resolveAtlasVisualAssetSelectionV289({ deliveryProfile: "vercel-lite", visualProfile: "science-cinematic-v7-v340", deepSpaceIntent: true });
+if (!assetReady.available || assetReady.provenance?.base.atlasVisualAssetRuntimeSelector !== "local-shadow-v7-deep-space-v340" || assetBeforeIntent.reason !== "no-deep-space-intent" || assetLite.reason !== "lite-boundary") throw new Error("v340-visual-asset-runtime-boundary");
+const consumers = ["app/components/GalaxyEnvironmentSphere.tsx", "app/components/Planet.tsx", "app/components/GaiaStarField.tsx", "app/components/UniversePmndrsPostProcessing.tsx", "app/components/KerrBlackHole.tsx", "app/components/LaunchSceneView.tsx", "app/components/ExoplanetSystemScene.tsx", "app/components/ScienceCinematicVisualSurfaceV261.tsx"];
+const sourceManifest = ["app/lib/atlasVisualProfileV299.ts", "app/lib/atlasVisualRuntimeConsumptionV300.ts", "app/lib/atlasVisualRuntimeMatrixV340.ts", "app/lib/atlasVisualRuntimeMatrixV340.test.ts", "app/lib/kerrStrongGravityVisualV305.ts", "app/lib/kerrScienceBandHudV322.ts", "app/lib/kerrScienceCinematicV7V340.ts", "app/lib/kerrScienceCinematicV7V340.test.ts", "app/lib/atlasVisualAssetsV289.ts", "app/components/AtlasVisualABControlV261.tsx", ...consumers, "scripts/build-visual-runtime-v340.ts"].map((path) => ({ path, sha256: fileSha(path) }));
+const unsigned = { version: "v340-atlas-visual-v7-runtime-audit-v1", generatedAt: new Date().toISOString(), status: "qualified-v7-runtime-wired-science-frozen-browser-pending", visualDirection: "deep-space-precision-observatory", matrix, rendering, assetRuntime: { availableAfterIntent: assetReady.available, selector: assetReady.provenance?.base.atlasVisualAssetRuntimeSelector ?? null, tier: assetReady.tier, beforeIntent: assetBeforeIntent.reason, lite: assetLite.reason, networkDownloadApplied: false }, ab: { profile: "science-cinematic-v7-v340", label: "V7 Observatory", localShadowManualOnly: true, defaultApplied: false, formalVisible: false, liteVisible: false }, sourceManifest, browserQualification: "not-run" };
+const artifact = { ...unsigned, artifactSha256: sha(unsigned) }; const target = resolve(root, output); mkdirSync(dirname(target), { recursive: true }); const temporary = `${target}.${process.pid}.part`; writeFileSync(temporary, `${JSON.stringify(artifact, null, 2)}\n`); renameSync(temporary, target);
+console.log(JSON.stringify({ status: artifact.status, artifactSha256: artifact.artifactSha256, rows: matrix.rowCount, profiles: matrix.profiles, science: rendering.scienceOutputDigest, cinematic: rendering.cinematicDigests, assetSelector: artifact.assetRuntime.selector, browser: artifact.browserQualification }, null, 2));

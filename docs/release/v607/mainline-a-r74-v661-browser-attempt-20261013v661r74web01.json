@@ -1,0 +1,24 @@
+{
+  "schema": "mainline-a-r74-browser-attempt-v661",
+  "runId": "20261013v661r74web01",
+  "status": "failed-preserved-not-browser-evidence",
+  "buildId": "6Cyl8uaz4c6byjQJ6IdfS",
+  "appSourceSha256": "ae62adcd05a92f224a2b4999089730890237a0b181f9d551170690e13b4ff6be",
+  "origin": "http://127.0.0.1:3123",
+  "failure": {
+    "stage": "desktop-after-r74-source-interactions",
+    "class": "local-review-image-route-disabled",
+    "observation": "14 HTTP 404 console errors from pre-existing candidate thumbnail/detail and R71 image routes after opening the review dialog",
+    "cause": "ATLAS_MAINLINE_A_LOCAL_REVIEW_IMAGES was not enabled on the first local server",
+    "r74RemoteImageRequestCount": 0,
+    "browserQualified": false
+  },
+  "preservedScreenshots": [
+    "docs/release/v607/mainline-a-r74-v661-desktop-conflict-20261013v661r74web01.png",
+    "docs/release/v607/mainline-a-r74-v661-desktop-detail-20261013v661r74web01.png"
+  ],
+  "nextAttempt": "Run the same preserved build with ATLAS_MAINLINE_A_LOCAL_REVIEW_IMAGES=1 on a distinct local port and create a new browser receipt.",
+  "scientificPayloadWriteback": false,
+  "copyrightApproval": false,
+  "productionPerformanceClaimed": false
+}

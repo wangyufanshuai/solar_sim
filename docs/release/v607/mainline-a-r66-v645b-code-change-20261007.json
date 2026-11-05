@@ -1,0 +1,58 @@
+{
+  "schema": "mainline-a-code-change-receipt-v645b",
+  "round": "R66-continuation",
+  "generatedAt": "2026-10-07T04:57:46.125Z",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "priorReceipt": {
+    "path": "docs/release/v607/mainline-a-r66-code-change-final.json",
+    "sha256": "440daebd09c5af20afddfab7804fcf306eaf6fb66ec33d2c491567791ec392cd"
+  },
+  "effectiveNewToolLinesSincePrior": 319,
+  "modifiedExistingToolLinesCounted": 0,
+  "modifiedLinesNotIndependentlyReconstructed": true,
+  "cumulativeEffectiveProductionAndToolLinesLowerBound": 1787,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "New browser and canonical HTTP collectors count nonblank noncomment production/tool lines. The edited R66 alignment verifier is listed but excluded because its prior source preimage is unavailable. Tests, receipts, screenshots, generated files and documents are excluded.",
+  "newToolFiles": [
+    {
+      "path": "scripts/collect-mainline-a-r66-browser-evidence-v645.mjs",
+      "bytes": 10395,
+      "sha256": "e07fe18cc4b04fe0b7c691b3cc20a44bea885bbbe50db512ce08f48154ecbba1",
+      "effectiveNonblankNoncommentLines": 183
+    },
+    {
+      "path": "scripts/collect-mainline-a-canonical-assets-http-v645.mjs",
+      "bytes": 8499,
+      "sha256": "10265dec12e4cb52a42e271e514befff92259118b1a6e6dc0440223122ba9c8e",
+      "effectiveNonblankNoncommentLines": 136
+    }
+  ],
+  "editedTool": {
+    "path": "scripts/mainline-a-release-evidence.mjs",
+    "bytes": 43639,
+    "sha256": "32d8a8a2183b038c0f90ba1ae9ee827515f43cf9b9f52f08a3f1f3b0ddea15d4",
+    "incrementalEffectiveLinesCounted": 0
+  },
+  "validation": {
+    "node": "R66 alignment 36/36; browser collector 5/5; canonical HTTP collector 5/5",
+    "vitest": "release alignment and canonical runtime 54/54",
+    "eslint": "passed targeted",
+    "typescript": "passed",
+    "productionBuild": "passed V645 preserved build",
+    "http": "page, health and 12/12 canonical JPEG 200",
+    "browser": "desktop and mobile viewport current-build DOM/PNG passed",
+    "visual": "desktop and mobile screenshots inspected",
+    "performance": "desktop long run valid 1/2; mobile run active",
+    "physicalMobile": "not-run-adb-unavailable"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  }
+}

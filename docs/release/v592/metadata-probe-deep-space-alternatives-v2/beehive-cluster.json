@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v2",
+  "probedAt": "2026-08-19T10:10:09.575Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "beehive-cluster",
+  "category": "cluster",
+  "query": "Messier 44",
+  "requiredTermGroups": [
+    [
+      "messier 44",
+      "m44",
+      "beehive"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives/beehive-cluster.json",
+    "receiptSha256": "823a863b29c32fc79495cca3e634dd6a2bbb66e9b87f5a85ab88311a0cfc1305",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=M44+Beehive+star+cluster&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Messier+44&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Messier+44&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 158,
+    "responseSha256": "b2d8e4a99660d72894e92022e58f6fe24a99ded278256c3d5a96a345ed1d3252"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "7a296cd6f1a6b099e3137e312d3a10d83b43d1fa9da9d019005818075688cc91"
+}

@@ -1,0 +1,1096 @@
+{
+  "version": "v192-readiness-dossier",
+  "generatedAt": "2026-07-16T02:41:31.537Z",
+  "status": "host-validated-install-qa-pending",
+  "eligibleLabelAfterAllBlockersClear": "web-and-desktop-beta-rc-ready-science-shadow-retained",
+  "releaseLabelApplied": false,
+  "runtime": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "reactDom": "19.2.7",
+    "r3f": "9.6.1",
+    "three": "^0.170.0",
+    "defaultScientificKernel": "legacy-eih-1pn",
+    "shadowScientificKernel": "eih-1pn-2pn-lt"
+  },
+  "science": {
+    "version": "v187-scientific-promotion-decision-v7",
+    "status": "shadow-retained",
+    "absoluteErrorGatePassed": true,
+    "comparativeAggregateImprovementDemonstrated": true,
+    "independentPerBodyComparisonComplete": true,
+    "perBodyNoRegression": false,
+    "effectIsolationComplete": true,
+    "supportingGatesPassed": true,
+    "legacy": {
+      "positionRmsKm": 56.66491927394823,
+      "velocityRmsMS": 0.1603763239995811
+    },
+    "candidate": {
+      "positionRmsKm": 56.66258973654782,
+      "velocityRmsMS": 0.16036424592186993
+    },
+    "deltaVsLegacy": {
+      "positionKm": -0.002329537400406423,
+      "velocityMS": -0.000012078077711169533
+    },
+    "promotionQualified": false,
+    "promotionApplied": false,
+    "defaultKernel": "legacy-eih-1pn",
+    "shadowKernel": "eih-1pn-2pn-lt",
+    "blockers": [
+      "candidate-per-body-regression-detected-or-pending"
+    ],
+    "boundary": "decision-only-no-live-or-worker-physics-mutation"
+  },
+  "builds": {
+    "standaloneFull": {
+      "productionBuildPassed": true,
+      "bundle": {
+        "version": "v192-cold-client-bundle-budget",
+        "generatedAt": "2026-07-16T02:29:09.703Z",
+        "profile": "standalone-full",
+        "milestone": "single-webgl-canvas-programs-ready",
+        "transferBytes": 644905,
+        "recommendedTransferBytes": 634880,
+        "hardMaxTransferBytes": 655360,
+        "recommendedPassed": false,
+        "passed": true,
+        "resourceCount": 17,
+        "resources": [
+          {
+            "name": "/_next/static/chunks/webpack-806b607467510b15.js",
+            "transferSize": 3070,
+            "encodedBodySize": 2770
+          },
+          {
+            "name": "/_next/static/chunks/4bd1b696-e356ca5ba0218e27.js",
+            "transferSize": 63180,
+            "encodedBodySize": 62880
+          },
+          {
+            "name": "/_next/static/chunks/3794-c66b3d8325973459.js",
+            "transferSize": 61019,
+            "encodedBodySize": 60719
+          },
+          {
+            "name": "/_next/static/chunks/main-app-89272842b6ada29b.js",
+            "transferSize": 829,
+            "encodedBodySize": 529
+          },
+          {
+            "name": "/_next/static/chunks/app/page-c05e33115a65404e.js",
+            "transferSize": 2104,
+            "encodedBodySize": 1804
+          },
+          {
+            "name": "/_next/static/chunks/b536a0f1.c913a7170a0ea9bf.js",
+            "transferSize": 171343,
+            "encodedBodySize": 171043
+          },
+          {
+            "name": "/_next/static/chunks/1581.9cb12a98bb018865.js",
+            "transferSize": 10549,
+            "encodedBodySize": 10249
+          },
+          {
+            "name": "/_next/static/chunks/8079.0f4a05422f6b9c34.js",
+            "transferSize": 170869,
+            "encodedBodySize": 170569
+          },
+          {
+            "name": "/_next/static/chunks/7260.368b9d4c1c230657.js",
+            "transferSize": 6155,
+            "encodedBodySize": 5855
+          },
+          {
+            "name": "/_next/static/chunks/b79b7286.6466fbbb31113877.js",
+            "transferSize": 46205,
+            "encodedBodySize": 45905
+          },
+          {
+            "name": "/_next/static/chunks/4794.b0c3d9bda5ad3293.js",
+            "transferSize": 3721,
+            "encodedBodySize": 3421
+          },
+          {
+            "name": "/_next/static/chunks/7287.8ce3b4402839d522.js",
+            "transferSize": 13286,
+            "encodedBodySize": 12986
+          },
+          {
+            "name": "/_next/static/chunks/8546.cfcfd2afed832ec3.js",
+            "transferSize": 6942,
+            "encodedBodySize": 6642
+          },
+          {
+            "name": "/_next/static/chunks/9811.25eaa7ef74ea875e.js",
+            "transferSize": 9974,
+            "encodedBodySize": 9674
+          },
+          {
+            "name": "/_next/static/chunks/63.b92570873e4eec9d.js",
+            "transferSize": 67768,
+            "encodedBodySize": 67468
+          },
+          {
+            "name": "/_next/static/chunks/7572.54024e9a0fe0c221.js",
+            "transferSize": 2904,
+            "encodedBodySize": 2604
+          },
+          {
+            "name": "/_next/static/chunks/70.d83f259f24c96731.js",
+            "transferSize": 4987,
+            "encodedBodySize": 4687
+          }
+        ]
+      }
+    },
+    "vercelLite": {
+      "productionBuildPassed": true,
+      "bundle": {
+        "version": "v192-cold-client-bundle-budget",
+        "generatedAt": "2026-07-16T02:29:28.675Z",
+        "profile": "vercel-lite",
+        "milestone": "single-webgl-canvas-programs-ready",
+        "transferBytes": 644907,
+        "recommendedTransferBytes": 634880,
+        "hardMaxTransferBytes": 655360,
+        "recommendedPassed": false,
+        "passed": true,
+        "resourceCount": 17,
+        "resources": [
+          {
+            "name": "/_next/static/chunks/webpack-127e29cb7d5913e8.js",
+            "transferSize": 3072,
+            "encodedBodySize": 2772
+          },
+          {
+            "name": "/_next/static/chunks/4bd1b696-e356ca5ba0218e27.js",
+            "transferSize": 63180,
+            "encodedBodySize": 62880
+          },
+          {
+            "name": "/_next/static/chunks/3794-c66b3d8325973459.js",
+            "transferSize": 61019,
+            "encodedBodySize": 60719
+          },
+          {
+            "name": "/_next/static/chunks/main-app-89272842b6ada29b.js",
+            "transferSize": 829,
+            "encodedBodySize": 529
+          },
+          {
+            "name": "/_next/static/chunks/app/page-c05e33115a65404e.js",
+            "transferSize": 2104,
+            "encodedBodySize": 1804
+          },
+          {
+            "name": "/_next/static/chunks/b536a0f1.c913a7170a0ea9bf.js",
+            "transferSize": 171343,
+            "encodedBodySize": 171043
+          },
+          {
+            "name": "/_next/static/chunks/1581.9cb12a98bb018865.js",
+            "transferSize": 10549,
+            "encodedBodySize": 10249
+          },
+          {
+            "name": "/_next/static/chunks/8079.44fb9237f5599cad.js",
+            "transferSize": 170869,
+            "encodedBodySize": 170569
+          },
+          {
+            "name": "/_next/static/chunks/7260.368b9d4c1c230657.js",
+            "transferSize": 6155,
+            "encodedBodySize": 5855
+          },
+          {
+            "name": "/_next/static/chunks/b79b7286.6466fbbb31113877.js",
+            "transferSize": 46205,
+            "encodedBodySize": 45905
+          },
+          {
+            "name": "/_next/static/chunks/4794.b0c3d9bda5ad3293.js",
+            "transferSize": 3721,
+            "encodedBodySize": 3421
+          },
+          {
+            "name": "/_next/static/chunks/7287.8ce3b4402839d522.js",
+            "transferSize": 13286,
+            "encodedBodySize": 12986
+          },
+          {
+            "name": "/_next/static/chunks/8546.cfcfd2afed832ec3.js",
+            "transferSize": 6942,
+            "encodedBodySize": 6642
+          },
+          {
+            "name": "/_next/static/chunks/9811.25eaa7ef74ea875e.js",
+            "transferSize": 9974,
+            "encodedBodySize": 9674
+          },
+          {
+            "name": "/_next/static/chunks/63.b92570873e4eec9d.js",
+            "transferSize": 67768,
+            "encodedBodySize": 67468
+          },
+          {
+            "name": "/_next/static/chunks/7572.54024e9a0fe0c221.js",
+            "transferSize": 2904,
+            "encodedBodySize": 2604
+          },
+          {
+            "name": "/_next/static/chunks/70.72dffe6c56dcf21d.js",
+            "transferSize": 4987,
+            "encodedBodySize": 4687
+          }
+        ]
+      }
+    },
+    "desktopCompact": {
+      "productionBuildPassed": true,
+      "build": {
+        "version": "v192-desktop-compact-build-evidence",
+        "generatedAt": "2026-07-16T02:19:33.967Z",
+        "profile": "desktop-compact",
+        "stage": {
+          "path": "dist/desktop-stage/v192/desktop-stage.json",
+          "sha256": "b178f952bdc46d53c6b222e3f6611e862abe90bb92f654295ea03fcd4be8b793",
+          "bytes": 231666321,
+          "files": 2738,
+          "nextBuildId": "jgpkyQ00RHxkJJhASnh2U"
+        },
+        "webviewInstallMode": "embedBootstrapper",
+        "artifacts": [
+          {
+            "kind": "nsis",
+            "path": "src-tauri/target/release/bundle/nsis/Solar Atlas_1.0.0_x64-setup.exe",
+            "bytes": 93330897,
+            "sha256": "5d1d8ed926fa081c22f10cca1a33648296b7fe8af2f325ac7b64bb374a88cf3a",
+            "signed": false
+          },
+          {
+            "kind": "msi",
+            "path": "src-tauri/target/release/bundle/msi/Solar Atlas_1.0.0_x64_en-US.msi",
+            "bytes": 113135824,
+            "sha256": "449b1f5085809f9ed4078f74b8dd14239371d549527fe81ab43f3a055f643d87",
+            "signed": false
+          }
+        ],
+        "installQa": "pending-clean-windows-11-vm",
+        "passed": true
+      },
+      "rustValidation": {
+        "version": "v192-desktop-rust-verification",
+        "generatedAt": "2026-07-16T01:55:15.3931585+00:00",
+        "startedAt": "2026-07-16T01:54:56.4210651+00:00",
+        "target": "x86_64-pc-windows-msvc",
+        "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+        "cargo": "cargo 1.97.0 (c980f4866 2026-06-30)",
+        "checks": {
+          "fmt": "passed",
+          "check": "passed",
+          "test": "passed",
+          "releaseCheck": "passed"
+        },
+        "unitTests": {
+          "passed": 3,
+          "failed": 0
+        },
+        "sourceLineCounts": {
+          "commands.rs": 843,
+          "lib.rs": 8,
+          "lifecycle.rs": 112,
+          "main.rs": 3,
+          "resources.rs": 55,
+          "state.rs": 12
+        },
+        "passed": true
+      }
+    }
+  },
+  "regression": {
+    "command": "npm run test:atlas",
+    "filesPassed": 107,
+    "filesTotal": 107,
+    "passed": 673,
+    "total": 673,
+    "failed": 0
+  },
+  "contentPacks": {
+    "packCount": 6,
+    "manifestFileCount": 805,
+    "verifiedFileCount": 805,
+    "missingFileCount": 0,
+    "passed": true
+  },
+  "assetRecovery": {
+    "recordedMissingFiles": 45,
+    "restoredExactFiles": 45,
+    "unresolvedFiles": 0,
+    "frozenV9Regenerated": false,
+    "frozenV9RestorePolicy": "exact-checksummed-copy-only"
+  },
+  "browserQa": {
+    "version": "v192-fresh-browser-qa",
+    "generatedAt": "2026-07-16T02:38:27.221Z",
+    "nextBuildId": "jgpkyQ00RHxkJJhASnh2U",
+    "runner": "playwright-cli-named-fresh-chrome-sessions",
+    "viewports": [
+      {
+        "viewport": "desktop-1440x900",
+        "path": "output/playwright/v192-final-desktop-1440x900.png",
+        "width": 1440,
+        "height": 900,
+        "focusReturn": "data-atlas-section=simulation",
+        "bytes": 1383648,
+        "sha256": "85dee3c5a8cf967a317e328975571683f2279ba0311354c375d88695f2cebd7c"
+      },
+      {
+        "viewport": "mobile-390x844",
+        "path": "output/playwright/v192-final-mobile-390x844.png",
+        "width": 390,
+        "height": 844,
+        "focusReturn": "data-atlas-accessibility-return-target=search",
+        "bytes": 288386,
+        "sha256": "3db7fd5780d93744b1277c5350cab864234a63647c1478ded0c74ad7837a4a72"
+      }
+    ],
+    "assertions": {
+      "singleCanvasBeforeDuringAfterLaunchPanel": true,
+      "horizontalOverflowCount": 0,
+      "consoleErrorCount": 0,
+      "consoleWarningCount": 0,
+      "pageErrorCount": 0,
+      "response4xx5xxCount": 0,
+      "launchRegionReceivesFocus": true,
+      "escapeClosesLaunchPanel": true,
+      "focusReturnPassed": true,
+      "mobileMinimumTouchTargetPx": 40,
+      "mobileSmallTouchTargetCount": 0,
+      "v9Base4kStatus": 200,
+      "v9Base8kStatus": 200,
+      "moonTextureStatus": 200
+    },
+    "passed": true,
+    "boundary": "fresh-production-browser-observation-no-scientific-state-mutation"
+  },
+  "lifecycleSoak": {
+    "version": "v192-production-lifecycle-soak",
+    "generatedAt": "2026-07-16T02:33:23.548Z",
+    "runtimeBaseline": "next16-react19-r3f9-standalone-production-v192",
+    "warmupCycles": 2,
+    "measuredCycles": 10,
+    "baseline": {
+      "workers": 2,
+      "renderTargets": 0,
+      "subscriptions": 1,
+      "cameraLocks": 0,
+      "textures": 17,
+      "models": 0,
+      "programs": 28,
+      "rendererTextures": 27
+    },
+    "baselineHeap": 41138052,
+    "cycles": [
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 41768716,
+        "searchMs": 7.025000000372529,
+        "focusMs": 0.029999999329447746,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 42058752,
+        "searchMs": 6.280000001192093,
+        "focusMs": 0.02499999850988388,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 42369328,
+        "searchMs": 7.259999999776483,
+        "focusMs": 0.029999999329447746,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 42569888,
+        "searchMs": 6.935000000521541,
+        "focusMs": 0.02500000037252903,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 42838260,
+        "searchMs": 6.8599999994039536,
+        "focusMs": 0.03999999910593033,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 43099652,
+        "searchMs": 7.224999999627471,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 43372596,
+        "searchMs": 6.0849999990314245,
+        "focusMs": 0.029999999329447746,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 43628324,
+        "searchMs": 8.384999999776483,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 43824556,
+        "searchMs": 6.6650000009685755,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 2,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 43978040,
+        "searchMs": 6.774999998509884,
+        "focusMs": 0.02499999850988388,
+        "stageResources": {
+          "inspect": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 2,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      }
+    ],
+    "released": {
+      "workers": 2,
+      "renderTargets": 0,
+      "subscriptions": 1,
+      "cameraLocks": 0,
+      "textures": 17,
+      "models": 0,
+      "programs": 28,
+      "rendererTextures": 27
+    },
+    "finalHeap": 43978040,
+    "heapLimit": 74692484,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "passed": true,
+    "boundary": "production-browser-lifecycle-only-no-scientific-state-mutation"
+  },
+  "performance": {
+    "version": "v192-hardware-performance-production",
+    "generatedAt": "2026-07-16T02:35:54.008Z",
+    "runtimeBaseline": "next16-react19-r3f9-standalone-production-v192",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+    "adapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    },
+    "softwareRenderer": false,
+    "windowMs": 10000,
+    "samples": [
+      {
+        "id": "overview",
+        "sceneMode": "atlas",
+        "medianFps": 121,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 8.4,
+        "longestTaskMs": 0,
+        "frameSamples": 1432,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 25,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "earth-inspect",
+        "sceneMode": "inspect",
+        "medianFps": 119.8,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 12.5,
+        "longestTaskMs": 0,
+        "frameSamples": 1145,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 30,
+        "textures": 24,
+        "renderTargets": 0
+      },
+      {
+        "id": "gaia-stellar",
+        "sceneMode": "inspect",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2392,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 29,
+        "textures": 19,
+        "renderTargets": 0
+      },
+      {
+        "id": "launch",
+        "sceneMode": "launch",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 51,
+        "frameSamples": 2381,
+        "drawCalls": 39,
+        "triangles": 89696,
+        "programs": 15,
+        "textures": 6,
+        "renderTargets": 0
+      },
+      {
+        "id": "kerr",
+        "sceneMode": "kerr",
+        "medianFps": 120.6,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 8.4,
+        "longestTaskMs": 0,
+        "frameSamples": 1377,
+        "drawCalls": 1,
+        "triangles": 2,
+        "programs": 28,
+        "textures": 20,
+        "renderTargets": 1
+      }
+    ],
+    "baseline": {
+      "total": 12,
+      "workers": 2,
+      "renderTargets": 0,
+      "cameraLocks": 0
+    },
+    "released": {
+      "total": 12,
+      "workers": 2,
+      "renderTargets": 0,
+      "cameraLocks": 0
+    },
+    "resourcesReleased": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "thresholds": {
+      "overviewMedianFpsMin": 55,
+      "sceneMedianFpsMin": 45,
+      "frameP95MsMax": 50
+    },
+    "passed": true,
+    "boundary": "named-local-hardware-browser-observation-no-scientific-state-mutation"
+  },
+  "maintainability": {
+    "sourceLineCounts": {
+      "app/UniverseRuntimeController.tsx": 49,
+      "app/AtlasRuntimeWorkbench.tsx": 1593,
+      "app/components/AtlasSceneCameraBridges.tsx": 292,
+      "app/components/AtlasSceneFocusCameraBridge.tsx": 642,
+      "src-tauri/src/lib.rs": 9,
+      "src-tauri/src/commands.rs": 844,
+      "src-tauri/src/lifecycle.rs": 113,
+      "src-tauri/src/resources.rs": 56,
+      "src-tauri/src/state.rs": 13
+    },
+    "workbenchTargetMet": true,
+    "cameraBridgeTargetMet": true,
+    "rustLibTargetMet": true
+  },
+  "desktopRust": {
+    "version": "v192-desktop-rust-verification",
+    "generatedAt": "2026-07-16T01:55:15.3931585+00:00",
+    "startedAt": "2026-07-16T01:54:56.4210651+00:00",
+    "target": "x86_64-pc-windows-msvc",
+    "rustc": "rustc 1.96.0 (ac68faa20 2026-05-25)",
+    "cargo": "cargo 1.97.0 (c980f4866 2026-06-30)",
+    "checks": {
+      "fmt": "passed",
+      "check": "passed",
+      "test": "passed",
+      "releaseCheck": "passed"
+    },
+    "unitTests": {
+      "passed": 3,
+      "failed": 0
+    },
+    "sourceLineCounts": {
+      "commands.rs": 843,
+      "lib.rs": 8,
+      "lifecycle.rs": 112,
+      "main.rs": 3,
+      "resources.rs": 55,
+      "state.rs": 12
+    },
+    "passed": true
+  },
+  "desktopBuild": {
+    "version": "v192-desktop-compact-build-evidence",
+    "generatedAt": "2026-07-16T02:19:33.967Z",
+    "profile": "desktop-compact",
+    "stage": {
+      "path": "dist/desktop-stage/v192/desktop-stage.json",
+      "sha256": "b178f952bdc46d53c6b222e3f6611e862abe90bb92f654295ea03fcd4be8b793",
+      "bytes": 231666321,
+      "files": 2738,
+      "nextBuildId": "jgpkyQ00RHxkJJhASnh2U"
+    },
+    "webviewInstallMode": "embedBootstrapper",
+    "artifacts": [
+      {
+        "kind": "nsis",
+        "path": "src-tauri/target/release/bundle/nsis/Solar Atlas_1.0.0_x64-setup.exe",
+        "bytes": 93330897,
+        "sha256": "5d1d8ed926fa081c22f10cca1a33648296b7fe8af2f325ac7b64bb374a88cf3a",
+        "signed": false
+      },
+      {
+        "kind": "msi",
+        "path": "src-tauri/target/release/bundle/msi/Solar Atlas_1.0.0_x64_en-US.msi",
+        "bytes": 113135824,
+        "sha256": "449b1f5085809f9ed4078f74b8dd14239371d549527fe81ab43f3a055f643d87",
+        "signed": false
+      }
+    ],
+    "installQa": "pending-clean-windows-11-vm",
+    "passed": true
+  },
+  "blockers": [
+    {
+      "id": "desktop-install-qa",
+      "detail": "MSI/NSIS install, launch, exit, uninstall and reinstall matrix is pending on the user's second Windows 11 computer"
+    }
+  ],
+  "evidenceSha256": {
+    "dist/science/scientific-evidence-v7.json": "634a366ac20226de9dfb175eac57706aa273211d2fdb2169836224163b7c5b0e",
+    "dist/science/relativity-dop853-v7-report.json": "27cdc19da3277fb4ed17fa5e6e2267daa8d2a5dbfc1c3c9af8ff10ea2ade08be",
+    "dist/science/content-pack-integrity-v192.json": "0f09234010136557573361c6538611b3e3057dd7cc30f7695c6467bf92af1fe6",
+    "dist/science/client-bundle-v192-standalone-full.json": "5b0c644fa5ca2ffec7a300a2bffe102ea726c6ce813b6b7a8f3a2645bb37aca4",
+    "dist/science/client-bundle-v192-vercel-lite.json": "4f03f8aedbf22ac01fab29c3a0d448df14c2c2b623130099717a760ab00b5b83",
+    "dist/science/browser-qa-v192.json": "7c3ac4daa66c092580c8d1a87f3f65c92de2587cf2fba7b35bb472171ff5e1db",
+    "dist/science/lifecycle-soak-v192-report.json": "51b948a06c8053e3af958209df8a2d4d9cffdaa52eae796ba5cb70f3f4443689",
+    "dist/science/performance-v192-report.json": "6805ae210c7c8a3a74ad8c898c34b4fee6a992e86621c741a19fd3267e107d65",
+    "dist/science/desktop-rust-v192.json": "5f6d0488df374ac35074ffea36c447ae06cb721a49b6c0cd4f5a0c6d36c3a9b4",
+    "dist/science/desktop-build-v192.json": "b14cc540c4c1ae9ba1b22c963f2cc5c0017810538fc0ba11677f44434488362c",
+    "dist/release/orbit-atlas-v192-content-recovery.json": "15cfce889709ac015e895fd36dcfe7dcfbb7ce1d0dc1e7a1be1955ba44bb887f"
+  },
+  "boundaries": {
+    "cloudDeployment": "not-performed",
+    "signing": "not-performed",
+    "gitMutation": "no-reset-revert-clean-stage-or-commit",
+    "v2Promotion": "not-applied",
+    "frozenAssets": "restored-from-exact-checksummed-build-copy-no-regeneration"
+  }
+}

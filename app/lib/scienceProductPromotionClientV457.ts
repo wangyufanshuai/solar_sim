@@ -1,0 +1,107 @@
+"use client";
+
+import {
+  parseScienceProductPromotionApiV457,
+  type ScienceProductPromotionSummaryV457,
+} from "./scienceProductPromotionGateV457";
+
+export type ScienceProductPromotionSnapshotV457 = Readonly<{
+  status: "idle" | "loading" | "ready" | "unavailable";
+  reason: string | null;
+  requestCount: 0 | 1;
+  responseBytes: number;
+  summary: ScienceProductPromotionSummaryV457 | null;
+}>;
+
+const INITIAL: ScienceProductPromotionSnapshotV457 = Object.freeze({
+  status: "idle",
+  reason: null,
+  requestCount: 0,
+  responseBytes: 0,
+  summary: null,
+});
+const listeners = new Set<() => void>();
+let snapshot = INITIAL;
+let requestPromise: Promise<ScienceProductPromotionSummaryV457> | null = null;
+
+const safeReason = (value: unknown): string =>
+  typeof value === "string" && /^[a-z0-9-]{1,64}$/.test(value)
+    ? value
+    : "request-failed";
+const publish = (next: ScienceProductPromotionSnapshotV457): void => {
+  snapshot = Object.freeze(next);
+  listeners.forEach((listener) => listener());
+};
+
+export function loadScienceProductPromotionSummaryV457(): Promise<ScienceProductPromotionSummaryV457> {
+  if (requestPromise) return requestPromise;
+  publish({
+    status: "loading",
+    reason: null,
+    requestCount: 1,
+    responseBytes: 0,
+    summary: null,
+  });
+  requestPromise = fetch(
+    "/api/atlas/relativity-evidence/v457/science-product-gate",
+    { cache: "no-store" },
+  )
+    .then(async (response) => {
+      const declared = Number(response.headers.get("Content-Length"));
+      if (Number.isFinite(declared) && declared > 128 * 1024) {
+        throw new Error("response-too-large");
+      }
+      const body = await response.text();
+      const responseBytes = new TextEncoder().encode(body).byteLength;
+      if (responseBytes > 128 * 1024) throw new Error("response-too-large");
+      const api = parseScienceProductPromotionApiV457(JSON.parse(body));
+      if (!response.ok || !api.available || !api.summary) {
+        const reason = safeReason(api.reason);
+        publish({
+          status: "unavailable",
+          reason,
+          requestCount: 1,
+          responseBytes,
+          summary: null,
+        });
+        throw new Error(`v457-response-${reason}`);
+      }
+      publish({
+        status: "ready",
+        reason: null,
+        requestCount: 1,
+        responseBytes,
+        summary: api.summary,
+      });
+      return api.summary;
+    })
+    .catch((error: unknown) => {
+      if (snapshot.status !== "unavailable") {
+        publish({
+          status: "unavailable",
+          reason: safeReason(
+            error instanceof Error
+              ? error.message.replace(/^v457-response-/, "")
+              : null,
+          ),
+          requestCount: 1,
+          responseBytes: snapshot.responseBytes,
+          summary: null,
+        });
+      }
+      throw error;
+    });
+  return requestPromise;
+}
+
+export const getScienceProductPromotionSnapshotV457 =
+  (): ScienceProductPromotionSnapshotV457 => snapshot;
+export function subscribeScienceProductPromotionV457(listener: () => void): () => void {
+  listeners.add(listener);
+  return () => listeners.delete(listener);
+}
+export function resetScienceProductPromotionClientForTestsV457(): void {
+  requestPromise = null;
+  snapshot = INITIAL;
+  listeners.clear();
+}

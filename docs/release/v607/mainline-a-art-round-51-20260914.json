@@ -1,0 +1,77 @@
+{
+  "round": 51,
+  "date": "2026-09-14",
+  "title": "beta-hero-sealed-review-pipeline-and-source-gated-roster",
+  "status": "beta-hero-review-pipeline-delivered-runtime-remains-twenty",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaHeroSourceRecords": 24,
+    "betaHeroRuntimeCleared": 20,
+    "betaHeroEvidencePending": 4,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Replaced the review-pack parser's executable Function evaluation with JSON parsing of the generated projection module.",
+    "Added sealed source-snapshot replay, canonical projection comparison, content hashes, deterministic timestamps, and full nested pack equality checks.",
+    "Added fail-closed evidence inspection and source-patch sealing risks; forged runtime state and stale transitions are rejected by the V611 utility.",
+    "Refactored the Beta hero panel to use one review-row authority, canonical stellar colors, dynamic 20/24 coverage, component-correct SIMBAD links, and a responsive source-gate detail view.",
+    "Mounted the review panel through the existing stellar roster entry without opening runtime or scientific measurement admission."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in the six R51 production and test/tool files. All six files are R51 batch artifacts; generated JSON, screenshots, receipts, docs, lockfiles, and unrelated dirty-tree edits are excluded.",
+    "files": [
+      {"path": "app/lib/mainlineABetaStellarReviewV611.ts", "baseline": "new-in-r51", "effectiveChangedLines": 259, "sha256": "d3b6b3ee9df39e893b26a4388d48c0042801bc98d701a12a3bc5b2a09ded070a"},
+      {"path": "app/lib/mainlineABetaStellarReviewV611.test.ts", "baseline": "new-in-r51", "effectiveChangedLines": 176, "sha256": "0d94d6c72bc5bf672962ec5786a4cb034f7a8c63bd7d353e5644bed2dde70a28"},
+      {"path": "app/components/MainlineABetaHeroReviewPanelV611.tsx", "baseline": "new-in-r51", "effectiveChangedLines": 178, "sha256": "32009f89d2b383ccec0b82c3eef07b480ab8a687f7bf511487c99ba202cbfaff"},
+      {"path": "app/components/MainlineABetaHeroReviewPanelV611.test.tsx", "baseline": "new-in-r51", "effectiveChangedLines": 37, "sha256": "d137490e658f43971e28255af194e0a4de1d129199f0858001f6447a44829eef"},
+      {"path": "scripts/build-mainline-a-beta-hero-review-pack.mjs", "baseline": "new-in-r51", "effectiveChangedLines": 179, "sha256": "951f4b57d344b56ae085621baa7eb304f6262d4e2fe4a19002b99c2895fdf365"},
+      {"path": "scripts/build-mainline-a-beta-hero-review-pack.test.mjs", "baseline": "new-in-r51", "effectiveChangedLines": 133, "sha256": "ed4d362dc89f6baf799b7cb93284e0e93387470fcb4f4aa8e8d13607753be2a9"}
+    ],
+    "effectiveChangedLines": 962,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "vitest": {"passed": 22, "failed": 0, "files": 2, "command": "npx vitest run app/lib/mainlineABetaStellarReviewV611.test.ts app/components/MainlineABetaHeroReviewPanelV611.test.tsx"},
+    "reviewPackNode": {"passed": 9, "failed": 0, "command": "node --test scripts/build-mainline-a-beta-hero-review-pack.test.mjs"},
+    "eslint": {"passed": true, "files": 3},
+    "productionBuild": {
+      "passed": true,
+      "command": "npm run build:atlas:lite:current",
+      "profile": "vercel-lite",
+      "distDir": ".next-atlas-lite-current",
+      "buildId": "V81MV7VvOhit8pATT6-vR",
+      "buildIdSha256": "1f55e884f4e6b6797280a2fab980449602090cfc0049980e6363b40649062a73"
+    }
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "reviewRecords": 4, "selected": "spica", "simbadHref": "https://simbad.cds.unistra.fr/simbad/sim-id?Ident=*%20alf%20Vir", "consoleErrors": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"viewport": [390, 844], "reviewRecords": 4, "selected": "acrux", "dialogWidth": 374.3958435058594, "consoleErrors": 0, "scrollWidth": 390, "clientWidth": 390, "noHorizontalOverflow": true},
+    "scope": "browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r51-beta-hero-desktop.png", "bytes": 65258, "sha256": "95aa422aa85dc55bdaf5787f612d865372254bb83e43166a05dccb9c6c9830bc"},
+    {"path": "docs/release/v607/screenshots/mainline-a-r51-beta-hero-mobile.png", "bytes": 35704, "sha256": "9ba3af19d029b3e872d9e19b657a2273b6539c47854785fe806b8b969204aeaa"}
+  ],
+  "reviewPack": {
+    "schema": "mainline-a-beta-hero-review-pack-v611",
+    "path": "app/data/mainlineABetaHeroReviewPackV611.generated.json",
+    "pendingCount": 4,
+    "runtimeClearedCount": 20,
+    "sourceSnapshotSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061",
+    "packSha256": "3b15307dfe3b107afbc976a5f31886b5bedd1fc5158738ae120b930a338f4de5"
+  },
+  "openGates": [
+    "4 颗 Beta hero stars 尚未获得新的封存来源证据，运行时仍为 20/24",
+    "12→24 星云仍缺 12 张版权和署名明确的观测图及 runtime admission",
+    "星座美术仍需统一 12 个重点星座的最终视觉 signoff",
+    "多设备 GPU/FPS/资源生命周期仍未完成独立验收",
+    "root app/next-web 对齐与公共部署仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

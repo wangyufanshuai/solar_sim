@@ -1,0 +1,356 @@
+{
+  "version": "v591-celestial-convergence-capability-report-v1",
+  "generatedAt": "2026-08-10T00:00:00Z",
+  "status": "qualified-additive-3a-celestial-visual-candidate",
+  "candidate": {
+    "route": "/local-shadow-v591",
+    "manifestSha256": "1470fa2a9ac00dfbaa9ab7c0fada6ec70fc2d49fc6c2cb074c66036337a29abe",
+    "formalProductPointer": "v263",
+    "baseline": "v590-readonly",
+    "scientificPayloadWriteback": false
+  },
+  "capabilities": {
+    "namespaceIsolated": true,
+    "packageJsonMutationRequired": false,
+    "genericProxyCompatible": true,
+    "singleCanvas": true,
+    "runtimeBaseline": "v591-owned-composition-with-v590-readonly-layers",
+    "presentationOverlayOnly": false,
+    "v591HeroOverrideCount": 16,
+    "v591HeroOverrideBodies": [
+      "sun",
+      "earth",
+      "mercury",
+      "venus",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "vesta",
+      "bennu",
+      "eros",
+      "kleopatra",
+      "tempel-1",
+      "ceres",
+      "uranus",
+      "neptune"
+    ],
+    "sunAssetOverlaySha256": "d420c232741444a9802141b0ac11bf8bf15bd044a3f077a2b80cd1251f7148a7",
+    "sunMirroredHemisphereDisclosure": true,
+    "earthAssetOverlaySha256": "598ead89be4b853cd3e1018086ea902fc9d70e281ce83013baade569f0012238",
+    "earthExactByteReuse": true,
+    "mercuryAssetOverlaySha256": "98475a0b86460da379f741115ded14d912d8771817b835513593b7b945a76bc6",
+    "mercuryExactByteV589AlbedoReuse": true,
+    "mercuryFiniteRelief": true,
+    "venusAssetOverlaySha256": "38db2523d5f9859d267eff471394275026173075c6906bd54927e100066eb425",
+    "venusSourceReceiptSha256s": [
+      "bd8281ea2d55e5cd487c12f3919003e9965088dcf0b9debb6f50fe61488f0538",
+      "34dbad98e79dc32eda90220f15012ce176b9c4e68e15b397368bbc85a58f5831",
+      "966f8c03afe6762166eef798a9b1d5a4cbab257856a730dc618eb94109114150"
+    ],
+    "venusMeasuredTopographyClaim": false,
+    "venusOpticalColorClaim": false,
+    "moonAssetOverlaySha256": "25cf9a06057886066d8a927ffefa6b7bc52bb2ca3ab64183d2cbfd2a950a482a",
+    "moonFiniteRelief": true,
+    "marsAssetOverlaySha256": "0995c65fdc6290be0d4e4a6719d63d99f43b21d4c5d5d48e611eb946f9b1ae3e",
+    "marsAdmission": "admitted",
+    "marsAlbedoDetailCeiling": "1024x512",
+    "marsCompositeRejected": true,
+    "jupiterAssetOverlaySha256": "08b66eb0e8437c92d240676d2b04260f4acb3e32fbf6291425c5a47ad7d34113",
+    "jupiterSpecularLobe": false,
+    "saturnAssetOverlaySha256": "061d5394d765806999cbcef88560814cb5e0a004a79a4f2cdc3cb4325bb787f1",
+    "saturnRadialUv": true,
+    "vestaAssetOverlaySha256": "ee546b357512641c99cdd19ab224df435f60d2e26b02d0b282e8a87d73f957af",
+    "vestaModelLodReceiptSha256": "10967d130c5a2ff0e08764d8edd7ac366b91ae5efbd13d0110952f7d8f953dbd",
+    "vestaNoTextureBytesCopied": true,
+    "vestaMeasuredPhotometryClaim": false,
+    "bennuAssetOverlaySha256": "b8814014981066ccce219d9674aad66416d3a1f8dd8c44948a289a810ae89bed",
+    "bennuModelLodReceiptSha256": "1329e20befa500150b8eadbb81577c69d4b2c7c42a3f849ecad1fe9e65375195",
+    "bennuNoModelBytesCopied": true,
+    "erosAssetOverlaySha256": "0b72727b06dd0132ed35f5ee366bb4194884ab5e632d093e1c1e5dee90ccdee2",
+    "erosModelLodReceiptSha256": "133e2f6194401c7afab1873fe22c93e2bd3044cc551dcb3c55affeefba02ff66",
+    "erosPrintableSplitReconstruction": "topology-paired-watertight-two-half-reconstruction",
+    "erosSourceDetailCeiling": "nasa-shape-200856-triangles",
+    "kleopatraAssetOverlaySha256": "860392c7900a193f695bb96f84eace277eb2694da58c88188c955da12cca7b65",
+    "kleopatraModelLodReceiptSha256": "5689f7c26a5326dfba9e527626bce13037fc3e574a9b84cb3802b789c39df3f6",
+    "kleopatraSourceDetailCeiling": "nasa-low-resolution-radar-shape-4092-triangles",
+    "tempel1AssetOverlaySha256": "f0f83dd5d679ffa79ed3340f68c85de35f7877bcbe27a6af2a68259b9c1538e4",
+    "tempel1ModelLodReceiptSha256": "f4ff2207798b2bd848c670f4d13903a9bfd3548cea4099d39c8705c1a3833708",
+    "tempel1ObservedCoverageFraction": 0.8043214699074074,
+    "tempel1UnobservedAreaPolicy": "poly-haven-cc0-regolith-presentation-substrate-never-observation",
+    "ceresAssetOverlaySha256": "7c6a932cf0db2b88c967c5fd2483f7d51e4d1a79e78461746635f4e64368f576",
+    "ceresModelLodReceiptSha256": "5fc7348c81f2129e00a8fe267836ea826e403a461c9256e39111207918692dd9",
+    "ceresSourceDetailCeiling": "pds-dawn-spc-radius-2222x1111-261120-triangles",
+    "ceresObservationGrid": "2222x1111",
+    "ceresOpticalColorClaim": false,
+    "ceresSyntheticDetailAdded": false,
+    "iceGiantPrimaryOverlaySha256": "71fa5a03e4afc063f208b63f17cb87f3096bfd2cf40560a932a26114bae28bf5",
+    "iceGiantPrimaryBodies": [
+      "uranus",
+      "neptune"
+    ],
+    "iceGiantObservationTextureClaim": false,
+    "inheritedHeroAdmissions": [
+      "earth",
+      "uranus",
+      "neptune"
+    ],
+    "inheritedHeroBlocks": [
+      "sun",
+      "mercury",
+      "venus",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "ceres",
+      "vesta",
+      "bennu",
+      "eros",
+      "kleopatra",
+      "tempel-1"
+    ],
+    "effectiveHeroAdmissions": [
+      "sun",
+      "earth",
+      "mercury",
+      "venus",
+      "moon",
+      "mars",
+      "jupiter",
+      "saturn",
+      "vesta",
+      "bennu",
+      "eros",
+      "kleopatra",
+      "tempel-1",
+      "ceres",
+      "uranus",
+      "neptune"
+    ],
+    "constellationAnchors": "484/484-v591-owned-packet",
+    "constellationPacketVersion": "v591-constellation-gaia-packet-v1",
+    "constellationPacketSha256": "87e83d185be12627cf75b4cebc9d74ffbf47386e7dba66fa288bb10ed3d05a2f",
+    "constellationPacketFileSha256": "b65d2d54ecd39a17825d1268b066a5109c05e8aa93d0691c70d27d23252b0232",
+    "constellationFrozenSourceFileSha256": "6c5aefed75d78f566fa598a2fe15bad5482af41f7a600d055c1554544012f5f5",
+    "constellationFrozenBindingSha256": "5d5faefe782b221729084dc9796969579515151afab8c1ed377f0cbf718937a8",
+    "constellationUniqueGaiaSourceIdCount": 420,
+    "constellationMaximumAngularDistanceDeg": 1.4008261815085659,
+    "constellationMedianAngularDistanceDeg": 0.4760630074038235,
+    "constellationThresholdDeg": 1.5,
+    "constellationLabelAtlasSha256": "82264f01e9dfa6d053396fee531b21585aa0980ea10b2ab1d6d86a0e5b50f831",
+    "constellationLabelAtlasBytes": 99214,
+    "constellationRenderedTelemetryRequired": true,
+    "gaiaStarfield": "v590-readonly",
+    "buildGates": {
+      "standalone": {
+        "kind": "standalone",
+        "status": "passed",
+        "receiptPath": "dist/release/atlas-v591-standalone-build-resource.json",
+        "receiptSha256": "b4a5ce3cd938a18ad4ed08f5832708d0770f673ebec95612e7da409ce9d7d3b6",
+        "distDir": ".next-atlas-v591-standalone-current",
+        "deliveryTier": "standalone-full",
+        "buildId": "lom5-tE2nXbj0rbC65gR6",
+        "sourceManifestSha256": "af5dfe3e644ad3755999616aaaf75eeb99e058c06f46ba9af01d055305cf13f6",
+        "heapMb": 8192,
+        "swcRuntime": "official-wasm-fallback",
+        "rollbackSlotAvailable": true,
+        "reasons": []
+      },
+      "lite": {
+        "kind": "lite",
+        "status": "passed",
+        "receiptPath": "dist/release/atlas-v591-lite-build-resource.json",
+        "receiptSha256": "3dee625d2987ebad502506cbc361d7b2a6a44301113b09f4a1649a016cf8eb59",
+        "distDir": ".next-atlas-v591-lite-current",
+        "deliveryTier": "vercel-lite",
+        "buildId": "cPdI-v6h8PluYMzwWi4Cb",
+        "sourceManifestSha256": "af5dfe3e644ad3755999616aaaf75eeb99e058c06f46ba9af01d055305cf13f6",
+        "heapMb": 8192,
+        "swcRuntime": "official-wasm-fallback",
+        "rollbackSlotAvailable": true,
+        "reasons": []
+      }
+    },
+    "budgetChecks": {
+      "sourceCache": {
+        "actualBytes": 996811159,
+        "maximumBytes": 2147483648,
+        "status": "passed"
+      },
+      "fullCompressed": {
+        "actualBytes": 499228108,
+        "maximumBytes": 786432000,
+        "status": "passed"
+      },
+      "liteIncrement": {
+        "actualBytes": 8838536,
+        "maximumBytes": 9437184,
+        "status": "passed"
+      },
+      "liteTotal": {
+        "actualBytes": 84265670,
+        "baselineBytes": 75427134,
+        "maximumBytes": 85983232,
+        "status": "passed"
+      }
+    },
+    "litePackagingIsolation": {
+      "status": "passed",
+      "fullAssetLeaks": [],
+      "policy": "v591-full-ktx2-webp-excluded-from-lite-dist"
+    },
+    "browserEvidence": {
+      "sun": {
+        "status": "passed",
+        "receiptSha256": "aa4eca32eb396129452dba1337dc6ee15775c351ff70d00b0fe1ff221a7a0976",
+        "reasons": []
+      },
+      "earth": {
+        "status": "passed",
+        "receiptSha256": "0d6b07036f485a7f98ee6b740953c9e93ae83b62b85804aab8e49ff61c209a36",
+        "reasons": []
+      },
+      "mercury": {
+        "status": "passed",
+        "receiptSha256": "7d435bf3e07b8bd5811e7e532f245ba5bb18b5d434ee938f3ae8ebd4962838c3",
+        "reasons": []
+      },
+      "venus": {
+        "status": "passed",
+        "receiptSha256": "414f7b02691cb3a69187fc2a3b973487deacf9b62db97d78ffdfd792af3eb9ec",
+        "reasons": []
+      },
+      "moon": {
+        "status": "passed",
+        "receiptSha256": "afdc8d59a037091b1ba29d6c6e537afca0c55c38c66ae7121d2c6b062763d286",
+        "reasons": []
+      },
+      "mars": {
+        "status": "passed",
+        "receiptSha256": "a0835f44bb330aba9853f47a8692274c16619b106ec79b1fb86f48aa735b9317",
+        "reasons": []
+      },
+      "jupiter": {
+        "status": "passed",
+        "receiptSha256": "f87a3deff58e9aac7b25a765b7c7ddeaa3d02a2a8a7a6d47352c5670bc8deb34",
+        "reasons": []
+      },
+      "saturn": {
+        "status": "passed",
+        "receiptSha256": "3c56566778f90e7881d02d0ac5b366e5b01359ca0a6b8651fa595c19e73e02ee",
+        "reasons": []
+      },
+      "vesta": {
+        "status": "passed",
+        "receiptSha256": "6082b9d360d135111764608153e1d8d43bb450eb0da3beb0f54380a37475150d",
+        "reasons": []
+      },
+      "bennu": {
+        "status": "passed",
+        "receiptSha256": "590be3416a31fd3fdc095476058dd5e26650cdb8f2254cabb491bd85d237c984",
+        "reasons": []
+      },
+      "eros": {
+        "status": "passed",
+        "receiptSha256": "2599d4e4186dc7ae97360d724a5c7177f02bfd963e2762d240ed77ac67c32642",
+        "reasons": []
+      },
+      "kleopatra": {
+        "status": "passed",
+        "receiptSha256": "8d01fb685faf73b6ced3d93586f0e4a1a33529ba5cdd7bf25cde3f450ae9b529",
+        "reasons": []
+      },
+      "tempel-1": {
+        "status": "passed",
+        "receiptSha256": "3f1a221cda467823967563127a482f2fbfc2859a8c841032ca64c2fde0dbaf47",
+        "reasons": []
+      },
+      "ceres": {
+        "status": "passed",
+        "receiptSha256": "3254f7c3b0a7b97a2a0951b979716ed85fcec0784b708451cfea67419df81eac",
+        "reasons": []
+      },
+      "uranus": {
+        "status": "passed",
+        "receiptSha256": "7cc0df1733a04427e71516fe8e1ccf9f58bafdb1996774f5dc8d6121011310a5",
+        "reasons": []
+      },
+      "neptune": {
+        "status": "passed",
+        "receiptSha256": "0350d3f887fec2a5a7fde6775fcfadd09613df9ed47ad96af11698cb3ec769de",
+        "reasons": []
+      }
+    },
+    "deepSpaceBrowserEvidence": {
+      "status": "passed",
+      "receiptSha256": "79b1fb91c41939e2e2c8e23a34a8d5ceebc707132628cd21f69a6d26704275cd",
+      "reasons": []
+    },
+    "globalVisualMatrixEvidence": {
+      "status": "passed",
+      "receiptSha256": "d8262b8b54be05b4a7b4b3ea252c9fd2386a5323cdf3abbe12763693f5ae0377",
+      "reasons": []
+    },
+    "browserSoakEvidence": {
+      "status": "passed",
+      "receiptSha256": "1ce65b0478fa0cf630702a87f21a9023f97698b3ecb31592f7e68e2d260a954a",
+      "reasons": []
+    },
+    "humanVisualSignoffEvidence": {
+      "status": "passed",
+      "receiptSha256": "d4a39f4245cd738943564e7e5bd5ac8f09dcdc89da19ae33ae379d237b86b36f",
+      "reasons": []
+    },
+    "frozenEntryCount": 211,
+    "sourceCount": 581,
+    "nebulaOverlaySha256": "b4195a1d98d1a618b96dae731c1c484b511b3ddbffb49ad877f0cc34cbd93781",
+    "nebulaAdmittedCount": 6,
+    "nebulaBlockedCount": 0
+  },
+  "blockedGates": {
+    "p1CoreHeroOverrides": "passed:6/6",
+    "p2HeroOverrides": "passed:10/10-mercury-venus-vesta-bennu-eros-kleopatra-tempel-1-ceres-uranus-neptune-runtime-and-browser-qualified",
+    "allSixteenHeroAdmission": "passed:16/16-static-runtime-admission",
+    "allSixNebulaAdmission": "passed:6/6-runtime-browser-ready",
+    "v591StarOptics": "implemented-v591-gaia-deterministic-psf",
+    "v591DeepSpace": "passed:6/6-runtime-browser-ready",
+    "v591Constellations": "passed:88-catalog-484/484-gaia-anchors-rendered-telemetry",
+    "v591InstrumentUi": "architecture-first-instrument-shell",
+    "browserVisualMatrix": "passed",
+    "fps": "passed-preregistered-global-and-hero-thresholds",
+    "soak30Minutes": "passed",
+    "humanVisualSignoff": "passed",
+    "standaloneBuild": "passed",
+    "liteBuild": "passed",
+    "productionRelease": "not-authorized"
+  },
+  "evidence": {
+    "currentStateReceiptSha256": "da664b9db8a2301cc4645a38594faaf00be259b180acb0d241f76ff81aec47bf",
+    "verificationReceiptSha256": "6be9a0f0b7f24c77388bb4fa5fe4579d99952a7c88e03e571bfcdf0f64addc55",
+    "freezeAfterSha256": "8ad34acc312e8fa772e62b9c9b11eec2746e739ec311fc5785428a468e7b2f32",
+    "sourceManifestSha256": "af5dfe3e644ad3755999616aaaf75eeb99e058c06f46ba9af01d055305cf13f6",
+    "sunBrowserReceiptSha256": "aa4eca32eb396129452dba1337dc6ee15775c351ff70d00b0fe1ff221a7a0976",
+    "earthBrowserReceiptSha256": "0d6b07036f485a7f98ee6b740953c9e93ae83b62b85804aab8e49ff61c209a36",
+    "mercuryBrowserReceiptSha256": "7d435bf3e07b8bd5811e7e532f245ba5bb18b5d434ee938f3ae8ebd4962838c3",
+    "venusBrowserReceiptSha256": "414f7b02691cb3a69187fc2a3b973487deacf9b62db97d78ffdfd792af3eb9ec",
+    "moonBrowserReceiptSha256": "afdc8d59a037091b1ba29d6c6e537afca0c55c38c66ae7121d2c6b062763d286",
+    "marsBrowserReceiptSha256": "a0835f44bb330aba9853f47a8692274c16619b106ec79b1fb86f48aa735b9317",
+    "jupiterBrowserReceiptSha256": "f87a3deff58e9aac7b25a765b7c7ddeaa3d02a2a8a7a6d47352c5670bc8deb34",
+    "saturnBrowserReceiptSha256": "3c56566778f90e7881d02d0ac5b366e5b01359ca0a6b8651fa595c19e73e02ee",
+    "vestaBrowserReceiptSha256": "6082b9d360d135111764608153e1d8d43bb450eb0da3beb0f54380a37475150d",
+    "bennuBrowserReceiptSha256": "590be3416a31fd3fdc095476058dd5e26650cdb8f2254cabb491bd85d237c984",
+    "erosBrowserReceiptSha256": "2599d4e4186dc7ae97360d724a5c7177f02bfd963e2762d240ed77ac67c32642",
+    "kleopatraBrowserReceiptSha256": "8d01fb685faf73b6ced3d93586f0e4a1a33529ba5cdd7bf25cde3f450ae9b529",
+    "tempel1BrowserReceiptSha256": "3f1a221cda467823967563127a482f2fbfc2859a8c841032ca64c2fde0dbaf47",
+    "ceresBrowserReceiptSha256": "3254f7c3b0a7b97a2a0951b979716ed85fcec0784b708451cfea67419df81eac",
+    "uranusBrowserReceiptSha256": "7cc0df1733a04427e71516fe8e1ccf9f58bafdb1996774f5dc8d6121011310a5",
+    "neptuneBrowserReceiptSha256": "0350d3f887fec2a5a7fde6775fcfadd09613df9ed47ad96af11698cb3ec769de",
+    "deepSpaceBrowserReceiptSha256": "79b1fb91c41939e2e2c8e23a34a8d5ceebc707132628cd21f69a6d26704275cd",
+    "globalVisualMatrixReceiptSha256": "d8262b8b54be05b4a7b4b3ea252c9fd2386a5323cdf3abbe12763693f5ae0377",
+    "browserSoakReceiptSha256": "1ce65b0478fa0cf630702a87f21a9023f97698b3ecb31592f7e68e2d260a954a",
+    "humanVisualSignoffReceiptSha256": "d4a39f4245cd738943564e7e5bd5ac8f09dcdc89da19ae33ae379d237b86b36f"
+  },
+  "releaseAuthorized": false,
+  "reportSha256": "7d19d798d235d438ee83274cb5c09013af52d4fff5fbbc6c629138b059f0b5a5"
+}

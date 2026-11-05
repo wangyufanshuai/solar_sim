@@ -1,0 +1,3 @@
+import { describe, expect, it } from "vitest";
+import { loadKerrSparseScienceImageV555, resetKerrSparseScienceImageServerCacheForTestsV555 } from "./kerrSparseScienceImageServerV555";
+describe("v555 sparse science image server", () => { it("loads the bounded atlas, CSV and RGBA through one cache", async () => { resetKerrSparseScienceImageServerCacheForTestsV555(); const first = await loadKerrSparseScienceImageV555(), second = await loadKerrSparseScienceImageV555(); expect(first).toBe(second); expect(Object.keys(first.exports)).toEqual(["atlas", "csv", "rgba"]); expect(first.exports.rgba.bytes.byteLength).toBe(262144); expect(first.artifact.qualification.sparseScienceRasterQualified).toBe(true); }); });

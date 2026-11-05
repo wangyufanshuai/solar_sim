@@ -1,0 +1,113 @@
+{
+  "schema": "mainline-a-r75-layered-evidence-audit-v662",
+  "status": "verified-current-source-local-candidate-hold",
+  "observedAt": "2026-10-13T05:54:14.873Z",
+  "buildId": "6LSkpkfh8Q3k6pVypBrfQ",
+  "appSourceSha256": "6e206331b2aecc4d6a480040a7d3ba99d40972435b3c0e82278b10c6832036db",
+  "package": {
+    "path": "docs/release/v607/mainline-a-r75-v662-web-candidate-20261013v662r75web02.json",
+    "bytes": 55311,
+    "sha256": "df7e4e1a29dcae130c07115a4fc6e1247bc9d12b8a04cd8a02d5af03e166249f"
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "matrixRows": 96,
+      "assetPins": 49,
+      "toolSourcePins": 17,
+      "v616Pins": [
+        {
+          "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+          "bytes": 57424,
+          "sha256": "706be4e043fce25df4cd0e01522dd6ef5863c5cdf902c3e08ab6563e6c7a863b"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarProjectionV607.generated.ts",
+          "bytes": 6135,
+          "sha256": "8fbb31166d5b96890236da6842ce9f53a4ace3133ffbaabccd9811e8005e0dce"
+        }
+      ],
+      "sourceStable": true
+    },
+    "http": {
+      "status": "passed-local-enabled-and-default-off",
+      "enabled": {
+        "ok": true,
+        "issues": [],
+        "aAssets": 12,
+        "reviewImages": 19,
+        "heldImages": 5
+      },
+      "disabled": {
+        "ok": true,
+        "issues": [],
+        "reviewImagesDenied": 19,
+        "heldImagesDenied": 5
+      }
+    },
+    "visual": {
+      "status": "screenshots-pinned-sample-inspected-no-human-signoff",
+      "screenshotCount": 88,
+      "humanPerItemSignoff": false
+    },
+    "browser": {
+      "status": "desktop-and-simulated-mobile-passed",
+      "canonicalObjectsPerViewport": 36,
+      "skyStarsPerViewport": 24,
+      "skyConstellationsPerViewport": 12,
+      "nebulaePerViewport": 24,
+      "matrixRowsPerViewport": 96,
+      "physicalMobile": "not-run"
+    },
+    "performance": {
+      "status": "two-independent-local-browser-observations",
+      "ok": true,
+      "issues": [],
+      "durationsMs": [
+        1802016.92,
+        1802017.9300000016
+      ],
+      "frameP95Ms": [
+        11.104999999981374,
+        5.739999999990687
+      ],
+      "resourceTotals": [
+        [
+          27,
+          31,
+          27
+        ],
+        [
+          27,
+          31,
+          27
+        ]
+      ],
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "prior-real-HTTPS-captures-replayed",
+      "receipts": [
+        "docs/release/v607/mainline-a-r74-v661-page-ledger-20261013v661r74page02.json",
+        "docs/release/v607/mainline-a-r74-v661-page-audit-20261013v661r74page02.json"
+      ],
+      "newImageResponsesCaptured": 0,
+      "rightsSigned": 0
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "realUserValidation": false,
+    "productionPerformance": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  }
+}

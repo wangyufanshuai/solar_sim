@@ -1,0 +1,35 @@
+{
+  "version": "v591-nasa-images-metadata-probe-v1",
+  "probeId": "nebula-veil",
+  "probedAt": "2026-08-13T10:30:07.036Z",
+  "status": "metadata-probe-complete-no-payload",
+  "target": "veil-nebula",
+  "role": "real-coordinate-nebula-metadata-candidates",
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted"
+  },
+  "provenance": {
+    "archive": "NASA Image and Video Library API",
+    "host": "images-api.nasa.gov",
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=Veil%20Nebula%20NGC%206960&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=Veil%20Nebula%20NGC%206960&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 174,
+    "responseSha256": "7fb71b3a08e352307da79bda9cf9cd60ba146f2e1f0761c0fbebdfbcab4e562b"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "payloadAdmission": "not-attempted-metadata-only",
+  "receiptSha256": "4f717a990349e7fa24f4f393d8131787fafe9e974abd13d605a5080d756a6f68"
+}

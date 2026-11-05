@@ -1,0 +1,102 @@
+{
+  "schema": "mainline-a-code-change-receipt-v626",
+  "round": "R66",
+  "runId": "20260921-021",
+  "date": "2026-09-21",
+  "scope": "V627 nebula rights closure correction plus R66 readonly alignment and current browser/build evidence",
+  "status": "blocked-open-gates",
+  "physicsKernelMutation": false,
+  "scientificPayloadWriteback": false,
+  "effectiveChangedLines": 3349,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "Nonblank noncomment production lines in the listed V627 and R66 verifier/alignment/package files; tests, receipts, screenshots and generated manifests excluded.",
+  "files": [
+    {
+      "path": "app/lib/mainlineANebulaRightsClosureV627.ts",
+      "effectiveLines": 1029,
+      "sha256": "7a16ebe31d731405862c8bbfa68ae5503aac39a50991d8096ad9282559948a85"
+    },
+    {
+      "path": "scripts/build-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 619,
+      "sha256": "77879ec3d4c6c9805013088114e7025d18d1cb114722a7b501c7788aa5838fa8"
+    },
+    {
+      "path": "scripts/verify-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 175,
+      "sha256": "b69501be1489c938c6f45b6e5ed5b1b50b518e7e31c6f01517ab69a93fa5b7bd"
+    },
+    {
+      "path": "scripts/replay-mainline-a-nebula-rights-closure-v627.mjs",
+      "effectiveLines": 188,
+      "sha256": "21d31b00aa11b68667b6e0d5e992da317e2a3de701cb77a0b407964ecf843509"
+    },
+    {
+      "path": "app/components/MainlineANebulaRightsClosurePanelV627.tsx",
+      "effectiveLines": 120,
+      "sha256": "255cf21987c18254e06af27d4fe5947ba432f15a26d8373678057cbe5adb033a"
+    },
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "effectiveLines": 494,
+      "sha256": "0571ed1d070515254502adbeefeec2b785e3e9798d86df0a75b4894986ba0673"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-package-v626.mjs",
+      "effectiveLines": 298,
+      "sha256": "bc954b93b32829434cd2d3eb762723ea4dc7c49a2d4617085f3e57e311051de3"
+    },
+    {
+      "path": "scripts/build-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 233,
+      "sha256": "1d6aac63b8925f2a24db60bf5584b5058dde7bbd98119c975711d89786c18eca"
+    },
+    {
+      "path": "scripts/verify-mainline-a-release-identity-bridge-v626.mjs",
+      "effectiveLines": 193,
+      "sha256": "4e1aeac8e6e5a2b75a9f30e293d62b60b31ecb8d2c4ca472f54f9121d8227e3e"
+    }
+  ],
+  "tests": {
+    "node": {
+      "status": "passed",
+      "passed": 39,
+      "failed": 0,
+      "command": "node --test V627 closure/verifier/replay plus R66 alignment/package/identity tests"
+    },
+    "vitest": {
+      "status": "passed",
+      "passed": 37,
+      "failed": 0,
+      "files": 5
+    },
+    "eslint": {
+      "status": "passed",
+      "scope": "V627 contract/panel/CLI/replay/verifier and R66 alignment/package/identity scripts"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "runId": "20260921-021",
+      "buildId": "r0_nRe3Lp4mc2OvvoYHBD",
+      "runtimeBuildId": "mainline-a-d5681bbbfbf6014a",
+      "sourceSha256": "d5681bbbfbf6014a6e51a51f98bab57dd4699a6d414f45d4d2122dbd5483bfda"
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "notes": [
+    "V627 now merges six V624 captured rows with six V623 offline ledger rows.",
+    "Missing source-page evidence is pending; metadata-only or declared rights signoff never becomes trusted clearance.",
+    "Replay recomputes parent projection, preserves blocked integrity states and refuses rights promotion.",
+    "The browser-safe SHA-256 implementation remains pure TypeScript; no node:crypto import is used by production contract code."
+  ]
+}

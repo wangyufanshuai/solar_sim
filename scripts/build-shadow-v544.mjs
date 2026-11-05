@@ -1,0 +1,5 @@
+import { spawnSync } from "node:child_process";
+import { resolve } from "node:path";
+const tests = ["app/lib/kerrCalibrationAuthorityGapV544.test.ts", "app/lib/kerrCalibrationAuthorityGapServerV544.test.ts", "app/components/KerrCalibrationAuthorityGapV544.test.tsx", "app/components/kerrPhotonMetrologyDetailCatalogV544.test.ts", "app/api/atlas/relativity-evidence/v544/calibration-authority-gap/route.test.ts"], commands = [[process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-calibration-authority-gap-v544.ts"], "authority-gap"], [process.execPath, [resolve("node_modules/vitest/vitest.mjs"), "run", ...tests], "authority-gap-tests"], [process.execPath, [resolve("node_modules/tsx/dist/cli.mjs"), "scripts/build-kerr-calibration-authority-gap-runtime-v544.ts"], "runtime"]];
+for (const [command, args, label] of commands) { const result = spawnSync(command, args, { cwd: process.cwd(), encoding: "utf8", stdio: "inherit" }); if (result.status !== 0) throw new Error(`v544-${label}-exit-${result.status}`); }
+await import("./build-shadow-candidate-v544.mjs");

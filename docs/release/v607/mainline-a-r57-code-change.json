@@ -1,0 +1,16 @@
+{
+  "round": 57,
+  "date": "2026-09-14",
+  "scope": "Beta nebula expansion V617",
+  "effectiveChangedLines": 509,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R57 expansion generator/test/utility files; panel integration and generated pack are additional.",
+  "files": [
+    {"path": "scripts/build-mainline-a-beta-nebula-expansion-v617.mjs", "lines": 174, "sha256": "843d10ccccbb0e8f147e5a93225f51d3f9ff5241b5a514ae14d5134d0c23798d"},
+    {"path": "scripts/build-mainline-a-beta-nebula-expansion-v617.test.mjs", "lines": 86, "sha256": "86c800447b1e5a4c41a592d5b7dc441e73e17c6e34e172b3e89d8959067b30be"},
+    {"path": "app/lib/mainlineABetaNebulaExpansionV617.ts", "lines": 161, "sha256": "046db097b8bd38f722ca7489d7e7a5ac5061ddfea8f30e38971c6bbe990b242b"},
+    {"path": "app/lib/mainlineABetaNebulaExpansionV617.test.ts", "lines": 88, "sha256": "4250c3b54d80ee34810ad5b3b27bf98c7260712b8a08a7ae6fd177c9e9c66827"}
+  ],
+  "integrationFiles": ["app/components/MainlineANebulaReviewPanelV610.tsx", "app/components/MainlineANebulaReviewPanelV610.test.tsx", "app/data/mainlineABetaNebulaExpansionV617.generated.json", "package.json"]
+}

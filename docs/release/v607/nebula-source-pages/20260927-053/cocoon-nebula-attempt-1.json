@@ -1,0 +1,68 @@
+{
+  "attempt": 1,
+  "startedAt": "2026-09-27T02:40:38.573Z",
+  "endedAt": "2026-09-27T02:40:40.312Z",
+  "timeout": false,
+  "timeoutMs": 20000,
+  "retryCount": 0,
+  "requestExecuted": true,
+  "method": "GET",
+  "requestUrl": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+  "requestHeaders": {
+    "accept": "text/html,application/xhtml+xml",
+    "accept-encoding": "identity",
+    "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+  },
+  "fingerprintPayload": {
+    "method": "GET",
+    "url": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+    "headers": {
+      "accept": "text/html,application/xhtml+xml",
+      "accept-encoding": "identity",
+      "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+    },
+    "timeoutMs": 20000,
+    "maxRedirects": 5,
+    "maxBytes": 8388608
+  },
+  "requestFingerprint": "0ef047ba2fcd9153348e5734f073b109fc94dc4778605add973ae675faf74780",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=UTF-8",
+  "contentEncoding": null,
+  "finalUrl": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+  "redirectChain": [
+    {
+      "url": "https://science.nasa.gov/photojournal/cosmic-cocoon/",
+      "status": 200,
+      "location": null
+    }
+  ],
+  "errorClass": null,
+  "errorMessage": null,
+  "responseCaptured": 1,
+  "responseBytes": 268755,
+  "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053/cocoon-nebula-attempt-1.html",
+  "sha256": "a7bf4bd7145a2868e270db48e452b7e7e656d99d44e5d2fed0ab4b1a981ee4a3",
+  "candidate": {
+    "evidenceKind": "candidate-official-html-extraction",
+    "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+    "title": "Cosmic Cocoon",
+    "expectedPia": "PIA13441",
+    "observedPiaIds": [
+      "PIA13441"
+    ],
+    "sourceIdentityMatched": true,
+    "credit": "NASA/JPL-Caltech/UCLA",
+    "jpegDownloadLinks": [
+      "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13441/PIA13441.jpg"
+    ],
+    "restrictionFragments": [
+      "Commercial Space"
+    ],
+    "absenceOfRestrictionTextIsApproval": false,
+    "officialSourcePageCaptured": true,
+    "rightsApproval": "pending",
+    "signoffStatus": "pending",
+    "scientificValidity": "not-assessed"
+  }
+}

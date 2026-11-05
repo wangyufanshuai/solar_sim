@@ -1,0 +1,118 @@
+{
+  "version": "v592-major-moon-asset-manifest-probe-v1",
+  "probedAt": "2026-08-15T04:42:30.572Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "titan",
+  "selection": {
+    "nasaId": "PIA19658",
+    "title": "Titan Global Map - June 2015",
+    "description": "This global digital map of Saturn's moon Titan was created using images taken by NASA's Cassini spacecraft's imaging science subsystem (ISS). The map was produced in June 2015 using data collected through Cassini's flyby on April 7, 2014, known as \"T100.\" The images were taken using a filter centered at 938 nanometers, allowing researchers to examine variations in albedo (or inherent brightness) across the surface of Titan. Because of the scattering of light by Titan's dense atmosphere, no topographic shading is visible in these images. The map is an equidistant projection and has a scale of 2.5 miles (4 kilometers) per pixel. Actual resolution varies greatly across the map, with the best coverage (close to the map scale) along the equator near the center of the map at 180 degrees west longitude. The lowest resolution coverage can be seen in the northern mid-latitudes on the sub-Saturn h",
+    "center": "JPL",
+    "selectionReason": "Cassini ISS global equidistant map",
+    "metadataReceiptSha256": "9e1a39ec8b0cccb7e730f29560c99e4d8616a56a6eed6c76102dccb22efaee35",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA19658/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "visualAssetAdmissionGranted": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA19658/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA19658/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "ea6e0b69f7dc16b7dec5fbf2e1ed6a24eb496a89a8b5361611584086c17895f4"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/PIA19658~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA19658~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/PIA19658~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA19658~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/PIA19658~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA19658~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/PIA19658~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA19658~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/PIA19658~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA19658~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/PIA19658~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA19658/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA19658/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "dc94e8b4d0910e2f8ea2449d0b4ff8c12e378738dbd9a9504f458c3696166021"
+}

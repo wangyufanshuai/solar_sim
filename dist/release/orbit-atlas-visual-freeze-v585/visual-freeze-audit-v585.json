@@ -1,0 +1,176 @@
+{
+  "version": "v585-visual-freeze-audit-v1",
+  "generatedAt": "2026-08-04T00:00:00Z",
+  "status": "stable-binding-restored-candidate-decoupled",
+  "repository": {
+    "branch": "codex/orbit-atlas-visual-freeze-v585",
+    "head": "0215cac6872e5a1118a86adff056f290cd496399",
+    "scopedStatus": []
+  },
+  "historicalChange": {
+    "commit": "1eecca0f6d553e60da30f7f1ac3a726db13a2738",
+    "priorDefault": "ORBIT_ATLAS_SKY",
+    "changedDefault": "ATLAS_VISUAL_RUNTIME_SKY_V562",
+    "deletedAssets": [
+      "public/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "public/atlas-lite/textures/sky/orbit-atlas-v9-base-8k.jpg",
+      "public/atlas-lite/textures/sky/orbit-atlas-v9-base-4k.jpg"
+    ],
+    "governanceFinding": "formalProductPointer remained v263 while ordinary runtime sky binding changed"
+  },
+  "currentBindings": {
+    "formalProduct": {
+      "pointer": "v263",
+      "visualIdentity": "Legacy V9",
+      "scienceKernel": "legacy-eih-1pn"
+    },
+    "ordinaryRoot": {
+      "route": "/",
+      "lane": "stable-v263-legacy-v9",
+      "defaultManifest": "ORBIT_ATLAS_SKY",
+      "manifestIdentity": "ORBIT_ATLAS_V9_SKY"
+    },
+    "standalone": {
+      "route": "/",
+      "lane": "stable-v263-legacy-v9",
+      "deliveryProfile": "standalone-full"
+    },
+    "lite": {
+      "route": "/",
+      "lane": "stable-v263-legacy-v9",
+      "deliveryProfile": "vercel-lite"
+    },
+    "candidate": {
+      "route": "/local-shadow-v562",
+      "lane": "candidate-v562",
+      "defaultAppliedToStable": false,
+      "authorityInheritedFromLegacyV9": false
+    },
+    "experimental": {
+      "route": "/local-shadow-v562#hero-scenes",
+      "lane": "experimental-hero",
+      "scienceWriteback": false
+    },
+    "existingVercel": {
+      "url": "https://next-web-eight-virid.vercel.app",
+      "classification": "public-candidate-preview-not-strict-v263-legacy-v9",
+      "productionAliasChangedByV585": false
+    },
+    "v585Preview": {
+      "deploymentId": "dpl_9ixwYBCfWxeYg2ytgsbwxcG5sUt9",
+      "url": "https://next-7nlewylfj-wyufan43-3383s-projects.vercel.app",
+      "target": "preview",
+      "readyState": "READY",
+      "sourceCommit": "88d22ebce7714f2f70732c20e9116dfc8b289a86",
+      "classification": "v585-stable-preview-dual-track-not-production",
+      "productionAliasChangedByV585": false
+    }
+  },
+  "builds": {
+    "qualified": true,
+    "profiles": [
+      {
+        "path": "dist/release/atlas-build-resource-v562.json",
+        "profile": "standalone-full",
+        "status": "passed",
+        "distDir": ".next-atlas-standalone-current",
+        "heapMb": 8192,
+        "standaloneTopologyQualified": true,
+        "rollbackSlotAvailable": true,
+        "swcRuntime": {
+          "mode": "official-wasm-fallback",
+          "nativeQualified": false,
+          "runnerWarning": "native-swc-unavailable-official-wasm-fallback-used",
+          "nativeLoadError": "\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node is not a valid Win32 application.\r\n\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node"
+        }
+      },
+      {
+        "path": "dist/release/atlas-lite-build-resource-v562.json",
+        "profile": "vercel-lite",
+        "status": "passed",
+        "distDir": ".next-atlas-lite-current",
+        "heapMb": 8192,
+        "standaloneTopologyQualified": true,
+        "rollbackSlotAvailable": true,
+        "swcRuntime": {
+          "mode": "official-wasm-fallback",
+          "nativeQualified": false,
+          "runnerWarning": "native-swc-unavailable-official-wasm-fallback-used",
+          "nativeLoadError": "\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node is not a valid Win32 application.\r\n\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node"
+        }
+      },
+      {
+        "path": "dist/release/atlas-local-shadow-build-resource-v562.json",
+        "profile": "local-shadow",
+        "status": "passed",
+        "distDir": ".next-atlas-local-shadow-current",
+        "heapMb": 8192,
+        "standaloneTopologyQualified": true,
+        "rollbackSlotAvailable": true,
+        "swcRuntime": {
+          "mode": "official-wasm-fallback",
+          "nativeQualified": false,
+          "runnerWarning": "native-swc-unavailable-official-wasm-fallback-used",
+          "nativeLoadError": "\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node is not a valid Win32 application.\r\n\\\\?\\E:\\86137\\myai\\solar_sim\\next-web\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node"
+        }
+      }
+    ],
+    "nativeSwcQualified": false,
+    "runnerWarning": "native-swc-unavailable-official-wasm-fallback-used"
+  },
+  "differences": [
+    {
+      "subject": "ordinary runtime before v585",
+      "versus": "v263/Legacy V9",
+      "difference": "default sky manifest was v562 candidate",
+      "resolved": true
+    },
+    {
+      "subject": "v562 candidate before v585",
+      "versus": "authority namespace rule",
+      "difference": "candidate URLs reused orbit-atlas-v9 filenames",
+      "resolved": true
+    },
+    {
+      "subject": "existing Vercel deployment",
+      "versus": "strict v263/Legacy V9",
+      "difference": "deployed while historical base assets were absent and candidate binding was active",
+      "resolved": false,
+      "treatment": "public candidate preview"
+    }
+  ],
+  "sourceManifest": [
+    {
+      "path": "app/components/GalaxyEnvironmentSphere.tsx",
+      "bytes": 38258,
+      "sha256": "ef384c0bf27f6d877cb329107af3b0f4ef3d54215863fd8038e6b3582ff8d4e3"
+    },
+    {
+      "path": "app/lib/atlasRuntimeStore.ts",
+      "bytes": 12264,
+      "sha256": "fa1bce5b1edbfd1c7d4bc0b560c7790de69181aa9d102e6ae9c66410df1226b8"
+    },
+    {
+      "path": "app/lib/atlasVisualRuntimeCandidateV562.ts",
+      "bytes": 1048,
+      "sha256": "1a69f806765a15e0b748400ec2567e7ab2622075ab1f0e1472b9a5f0cb1b650e"
+    },
+    {
+      "path": "app/lib/orbitAtlasPresentation.ts",
+      "bytes": 21688,
+      "sha256": "c873ea3e5b39943a72682c639b4c4c7499653956fdfdc17d23d864708911e1d8"
+    },
+    {
+      "path": "app/local-shadow-v562/page.tsx",
+      "bytes": 1829,
+      "sha256": "cafb4f637bf6be9c3d030f8d7862418eb9b4db37a5fa162073bcec2c158609cb"
+    },
+    {
+      "path": "scripts/release-source-policy-v241.mjs",
+      "bytes": 3116,
+      "sha256": "d0d6667d24f4e28dde940ced78b9f5cb4ddb2d1d793b4526b3e07b4e27f69194"
+    }
+  ],
+  "sourceSha256": "db020cb4b70ce245592d62b85eb967c8ab51c5df01a4e1f3582a57186fbb1d69",
+  "artifactSha256": "52ef884c13eccab0a48b6d290f9f1f3b0685fcd8813addaf126b7aa3b0a07782"
+}

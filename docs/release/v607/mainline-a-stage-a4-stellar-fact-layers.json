@@ -1,0 +1,127 @@
+{
+  "stage": "A4",
+  "status": "portrait-and-uncertainty-implemented-rb2-desktop-mobile-six-of-six",
+  "verifiedAt": "2026-09-13T03:12:03Z",
+  "scope": "Six first-set stellar introductions with observed-reference, curated-catalog, parametric-model, and artistic-inference layers; Gaia associations remain positional candidates or render anchors",
+  "objects": [
+    "alpha-centauri-a",
+    "achernar",
+    "betelgeuse",
+    "sirius-a",
+    "rigel",
+    "antares"
+  ],
+  "contract": {
+    "type": "app/lib/celestialObjectContractV607.ts",
+    "requiredFields": [
+      "gaiaSourceId",
+      "science.coordinateFrame",
+      "science.raDeg",
+      "science.decDeg",
+      "science.distancePc",
+      "science.spectralType",
+      "artDirection",
+      "factLayers.observed",
+      "factLayers.catalogDerived",
+      "factLayers.model",
+      "factLayers.artisticInference",
+      "evidence.gaiaAssociation",
+      "evidence.referenceDistance",
+      "evidence.literatureModel",
+      "evidence.modelUncertainties",
+      "evidence.sources",
+      "evidence.scientificPayloadWriteback"
+    ],
+    "presentationBoundary": "photosphere and fact-layer text are presentation-only; they do not alter simulation state"
+  },
+  "implementation": {
+    "metadata": "app/data/mainlineAMetadataV607.ts",
+    "passport": "app/components/CelestialObjectPassportPanel.tsx",
+    "evidenceData": "app/data/mainlineAStellarEvidenceV607.ts",
+    "evidencePanel": "app/components/MainlineStellarEvidencePanelV607.tsx",
+    "runtimeMarkers": [
+      "data-mainline-a-stellar-fact-layers",
+      "data-mainline-a-stellar-uncertainty",
+      "data-mainline-a-gaia-association",
+      "data-mainline-a-uncertainty-status",
+      "data-mainline-a-uncertainty-confidence-level"
+    ],
+    "portrait": "app/components/MainlineAStellarPortraitV607.tsx"
+  },
+  "sourceEvidence": {
+    "authority": "local sealed reference replay; not a fresh external retrieval or measurement admission",
+    "snapshotRetrievedAt": "2026-08-25T11:26:00Z",
+    "manifest": "public/data/post-v593-stellar-relativity/stellar-provenance-v1.json",
+    "simbadSnapshot": {
+      "path": "docs/release/post-v593/source-snapshots/simbad-stellar-24-2026-08-25.json",
+      "canonicalSha256": "be5e2956350d7d81f19e29d6f98529702b4cf018cd1c3b6d47b392be82db5061"
+    },
+    "literatureSnapshot": {
+      "path": "docs/release/post-v593/source-snapshots/stellar-literature-intake-2026-08-25.json",
+      "canonicalSha256": "61e198cf8939262703c4df4e6aee25f9e0e80daaad2836775b99f65938e59767"
+    },
+    "firstSetSimbadNameOrComponentResolutions": 6,
+    "firstSetConfirmedGaiaIdentities": 0,
+    "firstSetGaiaPositionalCandidates": 1,
+    "firstSetGaiaRenderAnchors": 5,
+    "firstOrderParallaxDistanceReferences": 6,
+    "literatureModelObjects": [
+      "achernar"
+    ],
+    "achernarReportedModelErrors": [
+      "equatorial-radius",
+      "inclination"
+    ],
+    "achernarModelErrorsNotProvided": [
+      "polar-temperature",
+      "equatorial-temperature"
+    ],
+    "missingPortraitParameterErrors": 18,
+    "confidenceLevel": "not-recorded-in-sealed-reference",
+    "photometryBoundary": "Johnson V is a curated named-star value with no recorded photometric error; Gaia G/BP/RP belong to the nearby render-anchor entry and do not inherit named-star identity",
+    "distanceBoundary": "SIMBAD inverse-parallax reference and first-order propagated error are shown together without replacing the scene catalog distance",
+    "modelBoundary": "Achernar literature model epoch and radius/temperature definitions remain separate from the current portrait model"
+  },
+  "automatedEvidence": {
+    "testCommand": "node node_modules/vitest/vitest.mjs run app/data/mainlineAStellarEvidenceV607.test.ts app/lib/stellarProvenanceCandidate.test.ts app/data/mainlineAMetadataV607.test.ts --pool=threads --maxWorkers=1 -t stellar --reporter=default --reporter=junit --outputFile=tmp/mainline-a-v607-a4-20260909/final-junit.xml",
+    "testResult": {
+      "exitCode": 0,
+      "sessionId": null,
+      "executionChunkId": "c6b819",
+      "filesPassed": 3,
+      "testsPassed": 18,
+      "testsSkippedByStellarNameFilter": 16,
+      "testsFailed": 0,
+      "log": "tmp/mainline-a-v607-a4-20260909/final-vitest.log",
+      "junit": "tmp/mainline-a-v607-a4-20260909/final-junit.xml",
+      "junitSha256": "2659a74afe6ec3d2662785bb1044e6f47e0f472d7ab9e0ce3422ea1ee3a06420"
+    },
+    "lintCommand": "node node_modules/eslint/bin/eslint.js app/data/mainlineAStellarEvidenceV607.ts app/data/mainlineAStellarEvidenceV607.test.ts app/data/mainlineAMetadataV607.ts app/data/mainlineAMetadataV607.test.ts app/components/MainlineStellarEvidencePanelV607.tsx app/lib/celestialObjectContractV607.ts",
+    "lintResult": {
+      "exitCode": 0,
+      "sessionId": null,
+      "executionChunkId": "8e43af",
+      "log": "tmp/mainline-a-v607-a4-20260909/eslint.log"
+    },
+    "staticIntegration": "All six real runtime catalog IDs produced passport markup containing the evidence and fact-layer panels",
+    "sealVerification": "Both snapshot canonical hashes and the parent provenance manifest/receipt seals recomputed successfully",
+    "typecheck": "not executed by A4 subtask; parent integration owns the current combined typecheck",
+    "browser": "Rb2 current bound build: all six Mainline A roster clicks produced the stellar-hero focus, CelestialObjectPassport fact layers, uncertainty boundary text and parameterized portrait at 1280x720 desktop and 390x844 mobile; mobile passport rect was 8..382 x 14..748 with body scroll width 390 and roster/workbench hidden",
+    "currentBrowserReceipt": "docs/release/v607/mainline-a4-stellar-browser-current-20260913.json",
+    "parentIntegration": "Six-file Mainline A suite: 45 tests passed; all six stellar passports include their SVG portrait and reference evidence. Targeted ESLint passed."
+  },
+  "remaining": [
+    "Keep the six-star browser receipt bound to the current build; future Gaia identity intake remains separate.",
+    "A future measurement-data intake must bind named stars to Gaia identities before using Gaia measurement uncertainties.",
+    "Current portrait temperature/luminosity/radius errors and reference confidence levels remain explicitly unavailable."
+  ],
+  "physicsBoundary": "No changes to EIH, Newton N-body, 2PN/Lense–Thirring shadow model, or Kerr reference kernels.",
+  "staticVisualEvidence": {
+    "receipt": "docs/release/v607/visuals/stellar-portraits-render.json",
+    "image": "docs/release/v607/visuals/stellar-portraits-v607.png",
+    "command": "node node_modules/tsx/dist/cli.mjs scripts/render-mainline-a4-portraits.ts",
+    "objects": 6,
+    "review": "six distinct temperature/shape profiles; limb darkening visible; no clipping in contact sheet",
+    "scope": "SSR SVG rendered with sharp, not browser or interactive acceptance"
+  }
+}

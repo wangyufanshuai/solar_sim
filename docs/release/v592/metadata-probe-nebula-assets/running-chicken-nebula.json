@@ -1,0 +1,118 @@
+{
+  "version": "v592-nebula-asset-manifest-probe-v2",
+  "probedAt": "2026-08-15T04:23:01.350Z",
+  "status": "asset-manifest-probe-complete-no-payload",
+  "target": "running-chicken-nebula",
+  "selection": {
+    "metadataProbe": "running-chicken-nebula",
+    "metadataReceiptSha256": "d1120b15eebc5c7be3cd27355a81869e0aa76b0453bc94e160e3f8fc68b2e6ce",
+    "nasaId": "PIA13451",
+    "title": "Chasing Chickens in the Lambda Centauri Nebula",
+    "description": "This infrared image from NASA Wide-field Infrared Survey Explorer shows the Lambda Centauri nebula, a star-forming cloud in our Milky Way galaxy, also known as the Running Chicken nebula.",
+    "center": "JPL",
+    "assetManifestUrl": "https://images-assets.nasa.gov/image/PIA13451/collection.json"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "itemLevelLicenseReviewRequired": true,
+    "manifestRequestRequiresHttps": true,
+    "returnedHttpUrlsAreMetadataOnly": true,
+    "explicitHttpsAcquisitionRequired": true
+  },
+  "metadataRequest": {
+    "url": "https://images-assets.nasa.gov/image/PIA13451/collection.json",
+    "finalUrl": "https://images-assets.nasa.gov/image/PIA13451/collection.json",
+    "status": 200,
+    "responseBytes": 397,
+    "responseSha256": "9436d0013ac733e236507dbcc7ac3a50bfc2b76fdfb5fd0aca3cbbf482e0200b"
+  },
+  "files": [
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13451~orig.jpg",
+      "candidateRole": "original",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~orig.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/PIA13451~large.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13451~large.jpg",
+      "candidateRole": "large",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~large.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/PIA13451~medium.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13451~medium.jpg",
+      "candidateRole": "medium",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~medium.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/PIA13451~small.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13451~small.jpg",
+      "candidateRole": "small",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~small.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/PIA13451~thumb.jpg",
+      "host": "images-assets.nasa.gov",
+      "filename": "PIA13451~thumb.jpg",
+      "candidateRole": "thumbnail",
+      "extension": "jpg",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/PIA13451~thumb.jpg",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    },
+    {
+      "url": "http://images-assets.nasa.gov/image/PIA13451/metadata.json",
+      "host": "images-assets.nasa.gov",
+      "filename": "metadata.json",
+      "candidateRole": "other",
+      "extension": "json",
+      "metadataTransport": "insecure-metadata-url",
+      "httpsCandidate": "https://images-assets.nasa.gov/image/PIA13451/metadata.json",
+      "httpsCandidateRequested": false,
+      "payloadAdmission": "requires-explicit-https-acquisition",
+      "metadataOnly": true
+    }
+  ],
+  "summary": {
+    "fileCount": 6,
+    "originalCandidateCount": 1,
+    "largeCandidateCount": 1,
+    "insecureMetadataUrlCount": 6,
+    "explicitHttpsAcquisitionCandidateCount": 2,
+    "payloadAdmission": "requires-explicit-https-acquisition"
+  },
+  "originalCandidateCount": 1,
+  "payloadAdmission": "requires-explicit-https-acquisition",
+  "receiptSha256": "f8da4834d560ee038160f1fb256d548572240c7b18e6179a938edc06a1876712"
+}

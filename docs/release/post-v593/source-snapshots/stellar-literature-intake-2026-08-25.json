@@ -1,0 +1,377 @@
+{
+  "version": "post-v593-stellar-literature-intake-v2",
+  "retrievedAt": "2026-08-25T11:26:00Z",
+  "searchAudit": {
+    "provider": "Exa",
+    "ledgerPath": "docs/release/post-v593/source-snapshots/exa-stellar-source-search-ledger-2026-08-25.json",
+    "ledgerSha256": "211c0fb853901830c6ae3526effc89140713b9995cdbac8f8775f74ca25e845b",
+    "replayStatus": "sealed-replay-replaces-unverifiable-historical-aggregate",
+    "workstreamCount": 4,
+    "queryCount": 26,
+    "sourcesReviewed": 130,
+    "returnedResultSlots": 130,
+    "uniqueNormalizedUrls": 101,
+    "duplicateResultSlots": 29,
+    "uniqueAdmittedSources": 15,
+    "historicalAggregateStatus": "unverifiable-historical-aggregate",
+    "policy": "sourcesReviewed is recomputed as the sum of requested numResults in the sealed ledger. Every returned slot preserves stable URL/title, source class, keep/drop reason, and exact-normalized-URL dedupe target. The unrecoverable historical 259 aggregate is a note only and is not build authority."
+  },
+  "reviewedCatalogs": {
+    "gaia-dr3-docs": {
+      "sourceRef": "Gaia Data Release 3 Documentation release 1.3",
+      "sourceUrl": "https://gea.esac.esa.int/archive/documentation/GDR3/",
+      "doi": "10.1051/0004-6361/202243940",
+      "dataRelease": "Gaia DR3 documentation 1.3, 2023-07-10",
+      "license": "Gaia data open and free with ESA/Gaia/DPAC credit",
+      "citationStatus": "reviewed-discovery-and-anchor-context-not-identity-crossmatch"
+    },
+    "hipparcos-new-reduction": {
+      "sourceRef": "van Leeuwen 2007, Hipparcos new reduction, VizieR I/311",
+      "sourceUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/I/311?format=html&tex=true",
+      "doi": "10.1007/978-1-4020-6342-8",
+      "dataRelease": "VizieR I/311",
+      "license": "catalog-specific; VizieR scientific-use rules; consult ReadMe for reuse",
+      "citationStatus": "reviewed-upstream-catalog-context"
+    },
+    "pastel-2020": {
+      "sourceRef": "Soubiran et al., PASTEL catalogue, 2020 table revision",
+      "sourceUrl": "https://cdsarc.cds.unistra.fr/viz-bin/ReadMe/B/pastel?format=html&tex=true",
+      "doi": "10.1051/0004-6361/201628497",
+      "dataRelease": "B/pastel, 81362 records, 2020-01-30",
+      "license": "catalog-specific; VizieR scientific-use rules; commercial reuse not assumed",
+      "citationStatus": "reviewed-discovery-only-no-24-row-snapshot"
+    },
+    "jmmc-jsdc-v2": {
+      "sourceRef": "JMMC Stellar Diameters Catalogue version 2",
+      "sourceUrl": "https://cdsarc.cds.unistra.fr/viz-bin/cat/II/346",
+      "doi": null,
+      "dataRelease": "VizieR II/346, JSDC v2",
+      "license": "catalog-specific; VizieR landing page did not expose a machine-readable license in fetched content",
+      "citationStatus": "reviewed-discovery-only-no-24-row-snapshot"
+    },
+    "glebocki-rotation": {
+      "sourceRef": "Glebocki & Gnacinski, Catalog of Stellar Rotational Velocities",
+      "sourceUrl": "https://vizier.cds.unistra.fr/viz-bin/VizieR?-source=III%2F244",
+      "doi": null,
+      "dataRelease": "VizieR III/244",
+      "license": "catalog-specific; VizieR landing page did not expose a machine-readable license in fetched content",
+      "citationStatus": "reviewed-discovery-only-no-24-row-snapshot"
+    },
+    "gcvs-5-1": {
+      "sourceRef": "Samus et al. 2017, General Catalogue of Variable Stars 5.1",
+      "sourceUrl": "http://www.sai.msu.su/gcvs/gcvs/intr.htm",
+      "doi": "10.1134/S1063772917010085",
+      "dataRelease": "GCVS 5.1, site data through 2024",
+      "license": "citation requested; explicit reuse license not stated on fetched introduction",
+      "citationStatus": "reviewed-discovery-only-no-24-row-snapshot"
+    },
+    "aavso-vsx": {
+      "sourceRef": "AAVSO International Variable Star Index (VSX)",
+      "sourceUrl": "https://www.aavso.org/index.php/rest-api-specification-vsx",
+      "doi": null,
+      "dataRelease": "live service; documentation reviewed 2026-08-25",
+      "license": "AAVSO Data Usage Guidelines, revised 2025-10-01; no row snapshot admitted",
+      "citationStatus": "reviewed-discovery-only-no-24-row-snapshot"
+    },
+    "usno-wds": {
+      "sourceRef": "Washington Double Star Catalog",
+      "sourceUrl": "https://crf.usno.navy.mil/wdstext",
+      "doi": null,
+      "dataRelease": "USNO WDS live catalog, nightly updated",
+      "license": "US Government source; page-specific reuse terms not stated in fetched description",
+      "citationStatus": "reviewed-discovery-only-identifiers-observed-via-simbad"
+    },
+    "sb9": {
+      "sourceRef": "Pourbaix et al. 2004, Ninth Catalogue of Spectroscopic Binary Orbits",
+      "sourceUrl": "https://sb9.astro.ulb.ac.be/intro.html",
+      "doi": "10.1051/0004-6361:20041213",
+      "dataRelease": "SB9 continuously updated; introduction revised 2022-04-05",
+      "license": "citation-only; explicit dataset reuse license not stated in fetched introduction",
+      "citationStatus": "reviewed-discovery-only-identifiers-observed-via-simbad"
+    },
+    "vizier-usage": {
+      "sourceRef": "CDS Rules of usage of VizieR data",
+      "sourceUrl": "https://cds.unistra.fr/vizier-org/licences_vizier.html",
+      "doi": "10.26093/cds/vizier",
+      "dataRelease": "fetched 2026-08-25",
+      "license": "scientific use generally free with original authors/publisher citation; commercial rules depend on catalog origin",
+      "citationStatus": "reviewed-license-policy-authority"
+    }
+  },
+  "primarySources": {
+    "vega-monnier-2012": {
+      "sourceRef": "Monnier et al. 2012, Resolving Vega and the Inclination Controversy with CHARA/MIRC",
+      "sourceUrl": "https://iopscience.iop.org/article/10.1088/2041-8205/761/1/L3",
+      "doi": "10.1088/2041-8205/761/1/L3",
+      "bibcode": "2012ApJ...761L...3M",
+      "dataRelease": "ApJ Letters 761 L3, concordance model Table 2",
+      "license": "© 2012 AAS; publisher-specific, citation-only factual extraction",
+      "citationStatus": "primary-paper-table-reviewed"
+    },
+    "altair-monnier-2007": {
+      "sourceRef": "Monnier et al. 2007, Imaging the Surface of Altair",
+      "sourceUrl": "https://www.science.org/doi/10.1126/science.1143205",
+      "doi": "10.1126/science.1143205",
+      "bibcode": "2007Sci...317..342M",
+      "dataRelease": "Science 317, 342, free-beta model Table 1",
+      "license": "AAAS publisher-specific, citation-only factual extraction",
+      "citationStatus": "primary-paper-table-reviewed"
+    },
+    "achernar-domiciano-2014": {
+      "sourceRef": "Domiciano de Souza et al. 2014, The environment of the fast rotating star Achernar III",
+      "sourceUrl": "https://www.aanda.org/articles/aa/full_html/2014/09/aa24144-14/aa24144-14.html",
+      "doi": "10.1051/0004-6361/201424144",
+      "bibcode": "2014A&A...569A..10D",
+      "dataRelease": "A&A 569 A10, CHARRON RVZ MCMC Table 6",
+      "license": "© ESO 2014, citation-only factual extraction",
+      "citationStatus": "primary-paper-table-reviewed"
+    },
+    "regulus-mcalister-2005": {
+      "sourceRef": "McAlister et al. 2005, CHARA interferometric and spectroscopic study of Regulus",
+      "sourceUrl": "https://iopscience.iop.org/article/10.1086/430730",
+      "doi": "10.1086/430730",
+      "bibcode": "2005ApJ...628..439M",
+      "dataRelease": "ApJ 628, 439, adopted model and Tables 3/5",
+      "license": "© 2005 AAS, publisher-specific, citation-only factual extraction",
+      "citationStatus": "primary-paper-table-reviewed"
+    }
+  },
+  "records": [
+    {
+      "id": "vega",
+      "sourceKey": "vega-monnier-2012",
+      "measurementEpoch": null,
+      "fields": {
+        "temperature": {
+          "value": {
+            "surfaceAverageK": 9360,
+            "polarK": 10070,
+            "equatorialK": 8910
+          },
+          "uncertainty": {
+            "surfaceAverageK": 90,
+            "polarK": 90,
+            "equatorialK": 130
+          }
+        },
+        "radius": {
+          "value": {
+            "polarSolar": 2.418,
+            "equatorialSolar": 2.726,
+            "equatorialPolarRatio": 1.127378
+          },
+          "uncertainty": {
+            "polarSolar": 0.012,
+            "equatorialSolar": 0.006,
+            "equatorialPolarRatio": 0.005959
+          }
+        },
+        "luminosity": {
+          "value": 47.2,
+          "uncertainty": 2.0
+        },
+        "rotation": {
+          "value": {
+            "periodDays": 0.71,
+            "omegaFractionCritical": 0.774,
+            "projectedVelocityKmS": 21.3,
+            "gravityDarkeningBeta": 0.231
+          },
+          "uncertainty": {
+            "periodDays": 0.02,
+            "omegaFractionCritical": 0.012,
+            "projectedVelocityKmS": 1.2,
+            "gravityDarkeningBeta": 0.028
+          }
+        },
+        "orientation": {
+          "value": {
+            "inclinationDeg": 6.2,
+            "polePositionAngleEastOfNorthDeg": -58
+          },
+          "uncertainty": {
+            "inclinationDeg": 0.4,
+            "polePositionAngleEastOfNorthDeg": 6
+          }
+        }
+      }
+    },
+    {
+      "id": "altair",
+      "sourceKey": "altair-monnier-2007",
+      "measurementEpoch": "2006-08-31/2006-09-01",
+      "fields": {
+        "temperature": {
+          "value": {
+            "polarK": 8450,
+            "equatorialK": 6860
+          },
+          "uncertainty": {
+            "polarK": 140,
+            "equatorialK": 150
+          }
+        },
+        "radius": {
+          "value": {
+            "polarSolar": 1.634,
+            "equatorialSolar": 2.029,
+            "equatorialPolarRatio": 1.241738
+          },
+          "uncertainty": {
+            "polarSolar": 0.011,
+            "equatorialSolar": 0.007,
+            "equatorialPolarRatio": 0.008918
+          }
+        },
+        "rotation": {
+          "value": {
+            "omegaFractionCritical": 0.923,
+            "gravityDarkeningBeta": 0.19
+          },
+          "uncertainty": {
+            "omegaFractionCritical": 0.006,
+            "gravityDarkeningBeta": 0.012
+          }
+        },
+        "orientation": {
+          "value": {
+            "inclinationDeg": 57.2,
+            "polePositionAngleEastOfNorthDeg": -61.8
+          },
+          "uncertainty": {
+            "inclinationDeg": 1.9,
+            "polePositionAngleEastOfNorthDeg": 0.8
+          }
+        }
+      }
+    },
+    {
+      "id": "achernar",
+      "sourceKey": "achernar-domiciano-2014",
+      "measurementEpoch": "2009-2012 diskless-phase observations",
+      "fields": {
+        "temperature": {
+          "value": {
+            "polarK": 17124,
+            "equatorialK": 12673
+          },
+          "uncertainty": null
+        },
+        "logg": {
+          "value": {
+            "polarDexCgs": 3.561,
+            "equatorialDexCgs": 2.772
+          },
+          "uncertainty": null
+        },
+        "radius": {
+          "value": {
+            "polarSolar": 6.78,
+            "equatorialSolar": 9.16,
+            "equatorialPolarRatio": 1.352
+          },
+          "uncertainty": {
+            "polarSolar": null,
+            "equatorialSolar": {
+              "plus": 0.23,
+              "minus": 0.23
+            },
+            "equatorialPolarRatio": null
+          }
+        },
+        "luminosity": {
+          "value": {
+            "log10Solar": 3.48
+          },
+          "uncertainty": null
+        },
+        "rotation": {
+          "value": {
+            "periodHours": 37.25,
+            "equatorialVelocityKmS": 298.8,
+            "omegaFractionCritical": 0.98,
+            "gravityDarkeningBeta": 0.166
+          },
+          "uncertainty": {
+            "periodHours": null,
+            "equatorialVelocityKmS": {
+              "plus": 6.9,
+              "minus": 5.5
+            },
+            "omegaFractionCritical": null,
+            "gravityDarkeningBeta": {
+              "plus": 0.012,
+              "minus": 0.01
+            }
+          }
+        },
+        "orientation": {
+          "value": {
+            "inclinationDeg": 60.6,
+            "polePositionAngleEastOfNorthDeg": 216.9
+          },
+          "uncertainty": {
+            "inclinationDeg": {
+              "plus": 7.1,
+              "minus": 3.9
+            },
+            "polePositionAngleEastOfNorthDeg": {
+              "plus": 0.4,
+              "minus": 0.4
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "regulus",
+      "sourceKey": "regulus-mcalister-2005",
+      "measurementEpoch": "2004-03-10/2004-04-16",
+      "fields": {
+        "temperature": {
+          "value": {
+            "polarK": 15400,
+            "equatorialK": 10314
+          },
+          "uncertainty": null
+        },
+        "radius": {
+          "value": {
+            "polarSolar": 3.14,
+            "equatorialSolar": 4.16,
+            "equatorialPolarRatio": 1.32
+          },
+          "uncertainty": {
+            "relativePercent": 1
+          }
+        },
+        "rotation": {
+          "value": {
+            "periodHours": 15.9,
+            "equatorialVelocityKmS": 317,
+            "velocityFractionCritical": 0.86,
+            "gravityDarkeningBeta": 0.25
+          },
+          "uncertainty": {
+            "equatorialVelocityKmS": 3,
+            "otherComponents": null
+          }
+        },
+        "orientation": {
+          "value": {
+            "inclinationDeg": {
+              "lower": 78,
+              "upper": 90
+            },
+            "polePositionAngleEastOfNorthDeg": 85.5
+          },
+          "uncertainty": {
+            "inclinationDeg": "one-sigma-admitted-range",
+            "polePositionAngleEastOfNorthDeg": 2.8
+          }
+        }
+      }
+    }
+  ],
+  "snapshotSha256": "61e198cf8939262703c4df4e6aee25f9e0e80daaad2836775b99f65938e59767"
+}

@@ -1,0 +1,27 @@
+{
+  "round": 20,
+  "date": "2026-09-13",
+  "title": "Constellation index route regression",
+  "status": "verified-browser",
+  "browser": {
+    "url": "http://localhost:3018/?deliveryProfile=vercel-lite",
+    "route": "对象浏览器 > 星座 88 > 金牛座 > passport > chart",
+    "selectedEntry": "constellation:Tau",
+    "passportCount": 1,
+    "chartCount": 1,
+    "documentHorizontalOverflow": false,
+    "screenshot": {
+      "path": "docs/release/v607/screenshots/mainline-a-round-20-taurus-passport-20260913.png",
+      "bytes": 67282,
+      "sha256": "03414D3A3A7A2F6686983B186A0CD14B1B97AED64AE52DFED3EE143C1BA22484"
+    }
+  },
+  "validation": {
+    "indexMarker": "data-mainline-a-constellation-index=true",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This is a desktop browser regression sample; a device viewport override is unavailable in the current browser bridge.",
+    "Beta remains open at 12 hero stars and 12 rights-cleared nebulae."
+  ]
+}

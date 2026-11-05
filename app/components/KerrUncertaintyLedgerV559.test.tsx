@@ -1,0 +1,1 @@
+import{createElement}from"react";import{describe,expect,it}from"vitest";import KerrUncertaintyLedgerV559 from"./KerrUncertaintyLedgerV559";describe("v559 uncertainty HUD",()=>{it("remains client-only and canvas-free",()=>{const element=createElement(KerrUncertaintyLedgerV559);expect(element.type).toBe(KerrUncertaintyLedgerV559);expect(element.props).toEqual({});});});

@@ -1,0 +1,21 @@
+{
+  "round": 59,
+  "date": "2026-09-14",
+  "scope": "Beta stellar V619 raw capture and replay contract",
+  "effectiveChangedLines": 512,
+  "minimumRequired": 500,
+  "minimumMet": true,
+  "countMethod": "Nonblank, noncomment lines in four new R59 generator/test/utility files; raw pack, panel integration and package scripts are additional.",
+  "files": [
+    {"path": "scripts/build-mainline-a-beta-stellar-raw-capture-v619.mjs", "lines": 154, "sha256": "e36849e74b38954bb6e804cc0b309149d6df1983baa8096df3f975cb4775d238"},
+    {"path": "scripts/build-mainline-a-beta-stellar-raw-capture-v619.test.mjs", "lines": 131, "sha256": "7028ee9537a14163d96230d2ff267ff42a2f6bf957d100294b5824a72727e281"},
+    {"path": "app/lib/mainlineABetaStellarRawCaptureV619.ts", "lines": 141, "sha256": "f3fcac1380b3a0d7338bc9c4f5e678de99c2ec78580aa8efcb496f3d92699a1b"},
+    {"path": "app/lib/mainlineABetaStellarRawCaptureV619.test.ts", "lines": 86, "sha256": "b12ffddb076b1ca7028d71aaee2ea4d93d54c8bb4279c2a1bdff3d817a21062c"}
+  ],
+  "integrationFiles": [
+    {"path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json", "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"},
+    {"path": "app/components/MainlineABetaHeroReviewPanelV611.tsx", "sha256": "80f6ee04ded878b8c0dc4bc59d352c7b55611f6026476b58aa43c828e96488ae"},
+    {"path": "app/components/MainlineABetaHeroReviewPanelV611.test.tsx", "sha256": "00bcc20ab2c56fe5408a2768c3f5ca9b6ffb191861702d7af381d96fe5cacbcd"},
+    {"path": "package.json", "sha256": "911089a1b5053eedfb4e6294b884b6c1f087b2a72a6f1d3e437fe4e351202e44"}
+  ]
+}

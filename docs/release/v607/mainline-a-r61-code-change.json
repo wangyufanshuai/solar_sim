@@ -1,0 +1,22 @@
+{
+  "round": 61,
+  "date": "2026-09-14",
+  "scope": "Beta stellar structured evidence, source/component ledger, deterministic replay and audit",
+  "effectiveChangedLines": 1042,
+  "minimumRequired": 1000,
+  "countMethod": "Nonblank, noncomment production lines in new V621 parser, evidence utility, replay report and audit tooling, plus measured UI/package integration additions; tests and generated receipts excluded.",
+  "files": [
+    {"path":"app/lib/mainlineABetaStellarStructuredCandidateV621.ts","effectiveLines":137},
+    {"path":"app/lib/mainlineABetaStellarStructuredEvidenceV621.ts","effectiveLines":374},
+    {"path":"scripts/build-mainline-a-beta-stellar-structured-candidate-v621.ts","effectiveLines":29},
+    {"path":"scripts/audit-mainline-a-beta-stellar-structured-v621.mjs","effectiveLines":161},
+    {"path":"scripts/replay-mainline-a-beta-stellar-structured-v621.ts","effectiveLines":192},
+    {"path":"app/components/MainlineABetaHeroReviewPanelV611.tsx","effectiveLines":133,"changeType":"integration-additions"},
+    {"path":"package.json","effectiveLines":16,"changeType":"scripts"}
+  ],
+  "testsExcluded": [
+    "app/lib/mainlineABetaStellarStructuredCandidateV621.test.ts",
+    "app/lib/mainlineABetaStellarStructuredEvidenceV621.test.ts",
+    "scripts/audit-mainline-a-beta-stellar-structured-v621.test.mjs"
+  ]
+}

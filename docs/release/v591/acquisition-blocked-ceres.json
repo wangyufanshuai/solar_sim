@@ -1,0 +1,33 @@
+{
+  "version": "v591-ceres-visual-acquisition-blocked-v2",
+  "failedAt": "2026-08-12T04:09:54.327Z",
+  "reconciledAt": "2026-08-12T05:00:00.000Z",
+  "status": "blocked-no-automatic-retry",
+  "failureClass": "post-stream-partial-missing-cause-undetermined",
+  "metadataReceiptSha256": "196ac08c48e50847ec7f227abd85c76d9e989863af8ec7c4795f0bf1a2a18c09",
+  "urlLedgerReceiptSha256": "f6be811d1109515ffa6122b8fff8c62d017064038b49632ebe9a254f4a02b7a9",
+  "requestedUrls": [
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ceres_Dawn_FC_DLR_global_20ppd_Oct2015.lbl",
+    "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Ceres_Dawn_FC_DLR_global_20ppd_Oct2015.tif"
+  ],
+  "establishedFacts": {
+    "responseHeadersReceivedForRequestedUrls": true,
+    "httpStatus": 200,
+    "expectedContentLengthReported": 27280830,
+    "finalPayloadCommitted": false,
+    "partialPayloadPresentAtReconciliation": false
+  },
+  "claimsNotEstablished": [
+    "response-body-completed",
+    "transport-stalled",
+    "payload-byte-count-verified",
+    "payload-sha256-verified",
+    "payload-license-admitted"
+  ],
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "presentationAdmission": "asset-blocked",
+  "error": "v591-ceres-acquisition-post-stream-partial-missing-cause-undetermined:ceres-albedo-source-v591",
+  "supersedesReceiptSha256": "ca3fd20b5e466c571296343955d301e5b1e3385913c3552ad63d71dfc421d79e",
+  "receiptSha256": "74cd8ff85d5c0b33b4e11b38eea60139179e9c71d5c255d5a30cf5686141fffb"
+}

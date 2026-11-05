@@ -1,0 +1,178 @@
+{
+  "round": 49,
+  "date": "2026-09-13",
+  "recordedAtUtc": "2026-09-13T15:14:12.335446+00:00",
+  "title": "beta-nebula-candidate-atlas-and-source-projection",
+  "status": "candidate-review-delivered-runtime-remains-twelve",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "candidateNebulaRecords": 18,
+    "betaTarget": [
+      24,
+      12,
+      24
+    ]
+  },
+  "implementation": [
+    "Added deterministic projection from three sealed v592 nebula manifests.",
+    "Added explicit candidate-only source, rights, dimensions, bytes, SHA-256, and canonical queue mappings.",
+    "Added read-only nebula evidence atlas with filters, search, sorting, source links, credits, and non-admission disclosure.",
+    "Mounted the atlas beside the existing stellar atlas without changing Mainline A runtime allowlist."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, non-comment source lines in new R49 files; count only four new R49 integration lines in the previously changed roster component. Generated projection, screenshots, docs, lockfiles, and existing-function edits are excluded.",
+    "files": [
+      {
+        "path": "app/lib/mainlineANebulaAtlasV609.ts",
+        "baseline": "new-in-r49",
+        "added": 136,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "ef1125da6e4d7b96621e0dac511f04437fd6619da9634207e0c535253a42effe"
+      },
+      {
+        "path": "app/lib/mainlineANebulaAtlasV609.test.tsx",
+        "baseline": "new-in-r49",
+        "added": 91,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "aa424728ed23c26c24bd2eafd391e80c22243f32a372e02f6e4c79e2d7c015de"
+      },
+      {
+        "path": "app/components/MainlineANebulaAtlasV609.tsx",
+        "baseline": "new-in-r49",
+        "added": 123,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "6c820cd57eae0f462ed51a7c28d0040fb0fd54a852cad55da76be95f7493770b"
+      },
+      {
+        "path": "scripts/project-mainline-a-beta-nebula.mjs",
+        "baseline": "new-in-r49",
+        "added": 91,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "c298b237fceb16b35630c19a4aab99872b39f08d11b9f91b4d7c750496fa6c70"
+      },
+      {
+        "path": "scripts/project-mainline-a-beta-nebula.test.mjs",
+        "baseline": "new-in-r49",
+        "added": 73,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "272faf30b823e6bdc1d2a3214cd8cbc5ac9287c9e8397f4d7e702103d27b2ba4"
+      },
+      {
+        "path": "app/components/PostV593StellarRosterPanel.tsx",
+        "baseline": "r48-baseline-plus-r49-nebula-entry",
+        "added": 4,
+        "modified": 0,
+        "removed": 0,
+        "sha256": "b25190cb2a331ce22a153524124bc489408bb5b8d06fc59ba029c7dcff38d815"
+      }
+    ],
+    "totals": {
+      "added": 518,
+      "modified": 0,
+      "removed": 0
+    },
+    "effectiveChangedLines": 518,
+    "minimumMet": true
+  },
+  "tests": {
+    "nebulaAtlasVitest": {
+      "passed": 9,
+      "failed": 0
+    },
+    "nebulaProjectionNode": {
+      "passed": 5,
+      "failed": 0
+    },
+    "eslint": "passed",
+    "productionBuild": {
+      "passed": true,
+      "command": "npm run build:atlas:lite:current",
+      "profile": {
+        "version": "v225-atlas-build-slot-v1",
+        "profile": "vercel-lite",
+        "slot": "current",
+        "distDir": ".next-atlas-lite-current",
+        "buildId": "42lUpU_quTUfjWa6L_wRb",
+        "deliveryTier": null,
+        "candidateSourceManifestSha256": null,
+        "deploymentId": null,
+        "directoryCount": 404,
+        "routeOverlay": {
+          "enabled": true,
+          "directoryCount": 264,
+          "versionedEvidenceDirectoryCount": 202,
+          "rootPageHeldForLocalShadow": false,
+          "boundary": "profile-scoped-routes-restored-after-build"
+        }
+      }
+    }
+  },
+  "browser": {
+    "production": {
+      "viewport": [
+        1280,
+        720
+      ],
+      "candidateRecords": 30,
+      "current": 12,
+      "candidates": 18,
+      "selected": "m42",
+      "nonAdmissionDisclosure": true,
+      "url": "http://127.0.0.1:3019/"
+    },
+    "mobile": {
+      "viewport": [
+        390,
+        844
+      ],
+      "selected": "heart",
+      "clientWidth": 390,
+      "scrollWidth": 390,
+      "noHorizontalOverflow": true,
+      "candidateRightsLabelVisible": true
+    },
+    "scope": "visual and interaction evidence; not GPU/FPS/performance or public deployment acceptance"
+  },
+  "screenshots": [
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r49-nebula-desktop.png",
+      "bytes": 70271,
+      "sha256": "0e5ce385743f9ba9e372a1500c6c524ff16c6c6a08b47efda391afe4871ee391"
+    },
+    {
+      "path": "docs/release/v607/screenshots/mainline-a-r49-nebula-mobile.png",
+      "bytes": 36582,
+      "sha256": "c46bac40016906655a8acf8350c3495f3cb4a7ff225e71079e198dc9093298bb"
+    }
+  ],
+  "sourceProjection": {
+    "script": "scripts/project-mainline-a-beta-nebula.mjs",
+    "generated": "app/data/mainlineABetaNebulaProjectionV609.generated.ts",
+    "assets": 18,
+    "rightsReview": 18,
+    "runtimeAdmitted": 0,
+    "manifestPaths": [
+      "public/data/living-universe-v592/nebula-visual-assets.json",
+      "public/data/living-universe-v592/nebula-extended-visual-assets.json",
+      "public/data/living-universe-v592/nebula-closure-visual-assets.json"
+    ]
+  },
+  "openGates": [
+    "NASA candidate rights remain review, not CC BY clearance",
+    "Mainline A runtime remains 12 nebulae",
+    "Per-image legal/visual signoff for 12\u219218 or 18\u219224",
+    "Remaining 4 hero stars",
+    "multi-device GPU/FPS/lifecycle",
+    "root app/next-web alignment and public deployment"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

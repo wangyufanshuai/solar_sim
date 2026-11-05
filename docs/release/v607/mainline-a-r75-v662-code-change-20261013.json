@@ -1,0 +1,70 @@
+{
+  "schema": "mainline-a-r75-code-change-v662",
+  "round": 75,
+  "date": "2026-10-13",
+  "repository": {
+    "root": "E:/86137/myai/solar_sim/next-web",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "parentGitTouched": false,
+    "physicsKernelEditedByRound": false,
+    "concurrentRelativityWindowExcludedFromCounts": true
+  },
+  "method": "Count newly created nonempty noncomment TypeScript, TSX and MJS source lines. Exclude generated data, screenshot bytes, receipts, documentation, preserved builds, old script profile edits and the existing integration component from credited effective lines. Compare that component against the preserved R74 application source.",
+  "productionAndToolFiles": [
+    { "path": "app/lib/mainlineAWebAcceptanceV662.ts", "effectiveNewLines": 343, "role": "fail-closed 96-entry A/Beta cross-reference, hold and admission model" },
+    { "path": "app/components/MainlineAWebAcceptancePanelV662.tsx", "effectiveNewLines": 221, "role": "filterable, accessible candidate-only cross-entry review UI" },
+    { "path": "scripts/build-mainline-a-r75-matrix-v662.mjs", "effectiveNewLines": 176, "role": "current-source matrix builder, 49 asset byte/SHA pins and safe path handling" },
+    { "path": "scripts/verify-mainline-a-r75-matrix-v662.mjs", "effectiveNewLines": 165, "role": "independent offline source, row and file replay with promotion negatives" },
+    { "path": "scripts/verify-mainline-a-r75-http-v662.mjs", "effectiveNewLines": 166, "role": "local production HTTP verification for A assets, Beta review images and held routes" },
+    { "path": "scripts/verify-mainline-a-r75-http-disabled-v662.mjs", "effectiveNewLines": 119, "role": "default-off production HTTP policy and negative-route qualification" },
+    { "path": "scripts/capture-mainline-a-r75-matrix-browser-v662.mjs", "effectiveNewLines": 263, "role": "desktop and mobile-viewport 96-entry interaction, screenshot and failure-state capture" },
+    { "path": "scripts/build-mainline-a-r75-visual-v662.mjs", "effectiveNewLines": 126, "role": "independent 88-screenshot byte/SHA visual coverage and sampled observation receipt" },
+    { "path": "scripts/audit-mainline-a-r75-evidence-v662.mjs", "effectiveNewLines": 406, "role": "layered current-source browser, visual, performance and source evidence qualification and candidate package" },
+    { "path": "scripts/verify-mainline-a-r75-candidate-v662.mjs", "effectiveNewLines": 195, "role": "independent local package pin replay, current-source and release-boundary verification" }
+  ],
+  "substantiveTestFiles": [
+    { "path": "app/lib/mainlineAWebAcceptanceV662.test.tsx", "effectiveNewLines": 119, "role": "cross-source consistency, forged component/image promotion, route hold and UI render negatives" },
+    { "path": "scripts/build-mainline-a-r75-matrix-v662.test.mjs", "effectiveNewLines": 119, "role": "real file replay, path traversal, forged receipt, source drift and HTTP negative tests" },
+    { "path": "scripts/audit-mainline-a-r75-evidence-v662.test.mjs", "effectiveNewLines": 100, "role": "current browser matrix replay and omitted/forged scene, image lifecycle and longrun negatives" },
+    { "path": "scripts/build-mainline-a-r75-visual-v662.test.mjs", "effectiveNewLines": 55, "role": "full 88-frame visual coverage and missing-scene/image negatives" },
+    { "path": "scripts/verify-mainline-a-r75-candidate-v662.test.mjs", "effectiveNewLines": 60, "role": "unbound package, unsafe duplicate pin and publication promotion negatives" },
+    { "path": "scripts/verify-mainline-a-r75-http-disabled-v662.test.mjs", "effectiveNewLines": 62, "role": "saved default-off HTTP replay, exposed review image and missing held route negatives" }
+  ],
+  "existingIntegration": {
+    "path": "app/components/MainlineANebulaReviewPanelV610.tsx",
+    "comparison": "preserved R74 application source versus current file",
+    "rawAddedLines": 2,
+    "rawRemovedLines": 0,
+    "effectiveLinesCredited": 0,
+    "change": "mount the cross-entry acceptance board in the existing review surface"
+  },
+  "existingBrowserDriverProfiles": {
+    "paths": [
+      "scripts/capture-mainline-a-web-canonical-scene-v648.mjs",
+      "scripts/capture-mainline-a-web-sky-browser-v656.mjs",
+      "scripts/capture-mainline-a-r73-browser-v660.mjs",
+      "scripts/capture-mainline-a-r73-longrun-v660.mjs"
+    ],
+    "effectiveLinesCredited": 0,
+    "change": "opt-in R75 build and output identity while preserving earlier profile defaults"
+  },
+  "totals": {
+    "newProductionAndToolEffectiveLines": 2180,
+    "newSubstantiveTestEffectiveLines": 515,
+    "newEffectiveLinesIncludingTests": 2695,
+    "existingIntegrationRawAddedLines": 2,
+    "existingIntegrationRawRemovedLines": 0,
+    "existingIntegrationLinesCredited": 0,
+    "minimum500MetWithoutTests": true,
+    "target1000MetWithoutTests": true
+  },
+  "excluded": [
+    "app/data/*.generated.json",
+    "docs/release/v607/mainline-a-r75-*.json",
+    "docs/release/v607/mainline-a-r75-*.png",
+    "output/playwright/mainline-a-r75-*.png",
+    ".next-mainline-a-r75-*",
+    "all relativity and physics kernel files"
+  ]
+}

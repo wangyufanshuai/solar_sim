@@ -1,0 +1,161 @@
+{
+  "schema": "mainline-a-browser-preflight-v638",
+  "capturedAt": "2026-09-27T13:05:46.580Z",
+  "status": "incomplete-local",
+  "build": {
+    "receipt": "docs/release/v607/mainline-a-r66-build-20260927-068b.json",
+    "buildId": "MWJ1kKt8d99rWccDdaqO5",
+    "runtimeBuildId": "mainline-a-adab7be926b0c871",
+    "sourceSha256": "adab7be926b0c87159346ebab4420987c28cbd75fca76edf9e51cce6190aa51f",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1"
+  },
+  "browser": {
+    "surface": "Codex in-app Browser",
+    "url": "http://127.0.0.1:3068/",
+    "desktopViewport": {
+      "width": 1280,
+      "height": 720
+    },
+    "mobileViewport": {
+      "width": 390,
+      "height": 844
+    },
+    "physicalMobile": "not-run",
+    "console": {
+      "warnErrorLogEntriesReturned": 0,
+      "limit": 40,
+      "scope": "current tab dev logs after preflight; not all historical browser events"
+    }
+  },
+  "localLifecycle": {
+    "verified": 3,
+    "totalRequired": 36,
+    "objects": [
+      "star:achernar",
+      "nebula:m42",
+      "constellation:Ori"
+    ],
+    "baseline": "star:alpha-centauri-a",
+    "offlineIntake": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/intake.json",
+    "fullMatrixStatus": "pending-revised-production-build"
+  },
+  "visual": {
+    "status": "issues-found",
+    "imagesInspected": true,
+    "mobile": {
+      "passportFitsViewport": true,
+      "stellarAtlasFitsViewport": true,
+      "documentScrollWidth": 390,
+      "viewportWidth": 390
+    },
+    "issues": [
+      {
+        "id": "observer-dock-obscures-search",
+        "severity": "P2",
+        "details": "Dock at x1161 y660 width107 height48 obscured search at x1224 y673.5 width36 height36. Search center hit the restore button. Keyboard activation used during diagnostic navigation.",
+        "repairStatus": "source-repaired-new-build-not-yet-verified"
+      },
+      {
+        "id": "workbench-obscures-search-and-nebula-caption",
+        "severity": "P2",
+        "details": "M42 result center at x143 y564.5 hit Relativity workbench DIV instead of target. Persistent bottom-left card also overlapped the scene caption.",
+        "repairStatus": "source-repaired-new-build-not-yet-verified"
+      },
+      {
+        "id": "constellation-focus-crops-figure",
+        "severity": "P1",
+        "details": "Orion reported ready and completed lifecycle protocol, but inspected image showed oversized cropped line segments; current direction camera treats it as a small stellar subject. This invalidates full figure visual acceptance.",
+        "repairStatus": "implementation-in-progress"
+      }
+    ]
+  },
+  "performance": {
+    "status": "diagnostic-only",
+    "rawRafIntervalsRetained": true,
+    "rendererFrameTimeClaim": false,
+    "productionPerformanceClaim": false,
+    "longRunStatus": "not-run",
+    "conditions": "UI investigation and bounded filesystem compression overlapped some observations; no benchmark conclusion is derived from these runs."
+  },
+  "externalSource": {
+    "status": "not-refetched-in-this-browser-preflight",
+    "copyrightApproval": false,
+    "scientificValidityClaim": false
+  },
+  "artifacts": [
+    {
+      "path": "tmp/mainline-a-b2-preflight-batch-068.json",
+      "bytes": 163967,
+      "sha256": "3e4b0c7cccf7c2f31d720d911db9af81077768c3ba947aaeb7ce488053904734"
+    },
+    {
+      "path": "tmp/mainline-a-b2-browser-achernar-068.json",
+      "bytes": 49818,
+      "sha256": "cead03e1bcb02948ae4e1e721108dd5700593cda0c5bbc1ecedeb7582956256a"
+    },
+    {
+      "path": "tmp/mainline-a-b2-browser-m42-recovered-068.json",
+      "bytes": 48726,
+      "sha256": "c3c3f6e6209d5e8bf725dc0960496fdd0190e640a3f4fcdabfad51278fc854cd"
+    },
+    {
+      "path": "tmp/mainline-a-b2-browser-orion-068.json",
+      "bytes": 47030,
+      "sha256": "7b0c89f39050c4e9769e5e8c0602a3f84f0889076e1f746b429c79727f7bb5f4"
+    },
+    {
+      "path": "tmp/mainline-a-b2-dock-overlap-068.json",
+      "bytes": 493,
+      "sha256": "2dd4d96267424599a54351d6c1e8cf71852736a6820633c08195ffdcbbd6f4b2"
+    },
+    {
+      "path": "tmp/mainline-a-b2-dock-overlap-068.png",
+      "bytes": 73772,
+      "sha256": "8ba412bf1b57230787229745598d313b2c5b78d8851c20252a630032a48d1d1d"
+    },
+    {
+      "path": "tmp/mainline-a-b2-search-overlap-068.json",
+      "bytes": 282,
+      "sha256": "4202fafc6ac1d9a2172d928a9f63d5600990270fb4f395d3f4951b54981d892f"
+    },
+    {
+      "path": "tmp/mainline-a-b2-search-overlap-068.png",
+      "bytes": 80298,
+      "sha256": "e51e8dd27d6cf6f3ae6d93f386552322573c8a2dd95c5f4e9c0bfebe07971f0d"
+    },
+    {
+      "path": "tmp/mainline-a-b2-m42-desktop-068.png",
+      "bytes": 94711,
+      "sha256": "39a83cdd9690f1f0d1a86c3b5f17775bd0549e4590038cd289789289ede7ac50"
+    },
+    {
+      "path": "tmp/mainline-a-b2-orion-desktop-068.png",
+      "bytes": 75785,
+      "sha256": "5eec8ee2c3cd2d2004fb10c2ab323f93088c9a15d652efd1f97813967618efe3"
+    },
+    {
+      "path": "tmp/mainline-a-b2-mobile-passport-068.png",
+      "bytes": 50512,
+      "sha256": "fcbef4c48bb5e4b3f8bbd6dcc68802a606e02c7be638a1d46ff37b0c99489c34"
+    },
+    {
+      "path": "docs/release/v607/mainline-a-b2-preflight-intake-20260927-068/intake.json",
+      "bytes": 10089,
+      "sha256": "56b72cf6c1cad3d97a0add43ddfc2ef5e40eeb23ea337aac43b9b329b361c7d2"
+    }
+  ],
+  "storage": {
+    "writeFailure": "ENOSPC; failed outputs preserved",
+    "recoveryReceipt": "docs/release/v607/mainline-a-build-storage-preservation-20260927-071.json",
+    "rawRecordsRecoveredFromExistingUI": true
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "realUserValidation": false
+  },
+  "nextAction": "Complete constellation framing, produce a new preserved build, verify repaired mouse interactions and full figure visibility, then execute the full canonical36 matrix. Do not attribute this 068b evidence to the revised build."
+}

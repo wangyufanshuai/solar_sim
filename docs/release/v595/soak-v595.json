@@ -1,0 +1,106 @@
+{
+  "version": "v595-current-source-soak-v2",
+  "generatedAt": "2026-08-28T07:44:54.340Z",
+  "status": "passed-current-v595-cdp-renderer-heap-cycles-and-final-scene-exit",
+  "candidate": {
+    "sourceManifestSha256": "e06febbe18cd65ad8d24bb618d09c93032ca7fa02d5d69e2d916ea3b8f802186",
+    "candidateManifestSha256": "332b5ce6a0b5f26a4f9553d44cb9d0eb8d5cc169ae3242b4cd83259b669abae1",
+    "buildId": "v595b-97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "buildFingerprint": "97bcb089ed86374e7c4440f20458652d20ce571479de7e4170e74d38a5193ca4",
+    "deploymentId": "v595-e06febbe18cd-332b5ce6a0b5",
+    "formalProductPointer": "v263",
+    "deliveryTier": "standalone-full"
+  },
+  "evidence": {
+    "path": "tmp/v595-staging/formal-e06febbe18cd-332b5ce6a0b5-soak/batch.json",
+    "bytes": 410091,
+    "sha256": "f47e7f1060a1803019b3c3e81a229aa066d93eb69d68722a7e390fa54aaceb98"
+  },
+  "stageReceiptSha256": "3bbae6a35c55a50905e37af37d74f46b9c2190896b9eb59eabfd789e3d33b675",
+  "shardCount": 8,
+  "warmup": {
+    "cycleCount": 1,
+    "sampleCount": 4,
+    "profileKey": "hot-radiative",
+    "realmToken": "ff45fed0-185e-49d4-b53a-10be04615110",
+    "timeOrigin": 1787902546828.865,
+    "rendererFingerprint": "c19030cb93235f39ed37363f6a92de6db276446c9c54cb68047e0f6513adc9b3",
+    "firstHeapUsedBytes": 29671096,
+    "finalHeapUsedBytes": 38350176,
+    "finalSampleSha256": "274e8fa270b087cbb2b7e79e2a5b41881f5466748b1de0f566060be428004b6d"
+  },
+  "warmupSampleCount": 4,
+  "cycleCount": 40,
+  "sampleCount": 160,
+  "rendererFingerprint": "c19030cb93235f39ed37363f6a92de6db276446c9c54cb68047e0f6513adc9b3",
+  "metrics": {
+    "cycleCount": 40,
+    "sampleCount": 160,
+    "rendererFingerprintCount": 1,
+    "rendererResourceBaselineStable": true,
+    "rendererResourceGrowth": false,
+    "canvasCountStable": true,
+    "rawHardGatesPassed": true,
+    "semanticFallbackApplied": false,
+    "syntheticHeapPassClaim": false,
+    "heap": {
+      "baselineUsedSizeBytes": 38363272,
+      "finalUsedSizeBytes": 40761796,
+      "allowanceBytes": 8388608,
+      "overallOlsBytesPerSample": 16369.219828899566,
+      "tailOlsBytesPerSample": -7864.7493433395875,
+      "tailOlsMaximumBytesPerSample": 262144,
+      "finalHeapWithinAllowance": true,
+      "tailOlsWithinLimit": true,
+      "sustainedGrowth": false,
+      "telemetry": "chromium-cdp-runtime-getHeapUsage",
+      "garbageCollection": "HeapProfiler.collectGarbage"
+    },
+    "measurementWindow": {
+      "version": "v595-cdp-soak-premeasurement-warmup-v1",
+      "warmupCycleCount": 1,
+      "warmupSampleCount": 4,
+      "measuredCycleCount": 40,
+      "measuredSampleCount": 160,
+      "baselineSource": "first-measured-baseline-after-warmup",
+      "warmupExcludedFromFormalMetrics": true
+    }
+  },
+  "aggregation": {
+    "allShardsComplete": true,
+    "unknownShardCount": 0,
+    "failedShardCount": 0
+  },
+  "heapQualification": {
+    "telemetry": "chromium-cdp-runtime-getHeapUsage",
+    "finalHeapWithinAllowance": true,
+    "tailOlsWithinLimit": true,
+    "sustainedGrowth": false,
+    "noSyntheticSubstitution": true
+  },
+  "sameRealm": true,
+  "finalClientRouteExit": "/downloads",
+  "releaseContractVersion": "v595-observed-scene-exit-release-contract-v1",
+  "rendererInfoAfterContextLoss": "explicitly-unavailable-not-zero",
+  "tooling": {
+    "runnerVersion": "v595-cdp-renderer-heap-soak-runner-v2",
+    "auditorVersion": "v595-cdp-renderer-heap-soak-audit-v2",
+    "collectorVersion": "v595-cdp-renderer-heap-soak-live-collector-v2"
+  },
+  "authority": {
+    "defaultKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "scientificAuthorityGranted": false,
+    "scientificPayloadMutationAllowed": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferGranted": false,
+    "grmhdGranted": false,
+    "geometryReferenceGranted": false,
+    "polarizationTransportReferenceGranted": false,
+    "productionReleaseAuthorized": false,
+    "productionPromotionAllowed": false
+  },
+  "synthetic": false,
+  "receiptSha256": "c3ea5ec3c8d79ef351a5453a5216ea76c42ff5497d8ae2269468a8664c7cef59"
+}

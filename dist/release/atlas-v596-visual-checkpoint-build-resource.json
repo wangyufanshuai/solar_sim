@@ -1,0 +1,531 @@
+{
+  "version": "v562-atlas-build-resource-receipt-v1",
+  "status": "passed",
+  "profile": "standalone-full",
+  "distDir": ".next-atlas-v596-checkpoint-26c63b2df7aa-5f681cdc38f3",
+  "buildId": "HMfgNJxLApNMOg8IdvTkb",
+  "deliveryTier": "staging-standalone",
+  "candidateSourceManifestSha256": null,
+  "deploymentId": null,
+  "heapMb": 8192,
+  "lowMemoryMode": true,
+  "swcRuntime": {
+    "mode": "native",
+    "nativeQualified": true,
+    "runnerWarning": null
+  },
+  "heapPolicyMaximumReached": true,
+  "routeOverlayDirectoryCount": 264,
+  "routeOverlayVersionedEvidenceDirectoryCount": 202,
+  "rootPageHeldForLocalShadow": false,
+  "skippedIsolation": [
+    {
+      "path": ".next-atlas-v595-standalone-e06febbe18cd-332b5ce6a0b5",
+      "reason": "preserved-active-build-directory"
+    },
+    {
+      "path": ".next-atlas-v595-lite-e06febbe18cd-332b5ce6a0b5",
+      "reason": "preserved-active-build-directory"
+    },
+    {
+      "path": ".next-v596-dev",
+      "reason": "preserved-active-build-directory"
+    },
+    {
+      "path": ".next-atlas-v596-checkpoint-6646b9a7c931-bec45545d3bb",
+      "reason": "preserved-active-build-directory"
+    },
+    {
+      "path": ".next-atlas-v596-checkpoint-41aebc8b7ee3-a5310219163f",
+      "reason": "preserved-active-build-directory"
+    },
+    {
+      "path": "tmp\\lite-build-v562.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\lite-build-v562.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\lite-v562.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\lite-v562.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\local-shadow-dev-v567.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\local-shadow-dev-v567.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-72eb-3014.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-72eb-3014.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-current-dev.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-current-dev.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-dev-3016.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-dev-3016.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-inspect-3016.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\retention-inspect-3016.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\standalone-3017.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\standalone-3017.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\standalone-v562.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\standalone-v562.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-dev-webpack.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-dev-webpack.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-dev.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-dev.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-final.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-final.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v2.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v2.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v3.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v3.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v4.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v4.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v5.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64-v5.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-64x64.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-soak-final.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v587-postbuild-soak-final.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-next-dev.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-next-dev.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-next-turbo.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-next-turbo.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-standalone.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v589-standalone.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v590-standalone-3011.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v590-standalone-3011.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v590-standalone-3011.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v590-standalone-3011.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-browser-server-current.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-browser-server-current.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-browser-server.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-browser-server.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle7-final-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle7-final-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle7-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle7-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle8-bennu-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle8-bennu-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-final-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-final-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-ice-giants-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-ice-giants-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-cycle9-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-final-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-final-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-final2-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-final2-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-authority-browser.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-authority-browser.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-final-browser.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-final-browser.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-standalone.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p1-standalone.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p2-browser.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-p2-browser.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012-20260811-161521.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012-20260811-161521.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012-final.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012-final.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-3012.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-current.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v591-standalone-current.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v592-standalone-3016-current.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v592-standalone-3016-current.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-6fcb41491c28-3015.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-6fcb41491c28-3015.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-6fcb41491c28-3016.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-6fcb41491c28-3016.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-8eaaffbcbf60-3015.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-8eaaffbcbf60-3015.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-8eaaffbcbf60-3016.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-8eaaffbcbf60-3016.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-closure-3015.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-closure-3015.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-closure-3016.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-closure-3016.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-current-3013.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-current-3013.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-current-3014.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-current-3014.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-3013.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-3013.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-3014.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-3014.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-reseal-3013.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-reseal-3013.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-reseal-3014.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-final-reseal-3014.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-postbuild-3013.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-postbuild-3013.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-postbuild-3014.stderr.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v593-postbuild-3014.stdout.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-6ba6083cf47f-b8faa3b95d95-server.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-6ba6083cf47f-b8faa3b95d95-server.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-leak-server.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-leak-server.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-real-desktop-server.err.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v594-real-desktop-server.out.log",
+      "reason": "preserved-active-dev-log"
+    },
+    {
+      "path": "tmp\\v596-staging",
+      "reason": "preserved-locked-temporary-EPERM"
+    }
+  ],
+  "prunedTraceDirectories": [
+    ".next-atlas-v595-standalone-e06febbe18cd-332b5ce6a0b5",
+    ".next-atlas-v595-lite-e06febbe18cd-332b5ce6a0b5",
+    ".next-v596-dev",
+    ".next-atlas-v596-checkpoint-6646b9a7c931-bec45545d3bb",
+    ".next-atlas-v596-checkpoint-41aebc8b7ee3-a5310219163f"
+  ],
+  "standaloneTopologyQualified": true,
+  "rollbackSlotAvailable": false,
+  "browserStarted": false,
+  "denseStarted": false,
+  "gpuStarted": false
+}

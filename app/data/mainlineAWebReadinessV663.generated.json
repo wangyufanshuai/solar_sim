@@ -1,0 +1,468 @@
+{
+  "schema": "mainline-a-r76-web-readiness-v663",
+  "evidenceClass": "offline-replayed-current-web-release-gates",
+  "sourcePins": [
+    {
+      "role": "itemPolicy",
+      "path": "docs/release/v592/nebula-item-license-review-v592.json",
+      "bytes": 20468,
+      "sha256": "b5b36b3a6d20ed167112041f1efc067fb73a664b78fc8f25a7f906c93386a2e5"
+    },
+    {
+      "role": "alternatives",
+      "path": "app/data/mainlineANebulaR74AlternativesV661.generated.json",
+      "bytes": 18161,
+      "sha256": "8f7c3c6247d1abc561ed19be26cc4254e51b6d94dc00375c508da02b3149f76f"
+    },
+    {
+      "role": "componentTap",
+      "path": "docs/release/v607/stellar-component-tap-v646/analysis-r66-tap-20261007-001.json",
+      "bytes": 7310,
+      "sha256": "a245982f38ec347bf0c2a8a12571603b87e935a02eb5abfc202043812db8466d"
+    },
+    {
+      "role": "componentReview",
+      "path": "docs/release/v607/mainline-a-r66-stellar-component-review-packet-20261007.json",
+      "bytes": 22734,
+      "sha256": "50db072008c8126a451214c001f68d1c2958fe8abd6f684a1d9083bffe24420b"
+    },
+    {
+      "role": "previousRound",
+      "path": "docs/release/v607/mainline-a-r75-v662-round-20261013.json",
+      "bytes": 8350,
+      "sha256": "7cea3cac934255c105c8fff2b1e3bfafe541143662c8460f503963b92118aff3"
+    },
+    {
+      "role": "visualReview",
+      "path": "docs/release/v607/mainline-a-r75-v662-visual-20261013v662r75web02.json",
+      "bytes": 23791,
+      "sha256": "acf7dacc55cb83c9ca88494e72d2d4d1feebe8ed963ff057eefcfa2c06ff20be"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/ring-photojournal-048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc.html",
+      "bytes": 271453,
+      "sha256": "048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-spitzer-d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4.html",
+      "bytes": 268729,
+      "sha256": "d7ddacbed8e75a229933876600acda969a5de592a26e6348cb832464b2d01df4"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-hubble-2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e.html",
+      "bytes": 298800,
+      "sha256": "2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/bubble-hubble-bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477.html",
+      "bytes": 274737,
+      "sha256": "bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/cats-eye-photojournal-6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80.html",
+      "bytes": 269111,
+      "sha256": "6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80"
+    },
+    {
+      "path": "docs/release/v607/nebula-r74-v661/raw/omega-photojournal-7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe.html",
+      "bytes": 268393,
+      "sha256": "7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/acrux-f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b.csv",
+      "bytes": 353,
+      "sha256": "f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/spica-c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5.csv",
+      "bytes": 190,
+      "sha256": "c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/regulus-7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7.csv",
+      "bytes": 431,
+      "sha256": "7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/polaris-62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4.csv",
+      "bytes": 502,
+      "sha256": "62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+      "bytes": 5406,
+      "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+      "bytes": 4321,
+      "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+      "bytes": 4323,
+      "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346"
+    },
+    {
+      "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+      "bytes": 4633,
+      "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8"
+    }
+  ],
+  "stars": [
+    {
+      "id": "acrux",
+      "wdsSystemId": "12266-6306",
+      "heroIdentifier": "* alf01 Cru",
+      "primaryCrossId": "WDS J12266-6306A",
+      "crossIdMatched": true,
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/acrux-f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b.csv",
+        "bytes": 353,
+        "sha256": "f6bf87a3b770904a20347be5fe5bec60113a4221a94c38a72bbb981347405d5b"
+      },
+      "pairCount": 11,
+      "pairArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99.tsv",
+        "bytes": 5406,
+        "sha256": "7927e0e150c6872a47f477ebe93c7d379cce971ea70e6f860249d79a4e740a99"
+      },
+      "reviewQuestion": "Does the hero target identify WDS A as an unresolved component, a specific close subsystem, or the full Acrux multiple system? Which component-specific cross-identification proves it?",
+      "warningCodes": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "physicalComponentConfirmed": false,
+      "state": "component-review-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "spica",
+      "wdsSystemId": "13252-1110",
+      "heroIdentifier": "* alf Vir",
+      "primaryCrossId": "WDS J13252-1110A",
+      "crossIdMatched": true,
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/spica-c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5.csv",
+        "bytes": 190,
+        "sha256": "c555f5be71532e47cccc696bbe89633cc01cf9d45f9d25737a23a1f62de750c5"
+      },
+      "pairCount": 4,
+      "pairArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3.tsv",
+        "bytes": 4321,
+        "sha256": "a90a31292db83d59c6bc0818ceace87c0b4b0bea0c5a52286c1079cabca855f3"
+      },
+      "reviewQuestion": "Does the hero target identify WDS A as an unresolved system or a physical member such as Aa? The Aa,Ab catalogue row has no valid last separation and zero reported means.",
+      "warningCodes": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query",
+        "no-distinct-wide-companion-in-bounded-query"
+      ],
+      "physicalComponentConfirmed": false,
+      "state": "component-review-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "regulus",
+      "wdsSystemId": "10084+1158",
+      "heroIdentifier": "* alf Leo",
+      "primaryCrossId": "WDS J10084+1158A",
+      "crossIdMatched": true,
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/regulus-7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7.csv",
+        "bytes": 431,
+        "sha256": "7f62cde6c6efe3a771ee25ccd4c72eae907a4e6c8465e7c2a264c1914fff8bc7"
+      },
+      "pairCount": 4,
+      "pairArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346.tsv",
+        "bytes": 4323,
+        "sha256": "a10ace24d02758775138901acc92a601c46c08e44b8cc27da4bd8ac177cb1346"
+      },
+      "reviewQuestion": "Does the hero target identify WDS A alone, an A subsystem, or the full system? AB/AD are relative pair measurements; BC/BD describe different component relationships.",
+      "warningCodes": [
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "physicalComponentConfirmed": false,
+      "state": "component-review-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "polaris",
+      "wdsSystemId": "02318+8916",
+      "heroIdentifier": "* alf UMi",
+      "primaryCrossId": "WDS J02318+8916A",
+      "crossIdMatched": true,
+      "rawCsv": {
+        "path": "docs/release/v607/stellar-component-tap-v646/r66-tap-20261007-001/polaris-62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4.csv",
+        "bytes": 502,
+        "sha256": "62c174a876f69b5dfcf21f0362f10e1faea36ad065d4a125c00d240100cd7aa4"
+      },
+      "pairCount": 6,
+      "pairArtifact": {
+        "path": "docs/release/v607/stellar-component-artifacts/v634/20260927-056/c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8.tsv",
+        "bytes": 4633,
+        "sha256": "c7512a9d1a91369772a38496e32ef187f35ab557ae05335ff8c871480e24bfe8"
+      },
+      "reviewQuestion": "Does the hero target identify WDS A as the aggregate, Aa as the Cepheid, or another component? The source identifiers include both A and Aa,Ab hints.",
+      "warningCodes": [
+        "close-pair-identifier-aliases-primary-simbad-object",
+        "no-individually-resolved-aa-or-ab-cross-id-in-bounded-query"
+      ],
+      "physicalComponentConfirmed": false,
+      "state": "component-review-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "nebulae": [
+    {
+      "id": "ring-nebula",
+      "sourceKey": "ring-photojournal",
+      "officialPageUrl": "https://science.nasa.gov/photojournal/ring-beholds-a-delicate-flower/",
+      "officialPageRaw": {
+        "path": "docs/release/v607/nebula-r74-v661/raw/ring-photojournal-048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc.html",
+        "bytes": 271453,
+        "sha256": "048f24f0a4dfd428a65fa8c0d96b52ec056b22eaa97eeb99dea710c5a1d63bbc"
+      },
+      "title": "Ring Beholds a Delicate Flower",
+      "credit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+      "partnerMarkers": [
+        "Harvard-Smithsonian"
+      ],
+      "pageIdentity": "page-identity-confirmed",
+      "conflictingSources": [],
+      "imageRequestIntent": {
+        "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07343/PIA07343.jpg",
+        "listedFormat": "JPEG (296.98 KB)",
+        "listedDimensions": "2104 × 1726",
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "rawArtifact": null
+      },
+      "oldItemPolicyBlockers": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "imageAcquisitionAllowed": false,
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "state": "image-acquisition-policy-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "dumbbell-nebula",
+      "sourceKey": "dumbbell-hubble",
+      "officialPageUrl": "https://science.nasa.gov/asset/hubble/the-dumbbell-nebula-m27/",
+      "officialPageRaw": {
+        "path": "docs/release/v607/nebula-r74-v661/raw/dumbbell-hubble-2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e.html",
+        "bytes": 298800,
+        "sha256": "2c71a81fc1cc9c3c215191fbb48aed2586bbd4c2439a9d440ffaa87865fddb4e"
+      },
+      "title": "The Dumbbell Nebula (M27)",
+      "credit": "NASA and The Hubble Heritage Team (STScI/AURA)",
+      "partnerMarkers": [
+        "STScI",
+        "AURA"
+      ],
+      "pageIdentity": "page-identity-confirmed",
+      "conflictingSources": [
+        {
+          "sourceKey": "dumbbell-spitzer",
+          "pageUrl": "https://science.nasa.gov/photojournal/weighing-in-on-the-dumbbell-nebula/",
+          "issueCodes": [
+            "target-identity-conflict"
+          ]
+        }
+      ],
+      "imageRequestIntent": {
+        "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2003/02/STScI-01EVVJZGXHF8B9N2CT0Y97EXES.tif/jcr:content/renditions/1478x1504.jpg",
+        "listedFormat": "jpg (1.67 MB)",
+        "listedDimensions": null,
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "rawArtifact": null
+      },
+      "oldItemPolicyBlockers": [
+        "source-resolution"
+      ],
+      "imageAcquisitionAllowed": false,
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "state": "image-acquisition-policy-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "bubble-nebula",
+      "sourceKey": "bubble-hubble",
+      "officialPageUrl": "https://science.nasa.gov/asset/hubble/mosaic-image-of-the-bubble-nebula/",
+      "officialPageRaw": {
+        "path": "docs/release/v607/nebula-r74-v661/raw/bubble-hubble-bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477.html",
+        "bytes": 274737,
+        "sha256": "bdc2e94d09a1db467f677894d661821c432be88a877efd01c83ff4630c320477"
+      },
+      "title": "Mosaic Image of the Bubble Nebula",
+      "credit": "NASA and STScI",
+      "partnerMarkers": [
+        "STScI"
+      ],
+      "pageIdentity": "page-identity-confirmed",
+      "conflictingSources": [],
+      "imageRequestIntent": {
+        "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/infographics/STScI-01EVSVFNPZGZSA6505GFJK9SP0.png/jcr:content/renditions/1800x2547.jpg",
+        "listedFormat": "jpg (468.96 KB)",
+        "listedDimensions": null,
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "rawArtifact": null
+      },
+      "oldItemPolicyBlockers": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format"
+      ],
+      "imageAcquisitionAllowed": false,
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "state": "image-acquisition-policy-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "cats-eye-nebula",
+      "sourceKey": "cats-eye-photojournal",
+      "officialPageUrl": "https://science.nasa.gov/photojournal/galactic-dust-bunnies-found-to-contain-carbon-after-all/",
+      "officialPageRaw": {
+        "path": "docs/release/v607/nebula-r74-v661/raw/cats-eye-photojournal-6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80.html",
+        "bytes": 269111,
+        "sha256": "6b4a29a277fc743624dfb2da6de38b3b7aae045179091040985fadcca4b96a80"
+      },
+      "title": "Galactic Dust Bunnies Found to Contain Carbon After All",
+      "credit": "NASA/JPL-Caltech",
+      "partnerMarkers": [],
+      "pageIdentity": "page-identity-confirmed",
+      "conflictingSources": [],
+      "imageRequestIntent": {
+        "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia11/pia11827/PIA11827.jpg",
+        "listedFormat": "JPEG (226.60 KB)",
+        "listedDimensions": "1700 × 1700",
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "rawArtifact": null
+      },
+      "oldItemPolicyBlockers": [
+        "restricted-partner-or-copyright-flag",
+        "source-resolution",
+        "source-format",
+        "target-identity"
+      ],
+      "imageAcquisitionAllowed": false,
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "state": "image-acquisition-policy-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    },
+    {
+      "id": "omega-nebula",
+      "sourceKey": "omega-photojournal",
+      "officialPageUrl": "https://science.nasa.gov/photojournal/celestial-sea-of-stars/",
+      "officialPageRaw": {
+        "path": "docs/release/v607/nebula-r74-v661/raw/omega-photojournal-7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe.html",
+        "bytes": 268393,
+        "sha256": "7ec3a7b268a753e8316dd7d5e01ee2dfd3efc5c19c35af2f8d1af5097b480bfe"
+      },
+      "title": "Celestial Sea of Stars",
+      "credit": "NASA/JPL-Caltech/Univ. of Wisc.",
+      "partnerMarkers": [
+        "Univ. of Wisc."
+      ],
+      "pageIdentity": "page-identity-confirmed",
+      "conflictingSources": [],
+      "imageRequestIntent": {
+        "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia12/pia12071/PIA12071.jpg",
+        "listedFormat": "JPEG (1.10 MB)",
+        "listedDimensions": "2674 × 2176",
+        "requestExecuted": false,
+        "responseCaptured": 0,
+        "rawArtifact": null
+      },
+      "oldItemPolicyBlockers": [
+        "restricted-partner-or-copyright-flag"
+      ],
+      "imageAcquisitionAllowed": false,
+      "imageRequestExecuted": false,
+      "imageResponseCaptured": 0,
+      "rightsSigned": false,
+      "visualSignoff": false,
+      "state": "image-acquisition-policy-hold",
+      "runtimeAdmission": "candidate-only",
+      "hold": true,
+      "notAdmitted": true,
+      "scientificPayloadWriteback": false
+    }
+  ],
+  "gates": {
+    "aLineRuntimeObjects": 36,
+    "betaStarEntries": 24,
+    "betaConstellationEntries": 12,
+    "betaNebulaEntries": 24,
+    "identityReviewsPending": 4,
+    "blockedImageAcquisitions": 5,
+    "rawImagesCapturedForBlockedTargets": 0,
+    "aNebulaRightsSigned": 0,
+    "betaNebulaRightsSigned": 0,
+    "humanVisualSignoffs": 0,
+    "localLongRuns": 2,
+    "physicalMobileRuns": 0,
+    "publicWebReleaseAllowed": false
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "publicWebReleaseApproved": false
+  },
+  "claims": {
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false,
+    "physicalMobile": false,
+    "publicWebReleaseApproved": false
+  },
+  "fingerprint": "69047c3427f1b3f7490af829c8c653120b8cde428785cbb3fdf2111735ad527a",
+  "generatedAt": "2026-10-13T06:04:58.365Z"
+}

@@ -1,0 +1,668 @@
+{
+  "version": "v592-deep-space-alternative-source-visual-analysis-v1",
+  "generatedAt": "2026-08-19T00:00:00Z",
+  "status": "five-runtime-derivation-candidates-three-clean-redundant-alternates-held-one-scientific-overlay-blocked",
+  "policy": {
+    "manualTechnicalVisualJudgement": true,
+    "oneRuntimeRepresentationPerTarget": true,
+    "noInpainting": true,
+    "noSyntheticCoverageFill": true,
+    "noAnnotationRemoval": true,
+    "noObservationClaimForMissingPixels": true,
+    "noNakedEyeColorClaim": true,
+    "mappedColorMustRemainLabeled": true,
+    "scienceNeverLoadsImagePayload": true,
+    "onlyCurrentFocusMayLoadCinematicImage": true,
+    "sourceReceiptLicenseLineagePreserved": true,
+    "runtimeAssetAdmissionGranted": false,
+    "scientificPayloadWriteback": false
+  },
+  "sourceSelectionManifestPath": "scripts/v592-deep-space-alternative-visual-source-selections.json",
+  "sourceSelectionManifestSha256": "37fa2c09afbdfc047cfc6b4da93f3423867a5810506cf1ecf492c3c1f0f40324",
+  "licenseReviewReceiptSha256": "e67c2476e9f6e582a17cea2ebeb439ec12c4c1a72a12dd654a84f6a366c679c7",
+  "contactSheetReceiptSha256": "d3aaa920c127a35cc9858c3ecabcc25285413931ca3a52f11f5e9f65170e0418",
+  "summary": {
+    "analyzedCount": 9,
+    "runtimeDerivationCandidateCount": 5,
+    "cleanRedundantAlternateHeldCount": 3,
+    "scientificOverlayBlockedCount": 1,
+    "runtimeAssetAdmittedCount": 0
+  },
+  "derivableSelectionIds": [
+    "sombrero-galaxy--PIA07899",
+    "whirlpool-galaxy--PIA23005",
+    "bodes-galaxy--PIA09337",
+    "southern-pinwheel-galaxy--PIA10373",
+    "pleiades--PIA09263"
+  ],
+  "derivableTargets": [
+    "sombrero-galaxy",
+    "whirlpool-galaxy",
+    "bodes-galaxy",
+    "southern-pinwheel-galaxy",
+    "pleiades"
+  ],
+  "heldSelectionIds": [
+    "southern-pinwheel-galaxy--PIA10374",
+    "pleiades--PIA09262",
+    "pleiades--PIA13121"
+  ],
+  "blockedSelectionIds": [
+    "cigar-galaxy--PIA23010"
+  ],
+  "analyses": [
+    {
+      "selectionId": "sombrero-galaxy--PIA07899",
+      "target": "sombrero-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA07899",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA07899/PIA07899~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/sombrero-galaxy--PIA07899.jpg",
+      "sourceBytes": 219962,
+      "sourceSha256": "ae25ac6e5377724e4883027416a3983cfeb07418f6a18bddde3000d291d0772f",
+      "sourceDimensions": [
+        3000,
+        1681
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech/University of Arizona;<br .>Figures 1 and 2: NASA/JPL-Caltech/University of Arizona/STScI;<br .>Figure 3: NASA/STScI/AURA;<br .>Animation: NASA/JPL-Caltech/University of Arizona/STScI",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "a57945cc736964a127918d375cca0a3fe1e448392b35d2b575ca424a062974fc",
+      "sourceAcquisitionReceiptSha256": "b3e3394c4aebb17c2f66c02856edee89c69fd3a296f77d279009dc16a08f11d2",
+      "sourceLicenseReviewReceiptSha256": "e67c2476e9f6e582a17cea2ebeb439ec12c4c1a72a12dd654a84f6a366c679c7",
+      "cropPolicy": "full-clean-observation-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 3000,
+        "height": 1681
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          430
+        ],
+        "meanLuma": 34.927733,
+        "blackPixelFraction": 0.006640625,
+        "brightNeutralPixelFraction": 0.000015141
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "rationale": "clean centered Spitzer/Hubble Sombrero field without captions, callouts, inset panels or uncovered survey holes; mapped infrared/visible color remains labeled in Cinematic",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": true,
+      "runtimeProfile": "compact-1536-768",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 2,
+        "fullMobileDepthSlices": 1,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "selectionId": "cigar-galaxy--PIA23010",
+      "target": "cigar-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23010",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA23010/PIA23010~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/cigar-galaxy--PIA23010.jpg",
+      "sourceBytes": 132381,
+      "sourceSha256": "b33e6849aa07beae5251c64eeeb794d7819e543d2593c3e82d8292871e4413ef",
+      "sourceDimensions": [
+        2412,
+        1713
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/SOFIA/E. Lopez-Rodiguez; NASA/Spitzer/J. Moustakas et al.",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "80b4e0aa9969b200bb1bf8b8589bb60ec0180353bbd6cca2fb85fdd13bcdd978",
+      "sourceAcquisitionReceiptSha256": "8b33db2344ed28d0ddb302346f9c960f6e86b21fe81953ba4c9301932353d3c5",
+      "sourceLicenseReviewReceiptSha256": "e67c2476e9f6e582a17cea2ebeb439ec12c4c1a72a12dd654a84f6a366c679c7",
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2412,
+        "height": 1713
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          545
+        ],
+        "meanLuma": 14.959991,
+        "blackPixelFraction": 0.614769687,
+        "brightNeutralPixelFraction": 0.000038226
+      },
+      "visualInspectionDecision": "blocked-scientific-vector-overlay",
+      "visualInspection": {
+        "rationale": "source contains a dense polarization magnetic-field vector overlay across M82; retain the acquired source and metadata as negative evidence without annotation removal or runtime derivation",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": false,
+      "runtimeProfile": null,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "selectionId": "whirlpool-galaxy--PIA23005",
+      "target": "whirlpool-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA23005",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA23005/PIA23005~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/whirlpool-galaxy--PIA23005.jpg",
+      "sourceBytes": 228760,
+      "sourceSha256": "15c0bccfa39c4e7b2f82a170f0025d01482dfc9453b1119a94c6821c0d6fc804",
+      "sourceDimensions": [
+        2500,
+        2500
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech, IPAC",
+      "sourceObservationEncoding": {
+        "bands": [
+          "x-ray",
+          "visible"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "3686fd2bdb2d1dffc4a5b5c0678a29e84e3759052ad33f8acdf399b8eb7c3f92",
+      "sourceAcquisitionReceiptSha256": "6233e73d95bc2e30edced4a926fe35431246274b869543a1ad66000c4d43c675",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "full-clean-observation-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2500,
+        "height": 2500
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          768
+        ],
+        "meanLuma": 16.597057,
+        "blackPixelFraction": 0.63756307,
+        "brightNeutralPixelFraction": 0.000037299
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "rationale": "clean M51 field without captions, callouts or inset panels; retain the full mapped X-ray/UV/optical/IR composition",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": true,
+      "runtimeProfile": "standard-2048-1024",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "selectionId": "bodes-galaxy--PIA09337",
+      "target": "bodes-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA09337",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA09337/PIA09337~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/bodes-galaxy--PIA09337.jpg",
+      "sourceBytes": 595604,
+      "sourceSha256": "4e7c96fb8351b6dfe0f4d78dbad9727a21fc1ed9ec13a1acc13df98e167656d7",
+      "sourceDimensions": [
+        2250,
+        2550
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech/Harvard-Smithsonian CfA",
+      "sourceObservationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "becfd448fa9b0d8f5f3fbd5e039e719d1b73cc82b5183eedc7faed11a6ce94b0",
+      "sourceAcquisitionReceiptSha256": "ab7bace535e94aace3d58eebd3ea159d24dee4963f855ffbb6c485a6eddf8682",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "full-clean-observation-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2250,
+        "height": 2550
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          678,
+          768
+        ],
+        "meanLuma": 32.93526,
+        "blackPixelFraction": 0.026181861,
+        "brightNeutralPixelFraction": 0.000708656
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "rationale": "clean M81 field without publication borders or overlays; full frame preserves the disk and surrounding stellar field",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": true,
+      "runtimeProfile": "standard-2048-1024",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "selectionId": "southern-pinwheel-galaxy--PIA10373",
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA10373",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA10373/PIA10373~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/southern-pinwheel-galaxy--PIA10373.jpg",
+      "sourceBytes": 980761,
+      "sourceSha256": "b6e406efd64e675ac943faaeb12335439c8b59519164cb786da8b53857a132b3",
+      "sourceDimensions": [
+        2852,
+        2852
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech/VLA/MPIA",
+      "sourceObservationEncoding": {
+        "bands": [],
+        "colorPolicy": "visible-or-line-mapped-color-review-required",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "146bc55dad1b3389699c738a4331d8af15cd00a240f365ad65f247744383edcb",
+      "sourceAcquisitionReceiptSha256": "090df818365147d28591dcad294f0db0e6134384d55a1200119f885a02f6c9aa",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "manual-inscribed-observation-crop",
+      "crop": {
+        "left": 476,
+        "top": 476,
+        "width": 1900,
+        "height": 1900
+      },
+      "retainedSourcePixelFraction": 0.443821319,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          768
+        ],
+        "meanLuma": 27.788655,
+        "blackPixelFraction": 0.029764811,
+        "brightNeutralPixelFraction": 0
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "rationale": "deterministic square wholly inside the circular GALEX footprint; removes uncovered black corners without repairing or inventing pixels",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": true,
+      "runtimeProfile": "standard-2048-1024",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "selectionId": "southern-pinwheel-galaxy--PIA10374",
+      "target": "southern-pinwheel-galaxy",
+      "category": "galaxy",
+      "nasaId": "PIA10374",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA10374/PIA10374~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/southern-pinwheel-galaxy--PIA10374.jpg",
+      "sourceBytes": 1109074,
+      "sourceSha256": "02f716d0ce58e3ea29436f1e2fc5a0312c87daddea86cf31d8d614a0c0973131",
+      "sourceDimensions": [
+        2852,
+        2852
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech/MPIA",
+      "sourceObservationEncoding": {
+        "bands": [
+          "ultraviolet"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "de5b19c1e725ec5a5f74123f4cc75faea2bb330ea569542ed7e80fa0b8cab237",
+      "sourceAcquisitionReceiptSha256": "613953a0c92040a032d456d3492374c9b7f5afa587e6eef6cccb1cbee11c0535",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2852,
+        "height": 2852
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          768
+        ],
+        "meanLuma": 17.540549,
+        "blackPixelFraction": 0.278149075,
+        "brightNeutralPixelFraction": 0.000411987
+      },
+      "visualInspectionDecision": "held-redundant-mapped-color-alternate",
+      "visualInspection": {
+        "rationale": "clean ultraviolet alternate retained in source cache; PIA10373 is the single runtime representation for the target",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": false,
+      "runtimeProfile": null,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "selectionId": "pleiades--PIA09262",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA09262",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA09262/PIA09262~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/pleiades--PIA09262.jpg",
+      "sourceBytes": 985582,
+      "sourceSha256": "0adeeaffba9a1f72593d361be7abfb919c1681951a0d775d5d30a21c8f3638b5",
+      "sourceDimensions": [
+        2855,
+        2855
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "03a239b95705846602f4eae508383282d9fcbd4049c0cef1faa5532b6ecfb493",
+      "sourceAcquisitionReceiptSha256": "8f7fe7b061b0f9162d7ef58352d2636f683f8b2fad2832f01979056f01b32f0c",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2855,
+        "height": 2855
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          768
+        ],
+        "meanLuma": 65.412238,
+        "blackPixelFraction": 0,
+        "brightNeutralPixelFraction": 0.000878228
+      },
+      "visualInspectionDecision": "held-redundant-mapped-color-alternate",
+      "visualInspection": {
+        "rationale": "clean infrared alternate retained; PIA09263 provides clearer multi-scale dust and bright-star structure for the single runtime representation",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": false,
+      "runtimeProfile": null,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    },
+    {
+      "selectionId": "pleiades--PIA09263",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA09263",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA09263/PIA09263~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/pleiades--PIA09263.jpg",
+      "sourceBytes": 784831,
+      "sourceSha256": "dc140c2f33a37e40a85bfbcd2bd9bd1a10703902986e8937ac7dfc989300dfa9",
+      "sourceDimensions": [
+        2855,
+        2855
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "57df0ef0657105079fe471003dda46c3450b4eb8fdbdf714d72ca000ef186a99",
+      "sourceAcquisitionReceiptSha256": "0526c7237a47b9f7d60b861ba6098606fedf2f118a0817ca8c67e7b648276d5f",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "full-clean-observation-frame",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 2855,
+        "height": 2855
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          768
+        ],
+        "meanLuma": 91.262754,
+        "blackPixelFraction": 0,
+        "brightNeutralPixelFraction": 0.000137329
+      },
+      "visualInspectionDecision": "derive-runtime-candidate",
+      "visualInspection": {
+        "rationale": "clean centered Spitzer field with strong bright-star hierarchy and dust structure, without captions or inset panels",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": true,
+      "runtimeProfile": "standard-2048-1024",
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": {
+        "fullDesktopDepthSlices": 3,
+        "fullMobileDepthSlices": 2,
+        "liteDepthSlices": 1,
+        "presentationOnly": true,
+        "scienceImagePayload": false,
+        "syntheticScientificData": false
+      }
+    },
+    {
+      "selectionId": "pleiades--PIA13121",
+      "target": "pleiades",
+      "category": "cluster",
+      "nasaId": "PIA13121",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13121/PIA13121~orig.jpg",
+      "sourcePath": "source-cache/v592/deep-space/alternative-visual/pleiades--PIA13121.jpg",
+      "sourceBytes": 1676722,
+      "sourceSha256": "80e948deed2863cebdb92c271bfe261997ee6b7b154c1f5ecf6e0ec5509c3256",
+      "sourceDimensions": [
+        4007,
+        3061
+      ],
+      "sourceColorSpace": "srgb",
+      "sourceLicense": "NASA-media-guidelines-public-use-candidate-with-item-credit-and-no-restricted-partner-flag",
+      "sourceLicenseUrl": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+      "sourceCredit": "NASA/JPL-Caltech/UCLA",
+      "sourceObservationEncoding": {
+        "bands": [
+          "infrared"
+        ],
+        "colorPolicy": "mapped-or-composite-color-not-naked-eye",
+        "nakedEyeRepresentationClaimed": false,
+        "scienceModePolicy": "catalog-marker-coordinate-angular-extent-and-source-state-only",
+        "cinematicModePolicy": "presentation-only-observation-image-with-band-label"
+      },
+      "metadataAcquisitionReceiptSha256": "a030d215ae477911900ec93623a7b3827c11cae4bec817515cfebcc8799aad4c",
+      "sourceAcquisitionReceiptSha256": "dc9896c660a27c02e5f63616b1c6b4882d9a43fb4fe24b71f5ceef39cdddf18f",
+      "sourceLicenseReviewReceiptSha256": "88bdfdc7162364b56c53dfd25d801c4625ba9adadaf6d969af45a369097132da",
+      "cropPolicy": "no-runtime-crop",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "width": 4007,
+        "height": 3061
+      },
+      "retainedSourcePixelFraction": 1,
+      "metrics": {
+        "analysisDimensions": [
+          768,
+          587
+        ],
+        "meanLuma": 38.295481,
+        "blackPixelFraction": 0,
+        "brightNeutralPixelFraction": 0.000113128
+      },
+      "visualInspectionDecision": "held-redundant-mapped-color-alternate",
+      "visualInspection": {
+        "rationale": "clean WISE alternate retained; not loaded concurrently with the selected Spitzer representation",
+        "contactSheetPath": "tmp/v592-deep-space-alternative-contact-sheet.webp",
+        "contactSheetSha256": "a90cc77d7674bb2caed990433af793a567a7b0c56efd999863fc6ee77ce0c706",
+        "prohibitedOperations": [
+          "annotation-removal",
+          "inpainting",
+          "content-aware-fill",
+          "synthetic-coverage-fill",
+          "synthetic-upscale-as-observation"
+        ]
+      },
+      "runtimeDerivationCandidate": false,
+      "runtimeProfile": null,
+      "runtimeAssetAdmitted": false,
+      "depthImpostorPolicy": null
+    }
+  ],
+  "receiptSha256": "0fd04c4143c3ec8a97ae50e399f73e9298217ec2180de7b1bbc3249aba6c31fd"
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "mainline-a-r66-web-code-change-v648",
+  "round": "R66-web-only-continuation",
+  "comparisonBaseline": {
+    "preservedBuild": ".next-mainline-a-r66-20261007-v647web02",
+    "sourceSha256": "8136bf33ce9a75d1f708b9a67c3f87cbfd8148c9819ce40d004fb668bf57d00d",
+    "priorCumulativeR66LowerBound": 3085
+  },
+  "currentBuild": {
+    "buildId": "8XBcnLcHwAPGkydjoHvOV",
+    "sourceSha256": "4f5a5614bacd1e7ebf7111a3f575083691cfdad4c40fcda8ce1044dd8cc95ab9"
+  },
+  "countMethod": "New and changed production/tool lines were counted against the preserved V647 source; empty lines and standalone comments were excluded. Replacement lines are counted as modified, and the remaining added lines as new. Tests, package scripts, credits, generated receipts, images and documentation are excluded.",
+  "effectiveCode": {
+    "newStandaloneProductionToolLines": 1251,
+    "newLinesInModifiedProductionFiles": 65,
+    "newLines": 1316,
+    "modifiedLines": 26,
+    "totalEffectiveChangedLines": 1342,
+    "minimumRequired": 500,
+    "minimumMet": true,
+    "cumulativeR66LowerBound": 4427,
+    "newTestLinesExcludedAtLeast": 512
+  },
+  "newProductionToolFiles": [
+    "app/lib/mainlineAWebNebulaPreviewV648.ts",
+    "scripts/verify-mainline-a-web-nebula-rights-v648.mjs",
+    "scripts/verify-mainline-a-web-nebula-http-v648.mjs",
+    "scripts/capture-mainline-a-web-nebula-browser-v648.mjs",
+    "scripts/capture-mainline-a-web-performance-v648.mjs",
+    "scripts/probe-mainline-a-web-nebula-search-v648.mjs",
+    "scripts/verify-mainline-a-web-nebula-browser-v648.mjs",
+    "scripts/build-mainline-a-web-candidate-v648.mjs"
+  ],
+  "modifiedProductionFiles": [
+    "app/lib/celestialObjectContractV607.ts",
+    "app/data/mainlineAMetadataV607.ts",
+    "app/data/mainlineAAssetCoverageV607.ts",
+    "app/lib/mainlineANebulaSceneV607.ts",
+    "app/components/CelestialObjectPassportPanel.tsx",
+    "app/components/MainlineANebulaScenePortraitV607.tsx",
+    "app/components/MainlineANebulaPortraitV607.tsx"
+  ],
+  "substantiveTestFiles": [
+    "app/lib/mainlineAWebNebulaPreviewV648.test.ts",
+    "app/components/MainlineANebulaPortraitV648.test.tsx",
+    "scripts/verify-mainline-a-web-nebula-rights-v648.test.mjs",
+    "scripts/verify-mainline-a-web-nebula-http-v648.test.mjs",
+    "scripts/verify-mainline-a-web-nebula-browser-v648.test.mjs",
+    "scripts/build-mainline-a-web-candidate-v648.test.mjs",
+    "app/lib/mainlineANebulaSceneTextureV607.test.ts"
+  ],
+  "behavior": [
+    "The twelve local A-line nebula textures remain available as candidate previews while the current runtime reports zero human rights signoffs and zero release admissions.",
+    "Static, HTTP, browser, visual and short performance observations bind to one preserved production build and reject forged rights promotion or mismatched image bytes.",
+    "The V648 candidate package pins ten evidence receipts and seven preserved build files while retaining blocked release status and an explicit current-source long-run gap.",
+    "The canonical V622 manifest and historical generated asset digests remain unchanged; historical cleared source labels do not grant current release rights."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "version": "v591-mars-visual-asset-acquisition-receipt-v1",
+  "status": "committed-single-request-no-retry",
+  "asset": {
+    "id": "mars-mola-label-source-v591",
+    "body": "mars",
+    "role": "height-metadata",
+    "sourceUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.lbl",
+    "finalUrl": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg016/megt90n000eb.lbl",
+    "redirectChain": [],
+    "httpStatus": 200,
+    "mediaType": "text/plain",
+    "outputPath": "source-cache/celestial-convergence-v591/mars/megt90n000eb.lbl",
+    "bytes": 4813,
+    "sha256": "0f2bd919dddb86d83489a008d3007bd915507c892a0f22ce49ad5dd5d2fc7d8a",
+    "license": {
+      "id": "NASA-PDS-public-domain",
+      "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_3001/"
+    },
+    "observationIdentity": "MGS MOLA MEGDR 16 pixels/degree PDS3 label",
+    "observationLimit": "The label supplies raster dimensions, signed big-endian encoding, missing-value semantics and elevation units for deterministic presentation derivatives.",
+    "presentationOnly": true,
+    "labelContract": {
+      "lineSamples": 5760,
+      "lines": 2880,
+      "sampleBits": 16,
+      "sampleType": "MSB_INTEGER",
+      "missingConstant": null,
+      "scalingFactor": "1",
+      "offset": "1440.5"
+    }
+  },
+  "receiptSha256": "f3a96a7ddae7ad67e547d2a1f035c5d907125d9dbdf04a331406ff1976ca7f63"
+}

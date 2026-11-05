@@ -1,0 +1,20 @@
+{
+  "round": 24,
+  "date": "2026-09-13",
+  "title": "Twelve-star contact sheet binding",
+  "status": "verified-static",
+  "scope": {
+    "artifact": "docs/release/v607/visuals/stellar-portraits-v607.png",
+    "artChange": "Added a regression contract that binds the static contact sheet object order, canvas dimensions and render receipt to the current twelve-star roster."
+  },
+  "validation": {
+    "vitest": "mainlineA4PortraitRenderV607.test.ts: 1/1",
+    "eslint": "passed",
+    "contactSheet": "12 portraits, 1160x1540, >100KB, receipt SHA format verified",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "This is a static render contract; it does not replace browser interaction, performance or device viewport evidence.",
+    "Beta remains open at 24 runtime-admitted hero stars and 24 rights-cleared nebulae."
+  ]
+}

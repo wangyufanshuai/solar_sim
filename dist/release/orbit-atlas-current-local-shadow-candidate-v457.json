@@ -1,0 +1,45 @@
+{
+  "version": "orbit-atlas-current-local-shadow-candidate-v457",
+  "generatedAt": "2026-07-30T00:00:00Z",
+  "status": "v457-promotion-gate-fail-closed-fits-structure-qualified-detector-and-dense-blocked-science-cinematic-v7-implemented-heavy-qualification-not-run",
+  "formalProductPointer": "v263",
+  "formalProductPointerAdvanced": false,
+  "localShadowDefaultApplied": false,
+  "publicDeploymentBlocked": true,
+  "capabilities": {
+    "v456SparseCoordinateEnvelope": "qualified-coordinate-only",
+    "v457FitsHeader": "qualified",
+    "v457ProvenanceGraph": "qualified",
+    "v457MeasuredDetectorInputs": "blocked-0-of-6",
+    "v457DetectorPixelValues": "blocked",
+    "v457DenseAggregate": "incomplete-0-of-49",
+    "v457SelectionBias": "unquantified",
+    "v457BrowserQualification": "not-run",
+    "v457VisualMatrix": "not-run",
+    "v457Soak": "not-run",
+    "v457RtxWebGpu": "not-run",
+    "v457ScienceProductPromotion": "blocked-fail-closed",
+    "v457ScienceCinematicV7": "implemented-awaiting-browser-qualification"
+  },
+  "promotion": {
+    "promotionAllowed": false,
+    "fitsWriteAllowed": false,
+    "pngWriteAllowed": false,
+    "blockerIds": [
+      "measured-detector-inputs",
+      "detector-pixel-values",
+      "dense-aggregate",
+      "selection-bias",
+      "browser",
+      "visual-matrix",
+      "soak",
+      "rtx-webgpu"
+    ]
+  },
+  "evidence": {
+    "path": "dist/science/orbit-atlas-shadow-v457-evidence.json",
+    "fileSha256": "27fdd4188b8c571858320a7a379c5b15f44e493e2b887042e4e438af066773ec",
+    "canonicalSha256": "345b68ae963a60adb305a0ed1bd59810a3f8c87fd0e726401adcbdf055f09dc6"
+  },
+  "pointerSha256": "f7737a539aaf66bb56308b76bcaeadc4cb53810e6dc9b2f8ef169f34ac8766d2"
+}

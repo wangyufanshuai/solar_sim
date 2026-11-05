@@ -1,0 +1,68 @@
+{
+  "version": "v595-timelike-kerr-web-admission-receipt-v1",
+  "generatedAt": "2026-08-27T00:00:00Z",
+  "status": "passed-source-bound-compact-admission-not-promoted",
+  "hostBase": {
+    "version": "v594",
+    "formalProductPointer": "v263",
+    "sourceManifestSha256": "6599398a6fab78a1367b234d3a3e9ed428027879a1df4838f76b97ff279b981f",
+    "candidateManifestSha256": "e92484940ba9a812d0936bbd67b29c4cb3c3ac20d9477cd04a949e35efd33bad",
+    "deploymentId": "v594-6599398a6fab-e92484940ba9",
+    "binding": "sealed-v594-base-for-additive-v595-source-input"
+  },
+  "input": {
+    "manifestSha256": "0b4d72b0313b6ba5bcdd49a0fdd20dc2e17a137a76902e55d530da08d46c3e63",
+    "summarySha256": "59b46d0f0a3d18b34c5bb96003215976e75596177855f73ed4dd2f1dd02f6d69",
+    "sourceSha256": "23e775498e009cd5a458df000e7ae20c3e416dc7065328af4cab922b5c36a06f",
+    "productFiles": [
+      {
+        "bytes": 29325,
+        "path": "timelike-kerr-summary-v595.json",
+        "sha256": "1edfe5f0a53e0bc5e0de4f675abc4861a49ccf1b0ef443c94a5868a4b4526329"
+      },
+      {
+        "bytes": 292966,
+        "path": "timelike-kerr-trajectories-v595.h5",
+        "sha256": "140e539035923a8b27ddda6e69aa4120323bb63c5b31d6c8cdf5622280a509f7"
+      },
+      {
+        "bytes": 11520,
+        "path": "timelike-kerr-invariants-v595.fits",
+        "sha256": "f81294756eb49a5050f4e4ea5aba6b0d42ba00120b455ab35030c8ed05028aa8"
+      }
+    ]
+  },
+  "validation": {
+    "manifestCanonicalSeal": true,
+    "summaryPythonCanonicalSeal": true,
+    "sourceReceiptCanonicalSeal": true,
+    "productFileHashes": true,
+    "jsonHdf5FitsSemantics": true,
+    "exactFixtureAndAnchorSets": true,
+    "numericThresholds": true,
+    "authorityBoundary": true,
+    "writesPerformedByExternalVerifier": false
+  },
+  "output": {
+    "path": "public/data/post-v593-stellar-relativity/timelike-kerr-reference-v595.json",
+    "bytes": 14032,
+    "sha256": "519fad3fa98bbbdffc51f0e65d7364ee14db98daf60a4d4fd0a803e92417b56d",
+    "admissionSha256": "52123a1ee9f0d08526176964815b9679c578590bdced6cec4891bc4cb3e61e0d"
+  },
+  "authority": {
+    "defaultWebKernel": "legacy-eih-1pn",
+    "v2Mode": "shadow-only",
+    "referenceCandidateEvidence": true,
+    "formalEvidence": false,
+    "promotion": "none",
+    "scientificAuthorityGranted": false,
+    "measuredAuthorityGranted": false,
+    "gpuAuthorityGranted": false,
+    "radiativeTransferAuthorityGranted": false,
+    "grmhdAuthorityGranted": false,
+    "productionAuthorityGranted": false,
+    "webTeachingKernelModified": false,
+    "scientificPayloadMutationAllowed": false
+  },
+  "receiptSha256": "98777b240f911dbcf3c21b4a6d067d42a03f31fd8cf2fce9edd2b596e219656a"
+}

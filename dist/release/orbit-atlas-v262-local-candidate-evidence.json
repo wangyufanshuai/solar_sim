@@ -1,0 +1,473 @@
+{
+  "version": "v262-local-candidate-evidence-v1",
+  "generatedAt": "2026-07-19T13:46:35.469Z",
+  "science": {
+    "status": "science-failed-shadow-retained",
+    "defaultKernel": "legacy-eih-1pn",
+    "runtimePromotionApplied": false,
+    "v8": {
+      "status": "failed",
+      "completedShards": 3,
+      "plannedShards": 49,
+      "failedShardIndex": 3,
+      "noAutomaticRetry": true,
+      "codeSha256": "0debb41b96f001f92f498ef6a36ceff77ede7f0dd2bdbe3c6e9db3dfbf6090a8",
+      "screenSha256": "08f42a50bc787df62dc018ee56b5f7b58065dcafe2e2a3703e3e67f3e6d94037",
+      "progressSha256": "b61647e98b0b9719449afdb8dbba8daaa309812ab150e48e716a80205fe6d582"
+    },
+    "weakFieldCopiedWithoutMutation": {
+      "checkpointCount": 3,
+      "bodyCount": 12,
+      "perBodyRegressionCount": 15,
+      "regressionsByCheckpoint": {
+        "+30d": 4,
+        "+365d": 4,
+        "+10y": 7
+      },
+      "confirmedRegressionCount": 10,
+      "attributionCounts": {
+        "cross-solver-regression-confirmed": 7,
+        "inconclusive": 8
+      },
+      "effectIsolationComplete": false
+    },
+    "stmCopiedWithoutMutation": {
+      "evidenceVersion": "v229-relativity-variational-stm-evidence-v12",
+      "profile": "smoke",
+      "shortGatePassed": false,
+      "deterministicRerunPassed": true,
+      "releaseQualificationAvailable": false,
+      "effectiveRank": 66,
+      "integratedStateAndPhiDimension": 4824,
+      "holdoutDays": [
+        365
+      ],
+      "fitIterations": 1,
+      "gatePassed": false
+    },
+    "sourceEvidence": {
+      "currentPath": "dist/release/orbit-atlas-current-evidence-v233.json",
+      "currentSha256": "db80197791bc5a6ecbca26ddeba0cd5088217d5d5fcabcd8711a1b06f887d660",
+      "campaignPath": "dist/release/orbit-atlas-research-campaign-v13.json",
+      "campaignSha256": "52b625b5e004dd1a0900554e8c77b0e3775ab8d3458cf9774e900bb061b94467"
+    }
+  },
+  "contracts": {
+    "legacyRootAttributes": 603,
+    "legacyRootKeySha256": "ac6470fcc517e1b2ba2c6618f530f7af57d1a0caa52fffae0af7232f912f9867",
+    "evidenceLedgerClaims": 84,
+    "evidenceLedgerCanonicalSha256": "e7d7e2984983714d80cc726e621b7d4fdb171622917ff8e052c57836d0a18dec",
+    "singleCanvas": true,
+    "workerPhysicsMutation": "not-applied",
+    "eihOnePnMutation": "not-applied"
+  },
+  "product": {
+    "v256": {
+      "status": "ready",
+      "compactDomains": [
+        "scene",
+        "catalog",
+        "observer",
+        "analysis",
+        "evidence",
+        "performance",
+        "release"
+      ],
+      "topLevelScriptCount": 45,
+      "legacyCommandCount": 353
+    },
+    "v257": {
+      "status": "ready",
+      "searchableRows": 1224219,
+      "renderableRows": 1221242,
+      "spatial3dRows": 758955,
+      "scheme": "NESTED",
+      "orders": [
+        3,
+        5,
+        6
+      ],
+      "archive": {
+        "url": "data/catalog-healpix-v8/catalog-v8.bin",
+        "sha256": "d95af95cded3e608bcadbae4b02c157a25034fc646a795aa79e5b1cea25d1066",
+        "byteLength": 39393216,
+        "headerBytes": 128,
+        "recordBytes": 32,
+        "recordsOffset": 313472
+      },
+      "index": {
+        "url": "data/catalog-healpix-v8/catalog-v8.index.bin",
+        "sha256": "87bcd28449ab77e95594203b18a247bcb5cfaace57735b4c747d8d463eb869b4",
+        "byteLength": 1376256,
+        "entryBytes": 28,
+        "cellCount": 49152
+      },
+      "activeBudgets": {
+        "mobile": [
+          8000,
+          750
+        ],
+        "balanced": [
+          32000,
+          2000
+        ],
+        "dense": [
+          96000,
+          4000
+        ],
+        "closeupMaximum": 1200
+      },
+      "fallbacks": [
+        "data/gaia-dr3-nearby-46000-v255.json",
+        "data/gaia-dr3-bright-5000.json"
+      ]
+    },
+    "v258": {
+      "status": "ready",
+      "engine": "astronomy-engine@2.1.19",
+      "durationsHours": [
+        24,
+        48,
+        72
+      ],
+      "fixtureMatrixCount": 100,
+      "weather": {
+        "optional": true,
+        "locationPrecisionDeg": 0.01,
+        "cacheMinutes": 30,
+        "canonical": false,
+        "automaticRetry": false
+      }
+    },
+    "v259": {
+      "status": "ready-with-negative-completeness-evidence",
+      "frozenSubsetRows": 200000,
+      "validCandidateRows": 259853,
+      "qualityCounts": {
+        "gold": 30028,
+        "silver": 169972,
+        "limited": 0
+      },
+      "output": {
+        "path": "dist/gaia-science-v8/gaia-science-v8.sqlite",
+        "bytes": 78626816,
+        "sha256": "ad899ccac3e95ef7702b071694da257ea41af963155c8e686c6daed4c2ba795a"
+      },
+      "monteCarlo": {
+        "samples": 4096,
+        "seed": 2590004096
+      },
+      "liveQueryCanonical": false,
+      "atlasSelectionAvailable": true,
+      "gaiaSurveyCompleteness": {
+        "status": "blocked",
+        "result": "unavailable",
+        "fallbackApplied": false
+      }
+    },
+    "v260": {
+      "status": "ready-local-candidate",
+      "scaleBands": [
+        "solar",
+        "stellar",
+        "galactic",
+        "local-group",
+        "near-universe"
+      ],
+      "openNgc": {
+        "rows": 13962,
+        "output": {
+          "path": "data/openngc-v260/openngc-v260.json.gz",
+          "bytes": 379233,
+          "sha256": "cd208d02ab7ad585d79d005a50c322d38d61d2db4f4b56c63f4a83d5e2e40a10"
+        },
+        "license": {
+          "id": "CC-BY-SA-4.0",
+          "url": "https://raw.githubusercontent.com/mattiaverga/OpenNGC/master/LICENSES/CC-BY-SA-4.0.txt",
+          "sha256": "cde7883b9050a1104f4ac19a1572aafd6e5d7323b68351aaf51fbf4beba54966",
+          "attributionRequired": true
+        }
+      },
+      "cosmicflows": {
+        "rows": 55877,
+        "output": {
+          "path": "dist/local-candidate/cosmicflows4-v260/cosmicflows4-v260.csv.gz",
+          "bytes": 2531909,
+          "sha256": "774e11c0b5385247d19c47823c4832e8c372f90b2a853916ae2976e803a07e16"
+        },
+        "publicDeploymentBlocked": true,
+        "licenseStatus": "unconfirmed-for-public-bundling"
+      }
+    },
+    "v261": {
+      "status": "ready-local-ab",
+      "legacy": "legacy-v9",
+      "candidate": "science-cinematic-v256",
+      "candidateAppliedAsDefault": false,
+      "physicsMutation": "not-applied",
+      "kerrScienceMutation": "not-applied",
+      "launchDynamicsMutation": "not-applied"
+    }
+  },
+  "validation": {
+    "focused": {
+      "status": "passed",
+      "files": 12,
+      "tests": 34
+    },
+    "typescript": "passed",
+    "eslint": {
+      "status": "passed",
+      "errors": 0,
+      "warnings": 85
+    },
+    "mainRegression": {
+      "status": "passed",
+      "files": 107,
+      "tests": 674
+    },
+    "rust": {
+      "status": "passed",
+      "tests": 3,
+      "profiles": [
+        "dev",
+        "test",
+        "release"
+      ]
+    },
+    "standaloneBuild": {
+      "status": "passed",
+      "buildId": "19OANocf2iaAVsGCShYAk"
+    },
+    "liteBuild": {
+      "status": "passed",
+      "buildId": "DzzBBVcnvFvwFetVCLlH-"
+    },
+    "contentPacks": {
+      "status": "passed",
+      "packCount": 6,
+      "verifiedFiles": 815,
+      "manifestFiles": 815,
+      "failureCount": 0,
+      "report": "dist/science/content-pack-integrity-v232.json"
+    },
+    "bundleTargetBytes": 604160,
+    "baselineCanvasReadyBytes": {
+      "standalone": 594330,
+      "lite": 594330
+    },
+    "measuredCanvasReadyBytes": {
+      "standalone": 600370,
+      "lite": 600371
+    },
+    "bundleGatePassed": true,
+    "browserQa": {
+      "status": "blocked-fresh-matrix-not-reclosed",
+      "dedicatedGates": {
+        "v262Standalone": "passed",
+        "v262LiteBoundary": "passed",
+        "v262MobileAb": "passed",
+        "visualMatrix": "passed"
+      },
+      "fullFresh": {
+        "status": "blocked",
+        "firstAttempt": {
+          "elapsedMs": 604039,
+          "result": "outer-timeout-no-reporter-summary"
+        },
+        "finalAttempt": {
+          "elapsedMs": 2704025,
+          "result": "outer-timeout-no-reporter-summary"
+        },
+        "completedAcceptanceArtifacts": {
+          "desktop": true,
+          "mobile": true,
+          "reporterPassClaimed": false
+        },
+        "misroutedProfileFailures": [
+          "vercel-lite-tests-executed-against-standalone-full",
+          "lite-cosmicflows-451-test-received-standalone-200"
+        ],
+        "shortWindowSoakNegativeEvidence": {
+          "measuredCycles": 10,
+          "heapSlopeBytesPerCycle": 320873.62424242427,
+          "heapSlopeLimitBytesPerCycle": 262144,
+          "passed": false
+        },
+        "correctedHarness": {
+          "server": ".next-atlas-standalone-current",
+          "trace": "on-first-retry",
+          "dedicatedProfileTestsExcluded": true,
+          "listedTestsBefore": 50,
+          "listedTestsAfter": 22,
+          "rerunAfterCorrection": true,
+          "correctedAttempt": {
+            "status": "failed",
+            "command": "npm run test:atlas:browser:fresh",
+            "buildId": "19OANocf2iaAVsGCShYAk",
+            "files": 11,
+            "tests": 22,
+            "projects": [
+              "desktop-chrome-1440x900",
+              "mobile-chrome-390x844"
+            ],
+            "workers": 1,
+            "trace": "on-first-retry",
+            "outerLimitMinutes": 45,
+            "exitCode": 1,
+            "reportedDuration": "13.8m",
+            "results": {
+              "passed": 20,
+              "skipped": 1,
+              "failed": 1
+            },
+            "failedTest": {
+              "project": "mobile-chrome-390x844",
+              "file": "tests/atlas-browser/atlas-v262-local-candidate.spec.ts",
+              "line": 53,
+              "title": "v262 streams real catalogs and exposes local Legacy/Candidate research A/B",
+              "error": "locator.click timed out after 420000ms because the desktop experience-mode control exists in the mobile DOM but is hidden",
+              "classification": "test-viewport-routing-not-product-or-science-failure"
+            },
+            "artifacts": [
+              {
+                "path": "dist/science/browser-fresh-v262-corrected-attempt/error-context.md",
+                "bytes": 10822,
+                "sha256": "33cc753c766094a1294e5934cf7c436da9539e02e653eaddc7067bbf4b01de46"
+              },
+              {
+                "path": "dist/science/browser-fresh-v262-corrected-attempt/test-failed-1.png",
+                "bytes": 298701,
+                "sha256": "e8429b3ad6613c2d3734844d4d2d0ded84713a7919acd956c21abca86ad7ecbd"
+              },
+              {
+                "path": "dist/science/browser-fresh-v262-corrected-attempt/last-run.json",
+                "bytes": 96,
+                "sha256": "e0470b3e70b365d100ea7ac7ebf16ce35dcc2d372dcb476d34802353bf32a875"
+              }
+            ],
+            "cleanup": {
+              "port3015Clear": true,
+              "matchingPlaywrightOrStandaloneProcesses": 0
+            },
+            "automaticRetryApplied": false,
+            "assertionOrThresholdRelaxationApplied": false,
+            "viewportRouteFix": {
+              "status": "prepared-not-rerun",
+              "mobile": "visible More menu -> switch to research mode",
+              "desktop": "visible desktop experience-mode toggle",
+              "productMutation": "not-applied",
+              "scienceMutation": "not-applied"
+            }
+          }
+        }
+      },
+      "formalThirtyCycleSoak": "passed",
+      "consoleErrorsInDedicatedGates": 0,
+      "pageErrorsInDedicatedGates": 0,
+      "missingResourcesInDedicatedGates": 0,
+      "evidencePath": "dist/science/browser-fresh-v262-negative-evidence.json"
+    },
+    "visualMatrix": {
+      "status": "passed",
+      "legacyJourneyFrames": 36,
+      "legacyRiskFrames": 4,
+      "v262AbExtensionFrames": 8,
+      "totalFrames": 48,
+      "distinction": "40-frame legacy regression plus 8-frame v262 desktop/mobile A/B extension"
+    },
+    "soak": {
+      "status": "passed",
+      "measuredCycles": 30,
+      "heapSlopeBytesPerCycle": 207545.23636363636,
+      "heapSlopeLimitBytesPerCycle": 262144,
+      "baselineResources": {
+        "workers": 1,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "releasedResources": {
+        "workers": 1,
+        "renderTargets": 0,
+        "subscriptions": 1,
+        "cameraLocks": 0,
+        "textures": 17,
+        "models": 0,
+        "programs": 28,
+        "rendererTextures": 27
+      },
+      "webGlTextureAuditEnabled": false,
+      "report": "dist/science/lifecycle-soak-v236-report.json"
+    },
+    "performanceHardware": {
+      "status": "passed",
+      "adapter": {
+        "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+        "vendor": "Google Inc. (NVIDIA)"
+      },
+      "softwareRenderer": false,
+      "thresholds": {
+        "overviewMedianFpsMin": 55,
+        "sceneMedianFpsMin": 45,
+        "frameP95MsMax": 50
+      },
+      "samples": [
+        {
+          "id": "overview",
+          "medianFps": 166.4,
+          "frameP95Ms": 12,
+          "frameSamples": 1278
+        },
+        {
+          "id": "earth-inspect",
+          "medianFps": 89.2,
+          "frameP95Ms": 12.2,
+          "frameSamples": 997
+        },
+        {
+          "id": "gaia-stellar",
+          "medianFps": 167.4,
+          "frameP95Ms": 6.2,
+          "frameSamples": 1700
+        },
+        {
+          "id": "launch",
+          "medianFps": 167.9,
+          "frameP95Ms": 6.1,
+          "frameSamples": 1636
+        },
+        {
+          "id": "kerr",
+          "medianFps": 167.6,
+          "frameP95Ms": 6.1,
+          "frameSamples": 1709
+        }
+      ],
+      "resourcesReleased": true,
+      "gpuCounterBoundary": "FPS/frame timing and adapter provenance are valid; drawCalls/triangles are not accepted as success evidence",
+      "report": "dist/science/performance-v232-report.json"
+    }
+  },
+  "release": {
+    "profile": "local-candidate",
+    "vercelApplied": false,
+    "productionApplied": false,
+    "dnsApplied": false,
+    "signingApplied": false,
+    "desktopBetaApplied": false,
+    "localCandidateValidationStatus": "blocked-fresh-matrix-not-reclosed",
+    "publicDeploymentBlocked": true,
+    "blockers": [
+      "corrected 22-test fresh matrix returned 20 passed, 1 skipped and 1 failed on a mobile test viewport route; the test-only fix is not rerun",
+      "Cosmicflows-4 redistribution license unconfirmed",
+      "GaiaUnlimited completeness dependency blocked"
+    ]
+  },
+  "boundary": "v256-v262-product-research-and-visual-layer-no-kerr-stm-weak-field-or-runtime-physics-mutation",
+  "manifestSha256": "2cc1e1b7f049b579e5851c045720b1ba7a8384e75ea369a34c8eabddd79644b5"
+}

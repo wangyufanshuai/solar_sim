@@ -1,0 +1,43 @@
+{
+  "version": "v592-major-moon-secondary-probes-v1",
+  "policy": {
+    "archive": "NASA Image and Video Library API",
+    "allowedHosts": ["images-api.nasa.gov", "images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "payloadDownloadAllowed": false,
+    "itemLevelLicenseReviewRequired": true,
+    "selectionDoesNotGrantVisualAssetAdmission": true
+  },
+  "probes": [
+    {
+      "id": "io-global-mosaic",
+      "target": "io",
+      "query": "Io global mosaic",
+      "requiredTerms": ["io"],
+      "preferredTerms": ["global", "map", "mosaic"]
+    },
+    {
+      "id": "europa-global-mosaic",
+      "target": "europa",
+      "query": "Europa global mosaic",
+      "requiredTerms": ["europa"],
+      "preferredTerms": ["global", "map", "mosaic"]
+    },
+    {
+      "id": "ganymede-global-mosaic",
+      "target": "ganymede",
+      "query": "Ganymede global mosaic",
+      "requiredTerms": ["ganymede"],
+      "preferredTerms": ["global", "map", "mosaic"]
+    },
+    {
+      "id": "callisto-global-mosaic",
+      "target": "callisto",
+      "query": "Callisto global mosaic",
+      "requiredTerms": ["callisto"],
+      "preferredTerms": ["global", "map", "mosaic"]
+    }
+  ]
+}

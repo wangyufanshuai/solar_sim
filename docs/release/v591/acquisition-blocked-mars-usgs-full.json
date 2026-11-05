@@ -1,0 +1,29 @@
+{
+  "version": "v591-mars-usgs-full-acquisition-blocked-v1",
+  "status": "blocked-resource-throughput",
+  "sourceUrl": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+  "redirectProvenance": {
+    "originUrl": "https://planetarymaps.usgs.gov/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "bucket": "asc-pds-services",
+    "key": "mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "expectedBytes": 797888177,
+    "expectedDimensions": "23059x11530",
+    "observedEtag": "0da6f2e347b88927925a196a03c0bfbe-96"
+  },
+  "transferAudit": {
+    "partialBytesObserved": 24283736,
+    "partialSha256": null,
+    "partialShaUnavailableReason": "writer-held-file-at-controlled-termination",
+    "observedThroughputBytesPerSecondApproximate": 70000,
+    "estimatedCompletionHours": 3.1,
+    "controlledTermination": true,
+    "processStopped": true,
+    "partFileRemoved": true
+  },
+  "payloadWritten": false,
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "retryAuthorized": false,
+  "assetAdmission": "blocked",
+  "receiptSha256": "e9c7c217b14c36ed93d0879f9049c1ed18b4af2a5148336b595b870a92b2ca74"
+}

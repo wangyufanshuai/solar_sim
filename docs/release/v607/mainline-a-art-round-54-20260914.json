@@ -1,0 +1,79 @@
+{
+  "round": 54,
+  "date": "2026-09-14",
+  "title": "nebula-receipt-linkage-and-manifest-seals-v614",
+  "status": "receipt-linkage-verified-rights-still-pending",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "currentStars": 20,
+    "currentConstellations": 12,
+    "currentNebulae": 12,
+    "betaNebulaCandidates": 18,
+    "rightsEvidenceRecords": 18,
+    "rightsEvidencePending": 18,
+    "rightsEvidenceCleared": 0,
+    "betaNebulaRuntimeAdmitted": 0,
+    "receiptCandidates": 18,
+    "receiptCandidatesValid": 18,
+    "receiptPayloadLinks": 18,
+    "receiptIdentityLinks": 42,
+    "receiptMissing": 0,
+    "betaTarget": [24, 12, 24]
+  },
+  "implementation": [
+    "Added a V614 receipt linker that validates canonical v592 manifest seals, associated asset-build receipt seals, declared receipt hashes, and per-item NASA ID/target/source URL/local path/bytes/SHA-256 linkage.",
+    "Kept raw manifest hashes separate from canonical manifest seals and made the closure tarantula-nebula / tarantula-nebula-closure relationship explicit through NASA ID PIA23646 rather than target-string equality.",
+    "Added fail-closed receipt-linkage tests for missing references, tampered URL/path/bytes/digest, invalid receipt seals, identity-only metadata receipts, deterministic fingerprints, and alias resolution.",
+    "Added typed V614 linkage presentation helpers and tests for status labels, risk ordering, summary completion, evidence paths, alias paths, shape validation, and stable UI formatting; the review panel now displays the first linked receipt status without turning linkage into a rights grant.",
+    "Regenerated the V613 rights pack so every candidate carries manifest seal identity, receipt references, per-reference linkage, and top-level linkage summary while all 18 item-level rights decisions remain pending."
+  ],
+  "codeChange": {
+    "method": "Count nonblank, noncomment lines in the four new R54 linker and typed UI utility files. Existing V613 generator/pack and review-panel integration edits are additional and are not needed to reach the threshold.",
+    "files": [
+      {"path": "scripts/mainline-a-nebula-receipt-linker-v614.mjs", "baseline": "new-in-r54", "effectiveChangedLines": 199, "sha256": "f2cab98ca15d3ab5f0aaa1db0434b34628cf0dac5112818ec5368c5c7f845338"},
+      {"path": "scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "baseline": "new-in-r54", "effectiveChangedLines": 110, "sha256": "b5071c2287fe2520cd4f69e714294a86a668701ada583b788ea50f4cf1b0da02"},
+      {"path": "app/lib/mainlineANebulaReceiptLinkageV614.ts", "baseline": "new-in-r54", "effectiveChangedLines": 134, "sha256": "9a7deb2db649e9ba3c71e8c8b75b40d81f802c965cde234d0b88b634b1388a77"},
+      {"path": "app/lib/mainlineANebulaReceiptLinkageV614.test.ts", "baseline": "new-in-r54", "effectiveChangedLines": 70, "sha256": "481c31a83d1053c79eb30c5bd6f0d2be28b7ea337f158cdacb914ea3617b06c6"}
+    ],
+    "effectiveChangedLines": 513,
+    "minimumRequired": 500,
+    "minimumMet": true
+  },
+  "tests": {
+    "linkageVitest": {"passed": 25, "failed": 0, "files": 3, "command": "npx vitest run app/lib/mainlineANebulaReceiptLinkageV614.test.ts app/lib/mainlineANebulaRightsEvidenceV613.test.ts app/components/MainlineANebulaReviewPanelV610.test.tsx"},
+    "receiptLinkerNode": {"passed": 11, "failed": 0, "command": "node --test scripts/mainline-a-nebula-receipt-linker-v614.test.mjs"},
+    "rightsPackNode": {"passed": 8, "failed": 0, "command": "node --test scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs"},
+    "nebulaRegressionNode": {"passed": 43, "failed": 0, "command": "node --test --test-concurrency=1 scripts/project-mainline-a-beta-nebula.test.mjs scripts/build-mainline-a-nebula-review-pack.test.mjs scripts/build-mainline-a-nebula-review-pack-v612.test.mjs scripts/build-mainline-a-nebula-rights-pack-v613.test.mjs scripts/mainline-a-nebula-receipt-linker-v614.test.mjs", "note": "One expected stale-pack child-process error is exercised and asserted; the aggregate runner exits 0 with 43 passing tests."},
+    "eslint": {"passed": true, "scope": "R54 linker, typed utility, V613 pack, review panel and tests"},
+    "productionBuild": {"passed": true, "command": "npm run build:atlas:lite:current", "profile": "vercel-lite", "distDir": ".next-atlas-lite-current", "buildId": "g89NPTGWITiqwAHOq9Ndg", "buildIdSha256": "9fadeb9cda1d5c3fd17c1d162e1ec1590c3d1260ab34d9f42e25dde967396864"}
+  },
+  "http": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "checks": [
+      {"path": "/", "status": 200, "contentType": "text/html; charset=utf-8", "bytes": 8697},
+      {"path": "/api/health", "status": 200, "contentType": "application/json", "bytes": 241}
+    ]
+  },
+  "browser": {
+    "productionUrl": "http://127.0.0.1:3019/",
+    "desktop": {"viewport": [1280, 720], "reviewRecords": 18, "rightsSchema": "mainline-a-nebula-rights-pack-v613", "receiptStatusText": "载荷字段已逐项关联", "receiptSummaryText": "18/18 candidates valid · 18 payload links", "pendingText": true, "policyUrlVisible": true, "unreviewedDecisionVisible": true, "runtimeBoundaryText": true, "consoleErrors": 0, "consoleWarnings": 0, "scrollWidth": 1280, "clientWidth": 1280},
+    "mobile": {"status": "not-run", "reason": "R54 retains the established in-app viewport-control limitation; no mobile pass is claimed"},
+    "scope": "HTTP, browser and visual interaction evidence only; not GPU/FPS, public deployment, real-user, legal rights, or scientific validation"
+  },
+  "screenshots": [
+    {"path": "docs/release/v607/screenshots/mainline-a-r54-nebula-receipt-linkage-desktop.png", "bytes": 66291, "sha256": "00e1dfcb75fc223cc90d2783a979a994938c434c701048b8b962b0b739c5e68b"}
+  ],
+  "artifacts": {
+    "rightsPack": {"schema": "mainline-a-nebula-rights-pack-v613", "path": "app/data/mainlineANebulaRightsPackV613.generated.json", "sha256": "6c6b1d2cdc8d3e5c4a0ab0c224b6f012e77485a072933b293adc4c385e7cb5f7", "pending": 18, "cleared": 0, "runtimeAdmission": 0},
+    "receiptLinker": {"path": "scripts/mainline-a-nebula-receipt-linker-v614.mjs", "sha256": "f2cab98ca15d3ab5f0aaa1db0434b34628cf0dac5112818ec5368c5c7f845338", "manifestSealsVerified": 3, "assetReceiptSealsVerified": 3, "rawAndCanonicalHashesKeptSeparate": true},
+    "tarantulaAlias": {"target": "tarantula-nebula", "receiptTarget": "tarantula-nebula-closure", "nasaId": "PIA23646", "aliasResolved": true}
+  },
+  "openGates": [
+    "18 条 NASA 候选仍没有完整逐图权利页、政策证据、审核人、审核时间和署名确认；receipt linkage 是来源完整性，不是版权批准",
+    "18→24 星云仍缺 6 条候选记录及 runtime admission",
+    "4 颗 hero stars 仍未进入运行时，当前恒星为 20/24",
+    "12 个重点星座最终视觉 signoff、多设备 GPU/FPS/资源生命周期、移动端视口证据、root/next-web 对齐、公共部署和最终发布包仍未完成"
+  ],
+  "releasePacket": "docs/release/v607/mainline-a-stage-a6-release-packet.json"
+}

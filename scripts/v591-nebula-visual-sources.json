@@ -1,0 +1,95 @@
+{
+  "version": "v591-nebula-visual-sources-v1",
+  "policy": {
+    "allowedHosts": ["images-assets.nasa.gov"],
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "maximumSourceBytes": 134217728,
+    "expectedMediaTypes": ["image/jpeg"],
+    "license": {
+      "id": "NASA-public-domain",
+      "url": "https://www.nasa.gov/nasa-brand-center/images-and-media/"
+    }
+  },
+  "assets": [
+    {
+      "id": "orion-nebula-nasa-wise",
+      "target": "orion-nebula",
+      "nasaId": "PIA16684",
+      "instrument": "NASA WISE",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA16684/PIA16684~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/orion/PIA16684~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-orion-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "wide-target-field",
+      "observationColorPolicy": "infrared-long-exposure-presentation-only"
+    },
+    {
+      "id": "lagoon-nebula-nasa-wise",
+      "target": "lagoon-nebula",
+      "nasaId": "PIA13453",
+      "instrument": "NASA WISE",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13453/PIA13453~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/lagoon/PIA13453~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-lagoon-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "wide-target-field",
+      "observationColorPolicy": "infrared-long-exposure-presentation-only"
+    },
+    {
+      "id": "eagle-nebula-nasa-wise",
+      "target": "eagle-nebula",
+      "nasaId": "PIA25433",
+      "instrument": "NASA WISE",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA25433/PIA25433~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/eagle/PIA25433~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-eagle-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "wide-target-field",
+      "observationColorPolicy": "infrared-long-exposure-presentation-only"
+    },
+    {
+      "id": "helix-nebula-nasa-galex",
+      "target": "helix-nebula",
+      "nasaId": "PIA15658",
+      "instrument": "NASA GALEX",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA15658/PIA15658~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/helix/PIA15658~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-helix-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "wide-target-field",
+      "observationColorPolicy": "ultraviolet-long-exposure-presentation-only"
+    },
+    {
+      "id": "veil-nebula-nasa-hubble-partial",
+      "target": "veil-nebula",
+      "nasaId": "GSFC_20171208_Archive_e000607",
+      "instrument": "NASA Hubble Space Telescope",
+      "sourceUrl": "https://images-assets.nasa.gov/image/GSFC_20171208_Archive_e000607/GSFC_20171208_Archive_e000607~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/veil/GSFC_20171208_Archive_e000607~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-veil-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "explicit-partial-field",
+      "observationColorPolicy": "visible-long-exposure-partial-field-presentation-only"
+    },
+    {
+      "id": "north-america-nebula-nasa-spitzer",
+      "target": "north-america-nebula",
+      "nasaId": "PIA13843",
+      "instrument": "NASA Spitzer Space Telescope",
+      "sourceUrl": "https://images-assets.nasa.gov/image/PIA13843/PIA13843~orig.jpg",
+      "outputPath": "source-cache/celestial-convergence-v591/nebulae/north-america/PIA13843~orig.jpg",
+      "metadataReceiptPath": "docs/release/v591/metadata-probe-nebula-north-america-targeted.json",
+      "minimumWidth": 1600,
+      "minimumHeight": 900,
+      "fieldCoverage": "wide-target-field",
+      "observationColorPolicy": "infrared-long-exposure-presentation-only"
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "round": 61,
+  "date": "2026-09-14",
+  "title": "beta-stellar-structured-evidence-v621",
+  "status": "structured-candidate-4-of-4-hold",
+  "physicsKernelMutation": false,
+  "counts": {
+    "stellarCandidates": 4,
+    "rawArtifactsRecomputed": 4,
+    "parsedCandidates": 4,
+    "componentConfirmed": 0,
+    "sourceClosed": 0,
+    "runtimeAdmitted": 0,
+    "measurementAdmitted": 0
+  },
+  "implementation": [
+    "Added SIMBAD HTML parser with exact ICRS sexagesimal extraction and RA-hours to degree normalization.",
+    "Added V621 sourceLedger/sourceRefs with capturedAt, raw SHA-256, citation pending and ODbL attribution required states.",
+    "Added structured evidence quality scoring, blocker classification, deterministic fingerprints, report rows and JSONL replay.",
+    "Added read-only audit that recomputes artifact bytes/SHA, checks V616 digest identity, telemetry, source closure and fixture promotion boundaries.",
+    "Connected V621 structured candidate and source/component identity details to the Beta hero review panel."
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "fixtureStructuredPromotion": false
+  },
+  "validation": {
+    "node": {"passed": 28,"failed":0,"scope":"V620 raw/replay/artifact tests + V621 audit tests"},
+    "vitest": {"passed":23,"failed":0,"files":3,"scope":"V621 parser/evidence + review panel"},
+    "eslint": {"passed":true,"scope":"V621 parser/evidence/replay/audit and review panel"},
+    "productionBuild": {"passed":true,"command":"npm run build:atlas:lite:current","profile":"vercel-lite","distDir":".next-atlas-lite-current","buildId":"VrEsEW2gNzXpdBJPnmXXa","buildIdSha256":"048fcc87bd42aac933fda9997cfd8016b1318b88cbc9df4c180e5402b2e8501b"}
+  },
+  "http": {
+    "productionUrl":"http://127.0.0.1:3019/",
+    "checks":[{"path":"/api/health","status":200,"defaultScientificKernel":"legacy-eih-1pn"}]
+  },
+  "browser": {
+    "productionUrl":"http://127.0.0.1:3019/",
+    "desktop":{"viewport":[1280,720],"panel":"mainline-a-beta-hero-review-v611","structuredSummary":"V621 structured 4/4 parsed · 0 blocked · component confirmed 0 · hold","ledgerDetailVisible":true,"scrollWidth":1280,"clientWidth":1280,"consoleErrors":0,"consoleWarnings":4,"warningClass":"headless WebGL GPU stall; not a performance result"},
+    "mobile":{"status":"not-run","reason":"No mobile viewport pass executed"},
+    "screenshot":{"path":"docs/release/v607/screenshots/mainline-a-r61-stellar-structured-desktop.png","bytes":295719,"sha256":"5DC5D61DD5766E951BCD5AF145A960A994058823DBD18AE61FAFF81D69AFF0DC"}
+  },
+  "evidenceBoundary": {
+    "static":"Code, data, tests and receipts only",
+    "http":"Local production HTTP response",
+    "visual":"Desktop browser screenshot and semantic panel state",
+    "browser":"Headless Playwright DOM/AX-style locator checks with console capture",
+    "performance":"Not measured; WebGL warning is not a performance claim",
+    "externalSource":"Direct SIMBAD HTTPS raw HTML and parser output only; component/source closure remains pending",
+    "legalDecision":"not-granted"
+  },
+  "openGates": [
+    "All four records are parsed candidates but component identity, component source references, citation review and rights decision remain open.",
+    "A-line 12/12/12 freeze, 24 nebula payloads and rights, 12 constellation visual signoffs, mobile/multi-device performance, root/next-web alignment and final release packet remain open."
+  ]
+}

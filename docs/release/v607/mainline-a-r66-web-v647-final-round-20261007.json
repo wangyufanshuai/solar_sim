@@ -1,0 +1,159 @@
+{
+  "schema": "mainline-a-r66-web-round-completion-v647",
+  "round": "R66-web-only-continuation",
+  "generatedAt": "2026-10-07T12:31:02.129Z",
+  "deliveryTarget": "next-web-only-local-technical-review",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "8136bf33ce9a75d1f708b9a67c3f87cbfd8148c9819ce40d004fb668bf57d00d",
+  "buildId": "B3cFqMTv1S0yIvqbkXPXQ",
+  "status": {
+    "localWebTechnicalReview": "qualified",
+    "currentSourceLongRun": "qualified-2-of-2",
+    "candidateEvidencePackage": "verified-candidate-blocked",
+    "publicWebRelease": "blocked",
+    "scientificAdmission": "blocked",
+    "copyrightApproval": false
+  },
+  "effectiveCode": {
+    "receipt": "docs/release/v607/mainline-a-r66-web-v647-final-code-change-20261007.json",
+    "sha256": "63562d5d41480d51ce8ad5703183ca78df707e5f2a9b3c2fe4f3adf2d4a41263",
+    "newProductionToolLinesThisContinuation": 597,
+    "modifiedProductionLinesThisContinuation": 0,
+    "testLinesExcluded": 266,
+    "cumulativeR66LowerBound": 3085,
+    "minimumRequired": 1000,
+    "minimumMet": true
+  },
+  "checks": {
+    "node": "13/13 passed",
+    "vitest": "35/35 focused passed",
+    "targetedEslint": "passed",
+    "syntax": "passed",
+    "typescript": "passed in preserved v647web02 build",
+    "productionBuild": "passed; current app/config/package input hash unchanged",
+    "http": "page and health 200, script bytes matched build, twelve local images and CREDITS.md matched pinned bytes",
+    "visual": "previous current-source desktop and mobile viewport PNGs manually inspected",
+    "browser": "1280x720 desktop and 390x844 mobile viewport, separate 30-minute observations with zero visibility interruptions",
+    "performance": "offline verifier qualified two browser-runtime observations; no production performance claim",
+    "externalSource": "V646 source supplement historical for this source; rights and component gates remain pending"
+  },
+  "evidence": {
+    "static": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-delivery-audit-20261007-v647web02.json",
+        "sha256": "959de10066cd18891f4ad6cf85a715b89a4189a7075e09d28a4cc0fa28df49ce"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-build-20261007-v647web02.json",
+        "sha256": "6315738b699d684db3313cda879402cdb9ca79770f77622e535d04c1845e0bc2"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-candidate-20261007-v647web02.json",
+        "sha256": "b9ffcfe1f7a5eeb117fe72cf521101636b82f71c78be1b081f2a3c5483ef4f37",
+        "status": "candidate-blocked",
+        "pinnedEvidenceFiles": 12,
+        "pinnedBuildFiles": 7
+      }
+    ],
+    "HTTP": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-http-20261007-v647web02.json",
+        "sha256": "d5599b478455e4410cd0586fddcadd0cce0ada675d69be8e89ae85413c5b6257"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-asset-http-20261007-v647web02-credits-pinned.json",
+        "sha256": "e955b810ad3b5511674b30db7d35f59c06150709d080992d947cb41eecf191bb",
+        "matchedImages": 12,
+        "matchedCreditEntries": 12
+      }
+    ],
+    "visual": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-visual-20261007-v647web02.json",
+        "sha256": "bd7365b420ee83e136eafcbbcbf2526ddada2147e0d95c81a93af50eda5aba75"
+      }
+    ],
+    "browser": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-browser-20261007-v647web02.json",
+        "sha256": "f8c1ff1a79f3383168be484783b7529a58be9b4ef6a9b6ce09c1bfebb6f0a100"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-browser-final-raw-20261007-v647web02.json",
+        "sha256": "701461e950f6f5a1bcb63606f082ab7789b87e397f7a8abf020472a7b7f08e7b",
+        "bytes": 66486379,
+        "source": "same live browser session; two independently timed observations"
+      }
+    ],
+    "performance": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-performance-20261007-v647web02.json",
+        "sha256": "57068d368716a76ab6fcebd1dd57fdd8048cdbec0e0578ca0ce97c83e12bc548",
+        "scope": "two short 120-frame local samples"
+      },
+      {
+        "path": "docs/release/v607/mainline-a-r66-web-r65-longrun-replay-20261007-v647web02.json",
+        "sha256": "0dccbf080a83215132d14bd9b87ad058e588791d1268f2d7506e536282c96a0a",
+        "scope": "two independent 30-minute browser-runtime observations",
+        "status": "verified"
+      }
+    ],
+    "externalSource": [
+      {
+        "path": "docs/release/v607/mainline-a-r66-v646-evidence-supplement-20261007.json",
+        "sha256": "3de12379977f6a676b870cafbaea74eaecae75196d350215af8c669e715f661c",
+        "currentSource": false
+      }
+    ]
+  },
+  "longRunObservations": [
+    {
+      "device": "desktop browser",
+      "viewport": "1280x720",
+      "durationMs": 1802003.14,
+      "frameSamples": 266931,
+      "frameP95Ms": 7.12,
+      "memorySamples": 1803,
+      "memoryDeltaBytes": 37231622,
+      "resources": "27 baseline / 31 active / 27 final",
+      "visibilityInterruptions": 0
+    },
+    {
+      "device": "mobile browser viewport",
+      "viewport": "390x844",
+      "durationMs": 1802001.485,
+      "frameSamples": 267088,
+      "frameP95Ms": 7.115,
+      "memorySamples": 1803,
+      "memoryDeltaBytes": 6894973,
+      "resources": "27 baseline / 31 active / 27 final",
+      "visibilityInterruptions": 0
+    }
+  ],
+  "gates": {
+    "nebulaRightsSignoff": "pending-0-of-12",
+    "heroPhysicalComponentIdentity": "pending-0-of-4",
+    "constellationVisualSignoff": "pending-0-of-12",
+    "legacyA3RightsTerminology": "pending-migration",
+    "rootAppParity": "out-of-scope-for-web-only-local-review; unresolved for cross-app release",
+    "physicalMobile": "not-run; optional for web-only local review",
+    "publicWebRelease": "blocked"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "runtimePromotion": "closed"
+  },
+  "claims": {
+    "releaseApproved": false,
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "version": "v591-venus-s3-path-alias-source-v1",
+  "metadataReceiptPath": "docs/release/v591/metadata-probe-venus-s3-path-alias.json",
+  "asset": {
+    "id": "venus-clrtopo-6600m-cube-path-alias-v591",
+    "body": "venus",
+    "role": "isis-cube",
+    "sourceUrl": "https://s3.us-west-2.amazonaws.com/asc-pds-services/mosaic/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m.cub",
+    "outputPath": "source-cache/celestial-convergence-v591/venus/Venus_Magellan_C3-MDIR_ClrTopo_Global_Mosaic_6600m-path-alias.cub",
+    "expectedBytes": 49841063,
+    "expectedEtag": "31030252e464d93233aab6265efba449-6",
+    "minimumWidth": 5000,
+    "minimumHeight": 2500,
+    "maximumSeconds": 10800,
+    "license": {
+      "id": "USGS-public-domain",
+      "url": "https://www.usgs.gov/information-policies-and-instructions/copyrights-and-credits"
+    },
+    "observationIdentity": "Magellan C3-MDIR color/topography global ISIS cube at 6600 m/pixel distributed from the same USGS Astrogeology PDS S3 object via the regional path-style endpoint",
+    "observationLimit": "false-color radar/topography presentation source; no optical-color, measured-elevation or measured-photometry claim",
+    "presentationOnly": true
+  },
+  "policy": {
+    "allowedHost": "s3.us-west-2.amazonaws.com",
+    "requiredBucketPathPrefix": "/asc-pds-services/mosaic/",
+    "maximumRedirectHops": 0,
+    "singleRequestPerUrl": true,
+    "automaticRetryAllowed": false,
+    "automaticReplacementAllowed": false,
+    "atomicPartRenameRequired": true
+  }
+}
+

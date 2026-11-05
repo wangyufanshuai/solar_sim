@@ -1,0 +1,509 @@
+{
+  "schema": "mainline-a-art-round-receipt-v636",
+  "round": "R65-R66-continuation",
+  "runId": "20260927-058",
+  "generatedAt": "2026-09-27T06:02:43.297Z",
+  "status": "technical-batch-implemented-acceptance-pending",
+  "newDevelopmentRound": false,
+  "previous": {
+    "path": "docs/release/v607/mainline-a-art-round-65-v635-20260927-057.json",
+    "sha256": "8e9e3332408e8b423bd35451ef7027b42f6b15a30e62e7e297714eb990c9c32a"
+  },
+  "delivered": [
+    "Actual standalone/public/dependency payload with hashes and explicit source closure",
+    "Exclusive recovery into a new directory and native Node permission isolated HTTP smoke",
+    "Rollback package/build/payload semantic binding",
+    "Dockable observation panel retaining its session; surface/halo/corona disposal observations"
+  ],
+  "codeChange": {
+    "receipt": {
+      "path": "docs/release/v607/mainline-a-r66-v636-code-change-20260927-058b-sealed.json",
+      "sha256": "08086569d89b7072613d32078fe3274833c9a971a63b54f2c6de506eb8afb84c"
+    },
+    "effectiveProductionLines": 1098,
+    "addedLines": 2273,
+    "removedLines": 20,
+    "files": 15,
+    "productionFiles": 8,
+    "testFiles": 7,
+    "testsCountedInEffectiveLines": false
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "node": {
+        "passed": 141,
+        "suites": [
+          {
+            "passed": 91,
+            "failed": 0,
+            "log": {
+              "path": "tmp/mainline-a-v636-core-node-20260927-058b.log",
+              "sha256": "cd7c0f19c7ab5a2fd00306d39b71688ae2bcade4d984083235cd7a477ed00eb8"
+            }
+          },
+          {
+            "passed": 23,
+            "failed": 0,
+            "log": {
+              "path": "tmp/mainline-a-v636-smoke-node-20260927-058-static-html-repair.log",
+              "sha256": "770bd124afa1ac44ec5d11d88e26c878147b698fa74026248573156862d7e4c7"
+            }
+          },
+          {
+            "passed": 27,
+            "failed": 0,
+            "log": {
+              "path": "tmp/mainline-a-runtime-node-20260927-058.log",
+              "sha256": "cdfd2a14482b7e907301eb977b8c62cc72d0f6c15112831a5f47ea6db08a9b9a"
+            }
+          }
+        ]
+      },
+      "vitest": {
+        "passed": 173,
+        "files": 6,
+        "log": {
+          "path": "tmp/mainline-a-runtime-vitest-20260927-058-final.log",
+          "sha256": "a7ada41bd7787b896092decb227764d70993d34c83148e00488058554d8a8193"
+        }
+      },
+      "eslint": {
+        "files": 15,
+        "errors": 0,
+        "warnings": 1,
+        "warningScope": "existing checkpointMetadata dependency",
+        "details": {
+          "path": "tmp/mainline-a-v636-eslint-details-20260927-058b.json",
+          "sha256": "a8c2838c5f05237258dbc574519d68f6bc96781a3978a2a20d4a918d534b930f"
+        }
+      },
+      "build": {
+        "path": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+        "sha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+      },
+      "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+      "runtimeBuildId": "mainline-a-607a1a089e56459a",
+      "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+      "sourceInputFiles": 2359,
+      "changedSources": [
+        "app/components/MainlineAPerformancePanelV625.tsx",
+        "app/components/SelectedSkyTargetProxy.tsx",
+        "app/lib/mainlineACanonicalProducerV635.ts"
+      ],
+      "sourceCurrent": true,
+      "protectedFiles": [
+        {
+          "path": "app/data/mainlineABetaStellarSourceClosureV616.generated.json",
+          "sha256": "bd307be6b47077a317adae1662a0bcc1ebd6c897291006567991238792f77310"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawCaptureV619.generated.json",
+          "sha256": "73b89dc9e58ec7b0b2de0e93ce714b57f5ae68ad48f4fc2b1909c1a9c7b621dd"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+          "sha256": "9a759b27bc306486f517346cd381cec8fe2d6c9d7474605714b2c4a81b886ab2"
+        },
+        {
+          "path": "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+          "sha256": "b9682813f7f28ad84a8e6f266babf32b06a10c6808a3e8108a50d90da745500c"
+        }
+      ],
+      "protectedFilesUnchanged": true,
+      "runtimePayload": {
+        "status": "verified",
+        "directory": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime",
+        "manifestPath": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime/runtime-payload-manifest.json",
+        "manifestSha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+        "build": {
+          "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+          "runtimeBuildId": "mainline-a-607a1a089e56459a",
+          "branch": "codex/solar-sim-mainline-a",
+          "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+          "profile": "vercel-lite",
+          "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+          "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+          "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+        },
+        "inventorySha256": "a6cab337fca1cb04b0b2d88d6cb491f5d0b55da8a004cd135992fb7395fc38fa",
+        "totals": {
+          "files": 12757,
+          "bytes": 2486317478
+        },
+        "hostCompatible": true,
+        "scope": "exact-candidate-runtime-files; no-launch-browser-or-rights-approval",
+        "boundary": {
+          "candidateOnly": true,
+          "hold": true,
+          "notAdmitted": true,
+          "scientificPayloadWriteback": false,
+          "releaseApproved": false,
+          "physicsKernelMutation": false,
+          "parentGitMutation": false,
+          "runtimePromotion": "closed"
+        }
+      },
+      "restore": {
+        "path": "docs/release/v607/mainline-a-r66-runtime-restore-20260927-058.json",
+        "sha256": "09c3e714171670b9059e568cca1e0687086be2f9f117782533b8dd4f113d80bf"
+      },
+      "limitations": [
+        "SSR/AST and session-controller checks do not prove React mounting or browser interaction",
+        "Geometry/material dispose event tests do not measure GPU release"
+      ]
+    },
+    "http": {
+      "status": "passed",
+      "originalBuild": {
+        "path": "docs/release/v607/mainline-a-r66-http-20260927-058.json",
+        "sha256": "2cf3aa47f0b88603756652e1db9cf1c02ff5887b7e1122238e2a202ea6eacfcb"
+      },
+      "canonicalAssets": {
+        "path": "docs/release/v607/mainline-a-canonical-assets-http-20260927-058.json",
+        "sha256": "fa4dd6ed3c78729cfcc7c347d6dff49904c020e19eb473f4bd79c14a3d33f2de"
+      },
+      "scriptsMatched": 6,
+      "canonicalImagesMatched": 12,
+      "restoredRuntime": {
+        "path": "docs/release/v607/mainline-a-r66-restored-runtime-http-20260927-058b.json",
+        "sha256": "deb0581faed689fede34d1a1da00ae3841d0a7e2706ddf290bae4c1dec29667c"
+      },
+      "restoredScriptFiles": 6,
+      "restoredPublicFiles": 12,
+      "isolatedToRestoredDirectory": true,
+      "ownedServerStopped": true,
+      "unchangedAfterSmoke": true,
+      "pageIdentity": {
+        "mode": "static-html-bytes-client-render-pending",
+        "domBuildIdentityObserved": false,
+        "browserDomObserved": false,
+        "serverHtmlBuildIdentityObserved": false,
+        "expectedRuntimeBuildId": "mainline-a-607a1a089e56459a",
+        "expectedBranch": "codex/solar-sim-mainline-a",
+        "expectedHead": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+        "staticHtml": {
+          "payloadPath": ".next/server/app/index.html",
+          "sha256": "31aa85e964c4ad0f08accdf68f40c8fdf190754ed1b1a02f2ccabaf6c67c8e20",
+          "bytes": 8696
+        }
+      },
+      "failedFirstAttemptPreserved": {
+        "path": "docs/release/v607/mainline-a-r66-restored-runtime-http-20260927-058.json",
+        "sha256": "19ea4e3c409597689da51fcec8f4ce8a98b6f2c56bf10c72b1f42ded3de9cec9"
+      },
+      "verifierRepair": "Pre-hydration CSR HTML has no app-shell DOM identity; exact manifest/local/HTTP static HTML bytes are checked instead. Scripts and BUILD_ID remain pinned; browser identity is unobserved.",
+      "scope": "Local production HTTP bytes, canonical software image decode, and isolated restored runtime; no browser or production performance claim"
+    },
+    "visual": {
+      "status": "not-run",
+      "screenshots": [],
+      "reason": "browser security check unavailable before navigation"
+    },
+    "browser": {
+      "status": "blocked-before-navigation",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-browser-v636-20260927-058.json",
+        "sha256": "7a1127bb947ab8825e87224c1472cf8c6f3435e80d1e3766b7594dd13e077106"
+      },
+      "desktop": "not-run",
+      "mobileViewport": "not-run",
+      "physicalMobile": "not-run",
+      "bypassUsed": false,
+      "realUserValidation": false
+    },
+    "performance": {
+      "status": "not-run",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-performance-v636-20260927-058.json",
+        "sha256": "49a26c5bf3655c9acb8f2d162b7e8dba25405c53175cd8d92721fc8be8db419d"
+      },
+      "rendererFrameTime": null,
+      "memory": null,
+      "gpuRelease": "not-observed",
+      "longRun": "not-run",
+      "productionPerformanceClaim": false
+    },
+    "externalSource": {
+      "status": "preserved-no-new-external-capture",
+      "newNetworkCaptures": 0,
+      "stellarRawCaptured": 4,
+      "componentConfirmed": 0,
+      "componentPending": 4,
+      "rightsSigned": 0,
+      "extensionRightsPending": 12,
+      "rightsDirective": "user requested pending while technical acceptance continues",
+      "copyrightApproval": false,
+      "scientificValidity": false,
+      "fixturePromotion": false
+    },
+    "release": {
+      "status": "blocked",
+      "manifest": {
+        "path": "docs/release/v607/mainline-a-r66-package-20260927-058b/manifest.json",
+        "sha256": "a6d25e1a5b5bf59574f90800648181fb1a334a530b0527c495c85f729a058253"
+      },
+      "alignment": {
+        "path": "docs/release/v607/mainline-a-r66-alignment-20260927-058b.json",
+        "sha256": "69d6504b3818c68a35543738335b1ccbce87dc4e72a449be7c72d7f9b274c932"
+      },
+      "identityBridge": {
+        "path": "docs/release/v607/mainline-a-r66-identity-bridge-20260927-058b.json",
+        "sha256": "dba73d0b95dd1027ecebf07e84bda7bdd0433697216ab534390c00a0abf287ea"
+      },
+      "evidenceInput": {
+        "path": "docs/release/v607/mainline-a-release-evidence-input-20260927-058b.json",
+        "sha256": "cb0bcbe1a4851ce27f06c713262647752c3e910f3b57a3d1ace5b4517e7876fc"
+      },
+      "verification": {
+        "path": "tmp/mainline-a-package-verify-current-20260927-058b.log",
+        "sha256": "8f0cbcc4f6e81924a7152839bc8d9e5ecd63035fb391079f8b9a33364b811508"
+      },
+      "integrity": {
+        "files": 320,
+        "status": "verified",
+        "evidenceClass": "static",
+        "scientificValidity": false,
+        "rightsApproval": false,
+        "packageFiles": 8,
+        "offlineReplay": true,
+        "runtimePayload": {
+          "status": "verified",
+          "directory": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime",
+          "manifestPath": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime/runtime-payload-manifest.json",
+          "manifestSha256": "3749afacdb5276a6cc956256fff06d89cd85f192e45999d25326d4c9ad5b3221",
+          "build": {
+            "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+            "runtimeBuildId": "mainline-a-607a1a089e56459a",
+            "branch": "codex/solar-sim-mainline-a",
+            "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+            "profile": "vercel-lite",
+            "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+            "receiptPath": "docs/release/v607/mainline-a-r66-build-20260927-058.json",
+            "receiptSha256": "183ff2d5e519bb4e63975179b562c6746b5135adb6b088470c8a8c7a31c3cd63"
+          },
+          "inventorySha256": "a6cab337fca1cb04b0b2d88d6cb491f5d0b55da8a004cd135992fb7395fc38fa",
+          "totals": {
+            "files": 12757,
+            "bytes": 2486317478
+          },
+          "hostCompatible": true,
+          "scope": "exact-candidate-runtime-files; no-launch-browser-or-rights-approval",
+          "boundary": {
+            "candidateOnly": true,
+            "hold": true,
+            "notAdmitted": true,
+            "scientificPayloadWriteback": false,
+            "releaseApproved": false,
+            "physicsKernelMutation": false,
+            "parentGitMutation": false,
+            "runtimePromotion": "closed"
+          }
+        }
+      },
+      "currentSourceVerified": true,
+      "releaseApproved": false,
+      "gatesPassed": 6,
+      "gatesTotal": 17,
+      "gates": [
+        {
+          "id": "build-current-source",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "root-readonly-input",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "next-web-identity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "manifest-parity",
+          "evidenceClass": "static",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "root-manifest-not-present-or-mismatched"
+          ]
+        },
+        {
+          "id": "canonical-coverage",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "canonical-runtime",
+          "evidenceClass": "browser",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "canonical-runtime-clearance-pending"
+          ]
+        },
+        {
+          "id": "http",
+          "evidenceClass": "http",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "desktop-browser",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "desktop-browser-not-run"
+          ]
+        },
+        {
+          "id": "mobile-viewport",
+          "evidenceClass": "browser",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "mobile-viewport-not-run"
+          ]
+        },
+        {
+          "id": "visual",
+          "evidenceClass": "visual",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "visual-evidence-not-observed"
+          ]
+        },
+        {
+          "id": "performance",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "lifecycle",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "nebula-file-integrity",
+          "evidenceClass": "static",
+          "state": "passed",
+          "required": true,
+          "blockers": []
+        },
+        {
+          "id": "stellar-component-identity",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "stellar-component-identity-pending"
+          ]
+        },
+        {
+          "id": "rights-closure",
+          "evidenceClass": "external-source",
+          "state": "pending",
+          "required": true,
+          "blockers": [
+            "human-rights-signoff-pending"
+          ]
+        },
+        {
+          "id": "physical-mobile",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "physical-device-not-run"
+          ]
+        },
+        {
+          "id": "long-run",
+          "evidenceClass": "performance",
+          "state": "not-run",
+          "required": true,
+          "blockers": [
+            "long-run:browser-device-not-observed",
+            "long-run:two-independent-runs-required"
+          ]
+        }
+      ],
+      "blockers": [
+        "canonical-runtime-clearance-pending",
+        "desktop-browser-not-run",
+        "human-rights-signoff-pending",
+        "lifecycle-not-passed",
+        "long-run:browser-device-not-observed",
+        "long-run:two-independent-runs-required",
+        "mobile-viewport-not-run",
+        "performance-not-passed",
+        "physical-device-not-run",
+        "root-manifest-not-present-or-mismatched",
+        "stellar-component-identity-pending",
+        "visual-evidence-not-observed"
+      ],
+      "runtimeStorage": "workspace-reference; corrected metadata and explicitly pinned original runtime directory must be retained together",
+      "supersededMetadataPreserved": {
+        "path": "docs/release/v607/mainline-a-r66-package-20260927-058/manifest.json",
+        "sha256": "6483ccbe45156a5047fcfbbb1900386d8ddfeaa0b99b9de1a3a5609fd405e47f"
+      },
+      "scope": "Candidate runtime is self-contained for same-host isolated HTTP smoke. Evidence index still references local workspace source records; not an approved distributable release."
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false,
+    "releaseApproved": false
+  },
+  "continuation": {
+    "goalComplete": false,
+    "meaningfulProgressThisTurn": true,
+    "consecutiveNoProgressGoalTurns": 0,
+    "technicalDefectsAddressed": [
+      "recoverable-runtime-payload",
+      "observation-panel-navigation-occlusion",
+      "stellar-halo-corona-registry-coverage"
+    ],
+    "nextActions": [
+      "Resume the selected Browser plugin only when its saved permission check works; never bypass it.",
+      "Collect 36 real canonical object cycles and desktop/mobile-viewport visual records on the pinned production build.",
+      "Record two independent 30-minute lifecycle/performance runs and available physical-device evidence.",
+      "Keep 12 rights signatures pending per user directive; do not reopen the same preference question.",
+      "Keep 4 stellar field/component identities pending until authoritative measurements and review exist.",
+      "Consume an actual root canonical/build manifest as read-only input when available; never generate parity by copying next-web data."
+    ],
+    "storage": {
+      "preservedRuntimeDirectory": "docs/release/v607/mainline-a-r66-package-20260927-058/runtime",
+      "recoveryDirectory": ".mainline-a-restored-r66-20260927-058",
+      "payloadBytesPerCopy": 2486317478,
+      "preserveHistory": true
+    },
+    "avoidDuplicateWork": "The runtime copy, recovery, pure replay validators and candidate metadata are implemented. Do not create another code batch solely by adding guards or receipts while waiting on these external evidence gates."
+  },
+  "referenceIntegrity": {
+    "status": "verified",
+    "files": 25,
+    "checkedAt": "2026-09-27T06:02:43.306Z"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "round": 16,
+  "date": "2026-09-13",
+  "title": "Beta constellation boundary expansion",
+  "status": "verified-static",
+  "scope": {
+    "constellationCodes": ["Ori", "UMa", "Cas", "Sco", "Cyg", "Gem", "Leo", "Cru", "Lyr", "Aql", "Tau", "Sgr"],
+    "boundarySource": "IAU Delporte text files from iauarchive.eso.org, retrieved 2026-09-13",
+    "artChange": "Expanded the current constellation roster from 8 to 12 and added IAU J2000 boundary rings plus illustrative anchor routes for Lyra, Aquila, Taurus, and Sagittarius."
+  },
+  "validation": {
+    "vitest": "mainlineAConstellationFiguresV607.test.ts + mainlineAMetadataV607.test.ts + mainlineAConstellationBoundaryV607.test.ts: 34/34",
+    "eslint": "passed",
+    "releasePacketPath": "dist/release-exports/mainline-a-v607/mainline-a-source-evidence.zip"
+  },
+  "limitations": [
+    "The new anchor routes are explanatory sky-chart lines and do not claim physical relationships.",
+    "Browser screenshots for the new four constellation passports remain pending.",
+    "Beta still requires 24 hero stars and 24 rights-cleared nebula images."
+  ]
+}

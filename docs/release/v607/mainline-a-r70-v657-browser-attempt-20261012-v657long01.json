@@ -1,0 +1,29 @@
+{
+  "schema": "mainline-a-r70-web-longrun-interruption-v657",
+  "status": "interrupted-before-qualification",
+  "runId": "20261012-v657long01",
+  "startedAt": "2026-10-12T05:01:25.552Z",
+  "interruptedAt": "2026-10-12T05:10:13Z",
+  "stage": "desktop-observation",
+  "buildReceipt": "docs/release/v607/mainline-a-r70-build-20261012v657web01.json",
+  "buildId": "X9GEStnDpmzMz4fKI5mnz",
+  "sourceSha256": "48112b48fc0c670945d451e751c8e478690b58b0fa221c5866f56167be505dda",
+  "observedResourceCycle": {
+    "baseline": 27,
+    "active": 31,
+    "restored": 27,
+    "baselineIdentityDigest": "79594999",
+    "restoredIdentityDigest": "79594999"
+  },
+  "qualifiedObservationCount": 0,
+  "reason": "Visual inspection found that the mobile-viewport stage search field had collapsed to an unusable width despite the no-overflow check. The running observation was manually stopped before 30 minutes so the source could be corrected and the complete evidence set rebuilt.",
+  "evidenceUse": "failed-attempt-ledger-only",
+  "claims": {
+    "completeLongRun": false,
+    "productionPerformance": false,
+    "physicalMobile": false,
+    "realUserValidation": false,
+    "publicWebReleaseApproved": false,
+    "scientificPayloadWriteback": false
+  }
+}

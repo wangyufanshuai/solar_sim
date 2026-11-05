@@ -1,0 +1,185 @@
+{
+  "schema": "mainline-a-browser-smoke-v1",
+  "runId": "20260927-064",
+  "recordedAt": "2026-09-27T10:31:15.691Z",
+  "status": "application-access-restored-smoke-observed-with-layout-defects",
+  "newDevelopmentRound": false,
+  "workspace": "E:\\86137\\myai\\solar_sim\\next-web",
+  "server": {
+    "url": "http://127.0.0.1:3057",
+    "runtime": ".mainline-a-restored-r66-20260927-058",
+    "sourceBuildStage": ".next-mainline-a-r66-20260927-058",
+    "loopbackOnly": true,
+    "mode": "production",
+    "nodeVersion": "v24.14.0",
+    "filesystemReadScope": "restored-runtime-only",
+    "leftRunningForPreview": true
+  },
+  "identity": {
+    "buildId": "zs_6RqmgRa52VqlcUfxeZ",
+    "runtimeBuildId": "mainline-a-607a1a089e56459a",
+    "branch": "codex/solar-sim-mainline-a",
+    "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+    "sourceSha256": "607a1a089e56459aa84dd30452d7c85c3c7811e2b1f30702ff58252398138314",
+    "sourceInputFiles": 2359,
+    "currentSourceMatchesBuild": true,
+    "browserDomMatchesHttpBuild": true,
+    "observation": {
+      "path": "tmp/mainline-a-browser-observation-20260927-064.json",
+      "bytes": 581,
+      "sha256": "a18621698874908478b6132304d3ae9598cdaa6f3913755b85288d82dc2ff2f2"
+    }
+  },
+  "recovery": [
+    "Fresh browser connection no longer reported saved-permission verification failure",
+    "Initial navigation encountered ERR_CONNECTION_REFUSED because the preview server was not running",
+    "Started the existing restored production runtime on loopback port 3057",
+    "Original error-page tab was blocked by data-URL policy; no data-URL content was executed or policy changed",
+    "A fresh tab in the same in-app browser opened the original HTTP application address successfully"
+  ],
+  "evidence": {
+    "static": {
+      "sourceDigestVerified": true,
+      "build": "Reused the successful 058 production build; no rebuild or source edits",
+      "nodeTests": "not-rerun",
+      "vitest": "not-rerun",
+      "eslint": "not-rerun"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": {
+        "path": "docs/release/v607/mainline-a-r66-http-20260927-064.json",
+        "bytes": 5757,
+        "sha256": "19b9162ee5c609fdfe3db63950569d0ff24e7633206e6946b4a81bf45707c086"
+      },
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "scriptAssetsMatched": 6
+    },
+    "browser": {
+      "surface": "Codex In-app Browser",
+      "desktopViewport": {
+        "width": 1280,
+        "height": 720
+      },
+      "applicationRendered": true,
+      "observedFlows": [
+        "Solar-system scene finished loading",
+        "Opened stellar atlas showing 20 records",
+        "Changed selection from Altair to Achernar; heading, descriptive text and portrait changed",
+        "Closed stellar atlas and returned to scene",
+        "Opened nebula candidate atlas showing its own 30-record review catalog",
+        "Closed nebula atlas and returned to scene"
+      ],
+      "warningOrErrorLogEntriesCaptured": 0,
+      "accessibility": [
+        {
+          "path": "tmp/mainline-a-browser-stellar-20260927-064.txt",
+          "bytes": 5827,
+          "sha256": "e1676029397d8926f7ab0631a80eee266dbb3fc235b9eabee155309f9735d211"
+        },
+        {
+          "path": "tmp/mainline-a-browser-nebula-20260927-064.txt",
+          "bytes": 9610,
+          "sha256": "ebb5fb1873699d07a6718d253256b9fdb244083f384f956a4412ef47d95e31bc"
+        },
+        {
+          "path": "tmp/mainline-a-browser-mobile-20260927-064.txt",
+          "bytes": 2084,
+          "sha256": "6e52ba5ffdf28a1f04d0dc53e13e48b28556040dd2b0836caab28b836a494517"
+        }
+      ]
+    },
+    "visual": {
+      "status": "observed-with-defects",
+      "screenshots": [
+        {
+          "path": "docs/release/v607/visuals/mainline-a-desktop-home-20260927-064.png",
+          "bytes": 136608,
+          "sha256": "7b7907a487a2ab7db0d7a18678a2c4adb008867b65952864ab39190712440772"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-desktop-stellar-20260927-064.png",
+          "bytes": 97461,
+          "sha256": "0aaf3be725bf05ea942a83f18ee71be7718a2bba3d53a39d1b44c9bcc2febe4f"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-desktop-nebula-20260927-064.png",
+          "bytes": 78343,
+          "sha256": "0851df03c577fc4afa7ec88638d3c9101630c438fc24581af7f3cb2cd1ded1ae"
+        },
+        {
+          "path": "docs/release/v607/visuals/mainline-a-mobile-home-20260927-064.png",
+          "bytes": 53290,
+          "sha256": "3a7ab7e8b3d50e215756a41ba0fc122f127e7fece58b5979ac764f258c230f93"
+        }
+      ]
+    },
+    "mobileViewport": {
+      "status": "homepage-observed-with-layout-defect",
+      "width": 390,
+      "height": 844,
+      "physicalDevice": false,
+      "viewportResetAfterTest": true
+    },
+    "performance": {
+      "status": "not-run",
+      "frameTimeClaim": false,
+      "gpuReleaseClaim": false,
+      "longRunClaim": false,
+      "realUserValidation": false
+    },
+    "externalSource": {
+      "status": "no-new-scientific-source-capture",
+      "rightsSignoffAdded": false
+    }
+  },
+  "findings": [
+    {
+      "id": "toolbar-navigation-overlap",
+      "status": "reproduced",
+      "evidenceClasses": [
+        "visual",
+        "browser"
+      ],
+      "viewports": [
+        "1280x720",
+        "390x844"
+      ],
+      "description": "Top-right review actions overlap the cosmic scale navigation; mobile second-row actions cover navigation labels."
+    },
+    {
+      "id": "candidate-missing-angular-size",
+      "status": "observed-needs-data-model-review",
+      "evidenceClasses": [
+        "browser"
+      ],
+      "description": "Nebula review candidate entries display 0 arcmin; confirm missing-versus-zero handling before treating any value as measured."
+    }
+  ],
+  "limits": {
+    "canonical36AcceptanceComplete": false,
+    "beta24StarsAdmitted": false,
+    "beta24NebulaeAdmitted": false,
+    "physicalMobile": "not-run",
+    "lifecycle": "not-run",
+    "finalReleaseComplete": false,
+    "previousGateCountNotRecomputed": true
+  },
+  "codeChange": {
+    "productionAddedLines": 0,
+    "productionModifiedLines": 0,
+    "effectiveCodeFiles": [],
+    "evidenceArtifactsExcludedFromEffectiveCode": true
+  },
+  "boundaries": {
+    "candidateOnly": true,
+    "hold": true,
+    "admission": "not-admitted",
+    "scientificPayloadWriteback": false,
+    "physicsKernelsModifiedThisRun": false,
+    "parentGitAccessed": false,
+    "deploymentCreated": false,
+    "historicalArtifactsOverwritten": false
+  }
+}

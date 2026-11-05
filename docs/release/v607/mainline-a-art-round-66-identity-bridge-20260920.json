@@ -1,0 +1,141 @@
+{
+  "schema": "mainline-a-art-round-receipt-v626",
+  "round": "R66",
+  "generatedAt": "2026-09-20T15:47:33.652Z",
+  "objective": "R66 continuation: read-only root/next-web release identity bridge, receipt-drift isolation, replay verifier and runtime gate panel",
+  "codeChangeReceipt": "docs/release/v607/mainline-a-r66-identity-bridge-code-change-20260920.json",
+  "build": {
+    "status": "passed",
+    "receipt": "docs/release/v607/mainline-a-r66-build-20260920-008.json",
+    "buildId": "ZFv-l-jxGEoQNLpcxGiE0",
+    "runtimeBuildId": "mainline-a-49be5261e1afd43d",
+    "sourceStable": true,
+    "profile": "vercel-lite"
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "receipts": [
+        "docs/release/v607/mainline-a-r66-alignment-v626.json",
+        "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-003.json"
+      ],
+      "claim": "read-only identity mapping, raw SHA and gate contract only"
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260920-008.json",
+      "pageStatus": 200,
+      "healthStatus": 200,
+      "allScriptAssetsOk": true,
+      "claim": "local preserved-build HTTP and build binding only"
+    },
+    "visual": {
+      "status": "passed",
+      "screenshots": [
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-desktop-20260920-008.png",
+          "sha256": "103b45debd4d7bc7fa7b41b3cc9e75a4c185b6208260066151766fbbc6bfd7d2"
+        },
+        {
+          "path": "docs/release/v607/screenshots/mainline-a-r66-mobile-20260920-008.png",
+          "sha256": "d3034ce7e61c4223c9450c3e834e8a1cc6627ee99e42125274de2a53fa7b73fd"
+        }
+      ],
+      "claim": "visual evidence only"
+    },
+    "browser": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260920-008.json",
+      "desktopViewport": [
+        1280,
+        720
+      ],
+      "mobileViewport": [
+        390,
+        844
+      ],
+      "consoleErrors": 0,
+      "consoleWarnings": 0,
+      "claim": "Codex in-app browser local observation only"
+    },
+    "performance": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "blockers": [
+        "long-run-observation-required",
+        "physical-device-not-run"
+      ],
+      "claim": "four-second browser samples remain separate; no production or real-user performance claim"
+    },
+    "externalSource": {
+      "status": "blocked",
+      "receipts": [
+        "app/data/mainlineABetaStellarRawAttemptLedgerV620.generated.json",
+        "app/data/mainlineABetaStellarStructuredCandidateV621.generated.json",
+        "app/data/mainlineANebulaBatchV624.generated.json"
+      ],
+      "claim": "external source and rights closure remain pending"
+    },
+    "releasePackage": {
+      "status": "blocked",
+      "pointer": "docs/release/v607/mainline-a-r66-release-package-v626-20260920-010.json",
+      "directory": "docs/release/v607/mainline-a-r66-package-20260920-010",
+      "identityVerifier": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-003.json",
+      "claim": "candidate release metadata, mapping and rollback only"
+    }
+  },
+  "alignment": {
+    "receipt": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "status": "blocked",
+    "rootMirror": "E:\\86137\\myai\\solar_sim\\web",
+    "rootReadOnly": true,
+    "packageRuntimeNames": {
+      "root": "solar-sim-viz",
+      "nextWeb": "solar-next-web"
+    },
+    "releaseIdentity": "solar-sim-mainline-a",
+    "releaseIdentityMatch": true,
+    "sourceIdentityMatch": false,
+    "manifestParity": false,
+    "blockers": [
+      "beta-nebula-source-closure-pending",
+      "canonical-rights-signoff-pending",
+      "canonical-runtime-clearance-pending",
+      "long-run-not-run",
+      "nebula-rights-review-pending",
+      "nebula-rights-signoff-pending",
+      "performance-receipt-blocked",
+      "physical-mobile-not-run",
+      "root-manifest-not-present",
+      "stellar-component-identity-pending"
+    ]
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelsUnmodified": true
+  },
+  "openGates": [
+    "physical mobile device",
+    "30-minute soak",
+    "12 canonical signoffs",
+    "Beta 24 nebula rights and source closure",
+    "4 stellar component identities",
+    "root manifest parity"
+  ],
+  "claimsClosed": {
+    "publicDeployment": false,
+    "legalClearance": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  },
+  "notes": [
+    "Runtime package names remain different and are mapped through an explicit release identity; this does not claim source parity.",
+    "The negative fixture audit now uses --no-write, and the canonical alignment receipt points to the real root mirror.",
+    "No root file was written, no parent Git state was touched, and no physics kernel was modified."
+  ]
+}\n

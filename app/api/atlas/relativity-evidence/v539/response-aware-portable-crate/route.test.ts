@@ -1,0 +1,9 @@
+import { afterEach, describe, expect, it } from "vitest";
+import { GET } from "./route";
+
+const previous = process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE;
+afterEach(() => { if (previous === undefined) delete process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE; else process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = previous; });
+describe("v539 portable-crate route", () => {
+  it("serves a bounded summary and exact ZIP only in local-shadow", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "local-shadow"; const summary = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v539/response-aware-portable-crate", { headers: { "x-forwarded-for": "127.0.0.541" } })); expect(summary.status).toBe(200); expect(summary.headers.get("cache-control")).toBe("no-store"); expect((await summary.json()).summary.crate.memberCount).toBe(9); const crate = await GET(new Request("http://localhost/api/atlas/relativity-evidence/v539/response-aware-portable-crate?download=crate", { headers: { "x-forwarded-for": "127.0.0.542" } })); expect(crate.status).toBe(200); expect(crate.headers.get("content-type")).toBe("application/zip"); expect(crate.headers.get("x-atlas-kerr-product")).toContain("not-production"); expect(Array.from(new Uint8Array((await crate.arrayBuffer()).slice(0, 4)))).toEqual([0x50, 0x4b, 0x03, 0x04]); });
+  it("fails closed for ordinary standalone and Lite", async () => { process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "standalone-full"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v539/response-aware-portable-crate"))).json()).reason).toBe("local-shadow-only"); process.env.NEXT_PUBLIC_ATLAS_DELIVERY_PROFILE = "vercel-lite"; expect((await (await GET(new Request("http://localhost/api/atlas/relativity-evidence/v539/response-aware-portable-crate"))).json()).reason).toBe("lite-boundary"); });
+});

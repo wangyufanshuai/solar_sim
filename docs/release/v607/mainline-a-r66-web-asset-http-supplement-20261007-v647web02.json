@@ -1,0 +1,80 @@
+{
+  "schema": "mainline-a-r66-web-asset-http-supplement-v647",
+  "round": "R66-web-only-continuation",
+  "observedAt": "2026-10-07T11:43:55Z",
+  "deliveryTarget": "next-web-only-local-technical-review",
+  "branch": "codex/solar-sim-mainline-a",
+  "head": "156ec7790a99be2f89f5d8f44831cb118c9437e1",
+  "sourceSha256": "8136bf33ce9a75d1f708b9a67c3f87cbfd8148c9819ce40d004fb668bf57d00d",
+  "buildId": "B3cFqMTv1S0yIvqbkXPXQ",
+  "effectiveCode": {
+    "newProductionTool": "scripts/verify-mainline-a-web-asset-http-v647.mjs",
+    "newProductionToolSha256": "e39959cdc8cc494a3e4e84e3779ae3def8b12c14446db052abf3824c8f6569de",
+    "newEffectiveNonblankNoncommentLines": 314,
+    "modifiedProductionLinesThisSupplement": 0,
+    "testFile": "scripts/verify-mainline-a-web-asset-http-v647.test.mjs",
+    "testFileSha256": "65be07ec954a455a022d69eb7ea4a3ff874d75d7a8b7b78d400374e0a91f82bc",
+    "testLinesExcludedFromEffectiveCount": 142,
+    "previousR66LowerBound": 2488,
+    "cumulativeR66LowerBound": 2802,
+    "minimumRequiredForFormalRound": 1000,
+    "minimumMetByCumulativeR66": true
+  },
+  "checks": {
+    "node": "7/7 passed; malformed origin, forged rights, duplicate path, stale build, HTML, redirect, 404, wrong bytes, missing credit and tampered replay rejected",
+    "vitest": "22/22 focused V647 and R65 tests passed",
+    "targetedEslint": "passed",
+    "syntax": "passed",
+    "canonicalWebAuditReplay": "passed; public release blocked",
+    "productionBuild": "existing preserved v647web02 build passed; build input hash unchanged after tool-only changes",
+    "http": "12/12 local image responses and CREDITS.md matched local bytes, expected content types and source/build binding",
+    "browser": "desktop long-run in progress; not yet qualified",
+    "performance": "no new performance claim from asset HTTP timings"
+  },
+  "evidence": {
+    "static": [
+      "docs/release/v607/mainline-a-r66-web-v647-code-change-20261007.json",
+      "docs/release/v607/mainline-a-r66-web-delivery-audit-20261007-v647web02.json"
+    ],
+    "http": {
+      "path": "docs/release/v607/mainline-a-r66-web-asset-http-20261007-v647web02-credits-pinned.json",
+      "sha256": "e955b810ad3b5511674b30db7d35f59c06150709d080992d947cb41eecf191bb",
+      "replay": "verified-local-release-blocked",
+      "matchedImages": 12,
+      "matchedCreditsEntries": 12
+    },
+    "visual": "docs/release/v607/mainline-a-r66-web-visual-20261007-v647web02.json",
+    "browser": "docs/release/v607/mainline-a-r66-web-browser-20261007-v647web02.json",
+    "performance": "docs/release/v607/mainline-a-r66-web-performance-20261007-v647web02.json",
+    "externalSource": "docs/release/v607/mainline-a-r66-v646-evidence-supplement-20261007.json; historical for current source"
+  },
+  "knownDiscrepancy": {
+    "legacyA3CoverageLabel": "12-cleared-of-12",
+    "legacyA3PresentationRightsCleared": 12,
+    "canonicalRightsPending": 12,
+    "interpretation": "legacy local-display/metadata labels are not human rights signatures; canonical release gate remains pending",
+    "action": "migrate old rights naming in a later source-changing web batch, then rebuild and rerun current-source browser and performance evidence"
+  },
+  "gates": {
+    "nebulaRightsSignoff": "pending-0-of-12",
+    "heroPhysicalComponentIdentity": "pending-0-of-4",
+    "constellationVisualSignoff": "pending-0-of-12",
+    "currentSourceLongRun": "in-progress",
+    "publicWebRelease": "blocked"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "physicsKernelMutation": false,
+    "parentGitMutation": false
+  },
+  "claims": {
+    "releaseApproved": false,
+    "copyrightApproval": false,
+    "scientificValidity": false,
+    "productionPerformance": false,
+    "realUserValidation": false
+  }
+}

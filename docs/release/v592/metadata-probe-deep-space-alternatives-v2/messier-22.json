@@ -1,0 +1,45 @@
+{
+  "version": "v592-deep-space-alternative-metadata-probe-v2",
+  "probedAt": "2026-08-19T10:10:09.009Z",
+  "status": "alternative-metadata-probe-complete-no-payload",
+  "target": "messier-22",
+  "category": "cluster",
+  "query": "NGC 6656",
+  "requiredTermGroups": [
+    [
+      "messier 22",
+      "m22",
+      "ngc 6656"
+    ]
+  ],
+  "priorProbe": {
+    "path": "docs/release/v592/metadata-probe-deep-space-alternatives/messier-22.json",
+    "receiptSha256": "2d049b2f1d8b2360cbf3f92852c2527259355596c81100b26fe00872f0dd741f",
+    "status": "alternative-metadata-probe-complete-no-payload",
+    "priorUrl": "https://images-api.nasa.gov/search?q=Messier+22+globular+cluster&media_type=image&page_size=100"
+  },
+  "policy": {
+    "requestCount": 1,
+    "automaticRetryPerformed": false,
+    "automaticReplacementPerformed": false,
+    "payloadDownloaded": false,
+    "redirectPolicy": "manual-no-redirect-accepted",
+    "explicitOperatorInvokedQueryRefinement": true,
+    "manualTechnicalSelectionStillRequired": true,
+    "scientificPayloadWriteback": false
+  },
+  "metadataRequest": {
+    "url": "https://images-api.nasa.gov/search?q=NGC+6656&media_type=image&page_size=100",
+    "finalUrl": "https://images-api.nasa.gov/search?q=NGC+6656&media_type=image&page_size=100",
+    "status": 200,
+    "contentType": "application/json",
+    "responseBytes": 156,
+    "responseSha256": "bd402855ae62d4d09cc8ddf77d60b4ead9c06f0c433883a759c765a1644dea17"
+  },
+  "totalHits": 0,
+  "candidates": [],
+  "matchedCandidateCount": 0,
+  "payloadAdmission": "not-attempted-metadata-only",
+  "scientificPayloadWriteback": false,
+  "receiptSha256": "e045b09a138db84f1a4a7c30b316d185db7b21bd0bfdfb88a90114725b25a4ce"
+}

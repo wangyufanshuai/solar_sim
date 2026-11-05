@@ -1,0 +1,135 @@
+{
+  "schema": "mainline-a-code-change-receipt-v629",
+  "round": "R66-continuation",
+  "runId": "20260922-050",
+  "date": "2026-09-22",
+  "scope": "R66 continuation: readonly root source audit, R65 lifecycle evidence audit, and external source-rights ledger integration into release alignment",
+  "status": "blocked-open-gates",
+  "physicsKernelMutation": false,
+  "scientificPayloadWriteback": false,
+  "effectiveChangedLines": 1203,
+  "minimumRequired": 1000,
+  "minimumMet": true,
+  "countMethod": "Nonblank noncomment production/tool lines in the three new R66 continuation scripts; tests, receipts, screenshots, generated manifests and documentation excluded.",
+  "files": [
+    {
+      "path": "scripts/audit-mainline-a-root-source-v627.mjs",
+      "effectiveLines": 394,
+      "sha256": "e3737be20bc500eec1fe53e7f9a35c21d97f3869aae194caa4b8480fe3632c98"
+    },
+    {
+      "path": "scripts/audit-mainline-a-r65-lifecycle-v626.mjs",
+      "effectiveLines": 389,
+      "sha256": "cef50f839355decd3d72bdbe6d913d9f55c1a9a71206fd76d704bc0888f83868"
+    },
+    {
+      "path": "scripts/build-mainline-a-source-rights-ledger-v629.mjs",
+      "effectiveLines": 420,
+      "sha256": "c88e9383857f6f7202a5ccf8a75aff906f2240a697b47d747797b9fc1f84dd06"
+    }
+  ],
+  "supportingIntegrationChanges": [
+    {
+      "path": "scripts/audit-mainline-a-release-alignment-v626.mjs",
+      "reason": "bind lifecycle audit and source-rights/root-source closures into R66 release gates"
+    },
+    {
+      "path": "package.json",
+      "reason": "expose R65 lifecycle, R66 root-source and V629 source-rights commands"
+    }
+  ],
+  "tests": {
+    "node": {
+      "status": "passed",
+      "passed": 73,
+      "failed": 0,
+      "command": "node --test R66 alignment, root-source, lifecycle, source-rights, package and identity-bridge suites"
+    },
+    "vitest": {
+      "status": "passed",
+      "passed": 15,
+      "failed": 0,
+      "command": "vitest R66 release alignment and R65 performance/panel suites"
+    },
+    "eslint": {
+      "status": "passed",
+      "scope": "R66 alignment, root-source, lifecycle, source-rights, package, identity bridge and evidence tools"
+    },
+    "diffCheck": {
+      "status": "passed",
+      "command": "git diff --check"
+    },
+    "productionBuild": {
+      "status": "passed",
+      "runId": "20260922-050",
+      "buildId": "DKt91tHlwaSONTonnK5K-",
+      "runtimeBuildId": "mainline-a-8848c553e957b8fb"
+    }
+  },
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "receipts": [
+        "mainline-a-r66-root-source-audit-v627.json",
+        "mainline-a-r65-lifecycle-v626-20260922-050.json",
+        "mainline-a-source-rights-ledger-v629.json",
+        "mainline-a-r66-alignment-v626.json"
+      ]
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260922-050.json"
+    },
+    "visual": {
+      "status": "captured",
+      "screenshots": [
+        "docs/release/v607/screenshots/mainline-a-r66-build050-desktop.png",
+        "docs/release/v607/screenshots/mainline-a-r66-build050-mobile.png"
+      ],
+      "claim": "local rendered visual evidence only"
+    },
+    "browser": {
+      "status": "captured",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260922-050.json",
+      "claim": "in-app browser DOM, interaction and viewport evidence only"
+    },
+    "performance": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625-20260922-050.json",
+      "physicalMobile": "not-run",
+      "longRun": "not-run",
+      "claim": "digest-only local observations, no production or real-user performance claim"
+    },
+    "externalSource": {
+      "status": "blocked",
+      "receipt": "docs/release/v607/mainline-a-source-rights-ledger-v629.json",
+      "captured": 7,
+      "blocked": 7,
+      "rightsPending": 10,
+      "rightsSigned": 0
+    }
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWrites": false,
+    "measurementWrites": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "artifacts": {
+    "alignment": "docs/release/v607/mainline-a-r66-alignment-v626.json",
+    "releasePackage": "docs/release/v607/mainline-a-r66-release-package-v626-20260922-050.json",
+    "identityBridge": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-013.json",
+    "roundReceipt": "docs/release/v607/mainline-a-art-round-66-continuation-20260922-050.json"
+  },
+  "notes": [
+    "Root application was read as an external input only; no parent Git operation was performed.",
+    "Lifecycle evidence remains digest-only with no full resource registry, physical mobile run or signed long-run observation.",
+    "Source and rights rows remain candidate-only; no synthetic response, fixture promotion or scientific payload writeback was used.",
+    "The continuation meets the 1000-line effective production/tool threshold with a recomputed total of 1203 lines."
+  ],
+  "generatedAt": "2026-09-22T05:29:20.0926651Z"
+}

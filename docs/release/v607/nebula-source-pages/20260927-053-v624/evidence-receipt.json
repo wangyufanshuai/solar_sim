@@ -1,0 +1,638 @@
+{
+  "schema": "mainline-a-nebula-source-page-evidence-v624-20260927-053",
+  "startedAt": "2026-09-27T02:44:48.633Z",
+  "endedAt": "2026-09-27T02:44:50.739Z",
+  "scope": "existing-V624-source-evidence-only-no-new-development-round",
+  "transport": "Node-HTTPS-verified-TLS-manual-redirects",
+  "byteSemantics": "exact-HTTP-response-body-bytes-after-transfer-framing-before-content-decoding",
+  "captureScope": "official-source-page-and-policy-HTML-not-image-payload-not-structured-scientific-response",
+  "requestCount": 6,
+  "responseCaptured": 6,
+  "itemCount": 6,
+  "policyPageCount": 0,
+  "existingPolicyReference": {
+    "path": "docs/release/v607/nebula-source-pages/20260927-053/nasa-images-and-media-policy-attempt-1.html",
+    "sha256": "175fc5f5386cc1f782b5628846617aa65c0d32f740cb78545fe480da90878238"
+  },
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "runtimeWriteback": false,
+    "productionCodeChanged": false,
+    "rightsApproval": "pending",
+    "humanSigned": false,
+    "physicsKernelChanged": false
+  },
+  "rows": [
+    {
+      "id": "heart-nebula",
+      "expectedPia": "PIA13112",
+      "sourceUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.635Z",
+          "endedAt": "2026-09-27T02:44:50.118Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/heart-and-soul/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "dc9d9b959ef6c9af16726533a5b9572f4a14339a6dcc6b6585341a6205e1afd5",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/heart-and-soul/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/heart-and-soul/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 269857,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/heart-nebula-attempt-1.html",
+          "sha256": "80e301d515b0827f9aea48d32eb90f181b9d13ee905c9f955f19645622cbc4f4",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Heart and Soul",
+            "expectedPia": "PIA13112",
+            "observedPiaIds": [
+              "PIA13112"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13112/PIA13112.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Heart and Soul",
+        "expectedPia": "PIA13112",
+        "observedPiaIds": [
+          "PIA13112"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13112/PIA13112.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "soul-nebula",
+      "expectedPia": "PIA13014",
+      "sourceUrl": "https://science.nasa.gov/photojournal/soul-nebula/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.649Z",
+          "endedAt": "2026-09-27T02:44:50.462Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/soul-nebula/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/soul-nebula/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "6c87f1e315cb7848ad4849bfa3c2fd6a89818944442e5d2ed3ab45563ae7667e",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/soul-nebula/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/soul-nebula/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 269713,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/soul-nebula-attempt-1.html",
+          "sha256": "ce66eec9f8308856ae30d1ea2f50745f5f1c9df86f406f2360691e157f61ab9d",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Soul Nebula",
+            "expectedPia": "PIA13014",
+            "observedPiaIds": [
+              "PIA13014"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13014/PIA13014.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Soul Nebula",
+        "expectedPia": "PIA13014",
+        "observedPiaIds": [
+          "PIA13014"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13014/PIA13014.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "witch-head-nebula",
+      "expectedPia": "PIA17553",
+      "sourceUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.649Z",
+          "endedAt": "2026-09-27T02:44:50.517Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "781c64f505515ddbe6830790913f474913b1c7ad59cc6f2bc462b34ac6d9bea1",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/witch-head-brews-baby-stars/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 270320,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/witch-head-nebula-attempt-1.html",
+          "sha256": "59056479e23ab2f4eb4d4c32c1d051c6c5a32480df049d32f4a27b0c3ac9f05d",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "‘Witch Head’ Brews Baby Stars",
+            "expectedPia": "PIA17553",
+            "observedPiaIds": [
+              "PIA17553"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia17/pia17553/PIA17553.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "‘Witch Head’ Brews Baby Stars",
+        "expectedPia": "PIA17553",
+        "observedPiaIds": [
+          "PIA17553"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia17/pia17553/PIA17553.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "flame-nebula",
+      "expectedPia": "PIA15635",
+      "sourceUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.650Z",
+          "endedAt": "2026-09-27T02:44:50.661Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "00c98fd4a0aea0e19258f618d78f357b3f595a8fd6e7fa6278a5a46d4bda96d6",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/a-different-view-of-the-flame-nebula/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 273238,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/flame-nebula-attempt-1.html",
+          "sha256": "bd46fe88224b2f23e6fdda5205447a8ebca8a06c4c75ba441b66624622235cc2",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "A Different View of the Flame Nebula",
+            "expectedPia": "PIA15635",
+            "observedPiaIds": [
+              "PIA15635",
+              "PIA13448"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15635/PIA15635.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "A Different View of the Flame Nebula",
+        "expectedPia": "PIA15635",
+        "observedPiaIds": [
+          "PIA15635",
+          "PIA13448"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia15/pia15635/PIA15635.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "pacman-nebula",
+      "expectedPia": "PIA14731",
+      "sourceUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.650Z",
+          "endedAt": "2026-09-27T02:44:50.450Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "3b09fc2bd872b55d6cf26847ece97ec91db507e008e39fccd00df9715c3b90cb",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/the-pacman-nebula/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 269928,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/pacman-nebula-attempt-1.html",
+          "sha256": "17db9e17eb9bdc6dc22ffe7cf2f120dbc9674c3ba3ae441629a2df86fde9e83a",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "The ‘Pacman Nebula’",
+            "expectedPia": "PIA14731",
+            "observedPiaIds": [
+              "PIA14731"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "X-ray: NASA/CXC/CfA/S.Wolk; IR: NASA/JPL/CfA/S.Wolk",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14731/PIA14731.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "The ‘Pacman Nebula’",
+        "expectedPia": "PIA14731",
+        "observedPiaIds": [
+          "PIA14731"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "X-ray: NASA/CXC/CfA/S.Wolk; IR: NASA/JPL/CfA/S.Wolk",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia14/pia14731/PIA14731.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    },
+    {
+      "id": "running-chicken-nebula",
+      "expectedPia": "PIA13451",
+      "sourceUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+      "attempts": [
+        {
+          "attempt": 1,
+          "startedAt": "2026-09-27T02:44:48.651Z",
+          "endedAt": "2026-09-27T02:44:50.738Z",
+          "timeout": false,
+          "timeoutMs": 20000,
+          "retryCount": 0,
+          "requestExecuted": true,
+          "method": "GET",
+          "requestUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+          "requestHeaders": {
+            "accept": "text/html,application/xhtml+xml",
+            "accept-encoding": "identity",
+            "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+          },
+          "fingerprintPayload": {
+            "method": "GET",
+            "url": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+            "headers": {
+              "accept": "text/html,application/xhtml+xml",
+              "accept-encoding": "identity",
+              "user-agent": "SolarSimMainlineA-SourceEvidence/20260927"
+            },
+            "timeoutMs": 20000,
+            "maxRedirects": 5,
+            "maxBytes": 8388608
+          },
+          "requestFingerprint": "b27b6f57a0d510e7710467a724a0d5c347961e3aa66367d17a288d1c2882195c",
+          "httpStatus": 200,
+          "contentType": "text/html; charset=UTF-8",
+          "contentEncoding": null,
+          "finalUrl": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+          "redirectChain": [
+            {
+              "url": "https://science.nasa.gov/photojournal/chasing-chickens-in-the-lambda-centauri-nebula/",
+              "status": 200,
+              "location": null
+            }
+          ],
+          "errorClass": null,
+          "errorMessage": null,
+          "responseCaptured": 1,
+          "responseBytes": 271508,
+          "rawArtifactPath": "docs/release/v607/nebula-source-pages/20260927-053-v624/running-chicken-nebula-attempt-1.html",
+          "sha256": "daa7212afa9076300b40c188dec67ab1f586856d97b45142aeb2fd5893cc933f",
+          "candidate": {
+            "evidenceKind": "candidate-official-html-extraction",
+            "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+            "title": "Chasing Chickens in the Lambda Centauri Nebula",
+            "expectedPia": "PIA13451",
+            "observedPiaIds": [
+              "PIA13451"
+            ],
+            "sourceIdentityMatched": true,
+            "credit": "NASA/JPL-Caltech/UCLA",
+            "jpegDownloadLinks": [
+              "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13451/PIA13451.jpg"
+            ],
+            "restrictionFragments": [
+              "Commercial Space"
+            ],
+            "absenceOfRestrictionTextIsApproval": false,
+            "officialSourcePageCaptured": true,
+            "rightsApproval": "pending",
+            "signoffStatus": "pending",
+            "scientificValidity": "not-assessed"
+          }
+        }
+      ],
+      "responseCaptured": 1,
+      "status": "candidate-html-captured",
+      "candidate": {
+        "evidenceKind": "candidate-official-html-extraction",
+        "htmlParser": "bounded-specific-tag-and-label-extraction-not-scientific-parser",
+        "title": "Chasing Chickens in the Lambda Centauri Nebula",
+        "expectedPia": "PIA13451",
+        "observedPiaIds": [
+          "PIA13451"
+        ],
+        "sourceIdentityMatched": true,
+        "credit": "NASA/JPL-Caltech/UCLA",
+        "jpegDownloadLinks": [
+          "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia13/pia13451/PIA13451.jpg"
+        ],
+        "restrictionFragments": [
+          "Commercial Space"
+        ],
+        "absenceOfRestrictionTextIsApproval": false,
+        "officialSourcePageCaptured": true,
+        "rightsApproval": "pending",
+        "signoffStatus": "pending",
+        "scientificValidity": "not-assessed"
+      },
+      "rightsApproval": "pending",
+      "signoffStatus": "pending"
+    }
+  ]
+}

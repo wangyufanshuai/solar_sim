@@ -1,0 +1,55 @@
+{
+  "version": "v591-jupiter-visual-acquisition-receipt-v1",
+  "acquiredAt": "2026-08-11T03:45:30.203Z",
+  "status": "acquired-single-request-no-retry",
+  "metadataProbe": {
+    "productIdentity": "PIA07782 Jupiter global cylindrical map",
+    "mission": "Cassini-Huygens",
+    "instrument": "Cassini Imaging Science Subsystem",
+    "sourceCatalog": "NASA/JPL Photojournal",
+    "sourcePage": "https://photojournal.jpl.nasa.gov/catalog/PIA07782"
+  },
+  "policy": {
+    "requestPerUrlMaximum": 1,
+    "automaticRetry": false,
+    "automaticReplacement": false,
+    "atomicWrite": ".part-to-final"
+  },
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "asset": {
+    "id": "jupiter-cassini-albedo-source-v591",
+    "body": "jupiter",
+    "role": "albedo-source",
+    "sourceUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07782/PIA07782.tif",
+    "outputPath": "source-cache/celestial-convergence-v591/jupiter/PIA07782-cassini-global.tif",
+    "allowedHosts": [
+      "assets.science.nasa.gov"
+    ],
+    "expectedMediaTypes": [
+      "image/tiff",
+      "image/tif",
+      "application/octet-stream",
+      "binary/octet-stream"
+    ],
+    "minimumWidth": 3000,
+    "minimumHeight": 1500,
+    "license": {
+      "id": "NASA-JPL-public-domain",
+      "url": "https://photojournal.jpl.nasa.gov/catalog/PIA07782"
+    },
+    "observationIdentity": "Cassini-derived Jupiter global cylindrical color map PIA07782",
+    "observationLimit": "Presentation albedo; delivery dimensions cannot add detail beyond the admitted source.",
+    "presentationOnly": true,
+    "finalUrl": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia07/pia07782/PIA07782.tif",
+    "httpStatus": 200,
+    "mediaType": "image/tiff",
+    "bytes": 19456427,
+    "sha256": "f92ffc7a2fa0235c47ec8f1f168dd36bffeb6acc318292b237878a00a48cf7d9",
+    "width": 3601,
+    "height": 1801,
+    "format": "tiff",
+    "bitDepth": 8
+  },
+  "receiptSha256": "f69fe164189ffd29d5dd8d805cace552b5281a1446c60ebec344c7e72379660d"
+}

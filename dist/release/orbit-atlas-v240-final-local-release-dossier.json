@@ -1,0 +1,2080 @@
+{
+  "version": "v240-final-local-release-dossier",
+  "generatedAt": "2026-07-18T02:17:16.381Z",
+  "readiness": {
+    "version": "v240-local-release-readiness",
+    "product": {
+      "outcome": "orbit-atlas-web-1.0.0-ga-ready-local",
+      "passed": true,
+      "blockers": []
+    },
+    "desktop": {
+      "outcome": "desktop-1.0.0-beta.1-unsigned-rc",
+      "artifactsBuilt": true,
+      "signed": false,
+      "externalInstallReportPassed": false,
+      "blockers": [
+        "azure-artifact-signing-not-complete",
+        "external-windows-install-report-not-passed"
+      ]
+    },
+    "research": {
+      "outcome": "relativity-v12-research-candidate-shadow-retained",
+      "defaultKernel": "legacy-eih-1pn",
+      "candidateRuntimePolicy": "offline-shadow",
+      "denseKerrComplete": false,
+      "variationalStmQualified": false,
+      "perBodyNoRegression": false,
+      "blockers": [
+        "dense-kerr-1-of-49-shards",
+        "variational-stm-release-qualification-incomplete",
+        "weak-field-15-per-body-checkpoint-regressions"
+      ]
+    },
+    "boundary": "local-evidence-only-no-deploy-sign-stage-commit-or-runtime-promotion"
+  },
+  "runtime": {
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "reactDom": "19.2.7",
+    "r3f": "9.6.1",
+    "three": "0.170.0",
+    "standaloneBuildId": "YyWAUfFtwVnE9S85J1jxR",
+    "liteBuildId": "Aq0GfdC1qhyWqyGpqujJM"
+  },
+  "contracts": {
+    "canvasCount": 1,
+    "rootAttributeCount": 603,
+    "rootKeyHash": "ac6470fcc517e1b2ba2c6618f530f7af57d1a0caa52fffae0af7232f912f9867",
+    "missionUrlFocusCameraPanelStoreSceneRevisionPreserved": true,
+    "frozenV9Mutated": false,
+    "defaultScientificKernel": "legacy-eih-1pn"
+  },
+  "productGates": {
+    "evidence-consistent": true,
+    "typescript": true,
+    "rust": true,
+    "regression": true,
+    "standalone-build": true,
+    "lite-build": true,
+    "content-packs": true,
+    "visual-40-frame": true,
+    "fresh-browser-qa": true,
+    "accessibility": true,
+    "lifecycle-30-cycle": true,
+    "bundle-budget": true,
+    "rtx4060-performance": true
+  },
+  "regression": {
+    "files": "107/107",
+    "tests": "674/674",
+    "tsc": "passed"
+  },
+  "rust": {
+    "fmt": "passed",
+    "check": "passed",
+    "test": "3/3",
+    "releaseCheck": "passed"
+  },
+  "delivery": {
+    "standalone": {
+      "version": "v236-cold-client-bundle-budget",
+      "generatedAt": "2026-07-18T01:44:12.891Z",
+      "profile": "standalone-full",
+      "milestone": "single-webgl-canvas-programs-ready",
+      "transferBytes": 592056,
+      "releaseTargetBytes": 614400,
+      "stopLineBytes": 624640,
+      "releaseTargetPassed": true,
+      "stopLinePassed": true,
+      "resourceCount": 10,
+      "resources": [
+        {
+          "name": "/_next/static/chunks/webpack-f05cfab6486676f1.js",
+          "transferSize": 3133,
+          "encodedBodySize": 2833
+        },
+        {
+          "name": "/_next/static/chunks/4bd1b696-e356ca5ba0218e27.js",
+          "transferSize": 63180,
+          "encodedBodySize": 62880
+        },
+        {
+          "name": "/_next/static/chunks/3794-c66b3d8325973459.js",
+          "transferSize": 61019,
+          "encodedBodySize": 60719
+        },
+        {
+          "name": "/_next/static/chunks/main-app-89272842b6ada29b.js",
+          "transferSize": 829,
+          "encodedBodySize": 529
+        },
+        {
+          "name": "/_next/static/chunks/app/page-6dce4f397e11dcfc.js",
+          "transferSize": 2109,
+          "encodedBodySize": 1809
+        },
+        {
+          "name": "/_next/static/chunks/b536a0f1.c913a7170a0ea9bf.js",
+          "transferSize": 171343,
+          "encodedBodySize": 171043
+        },
+        {
+          "name": "/_next/static/chunks/b79b7286.6466fbbb31113877.js",
+          "transferSize": 46205,
+          "encodedBodySize": 45905
+        },
+        {
+          "name": "/_next/static/chunks/9119.f5c3876b2b457a60.js",
+          "transferSize": 24872,
+          "encodedBodySize": 24572
+        },
+        {
+          "name": "/_next/static/chunks/4408.a03499b2555f7061.js",
+          "transferSize": 213211,
+          "encodedBodySize": 212911
+        },
+        {
+          "name": "/_next/static/chunks/7260.368b9d4c1c230657.js",
+          "transferSize": 6155,
+          "encodedBodySize": 5855
+        }
+      ]
+    },
+    "lite": {
+      "version": "v236-cold-client-bundle-budget",
+      "generatedAt": "2026-07-18T01:44:22.020Z",
+      "profile": "vercel-lite",
+      "milestone": "single-webgl-canvas-programs-ready",
+      "transferBytes": 592055,
+      "releaseTargetBytes": 614400,
+      "stopLineBytes": 624640,
+      "releaseTargetPassed": true,
+      "stopLinePassed": true,
+      "resourceCount": 10,
+      "resources": [
+        {
+          "name": "/_next/static/chunks/webpack-2f40674910ade7cf.js",
+          "transferSize": 3132,
+          "encodedBodySize": 2832
+        },
+        {
+          "name": "/_next/static/chunks/4bd1b696-e356ca5ba0218e27.js",
+          "transferSize": 63180,
+          "encodedBodySize": 62880
+        },
+        {
+          "name": "/_next/static/chunks/3794-c66b3d8325973459.js",
+          "transferSize": 61019,
+          "encodedBodySize": 60719
+        },
+        {
+          "name": "/_next/static/chunks/main-app-89272842b6ada29b.js",
+          "transferSize": 829,
+          "encodedBodySize": 529
+        },
+        {
+          "name": "/_next/static/chunks/app/page-6dce4f397e11dcfc.js",
+          "transferSize": 2109,
+          "encodedBodySize": 1809
+        },
+        {
+          "name": "/_next/static/chunks/b536a0f1.c913a7170a0ea9bf.js",
+          "transferSize": 171343,
+          "encodedBodySize": 171043
+        },
+        {
+          "name": "/_next/static/chunks/b79b7286.6466fbbb31113877.js",
+          "transferSize": 46205,
+          "encodedBodySize": 45905
+        },
+        {
+          "name": "/_next/static/chunks/9119.f5c3876b2b457a60.js",
+          "transferSize": 24872,
+          "encodedBodySize": 24572
+        },
+        {
+          "name": "/_next/static/chunks/4408.dc8798ca370e627c.js",
+          "transferSize": 213211,
+          "encodedBodySize": 212911
+        },
+        {
+          "name": "/_next/static/chunks/7260.368b9d4c1c230657.js",
+          "transferSize": 6155,
+          "encodedBodySize": 5855
+        }
+      ],
+      "manifestFiles": 595,
+      "installedMiB": 65.9,
+      "loopbackFallback": false
+    },
+    "contentPacks": {
+      "packs": 6,
+      "files": "805/805",
+      "bytes": 565235470,
+      "mib": 539.0505504608154
+    },
+    "installers": [
+      {
+        "id": "desktop-nsis",
+        "file": "src-tauri/target/release/bundle/nsis/Orbit Atlas_1.0.0-beta.1_x64-setup.exe",
+        "externalQa": "pending",
+        "bytes": 93351702,
+        "sha256": "a55ee023ba7d01fb5d316db67f07b1cf4ade6c48be0f133a97a79f92a3e30906",
+        "signatureStatus": "NotSigned",
+        "builtBeforeV240FinalWebPass": true,
+        "uploaded": false
+      },
+      {
+        "id": "desktop-msi",
+        "file": "src-tauri/target/release/bundle/msi/Orbit Atlas_1.0.0-beta.1_x64_en-US.msi",
+        "externalQa": "pending",
+        "bytes": 113271481,
+        "sha256": "2016d3e0207b6b66402ca315f7e34852237cba6cdcf7f2061fb87dc379eaf441",
+        "signatureStatus": "NotSigned",
+        "builtBeforeV240FinalWebPass": true,
+        "uploaded": false
+      }
+    ]
+  },
+  "browser": {
+    "visual": {
+      "journeyFrames": 36,
+      "riskFrames": 4,
+      "totalFrames": 40,
+      "baselineUpdated": false
+    },
+    "freshQa": {
+      "passed": 9,
+      "expectedViewportSkips": 1,
+      "failed": 0
+    },
+    "consolePageServerErrors": 0
+  },
+  "lifecycle": {
+    "version": "v236-production-lifecycle-soak-30-cycle",
+    "generatedAt": "2026-07-18T02:07:34.312Z",
+    "runtimeBaseline": "next16-react19-r3f9-standalone-production-v236",
+    "simulationClockPolicy": "paused-before-warmup-to-isolate-scene-lifecycle",
+    "webGlTextureAuditEnabled": false,
+    "warmupCycles": 2,
+    "measuredCycles": 30,
+    "baselineQuiescence": {
+      "waitMs": 5714,
+      "rendererTextures": 27
+    },
+    "baseline": {
+      "workers": 1,
+      "renderTargets": 0,
+      "subscriptions": 1,
+      "cameraLocks": 0,
+      "textures": 17,
+      "models": 0,
+      "programs": 28,
+      "rendererTextures": 27
+    },
+    "baselineHeap": 36590868,
+    "baselineWebGlTextureAudit": {
+      "created": 0,
+      "deleted": 0,
+      "live": []
+    },
+    "cycles": [
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 37104232,
+        "searchMs": 10.010000000707805,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 37448876,
+        "searchMs": 11.03000000026077,
+        "focusMs": 0.049999999813735485,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 37761616,
+        "searchMs": 10.25,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 37997752,
+        "searchMs": 9.565000000409782,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38269612,
+        "searchMs": 9.754999999888241,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38516640,
+        "searchMs": 11.040000000037253,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39041176,
+        "searchMs": 9.639999999664724,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39174988,
+        "searchMs": 9.445000000298023,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39342300,
+        "searchMs": 11.004999999888241,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39275996,
+        "searchMs": 10.115000000223517,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39644052,
+        "searchMs": 9.785000000149012,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39186644,
+        "searchMs": 11.25,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38997112,
+        "searchMs": 11.205000000074506,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38867888,
+        "searchMs": 10.699999999254942,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39018028,
+        "searchMs": 11.019999999552965,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 37939648,
+        "searchMs": 10.21999999973923,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38002280,
+        "searchMs": 10.674999999813735,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38064336,
+        "searchMs": 12.095000000670552,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38107740,
+        "searchMs": 12.889999999664724,
+        "focusMs": 0.03500000014901161,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38162784,
+        "searchMs": 7.875,
+        "focusMs": 0.02500000037252903,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38232728,
+        "searchMs": 10.84499999973923,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38251932,
+        "searchMs": 10.825000000186265,
+        "focusMs": 0.03000000026077032,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38375772,
+        "searchMs": 6.979999999515712,
+        "focusMs": 0.02500000037252903,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38354084,
+        "searchMs": 6.955000000074506,
+        "focusMs": 0.019999999552965164,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38468920,
+        "searchMs": 6.879999999888241,
+        "focusMs": 0.02500000037252903,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 38268988,
+        "searchMs": 12.120000000111759,
+        "focusMs": 0.03499999921768904,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39301144,
+        "searchMs": 13.025000000372529,
+        "focusMs": 0.044999999925494194,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39335588,
+        "searchMs": 11.81499999947846,
+        "focusMs": 0.0400000000372529,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39425212,
+        "searchMs": 7.570000000298023,
+        "focusMs": 0.10500000044703484,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      },
+      {
+        "resources": {
+          "workers": 1,
+          "renderTargets": 0,
+          "subscriptions": 1,
+          "cameraLocks": 0,
+          "textures": 17,
+          "models": 0,
+          "programs": 28,
+          "rendererTextures": 27
+        },
+        "heapBytes": 39272892,
+        "searchMs": 9.394999999552965,
+        "focusMs": 0.02500000037252903,
+        "stageResources": {
+          "inspect": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 30,
+            "rendererTextures": 27
+          },
+          "launch": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          },
+          "kerr": {
+            "workers": 1,
+            "renderTargets": 0,
+            "subscriptions": 1,
+            "cameraLocks": 0,
+            "textures": 17,
+            "models": 0,
+            "programs": 28,
+            "rendererTextures": 27
+          }
+        }
+      }
+    ],
+    "released": {
+      "workers": 1,
+      "renderTargets": 0,
+      "subscriptions": 1,
+      "cameraLocks": 0,
+      "textures": 17,
+      "models": 0,
+      "programs": 28,
+      "rendererTextures": 27
+    },
+    "finalHeap": 39272892,
+    "finalWebGlTextureAudit": {
+      "created": 0,
+      "deleted": 0,
+      "live": []
+    },
+    "newLiveWebGlTextures": [],
+    "heapLimit": 70145300,
+    "stableHeapSeries": [
+      38232728,
+      38251932,
+      38375772,
+      38354084,
+      38468920,
+      38268988,
+      39301144,
+      39335588,
+      39425212,
+      39272892
+    ],
+    "stableHeapOlsSlopeBytesPerCycle": 151604.6303030303,
+    "stableHeapOlsSlopeLimitBytesPerCycle": 262144,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "passed": true,
+    "boundary": "production-browser-lifecycle-only-no-scientific-state-mutation"
+  },
+  "performance": {
+    "version": "v232-hardware-performance-production",
+    "generatedAt": "2026-07-18T02:09:36.836Z",
+    "runtimeBaseline": "next16-react19-r3f9-standalone-production-v232",
+    "viewport": {
+      "width": 1440,
+      "height": 900,
+      "dpr": 1
+    },
+    "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/150.0.0.0 Safari/537.36",
+    "adapter": {
+      "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+      "vendor": "Google Inc. (NVIDIA)"
+    },
+    "softwareRenderer": false,
+    "windowMs": 10000,
+    "samples": [
+      {
+        "id": "overview",
+        "sceneMode": "atlas",
+        "medianFps": 120.3,
+        "frameP50Ms": 8.3,
+        "frameP95Ms": 12.6,
+        "longestTaskMs": 0,
+        "frameSamples": 1215,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 25,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "earth-inspect",
+        "sceneMode": "inspect",
+        "medianFps": 80.7,
+        "frameP50Ms": 12.4,
+        "frameP95Ms": 16.8,
+        "longestTaskMs": 158,
+        "frameSamples": 853,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 31,
+        "textures": 25,
+        "renderTargets": 0
+      },
+      {
+        "id": "gaia-stellar",
+        "sceneMode": "inspect",
+        "medianFps": 239.8,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2325,
+        "drawCalls": 1,
+        "triangles": 1,
+        "programs": 28,
+        "textures": 18,
+        "renderTargets": 0
+      },
+      {
+        "id": "launch",
+        "sceneMode": "launch",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 313,
+        "frameSamples": 2395,
+        "drawCalls": 40,
+        "triangles": 89696,
+        "programs": 15,
+        "textures": 6,
+        "renderTargets": 0
+      },
+      {
+        "id": "kerr",
+        "sceneMode": "kerr",
+        "medianFps": 240,
+        "frameP50Ms": 4.2,
+        "frameP95Ms": 4.3,
+        "longestTaskMs": 0,
+        "frameSamples": 2400,
+        "drawCalls": 1,
+        "triangles": 2,
+        "programs": 22,
+        "textures": 20,
+        "renderTargets": 1
+      }
+    ],
+    "baseline": {
+      "total": 11,
+      "workers": 1,
+      "renderTargets": 0,
+      "cameraLocks": 0
+    },
+    "released": {
+      "total": 11,
+      "workers": 1,
+      "renderTargets": 0,
+      "cameraLocks": 0
+    },
+    "resourcesReleased": true,
+    "consoleErrors": [],
+    "pageErrors": [],
+    "thresholds": {
+      "overviewMedianFpsMin": 55,
+      "sceneMedianFpsMin": 45,
+      "frameP95MsMax": 50
+    },
+    "passed": true,
+    "boundary": "named-local-hardware-browser-observation-no-scientific-state-mutation"
+  },
+  "security": {
+    "responseHeaders": {
+      "version": "v232-production-security-verifier-v1",
+      "generatedAt": "2026-07-17T08:58:05.083Z",
+      "status": "passed",
+      "baseUrl": "http://127.0.0.1:3085",
+      "checks": {
+        "root200": true,
+        "cspEnforced": true,
+        "cspNoUnsafeEval": true,
+        "cspObjectNone": true,
+        "cspFrameNone": true,
+        "cspWorkerRestricted": true,
+        "sriSha384Enabled": true,
+        "sriCoverageAtLeast80Percent": true,
+        "nosniff": true,
+        "referrerPolicy": true,
+        "permissionsPolicy": true,
+        "coop": true,
+        "coep": true,
+        "debugProduction404": true,
+        "health200": true
+      },
+      "evidence": {
+        "rootStatus": 200,
+        "debugStatus": 404,
+        "healthStatus": 200,
+        "externalScriptCount": 6,
+        "sha384SriScriptCount": 5,
+        "allExternalScriptsHaveSri": false,
+        "uncoveredScriptSources": [
+          "/_next/static/chunks/app/page-f5791c757dd6ab6b.js"
+        ],
+        "cspSha256": "8165ee29d3e9349a04a1eb753c9ce11266662474d2b1dc2dbb5d003eee75f6c3",
+        "healthBodySha256": "0bfda93f438edb0f100619f9c967e1dca6cfdf53669cf7c93adb6a5e755dc9ee",
+        "headers": {
+          "contentSecurityPolicy": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; frame-src 'none'; form-action 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' data: blob: ws: wss:; worker-src 'self' blob:; media-src 'self' blob:; manifest-src 'self'",
+          "xContentTypeOptions": "nosniff",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "permissionsPolicy": "camera=(), microphone=(), geolocation=(), browsing-topics=()",
+          "crossOriginOpenerPolicy": "same-origin",
+          "crossOriginEmbedderPolicy": "credentialless"
+        }
+      }
+    },
+    "productionAudit": {
+      "version": "v232-production-npm-audit",
+      "generatedAt": "2026-07-18T02:17:06.710Z",
+      "registry": "https://registry.npmjs.org",
+      "omit": "dev",
+      "exitCode": 0,
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 0,
+        "high": 0,
+        "critical": 0,
+        "total": 0
+      },
+      "dependencyCounts": {
+        "prod": 146,
+        "dev": 486,
+        "optional": 124,
+        "peer": 0,
+        "peerOptional": 0,
+        "total": 667
+      },
+      "stderr": "",
+      "passed": true
+    },
+    "secretScan": {
+      "version": "v232-release-secret-scan",
+      "generatedAt": "2026-07-18T02:17:08.233Z",
+      "scannedFileCount": 938,
+      "findingCount": 0,
+      "findings": [],
+      "excludedLocalEnvironmentFiles": [
+        ".env",
+        ".env.local"
+      ],
+      "passed": true
+    }
+  },
+  "science": {
+    "currentEvidenceManifest": {
+      "version": "v233-current-evidence-manifest",
+      "generatedAt": "2026-07-18T02:17:08.233Z",
+      "sourceSha256": {
+        "promotion": "27cdc19da3277fb4ed17fa5e6e2267daa8d2a5dbfc1c3c9af8ff10ea2ade08be",
+        "densePlan": "2766029e87dcb5edae26b5d20681f98a6f062c7be08dd35380d291a3e0809f0b",
+        "denseAggregate": "5616f36d9ebf776f5c5fec320a8a645c55121a4953af68260bd33fe3e58bdebb",
+        "stm": "3eaf637e0b92fc3c1f524f5a1bcf3e38a427373024ed97920042483ffe307340",
+        "bundleStandalone": "75d9151bc9a1dfc7b7e5345266da3d521780c5065a0c2948d4c50a6a98eb9137",
+        "bundleLite": "305a9c708251c333b577765acb69277f6a5a099b267331f1fbadc9487d7fa73b",
+        "lifecycle": "110578969cf27ae8e72320257ca69adce659860848a5f878f6be853e86288a92",
+        "contentPacks": "363e5ac16abca8a1b55992491d6cb347c027b0ee5474f90ab1e9bad2f8f155cd",
+        "security": "938cfd3b878d1c2319521df1b6b34ed318820a97e55c7ba57973ecf7922b98ca",
+        "productionAudit": "1711b1236db435c042e480767a137034c27b92ade4c13c3cc3dd76d518949bb0",
+        "secretScan": "92b17cfc8b0ef32fde70d71fdf3d4690ffcb133bec104d964f417ce38eec0900",
+        "shard:shard-0000.json": "a690b4b34fcc0df25f0b328fb1cd850e21cd40d3e6e1944b838dfe04e066de38"
+      },
+      "promotionInput": {
+        "legacyPositionRmsKm": 56.66491927394823,
+        "legacyVelocityRmsMS": 0.1603763239995811,
+        "candidatePositionRmsKm": 56.66258973654782,
+        "candidateVelocityRmsMS": 0.16036424592186993,
+        "comparativeAggregateImprovementDemonstrated": true,
+        "independentPerBodyComparisonComplete": true,
+        "perBodyNoRegression": false,
+        "effectIsolationComplete": true,
+        "supportingGatesPassed": false
+      },
+      "weakField": {
+        "checkpointCount": 3,
+        "bodyCount": 12,
+        "perBodyRegressionCount": 15,
+        "regressionsByCheckpoint": {
+          "+30d": 4,
+          "+365d": 4,
+          "+10y": 7
+        },
+        "effectIsolationComplete": true
+      },
+      "denseKerr": {
+        "profile": "release",
+        "plannedRayCount": 3097,
+        "plannedShardCount": 49,
+        "completedReleaseShardCount": 1,
+        "completedRayCount": 64,
+        "completedExecutionCount": 512,
+        "completedShardIndices": [
+          0
+        ],
+        "rayClassCounts": {
+          "canonical": 25,
+          "low-discrepancy": 39,
+          "critical-bracket": 0
+        },
+        "codeSha256": "9f164e6058a7ee38dfee99f57f824582d5c37536d2f36e8067498b6ab5b78999",
+        "environmentSha256": "5cb0191749e1062441ff59108144f9b413cd0767f4c64001b846a2f7fa18ef83",
+        "frozenScreenManifestSha256": "d676c1a7c8d1427e8800aa460e3786e45df0e11e6968980837fdfb379bc15fa4",
+        "planSha256": "24ced109424e5f1a42889a47633e8617b7285ded257b92baf2d78204f9eaf9fd",
+        "maxNullConstraint": 2.4000980606573645e-11,
+        "partialResultsAggregated": false,
+        "gatePassed": false,
+        "blocker": "dense-release-shards-incomplete-no-partial-aggregation"
+      },
+      "variationalStm": {
+        "profile": "smoke",
+        "deterministicRerunPassed": true,
+        "releaseQualificationAvailable": false,
+        "effectiveRank": 66,
+        "integratedStateAndPhiDimension": 4824,
+        "holdoutDays": [
+          365
+        ],
+        "fitIterations": 1,
+        "gatePassed": false
+      },
+      "product": {
+        "gates": {
+          "contentPacks": true,
+          "standaloneBundle": true,
+          "liteBundle": true,
+          "lifecycle": true,
+          "security": true,
+          "productionAudit": true,
+          "secretScan": true
+        },
+        "localProductGatesPassed": true,
+        "bundles": {
+          "standaloneTransferBytes": 592056,
+          "liteTransferBytes": 592055,
+          "hardLimitBytes": 614400,
+          "engineeringTargetBytes": 604160
+        },
+        "contentPacks": {
+          "packCount": 6,
+          "manifestFileCount": 805,
+          "verifiedFileCount": 805
+        }
+      },
+      "boundary": "generated-current-evidence-no-root-contract-or-runtime-physics-mutation",
+      "manifestSha256": "0564c019cf01168e12bd5e445fb839f701cec98d4989d5204e41f93560003604"
+    },
+    "promotionDecision": "shadow-retained",
+    "runtimePromotionApplied": false
+  },
+  "capabilityMatrix": {
+    "vercel-lite": {
+      "interactiveAtlas": true,
+      "localContentPacks": false,
+      "fullResearchArtifacts": false,
+      "deploymentPerformed": false
+    },
+    "standalone-full": {
+      "interactiveAtlas": true,
+      "localContentPacks": true,
+      "fullResearchArtifacts": true,
+      "packagedForUpload": false
+    },
+    "desktop": {
+      "artifactsBuilt": true,
+      "signed": false,
+      "externalInstallQa": "pending",
+      "updater": "disabled"
+    }
+  },
+  "dirtyWorktree": {
+    "entryCount": 1402,
+    "categories": {
+      "external-asset": 7,
+      "other": 580,
+      "source-or-test": 815
+    },
+    "preserved": true
+  },
+  "externalBoundaries": {
+    "vercelPreview": "not-performed",
+    "productionDomainMigration": "not-performed",
+    "dnsRollbackRehearsal": "not-performed",
+    "azureArtifactSigning": "not-performed",
+    "externalWindowsInstallQa": "pending",
+    "gitBaselineTagCommit": "not-authorized-not-performed"
+  },
+  "inputEvidenceSha256": {
+    "dist/release/orbit-atlas-current-evidence-v233.json": "c5d00fe57170e06e8deb7560443d844d4eb09cf20701b4ba7a99f9e4c92a9f55",
+    "dist/science/content-pack-integrity-v232.json": "363e5ac16abca8a1b55992491d6cb347c027b0ee5474f90ab1e9bad2f8f155cd",
+    "dist/science/client-bundle-v236-standalone-full.json": "75d9151bc9a1dfc7b7e5345266da3d521780c5065a0c2948d4c50a6a98eb9137",
+    "dist/science/client-bundle-v236-vercel-lite.json": "305a9c708251c333b577765acb69277f6a5a099b267331f1fbadc9487d7fa73b",
+    "dist/science/lifecycle-soak-v236-report.json": "110578969cf27ae8e72320257ca69adce659860848a5f878f6be853e86288a92",
+    "dist/science/performance-v232-report.json": "0f9eb0c683c8f4fb9d8f3575f3d8063756f02c346da7a9a07e423ea69f8e2344",
+    "dist/science/production-security-v232.json": "938cfd3b878d1c2319521df1b6b34ed318820a97e55c7ba57973ecf7922b98ca",
+    "dist/science/production-audit-v232.json": "1711b1236db435c042e480767a137034c27b92ade4c13c3cc3dd76d518949bb0",
+    "dist/science/secret-scan-v232.json": "92b17cfc8b0ef32fde70d71fdf3d4690ffcb133bec104d964f417ce38eec0900",
+    "src-tauri/target/release/bundle/nsis/Orbit Atlas_1.0.0-beta.1_x64-setup.exe": "a55ee023ba7d01fb5d316db67f07b1cf4ade6c48be0f133a97a79f92a3e30906",
+    "src-tauri/target/release/bundle/msi/Orbit Atlas_1.0.0-beta.1_x64_en-US.msi": "2016d3e0207b6b66402ca315f7e34852237cba6cdcf7f2061fb87dc379eaf441"
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "mainline-a-art-round-receipt-v607",
+  "round": "R66",
+  "date": "2026-09-21",
+  "title": "V627 nebula closure correction and R66 release evidence rebinding",
+  "status": "blocked-open-gates",
+  "goalStatus": "active",
+  "physicsKernelMutation": false,
+  "counts": {
+    "nebulaClosureRows": 12,
+    "nebulaBatchRows": 6,
+    "nebulaLedgerRows": 6,
+    "nebulaResponsesCaptured": 6,
+    "nebulaResponsesPending": 6,
+    "nebulaArtifactsVerified": 6,
+    "nebulaRightsCleared": 0,
+    "canonicalStars": 12,
+    "canonicalConstellations": 12,
+    "canonicalNebulaCandidates": 12
+  },
+  "implementation": [
+    "Corrected V627 source and rights semantics: six captured V624 rows plus six V623 ledger-only rows, no synthetic signoff, row boundary validation, request fingerprint rebinding, and recomputed closure projection.",
+    "Added replay integrity inheritance, summary verification, and deterministic source/artifact/rights sidecars.",
+    "Rebound R66 audit, readonly identity bridge, release package and panel to the verified V627 receipt.",
+    "Rebound package verification pointer to the immutable 023 candidate package after receipt generation."
+  ],
+  "evidence": {
+    "static": {
+      "status": "passed",
+      "items": [
+        "V627 closure/verifier/replay Node tests 23/23",
+        "R66 alignment/package/identity Node tests 16/16",
+        "V627/identity/alignment Vitest 37/37",
+        "targeted ESLint passed",
+        "V619 check passed",
+        "boundary and physics-kernel static inspection pending final audit"
+      ]
+    },
+    "http": {
+      "status": "passed",
+      "receipt": "docs/release/v607/mainline-a-r66-http-20260921-021.json",
+      "buildId": "r0_nRe3Lp4mc2OvvoYHBD",
+      "runtimeBuildId": "mainline-a-d5681bbbfbf6014a"
+    },
+    "visual": {
+      "status": "captured",
+      "screenshots": [
+        "docs/release/v607/screenshots/mainline-a-v627-closure-desktop-021.png",
+        "docs/release/v607/screenshots/mainline-a-v627-closure-mobile-021.png"
+      ],
+      "claim": "local rendered visual evidence only"
+    },
+    "browser": {
+      "status": "captured",
+      "receipt": "docs/release/v607/mainline-a-r66-browser-20260921-021.json",
+      "checks": [
+        "12/12 V627 rows visible",
+        "search soul 1/12",
+        "negative search 0/12 with empty state",
+        "keyboard clear restored 12/12",
+        "desktop and 390x844 viewport scrollWidth equal clientWidth",
+        "console errors=0 warnings=0"
+      ]
+    },
+    "performance": {
+      "status": "not-claimed",
+      "receipt": "docs/release/v607/mainline-a-r65-performance-v625.json",
+      "note": "R65 four-second samples remain separate; no production or real-user performance claim"
+    },
+    "externalSource": {
+      "status": "pending",
+      "items": [
+        "six captured NASA artifacts have bytes and SHA-256, but official source-page evidence and item-level rights signoff remain pending",
+        "six V623 ledger rows remain responseCaptured=0"
+      ]
+    },
+    "mobilePhysical": {
+      "status": "not-run",
+      "reason": "only 390x844 browser viewport was available"
+    }
+  },
+  "artifacts": {
+    "closure": "docs/release/v607/mainline-a-r64-nebula-rights-closure-v627-verified-20260921.json",
+    "replay": "docs/release/v607/mainline-a-r64-nebula-rights-closure-replay-v627-verified-20260921.json",
+    "identityBridge": "docs/release/v607/mainline-a-r66-identity-bridge-v626-final-006.json",
+    "releasePackage": "docs/release/v607/mainline-a-r66-release-package-v626-20260921-023.json",
+    "codeChange": "docs/release/v607/mainline-a-r66-nebula-rights-code-change-20260921-final-011.json"
+  },
+  "openGates": [
+    "official item source-page evidence for 12 nebula candidates",
+    "trusted rights and visual signoff for 12 nebula candidates",
+    "four stellar raw HTTPS responses and structured/component source closure",
+    "canonical 12/12/12 runtime and rights signoff",
+    "long-run resource lifecycle and physical mobile evidence",
+    "root mirror signed canonical manifest and source parity",
+    "24-item Beta nebula target remains incomplete"
+  ],
+  "boundary": {
+    "candidateOnly": true,
+    "hold": true,
+    "notAdmitted": true,
+    "scientificPayloadWriteback": false,
+    "parentGitMutation": false,
+    "physicsKernelMutation": false
+  },
+  "claims": {
+    "static": true,
+    "http": true,
+    "visual": true,
+    "browser": true,
+    "performance": false,
+    "externalSource": false,
+    "realUserValidation": false,
+    "scientificValidity": false,
+    "copyrightApproval": false
+  },
+  "runId": "20260921-023"
+}

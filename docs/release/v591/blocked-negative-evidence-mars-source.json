@@ -1,0 +1,60 @@
+{
+  "version": "v591-mars-source-redirect-negative-evidence-v1",
+  "status": "blocked-redirect-host",
+  "productIdentity": "PIA00407 Viking global Mars color mosaic",
+  "requestedUrl": "https://photojournal.jpl.nasa.gov/tiff/PIA00407.tif",
+  "redirectHost": "science.nasa.gov",
+  "allowedHosts": [
+    "photojournal.jpl.nasa.gov",
+    "assets.science.nasa.gov",
+    "pds-geosciences.wustl.edu"
+  ],
+  "automaticRetryPerformed": false,
+  "automaticReplacementPerformed": false,
+  "payloadWritten": false,
+  "partFilesWritten": false,
+  "canonicalContinuation": {
+    "url": "https://assets.science.nasa.gov/content/dam/science/psd/photojournal/pia/pia00/pia00407/PIA00407.jpg",
+    "sameProductIdentity": true,
+    "basis": "existing repository NASA source catalog records this canonical PIA00407 asset path",
+    "singleRequestPerformed": true,
+    "result": "blocked-non-equirectangular",
+    "observedDimensions": "6787x6787",
+    "payloadWritten": false,
+    "partFileRemoved": true
+  },
+  "projectionCorrectedContinuation": {
+    "url": "https://astrogeology.usgs.gov/ckan/dataset/7131d503-cdc9-45a5-8f83-5126c0fd397e/resource/5ea881c6-01b3-41fa-a7af-42d2131b54f1/download/mars_viking_mdim21_clrmosaic_1km.jpg",
+    "productPage": "https://astrogeology.usgs.gov/search/map/mars_viking_colorized_global_mosaic_232m",
+    "productIdentity": "USGS Mars Viking MDIM 2.1 Colorized Global Mosaic",
+    "projection": "global-equirectangular",
+    "sameMissionDataFamily": true,
+    "automaticSelection": false,
+    "requiresSeparateSingleRequest": true
+  },
+  "fullResolutionAttempt": {
+    "url": "https://planetarymaps.usgs.gov/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "result": "blocked-redirect-host",
+    "redirectHost": "asc-pds-services.s3.us-west-2.amazonaws.com",
+    "payloadWritten": false,
+    "automaticRetryPerformed": false
+  },
+  "adoptedIdentityReference": {
+    "url": "https://astrogeology.usgs.gov/ckan/dataset/dfdc2242-52dc-4126-bc89-03af8253ae79/resource/0d7b31dc-0b2e-4ca6-89dc-e3c1404c0232/download/mars_viking_clrmosaic_global_1024.jpg",
+    "role": "official-product-identity-and-color-reference-only",
+    "runtimeAlbedo": "exact-byte-frozen-v588-8k",
+    "upscaleAllowed": false,
+    "similarityAuditRequired": true
+  },
+  "fullSourceThroughputBlock": {
+    "url": "https://asc-pds-services.s3.us-west-2.amazonaws.com/mosaic/Mars_Viking_ClrMosaic_global_925m.tif",
+    "expectedBytes": 797888177,
+    "partialBytesObserved": 24283736,
+    "result": "blocked-resource-throughput",
+    "partFileRemoved": true,
+    "automaticRetryPerformed": false
+  },
+  "scientificAuthorityGranted": false,
+  "measuredAuthorityGranted": false,
+  "receiptSha256": "36dcc638a07e565b411219358d4aeb9a2e14ff2df4dfae7b8b36de4c8756675f"
+}
