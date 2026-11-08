@@ -6,6 +6,7 @@ export type AtlasProxyDeliveryProfileV562 = "standalone-full" | "vercel-lite" | 
 export const ATLAS_PROXY_SEMANTIC_CASES_V562 = Object.freeze([
   { id: "root", method: "GET", pathname: "/", decision: "next" },
   { id: "downloads", method: "GET", pathname: "/downloads", decision: "next" },
+  { id: "relativity-lab", method: "GET", pathname: "/lab", decision: "next" },
   { id: "api", method: "GET", pathname: "/api/atlas/current", decision: "next" },
   { id: "next-assets", method: "GET", pathname: "/_next/static/chunk.js", decision: "next" },
   { id: "textures", method: "GET", pathname: "/textures/ktx2/earth.ktx2", decision: "next" },
@@ -28,7 +29,7 @@ export function classifyAtlasProxyPathV562(
 ): AtlasProxyPathDecisionV562 {
   if (method !== "GET" && method !== "HEAD") return "next";
   if (deliveryProfile === "local-shadow" && /^\/local-shadow-v\d+(?:\/|$)/.test(pathname)) return "next";
-  if (pathname === "/" || pathname === "/downloads" || pathname.startsWith("/api/") || pathname.startsWith("/_next") || pathname.startsWith("/textures") || pathname === "/favicon.ico" || /\.[a-zA-Z0-9]{1,10}$/.test(pathname)) return "next";
+  if (pathname === "/" || pathname === "/downloads" || pathname === "/lab" || pathname.startsWith("/api/") || pathname.startsWith("/_next") || pathname.startsWith("/textures") || pathname === "/favicon.ico" || /\.[a-zA-Z0-9]{1,10}$/.test(pathname)) return "next";
   return "redirect-root";
 }
 

@@ -342,7 +342,7 @@ function AtlasRuntimeWorkbenchSurfaceNormal({
   const {
     selectedExoplanetSystemId, selectedCelestialCatalogId, selectedBodyIndex,
     searchFocusNonce, onBodyFocusFromList, onSelectBody, onNearbyStarFocus, celestialObjectPassport,
-    requestCatalogObjectFocus, clearFocusLock,
+    requestCatalogObjectFocus, clearFocusLock, openKerrLab,
   } = domains.navigationFocus;
   const {
     openAtlasMissionHub, openAtlasObservatoryDeck, openAtlasWorkflows,
@@ -469,6 +469,7 @@ function AtlasRuntimeWorkbenchSurfaceNormal({
         selectedCatalogId={selectedCelestialCatalogId}
         onFocus={onNearbyStarFocus}
         onOpenPerformance={() => setMainlinePerformanceOpen(true)}
+        onOpenKerrStudio={openKerrLab}
       />
       <AtlasVisualABControlV261 />
       <ScienceCinematicVisualSurfaceV261 />

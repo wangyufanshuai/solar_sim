@@ -10,6 +10,7 @@ type Props = Readonly<{
   toolsVisible: boolean;
   onFocus: (direction: [number, number, number], catalogId?: string) => void;
   onOpenPerformance: () => void;
+  onOpenKerrStudio?: () => void;
 }>;
 
 export default function MainlineAWorkspaceNavigationV637(props: Props) {
@@ -64,6 +65,7 @@ export default function MainlineAWorkspaceNavigationV637(props: Props) {
           selectedCatalogId={props.selectedCatalogId}
           onFocus={props.onFocus}
           onOpenPerformance={props.onOpenPerformance}
+          onOpenKerrStudio={props.onOpenKerrStudio}
         />
       ) : null}
     </div>

@@ -39,13 +39,14 @@ describe("Orbit Atlas v208 relativity research boundary", () => {
     );
   });
 
-  it("keeps the new renderer conditional and mobile target-free", () => {
-    const renderer = readFileSync("app/components/KerrRayTraceRendererV3.tsx", "utf8");
+  it("maps the ray-trace quality tiers onto the Kerr v4 renderer", () => {
+    // KerrRayTraceRendererV3 was replaced by KerrRendererV4 (app/lib/kerr-v4).
+    const renderer = readFileSync("app/components/KerrRendererV4.tsx", "utf8");
+    const blackHole = readFileSync("app/components/KerrBlackHole.tsx", "utf8");
     const scene = readFileSync("app/components/AtlasUniverseSceneRuntime.tsx", "utf8");
-    expect(renderer).toContain('quality === "mobile-safe"');
     expect(renderer).toContain("WebGLRenderTarget");
-    expect(renderer).toContain('quality === "science-still" ? 1024');
-    expect(renderer).toContain('quality === "interactive" ? 192');
+    expect(blackHole).toContain('rayTraceQuality === "science-still" ? 1');
+    expect(blackHole).toContain('rayTraceQuality === "mobile-safe" ? 0.35');
     expect(scene).toContain("rayTraceQuality");
   });
 

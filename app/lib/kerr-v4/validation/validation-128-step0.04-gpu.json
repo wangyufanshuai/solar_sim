@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-11-05T09:53:34.220Z",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "stepScale": 0.04,
+  "W": 128,
+  "H": 128,
+  "rOut": 20,
+  "summary": [
+    {
+      "config": "a0.9-i75",
+      "pixels": 16384,
+      "refMs": 3329,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 9351,
+      "redshiftRelErr": {
+        "median": 9.01496550329067e-8,
+        "p99": 0.0000011408487107326873,
+        "max": 0.00015475321811766655
+      },
+      "emitRadiusRelErrMax": 0.001906408892766621,
+      "refMaxHamiltonian": 0.000002877612132579088
+    },
+    {
+      "config": "a0-i60",
+      "pixels": 16384,
+      "refMs": 3934,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 11138,
+      "redshiftRelErr": {
+        "median": 7.75882901200792e-8,
+        "p99": 5.528605069683456e-7,
+        "max": 0.00001702212706586347
+      },
+      "emitRadiusRelErrMax": 0.00004986594351662427,
+      "refMaxHamiltonian": 9.546056389808655e-9
+    },
+    {
+      "config": "a0.99-i85",
+      "pixels": 16384,
+      "refMs": 6454,
+      "statusAgreement": 0.999755859375,
+      "mismatches": {
+        "disk->4": 1,
+        "captured->1": 3
+      },
+      "gpuStepBudgetExhausted": 1,
+      "diskPixelsCompared": 4473,
+      "redshiftRelErr": {
+        "median": 1.1860911586603062e-7,
+        "p99": 0.0000061228187182901736,
+        "max": 0.00003516806245015396
+      },
+      "emitRadiusRelErrMax": 0.0000067766546217453715,
+      "refMaxHamiltonian": 0.00004091672599315643
+    },
+    {
+      "config": "a-0.6-i45",
+      "pixels": 16384,
+      "refMs": 4289,
+      "statusAgreement": 1,
+      "mismatches": {},
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 10745,
+      "redshiftRelErr": {
+        "median": 7.946178267024055e-8,
+        "p99": 4.3566016887060963e-7,
+        "max": 0.000010865330113656849
+      },
+      "emitRadiusRelErrMax": 0.00004937785869454702,
+      "refMaxHamiltonian": 1.9278377294540405e-7
+    }
+  ]
+}

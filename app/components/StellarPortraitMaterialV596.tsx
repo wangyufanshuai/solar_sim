@@ -14,17 +14,21 @@ import {
   type StellarPortraitProfileV596,
   type StellarPortraitRenderContractV596,
 } from "../lib/stellarPortraitRenderContractV596";
+import { limbDarkeningQuadratic, photosphereLinearColor } from "../lib/stellarPhotosphere";
 
 export const STELLAR_SURFACE_VERTEX_SHADER_V596 = /* glsl */ `
 precision highp float;
 varying vec3 vNormalView;
 varying vec3 vPosition;
+varying vec3 vViewPosition;
 #include <common>
 #include <logdepthbuf_pars_vertex>
 void main() {
   vNormalView = normalize(normalMatrix * normal);
   vPosition = position;
-  gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+  vec4 viewPosition = modelViewMatrix * vec4(position, 1.0);
+  vViewPosition = viewPosition.xyz;
+  gl_Position = projectionMatrix * viewPosition;
   #include <logdepthbuf_vertex>
 }`;
 
@@ -58,12 +62,14 @@ uniform float uLimbCrispness;
 uniform float uSurfaceContrast;
 uniform float uActivity;
 uniform float uPresentationEnhancement;
-uniform vec3 uSceneLinearColor;
-uniform vec3 uCore;
-uniform vec3 uSurface;
+uniform vec3 uPhotosphereColor;
+uniform float uLimbU1;
+uniform float uLimbU2;
+uniform float uExposure;
 uniform vec3 uCorona;
 varying vec3 vNormalView;
 varying vec3 vPosition;
+varying vec3 vViewPosition;
 #include <logdepthbuf_pars_fragment>
 
 float hashV596(vec3 p) {
@@ -201,32 +207,40 @@ void main() {
   float boundaryDarkening = boundary * uBoundaryStrength * 0.32;
   float cellHeat = clamp(0.5 + signedStructure * 1.1 + plume * 0.24, 0.0, 1.0);
 
-  float facing = clamp(dot(normalize(vNormalView), vec3(0.0, 0.0, 1.0)), 0.0, 1.0);
-  float limbExponent = mix(0.42, 0.82, uLimbCrispness);
-  float limbFloor = mix(0.3, 0.1, uLimbCrispness);
-  float limb = mix(limbFloor, 1.0, pow(facing, limbExponent));
+  // mu = cos(angle between the surface normal and this fragment's line of sight). Using the
+  // per-fragment view ray keeps mu -> 0 at the visible limb even for close perspective cameras.
+  float facing = clamp(dot(normalize(vNormalView), normalize(-vViewPosition)), 0.0, 1.0);
+  // Quadratic limb-darkening law I(mu)/I(1) = 1 - u1 (1 - mu) - u2 (1 - mu)^2; the
+  // coefficients come from app/lib/stellarPhotosphere.ts (representative values, approximate).
+  float oneMinusMu = 1.0 - facing;
+  float limb = max(0.0, 1.0 - uLimbU1 * oneMinusMu - uLimbU2 * oneMinusMu * oneMinusMu);
   float rim = pow(1.0 - facing, 3.2);
   float polarWeight = pow(abs(n.y), mix(1.35, 3.1, uGravityTransition));
-  float gravityBrightness = 1.0
+  // Gravity darkening relative to the pole (pole = 1). The equator-to-pole ratio is kept
+  // >= 0.4, roughly (T_eq / T_pole)^4 from von Zeipel's law for rapid rotators such as Altair
+  // (an approximate bound, not a per-star fit).
+  float gravityBrightness = max(0.4, (1.0
     + polarWeight * uPolarBrightening
-    - (1.0 - polarWeight) * uEquatorialDarkening;
+    - (1.0 - polarWeight) * uEquatorialDarkening) / (1.0 + uPolarBrightening));
 
-  vec3 neutralSurface = mix(uSurface * uSceneLinearColor, uSceneLinearColor, 0.82);
-  vec3 hotSurface = mix(neutralSurface, uCore * uSceneLinearColor, 0.46);
-  vec3 coolSurface = mix(neutralSurface, uSurface * 0.5, 0.34);
-  vec3 color = mix(coolSurface, hotSurface, cellHeat);
+  // Presentation layer: convective structure modulates brightness only (no hue), and fades
+  // toward the limb at a rate set by uLimbCrispness; granules are drawn as brighter cells.
+  float structureWeight = mix(1.0, sqrt(facing), uLimbCrispness);
   float contrastGain = 0.72 + uSurfaceContrast * 1.2;
-  color *= (1.0 + signedStructure * contrastGain - boundaryDarkening);
-  color *= limb * gravityBrightness;
+  float structure = 1.0
+    + (signedStructure * contrastGain - boundaryDarkening) * structureWeight
+    + (cellHeat - 0.5) * 0.18 * structureWeight;
+  // Physical layer: blackbody colour of T_eff (peak channel 1) times the limb law.
+  vec3 color = uPhotosphereColor * limb * gravityBrightness * max(0.0, structure);
   color *= 1.0 - activityRegion * (0.22 + uActivity * 0.16);
-  color += hotSurface * plume * (0.14 + uPresentationEnhancement * 0.12);
+  color += uPhotosphereColor * plume * limb * (0.14 + uPresentationEnhancement * 0.12);
   color += uCorona * rim * uPresentationEnhancement * (0.1 + uActivity * 0.08);
+  color = max(vec3(0.0), color) * uExposure;
 
-  float luminance = dot(color, vec3(0.2126, 0.7152, 0.0722));
-  color = mix(vec3(luminance), color, mix(1.0, 1.18, uPresentationEnhancement));
-  color = max(vec3(0.0), color);
-  vec3 restrainedShoulder = color / (color + vec3(0.92));
-  color = mix(color, restrainedShoulder, uPresentationEnhancement * 0.42);
+  // Output stays linear; the scene's bloom/compositing pass handles display encoding. In
+  // cinematic mode, channels above 1 are scaled down together (hue kept) rather than clipped.
+  float peak = max(max(color.r, color.g), max(color.b, 1.0));
+  color = mix(color, color / peak, uPresentationEnhancement);
   gl_FragColor = vec4(color, 1.0);
 }`;
 
@@ -381,6 +395,11 @@ void main() {
   gl_FragColor = vec4(uColor * (0.48 + inner * 0.32), alpha);
 }`;
 
+function peakNormalised(color: readonly [number, number, number]): [number, number, number] {
+  const peak = Math.max(color[0], color[1], color[2]);
+  return [color[0] / peak, color[1] / peak, color[2] / peak];
+}
+
 export function createStellarSurfaceUniformsV596(
   portrait: StellarPortraitProfileV596,
   contract: StellarPortraitRenderContractV596,
@@ -415,9 +434,13 @@ export function createStellarSurfaceUniformsV596(
     uSurfaceContrast: { value: portrait.granulationContrast },
     uActivity: { value: portrait.activity },
     uPresentationEnhancement: { value: contract.surface.linearOutput ? 0 : 1 },
-    uSceneLinearColor: { value: new THREE.Color().fromArray([...portrait.sceneLinearColor]) },
-    uCore: { value: new THREE.Color(portrait.coreColor) },
-    uSurface: { value: new THREE.Color(portrait.displayColor) },
+    // Blackbody hue scaled so its brightest channel is 1 (an exposure choice, not a luminosity):
+    // the disc centre then sits just below clipping and the limb law stays visible.
+    uPhotosphereColor: { value: new THREE.Color().fromArray(peakNormalised(photosphereLinearColor(portrait.temperatureK))) },
+    uLimbU1: { value: limbDarkeningQuadratic(portrait.temperatureK)[0] },
+    uLimbU2: { value: limbDarkeningQuadratic(portrait.temperatureK)[1] },
+    // HDR scale before tone mapping in cinematic mode; 1 keeps the science output linear.
+    uExposure: { value: contract.surface.linearOutput ? 1 : 0.95 },
     uCorona: { value: new THREE.Color(portrait.coronaColor) },
   };
 }
@@ -603,7 +626,9 @@ export function StellarHaloMaterialV596({
       uniforms,
       transparent: true,
       depthWrite: false,
-      depthTest: false,
+      // The opaque surface writes depth first (render order 44 < 45), so the additive halo
+      // glows only outside the disc instead of washing out the photosphere.
+      depthTest: true,
       side: THREE.DoubleSide,
       blending: THREE.AdditiveBlending,
       toneMapped: false,

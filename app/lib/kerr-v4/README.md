@@ -101,8 +101,15 @@ import { KERR_V4_CINEMATIC, KERR_V4_SCIENCE } from "../lib/kerr-v4/kerrShaderV4"
 
 同机位前后对照（sandbox 路由 → 导航器 → “Kerr 相对论工作室”，1280×720）：`docs/screenshots/a1-kerr-v4/before-kerr-studio.jpg`、`after-kerr-studio.jpg`；`intermediate-wrong-spin-axis.jpg` 是自旋轴尚取 +Y 时的错误画面（盘面和轨迹不在同一平面），留作记录。
 
+## 真实 GPU 校验（2026-11-05）
+
+`PW_CHANNEL=chrome npx tsx scripts/kerr-v4/validate.mts` 在 RTX 4060 Laptop（ANGLE D3D11）上运行，记录在 `validation/validation-128-step0.04-gpu.json`：分类一致 100% / 100% / 99.976% / 100%，红移最大相对误差 1.5e-4 / 1.7e-5 / 3.5e-5 / 1.1e-5，均满足 A1 的 ≥ 99%、≤ 1e-3。
+
+## 入口
+
+默认 Orbit Atlas 界面：右上“工具” → “Kerr 黑洞 · 光线追踪”（`docs/screenshots/a1-kerr-v4/atlas-default-entry.jpg`），Esc 退出。sandbox 路由的导航器入口“Kerr 相对论工作室”保留。
+
 ## 接下来
 
-1. 用真实 GPU 跑一次 `validate.mts`（目前的逐像素对照记录来自 SwiftShader）。
-2. 用 Gaia 星表立方体贴图替换程序星空；静帧加入逐帧累积超采样。
-3. 路线图 A2：厚盘、偏振（Walker–Penrose 上 GPU）、热斑。
+1. 用 Gaia 星表立方体贴图替换程序星空；静帧加入逐帧累积超采样。
+2. 路线图 A2：厚盘、偏振（Walker–Penrose 上 GPU）、热斑。

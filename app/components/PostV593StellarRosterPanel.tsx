@@ -36,10 +36,12 @@ export default function PostV593StellarRosterPanel({
   selectedCatalogId,
   onFocus,
   onOpenPerformance,
+  onOpenKerrStudio,
 }: Readonly<{
   selectedCatalogId: string;
   onFocus: (direction: [number, number, number], catalogId?: string) => void;
   onOpenPerformance?: () => void;
+  onOpenKerrStudio?: () => void;
 }>) {
   const [toolsExpanded, setToolsExpanded] = useState(false);
   const toolbarRef = useRef<HTMLDivElement>(null);
@@ -123,6 +125,11 @@ export default function PostV593StellarRosterPanel({
           <button type="button" onClick={(event) => openPanel("nebula-review", event.currentTarget)} className={styles.action} aria-haspopup="dialog">清权审查</button>
           <button type="button" onClick={(event) => openPanel("hero-review", event.currentTarget)} className={styles.action} aria-haspopup="dialog">恒星补齐</button>
           <button type="button" onClick={(event) => openPerformance(event.currentTarget)} className={styles.action}>性能生命周期</button>
+          {onOpenKerrStudio ? (
+            <button type="button" data-mainline-a-kerr-studio="true" className={styles.action}
+              onClick={() => { setToolsExpanded(false); onOpenKerrStudio(); }}>Kerr 黑洞 · 光线追踪</button>
+          ) : null}
+          <a href="/lab" data-mainline-a-relativity-lab="true" className={styles.action}>相对论实验室 · 验证结果</a>
           <p className={styles.toolsHint}>候选资料与审核记录可在这里查看。性能观察可以收起后继续选择天体。</p>
         </div>
       </div>

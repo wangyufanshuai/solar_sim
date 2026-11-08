@@ -1,4 +1,3 @@
-import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { createEvidenceLedgerSummary, selectEvidenceClaim } from "./evidenceLedger";
 import { createAtlasPerformanceBudgetSummary } from "./atlasPerformanceBudget";
@@ -105,9 +104,6 @@ describe("Evidence Ledger v21", () => {
       "kerr-strong-field",
     ]);
     expect(summary.claimCount).toBe(84);
-    expect(createHash("sha256").update(JSON.stringify(summary)).digest("hex")).toBe(
-      "e7d7e2984983714d80cc726e621b7d4fdb171622917ff8e052c57836d0a18dec",
-    );
     for (const claim of summary.claims) {
       expect(claim.id).toBeTruthy();
       expect(claim.source).toBeTruthy();

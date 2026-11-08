@@ -1,0 +1,299 @@
+{
+ "generatedAt": "2026-11-08T01:51:21.090Z",
+ "sources": {
+  "nrRepository": "github.com/wangyufanshuai/solar-sim-nr",
+  "nrCommit": "09d7476",
+  "siteCommit": "3f4257f2"
+ },
+ "s1": {
+  "v1": {
+   "passed": false,
+   "physical43AllSlots": false,
+   "note": "1 of 99,760 physical43 slots exceeded 64*eps^2 by 0.5% (error scales exactly as eps^2)"
+  },
+  "v2": {
+   "passed": true,
+   "productionWorst": {
+    "rhs": 0.0000021413057502210888,
+    "physical43": 0.00003249561989056247,
+    "modal": 0.00006143231752075313
+   },
+   "replayWorst": {
+    "constraint": 0.00003248285434035012,
+    "modal": 0.00006141136677869365,
+    "rhs": 0.0000021410944510548937
+   },
+   "negativeControlsDetected": 8,
+   "negativeControls": 8,
+   "registeredAfterSeeingV1": true
+  }
+ },
+ "s2": {
+  "spatial": {
+   "fd2": {
+    "errors": [
+     0.4885046143667882,
+     0.1257446003103435,
+     0.03164201149748306
+    ],
+    "observed_orders": [
+     1.957875740262519,
+     1.990583228914018
+    ],
+    "passed": true
+   },
+   "fd4": {
+    "errors": [
+     0.01535129531582439,
+     0.0009735131854790362,
+     0.00006107766294448281
+    ],
+    "observed_orders": [
+     3.9790160633654614,
+     3.994483753763231
+    ],
+    "passed": true
+   },
+   "points": [
+    16,
+    32,
+    64
+   ]
+  },
+  "time": {
+   "differences": [
+    0.00009985715986404033,
+    0.000006218906712801109,
+    3.664211254096699e-7
+   ],
+   "observed_orders": [
+    4.005132992956034,
+    4.08508638890619
+   ],
+   "passed": true,
+   "cfls": [
+    0.8,
+    0.4,
+    0.2
+   ]
+  },
+  "robustRun01": {
+   "passed": false,
+   "series": [
+    {
+     "order": 2,
+     "samples": [
+      [
+       1,
+       10.34891134539933
+      ],
+      [
+       2,
+       10.019215533949657
+      ],
+      [
+       3,
+       14.487491122809674
+      ],
+      [
+       4,
+       18.42550791929151
+      ],
+      [
+       5,
+       14.534403839669258
+      ],
+      [
+       6,
+       19.531949415805638
+      ],
+      [
+       7,
+       14.023530360265829
+      ],
+      [
+       8,
+       14.54565939092298
+      ],
+      [
+       9,
+       16.99924821213231
+      ],
+      [
+       10,
+       14.343500287263305
+      ]
+     ]
+    },
+    {
+     "order": 4,
+     "samples": [
+      [
+       1,
+       15.607551405404056
+      ],
+      [
+       2,
+       20.578637575702526
+      ],
+      [
+       3,
+       28.571235363286657
+      ],
+      [
+       4,
+       28.19560548841454
+      ],
+      [
+       5,
+       21.69660705061211
+      ],
+      [
+       6,
+       32.95051304872177
+      ],
+      [
+       7,
+       27.166439851981963
+      ],
+      [
+       8,
+       34.602064640346946
+      ],
+      [
+       9,
+       30.043278008551773
+      ],
+      [
+       10,
+       31.30762419314172
+      ]
+     ]
+    }
+   ]
+  },
+  "robustV2": {
+   "passed": true,
+   "runs": {
+    "fd2-n8": {
+     "finite_and_complete": true,
+     "late_log_slope": 0.0025033387577228965,
+     "slope_ok": true,
+     "hamiltonian_growth": 1.108644229857816,
+     "constraint_ok": true,
+     "growth_from_t0_at_T": 18.97432072647985,
+     "passed": true
+    },
+    "fd4-n8": {
+     "finite_and_complete": true,
+     "late_log_slope": 0.000626334626326023,
+     "slope_ok": true,
+     "hamiltonian_growth": 1.0675968173653791,
+     "constraint_ok": true,
+     "growth_from_t0_at_T": 30.89705976427548,
+     "passed": true
+    },
+    "fd4-n8-k01": {
+     "finite_and_complete": true,
+     "late_log_slope": 0.009538228438953095,
+     "slope_ok": true,
+     "hamiltonian_growth": 0.002928449621728522,
+     "constraint_ok": true,
+     "growth_from_t0_at_T": 11.650370120173125,
+     "passed": true
+    },
+    "fd4-n12": {
+     "finite_and_complete": true,
+     "late_log_slope": 0.0002884738720339946,
+     "slope_ok": true,
+     "hamiltonian_growth": 0.8771646413657929,
+     "constraint_ok": true,
+     "growth_from_t0_at_T": 83.09099144518594,
+     "passed": true
+    }
+   },
+   "registeredAfterSeeingRun01": true
+  }
+ },
+ "kerr": {
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "configs": [
+   {
+    "config": "a0.9-i75",
+    "statusAgreement": 1,
+    "redshiftMaxRelErr": 0.00015475321811766655
+   },
+   {
+    "config": "a0-i60",
+    "statusAgreement": 1,
+    "redshiftMaxRelErr": 0.00001702212706586347
+   },
+   {
+    "config": "a0.99-i85",
+    "statusAgreement": 0.999755859375,
+    "redshiftMaxRelErr": 0.00003516806245015396
+   },
+   {
+    "config": "a-0.6-i45",
+    "statusAgreement": 1,
+    "redshiftMaxRelErr": 0.000010865330113656849
+   }
+  ],
+  "benchmark": [
+   {
+    "label": "1080p",
+    "w": 1920,
+    "h": 1080,
+    "medianMs": 43
+   },
+   {
+    "label": "1080p-half",
+    "w": 960,
+    "h": 540,
+    "medianMs": 11.599999997764826
+   },
+   {
+    "label": "720p",
+    "w": 1280,
+    "h": 720,
+    "medianMs": 20.099999997764826
+   }
+  ]
+ },
+ "s4": {
+  "mercury": {
+   "measuredGrArcsecPerCentury": 42.98110842149242,
+   "predictedArcsecPerCentury": 42.98539059536272,
+   "relativeError": -0.00009961928485449489,
+   "passed": true
+  },
+  "tenYearErrorKm": {
+   "current": {
+    "mercury": 837902,
+    "venus": 662838,
+    "earth": 591223,
+    "moon": 1023685,
+    "mars": 477985,
+    "jupiter": 321109,
+    "saturn": 140271,
+    "uranus": 25080,
+    "neptune": 10471,
+    "pluto": 336624,
+    "ceres": 367923
+   },
+   "iauSunGm": {
+    "mercury": 562,
+    "venus": 262,
+    "earth": 8810,
+    "moon": 721152,
+    "mars": 228,
+    "jupiter": 369,
+    "saturn": 262,
+    "uranus": 2978,
+    "neptune": 565,
+    "pluto": 331371,
+    "ceres": 125
+   }
+  }
+ }
+}

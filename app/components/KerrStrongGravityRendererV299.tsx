@@ -42,7 +42,6 @@ import {
   type KerrCinematicVisualContractV305,
   type KerrScienceVisualContractV305,
 } from "../lib/kerrStrongGravityVisualV305";
-import { KerrRayTraceRendererV3 } from "./KerrRayTraceRendererV3";
 
 // Historical v317 contract remains immutable for evidence replay; the active
 // Science path intentionally upgrades its materialization to v321 below.
@@ -265,11 +264,9 @@ function CinematicComputeRenderer({ radiusScene, spinA, quality, contract }: { r
     };
   }, [contract, dimensions.height, dimensions.width, spinA]);
   if (!texture) {
-    return (
-      <group userData={{ atlasFallback: "legacy-visual-approximation-not-science-authority", atlasAuthoritative: false }}>
-        <KerrRayTraceRendererV3 radiusScene={radiusScene} spinA={spinA} quality={quality} />
-      </group>
-    );
+    // Nothing is drawn until the worker texture arrives; the V3 2D approximation was removed.
+    // KerrBlackHole uses KerrRendererV4 for cinematic mode, so this path is not on the default route.
+    return <group userData={{ atlasFallback: "pending-compute-no-approximation", atlasAuthoritative: false }} />;
   }
   return (
     <group userData={{ atlasCinematicRenderer: "v305-seeded-bloom", atlasScienceAuthority: false, atlasVisualContract: contract.version, atlasTokenSource: contract.tokenSource }}>

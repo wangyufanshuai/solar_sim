@@ -1,7 +1,7 @@
 /**
  * GPU-vs-float64 validation for the Kerr v4 shader.
  * Run from next-web:  npx tsx scripts/kerr-v4/validate.mts      (N=128 STEP=0.04 by default)
- * Writes app/lib/kerr-v4/validation/validation-<N>-step<STEP>.json
+ * Writes app/lib/kerr-v4/validation/validation-<N>-step<STEP>.json (SOFTWARE=1) or ...-gpu.json
  */
 import { createRequire } from "node:module";
 import { join } from "node:path";
@@ -44,7 +44,7 @@ const bundle = await build({ stdin: { contents: entry, resolveDir: process.cwd()
 const js = bundle.outputFiles[0].text;
 // SOFTWARE=1 forces SwiftShader (how the recorded results were produced); default uses the real GPU when available.
 // PW_CHANNEL=chrome (or msedge) uses an installed browser instead of Playwright's bundled Chromium.
-const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || undefined, args:process.env.SOFTWARE ? ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"] : ["--ignore-gpu-blocklist", "--enable-gpu"] });
+const browser = await chromium.launch({ channel: process.env.PW_CHANNEL || undefined, args:process.env.SOFTWARE ? ["--use-angle=swiftshader", "--enable-unsafe-swiftshader"] : ["--ignore-gpu-blocklist", "--enable-gpu", "--use-angle=d3d11", "--force_high_performance_gpu"] });
 const page = await browser.newPage();
 await page.setContent(`<canvas id=c width=${W} height=${H}></canvas><script>${js}</script>`);
 const summary: any[] = [];
@@ -94,5 +94,5 @@ for (const c of configs) {
   summary.push(s);
   console.log(JSON.stringify(s));
 }
-writeFileSync(`${outDir}/validation-${W}-step${stepScale}.json`, JSON.stringify({ generatedAt: new Date().toISOString(), renderer: await page.evaluate(() => { const gl = document.createElement("canvas").getContext("webgl2"); const ext = gl?.getExtension("WEBGL_debug_renderer_info"); return ext ? gl!.getParameter(ext.UNMASKED_RENDERER_WEBGL) : "unknown"; }), stepScale, W, H, rOut, summary }, null, 2));
+writeFileSync(`${outDir}/validation-${W}-step${stepScale}${process.env.SOFTWARE ? "" : "-gpu"}.json`, JSON.stringify({ generatedAt: new Date().toISOString(), renderer: await page.evaluate(() => { const gl = document.createElement("canvas").getContext("webgl2"); const ext = gl?.getExtension("WEBGL_debug_renderer_info"); return ext ? gl!.getParameter(ext.UNMASKED_RENDERER_WEBGL) : "unknown"; }), stepScale, W, H, rOut, summary }, null, 2));
 await browser.close();

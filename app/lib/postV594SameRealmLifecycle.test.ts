@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import type { AtlasRuntimeResourceSnapshot } from "./atlasResourceLifecycle";
@@ -481,7 +481,9 @@ describe("post-v593 v594 same-realm scene-exit contract", () => {
     expect(workbench).not.toContain("about:blank");
   });
 
-  it("keeps the lifecycle request ledger compatible with the Playwright CLI VM", () => {
+  // Reads local, untracked Playwright runner scratch files under tmp/; skipped when they are absent.
+  it.skipIf(!["tmp/v594-same-realm-lifecycle-runner.mjs", "tmp/v595-same-realm-lifecycle-runner.mjs"].every((path) => existsSync(path)))(
+    "keeps the lifecycle request ledger compatible with the Playwright CLI VM", () => {
     const runner = read("tmp/v594-same-realm-lifecycle-runner.mjs");
     const currentRunner = read("tmp/v595-same-realm-lifecycle-runner.mjs");
     expect(runner).toContain("url: request.url()");
