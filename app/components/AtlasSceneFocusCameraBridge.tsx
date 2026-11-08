@@ -10,6 +10,7 @@ import { lodConfigForTier } from "../lib/galacticLod";
 import { EARTH_BODY_INDEX, MOON_BODY_INDEX, SOLAR_SYSTEM_BODIES } from "../data/planetsJ2000";
 import { CAMERA_FOCUS_BODY_EVENT, CAMERA_FOCUS_DIRECTION_EVENT, CAMERA_FOCUS_EARTH_MOON_EVENT, CAMERA_FOCUS_ORIGIN_EVENT, CAMERA_ZOOM_EVENT, type CameraFocusBodyDetail, type CameraFocusDirectionDetail, type CameraZoomDetail } from "../lib/camera-bridge";
 import { smootherstep01, type CameraFocusMode } from "../lib/cameraFocusCommand";
+import { interpolateSkyCameraPose, skyTransitionTurnRad } from "../lib/skyCameraTransition";
 import { atlasRuntimeStore } from "../lib/atlasRuntimeStore";
 import {
   atlasCameraPresentationCanWriteV273,
@@ -395,10 +396,12 @@ export function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoon
       if (direction.lengthSq() < 1e-12) return;
       clearLock(); captureFocusStart(); direction.normalize();
       const now = performance.now();
+      // Duration from the actual turn (previously always the half-turn value).
+      const turn = controls ? skyTransitionTurnRad(camera.position, controls.target, direction) : Math.PI;
       focusRef.current = {
         kind: "direction", direction,
         constellation: resolveMainlineAConstellationCameraTargetV638(detail.constellationCatalogId),
-        start: now, until: now + runtimeFocusDurationMs(Math.PI, 1, focusViewport),
+        start: now, until: now + runtimeFocusDurationMs(turn, 1, focusViewport),
       };
       atlasRuntimeStore.setFocusTransition("transition");
     };
@@ -636,16 +639,8 @@ export function CameraFocusBodyBridge({ physicsRef, floatingOriginRef, earthMoon
           THREE.Object3D.DEFAULT_UP,
           Math.min(SKY_TARGET_CAMERA_HEIGHT_SCENE, frame.distance * 0.14),
         );
-      controls.target.lerpVectors(
-        focusStartTarget.current,
-        tmpTarget.current,
-        ease,
-      );
-      camera.position.lerpVectors(
-        focusStartCamera.current,
-        tmpCam.current,
-        ease,
-      );
+      interpolateSkyCameraPose(focusStartTarget.current, focusStartCamera.current,
+        tmpTarget.current, tmpCam.current, ease, controls.target, camera.position);
       controls.minDistance = SKY_TARGET_ZOOM_MIN_DISTANCE_SCENE;
       controls.maxDistance = f.constellation ? mainlineAConstellationMaxDistanceV638(frame) : SKY_TARGET_ZOOM_MAX_DISTANCE_SCENE;
       controls.update();

@@ -254,9 +254,14 @@ export default function OrbitAtlasHud({
                     onChange={(checked) => patchView({ showOrbitTrails: checked })}
                   />
                   <LayerToggle
-                    label="星座"
+                    label="星座连线"
                     checked={viewSettings.showConstellationLines}
                     onChange={(checked) => patchView({ showConstellationLines: checked })}
+                  />
+                  <LayerToggle
+                    label="星座边界"
+                    checked={viewSettings.showConstellationBoundaries !== false}
+                    onChange={(checked) => patchView({ showConstellationBoundaries: checked })}
                   />
                   <LayerToggle
                     label="深空天体"

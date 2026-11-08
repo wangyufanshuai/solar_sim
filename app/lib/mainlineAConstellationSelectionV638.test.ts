@@ -170,14 +170,19 @@ describe("V638 projected selected-figure visibility", () => {
     expect(Object.values(projection.bounds!).every(Number.isFinite)).toBe(true);
   });
 
-  it("preserves the existing direction convention for every non-constellation catalog entry", () => {
-    const otherKinds = CELESTIAL_CATALOG_ENTRIES.filter((entry) => entry.kind !== "constellation");
-    expect(otherKinds.length).toBeGreaterThan(0);
-    for (const entry of otherKinds) {
-      const direction = celestialEntryToDirection(entry);
-      expect(direction, entry.id).toEqual(starToDirection(entry.raHours!, entry.decDeg!));
+  it("uses one sky basis for every catalog kind, so members lie near their constellation (A4)", () => {
+    const placed = CELESTIAL_CATALOG_ENTRIES.filter((entry) => entry.raHours != null && entry.decDeg != null);
+    expect(placed.some((entry) => entry.kind !== "constellation")).toBe(true);
+    for (const entry of placed) {
+      expect(celestialEntryToDirection(entry), entry.id).toEqual(starToDirection(entry.raHours!, entry.decDeg!));
     }
-    expect(starToDirection(6, 0)[2]).toBe(-1);
+    // Shared basis: +Z for increasing RA (a known mirror of the real sky, kept consistent across layers).
+    expect(starToDirection(6, 0)[2]).toBe(1);
+    const angle = (a: string, b: string) => {
+      const [u, v] = [a, b].map((id) => celestialEntryToDirection(CELESTIAL_CATALOG_ENTRIES.find((entry) => entry.id === id)!)!);
+      return Math.acos(Math.min(1, u[0] * v[0] + u[1] * v[1] + u[2] * v[2])) * 180 / Math.PI;
+    };
+    expect(angle("constellation:Ori", "nebula:m42")).toBeLessThan(20);
   });
 });
 

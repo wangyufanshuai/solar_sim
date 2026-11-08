@@ -347,7 +347,7 @@ function AtlasRuntimeScene({
     [simulation.viewSettings, solarAnnotationsSuppressed],
   );
   const showConstellationOverlay =
-    simulation.viewSettings.showConstellationLines &&
+    (simulation.viewSettings.showConstellationLines || simulation.viewSettings.showConstellationBoundaries !== false) &&
     !launchRuntimeActive &&
     !showKerrSceneVisual &&
     !gaiaOverlayCloseupSuppressed &&

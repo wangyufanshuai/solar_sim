@@ -57,6 +57,7 @@ export default function MainlineANebulaSceneCaption({ asset, title, attempt, exp
         <p className={styles.bands}>{asset.bands.join(" · ")} <span>· 官方构图保留</span></p>
         <p>{mainlineANebulaImageNoteM3(asset.objectId)}</p>
         <p>保留官方构图与配色。二维图像不表示三维深度、目录角径或肉眼色彩。</p>
+        <p data-mainline-a-nebula-parallax-note>图像前后的两层星点是示意视差层（随机生成，不是星表恒星），只在转动视角时提供远近感。</p>
         <p className={styles.rights}>本地候选预览；来源许可标记已记录，逐图版权签署仍待完成。</p>
         <p className={styles.credit} data-mainline-a-scene-image-credit>{asset.credit}</p>
         <a className={styles.license} href={asset.licenseUrl} target="_blank" rel="noreferrer">{asset.license}</a>

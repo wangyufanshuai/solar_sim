@@ -1,16 +1,17 @@
-# Source-only snapshot of next-web — v1.0-freeze
+# Source-only snapshot of next-web — post-freeze A3/A4
 
-Generated 2026-11-08 from local commit `1e8eef18e4fe2fffeff6a7c9232340fa4827eedd` (annotated tag v1.0-freeze, branch
-codex/solar-sim-mainline-a). The local history contains data files over GitHub's 100 MB
-limit, so this commit is a source-only snapshot whose parent is the previous snapshot
-(9cd43ad, 2026-11-05). The tag v1.0-freeze in this repository points here.
+Generated 2026-11-09 from local commit `48239d572b19477565ff1c222f62db17b2407cf1` (branch codex/solar-sim-mainline-a). The local
+history contains data files over GitHub's 100 MB limit, so this commit is a source-only
+snapshot whose parent is the v1.0-freeze snapshot (095a6dc).
+
+Contents since v1.0-freeze (separate post-freeze projects, see docs/ROADMAP.md): A3 nebula
+parallax layers; A4 shared sky basis, steadier sky focus turns, separate constellation line
+and boundary switches.
 
 Excluded asset directories (Gaia catalogues, textures, models, ephemerides, bundled
-runtimes, about 5.7 GB; needed at runtime and shipped separately):
+runtimes; needed at runtime and shipped separately):
 
 - tools/asset-cache, tools/science-cache, tools/ktx
 - public/textures, public/data, public/atlas-lite, public/models, public/vendor
 - dist/content-packs, dist/release-exports
 - source-cache, src-tauri/server, src-tauri/runtime
-
-No file over 20 MB is included. Freeze rule and scope: docs/ROADMAP.md.

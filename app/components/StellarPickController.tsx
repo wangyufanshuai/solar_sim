@@ -36,7 +36,7 @@ function brightStarPosition(star: BrightStarDef, target: THREE.Vector3): THREE.V
   return target.set(
     BRIGHT_STAR_RADIUS * Math.cos(dec) * Math.cos(ra),
     BRIGHT_STAR_RADIUS * Math.sin(dec),
-    -BRIGHT_STAR_RADIUS * Math.cos(dec) * Math.sin(ra),
+    BRIGHT_STAR_RADIUS * Math.cos(dec) * Math.sin(ra), // shared sky basis, see starToDirection
   );
 }
 

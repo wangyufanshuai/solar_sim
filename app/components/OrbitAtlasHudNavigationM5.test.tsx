@@ -82,11 +82,11 @@ beforeEach(() => {
 afterEach(() => { vi.unstubAllGlobals(); });
 
 describe("orbit layers yield to both object navigation surfaces", () => {
-  it("keeps all six controls above desktop and mobile passports when navigation is closed", () => {
+  it("keeps all seven controls (A4: lines and boundaries separate) above desktop and mobile passports when navigation is closed", () => {
     const hud = harness();
     const html = hud.open();
     expect(html).toContain('aria-expanded="true" title="图层"');
-    expect(html.match(/type="checkbox"/g)).toHaveLength(6);
+    expect(html.match(/type="checkbox"/g)).toHaveLength(7);
     expect(html).toMatch(/<footer class="[^"]* z-\[121\] sm:z-\[104\]"/);
     expect(hud.props.onViewSettingsChange).not.toHaveBeenCalled();
   });

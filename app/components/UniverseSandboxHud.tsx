@@ -482,9 +482,14 @@ export default function UniverseSandboxHud({
                   onChange={(v) => patch({ showReferenceOrbits: v })}
                 />
                 <ToggleRow
-                  label="星座"
+                  label="星座连线"
                   checked={viewSettings.showConstellationLines}
                   onChange={(v) => patch({ showConstellationLines: v })}
+                />
+                <ToggleRow
+                  label="星座边界"
+                  checked={viewSettings.showConstellationBoundaries !== false}
+                  onChange={(v) => patch({ showConstellationBoundaries: v })}
                 />
                 <ToggleRow
                   label="深空天体"

@@ -603,12 +603,17 @@ export const NEARBY_STARS: NearbyStarDef[] = [
  * Convert RA/Dec to a unit direction vector.
  * Used for camera orientation when focusing on a star.
  */
+/**
+ * Shared sky basis of the celestial-sphere layers: (cos d cos a, sin d, +cos d sin a), +Y = celestial north.
+ * Known issue (A4, 2026-11-08): +Z for increasing RA makes this basis a mirror image of the real sky as seen
+ * from inside; it is kept because every sky layer uses it, so they agree with each other. See docs/ROADMAP.md.
+ */
 export function starToDirection(raHours: number, decDeg: number): [number, number, number] {
   const ra = (raHours / 24) * Math.PI * 2;
   const dec = (decDeg / 180) * Math.PI;
   return [
     Math.cos(dec) * Math.cos(ra),
     Math.sin(dec),
-    -Math.cos(dec) * Math.sin(ra),
+    Math.cos(dec) * Math.sin(ra),
   ];
 }

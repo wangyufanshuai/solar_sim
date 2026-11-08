@@ -52,7 +52,7 @@ function raDecToXYZ(raHours: number, decDeg: number, radius: number): [number, n
   const dec = (decDeg / 180) * Math.PI;
   const x = radius * Math.cos(dec) * Math.cos(ra);
   const y = radius * Math.sin(dec);
-  const z = -radius * Math.cos(dec) * Math.sin(ra);
+  const z = radius * Math.cos(dec) * Math.sin(ra); // shared sky basis, see starToDirection
   return [x, y, z];
 }
 

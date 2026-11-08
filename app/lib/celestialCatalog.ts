@@ -520,12 +520,8 @@ function countDeepSkyEntries(entries: readonly CelestialCatalogEntry[]): number 
 
 export function celestialEntryToDirection(entryItem: CelestialCatalogEntry): [number, number, number] | null {
   if (entryItem.raHours == null || entryItem.decDeg == null) return null;
-  const direction = starToDirection(entryItem.raHours, entryItem.decDeg);
-  // Constellation figures and labels use positive Z for increasing RA.
-  // Preserve the existing negative-Z camera basis for other catalog kinds.
-  return entryItem.kind === "constellation"
-    ? [direction[0], direction[1], -direction[2]]
-    : direction;
+  // One basis for every kind (see starToDirection), so a nebula lies inside its constellation's figure.
+  return starToDirection(entryItem.raHours, entryItem.decDeg);
 }
 
 export function celestialEntriesForKinds(

@@ -106,10 +106,15 @@ export default function ConstellationLines({
   cinematicCameraProfile = "overview-atlas",
   qualityTier = "balanced",
   asterismEnabled = true,
+  linesEnabled = true,
+  boundariesEnabled = true,
 }: {
   floatingOriginRef: MutableRefObject<FloatingOriginState>;
   selectedCatalogId?: string;
   enabled?: boolean;
+  /** A4: figure lines/anchors and the selected IAU boundary can be switched separately. */
+  linesEnabled?: boolean;
+  boundariesEnabled?: boolean;
   orbitAtlas?: boolean;
   cinematicCameraProfile?: AtlasCinematicCameraProfile;
   qualityTier?: AtlasGaiaStarfieldEnhancementQualityTier;
@@ -224,9 +229,10 @@ export default function ConstellationLines({
     if (!line || !asterismLine || !boundaryLine) return;
     const tier = floatingOriginRef.current.lodTier;
     const scaleBand = atlasRuntimeStore.getSnapshot().scaleBand;
-    const visible = enabled
+    const overlay = enabled
       && cinematicCameraProfile !== "selected-body-cinematic"
       && (scaleBand === "solar" || scaleBand === "stellar" || scaleBand === "galactic");
+    const visible = overlay && linesEnabled;
     const layer = resolveMainlineAConstellationLayerV607({
       enabled: visible,
       orbitAtlas,
@@ -252,7 +258,7 @@ export default function ConstellationLines({
       viewport.height, state.camera.projectionMatrix.elements[5],
       state.camera.position.distanceTo(boundaryGeometry.boundingSphere.center),
     ) : 0;
-    const boundaryVisible = visible && appearance !== null && selectedFigure.status === "selected"
+    const boundaryVisible = overlay && boundariesEnabled && appearance !== null && selectedFigure.status === "selected"
       && (scaleBand === "stellar" || scaleBand === "galactic") && boundaryScale > 0;
     boundaryLine.visible = boundaryVisible;
     asterismLine.visible = layer.showAsterisms;

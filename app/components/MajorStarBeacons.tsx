@@ -76,7 +76,7 @@ function raDecToXYZ(raHours: number, decDeg: number, radius: number): [number, n
   return [
     radius * Math.cos(dec) * Math.cos(ra),
     radius * Math.sin(dec),
-    -radius * Math.cos(dec) * Math.sin(ra),
+    radius * Math.cos(dec) * Math.sin(ra), // shared sky basis, see starToDirection
   ];
 }
 

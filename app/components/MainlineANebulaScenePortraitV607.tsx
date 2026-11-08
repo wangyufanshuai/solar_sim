@@ -34,6 +34,7 @@ import {
 } from "../lib/mainlineANebulaLoadV638";
 import MainlineANebulaSceneCaption from "./MainlineANebulaSceneCaption";
 import MainlineANebulaViewerM3 from "./MainlineANebulaViewerM3";
+import NebulaParallaxLayers from "./NebulaParallaxLayers";
 import captionStyles from "./MainlineANebulaSceneCaption.module.css";
 import { resolveMainlineAJourneyViewportM4 } from "../lib/mainlineAJourneyViewportM4";
 import { runtimeSafeViewportRect } from "../lib/atlasSceneFocusCameraRuntime";
@@ -169,7 +170,8 @@ function ObservationPlaneV607({ target }: { target: TargetV607 }) {
     renderObserver.inspect(camera);
   });
 
-  return (
+  return (<>
+    <NebulaParallaxLayers objectId={asset.objectId} position={target.position} visible={attempt.status === "ready" && Boolean(texture)} />
     <Billboard ref={billboardRef} position={target.position} userData={{
       atlasLayer: "mainline-a-nebula-observation-plane-v607",
       atlasObjectId: asset.objectId,
@@ -221,5 +223,5 @@ function ObservationPlaneV607({ target }: { target: TargetV607 }) {
         </Html>
       </group>
     </Billboard>
-  );
+  </>);
 }

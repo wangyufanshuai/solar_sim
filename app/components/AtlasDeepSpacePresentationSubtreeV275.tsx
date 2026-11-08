@@ -86,6 +86,8 @@ export default function AtlasDeepSpacePresentationSubtreeV275({
           selectedCatalogId={simulation.selectedCelestialCatalogId}
           floatingOriginRef={simulation.floatingOriginRef}
           enabled={showConstellationOverlay && !closeupSuppressed}
+          linesEnabled={simulation.viewSettings.showConstellationLines}
+          boundariesEnabled={simulation.viewSettings.showConstellationBoundaries !== false}
           orbitAtlas={orbitAtlas}
           cinematicCameraProfile={simulation.cinematicCameraProfile ?? "overview-atlas"}
           qualityTier={qualityTier}
