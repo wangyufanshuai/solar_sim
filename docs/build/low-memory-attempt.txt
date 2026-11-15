@@ -1,0 +1,35 @@
+▲ Next.js 16.3.0 (webpack)
+✓ Running next.config.mjs took 83ms
+- Experiments (use with caution):
+  · cpus: 1
+  · optimizePackageImports
+  · sri
+  ✓ webpackBuildWorker
+  ✓ webpackMemoryOptimizations
+
+  Creating an optimized production build ...
+Browserslist: browsers data (caniuse-lite) is 8 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+<--- Last few GCs --->
+
+[58764:000001F13EA31000]    42277 ms: Mark-Compact 762.1 (770.6) -> 760.9 (771.9) MB, pooled: 0 MB, 361.72 / 0.00 ms  (average mu = 0.259, current mu = 0.026) allocation failure; scavenge might not succeed
+[58764:000001F13EA31000]    42636 ms: Mark-Compact 763.0 (772.1) -> 761.7 (776.6) MB, pooled: 0 MB, 350.91 / 0.00 ms  (average mu = 0.152, current mu = 0.022) allocation failure; scavenge might not succeed
+
+FATAL ERROR: Reached heap limit Allocation failed - JavaScript heap out of memory
+----- Native stack trace -----
+
+ 1: 00007FF6799C6536 node::SetAbortHandler+54
+ 2: 00007FF6799C6A74 node::OnFatalError+1284
+ 3: 00007FF6785B2387 v8::Function::NewInstance+423
+ 4: 00007FF6783B2BC7 v8::HeapStatistics::used_global_handles_size+54423
+ 5: 00007FF6783B0866 v8::HeapStatistics::used_global_handles_size+45366
+ 6: 00007FF6783CAEEA X509_STORE_set_cleanup+5098
+ 7: 00007FF6783D7386 uv_timer_set_repeat+20694
+ 8: 00007FF677FA9247 v8::CodeEvent::GetFunctionName+131959
+ 9: 00007FF679BAA2BA node::AsyncResource::CallbackScope::CallbackScope+752474
+10: 00007FF679AFD965 node::AsyncResource::CallbackScope::CallbackScope+45573
+11: 00007FF679AFD26B node::AsyncResource::CallbackScope::CallbackScope+43787
+12: 000001F159DA738F
+Next.js build worker exited with code: 134 and signal: null

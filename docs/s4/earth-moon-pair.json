@@ -1,0 +1,830 @@
+{
+ "schema": "s4-earth-moon-pair-comparison",
+ "registrationCommit": "96d138d4",
+ "implementationCommit": "8ae6fbd4",
+ "reference": "public/data/horizons-validation-j2000.json",
+ "baselineCommit": "c7169adf",
+ "baselineFile": "app/data/s4Horizons.generated.json",
+ "earthMoonSofteningMeters": 1000,
+ "thresholdsChanged": false,
+ "defaultAdopted": false,
+ "cases": [
+  {
+   "run": {
+    "mode": "newton",
+    "bodies": 101,
+    "sunGmSi": 132712440000000000000,
+    "softeningMeters": 14959787.07,
+    "earthMoonSofteningMeters": 1000,
+    "earthGmSi": 398600542309999.94,
+    "moonGmSi": 4902800619700,
+    "integrationModes": [
+     "dp",
+     "rk4-fallback",
+     "rk4-fallback"
+    ],
+    "earthMoon": [
+     {
+      "checkpoint": "J2000",
+      "geocentricErrorKm": 2.534286506439775e-12,
+      "barycenterErrorKm": 4.926889932299282e-14
+     },
+     {
+      "checkpoint": "+30d",
+      "geocentricErrorKm": 0.39361919226847575,
+      "barycenterErrorKm": 0.2972311776684903
+     },
+     {
+      "checkpoint": "+365d",
+      "geocentricErrorKm": 6.229323897957123,
+      "barycenterErrorKm": 31.24941572328228
+     },
+     {
+      "checkpoint": "+10y",
+      "geocentricErrorKm": 42.602425510473985,
+      "barycenterErrorKm": 312.55244385427693
+     }
+    ],
+    "seconds": 96.214878,
+    "rows": [
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "mercury",
+      "errorKm": 9.284545581645488e-9,
+      "relative": 1.330485512396505e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "venus",
+      "errorKm": 1.664110729902639e-8,
+      "relative": 1.544528400469412e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "earth",
+      "errorKm": 0,
+      "relative": 0
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "moon",
+      "errorKm": 4.0548584103036394e-12,
+      "relative": 2.7605448160101387e-20
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "mars",
+      "errorKm": 3.32184137963424e-8,
+      "relative": 1.5961052057518543e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "jupiter",
+      "errorKm": 2.0760875060754634e-9,
+      "relative": 2.794908936909903e-18
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "saturn",
+      "errorKm": 1.8808940332804688e-7,
+      "relative": 1.369034019774537e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "uranus",
+      "errorKm": 2.657392007776593e-7,
+      "relative": 8.9156522477092e-17
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "neptune",
+      "errorKm": 4.152175012150927e-9,
+      "relative": 9.214821101395272e-19
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "pluto",
+      "errorKm": 5.942109172253113e-7,
+      "relative": 1.3142386856613316e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "ceres",
+      "errorKm": 0,
+      "relative": 0
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "mercury",
+      "errorKm": 1.057937536284624,
+      "relative": 1.9384760669027346e-8
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "venus",
+      "errorKm": 0.49531168666175407,
+      "relative": 4.572789421669746e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "earth",
+      "errorKm": 0.29964785168915054,
+      "relative": 2.033099594898332e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "moon",
+      "errorKm": 0.35231646842037173,
+      "relative": 2.394191433948093e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "mars",
+      "errorKm": 0.127293209648017,
+      "relative": 6.025144059480708e-10
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "jupiter",
+      "errorKm": 13.336987493554842,
+      "relative": 1.7939741743183152e-8
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "saturn",
+      "errorKm": 1.813778104257698,
+      "relative": 1.321104553302102e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "uranus",
+      "errorKm": 26.11912836085382,
+      "relative": 8.761783547121101e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "neptune",
+      "errorKm": 7.781061032994068,
+      "relative": 1.7268923065394508e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "pluto",
+      "errorKm": 2536.062867196012,
+      "relative": 5.607452819441986e-7
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "ceres",
+      "errorKm": 0.029248944724263877,
+      "relative": 7.649919115987315e-11
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "mercury",
+      "errorKm": 205.44234506991427,
+      "relative": 0.0000030697675124303327
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "venus",
+      "errorKm": 29.791929932872602,
+      "relative": 2.7547041941985825e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "earth",
+      "errorKm": 31.22147958276724,
+      "relative": 2.1224191696146343e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "moon",
+      "errorKm": 34.01094478328501,
+      "relative": 2.3149482061607814e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "mars",
+      "errorKm": 27.057887631989512,
+      "relative": 1.0967856360744079e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "jupiter",
+      "errorKm": 13.38761450225823,
+      "relative": 1.7735370508679825e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "saturn",
+      "errorKm": 27.770983496788194,
+      "relative": 2.036933961197674e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "uranus",
+      "errorKm": 324.7174528329212,
+      "relative": 1.0875971620255788e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "neptune",
+      "errorKm": 106.48599638500866,
+      "relative": 2.364214639012455e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "pluto",
+      "errorKm": 29198.796746983426,
+      "relative": 0.000006433928710384363
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "ceres",
+      "errorKm": 4.810669542249492,
+      "relative": 1.1640225753774263e-8
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "mercury",
+      "errorKm": 561.9472071259285,
+      "relative": 0.000012212683722735225
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "venus",
+      "errorKm": 261.9724872489793,
+      "relative": 0.000002407966981956604
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "earth",
+      "errorKm": 312.2404356710191,
+      "relative": 0.0000021226402266004077
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "moon",
+      "errorKm": 339.60376414702165,
+      "relative": 0.0000023030394171970317
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "mars",
+      "errorKm": 228.47474368603056,
+      "relative": 9.382394634085598e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "jupiter",
+      "errorKm": 369.1773548063614,
+      "relative": 4.932268675369284e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "saturn",
+      "errorKm": 261.7420636290753,
+      "relative": 1.8465628218528033e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "uranus",
+      "errorKm": 2977.766650819214,
+      "relative": 9.904578262264532e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "neptune",
+      "errorKm": 565.1135005754118,
+      "relative": 1.2581568393389047e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "pluto",
+      "errorKm": 331469.5486359825,
+      "relative": 0.00006975851138175097
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "ceres",
+      "errorKm": 124.98978155146843,
+      "relative": 3.087705027678149e-7
+     }
+    ]
+   },
+   "gate": {
+    "finite": true,
+    "earthMoonImproved": true,
+    "lunar": [
+     {
+      "checkpoint": "+30d",
+      "geocentricErrorKm": 0.39361919226847575,
+      "barycenterErrorKm": 0.2972311776684903,
+      "baselineGeocentricLowerBoundKm": 10094.362741823476,
+      "passed": true
+     },
+     {
+      "checkpoint": "+365d",
+      "geocentricErrorKm": 6.229323897957123,
+      "barycenterErrorKm": 31.24941572328228,
+      "baselineGeocentricLowerBoundKm": 130594.12842862733,
+      "passed": true
+     },
+     {
+      "checkpoint": "+10y",
+      "geocentricErrorKm": 42.602425510473985,
+      "barycenterErrorKm": 312.55244385427693,
+      "baselineGeocentricLowerBoundKm": 712342.0368393807,
+      "passed": true
+     }
+    ],
+    "otherBodyCheckpointRegressions": [],
+    "passed": true
+   },
+   "receipt": {
+    "pid": 40684,
+    "exitCode": 0,
+    "seconds": 96.6659317,
+    "peakObservedRssBytes": 106745856,
+    "outputBytes": 7897,
+    "abort": null,
+    "ramReserveMiB": 1024,
+    "rssLimitMiB": 768
+   }
+  },
+  {
+   "run": {
+    "mode": "eih",
+    "bodies": 101,
+    "sunGmSi": 132712440000000000000,
+    "softeningMeters": 14959787.07,
+    "earthMoonSofteningMeters": 1000,
+    "earthGmSi": 398600542309999.94,
+    "moonGmSi": 4902800619700,
+    "integrationModes": [
+     "dp",
+     "rk4-fallback",
+     "rk4-fallback"
+    ],
+    "earthMoon": [
+     {
+      "checkpoint": "J2000",
+      "geocentricErrorKm": 2.534286506439775e-12,
+      "barycenterErrorKm": 4.926889932299282e-14
+     },
+     {
+      "checkpoint": "+30d",
+      "geocentricErrorKm": 0.6578487310354036,
+      "barycenterErrorKm": 0.3420706058690891
+     },
+     {
+      "checkpoint": "+365d",
+      "geocentricErrorKm": 8.903950761894784,
+      "barycenterErrorKm": 29.706705354861764
+     },
+     {
+      "checkpoint": "+10y",
+      "geocentricErrorKm": 40.9213787029822,
+      "barycenterErrorKm": 296.92645613425924
+     }
+    ],
+    "seconds": 341.2396444,
+    "rows": [
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "mercury",
+      "errorKm": 9.284545581645488e-9,
+      "relative": 1.330485512396505e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "venus",
+      "errorKm": 1.664110729902639e-8,
+      "relative": 1.544528400469412e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "earth",
+      "errorKm": 0,
+      "relative": 0
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "moon",
+      "errorKm": 4.0548584103036394e-12,
+      "relative": 2.7605448160101387e-20
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "mars",
+      "errorKm": 3.32184137963424e-8,
+      "relative": 1.5961052057518543e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "jupiter",
+      "errorKm": 2.0760875060754634e-9,
+      "relative": 2.794908936909903e-18
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "saturn",
+      "errorKm": 1.8808940332804688e-7,
+      "relative": 1.369034019774537e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "uranus",
+      "errorKm": 2.657392007776593e-7,
+      "relative": 8.9156522477092e-17
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "neptune",
+      "errorKm": 4.152175012150927e-9,
+      "relative": 9.214821101395272e-19
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "pluto",
+      "errorKm": 5.942109172253113e-7,
+      "relative": 1.3142386856613316e-16
+     },
+     {
+      "checkpoint": "J2000",
+      "days": 0,
+      "body": "ceres",
+      "errorKm": 0,
+      "relative": 0
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "mercury",
+      "errorKm": 9.850106192499952,
+      "relative": 1.8048508967427864e-7
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "venus",
+      "errorKm": 1.2121341507340793,
+      "relative": 1.1190598508745895e-8
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "earth",
+      "errorKm": 0.3378093808893245,
+      "relative": 2.292024159583885e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "moon",
+      "errorKm": 0.8832080933462204,
+      "relative": 6.001902950957485e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "mars",
+      "errorKm": 0.0869146775909478,
+      "relative": 4.113915069129047e-10
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "jupiter",
+      "errorKm": 13.341050391973281,
+      "relative": 1.7945206796546275e-8
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "saturn",
+      "errorKm": 1.813234122872989,
+      "relative": 1.3207083326825214e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "uranus",
+      "errorKm": 26.119118392564033,
+      "relative": 8.761780203211754e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "neptune",
+      "errorKm": 7.78107794059728,
+      "relative": 1.7268960589338588e-9
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "pluto",
+      "errorKm": 2536.0630702039775,
+      "relative": 5.607453268310032e-7
+     },
+     {
+      "checkpoint": "+30d",
+      "days": 30,
+      "body": "ceres",
+      "errorKm": 0.00577095365157375,
+      "relative": 1.509364835991084e-11
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "mercury",
+      "errorKm": 255.512719048621,
+      "relative": 0.000003817930737118815
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "venus",
+      "errorKm": 68.89193668635359,
+      "relative": 6.370077647334971e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "earth",
+      "errorKm": 29.753605318131555,
+      "relative": 2.022633876941755e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "moon",
+      "errorKm": 27.093977041360045,
+      "relative": 1.8441461696907262e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "mars",
+      "errorKm": 12.668517631692724,
+      "relative": 5.135156283363688e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "jupiter",
+      "errorKm": 12.748238197126065,
+      "relative": 1.6888350625930965e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "saturn",
+      "errorKm": 27.68824614363009,
+      "relative": 2.0308653779756633e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "uranus",
+      "errorKm": 324.71433854332753,
+      "relative": 1.087586731134063e-7
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "neptune",
+      "errorKm": 106.48462548651416,
+      "relative": 2.3641842021625466e-8
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "pluto",
+      "errorKm": 29198.75344357739,
+      "relative": 0.000006433919168517628
+     },
+     {
+      "checkpoint": "+365d",
+      "days": 365,
+      "body": "ceres",
+      "errorKm": 1.156641338345738,
+      "relative": 2.7986886599149694e-9
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "mercury",
+      "errorKm": 2384.692092497129,
+      "relative": 0.000051826025527783644
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "venus",
+      "errorKm": 638.1516107409938,
+      "relative": 0.000005865684691867289
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "earth",
+      "errorKm": 296.72763893789187,
+      "relative": 0.0000020171827566156274
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "moon",
+      "errorKm": 315.30196390218805,
+      "relative": 0.000002138235578778826
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "mars",
+      "errorKm": 115.09707092703925,
+      "relative": 4.726501158258435e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "jupiter",
+      "errorKm": 314.54539810798735,
+      "relative": 4.2023769710450663e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "saturn",
+      "errorKm": 254.64526399874543,
+      "relative": 1.79649564438118e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "uranus",
+      "errorKm": 2977.343932009724,
+      "relative": 9.903172224779905e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "neptune",
+      "errorKm": 565.0772180662335,
+      "relative": 1.2580760607218225e-7
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "pluto",
+      "errorKm": 331451.7541189257,
+      "relative": 0.00006975476648564891
+     },
+     {
+      "checkpoint": "+10y",
+      "days": 3652.5,
+      "body": "ceres",
+      "errorKm": 29.18517028569916,
+      "relative": 7.209805146166166e-8
+     }
+    ]
+   },
+   "gate": {
+    "finite": true,
+    "earthMoonImproved": true,
+    "lunar": [
+     {
+      "checkpoint": "+30d",
+      "geocentricErrorKm": 0.6578487310354036,
+      "barycenterErrorKm": 0.3420706058690891,
+      "baselineGeocentricLowerBoundKm": 10095.368097642842,
+      "passed": true
+     },
+     {
+      "checkpoint": "+365d",
+      "geocentricErrorKm": 8.903950761894784,
+      "barycenterErrorKm": 29.706705354861764,
+      "baselineGeocentricLowerBoundKm": 130526.65433495588,
+      "passed": true
+     },
+     {
+      "checkpoint": "+10y",
+      "geocentricErrorKm": 40.9213787029822,
+      "barycenterErrorKm": 296.92645613425924,
+      "baselineGeocentricLowerBoundKm": 712086.8495041037,
+      "passed": true
+     }
+    ],
+    "otherBodyCheckpointRegressions": [],
+    "passed": true
+   },
+   "receipt": {
+    "pid": 63328,
+    "exitCode": 0,
+    "seconds": 341.7519104,
+    "peakObservedRssBytes": 97337344,
+    "outputBytes": 7888,
+    "abort": null,
+    "ramReserveMiB": 256,
+    "rssLimitMiB": 256
+   }
+  }
+ ],
+ "attempts": [
+  {
+   "attempt": "newton-first",
+   "pid": 37880,
+   "exitCode": -1,
+   "seconds": 89.9919001,
+   "peakObservedRssBytes": 103469056,
+   "outputBytes": 0,
+   "abort": "resource-limit",
+   "ramReserveMiB": 1024,
+   "rssLimitMiB": 768
+  },
+  {
+   "attempt": "newton-r1",
+   "status": "INTERRUPTED_WITHOUT_RECEIPT",
+   "outputProduced": false
+  },
+  {
+   "attempt": "eih-r2",
+   "pid": 14352,
+   "exitCode": -1,
+   "seconds": 20.9171565,
+   "peakObservedRssBytes": 84168704,
+   "outputBytes": 0,
+   "abort": "available-memory",
+   "ramReserveMiB": 1024,
+   "rssLimitMiB": 768
+  },
+  {
+   "attempt": "eih-r3",
+   "pid": 55544,
+   "exitCode": -1,
+   "seconds": 151.0655455,
+   "peakObservedRssBytes": 102563840,
+   "outputBytes": 0,
+   "abort": "available-memory",
+   "ramReserveMiB": 512,
+   "rssLimitMiB": 768
+  }
+ ],
+ "scientificBoundary": "Registered fixed-checkpoint comparison, 101 evolved bodies and 11 reference bodies, with observed DP/RK4 fallback. Regularized force model. Experimental explicit option; current default remains the solar-GM-only record."
+}

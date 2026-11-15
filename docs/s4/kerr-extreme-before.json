@@ -1,0 +1,68 @@
+{
+  "generatedAt": "2026-11-13T15:01:12.412Z",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "stepScale": 0.04,
+  "maxSteps": 4000,
+  "W": 128,
+  "H": 128,
+  "rOut": 20,
+  "summary": [
+    {
+      "config": "a0.99-i85",
+      "pixels": 16384,
+      "refMs": 11902,
+      "statusAgreement": 0.999755859375,
+      "mismatches": {
+        "disk->4": 1,
+        "captured->1": 3
+      },
+      "mismatchPixels": [
+        {
+          "x": 55,
+          "y": 68,
+          "reference": "disk",
+          "gpu": 4,
+          "referenceSteps": 1867,
+          "r": 3.604650931068122,
+          "g": 0.8425553995157882
+        },
+        {
+          "x": 80,
+          "y": 68,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1047,
+          "r": null,
+          "g": null
+        },
+        {
+          "x": 80,
+          "y": 69,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1048,
+          "r": null,
+          "g": null
+        },
+        {
+          "x": 81,
+          "y": 69,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1074,
+          "r": null,
+          "g": null
+        }
+      ],
+      "gpuStepBudgetExhausted": 1,
+      "diskPixelsCompared": 4473,
+      "redshiftRelErr": {
+        "median": 1.1860911586603062e-7,
+        "p99": 0.0000061228187182901736,
+        "max": 0.00003516806245015396
+      },
+      "emitRadiusRelErrMax": 0.0000067766546217453715,
+      "refMaxHamiltonian": 0.00004091672599315643
+    }
+  ]
+}

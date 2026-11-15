@@ -1,0 +1,15 @@
+{
+ "schema": "s4-earth-moon-causal-comparison-v1",
+ "reference": "public/data/horizons-validation-j2000.json",
+ "defaultSolarGm": 1.3271244e20,
+ "checkpointDays": [0, 30, 365, 3652.5],
+ "cases": [
+  {"id":"baseline","softeningMeters":14959787.07,"exitCode":0,"earthMoon":{"+30d":{"geocentricErrorKm":10346.133507570166,"barycenterErrorKm":0.30490240421535253},"+365d":{"geocentricErrorKm":133809.48372269308,"barycenterErrorKm":31.42920241193359},"+10y":{"geocentricErrorKm":729957.339136813,"barycenterErrorKm":314.5576430972164}},"tenYearHeliocentricErrorKm":{"earth":8810,"moon":721152,"mercury":562,"mars":228,"jupiter":369,"uranus":2978,"pluto":331371}},
+  {"id":"gm-only","earthMoonGm":"de440","softeningMeters":14959787.07,"exitCode":0,"earthMoon":{"+30d":{"geocentricErrorKm":10347.258855121663,"barycenterErrorKm":0.30979835540077943},"+365d":{"geocentricErrorKm":133824.27873250272,"barycenterErrorKm":31.534967553667443},"+10y":{"geocentricErrorKm":729928.5816693156,"barycenterErrorKm":315.6025963186844}},"tenYearHeliocentricErrorKm":{"earth":8810,"moon":721124,"mercury":562,"mars":228,"jupiter":369,"uranus":2978,"pluto":331372}},
+  {"id":"softening-only","softeningMeters":1000,"exitCode":0,"earthMoon":{"+30d":{"geocentricErrorKm":0.3942857361794711,"barycenterErrorKm":0.6282597593753533},"+365d":{"geocentricErrorKm":6.238218574794672,"barycenterErrorKm":60.19976320411367},"+10y":{"geocentricErrorKm":42.458631888389455,"barycenterErrorKm":602.0103981031621}},"tenYearHeliocentricErrorKm":{"earth":602,"moon":628,"mercury":1814,"mars":49,"jupiter":239,"uranus":3131,"pluto":332622}},
+  {"id":"combined","earthMoonGm":"de440","softeningMeters":1000,"exitCode":0,"priorAttempt":{"status":"INTERRUPTED_BEFORE_RESULT","error":"worker ended without a JSON result or stderr receipt"},"rerun":"combined-20261113-r1","earthMoon":{"+30d":{"geocentricErrorKm":1.498711501878125,"barycenterErrorKm":0.6331497557997873},"+365d":{"geocentricErrorKm":19.398327311555654,"barycenterErrorKm":60.305648327404754},"+10y":{"geocentricErrorKm":155.68025489392346,"barycenterErrorKm":603.0578677985434}},"tenYearHeliocentricErrorKm":{"earth":604.8510714232813,"moon":459.9146088289544,"mercury":1813.793181690711,"mars":48.91227395805938,"jupiter":211.50698065418777,"uranus":3125.994164704545,"pluto":332622.26482522086}}
+ ],
+ "integrationModes":["dp","rk4-fallback","rk4-fallback"],
+ "adoption":{"status":"REJECTED","reason":"softening-only improves lunar geocentric error but worsens Mercury 10-year error 562 -> 1814 km; GM-only does not improve lunar geocentric error; combined is 155.7 km geocentric and still worsens Mercury","defaultChanged":false,"automaticRetry":false,"thresholdsChanged":false},
+ "scientificBoundary":"Fixed Horizons checkpoints and actual fallback modes; causal diagnosis only."
+}

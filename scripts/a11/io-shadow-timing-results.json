@@ -1,0 +1,67 @@
+{
+  "generatedAt": "2026-11-15T01:23:46.501Z",
+  "elapsedSeconds": 25.8055936,
+  "bodies": 101,
+  "warmupChunkSeconds": 3600,
+  "sampleSeconds": 60,
+  "jovianSatelliteSofteningMeters": 10000,
+  "jupiterJ2": true,
+  "fallbackCount": 0,
+  "result": {
+    "newton": [
+      {
+        "kind": "ingress",
+        "horizons": "2000-01-20 03:05:29",
+        "sim": "2000-01-20 03:05:17",
+        "diffS": -11.75362765789032
+      },
+      {
+        "kind": "egress",
+        "horizons": "2000-01-20 05:13:48",
+        "sim": "2000-01-20 05:13:36",
+        "diffS": -11.79993599653244
+      },
+      {
+        "kind": "ingress",
+        "horizons": "2000-01-21 21:34:19",
+        "sim": "2000-01-21 21:34:06",
+        "diffS": -12.900272011756897
+      },
+      {
+        "kind": "egress",
+        "horizons": "2000-01-21 23:42:38",
+        "sim": "2000-01-21 23:42:25",
+        "diffS": -12.940827012062073
+      }
+    ],
+    "eih": [
+      {
+        "kind": "ingress",
+        "horizons": "2000-01-20 03:05:29",
+        "sim": "2000-01-20 03:05:17",
+        "diffS": -11.66435033082962
+      },
+      {
+        "kind": "egress",
+        "horizons": "2000-01-20 05:13:48",
+        "sim": "2000-01-20 05:13:37",
+        "diffS": -11.71029657125473
+      },
+      {
+        "kind": "ingress",
+        "horizons": "2000-01-21 21:34:19",
+        "sim": "2000-01-21 21:34:06",
+        "diffS": -12.802545726299286
+      },
+      {
+        "kind": "egress",
+        "horizons": "2000-01-21 23:42:38",
+        "sim": "2000-01-21 23:42:25",
+        "diffS": -12.842778861522675
+      }
+    ]
+  },
+  "worstSeconds": 12.940827012062073,
+  "acceptanceSeconds": 60,
+  "passed": true
+}

@@ -10,7 +10,7 @@
 
 import { AU_METERS, DAY_SECONDS } from "./physicalConstants";
 
-/** Softening ε² (m²); ~1e-4 AU. */
+/** Legacy Plummer softening ε² (m²); used outside resolved parent–moon pairs. */
 export function defaultEps2Meters(): number {
   const epsAu = 1e-4;
   return (epsAu * AU_METERS) ** 2;
@@ -34,6 +34,14 @@ export function stateAuToSi(
  * Total acceleration (flattened 3N): Newton for all bodies; 1PN for every `i` when invC2 > 0.
  * Workspace: `aNewt`, `phi`, `out` (PN accumulates in `out`, then Newton is added).
  */
+export type GravityDynamics = {
+  /** Symmetric n×n pair softening matrix; omitted for the legacy point-mass path. */
+  pairEps2?: Float64Array;
+  j2: Float64Array;
+  reqEquatorialM: Float64Array;
+  axes: Float64Array;
+};
+
 export function calculateAcceleration(
   pos: Float64Array,
   vel: Float64Array,
@@ -44,7 +52,8 @@ export function calculateAcceleration(
   eps2: number,
   aNewt: Float64Array,
   phi: Float64Array,
-  out: Float64Array
+  out: Float64Array,
+  gravityDynamics?: GravityDynamics
 ): void {
   aNewt.fill(0);
   phi.fill(0);
@@ -55,7 +64,7 @@ export function calculateAcceleration(
       const dx = pos[3 * j] - pos[3 * i];
       const dy = pos[3 * j + 1] - pos[3 * i + 1];
       const dz = pos[3 * j + 2] - pos[3 * i + 2];
-      const r2 = dx * dx + dy * dy + dz * dz + eps2;
+      const r2 = dx * dx + dy * dy + dz * dz + (gravityDynamics?.pairEps2?.[i * n + j] ?? eps2);
       const invR = 1 / Math.sqrt(r2);
       const invR2 = invR * invR;
       const gm = G * mass[j];
@@ -68,6 +77,7 @@ export function calculateAcceleration(
 
   if (invC2 <= 0) {
     out.set(aNewt);
+    if (gravityDynamics) addJ2Acceleration(pos, mass, n, G, eps2, gravityDynamics, out);
     return;
   }
 
@@ -84,7 +94,7 @@ export function calculateAcceleration(
       const dx = pos[3 * j] - pos[3 * i];
       const dy = pos[3 * j + 1] - pos[3 * i + 1];
       const dz = pos[3 * j + 2] - pos[3 * i + 2];
-      const r2 = dx * dx + dy * dy + dz * dz + eps2;
+      const r2 = dx * dx + dy * dy + dz * dz + (gravityDynamics?.pairEps2?.[i * n + j] ?? eps2);
       const invR = 1 / Math.sqrt(r2);
       const invR2 = invR * invR;
 
@@ -148,6 +158,8 @@ export function calculateAcceleration(
     out[3 * k + 1] += aNewt[3 * k + 1];
     out[3 * k + 2] += aNewt[3 * k + 2];
   }
+  // Newtonian quadrupole added after point-mass EIH; no unmodelled J2 × 1PN terms.
+  if (gravityDynamics) addJ2Acceleration(pos, mass, n, G, eps2, gravityDynamics, out);
 }
 
 export type Rk4Workspaces = {
@@ -203,6 +215,46 @@ function statePlusScaled(
   }
 }
 
+/** Newtonian J2 from a fixed unit spin axis, with equal/opposite translational force.
+ * Uses the gradient of the Plummer-regularized quadrupole potential
+ * U = GM J2 R²/2 * (r_soft^-3 - 3 (d·axis)² r_soft^-5).
+ * Spin precession, higher zonals and relativistic multipoles are not modelled.
+ */
+export function addJ2Acceleration(
+  pos: Float64Array, mass: Float64Array, n: number, G: number, eps2: number,
+  model: GravityDynamics, out: Float64Array
+): void {
+  for (let j = 0; j < n; j++) {
+    const j2 = model.j2[j] ?? 0;
+    if (j2 === 0) continue;
+    const ax = model.axes[3 * j];
+    const ay = model.axes[3 * j + 1];
+    const az = model.axes[3 * j + 2];
+    const coefficient = 1.5 * G * j2 * model.reqEquatorialM[j] ** 2;
+    for (let i = 0; i < n; i++) {
+      if (i === j) continue;
+      const dx = pos[3 * j] - pos[3 * i];
+      const dy = pos[3 * j + 1] - pos[3 * i + 1];
+      const dz = pos[3 * j + 2] - pos[3 * i + 2];
+      const r2 = dx * dx + dy * dy + dz * dz + (model.pairEps2?.[i * n + j] ?? eps2);
+      const invR = 1 / Math.sqrt(r2);
+      const s = (dx * ax + dy * ay + dz * az) * invR;
+      const pref = coefficient * invR ** 5;
+      const radial = 1 - 5 * s * s;
+      const pole = 2 * s / invR;
+      const qx = pref * (dx * radial + ax * pole);
+      const qy = pref * (dy * radial + ay * pole);
+      const qz = pref * (dz * radial + az * pole);
+      out[3 * i] += mass[j] * qx;
+      out[3 * i + 1] += mass[j] * qy;
+      out[3 * i + 2] += mass[j] * qz;
+      out[3 * j] -= mass[i] * qx;
+      out[3 * j + 1] -= mass[i] * qy;
+      out[3 * j + 2] -= mass[i] * qz;
+    }
+  }
+}
+
 /** Classic RK4 on ẋ = v, v̇ = a(x,v). No heap alloc in the hot path. */
 export function rk4Step(
   pos: Float64Array,
@@ -213,7 +265,8 @@ export function rk4Step(
   G: number,
   invC2: number,
   eps2: number,
-  ws: Rk4Workspaces
+  ws: Rk4Workspaces,
+  gravityDynamics?: GravityDynamics
 ): void {
   const {
     aNewt,
@@ -231,28 +284,28 @@ export function rk4Step(
     kVel4,
   } = ws;
 
-  calculateAcceleration(pos, vel, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(pos, vel, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < 3 * n; b++) {
     kVel1[b] = acc[b];
     kPos1[b] = vel[b];
   }
 
   statePlusScaled(pos, vel, posTmp, velTmp, n, dt, 0.5, kPos1, kVel1);
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < 3 * n; b++) {
     kVel2[b] = acc[b];
     kPos2[b] = velTmp[b];
   }
 
   statePlusScaled(pos, vel, posTmp, velTmp, n, dt, 0.5, kPos2, kVel2);
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < 3 * n; b++) {
     kVel3[b] = acc[b];
     kPos3[b] = velTmp[b];
   }
 
   statePlusScaled(pos, vel, posTmp, velTmp, n, dt, 1, kPos3, kVel3);
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < 3 * n; b++) {
     kVel4[b] = acc[b];
     kPos4[b] = velTmp[b];
@@ -393,7 +446,8 @@ export function dp54TrialStepErrorNorm(
   ws: Dp54Workspaces,
   rtol: number,
   atolPos: number,
-  atolVel: number
+  atolVel: number,
+  gravityDynamics?: GravityDynamics
 ): number {
   const m = 3 * n;
   const {
@@ -425,7 +479,7 @@ export function dp54TrialStepErrorNorm(
   copyVec(pos0, pos, m);
   copyVec(vel0, vel, m);
 
-  calculateAcceleration(pos0, vel0, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(pos0, vel0, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel1[b] = acc[b];
     kPos1[b] = vel0[b];
@@ -435,7 +489,7 @@ export function dp54TrialStepErrorNorm(
     posTmp[b] = pos0[b] + h * DP_A21 * kPos1[b];
     velTmp[b] = vel0[b] + h * DP_A21 * kVel1[b];
   }
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel2[b] = acc[b];
     kPos2[b] = velTmp[b];
@@ -447,7 +501,7 @@ export function dp54TrialStepErrorNorm(
     velTmp[b] =
       vel0[b] + h * (DP_A31 * kVel1[b] + DP_A32 * kVel2[b]);
   }
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel3[b] = acc[b];
     kPos3[b] = velTmp[b];
@@ -467,7 +521,7 @@ export function dp54TrialStepErrorNorm(
           DP_A42 * kVel2[b] +
           DP_A43 * kVel3[b]);
   }
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel4[b] = acc[b];
     kPos4[b] = velTmp[b];
@@ -489,7 +543,7 @@ export function dp54TrialStepErrorNorm(
           DP_A53 * kVel3[b] +
           DP_A54 * kVel4[b]);
   }
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel5[b] = acc[b];
     kPos5[b] = velTmp[b];
@@ -513,7 +567,7 @@ export function dp54TrialStepErrorNorm(
           DP_A64 * kVel4[b] +
           DP_A65 * kVel5[b]);
   }
-  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posTmp, velTmp, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel6[b] = acc[b];
     kPos6[b] = velTmp[b];
@@ -538,7 +592,7 @@ export function dp54TrialStepErrorNorm(
           DP_B6 * kVel6[b]);
   }
 
-  calculateAcceleration(posNew, velNew, mass, n, G, invC2, eps2, aNewt, phi, acc);
+  calculateAcceleration(posNew, velNew, mass, n, G, invC2, eps2, aNewt, phi, acc, gravityDynamics);
   for (let b = 0; b < m; b++) {
     kVel7[b] = acc[b];
     kPos7[b] = velNew[b];

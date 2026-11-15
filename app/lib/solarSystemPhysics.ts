@@ -10,10 +10,11 @@ import {
   stateAuToSi,
   type Dp54Workspaces,
   type GravitationalTimeDilationResult,
+  type GravityDynamics,
   type Rk4Workspaces,
 } from "./physicsEngine";
 import { AU_METERS, C_LIGHT, DAY_SECONDS, G_SI } from "./physicalConstants";
-import { BODY_J2, BODY_REQ_M } from "./planetJ2Data";
+import { BODY_J2, BODY_J2_AXIS, BODY_REQ_M } from "./planetJ2Data";
 import type { PhysicsPrecisionTier } from "./physicsPrecision";
 import { galacticAccelFromAuPosition, DEFAULT_GALACTIC_POTENTIAL, type GalacticPotentialParams } from "./galacticPotential";
 import {
@@ -69,6 +70,12 @@ export type SolarSystemPhysicsOptions = {
   capacity?: number;
   /** Override fixed RK4 mode (else env). */
   forceFixedRk4?: boolean;
+  /** Global Plummer softening override in m²; retains legacy close-encounter protection. */
+  eps2Meters?: number;
+  /** Jupiter J2 force (IAU J2000 pole approximation), enabled by default. */
+  enableJ2Dynamics?: boolean;
+  /** Jovian parent–moon pair softening in m²; default (10 km)². */
+  jovianSatelliteEps2Meters?: number;
   /** Opt-in locked, transactional legacy science run; default interactive behavior is unchanged. */
   executionPolicy?: PhysicsExecutionPolicyInput;
 };
@@ -99,6 +106,7 @@ export class SolarSystemPhysics {
 
   readonly G: number;
   readonly eps2: number;
+  readonly gravityDynamics?: GravityDynamics;
 
   private readonly rk4: Rk4Workspaces;
   private readonly dp54: Dp54Workspaces;
@@ -158,7 +166,21 @@ export class SolarSystemPhysics {
     this.capacity = cap;
     this.n = activeN;
     this.G = G_SI;
-    this.eps2 = defaultEps2Meters();
+    this.eps2 = options?.eps2Meters ?? defaultEps2Meters();
+    if (!Number.isFinite(this.eps2) || this.eps2 < 0) throw new Error("SolarSystemPhysics: eps2Meters must be finite and nonnegative");
+    const satelliteEps2 = options?.jovianSatelliteEps2Meters ?? 10_000 ** 2;
+    if (!Number.isFinite(satelliteEps2) || satelliteEps2 < 0) throw new Error("SolarSystemPhysics: jovianSatelliteEps2Meters must be finite and nonnegative");
+    const pairEps2 = new Float64Array(this.n * this.n).fill(this.eps2);
+    for (let i = 0; i < this.n; i++) {
+      const parent = bodies[i]?.osculatingCentralBodyIndex;
+      // A11 qualifies the Jovian system; other moon systems keep their existing model.
+      if (parent == null || parent >= this.n || bodies[parent]?.id !== "jupiter") continue;
+      pairEps2[i * this.n + parent] = Math.min(satelliteEps2, this.eps2);
+      pairEps2[parent * this.n + i] = Math.min(satelliteEps2, this.eps2);
+    }
+    const j2 = new Float64Array(BODY_J2.length);
+    if (options?.enableJ2Dynamics !== false) j2[6] = BODY_J2[6] ?? 0;
+    this.gravityDynamics = { pairEps2, j2, reqEquatorialM: BODY_REQ_M, axes: BODY_J2_AXIS };
     this.phiTd = new Float64Array(this.n);
     this.scratchVelAu = new Float64Array(cap3);
     this.rtol = DEFAULT_RTOL;
@@ -314,7 +336,8 @@ export class SolarSystemPhysics {
         this.G,
         invC2,
         this.eps2,
-        this.rk4
+        this.rk4,
+        this.gravityDynamics
       );
       metrics.acceptedSubsteps += 1;
       t -= h;
@@ -389,7 +412,8 @@ export class SolarSystemPhysics {
           this.G,
           invC2,
           this.eps2,
-          this.rk4
+          this.rk4,
+          this.gravityDynamics
         );
         metrics.acceptedSubsteps += 1;
       }
@@ -441,7 +465,8 @@ export class SolarSystemPhysics {
         this.dp54,
         this.rtol,
         ADAPTIVE_ATOL_POS_M,
-        ADAPTIVE_ATOL_VEL_MS
+        ADAPTIVE_ATOL_VEL_MS,
+        this.gravityDynamics
       );
       accelEvals += ACCEL_EVALS_PER_DP_TRIAL;
       if (scientific && !Number.isFinite(err)) this.abortScientificStep("non-finite-error-estimate", metrics);

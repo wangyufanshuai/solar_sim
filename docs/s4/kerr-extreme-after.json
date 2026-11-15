@@ -1,0 +1,58 @@
+{
+  "generatedAt": "2026-11-13T15:02:55.647Z",
+  "renderer": "ANGLE (NVIDIA, NVIDIA GeForce RTX 4060 Laptop GPU (0x000028E0) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+  "stepScale": 0.04,
+  "maxSteps": 8000,
+  "W": 128,
+  "H": 128,
+  "rOut": 20,
+  "summary": [
+    {
+      "config": "a0.99-i85",
+      "pixels": 16384,
+      "refMs": 10937,
+      "statusAgreement": 0.99981689453125,
+      "mismatches": {
+        "captured->1": 3
+      },
+      "mismatchPixels": [
+        {
+          "x": 80,
+          "y": 68,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1047,
+          "r": null,
+          "g": null
+        },
+        {
+          "x": 80,
+          "y": 69,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1048,
+          "r": null,
+          "g": null
+        },
+        {
+          "x": 81,
+          "y": 69,
+          "reference": "captured",
+          "gpu": 1,
+          "referenceSteps": 1074,
+          "r": null,
+          "g": null
+        }
+      ],
+      "gpuStepBudgetExhausted": 0,
+      "diskPixelsCompared": 4474,
+      "redshiftRelErr": {
+        "median": 1.1862056993425569e-7,
+        "p99": 0.0000063033116776220044,
+        "max": 0.000375790205430154
+      },
+      "emitRadiusRelErrMax": 0.0033173606180099927,
+      "refMaxHamiltonian": 0.00004091672599315643
+    }
+  ]
+}

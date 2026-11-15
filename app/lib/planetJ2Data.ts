@@ -1,6 +1,6 @@
 /**
- * Oblate gravity parameters for J2 correction to Newtonian potential (time dilation Φ only).
- * J2 dimensionless; R_eq equatorial radius [m]. Spin axis approximated as +Z (ecliptic north);
+ * Oblate gravity parameters. Dynamics currently admits Jupiter J2 with its IAU pole.
+ * J2 dimensionless; R_eq equatorial radius [m]. The legacy time-dilation potential still approximates the axis as +Z;
  * Uranus/Neptune obliquity errors are a known teaching limitation.
  *
  * Values from NASA Planetary Fact Sheets where cited; extras use 0 J2 (disabled in φ_J2).
@@ -32,3 +32,16 @@ export const BODY_REQ_M: Float64Array = new Float64Array([
   15.7e3, 26e3, 350, 2.65e3, 334e3, 308e3, 200e3, 358e3, 84e3, 40e3, 62e3,
   85e3,
 ]);
+
+/** Fixed J2000 linear IAU Jupiter pole from NAIF pck00011.tpc BODY599_POLE_RA/DEC.
+ * RA=268.056595°, Dec=64.495303°; rotate equatorial J2000 to ecliptic J2000.
+ * Secular precession and periodic nutation are omitted in this short-arc approximation.
+ * Source: https://naif.jpl.nasa.gov/pub/naif/generic_kernels/pck/pck00011.tpc
+ */
+export const BODY_J2_AXIS: Float64Array = new Float64Array(3 * 100);
+const ra = 268.056595 * Math.PI / 180;
+const dec = 64.495303 * Math.PI / 180;
+const obliquity = 23.439291111 * Math.PI / 180;
+BODY_J2_AXIS[18] = Math.cos(dec) * Math.cos(ra);
+BODY_J2_AXIS[19] = Math.cos(obliquity) * Math.cos(dec) * Math.sin(ra) + Math.sin(obliquity) * Math.sin(dec);
+BODY_J2_AXIS[20] = -Math.sin(obliquity) * Math.cos(dec) * Math.sin(ra) + Math.cos(obliquity) * Math.sin(dec);
